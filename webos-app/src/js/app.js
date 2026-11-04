@@ -36,6 +36,7 @@
       else if (r && r.returnValue) $("hint").textContent = "Bridge service running (public access; elevate in Homebrew Channel for private methods).";
     });
     wireKeys();
+    initWeb();
     $("search").addEventListener("input", function () { curSvc = null; renderServices(this.value); });
   }
 
@@ -233,13 +234,60 @@
     } catch (e) {}
   }
 
+  /* ---- web access: toggle the service's LAN web server, show QR + URL + code ---- */
+  var webOn = false;
+  function svcCall(method, params, cb) {
+    if (!window.Luna) { cb({}); return; }
+    Luna.raw(Luna.SERVICE + "/" + method, params || {}, function (r) { cb(r || {}); });
+  }
+  function initWeb() {
+    var btn = $("webaccess"); if (!btn) return;
+    btn.onclick = toggleWeb;
+    btn.addEventListener("keydown", function (ev) { if (ev.keyCode === 13) { ev.preventDefault(); toggleWeb(); } });
+    svcCall("webStatus", {}, function (r) { setWeb(r && r.running, r); });
+  }
+  function setWeb(on, s) {
+    webOn = !!on;
+    var btn = $("webaccess"); if (btn) btn.className = "webbtn" + (webOn ? " on" : "");
+    if (webOn && s && s.port) showWeb(s);
+  }
+  function toggleWeb() {
+    var btn = $("webaccess");
+    if (webOn) { svcCall("webStop", {}, function () { setWeb(false); hideWeb(); }); return; }
+    if (btn) btn.textContent = "Starting...";
+    svcCall("webStart", { port: 3000 }, function (r) {
+      if (btn) { btn.innerHTML = 'Web access <span id="webdot" class="webdot"></span>'; }
+      if (r && r.running) setWeb(true, r);
+      else alertWeb((r && r.errorText) || "Could not start the web server.");
+    });
+  }
+  function urlOf(s, ip) { return "http://" + (ip || (s.ips && s.ips[0]) || "<tv-ip>") + ":" + s.port; }
+  function showWeb(s) {
+    var url = urlOf(s);
+    $("weburl").textContent = url;
+    $("webcode").textContent = s.code || "----";
+    var qr = $("webqr"); qr.innerHTML = "";
+    try { if (typeof qrcode === "function") { var q = qrcode(0, "M"); q.addData(url); q.make(); qr.innerHTML = q.createSvgTag({ cellSize: 6, margin: 1 }); } } catch (e) {}
+    var note = "Scan the QR with your phone's camera, or type the address on a computer on the same network.";
+    if (s.ips && s.ips.length > 1) note += "  Other addresses: " + s.ips.slice(1).map(function (i) { return urlOf(s, i); }).join("  ");
+    if (!s.ips || !s.ips.length) note = "This TV reports no network address; check it's on Wi-Fi or Ethernet.";
+    $("webnote").textContent = note;
+    $("weboverlay").className = "weboverlay";
+  }
+  function hideWeb() { var o = $("weboverlay"); if (o) o.className = "weboverlay hidden"; }
+  function alertWeb(msg) { $("weburl").textContent = ""; $("webcode").textContent = ""; $("webqr").innerHTML = ""; $("webnote").textContent = msg; $("weboverlay").className = "weboverlay"; }
+  function webOverlayOpen() { var o = $("weboverlay"); return o && o.className.indexOf("hidden") < 0; }
+
   /* ---- basic remote/keyboard navigation between the three panes ---- */
   function wireKeys() {
     var panes = ["svclist", "methodlist"];
     document.addEventListener("keydown", function (ev) {
       var k = ev.keyCode;
-      // Back (461 on webOS) / Esc -> move focus left
-      if (k === 461 || k === 27) { focusPane("svclist"); ev.preventDefault(); return; }
+      // Back / Esc: close the web overlay first (server keeps running), else move focus left
+      if (k === 461 || k === 27) {
+        if (webOverlayOpen()) { hideWeb(); ev.preventDefault(); return; }
+        focusPane("svclist"); ev.preventDefault(); return;
+      }
       var active = document.activeElement;
       if (k === 38 || k === 40) { // up / down within a pane
         var pane = active && active.closest ? active.closest(".pane") : null;

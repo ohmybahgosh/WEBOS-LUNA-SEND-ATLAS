@@ -1,13 +1,16 @@
 {
   "id": "org.ohmybahgosh.lunaatlas.service",
-  "description": "Luna Atlas bridge: relays a chosen luna URI + payload to the bus",
+  "description": "Luna Atlas bridge + LAN web server",
   "services": [
     {
       "name": "org.ohmybahgosh.lunaatlas.service",
       "description": "Luna Atlas bridge",
       "commands": [
-        { "name": "run", "description": "Relay a luna-send call and return the reply" },
-        { "name": "status", "description": "Report bridge availability and whether it runs as root" }
+        { "name": "run", "description": "Relay a luna call and return the reply" },
+        { "name": "status", "description": "Bridge availability / root" },
+        { "name": "webStart", "description": "Start the LAN web server (returns url + code)" },
+        { "name": "webStop", "description": "Stop the LAN web server" },
+        { "name": "webStatus", "description": "LAN web server status" }
       ]
     }
   ]

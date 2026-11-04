@@ -1,65 +1,57 @@
 /*
- * Luna Atlas bridge service.
+ * Luna Atlas bridge + web server service.
  *
- * The web app can only call public bus methods on its own. This service sits on
- * the bus as org.ohmybahgosh.lunaatlas.service and relays a chosen luna URI and
- * JSON payload to the bus via webos-service's own call() (palmbus; no exec), so
- * it works inside the dev sandbox. Elevated to root via the Homebrew Channel
- * ("elevate service") it reaches private methods too; otherwise public only.
+ * - run/status: relay a luna URI + payload to the bus via webos-service (works
+ *   in the dev sandbox, where spawning luna-send is blocked).  Root via the
+ *   Homebrew Channel "elevate service" reaches private methods.
+ * - webStart/webStop/webStatus: turn on a LAN web server (webserver.js) so a
+ *   phone or computer on the same network can browse and run commands, gated by
+ *   a short code the app shows on the TV.
  *
- * It does not interpret, whitelist, or hide any method: the app is the catalog,
- * this is just the transport. Dangerous calls are gated in the UI.
- *
- * webos-service and palmbus are provided by the TV runtime (/usr/lib/node_modules).
+ * webos-service and node core modules are provided by the TV runtime.
  */
+"use strict";
 var Service = require("webos-service");
+var path = require("path");
+var WebServer = require("./webserver");
 var service = new Service("org.ohmybahgosh.lunaatlas.service");
 
-function isRoot() {
-  try { return typeof process.getuid === "function" && process.getuid() === 0; }
-  catch (e) { return false; }
+function isRoot() { try { return typeof process.getuid === "function" && process.getuid() === 0; } catch (e) { return false; } }
+
+// relay one call through the bus (no luna-send spawn; dev sandbox safe)
+function lunaRun(uri, params, done) {
+  var fired = false;
+  function finish(o) { if (fired) return; fired = true; o.__bridge = { root: isRoot() }; done(o); }
+  var t = setTimeout(function () { finish({ returnValue: false, errorText: "no response within 12s" }); }, 12000);
+  try {
+    service.call(uri, params || {}, function (m) { clearTimeout(t); finish(m && m.payload ? m.payload : { returnValue: false, errorText: "empty reply" }); });
+  } catch (e) { clearTimeout(t); finish({ returnValue: false, errorText: "bridge error: " + (e && e.message ? e.message : e) }); }
 }
 
-service.register("status", function (message) {
-  message.respond({
-    returnValue: true,
-    service: "org.ohmybahgosh.lunaatlas.service",
-    version: "1.0.0",
-    root: isRoot(),
-    note: isRoot() ? "full access" : "public access only; elevate in Homebrew Channel for private methods"
+var web = WebServer.create({
+  webdir: path.join(__dirname, "web"),
+  runner: lunaRun,
+  log: function (o) { try { console.info("[lunaatlas]", JSON.stringify(o)); } catch (e) {} }
+});
+
+service.register("status", function (m) {
+  m.respond({ returnValue: true, service: "org.ohmybahgosh.lunaatlas.service", version: "1.0.0", root: isRoot(),
+    note: isRoot() ? "full access" : "public access only; elevate in Homebrew Channel for private methods" });
+});
+
+service.register("run", function (m) {
+  var p = m.payload || {};
+  if (!p.uri || typeof p.uri !== "string" || p.uri.indexOf("luna://") !== 0) { m.respond({ returnValue: false, errorText: "run requires a luna:// uri" }); return; }
+  lunaRun(p.uri, (p.params && typeof p.params === "object") ? p.params : {}, function (o) { m.respond(o); });
+});
+
+service.register("webStart", function (m) {
+  var port = (m.payload && +m.payload.port) || 3000;
+  if (port < 1024 || port > 65535) { m.respond({ returnValue: false, errorText: "pick a port 1024-65535" }); return; }
+  web.start(port, function (err, s) {
+    if (err) { m.respond({ returnValue: false, errorText: err.message }); return; }
+    m.respond(Object.assign({ returnValue: true }, s));
   });
 });
-
-service.register("run", function (message) {
-  var p = message.payload || {};
-  var uri = p.uri;
-  if (!uri || typeof uri !== "string" || uri.indexOf("luna://") !== 0) {
-    message.respond({ returnValue: false, errorText: "run requires a luna:// uri" });
-    return;
-  }
-  var params = (p.params && typeof p.params === "object") ? p.params : {};
-  var done = false;
-  function finish(obj) {
-    if (done) return; done = true;
-    obj.__bridge = { root: isRoot(), subscribed: !!p.subscribe };
-    message.respond(obj);
-  }
-
-  try {
-    if (p.subscribe === true) {
-      // take the first subscription event, then stop
-      var sub = service.subscribe(uri, params);
-      var timer = setTimeout(function () { try { sub.cancel(); } catch (e) {} finish({ returnValue: false, errorText: "no response within 12s" }); }, 12000);
-      sub.on("response", function (m) { clearTimeout(timer); try { sub.cancel(); } catch (e) {} finish(m.payload); });
-      sub.on("cancel", function (m) { clearTimeout(timer); finish((m && m.payload) || { returnValue: false, errorText: "cancelled" }); });
-    } else {
-      var t = setTimeout(function () { finish({ returnValue: false, errorText: "no response within 12s" }); }, 12000);
-      service.call(uri, params, function (m) {
-        clearTimeout(t);
-        finish(m && m.payload ? m.payload : { returnValue: false, errorText: "empty reply" });
-      });
-    }
-  } catch (e) {
-    finish({ returnValue: false, errorText: "bridge error: " + (e && e.message ? e.message : e) });
-  }
-});
+service.register("webStop", function (m) { web.stop(); m.respond(Object.assign({ returnValue: true }, web.status())); });
+service.register("webStatus", function (m) { m.respond(Object.assign({ returnValue: true }, web.status())); });

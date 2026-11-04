@@ -5,3 +5,4 @@ __pycache__/
 
 app/dist/
 app/luna-atlas-service/node_modules/
+webos-app/out/
