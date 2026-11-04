@@ -6,3 +6,9 @@ __pycache__/
 app/dist/
 app/luna-atlas-service/node_modules/
 webos-app/out/
+
+# build.sh bundles these into the IPK from canonical sources
+webos-app/src/web/
+webos-app/src/catalog/
+webos-app/src/luna-atlas.sh
+webos-app/service/web/

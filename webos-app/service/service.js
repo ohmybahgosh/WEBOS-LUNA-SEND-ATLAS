@@ -34,6 +34,22 @@ var web = WebServer.create({
   log: function (o) { try { console.info("[lunaatlas]", JSON.stringify(o)); } catch (e) {} }
 });
 
+// Keepalive: webos-service exits an idle JS service after a few seconds (its
+// ActivityManager idle timer), which would reap this process and kill the web
+// server right after webStart returns.  Holding an internal activity keeps the
+// idle timer stopped; completing it on webStop lets the service idle out again.
+var keepActivity = null;
+function keepAliveOn() {
+  if (keepActivity) return;
+  try { service.activityManager.create("org.ohmybahgosh.lunaatlas.web", function (a) { keepActivity = a; }); }
+  catch (e) { keepActivity = null; }
+}
+function keepAliveOff() {
+  if (!keepActivity) return;
+  try { service.activityManager.complete(keepActivity, function () {}); } catch (e) {}
+  keepActivity = null;
+}
+
 service.register("status", function (m) {
   m.respond({ returnValue: true, service: "org.ohmybahgosh.lunaatlas.service", version: "1.0.0", root: isRoot(),
     note: isRoot() ? "full access" : "public access only; elevate in Homebrew Channel for private methods" });
@@ -50,8 +66,9 @@ service.register("webStart", function (m) {
   if (port < 1024 || port > 65535) { m.respond({ returnValue: false, errorText: "pick a port 1024-65535" }); return; }
   web.start(port, function (err, s) {
     if (err) { m.respond({ returnValue: false, errorText: err.message }); return; }
+    keepAliveOn();
     m.respond(Object.assign({ returnValue: true }, s));
   });
 });
-service.register("webStop", function (m) { web.stop(); m.respond(Object.assign({ returnValue: true }, web.status())); });
+service.register("webStop", function (m) { web.stop(); keepAliveOff(); m.respond(Object.assign({ returnValue: true }, web.status())); });
 service.register("webStatus", function (m) { m.respond(Object.assign({ returnValue: true }, web.status())); });
