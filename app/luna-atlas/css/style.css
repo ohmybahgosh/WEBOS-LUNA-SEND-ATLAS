@@ -76,6 +76,12 @@ label.lbl { display: block; color: #6f7f78; font-size: 20px; margin: 14px 0 6px;
   background: #0c120f; border: 1px solid rgba(255, 255, 255, .07); border-radius: 16px; padding: 16px;
   margin-top: 12px; max-height: 300px; overflow: auto; color: #93a39b; }
 .ok { color: #22e584; } .err { color: #ff8a84; }
+#response.cmdview { color: #e8efeb; }
+.cmd { color: #22e584; word-break: break-all; margin-bottom: 14px; }
+.qr { display: flex; align-items: center; gap: 20px; }
+.qr svg { width: 180px; height: 180px; background: #fff; padding: 10px; border-radius: 12px; flex: none; }
+.qr span { color: #93a39b; font-size: 19px; font-family: "LG Smart UI", Inter, sans-serif; }
+.qrhint { color: #6f7f78; font-size: 19px; }
 .empty { padding: 40px; color: #6f7f78; text-align: center; font-size: 22px; }
 
 footer { display: flex; align-items: center; color: #6f7f78; font-size: 21px; padding: 16px 0 22px; }

@@ -178,9 +178,9 @@
     if (m.d) { runBtn.disabled = true; confirmChk.onchange = function () { runBtn.disabled = !this.checked; }; }
     runBtn.onclick = function () { doRun(m, ta, runBtn); };
     row.appendChild(runBtn);
-    var copy = el("button", "btn", "Copy luna-send");
-    copy.onclick = function () { copyCmd(m, ta); };
-    row.appendChild(copy);
+    var show = el("button", "btn", "Show command");
+    show.onclick = function () { showCmd(m, ta); };
+    row.appendChild(show);
     d.appendChild(row);
 
     var resp = el("div", "empty", "Response will appear here."); resp.id = "response";
@@ -206,10 +206,27 @@
     });
   }
 
-  function copyCmd(m, ta) {
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  // Show the full luna-send command to read/type over SSH, plus a QR code so it
+  // can be scanned to a phone. (On a TV there is no clipboard to paste into, so
+  // "copy" is pointless; this is the useful form.)
+  function showCmd(m, ta) {
     var params = "{}"; try { params = JSON.stringify(parsePayload(ta)); } catch (e) {}
     var cmd = "luna-send -n 1 -f " + m.u + " '" + params + "'";
-    var resp = $("response"); resp.className = ""; resp.textContent = cmd;
+    var resp = $("response"); resp.className = "cmdview";
+    var html = '<div class="cmd">' + escapeHtml(cmd) + "</div>";
+    try {
+      if (typeof qrcode === "function") {
+        var qr = qrcode(0, "L"); qr.addData(cmd); qr.make();
+        html += '<div class="qr">' + qr.createSvgTag({ cellSize: 4, margin: 2 }) +
+                "<span>Run it with root over SSH, or scan to send the command to your phone.</span></div>";
+      }
+    } catch (e) { html += '<div class="qrhint">Command too long for a QR code; read it above.</div>'; }
+    resp.innerHTML = html;
+    // best-effort clipboard (only does anything in a desktop browser)
     try {
       var t = document.createElement("textarea"); t.value = cmd; document.body.appendChild(t);
       t.select(); document.execCommand("copy"); document.body.removeChild(t);
