@@ -304,15 +304,19 @@
      between columns; OK steps right (into the next column); Back steps left, and
      leaves the app from the first column. The Magic Remote cursor still works via
      the click handlers on every row and control. */
-  var col = "svclist";
-  function colEl(id) { return $(id); }
+  var col = "svclist"; // cats | svclist | methodlist | detail
   function selRowOf(id) { var rows = $(id).querySelectorAll(".row"); for (var i = 0; i < rows.length; i++) if (rows[i].className.indexOf("sel") >= 0) return rows[i]; return rows[0] || null; }
+  function chips() { return $("cats").querySelectorAll(".chip"); }
+  function chipIdx() { var cs = chips(), ae = document.activeElement; for (var i = 0; i < cs.length; i++) if (cs[i] === ae) return i; for (var j = 0; j < cs.length; j++) if (cs[j].className.indexOf("active") >= 0) return j; return 0; }
+  function focusChip(idx) { var cs = chips(); if (!cs.length) return; idx = Math.max(0, Math.min(cs.length - 1, idx)); try { cs[idx].focus(); } catch (e) {} cs[idx].scrollIntoView({ block: "nearest", inline: "center" }); }
+  function atFirstRow(id) { var rows = $(id).querySelectorAll(".row"); return !rows.length || rows[0].className.indexOf("sel") >= 0; }
   function setCol(c) {
     col = c;
     ["svclist", "methodlist", "detail"].forEach(function (id) {
       var p = $(id); if (!p) return;
       p.className = p.className.replace(/\s*col-focus/g, "") + (id === c ? " col-focus" : "");
     });
+    if (c === "cats") { focusChip(chipIdx()); return; }
     if (c === "detail") { focusDetail(0); return; }
     var sel = selRowOf(c);
     if (sel) { try { sel.focus(); } catch (e) {} sel.scrollIntoView({ block: "nearest" }); }
@@ -345,19 +349,31 @@
         if (webOverlayOpen()) { hideWeb(); return; }
         if (col === "detail") { setCol("methodlist"); return; }
         if (col === "methodlist") { setCol("svclist"); return; }
+        if (col === "cats") { setCol("svclist"); return; }
         try { if (window.webOSSystem && window.webOSSystem.platformBack) { window.webOSSystem.platformBack(); return; } } catch (e) {}
         try { window.close(); } catch (e) {}
         return;
       }
       if (webOverlayOpen()) return; // panel open: only Back / cursor act on it
       var ae = document.activeElement;
-      // From the search box, Down or Right drops into the service list.
-      if (ae && ae.id === "search" && (k === 40 || k === 39)) { ev.preventDefault(); setCol("svclist"); return; }
+      // From the search box, Down drops into the category pills.
+      if (ae && ae.id === "search" && k === 40) { ev.preventDefault(); setCol("cats"); return; }
+      // Category pills row: Left/Right between pills, OK applies, Up to search, Down to list.
+      if (col === "cats") {
+        if (k === 37) { ev.preventDefault(); focusChip(chipIdx() - 1); return; }
+        if (k === 39) { ev.preventDefault(); focusChip(chipIdx() + 1); return; }
+        if (k === 38) { ev.preventDefault(); var s = $("search"); if (s) try { s.focus(); } catch (e) {} return; }
+        if (k === 40) { ev.preventDefault(); setCol("svclist"); return; }
+        if (k === 13) { ev.preventDefault(); var cs = chips(); if (cs[chipIdx()]) cs[chipIdx()].click(); return; }
+        return;
+      }
       var typing = ae && (ae.id === "search" || ae.id === "payload");
       if (k === 37) { if (typing) return; ev.preventDefault(); if (col === "detail") setCol("methodlist"); else if (col === "methodlist") setCol("svclist"); return; }
       if (k === 39) { if (typing) return; ev.preventDefault(); if (col === "svclist") setCol("methodlist"); else if (col === "methodlist") setCol("detail"); return; }
       if (k === 38 || k === 40) {
         if (typing) return; ev.preventDefault();
+        // Up from the top of the service list jumps to the category pills.
+        if (k === 38 && col === "svclist" && atFirstRow("svclist")) { setCol("cats"); return; }
         if (col === "detail") moveDetail(k === 40 ? 1 : -1); else moveSel(col, k === 40 ? 1 : -1);
         return;
       }

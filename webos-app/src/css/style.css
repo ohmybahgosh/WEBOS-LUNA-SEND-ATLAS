@@ -23,8 +23,10 @@ header h1 { font-size: 46px; font-weight: 800; letter-spacing: -1px; white-space
 #search:focus { outline: none; border-color: #22e584; box-shadow: 0 0 0 6px rgba(34, 229, 132, .15); }
 .stats { font-size: 22px; font-weight: 600; color: #6f7f78; white-space: nowrap; }
 
-.cats { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; max-height: 92px; overflow: hidden; }
-.chip { font-size: 20px; padding: 8px 18px; border-radius: 16px; background: #16201c; color: #93a39b;
+.cats { display: flex; flex-wrap: nowrap; gap: 10px; margin-top: 22px; overflow-x: auto; overflow-y: hidden;
+  scrollbar-width: none; padding-bottom: 4px; }
+.cats::-webkit-scrollbar { display: none; }
+.chip { flex: none; white-space: nowrap; font-size: 20px; padding: 8px 18px; border-radius: 16px; background: #16201c; color: #93a39b;
   border: 3px solid transparent; }
 .chip.active { background: #183026; color: #22e584; border-color: rgba(34, 229, 132, .4); }
 .chip:focus { outline: none; border-color: #22e584; }
