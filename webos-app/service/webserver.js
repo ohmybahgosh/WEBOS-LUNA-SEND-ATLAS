@@ -94,7 +94,7 @@ function create(opts) {
   }
 
   function start(port, cb) {
-    port = port || 3000;
+    port = port || 28472;
     if (st.server) stop();
     st.code = makeCode();
     var srv = http.createServer(function (req, res) { try { handle(req, res); } catch (e) { try { send(res, 500, { error: "server error" }); } catch (x) {} } });

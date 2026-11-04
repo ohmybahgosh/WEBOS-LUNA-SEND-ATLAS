@@ -87,7 +87,7 @@ luna-atlas services tvpower             # list services (optionally filtered)
 luna-atlas categories                   # methods grouped by what they do
 luna-atlas run luna://com.webos.notification/createToast '{"message":"hi"}'
 luna-atlas run luna://com.webos.service.tvpower/power/reboot   # dangerous ones ask first
-luna-atlas serve 3000                   # start the browser UI (see below)
+luna-atlas serve 28472                  # start the browser UI (see below)
 luna-atlas dump                         # read-only dump of THIS TV's services
 ```
 
@@ -95,15 +95,17 @@ luna-atlas dump                         # read-only dump of THIS TV's services
 
 ## Using the browser UI
 
-`luna-atlas serve` runs a tiny web server bound to **localhost only** (busybox httpd where it exists, otherwise `node`, which ships on webOS, so nothing to install), reached through an SSH tunnel so nothing is exposed on your network:
+`luna-atlas serve` runs a tiny `node` web server (node ships on webOS, so nothing to install) bound to **localhost only**, reached through an SSH tunnel so nothing is exposed on your network:
 
 ```sh
 # on the TV:
-luna-atlas serve 3000
+luna-atlas serve 28472
 # on your PC/phone, in another terminal:
-ssh -L 3000:127.0.0.1:3000 root@<tv-ip>
-# then open http://localhost:3000
+ssh -L 28472:127.0.0.1:28472 root@<tv-ip>
+# then open http://localhost:28472
 ```
+
+The webOS app has a simpler path: its **Web access** switch starts the same UI on your LAN with a QR code and a one-time code, no SSH needed.  The default port is **28472** (an uncommon one, chosen to avoid SSAP on 3000/3001 and other services).
 
 The page browses the whole catalog, shows parameters, and **runs** commands back on the TV (a small CGI calls `luna-send`).  It works on a phone or a desktop.
 

@@ -108,4 +108,7 @@ footer .right { margin-left: auto; }
 .weburl{font-family:"DejaVu Sans Mono",monospace;font-size:40px;color:#22e584;word-break:break-all;margin-top:8px}
 .webcode{font-family:"DejaVu Sans Mono",monospace;font-size:72px;font-weight:800;letter-spacing:6px;color:#e8efeb;margin-top:8px}
 .webnote{color:#93a39b;font-size:24px;margin-top:26px;line-height:1.4}
-.webpanel-hint{color:#6f7f78;font-size:22px;margin-top:40px;text-align:center}
+.webpanel-actions{display:flex;justify-content:center;margin-top:40px}
+.webact{font-size:24px;font-weight:700;padding:14px 32px;border-radius:14px;border:2px solid var(--bad);background:#2a1312;color:#ff8a84;cursor:pointer}
+.webact:focus{outline:none;border-color:#ff8a84;box-shadow:0 0 0 4px rgba(255,95,87,.35)}
+.webpanel-hint{color:#6f7f78;font-size:22px;margin-top:28px;text-align:center}

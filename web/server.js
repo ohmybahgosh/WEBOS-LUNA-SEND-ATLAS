@@ -9,7 +9,7 @@
 var http = require("http"), fs = require("fs"), path = require("path"), execFile = require("child_process").execFile;
 var ROOT = __dirname;
 var args = process.argv.slice(2);
-var PORT = parseInt(args[0] || "3000", 10);
+var PORT = parseInt(args[0] || "28472", 10);
 var HOST = "127.0.0.1";
 for (var i = 1; i < args.length; i++) { if (args[i] === "--host") HOST = args[++i]; }
 var MIME = { ".html": "text/html", ".css": "text/css", ".js": "application/javascript", ".json": "application/json", ".svg": "image/svg+xml", ".png": "image/png" };

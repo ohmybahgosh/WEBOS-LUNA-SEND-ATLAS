@@ -242,25 +242,39 @@
   }
   function initWeb() {
     var btn = $("webaccess"); if (!btn) return;
-    btn.onclick = toggleWeb;
-    btn.addEventListener("keydown", function (ev) { if (ev.keyCode === 13) { ev.preventDefault(); toggleWeb(); } });
-    svcCall("webStatus", {}, function (r) { setWeb(r && r.running, r); });
+    btn.onclick = openWeb;
+    btn.addEventListener("keydown", function (ev) { if (ev.keyCode === 13) { ev.preventDefault(); openWeb(); } });
+    var stop = $("webstop");
+    if (stop) { stop.onclick = stopWeb; stop.addEventListener("keydown", function (ev) { if (ev.keyCode === 13) { ev.preventDefault(); stopWeb(); } }); }
+    // Reflect the current state on the button only.  Never pop the panel open on
+    // launch; the panel appears when the user chooses Web access.
+    svcCall("webStatus", {}, function (r) { setWeb(r && r.running); });
   }
-  function setWeb(on, s) {
+  function setWeb(on) {
     webOn = !!on;
     var btn = $("webaccess"); if (btn) btn.className = "webbtn" + (webOn ? " on" : "");
-    if (webOn && s && s.port) showWeb(s);
   }
-  function toggleWeb() {
-    var btn = $("webaccess");
-    if (webOn) { svcCall("webStop", {}, function () { setWeb(false); hideWeb(); }); return; }
-    if (btn) btn.textContent = "Starting...";
-    svcCall("webStart", { port: 3000 }, function (r) {
+  // Tapping Web access opens the panel: start the server if it's off, otherwise
+  // show the current address and code again (fetched fresh).
+  function openWeb() {
+    if (webOn) {
+      svcCall("webStatus", {}, function (r) {
+        if (r && r.running && r.port) { setWeb(true); showWeb(r); }
+        else startWeb();
+      });
+      return;
+    }
+    startWeb();
+  }
+  function startWeb() {
+    var btn = $("webaccess"); if (btn) btn.textContent = "Starting...";
+    svcCall("webStart", { port: 28472 }, function (r) {
       if (btn) { btn.innerHTML = 'Web access <span id="webdot" class="webdot"></span>'; }
-      if (r && r.running) setWeb(true, r);
-      else alertWeb((r && r.errorText) || "Could not start the web server.");
+      if (r && r.running) { setWeb(true); showWeb(r); }
+      else { setWeb(false); alertWeb((r && r.errorText) || "Could not start the web server."); }
     });
   }
+  function stopWeb() { svcCall("webStop", {}, function () { setWeb(false); hideWeb(); }); }
   function urlOf(s, ip) { return "http://" + (ip || (s.ips && s.ips[0]) || "<tv-ip>") + ":" + s.port; }
   function showWeb(s) {
     var url = urlOf(s);
@@ -273,6 +287,7 @@
     if (!s.ips || !s.ips.length) note = "This TV reports no network address; check it's on Wi-Fi or Ethernet.";
     $("webnote").textContent = note;
     $("weboverlay").className = "weboverlay";
+    var stop = $("webstop"); if (stop) { try { stop.focus(); } catch (e) {} }
   }
   function hideWeb() { var o = $("weboverlay"); if (o) o.className = "weboverlay hidden"; }
   function alertWeb(msg) { $("weburl").textContent = ""; $("webcode").textContent = ""; $("webqr").innerHTML = ""; $("webnote").textContent = msg; $("weboverlay").className = "weboverlay"; }

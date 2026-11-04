@@ -48,7 +48,7 @@ ${C_B}Usage${C_0}
   luna-atlas services [filter]          list services and their method counts
   luna-atlas categories                 list categories and counts
   luna-atlas run <uri> ['<payload>'] [-y]  run a call (asks on dangerous ones)
-  luna-atlas serve [port]               browser UI on 127.0.0.1 (default 3000)
+  luna-atlas serve [port]               browser UI on 127.0.0.1 (default 28472)
   luna-atlas dump [outdir]              read-only dump of THIS TV's services
   luna-atlas count                      how many methods / services
   luna-atlas help
@@ -57,7 +57,7 @@ ${C_B}Examples${C_0}
   luna-atlas search toast
   luna-atlas show com.webos.notification/createToast
   luna-atlas run luna://com.webos.notification/createToast '{"message":"hi"}'
-  luna-atlas serve 3000     # then on your PC: ssh -L 3000:127.0.0.1:3000 root@TV
+  luna-atlas serve 28472    # then on your PC: ssh -L 28472:127.0.0.1:28472 root@TV
 
 Data: $DATA
 EOF
@@ -152,20 +152,13 @@ cmd_dump() {
 }
 
 cmd_serve() {
-  port=${1:-3000}
+  port=${1:-28472}
   [ -d "$WEB" ] || die "web UI not found at $WEB"
   echo "${C_B}Luna Atlas${C_0} serving on ${C_G}http://127.0.0.1:$port${C_0} (localhost only)"
   echo "${C_D}From your PC/phone:  ssh -L $port:127.0.0.1:$port root@<tv-ip>  then open http://localhost:$port${C_0}"
   echo "${C_D}Ctrl-C to stop.${C_0}"
-  # busybox httpd where it exists (CGI at /cgi-bin/run); else node (ships on webOS).
-  if command -v httpd >/dev/null 2>&1; then
-    chmod +x "$WEB/cgi-bin/run" 2>/dev/null || true
-    exec httpd -f -p "127.0.0.1:$port" -h "$WEB"
-  elif command -v node >/dev/null 2>&1; then
-    exec node "$WEB/server.js" "$port"
-  else
-    die "need busybox httpd or node to serve (neither found)"
-  fi
+  command -v node >/dev/null 2>&1 || die "node not found (needed to serve; it ships on webOS)"
+  exec node "$WEB/server.js" "$port"
 }
 
 sub=${1:-help}; [ $# -gt 0 ] && shift || true

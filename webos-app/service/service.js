@@ -62,7 +62,7 @@ service.register("run", function (m) {
 });
 
 service.register("webStart", function (m) {
-  var port = (m.payload && +m.payload.port) || 3000;
+  var port = (m.payload && +m.payload.port) || 28472;
   if (port < 1024 || port > 65535) { m.respond({ returnValue: false, errorText: "pick a port 1024-65535" }); return; }
   web.start(port, function (err, s) {
     if (err) { m.respond({ returnValue: false, errorText: err.message }); return; }
