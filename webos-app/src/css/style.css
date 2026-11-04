@@ -32,6 +32,7 @@ header h1 { font-size: 46px; font-weight: 800; letter-spacing: -1px; white-space
 main { flex: 1; display: flex; gap: 26px; margin-top: 26px; min-height: 0; padding-bottom: 20px; }
 .pane { background: #111a17; border: 1px solid rgba(255, 255, 255, .07); border-radius: 24px;
   overflow-y: auto; height: 100%; }
+.pane.col-focus { border-color: rgba(34, 229, 132, .45); box-shadow: 0 0 0 1px rgba(34, 229, 132, .25); }
 #svclist { width: 440px; flex: none; }
 #methodlist { width: 560px; flex: none; }
 .detail { flex: 1; padding: 34px 38px; }

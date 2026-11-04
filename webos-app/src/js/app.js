@@ -38,6 +38,8 @@
     wireKeys();
     initWeb();
     $("search").addEventListener("input", function () { curSvc = null; renderServices(this.value); });
+    // Focus the service column so the D-pad works without first clicking.
+    setCol("svclist");
   }
 
   function buildCats(cats) {
@@ -296,43 +298,74 @@
   function alertWeb(msg) { $("weburl").textContent = ""; $("webcode").textContent = ""; $("webqr").innerHTML = ""; $("webnote").textContent = msg; $("weboverlay").className = "weboverlay"; }
   function webOverlayOpen() { var o = $("weboverlay"); return o && o.className.indexOf("hidden") < 0; }
 
-  /* ---- basic remote/keyboard navigation between the three panes ---- */
+  /* ---- D-pad / remote navigation across the three columns ----
+     Columns: svclist (services) -> methodlist (methods) -> detail (form).
+     Up/Down moves the selection inside the focused list column; Left/Right moves
+     between columns; OK steps right (into the next column); Back steps left, and
+     leaves the app from the first column. The Magic Remote cursor still works via
+     the click handlers on every row and control. */
+  var col = "svclist";
+  function colEl(id) { return $(id); }
+  function selRowOf(id) { var rows = $(id).querySelectorAll(".row"); for (var i = 0; i < rows.length; i++) if (rows[i].className.indexOf("sel") >= 0) return rows[i]; return rows[0] || null; }
+  function setCol(c) {
+    col = c;
+    ["svclist", "methodlist", "detail"].forEach(function (id) {
+      var p = $(id); if (!p) return;
+      p.className = p.className.replace(/\s*col-focus/g, "") + (id === c ? " col-focus" : "");
+    });
+    if (c === "detail") { focusDetail(0); return; }
+    var sel = selRowOf(c);
+    if (sel) { try { sel.focus(); } catch (e) {} sel.scrollIntoView({ block: "nearest" }); }
+    else { var p = $(c); if (p) try { p.focus(); } catch (e) {} }
+  }
+  function moveSel(id, dir) {
+    var rows = $(id).querySelectorAll(".row"); if (!rows.length) return;
+    var idx = 0; for (var i = 0; i < rows.length; i++) if (rows[i].className.indexOf("sel") >= 0) idx = i;
+    idx = Math.max(0, Math.min(rows.length - 1, idx + dir));
+    rows[idx].click(); rows[idx].scrollIntoView({ block: "nearest" }); try { rows[idx].focus(); } catch (e) {}
+  }
+  function detailControls() { return $("detail").querySelectorAll("input, button"); }
+  function focusDetail(idx) {
+    var c = detailControls(); if (!c.length) { try { $("detail").focus(); } catch (e) {} return; }
+    idx = Math.max(0, Math.min(c.length - 1, idx));
+    try { c[idx].focus(); } catch (e) {} c[idx].scrollIntoView({ block: "nearest" });
+  }
+  function moveDetail(dir) {
+    var c = detailControls(); if (!c.length) return;
+    var ae = document.activeElement, idx = 0;
+    for (var i = 0; i < c.length; i++) if (c[i] === ae) idx = i;
+    focusDetail(idx + dir);
+  }
   function wireKeys() {
-    var panes = ["svclist", "methodlist"];
     document.addEventListener("keydown", function (ev) {
       var k = ev.keyCode, key = ev.key;
-      // Back / Esc: close the web overlay first (server keeps running); then step
-      // up from the method list to the service list; at the top level, leave the
-      // app (otherwise Back feels like it does nothing).
+      // Back / Esc: close the web overlay, else step left a column, else leave the app.
       if (k === 461 || k === 27 || k === 8 || key === "Back" || key === "GoBack" || key === "BrowserBack") {
         ev.preventDefault();
         if (webOverlayOpen()) { hideWeb(); return; }
-        var a = document.activeElement;
-        var deep = a && a.closest && (a.closest("#methodlist") || a.closest("#detail"));
-        if (deep) { focusPane("svclist"); return; }
-        // top level: exit to the launcher
+        if (col === "detail") { setCol("methodlist"); return; }
+        if (col === "methodlist") { setCol("svclist"); return; }
         try { if (window.webOSSystem && window.webOSSystem.platformBack) { window.webOSSystem.platformBack(); return; } } catch (e) {}
         try { window.close(); } catch (e) {}
         return;
       }
-      var active = document.activeElement;
-      if (k === 38 || k === 40) { // up / down within a pane
-        var pane = active && active.closest ? active.closest(".pane") : null;
-        if (pane && (pane.id === "svclist" || pane.id === "methodlist")) {
-          moveRow(pane, k === 40 ? 1 : -1); ev.preventDefault();
-        }
+      if (webOverlayOpen()) return; // panel open: only Back / cursor act on it
+      var ae = document.activeElement;
+      // From the search box, Down or Right drops into the service list.
+      if (ae && ae.id === "search" && (k === 40 || k === 39)) { ev.preventDefault(); setCol("svclist"); return; }
+      var typing = ae && (ae.id === "search" || ae.id === "payload");
+      if (k === 37) { if (typing) return; ev.preventDefault(); if (col === "detail") setCol("methodlist"); else if (col === "methodlist") setCol("svclist"); return; }
+      if (k === 39) { if (typing) return; ev.preventDefault(); if (col === "svclist") setCol("methodlist"); else if (col === "methodlist") setCol("detail"); return; }
+      if (k === 38 || k === 40) {
+        if (typing) return; ev.preventDefault();
+        if (col === "detail") moveDetail(k === 40 ? 1 : -1); else moveSel(col, k === 40 ? 1 : -1);
+        return;
+      }
+      if (k === 13) { // OK: step into the next column (buttons handle their own Enter)
+        if (col === "svclist") { ev.preventDefault(); setCol("methodlist"); return; }
+        if (col === "methodlist") { ev.preventDefault(); setCol("detail"); return; }
       }
     });
-  }
-  function focusPane(id) { var p = $(id); if (p) p.focus(); }
-  function moveRow(pane, dir) {
-    var rows = pane.querySelectorAll(".row");
-    if (!rows.length) return;
-    var idx = -1;
-    for (var i = 0; i < rows.length; i++) if (rows[i].className.indexOf("sel") >= 0) idx = i;
-    idx = Math.max(0, Math.min(rows.length - 1, idx + dir));
-    rows[idx].click();
-    rows[idx].scrollIntoView({ block: "nearest" });
   }
 
   // polyfill closest for old webkit
