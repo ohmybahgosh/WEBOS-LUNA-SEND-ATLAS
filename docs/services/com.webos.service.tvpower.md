@@ -1,11 +1,12 @@
 # `com.webos.service.tvpower`
 
-40 methods.  Platforms seen: webOS TV.
+83 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
 | Method | Access | Sub | Category | Description |
 |---|---|---|---|---|
+| [`power/cancelPowerOff`](#power_cancelpoweroff) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
 | [`power/getClientList`](#power_getclientlist) | private |  | power | Lists clients registered with tvpower for the power-state lifecycle (name from introspection; behaviour undocumented) |
 | [`power/getPowerOnReason`](#power_getpoweronreason) | private |  | power | Returns why the TV was last powered on (e.g. ON_BY_REMOTE_KEY) |
 | [`power/getPowerOnTime`](#power_getpowerontime) | private |  | power | Returns uptime since boot in seconds |
@@ -13,7 +14,9 @@
 | [`power/powerOff`](#power_poweroff) | private |  | power | Puts the TV into standby (quick-start suspend when Quick Start+ is on) |
 | [`power/powerOn`](#power_poweron) | private |  | power | Brings a TV back from Active Standby/Always-on |
 | [`power/reboot`](#power_reboot) | private |  | power | Soft reboots the TV |
+| [`power/rebootMicom`](#power_rebootmicom) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
 | [`power/registerActiveStandbyRequest`](#power_registeractivestandbyrequest) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
+| [`power/registerPowerOffLogoRequest`](#power_registerpowerofflogorequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
 | [`power/registerPowerOffRequest`](#power_registerpoweroffrequest) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
 | [`power/registerPrepareActiveStandby`](#power_registerprepareactivestandby) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
 | [`power/registerPreparePowerOff`](#power_registerpreparepoweroff) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
@@ -23,6 +26,7 @@
 | [`power/registerScreenSaverRequest`](#power_registerscreensaverrequest) | private | yes | display | Subscription: LG asks before starting its screensaver; the subscriber replies via responseScreenSaverRequest |
 | [`power/registerSuspendRequest`](#power_registersuspendrequest) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
 | [`power/responseActiveStandbyRequest`](#power_responseactivestandbyrequest) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
+| [`power/responsePowerOffLogoRequest`](#power_responsepowerofflogorequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
 | [`power/responsePowerOffRequest`](#power_responsepoweroffrequest) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
 | [`power/responsePrepareActiveStandby`](#power_responseprepareactivestandby) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
 | [`power/responsePreparePowerOff`](#power_responsepreparepoweroff) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
@@ -36,7 +40,9 @@
 | [`power/sendPrepareActiveStandbyAck`](#power_sendprepareactivestandbyack) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
 | [`power/sendPreparePowerOffAck`](#power_sendpreparepoweroffack) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
 | [`power/sendPreparePowerOnAck`](#power_sendpreparepoweronack) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
+| [`power/setHostReady`](#power_sethostready) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
 | [`power/setPowerInitState`](#power_setpowerinitstate) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
+| [`power/setPowerOffTimeout`](#power_setpowerofftimeout) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
 | [`power/setPowerOnReason`](#power_setpoweronreason) | private |  | power | Sets the recorded power-on reason (counterpart of power/getPowerOnReason) |
 | [`power/setScreenBlock`](#power_setscreenblock) | private |  | power | Screen block control on tvpower (name only) |
 | [`power/shutDown`](#power_shutdown) | private |  | power | Full power off, cold boot next start; Wake-on-LAN no longer wakes the TV |
@@ -44,8 +50,66 @@
 | [`power/turnOffScreen`](#power_turnoffscreen) | ssap |  | display | Blank the panel (screen off) while keeping the TV powered |
 | [`power/turnOnScreen`](#power_turnonscreen) | ssap |  | display | Unblank the panel |
 | [`power/turnOnScreenSaver`](#power_turnonscreensaver) | private |  | display | Starts the LG screensaver now |
+| [`power2/cancelPowerOff`](#power2_cancelpoweroff) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/getClientList`](#power2_getclientlist) | private |  | power | Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/getPowerOnReason`](#power2_getpoweronreason) | private |  | power | Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/getPowerOnTime`](#power2_getpowerontime) | private |  | power | Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/getPowerState`](#power2_getpowerstate) | private |  | power | Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/power`](#power2_power) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/powerOff`](#power2_poweroff) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/powerOn`](#power2_poweron) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/reboot`](#power2_reboot) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/rebootMicom`](#power2_rebootmicom) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/registerActiveStandbyRequest`](#power2_registeractivestandbyrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/registerAlwaysOnDisplayRequest`](#power2_registeralwaysondisplayrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/registerAlwaysReadyRequest`](#power2_registeralwaysreadyrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/registerPowerOffLogoRequest`](#power2_registerpowerofflogorequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/registerPowerOffRequest`](#power2_registerpoweroffrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/registerPreparePowerOff`](#power2_registerpreparepoweroff) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/registerPreparePowerOn`](#power2_registerpreparepoweron) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/registerScreenSaverRequest`](#power2_registerscreensaverrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/registerSuspendRequest`](#power2_registersuspendrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/responseActiveStandbyRequest`](#power2_responseactivestandbyrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/responseAlwaysOnDisplayRequest`](#power2_responsealwaysondisplayrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/responseAlwaysReadyRequest`](#power2_responsealwaysreadyrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/responsePowerOffLogoRequest`](#power2_responsepowerofflogorequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/responsePowerOffRequest`](#power2_responsepoweroffrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/responsePreparePowerOff`](#power2_responsepreparepoweroff) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/responsePreparePowerOn`](#power2_responsepreparepoweron) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/responseScreenSaverRequest`](#power2_responsescreensaverrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/responseSuspendRequest`](#power2_responsesuspendrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/setHostReady`](#power2_sethostready) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/setPowerInitState`](#power2_setpowerinitstate) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/setPowerOffTimeout`](#power2_setpowerofftimeout) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/setScreenBlock`](#power2_setscreenblock) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/shutDown`](#power2_shutdown) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). ⚠️ |
+| [`power2/test`](#power2_test) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/turnOffAoD`](#power2_turnoffaod) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
 | [`power2/turnOffScreen`](#power2_turnoffscreen) | private |  | display | Alternate screen-off path tried as fallback |
+| [`power2/turnOnAoD`](#power2_turnonaod) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
+| [`power2/turnOnScreen`](#power2_turnonscreen) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
 | [`power2/turnOnScreenSaver`](#power2_turnonscreensaver) | private |  | power | Starts the screen saver (webOS 7+ variant; webOS 6 uses power/turnOnScreenSaver) |
+
+<a id="power_cancelpoweroff"></a>
+## `power/cancelPowerOff`
+
+`luna://com.webos.service.tvpower/power/cancelPowerOff`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power/cancelPowerOff '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="power_getclientlist"></a>
 ## `power/getClientList`
@@ -206,6 +270,27 @@ luna-send -n 1 luna://com.webos.service.tvpower/power/reboot '{"reason":"remoteK
 
 Sources: [1](https://github.com/webosbrew/webos-homebrew-channel/blob/HEAD/services/service.ts), [2](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/webos_client.py), [3](https://github.com/grzegorz914/homebridge-lgwebos-tv/blob/HEAD/src/constants.js), [4](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [5](https://github.com/grzegorz914/homebridge-lgwebos-tv/blob/main/src/constants.js)
 
+<a id="power_rebootmicom"></a>
+## `power/rebootMicom`
+
+`luna://com.webos.service.tvpower/power/rebootMicom`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power/rebootMicom '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="power_registeractivestandbyrequest"></a>
 ## `power/registerActiveStandbyRequest`
 
@@ -226,6 +311,27 @@ luna-send -n 1 -f luna://com.webos.service.tvpower/power/registerActiveStandbyRe
 > Seen via `ls-monitor -i com.webos.service.tvpower` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, tv.management, all. Only the name and ACG groups are known; parameters/return fields were not read.
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
+
+<a id="power_registerpowerofflogorequest"></a>
+## `power/registerPowerOffLogoRequest`
+
+`luna://com.webos.service.tvpower/power/registerPowerOffLogoRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power/registerPowerOffLogoRequest '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="power_registerpoweroffrequest"></a>
 ## `power/registerPowerOffRequest`
@@ -419,6 +525,27 @@ luna-send -n 1 -f luna://com.webos.service.tvpower/power/responseActiveStandbyRe
 > Seen via `ls-monitor -i com.webos.service.tvpower` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, tv.management, all. Only the name and ACG groups are known; parameters/return fields were not read.
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
+
+<a id="power_responsepowerofflogorequest"></a>
+## `power/responsePowerOffLogoRequest`
+
+`luna://com.webos.service.tvpower/power/responsePowerOffLogoRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power/responsePowerOffLogoRequest '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="power_responsepoweroffrequest"></a>
 ## `power/responsePowerOffRequest`
@@ -698,6 +825,27 @@ luna-send -n 1 -f luna://com.webos.service.tvpower/power/sendPreparePowerOnAck '
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
+<a id="power_sethostready"></a>
+## `power/setHostReady`
+
+`luna://com.webos.service.tvpower/power/setHostReady`
+
+Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power/setHostReady '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="power_setpowerinitstate"></a>
 ## `power/setPowerInitState`
 
@@ -718,6 +866,27 @@ luna-send -n 1 -f luna://com.webos.service.tvpower/power/setPowerInitState '{}'
 > Seen via `ls-monitor -i com.webos.service.tvpower` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, tv.management, all. Only the name and ACG groups are known; parameters/return fields were not read.
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
+
+<a id="power_setpowerofftimeout"></a>
+## `power/setPowerOffTimeout`
+
+`luna://com.webos.service.tvpower/power/setPowerOffTimeout`
+
+Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power/setPowerOffTimeout '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="power_setpoweronreason"></a>
 ## `power/setPowerOnReason`
@@ -878,6 +1047,741 @@ luna-send -n 1 luna://com.webos.service.tvpower/power/turnOnScreenSaver '{}'
 
 Sources: [1](https://github.com/merdok/homebridge-webos-tv/blob/master/lib/LgTvController.js), [2](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/webos_client.py), [3](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [4](https://github.com/grzegorz914/homebridge-lgwebos-tv/blob/main/src/constants.js)
 
+<a id="power2_cancelpoweroff"></a>
+## `power2/cancelPowerOff`
+
+`luna://com.webos.service.tvpower/power2/cancelPowerOff`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/cancelPowerOff '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_getclientlist"></a>
+## `power2/getClientList`
+
+`luna://com.webos.service.tvpower/power2/getClientList`
+
+Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/getClientList '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_getpoweronreason"></a>
+## `power2/getPowerOnReason`
+
+`luna://com.webos.service.tvpower/power2/getPowerOnReason`
+
+Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/getPowerOnReason '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_getpowerontime"></a>
+## `power2/getPowerOnTime`
+
+`luna://com.webos.service.tvpower/power2/getPowerOnTime`
+
+Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/getPowerOnTime '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_getpowerstate"></a>
+## `power2/getPowerState`
+
+`luna://com.webos.service.tvpower/power2/getPowerState`
+
+Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/getPowerState '{}'
+```
+
+> ACG groups: private, configurator.callbacks, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_power"></a>
+## `power2/power`
+
+`luna://com.webos.service.tvpower/power2/power`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/power '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_poweroff"></a>
+## `power2/powerOff`
+
+`luna://com.webos.service.tvpower/power2/powerOff`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/powerOff '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_poweron"></a>
+## `power2/powerOn`
+
+`luna://com.webos.service.tvpower/power2/powerOn`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/powerOn '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_reboot"></a>
+## `power2/reboot`
+
+`luna://com.webos.service.tvpower/power2/reboot`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/reboot '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_rebootmicom"></a>
+## `power2/rebootMicom`
+
+`luna://com.webos.service.tvpower/power2/rebootMicom`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/rebootMicom '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_registeractivestandbyrequest"></a>
+## `power2/registerActiveStandbyRequest`
+
+`luna://com.webos.service.tvpower/power2/registerActiveStandbyRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerActiveStandbyRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_registeralwaysondisplayrequest"></a>
+## `power2/registerAlwaysOnDisplayRequest`
+
+`luna://com.webos.service.tvpower/power2/registerAlwaysOnDisplayRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerAlwaysOnDisplayRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_registeralwaysreadyrequest"></a>
+## `power2/registerAlwaysReadyRequest`
+
+`luna://com.webos.service.tvpower/power2/registerAlwaysReadyRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerAlwaysReadyRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_registerpowerofflogorequest"></a>
+## `power2/registerPowerOffLogoRequest`
+
+`luna://com.webos.service.tvpower/power2/registerPowerOffLogoRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPowerOffLogoRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_registerpoweroffrequest"></a>
+## `power2/registerPowerOffRequest`
+
+`luna://com.webos.service.tvpower/power2/registerPowerOffRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPowerOffRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_registerpreparepoweroff"></a>
+## `power2/registerPreparePowerOff`
+
+`luna://com.webos.service.tvpower/power2/registerPreparePowerOff`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPreparePowerOff '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_registerpreparepoweron"></a>
+## `power2/registerPreparePowerOn`
+
+`luna://com.webos.service.tvpower/power2/registerPreparePowerOn`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPreparePowerOn '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_registerscreensaverrequest"></a>
+## `power2/registerScreenSaverRequest`
+
+`luna://com.webos.service.tvpower/power2/registerScreenSaverRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerScreenSaverRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_registersuspendrequest"></a>
+## `power2/registerSuspendRequest`
+
+`luna://com.webos.service.tvpower/power2/registerSuspendRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerSuspendRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_responseactivestandbyrequest"></a>
+## `power2/responseActiveStandbyRequest`
+
+`luna://com.webos.service.tvpower/power2/responseActiveStandbyRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responseActiveStandbyRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_responsealwaysondisplayrequest"></a>
+## `power2/responseAlwaysOnDisplayRequest`
+
+`luna://com.webos.service.tvpower/power2/responseAlwaysOnDisplayRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responseAlwaysOnDisplayRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_responsealwaysreadyrequest"></a>
+## `power2/responseAlwaysReadyRequest`
+
+`luna://com.webos.service.tvpower/power2/responseAlwaysReadyRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responseAlwaysReadyRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_responsepowerofflogorequest"></a>
+## `power2/responsePowerOffLogoRequest`
+
+`luna://com.webos.service.tvpower/power2/responsePowerOffLogoRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responsePowerOffLogoRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_responsepoweroffrequest"></a>
+## `power2/responsePowerOffRequest`
+
+`luna://com.webos.service.tvpower/power2/responsePowerOffRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responsePowerOffRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_responsepreparepoweroff"></a>
+## `power2/responsePreparePowerOff`
+
+`luna://com.webos.service.tvpower/power2/responsePreparePowerOff`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responsePreparePowerOff '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_responsepreparepoweron"></a>
+## `power2/responsePreparePowerOn`
+
+`luna://com.webos.service.tvpower/power2/responsePreparePowerOn`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responsePreparePowerOn '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_responsescreensaverrequest"></a>
+## `power2/responseScreenSaverRequest`
+
+`luna://com.webos.service.tvpower/power2/responseScreenSaverRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responseScreenSaverRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_responsesuspendrequest"></a>
+## `power2/responseSuspendRequest`
+
+`luna://com.webos.service.tvpower/power2/responseSuspendRequest`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responseSuspendRequest '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_sethostready"></a>
+## `power2/setHostReady`
+
+`luna://com.webos.service.tvpower/power2/setHostReady`
+
+Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/setHostReady '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_setpowerinitstate"></a>
+## `power2/setPowerInitState`
+
+`luna://com.webos.service.tvpower/power2/setPowerInitState`
+
+Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/setPowerInitState '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_setpowerofftimeout"></a>
+## `power2/setPowerOffTimeout`
+
+`luna://com.webos.service.tvpower/power2/setPowerOffTimeout`
+
+Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/setPowerOffTimeout '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_setscreenblock"></a>
+## `power2/setScreenBlock`
+
+`luna://com.webos.service.tvpower/power2/setScreenBlock`
+
+Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/setScreenBlock '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_shutdown"></a>
+## `power2/shutDown` ⚠️ DANGEROUS
+
+`luna://com.webos.service.tvpower/power2/shutDown`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/shutDown '{}'
+```
+
+> ACG groups: private, all, tv.management. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_test"></a>
+## `power2/test`
+
+`luna://com.webos.service.tvpower/power2/test`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/test '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_turnoffaod"></a>
+## `power2/turnOffAoD`
+
+`luna://com.webos.service.tvpower/power2/turnOffAoD`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/turnOffAoD '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="power2_turnoffscreen"></a>
 ## `power2/turnOffScreen`
 
@@ -896,6 +1800,48 @@ luna-send -n 1 luna://com.webos.service.tvpower/power2/turnOffScreen '{}'
 ```
 
 Sources: [1](https://github.com/gprot42/webos-launch-home/blob/HEAD/voice/daemon/tv_control.py)
+
+<a id="power2_turnonaod"></a>
+## `power2/turnOnAoD`
+
+`luna://com.webos.service.tvpower/power2/turnOnAoD`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/turnOnAoD '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="power2_turnonscreen"></a>
+## `power2/turnOnScreen`
+
+`luna://com.webos.service.tvpower/power2/turnOnScreen`
+
+Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.tvpower/power2/turnOnScreen '{}'
+```
+
+> ACG groups: private, all, tv.management.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="power2_turnonscreensaver"></a>
 ## `power2/turnOnScreenSaver`

@@ -6,22 +6,22 @@
 
 | Method | Access | Sub | Category | Description |
 |---|---|---|---|---|
-| [`closeSession`](#closesession) | unknown |  | misc | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`getPairedSessions`](#getpairedsessions) | unknown |  | misc | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`getRangingInfo`](#getranginginfo) | public | yes | misc | Retrieves ranging info for a session. Subscribe to this API to get a continuous notification of the ranging data. |
-| [`getStatus`](#getstatus) | unknown |  | misc | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`getUwbServiceState`](#getuwbservicestate) | public | yes | misc | Retrieves the state of the UWB service. If subscribe is set to true, the method sends an update if the values change. |
-| [`getUwbSpecificInfo`](#getuwbspecificinfo) | public | yes | misc | Provides the capabilities and features of the device (supported UWB protocols and parameters). |
-| [`openSession`](#opensession) | unknown |  | misc | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`rangingDataCommon`](#rangingdatacommon) | unknown |  | misc | Ranging information for common standard protocol. |
-| [`rangingDataLgeAirCond`](#rangingdatalgeaircond) | unknown |  | misc | Ranging information for LGE Air Conditioner product. |
-| [`rangingInfo`](#ranginginfo) | unknown |  | misc | Ranging information received from UWB module. |
-| [`receivedCommonData`](#receivedcommondata) | unknown |  | misc | Provide a ranging information from the UWB module. |
-| [`setState`](#setstate) | unknown |  | misc | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`startDiscovery`](#startdiscovery) | unknown |  | misc | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`startRanging`](#startranging) | unknown |  | misc | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`stopDiscovery`](#stopdiscovery) | unknown |  | misc | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`stopRanging`](#stopranging) | unknown |  | misc | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`closeSession`](#closesession) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`getPairedSessions`](#getpairedsessions) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`getRangingInfo`](#getranginginfo) | public | yes | connection | Retrieves ranging info for a session. Subscribe to this API to get a continuous notification of the ranging data. |
+| [`getStatus`](#getstatus) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`getUwbServiceState`](#getuwbservicestate) | public | yes | connection | Retrieves the state of the UWB service. If subscribe is set to true, the method sends an update if the values change. |
+| [`getUwbSpecificInfo`](#getuwbspecificinfo) | public | yes | connection | Provides the capabilities and features of the device (supported UWB protocols and parameters). |
+| [`openSession`](#opensession) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`rangingDataCommon`](#rangingdatacommon) | unknown |  | connection | Ranging information for common standard protocol. |
+| [`rangingDataLgeAirCond`](#rangingdatalgeaircond) | unknown |  | connection | Ranging information for LGE Air Conditioner product. |
+| [`rangingInfo`](#ranginginfo) | unknown |  | connection | Ranging information received from UWB module. |
+| [`receivedCommonData`](#receivedcommondata) | unknown |  | connection | Provide a ranging information from the UWB module. |
+| [`setState`](#setstate) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`startDiscovery`](#startdiscovery) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`startRanging`](#startranging) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`stopDiscovery`](#stopdiscovery) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`stopRanging`](#stopranging) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
 
 <a id="closesession"></a>
 ## `closeSession`

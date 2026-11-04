@@ -1,6 +1,6 @@
 # Database (db8)
 
-191 methods.  [Back to index](../../README.md#categories)
+274 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -18,6 +18,7 @@
 | [`luna://com.palm.db/internal/preBackup`](../services/com.palm.db.md#internal_prebackup) | private | Invoked when an internal webOS service wants to restore a database from a backup file. |
 | [`luna://com.palm.db/internal/preRestore`](../services/com.palm.db.md#internal_prerestore) | private | Used by the webOS service to correctly respond to a database restore command. This method must be called before restoring a database. |
 | [`luna://com.palm.db/internal/releaseAdminProfile`](../services/com.palm.db.md#internal_releaseadminprofile) | private | For applications whose profiling is controlled by admin-privileged applications, this method relinquishes the profiling control from admin-privilged application |
+| [`luna://com.palm.db/internal/scheduledBackup`](../services/com.palm.db.md#internal_scheduledbackup) | private | Method on com.palm.db (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.db/internal/scheduledPurge`](../services/com.palm.db.md#internal_scheduledpurge) | private | An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that has been marked for  |
 | [`luna://com.palm.db/internal/scheduledSpaceCheck`](../services/com.palm.db.md#internal_scheduledspacecheck) | private | An internal DB8 callback method, that is called by the Activity Manager for checking available disk space. |
 | [`luna://com.palm.db/internal/spaceCheck`](../services/com.palm.db.md#internal_spacecheck) | private | An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when DB8 reaches soft and |
@@ -38,12 +39,15 @@
 | [`luna://com.palm.db/search`](../services/com.palm.db.md#search) | public | Like find but supports the ? full-text operator. |
 | [`luna://com.palm.db/setShardMode`](../services/com.palm.db.md#setshardmode) | unknown | Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and wi |
 | [`luna://com.palm.db/shardInfo`](../services/com.palm.db.md#shardinfo) | unknown | Retrieves the state of a shard, like shard activity, associated media devices, mount point. |
+| [`luna://com.palm.db/shardKind`](../services/com.palm.db.md#shardkind) | public | Method on com.palm.db (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.db/stats`](../services/com.palm.db.md#stats) | unknown | The stats method returns detailed information about the storage space used by every service. |
 | [`luna://com.palm.db/watch`](../services/com.palm.db.md#watch) | public | Watches for updates that would change a query result. |
 | [`luna://com.palm.tempdb/batch`](../services/com.palm.tempdb.md#batch) | unknown | The batch method enables apps to execute multiple database operations in one service request. It allows only the following database operations: put get del find |
+| [`luna://com.palm.tempdb/cancelSearch`](../services/com.palm.tempdb.md#cancelsearch) | private | Method on com.palm.tempdb (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.tempdb/compact`](../services/com.palm.tempdb.md#compact) | private | The compact method invokes the low level garbage collector. When DB8 executes a del operation without Purge:True param, it only marks the object as to be delete |
 | [`luna://com.palm.tempdb/del`](../services/com.palm.tempdb.md#del) | unknown | The del method deletes JSON data objects from the database. Apps can specify the objects to be deleted by providing: a set of IDs to be deleted a DB8 query |
 | [`luna://com.palm.tempdb/delKind`](../services/com.palm.tempdb.md#delkind) | unknown | The delKind method deletes a Kind from the database. Deleting a Kind deletes ALL data objects of that Kind. |
+| [`luna://com.palm.tempdb/dump`](../services/com.palm.tempdb.md#dump) | private | Method on com.palm.tempdb (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.tempdb/find`](../services/com.palm.tempdb.md#find) | unknown | The find method returns a set of objects that match the query specified in the query parameter. The app can specify the number of results to return. However, if |
 | [`luna://com.palm.tempdb/get`](../services/com.palm.tempdb.md#get) | unknown | The get method retrieves JSON data objects by ids. This is the fastest way to retrieve data. |
 | [`luna://com.palm.tempdb/getProfile`](../services/com.palm.tempdb.md#getprofile) | unknown | Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time. |
@@ -52,10 +56,12 @@
 | [`luna://com.palm.tempdb/internal/preBackup`](../services/com.palm.tempdb.md#internal_prebackup) | private | Invoked when an internal webOS service wants to restore a database from a backup file. |
 | [`luna://com.palm.tempdb/internal/preRestore`](../services/com.palm.tempdb.md#internal_prerestore) | private | Used by the webOS service to correctly respond to a database restore command. This method must be called before restoring a database. |
 | [`luna://com.palm.tempdb/internal/releaseAdminProfile`](../services/com.palm.tempdb.md#internal_releaseadminprofile) | private | For applications whose profiling is controlled by admin-privileged applications, this method relinquishes the profiling control from admin-privilged application |
+| [`luna://com.palm.tempdb/internal/scheduledBackup`](../services/com.palm.tempdb.md#internal_scheduledbackup) | private | Method on com.palm.tempdb (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.tempdb/internal/scheduledPurge`](../services/com.palm.tempdb.md#internal_scheduledpurge) | private | An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that has been marked for  |
 | [`luna://com.palm.tempdb/internal/scheduledSpaceCheck`](../services/com.palm.tempdb.md#internal_scheduledspacecheck) | private | An internal DB8 callback method, that is called by the Activity Manager for checking available disk space. |
 | [`luna://com.palm.tempdb/internal/spaceCheck`](../services/com.palm.tempdb.md#internal_spacecheck) | private | An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when DB8 reaches soft and |
 | [`luna://com.palm.tempdb/listActiveMedia`](../services/com.palm.tempdb.md#listactivemedia) | unknown | Returns a list of active attached media, and shards. |
+| [`luna://com.palm.tempdb/load`](../services/com.palm.tempdb.md#load) | private | Method on com.palm.tempdb (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.tempdb/merge`](../services/com.palm.tempdb.md#merge) | unknown | The merge method updates the properties of existing objects. The objects can be specified in one of the following ways: A query An array of IDs |
 | [`luna://com.palm.tempdb/mergePut`](../services/com.palm.tempdb.md#mergeput) | unknown | The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The object to be updated  |
 | [`luna://com.palm.tempdb/profile`](../services/com.palm.tempdb.md#profile) | unknown | Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profiling using one of the  |
@@ -71,8 +77,38 @@
 | [`luna://com.palm.tempdb/search`](../services/com.palm.tempdb.md#search) | unknown | Unlike the find method, the search method supports the "?" (question mark) operator. The ? operator can be used for full-text searching. However, the search met |
 | [`luna://com.palm.tempdb/setShardMode`](../services/com.palm.tempdb.md#setshardmode) | unknown | Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and wi |
 | [`luna://com.palm.tempdb/shardInfo`](../services/com.palm.tempdb.md#shardinfo) | unknown | Retrieves the state of a shard, like shard activity, associated media devices, mount point. |
+| [`luna://com.palm.tempdb/shardKind`](../services/com.palm.tempdb.md#shardkind) | public | Method on com.palm.tempdb (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.tempdb/stats`](../services/com.palm.tempdb.md#stats) | unknown | The stats method returns detailed information about the storage space used by every service. |
 | [`luna://com.palm.tempdb/watch`](../services/com.palm.tempdb.md#watch) | unknown | The watch method watches for updates to the database that would change the results of a query. |
+| [`luna://com.webos.accountdb/batch`](../services/com.webos.accountdb.md#batch) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/compact`](../services/com.webos.accountdb.md#compact) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/del`](../services/com.webos.accountdb.md#del) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/deleteWorkSpace`](../services/com.webos.accountdb.md#deleteworkspace) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). ⚠️ |
+| [`luna://com.webos.accountdb/delKind`](../services/com.webos.accountdb.md#delkind) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/dump`](../services/com.webos.accountdb.md#dump) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/fill`](../services/com.webos.accountdb.md#fill) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/find`](../services/com.webos.accountdb.md#find) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/get`](../services/com.webos.accountdb.md#get) | private | Getter on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/internal/postBackup`](../services/com.webos.accountdb.md#internal_postbackup) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/internal/postRestore`](../services/com.webos.accountdb.md#internal_postrestore) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/internal/preBackup`](../services/com.webos.accountdb.md#internal_prebackup) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/internal/preRestore`](../services/com.webos.accountdb.md#internal_prerestore) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/internal/releaseAdminProfile`](../services/com.webos.accountdb.md#internal_releaseadminprofile) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/internal/scheduledBackup`](../services/com.webos.accountdb.md#internal_scheduledbackup) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/internal/scheduledPurge`](../services/com.webos.accountdb.md#internal_scheduledpurge) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/internal/scheduledSpaceCheck`](../services/com.webos.accountdb.md#internal_scheduledspacecheck) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/internal/spaceCheck`](../services/com.webos.accountdb.md#internal_spacecheck) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/merge`](../services/com.webos.accountdb.md#merge) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/mergePut`](../services/com.webos.accountdb.md#mergeput) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/purge`](../services/com.webos.accountdb.md#purge) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/put`](../services/com.webos.accountdb.md#put) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/putKind`](../services/com.webos.accountdb.md#putkind) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/putPermissions`](../services/com.webos.accountdb.md#putpermissions) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/resetWorkSpaceData`](../services/com.webos.accountdb.md#resetworkspacedata) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). ⚠️ |
+| [`luna://com.webos.accountdb/search`](../services/com.webos.accountdb.md#search) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/setCurrentWorkSpace`](../services/com.webos.accountdb.md#setcurrentworkspace) | private | Setter on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.accountdb/watch`](../services/com.webos.accountdb.md#watch) | private | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.app.igallery.preview/createGalleryDB`](../services/com.webos.app.igallery.preview.md#creategallerydb) | private | Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.epgdb/batch`](../services/com.webos.epgdb.md#batch) | unknown | The batch method enables apps to execute multiple database operations in one service request. It allows only the following database operations: put get del find |
 | [`luna://com.webos.epgdb/compact`](../services/com.webos.epgdb.md#compact) | private | The compact method invokes the low level garbage collector. When DB8 executes a del operation without Purge:True param, it only marks the object as to be delete |
 | [`luna://com.webos.epgdb/del`](../services/com.webos.epgdb.md#del) | unknown | The del method deletes JSON data objects from the database. Apps can specify the objects to be deleted by providing: a set of IDs to be deleted a DB8 query |
@@ -143,6 +179,10 @@
 | [`luna://com.webos.mediadb/shardInfo`](../services/com.webos.mediadb.md#shardinfo) | unknown | Retrieves the state of a shard, like shard activity, associated media devices, mount point. |
 | [`luna://com.webos.mediadb/stats`](../services/com.webos.mediadb.md#stats) | unknown | The stats method returns detailed information about the storage space used by every service. |
 | [`luna://com.webos.mediadb/watch`](../services/com.webos.mediadb.md#watch) | public | Watches for updates that would change a query result. |
+| [`luna://com.webos.service.admanager/requestRollAndBannerInfo`](../services/com.webos.service.admanager.md#requestrollandbannerinfo) | public | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.asc/readBleDevices`](../services/com.webos.service.asc.md#readbledevices) | public | Method on com.webos.service.asc (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.avmutemanager/getRegisterDB`](../services/com.webos.service.avmutemanager.md#getregisterdb) | public | Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.commercial.scapadapter/deviceInfo/addBlockedPortList`](../services/com.webos.service.commercial.scapadapter.md#deviceinfo_addblockedportlist) | public | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.db/activity`](../services/com.webos.service.db.md#activity) | unknown | Information about registered Activity in ActivityManager for calling DB8 internal/scheduledPurge API call. |
 | [`luna://com.webos.service.db/batch`](../services/com.webos.service.db.md#batch) | public | The batch method enables apps to execute multiple database operations in one service request. It allows only the following database operations: put get del find |
 | [`luna://com.webos.service.db/BatchOperation`](../services/com.webos.service.db.md#batchoperation) | unknown | Method and params for batch operation. |
@@ -195,3 +235,46 @@
 | [`luna://com.webos.service.db/statsKindResult`](../services/com.webos.service.db.md#statskindresult) | unknown | Information about kind usage. |
 | [`luna://com.webos.service.db/watch`](../services/com.webos.service.db.md#watch) | public | The watch method watches for updates to the database that would change the results of a query. |
 | [`luna://com.webos.service.db/WhereClause`](../services/com.webos.service.db.md#whereclause) | unknown | Defines a SQL-like JSON where clause for a db8 Query. |
+| [`luna://com.webos.service.factorymanager/ledBarCtrl`](../services/com.webos.service.factorymanager.md#ledbarctrl) | private | Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.ftms/appendBlockedDeviceList`](../services/com.webos.service.ftms.md#appendblockeddevicelist) | private | Method on com.webos.service.ftms (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.ics/blaster/getIrDbVersion`](../services/com.webos.service.ics.md#blaster_getirdbversion) | private | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/blockIRDevice`](../services/com.webos.service.irdbmanager.md#blockirdevice) | private | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/channelChanged`](../services/com.webos.service.irdbmanager.md#channelchanged) | private | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/clearSettingCash`](../services/com.webos.service.irdbmanager.md#clearsettingcash) | private | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/createAlert`](../services/com.webos.service.irdbmanager.md#createalert) | private | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/delDeviceHistory`](../services/com.webos.service.irdbmanager.md#deldevicehistory) | private | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/getBrandList`](../services/com.webos.service.irdbmanager.md#getbrandlist) | private | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/getBrandListByPredictive`](../services/com.webos.service.irdbmanager.md#getbrandlistbypredictive) | private | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/getDeviceHistory`](../services/com.webos.service.irdbmanager.md#getdevicehistory) | private | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/getDevices`](../services/com.webos.service.irdbmanager.md#getdevices) | private | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/getIPDeviceList`](../services/com.webos.service.irdbmanager.md#getipdevicelist) | private | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/getIrDbVersion`](../services/com.webos.service.irdbmanager.md#getirdbversion) | private | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/getModelList`](../services/com.webos.service.irdbmanager.md#getmodellist) | private | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/getPinCodeInfo`](../services/com.webos.service.irdbmanager.md#getpincodeinfo) | private | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/getRemoteData`](../services/com.webos.service.irdbmanager.md#getremotedata) | private | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/getSearchedModelInfo`](../services/com.webos.service.irdbmanager.md#getsearchedmodelinfo) | private | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/getServiceList`](../services/com.webos.service.irdbmanager.md#getservicelist) | private | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/nextKeyTest`](../services/com.webos.service.irdbmanager.md#nextkeytest) | private | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/setDeviceBrand`](../services/com.webos.service.irdbmanager.md#setdevicebrand) | private | Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/setDeviceType`](../services/com.webos.service.irdbmanager.md#setdevicetype) | private | Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/setModelName`](../services/com.webos.service.irdbmanager.md#setmodelname) | private | Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/setSoundOutSetting`](../services/com.webos.service.irdbmanager.md#setsoundoutsetting) | private | Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/startKeyTest`](../services/com.webos.service.irdbmanager.md#startkeytest) | private | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/subscribeChannelChange`](../services/com.webos.service.irdbmanager.md#subscribechannelchange) | private | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.irdbmanager/updateServerKeyList`](../services/com.webos.service.irdbmanager.md#updateserverkeylist) | private | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.ledbarcontroller/setAplusLedBarControl`](../services/com.webos.service.ledbarcontroller.md#setaplusledbarcontrol) | public | Method on com.webos.service.ledbarcontroller (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.micomservice/requestAplusLedBarCtrl`](../services/com.webos.service.micomservice.md#requestaplusledbarctrl) | public | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.micomservice/setAplusLedBar`](../services/com.webos.service.micomservice.md#setaplusledbar) | public | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.pbsw/getDbFilePath`](../services/com.webos.service.pbsw.md#getdbfilepath) | private | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.personalsoundwizard/getSoundBarStatus`](../services/com.webos.service.personalsoundwizard.md#getsoundbarstatus) | private | Method on com.webos.service.personalsoundwizard (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.personalsoundwizard/setSoundBarStatus`](../services/com.webos.service.personalsoundwizard.md#setsoundbarstatus) | private | Method on com.webos.service.personalsoundwizard (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.sm/license/apps/getDbPath`](../services/com.webos.service.sm.md#license_apps_getdbpath) | private | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.tts/msgFeedback`](../services/com.webos.service.tts.md#msgfeedback) | private | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.update/startedByActivitymanager`](../services/com.webos.service.update.md#startedbyactivitymanager) | private | Method on com.webos.service.update (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.utp.externaldevice/getLastInputInfoDB`](../services/com.webos.service.utp.externaldevice.md#getlastinputinfodb) | private | Method on com.webos.service.utp.externaldevice (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.utp.externaldevice/setLastInputInfoDB`](../services/com.webos.service.utp.externaldevice.md#setlastinputinfodb) | private | Method on com.webos.service.utp.externaldevice (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.utp.ssu/onOffWarmStandByOTA`](../services/com.webos.service.utp.ssu.md#onoffwarmstandbyota) | private | Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.utp.ssu/startWarmStandByOTA`](../services/com.webos.service.utp.ssu.md#startwarmstandbyota) | private | Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.utp.ssu/stopWarmStandByOTA`](../services/com.webos.service.utp.ssu.md#stopwarmstandbyota) | private | Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.wowplay/getSoundbarStatus`](../services/com.webos.service.wowplay.md#getsoundbarstatus) | private | Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.wowplay/requestSoundbarStatus`](../services/com.webos.service.wowplay.md#requestsoundbarstatus) | private | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |

@@ -1,12 +1,13 @@
 # `com.webos.service.pdm`
 
-26 methods.  Platforms seen: webOS OSE.
+42 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
 | Method | Access | Sub | Category | Description |
 |---|---|---|---|---|
 | [`audioDeviceList`](#audiodevicelist) | unknown |  | storage | List of audio device(s) connected. |
+| [`checkUSBPort`](#checkusbport) | private |  | storage | Method on com.webos.service.pdm (introspected on-device; parameters undocumented). |
 | [`dev/getAttachedDeviceList`](#dev_getattacheddevicelist) | unknown |  | storage | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.query); name only |
 | [`dev/setDeviceForSession`](#dev_setdeviceforsession) | private |  | storage | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.management); name only |
 | [`deviceListInfo`](#devicelistinfo) | unknown |  | storage | An array containing information about the currently connected device(s). |
@@ -15,16 +16,30 @@
 | [`eject`](#eject) | public |  | storage | Unmounts all drives of the storage device for safe removal. Prerequisite: The storage device must be connected. |
 | [`format`](#format) | public |  | storage | Formats the connected drive. |
 | [`fsck`](#fsck) | public |  | storage | Checks the file system by performing fsck (File System Check) of the corresponding connected drive. Note : On connecting a USB device with a |
+| [`fsckAlert`](#fsckalert) | private |  | storage | Method on com.webos.service.pdm (introspected on-device; parameters undocumented). |
 | [`getAttachedAllDeviceList`](#getattachedalldevicelist) | unknown |  | storage | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.query); name only |
+| [`getAttachedDeviceList`](#getattacheddevicelist) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
 | [`getAttachedDeviceStatus`](#getattacheddevicestatus) | public | yes | storage | Gets the status information of connected device(s). |
 | [`getAttachedNonStorageDeviceList`](#getattachednonstoragedevicelist) | public | yes | storage | Gets the status information of connected non-storage device(s). |
 | [`getAttachedStorageDeviceList`](#getattachedstoragedevicelist) | public | yes | storage | Gets status information of connected storage device(s). |
+| [`getBuiltInUnknownCount`](#getbuiltinunknowncount) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
 | [`getExample`](#getexample) | public |  | storage | Provides debug logs with detailed information of all connected storage and non-storage device list. |
+| [`getIoPerformance`](#getioperformance) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
 | [`getSpaceInfo`](#getspaceinfo) | public |  | storage | Gets the space information of the connected drive. Note : The drive must be mounted. |
+| [`getTouchPanelDisconnectCount`](#gettouchpaneldisconnectcount) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
+| [`getTouchRoute`](#gettouchroute) | private |  | storage | Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented). |
+| [`getUsbPowerControl`](#getusbpowercontrol) | private |  | power | Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented). |
+| [`getUSBResumeDone`](#getusbresumedone) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
+| [`getUSBSwitch`](#getusbswitch) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
 | [`isWritableDrive`](#iswritabledrive) | public |  | storage | Checks the file system attribute of the drive and returns whether it is writable. |
 | [`mountandFullFsck`](#mountandfullfsck) | public |  | storage | Mounts the device without performing Fsck. Alternatively, it can be configured to perform Fsck and then mount the device. |
 | [`netDeviceList`](#netdevicelist) | unknown |  | storage | List of Communication Device Class (CDC) device(s) connected. |
 | [`nonStorageDeviceList`](#nonstoragedevicelist) | unknown |  | storage | List of information about the non-storage devices that are currently connected. |
+| [`pdmStatistics`](#pdmstatistics) | private |  | storage | Method on com.webos.service.pdm (introspected on-device; parameters undocumented). |
+| [`resetVbus`](#resetvbus) | private |  | storage | Method on com.webos.service.pdm (introspected on-device; parameters undocumented). ⚠️ |
+| [`setTouchRoute`](#settouchroute) | private |  | storage | Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented). |
+| [`setUsbPowerControl`](#setusbpowercontrol) | private |  | power | Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented). |
+| [`setUSBSwitch`](#setusbswitch) | private |  | storage | Setter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
 | [`setVolumeLabel`](#setvolumelabel) | public |  | storage | Sets the volume label of the drive. It is supported only when file system type is FAT. |
 | [`spaceInfo`](#spaceinfo) | unknown |  | storage | Information about the drive space. |
 | [`storageDeviceList`](#storagedevicelist) | unknown |  | storage | List of information about the storage devices that are currently connected. |
@@ -32,6 +47,7 @@
 | [`subDeviceList`](#subdevicelist) | unknown |  | storage | Contains info of sub-devices Note: Sub-devices are multiple camera or sound devices inside single camera or sound device. |
 | [`umountAllDrive`](#umountalldrive) | public |  | storage | Unmounts all drives. |
 | [`videoDeviceList`](#videodevicelist) | unknown |  | storage | List of video device(s) connected. |
+| [`wakeupHdd`](#wakeuphdd) | private |  | storage | Method on com.webos.service.pdm (introspected on-device; parameters undocumented). |
 
 <a id="audiodevicelist"></a>
 ## `audioDeviceList`
@@ -53,6 +69,27 @@ luna-send -n 1 -f luna://com.webos.service.pdm/audioDeviceList '{}'
 > Service: Manages USB devices that are connected to the webOS system. Main Functions: Mount/unmount of Mass Storage Class (MSC) USB devices Format, Fdisk, File system check (FSCK) Detect USB device Supported US \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-pdm/)
+
+<a id="checkusbport"></a>
+## `checkUSBPort`
+
+`luna://com.webos.service.pdm/checkUSBPort`
+
+Method on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/checkUSBPort '{}'
+```
+
+> ACG groups: physicaldevice.query, private, all, pdm.control, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="dev_getattacheddevicelist"></a>
 ## `dev/getAttachedDeviceList`
@@ -236,6 +273,27 @@ luna-send -n 1 -f luna://com.webos.service.pdm/fsck '{"driveName":"sda"}
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-pdm/)
 
+<a id="fsckalert"></a>
+## `fsckAlert`
+
+`luna://com.webos.service.pdm/fsckAlert`
+
+Method on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/fsckAlert '{}'
+```
+
+> ACG groups: private, all, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="getattachedalldevicelist"></a>
 ## `getAttachedAllDeviceList`
 
@@ -256,6 +314,27 @@ luna-send -n 1 -f luna://com.webos.service.pdm/getAttachedAllDeviceList '{}'
 > Listed under ACG group "physicaldevice.query" in the component api.json/groups.json; no parameter docs read.
 
 Sources: [1](https://github.com/webosose/com.webos.service.pdm/blob/master/files/sysbus_auto/com.webos.service.pdm.api.json.in)
+
+<a id="getattacheddevicelist"></a>
+## `getAttachedDeviceList`
+
+`luna://com.webos.service.pdm/getAttachedDeviceList`
+
+Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/getAttachedDeviceList '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="getattacheddevicestatus"></a>
 ## `getAttachedDeviceStatus`
@@ -334,6 +413,27 @@ luna-send -n 1 -f luna://com.webos.service.pdm/getAttachedStorageDeviceList '{ "
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-pdm/)
 
+<a id="getbuiltinunknowncount"></a>
+## `getBuiltInUnknownCount`
+
+`luna://com.webos.service.pdm/getBuiltInUnknownCount`
+
+Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/getBuiltInUnknownCount '{}'
+```
+
+> ACG groups: private, all, physicaldevice.devutility.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="getexample"></a>
 ## `getExample`
 
@@ -354,6 +454,27 @@ luna-send -n 1 -f luna://com.webos.service.pdm/getExample '{ }
 > ACG: physicaldevice.query \| Returns: returnValue:Boolean \| Service: Manages USB devices that are connected to the webOS system. Main Functions: Mount/unmount of Mass Storage Class (MSC) USB devices Format, Fdisk, File system check (FSCK) Detect USB device Supported US
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-pdm/)
+
+<a id="getioperformance"></a>
+## `getIoPerformance`
+
+`luna://com.webos.service.pdm/getIoPerformance`
+
+Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/getIoPerformance '{}'
+```
+
+> ACG groups: pdm.read, physicaldevice.query, private, all, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="getspaceinfo"></a>
 ## `getSpaceInfo`
@@ -380,6 +501,111 @@ luna-send -n 1 -f luna://com.webos.service.pdm/getSpaceInfo '{ "driveName" : "sd
 > ACG: physicaldevice.query \| Returns: returnValue:Boolean; errorCode:Number; errorText:String; spaceInfo:Object: spaceInfo \| Service: Manages USB devices that are connected to the webOS system. Main Functions: Mount/unmount of Mass Storage Class (MSC) USB devices Format, Fdisk, File system check (FSCK) Detect USB device Supported US
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-pdm/)
+
+<a id="gettouchpaneldisconnectcount"></a>
+## `getTouchPanelDisconnectCount`
+
+`luna://com.webos.service.pdm/getTouchPanelDisconnectCount`
+
+Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/getTouchPanelDisconnectCount '{}'
+```
+
+> ACG groups: private, all, physicaldevice.devutility.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="gettouchroute"></a>
+## `getTouchRoute`
+
+`luna://com.webos.service.pdm/getTouchRoute`
+
+Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/getTouchRoute '{}'
+```
+
+> ACG groups: devices, physicaldevice.devutility, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="getusbpowercontrol"></a>
+## `getUsbPowerControl`
+
+`luna://com.webos.service.pdm/getUsbPowerControl`
+
+Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/getUsbPowerControl '{}'
+```
+
+> ACG groups: physicaldevice.devutility. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="getusbresumedone"></a>
+## `getUSBResumeDone`
+
+`luna://com.webos.service.pdm/getUSBResumeDone`
+
+Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/getUSBResumeDone '{}'
+```
+
+> ACG groups: pdm.read, private, all, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="getusbswitch"></a>
+## `getUSBSwitch`
+
+`luna://com.webos.service.pdm/getUSBSwitch`
+
+Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/getUSBSwitch '{}'
+```
+
+> ACG groups: private, all, physicaldevice.devutility.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="iswritabledrive"></a>
 ## `isWritableDrive`
@@ -473,6 +699,111 @@ luna-send -n 1 -f luna://com.webos.service.pdm/nonStorageDeviceList '{}'
 > Service: Manages USB devices that are connected to the webOS system. Main Functions: Mount/unmount of Mass Storage Class (MSC) USB devices Format, Fdisk, File system check (FSCK) Detect USB device Supported US \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-pdm/)
+
+<a id="pdmstatistics"></a>
+## `pdmStatistics`
+
+`luna://com.webos.service.pdm/pdmStatistics`
+
+Method on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/pdmStatistics '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="resetvbus"></a>
+## `resetVbus` ⚠️ DANGEROUS
+
+`luna://com.webos.service.pdm/resetVbus`
+
+Method on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/resetVbus '{}'
+```
+
+> ACG groups: all. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="settouchroute"></a>
+## `setTouchRoute`
+
+`luna://com.webos.service.pdm/setTouchRoute`
+
+Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/setTouchRoute '{}'
+```
+
+> ACG groups: devices, physicaldevice.devutility, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="setusbpowercontrol"></a>
+## `setUsbPowerControl`
+
+`luna://com.webos.service.pdm/setUsbPowerControl`
+
+Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/setUsbPowerControl '{}'
+```
+
+> ACG groups: physicaldevice.devutility. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="setusbswitch"></a>
+## `setUSBSwitch`
+
+`luna://com.webos.service.pdm/setUSBSwitch`
+
+Setter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/setUSBSwitch '{}'
+```
+
+> ACG groups: private, all, physicaldevice.devutility.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="setvolumelabel"></a>
 ## `setVolumeLabel`
@@ -625,3 +956,24 @@ luna-send -n 1 -f luna://com.webos.service.pdm/videoDeviceList '{}'
 > Service: Manages USB devices that are connected to the webOS system. Main Functions: Mount/unmount of Mass Storage Class (MSC) USB devices Format, Fdisk, File system check (FSCK) Detect USB device Supported US \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-pdm/)
+
+<a id="wakeuphdd"></a>
+## `wakeupHdd`
+
+`luna://com.webos.service.pdm/wakeupHdd`
+
+Method on com.webos.service.pdm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.pdm/wakeupHdd '{}'
+```
+
+> ACG groups: physicaldevice.management, private, all, pdm.control, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))

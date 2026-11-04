@@ -1,0 +1,10974 @@
+[
+{
+"key": "customModelInfo",
+"dbtype": "G"
+},
+{
+"key": "customModelInfo",
+"dbtype": "G"
+},
+{
+"key": "eulaInfo",
+"dbtype": "G"
+},
+{
+"key": "eulaInfoNetwork",
+"dbtype": "G"
+},
+{
+"key": "eulaStatus",
+"dbtype": "G"
+},
+{
+"key": "locale",
+"dbtype": "G"
+},
+{
+"key": "localeInfo",
+"dbtype": "G"
+},
+{
+"key": "mobileSetupStatus",
+"dbtype": "G"
+},
+{
+"key": "ai_Brightness",
+"category": "aiPicture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "ai_Genre",
+"category": "aiPicture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "ai_Picture",
+"category": "aiPicture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "isAiPictureActing",
+"category": "aiPicture",
+"dbtype": "G"
+},
+{
+"key": "allDirZoomHPosition",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input"
+]
+},
+{
+"key": "allDirZoomHPosition",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "allDirZoomHRatio",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input"
+]
+},
+{
+"key": "allDirZoomHRatio",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "allDirZoomVPosition",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input"
+]
+},
+{
+"key": "allDirZoomVPosition",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "allDirZoomVRatio",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input"
+]
+},
+{
+"key": "allDirZoomVRatio",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcMenuBySystem",
+"category": "aspectRatio",
+"dbtype": "G"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input",
+"twinMode"
+]
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "arcPerApp",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "justScan",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input",
+"resolution"
+]
+},
+{
+"key": "justScan",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "justScan",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "justScan",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "twinCinemaVPosition",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input"
+]
+},
+{
+"key": "twinCinemaVPosition",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "twinZoomHPosition",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input"
+]
+},
+{
+"key": "twinZoomHPosition",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "twinZoomHRatio",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input"
+]
+},
+{
+"key": "twinZoomHRatio",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "twinZoomVPosition",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input"
+]
+},
+{
+"key": "twinZoomVPosition",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "twinZoomVRatio",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input"
+]
+},
+{
+"key": "twinZoomVRatio",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "vertZoomVPosition",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input"
+]
+},
+{
+"key": "vertZoomVPosition",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "vertZoomVRatio",
+"category": "aspectRatio",
+"dbtype": "E",
+"dimension": [
+"input"
+]
+},
+{
+"key": "vertZoomVRatio",
+"category": "aspectRatio",
+"dbtype": "E"
+},
+{
+"key": "aiCaptionEnable",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "caption608PosOption",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "caption608PosX",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "caption608PosY",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "caption708PosOption",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "caption708PosX",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "caption708PosY",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionAnalog",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionAnalog",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionAnalog",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionAnalog",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionAnalog",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionBgColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionBgColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionBgColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionBgColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionBgOpacity",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionBgOpacity",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionBgOpacity",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionBgOpacity",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionDigital",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionDigital",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionDigital",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionDigital",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionDigitalPosOption",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionDigitalPosX",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionDigitalPosY",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionEdgeColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionEdgeColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionEdgeColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionEdgeColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionEdgeType",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionEdgeType",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionEdgeType",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionEdgeType",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionEnable",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionFont",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionFont",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionFont",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionFont",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionSize",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionSize",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionSize",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionSize",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionStyle",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionStyle",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionStyle",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionStyle",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionTextColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionTextColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionTextColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionTextColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionTextOpacity",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionTextOpacity",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionTextOpacity",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionTextOpacity",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionWindowColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionWindowColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionWindowColor",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionWindowOpacity",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionWindowOpacity",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "captionWindowOpacity",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "digitalPlusCaptionLanguage",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "digitalPlusCaptionLanguage",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "digitalPlusCaptionLanguage",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "digitalPlusCaptionLanguage",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "hardOfHearing",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "hardOfHearing",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "japanCaptionEnable",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "japanSuperImposeEnable",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "naisDevicePaired",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "phlCaptionEnable",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "phlSuperImposeEnable",
+"category": "caption",
+"dbtype": "G"
+},
+{
+"key": "aiFavoriteGroup4stb",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "aiFavoriteGroup4tv",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "analogSystemColor",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "audioLanguage",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "automaticServiceListUpdate",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanAribFreqBand",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanAribFreqBand",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanAribFreqBand",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanAribInitalScan",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanAribInitalScan",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanAribInitalScan",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanCableBlindsearch",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanCableDigitalOnlySearch",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanCableNetworkscan",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanCableQuickScan",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanCableScan",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanCableSkipScrambleSerarch",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanChannelGroup",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanFastscanSatellite",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanSatelliteInitialScan",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanSatelliteScan",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanTerrestrialDigitalOnlySearch",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanTerrestrialScan",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "autoscanTerrestrialSecamlSearch",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "channelMute",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "channelsInHome",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "digitalPlus",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "dualMono",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "ewbsTargetChannel",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "favoriteGroupName4stb",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "favoriteGroupName4tv",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "levelSoundSatellite",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "levelSoundSatellite",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "levelSoundSatellite",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "levelSoundTerrestrial",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "levelSoundTerrestrial",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "levelSoundTerrestrial",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "manualscanSatelliteNetworkSearch",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "multiAudio",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "multiFeed",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "objectAudio",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "powerSupply",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "powerSupply",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "powerSupply",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "programListUpdateCable",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "programListUpdateSatellite",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "recommended",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "recordingRestrictions",
+"category": "channel",
+"dbtype": "S"
+},
+{
+"key": "satelliteHDSD",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "signalAttenuation",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "signalBeepSound",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "signingAtsc30",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "signingAtsc30",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "signingAtsc30",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguage",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "supportOperatorProfile",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "tuningTypeMDUUniversal",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "uhdJackConnected",
+"category": "channel",
+"dbtype": "G"
+},
+{
+"key": "15MinAutoOff",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "AV1En",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "AV2En",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "HPDControl",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "RGBOverlayInRF",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "aMuteTime",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "acOn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "ackMask",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "alarmTimer",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "alarmTimerHour",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "alarmTimerMinute",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "appLaunchMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "aspectRatioLock",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "atscBand",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "atscTuneMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "audioOutput",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "audioPtsOffset",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "audioSourceDp",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "audioSourceHdmi1",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "audioSourceHdmi2",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "audioVolumeWatt",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "autoCamport",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "autoRearAux",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "autoRearYC",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "autoSensing",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "autoServerIp",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "autoTeletext",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "autoYPrPb",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "auxInputAll",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "auxInputIndependently",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "auxStatus",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "bLanPowerSaving",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "backlighting",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "bandAfc",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "bannerEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "bckAudioM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "bckChTime",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "bckPtlM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "bckSetupM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "bckSrcM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "bckVideoM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "bed12",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "bigUI",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "captionLock",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "care365Enable",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "chNotAvble",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "chTimeSize",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "channelLock",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "channelOverride",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "checkScreen",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "chksumError",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "commer365CareServiceMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "commercialFlag",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "component1En",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "contentsRotation",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "contentsSync",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "defaultArc",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "defeatXds",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "destination_ip",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "destination_port",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "digitalAudioInput",
+"category": "commercial",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "digitalAudioInputList",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "direction_path",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "disAudioM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "disAudioMenu",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "disChTime",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "disPt1M",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "disSetupM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "disVideoM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "dispSourceM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "dmrEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "dpmMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "dtvChannelUpdate",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "dynamicBrightness",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enAlarm",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enAudioCol",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enChTCol",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enNoiseMute",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enPtlCol",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enSetupCol",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enSleepTimer",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enSrcCol",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enTimer",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enVchip",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enVideoCol",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enVideoMute",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enableResetToInitial",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enableSpeaker",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "enableUsb",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "extClockDimmingPowerOn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "extClockDimmingStandBy",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "extClockDisplay",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "extClockProgram",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "extClockSource",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "extOffsetTTXClock",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "extSpkVolumeControl",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "ezmgr_update_status",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "factoryReset",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "failover",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "failoverPriority",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "failoverPriority1",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "failoverPriority2",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "failoverPriority3",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "failoverPriority4",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "failoverPriority5",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "forAudioM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "forChTime",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "forPtlM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "forSetupM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "forSrcM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "forVideoM",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "frntYCEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "functionPre",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "gostChannel",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "guestMenuState",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "guestSetting",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "handshkTime",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "hdmi1En",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "hdmi2En",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "hdmi3En",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "hospitalMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingAudioOnlyDisplay",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingLockChannel",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingLockInput",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingLockMenuEnter",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingLockPower",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingMax",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingOsdDisplayOff",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingWakeUpHour",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingWakeUpInput",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingWakeUpMinute",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingWakeUpSet",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingWakeUpVolume",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "idHTNGSettingWakeUpVolumeRampUpTime",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "igmpVersion",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "inputSensingAV1",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "inputSensingAll",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "inputSensingComp1",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "inputSensingHDMI1",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "inputSensingHDMI2",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "inputSensingHDMI3",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "installerSeq",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "instantOn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "intelligentAuto",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "irBankEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "irBlaster",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "irMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "istm_reserved_3",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "istm_reserved_4",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "istm_reserved_5",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "istm_reserved_6",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "istm_reserved_7",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "keyDefeat",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "keyLock",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "keyOperation",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "keylessOffHours",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "keylessOffHoursEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "ledCalibrator",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "linkSecuredConnection",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "linkServerEnable",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "linkServerIP",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "linkServerIPv6",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "linkServerIpType",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "linkServerPort",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "linkServerStatus",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "localAppUpgrade",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "lockModeFactory",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "lockModeUSB",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "log_forwarding_mode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "log_level",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "mainSpeaker",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "manualServerIp",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "maxBlockHour",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "maxVolume",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "minVolume",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "multiOffTimerHour",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "multiOffTimerMinute",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "multiOffTimerWeekday",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "multiOnTimerHour",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "multiOnTimerMinute",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "multiOnTimerSource",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "multiOnTimerWeekday",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "multiRemoteKey",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "muteDisable",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "naturalMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "ntscScancard",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "offTimerCount",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "offTimerSchedule",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "oldOcv",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "onTimerCount",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "onTimerOperation",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "onTimerSchedule",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "oneChannelMap",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "osdEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "osdPortraitMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "panelCom",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "panelHandshake",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "panelMaxVol",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "panelMinVol",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "panelStartVol",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "panelTunerOnDelay",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "panelType",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "panelVolRepeat",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "pcrOffset",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "permanentBlk",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "permanentBlock",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "pictureId",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "pokeEnable",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "pollRate",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "powerManage",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "powerOnDelay",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "powerOnOffHistoroy",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "powerOnOffHistory",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "ppvChannelMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "preLoadedApp",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "proCentricClockUpdate",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricClockFreq",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricClockIPAdd_a",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricClockIPAdd_b",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricClockIPAdd_c",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricClockIPAdd_d",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricClockIPAddr",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricClockIPPort",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricClockServiceID",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricClockUpdate",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricDataCarouselEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricDataChannel",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricDataChannelSlt",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricIPAddr_a",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricIPAddr_b",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricIPAddr_c",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricIPAddr_d",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricIPPort",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricMediaType",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricModulation",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricRFFreq",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricRFType",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "procentricSymbol",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "pseudoPwrOff",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "ptc_Download_Fail",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "quickShutoff",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "radioEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "radioNameDisplay",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rbg1En",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rearYCEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "remainingBlockHr",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "remoteJackPack",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "reorderLaunchPoint",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "revertCh",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rfUpdateTImeMin",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rfUpdateTimeHr",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rfUpdateTimeHrEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rfWakeUpEventEnable",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rfWakeUpEventHour",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rfWakeUpEventMin",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rgb1en",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rjpAvailable",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rmsEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "roomNumber",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "rs232Baudrate",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "sapLock",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "sapMenuEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "scanMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "scartOut",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "sclActiveStatus",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "sclDisplayMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "sendToRs232",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "serverIpMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "serverIpPort",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "serverStatus",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "serviceIp",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "signage365CareAccountName",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "signage365CareAccountNumber",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "signage365CareInstall",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "signageMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "signageName",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "signageSetId",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "simplinkEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "sixKeySys",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "smartEnergy",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "smartParing",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "smartShareEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "smoovie",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "smoovieInputSource",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "smoovieProgramme",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "smoovieRing1",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "smoovieRing2",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "smoovieStandard",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "softapDefault",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "softapDefaultSecurityKey",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "softapEnable",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "softapOnOff",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "softapSecurityKey",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "softapSsid",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "splashTime",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "splitscreenEnable",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "standByMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startAuxSrc",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startChInSm",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startChMajorNum",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startChnumMinor",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startIpAddress",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startIpAddress_a",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startIpAddress_b",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startIpAddress_c",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startIpAddress_d",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startIpType",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startPort",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startProgram",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startSourceIpAddress_a",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startSourceIpAddress_b",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startSourceIpAddress_c",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startSourceIpAddress_d",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "startVolume",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "staticSaving",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "textMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tileCol",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tileId",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tileMode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tileRow",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "timeoutEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "timingPulse",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tuneAudioPid",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tuneAudioType",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tuneIPAddr_a",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tuneIPAddr_b",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tuneIPAddr_c",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tuneIPAddr_d",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tuneIpType",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tunePcrPid",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tunePort",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tuneProgram",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tuneVideoPid",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tuneVideoType",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tvlinkHcecControl",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tvlinkHcecDeviceID",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tvlinkHcecForcedInitialize",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tvlinkHcecHotelmode",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tvlinkHcecIrDecoding",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "tvlinkHcecStandby",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "uartPowerOutlet",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "upnLsb",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "upnMsb",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "upnMsb1",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "upnMsb2",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "usbAutoPlayBack",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "usbAutoPlayback",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "usbAutoPlaybackPath",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "vMuteTime",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "vidOutFormat",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "videoInterface",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "videoPtsOffset",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "wifiScreenShareEn",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "wifiZone",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "wolEnable",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "wolMagicPacket",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "ycLoopOut",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "zone",
+"category": "commercial",
+"dbtype": "G"
+},
+{
+"key": "hcapStartChSSID0",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapStartChSSID1",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapStartChSSID2",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapStartChSSID3",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapStartChSSID4",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapStartRfChBandType",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapStartRfChType",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapStartRfFreqHz",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapStartRfProgNumber",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapTuneCmIpProtocol",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartChType",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartFreq",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartHour",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartIp",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartIpPort",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartIpProgram",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartIpProtocol",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartLogical",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartMajor",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartMinor",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartMinute",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartProgramNumber",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartRfBandType",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartSSID0",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartSSID1",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartSSID2",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartSSID3",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartSSID4",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "hcapalarmStartVolume",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyAppUpdateShutDown",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyAppUpdateStartUp",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyApplicationChannelControl",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyBootSequenceOption",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyBrowserHttpsSecurityLevel",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyBrowserNetworkErrorHandling",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyCountry",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyDefaultAudioLanguage",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyDefaultAudioLanguageList",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyDefaultSubtitleLanguage",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyDefaultSubtitleLanguageList",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyDefaultSubtitleLanguageListUsAnalog",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyDefaultSubtitleLanguageUsAnalog",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyInbandDataServiceHbbtv",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyInbandDataServiceMheg",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyInbandDataServiceMhp",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyIpSupport",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyKeyDeliveryToSimpLink",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyLanguage",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyMuteOnTvInput",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyNumberOfTuner",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyOsdLayerId",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyPcrRecovery",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyReserved0",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyReserved1",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyReserved2",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyReserved3",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyReserved4",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyReserved5",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertySecurityLevel",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertySingleDecoding",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertySmartPairing",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyStrReserved0",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyStrReserved1",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyStrReserved2",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyStrReserved3",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyStrReserved4",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyStrReserved5",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertySupportLanguageList",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyTvCaptionUi",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyTvChannelControl",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyTvChannelLockUi",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyTvChannelUi",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyTvFloatingUi",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyTvMhegUi",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyTvPreloadedAppLauncherUi",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "propertyTvVolumeUi",
+"category": "commercialTv",
+"dbtype": "G"
+},
+{
+"key": "audioInput",
+"category": "dimensionInfo",
+"dbtype": "G"
+},
+{
+"key": "audioOutput",
+"category": "dimensionInfo",
+"dbtype": "G"
+},
+{
+"key": "colorSystem",
+"category": "dimensionInfo",
+"dbtype": "G"
+},
+{
+"key": "dynamicRange",
+"category": "dimensionInfo",
+"dbtype": "G"
+},
+{
+"key": "gameInput",
+"category": "dimensionInfo",
+"dbtype": "G"
+},
+{
+"key": "input",
+"category": "dimensionInfo",
+"dbtype": "G"
+},
+{
+"key": "resolution",
+"category": "dimensionInfo",
+"dbtype": "G"
+},
+{
+"key": "twinMode",
+"category": "dimensionInfo",
+"dbtype": "G"
+},
+{
+"key": "SCA3SystemCountry",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "absenceRecognition",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "adCookie",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "aiChannel",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "aiNudge",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "aiSettingsNudge",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "alwaysOn",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "alwaysOnDisableEndHour",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "alwaysOnDisableEndMinute",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "alwaysOnDisableStartHour",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "alwaysOnDisableStartMinute",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "avmsd",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "bendableSound",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "blueToothSpeakerMode",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "checkForcedInputPowerOn",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "checkHomeAutoLaunchValue",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "customizedAd",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "doNotSellMyPersonalInformation",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "doNotSellMyPersonalInformation",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "doNotSellMyPersonalInformation",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "gameAlarm",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "globalConditions",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "homeAutoLaunch",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "homeEffect",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "homeEffect",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "homePromotion",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "homePromotion",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "ignoreSslCertificate",
+"category": "general",
+"dbtype": "S"
+},
+{
+"key": "lastAppHandlerPolicy",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "lastInputApp",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "lastInputAppType",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "launchEulaByHome",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "lifeAlarm",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "lifeOnScreenMode",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "lmt",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "mySportAppList",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "mySportTeamList",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "nativeConsentAd",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "noSignalGuideArea",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "noSignalScreenSaver",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "noSignalScreenSaver",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "noSignalScreenSaver",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "noSignalScreenSaver",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "noSignalScreenSaver",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "noSignalScreenSaver",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "opapp",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "opappReplaceUI",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "personalRecommend",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "physicalLastInputApp",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "physicalLastInputType",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "powerOffBySCA3SystemChanged",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "powerOnScreen",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "remotePointer",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "remoteserverType",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "screenRemotePlacement",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "screenSaverAd",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "screenSaverAd",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "screenSaverAd",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "screenSaverEnabled",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "screenSaverEnabled",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "screenSaverSensibility",
+"category": "general",
+"dbtype": "S"
+},
+{
+"key": "selectedInputApp",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "sportsAlarm",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "sportsPicker",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "tnativeShadescreen",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "tnativeSound",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "touchLock",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "tvInstallMethod",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "tvOnScreen",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "tvOnSound",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "voiceLongDistance",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "wavBoxPosition",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "wavUpperLedFlag",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "welcomeFeature",
+"category": "general",
+"dbtype": "G"
+},
+{
+"key": "autoBrowser",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "autoBrowserUrl",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "auxSettings",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "auxSettingsEnabled",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "avSettings",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "blankOnRadioProgram",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "displayRadioName",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAutoBrowser",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAuxSetting_av1",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAuxSetting_av2",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAuxSetting_av3",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAuxSetting_comp1",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAuxSetting_comp2",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAuxSetting_comp3",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAuxSetting_hdmi1",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAuxSetting_hdmi2",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAuxSetting_hdmi3",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAuxSetting_hdmi4",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableAuxSetting_rgb",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableChannelUpdate",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableFullscreen",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableFunctionStatus",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableHIDDevice",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableHotelMode",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableIrRemote",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableKeylock",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableLimitedInputSrcChange",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableLimitedMode",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableLocalKey",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableMenuKey",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableMrcu",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableOsdDisplay",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableOsdVisibility",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enablePowerOnDefault",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enablePowerOnDefaultVolume",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableProgramChange",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableSetIdMenu",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableStartVolume",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enableSystemProviderMode",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "enterStationMenu",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "keyManagement",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "maximumVolume",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "minimumVolume",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "noActivityPowerOffHours",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "password",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "powerOnAspectRatio",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "powerOnDefaultAv",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "powerOnDefaultInput",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "powerOnDefaultMajor",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "powerOnDefaultMinor",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "powerOnDefaultProgramme",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "powerOnDefaultTuneMode",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "powerOnDefaultVolume",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "powerOnStatus",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "radioProgramCount",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "radioProgramStart",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "swUpdateEnable",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "swUpdateNotice",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "tvlinkHid",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "tvlinkKeylock",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "tvlinkMrcu",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "tvlinkOsdDisplay",
+"category": "hotelMode",
+"dbtype": "G"
+},
+{
+"key": "isVideoScreenSaverEnabled",
+"category": "lgchannels",
+"dbtype": "G"
+},
+{
+"key": "videoScreenSaverAppList",
+"category": "lgchannels",
+"dbtype": "G"
+},
+{
+"key": "videoScreenSaverDisabledByError",
+"category": "lgchannels",
+"dbtype": "G"
+},
+{
+"key": "applockByAge",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "applockByAge",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "applockByAge",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "applockPerApp",
+"category": "lock",
+"dbtype": "S"
+},
+{
+"key": "camPinCode",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "dailyRepeatFlag",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "downloadableRrt",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "initialPinCode",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "inputBlock",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "installedApplockByAge",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "lockByAge",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "movieRating",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "offHearingProtectFlag",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "offHearingProtectMaxVolume",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "offUsageTimeFlag",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalControl",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalControl",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalControl",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalControl",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidance",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidance",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidance",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidance",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidance",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidance",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidance",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidance",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidance",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidance",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidanceAu",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidanceJp",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidanceNz",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "parentalGuidanceSg",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "pineValueChangePCS",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "ratingBR",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "ratingPH",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "ratingSA",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "secretMode",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "systemPin",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "systemPinCode",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "tvRatingChildrenAge",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "tvRatingChildrenFantasy",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "tvRatingEnglish",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "tvRatingFrench",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "tvRatingGeneralAge",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "tvRatingGeneralDialog",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "tvRatingGeneralLanguage",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "tvRatingGeneralSex",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "tvRatingGeneralViolence",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "unlockDate",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "usageTimeEnd",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "usageTimeStart",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "vooRating",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "ziggoRaiting",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "ziggoRaiting",
+"category": "lock",
+"dbtype": "G"
+},
+{
+"key": "isLegalNoticeShown",
+"category": "musicCatch",
+"dbtype": "G"
+},
+{
+"key": "musicCatchStorageInfo",
+"category": "musicCatch",
+"dbtype": "G"
+},
+{
+"key": "allowMobileDeviceAccess",
+"category": "network",
+"dbtype": "G"
+},
+{
+"key": "bleAdvertisingOnOff",
+"category": "network",
+"dbtype": "G"
+},
+{
+"key": "deviceName",
+"category": "network",
+"dbtype": "G"
+},
+{
+"key": "deviceName",
+"category": "network",
+"dbtype": "G"
+},
+{
+"key": "ipv6Enable",
+"category": "network",
+"dbtype": "G"
+},
+{
+"key": "miracastTxPlaying",
+"category": "network",
+"dbtype": "G"
+},
+{
+"key": "sscNetworkKey",
+"category": "network",
+"dbtype": "G"
+},
+{
+"key": "wifiConnection",
+"category": "network",
+"dbtype": "G"
+},
+{
+"key": "wiredConnection",
+"category": "network",
+"dbtype": "G"
+},
+{
+"key": "wolwowlOnOff",
+"category": "network",
+"dbtype": "G"
+},
+{
+"key": "IPControlSecureKey",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "a11yQuickList",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "additionalAudioSelection",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "addressInfo",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "adjustments",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "animationGuide",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "aodThemeHistory",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "appInstallDevice",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "appUpdateMode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "artisticDisplayTimer",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "artisticDisplayTimer",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "audioGuidance",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "audioGuidancePitch",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "audioGuidanceSpeed",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "audioGuidanceVolume",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "autoComplete",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "autoSmartServiceCountry",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "avatar",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "backupPsm",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "backupPsmDolby",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "baloonHelp",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "bannerPosition",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "broadcastInfoNoti",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "broadcastInfoNoti",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "broadcastInfoNoti",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "cameraResourcePermission",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "channelplus",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "channelplus",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "channelplus",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "channelplusPopup",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "checkChangedScreenSaverTimerByUser",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "cicNumber",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "country",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "countryBroadcastSystem",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "countryGroup",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "countryRegion",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "curDemoFile",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "curvature",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "dataService",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "dbgLogUpload",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "dbgLogUpload",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "dbgLogUpload",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "demoFileList",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "demoMode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "displayMusicWidget",
+"category": "option",
+"dbtype": "S"
+},
+{
+"key": "eStreamerPosition",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "emergencyAlert",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "emergencyInformationAtsc30",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "emergencyInformationAtsc30",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "emergencyInformationAtsc30",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "emergencyInformationLanguageAtsc30",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "emergencyInformationLanguageAtsc30",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "emergencyInformationLanguageAtsc30",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "enableIpControl",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "enableSDDP",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "enableToastPopup",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "epgPipMode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "estreamerMinimalMode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "estreamerStatus",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "faultLogUpload",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "faultLogUpload",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "faultLogUpload",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "favRecommendResetTime",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "fileapiResourcePermission",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "firstTvSignalStatus",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "focusEmphasis",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "focusedItemEnlarged",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "freeviewMode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "freeviewplay",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "googleAssistantTTS",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "graphicSharpnessLevel",
+"category": "option",
+"dbtype": "S"
+},
+{
+"key": "greyscale",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "hbbTV",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "hbbTV",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "hbbTV",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "hbbTvDeviceId",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "hddEcoMode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "helpOnSettings",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "highContrast",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "homeWallPaper",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "hybridCast",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "hybridCast",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "hybridCast",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "inputDevicesSupportStatus",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactive-service-hdmi",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactive-service-hdmi",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactive-service-hdmi",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactive-service-id",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactive-service-id",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactive-service-id",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactive-service",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactive-service",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactive-service",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactivity",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactivity",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "interactivity",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "irBlaster",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "ismMethod",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "japanCitySelection",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "japanCitySelection",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "lifeOnScreenEnergySaving",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "lifeOnScreenNotification",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "lifeOnScreenOnTimer",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "lifeOnScreenUsingMotionSensor",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "lineView",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "liveMenuLaunched",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "livePlus",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "livePromotion",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "localeCountryGroup",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "logoLight",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "logoLight",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "longPressInterval",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNum1",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNum2",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNum3",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNum4",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNum5",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNum6",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNum7",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNum8",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNum9",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNum9",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNumFvp",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magicNumHelpShow",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "magnificationValue",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "medicationInfoAgreement",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "menuLanguage",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "menuTransparency",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "mhegGuide",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "mhegGuide",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "mhegGuide",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "miracastOverlayAdRecovery",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "miracastOverlayStatus",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "modeSelectFlag",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "motionRecognition",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "motionSensorSensitivity",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "motionSensorSensitivityForAOD",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "multiChannelAudio",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "multiViewStatus",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "mySketchSettings",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "nearbyDevicePermission",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "ohtv",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "orbit",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "password_ipcontrol",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "personalizedDemoImgList",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "personalizedDemoString",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "personalizedImgList",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "personalizedString",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "phlCitySelection",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "phlCitySelection",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "pointerAlignment",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "pointerShape",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "pointerSize",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "pointerSpeed",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "powerOnLight",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "pqPlus",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "promotionOriginEnd",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "promotionOriginStart",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "promotionPeriodEnd",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "promotionPeriodStart",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "promotionStreamer",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "pstreamerUser",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "quickStartMode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "quickStartMode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "remoteSlowInput",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "repeatInterval",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "restoreCurve",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "screenMagnification",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "screenOff",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "screenOffTime",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "screenRotation",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "screenSaverArtEnabled",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "screenSaverTimer",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "searchAppTTS",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "seniorMode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "serviceCountryForMagicNum",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "setId",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "showCursorAlert",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "signLanguageGuidance",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "signLanguageGuidanceAvatarType",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "signLanguageGuidancePosition",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "signLanguageGuidanceSize",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "signLanguageGuidanceSpeed",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "smartServiceCountryCode2",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "smartServiceCountryCode3",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "smartSoundDemo",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "soundPlus",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "speakToTv",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "speakToTv",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "speakToTv",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "specialRemote",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "standByLight",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "standByLight",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "storeHDR",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "storeLogo",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "storeMode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "storeMode2",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "storeModeVideo",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "storeUsbAlarm",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subdivisionCodeOfServiceCountry",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "subtitleLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "supplementaryAudio",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "syncMode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "syncModeTvCondition",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageFirst",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "teletextLanguageSecond",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "thirdPartyCookie",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "turnOnByVoice",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "usageCare",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "usbBuiltInVideo",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "virtualKeyboardLanguage",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "virtualSetTop",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "voiceRecognitionLanguage",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "vsn",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "wakeUpword",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "wakeUpword",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "wakeUpword",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "wallPaperHistory",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "wallPaperSettings",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "watchedListCollection",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "webOSPromotionVideo",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "yourMomentsVersion",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "zipcode",
+"category": "option",
+"dbtype": "G"
+},
+{
+"key": "444BypassHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "444BypassHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "444BypassHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "444BypassHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "444BypassHDMINone",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "activeArtisticDisplayScreenSaver",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "adaptivePowerDelivery",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "amazonHotkeyIsActive",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "aodPictureSyncMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "appReturn",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "autoSLZoomWithObjectDetection",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "battery25PercentMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "batteryInstopProtect",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "blackStabilizer",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput",
+"dynamicRange",
+"gameGenre"
+]
+},
+{
+"key": "blueLight",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "care365",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "colorimetry",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "colorimetryHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "colorimetryHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "colorimetryHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "colorimetryHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "contentRecommendation",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "contentRecommendation",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "cursorAutoRemover",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "darkMode",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "darkMode",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "darkMode",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "darkMode",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "darkMode",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "darkMode",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "dolbyVSVDBVer",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "dolbyVSVDBVerHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "dolbyVSVDBVerHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "dolbyVSVDBVerHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "dolbyVSVDBVerHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "dpPcMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "enable144HzBooster",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enable144HzBooster",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enable144HzBooster",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enable144HzBooster",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enable144HzBooster",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableALLM",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableALLM",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableALLM",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableDolbyVisionPC",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableQFT",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableQFT",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableQFT",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableQFT",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "enableQuickGame",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "eotf",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "eotfHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "eotfHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "eotfHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "eotfHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "epgRowCount",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "fitLogUsbDump",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "flickerPatternCtrl",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesync",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "freesync",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "freesync",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "freesync",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "freesync",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "freesync",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "freesync",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "freesync",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "freesyncLCDHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncLCDHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncLCDHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncLCDHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncOLEDHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncOLEDHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncOLEDHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncOLEDHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncSupport",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncSupport",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncSupport",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncSupport",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncSupport",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freesyncSupport",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "freeviewTnCPopup",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "gameAdjustContrast",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput",
+"dynamicRange",
+"gameGenre"
+]
+},
+{
+"key": "gameBlackLevel",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput",
+"dynamicRange",
+"gameGenre"
+]
+},
+{
+"key": "gameColorDepth",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput",
+"dynamicRange",
+"gameGenre"
+]
+},
+{
+"key": "gameDashboardStatusList",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "gameGenre",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameGenre",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameGenre",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameGenre",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameGenre",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameGenre",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "gameOptimization",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameOptimization",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameOptimization",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameOptimizationDP1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "gameOptimizationDP2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "gameOptimizationHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "gameOptimizationHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "gameOptimizationHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "gameOptimizationHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "gameOptimizationUSBC1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "gameOptimizationUSBC2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "gameScreenPosition",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameScreenPosition",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameScreenPosition",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameScreenRatio",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameScreenRatio",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameScreenRatio",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameScreenSize",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameScreenSize",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameScreenSize",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameSettingModified",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "gameSharpness",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput",
+"dynamicRange",
+"gameGenre"
+]
+},
+{
+"key": "gameUIColor",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "hdmiPcMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "homeAppLaunched",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "homeEffectVersion",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "homeQuickGuideLaunched",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "homeShelfEdit",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "homelegalPopup",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "hueSyncAutoEnable",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "hueSyncManualEnable",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "illuminanceThreshold",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "inputOptimization",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "inputOptimization",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "inputOptimization",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "inputOptimization",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "inputOptimization",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "isFirstCapture",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "isFirstShowSbmSpeaker",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "isHdpOpAppPopupDone",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "isSLZoomExecutable",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "isSLZoomOn",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "isSLZoomOperable",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "isfUpdated",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "lastSbmSpeakerState",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "lgLogoDisplay",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "lightingAutoBrightness",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "lightingBrightness",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "lightingColorMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "lightingEnable",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "lightingMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "lightingTnativeBrightness",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "lightingTnativeMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "lowLevelAdjustment",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput",
+"dynamicRange",
+"gameGenre"
+]
+},
+{
+"key": "lowLevelAdjustment",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput",
+"dynamicRange",
+"gameGenre"
+]
+},
+{
+"key": "lowPowerMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "mapping_info",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "masterLuminanceLevel",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "masteringColor",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "masteringColorHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "masteringColorHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "masteringColorHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "masteringColorHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "masteringPeak",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "masteringPeakHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "masteringPeakHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "masteringPeakHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "masteringPeakHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "maxCLL",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "maxCLLHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "maxCLLHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "maxCLLHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "maxCLLHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "maxFALL",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "maxFALLHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "maxFALLHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "maxFALLHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "maxFALLHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "multiViewLaunchMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "netflixHotkeyIsActive",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "newKey",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "oledCareMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "oledCareMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "oledCareRecommendation",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "oledCareRecommendation",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "othersColorMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "playbackThreshold",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "pseudoTouchMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "qmsVrr",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "qmsVrr",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "qmsVrr",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "qmsVrr",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "quickSettingsMenuList",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "quickSettingsRecentMenu",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "screenRemoteAutoShow",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "screenRemoteExpanded",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "screenRemotePosition",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "simplinkAutoPowerOn",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "simplinkEnable",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "slzoomTargetAreaHeight",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "slzoomTargetAreaLevel",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "slzoomTargetAreaWidth",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "slzoomTargetAreaX",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "slzoomTargetAreaY",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "soundSyncModeColor",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "soundSyncModeDisplayMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "soundSyncModeFrequency",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "soundSyncModeStaticColor",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "staticModeColor1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "staticModeColor2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "staticModeColor3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "staticModeColor4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "supportAirplay",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "supportBnoModel",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "svcMenuFlag",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "touchRemoteLaunchMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "ueiEnable",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "ueiEnable",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColor",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "uhdDeepColor",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "uhdDeepColor",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "uhdDeepColor",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput"
+]
+},
+{
+"key": "uhdDeepColor8kHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColor8kHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColor8kHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColor8kHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColorAutoStatusHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColorAutoStatusHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColorAutoStatusHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColorAutoStatusHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColorHDMI1",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColorHDMI2",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColorHDMI3",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "uhdDeepColorHDMI4",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "usbcPcMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "weatherAllowed",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "whiteColorMode",
+"category": "other",
+"dbtype": "G"
+},
+{
+"key": "whiteStabilizer",
+"category": "other",
+"dbtype": "G",
+"dimension": [
+"gameInput",
+"dynamicRange",
+"gameGenre"
+]
+},
+{
+"key": "DtmMastering10k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmMastering10k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmMastering10k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmMastering10k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmMastering1k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmMastering1k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmMastering1k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmMastering1k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmMastering4k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmMastering4k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmMastering4k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmMastering4k",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmProfessional",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmProfessional",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmProfessional",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "DtmProfessional",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "RGBWDotPatternMax",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "RGBWDotPatternMin",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "RGBWDotPatternOnOff",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "ScreenOff",
+"category": "picture",
+"dbtype": "M"
+},
+{
+"key": "ScreenOff",
+"category": "picture",
+"dbtype": "M"
+},
+{
+"key": "ScreenOff",
+"category": "picture",
+"dbtype": "M"
+},
+{
+"key": "ScreenOff",
+"category": "picture",
+"dbtype": "M"
+},
+{
+"key": "_14_9VPosition",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "adjustingLuminance",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "adjustingLuminance10pt",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "aiPicture",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "aiPictureReset",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "applyToAllInput",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "aspectRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatioActive",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "aspectRatioActivePerApp",
+"category": "picture",
+"dbtype": "S"
+},
+{
+"key": "aspectRatioHdmiCinema",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatioHdmiCinema",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatioPerApp",
+"category": "picture",
+"dbtype": "S"
+},
+{
+"key": "aspectRatioSettingActivePerApp",
+"category": "picture",
+"dbtype": "S"
+},
+{
+"key": "aspectRatioTv",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatioTv",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatioTv",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatioTv",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatioTv",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatioTv",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatioTv",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "aspectRatioTv",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "avMode",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "backlight",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "blackLevel",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "brightness",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "brightnessActive",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "captionZoomRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "captionZoomRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "captionZoomVPosition",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "captionZoomVPosition",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "cinemaVPosition",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "cinemaVPosition",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "cinemaZoomRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "cinemaZoomRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "clarityActive",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "color",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorActive",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorGamut",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementColorSystem",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementHueBlue",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementHueCyan",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementHueGreen",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementHueMagenta",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementHueRed",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementHueYellow",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementLuminanceBlue",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementLuminanceCyan",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementLuminanceGreen",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementLuminanceMagenta",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementLuminanceRed",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementLuminanceYellow",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementSaturationBlue",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementSaturationCyan",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementSaturationGreen",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementSaturationMagenta",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementSaturationRed",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorManagementSaturationYellow",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "colorTemperature",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "contrast",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "demandResponse",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "displayType",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "doNotShowAbcNotification",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "doNotShowMecNotification",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "dolbyPrecisionDetail",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "dualPlayMenu",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "dynamicColor",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "dynamicContrast",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "energySaving",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "energySavingAutoMin",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "energySavingAutoMin",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "energySavingAutoMin",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "energySavingAutoMin",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "energySavingAutoMin",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "energySavingAutoMin",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "energySavingModified",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "erpUserConfirm",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "expressionEnhancer",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "externalPqlDbType",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "eyeComfortMode",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "filmMakerMode",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "filmMakerMode",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "filmMakerMode",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "filmMakerMode",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "filmmakerAmbientLight",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "gamma",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "gammaLevel",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "grassColor",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "hPosition",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "hSize",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "hdrDynamicToneMapping",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "hgig",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "inputListForCopyCms",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "inputListForCopyPsm",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "inputListForCopyWb",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "isfMode",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "keyListForCopyCms",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "keyListForCopyPsm",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"pictureMode"
+]
+},
+{
+"key": "keyListForCopyWb",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "localDimming",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "logoLuminanceAdjust",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "mediaZoomRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "mediaZoomVPosition",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "memcDelayLevel",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "motionEyeCare",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "motionPro",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "motionPro",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "motionPro",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "motionProOLED",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "motionProOLED",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "motionProOLED",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "mpegNoiseReduction",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "nearBlackDetail",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "nearBlackDetail",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "noiseReduction",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "oledPanelSettings",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "pcMode",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "pcScreenSaver",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "peakBrightness",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "peakBrightness",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "pictureControlLimitation",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "pictureControlLimitation",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "pictureCustomize",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "pictureMode",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"dynamicRange"
+]
+},
+{
+"key": "pictureModeSettingsActive",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "pictureModeSettingsActivePerApp",
+"category": "picture",
+"dbtype": "S"
+},
+{
+"key": "pictureSettingModified",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "pictureSettingsActivePerApp",
+"category": "picture",
+"dbtype": "S"
+},
+{
+"key": "pictureTempKey",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "pictureTest",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "pictureWizard",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "precisionHdrMasterPro",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "precisionHdrMasterPro",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "precisionHdrMasterPro",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "psmListForExpert",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "realCinema",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "scheduledPixelCleaning",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "screenShift",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "sharpness",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "skinColor",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "skyColor",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "smoothGradation",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "sourceRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "superResolution",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "tint",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "truMotionBlur",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "truMotionBlur",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "truMotionJudder",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "truMotionMode",
+"category": "picture",
+"dbtype": "M",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "truMotionMode",
+"category": "picture",
+"dbtype": "M",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "truMotionMode",
+"category": "picture",
+"dbtype": "M"
+},
+{
+"key": "vPosition",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "vSize",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "videoSource",
+"category": "picture",
+"dbtype": "S"
+},
+{
+"key": "wb10PointsGammaValue",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "wb22PointsGammaValue",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "whiteBalanceActive",
+"category": "picture",
+"dbtype": "G"
+},
+{
+"key": "whiteBalanceApplyAllInputs",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceBlue",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceBlue10pt",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceBlueGain",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceBlueOffset",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceCodeValue",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceCodeValue10pt",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceColorTemperature",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceColorTemperature",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceColorTemperature",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceGreen",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceGreen10pt",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceGreenGain",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceGreenOffset",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceIre",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceIre10pt",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceLuminance",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceMethod",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalancePoint",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceRed",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceRed10pt",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceRedGain",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "whiteBalanceRedOffset",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"key": "wssZoomVPosition",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "zoomRatio",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "zoomVPosition",
+"category": "picture",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "status",
+"category": "pqsettings",
+"dbtype": "G"
+},
+{
+"key": "updateCycle",
+"category": "pqsettings",
+"dbtype": "G"
+},
+{
+"key": "aps",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "bright",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "cinema",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "eco",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "expert1",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "expert2",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "eyeq",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "game",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "movie",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "natural",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "normal",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "photo",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "sports",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "vivid",
+"category": "psmModified",
+"dbtype": "G",
+"dimension": [
+"input"
+]
+},
+{
+"key": "com.webos.app.homeconnect",
+"category": "push",
+"dbtype": "G"
+},
+{
+"key": "com.webos.app.sportsteamsettings",
+"category": "push",
+"dbtype": "G"
+},
+{
+"key": "hidden",
+"category": "push",
+"dbtype": "G"
+},
+{
+"key": "list",
+"category": "push",
+"dbtype": "M"
+},
+{
+"key": "notification",
+"category": "push",
+"dbtype": "M"
+},
+{
+"key": "TTSMixingRatio",
+"category": "sound",
+"dbtype": "M"
+},
+{
+"key": "ac4DialogueEnhancer",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "aiSound",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "aigamesound",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "aigamesound",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "aigamesound",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "analogOut",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "applyToAllInputSSM",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "audioBalance",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "audioBalance",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "audioDescription",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "audioDescriptionAtsc30",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "audioDescriptionAtsc30",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "audioDescriptionAtsc30",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "audioDescriptionVolume",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "audioLanguageFirst",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "audioLanguageSecond",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "auracast",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "autoVolume",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "avSync",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "avSyncBtSurround",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "avSyncBypass",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "avSyncBypassInput",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "avSyncSpdif",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "avSyncSpeaker",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "avSyncWisa",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "blegattSoundbar",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "bluetoothMode",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "btSpeakerMode",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "clearVoice",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "coSoundOutput",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "coSoundOutputState",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "deviceCntOfBtGeneral",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "dialogEnhancementAtsc30",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "dialogEnhancementAtsc30",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "dialogEnhancementAtsc30",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "dialogEnhancementVolumeAtsc30",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "dialogEnhancementVolumeAtsc30",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "dialogEnhancementVolumeAtsc30",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "digitalAudioPriority",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "digitalAudioPriority",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "digitalAudioPriority",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "digitalAudioPriority",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "digitalAudioPriority",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "digitalAudioPriority",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "eArcSupport",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "eArcSupport",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "eArcSupport",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "equalizerStatus",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "forceOutputDDPLUS",
+"category": "sound",
+"dbtype": "M"
+},
+{
+"key": "gameTVEqualizer",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "gameTVEqualizer",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "gameTVEqualizer",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "gameTVEqualizer10band",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "gameTVEqualizer10band",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "gameTVEqualizer10band",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "hdmiArcMode",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "headphoneDetection",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "hearingAid",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "inputAudioFormatDP1",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "inputAudioFormatDP2",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "inputAudioFormatHDMI1",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "inputAudioFormatHDMI2",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "inputAudioFormatHDMI3",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "inputAudioFormatHDMI4",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "inputAudioFormatUSBC1",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "inputAudioFormatUSBC2",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "lgSoundSync",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "lgSoundSync",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "lgSoundSync",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "magicSoundModified",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "magicSoundTime",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "magicSpaceSound",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "magicSpaceSound",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "multiAudioOutputWithBt",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "prevSoundOutput",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "slidingSpeaker",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "slidingSpeakerMelody",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "smartSoundMode",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "sound",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "soundAlive",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "soundAlive",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "soundEffect",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "soundEngineStatus",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "soundMode",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput",
+"soundOutput"
+]
+},
+{
+"key": "soundMode",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput",
+"soundOutput"
+]
+},
+{
+"key": "soundMode",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput",
+"soundOutput"
+]
+},
+{
+"key": "soundMode",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput",
+"soundOutput"
+]
+},
+{
+"key": "soundMode",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput",
+"soundOutput"
+]
+},
+{
+"key": "soundMode",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput",
+"soundOutput"
+]
+},
+{
+"key": "soundMode",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput",
+"soundOutput"
+]
+},
+{
+"key": "soundModeModified",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"soundMode",
+"soundOutput"
+]
+},
+{
+"key": "soundModeSync",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "soundModeSync",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "soundOptimizer",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "soundOutput",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioOutput"
+]
+},
+{
+"key": "soundOutputDigital",
+"category": "sound",
+"dbtype": "G",
+"dimension": [
+"audioInput"
+]
+},
+{
+"key": "soundOutputList",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "soundOutputs",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "soundTest",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "startupSound",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "startupSound",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "supportATMOS",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "tvPowerSound",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "tvPowerSound",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "tvPowerSound",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "tvSetupConfiguration",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "tvSetupConfiguration",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "userEqualizer",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "userEqualizerValues",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "virtualSurround",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "visualImpaired",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "volumeControl",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "volumeStep",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "wisaSpeakerChannelType",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "wisaSpeakerChannelType",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "wisaSpeakerChannelType",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "wisaSpeakerChannelType",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "wisaSpeakerChannelType",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "wisaSpeakerChannelType",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "wisaSpeakerChannelType",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "wisaSpeakerChannelType",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "wisaSpeakerChannelType",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "wooferLevel",
+"category": "sound",
+"dbtype": "G"
+},
+{
+"key": "autopower",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "bass",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "centerlevel",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "display",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "lastfunction",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "midlevel",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "mybtnApp",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "mybtnSleepMinute",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "mybtnSoundMode",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "mybtnVolume",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "night",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "rearlevel",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "sidelevel",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "surround",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "toplevel",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "treble",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "wooferlevel",
+"category": "soundbar",
+"dbtype": "G"
+},
+{
+"key": "automaticUpdate",
+"category": "support",
+"dbtype": "G"
+},
+{
+"key": "launchPUGuideApp",
+"category": "support",
+"dbtype": "G"
+},
+{
+"key": "softwareUpdateEnable",
+"category": "support",
+"dbtype": "G"
+},
+{
+"key": "autoClock",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "autoOff15Min",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "autoOff2HourOnTimer",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "automaticStandBy",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "automaticStandBy",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "automaticStandBy",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "daylightSaving",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "defaultTimeZone",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "dpmsAutoOff",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "dpmsAutoOff",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "dpmsAutoOff",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "noOperationAutoOff",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "noOperationAutoOff",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "noOperationAutoOff",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "noSignalAutoOff",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "noSignalAutoOff",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "noSignalAutoOff",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "offTimerEnable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "offTimerFlag",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "offTimerHour",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "offTimerMinute",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "offTimerRepeat",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "offTimerWeekday",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerAppId",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerAppId2",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerAppId3",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerAppId4",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerAppId5",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerChannel",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerChannel2",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerChannel3",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerChannel4",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerChannel5",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerEnable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerEnable2",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerEnable3",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerEnable4",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerEnable5",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerHour",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerHour",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerHour3",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerHour4",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerHour5",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerMinute",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerMinute",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerMinute3",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerMinute4",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerMinute5",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerRepeat",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerRepeat2",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerRepeat3",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerRepeat4",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerRepeat5",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerSource",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerSource2",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerSource3",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerSource4",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerSource5",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerVolume",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerVolume2",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerVolume3",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerVolume4",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerVolume5",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerWeekday",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerWeekday",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerWeekday3",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerWeekday4",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "onTimerWeekday5",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "remindAppId",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "remindChannel",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "remindEnable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "remindVolume",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "sleepTimer",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "starttime",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "starttime",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "starttime",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "timeOffset",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "timeZone",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerEnable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerEnable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekday1Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekday2Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekday3Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekday4Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekday5Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekday6Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekday7Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekday8Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekend1Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekend2Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekend3Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekend4Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekend5Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekend6Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekend7Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "warmTimerWeekend8Enable",
+"category": "time",
+"dbtype": "G"
+},
+{
+"key": "absenceTimemachineMode",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "autoDeleteMode",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "autoRecStorageValue",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "autoRecordMode",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "autoUploadMode",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "continuePlayMode",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "dualRecordMode",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "performanceTestStorageValue",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "recordQualityMode",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "recordStorageValue",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "saveLivePlaybackMode",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "stopRecordValue",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "timemachineMode",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "tsStorageValue",
+"category": "timemachine",
+"dbtype": "G"
+},
+{
+"key": "autoPowerOff",
+"category": "timer",
+"dbtype": "S"
+},
+{
+"key": "autoPowerOff2Hour",
+"category": "timer",
+"dbtype": "G"
+},
+{
+"key": "autoPowerOff2HourMute",
+"category": "timer",
+"dbtype": "G"
+},
+{
+"key": "myStarterInfo",
+"category": "timer",
+"dbtype": "G"
+},
+{
+"key": "noMenuAutoOff15Min",
+"category": "timer",
+"dbtype": "G"
+},
+{
+"key": "setMyStarter",
+"category": "timer",
+"dbtype": "G"
+},
+{
+"key": "audioMode",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "backlightOffset",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "bezelOffsetBottom",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "bezelOffsetLeft",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "bezelOffsetRight",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "bezelOffsetTop",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "dimension",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "dimensionCol",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "dimensionRow",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "masterInfo",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "originalPictureMode",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "originalVividValue",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "originalWhiteBalance",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "pictureModeSettingsDone",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "positionCol",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "positionRow",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "role",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "slaveInfo",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "status",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "systemMode",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "videoMode",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "wideZoomToast",
+"category": "twinTv",
+"dbtype": "G"
+},
+{
+"key": "amazonAlexaLocale",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "audioFeedback",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "channelZapping",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "countPowerOn",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "disclosureAccepted",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "disclosureAcceptedVsn",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "epgLastUpdated",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "googleAssistantLocale",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "googleAssistantStateToken",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "supportGoogleAssistant",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "supportMasa",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "supportNlp",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "supportStt",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "supportThinQtvNlp",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "vidStatus",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "voiceModel",
+"category": "voiceframework",
+"dbtype": "G"
+},
+{
+"key": "voice_mic",
+"category": "voiceframework",
+"dbtype": "G"
+}
+]

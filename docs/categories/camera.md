@@ -1,6 +1,6 @@
 # Camera
 
-49 methods.  [Back to index](../../README.md#categories)
+73 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -16,8 +16,29 @@
 | [`luna://com.webos.service.camera/getInfo`](../services/com.webos.service.camera.md#getinfo) | public | Returns detailed info of a camera/microphone device. |
 | [`luna://com.webos.service.camera/getList`](../services/com.webos.service.camera.md#getlist) | public | Lists camera and microphone devices connected to the TV. |
 | [`luna://com.webos.service.camera/getProperties`](../services/com.webos.service.camera.md#getproperties) | private | USB camera method: getProperties |
+| [`luna://com.webos.service.camera/getServiceStatus`](../services/com.webos.service.camera.md#getservicestatus) | public | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/initializePhotoEffect`](../services/com.webos.service.camera.md#initializephotoeffect) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.camera/isCovered`](../services/com.webos.service.camera.md#iscovered) | public | Cover status of the built-in camera. |
+| [`luna://com.webos.service.camera/isUpdating`](../services/com.webos.service.camera.md#isupdating) | public | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.camera/open`](../services/com.webos.service.camera.md#open) | private | USB camera method: open |
+| [`luna://com.webos.service.camera/previewPhotoEffect`](../services/com.webos.service.camera.md#previewphotoeffect) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/recognition/getERLE`](../services/com.webos.service.camera.md#recognition_geterle) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/recognition/getFrequencyResponse`](../services/com.webos.service.camera.md#recognition_getfrequencyresponse) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/recognition/getProperties`](../services/com.webos.service.camera.md#recognition_getproperties) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/recognition/getRecordedTriggerKeyword`](../services/com.webos.service.camera.md#recognition_getrecordedtriggerkeyword) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/recognition/getSignalLevel`](../services/com.webos.service.camera.md#recognition_getsignallevel) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/recognition/setProperties`](../services/com.webos.service.camera.md#recognition_setproperties) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/recognition/subscribeRecognition`](../services/com.webos.service.camera.md#recognition_subscriberecognition) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/recognition/unsubscribeRecognition`](../services/com.webos.service.camera.md#recognition_unsubscriberecognition) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/release`](../services/com.webos.service.camera.md#release) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/requestRefreshFrame`](../services/com.webos.service.camera.md#requestrefreshframe) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/setProperties`](../services/com.webos.service.camera.md#setproperties) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/start`](../services/com.webos.service.camera.md#start) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/stop`](../services/com.webos.service.camera.md#stop) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/takePicture`](../services/com.webos.service.camera.md#takepicture) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/wakeup`](../services/com.webos.service.camera.md#wakeup) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/yuv/getProperties`](../services/com.webos.service.camera.md#yuv_getproperties) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.camera/yuv/setProperties`](../services/com.webos.service.camera.md#yuv_setproperties) | private | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.camera.gesture/finger/getStatus`](../services/com.webos.service.camera.gesture.md#finger_getstatus) | private | Camera gesture method: finger/getStatus |
 | [`luna://com.webos.service.camera.gesture/finger/setMode`](../services/com.webos.service.camera.gesture.md#finger_setmode) | private | Camera gesture method: finger/setMode |
 | [`luna://com.webos.service.camera2/camera_capability`](../services/com.webos.service.camera2.md#camera_capability) | unknown | Contains the capability of the camera |
@@ -27,6 +48,7 @@
 | [`luna://com.webos.service.camera2/camera_properties`](../services/com.webos.service.camera2.md#camera_properties) | unknown | Contains the properties of the camera. |
 | [`luna://com.webos.service.camera2/capture`](../services/com.webos.service.camera2.md#capture) | public | Starts capturing images using the camera. The captured images are stored as separate files at the specified location. The default file name is of the format Pic |
 | [`luna://com.webos.service.camera2/capture_info`](../services/com.webos.service.camera2.md#capture_info) | unknown | Indicates the information about the camera. |
+| [`luna://com.webos.service.camera2/captureImage`](../services/com.webos.service.camera2.md#captureimage) | private | Method on com.webos.service.camera2 (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.camera2/close`](../services/com.webos.service.camera2.md#close) | public | Closes the connection between the camera and the webOS device. |
 | [`luna://com.webos.service.camera2/deviceList`](../services/com.webos.service.camera2.md#devicelist) | unknown | Contains the list of cameras connected to the webOS device. |
 | [`luna://com.webos.service.camera2/getCameraList`](../services/com.webos.service.camera2.md#getcameralist) | public | Gets the list of cameras connected to the webOS device. Returns IDs for each of the cameras connected to the device. |
@@ -40,6 +62,7 @@
 | [`luna://com.webos.service.camera2/open`](../services/com.webos.service.camera2.md#open) | public | Establishes a connection between a camera and the webOS device. Returns the device handle for this connection instance. |
 | [`luna://com.webos.service.camera2/picture`](../services/com.webos.service.camera2.md#picture) | unknown | Indicates the image size and image format. |
 | [`luna://com.webos.service.camera2/setFormat`](../services/com.webos.service.camera2.md#setformat) | public | Sets the size and format of the preview stream. This includes the height and width of the frame and the format in which data is to be written to the shared buff |
+| [`luna://com.webos.service.camera2/setPermission`](../services/com.webos.service.camera2.md#setpermission) | private | Setter on com.webos.service.camera2 (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.camera2/setProperties`](../services/com.webos.service.camera2.md#setproperties) | public | Sets the properties of the connected camera device. |
 | [`luna://com.webos.service.camera2/setSolutions`](../services/com.webos.service.camera2.md#setsolutions) | public | Enables and disables camera solutions. |
 | [`luna://com.webos.service.camera2/setWindow`](../services/com.webos.service.camera2.md#setwindow) | public | Sets the window's position and size, display ID, and overlay/mirror options. |
@@ -51,5 +74,6 @@
 | [`luna://com.webos.service.camera2/stopCamera`](../services/com.webos.service.camera2.md#stopcamera) | public | Stops camera and turns off streaming into the shared memory. Note: Applications that called startCamera() should call this method to stop streaming. |
 | [`luna://com.webos.service.camera2/stopCapture`](../services/com.webos.service.camera2.md#stopcapture) | public | Stops camera from capturing images in the continuous mode. Continuous mode captures frames in succession till the stopCapture() method is called. |
 | [`luna://com.webos.service.camera2/stopPreview`](../services/com.webos.service.camera2.md#stoppreview) | public | Turns off camera streaming and finishes showing the preview on the surface. Note: The applications should call this method to stop streaming and preview when th |
+| [`luna://com.webos.service.camera2/test`](../services/com.webos.service.camera2.md#test) | private | Method on com.webos.service.camera2 (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.camera2/video`](../services/com.webos.service.camera2.md#video) | unknown | Indicates the video size and the video format. |
 | [`luna://com.webos.service.camera2/window_params`](../services/com.webos.service.camera2.md#window_params) | unknown | Defines a window's position, size, display ID, and overlay/mirror options. Note: At least one property must be mandatory. |

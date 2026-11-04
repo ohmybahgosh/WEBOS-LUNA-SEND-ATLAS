@@ -1,6 +1,6 @@
 # `com.webos.service.audio`
 
-181 methods.  Platforms seen: webOS OSE, webOS TV.
+236 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -20,7 +20,13 @@
 | [`alert/status`](#alert_status) | private |  | audio | Method registered by com.webos.service.audio (category '/alert') |
 | [`audio`](#audio) | unknown |  | audio | Object returned by the UMI/getStatus. |
 | [`broadcastEvent`](#broadcastevent) | private |  | audio | Method registered by com.webos.service.audio (root category) |
+| [`capture/getStatus`](#capture_getstatus) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`capture/resetParams`](#capture_resetparams) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). ⚠️ |
+| [`capture/setParams`](#capture_setparams) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`capture/start`](#capture_start) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`capture/stop`](#capture_stop) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
 | [`checkAudioEffectStatus`](#checkaudioeffectstatus) | public |  | audio | Check the status of an audio effect. |
+| [`connectSoundInput`](#connectsoundinput) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
 | [`controlPlayback`](#controlplayback) | public |  | audio | Controls playback operations like stop, pause/resume for audio samples that are played using the playSound method. |
 | [`deviceList`](#devicelist) | unknown |  | audio | Provides information about all supported input and output devices and their type and connection status. |
 | [`disableScenario`](#disablescenario) | private |  | audio | Method registered by com.webos.service.audio (root category) |
@@ -37,6 +43,7 @@
 | [`getInputVolume`](#getinputvolume) | public | yes | audio | Gets the input volume for audio streams. |
 | [`getPlaybackStatus`](#getplaybackstatus) | public | yes | audio | Checks the status of playback which is played using playSound method. |
 | [`getSoundInput`](#getsoundinput) | public | yes | audio | Gets the current active sound input device. |
+| [`getSoundInputList`](#getsoundinputlist) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
 | [`getSoundOut`](#getsoundout) | private |  | audio | Method registered by com.webos.service.audio (root category) |
 | [`getSoundOutput`](#getsoundoutput) | public | yes | audio | Gets the current active sound output device. |
 | [`getSourceInputVolume`](#getsourceinputvolume) | public | yes | audio | Gets input volume of the source. |
@@ -94,6 +101,8 @@
 | [`phone/setVolume`](#phone_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
 | [`phone/status`](#phone_status) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
 | [`playSound`](#playsound) | public |  | audio | Plays PCM audio files through PulseAudio sound server. |
+| [`quality/setQualityAttribute`](#quality_setqualityattribute) | public |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
+| [`quality/setSoundOutputMode`](#quality_setsoundoutputmode) | public |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
 | [`registerTrack`](#registertrack) | public |  | audio | Registers a playback by an application/service and returns a track ID. The track ID must be used to control the volume of that particular pl |
 | [`ringtone/getVolume`](#ringtone_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/ringtone') |
 | [`ringtone/lockVolumeKeys`](#ringtone_lockvolumekeys) | private |  | audio | Method registered by com.webos.service.audio (category '/ringtone') |
@@ -142,6 +151,9 @@
 | [`system/setVolume`](#system_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/system') |
 | [`system/status`](#system_status) | private |  | audio | Method registered by com.webos.service.audio (category '/system') |
 | [`systemsounds/playFeedback`](#systemsounds_playfeedback) | public |  | audio | Plays the various system alert sounds based on the name passed to it. |
+| [`telephony/answered`](#telephony_answered) | private |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
+| [`telephony/callAudio`](#telephony_callaudio) | private |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
+| [`telephony/startCall`](#telephony_startcall) | private |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
 | [`timer/getTimerOn`](#timer_gettimeron) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
 | [`timer/getVolume`](#timer_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
 | [`timer/offsetVolume`](#timer_offsetvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
@@ -149,12 +161,55 @@
 | [`timer/setTimerOn`](#timer_settimeron) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
 | [`timer/setVolume`](#timer_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
 | [`timer/status`](#timer_status) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
+| [`timer/tonegenerator`](#timer_tonegenerator) | public |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
 | [`tonegenerator/playCallertone`](#tonegenerator_playcallertone) | private |  | audio | Method registered by com.webos.service.audio (category '/tonegenerator') |
+| [`tv/activateWisaSpeaker`](#tv_activatewisaspeaker) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/ctrMicSwitch`](#tv_ctrmicswitch) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/getAmplifierState`](#tv_getamplifierstate) | public |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/getArcAvSyncTime`](#tv_getarcavsynctime) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/getAudioEffectData`](#tv_getaudioeffectdata) | private |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
+| [`tv/getAudioInputProperty`](#tv_getaudioinputproperty) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/getExtDeviceFwVersion`](#tv_getextdevicefwversion) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/getGainAsInput`](#tv_getgainasinput) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/getHeadphoneStatus`](#tv_getheadphonestatus) | public |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/getSoundCardsState`](#tv_getsoundcardsstate) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/mixDigitalSoundOutput`](#tv_mixdigitalsoundoutput) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/playOnPowerState`](#tv_playonpowerstate) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/readI2cDataFromAmplifier`](#tv_readi2cdatafromamplifier) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/resetSoundSettings`](#tv_resetsoundsettings) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). ⚠️ |
+| [`tv/setAmplifierState`](#tv_setamplifierstate) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setARCDeviceInfo`](#tv_setarcdeviceinfo) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setAudioEffectState`](#tv_setaudioeffectstate) | private |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
+| [`tv/setAudioVideoSync`](#tv_setaudiovideosync) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setDolbyOTTMode`](#tv_setdolbyottmode) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setDolbyVisionPopup`](#tv_setdolbyvisionpopup) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setEqualizerStatus`](#tv_setequalizerstatus) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setInputVolume`](#tv_setinputvolume) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setMSSProperties`](#tv_setmssproperties) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setNpuProperties`](#tv_setnpuproperties) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setOffsetDelay`](#tv_setoffsetdelay) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setOutputMute`](#tv_setoutputmute) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setPopupDisplayStatus`](#tv_setpopupdisplaystatus) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setPSWProperties`](#tv_setpswproperties) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setQualityAttribute`](#tv_setqualityattribute) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setSCMS`](#tv_setscms) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setSoundEngineStatus`](#tv_setsoundenginestatus) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setSoundOutputMode`](#tv_setsoundoutputmode) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/setVideoLatencyTime`](#tv_setvideolatencytime) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/switchMicrophone`](#tv_switchmicrophone) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/updateExtFw`](#tv_updateextfw) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`tv/writeI2cDataToAmplifier`](#tv_writei2cdatatoamplifier) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
 | [`udev/event`](#udev_event) | public |  | audio | Gives the audiod information regarding the USB Mic/Headset Connected/Disconnected events based on the udev rules. It also provides the sound |
+| [`UMI/activateConnection`](#umi_activateconnection) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
 | [`UMI/connect`](#umi_connect) | public |  | audio | Establishes connection for the audio resource. |
 | [`UMI/disconnect`](#umi_disconnect) | public |  | audio | Disconnects the connection. |
+| [`UMI/getInputVolume`](#umi_getinputvolume) | public |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
 | [`UMI/getStatus`](#umi_getstatus) | public |  | audio | Shows the connection status of audio resources. |
 | [`UMI/mute`](#umi_mute) | public |  | audio | Mutes or unmutes the input volume of the requested connection. Note: This method is added for future-use. It does not have any impact on the |
+| [`UMI/register`](#umi_register) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`UMI/setInputDownMix`](#umi_setinputdownmix) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`UMI/setInputVolume`](#umi_setinputvolume) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
+| [`UMI/unregister`](#umi_unregister) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
 | [`unregisterTrack`](#unregistertrack) | public |  | audio | Unregisters a playback by an application/service. |
 | [`vibrate/get`](#vibrate_get) | private |  | audio | Method registered by com.webos.service.audio (category '/vibrate') |
 | [`vibrate/set`](#vibrate_set) | private |  | audio | Method registered by com.webos.service.audio (category '/vibrate') |
@@ -482,6 +537,111 @@ luna-send -n 1 -f luna://com.webos.service.audio/broadcastEvent '{}'
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
+<a id="capture_getstatus"></a>
+## `capture/getStatus`
+
+`luna://com.webos.service.audio/capture/getStatus`
+
+Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/capture/getStatus '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="capture_resetparams"></a>
+## `capture/resetParams` ⚠️ DANGEROUS
+
+`luna://com.webos.service.audio/capture/resetParams`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/capture/resetParams '{}'
+```
+
+> ACG groups: all. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="capture_setparams"></a>
+## `capture/setParams`
+
+`luna://com.webos.service.audio/capture/setParams`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/capture/setParams '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="capture_start"></a>
+## `capture/start`
+
+`luna://com.webos.service.audio/capture/start`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/capture/start '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="capture_stop"></a>
+## `capture/stop`
+
+`luna://com.webos.service.audio/capture/stop`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/capture/stop '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="checkaudioeffectstatus"></a>
 ## `checkAudioEffectStatus`
 
@@ -506,6 +666,27 @@ luna-send -f -n 1 luna://com.webos.service.audio/checkAudioEffectStatus '{"effec
 > ACG: audio.query \| Returns: enabled:Boolean; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Controls the audio policy of a webOS system. Implements audio routing (sending audio streams to the proper destinations) and setting volumes in different scenarios. Its functionality is categorized in
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-audio/)
+
+<a id="connectsoundinput"></a>
+## `connectSoundInput`
+
+`luna://com.webos.service.audio/connectSoundInput`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/connectSoundInput '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="controlplayback"></a>
 ## `controlPlayback`
@@ -866,6 +1047,27 @@ luna-send -n 1 luna://com.webos.service.audio/getSoundInput '{}
 > ACG: audio.query \| Returns: soundInput:String; returnValue:Boolean; subscribed:Boolean; displayId:Number \| Service: Controls the audio policy of a webOS system. Implements audio routing (sending audio streams to the proper destinations) and setting volumes in different scenarios. Its functionality is categorized in
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-audio/)
+
+<a id="getsoundinputlist"></a>
+## `getSoundInputList`
+
+`luna://com.webos.service.audio/getSoundInputList`
+
+Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/getSoundInputList '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="getsoundout"></a>
 ## `getSoundOut`
@@ -2157,6 +2359,48 @@ luna-send -n 1 luna://com.webos.service.audio/playSound '{ "fileName":"/usr/shar
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-audio/)
 
+<a id="quality_setqualityattribute"></a>
+## `quality/setQualityAttribute`
+
+`luna://com.webos.service.audio/quality/setQualityAttribute`
+
+Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/quality/setQualityAttribute '{}'
+```
+
+> ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="quality_setsoundoutputmode"></a>
+## `quality/setSoundOutputMode`
+
+`luna://com.webos.service.audio/quality/setSoundOutputMode`
+
+Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/quality/setSoundOutputMode '{}'
+```
+
+> ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="registertrack"></a>
 ## `registerTrack`
 
@@ -3219,6 +3463,69 @@ luna-send -n 1 -f luna://com.webos.service.audio/systemsounds/playFeedback '{ "n
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-audio/)
 
+<a id="telephony_answered"></a>
+## `telephony/answered`
+
+`luna://com.webos.service.audio/telephony/answered`
+
+Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/telephony/answered '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="telephony_callaudio"></a>
+## `telephony/callAudio`
+
+`luna://com.webos.service.audio/telephony/callAudio`
+
+Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/telephony/callAudio '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="telephony_startcall"></a>
+## `telephony/startCall`
+
+`luna://com.webos.service.audio/telephony/startCall`
+
+Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/telephony/startCall '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="timer_gettimeron"></a>
 ## `timer/getTimerOn`
 
@@ -3366,6 +3673,27 @@ luna-send -n 1 -f luna://com.webos.service.audio/timer/status '{}'
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
+<a id="timer_tonegenerator"></a>
+## `timer/tonegenerator`
+
+`luna://com.webos.service.audio/timer/tonegenerator`
+
+Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/timer/tonegenerator '{}'
+```
+
+> ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="tonegenerator_playcallertone"></a>
 ## `tonegenerator/playCallertone`
 
@@ -3386,6 +3714,762 @@ luna-send -n 1 -f luna://com.webos.service.audio/tonegenerator/playCallertone '{
 > Seen via `ls-monitor -i com.webos.service.audio` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: all, media. Only the name and ACG groups are known; parameters/return fields were not read. Same method table as com.webos.audio on this firmware (both bus names list identical methods).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
+
+<a id="tv_activatewisaspeaker"></a>
+## `tv/activateWisaSpeaker`
+
+`luna://com.webos.service.audio/tv/activateWisaSpeaker`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/activateWisaSpeaker '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_ctrmicswitch"></a>
+## `tv/ctrMicSwitch`
+
+`luna://com.webos.service.audio/tv/ctrMicSwitch`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/ctrMicSwitch '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_getamplifierstate"></a>
+## `tv/getAmplifierState`
+
+`luna://com.webos.service.audio/tv/getAmplifierState`
+
+Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/getAmplifierState '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_getarcavsynctime"></a>
+## `tv/getArcAvSyncTime`
+
+`luna://com.webos.service.audio/tv/getArcAvSyncTime`
+
+Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/getArcAvSyncTime '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_getaudioeffectdata"></a>
+## `tv/getAudioEffectData`
+
+`luna://com.webos.service.audio/tv/getAudioEffectData`
+
+Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/getAudioEffectData '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_getaudioinputproperty"></a>
+## `tv/getAudioInputProperty`
+
+`luna://com.webos.service.audio/tv/getAudioInputProperty`
+
+Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/getAudioInputProperty '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_getextdevicefwversion"></a>
+## `tv/getExtDeviceFwVersion`
+
+`luna://com.webos.service.audio/tv/getExtDeviceFwVersion`
+
+Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/getExtDeviceFwVersion '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_getgainasinput"></a>
+## `tv/getGainAsInput`
+
+`luna://com.webos.service.audio/tv/getGainAsInput`
+
+Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/getGainAsInput '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_getheadphonestatus"></a>
+## `tv/getHeadphoneStatus`
+
+`luna://com.webos.service.audio/tv/getHeadphoneStatus`
+
+Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/getHeadphoneStatus '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_getsoundcardsstate"></a>
+## `tv/getSoundCardsState`
+
+`luna://com.webos.service.audio/tv/getSoundCardsState`
+
+Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/getSoundCardsState '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_mixdigitalsoundoutput"></a>
+## `tv/mixDigitalSoundOutput`
+
+`luna://com.webos.service.audio/tv/mixDigitalSoundOutput`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/mixDigitalSoundOutput '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_playonpowerstate"></a>
+## `tv/playOnPowerState`
+
+`luna://com.webos.service.audio/tv/playOnPowerState`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/playOnPowerState '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_readi2cdatafromamplifier"></a>
+## `tv/readI2cDataFromAmplifier`
+
+`luna://com.webos.service.audio/tv/readI2cDataFromAmplifier`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/readI2cDataFromAmplifier '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_resetsoundsettings"></a>
+## `tv/resetSoundSettings` ⚠️ DANGEROUS
+
+`luna://com.webos.service.audio/tv/resetSoundSettings`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/resetSoundSettings '{}'
+```
+
+> ACG groups: media, public, private, all. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setamplifierstate"></a>
+## `tv/setAmplifierState`
+
+`luna://com.webos.service.audio/tv/setAmplifierState`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setAmplifierState '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setarcdeviceinfo"></a>
+## `tv/setARCDeviceInfo`
+
+`luna://com.webos.service.audio/tv/setARCDeviceInfo`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setARCDeviceInfo '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setaudioeffectstate"></a>
+## `tv/setAudioEffectState`
+
+`luna://com.webos.service.audio/tv/setAudioEffectState`
+
+Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setAudioEffectState '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setaudiovideosync"></a>
+## `tv/setAudioVideoSync`
+
+`luna://com.webos.service.audio/tv/setAudioVideoSync`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setAudioVideoSync '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setdolbyottmode"></a>
+## `tv/setDolbyOTTMode`
+
+`luna://com.webos.service.audio/tv/setDolbyOTTMode`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setDolbyOTTMode '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setdolbyvisionpopup"></a>
+## `tv/setDolbyVisionPopup`
+
+`luna://com.webos.service.audio/tv/setDolbyVisionPopup`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setDolbyVisionPopup '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setequalizerstatus"></a>
+## `tv/setEqualizerStatus`
+
+`luna://com.webos.service.audio/tv/setEqualizerStatus`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setEqualizerStatus '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setinputvolume"></a>
+## `tv/setInputVolume`
+
+`luna://com.webos.service.audio/tv/setInputVolume`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setInputVolume '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setmssproperties"></a>
+## `tv/setMSSProperties`
+
+`luna://com.webos.service.audio/tv/setMSSProperties`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setMSSProperties '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setnpuproperties"></a>
+## `tv/setNpuProperties`
+
+`luna://com.webos.service.audio/tv/setNpuProperties`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setNpuProperties '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setoffsetdelay"></a>
+## `tv/setOffsetDelay`
+
+`luna://com.webos.service.audio/tv/setOffsetDelay`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setOffsetDelay '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setoutputmute"></a>
+## `tv/setOutputMute`
+
+`luna://com.webos.service.audio/tv/setOutputMute`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setOutputMute '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setpopupdisplaystatus"></a>
+## `tv/setPopupDisplayStatus`
+
+`luna://com.webos.service.audio/tv/setPopupDisplayStatus`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setPopupDisplayStatus '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setpswproperties"></a>
+## `tv/setPSWProperties`
+
+`luna://com.webos.service.audio/tv/setPSWProperties`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setPSWProperties '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setqualityattribute"></a>
+## `tv/setQualityAttribute`
+
+`luna://com.webos.service.audio/tv/setQualityAttribute`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setQualityAttribute '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setscms"></a>
+## `tv/setSCMS`
+
+`luna://com.webos.service.audio/tv/setSCMS`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setSCMS '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setsoundenginestatus"></a>
+## `tv/setSoundEngineStatus`
+
+`luna://com.webos.service.audio/tv/setSoundEngineStatus`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setSoundEngineStatus '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setsoundoutputmode"></a>
+## `tv/setSoundOutputMode`
+
+`luna://com.webos.service.audio/tv/setSoundOutputMode`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setSoundOutputMode '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_setvideolatencytime"></a>
+## `tv/setVideoLatencyTime`
+
+`luna://com.webos.service.audio/tv/setVideoLatencyTime`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/setVideoLatencyTime '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_switchmicrophone"></a>
+## `tv/switchMicrophone`
+
+`luna://com.webos.service.audio/tv/switchMicrophone`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/switchMicrophone '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_updateextfw"></a>
+## `tv/updateExtFw`
+
+`luna://com.webos.service.audio/tv/updateExtFw`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/updateExtFw '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_writei2cdatatoamplifier"></a>
+## `tv/writeI2cDataToAmplifier`
+
+`luna://com.webos.service.audio/tv/writeI2cDataToAmplifier`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/tv/writeI2cDataToAmplifier '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="udev_event"></a>
 ## `udev/event`
@@ -3413,6 +4497,27 @@ luna-send -n 1 luna://com.webos.service.audio/udev/event '{"event":"headset-inse
 > ACG: audio.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Controls the audio policy of a webOS system. Implements audio routing (sending audio streams to the proper destinations) and setting volumes in different scenarios. Its functionality is categorized in
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-audio/)
+
+<a id="umi_activateconnection"></a>
+## `UMI/activateConnection`
+
+`luna://com.webos.service.audio/UMI/activateConnection`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/UMI/activateConnection '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="umi_connect"></a>
 ## `UMI/connect`
@@ -3473,6 +4578,27 @@ luna-send -f -n 1 luna://com.webos.service.audio/UMI/disconnect '{ "sink":"ALSA"
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-audio/)
 
+<a id="umi_getinputvolume"></a>
+## `UMI/getInputVolume`
+
+`luna://com.webos.service.audio/UMI/getInputVolume`
+
+Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/UMI/getInputVolume '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="umi_getstatus"></a>
 ## `UMI/getStatus`
 
@@ -3521,6 +4647,90 @@ luna-send -n 1 -f luna://com.webos.service.audio/UMI/mute '{ "sink":"ALSA", "sou
 > ACG: audio.operation \| Returns: returnValue:Boolean \| Service: Controls the audio policy of a webOS system. Implements audio routing (sending audio streams to the proper destinations) and setting volumes in different scenarios. Its functionality is categorized in
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-audio/)
+
+<a id="umi_register"></a>
+## `UMI/register`
+
+`luna://com.webos.service.audio/UMI/register`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/UMI/register '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="umi_setinputdownmix"></a>
+## `UMI/setInputDownMix`
+
+`luna://com.webos.service.audio/UMI/setInputDownMix`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/UMI/setInputDownMix '{}'
+```
+
+> ACG groups: media, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="umi_setinputvolume"></a>
+## `UMI/setInputVolume`
+
+`luna://com.webos.service.audio/UMI/setInputVolume`
+
+Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/UMI/setInputVolume '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="umi_unregister"></a>
+## `UMI/unregister`
+
+`luna://com.webos.service.audio/UMI/unregister`
+
+Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audio/UMI/unregister '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="unregistertrack"></a>
 ## `unregisterTrack`

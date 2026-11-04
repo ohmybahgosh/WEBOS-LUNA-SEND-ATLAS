@@ -2,6 +2,9 @@
 
 SSAP is the websocket API (port 3000 / 3001) that phone apps and Home Assistant use to talk to the TV.  Under the hood it is a thin gateway over the Luna bus, so most SSAP URIs map directly onto luna URIs.  This page also documents the well known trick for reaching *private* luna methods without root.
 
+> **Authoritative mapping:** a full SSAP->luna routing table with real required permissions, pulled from a retail webOS 7.0 TV, is in [ssap-routing-W22O.md](ssap-routing-W22O.md).  The table below explains the mechanism; that file has every concrete route.
+
+
 ## SSAP protocol essentials (from sources)
 
 * Transport: websocket `ws://<tv>:3000` or `wss://<tv>:3001` (LG_Buddy, bscpylgtv `proto`/`port`).

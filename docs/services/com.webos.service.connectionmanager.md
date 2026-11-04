@@ -1,6 +1,6 @@
 # `com.webos.service.connectionmanager`
 
-26 methods.  Platforms seen: webOS OSE, webOS TV.
+29 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -8,11 +8,13 @@
 |---|---|---|---|---|
 | [`checkinternetstatus`](#checkinternetstatus) | private |  | network | Method registered by com.webos.service.connectionmanager (root category) |
 | [`findProxyForURL`](#findproxyforurl) | public |  | connection | Provides the proxy server that was used to reach the target URL. |
+| [`getHistory`](#gethistory) | private |  | connection | Getter on com.webos.service.connectionmanager (introspected on-device; parameters undocumented). |
 | [`getinfo`](#getinfo) | public | yes | connection | Gets the MAC addresses for the Wi-Fi and wired interfaces. When subscribed, getInfo periodically checks for any changes in interface MAC add |
 | [`getStatus`](#getstatus) | public | yes | connection | Provides the current status of Wi-Fi and wired network connections on the system. |
 | [`getUserStatus`](#getuserstatus) | public |  | network | Method registered by com.webos.service.connectionmanager (root category) |
+| [`getwolwowlstatus`](#getwolwowlstatus) | private |  | connection | Method on com.webos.service.connectionmanager (from on-device permission registry; parameters undocumented). |
 | [`InterfaceInfo`](#interfaceinfo) | unknown |  | connection | This object provides detailed information about the interfaces details Sample "InterfaceInfo" object : { "name" : "eth0", "netmask": "255.25 |
-| [`InterfaceMacInfo`](#interfacemacinfo) | unknown |  | connection | Provides interfaces MAC address and name Sample InterfaceMacinfo object : { "name":"eth0", "macAddress":"DC:A6:32:AF:7C:3B" } |
+| [`InterfaceMacInfo`](#interfacemacinfo) | unknown |  | connection | Provides interfaces MAC address and name Sample InterfaceMacinfo object : { "name":"eth0", "macAddress":"AA:BB:CC:DD:EE:FF" } |
 | [`ipInfo`](#ipinfo) | unknown |  | connection | The object containing IP configuration information. An example would look like: { "subnet": "255.255.255.0", "dns": [ "192.168.100.10" ], "a |
 | [`monitorActivity`](#monitoractivity) | public | yes | connection | Monitors the data activity on the wired, Wi-Fi and WAN interfaces for bytes received or transmitted, errors, packets and dropped packets. A  |
 | [`proxyInfo`](#proxyinfo) | unknown |  | connection | This object contains the actual system configuration for proxy servers. Sample "proxyInfo" object: { "servers": ["10.10.10.10:80"], "method" |
@@ -27,6 +29,7 @@
 | [`tv/createVirtualLan`](#tv_createvirtuallan) | private |  | network | Method registered by com.webos.service.connectionmanager (category '/tv') |
 | [`tv/getWolWowlStatus`](#tv_getwolwowlstatus) | private |  | network | Gets Wake-on-LAN / Wake-on-WLAN status |
 | [`tv/setExternalWanStatus`](#tv_setexternalwanstatus) | private |  | network | Method registered by com.webos.service.connectionmanager (category '/tv') |
+| [`tv/setMacAddress`](#tv_setmacaddress) | private |  | connection | Setter on com.webos.service.connectionmanager (introspected on-device; parameters undocumented). |
 | [`tv/setWolWowlStatus`](#tv_setwolwowlstatus) | private |  | network | Sets Wake-on-LAN / Wake-on-WLAN status |
 | [`wifi`](#wifi) | unknown |  | connection | The wifi object provides details on the status of the Wi-Fi connection. If the Wi-Fi connection is available then all the fields of this obj |
 | [`wifiInfo`](#wifiinfo) | unknown |  | connection | This object contains the MAC address for the WI-Fi interface. An example object would like this: { "macAddress": "aa:bb:cc:dd:ee" } |
@@ -79,6 +82,27 @@ luna-send -n 1 -f luna://com.webos.service.connectionmanager/findProxyForURL '{ 
 > ACG: networkconnection.query \| Returns: proxy:String; returnValue:String; errorCode:String; errorText:String \| Service: Manages wired and wireless network connections across webOS apps and services
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-connectionmanager/)
+
+<a id="gethistory"></a>
+## `getHistory`
+
+`luna://com.webos.service.connectionmanager/getHistory`
+
+Getter on com.webos.service.connectionmanager (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.connectionmanager/getHistory '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="getinfo"></a>
 ## `getinfo`
@@ -151,6 +175,27 @@ luna-send -n 1 -f luna://com.webos.service.connectionmanager/getUserStatus '{}'
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
+<a id="getwolwowlstatus"></a>
+## `getwolwowlstatus`
+
+`luna://com.webos.service.connectionmanager/getwolwowlstatus`
+
+Method on com.webos.service.connectionmanager (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.connectionmanager/getwolwowlstatus '{}'
+```
+
+> ACG groups: networking.query. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="interfaceinfo"></a>
 ## `InterfaceInfo`
 
@@ -177,7 +222,7 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-c
 
 `luna://com.webos.service.connectionmanager/InterfaceMacInfo`
 
-Provides interfaces MAC address and name Sample InterfaceMacinfo object : { "name":"eth0", "macAddress":"DC:A6:32:AF:7C:3B" }
+Provides interfaces MAC address and name Sample InterfaceMacinfo object : { "name":"eth0", "macAddress":"AA:BB:CC:DD:EE:FF" }
 
 - **Access:** unknown  
 - **Subscribe:** no  
@@ -305,7 +350,7 @@ Changes the DNS servers for the network. If a SSID value is not provided in the 
 | `interfaceName` | String (optional) Interface on which operation needs to be performed. If not provided operation will be performed on default interface |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.connectionmanager/setdns '{"dns":["192.45.67.128"]}
+luna-send -n 1 -f luna://com.webos.service.connectionmanager/setdns '{"dns":["203.0.113.10"]}
 ```
 
 > ACG: networkconnection.management \| Returns: returnValue:Boolean \| Service: Manages wired and wireless network connections across webOS apps and services
@@ -541,6 +586,27 @@ luna-send -n 1 -f luna://com.webos.service.connectionmanager/tv/setExternalWanSt
 > Seen via `ls-monitor -i com.webos.service.connectionmanager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: all. Only the name and ACG groups are known; parameters/return fields were not read.
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
+
+<a id="tv_setmacaddress"></a>
+## `tv/setMacAddress`
+
+`luna://com.webos.service.connectionmanager/tv/setMacAddress`
+
+Setter on com.webos.service.connectionmanager (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.connectionmanager/tv/setMacAddress '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="tv_setwolwowlstatus"></a>
 ## `tv/setWolWowlStatus`

@@ -1,9 +1,14 @@
 # Developer Mode & Testing
 
-34 methods.  [Back to index](../../README.md#categories)
+39 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
+| [`luna://com.palm.service.devmode/getDevMode`](../services/com.palm.service.devmode.md#getdevmode) | public | Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented). |
+| [`luna://com.palm.service.devmode/getPassphrase`](../services/com.palm.service.devmode.md#getpassphrase) | public | Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented). |
+| [`luna://com.palm.service.devmode/info`](../services/com.palm.service.devmode.md#info) | public | Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented). |
+| [`luna://com.palm.service.devmode/quit`](../services/com.palm.service.devmode.md#quit) | public | Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented). |
+| [`luna://com.palm.service.devmode/setDevMode`](../services/com.palm.service.devmode.md#setdevmode) | public | Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.service.tellurium/appInfo`](../services/com.palm.service.tellurium.md#appinfo) | unknown | Provide the application ID to subscribe. Ex: "appInfo":{"id":"amazon.html"} |
 | [`luna://com.palm.service.tellurium/broadcastCommand`](../services/com.palm.service.tellurium.md#broadcastcommand) | public | Sends message to all TelluriomNub instances |
 | [`luna://com.palm.service.tellurium/filter`](../services/com.palm.service.tellurium.md#filter) | unknown | Its an object that describes details to apply the filter (usually used when "command": "getItems") |
@@ -21,11 +26,11 @@
 | [`luna://com.palm.service.tellurium/subscribeToEvents`](../services/com.palm.service.tellurium.md#subscribetoevents) | public | Subscribes to stages' events (received from stage in notifyEvent) |
 | [`luna://com.palm.service.tellurium/version`](../services/com.palm.service.tellurium.md#version) | public | Returns the tellurium version from the submission tag. |
 | [`luna://com.palm.service.tellurium/window`](../services/com.palm.service.tellurium.md#window) | unknown | Creates a top level window and accesses the screen information. |
-| [`luna://com.palmdts.devmode.service/devSessionTimeStatus`](../services/com.palmdts.devmode.service.md#devsessiontimestatus) | private | Remaining dev session time |
-| [`luna://com.palmdts.devmode.service/resetSession`](../services/com.palmdts.devmode.service.md#resetsession) | private | Renews the dev mode session |
 | [`luna://com.webos.service.devmode/getDevMode`](../services/com.webos.service.devmode.md#getdevmode) | public | Return the current status of developer mode. |
 | [`luna://com.webos.service.devmode/getPassphrase`](../services/com.webos.service.devmode.md#getpassphrase) | public | Returns the current passphrase associated with the SSH key, which is used to connect to the device. This method is only callable by the developer mode app. |
 | [`luna://com.webos.service.devmode/setDevMode`](../services/com.webos.service.devmode.md#setdevmode) | public | Enable or disable developer mode. The device will reboot if the mode is changed. |
+| [`luna://com.webos.service.gingaccwebservices/enableDevmode`](../services/com.webos.service.gingaccwebservices.md#enabledevmode) | public | Method on com.webos.service.gingaccwebservices (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.gingaccwebservices.test/enableDevmode`](../services/com.webos.service.gingaccwebservices.test.md#enabledevmode) | public | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.sdkagent/agent`](../services/com.webos.service.sdkagent.md#agent) | unknown | Config data for telegraf agent. |
 | [`luna://com.webos.service.sdkagent/collector/getConfig`](../services/com.webos.service.sdkagent.md#collector_getconfig) | public | Gets configurations of the Telegraf service. |
 | [`luna://com.webos.service.sdkagent/collector/getData`](../services/com.webos.service.sdkagent.md#collector_getdata) | public | Gets data from the Telegraf service. |

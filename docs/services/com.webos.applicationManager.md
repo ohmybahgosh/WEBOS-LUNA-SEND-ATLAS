@@ -1,11 +1,12 @@
 # `com.webos.applicationManager`
 
-63 methods.  Platforms seen: webOS OSE, webOS TV.
+76 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
 | Method | Access | Sub | Category | Description |
 |---|---|---|---|---|
+| [`addContent`](#addcontent) | private |  | apps | Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented). |
 | [`addLaunchPoint`](#addlaunchpoint) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`addVirtualApp`](#addvirtualapp) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`blockSystemApp`](#blocksystemapp) | private |  | apps | Blocks a system app (used by webos-homebar to replace LG Home) ⚠️ |
@@ -13,9 +14,11 @@
 | [`close`](#close) | ssap |  | apps | Close an app by id (SSAP) |
 | [`closeAllApps`](#closeallapps) | private |  | apps | Closes all running apps (as used by webos-homebar helper) |
 | [`closeByAppId`](#closebyappid) | public |  | apps | Closes a running app by id |
+| [`debug/traceApi`](#debug_traceapi) | private |  | apps | Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented). |
 | [`dev/close`](#dev_close) | unknown |  | apps | Registered in webOS OSE sysbus api.json (ACG group application.devmode); name only |
 | [`dev/closeByAppId`](#dev_closebyappid) | public |  | apps | Developer-mode variant of closeByAppId used by ares-launch to close a dev app |
 | [`dev/listApps`](#dev_listapps) | public |  | apps | Lists developer-mode (and dev-visible) apps with id, version, folderPath, icon |
+| [`dev/listPackages`](#dev_listpackages) | private |  | apps | Lister on com.webos.applicationManager (introspected on-device; parameters undocumented). |
 | [`dev/managerInfo`](#dev_managerinfo) | unknown |  | apps | Registered in webOS OSE sysbus api.json (ACG group application.devmode); name only |
 | [`dev/running`](#dev_running) | public |  | apps | Developer-mode listing of running apps (ares-launch --running) |
 | [`getAllContents`](#getallcontents) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
@@ -27,11 +30,15 @@
 | [`getAppStatus`](#getappstatus) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`getContents`](#getcontents) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`getForegroundAppInfo`](#getforegroundappinfo) | ssap | yes | apps | Get (or subscribe to) the foreground app |
+| [`getForegroundApps`](#getforegroundapps) | private |  | apps | Getter on com.webos.applicationManager (introspected on-device; parameters undocumented). |
 | [`getHandlerForExtension`](#gethandlerforextension) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`getHandlerForMimeType`](#gethandlerformimetype) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`getHandlerForMimeTypeByVerb`](#gethandlerformimetypebyverb) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`getHandlerForUrl`](#gethandlerforurl) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`getHandlerForUrlByVerb`](#gethandlerforurlbyverb) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
+| [`getHistoricalBackInfo`](#gethistoricalbackinfo) | private |  | apps | Getter on com.webos.applicationManager (introspected on-device; parameters undocumented). |
+| [`getLastOrder`](#getlastorder) | private |  | apps | Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented). |
+| [`getPackageInfo`](#getpackageinfo) | private |  | apps | Getter on com.webos.applicationManager (introspected on-device; parameters undocumented). |
 | [`isPromotionalAppOn`](#ispromotionalappon) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`launch`](#launch) | public |  | apps | Launches the app with the given app ID, optionally with params. ⚠️ |
 | [`launchDefaultApp`](#launchdefaultapp) | private |  | apps | Launches the default app (listed by ls-monitor -i, parameters unread) |
@@ -46,6 +53,9 @@
 | [`listApps`](#listapps) | private |  | apps | Lists installed apps |
 | [`listExtensionMap`](#listextensionmap) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`listLaunchPoints`](#listlaunchpoints) | ssap | yes | apps | List launcher launch points (apps visible in launcher) |
+| [`listLaunchPointsForLocale`](#listlaunchpointsforlocale) | private |  | apps | Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented). |
+| [`listPackages`](#listpackages) | private |  | apps | Lister on com.webos.applicationManager (introspected on-device; parameters undocumented). |
+| [`lockAllApps`](#lockallapps) | private |  | apps | Method on com.webos.applicationManager (introspected on-device; parameters undocumented). |
 | [`lockApp`](#lockapp) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`mimeTypeForExtension`](#mimetypeforextension) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
@@ -63,12 +73,36 @@
 | [`removeContent`](#removecontent) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`removeLaunchPoint`](#removelaunchpoint) | private |  | apps | Removes a launch point by id |
 | [`removeVirtualApp`](#removevirtualapp) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
+| [`run`](#run) | private |  | apps | Method on com.webos.applicationManager (introspected on-device; parameters undocumented). |
 | [`running`](#running) | private | yes | apps | Lists running apps |
+| [`saveOrder`](#saveorder) | private |  | apps | Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented). |
 | [`scan`](#scan) | private |  | apps | Triggers the app manager to rescan app directories |
 | [`searchApps`](#searchapps) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`setContents`](#setcontents) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
+| [`setDefaultApp`](#setdefaultapp) | private |  | apps | Setter on com.webos.applicationManager (introspected on-device; parameters undocumented). |
 | [`setOrder`](#setorder) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
 | [`updateLaunchPoint`](#updatelaunchpoint) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
+
+<a id="addcontent"></a>
+## `addContent`
+
+`luna://com.webos.applicationManager/addContent`
+
+Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/addContent '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="addlaunchpoint"></a>
 ## `addLaunchPoint`
@@ -230,6 +264,27 @@ luna-send -n 1 'luna://com.webos.applicationManager/closeByAppId' '{"id":"netfli
 
 Sources: [1](https://github.com/webosbrew/pages/blob/HEAD/content/pages/cheatsheet.md), [2](https://gist.github.com/Ircama/1f29c2d2def75da6604756a3c91a8ab4), [3](https://github.com/diaahussein/WebOS_LG_TV_Scripts/blob/HEAD/README.md), [4](https://github.com/Jezzarium/Actually-Good-WebOS/blob/HEAD/tv/default-home), [5](https://github.com/lasharor/cleanyourtv-WebOS/blob/HEAD/helper/running.js)
 
+<a id="debug_traceapi"></a>
+## `debug/traceApi`
+
+`luna://com.webos.applicationManager/debug/traceApi`
+
+Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/debug/traceApi '{}'
+```
+
+> ACG groups: applications.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="dev_close"></a>
 ## `dev/close`
 
@@ -297,6 +352,27 @@ luna-send-pub -n 1 luna://com.webos.applicationManager/dev/listApps '{}'
 > Used by ares-install --list, dev-manager, and Homebrew Channel getAppInfo.
 
 Sources: [1](https://github.com/webosbrew/dev-manager-desktop/blob/HEAD/src/app/core/services/app-manager.service.ts), [2](https://github.com/webosbrew/ares-cli-rs/blob/HEAD/ares-install/src/list.rs), [3](https://github.com/webosbrew/webos-homebrew-channel/blob/HEAD/services/service.ts)
+
+<a id="dev_listpackages"></a>
+## `dev/listPackages`
+
+`luna://com.webos.applicationManager/dev/listPackages`
+
+Lister on com.webos.applicationManager (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/dev/listPackages '{}'
+```
+
+> ACG groups: private, applications.dev, all, applications.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="dev_managerinfo"></a>
 ## `dev/managerInfo`
@@ -540,6 +616,27 @@ Get (or subscribe to) the foreground app
 
 Sources: [1](https://github.com/home-assistant-libs/aiowebostv/blob/main/aiowebostv/endpoints.py), [2](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [3](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/webos_client.py), [4](https://github.com/snabb/webostv/blob/master/mapps.go), [5](https://github.com/webosbrew/pages/blob/HEAD/content/pages/cheatsheet.md), [6](https://github.com/webosbrew/pages/blob/HEAD/content/pages/luna.md), [7](https://gist.github.com/Ircama/1f29c2d2def75da6604756a3c91a8ab4), [8](https://github.com/rawinek/webos-homebar/blob/HEAD/webos10/home-takeover.sh)
 
+<a id="getforegroundapps"></a>
+## `getForegroundApps`
+
+`luna://com.webos.applicationManager/getForegroundApps`
+
+Getter on com.webos.applicationManager (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/getForegroundApps '{}'
+```
+
+> ACG groups: private, configurator.callbacks, all, applications.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="gethandlerforextension"></a>
 ## `getHandlerForExtension`
 
@@ -644,6 +741,69 @@ luna-send -n 1 -f luna://com.webos.applicationManager/getHandlerForUrlByVerb '{}
 > Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
+
+<a id="gethistoricalbackinfo"></a>
+## `getHistoricalBackInfo`
+
+`luna://com.webos.applicationManager/getHistoricalBackInfo`
+
+Getter on com.webos.applicationManager (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/getHistoricalBackInfo '{}'
+```
+
+> ACG groups: private, applications, all, applications.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="getlastorder"></a>
+## `getLastOrder`
+
+`luna://com.webos.applicationManager/getLastOrder`
+
+Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/getLastOrder '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="getpackageinfo"></a>
+## `getPackageInfo`
+
+`luna://com.webos.applicationManager/getPackageInfo`
+
+Getter on com.webos.applicationManager (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/getPackageInfo '{}'
+```
+
+> ACG groups: private, all, applications.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="ispromotionalappon"></a>
 ## `isPromotionalAppOn`
@@ -956,6 +1116,69 @@ List launcher launch points (apps visible in launcher)
 > Response key: launchPoints. \|\| Magic mapper and Ircama gist use alias com.palm.applicationManager; webos-homebar uses com.webos.applicationManager. Reply used to find app ids for launch.
 
 Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [2](https://github.com/home-assistant-libs/aiowebostv/blob/main/aiowebostv/endpoints.py), [3](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/webos_client.py), [4](https://gist.github.com/Ircama/1f29c2d2def75da6604756a3c91a8ab4), [5](https://github.com/andrewfraley/magic_mapper/blob/HEAD/magic_mapper.py), [6](https://github.com/rawinek/webos-homebar/blob/HEAD/webos10/mode-switch.sh), [7](https://github.com/gprot42/webos-launch-home/blob/HEAD/src/js/luna.js)
+
+<a id="listlaunchpointsforlocale"></a>
+## `listLaunchPointsForLocale`
+
+`luna://com.webos.applicationManager/listLaunchPointsForLocale`
+
+Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/listLaunchPointsForLocale '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="listpackages"></a>
+## `listPackages`
+
+`luna://com.webos.applicationManager/listPackages`
+
+Lister on com.webos.applicationManager (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/listPackages '{}'
+```
+
+> ACG groups: private, all, applications.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="lockallapps"></a>
+## `lockAllApps`
+
+`luna://com.webos.applicationManager/lockAllApps`
+
+Method on com.webos.applicationManager (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/lockAllApps '{}'
+```
+
+> ACG groups: private, all, applications.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="lockapp"></a>
 ## `lockApp`
@@ -1324,6 +1547,27 @@ luna-send -n 1 -f luna://com.webos.applicationManager/removeVirtualApp '{}'
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
+<a id="run"></a>
+## `run`
+
+`luna://com.webos.applicationManager/run`
+
+Method on com.webos.applicationManager (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/run '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="running"></a>
 ## `running`
 
@@ -1348,6 +1592,27 @@ luna-send -n 1 luna://com.webos.applicationManager/running '{}'
 > Reply contains "running" array of app objects with id. A dev-only variant luna://com.webos.applicationManager/dev/running is used by ares-launch.
 
 Sources: [1](https://github.com/Jezzarium/Actually-Good-WebOS/blob/HEAD/tv/settings-key), [2](https://github.com/webosbrew/ares-cli-rs/blob/HEAD/ares-launch/src/running.rs), [3](https://github.com/lasharor/cleanyourtv-WebOS/blob/HEAD/helper/running.js)
+
+<a id="saveorder"></a>
+## `saveOrder`
+
+`luna://com.webos.applicationManager/saveOrder`
+
+Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/saveOrder '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="scan"></a>
 ## `scan`
@@ -1411,6 +1676,27 @@ luna-send -n 1 -f luna://com.webos.applicationManager/setContents '{}'
 > Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, public, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
+
+<a id="setdefaultapp"></a>
+## `setDefaultApp`
+
+`luna://com.webos.applicationManager/setDefaultApp`
+
+Setter on com.webos.applicationManager (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.applicationManager/setDefaultApp '{}'
+```
+
+> ACG groups: applications, all, applications.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="setorder"></a>
 ## `setOrder`

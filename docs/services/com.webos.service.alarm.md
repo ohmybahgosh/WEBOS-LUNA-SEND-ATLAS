@@ -1,6 +1,6 @@
 # `com.webos.service.alarm`
 
-3 methods.  Platforms seen: webOS OSE.
+7 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -8,6 +8,10 @@
 |---|---|---|---|---|
 | [`alarmObject`](#alarmobject) | unknown |  | misc | Object contains information about the alarms. |
 | [`clear`](#clear) | public |  | misc | Deletes an existing alarm. Apps or daemons can identify their alarm to be deleted by specifying its key. |
+| [`getAllAlarms`](#getallalarms) | private |  | misc | Getter on com.webos.service.alarm (introspected on-device; parameters undocumented). |
+| [`getNextWakeupAlarm`](#getnextwakeupalarm) | private |  | misc | Getter on com.webos.service.alarm (introspected on-device; parameters undocumented). |
+| [`privileged/clear`](#privileged_clear) | private |  | misc | Method on com.webos.service.alarm (introspected on-device; parameters undocumented). |
+| [`privileged/getAllAlarms`](#privileged_getallalarms) | private |  | misc | Getter on com.webos.service.alarm (introspected on-device; parameters undocumented). |
 | [`set`](#set) | public |  | misc | Creates a new alarm for an absolute time or a relative time. By using the " wakeup " parameter you can define it as a wake-up or a non-wakeu |
 
 <a id="alarmobject"></a>
@@ -55,6 +59,90 @@ luna-send -n 1 -a com.webos.app.test luna://com.webos.service.alarm/clear '{"key
 > ACG: alarm.operation \| Returns: key:String; returnValue:Boolean; errorText:String \| Service: Enables webOS daemons or apps to call webOS API methods with specific parameters in a specified time interval.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-alarm/)
+
+<a id="getallalarms"></a>
+## `getAllAlarms`
+
+`luna://com.webos.service.alarm/getAllAlarms`
+
+Getter on com.webos.service.alarm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.alarm/getAllAlarms '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="getnextwakeupalarm"></a>
+## `getNextWakeupAlarm`
+
+`luna://com.webos.service.alarm/getNextWakeupAlarm`
+
+Getter on com.webos.service.alarm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.alarm/getNextWakeupAlarm '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="privileged_clear"></a>
+## `privileged/clear`
+
+`luna://com.webos.service.alarm/privileged/clear`
+
+Method on com.webos.service.alarm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.alarm/privileged/clear '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="privileged_getallalarms"></a>
+## `privileged/getAllAlarms`
+
+`luna://com.webos.service.alarm/privileged/getAllAlarms`
+
+Getter on com.webos.service.alarm (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.alarm/privileged/getAllAlarms '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="set"></a>
 ## `set`

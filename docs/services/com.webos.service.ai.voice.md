@@ -6,10 +6,10 @@
 
 | Method | Access | Sub | Category | Description |
 |---|---|---|---|---|
-| [`getResponse`](#getresponse) | public | yes | misc | Returns speech recognition results. This method is asynchronous. |
-| [`getState`](#getstate) | public |  | misc | Gets the current state of the service. It can have the following states: idle : Before start. waitActivation : Wait for keyword activation.  |
-| [`start`](#start) | public |  | misc | Starts the service based on the mode selected. Note: This method is only for allowed clients. |
-| [`stop`](#stop) | public |  | misc | Stops the service. Make sure to call this method before starting another engine. Note: This method is only for allowed clients. |
+| [`getResponse`](#getresponse) | public | yes | input | Returns speech recognition results. This method is asynchronous. |
+| [`getState`](#getstate) | public |  | input | Gets the current state of the service. It can have the following states: idle : Before start. waitActivation : Wait for keyword activation.  |
+| [`start`](#start) | public |  | input | Starts the service based on the mode selected. Note: This method is only for allowed clients. |
+| [`stop`](#stop) | public |  | input | Stops the service. Make sure to call this method before starting another engine. Note: This method is only for allowed clients. |
 
 <a id="getresponse"></a>
 ## `getResponse`

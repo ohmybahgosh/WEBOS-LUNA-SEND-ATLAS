@@ -1,6 +1,6 @@
 # `com.palm.sleep`
 
-25 methods.  Platforms seen: webOS OSE.
+31 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -13,9 +13,13 @@
 | [`com/palm/power/identify`](#com_palm_power_identify) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
 | [`com/palm/power/prepareSuspendAck`](#com_palm_power_preparesuspendack) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
 | [`com/palm/power/prepareSuspendRegister`](#com_palm_power_preparesuspendregister) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/setWakeLock`](#com_palm_power_setwakelock) | private |  | power | Method on com.palm.sleep (from on-device permission registry; parameters undocumented). |
+| [`com/palm/power/somebodyWantsWakeup`](#com_palm_power_somebodywantswakeup) | private |  | power | Method on com.palm.sleep (from on-device permission registry; parameters undocumented). |
 | [`com/palm/power/suspendRequestAck`](#com_palm_power_suspendrequestack) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
 | [`com/palm/power/suspendRequestRegister`](#com_palm_power_suspendrequestregister) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/systemTimeChanged`](#com_palm_power_systemtimechanged) | private |  | power | Method on com.palm.sleep (from on-device permission registry; parameters undocumented). |
 | [`com/palm/power/TESTSuspend`](#com_palm_power_testsuspend) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/wakeLockRegister`](#com_palm_power_wakelockregister) | private |  | power | Method on com.palm.sleep (from on-device permission registry; parameters undocumented). |
 | [`shutdown/initiate`](#shutdown_initiate) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
 | [`shutdown/machineOff`](#shutdown_machineoff) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only ⚠️ |
 | [`shutdown/machineReboot`](#shutdown_machinereboot) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only ⚠️ |
@@ -30,6 +34,8 @@
 | [`time/alarmRemove`](#time_alarmremove) | unknown |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
 | [`time/internalAlarmFired`](#time_internalalarmfired) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
 | [`timeout/clear`](#timeout_clear) | unknown |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`timeout/getAllAlarms`](#timeout_getallalarms) | private |  | power-mgmt | Getter on com.palm.sleep (introspected on-device; parameters undocumented). |
+| [`timeout/getNextWakeupAlarm`](#timeout_getnextwakeupalarm) | private |  | power-mgmt | Getter on com.palm.sleep (introspected on-device; parameters undocumented). |
 | [`timeout/set`](#timeout_set) | unknown |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
 
 <a id="com_palm_power_activityend"></a>
@@ -179,6 +185,48 @@ luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/prepareSuspendRegister '{
 
 Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.webos.service.sleep.api.json.in)
 
+<a id="com_palm_power_setwakelock"></a>
+## `com/palm/power/setWakeLock`
+
+`luna://com.palm.sleep/com/palm/power/setWakeLock`
+
+Method on com.palm.sleep (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/setWakeLock '{}'
+```
+
+> ACG groups: private, sleep.internal, system. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="com_palm_power_somebodywantswakeup"></a>
+## `com/palm/power/somebodyWantsWakeup`
+
+`luna://com.palm.sleep/com/palm/power/somebodyWantsWakeup`
+
+Method on com.palm.sleep (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/somebodyWantsWakeup '{}'
+```
+
+> ACG groups: private, sleep.internal, system. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="com_palm_power_suspendrequestack"></a>
 ## `com/palm/power/suspendRequestAck`
 
@@ -221,6 +269,27 @@ luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/suspendRequestRegister '{
 
 Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.webos.service.sleep.api.json.in)
 
+<a id="com_palm_power_systemtimechanged"></a>
+## `com/palm/power/systemTimeChanged`
+
+`luna://com.palm.sleep/com/palm/power/systemTimeChanged`
+
+Method on com.palm.sleep (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/systemTimeChanged '{}'
+```
+
+> ACG groups: private, sleep.internal, system. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="com_palm_power_testsuspend"></a>
 ## `com/palm/power/TESTSuspend`
 
@@ -241,6 +310,27 @@ luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/TESTSuspend '{}'
 > Listed under ACG group "sleep.management" in the component api.json/groups.json; no parameter docs read.
 
 Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.webos.service.sleep.api.json.in)
+
+<a id="com_palm_power_wakelockregister"></a>
+## `com/palm/power/wakeLockRegister`
+
+`luna://com.palm.sleep/com/palm/power/wakeLockRegister`
+
+Method on com.palm.sleep (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/wakeLockRegister '{}'
+```
+
+> ACG groups: private, sleep.internal, system. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="shutdown_initiate"></a>
 ## `shutdown/initiate`
@@ -535,6 +625,48 @@ luna-send -n 1 -f luna://com.palm.sleep/timeout/clear '{}'
 > Listed under ACG group "sleep.operation" in the component api.json/groups.json; no parameter docs read.
 
 Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.webos.service.sleep.api.json.in)
+
+<a id="timeout_getallalarms"></a>
+## `timeout/getAllAlarms`
+
+`luna://com.palm.sleep/timeout/getAllAlarms`
+
+Getter on com.palm.sleep (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.palm.sleep/timeout/getAllAlarms '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="timeout_getnextwakeupalarm"></a>
+## `timeout/getNextWakeupAlarm`
+
+`luna://com.palm.sleep/timeout/getNextWakeupAlarm`
+
+Getter on com.palm.sleep (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.palm.sleep/timeout/getNextWakeupAlarm '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="timeout_set"></a>
 ## `timeout/set`

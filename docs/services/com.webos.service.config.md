@@ -1,6 +1,6 @@
 # `com.webos.service.config`
 
-7 methods.  Platforms seen: webOS OSE, webOS TV.
+12 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -8,11 +8,16 @@
 |---|---|---|---|---|
 | [`configs`](#configs) | unknown |  | settings | It contains full name of config and value pair. For example, "configs": { "com.webos.service.applicationmanager.testKey": "added" } |
 | [`dump`](#dump) | public |  | settings | It is useful for debugging. It returns the list of all configs and current values. |
+| [`freeDb`](#freedb) | public |  | settings | Method on com.webos.service.config (from on-device permission registry; parameters undocumented). |
 | [`fullDump`](#fulldump) | public |  | settings | It is useful for debugging. It returns the list of all configs including overridden values from all layers. |
+| [`genRemoteConfig`](#genremoteconfig) | private |  | settings | Method on com.webos.service.config (introspected on-device; parameters undocumented). |
+| [`getConfig`](#getconfig) | public |  | settings | Method on com.webos.service.config (from on-device permission registry; parameters undocumented). |
 | [`getConfigs`](#getconfigs) | public | yes | settings | It returns the requested configs which is the pairs of key-value as a JSON object and also supports a subscription. configd provides asteris |
 | [`reconfigure`](#reconfigure) | public |  | settings | Configd parses all configuration files again and regenerates the values of configs . |
 | [`reloadConfigs`](#reloadconfigs) | public |  | settings | Configd load configd db files. This load previous config values including user defined configs(by calling setConfigs) |
+| [`setConfig`](#setconfig) | public |  | settings | Method on com.webos.service.config (from on-device permission registry; parameters undocumented). |
 | [`setConfigs`](#setconfigs) | public |  | settings | Overrides current settings of the configs . The overridden values will be kept until rebooting or returning back in any future queries for t ⚠️ |
+| [`setTemporaryConfig`](#settemporaryconfig) | public |  | settings | Method on com.webos.service.config (from on-device permission registry; parameters undocumented). |
 
 <a id="configs"></a>
 ## `configs`
@@ -56,6 +61,27 @@ luna-send -f -n 1 luna://com.webos.service.config/dump '{}
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-config/)
 
+<a id="freedb"></a>
+## `freeDb`
+
+`luna://com.webos.service.config/freeDb`
+
+Method on com.webos.service.config (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.config/freeDb '{}'
+```
+
+> ACG groups: private, public, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="fulldump"></a>
 ## `fullDump`
 
@@ -76,6 +102,48 @@ luna-send -f -n 1 luna://com.webos.service.config/fullDump '{}
 > ACG: systemconfig.devutility \| Returns: configs:Object array; returnValue:Boolean \| Service: A static service in the system that provides product specific configurations to webOS components. This service provides simple get/set interfaces to access the configurations. [Terminology] config : I
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-config/)
+
+<a id="genremoteconfig"></a>
+## `genRemoteConfig`
+
+`luna://com.webos.service.config/genRemoteConfig`
+
+Method on com.webos.service.config (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.config/genRemoteConfig '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="getconfig"></a>
+## `getConfig`
+
+`luna://com.webos.service.config/getConfig`
+
+Method on com.webos.service.config (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.config/getConfig '{}'
+```
+
+> ACG groups: private, public, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getconfigs"></a>
 ## `getConfigs`
@@ -145,6 +213,27 @@ luna-send -f -n 10 luna://com.webos.service.config/reloadConfigs '{}
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-config/)
 
+<a id="setconfig"></a>
+## `setConfig`
+
+`luna://com.webos.service.config/setConfig`
+
+Method on com.webos.service.config (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.config/setConfig '{}'
+```
+
+> ACG groups: private, public, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="setconfigs"></a>
 ## `setConfigs` ⚠️ DANGEROUS
 
@@ -169,3 +258,24 @@ luna-send -n 1 -f luna://com.webos.service.config/setConfigs '{ "configs": {"com
 > ACG: systemconfig.management \| Returns: returnValue:Boolean; errorCode:Number (int32_t); errorText:String \| Service: A static service in the system that provides product specific configurations to webOS components. This service provides simple get/set interfaces to access the configurations. [Terminology] config : I \|\| bscpylgtv: 'access disabled at some point'; does not work via createAlert on newer webOS. Config keys: tv.model.* etc.; glasshouse writes profile.blockedAppList through it as root. Not exposed as an SSAP method; reachable without root only through the createAlert/closeAlert trick (see libs-notes.md): the alert button onClick/onclose/onfail luna URI is invoked by the TV; response data is NOT returned to the websocket client. \|\| Examples: system.collectDevLogs, tv.model.motionProMode ("OLED Motion"/"OLED Motion Pro"), tv.conti.supportUsedTime. Wrong values to display/panel configs can misbehave; keys are not validated here.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-config/), [2](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [3](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/webos_client.py), [4](https://github.com/grzegorz914/homebridge-lgwebos-tv/blob/main/src/constants.js), [5](https://github.com/rorygallagher2024/glasshouse/blob/main/server/50-tvweb.sh), [6](https://github.com/webosbrew/pages/blob/HEAD/content/pages/cheatsheet.md), [7](https://github.com/webosbrew/pages/blob/HEAD/content/pages/logging.md), [8](https://github.com/Jezzarium/Actually-Good-WebOS/blob/HEAD/README.md)
+
+<a id="settemporaryconfig"></a>
+## `setTemporaryConfig`
+
+`luna://com.webos.service.config/setTemporaryConfig`
+
+Method on com.webos.service.config (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.config/setTemporaryConfig '{}'
+```
+
+> ACG groups: private, public, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))

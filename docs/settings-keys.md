@@ -2,6 +2,9 @@
 
 Used with `com.webos.settingsservice/getSystemSettings` and `setSystemSettings`.  Key tables are the union across firmware dumps from 9 LG OLED models (C1, C2, C8, C9, CX, G3, G4, G5, G6) published by bscpylgtv.  Not every key exists on every model.
 
+> **Machine-readable:** a 1,954-key settings schema (key, category, dbtype, dimension) dumped from `/etc/palm/description.json` on a webOS 7.0 TV is in [`../catalog/settings-schema-W22O.json`](../catalog/settings-schema-W22O.json).
+
+
 
 `ssap://settings/getSystemSettings {category, keys[], subscribe?}` (read; whitelist of keys) and `luna://com.webos.settingsservice/setSystemSettings {category, settings{}, current_app?}` (write, via alert trick; also public `ssap://settings/setSystemSettings` on webOS 9+). Values are almost always **strings** (even numbers: `"backlight":"40"`); exceptions are ints for LGTV Companion `other` keys with `ValFormat:int` (lowLevelAdjustment, blackStabilizer, whiteStabilizer, staticModeColor1-4, lightingBrightness), bools (`erpUserConfirm`, `isAiPictureActing`), arrays (`whiteBalanceRed/Green/Blue` 22 or 20 ints, `adjustingLuminance` 22/20 ints) and objects (`blackLevel` per-colour-system object on `default` input).
 

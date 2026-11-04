@@ -1,6 +1,6 @@
 # Activity Manager
 
-44 methods.  [Back to index](../../README.md#categories)
+61 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -11,6 +11,11 @@
 | [`luna://com.palm.activitymanager/release`](../services/com.palm.activitymanager.md#release) | public | Parent frees an Activity and notifies other subscribers. |
 | [`luna://com.palm.activitymanager/start`](../services/com.palm.activitymanager.md#start) | public | Moves an Activity from init to eligible-to-run, or resumes a paused one. |
 | [`luna://com.palm.activitymanager/stop`](../services/com.palm.activitymanager.md#stop) | public | Stops an Activity and sends a stop event to all subscribers. |
+| [`luna://com.webos.app.igallery.preview/getstatusByActivitymanager`](../services/com.webos.app.igallery.preview.md#getstatusbyactivitymanager) | private | Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.app.music.preview/deviceStatusByActivitymanager`](../services/com.webos.app.music.preview.md#devicestatusbyactivitymanager) | private | Method on com.webos.app.music.preview (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.app.music.preview/listDevicesByActivitymanager`](../services/com.webos.app.music.preview.md#listdevicesbyactivitymanager) | private | Method on com.webos.app.music.preview (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.app.photovideo.preview/deviceStatusByActivitymanager`](../services/com.webos.app.photovideo.preview.md#devicestatusbyactivitymanager) | private | Method on com.webos.app.photovideo.preview (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.app.photovideo.preview/listDevicesByActivitymanager`](../services/com.webos.app.photovideo.preview.md#listdevicesbyactivitymanager) | private | Method on com.webos.app.photovideo.preview (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.pmlogd/setdevlogstatus`](../services/com.webos.pmlogd.md#setdevlogstatus) | private | Enables dev logging on webOS 3.x (no whitelist) |
 | [`luna://com.webos.service.activitymanager/Activity`](../services/com.webos.service.activitymanager.md#activity) | unknown | Represent everything about an Activity-name, type, state, requirements, schedule, trigger, callback, id,creator, adopters, processes, flows, and associations. |
 | [`luna://com.webos.service.activitymanager/addFocus`](../services/com.webos.service.activitymanager.md#addfocus) | public | Add a focus to the target Activity and remove a focus from source Activity. If a focus is added successfully, addFocus will generate "focus" events for subscrib |
@@ -48,3 +53,15 @@
 | [`luna://com.webos.service.activitymanager/Trigger`](../services/com.webos.service.activitymanager.md#trigger) | unknown | Activities with Triggers do not become runnable until an event occurs on a subscribed method. In addition, other requirements or scheduling constraints may also |
 | [`luna://com.webos.service.activitymanager/Type`](../services/com.webos.service.activitymanager.md#type) | unknown | Indicate how the Activity is handled. Forground or Background Default attributes are associated with background and foreground Activities: Foreground Activities |
 | [`luna://com.webos.service.activitymanager/unfocus`](../services/com.webos.service.activitymanager.md#unfocus) | public | Remove a focus from the specified Activity. |
+| [`luna://com.webos.service.activityPolicyMgr/releaseAuthority`](../services/com.webos.service.activityPolicyMgr.md#releaseauthority) | private | Method on com.webos.service.activityPolicyMgr (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.activityPolicyMgr/requestAuthority`](../services/com.webos.service.activityPolicyMgr.md#requestauthority) | private | Method on com.webos.service.activityPolicyMgr (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.dmpautotest/activityCallback`](../services/com.webos.service.dmpautotest.md#activitycallback) | private | Method on com.webos.service.dmpautotest (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.dmrautotest/activityCallback`](../services/com.webos.service.dmrautotest.md#activitycallback) | private | Method on com.webos.service.dmrautotest (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.hybridtvmanager/notifyActivityEvent`](../services/com.webos.service.hybridtvmanager.md#notifyactivityevent) | private | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.prs/activityStart`](../services/com.webos.service.prs.md#activitystart) | private | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.sportsalert/getAccountByActivitymanager`](../services/com.webos.service.sportsalert.md#getaccountbyactivitymanager) | private | Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.sportsalert/getAuthenticationByActivitymanager`](../services/com.webos.service.sportsalert.md#getauthenticationbyactivitymanager) | private | Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.sportsalert/getEventByActivitymanager`](../services/com.webos.service.sportsalert.md#geteventbyactivitymanager) | private | Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.sportsalert/getLocaleInfoByActivitymanager`](../services/com.webos.service.sportsalert.md#getlocaleinfobyactivitymanager) | private | Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.sportsalert/getstatusByActivitymanager`](../services/com.webos.service.sportsalert.md#getstatusbyactivitymanager) | private | Method on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.universalqcard/getstatusByActivitymanager`](../services/com.webos.service.universalqcard.md#getstatusbyactivitymanager) | private | Method on com.webos.service.universalqcard (introspected on-device; parameters undocumented). |

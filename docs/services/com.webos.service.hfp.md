@@ -58,7 +58,7 @@ Answers the incoming call from the given AG.
 | `address` | String (required) Indicates the address of the remote device (AG). |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.hfp/hf/answerCall '{ "address":"00:18:6b:49:db:86" }
+luna-send -n 1 -f luna://com.webos.service.hfp/hf/answerCall '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Provides the HFP service functions in webOS.
@@ -86,7 +86,7 @@ Dials the previous phone number (stored after the previous call) using the memor
 | `memoryDialing` | Number (optional) Indicates the last stored number(used in the previous call) that can be used for memory dialing. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.hfp/hf/call '{ "address":"00:18:6b:49:db:86" }
+luna-send -n 1 -f luna://com.webos.service.hfp/hf/call '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Provides the HFP service functions in webOS.
@@ -138,7 +138,7 @@ Places all the active calls (if any exist) on hold and answers another (held or 
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.hfp/hf/holdActiveCalls '{ "address":"00:18:6b:49:db:86" }
+luna-send -n 1 -f luna://com.webos.service.hfp/hf/holdActiveCalls '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; index:Number; errorCode:Number; errorText:String \| Service: Provides the HFP service functions in webOS.
@@ -164,7 +164,7 @@ Adds a held call to the conversation ( merging calls into a conference call ).
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.hfp/hf/mergeCall '{ "address":"00:18:6b:49:db:86" }
+luna-send -n 1 -f luna://com.webos.service.hfp/hf/mergeCall '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Provides the HFP service functions in webOS.
@@ -190,7 +190,7 @@ Releases all the active and answers the waiting call of the given AG.
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.hfp/hf/releaseHeldCalls '{ "address":"00:18:6b:49:db:86" }
+luna-send -n 1 -f luna://com.webos.service.hfp/hf/releaseHeldCalls '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Provides the HFP service functions in webOS.
@@ -216,7 +216,7 @@ Releases all the held calls of the given AG.
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.hfp/hf/releaseHeldCalls '{ "address":"00:18:6b:49:db:86" }
+luna-send -n 1 -f luna://com.webos.service.hfp/hf/releaseHeldCalls '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Provides the HFP service functions in webOS.
@@ -264,7 +264,7 @@ Sets the SCO volume level.
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.hfp/hf/setVolume '{ "address":"00:18:6b:49:db:86", "volume":7 }
+luna-send -n 1 -f luna://com.webos.service.hfp/hf/setVolume '{ "address":"AA:BB:CC:DD:EE:FF", "volume":7 }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Provides the HFP service functions in webOS.
@@ -291,7 +291,7 @@ Terminates the active call with the given AG.
 | `index` | Number (required) Indicates the call to terminate. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.hfp/hf/terminateCall '{ "address":"00:18:6b:49:db:86", "adapterAddress":"5c:f3:70:94:25:d4", "index":1 }
+luna-send -n 1 -f luna://com.webos.service.hfp/hf/terminateCall '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "index":1 }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Provides the HFP service functions in webOS.

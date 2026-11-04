@@ -1,14 +1,36 @@
 # `com.webos.bootManager`
 
-3 methods.  Platforms seen: webOS OSE.
+4 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
 | Method | Access | Sub | Category | Description |
 |---|---|---|---|---|
+| [`firstUseDone`](#firstusedone) | private |  | misc | Method on com.webos.bootManager (introspected on-device; parameters undocumented). |
 | [`generateSignal`](#generatesignal) | public |  | misc | Generates boot step signals. Caller and argument are decided statically. |
 | [`getBootStatus`](#getbootstatus) | public | yes | misc | Gets the boot status or subscribe to updates on the boot status. |
 | [`signals`](#signals) | unknown |  | misc | Contains an array of upstart signals. The value of an upstart signal is set to true after bootd generates the signal. Note: The value of all |
+
+<a id="firstusedone"></a>
+## `firstUseDone`
+
+`luna://com.webos.bootManager/firstUseDone`
+
+Method on com.webos.bootManager (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.bootManager/firstUseDone '{}'
+```
+
+> ACG groups: system, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="generatesignal"></a>
 ## `generateSignal`

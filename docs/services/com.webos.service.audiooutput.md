@@ -1,6 +1,6 @@
 # `com.webos.service.audiooutput`
 
-12 methods.  Platforms seen: webOS OSE.
+18 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -9,14 +9,20 @@
 | [`audio`](#audio) | unknown |  | audio | Contains information of the connections between source and sink. Note: If no Source/Sink are connected, it returns an empty array. |
 | [`audio/connect`](#audio_connect) | public |  | audio | Connects the audio source to the audio sink. |
 | [`audio/disconnect`](#audio_disconnect) | public |  | audio | Disconnects from the audio sink. Note: No changes if there is no connection. |
+| [`audio/getHeadphoneStatus`](#audio_getheadphonestatus) | private |  | audio | Getter on com.webos.service.audiooutput (introspected on-device; parameters undocumented). |
 | [`audio/getStatus`](#audio_getstatus) | public |  | audio | Lists the information of all the connected audio source and sinks. |
 | [`audio/mute`](#audio_mute) | public |  | audio | Mutes or unmutes the connected audio source. |
+| [`audio/removePipelineInfo`](#audio_removepipelineinfo) | private |  | audio | Method on com.webos.service.audiooutput (introspected on-device; parameters undocumented). ⚠️ |
+| [`audio/setInputVolume`](#audio_setinputvolume) | private |  | audio | Setter on com.webos.service.audiooutput (introspected on-device; parameters undocumented). |
 | [`audio/setSoundOut`](#audio_setsoundout) | public |  | audio | Sets the audio output device to which the audio must be routed. |
 | [`audio/volume/down`](#audio_volume_down) | public |  | audio | Linearly decreases, the master volume of the audio output device. |
 | [`audio/volume/getStatus`](#audio_volume_getstatus) | public |  | audio | Lists the information of all available audio output devices. |
 | [`audio/volume/muteSoundOut`](#audio_volume_mutesoundout) | public |  | audio | Mutes the audio output device. |
 | [`audio/volume/set`](#audio_volume_set) | public |  | audio | Sets the volume of the audio output device, to a specific numerical value. |
 | [`audio/volume/up`](#audio_volume_up) | public |  | audio | Linearly increases, the master volume of the audio output device. |
+| [`quality/getSettings`](#quality_getsettings) | private |  | audio | Getter on com.webos.service.audiooutput (introspected on-device; parameters undocumented). |
+| [`quality/setQualityAttribute`](#quality_setqualityattribute) | private |  | audio | Setter on com.webos.service.audiooutput (introspected on-device; parameters undocumented). |
+| [`quality/setSettings`](#quality_setsettings) | private |  | audio | Setter on com.webos.service.audiooutput (introspected on-device; parameters undocumented). |
 | [`volumeStatus`](#volumestatus) | unknown |  | audio | Contains the information of the audio output devices. |
 
 <a id="audio"></a>
@@ -92,6 +98,27 @@ luna-send -n 1 luna://com.webos.service.audiooutput/audio/disconnect '{"source":
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-audiooutput/)
 
+<a id="audio_getheadphonestatus"></a>
+## `audio/getHeadphoneStatus`
+
+`luna://com.webos.service.audiooutput/audio/getHeadphoneStatus`
+
+Getter on com.webos.service.audiooutput (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audiooutput/audio/getHeadphoneStatus '{}'
+```
+
+> ACG groups: all, media.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="audio_getstatus"></a>
 ## `audio/getStatus`
 
@@ -139,6 +166,48 @@ luna-send -n 1 -f luna://com.webos.service.audiooutput/audio/mute '{ "sink":"ALS
 > ACG: audiooutput.management \| Returns: returnValue:Boolean; errorCode:Number (int8_t); errorText:String; source:String; sink:String; mute:Boolean \| Service: Connects the audio source to the audio output device and also controls the volume on the audio device. It provides HAL abstraction for the back-end, which means that the 'audiooutput' service works wi
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-audiooutput/)
+
+<a id="audio_removepipelineinfo"></a>
+## `audio/removePipelineInfo` ⚠️ DANGEROUS
+
+`luna://com.webos.service.audiooutput/audio/removePipelineInfo`
+
+Method on com.webos.service.audiooutput (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audiooutput/audio/removePipelineInfo '{}'
+```
+
+> ACG groups: all, media. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="audio_setinputvolume"></a>
+## `audio/setInputVolume`
+
+`luna://com.webos.service.audiooutput/audio/setInputVolume`
+
+Setter on com.webos.service.audiooutput (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audiooutput/audio/setInputVolume '{}'
+```
+
+> ACG groups: all, media.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="audio_setsoundout"></a>
 ## `audio/setSoundOut`
@@ -287,6 +356,69 @@ luna-send -n 1 luna://com.webos.service.audiooutput/audio/volume/up '{"soundOutp
 > ACG: audiooutput.management \| Returns: returnValue:Boolean; errorCode:Number (int8_t); errorText:String; soundOutput:String; volume:Number (int8_t) \| Service: Connects the audio source to the audio output device and also controls the volume on the audio device. It provides HAL abstraction for the back-end, which means that the 'audiooutput' service works wi
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-audiooutput/)
+
+<a id="quality_getsettings"></a>
+## `quality/getSettings`
+
+`luna://com.webos.service.audiooutput/quality/getSettings`
+
+Getter on com.webos.service.audiooutput (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audiooutput/quality/getSettings '{}'
+```
+
+> ACG groups: all, media.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="quality_setqualityattribute"></a>
+## `quality/setQualityAttribute`
+
+`luna://com.webos.service.audiooutput/quality/setQualityAttribute`
+
+Setter on com.webos.service.audiooutput (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audiooutput/quality/setQualityAttribute '{}'
+```
+
+> ACG groups: all, media.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="quality_setsettings"></a>
+## `quality/setSettings`
+
+`luna://com.webos.service.audiooutput/quality/setSettings`
+
+Setter on com.webos.service.audiooutput (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.audiooutput/quality/setSettings '{}'
+```
+
+> ACG groups: all, media.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="volumestatus"></a>
 ## `volumeStatus`

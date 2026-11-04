@@ -1,6 +1,6 @@
 # `com.webos.service.camera2`
 
-33 methods.  Platforms seen: webOS OSE.
+39 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -13,6 +13,7 @@
 | [`camera_properties`](#camera_properties) | unknown |  | camera | Contains the properties of the camera. |
 | [`capture`](#capture) | public |  | camera | Starts capturing images using the camera. The captured images are stored as separate files at the specified location. The default file name  |
 | [`capture_info`](#capture_info) | unknown |  | camera | Indicates the information about the camera. |
+| [`captureImage`](#captureimage) | private |  | camera | Method on com.webos.service.camera2 (introspected on-device; parameters undocumented). |
 | [`close`](#close) | public |  | camera | Closes the connection between the camera and the webOS device. |
 | [`deviceList`](#devicelist) | unknown |  | camera | Contains the list of cameras connected to the webOS device. |
 | [`getCameraList`](#getcameralist) | public | yes | camera | Gets the list of cameras connected to the webOS device. Returns IDs for each of the cameras connected to the device. |
@@ -20,12 +21,16 @@
 | [`getFd`](#getfd) | public |  | camera | Provides the FD (File Descriptor) for the POSIX shared memory. Note: It returns the FD by attaching it using LS2 attach fd interface to the  |
 | [`getFormat`](#getformat) | public | yes | camera | Gets the current resolution, FPS, and format settings of the connected camera device. |
 | [`getInfo`](#getinfo) | public |  | camera | Gets information about a camera that is connected to the webOS device. |
+| [`getMediaFile`](#getmediafile) | private |  | media | Getter on com.webos.service.camera2 (introspected on-device; parameters undocumented). |
+| [`getMediaFileList`](#getmediafilelist) | private |  | media | Getter on com.webos.service.camera2 (introspected on-device; parameters undocumented). |
 | [`getProperties`](#getproperties) | public | yes | camera | Gets the current settings of the connected camera device. |
 | [`getSolutions`](#getsolutions) | public |  | camera | Gets the current status of the supported camera solutions. |
 | [`inputInfo`](#inputinfo) | unknown |  | camera | Indicates the details of user input on the screen. |
 | [`open`](#open) | public |  | camera | Establishes a connection between a camera and the webOS device. Returns the device handle for this connection instance. |
 | [`picture`](#picture) | unknown |  | camera | Indicates the image size and image format. |
+| [`removeMediaFile`](#removemediafile) | private |  | media | Method on com.webos.service.camera2 (introspected on-device; parameters undocumented). ⚠️ |
 | [`setFormat`](#setformat) | public |  | camera | Sets the size and format of the preview stream. This includes the height and width of the frame and the format in which data is to be writte |
+| [`setPermission`](#setpermission) | private |  | camera | Setter on com.webos.service.camera2 (introspected on-device; parameters undocumented). |
 | [`setProperties`](#setproperties) | public |  | camera | Sets the properties of the connected camera device. |
 | [`setSolutions`](#setsolutions) | public |  | camera | Enables and disables camera solutions. |
 | [`setWindow`](#setwindow) | public |  | camera | Sets the window's position and size, display ID, and overlay/mirror options. |
@@ -37,6 +42,7 @@
 | [`stopCamera`](#stopcamera) | public |  | camera | Stops camera and turns off streaming into the shared memory. Note: Applications that called startCamera() should call this method to stop st |
 | [`stopCapture`](#stopcapture) | public |  | camera | Stops camera from capturing images in the continuous mode. Continuous mode captures frames in succession till the stopCapture() method is ca |
 | [`stopPreview`](#stoppreview) | public |  | camera | Turns off camera streaming and finishes showing the preview on the surface. Note: The applications should call this method to stop streaming |
+| [`test`](#test) | private |  | camera | Method on com.webos.service.camera2 (introspected on-device; parameters undocumented). |
 | [`video`](#video) | unknown |  | camera | Indicates the video size and the video format. |
 | [`window_params`](#window_params) | unknown |  | camera | Defines a window's position, size, display ID, and overlay/mirror options. Note: At least one property must be mandatory. |
 
@@ -192,6 +198,27 @@ luna-send -n 1 -f luna://com.webos.service.camera2/capture_info '{}'
 > Service: Provides an interface to capture and stream images from a camera that is connected to a webOS device. Note: Currently, only V4L2 USB cameras are supported. It provides the following features: Live Cam \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-camera2/)
+
+<a id="captureimage"></a>
+## `captureImage`
+
+`luna://com.webos.service.camera2/captureImage`
+
+Method on com.webos.service.camera2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.camera2/captureImage '{}'
+```
+
+> ACG groups: private, camera.operation, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="close"></a>
 ## `close`
@@ -366,6 +393,48 @@ luna-send -n 1 -f luna://com.webos.service.camera2/getInfo '{ "id":"camera1"}
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-camera2/)
 
+<a id="getmediafile"></a>
+## `getMediaFile`
+
+`luna://com.webos.service.camera2/getMediaFile`
+
+Getter on com.webos.service.camera2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.camera2/getMediaFile '{}'
+```
+
+> ACG groups: private, camera.operation, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="getmediafilelist"></a>
+## `getMediaFileList`
+
+`luna://com.webos.service.camera2/getMediaFileList`
+
+Getter on com.webos.service.camera2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.camera2/getMediaFileList '{}'
+```
+
+> ACG groups: private, camera.operation, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="getproperties"></a>
 ## `getProperties`
 
@@ -488,6 +557,27 @@ luna-send -n 1 -f luna://com.webos.service.camera2/picture '{}'
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-camera2/)
 
+<a id="removemediafile"></a>
+## `removeMediaFile` ⚠️ DANGEROUS
+
+`luna://com.webos.service.camera2/removeMediaFile`
+
+Method on com.webos.service.camera2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.camera2/removeMediaFile '{}'
+```
+
+> ACG groups: private, camera.operation, all. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="setformat"></a>
 ## `setFormat`
 
@@ -513,6 +603,27 @@ luna-send -n 1 -f luna://com.webos.service.camera2/setFormat '{ "handle":9383, "
 > ACG: camera.operation \| Returns: returnValue:Boolean \| Service: Provides an interface to capture and stream images from a camera that is connected to a webOS device. Note: Currently, only V4L2 USB cameras are supported. It provides the following features: Live Cam
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-camera2/)
+
+<a id="setpermission"></a>
+## `setPermission`
+
+`luna://com.webos.service.camera2/setPermission`
+
+Setter on com.webos.service.camera2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.camera2/setPermission '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="setproperties"></a>
 ## `setProperties`
@@ -788,6 +899,27 @@ luna-send -n 1 -f luna://com.webos.service.camera2/stopPreview '{"handle":9383}
 > ACG: camera.operation \| Returns: returnValue:Boolean \| Service: Provides an interface to capture and stream images from a camera that is connected to a webOS device. Note: Currently, only V4L2 USB cameras are supported. It provides the following features: Live Cam
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-camera2/)
+
+<a id="test"></a>
+## `test`
+
+`luna://com.webos.service.camera2/test`
+
+Method on com.webos.service.camera2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.camera2/test '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="video"></a>
 ## `video`

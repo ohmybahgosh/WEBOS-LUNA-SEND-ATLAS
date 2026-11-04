@@ -1,6 +1,6 @@
 # `com.webos.service.videooutput`
 
-16 methods.  Platforms seen: webOS OSE, webOS TV.
+33 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -10,14 +10,31 @@
 | [`ComposeOrder`](#composeorder) | unknown |  | display | Object to represent compositing parameters for the video sinks. |
 | [`connect`](#connect) | public |  | display | Connects a video source to a video sink |
 | [`disconnect`](#disconnect) | public |  | display | Disconnects video from sink. |
+| [`display/debugScalerStatus`](#display_debugscalerstatus) | public |  | display | Method on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
+| [`display/getApplyDoneWindowRegion`](#display_getapplydonewindowregion) | public |  | display | Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
 | [`display/getOutputCapabilities`](#display_getoutputcapabilities) | public |  | display | Helper method to query the set video limits |
 | [`display/getParam`](#display_getparam) | public |  | display | Gets information of parameters for video sinks to render video frames |
+| [`display/getSupportedResolution`](#display_getsupportedresolution) | public |  | display | Method on com.webos.service.videooutput (from on-device permission registry; parameters undocumented). |
+| [`display/getSupportedResolutions`](#display_getsupportedresolutions) | private |  | display | Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
+| [`display/getVideoLimits`](#display_getvideolimits) | public |  | display | Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
+| [`display/requestVideoDelay`](#display_requestvideodelay) | public |  | display | Method on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
+| [`display/setBBD`](#display_setbbd) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
 | [`display/setCompositing`](#display_setcompositing) | public |  | display | Sets compositing parameters for the video sinks. This maps directly to adapter call and changes the compositing parameters for both video ou |
+| [`display/setDisplayResolution`](#display_setdisplayresolution) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
+| [`display/setDisplayScreen`](#display_setdisplayscreen) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
 | [`display/setDisplayWindow`](#display_setdisplaywindow) | public |  | display | Setup video output location on the screen for specified sink. |
+| [`display/setDisplayWindowProperty`](#display_setdisplaywindowproperty) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
+| [`display/setFrameDelay`](#display_setframedelay) | private |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
+| [`display/setNMRM`](#display_setnmrm) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
+| [`display/setParam`](#display_setparam) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
+| [`display/setReportBspError`](#display_setreportbsperror) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
 | [`getStatus`](#getstatus) | public | yes | display | Lists all video sinks and their status. |
+| [`orbit/debug`](#orbit_debug) | public |  | display | Method on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
 | [`Planes`](#planes) | unknown |  | display | Object to represent video planes and available size of scaling. |
 | [`register`](#register) | public |  | display | Registers pipeline ID to videooutputd. Note: If this API is required to be called, make sure it is called before the connect API call. |
+| [`reset/resetVideoSettings`](#reset_resetvideosettings) | public |  | settings | Method on com.webos.service.videooutput (introspected on-device; parameters undocumented). ⚠️ |
 | [`setVideoData`](#setvideodata) | public |  | display | Sets video data needed for playback. |
+| [`systemproperty/getProperties`](#systemproperty_getproperties) | public |  | system-info | Method on com.webos.service.videooutput (from on-device permission registry; parameters undocumented). |
 | [`unregister`](#unregister) | public |  | display | Unregisters pipeline ID from videooutputd. |
 | [`Video`](#video) | unknown |  | display | Object to represent the status of video sinks. |
 | [`VideoRect`](#videorect) | unknown |  | display | Object to represent the video window coordinates. |
@@ -120,6 +137,48 @@ luna-send -n 1 -f luna://com.webos.service.videooutput/disconnect '{"sink":"MAIN
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-videooutput/)
 
+<a id="display_debugscalerstatus"></a>
+## `display/debugScalerStatus`
+
+`luna://com.webos.service.videooutput/display/debugScalerStatus`
+
+Method on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/debugScalerStatus '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="display_getapplydonewindowregion"></a>
+## `display/getApplyDoneWindowRegion`
+
+`luna://com.webos.service.videooutput/display/getApplyDoneWindowRegion`
+
+Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/getApplyDoneWindowRegion '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="display_getoutputcapabilities"></a>
 ## `display/getOutputCapabilities`
 
@@ -167,6 +226,111 @@ luna-send -n 1 -f luna://com.webos.service.videooutput/display/getParam '{"comma
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-videooutput/)
 
+<a id="display_getsupportedresolution"></a>
+## `display/getSupportedResolution`
+
+`luna://com.webos.service.videooutput/display/getSupportedResolution`
+
+Method on com.webos.service.videooutput (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/getSupportedResolution '{}'
+```
+
+> ACG groups: media, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="display_getsupportedresolutions"></a>
+## `display/getSupportedResolutions`
+
+`luna://com.webos.service.videooutput/display/getSupportedResolutions`
+
+Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/getSupportedResolutions '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="display_getvideolimits"></a>
+## `display/getVideoLimits`
+
+`luna://com.webos.service.videooutput/display/getVideoLimits`
+
+Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/getVideoLimits '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="display_requestvideodelay"></a>
+## `display/requestVideoDelay`
+
+`luna://com.webos.service.videooutput/display/requestVideoDelay`
+
+Method on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/requestVideoDelay '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="display_setbbd"></a>
+## `display/setBBD`
+
+`luna://com.webos.service.videooutput/display/setBBD`
+
+Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/setBBD '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="display_setcompositing"></a>
 ## `display/setCompositing`
 
@@ -191,6 +355,48 @@ luna-send -n 1 -f luna://com.webos.service.videooutput/display/setCompositing '{
 > ACG: videooutput.management \| Returns: returnValue:Boolean \| Service: Connects the video source to the video output device and also controls post-processing and scaling on the video device. The service exposes methods that make the HAL calls to connect source to sink an
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-videooutput/)
+
+<a id="display_setdisplayresolution"></a>
+## `display/setDisplayResolution`
+
+`luna://com.webos.service.videooutput/display/setDisplayResolution`
+
+Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/setDisplayResolution '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="display_setdisplayscreen"></a>
+## `display/setDisplayScreen`
+
+`luna://com.webos.service.videooutput/display/setDisplayScreen`
+
+Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/setDisplayScreen '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="display_setdisplaywindow"></a>
 ## `display/setDisplayWindow`
@@ -220,6 +426,111 @@ luna-send -n 1 -f luna://com.webos.service.videooutput/display/setDisplayWindow 
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-videooutput/)
 
+<a id="display_setdisplaywindowproperty"></a>
+## `display/setDisplayWindowProperty`
+
+`luna://com.webos.service.videooutput/display/setDisplayWindowProperty`
+
+Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/setDisplayWindowProperty '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="display_setframedelay"></a>
+## `display/setFrameDelay`
+
+`luna://com.webos.service.videooutput/display/setFrameDelay`
+
+Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/setFrameDelay '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="display_setnmrm"></a>
+## `display/setNMRM`
+
+`luna://com.webos.service.videooutput/display/setNMRM`
+
+Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/setNMRM '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="display_setparam"></a>
+## `display/setParam`
+
+`luna://com.webos.service.videooutput/display/setParam`
+
+Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/setParam '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="display_setreportbsperror"></a>
+## `display/setReportBspError`
+
+`luna://com.webos.service.videooutput/display/setReportBspError`
+
+Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/display/setReportBspError '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="getstatus"></a>
 ## `getStatus`
 
@@ -244,6 +555,27 @@ luna-send -n 1 -f luna://com.webos.service.videooutput/getStatus '{"subscribe":t
 > ACG: videooutput.query \| Returns: returnValue:Boolean; errorCode:Number (int8_t); errorMessage:String; subscribed:Boolean; video:Object array: Video \| Service: Connects the video source to the video output device and also controls post-processing and scaling on the video device. The service exposes methods that make the HAL calls to connect source to sink an
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-videooutput/), [2](https://github.com/webosbrew/hyperion-webos/blob/HEAD/src/service.c), [3](https://github.com/Osyna/Overglass/blob/HEAD/docs/FINDINGS.md)
+
+<a id="orbit_debug"></a>
+## `orbit/debug`
+
+`luna://com.webos.service.videooutput/orbit/debug`
+
+Method on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/orbit/debug '{}'
+```
+
+> ACG groups: private, all, media, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="planes"></a>
 ## `Planes`
@@ -291,6 +623,27 @@ luna-send -n 1 -f luna://com.webos.service.videooutput/register '{"context":"_rf
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-videooutput/)
 
+<a id="reset_resetvideosettings"></a>
+## `reset/resetVideoSettings` ⚠️ DANGEROUS
+
+`luna://com.webos.service.videooutput/reset/resetVideoSettings`
+
+Method on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/reset/resetVideoSettings '{}'
+```
+
+> ACG groups: private, all, media, public. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="setvideodata"></a>
 ## `setVideoData`
 
@@ -321,6 +674,27 @@ luna-send -n 1 -f luna://com.webos.service.videooutput/setVideoData '{"sink":"MA
 > ACG: videooutput.management \| Returns: returnValue:Boolean; errorCode:Number (int8_t); errorMessage:String \| Service: Connects the video source to the video output device and also controls post-processing and scaling on the video device. The service exposes methods that make the HAL calls to connect source to sink an
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-videooutput/)
+
+<a id="systemproperty_getproperties"></a>
+## `systemproperty/getProperties`
+
+`luna://com.webos.service.videooutput/systemproperty/getProperties`
+
+Method on com.webos.service.videooutput (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.videooutput/systemproperty/getProperties '{}'
+```
+
+> ACG groups: media, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="unregister"></a>
 ## `unregister`

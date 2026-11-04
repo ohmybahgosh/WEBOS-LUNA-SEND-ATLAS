@@ -1,13 +1,16 @@
 # `com.palm.applicationManager`
 
-5 methods.  Platforms seen: HP webOS, Palm.
+8 methods.  Platforms seen: HP webOS, Palm, webOS TV.
 
 [Back to index](../../README.md#services)
 
 | Method | Access | Sub | Category | Description |
 |---|---|---|---|---|
 | [`close`](#close) | root |  | apps | Closes a running process |
+| [`closeByAppId`](#closebyappid) | private |  | apps | Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented). |
 | [`launch`](#launch) | root |  | apps | Launches an app |
+| [`launchDefaultApp`](#launchdefaultapp) | private |  | apps | Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented). |
+| [`listApps`](#listapps) | private |  | apps | Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented). |
 | [`listLaunchPoints`](#listlaunchpoints) | root |  | apps | Lists all installed apps/launch points |
 | [`rescan`](#rescan) | root |  | apps | Refreshes the Launcher |
 | [`running`](#running) | root |  | apps | Lists running apps with process ids |
@@ -35,6 +38,27 @@ luna-send -n 1 palm://com.palm.applicationManager/close '{"processId":"1058"}'
 
 Sources: [1](https://wiki.webos-internals.org/wiki/Luna_Send)
 
+<a id="closebyappid"></a>
+## `closeByAppId`
+
+`luna://com.palm.applicationManager/closeByAppId`
+
+Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.palm.applicationManager/closeByAppId '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="launch"></a>
 ## `launch`
 
@@ -58,6 +82,48 @@ luna-send -n 1 palm://com.palm.applicationManager/launch '{"id":"com.palm.app.br
 ```
 
 Sources: [1](https://wiki.webos-internals.org/wiki/Luna_Send)
+
+<a id="launchdefaultapp"></a>
+## `launchDefaultApp`
+
+`luna://com.palm.applicationManager/launchDefaultApp`
+
+Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.palm.applicationManager/launchDefaultApp '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="listapps"></a>
+## `listApps`
+
+`luna://com.palm.applicationManager/listApps`
+
+Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.palm.applicationManager/listApps '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="listlaunchpoints"></a>
 ## `listLaunchPoints`

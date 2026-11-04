@@ -1,12 +1,12 @@
 # `com.webos.service.wifi`
 
-60 methods.  Platforms seen: webOS OSE.
+88 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
 | Method | Access | Sub | Category | Description |
 |---|---|---|---|---|
-| [`bssInfo`](#bssinfo) | unknown |  | network | Information on one station in a Basic Service Set. Example "bssInfo": { "frequency": 2462, "bssid": "EE:94:F6:33:5F:F7", "signal": -65 } |
+| [`bssInfo`](#bssinfo) | unknown |  | network | Information on one station in a Basic Service Set. Example "bssInfo": { "frequency": 2462, "bssid": "AA:BB:CC:DD:EE:FF", "signal": -65 } |
 | [`cancel`](#cancel) | public |  | network | Cancels an ongoing connection attempt. Once the connection is canceled, the state is switched back to idle and the credentials are not saved |
 | [`cancelwps`](#cancelwps) | public |  | network | Cancels an ongoing WPS connection attempt. |
 | [`changeNetwork`](#changenetwork) | public |  | network | Allows users to change the properties of already stored Wi-Fi profiles . For non-enterprise networks, only the passphrase can be changed for |
@@ -15,16 +15,21 @@
 | [`deleteprofile`](#deleteprofile) | public |  | network | Deletes the profile with the given profile ID. |
 | [`enterpriseSecurity`](#enterprisesecurity) | unknown |  | network | Different security fields for connecting to enterprise networks. Example "enterpriseSecurity": { "eapType": "tls", "identity": "work", "pass |
 | [`findnetworks`](#findnetworks) | public | yes | network | Lists all the available Wi-Fi access points found in the area (from a previous Wi-Fi scan) and lists their details like SSID Name, available |
+| [`getconnectedprofile`](#getconnectedprofile) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
 | [`getCountryCode`](#getcountrycode) | public |  | network | Gets the current country code of the Wi-Fi adapter. Format of the country code follows the alpha-2 code of ISO-3166-1. |
+| [`getmultichannelschedmode`](#getmultichannelschedmode) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
 | [`getNetworks`](#getnetworks) | public | yes | network | Returns a list of available, configured but not available (out of range) networks without triggering an active scan. The users can subscribe |
 | [`getprofile`](#getprofile) | public |  | network | Lists the profile with the given profile ID on the system. |
 | [`getprofilelist`](#getprofilelist) | public |  | network | Lists all the stored Wi-Fi profiles on the system. |
 | [`getstatus`](#getstatus) | public | yes | network | Returns the following: The current status of Wi-Fi connection on the system. If the system is connected to an access point, then the details |
+| [`getTSF`](#gettsf) | private |  | network | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
+| [`getwifidiagnostics`](#getwifidiagnostics) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
 | [`ipInfo`](#ipinfo) | unknown |  | network | IP information for the connected network i.e. connected Wi-Fi interface returned as a response from the getstatus method. Example "ipInfo":  |
 | [`networkInfo`](#networkinfo) | unknown |  | network | Information of each of the networks found by the findNetworks, getNetworks or getstatus method. Example "networkInfo": { "available": true,  |
 | [`p2p/addservice`](#p2p_addservice) | public |  | network | Adds a Wi-Fi Direct service. |
 | [`p2p/cancel`](#p2p_cancel) | public |  | network | Cancels any ongoing Wi-Fi direct connection attempts. If there is no ongoing connection attempt then this method does nothing. |
 | [`p2p/connect`](#p2p_connect) | public |  | network | Connects to a given Wi-Fi direct peer. |
+| [`p2p/createautogo`](#p2p_createautogo) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
 | [`p2p/creategroup`](#p2p_creategroup) | public |  | network | Creates an autonomous Wi-Fi direct group. |
 | [`p2p/deleteprofile`](#p2p_deleteprofile) | public |  | network | Deletes a persistent profile for a specific MAC address or all profiles and also disconnect the peer(s) if connected. |
 | [`p2p/deleteservice`](#p2p_deleteservice) | public |  | network | Deletes a Wi-Fi Direct service. |
@@ -47,21 +52,44 @@
 | [`p2p/setstate`](#p2p_setstate) | public |  | network | Enables or disables the Wi-Fi Direct connection, as well as to set listen and persistent modes. |
 | [`p2p/settethering`](#p2p_settethering) | public |  | network | Enables or disables a groups' tethering property. |
 | [`p2p/setwifidisplayinfo`](#p2p_setwifidisplayinfo) | public |  | network | Sets the Wi-Fi display parameters. |
+| [`p2p/wfds/advertiseService`](#p2p_wfds_advertiseservice) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/boundPort`](#p2p_wfds_boundport) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/cancelAdvertiseService`](#p2p_wfds_canceladvertiseservice) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/closeSession`](#p2p_wfds_closesession) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/confirmSession`](#p2p_wfds_confirmsession) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/connectSessions`](#p2p_wfds_connectsessions) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/createContext`](#p2p_wfds_createcontext) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/findService`](#p2p_wfds_findservice) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/getSession`](#p2p_wfds_getsession) | private |  | network | Getter on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/getStatus`](#p2p_wfds_getstatus) | private |  | network | Getter on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/releaseContext`](#p2p_wfds_releasecontext) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/releasePort`](#p2p_wfds_releaseport) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/setServiceStatus`](#p2p_wfds_setservicestatus) | private |  | network | Setter on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`p2p/wfds/setSessionReady`](#p2p_wfds_setsessionready) | private |  | network | Setter on com.webos.service.wifi (introspected on-device; parameters undocumented). |
 | [`scan`](#scan) | public |  | network | Triggers a manual scan for the Wi-Fi networks. It should not be used together with the findnetworks method as using both at the same time wi |
 | [`security`](#security) | unknown |  | network | This object is used to provide security information for establishing a connection. Example "security": { "securityType": "psk", "simpleSecur |
 | [`securityType`](#securitytype) | unknown |  | network | A list of array types. Example "securityType": [ "open", "psk", "wps" ] |
 | [`setCountryCode`](#setcountrycode) | public |  | network | Sets the current country code of the Wi-Fi adapter. This affects the allowed Wi-Fi channel for both AP (Access Point) and STA (Station) mode |
+| [`setmultichannelschedmode`](#setmultichannelschedmode) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
+| [`setPassthroughParams`](#setpassthroughparams) | private |  | network | Setter on com.webos.service.wifi (introspected on-device; parameters undocumented). |
 | [`setstate`](#setstate) | public |  | network | Enables or disables Wi-Fi on the system by enabling/disabling the Wi-Fi interface. |
 | [`simpleSecurity`](#simplesecurity) | unknown |  | network | Connection information for a simple connection. Example "simpleSecurity": { "passKey": "1234" } |
 | [`startwps`](#startwps) | public |  | network | Starts the WPS authentication process. If wpsPin argument is provided then the WPS-PIN method will be used, else WPS-PBC method will be used |
 | [`tethering/getMaxStationCount`](#tethering_getmaxstationcount) | public |  | network | Gets the maximum number of stations allowed to connect to the AP. |
 | [`tethering/getState`](#tethering_getstate) | public | yes | network | Gets the current Wi-Fi tethering state. |
 | [`tethering/getStationCount`](#tethering_getstationcount) | public | yes | network | Gets the number of devices that are connected to the signage softAP. |
+| [`tethering/getvlan`](#tethering_getvlan) | private |  | network | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
 | [`tethering/setMaxStationCount`](#tethering_setmaxstationcount) | public |  | network | Sets the maximum number of stations allowed to connect to the AP. |
 | [`tethering/setState`](#tethering_setstate) | public |  | network | Sets the Wi-Fi tethering state. Wi-Fi tethering can either be enabled or disabled. At least the ssid field needs to be set before enabling t |
+| [`tethering/setvlan`](#tethering_setvlan) | private |  | network | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
+| [`tv/factoryWifiSearchResult`](#tv_factorywifisearchresult) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). ⚠️ |
+| [`tv/resetWifiSearchResult`](#tv_resetwifisearchresult) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). ⚠️ |
+| [`wearable/getSleepMode`](#wearable_getsleepmode) | private |  | power-mgmt | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
+| [`wearable/scanLps`](#wearable_scanlps) | private |  | network | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
+| [`wearable/setSleepMode`](#wearable_setsleepmode) | private |  | power-mgmt | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
 | [`WifiGroupInfo`](#wifigroupinfo) | unknown |  | network | This object contains information on a Wi-Fi peer-to-peer group. Example "groupInfo": { "frequency": 5180, "owner": true, "ssid": "DIRECT-vG- |
 | [`WifiGroups`](#wifigroups) | unknown |  | network | Group information. |
-| [`WifiPeerInfo`](#wifipeerinfo) | unknown |  | network | This object contains information on a peer-to-peer client. Example "peerInfo": { "connected": true, "configMethod": 128, "deviceAddress": "0 |
+| [`WifiPeerInfo`](#wifipeerinfo) | unknown |  | network | This object contains information on a peer-to-peer client. Example "peerInfo": { "connected": true, "configMethod": 128, "deviceAddress": "A |
 | [`WifiPeers`](#wifipeers) | unknown |  | network | List of peers and the related info. |
 | [`wifiProfile`](#wifiprofile) | unknown |  | network | A Wi-Fi profile stores all information for a previously successfully connected wireless network. However, it does not store critical securit |
 | [`WifiWfdInfo`](#wifiwfdinfo) | unknown |  | network | This object contains information on the Wi-Fi Direct settings of a Wi-Fi Peer connection. It is used in Wi-Fi Peer Info and is only present  |
@@ -72,7 +100,7 @@
 
 `luna://com.webos.service.wifi/bssInfo`
 
-Information on one station in a Basic Service Set. Example "bssInfo": { "frequency": 2462, "bssid": "EE:94:F6:33:5F:F7", "signal": -65 }
+Information on one station in a Basic Service Set. Example "bssInfo": { "frequency": 2462, "bssid": "AA:BB:CC:DD:EE:FF", "signal": -65 }
 
 - **Access:** unknown  
 - **Subscribe:** no  
@@ -278,6 +306,27 @@ luna-send -n 1 -f luna://com.webos.service.wifi/findnetworks '{"interval": 15000
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-wifi/)
 
+<a id="getconnectedprofile"></a>
+## `getconnectedprofile`
+
+`luna://com.webos.service.wifi/getconnectedprofile`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/getconnectedprofile '{}'
+```
+
+> ACG groups: networking, private, all, networking.query, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="getcountrycode"></a>
 ## `getCountryCode`
 
@@ -298,6 +347,27 @@ luna-send -n 1 -f luna://com.webos.service.wifi/getCountryCode '{}
 > ACG: None \| Returns: countryCode:String; returnValue:Boolean \| Service: Manages Wi-Fi connections on a webOS device. It provides an interface to find available Wi-Fi networks and handle connecting and disconnecting the device from those networks.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-wifi/)
+
+<a id="getmultichannelschedmode"></a>
+## `getmultichannelschedmode`
+
+`luna://com.webos.service.wifi/getmultichannelschedmode`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/getmultichannelschedmode '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="getnetworks"></a>
 ## `getNetworks`
@@ -395,6 +465,48 @@ luna-send -n 1 -f luna://com.webos.service.wifi/getstatus {}
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-wifi/)
 
+<a id="gettsf"></a>
+## `getTSF`
+
+`luna://com.webos.service.wifi/getTSF`
+
+Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/getTSF '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="getwifidiagnostics"></a>
+## `getwifidiagnostics`
+
+`luna://com.webos.service.wifi/getwifidiagnostics`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/getwifidiagnostics '{}'
+```
+
+> ACG groups: networking, private, all, networking.query, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="ipinfo"></a>
 ## `ipInfo`
 
@@ -421,7 +533,7 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-w
 
 `luna://com.webos.service.wifi/networkInfo`
 
-Information of each of the networks found by the findNetworks, getNetworks or getstatus method. Example "networkInfo": { "available": true, "signalLevel": 49, "signalBars": 1, "displayName": "xxx", "supported": true, "ssid": "xxx", "availableSecurityTypes": [ "psk", "wps" ], "connectState ": "ipConfigured", "bssInfo":[ { "frequency": 2462, "bssid": "EE:94:F6:33:5F:F7", "signal": -65 } ] }
+Information of each of the networks found by the findNetworks, getNetworks or getstatus method. Example "networkInfo": { "available": true, "signalLevel": 49, "signalBars": 1, "displayName": "xxx", "supported": true, "ssid": "xxx", "availableSecurityTypes": [ "psk", "wps" ], "connectState ": "ipConfigured", "bssInfo":[ { "frequency": 2462, "bssid": "AA:BB:CC:DD:EE:FF", "signal": -65 } ] }
 
 - **Access:** unknown  
 - **Subscribe:** no  
@@ -505,12 +617,33 @@ Connects to a given Wi-Fi direct peer.
 | `wpsInfo` | Object: wpsInfo (required) WPS information for peer connection. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.wifi/p2p/connect '{"peerAddress": "02:fc:ef:a0:d0:4a","wpsInfo":{"wps":true}}
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/connect '{"peerAddress": "AA:BB:CC:DD:EE:FF","wpsInfo":{"wps":true}}
 ```
 
 > ACG: wifi.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Manages Wi-Fi connections on a webOS device. It provides an interface to find available Wi-Fi networks and handle connecting and disconnecting the device from those networks.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-wifi/)
+
+<a id="p2p_createautogo"></a>
+## `p2p/createautogo`
+
+`luna://com.webos.service.wifi/p2p/createautogo`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/createautogo '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="p2p_creategroup"></a>
 ## `p2p/creategroup`
@@ -608,7 +741,7 @@ Disconnects the given Wi-Fi direct peer.
 | `peerAddress` | String (required) Device address of the peer to disconnect. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.wifi/p2p/disconnect '{"peerAddress": "02:fc:ef:a0:d0:4a"}
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/disconnect '{"peerAddress": "AA:BB:CC:DD:EE:FF"}
 ```
 
 > ACG: wifi.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Manages Wi-Fi connections on a webOS device. It provides an interface to find available Wi-Fi networks and handle connecting and disconnecting the device from those networks.
@@ -855,7 +988,7 @@ Invites a Wi-Fi direct peer to the group to which this device belongs.
 | `peerAddress` | String (required) Device address of the peer to invite. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.wifi/p2p/invite '{"peerAddress": "5a:a2:b5:fa:18:b7" }
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/invite '{"peerAddress": "AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: wifi.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Manages Wi-Fi connections on a webOS device. It provides an interface to find available Wi-Fi networks and handle connecting and disconnecting the device from those networks.
@@ -880,7 +1013,7 @@ Reject a connection attempt from a peer (specified with a device address). This 
 | `peerAddress` | String (required) Device address of the peer to reject the connection attempt from. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.wifi/p2p/rejectpeer '{"peerAddress": "02:fc:ef:a0:d0:4a"}
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/rejectpeer '{"peerAddress": "AA:BB:CC:DD:EE:FF"}
 ```
 
 > ACG: wifi.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Manages Wi-Fi connections on a webOS device. It provides an interface to find available Wi-Fi networks and handle connecting and disconnecting the device from those networks.
@@ -1070,6 +1203,300 @@ luna-send -n 1 -f luna://com.webos.service.wifi/p2p/setwifidisplayinfo '{"enable
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-wifi/)
 
+<a id="p2p_wfds_advertiseservice"></a>
+## `p2p/wfds/advertiseService`
+
+`luna://com.webos.service.wifi/p2p/wfds/advertiseService`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/advertiseService '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_boundport"></a>
+## `p2p/wfds/boundPort`
+
+`luna://com.webos.service.wifi/p2p/wfds/boundPort`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/boundPort '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_canceladvertiseservice"></a>
+## `p2p/wfds/cancelAdvertiseService`
+
+`luna://com.webos.service.wifi/p2p/wfds/cancelAdvertiseService`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/cancelAdvertiseService '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_closesession"></a>
+## `p2p/wfds/closeSession`
+
+`luna://com.webos.service.wifi/p2p/wfds/closeSession`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/closeSession '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_confirmsession"></a>
+## `p2p/wfds/confirmSession`
+
+`luna://com.webos.service.wifi/p2p/wfds/confirmSession`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/confirmSession '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_connectsessions"></a>
+## `p2p/wfds/connectSessions`
+
+`luna://com.webos.service.wifi/p2p/wfds/connectSessions`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/connectSessions '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_createcontext"></a>
+## `p2p/wfds/createContext`
+
+`luna://com.webos.service.wifi/p2p/wfds/createContext`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/createContext '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_findservice"></a>
+## `p2p/wfds/findService`
+
+`luna://com.webos.service.wifi/p2p/wfds/findService`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/findService '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_getsession"></a>
+## `p2p/wfds/getSession`
+
+`luna://com.webos.service.wifi/p2p/wfds/getSession`
+
+Getter on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/getSession '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_getstatus"></a>
+## `p2p/wfds/getStatus`
+
+`luna://com.webos.service.wifi/p2p/wfds/getStatus`
+
+Getter on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/getStatus '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_releasecontext"></a>
+## `p2p/wfds/releaseContext`
+
+`luna://com.webos.service.wifi/p2p/wfds/releaseContext`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/releaseContext '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_releaseport"></a>
+## `p2p/wfds/releasePort`
+
+`luna://com.webos.service.wifi/p2p/wfds/releasePort`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/releasePort '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_setservicestatus"></a>
+## `p2p/wfds/setServiceStatus`
+
+`luna://com.webos.service.wifi/p2p/wfds/setServiceStatus`
+
+Setter on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/setServiceStatus '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="p2p_wfds_setsessionready"></a>
+## `p2p/wfds/setSessionReady`
+
+`luna://com.webos.service.wifi/p2p/wfds/setSessionReady`
+
+Setter on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/setSessionReady '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="scan"></a>
 ## `scan`
 
@@ -1157,6 +1584,48 @@ luna-send -n 1 -f luna://com.webos.service.wifi/setCountryCode '{"countryCode":"
 > ACG: None \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Manages Wi-Fi connections on a webOS device. It provides an interface to find available Wi-Fi networks and handle connecting and disconnecting the device from those networks.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-wifi/)
+
+<a id="setmultichannelschedmode"></a>
+## `setmultichannelschedmode`
+
+`luna://com.webos.service.wifi/setmultichannelschedmode`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/setmultichannelschedmode '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setpassthroughparams"></a>
+## `setPassthroughParams`
+
+`luna://com.webos.service.wifi/setPassthroughParams`
+
+Setter on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/setPassthroughParams '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="setstate"></a>
 ## `setstate`
@@ -1300,6 +1769,27 @@ luna-send -i -f luna://com.webos.service.wifi/tethering/getStationCount '{"subsc
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-wifi/)
 
+<a id="tethering_getvlan"></a>
+## `tethering/getvlan`
+
+`luna://com.webos.service.wifi/tethering/getvlan`
+
+Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/tethering/getvlan '{}'
+```
+
+> ACG groups: networking, networking.internal. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="tethering_setmaxstationcount"></a>
 ## `tethering/setMaxStationCount`
 
@@ -1356,6 +1846,132 @@ luna-send -n 1 luna://com.webos.service.wifi/tethering/setState '{ "enabled":tru
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-wifi/)
 
+<a id="tethering_setvlan"></a>
+## `tethering/setvlan`
+
+`luna://com.webos.service.wifi/tethering/setvlan`
+
+Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/tethering/setvlan '{}'
+```
+
+> ACG groups: networking, networking.internal. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_factorywifisearchresult"></a>
+## `tv/factoryWifiSearchResult` ⚠️ DANGEROUS
+
+`luna://com.webos.service.wifi/tv/factoryWifiSearchResult`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/tv/factoryWifiSearchResult '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="tv_resetwifisearchresult"></a>
+## `tv/resetWifiSearchResult` ⚠️ DANGEROUS
+
+`luna://com.webos.service.wifi/tv/resetWifiSearchResult`
+
+Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/tv/resetWifiSearchResult '{}'
+```
+
+> ACG groups: networking, private, all, networking.internal. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="wearable_getsleepmode"></a>
+## `wearable/getSleepMode`
+
+`luna://com.webos.service.wifi/wearable/getSleepMode`
+
+Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/wearable/getSleepMode '{}'
+```
+
+> ACG groups: networking, networking.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="wearable_scanlps"></a>
+## `wearable/scanLps`
+
+`luna://com.webos.service.wifi/wearable/scanLps`
+
+Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/wearable/scanLps '{}'
+```
+
+> ACG groups: networking, networking.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="wearable_setsleepmode"></a>
+## `wearable/setSleepMode`
+
+`luna://com.webos.service.wifi/wearable/setSleepMode`
+
+Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.wifi/wearable/setSleepMode '{}'
+```
+
+> ACG groups: networking, networking.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="wifigroupinfo"></a>
 ## `WifiGroupInfo`
 
@@ -1403,7 +2019,7 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-w
 
 `luna://com.webos.service.wifi/WifiPeerInfo`
 
-This object contains information on a peer-to-peer client. Example "peerInfo": { "connected": true, "configMethod": 128, "deviceAddress": "02:fc:ef:a0:d0:4a", "peerIp": "192.168.16.2", "deviceName": "Test Test's G3", "groupOwner": false, "wfdInfo": { "wfdSessionAvail": true, "wfdCpSupport": true, "wfdDeviceType": "source", "wfdRtspPort": 8554 }, "signalLevel": 76 }
+This object contains information on a peer-to-peer client. Example "peerInfo": { "connected": true, "configMethod": 128, "deviceAddress": "AA:BB:CC:DD:EE:FF", "peerIp": "192.168.16.2", "deviceName": "Test Test's G3", "groupOwner": false, "wfdInfo": { "wfdSessionAvail": true, "wfdCpSupport": true, "wfdDeviceType": "source", "wfdRtspPort": 8554 }, "signalLevel": 76 }
 
 - **Access:** unknown  
 - **Subscribe:** no  

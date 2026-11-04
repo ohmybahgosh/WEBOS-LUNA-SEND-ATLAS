@@ -1,6 +1,6 @@
 # `com.webos.notification`
 
-36 methods.  Platforms seen: webOS OSE, webOS TV.
+44 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -10,6 +10,7 @@
 | [`action`](#action) | unknown |  | notifications | Describes the action parameter for the toast. |
 | [`alertInfo`](#alertinfo) | unknown |  | notifications | Contains the alert information. |
 | [`button`](#button) | unknown |  | notifications | Contains alert button information |
+| [`callback/wakeUp`](#callback_wakeup) | private |  | misc | Found by on-device introspection (parameters undocumented). |
 | [`closeAlert`](#closealert) | public |  | notifications | Closes the currently displayed alert notification. |
 | [`closeAllAlerts`](#closeallalerts) | public |  | notifications | Closes all the open alerts. Note: This method is for internal use. It must only be used by com.webos.service.battest during BAT test . If th |
 | [`closeInputAlert`](#closeinputalert) | private |  | notifications | Method registered by com.webos.notification (root category) |
@@ -19,15 +20,19 @@
 | [`createInputAlert`](#createinputalert) | private |  | notifications | Method registered by com.webos.notification (root category) |
 | [`createNotification`](#createnotification) | private |  | notifications | Method registered by com.webos.notification (root category) |
 | [`createPincodePrompt`](#createpincodeprompt) | public |  | notifications | Method registered by com.webos.notification (root category) |
+| [`createRemoteNotification`](#createremotenotification) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). |
 | [`createSignageAlert`](#createsignagealert) | public |  | notifications | Method registered by com.webos.notification (root category) |
 | [`createToast`](#createtoast) | public |  | notifications | Creates a toast notification. |
 | [`disable`](#disable) | public |  | notifications | Disables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note: Only a privileged application or service can call this met |
+| [`disableToast`](#disabletoast) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). |
 | [`enable`](#enable) | public |  | notifications | Enables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note: Only a privileged app/service can call this method. |
+| [`enableToast`](#enabletoast) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). |
 | [`getAlertNotification`](#getalertnotification) | public | yes | notifications | Subscribe to create alert notifications. Note: This method should only be used by the Surface Manager . |
 | [`getInputAlertNotification`](#getinputalertnotification) | private |  | notifications | Method registered by com.webos.notification (root category) |
 | [`getNotification`](#getnotification) | private |  | notifications | Method registered by com.webos.notification (root category) |
 | [`getNotificationInfo`](#getnotificationinfo) | private |  | notifications | Method registered by com.webos.notification (root category) |
 | [`getPincodePromptNotification`](#getpincodepromptnotification) | private |  | notifications | Method registered by com.webos.notification (root category) |
+| [`getRemoteNotificationInfo`](#getremotenotificationinfo) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). |
 | [`getToastCount`](#gettoastcount) | public | yes | notifications | Queries the toast notification details of the stored messages and provides the read/unread count of the toast notifications. Note: Only "com |
 | [`getToastList`](#gettoastlist) | public |  | notifications | Lists the toasts created for the app/client based on the user logged into the particular session. |
 | [`getToastNotification`](#gettoastnotification) | public | yes | notifications | Subscribe to created toast notification. Note: This method should only be used by Surface Manager only. |
@@ -37,9 +42,12 @@
 | [`onclose`](#onclose) | unknown |  | notifications | Contains close action when alert is closed with close button or automatically |
 | [`onfail`](#onfail) | unknown |  | notifications | Action to be performed on failure to create alert from view side (LSM). |
 | [`onFailAction`](#onfailaction) | unknown |  | notifications | Action to be performed on failure to create alert. |
+| [`purgeHistory`](#purgehistory) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). |
 | [`removeAllNotification`](#removeallnotification) | public |  | notifications | Removes all notifications that are currently being displayed. |
 | [`removeNotification`](#removenotification) | public |  | notifications | Deletes the given notification(s) from DB. We can remove given set of notifications or remove all notifications from a given sourceId. |
+| [`removeRemoteNotification`](#removeremotenotification) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). ⚠️ |
 | [`schedule`](#schedule) | unknown |  | notifications | Creates a toast notification as a persistent message and define its schedule. |
+| [`setAlertProgress`](#setalertprogress) | private |  | misc | Found by on-device introspection (parameters undocumented). |
 | [`setToastStatus`](#settoaststatus) | public |  | notifications | Specifies whether the toast is to be marked as read or unread. |
 | [`toastInfo`](#toastinfo) | unknown |  | notifications | Contains information about the stored toasts |
 
@@ -126,6 +134,27 @@ luna-send -n 1 -f luna://com.webos.notification/button '{}'
 > Service: Manages the system notifications. \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notification/)
+
+<a id="callback_wakeup"></a>
+## `callback/wakeUp`
+
+`luna://com.webos.notification/callback/wakeUp`
+
+Found by on-device introspection (parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on HE_DTV_W22O_AFABATPU  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.notification/callback/wakeUp '{}'
+```
+
+> ACG groups: all Confirmed on webOS 7.0 (W22O) dump.
+
+Sources: [1](luna-dump HE_DTV_W22O_AFABATPU)
 
 <a id="closealert"></a>
 ## `closeAlert`
@@ -339,6 +368,27 @@ luna-send -n 1 -f luna://com.webos.notification/createPincodePrompt '{}'
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
+<a id="createremotenotification"></a>
+## `createRemoteNotification`
+
+`luna://com.webos.notification/createRemoteNotification`
+
+Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.notification/createRemoteNotification '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="createsignagealert"></a>
 ## `createSignageAlert`
 
@@ -420,6 +470,27 @@ luna-send -n 1 -f -a com.webos.app.test luna://com.webos.notification/disable '{
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notification/), [2](https://github.com/rorygallagher2024/glasshouse/blob/HEAD/docs/development/TV-RESEARCH.md)
 
+<a id="disabletoast"></a>
+## `disableToast`
+
+`luna://com.webos.notification/disableToast`
+
+Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.notification/disableToast '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="enable"></a>
 ## `enable`
 
@@ -440,6 +511,27 @@ luna-send -n 1 -f -a com.webos.app.test luna://com.webos.notification/enable '{}
 > ACG: notification.management \| Returns: returnValue:Boolean \| Service: Manages the system notifications. \|\| Parameters unread; presence only.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notification/), [2](https://github.com/rorygallagher2024/glasshouse/blob/HEAD/docs/development/TV-RESEARCH.md)
+
+<a id="enabletoast"></a>
+## `enableToast`
+
+`luna://com.webos.notification/enableToast`
+
+Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.notification/enableToast '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getalertnotification"></a>
 ## `getAlertNotification`
@@ -549,6 +641,27 @@ luna-send -n 1 -f luna://com.webos.notification/getPincodePromptNotification '{}
 > Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, notifications, all. Only the name and ACG groups are known; parameters/return fields were not read.
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
+
+<a id="getremotenotificationinfo"></a>
+## `getRemoteNotificationInfo`
+
+`luna://com.webos.notification/getRemoteNotificationInfo`
+
+Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.notification/getRemoteNotificationInfo '{}'
+```
+
+> ACG groups: notifications.query, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="gettoastcount"></a>
 ## `getToastCount`
@@ -752,6 +865,27 @@ luna-send -n 1 -f luna://com.webos.notification/onFailAction '{}'
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notification/)
 
+<a id="purgehistory"></a>
+## `purgeHistory`
+
+`luna://com.webos.notification/purgeHistory`
+
+Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.notification/purgeHistory '{}'
+```
+
+> ACG groups: configurator.callbacks, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="removeallnotification"></a>
 ## `removeAllNotification`
 
@@ -803,6 +937,27 @@ luna-send -a com.webos.surfacemanager -n 1 -f luna://com.webos.notification/remo
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notification/)
 
+<a id="removeremotenotification"></a>
+## `removeRemoteNotification` ⚠️ DANGEROUS
+
+`luna://com.webos.notification/removeRemoteNotification`
+
+Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.notification/removeRemoteNotification '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="schedule"></a>
 ## `schedule`
 
@@ -823,6 +978,27 @@ luna-send -n 1 -f luna://com.webos.notification/schedule '{}'
 > Service: Manages the system notifications. \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notification/)
+
+<a id="setalertprogress"></a>
+## `setAlertProgress`
+
+`luna://com.webos.notification/setAlertProgress`
+
+Found by on-device introspection (parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on HE_DTV_W22O_AFABATPU  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.notification/setAlertProgress '{}'
+```
+
+> ACG groups: all Confirmed on webOS 7.0 (W22O) dump.
+
+Sources: [1](luna-dump HE_DTV_W22O_AFABATPU)
 
 <a id="settoaststatus"></a>
 ## `setToastStatus`

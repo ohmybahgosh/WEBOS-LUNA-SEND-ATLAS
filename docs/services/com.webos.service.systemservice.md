@@ -1,6 +1,6 @@
 # `com.webos.service.systemservice`
 
-42 methods.  Platforms seen: webOS OSE.
+51 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -12,6 +12,11 @@
 | [`clock/setTime`](#clock_settime) | public |  | system-info | The setTime method is used to set the time. By calling this method you can update any time data source, including Linux system time, network |
 | [`deviceInfo/query`](#deviceinfo_query) | public |  | system-info | The query method to get the device system information such as product Id, system number, hardware information, Wi-FI address, battery status |
 | [`EasLocalTime`](#easlocaltime) | unknown |  | system-info | This object provides details of the EAS time structure. Example "standardDate": { "month": 12, "day": 3, "dayOfWeek": 2, "hour": 11, "minute |
+| [`erase/EraseAll`](#erase_eraseall) | private |  | system-info | Method on com.webos.service.systemservice (introspected on-device; parameters undocumented). ⚠️ |
+| [`erase/EraseDeveloper`](#erase_erasedeveloper) | private |  | system-info | Method on com.webos.service.systemservice (introspected on-device; parameters undocumented). ⚠️ |
+| [`erase/EraseMedia`](#erase_erasemedia) | private |  | media | Method on com.webos.service.systemservice (introspected on-device; parameters undocumented). ⚠️ |
+| [`erase/EraseVar`](#erase_erasevar) | private |  | system-info | Method on com.webos.service.systemservice (introspected on-device; parameters undocumented). ⚠️ |
+| [`erase/Wipe`](#erase_wipe) | private |  | system-info | Method on com.webos.service.systemservice (introspected on-device; parameters undocumented). ⚠️ |
 | [`getPreferences`](#getpreferences) | public | yes | system-info | The getPreferences method retrieves the values for keys specified in a passed array. If subscribe is set to true, then getPreferences sends  |
 | [`getPreferenceValues`](#getpreferencevalues) | public |  | system-info | Retrieves a list of valid values for the specified key. If the key is of a type that takes one of a discrete set of valid values, it returns |
 | [`ImageConversionResult`](#imageconversionresult) | unknown |  | system-info | Contains details of the converted image. Example { "src": "/usr/lib/luna/system/luna-systemui/images/opensearch-small-icon.png", "dest": "/t |
@@ -26,10 +31,13 @@
 | [`time/getCurrentTimeZoneByLocale`](#time_getcurrenttimezonebylocale) | public |  | system-info | Returns the locale info matching the requested locale settings. In particular, the name of the city is returned on the language for which th |
 | [`time/getEffectiveBroadcastTime`](#time_geteffectivebroadcasttime) | public | yes | system-info | Returns the effective broadcast time. If no broadcast time info update has been received since boot, the Linux system-wide time is returned. |
 | [`time/getNTPTime`](#time_getntptime) | public |  | system-info | The getNTPTime returns the fresh NTP time (the time data transferred by the Network Time Protocol). |
+| [`time/getSpecificLocalTime`](#time_getspecificlocaltime) | public |  | input | Getter on com.webos.service.systemservice (introspected on-device; parameters undocumented). |
 | [`time/getSystemTime`](#time_getsystemtime) | public | yes | system-info | The time/getSystemTime method gets the system time and time zone information. Apps can susbcribe to this method and receive notifications wh |
 | [`time/getSystemTimezoneFile`](#time_getsystemtimezonefile) | public |  | system-info | Returns the path to Linux time-zone information file for the currently set zone. This file contains the list of rules that define switching  |
 | [`time/getSystemUptime`](#time_getsystemuptime) | public |  | system-info | Returns the number of seconds since the last system boot. This method uses the Linux-specific sysinfo function. |
 | [`time/launchTimeChangeApps`](#time_launchtimechangeapps) | public |  | system-info | Executes all methods listed in the timeChangeLaunch list (value of the timeChangeLaunch preference). The timeChangeLaunch list contains all  |
+| [`time/micomSynchronized`](#time_micomsynchronized) | private |  | input | Method on com.webos.service.systemservice (introspected on-device; parameters undocumented). |
+| [`time/setAdminTime`](#time_setadmintime) | private |  | input | Method on com.webos.service.systemservice (from on-device permission registry; parameters undocumented). |
 | [`time/setBroadcastTime`](#time_setbroadcasttime) | public |  | system-info | Sets the broadcast time which is in the broadcast signal. The system service will be notified that the broadcast time must be changed. |
 | [`time/setSystemNetworkTime`](#time_setsystemnetworktime) | public |  | system-info | The setSystemNetworkTime method is used to send a NITZ messages to Luna System Service. A NITZ message contains the local time and date, tim |
 | [`time/setSystemTime`](#time_setsystemtime) | public |  | system-info | The setSystemTime method sets the Linux system-wide time effectively overriding any previous synchronization with any time source. Note: thi |
@@ -38,6 +46,7 @@
 | [`TimeSourceOffset`](#timesourceoffset) | unknown |  | system-info | Details about the offset from one of the time-sources. Example "offset": { "source": "system", "value": 0 } |
 | [`Timestamp`](#timestamp) | unknown |  | system-info | Contains details of the timestamp. |
 | [`timezone/createTimeZoneFromEasData`](#timezone_createtimezonefromeasdata) | public |  | system-info | Create a manual timezone named " Etc/Manual " and specify details of this timezone. After creating the timezone, enable it by using the foll |
+| [`timezone/getTimeZoneDataVersion`](#timezone_gettimezonedataversion) | public |  | input | Method on com.webos.service.systemservice (from on-device permission registry; parameters undocumented). |
 | [`timezone/getTimeZoneFromEasData`](#timezone_gettimezonefromeasdata) | public |  | system-info | Gets the time-zone that matches the provided EAS data. This method enables you to determine the time zone by the specified time stamp. |
 | [`timezone/getTimeZoneRules`](#timezone_gettimezonerules) | public |  | system-info | The getTimeZoneRules method requests rules for specific time-zone for the specified years. By calling this method you can get the rules of w |
 | [`TimeZoneEasRule`](#timezoneeasrule) | unknown |  | system-info | Provides details of structure for creating a timezone rule. Example { "year": 2016, "month": 10, "dayOfWeek": 0, "week": 3, "hour": 2 } |
@@ -202,6 +211,111 @@ luna-send -n 1 -f luna://com.webos.service.systemservice/EasLocalTime '{}'
 > Service: Provides access to the webOS system settings such as: Backup options Getting device information Getting and modifying the date and time settings Setting ringtones Wallpaper Local formats \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-systemservice/)
+
+<a id="erase_eraseall"></a>
+## `erase/EraseAll` ⚠️ DANGEROUS
+
+`luna://com.webos.service.systemservice/erase/EraseAll`
+
+Method on com.webos.service.systemservice (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.systemservice/erase/EraseAll '{}'
+```
+
+> ACG groups: settings, private, all. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="erase_erasedeveloper"></a>
+## `erase/EraseDeveloper` ⚠️ DANGEROUS
+
+`luna://com.webos.service.systemservice/erase/EraseDeveloper`
+
+Method on com.webos.service.systemservice (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.systemservice/erase/EraseDeveloper '{}'
+```
+
+> ACG groups: settings, private, all. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="erase_erasemedia"></a>
+## `erase/EraseMedia` ⚠️ DANGEROUS
+
+`luna://com.webos.service.systemservice/erase/EraseMedia`
+
+Method on com.webos.service.systemservice (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.systemservice/erase/EraseMedia '{}'
+```
+
+> ACG groups: settings, private, all. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="erase_erasevar"></a>
+## `erase/EraseVar` ⚠️ DANGEROUS
+
+`luna://com.webos.service.systemservice/erase/EraseVar`
+
+Method on com.webos.service.systemservice (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.systemservice/erase/EraseVar '{}'
+```
+
+> ACG groups: settings, private, all. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="erase_wipe"></a>
+## `erase/Wipe` ⚠️ DANGEROUS
+
+`luna://com.webos.service.systemservice/erase/Wipe`
+
+Method on com.webos.service.systemservice (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.systemservice/erase/Wipe '{}'
+```
+
+> ACG groups: settings, private, all. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="getpreferences"></a>
 ## `getPreferences`
@@ -540,6 +654,27 @@ luna-send -n 1 -f luna://com.webos.service.systemservice/time/getNTPTime '{ }
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-systemservice/)
 
+<a id="time_getspecificlocaltime"></a>
+## `time/getSpecificLocalTime`
+
+`luna://com.webos.service.systemservice/time/getSpecificLocalTime`
+
+Getter on com.webos.service.systemservice (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.systemservice/time/getSpecificLocalTime '{}'
+```
+
+> ACG groups: public, settings, time.query, private, time, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="time_getsystemtime"></a>
 ## `time/getSystemTime`
 
@@ -627,6 +762,48 @@ luna-send -n 1 -f luna://com.webos.service.systemservice/time/launchTimeChangeAp
 > ACG: time.management \| Returns: subscribed:String; returnValue:Boolean \| Service: Provides access to the webOS system settings such as: Backup options Getting device information Getting and modifying the date and time settings Setting ringtones Wallpaper Local formats
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-systemservice/)
+
+<a id="time_micomsynchronized"></a>
+## `time/micomSynchronized`
+
+`luna://com.webos.service.systemservice/time/micomSynchronized`
+
+Method on com.webos.service.systemservice (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.systemservice/time/micomSynchronized '{}'
+```
+
+> ACG groups: settings, private, time, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="time_setadmintime"></a>
+## `time/setAdminTime`
+
+`luna://com.webos.service.systemservice/time/setAdminTime`
+
+Method on com.webos.service.systemservice (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.systemservice/time/setAdminTime '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="time_setbroadcasttime"></a>
 ## `time/setBroadcastTime`
@@ -838,6 +1015,27 @@ luna-send -n 1 -f luna://com.webos.service.systemservice/setPreferences '{"timeZ
 > ACG: time.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Provides access to the webOS system settings such as: Backup options Getting device information Getting and modifying the date and time settings Setting ringtones Wallpaper Local formats
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-systemservice/)
+
+<a id="timezone_gettimezonedataversion"></a>
+## `timezone/getTimeZoneDataVersion`
+
+`luna://com.webos.service.systemservice/timezone/getTimeZoneDataVersion`
+
+Method on com.webos.service.systemservice (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.systemservice/timezone/getTimeZoneDataVersion '{}'
+```
+
+> ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="timezone_gettimezonefromeasdata"></a>
 ## `timezone/getTimeZoneFromEasData`

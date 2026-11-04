@@ -100,7 +100,7 @@ Sets the Jira configurations. Currently, the only configurations supported are: 
 | `account` | Object: account (optional) Account info to login to Jira |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bugreport/setConfig '{"account": {"username": "webosreporter", "password": "bGdlITIzNDVe"}}
+luna-send -n 1 -f luna://com.webos.service.bugreport/setConfig '{"account": {"username": "webosreporter", "password": "<redacted>"}}
 ```
 
 > ACG: diagnostics.telemetry \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Provides methods for reporting bug in Jira system.

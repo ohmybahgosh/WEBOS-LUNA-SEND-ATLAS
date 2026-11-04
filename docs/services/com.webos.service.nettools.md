@@ -1,6 +1,6 @@
 # `com.webos.service.nettools`
 
-10 methods.  Platforms seen: webOS OSE.
+12 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -10,6 +10,8 @@
 | [`checkhttp`](#checkhttp) | public |  | network | Creates a TCP socket and checks if it can successfully connect to the hostURL using the standard http port (port 80). |
 | [`createVlan`](#createvlan) | public |  | network | Creates a VLAN for the provided index and interface. |
 | [`deleteVlan`](#deletevlan) | public |  | network | Provided VLAN index will be deleted for the provided interface, if present. |
+| [`detailping`](#detailping) | private |  | network | Method on com.webos.service.nettools (from on-device permission registry; parameters undocumented). |
+| [`detailping6`](#detailping6) | private |  | network | Method on com.webos.service.nettools (from on-device permission registry; parameters undocumented). |
 | [`gethostname`](#gethostname) | public | yes | network | Gets the hostname for the system. The implementation uses a call to gethostname() in glibc. |
 | [`interface`](#interface) | unknown |  | network | Provides the name of interface Sample example for "interface" object : { "name":"eth0" } |
 | [`ping`](#ping) | public |  | network | "Ping" an IPv4 network address or hostname to determine if it is reachable. The maximum wait time is 5 seconds. The implementation uses a ca |
@@ -123,6 +125,48 @@ luna-send -n 1 -f luna://com.webos.service.nettools/deleteVlan '{ "interface":{ 
 > ACG: nettools.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Provides a selection of standard network tools.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-nettools/)
+
+<a id="detailping"></a>
+## `detailping`
+
+`luna://com.webos.service.nettools/detailping`
+
+Method on com.webos.service.nettools (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.nettools/detailping '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="detailping6"></a>
+## `detailping6`
+
+`luna://com.webos.service.nettools/detailping6`
+
+Method on com.webos.service.nettools (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.nettools/detailping6 '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="gethostname"></a>
 ## `gethostname`

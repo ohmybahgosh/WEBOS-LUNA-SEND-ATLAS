@@ -1,6 +1,6 @@
 # `com.webos.service.bluetooth2`
 
-210 methods.  Platforms seen: webOS OSE.
+258 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -16,9 +16,13 @@
 | [`a2dp/internal/enable`](#a2dp_internal_enable) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`a2dp/internal/getAudioPath`](#a2dp_internal_getaudiopath) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`a2dp/internal/getCodecConfiguration`](#a2dp_internal_getcodecconfiguration) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`a2dp/internal/setCodecConfiguration`](#a2dp_internal_setcodecconfiguration) | private |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`a2dp/internal/setDualAudioMode`](#a2dp_internal_setdualaudiomode) | private |  | audio | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`a2dp/internal/setLatency`](#a2dp_internal_setlatency) | public |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`a2dp/internal/setSbcEncoderBitpool`](#a2dp_internal_setsbcencoderbitpool) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`a2dp/internal/startStreaming`](#a2dp_internal_startstreaming) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`a2dp/internal/stopStreaming`](#a2dp_internal_stopstreaming) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`a2dp/internal/toggle_left_right`](#a2dp_internal_toggle_left_right) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`adapter/awaitPairingRequests`](#adapter_awaitpairingrequests) | public | yes | bluetooth | Awaits incoming pairing requests on the default Bluetooth adapter (only) by setting its state to be pairable. The caller must subscribe to t |
 | [`adapter/cancelDiscovery`](#adapter_canceldiscovery) | public |  | bluetooth | Cancels discovering the remote Bluetooth devices. Note: Discovery of a specific adapter can be canceled based on the adapter address passed. |
 | [`adapter/cancelPairing`](#adapter_cancelpairing) | public |  | bluetooth | Cancels the pairing request with a remote device, either incoming or outgoing. Sends a success response immediately. Once the SIL (Stack Int |
@@ -27,8 +31,10 @@
 | [`adapter/internal/getTraceStatus`](#adapter_internal_gettracestatus) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`adapter/internal/getWoBleStatus`](#adapter_internal_getwoblestatus) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`adapter/internal/sendHciCommand`](#adapter_internal_sendhcicommand) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only ⚠️ |
+| [`adapter/internal/setDutMode`](#adapter_internal_setdutmode) | private |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`adapter/internal/setKeepAlive`](#adapter_internal_setkeepalive) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`adapter/internal/setTrace`](#adapter_internal_settrace) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`adapter/internal/setULLMode`](#adapter_internal_setullmode) | private |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`adapter/internal/setWoBle`](#adapter_internal_setwoble) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`adapter/internal/setWoBleTriggerDevices`](#adapter_internal_setwobletriggerdevices) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`adapter/internal/startDiscovery`](#adapter_internal_startdiscovery) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
@@ -59,11 +65,15 @@
 | [`avrcp/getStatus`](#avrcp_getstatus) | public | yes | bluetooth | Returns the status of an AVRCP connection to a remote Bluetooth device. |
 | [`avrcp/internal/disable`](#avrcp_internal_disable) | public |  | bluetooth | Disables the profile and role of AVRCP. |
 | [`avrcp/internal/enable`](#avrcp_internal_enable) | public |  | bluetooth | Enables the profile and the role of AVRCP. |
+| [`avrcp/internal/getRemoteBattery`](#avrcp_internal_getremotebattery) | public |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`avrcp/internal/getRemoteFeatures`](#avrcp_internal_getremotefeatures) | public |  | bluetooth | Gets the remote AVRCP's features. |
 | [`avrcp/internal/getSupportedNotificationEvents`](#avrcp_internal_getsupportednotificationevents) | public | yes | bluetooth | Gets the remote AVRCP's supported notification events. |
 | [`avrcp/notifyMediaPlayStatus`](#avrcp_notifymediaplaystatus) | public |  | bluetooth | Enables the AVRCP target to inform the AVRCP controller about the change in media play status or position without controller requesting for  |
 | [`avrcp/receivePassThroughCommand`](#avrcp_receivepassthroughcommand) | public | yes | bluetooth | Receives PATH THROUGH command from CT to TG. Note: The PASS THROUGH command is used to transfer user operation information from a CT (Contro |
+| [`avrcp/receiveRegisterNotificationAbsoluteVolume`](#avrcp_receiveregisternotificationabsolutevolume) | public |  | notifications | Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented). |
+| [`avrcp/registerNotificationAbsoluteVolumeResponse`](#avrcp_registernotificationabsolutevolumeresponse) | public |  | notifications | Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented). |
 | [`avrcp/sendPassThroughCommand`](#avrcp_sendpassthroughcommand) | public |  | bluetooth | Sends PASS THROUGH command from CT (Controller) to TG (Target). Note: The PASS THROUGH command is used to transfer user operation informatio |
+| [`avrcp/sendVendorPassThroughCommand`](#avrcp_sendvendorpassthroughcommand) | private |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`avrcp/setAbsoluteVolume`](#avrcp_setabsolutevolume) | public |  | bluetooth | Sets the absolute volume on the target device. |
 | [`avrcp/setPlayerApplicationSettings`](#avrcp_setplayerapplicationsettings) | public |  | bluetooth | Sets the player application settings value. |
 | [`avrcp/supplyMediaMetaData`](#avrcp_supplymediametadata) | public |  | bluetooth | Supplies media metadata of the target to remote devices connected via AVRCP 1.3 profile. |
@@ -121,15 +131,33 @@
 | [`bluetooth2ServiceClass`](#bluetooth2serviceclass) | unknown |  | bluetooth | Contains the Bluetooth service class information. |
 | [`bluetooth2TxPower`](#bluetooth2txpower) | unknown |  | bluetooth | Object containing txpower information. |
 | [`device/getConnectedDevices`](#device_getconnecteddevices) | unknown |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
+| [`device/getDiagnosis`](#device_getdiagnosis) | private |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`device/getDiscoveredDevice`](#device_getdiscovereddevice) | public | yes | bluetooth | Gets the newly discovered Bluetooth device information known to the system. |
+| [`device/getHistory`](#device_gethistory) | private |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`device/getPairedDevices`](#device_getpaireddevices) | public | yes | bluetooth | Gets a list of paired Bluetooth devices info, known to the system. |
 | [`device/getStatus`](#device_getstatus) | public | yes | bluetooth | Gets the current status of remote Bluetooth devices known to the system. |
 | [`device/internal/getLinkKey`](#device_internal_getlinkkey) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`device/internal/getStatus`](#device_internal_getstatus) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`device/internal/setDebugValue`](#device_internal_setdebugvalue) | private |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`device/internal/startSniff`](#device_internal_startsniff) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`device/internal/stopSniff`](#device_internal_stopsniff) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`device/setState`](#device_setstate) | public |  | bluetooth | Sets the local values for the state of a remote device. |
+| [`ftp/connect`](#ftp_connect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`ftp/disconnect`](#ftp_disconnect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`ftp/getStatus`](#ftp_getstatus) | public |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`ftp/listDirectory`](#ftp_listdirectory) | public |  | bluetooth | Lister on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`ftp/pullFile`](#ftp_pullfile) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`ftp/pushFile`](#ftp_pushfile) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`gatt/addService`](#gatt_addservice) | public |  | bluetooth | Adds a new service definition to the local database. Note: The new service will be directly exposed to clients which are discovering availab |
+| [`gatt/ancs/advertise`](#gatt_ancs_advertise) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`gatt/ancs/awaitConnectionRequest`](#gatt_ancs_awaitconnectionrequest) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`gatt/ancs/awaitNotifications`](#gatt_ancs_awaitnotifications) | public |  | notifications | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`gatt/ancs/connect`](#gatt_ancs_connect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`gatt/ancs/disconnect`](#gatt_ancs_disconnect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`gatt/ancs/getStatus`](#gatt_ancs_getstatus) | public |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`gatt/ancs/performNotificationAction`](#gatt_ancs_performnotificationaction) | public |  | notifications | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`gatt/ancs/queryAppAttributes`](#gatt_ancs_queryappattributes) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`gatt/ancs/queryNotificationAttributes`](#gatt_ancs_querynotificationattributes) | public |  | notifications | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`gatt/closeServer`](#gatt_closeserver) | public |  | bluetooth | Closes the BluetoothGattServer. |
 | [`gatt/connect`](#gatt_connect) | public | yes | bluetooth | Connects to the GATT profile on the specified remote device. |
 | [`gatt/disconnect`](#gatt_disconnect) | public |  | bluetooth | Drops the connection to the given remote device on GATT profile. |
@@ -146,20 +174,33 @@
 | [`gatt/removeService`](#gatt_removeservice) | public |  | bluetooth | Remove a service definition from the local database. All characteristics which belong to the service will be also removed. If the given serv |
 | [`gatt/writeCharacteristicValue`](#gatt_writecharacteristicvalue) | public |  | bluetooth | Writes the value for a local or remote characteristic. |
 | [`gatt/writeDescriptorValue`](#gatt_writedescriptorvalue) | public |  | bluetooth | Writes the value of a specific descriptor of a service characteristic either in the local adapter or the remote device. |
+| [`hfp/closeSCO`](#hfp_closesco) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`hfp/connect`](#hfp_connect) | public | yes | bluetooth | Opens a HFP connection to a remote device. |
 | [`hfp/disconnect`](#hfp_disconnect) | public |  | bluetooth | Drops the connection to the given remote device on the HFP profile. |
 | [`hfp/getStatus`](#hfp_getstatus) | public | yes | bluetooth | Returns the status of a HFP connection to a remote device. If address input parameter is not specified, the method will return the informati |
+| [`hfp/indicateCall`](#hfp_indicatecall) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`hfp/openSCO`](#hfp_opensco) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`hfp/receiveAT`](#hfp_receiveat) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`hfp/receiveResult`](#hfp_receiveresult) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`hfp/sendAT`](#hfp_sendat) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`hfp/sendResult`](#hfp_sendresult) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`hid/connect`](#hid_connect) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
 | [`hid/disconnect`](#hid_disconnect) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
 | [`hid/getStatus`](#hid_getstatus) | unknown |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
 | [`hid/internal/getReport`](#hid_internal_getreport) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`hid/internal/sendData`](#hid_internal_senddata) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`hid/internal/setReport`](#hid_internal_setreport) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`le/configureAdvertisement`](#le_configureadvertisement) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`le/disableAdvertising`](#le_disableadvertising) | public |  | bluetooth | Stops and disables advertising Note: Call this method after le/startAdvertising. |
 | [`le/getStatus`](#le_getstatus) | unknown |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
+| [`le/internal/startScan`](#le_internal_startscan) | private |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`le/setScanParameters`](#le_setscanparameters) | private |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`le/startAdvertising`](#le_startadvertising) | public | yes | bluetooth | Starts broadcasting the Bluetooth Low Energy advertisement. |
+| [`le/startMultiScan`](#le_startmultiscan) | private |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`le/startScan`](#le_startscan) | public | yes | bluetooth | Starts scanning only ble devices. |
+| [`le/stopAdvertising`](#le_stopadvertising) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`le/updateAdvertising`](#le_updateadvertising) | unknown |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.operation); name only |
+| [`leaudio/internal/updateBroadcastMetadata`](#leaudio_internal_updatebroadcastmetadata) | private |  | audio | Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented). |
 | [`map/connect`](#map_connect) | public | yes | bluetooth | Connects to the MAS Instance of the specified remote device. Note: The method is available only for MCE . |
 | [`map/disconnect`](#map_disconnect) | public |  | bluetooth | Disconnects from the MAS Instance on the specified remote device. Note: The method is available only for MCE . |
 | [`map/getFolderList`](#map_getfolderlist) | public |  | bluetooth | Lists the available folders of the connected MAS instance of the MSE device. Note: This method is available only for MCE. |
@@ -198,6 +239,12 @@
 | [`opp/monitorTransfer`](#opp_monitortransfer) | public | yes | bluetooth | Return the status of ongoing file transfer requests. This method is only available for server. |
 | [`opp/pushFile`](#opp_pushfile) | public | yes | bluetooth | Push a file to a remote Bluetooth device. This method is available only for push client. If the client calls LSCallCancel() , the file trans |
 | [`opp/rejectTransferRequest`](#opp_rejecttransferrequest) | public |  | bluetooth | Reject a Bluetooth object push request. This method is available only for a push server. |
+| [`pan/connect`](#pan_connect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`pan/disconnect`](#pan_disconnect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`pan/getStatus`](#pan_getstatus) | public |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`pan/setTethering`](#pan_settethering) | public |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`pbap/acceptAccessRequest`](#pbap_acceptaccessrequest) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
+| [`pbap/awaitAccessRequest`](#pbap_awaitaccessrequest) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`pbap/connect`](#pbap_connect) | public | yes | bluetooth | Connects to the PBAP profile on the specified remote device. Note: This method is available only for PCE . |
 | [`pbap/disconnect`](#pbap_disconnect) | public |  | bluetooth | Disconnects from the PBAP profile on the specified remote device. Note: This method is available only for PCE . |
 | [`pbap/getPhoneBookProperties`](#pbap_getphonebookproperties) | public | yes | bluetooth | Gets the supported PBAP profile properties from PSE device. Note: This method is available only for PCE . |
@@ -206,6 +253,7 @@
 | [`pbap/getvCardFilters`](#pbap_getvcardfilters) | public |  | bluetooth | Displays all the available vcard filters supported by Bluetooth stack. Note: The method is available only for PCE . |
 | [`pbap/pullPhoneBook`](#pbap_pullphonebook) | public | yes | bluetooth | Retrieves all (given maxcount) the phonebook entries from a given startoffset and stores it in a local file. |
 | [`pbap/pullvCard`](#pbap_pullvcard) | public |  | bluetooth | Given a vcard handle, retrieves the vcard in the current phonebook object and store it in a local file. Note: This method is available only  |
+| [`pbap/rejectAccessRequest`](#pbap_rejectaccessrequest) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
 | [`pbap/searchPhoneBook`](#pbap_searchphonebook) | public |  | bluetooth | Searches for entries matching the given condition and returns an object of vcard-listing data where every entry consists of a pair of string |
 | [`pbap/setPhoneBook`](#pbap_setphonebook) | public |  | bluetooth | Sets the phonebook object for other operations. Note: This method is available only for PCE . |
 | [`pbap/vCardListing`](#pbap_vcardlisting) | public |  | bluetooth | Displays the total number of vcf file entries from the selected phonebook path. Note: This method is available only for PCE . |
@@ -237,7 +285,7 @@ Connects to the A2DP profile on the specified remote device.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/connect '{ "address":"00:18:6b:49:db:86", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/connect '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; subscribed:Boolean; adapterAddress:String; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -262,7 +310,7 @@ Disables the AVDTP delay reporting.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/disableDelayReporting '{ "adapterAddress":"b8:ad:3e:bd:93:c2" }
+luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/disableDelayReporting '{ "adapterAddress":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: adapterAddress:String; errorCode:Number; errorText:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -288,7 +336,7 @@ Drops the connection to the given remote device on the A2DP profile.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/disconnect '{ "address":"aa:bb:cc:dd:ee:00" }
+luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/disconnect '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; adapterAddress:String; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.
@@ -313,7 +361,7 @@ Enables the AVDTP delay reporting.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n -1 luna://com.webos.service.bluetooth2/a2dp/enableDelayReporting '{ "adapterAddress":"0a:ad:3e:bd:93:c2" }
+luna-send -n -1 luna://com.webos.service.bluetooth2/a2dp/enableDelayReporting '{ "adapterAddress":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: adapterAddress:String; errorCode:Number; errorText:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -367,7 +415,7 @@ Returns the status of the A2DP connection to a remote device. Note: If the addre
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/getStatus '{ "address":"aa:bb:cc:dd:ee:00", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/getStatus '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.query \| Returns: returnValue:Boolean; subscribed:Boolean; connecting:Boolean; connected:Boolean; playing:Boolean; adapterAddress:String; address:String; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.
@@ -458,6 +506,69 @@ luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/getCodecConf
 
 Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/files/sysbus/com.webos.service.bluetooth2.api.json)
 
+<a id="a2dp_internal_setcodecconfiguration"></a>
+## `a2dp/internal/setCodecConfiguration`
+
+`luna://com.webos.service.bluetooth2/a2dp/internal/setCodecConfiguration`
+
+Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/setCodecConfiguration '{}'
+```
+
+> ACG groups: all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="a2dp_internal_setdualaudiomode"></a>
+## `a2dp/internal/setDualAudioMode`
+
+`luna://com.webos.service.bluetooth2/a2dp/internal/setDualAudioMode`
+
+Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/setDualAudioMode '{}'
+```
+
+> ACG groups: all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="a2dp_internal_setlatency"></a>
+## `a2dp/internal/setLatency`
+
+`luna://com.webos.service.bluetooth2/a2dp/internal/setLatency`
+
+Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/setLatency '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="a2dp_internal_setsbcencoderbitpool"></a>
 ## `a2dp/internal/setSbcEncoderBitpool`
 
@@ -520,6 +631,27 @@ luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/stopStreamin
 > Listed under ACG group "bluetooth.devutility" in the component api.json/groups.json; no parameter docs read.
 
 Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/files/sysbus/com.webos.service.bluetooth2.api.json)
+
+<a id="a2dp_internal_toggle_left_right"></a>
+## `a2dp/internal/toggle_left_right`
+
+`luna://com.webos.service.bluetooth2/a2dp/internal/toggle_left_right`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/toggle_left_right '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="adapter_awaitpairingrequests"></a>
 ## `adapter/awaitPairingRequests`
@@ -590,7 +722,7 @@ Cancels the pairing request with a remote device, either incoming or outgoing. S
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/cancelPairing '{ "address": "34:4d:f7:f9:52:f7" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/cancelPairing '{ "address": "AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.operation \| Returns: returnValue:Boolean; subscribed:Boolean; adapterAddress:String; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -716,6 +848,27 @@ luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/internal/sendHciCo
 
 Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/files/sysbus/com.webos.service.bluetooth2.api.json), [2](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/src/bluetoothmanagerservice.cpp)
 
+<a id="adapter_internal_setdutmode"></a>
+## `adapter/internal/setDutMode`
+
+`luna://com.webos.service.bluetooth2/adapter/internal/setDutMode`
+
+Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/internal/setDutMode '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="adapter_internal_setkeepalive"></a>
 ## `adapter/internal/setKeepAlive`
 
@@ -763,6 +916,27 @@ luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/internal/setTrace 
 > Listed under ACG group "bluetooth.devutility" in the component api.json/groups.json; no parameter docs read.
 
 Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/files/sysbus/com.webos.service.bluetooth2.api.json)
+
+<a id="adapter_internal_setullmode"></a>
+## `adapter/internal/setULLMode`
+
+`luna://com.webos.service.bluetooth2/adapter/internal/setULLMode`
+
+Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/internal/setULLMode '{}'
+```
+
+> ACG groups: all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="adapter_internal_setwoble"></a>
 ## `adapter/internal/setWoBle`
@@ -858,7 +1032,7 @@ Pairs a specific remote Bluetooth device with a specific Bluetooth adapter. The 
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/adapter/pair '{ "address": "34:4d:f7:f9:52:f7", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/adapter/pair '{ "address": "AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.operation \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -966,7 +1140,7 @@ Supplies the user-entered passkey. Note: The passkey is entered when adapter/pai
 | `passkey` | Number (required) Indicates the passkey entered by the user. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/supplyPasskey '{ "address": "34:4d:f7:f9:52:f7", "passkey":842280 }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/supplyPasskey '{ "address": "AA:BB:CC:DD:EE:FF", "passkey":842280 }
 ```
 
 > ACG: bluetooth.operation \| Returns: adapterAddress:String; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -992,7 +1166,7 @@ Supplies the user's confirmation for the passkey. Note: The user confirms the pa
 | `accept` | Boolean (required) Indicates if the user has confirmed the passkey. Possible values are: true: User confirmed the passkey. false: User did not confirm the passkey. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/supplyPasskeyConfirmation '{ "address": "34:4d:f7:f9:52:f7", "accept":true }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/supplyPasskeyConfirmation '{ "address": "AA:BB:CC:DD:EE:FF", "accept":true }
 ```
 
 > ACG: bluetooth.operation \| Returns: adapterAddress:String; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1018,7 +1192,7 @@ Supplies the user-entered PIN code. Note: The PIN code is entered when adapter/p
 | `pin` | String (required) Indicates the PIN code entered by the user. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/supplyPinCode '{ "address": "34:4d:f7:f9:52:f7", "pin":"2345" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/supplyPinCode '{ "address": "AA:BB:CC:DD:EE:FF", "pin":"2345" }
 ```
 
 > ACG: bluetooth.operation \| Returns: adapterAddress:String; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1043,7 +1217,7 @@ Disconnects from the paired remote device. Note: All pairing information about t
 | `address` | String (required) Indicates the address (bdaddr) of the remote device to unpair. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/unpair '{ "address": "34:4d:f7:f9:52:f7" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/unpair '{ "address": "AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.operation \| Returns: returnValue:Boolean; adapterAddress:String; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1122,7 +1296,7 @@ Adds the browsed item to the current playing list. Note : When user selects a pl
 | `itemPath` | String (required) Indicates the path to the item in the current folder to be added to the current playing list. Note: Item path is received in the bluetooth2FolderItem object of the getFolderItems API response. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/addToNowPlaying '{ "address":"6c:c4:d5:6d:83:db", "adapterAddress":"b8:27:eb:59:5c:8a", "itemPath":"player0/Filesystem/item4/item97" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/addToNowPlaying '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "itemPath":"player0/Filesystem/item4/item97" }
 ```
 
 > ACG: bluetooth.management \| Returns: adapterAddress:String; address:String; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1149,7 +1323,7 @@ Navigates the virtual filesystem presented by the remote media player. This API 
 | `itemPath` | String (required) Indicates the path to the folder item to change to. Note: Item path is received in the bluetooth2FolderItem object of the getFolderItems API response. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/changePath '{ "address":"6c:c4:d5:6d:83:db", "adapterAddress":"5c:f3:70:97:5d:3c", "itemPath":"player0/Filesystem/item4" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/changePath '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "itemPath":"player0/Filesystem/item4" }
 ```
 
 > ACG: bluetooth.management \| Returns: adapterAddress:String; address:String; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1176,7 +1350,7 @@ Gets the current folder in the media player's virtual filesystem presented by AV
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default : false |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/browse/getCurrentFolder '{ "address":"54:B8:02:34:B0:78", "adapterAddress":"b8:27:eb:b4:79:3f", "subscribe":true }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/browse/getCurrentFolder '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.management \| Returns: adapterAddress:String; address:String; returnValue:Boolean; subscribed:Boolean; folderName:String; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1204,7 +1378,7 @@ Gets the items in the current folder of the media player's virtual filesystem pr
 | `endIndex` | Number (required) Indicates the offset within the listing of the item, which should be the final returned item. Note : endIndex should be greater than or equal to startIndex ( endIndex = startIndex means you are requesting one item that is at index endIndex/startIndex) and less than total number of items in the current folder. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/browse/getFolderItems '{ "address":"6c:c4:d5:6d:83:db", "adapterAddress":"5c:f3:70:97:5d:3c", "startIndex":0, "endIndex":3 }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/browse/getFolderItems '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "startIndex":0, "endIndex":3 }
 ```
 
 > ACG: bluetooth.management \| Returns: adapterAddress:String; address:String; returnValue:Boolean; folderItems:Object array: bluetooth2AvrcpFolderItem; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1230,7 +1404,7 @@ Retrieves the total number of items in the current folder of the media player's 
 | `address` | String (required) Indicates the address of the remote device. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/browse/getNumberOfItems '{ "address":"6c:c4:d5:6d:83:db", "adapterAddress":"b8:27:eb:59:5c:8a" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/browse/getNumberOfItems '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: adapterAddress:String; address:String; returnValue:Boolean; numberOfItems:Number; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1257,7 +1431,7 @@ Plays the browsed item. Note : When user selects a playable item (playable is se
 | `itemPath` | String (required) Indicates the path to the playable item in the current folder to be played. Note: Item path is received in the bluetooth2AvrcpFolderItem object of the getFolderItems API response. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/playItem '{ "address":"6c:c4:d5:6d:83:db", "adapterAddress":"b8:27:eb:59:5c:8a", "itemPath":"player7/Filesystem/item4/item95" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/playItem '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "itemPath":"player7/Filesystem/item4/item95" }
 ```
 
 > ACG: bluetooth.management \| Returns: adapterAddress:String; address:String; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1284,7 +1458,7 @@ Searches an item in the current browsing folder (and its sub folders) using a se
 | `searchString` | String (required) Indicates the string to search. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/search '{ "address":"6c:c4:d5:6d:83:db", "adapterAddress":"b8:27:eb:59:5c:8a", "searchString":"abcd" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/search '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "searchString":"abcd" }
 ```
 
 > ACG: bluetooth.management \| Returns: adapterAddress:String; address:String; returnValue:Boolean; searchResult:String; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1311,7 +1485,7 @@ Opens an AVRCP connection to a remote Bluetooth device.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/avrcp/connect '{"address":"00:18:6b:49:db:86","subscribe":true}
+luna-send -i -f luna://com.webos.service.bluetooth2/avrcp/connect '{"address":"AA:BB:CC:DD:EE:FF","subscribe":true}
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; adapterAddress:String; errorText:String; errorCode:Number; subscribed:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1337,7 +1511,7 @@ Drops the connection to the given remote device on the AVRCP profile.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/disconnect '{"address":"aa:bb:cc:dd:ee:00"}
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/disconnect '{"address":"AA:BB:CC:DD:EE:FF"}
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; adapterAddress:String; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1364,7 +1538,7 @@ Gets media metadata of the target from remote devices connected via AVRCP 1.3 pr
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/getMediaMetaData '{ "subscribe":true, "address":"34:4d:f7:f9:52:f7" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/getMediaMetaData '{ "subscribe":true, "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; subscribed:Boolean; address:String; adapterAddress:String; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1445,7 +1619,7 @@ Returns the information of the media players available that is received from AVR
 | `subscribe` | Boolean (required) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default: false |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/avrcp/getPlayerInfo '{ "address":"54:B8:02:34:B0:78", "adapterAddress":"b8:27:eb:b4:79:3f", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/avrcp/getPlayerInfo '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.management \| Returns: adapterAddress:String; address:String; subscribed:Boolean; returnValue:Boolean; errorCode:Number; errorText:String; playerInfo:Object array: bluetooth2AvrcpPlayerInfo \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1499,7 +1673,7 @@ Returns the status of an AVRCP connection to a remote Bluetooth device.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/avrcp/getStatus '{"address":"aa:bb:cc:dd:ee:00", "subscribe":true}
+luna-send -i -f luna://com.webos.service.bluetooth2/avrcp/getStatus '{"address":"AA:BB:CC:DD:EE:FF", "subscribe":true}
 ```
 
 > ACG: bluetooth.query \| Returns: returnValue:Boolean; subscribed:Boolean; connecting:Boolean; connected:Boolean; adapterAddress:String; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1558,6 +1732,27 @@ luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/internal/enable '{ "
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
 
+<a id="avrcp_internal_getremotebattery"></a>
+## `avrcp/internal/getRemoteBattery`
+
+`luna://com.webos.service.bluetooth2/avrcp/internal/getRemoteBattery`
+
+Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/internal/getRemoteBattery '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="avrcp_internal_getremotefeatures"></a>
 ## `avrcp/internal/getRemoteFeatures`
 
@@ -1577,7 +1772,7 @@ Gets the remote AVRCP's features.
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 
 ```sh
-luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/internal/getRemoteFeatures '{ "address":"aa:bb:cc:dd:ee:ff" }
+luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/internal/getRemoteFeatures '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.devutility \| Returns: returnValue:Boolean; adapterAddress:String; address:String; remoteFeatures:Object array: bluetooth2AvrcpRemoteFeatureInfo; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1604,7 +1799,7 @@ Gets the remote AVRCP's supported notification events.
 | `subscribe` | Boolean (required) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Note: The caller must subscribe to this method. |
 
 ```sh
-luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/internal/getSupportedNotificationEvents '{ "address":"aa:bb:cc:dd:ee:ff", "subscribe":true }
+luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/internal/getSupportedNotificationEvents '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.devutility \| Returns: returnValue:Boolean; adapterAddress:String; subscribed:Boolean; address:String; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1631,7 +1826,7 @@ Enables the AVRCP target to inform the AVRCP controller about the change in medi
 | `playbackStatus` | Object: bluetooth2PlayStatus (required) Indicates the information about the play status of the media. |
 
 ```sh
-luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/ notifyMediaPlayStatus '{ "adapterAddress":"b8:27:eb:59:5c:8a", "address":"04:52:c7:7b:9e:ce", "playbackStatus":{ "duration":60000, "position":8000, "status":"playing" } }
+luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/ notifyMediaPlayStatus '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "playbackStatus":{ "duration":60000, "position":8000, "status":"playing" } }
 ```
 
 > ACG: bluetooth.management \| Returns: adapterAddress:String; address:String; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1658,12 +1853,54 @@ Receives PATH THROUGH command from CT to TG. Note: The PASS THROUGH command is u
 | `subscribe` | Boolean (required) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Note: The caller must subscribe to this method. |
 
 ```sh
-luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/receivePassThroughCommand '{ "address": "aa:bb:cc:dd:ee:ff", "subscribe" : true }
+luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/receivePassThroughCommand '{ "address": "AA:BB:CC:DD:EE:FF", "subscribe" : true }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; adapterAddress:String; subscribed:Boolean; address:String; errorCode:Boolean; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
+
+<a id="avrcp_receiveregisternotificationabsolutevolume"></a>
+## `avrcp/receiveRegisterNotificationAbsoluteVolume`
+
+`luna://com.webos.service.bluetooth2/avrcp/receiveRegisterNotificationAbsoluteVolume`
+
+Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/receiveRegisterNotificationAbsoluteVolume '{}'
+```
+
+> ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="avrcp_registernotificationabsolutevolumeresponse"></a>
+## `avrcp/registerNotificationAbsoluteVolumeResponse`
+
+`luna://com.webos.service.bluetooth2/avrcp/registerNotificationAbsoluteVolumeResponse`
+
+Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/registerNotificationAbsoluteVolumeResponse '{}'
+```
+
+> ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="avrcp_sendpassthroughcommand"></a>
 ## `avrcp/sendPassThroughCommand`
@@ -1686,12 +1923,33 @@ Sends PASS THROUGH command from CT (Controller) to TG (Target). Note: The PASS T
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/sendPassThroughCommand '{ "keyCode":"play", "keyStatus":"pressed", "address":"34:4d:f7:f9:52:f7" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/sendPassThroughCommand '{ "keyCode":"play", "keyStatus":"pressed", "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; adapterAddress:String; address:String; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
+
+<a id="avrcp_sendvendorpassthroughcommand"></a>
+## `avrcp/sendVendorPassThroughCommand`
+
+`luna://com.webos.service.bluetooth2/avrcp/sendVendorPassThroughCommand`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/sendVendorPassThroughCommand '{}'
+```
+
+> ACG groups: all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="avrcp_setabsolutevolume"></a>
 ## `avrcp/setAbsoluteVolume`
@@ -1713,7 +1971,7 @@ Sets the absolute volume on the target device.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/setAbsoluteVolume '{ "address":"34:4d:f7:f9:52:f7", "volume":100 }
+luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/setAbsoluteVolume '{ "address":"AA:BB:CC:DD:EE:FF", "volume":100 }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; adapterAddress:String; address:String; errorCode:String; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -1743,7 +2001,7 @@ Sets the player application settings value.
 | `scan` | String (optional) Indicates the status of scan. Possible values are: off alltracks group |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/setPlayerApplicationSettings '{ "address":"34:4d:f7:f9:52:f7", "equalizer":"on", "repeat":"on" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/setPlayerApplicationSettings '{ "address":"AA:BB:CC:DD:EE:FF", "equalizer":"on", "repeat":"on" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; adapterAddress:String; address:String; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -2923,6 +3181,27 @@ luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/getConnectedDevices
 
 Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/files/sysbus/com.webos.service.bluetooth2.api.json), [2](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/src/bluetoothmanagerservice.cpp)
 
+<a id="device_getdiagnosis"></a>
+## `device/getDiagnosis`
+
+`luna://com.webos.service.bluetooth2/device/getDiagnosis`
+
+Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/getDiagnosis '{}'
+```
+
+> ACG groups: all, bluetooth.query, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="device_getdiscovereddevice"></a>
 ## `device/getDiscoveredDevice`
 
@@ -2948,6 +3227,27 @@ luna-send -i -f luna://com.webos.service.bluetooth2/device/getDiscoveredDevice '
 > ACG: bluetooth.query \| Returns: subscribed:Boolean; returnValue:Boolean; errorCode:Number; errorText:String; adapterAddress:String; device:Object: bluetooth2DeviceStatus \| Service: Allows webOS to use remote Bluetooth devices.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
+
+<a id="device_gethistory"></a>
+## `device/getHistory`
+
+`luna://com.webos.service.bluetooth2/device/getHistory`
+
+Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/getHistory '{}'
+```
+
+> ACG groups: all, bluetooth.query, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="device_getpaireddevices"></a>
 ## `device/getPairedDevices`
@@ -3043,6 +3343,27 @@ luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/internal/getStatus 
 
 Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/files/sysbus/com.webos.service.bluetooth2.api.json)
 
+<a id="device_internal_setdebugvalue"></a>
+## `device/internal/setDebugValue`
+
+`luna://com.webos.service.bluetooth2/device/internal/setDebugValue`
+
+Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/internal/setDebugValue '{}'
+```
+
+> ACG groups: all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="device_internal_startsniff"></a>
 ## `device/internal/startSniff`
 
@@ -3106,12 +3427,138 @@ Sets the local values for the state of a remote device.
 | `blocked` | Boolean (optional) Indicates whether to block (if set) or unblock (if reset) a remote device for pairing and profile connections. Possible values are: true: Blocks incoming connections. Any incoming connection from the device will be immediately rejected. Also, device drivers will be removed and no new ones will be probed as long as the device is blocked. false (Default): Unblocks connections. |
 
 ```sh
-luna-send -f -n 1 luna://com.webos.service.bluetooth2/device/setState '{"address":"34:4d:f7:f9:52:f7", "trusted":true}
+luna-send -f -n 1 luna://com.webos.service.bluetooth2/device/setState '{"address":"AA:BB:CC:DD:EE:FF", "trusted":true}
 ```
 
 > ACG: bluetooth.operation \| Returns: returnValue:Boolean; adapterAddress:String \| Service: Allows webOS to use remote Bluetooth devices.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
+
+<a id="ftp_connect"></a>
+## `ftp/connect`
+
+`luna://com.webos.service.bluetooth2/ftp/connect`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/connect '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="ftp_disconnect"></a>
+## `ftp/disconnect`
+
+`luna://com.webos.service.bluetooth2/ftp/disconnect`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/disconnect '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="ftp_getstatus"></a>
+## `ftp/getStatus`
+
+`luna://com.webos.service.bluetooth2/ftp/getStatus`
+
+Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/getStatus '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.query, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="ftp_listdirectory"></a>
+## `ftp/listDirectory`
+
+`luna://com.webos.service.bluetooth2/ftp/listDirectory`
+
+Lister on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/listDirectory '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="ftp_pullfile"></a>
+## `ftp/pullFile`
+
+`luna://com.webos.service.bluetooth2/ftp/pullFile`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/pullFile '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="ftp_pushfile"></a>
+## `ftp/pushFile`
+
+`luna://com.webos.service.bluetooth2/ftp/pushFile`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/pushFile '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="gatt_addservice"></a>
 ## `gatt/addService`
@@ -3142,6 +3589,195 @@ luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/addService '{ "servic
 > ACG: bluetooth.operation \| Returns: adapterAddress:String; returnValue:Boolean; serverId:String \| Service: Allows webOS to use remote Bluetooth devices.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
+
+<a id="gatt_ancs_advertise"></a>
+## `gatt/ancs/advertise`
+
+`luna://com.webos.service.bluetooth2/gatt/ancs/advertise`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/advertise '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="gatt_ancs_awaitconnectionrequest"></a>
+## `gatt/ancs/awaitConnectionRequest`
+
+`luna://com.webos.service.bluetooth2/gatt/ancs/awaitConnectionRequest`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/awaitConnectionRequest '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="gatt_ancs_awaitnotifications"></a>
+## `gatt/ancs/awaitNotifications`
+
+`luna://com.webos.service.bluetooth2/gatt/ancs/awaitNotifications`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/awaitNotifications '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="gatt_ancs_connect"></a>
+## `gatt/ancs/connect`
+
+`luna://com.webos.service.bluetooth2/gatt/ancs/connect`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/connect '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="gatt_ancs_disconnect"></a>
+## `gatt/ancs/disconnect`
+
+`luna://com.webos.service.bluetooth2/gatt/ancs/disconnect`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/disconnect '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="gatt_ancs_getstatus"></a>
+## `gatt/ancs/getStatus`
+
+`luna://com.webos.service.bluetooth2/gatt/ancs/getStatus`
+
+Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/getStatus '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.query, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="gatt_ancs_performnotificationaction"></a>
+## `gatt/ancs/performNotificationAction`
+
+`luna://com.webos.service.bluetooth2/gatt/ancs/performNotificationAction`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/performNotificationAction '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="gatt_ancs_queryappattributes"></a>
+## `gatt/ancs/queryAppAttributes`
+
+`luna://com.webos.service.bluetooth2/gatt/ancs/queryAppAttributes`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/queryAppAttributes '{}'
+```
+
+> ACG groups: public, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="gatt_ancs_querynotificationattributes"></a>
+## `gatt/ancs/queryNotificationAttributes`
+
+`luna://com.webos.service.bluetooth2/gatt/ancs/queryNotificationAttributes`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/queryNotificationAttributes '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="gatt_closeserver"></a>
 ## `gatt/closeServer`
@@ -3190,7 +3826,7 @@ Connects to the GATT profile on the specified remote device.
 | `autoConnect` | Boolean (optional) Indicates if the remote device is automatically connected. Possible values are: true : Automatically connects as soon as the remote device becomes available. false : Manually connect to the remote device. Default: false |
 
 ```sh
-luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/connect '{ "address":"f6:04:af:d2:87:32" }
+luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/connect '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.operation \| Returns: returnValue:Boolean; adapaterAddress:String; address:String; errorCode:Number; errorText:String; clientId:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -3242,7 +3878,7 @@ Discovers available services for the given remote device. Pre-requisite: The giv
 | `address` | String (optional) Indicates the address of the remote device. |
 
 ```sh
-luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/discoverServices '{ "address":"f6:04:af:d2:87:32" }
+luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/discoverServices '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.operation \| Returns: adapterAddress:String; address:String; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -3269,7 +3905,7 @@ Gets available services for either the given local Bluetooth adapter or remote d
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 
 ```sh
-luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/getServices '{"adapterAddress":"00:00:68:64:d1:30"}
+luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/getServices '{"adapterAddress":"AA:BB:CC:DD:EE:FF"}
 ```
 
 > ACG: bluetooth.operation \| Returns: adapterAddress:String; address:String; services:Object array: bluetooth2GattServiceInfo; returnValue:Boolean; subscribed:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -3296,7 +3932,7 @@ Returns the status of GATT connection to the given remote device.
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 
 ```sh
-luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/getStatus '{"address":"f6:04:af:d2:87:32"}
+luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/getStatus '{"address":"AA:BB:CC:DD:EE:FF"}
 ```
 
 > ACG: bluetooth.query \| Returns: returnValue:Boolean; adapterAddress:String; address:String; connecting:Boolean; connected:Boolean; discoveringServices:Boolean; subscribed:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -3412,7 +4048,7 @@ Reads the value of a specific characteristic. Note: When called from client side
 | `clientId` | String (optional) Indicates the identifier of the remote device (client) to get the characteristic from. To read the value of characteristics, set serverId to specific server identifier. Or to read in remote device, set clientId to specific remote device identifier. If both serverId and clientId not specified, find characteristics in the webOS device. |
 
 ```sh
-luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/readCharacteristicValue '{ "adapterAddress":"00:00:68:64:d1:30", "service":"f000aa00-0451-4000-b000-000000000000", "characteristic":"f000aa01-0451-4000-b000-000000000000" }
+luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/readCharacteristicValue '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "service":"f000aa00-0451-4000-b000-000000000000", "characteristic":"f000aa01-0451-4000-b000-000000000000" }
 ```
 
 > ACG: bluetooth.operation \| Returns: adapterAddress:String; returnValue:Boolean; address:String; service:String; value:Object: bluetooth2GattCharacteristicInfo \| Service: Allows webOS to use remote Bluetooth devices.
@@ -3600,6 +4236,27 @@ luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/writeDescriptorValue 
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
 
+<a id="hfp_closesco"></a>
+## `hfp/closeSCO`
+
+`luna://com.webos.service.bluetooth2/hfp/closeSCO`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/closeSCO '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="hfp_connect"></a>
 ## `hfp/connect`
 
@@ -3646,7 +4303,7 @@ Drops the connection to the given remote device on the HFP profile.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/disconnect'{ "address":"34:4d:f7:f9:52:f7" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/disconnect'{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.operation \| Returns: returnValues:Boolean; adapterAddress:String; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.
@@ -3673,12 +4330,138 @@ Returns the status of a HFP connection to a remote device. If address input para
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/getStatus'{ "address":"34:4d:f7:f9:52:f7", "subscribe":false }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/getStatus'{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":false }
 ```
 
 > ACG: bluetooth.query \| Returns: returnValue:Boolean; subscribed:Boolean; connecting:Boolean; connected:Boolean; sco:Boolean; adapterAddress:String; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
+
+<a id="hfp_indicatecall"></a>
+## `hfp/indicateCall`
+
+`luna://com.webos.service.bluetooth2/hfp/indicateCall`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/indicateCall '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="hfp_opensco"></a>
+## `hfp/openSCO`
+
+`luna://com.webos.service.bluetooth2/hfp/openSCO`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/openSCO '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="hfp_receiveat"></a>
+## `hfp/receiveAT`
+
+`luna://com.webos.service.bluetooth2/hfp/receiveAT`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/receiveAT '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="hfp_receiveresult"></a>
+## `hfp/receiveResult`
+
+`luna://com.webos.service.bluetooth2/hfp/receiveResult`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/receiveResult '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="hfp_sendat"></a>
+## `hfp/sendAT`
+
+`luna://com.webos.service.bluetooth2/hfp/sendAT`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/sendAT '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="hfp_sendresult"></a>
+## `hfp/sendResult`
+
+`luna://com.webos.service.bluetooth2/hfp/sendResult`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/sendResult '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="hid_connect"></a>
 ## `hid/connect`
@@ -3806,6 +4589,27 @@ luna-send -n 1 -f luna://com.webos.service.bluetooth2/hid/internal/setReport '{}
 
 Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/files/sysbus/com.webos.service.bluetooth2.api.json)
 
+<a id="le_configureadvertisement"></a>
+## `le/configureAdvertisement`
+
+`luna://com.webos.service.bluetooth2/le/configureAdvertisement`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/configureAdvertisement '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="le_disableadvertising"></a>
 ## `le/disableAdvertising`
 
@@ -3853,6 +4657,48 @@ luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/getStatus '{}'
 
 Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/files/sysbus/com.webos.service.bluetooth2.api.json)
 
+<a id="le_internal_startscan"></a>
+## `le/internal/startScan`
+
+`luna://com.webos.service.bluetooth2/le/internal/startScan`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/internal/startScan '{}'
+```
+
+> ACG groups: all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="le_setscanparameters"></a>
+## `le/setScanParameters`
+
+`luna://com.webos.service.bluetooth2/le/setScanParameters`
+
+Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/setScanParameters '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="le_startadvertising"></a>
 ## `le/startAdvertising`
 
@@ -3881,6 +4727,27 @@ luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/startAdvertising '{ "su
 > ACG: bluetooth.operation \| Returns: subscribed:Boolean; returnValue:Boolean; adapterAddress:String; advertiserId:Number \| Service: Allows webOS to use remote Bluetooth devices.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
+
+<a id="le_startmultiscan"></a>
+## `le/startMultiScan`
+
+`luna://com.webos.service.bluetooth2/le/startMultiScan`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/startMultiScan '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="le_startscan"></a>
 ## `le/startScan`
@@ -3913,6 +4780,27 @@ luna-send -f -i luna://com.webos.service.bluetooth2/le/startScan '{ "subscribe":
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
 
+<a id="le_stopadvertising"></a>
+## `le/stopAdvertising`
+
+`luna://com.webos.service.bluetooth2/le/stopAdvertising`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/stopAdvertising '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="le_updateadvertising"></a>
 ## `le/updateAdvertising`
 
@@ -3942,6 +4830,27 @@ luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/updateAdvertising '{}'
 
 Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/files/sysbus/com.webos.service.bluetooth2.api.json), [2](https://github.com/webosose/com.webos.service.bluetooth2/blob/master/src/bluetoothmanagerservice.cpp)
 
+<a id="leaudio_internal_updatebroadcastmetadata"></a>
+## `leaudio/internal/updateBroadcastMetadata`
+
+`luna://com.webos.service.bluetooth2/leaudio/internal/updateBroadcastMetadata`
+
+Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/leaudio/internal/updateBroadcastMetadata '{}'
+```
+
+> ACG groups: bluetooth.manage, devices. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="map_connect"></a>
 ## `map/connect`
 
@@ -3963,7 +4872,7 @@ Connects to the MAS Instance of the specified remote device. Note: The method is
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true : Subscribe to get notifications. false : Not subscribed. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/map/connect '{ "adapterAddress":"b8:27:eb:13:68 :c0", "address":"64:a2:f9:7e:e7:a7", "instanceName":"SMS/MMS", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/map/connect '{ "adapterAddress":"b8:27:eb:13:68 :c0", "address":"AA:BB:CC:DD:EE:FF", "instanceName":"SMS/MMS", "subscribe":true }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; subscribed:Boolean; address:String; adapterAddress:String; instanceName:String; sessionId:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -3990,7 +4899,7 @@ Disconnects from the MAS Instance on the specified remote device. Note: The meth
 | `sessionId` | String (required) Indicates the unique identifier of the session which was received as a connection response from the map/connect . |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/disconnect '{ "adapterAddress":"b8:27:eb: 13:68:c0", "address":"64:a2:f9:7e:e7:a7", "sessionId":"session1" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/disconnect '{ "adapterAddress":"b8:27:eb: 13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session1" }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; instanceName:String; sessionId:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4019,7 +4928,7 @@ Lists the available folders of the connected MAS instance of the MSE device. Not
 | `maxListCount` | Number (optional) Indicates the maximum number of items. Default: 1024 |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getFolderList '{ "adapterAddress":"b8:27:eb :13:68:c0", "address":"64:a2:f9:7e:e7:a7", "sessionId":"session2" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getFolderList '{ "adapterAddress":"b8:27:eb :13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2" }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; folders:String array; instanceName:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4045,7 +4954,7 @@ Retrieves the MAS instance details of a MSE device. MAP MSE devices may present 
 | `address` | String (required) Indicates the address of the remote Bluetooth device address(MSE). |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMASInstances '{ "adapterAddress":"b8:2 7:eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMASInstances '{ "adapterAddress":"b8:2 7:eb:13:68:c0", "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.query \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; masInstances:Object array: bluetooth2MasInstances; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4075,7 +4984,7 @@ Downloads the specific message based on the message handle. Note: This method is
 | `sessionId` | String (required) Indicates the unique identifier of the session which was received as a connection response from the map/connect . |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMessage '{ "adapterAddress":"b8:27:eb: 13:68:c0", "address":"64:a2:f9:7e:e7:a7", "sessionId":"session2", "handle":"message288230376151723506" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMessage '{ "adapterAddress":"b8:27:eb: 13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2", "handle":"message288230376151723506" }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; destinationFile:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4102,7 +5011,7 @@ Returns all the available fields that can be used in the fields filter of the ge
 | `sessionId` | String (required) Indicates the unique identifier of the session which was received as a connection response from the map/connect . |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMessageFilters '{ "adapterAddress":"b8:2 7:eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7", "sessionId":"session2" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMessageFilters '{ "adapterAddress":"b8:2 7:eb:13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2" }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; filters:String array; instanceName:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4131,7 +5040,7 @@ Gets the message list of the specific folder of the connected MAS instance of th
 | `filters` | Object: bluetooth2MessageFilters (optional) Indicates the list of the filters which can be used for the API. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMessageList '{ "adapterAddress":"b8:27 :eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7", "sessionId":"session2", "folder":"sent", "filter":{ "maxCount":1 } }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMessageList '{ "adapterAddress":"b8:27 :eb:13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2", "folder":"sent", "filter":{ "maxCount":1 } }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; instanceName:String; returnValue:Boolean; messages:Object array: bluetooth2MessageList \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4159,7 +5068,7 @@ Receives the message notification from the MSE device. Note : This method is ava
 | `subscribe` | Boolean (required) Indicates if subscribed to get the notifications on the message event from the MSE. Possible values are: true : Subscribe to get the notifications false : Not subscribed |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/map/getMessageNotification '{ "adapterAddress":"b8:27:eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7", "sessionId":"session3", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/map/getMessageNotification '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session3", "subscribe":true }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; returnValue:Boolean; subscribed:Boolean; sessionId:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4187,7 +5096,7 @@ Returns the status of the MAS connection with a remote device. Note: The method 
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true : Subscribed for notifications. false : Not subscribed. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/map/getStatus '{ "adapterAddress":"b8:27:eb:13: 68:c0", "address":"64:a2:f9:7e:e7:a7", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/map/getStatus '{ "adapterAddress":"b8:27:eb:13: 68:c0", "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.query \| Returns: subscribed:Boolean; returnValue:Boolean; errorCode:Number; errorText:String; adapterAddress:String; address:String; status:Object array: bluetooth2MasInstancesStatus \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4219,7 +5128,7 @@ Sends the message. Example: Sending an SMS. Note : The API is designed based on 
 | `charset` | String (optional) Indicates the type of content delivered in the iMessage Possible values are: native : Only applicable for SMS messages, when the bMessage content is a SMS_Deliver PDU which can be sent by the MSE without trans-coding utf8 : If the message text shall is coded in UTF-8 which may (Email/MMS) or shall be trans-coded into SMS by the MSE before sending. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/pushMessage '{ "adapterAddress":"b8:27:eb :13:68:c0", "address":"64:a2:f9:7e:e7:a7", "sessionId":"session5", "sourceFile":"/media/internal/map/64_a2_f9_7e_e7_a7/message2882303761 51723506", "folder":"outbox" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/pushMessage '{ "adapterAddress":"b8:27:eb :13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session5", "sourceFile":"/media/internal/map/64_a2_f9_7e_e7_a7/message2882303761 51723506", "folder":"outbox" }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; returnValue:Boolean; handle:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4247,7 +5156,7 @@ Returns to the child folder of the current directory of the connected MAS instan
 | `folder` | String (required) Indicates the name or the absolute path of the child folder. Possible inputs: Get the supported folder list using map/getFolderlist |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/setFolder '{ "adapterAddress":"b8:27:eb:1 3:68:c0", "address":"64:a2:f9:7e:e7:a7", "sessionId":"session2", "folder":"/telecom/msg/inbox" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/setFolder '{ "adapterAddress":"b8:27:eb:1 3:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2", "folder":"/telecom/msg/inbox" }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; instanceName:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4277,7 +5186,7 @@ Modifies the status of a message on the MSE. Note : This method is available onl
 | `statusValue` | Boolean (required) Indicates the status value. For the "readStatus" indicator. Possible values are: true: read false: unread For the "deletedStatus" indicator. Possible values are: true: deleted false: undeleted |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/setMessageStatus '{ "adapterAddress":"b8: 27:eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7", "sessionId":"session2", "handle":"message288230376151723506", "statusIndicator":"delete", "statusValue":true }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/setMessageStatus '{ "adapterAddress":"b8: 27:eb:13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2", "handle":"message288230376151723506", "statusIndicator":"delete", "statusValue":true }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4863,7 +5772,7 @@ Open (or initialize) an OPP connection to a remote Bluetooth device. In some cas
 | `subscribe` | Boolean (optional) Subscribe and get notified when connection is closed. Possible values are: true - Subscribed for changes. false - Not subscribed. Default value: false |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/opp/connect '{ "address":"34:4d:f7:f9:52:f7", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/opp/connect '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.management \| Returns: subscribed:Boolean; returnValue:Boolean; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4888,7 +5797,7 @@ Close (or deinitialize) the connection to the given remote device on OPP profile
 | `address` | String (required) The address (bdaddr) of the remote device. |
 
 ```sh
-luna-send -n 1 luna://com.webos.service.bluetooth2/opp/disconnect '{ "address":"34:4d:f7:f9:52:f7" }
+luna-send -n 1 luna://com.webos.service.bluetooth2/opp/disconnect '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4914,7 +5823,7 @@ Return the status of an OPP connection to a remote Bluetooth device. This method
 | `subscribe` | Boolean (optional) To be notified of changes to the connection, set subscribe to true . Otherwise, set subscribe to false . |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/opp/getStatus '{ "address":"34:4d:f7:f9:52:f7", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/opp/getStatus '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.query \| Returns: returnValue:Boolean; connecting:Boolean; connected:Boolean; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.
@@ -4968,7 +5877,7 @@ Push a file to a remote Bluetooth device. This method is available only for push
 | `adapterAddress` | String (optional) The address of the adapter executing this method. If not specified, the default adapter will be used. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/opp/pushFile '{ "address":"34:4d:f7:f9:52:f7", "sourceFile":"music.mp3", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/opp/pushFile '{ "address":"AA:BB:CC:DD:EE:FF", "sourceFile":"music.mp3", "subscribe":true }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; adapterAddress:String; subscribed:Boolean; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5001,6 +5910,132 @@ luna-send -n 1 -f luna://com.webos.service.bluetooth2/opp/rejectTransferRequest 
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
 
+<a id="pan_connect"></a>
+## `pan/connect`
+
+`luna://com.webos.service.bluetooth2/pan/connect`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pan/connect '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="pan_disconnect"></a>
+## `pan/disconnect`
+
+`luna://com.webos.service.bluetooth2/pan/disconnect`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pan/disconnect '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="pan_getstatus"></a>
+## `pan/getStatus`
+
+`luna://com.webos.service.bluetooth2/pan/getStatus`
+
+Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pan/getStatus '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.query, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="pan_settethering"></a>
+## `pan/setTethering`
+
+`luna://com.webos.service.bluetooth2/pan/setTethering`
+
+Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pan/setTethering '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="pbap_acceptaccessrequest"></a>
+## `pbap/acceptAccessRequest`
+
+`luna://com.webos.service.bluetooth2/pbap/acceptAccessRequest`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/acceptAccessRequest '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="pbap_awaitaccessrequest"></a>
+## `pbap/awaitAccessRequest`
+
+`luna://com.webos.service.bluetooth2/pbap/awaitAccessRequest`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/awaitAccessRequest '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="pbap_connect"></a>
 ## `pbap/connect`
 
@@ -5021,7 +6056,7 @@ Connects to the PBAP profile on the specified remote device. Note: This method i
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed. Default: false |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/pbap/connect '{ "address":"64:a2:f9:7e:e7:a7", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/pbap/connect '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; subscribed:Boolean; adapterAddress:String; errorCode:Number; errorText:String; address:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5047,7 +6082,7 @@ Disconnects from the PBAP profile on the specified remote device. Note: This met
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/pbap/disconnect '{ "address":"aa:bb:cc:dd:ee:00" }
+luna-send -i -f luna://com.webos.service.bluetooth2/pbap/disconnect '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: returnValue:Boolean; adapterAddress:String; errorText:String; errorCode:Number; address:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5074,7 +6109,7 @@ Gets the supported PBAP profile properties from PSE device. Note: This method is
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Default: false |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/pbap/getPhoneBookProperties '{ "adapterAddress":"b8:27:eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/pbap/getPhoneBookProperties '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; properties:Object: bluetooth2PbapProperties; subscribed:Boolean; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5100,7 +6135,7 @@ Gets the total number of vcf entries from the selected phonebook path. Note: Thi
 | `address` | String (required) Indicates the address of the remote device. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/getSize '{ "adapterAddress":"b8:27:eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/getSize '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; size:Number; adapterAddress:String; address:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5127,7 +6162,7 @@ Returns the status of a PBAP connection to a remote Bluetooth device. Note: The 
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/pbap/getStatus '{ "address":"70:bb:e9:7e:c2:7d", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/pbap/getStatus '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
 
 > ACG: bluetooth.query \| Returns: returnValue:Boolean; connecting:Boolean; connected:Boolean; adapterAddress:String; subscribed:Boolean; errorText:String; errorCode:Number; address:String \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5153,7 +6188,7 @@ Displays all the available vcard filters supported by Bluetooth stack. Note: The
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/getvCardFilters '{ "adapterAddress":"b8:27:eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/getvCardFilters '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; adapterAddress:String; address:String; filters:String array; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5185,7 +6220,7 @@ Retrieves all (given maxcount) the phonebook entries from a given startoffset an
 | `filterFields` | String array (optional) Provide vCard with fields as specified in the filter. Mandatory properties for vCard 2.1 are VERSION, N, and TEL. Mandatory properties for vCard 3.0 are VERSION, N, FN, and TEL. Note: We can get the list of supported filters using pbap/getvCardFilters API. If not specified, all supported filters are used by default. |
 
 ```sh
-luna-send -i -f luna://com.webos.service.bluetooth2/pbap/pullPhoneBook '{ "adapterAddress":"5c:f3:70:87:3a:89", "address":"98:09:cf:15:4e:67", "destinationFile":"mycontacts.vcf", "subscribe":true }
+luna-send -i -f luna://com.webos.service.bluetooth2/pbap/pullPhoneBook '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "destinationFile":"mycontacts.vcf", "subscribe":true }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; destinationFile:String; subscribed:Boolean; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5215,12 +6250,33 @@ Given a vcard handle, retrieves the vcard in the current phonebook object and st
 | `filterFields` | String array (optional) Provides vCard with fields as specified in the filter. Mandatory properties for vCard 2.1 are VERSION, N, and TEL. Mandatory properties for vCard 3.0 are VERSION, N, FN, and TEL. Note : We can get the list of supported filters using pbap/getvCardFilters API. If not specified, all supported filters are used by default. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/pullvCard '{ "adapterAddress":"b8:27:eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7", "vCardHandle":"123.vcf", "vCardVersion":"2.1", "filterFields":[ "BDAY", "FN" ] }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/pullvCard '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "vCardHandle":"123.vcf", "vCardVersion":"2.1", "filterFields":[ "BDAY", "FN" ] }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; adapterAddress:String; address:String; destinationFile:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
+
+<a id="pbap_rejectaccessrequest"></a>
+## `pbap/rejectAccessRequest`
+
+`luna://com.webos.service.bluetooth2/pbap/rejectAccessRequest`
+
+Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/rejectAccessRequest '{}'
+```
+
+> ACG groups: public, private, all, bluetooth.manage, devices.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="pbap_searchphonebook"></a>
 ## `pbap/searchPhoneBook`
@@ -5243,7 +6299,7 @@ Searches for entries matching the given condition and returns an object of vcard
 | `filter` | Object: bluetooth2PbapSearchFilter (required) Filter with key & value pair to search the phonebook. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/searchPhoneBook '{ "adapterAddress":"b8:27:eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7", "order":"indexed", "filter":{ "key":"name", "value":"LG" } }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/searchPhoneBook '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "order":"indexed", "filter":{ "key":"name", "value":"LG" } }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; adapterAddress:String; address:String; vcfHandles:Object: bluetooth2PbapVcfHandles; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5271,7 +6327,7 @@ Sets the phonebook object for other operations. Note: This method is available o
 | `object` | String (required) Indicates the path of the phonebook object. Possible inputs : pb : phonebook for the saved contacts. ich : incoming call history. och : outgoing call history. mch : missing call history. cch : a combination of ich, och, mch. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/setPhoneBook '{ "adapterAddress":"b8:27:eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7", "repository":"internal", "object":"pb" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/setPhoneBook '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "repository":"internal", "object":"pb" }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; address:String; adapterAddress:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5297,7 +6353,7 @@ Displays the total number of vcf file entries from the selected phonebook path. 
 | `address` | String (required) Indicates the address of the remote device for the requested operation. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/vCardListing '{ "adapterAddress":"b8:27 :eb:13:68:c0", "address":"64:a2:f9:7e:e7:a7" }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/vCardListing '{ "adapterAddress":"b8:27 :eb:13:68:c0", "address":"AA:BB:CC:DD:EE:FF" }
 ```
 
 > ACG: bluetooth.management \| Returns: errorCode:Number; errorText:String; vcfHandles:Object array: bluetooth2PbapVcfHandles; adapterAddress:String; address:String; returnValue:Boolean \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5346,7 +6402,7 @@ Open a SPP connection to a remote Bluetooth device.
 | `adapterAddress` | String (optional) The address of the adapter executing this method call. If not specified, the default adapter will be used. |
 
 ```sh
-luna-send -i -f -a "com.domain.app.testapp" luna://com.webos.service.bluetooth2/spp/connect '{ "address":"b4:f1:da:6c:7e:67", "uuid":"00001101-0000-1000-8000-00805f9b34fb", "subscribe":true }
+luna-send -i -f -a "com.domain.app.testapp" luna://com.webos.service.bluetooth2/spp/connect '{ "address":"AA:BB:CC:DD:EE:FF", "uuid":"00001101-0000-1000-8000-00805f9b34fb", "subscribe":true }
 ```
 
 > ACG: bluetooth.operation \| Returns: returnValue:Boolean; adapterAddress:String; subscribed:Boolean; address:String; channelId:String; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.
@@ -5427,7 +6483,7 @@ Return the status of a SPP connection to a remote device.
 | `adapterAddress` | String (optional) The address of the adapter executing this method call. When the field is not set, the default adapter is used for it. |
 
 ```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/spp/getStatus '{ "address": "34:4d:f7:f9:52:f7", "subscribe": false }
+luna-send -n 1 -f luna://com.webos.service.bluetooth2/spp/getStatus '{ "address": "AA:BB:CC:DD:EE:FF", "subscribe": false }
 ```
 
 > ACG: bluetooth.query \| Returns: returnValue:Boolean; connecting:Boolean; connected:Boolean; adapterAddress:String; connectedChannels:String array; subscribed:Boolean; errorText:String; errorCode:Number \| Service: Allows webOS to use remote Bluetooth devices.

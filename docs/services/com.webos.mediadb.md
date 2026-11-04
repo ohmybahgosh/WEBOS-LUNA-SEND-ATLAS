@@ -1,12 +1,14 @@
 # `com.webos.mediadb`
 
-35 methods.  Platforms seen: webOS OSE, webOS TV.
+39 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
 | Method | Access | Sub | Category | Description |
 |---|---|---|---|---|
+| [`backupEpg`](#backupepg) | private |  | tv-broadcast | Method on com.webos.mediadb (introspected on-device; parameters undocumented). |
 | [`batch`](#batch) | public |  | db | Executes multiple database operations in one request. |
+| [`cancelSearch`](#cancelsearch) | private |  | media | Method on com.webos.mediadb (introspected on-device; parameters undocumented). |
 | [`compact`](#compact) | private |  | db | The compact method invokes the low level garbage collector. When DB8 executes a del operation without Purge:True param, it only marks the ob |
 | [`del`](#del) | public |  | db | Deletes JSON data objects. |
 | [`delKind`](#delkind) | public |  | db | Deletes a kind and ALL objects of that kind. |
@@ -19,6 +21,7 @@
 | [`internal/preBackup`](#internal_prebackup) | private |  | db | Invoked when an internal webOS service wants to restore a database from a backup file. |
 | [`internal/preRestore`](#internal_prerestore) | private |  | db | Used by the webOS service to correctly respond to a database restore command. This method must be called before restoring a database. |
 | [`internal/releaseAdminProfile`](#internal_releaseadminprofile) | private |  | db | For applications whose profiling is controlled by admin-privileged applications, this method relinquishes the profiling control from admin-p |
+| [`internal/scheduledBackup`](#internal_scheduledbackup) | private |  | media | Method on com.webos.mediadb (introspected on-device; parameters undocumented). |
 | [`internal/scheduledPurge`](#internal_scheduledpurge) | private |  | db | An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that  |
 | [`internal/scheduledSpaceCheck`](#internal_scheduledspacecheck) | private |  | db | An internal DB8 callback method, that is called by the Activity Manager for checking available disk space. |
 | [`internal/spaceCheck`](#internal_spacecheck) | private |  | db | An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when  |
@@ -39,8 +42,30 @@
 | [`search`](#search) | public | yes | db | Like find but supports the ? full-text operator. |
 | [`setShardMode`](#setshardmode) | unknown |  | db | Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by an |
 | [`shardInfo`](#shardinfo) | unknown |  | db | Retrieves the state of a shard, like shard activity, associated media devices, mount point. |
+| [`shardKind`](#shardkind) | public |  | media | Method on com.webos.mediadb (introspected on-device; parameters undocumented). |
 | [`stats`](#stats) | unknown |  | db | The stats method returns detailed information about the storage space used by every service. |
 | [`watch`](#watch) | public | yes | db | Watches for updates that would change a query result. |
+
+<a id="backupepg"></a>
+## `backupEpg`
+
+`luna://com.webos.mediadb/backupEpg`
+
+Method on com.webos.mediadb (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.mediadb/backupEpg '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="batch"></a>
 ## `batch`
@@ -66,6 +91,27 @@ luna-send -n 1 -f luna://com.webos.mediadb/batch '{"operations":[{"method":"put"
 > Same DB8 API surface as com.palm.db but for large media datasets; kinds use com.webos.mediadb permissions.
 
 Sources: [1](https://webostv.developer.lge.com/develop/references/media-database)
+
+<a id="cancelsearch"></a>
+## `cancelSearch`
+
+`luna://com.webos.mediadb/cancelSearch`
+
+Method on com.webos.mediadb (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.mediadb/cancelSearch '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="compact"></a>
 ## `compact`
@@ -369,6 +415,27 @@ luna-send -n 1 -f luna://com.webos.mediadb/internal/releaseAdminProfile '{}'
 > Listed under ACG group "mediadatabase.management" in the component api.json/groups.json; no parameter docs read. Same method as com.webos.service.db/internal/releaseAdminProfile (params copied from that record).
 
 Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/com.webos.service.db.api.json), [2](https://github.com/webosose/db8/blob/master/files/sysbus/static/com.webos.service.db.api.json)
+
+<a id="internal_scheduledbackup"></a>
+## `internal/scheduledBackup`
+
+`luna://com.webos.mediadb/internal/scheduledBackup`
+
+Method on com.webos.mediadb (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.mediadb/internal/scheduledBackup '{}'
+```
+
+> ACG groups: all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="internal_scheduledpurge"></a>
 ## `internal/scheduledPurge`
@@ -869,6 +936,27 @@ luna-send -n 1 -f luna://com.webos.mediadb/shardInfo '{}'
 > Listed under ACG group "mediadatabase.operation" in the component api.json/groups.json; no parameter docs read. Same method as com.webos.service.db/shardInfo (params copied from that record).
 
 Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/com.webos.service.db.api.json), [2](https://github.com/webosose/db8/blob/master/files/sysbus/static/com.webos.service.db.api.json)
+
+<a id="shardkind"></a>
+## `shardKind`
+
+`luna://com.webos.mediadb/shardKind`
+
+Method on com.webos.mediadb (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.mediadb/shardKind '{}'
+```
+
+> ACG groups: database.internal, public, private, all, database.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="stats"></a>
 ## `stats`

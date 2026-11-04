@@ -4,6 +4,8 @@ Every record in the catalog lists the exact URLs it came from.  This is the roll
 
 | Source | Records |
 |---|---|
+| https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68) | 3183 |
+| https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device  | 2565 |
 | https://www.webosose.org | 1084 |
 | https://github.com/SunnySide007/lumen-webos | 509 |
 | https://github.com/webosose/db8 | 231 |
@@ -16,13 +18,12 @@ Every record in the catalog lists the exact URLs it came from.  This is the roll
 | https://github.com/home-assistant-libs/aiowebostv | 41 |
 | https://github.com/webosose/com.webos.service.bluetooth2 | 37 |
 | https://wiki.webos-internals.org | 33 |
-| https://github.com/webosbrew/pages | 32 |
 | https://github.com/rorygallagher2024/glasshouse | 32 |
+| https://github.com/webosbrew/pages | 31 |
 | https://github.com/JPersson77/LGTVCompanion | 30 |
 | https://github.com/webosose/sleepd | 25 |
 | https://github.com/ConnectSDK/Connect-SDK-Android-Core | 25 |
 | https://github.com/grzegorz914/homebridge-lgwebos-tv | 24 |
-| https://github.com/webosbrew/webos-homebrew-channel | 23 |
 | https://github.com/Osyna/Overglass | 22 |
 | https://github.com/Jezzarium/Actually-Good-WebOS | 20 |
 | https://github.com/merdok/homebridge-webos-tv | 18 |
@@ -31,6 +32,7 @@ Every record in the catalog lists the exact URLs it came from.  This is the roll
 | https://github.com/webosbrew/dev-manager-desktop | 14 |
 | https://github.com/hobbyquaker/lgtv2 | 14 |
 | https://github.com/webosose/sam | 13 |
+| https://github.com/webosbrew/webos-homebrew-channel | 11 |
 | https://github.com/andrewfraley/magic_mapper | 11 |
 | https://github.com/PaulButtle/LGGlassUI | 11 |
 | https://github.com/Beltzac/piagent | 11 |
@@ -53,17 +55,16 @@ Every record in the catalog lists the exact URLs it came from.  This is the roll
 | https://github.com/webosbrew/hyperion-webos | 3 |
 | https://github.com/throwaway96/downgr8 | 3 |
 | https://www.banneret.nl | 2 |
-| https://github.com/lennylxx/lg-devmode-forever | 2 |
 | https://github.com/Kyusoo-Kim/memo | 2 |
 | https://github.com/Tenzer/alga | 2 |
 | https://github.com/webosbrew/webosbrew.github.io | 2 |
 | https://github.com/Staphylococcus/LG_Buddy | 2 |
 | https://github.com/throwaway96/dejavuln-autoroot | 2 |
-| https://github.com/webosbrew/piccap | 2 |
 | https://github.com/Cathwyler/MagicRemoteService | 2 |
 | https://github.com/webosose/com.webos.service.rosbridge | 2 |
 | https://github.com/bendavid/aiopylgtv | 2 |
 | https://github.com/supersaiyanmode/PyWebOSTV | 2 |
+| https://github.com/webosbrew/piccap | 1 |
 | https://github.com/Informatic/webos-ssap-web | 1 |
 | https://github.com/webosose/com.webos.service.hfp | 1 |
 | https://github.com/PhanNgocTrieu/swpct | 1 |

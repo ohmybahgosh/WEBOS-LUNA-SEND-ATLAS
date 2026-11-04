@@ -1,9 +1,11 @@
 # Power Management (sleep/wake)
 
-40 methods.  [Back to index](../../README.md#categories)
+44 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
+| [`luna://com.palm.sleep/timeout/getAllAlarms`](../services/com.palm.sleep.md#timeout_getallalarms) | private | Getter on com.palm.sleep (introspected on-device; parameters undocumented). |
+| [`luna://com.palm.sleep/timeout/getNextWakeupAlarm`](../services/com.palm.sleep.md#timeout_getnextwakeupalarm) | private | Getter on com.palm.sleep (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.devicereset/requestReboot`](../services/com.webos.service.devicereset.md#requestreboot) | ssap | Full TV reboot |
 | [`luna://com.webos.service.power2/acquireWakeLock`](../services/com.webos.service.power2.md#acquirewakelock) | public | Allows the device to remain powered on for a specific time period, after which the lock is released. Note: No other state change operation can be executed durin |
 | [`luna://com.webos.service.power2/getPowerOnReason`](../services/com.webos.service.power2.md#getpoweronreason) | public | Gets the last reason set for powering-on the device. |
@@ -44,3 +46,5 @@
 | [`luna://com.webos.service.sleep/timeout/clear`](../services/com.webos.service.sleep.md#timeout_clear) | public | Handles a timeout/clear message and deletes a timeout by its key. |
 | [`luna://com.webos.service.sleep/timeout/set`](../services/com.webos.service.sleep.md#timeout_set) | public | Handles a timeout/set message and adds a new power timeout. Relative timeouts can be set by passing the "in" parameter. Absolute timeouts can be set by passing  |
 | [`luna://com.webos.service.tv.power/reboot`](../services/com.webos.service.tv.power.md#reboot) | private | Soft reboot the TV (webOS 4/5 path) |
+| [`luna://com.webos.service.wifi/wearable/getSleepMode`](../services/com.webos.service.wifi.md#wearable_getsleepmode) | private | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.wifi/wearable/setSleepMode`](../services/com.webos.service.wifi.md#wearable_setsleepmode) | private | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |

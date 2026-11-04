@@ -1,6 +1,6 @@
 # `com.webos.service.settings`
 
-26 methods.  Platforms seen: webOS OSE, webOS TV.
+32 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -14,23 +14,29 @@
 | [`ext`](#ext) | unknown |  | settings | It is defined for future expansion. Not in use now. |
 | [`getCurrentSettings`](#getcurrentsettings) | public | yes | settings | Looks up the settings item, and returns the settings for the current foreground app only unlike the setSystemSettings method. Remarks Even t |
 | [`getSystemSettingDesc`](#getsystemsettingdesc) | public | yes | settings | Retrieves detailed information on the settings. Exception: The request for nonexistent keys is processed as an error. |
+| [`getSystemSettingDescPriv`](#getsystemsettingdescpriv) | private |  | settings | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). |
 | [`getSystemSettingFactoryValue`](#getsystemsettingfactoryvalue) | public |  | settings | Retrieves the factory default value of the setting item. Method of use is the same as getSystemSettings . Remarks Dimension is applied in th |
 | [`getSystemSettings`](#getsystemsettings) | public | yes | settings | Retrieves values from system settings with keys or category which are specified in array as parameter. Following keys are available in publi |
 | [`getSystemSettingValues`](#getsystemsettingvalues) | public | yes | settings | Retrives possible items to be set Remarks The return type varies depending on the keys. Use getSystemSettingDesc method for the retrieval of |
+| [`getSystemSettingValuesPriv`](#getsystemsettingvaluespriv) | private |  | settings | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). |
 | [`internal/getCurrentSubscriptions`](#internal_getcurrentsubscriptions) | public |  | settings | Returns the information of the services which currently subscribe to the Settings Service. |
 | [`internal/instrument`](#internal_instrument) | public |  | settings | Generates log for debug and changes current app. Remarks Generates logs for every luna call Changes current app id |
 | [`params`](#params) | unknown |  | settings | This object has the corresponding parameters to the methods described in the batch method's operations as property. No specific format neede |
 | [`range`](#range) | unknown |  | settings | It is used when describing the user-configurable data in the integer range. |
 | [`resetSystemSettingDesc`](#resetsystemsettingdesc) | public |  | settings | Initializes the settings item information to the factory default value. Exception Error occurs when requesting to delete nonexistent keys. |
+| [`resetSystemSettingDescPriv`](#resetsystemsettingdescpriv) | private |  | settings | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). ⚠️ |
 | [`resetSystemSettings`](#resetsystemsettings) | public |  | settings | Initializes the setting items to the factory default values. Remarks For the given category, when changing setting items, other items can be |
+| [`resetSystemSettingsPriv`](#resetsystemsettingspriv) | private |  | settings | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). ⚠️ |
 | [`setSystemSettingDesc`](#setsystemsettingdesc) | public |  | settings | Changes detailed information of the settings. Exception Category, key, dimension, dbtype, volatile attributes cannot be changed during runti |
 | [`setSystemSettingFactoryDesc`](#setsystemsettingfactorydesc) | public |  | settings | Sets the default value when reset by resetSystemSettingDesc . It is the same type as setSystemSettingDesc method, and it can change the fact |
+| [`setSystemSettingFactoryDescPriv`](#setsystemsettingfactorydescpriv) | private |  | settings | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). ⚠️ |
 | [`setSystemSettingFactoryValue`](#setsystemsettingfactoryvalue) | public |  | settings | Changes the factory default of the setting item. The using method is same as setSystemSettings method. It can set the default value when res |
 | [`setSystemSettings`](#setsystemsettings) | public |  | settings | Changes settings. It is available only for the keys open to public when called through Public Luna bus. The permission setting is as follow. |
 | [`setSystemSettingValues`](#setsystemsettingvalues) | public |  | settings | Changes the formats of the configurable values. It can change detailed information using setSystemSettingDesc method. Exception When undefin |
 | [`settings`](#settings) | unknown |  | settings | It is the Object that has the setting property. No specific format to follow. |
 | [`subscription`](#subscription) | unknown |  | settings | This object describes an active subscription to the settings service. |
 | [`ui`](#ui) | unknown |  | settings | UI settings when creating user UI like Settings app. |
+| [`update`](#update) | private |  | settings | Method on com.webos.service.settings (introspected on-device; parameters undocumented). |
 | [`values`](#values) | unknown |  | settings | Specify the properties of the values object according to vtype . It is the information that is used for the validation of configurable value |
 
 <a id="arrayext"></a>
@@ -230,6 +236,27 @@ luna-send -n 1 -f luna://com.webos.service.settings/getSystemSettingDesc '{"cate
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-settings/), [2](https://github.com/rorygallagher2024/glasshouse/blob/HEAD/server/lib/lgsettings.js), [3](https://github.com/SunnySide007/lumen-webos/blob/HEAD/docs/device/b9.md), [4](https://github.com/Jezzarium/Actually-Good-WebOS/blob/HEAD/control/src/tv.cpp), [5](https://github.com/rorygallagher2024/glasshouse/blob/HEAD/server/lib/telemetry.js), [6](https://github.com/grzegorz914/homebridge-lgwebos-tv/blob/main/src/constants.js), [7](https://github.com/rorygallagher2024/glasshouse/blob/main/docs/development/TV-RESEARCH.md)
 
+<a id="getsystemsettingdescpriv"></a>
+## `getSystemSettingDescPriv`
+
+`luna://com.webos.service.settings/getSystemSettingDescPriv`
+
+Method on com.webos.service.settings (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.settings/getSystemSettingDescPriv '{}'
+```
+
+> ACG groups: settings, settings.read. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="getsystemsettingfactoryvalue"></a>
 ## `getSystemSettingFactoryValue`
 
@@ -318,6 +345,27 @@ luna-send -n 1 luna://com.webos.service.settings/getSystemSettingValues '{"categ
 > ACG: settings.query \| Returns: method:String; vtype:String; values:Object: values; returnValue:Boolean; errorText:String; subscribed:Boolean \| Service: Settings Service manages the settings used in webOS and provides the setting information (descriptions) such as Set, Get functions to setting values, the valid range of data that can be set, and wheth \|\| Documented in the OSE settings service reference as per magic_mapper notes.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-settings/), [2](https://github.com/andrewfraley/magic_mapper/blob/HEAD/notes/luna_notes.md), [3](https://github.com/rorygallagher2024/glasshouse/blob/HEAD/server/lib/telemetry.js)
+
+<a id="getsystemsettingvaluespriv"></a>
+## `getSystemSettingValuesPriv`
+
+`luna://com.webos.service.settings/getSystemSettingValuesPriv`
+
+Method on com.webos.service.settings (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.settings/getSystemSettingValuesPriv '{}'
+```
+
+> ACG groups: settings.read. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="internal_getcurrentsubscriptions"></a>
 ## `internal/getCurrentSubscriptions`
@@ -435,6 +483,27 @@ luna-send -n 1 -a com.webos.setting luna://com.webos.service.settings/resetSyste
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-settings/)
 
+<a id="resetsystemsettingdescpriv"></a>
+## `resetSystemSettingDescPriv` ⚠️ DANGEROUS
+
+`luna://com.webos.service.settings/resetSystemSettingDescPriv`
+
+Method on com.webos.service.settings (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.settings/resetSystemSettingDescPriv '{}'
+```
+
+> ACG groups: private, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="resetsystemsettings"></a>
 ## `resetSystemSettings`
 
@@ -463,6 +532,27 @@ luna-send -n 1 -a com.webos.setting luna://com.webos.service.settings/resetSyste
 > ACG: settings.management \| Returns: method:String; returnValue:Boolean; errorText:String \| Service: Settings Service manages the settings used in webOS and provides the setting information (descriptions) such as Set, Get functions to setting values, the valid range of data that can be set, and wheth
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-settings/)
+
+<a id="resetsystemsettingspriv"></a>
+## `resetSystemSettingsPriv` ⚠️ DANGEROUS
+
+`luna://com.webos.service.settings/resetSystemSettingsPriv`
+
+Method on com.webos.service.settings (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.settings/resetSystemSettingsPriv '{}'
+```
+
+> ACG groups: private, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="setsystemsettingdesc"></a>
 ## `setSystemSettingDesc`
@@ -531,6 +621,27 @@ luna-send command: # luna-send -f -n 1 -a com.webos.service.settings luna://com.
 > ACG: settings.management \| Returns: method:String; returnValue:Boolean; errorText:String \| Service: Settings Service manages the settings used in webOS and provides the setting information (descriptions) such as Set, Get functions to setting values, the valid range of data that can be set, and wheth
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-settings/)
+
+<a id="setsystemsettingfactorydescpriv"></a>
+## `setSystemSettingFactoryDescPriv` ⚠️ DANGEROUS
+
+`luna://com.webos.service.settings/setSystemSettingFactoryDescPriv`
+
+Method on com.webos.service.settings (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.settings/setSystemSettingFactoryDescPriv '{}'
+```
+
+> ACG groups: settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="setsystemsettingfactoryvalue"></a>
 ## `setSystemSettingFactoryValue`
@@ -686,6 +797,27 @@ luna-send -n 1 -f luna://com.webos.service.settings/ui '{}'
 > Service: Settings Service manages the settings used in webOS and provides the setting information (descriptions) such as Set, Get functions to setting values, the valid range of data that can be set, and wheth \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-settings/)
+
+<a id="update"></a>
+## `update`
+
+`luna://com.webos.service.settings/update`
+
+Method on com.webos.service.settings (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.settings/update '{}'
+```
+
+> ACG groups: all, settings.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="values"></a>
 ## `values`

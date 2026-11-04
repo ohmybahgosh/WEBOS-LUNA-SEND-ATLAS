@@ -1,6 +1,6 @@
 # `com.webos.media`
 
-83 methods.  Platforms seen: webOS OSE, webOS TV.
+165 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -9,84 +9,166 @@
 | [`acbs`](#acbs) | unknown |  | media | Array of objects that gives details of media for foreground application (such as pipeline Id, playstate, position, etc.) |
 | [`acquire`](#acquire) | public |  | media | Requests resources from the mediaserver. Typical usage is to request the number of audio and video decoders or other hardware components use |
 | [`acquireComplete`](#acquirecomplete) | unknown |  | media | This event is invoked when the acquire request is performed and the result comes out. |
+| [`addResource`](#addresource) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`attach`](#attach) | public |  | media | Allows to transfer the control of a pipeline to be handed over to a different client. When this occurs, the original client gets notified th |
 | [`audio`](#audio) | unknown |  | media | Set a audio information for either video and audio or audio only recording. |
 | [`audioInfo`](#audioinfo) | unknown |  | media | Provides information related to audio. |
 | [`bufferingEnd`](#bufferingend) | unknown |  | media | Indicates the pipeline is resuming playback after filling buffers. |
 | [`bufferingStart`](#bufferingstart) | unknown |  | media | Indicates the pipeline is temporarily pausing playback internally in order to buffer more data. |
 | [`bufferRange`](#bufferrange) | unknown |  | media | Indicates the buffering range of the particular media content. It is raised multiple times when specific media is loaded. |
+| [`changeResolution`](#changeresolution) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`closeAllConnections`](#closeallconnections) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`closeMediaPipeline`](#closemediapipeline) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`contentReady`](#contentready) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
 | [`currentTime`](#currenttime) | unknown |  | media | The currentTime event is raised multiple times when a specific media is playing. It indicates the progress of the media being played and pro |
 | [`detached`](#detached) | unknown |  | media | The detached event is raised when a specific media has been detached from the client by another client attaching to the corresponding pipeli |
 | [`display_attr`](#display_attr) | unknown |  | media | Provides detailed information for display resource. |
+| [`downSubLevel`](#downsublevel) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`enableDebug`](#enabledebug) | private |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
 | [`endOfStream`](#endofstream) | unknown |  | media | The endOfStream event is raised when a specific media has received all of its data. |
 | [`error`](#error) | unknown |  | media | The error event reports errors thrown by pipelines. |
+| [`exit`](#exit) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`focus`](#focus) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
 | [`frameRate`](#framerate) | unknown |  | media | Provides information about the number of frames per second at which the video is being played. It is represented as a combination of numerat |
 | [`getActivePipelines`](#getactivepipelines) | public |  | media | Gets JSON formatted output of currently active media pipelines. Note: Typically, a luna methods returns a JSON object as response. However,  |
 | [`getDisplayId`](#getdisplayid) | public |  | media | Gets information about the display on which the specified application instance is launched. Note: This method supports multi-screen playback |
 | [`getForegroundAppInfo`](#getforegroundappinfo) | public | yes | media | Provides the application's foreground information. |
 | [`getPipelineState`](#getpipelinestate) | public |  | media | Requests the media server to retrieve pipeline state information. |
+| [`getProidiomDiag`](#getproidiomdiag) | private |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
+| [`getResourceList`](#getresourcelist) | public |  | media | Getter on com.webos.media (introspected on-device; parameters undocumented). |
 | [`image`](#image) | unknown |  | media | Set a image information for snapshot a image. |
+| [`keepAlive`](#keepalive) | public |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
+| [`kill`](#kill) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`load`](#load) | public |  | media | Loads a new pipeline for the specified URI. The media server returns a unique id to the client which is used for subsequent operations on th |
 | [`loadCompleted`](#loadcompleted) | unknown |  | media | The loadCompleted event is raised when a specific media pipeline has been successfully loaded. |
+| [`logPipelineState`](#logpipelinestate) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`mediaId`](#mediaid) | unknown |  | media | Unique identifier of the loaded media/camera pipeline. |
 | [`mediaPipelines`](#mediapipelines) | unknown |  | media | Contains the AppID-PID mapping of the currently running pipelines. Returns an empty array if no pipelines associated with any applications.  |
 | [`notifyActivity`](#notifyactivity) | public |  | media | Notifies the media server that the specific pipeline is currently in use. This command raises the timestamp record of the corresponding pipe |
+| [`notifyAppLifeStatus`](#notifyapplifestatus) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`notifyBackground`](#notifybackground) | public |  | media | Marks a pipeline as background. This API is called when the media object in question is carded, deleted, or otherwise removed from view. Not |
+| [`notifyDelay`](#notifydelay) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`notifyFocus`](#notifyfocus) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`notifyForeground`](#notifyforeground) | public |  | media | Marks a pipeline as foreground. This API is called when the media object in question is un-carded and made visible. Note: Foreground pipelin |
+| [`notifyMultiviewControlMode`](#notifymultiviewcontrolmode) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`notifyPipelineStatus`](#notifypipelinestatus) | public |  | media | Notifies the playback status of media pipelines. |
 | [`option`](#option) | unknown |  | media | Provides parameters for pipeline's Information. |
 | [`pause`](#pause) | public |  | media | Requests the media server to pause the media object. |
 | [`paused`](#paused) | unknown |  | media | The paused event is raised when a specific media has been successfully paused. |
+| [`pauseRecord`](#pauserecord) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`payload`](#payload) | unknown |  | media | Payload format used in load API. It represents the JSON payload object for a specific type of pipeline. |
 | [`play`](#play) | public |  | media | Requests the media server to play the media object. |
 | [`playing`](#playing) | unknown |  | media | The playing event is raised once, in response to the play method, when a specified media pipeline has transitioned into the playing state. |
 | [`policyAction`](#policyaction) | unknown |  | media | The policyAction event is invoked when the resources are short of quantity to playing new media content and request pipeline to release rega |
+| [`preload`](#preload) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`procUpdate`](#procupdate) | unknown |  | media | The procUpdate object value is an object of type: {"appId" : string, "exec" : bool, "pid" : number} where exec is true when a pipeline appid |
 | [`programs`](#programs) | unknown |  | media | Provides audio/video stream information. |
 | [`reacquire`](#reacquire) | public |  | media | Dynamically adds more resources to the pipeline. |
 | [`registerMedia`](#registermedia) | public |  | media | Media Content Provider (unmanaged) must register with Media Display Controller to allow proper management of video content and displays or a |
 | [`registerPipeline`](#registerpipeline) | public |  | media | Registers with the Resource Manager. Session is persistent across all start/end transaction and acquire/release cycles. Registered clients a |
 | [`release`](#release) | public |  | media | Informs media server the resources are released correctly and are not being used anymore. Note: This method is applicable for unmanaged pipe |
+| [`removeResource`](#removeresource) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). ⚠️ |
+| [`resetOwnerPipeline`](#resetownerpipeline) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). ⚠️ |
+| [`resetSubLevel`](#resetsublevel) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). ⚠️ |
 | [`ResourceDetails`](#resourcedetails) | unknown |  | media | Details of the resource. |
 | [`resources`](#resources) | unknown |  | media | Object of resource name, quantity, and index. Resources can hold more than one set of resource, quantity, and index. Example { "resources":  |
 | [`resources_new`](#resources_new) | unknown |  | media | Object indicating the new and old resource. |
 | [`ResponseObject`](#responseobject) | unknown |  | media | Provides a detailed description of the object. Limit to 2-3 paragraphs. |
+| [`resumeRecord`](#resumerecord) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`seek`](#seek) | public |  | media | Seeks the media object to a specified time position. |
 | [`seekDone`](#seekdone) | unknown |  | media | The seekDone event is raised when a seek operation for a media has been successfully completed. |
 | [`selectTrack`](#selecttrack) | unknown |  | media | Selects an audio or subtitle track of an open pipeline |
+| [`selectTrackByPreference`](#selecttrackbypreference) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`selectTrackByPreferencePayload`](#selecttrackbypreferencepayload) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setAppId`](#setappid) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setAppWindowType`](#setappwindowtype) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setAudioDualMono`](#setaudiodualmono) | public |  | audio | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setAudioMute`](#setaudiomute) | public |  | audio | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setAudioStreamPitch`](#setaudiostreampitch) | public |  | audio | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setClearKey`](#setclearkey) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setDebugLevel`](#setdebuglevel) | private |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setDebugLevelPipeline`](#setdebuglevelpipeline) | private |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setDefaultPrl`](#setdefaultprl) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setDescriptiveVideoService`](#setdescriptivevideoservice) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setDialogEnhancement`](#setdialogenhancement) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
 | [`setDisplayWindow`](#setdisplaywindow) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`setDrmOperation`](#setdrmoperation) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setMaster`](#setmaster) | public |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
+| [`setMasterClock`](#setmasterclock) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setMediaStartTime`](#setmediastarttime) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setMediaStopTime`](#setmediastoptime) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setMediaSynchronizerControlTimestamp`](#setmediasynchronizercontroltimestamp) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setMediaSynchronizerOptions`](#setmediasynchronizeroptions) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setMpeghAudioConfig`](#setmpeghaudioconfig) | public |  | audio | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setOwnerPipeline`](#setownerpipeline) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setPipelineDebugState`](#setpipelinedebugstate) | private |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
 | [`setPlayRate`](#setplayrate) | public |  | media | Sets the pipeline media play rate. |
+| [`setPriorityLevel`](#setprioritylevel) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setProperty`](#setproperty) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setPurpose`](#setpurpose) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setResourcePolicyExtraInfo`](#setresourcepolicyextrainfo) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setSink`](#setsink) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setSlave`](#setslave) | public |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
+| [`setSlaveClock`](#setslaveclock) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setStreamQuality`](#setstreamquality) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setSubtitleBackgroundBlinking`](#setsubtitlebackgroundblinking) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
 | [`setSubtitleBackgroundColor`](#setsubtitlebackgroundcolor) | unknown |  | media | Sets subtitle background color for an open media pipeline |
 | [`setSubtitleBackgroundOpacity`](#setsubtitlebackgroundopacity) | unknown |  | media | Sets subtitle background opacity for an open media pipeline |
+| [`setSubtitleCharacterBlinking`](#setsubtitlecharacterblinking) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
 | [`setSubtitleCharacterColor`](#setsubtitlecharactercolor) | unknown |  | media | Sets subtitle character color (similar to setSubtitleColor, different values) for an open media pipeline |
+| [`setSubtitleCharacterEdge`](#setsubtitlecharacteredge) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setSubtitleCharacterEdgeColor`](#setsubtitlecharacteredgecolor) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setSubtitleCharacterFont`](#setsubtitlecharacterfont) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setSubtitleCharacterFontSize`](#setsubtitlecharacterfontsize) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
 | [`setSubtitleCharacterOpacity`](#setsubtitlecharacteropacity) | unknown |  | media | Sets subtitle character opacity for an open media pipeline |
 | [`setSubtitleColor`](#setsubtitlecolor) | unknown |  | media | Sets subtitle color for an open media pipeline |
+| [`setSubtitleCustomStyleEnable`](#setsubtitlecustomstyleenable) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
 | [`setSubtitleEnable`](#setsubtitleenable) | unknown |  | media | Shows or hides subtitles for an open media pipeline |
 | [`setSubtitleEncoding`](#setsubtitleencoding) | unknown |  | media | Sets subtitle text encoding for an open media pipeline |
 | [`setSubtitleFontSize`](#setsubtitlefontsize) | unknown |  | media | Sets subtitle font size for an open media pipeline |
 | [`setSubtitlePosition`](#setsubtitleposition) | unknown |  | media | Sets subtitle vertical position for an open media pipeline |
+| [`setSubtitlePositionByPayload`](#setsubtitlepositionbypayload) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setSubtitlePresentationMode`](#setsubtitlepresentationmode) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
 | [`setSubtitleSource`](#setsubtitlesource) | unknown |  | media | Loads an external subtitle file for an open pipeline |
 | [`setSubtitleSync`](#setsubtitlesync) | unknown |  | media | Sets subtitle sync offset in milliseconds for an open media pipeline |
 | [`setSubtitleWindowColor`](#setsubtitlewindowcolor) | unknown |  | media | Sets subtitle window color for an open media pipeline |
 | [`setSubtitleWindowOpacity`](#setsubtitlewindowopacity) | unknown |  | media | Sets subtitle window opacity for an open media pipeline |
+| [`setUpdateInterval`](#setupdateinterval) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setUpdateIntervalKV`](#setupdateintervalkv) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setUri`](#seturi) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
 | [`setVideoInfo`](#setvideoinfo) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
 | [`setVisibility`](#setvisibility) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
 | [`setVolume`](#setvolume) | public |  | media | Sets the volume for the specified media object. Additionally, it specifies the ease (fade-in and fade-out) properties for the media object. |
+| [`setWindowId`](#setwindowid) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
+| [`setXlinkResolution`](#setxlinkresolution) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
 | [`sourceInfo`](#sourceinfo) | unknown |  | media | Provides information of the media that has just been loaded. Example { "sourceInfo": { "programs": [{ "audio_stream": 1, "video_stream": 1 } |
 | [`startCameraRecord`](#startcamerarecord) | public |  | media | Starts camera recording. Camera pipeline stores streamed data from the camera and microphone (if required) at the specified location. |
+| [`startRecord`](#startrecord) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`stopCameraRecord`](#stopcamerarecord) | public |  | media | Requests media server to stop camera recording and change to the preview state. |
+| [`stopRecord`](#stoprecord) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`subscribe`](#subscribe) | public | yes | media | Subscribes the media client to receive events from a media pipeline. These events, described in the tables above, allow the media client (ge |
+| [`switchToAutoLayout`](#switchtoautolayout) | public |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
 | [`switchToFullScreen`](#switchtofullscreen) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
 | [`takeCameraSnapshot`](#takecamerasnapshot) | public |  | media | Captures a frame from the camera preview. |
+| [`takeSnapshot`](#takesnapshot) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`testPipelineEvent`](#testpipelineevent) | private |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
+| [`trackAcquireResultInfo`](#trackacquireresultinfo) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`trackAppProcesses`](#trackappprocesses) | public | yes | media | Subscribes to messages containing the mapping of application ID (appID) and pipeline process ID (PID), i.e. it returns information about whi |
+| [`trackAppStatus`](#trackappstatus) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`trackPipelineInfo`](#trackpipelineinfo) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`trackPolicyActionInfo`](#trackpolicyactioninfo) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`trackResourcesStatus`](#trackresourcesstatus) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`tryAcquire`](#tryacquire) | public |  | media | Tries to acquire resources from mediaserver. Note: This API will not issue policyAction to other pipelines in order to force them to release |
 | [`unload`](#unload) | public |  | media | Unloads the pipeline and releases all AV resources. |
 | [`unloadCompleted`](#unloadcompleted) | unknown |  | media | The unloadCompleted event is raised when a specific media pipeline has been successfully unloaded. |
 | [`unregisterMedia`](#unregistermedia) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
 | [`unregisterPipeline`](#unregisterpipeline) | public |  | media | Unregisters pipeline with Resource Manager. Note: This method is applicable to unmanaged pipelines only. |
 | [`unsubscribe`](#unsubscribe) | public |  | media | Unsubscribes from media pipeline related events. |
+| [`updateMetadata`](#updatemetadata) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`updatePeriodStart`](#updateperiodstart) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`updatePipelineStateEvent`](#updatepipelinestateevent) | public |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
+| [`updateResource`](#updateresource) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
+| [`upSubLevel`](#upsublevel) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
 | [`video`](#video) | unknown |  | media | Set a video information for either video and audio or video only recording. |
 | [`videoInfo`](#videoinfo) | unknown |  | media | Provides information related to video. |
 
@@ -157,6 +239,27 @@ luna-send -n 1 -f luna://com.webos.media/acquireComplete '{}'
 > Service: Provides access to the functionality provided by the webOS media server. The webOS media server supports both managed and unmanaged pipelines. For managed pipelines, com.webos.media provides high-leve \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
+
+<a id="addresource"></a>
+## `addResource`
+
+`luna://com.webos.media/addResource`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/addResource '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="attach"></a>
 ## `attach`
@@ -288,6 +391,69 @@ luna-send -n 1 -f luna://com.webos.media/bufferRange '{}'
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="changeresolution"></a>
+## `changeResolution`
+
+`luna://com.webos.media/changeResolution`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/changeResolution '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="closeallconnections"></a>
+## `closeAllConnections`
+
+`luna://com.webos.media/closeAllConnections`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/closeAllConnections '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="closemediapipeline"></a>
+## `closeMediaPipeline`
+
+`luna://com.webos.media/closeMediaPipeline`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/closeMediaPipeline '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="contentready"></a>
 ## `contentReady`
 
@@ -372,6 +538,48 @@ luna-send -n 1 -f luna://com.webos.media/display_attr '{}'
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="downsublevel"></a>
+## `downSubLevel`
+
+`luna://com.webos.media/downSubLevel`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/downSubLevel '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="enabledebug"></a>
+## `enableDebug`
+
+`luna://com.webos.media/enableDebug`
+
+Method on com.webos.media (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/enableDebug '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
 <a id="endofstream"></a>
 ## `endOfStream`
 
@@ -413,6 +621,27 @@ luna-send -n 1 -f luna://com.webos.media/error '{}'
 > Service: Provides access to the functionality provided by the webOS media server. The webOS media server supports both managed and unmanaged pipelines. For managed pipelines, com.webos.media provides high-leve \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
+
+<a id="exit"></a>
+## `exit`
+
+`luna://com.webos.media/exit`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/exit '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="focus"></a>
 ## `focus`
@@ -556,6 +785,48 @@ luna-send -n 2 -f luna://com.webos.media/getPipelineState '{"mediaId":"_pwvgD9iv
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="getproidiomdiag"></a>
+## `getProidiomDiag`
+
+`luna://com.webos.media/getProidiomDiag`
+
+Method on com.webos.media (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/getProidiomDiag '{}'
+```
+
+> ACG groups: media, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="getresourcelist"></a>
+## `getResourceList`
+
+`luna://com.webos.media/getResourceList`
+
+Getter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/getResourceList '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="image"></a>
 ## `image`
 
@@ -576,6 +847,48 @@ luna-send -n 1 -f luna://com.webos.media/image '{}'
 > Service: Provides access to the functionality provided by the webOS media server. The webOS media server supports both managed and unmanaged pipelines. For managed pipelines, com.webos.media provides high-leve \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
+
+<a id="keepalive"></a>
+## `keepAlive`
+
+`luna://com.webos.media/keepAlive`
+
+Method on com.webos.media (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/keepAlive '{}'
+```
+
+> ACG groups: media, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="kill"></a>
+## `kill`
+
+`luna://com.webos.media/kill`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/kill '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="load"></a>
 ## `load`
@@ -624,6 +937,27 @@ luna-send -n 1 -f luna://com.webos.media/loadCompleted '{}'
 > Service: Provides access to the functionality provided by the webOS media server. The webOS media server supports both managed and unmanaged pipelines. For managed pipelines, com.webos.media provides high-leve \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
+
+<a id="logpipelinestate"></a>
+## `logPipelineState`
+
+`luna://com.webos.media/logPipelineState`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/logPipelineState '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="mediaid"></a>
 ## `mediaId`
@@ -692,6 +1026,27 @@ luna-send -n 1 -f luna://com.webos.media/notifyActivity '{"connectionId":"_EYv0V
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="notifyapplifestatus"></a>
+## `notifyAppLifeStatus`
+
+`luna://com.webos.media/notifyAppLifeStatus`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/notifyAppLifeStatus '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="notifybackground"></a>
 ## `notifyBackground`
 
@@ -717,6 +1072,48 @@ luna-send -n 1 -f luna://com.webos.media/notifyBackground '{"connectionId":"_c5z
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="notifydelay"></a>
+## `notifyDelay`
+
+`luna://com.webos.media/notifyDelay`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/notifyDelay '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="notifyfocus"></a>
+## `notifyFocus`
+
+`luna://com.webos.media/notifyFocus`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/notifyFocus '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="notifyforeground"></a>
 ## `notifyForeground`
 
@@ -741,6 +1138,27 @@ luna-send -n 1 -f luna://com.webos.media/notifyForeground '{"connectionId":"_z6S
 > ACG: media.operation \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Provides access to the functionality provided by the webOS media server. The webOS media server supports both managed and unmanaged pipelines. For managed pipelines, com.webos.media provides high-leve
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
+
+<a id="notifymultiviewcontrolmode"></a>
+## `notifyMultiviewControlMode`
+
+`luna://com.webos.media/notifyMultiviewControlMode`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/notifyMultiviewControlMode '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="notifypipelinestatus"></a>
 ## `notifyPipelineStatus`
@@ -836,6 +1254,27 @@ luna-send -n 1 -f luna://com.webos.media/paused '{}'
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="pauserecord"></a>
+## `pauseRecord`
+
+`luna://com.webos.media/pauseRecord`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/pauseRecord '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="payload"></a>
 ## `payload`
 
@@ -923,6 +1362,27 @@ luna-send -n 1 -f luna://com.webos.media/policyAction '{}'
 > Service: Provides access to the functionality provided by the webOS media server. The webOS media server supports both managed and unmanaged pipelines. For managed pipelines, com.webos.media provides high-leve \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
+
+<a id="preload"></a>
+## `preload`
+
+`luna://com.webos.media/preload`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/preload '{}'
+```
+
+> ACG groups: public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="procupdate"></a>
 ## `procUpdate`
@@ -1070,6 +1530,69 @@ luna-send -n 1 -f luna://com.webos.media/release '{ "resources":"[{\"resource\":
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="removeresource"></a>
+## `removeResource` ⚠️ DANGEROUS
+
+`luna://com.webos.media/removeResource`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/removeResource '{}'
+```
+
+> ACG groups: media, private, all. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="resetownerpipeline"></a>
+## `resetOwnerPipeline` ⚠️ DANGEROUS
+
+`luna://com.webos.media/resetOwnerPipeline`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/resetOwnerPipeline '{}'
+```
+
+> ACG groups: private, all, public. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="resetsublevel"></a>
+## `resetSubLevel` ⚠️ DANGEROUS
+
+`luna://com.webos.media/resetSubLevel`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/resetSubLevel '{}'
+```
+
+> ACG groups: private, all, public. Flagged dangerous by name; verify before calling.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="resourcedetails"></a>
 ## `ResourceDetails`
 
@@ -1154,6 +1677,27 @@ luna-send -n 1 -f luna://com.webos.media/ResponseObject '{}'
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="resumerecord"></a>
+## `resumeRecord`
+
+`luna://com.webos.media/resumeRecord`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/resumeRecord '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="seek"></a>
 ## `seek`
 
@@ -1228,6 +1772,279 @@ luna-send -n 1 -f luna://com.webos.media/selectTrack '{"mediaId":"<id>","type":"
 
 Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
+<a id="selecttrackbypreference"></a>
+## `selectTrackByPreference`
+
+`luna://com.webos.media/selectTrackByPreference`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/selectTrackByPreference '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="selecttrackbypreferencepayload"></a>
+## `selectTrackByPreferencePayload`
+
+`luna://com.webos.media/selectTrackByPreferencePayload`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/selectTrackByPreferencePayload '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setappid"></a>
+## `setAppId`
+
+`luna://com.webos.media/setAppId`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setAppId '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setappwindowtype"></a>
+## `setAppWindowType`
+
+`luna://com.webos.media/setAppWindowType`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setAppWindowType '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setaudiodualmono"></a>
+## `setAudioDualMono`
+
+`luna://com.webos.media/setAudioDualMono`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setAudioDualMono '{}'
+```
+
+> ACG groups: public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setaudiomute"></a>
+## `setAudioMute`
+
+`luna://com.webos.media/setAudioMute`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setAudioMute '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setaudiostreampitch"></a>
+## `setAudioStreamPitch`
+
+`luna://com.webos.media/setAudioStreamPitch`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setAudioStreamPitch '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setclearkey"></a>
+## `setClearKey`
+
+`luna://com.webos.media/setClearKey`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setClearKey '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setdebuglevel"></a>
+## `setDebugLevel`
+
+`luna://com.webos.media/setDebugLevel`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setDebugLevel '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setdebuglevelpipeline"></a>
+## `setDebugLevelPipeline`
+
+`luna://com.webos.media/setDebugLevelPipeline`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setDebugLevelPipeline '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setdefaultprl"></a>
+## `setDefaultPrl`
+
+`luna://com.webos.media/setDefaultPrl`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setDefaultPrl '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setdescriptivevideoservice"></a>
+## `setDescriptiveVideoService`
+
+`luna://com.webos.media/setDescriptiveVideoService`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setDescriptiveVideoService '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setdialogenhancement"></a>
+## `setDialogEnhancement`
+
+`luna://com.webos.media/setDialogEnhancement`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setDialogEnhancement '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="setdisplaywindow"></a>
 ## `setDisplayWindow`
 
@@ -1248,6 +2065,216 @@ luna-send -n 1 -f luna://com.webos.media/setDisplayWindow '{}'
 > Listed under ACG group "media" in the component api.json/groups.json; no parameter docs read.
 
 Sources: [1](https://github.com/webosose/umediaserver/blob/master/files/sysbus/com.webos.media.api.json)
+
+<a id="setdrmoperation"></a>
+## `setDrmOperation`
+
+`luna://com.webos.media/setDrmOperation`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setDrmOperation '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setmaster"></a>
+## `setMaster`
+
+`luna://com.webos.media/setMaster`
+
+Method on com.webos.media (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setMaster '{}'
+```
+
+> ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="setmasterclock"></a>
+## `setMasterClock`
+
+`luna://com.webos.media/setMasterClock`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setMasterClock '{}'
+```
+
+> ACG groups: public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setmediastarttime"></a>
+## `setMediaStartTime`
+
+`luna://com.webos.media/setMediaStartTime`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setMediaStartTime '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setmediastoptime"></a>
+## `setMediaStopTime`
+
+`luna://com.webos.media/setMediaStopTime`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setMediaStopTime '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setmediasynchronizercontroltimestamp"></a>
+## `setMediaSynchronizerControlTimestamp`
+
+`luna://com.webos.media/setMediaSynchronizerControlTimestamp`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setMediaSynchronizerControlTimestamp '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setmediasynchronizeroptions"></a>
+## `setMediaSynchronizerOptions`
+
+`luna://com.webos.media/setMediaSynchronizerOptions`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setMediaSynchronizerOptions '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setmpeghaudioconfig"></a>
+## `setMpeghAudioConfig`
+
+`luna://com.webos.media/setMpeghAudioConfig`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setMpeghAudioConfig '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setownerpipeline"></a>
+## `setOwnerPipeline`
+
+`luna://com.webos.media/setOwnerPipeline`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setOwnerPipeline '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setpipelinedebugstate"></a>
+## `setPipelineDebugState`
+
+`luna://com.webos.media/setPipelineDebugState`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setPipelineDebugState '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="setplayrate"></a>
 ## `setPlayRate`
@@ -1275,6 +2302,195 @@ luna-send -n 1 -f luna://com.webos.media/setPlayRate '{ "playRate":2.0, "mediaId
 > ACG: media.operation \| Returns: returnValue:Boolean; errorCode:Number; errorText:String; mediaId:String \| Service: Provides access to the functionality provided by the webOS media server. The webOS media server supports both managed and unmanaged pipelines. For managed pipelines, com.webos.media provides high-leve
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
+
+<a id="setprioritylevel"></a>
+## `setPriorityLevel`
+
+`luna://com.webos.media/setPriorityLevel`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setPriorityLevel '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setproperty"></a>
+## `setProperty`
+
+`luna://com.webos.media/setProperty`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setProperty '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setpurpose"></a>
+## `setPurpose`
+
+`luna://com.webos.media/setPurpose`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setPurpose '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setresourcepolicyextrainfo"></a>
+## `setResourcePolicyExtraInfo`
+
+`luna://com.webos.media/setResourcePolicyExtraInfo`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setResourcePolicyExtraInfo '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setsink"></a>
+## `setSink`
+
+`luna://com.webos.media/setSink`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSink '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setslave"></a>
+## `setSlave`
+
+`luna://com.webos.media/setSlave`
+
+Method on com.webos.media (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSlave '{}'
+```
+
+> ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="setslaveclock"></a>
+## `setSlaveClock`
+
+`luna://com.webos.media/setSlaveClock`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSlaveClock '{}'
+```
+
+> ACG groups: public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setstreamquality"></a>
+## `setStreamQuality`
+
+`luna://com.webos.media/setStreamQuality`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setStreamQuality '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setsubtitlebackgroundblinking"></a>
+## `setSubtitleBackgroundBlinking`
+
+`luna://com.webos.media/setSubtitleBackgroundBlinking`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSubtitleBackgroundBlinking '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="setsubtitlebackgroundcolor"></a>
 ## `setSubtitleBackgroundColor`
@@ -1328,6 +2544,27 @@ luna-send -n 1 -f luna://com.webos.media/setSubtitleBackgroundOpacity '{"mediaId
 
 Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
+<a id="setsubtitlecharacterblinking"></a>
+## `setSubtitleCharacterBlinking`
+
+`luna://com.webos.media/setSubtitleCharacterBlinking`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSubtitleCharacterBlinking '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="setsubtitlecharactercolor"></a>
 ## `setSubtitleCharacterColor`
 
@@ -1353,6 +2590,90 @@ luna-send -n 1 -f luna://com.webos.media/setSubtitleCharacterColor '{"mediaId":"
 > Undocumented by LG; gist author says direct use is discouraged but needed for features the web APIs lack. mediaId from document.querySelector('video').mediaId or videooutput/getStatus.
 
 Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
+
+<a id="setsubtitlecharacteredge"></a>
+## `setSubtitleCharacterEdge`
+
+`luna://com.webos.media/setSubtitleCharacterEdge`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSubtitleCharacterEdge '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setsubtitlecharacteredgecolor"></a>
+## `setSubtitleCharacterEdgeColor`
+
+`luna://com.webos.media/setSubtitleCharacterEdgeColor`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSubtitleCharacterEdgeColor '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setsubtitlecharacterfont"></a>
+## `setSubtitleCharacterFont`
+
+`luna://com.webos.media/setSubtitleCharacterFont`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSubtitleCharacterFont '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setsubtitlecharacterfontsize"></a>
+## `setSubtitleCharacterFontSize`
+
+`luna://com.webos.media/setSubtitleCharacterFontSize`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSubtitleCharacterFontSize '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="setsubtitlecharacteropacity"></a>
 ## `setSubtitleCharacterOpacity`
@@ -1405,6 +2726,27 @@ luna-send -n 1 -f luna://com.webos.media/setSubtitleColor '{"mediaId":"<mediaId>
 > Undocumented by LG; gist author says direct use is discouraged but needed for features the web APIs lack. mediaId from document.querySelector('video').mediaId or videooutput/getStatus.
 
 Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
+
+<a id="setsubtitlecustomstyleenable"></a>
+## `setSubtitleCustomStyleEnable`
+
+`luna://com.webos.media/setSubtitleCustomStyleEnable`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSubtitleCustomStyleEnable '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="setsubtitleenable"></a>
 ## `setSubtitleEnable`
@@ -1510,6 +2852,48 @@ luna-send -n 1 -f luna://com.webos.media/setSubtitlePosition '{"mediaId":"<media
 
 Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
+<a id="setsubtitlepositionbypayload"></a>
+## `setSubtitlePositionByPayload`
+
+`luna://com.webos.media/setSubtitlePositionByPayload`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSubtitlePositionByPayload '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setsubtitlepresentationmode"></a>
+## `setSubtitlePresentationMode`
+
+`luna://com.webos.media/setSubtitlePresentationMode`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setSubtitlePresentationMode '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="setsubtitlesource"></a>
 ## `setSubtitleSource`
 
@@ -1613,6 +2997,69 @@ luna-send -n 1 -f luna://com.webos.media/setSubtitleWindowOpacity '{"mediaId":"<
 
 Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
+<a id="setupdateinterval"></a>
+## `setUpdateInterval`
+
+`luna://com.webos.media/setUpdateInterval`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setUpdateInterval '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setupdateintervalkv"></a>
+## `setUpdateIntervalKV`
+
+`luna://com.webos.media/setUpdateIntervalKV`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setUpdateIntervalKV '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="seturi"></a>
+## `setUri`
+
+`luna://com.webos.media/setUri`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setUri '{}'
+```
+
+> ACG groups: media, public, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="setvideoinfo"></a>
 ## `setVideoInfo`
 
@@ -1681,6 +3128,48 @@ luna-send -n 1 -f luna://com.webos.media/setVolume '{"mediaId":"_IsGbw614gu7xRB"
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="setwindowid"></a>
+## `setWindowId`
+
+`luna://com.webos.media/setWindowId`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setWindowId '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="setxlinkresolution"></a>
+## `setXlinkResolution`
+
+`luna://com.webos.media/setXlinkResolution`
+
+Setter on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/setXlinkResolution '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="sourceinfo"></a>
 ## `sourceInfo`
 
@@ -1731,6 +3220,27 @@ luna-send -n 1 luna://com.webos.media/startCameraRecord '{ "mediaId" :"_5nxnM2Xi
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="startrecord"></a>
+## `startRecord`
+
+`luna://com.webos.media/startRecord`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/startRecord '{}'
+```
+
+> ACG groups: media, public, private, media.record, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="stopcamerarecord"></a>
 ## `stopCameraRecord`
 
@@ -1756,6 +3266,27 @@ luna-send -n 1 luna://com.webos.media/stopCameraRecord '{"mediaId":"_JtLZrGoEAoR
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="stoprecord"></a>
+## `stopRecord`
+
+`luna://com.webos.media/stopRecord`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/stopRecord '{}'
+```
+
+> ACG groups: media, public, private, media.record, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="subscribe"></a>
 ## `subscribe`
 
@@ -1780,6 +3311,27 @@ luna-send -n 2 -f luna://com.webos.media/subscribe '{"mediaId":"_rTNwzp81clPsxX"
 > ACG: media.operation \| Returns: returnValue:Boolean; errorCode:Number; errorText:String; mediaId:String; subscription:String \| Service: Provides access to the functionality provided by the webOS media server. The webOS media server supports both managed and unmanaged pipelines. For managed pipelines, com.webos.media provides high-leve
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
+
+<a id="switchtoautolayout"></a>
+## `switchToAutoLayout`
+
+`luna://com.webos.media/switchToAutoLayout`
+
+Method on com.webos.media (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/switchToAutoLayout '{}'
+```
+
+> ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="switchtofullscreen"></a>
 ## `switchToFullScreen`
@@ -1832,6 +3384,69 @@ luna-send -n 1 luna://com.webos.media/takeCameraSnapshot '{ "mediaId":"", "locat
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
+<a id="takesnapshot"></a>
+## `takeSnapshot`
+
+`luna://com.webos.media/takeSnapshot`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/takeSnapshot '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="testpipelineevent"></a>
+## `testPipelineEvent`
+
+`luna://com.webos.media/testPipelineEvent`
+
+Method on com.webos.media (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/testPipelineEvent '{}'
+```
+
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="trackacquireresultinfo"></a>
+## `trackAcquireResultInfo`
+
+`luna://com.webos.media/trackAcquireResultInfo`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/trackAcquireResultInfo '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
 <a id="trackappprocesses"></a>
 ## `trackAppProcesses`
 
@@ -1852,6 +3467,90 @@ luna-send -n 2 -f luna://com.webos.media/trackAppProcesses '{}
 > ACG: media.devutility \| Returns: subscribed:Boolean; returnValue:Boolean; mediaPipelines:Object array: mediaPipelines; subscription:Boolean \| Service: Provides access to the functionality provided by the webOS media server. The webOS media server supports both managed and unmanaged pipelines. For managed pipelines, com.webos.media provides high-leve
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
+
+<a id="trackappstatus"></a>
+## `trackAppStatus`
+
+`luna://com.webos.media/trackAppStatus`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/trackAppStatus '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="trackpipelineinfo"></a>
+## `trackPipelineInfo`
+
+`luna://com.webos.media/trackPipelineInfo`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/trackPipelineInfo '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="trackpolicyactioninfo"></a>
+## `trackPolicyActionInfo`
+
+`luna://com.webos.media/trackPolicyActionInfo`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/trackPolicyActionInfo '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="trackresourcesstatus"></a>
+## `trackResourcesStatus`
+
+`luna://com.webos.media/trackResourcesStatus`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/trackResourcesStatus '{}'
+```
+
+> ACG groups: private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="tryacquire"></a>
 ## `tryAcquire`
@@ -1995,6 +3694,111 @@ luna-send -n 1 -f luna://com.webos.media/unsubscribe '{"mediaId":"_gmkaR0OtGWxr6
 > ACG: media.operation \| Returns: returnValue:Boolean; errorCode:Number; errorText:String; mediaId:String \| Service: Provides access to the functionality provided by the webOS media server. The webOS media server supports both managed and unmanaged pipelines. For managed pipelines, com.webos.media provides high-leve
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
+
+<a id="updatemetadata"></a>
+## `updateMetadata`
+
+`luna://com.webos.media/updateMetadata`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/updateMetadata '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="updateperiodstart"></a>
+## `updatePeriodStart`
+
+`luna://com.webos.media/updatePeriodStart`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/updatePeriodStart '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="updatepipelinestateevent"></a>
+## `updatePipelineStateEvent`
+
+`luna://com.webos.media/updatePipelineStateEvent`
+
+Method on com.webos.media (from on-device permission registry; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/updatePipelineStateEvent '{}'
+```
+
+> ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+
+<a id="updateresource"></a>
+## `updateResource`
+
+`luna://com.webos.media/updateResource`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/updateResource '{}'
+```
+
+> ACG groups: media, private, all.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
+
+<a id="upsublevel"></a>
+## `upSubLevel`
+
+`luna://com.webos.media/upSubLevel`
+
+Method on com.webos.media (introspected on-device; parameters undocumented).
+
+- **Access:** public  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.media/upSubLevel '{}'
+```
+
+> ACG groups: private, all, public.
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
 <a id="video"></a>
 ## `video`

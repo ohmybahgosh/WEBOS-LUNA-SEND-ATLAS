@@ -1,6 +1,6 @@
 # `com.webos.service.downloadmanager`
 
-17 methods.  Platforms seen: webOS OSE.
+18 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -16,6 +16,7 @@
 | [`downloads`](#downloads) | unknown |  | network | Array containing downloads |
 | [`downloadStatusQuery`](#downloadstatusquery) | public | yes | network |  |
 | [`getAllHistory`](#getallhistory) | public |  | network | Get the download or upload history for a specific application. |
+| [`getTicketHistory`](#gettickethistory) | private |  | apps | Method on com.webos.service.downloadmanager (from on-device permission registry; parameters undocumented). |
 | [`is1xMode`](#is1xmode) | public |  | network | Determine if the network connection is in 1x mode. |
 | [`items`](#items) | unknown |  | network | Objects of items which describe information of download history. |
 | [`listPending`](#listpending) | public |  | network | Return the list of all downloads that are currently in progress. |
@@ -282,6 +283,27 @@ luna-send -n 1 -f luna://com.webos.service.downloadmanager/getAllHistory '{"owne
 > ACG: download.operation \| Returns: returnValue:Boolean; errorText:String; items:Object: items \| Service: Manages file upload and download on the device.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-downloadmanager/)
+
+<a id="gettickethistory"></a>
+## `getTicketHistory`
+
+`luna://com.webos.service.downloadmanager/getTicketHistory`
+
+Method on com.webos.service.downloadmanager (from on-device permission registry; parameters undocumented).
+
+- **Access:** private  
+- **Subscribe:** no  
+- **Platform:** webOS TV  
+- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Confidence:** code
+
+```sh
+luna-send -n 1 -f luna://com.webos.service.downloadmanager/getTicketHistory '{}'
+```
+
+> ACG groups: networking.internal. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+
+Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="is1xmode"></a>
 ## `is1xMode`
