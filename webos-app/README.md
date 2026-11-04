@@ -4,8 +4,8 @@ An on-TV companion to the catalog: browse every luna service and method, search,
 
 It ships as two parts packaged into one IPK:
 
-- `luna-atlas/` - the web app (plain ES5 HTML/JS, D-pad friendly). Bundles `app-catalog.json`, a slimmed copy of the main catalog (regenerate with `tools/gen_app_catalog.py`).
-- `luna-atlas-service/` - a tiny JS service, `org.ohmybahgosh.lunaatlas.service`, that relays a chosen `luna://` URI + payload to `luna-send` and returns the reply. The web app can only call public methods directly; this service is how the app reaches private ones.
+- `src/` - the web app (plain ES5 HTML/JS, D-pad friendly). Bundles `app-catalog.json`, a slimmed copy of the main catalog (regenerate with `tools/gen_app_catalog.py`).
+- `service/` - a tiny JS service, `org.ohmybahgosh.lunaatlas.service`, that relays a chosen `luna://` URI + payload to `luna-send` and returns the reply. The web app can only call public methods directly; this service is how the app reaches private ones.
 
 ## Access model
 
@@ -17,7 +17,7 @@ It ships as two parts packaged into one IPK:
 Needs the webOS CLI (`ares-*`) and a configured device. From this folder:
 
 ```sh
-sh ../scripts/build-ipk.sh            # npm-installs webos-service, runs ares-package
+sh build.sh            # npm-installs webos-service, runs ares-package
 ares-install -d <device> org.ohmybahgosh.lunaatlas_1.0.0_all.ipk
 ares-launch  -d <device> org.ohmybahgosh.lunaatlas
 ```

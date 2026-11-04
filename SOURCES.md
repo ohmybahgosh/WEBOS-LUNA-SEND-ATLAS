@@ -1,6 +1,6 @@
 # Sources
 
-Every record in the catalog lists the exact URLs it came from.  This is the rolled-up list, by number of records each source contributed.
+Every record in the catalog lists the exact URLs it came from.  Rolled up by number of records each source contributed.
 
 | Source | Records |
 |---|---|
