@@ -1,6 +1,6 @@
 # Media Playback
 
-414 methods.  [Back to index](../../README.md#categories)
+412 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -178,7 +178,6 @@
 | [`luna://com.webos.pipeline.record/stop`](../services/com.webos.pipeline.record.md#stop) | public | Stops recording and saves the output to file. |
 | [`luna://com.webos.pipeline.record/subscribe`](../services/com.webos.pipeline.record.md#subscribe) | public | Gets a notification when there is an event on pipeline. |
 | [`luna://com.webos.pipeline.record/video`](../services/com.webos.pipeline.record.md#video) | unknown | Details of video. |
-| [`luna://com.webos.service.acr/setCloseCaption`](../services/com.webos.service.acr.md#setclosecaption) | private | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.airplayadaptor/airplayRestart`](../services/com.webos.service.airplayadaptor.md#airplayrestart) | private | Method on com.webos.service.airplayadaptor (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.airplayadaptor/airplayStart`](../services/com.webos.service.airplayadaptor.md#airplaystart) | public | Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.airplayadaptor/airplayStatus`](../services/com.webos.service.airplayadaptor.md#airplaystatus) | public | Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented). |
@@ -244,7 +243,6 @@
 | [`luna://com.webos.service.dmost/subscribe`](../services/com.webos.service.dmost.md#subscribe) | private | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.dmost/unsubscribe`](../services/com.webos.service.dmost.md#unsubscribe) | private | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.dmrsvc/showSubtitle`](../services/com.webos.service.dmrsvc.md#showsubtitle) | private | Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.drm/getMediaStatus`](../services/com.webos.service.drm.md#getmediastatus) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.gingaccwebservices/mediaController`](../services/com.webos.service.gingaccwebservices.md#mediacontroller) | public | Method on com.webos.service.gingaccwebservices (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.gingaccwebservices/mediaKeySession`](../services/com.webos.service.gingaccwebservices.md#mediakeysession) | public | Method on com.webos.service.gingaccwebservices (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.gingaccwebservices.test/mediaController`](../services/com.webos.service.gingaccwebservices.test.md#mediacontroller) | public | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |

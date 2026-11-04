@@ -1,6 +1,6 @@
 # Applications
 
-361 methods.  [Back to index](../../README.md#categories)
+364 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -144,8 +144,8 @@
 | [`luna://com.webos.booster/launch`](../services/com.webos.booster.md#launch) | private | Method on com.webos.booster (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.sensord/getSampleRate`](../services/com.webos.sensord.md#getsamplerate) | public | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.sensord/setSampleRate`](../services/com.webos.sensord.md#setsamplerate) | public | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/getACRLaunchFlag`](../services/com.webos.service.acr.md#getacrlaunchflag) | private | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/launchApplication`](../services/com.webos.service.acr.md#launchapplication) | private | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.acr/closedApplication`](../services/com.webos.service.acr.md#closedapplication) | private | Notifies ACR that an app closed. Name only. |
+| [`luna://com.webos.service.acr/launchApplication`](../services/com.webos.service.acr.md#launchapplication) | private | Launches an app from an ACR trigger. Name only. |
 | [`luna://com.webos.service.admanager/checkForegroundEula`](../services/com.webos.service.admanager.md#checkforegroundeula) | private | Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.admanager/checkIntantBootComplete`](../services/com.webos.service.admanager.md#checkintantbootcomplete) | private | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.admanager/checkSuspendState`](../services/com.webos.service.admanager.md#checksuspendstate) | private | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
@@ -321,6 +321,9 @@
 | [`luna://com.webos.service.recent/listRecents`](../services/com.webos.service.recent.md#listrecents) | private | Lists the recent apps panel entries |
 | [`luna://com.webos.service.recent/removeRecent`](../services/com.webos.service.recent.md#removerecent) | private | Removes an app from the recents list |
 | [`luna://com.webos.service.rovi/launchres`](../services/com.webos.service.rovi.md#launchres) | public | Method on com.webos.service.rovi (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.sdx/callbackNotice`](../services/com.webos.service.sdx.md#callbacknotice) | private | SDP callback notification sink. Name only. |
+| [`luna://com.webos.service.sdx/getHttpHeaderForServiceRequest`](../services/com.webos.service.sdx.md#gethttpheaderforservicerequest) | private | Returns the HTTP headers (including the SDP HOST) to use for a named SDP service. Glasshouse reads only the HOST from it (e.g. GB.nextlgsdp.com for sdp_nlp/sdp_ |
+| [`luna://com.webos.service.sdx/send`](../services/com.webos.service.sdx.md#send) | private | Generic SDP request. Glasshouse uses it with serviceName 'sdp_onnow', url 'content_discovery/item-detail' and bodyData {item_id, item_type} to fetch a title's d |
 | [`luna://com.webos.service.servicemanager/launchPrerequisiteServices`](../services/com.webos.service.servicemanager.md#launchprerequisiteservices) | private | Method on com.webos.service.servicemanager (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.signageplayer/autoPlayManager/failover`](../services/com.webos.service.signageplayer.md#autoplaymanager_failover) | private | Method on com.webos.service.signageplayer (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.signageplayer/autoPlayManager/playInternalMemory`](../services/com.webos.service.signageplayer.md#autoplaymanager_playinternalmemory) | private | Method on com.webos.service.signageplayer (from on-device permission registry; parameters undocumented). |

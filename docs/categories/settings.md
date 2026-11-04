@@ -1,6 +1,6 @@
 # Settings
 
-275 methods.  [Back to index](../../README.md#categories)
+287 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -61,6 +61,11 @@
 | [`luna://com.webos.memorymanager/getConfigs`](../services/com.webos.memorymanager.md#getconfigs) | private | Getter on com.webos.memorymanager (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.rdxd/getLogSettings`](../services/com.webos.rdxd.md#getlogsettings) | private | Getter on com.webos.rdxd (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.rdxd/setLogSettings`](../services/com.webos.rdxd.md#setlogsettings) | private | Setter on com.webos.rdxd (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.acr/setACRsetting`](../services/com.webos.service.acr.md#setacrsetting) | private | Changes an ACR setting. |
+| [`luna://com.webos.service.acr/setCloseCaption`](../services/com.webos.service.acr.md#setclosecaption) | private | ACR closed-caption control. Name only. |
+| [`luna://com.webos.service.acr/setForceAliveTime`](../services/com.webos.service.acr.md#setforcealivetime) | private | Forces how long acr2 stays alive. |
+| [`luna://com.webos.service.acr/setSessionControl`](../services/com.webos.service.acr.md#setsessioncontrol) | private | Controls an ACR session. |
+| [`luna://com.webos.service.acr/setVideoPig`](../services/com.webos.service.acr.md#setvideopig) | private | ACR PIG (picture-in-graphic) control. Name only. |
 | [`luna://com.webos.service.admanager/checkForegroundSettings`](../services/com.webos.service.admanager.md#checkforegroundsettings) | private | Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.apiadapter/config/getConfigs`](../services/com.webos.service.apiadapter.md#config_getconfigs) | private | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.apiadapter/settings/getSystemSettingDesc`](../services/com.webos.service.apiadapter.md#settings_getsystemsettingdesc) | private | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
@@ -200,6 +205,13 @@
 | [`luna://com.webos.service.printing/configuration/setOptions`](../services/com.webos.service.printing.md#configuration_setoptions) | public | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.printing/info/displayConfig`](../services/com.webos.service.printing.md#info_displayconfig) | public | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.prs/setConfig`](../services/com.webos.service.prs.md#setconfig) | private | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.sdx/doServiceCountryChange`](../services/com.webos.service.sdx.md#doservicecountrychange) | private | Changes the service country SDP uses (which content catalogue / store region the TV talks to). Documented here as what the method is for; this repo does not pro ⚠️ |
+| [`luna://com.webos.service.sdx/notifySubdivisionChanged`](../services/com.webos.service.sdx.md#notifysubdivisionchanged) | private | Notifies SDP that the region subdivision changed. |
+| [`luna://com.webos.service.sdx/setAppPublishFlag`](../services/com.webos.service.sdx.md#setapppublishflag) | private | Sets the per-app SDP publish flag. |
+| [`luna://com.webos.service.sdx/setCountrySettingByAuto`](../services/com.webos.service.sdx.md#setcountrysettingbyauto) | private | Sets the SDP service country automatically (from network/geo). Purpose documented; no bypass recipe. ⚠️ |
+| [`luna://com.webos.service.sdx/setCountrySettingByManual`](../services/com.webos.service.sdx.md#setcountrysettingbymanual) | private | Sets the SDP service country manually. Purpose documented; no bypass recipe. ⚠️ |
+| [`luna://com.webos.service.sdx/setPublishFlag`](../services/com.webos.service.sdx.md#setpublishflag) | private | Sets the SDP publish flag. |
+| [`luna://com.webos.service.sdx/setServer`](../services/com.webos.service.sdx.md#setserver) | private | Points the TV at a different SDP server environment. Documented as existing; changing it can break store/search/updates. ⚠️ |
 | [`luna://com.webos.service.secondscreen.gateway/internal/setConfig`](../services/com.webos.service.secondscreen.gateway.md#internal_setconfig) | private | Method on com.webos.service.secondscreen.gateway (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.settings/arrayExt`](../services/com.webos.service.settings.md#arrayext) | unknown | This object describes the strings among the selectable value type. |
 | [`luna://com.webos.service.settings/batch`](../services/com.webos.service.settings.md#batch) | public | Runs more than one Settings Service method at once. Remarks Subscription is supported only when all the methods in operations input parameter support subscripti |

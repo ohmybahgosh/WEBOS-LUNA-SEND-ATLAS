@@ -1,6 +1,6 @@
 # WEBOS-LUNA-SEND-ATLAS
 
-**The most complete public reference of LG webOS TV `luna-send` (Luna Service Bus) commands.**  7,955 methods across 480 Luna services, each with its URI, parameters, example command, access level, platform and sources.
+**The most complete public reference of LG webOS TV `luna-send` (Luna Service Bus) commands.**  7,961 methods across 480 Luna services, each with its URI, parameters, example command, access level, platform and sources.
 
 There are lots of scattered gists, forum posts and library source files that each document a handful of luna calls.  This repo pulls all of them together, plus the official webOS TV and webOS OSE references, plus method lists introspected from a retail TV, into one searchable, machine-readable catalog.
 
@@ -33,6 +33,7 @@ No root?  Developer Mode gives you `luna-send-pub` (public methods only), and a 
 | [`docs/hidden-menus.md`](docs/hidden-menus.md) | Service menus and special app launches |
 | [`docs/calibration.md`](docs/calibration.md) | The `externalpq` calibration API (1D/3D LUTs, gamut, patterns) |
 | [`docs/dangerous.md`](docs/dangerous.md) | Calls that can hurt your TV |
+| [`docs/sensitive-services.md`](docs/sensitive-services.md) | sdx / ACR / DRM / Widevine, documented not weaponized |
 | [`docs/tv-dumps.md`](docs/tv-dumps.md) | Which real TVs / firmware the catalog was introspected from |
 | [`scripts/luna-dump.sh`](scripts/luna-dump.sh) | Read-only on-TV enumerator: dumps every service + method on *your* firmware |
 | [`scripts/parse_dump.py`](scripts/parse_dump.py) | Diffs a dump against the catalog so new methods can be contributed |
@@ -41,10 +42,10 @@ No root?  Developer Mode gives you `luna-send-pub` (public methods only), and a 
 
 | Access | Methods |
 |---|---|
-| `private` | 5006 |
-| `public` | 2405 |
+| `private` | 5035 |
+| `public` | 2377 |
 | `unknown` | 413 |
-| `ssap` | 96 |
+| `ssap` | 101 |
 | `root` | 35 |
 
 `public` = callable by apps with the right permission.  `private` = needs root or system rights.  `ssap` = reachable over the SSAP websocket.  `unknown` = the source didn't say (mostly webOS OSE pages).
@@ -57,28 +58,28 @@ Confidence levels: `documented` (official LG / webOS OSE docs), `code` (seen in 
 | Category | Methods |
 |---|---|
 | [TV Broadcast / DVR](docs/categories/tv-broadcast.md) | 1898 |
-| [Input & Keys](docs/categories/input.md) | 761 |
-| [Misc](docs/categories/misc.md) | 755 |
+| [Input & Keys](docs/categories/input.md) | 760 |
+| [Misc](docs/categories/misc.md) | 744 |
 | [Audio](docs/categories/audio.md) | 693 |
-| [Media Playback](docs/categories/media.md) | 414 |
+| [Media Playback](docs/categories/media.md) | 412 |
 | [Power](docs/categories/power.md) | 369 |
-| [Applications](docs/categories/apps.md) | 361 |
+| [Applications](docs/categories/apps.md) | 362 |
 | [Bluetooth](docs/categories/bluetooth.md) | 338 |
 | [Network / Wi-Fi](docs/categories/network.md) | 303 |
-| [Security / Keys](docs/categories/security.md) | 300 |
-| [Settings](docs/categories/settings.md) | 275 |
+| [System Info](docs/categories/system-info.md) | 288 |
+| [Settings](docs/categories/settings.md) | 286 |
+| [Security / Keys](docs/categories/security.md) | 280 |
 | [Database (db8)](docs/categories/db.md) | 274 |
-| [System Info](docs/categories/system-info.md) | 265 |
 | [Display / Panel](docs/categories/display.md) | 212 |
 | [Storage & USB](docs/categories/storage.md) | 140 |
 | [Connection Manager](docs/categories/connection.md) | 103 |
-| [Software Update](docs/categories/update.md) | 91 |
+| [Software Update](docs/categories/update.md) | 93 |
 | [Notifications & Alerts](docs/categories/notifications.md) | 81 |
 | [Camera](docs/categories/camera.md) | 73 |
 | [Activity Manager](docs/categories/activity.md) | 61 |
 | [Power Management (sleep/wake)](docs/categories/power-mgmt.md) | 44 |
 | [UI / Compositor](docs/categories/ui.md) | 44 |
-| [Developer Mode & Testing](docs/categories/devmode.md) | 39 |
+| [Developer Mode & Testing](docs/categories/devmode.md) | 42 |
 | [Picture](docs/categories/picture.md) | 26 |
 | [Location](docs/categories/location.md) | 21 |
 | [Key Management](docs/categories/keys.md) | 13 |
@@ -148,7 +149,7 @@ Confidence levels: `documented` (official LG / webOS OSE docs), `code` (seen in 
 | [`com.webos.rm.client`](docs/services/com.webos.rm.client.md) | 3 | webOS TV |
 | [`com.webos.sensord`](docs/services/com.webos.sensord.md) | 42 | webOS TV |
 | [`com.webos.service.accountmanager`](docs/services/com.webos.service.accountmanager.md) | 16 | webOS TV |
-| [`com.webos.service.acr`](docs/services/com.webos.service.acr.md) | 15 | webOS TV |
+| [`com.webos.service.acr`](docs/services/com.webos.service.acr.md) | 17 | webOS TV |
 | [`com.webos.service.activityPolicyMgr`](docs/services/com.webos.service.activityPolicyMgr.md) | 2 | webOS TV |
 | [`com.webos.service.admanager`](docs/services/com.webos.service.admanager.md) | 33 | webOS TV |
 | [`com.webos.service.adoverlay`](docs/services/com.webos.service.adoverlay.md) | 1 | webOS TV |
@@ -404,7 +405,7 @@ Confidence levels: `documented` (official LG / webOS OSE docs), `code` (seen in 
 | [`com.webos.service.screenmanager`](docs/services/com.webos.service.screenmanager.md) | 4 | webOS TV |
 | [`com.webos.service.screenrotation`](docs/services/com.webos.service.screenrotation.md) | 5 | webOS TV |
 | [`com.webos.service.sdpservernotice`](docs/services/com.webos.service.sdpservernotice.md) | 2 | webOS TV |
-| [`com.webos.service.sdx`](docs/services/com.webos.service.sdx.md) | 32 | webOS TV |
+| [`com.webos.service.sdx`](docs/services/com.webos.service.sdx.md) | 36 | webOS TV |
 | [`com.webos.service.sdxpromo`](docs/services/com.webos.service.sdxpromo.md) | 9 | webOS TV |
 | [`com.webos.service.secondscreen.gateway`](docs/services/com.webos.service.secondscreen.gateway.md) | 28 | webOS TV |
 | [`com.webos.service.sensor`](docs/services/com.webos.service.sensor.md) | 6 | webOS TV |

@@ -1,6 +1,6 @@
 # Misc
 
-755 methods.  [Back to index](../../README.md#categories)
+744 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -106,17 +106,6 @@
 | [`luna://com.webos.rm.client/acquireComplete`](../services/com.webos.rm.client.md#acquirecomplete) | private | Method on com.webos.rm.client (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.rm.client/policyAction`](../services/com.webos.rm.client.md#policyaction) | private | Method on com.webos.rm.client (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.rm.client/privateCommand`](../services/com.webos.rm.client.md#privatecommand) | private | Method on com.webos.rm.client (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.acr/closedApplication`](../services/com.webos.service.acr.md#closedapplication) | public | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/getACRAppStatus`](../services/com.webos.service.acr.md#getacrappstatus) | private | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/getACRstatus`](../services/com.webos.service.acr.md#getacrstatus) | private | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/getContentProperty`](../services/com.webos.service.acr.md#getcontentproperty) | public | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/getProductVersion`](../services/com.webos.service.acr.md#getproductversion) | private | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/setACRsetting`](../services/com.webos.service.acr.md#setacrsetting) | private | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/setDebug`](../services/com.webos.service.acr.md#setdebug) | private | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/setSessionControl`](../services/com.webos.service.acr.md#setsessioncontrol) | public | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/setVideoPig`](../services/com.webos.service.acr.md#setvideopig) | public | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/startAcr`](../services/com.webos.service.acr.md#startacr) | private | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/subscribeEvent`](../services/com.webos.service.acr.md#subscribeevent) | public | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.adoverlay/startAdoverlay`](../services/com.webos.service.adoverlay.md#startadoverlay) | private | Method on com.webos.service.adoverlay (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.aiinferencemanager/close`](../services/com.webos.service.aiinferencemanager.md#close) | private | Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.aiinferencemanager/getDeviceStatus`](../services/com.webos.service.aiinferencemanager.md#getdevicestatus) | private | Getter on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |

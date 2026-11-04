@@ -1,6 +1,6 @@
 # Security / Keys
 
-300 methods.  [Back to index](../../README.md#categories)
+279 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -139,34 +139,35 @@
 | [`luna://com.webos.service.dmost/getBroadcastState`](../services/com.webos.service.dmost.md#getbroadcaststate) | private | Getter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.drm/acquireRightsAsync`](../services/com.webos.service.drm.md#acquirerightsasync) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.drm/authenticateDevice`](../services/com.webos.service.drm.md#authenticatedevice) | public | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.drm/checkContentDrm`](../services/com.webos.service.drm.md#checkcontentdrm) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.drm/checkContentDrm`](../services/com.webos.service.drm.md#checkcontentdrm) | private | Checks whether content is DRM-protected and by which scheme. (licensed-playback CDM lifecycle.) |
 | [`luna://com.webos.service.drm/checkRightsAcquired`](../services/com.webos.service.drm.md#checkrightsacquired) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.drm/deleteDrmStore`](../services/com.webos.service.drm.md#deletedrmstore) | public | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). ⚠️ |
 | [`luna://com.webos.service.drm/deregistrate`](../services/com.webos.service.drm.md#deregistrate) | public | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.drm/getActivationStatus`](../services/com.webos.service.drm.md#getactivationstatus) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.drm/getCertificateInfo`](../services/com.webos.service.drm.md#getcertificateinfo) | public | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.drm/getActivationStatus`](../services/com.webos.service.drm.md#getactivationstatus) | private | Reports DRM activation status. (licensed-playback CDM lifecycle.) |
+| [`luna://com.webos.service.drm/getCertificateInfo`](../services/com.webos.service.drm.md#getcertificateinfo) | private | Returns the DRM certificate info. (licensed-playback CDM lifecycle.) |
 | [`luna://com.webos.service.drm/getCustomData`](../services/com.webos.service.drm.md#getcustomdata) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.drm/getDecryptionKey`](../services/com.webos.service.drm.md#getdecryptionkey) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.drm/getDeregistrationInfo`](../services/com.webos.service.drm.md#getderegistrationinfo) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.drm/getDivXDrmStatus`](../services/com.webos.service.drm.md#getdivxdrmstatus) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.drm/getDrmMessage`](../services/com.webos.service.drm.md#getdrmmessage) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.drm/getDivXDrmStatus`](../services/com.webos.service.drm.md#getdivxdrmstatus) | private | Returns DivX DRM registration status/code. (licensed-playback CDM lifecycle.) |
+| [`luna://com.webos.service.drm/getDrmMessage`](../services/com.webos.service.drm.md#getdrmmessage) | private | Returns a DRM challenge/message for the license server. (licensed-playback CDM lifecycle.) |
 | [`luna://com.webos.service.drm/getKeyProvisionInfo`](../services/com.webos.service.drm.md#getkeyprovisioninfo) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.drm/getKeyProvisionInfoAsync`](../services/com.webos.service.drm.md#getkeyprovisioninfoasync) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.drm/getRegistrationInfo`](../services/com.webos.service.drm.md#getregistrationinfo) | public | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.drm/getRentalStatus`](../services/com.webos.service.drm.md#getrentalstatus) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.drm/getMediaStatus`](../services/com.webos.service.drm.md#getmediastatus) | private | Returns the protected-media status. (licensed-playback CDM lifecycle.) |
+| [`luna://com.webos.service.drm/getRegistrationInfo`](../services/com.webos.service.drm.md#getregistrationinfo) | private | Returns device DRM registration info. (licensed-playback CDM lifecycle.) |
+| [`luna://com.webos.service.drm/getRentalStatus`](../services/com.webos.service.drm.md#getrentalstatus) | private | Returns rental/entitlement status for protected content. (licensed-playback CDM lifecycle.) |
 | [`luna://com.webos.service.drm/getRightsError`](../services/com.webos.service.drm.md#getrightserror) | public | Returns DRM rights error info on license errors during playback. |
 | [`luna://com.webos.service.drm/getRightsRequestInfo`](../services/com.webos.service.drm.md#getrightsrequestinfo) | public | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.drm/getVerifyUriSignature`](../services/com.webos.service.drm.md#getverifyurisignature) | public | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.drm/initializeDrmMemory`](../services/com.webos.service.drm.md#initializedrmmemory) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.drm/isLoaded`](../services/com.webos.service.drm.md#isloaded) | public | Checks whether a DRM client exists for an app ID. |
-| [`luna://com.webos.service.drm/load`](../services/com.webos.service.drm.md#load) | public | Creates a DRM client instance for the type. |
+| [`luna://com.webos.service.drm/isLoaded`](../services/com.webos.service.drm.md#isloaded) | private | Reports whether the DRM module is loaded. (licensed-playback CDM lifecycle.) |
+| [`luna://com.webos.service.drm/load`](../services/com.webos.service.drm.md#load) | private | Loads the DRM/CDM module. (licensed-playback CDM lifecycle.) |
 | [`luna://com.webos.service.drm/notifyRightsAcquired`](../services/com.webos.service.drm.md#notifyrightsacquired) | public | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.drm/notifyRightsError`](../services/com.webos.service.drm.md#notifyrightserror) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.drm/parseCustomData`](../services/com.webos.service.drm.md#parsecustomdata) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.drm/requestDaemonService`](../services/com.webos.service.drm.md#requestdaemonservice) | private | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.drm/saveRights`](../services/com.webos.service.drm.md#saverights) | public | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.drm/sendDrmMessage`](../services/com.webos.service.drm.md#senddrmmessage) | public | Sends a DRM message to the DRM service. |
-| [`luna://com.webos.service.drm/unload`](../services/com.webos.service.drm.md#unload) | public | Removes a DRM client instance. |
+| [`luna://com.webos.service.drm/sendDrmMessage`](../services/com.webos.service.drm.md#senddrmmessage) | private | Sends a DRM message to the license server. (licensed-playback CDM lifecycle.) |
+| [`luna://com.webos.service.drm/unload`](../services/com.webos.service.drm.md#unload) | private | Unloads the DRM module. (licensed-playback CDM lifecycle.) |
 | [`luna://com.webos.service.ics/blaster/clearSettingCash`](../services/com.webos.service.ics.md#blaster_clearsettingcash) | private | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.keymanager3/abort`](../services/com.webos.service.keymanager3.md#abort) | public | Aborts an in-progress operation. |
 | [`luna://com.webos.service.keymanager3/begin`](../services/com.webos.service.keymanager3.md#begin) | public | Starts a crypto operation and returns a handle. |
@@ -222,34 +223,11 @@
 | [`luna://com.webos.service.miracasttx/requestMsg`](../services/com.webos.service.miracasttx.md#requestmsg) | private | Method on com.webos.service.miracasttx (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.miracasttx/setEncodingMode`](../services/com.webos.service.miracasttx.md#setencodingmode) | private | Method on com.webos.service.miracasttx (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.pkgverifier/verifyIpk`](../services/com.webos.service.pkgverifier.md#verifyipk) | private | Method on com.webos.service.pkgverifier (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/callbackNotice`](../services/com.webos.service.sdx.md#callbacknotice) | private | Method on com.webos.service.sdx (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.sdx/cancelEulaDownload`](../services/com.webos.service.sdx.md#canceleuladownload) | private | Method on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/debug`](../services/com.webos.service.sdx.md#debug) | private | Method on com.webos.service.sdx (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.sdx/deleteDeviceAuthentication`](../services/com.webos.service.sdx.md#deletedeviceauthentication) | public | Method on com.webos.service.sdx (introspected on-device; parameters undocumented). ⚠️ |
-| [`luna://com.webos.service.sdx/doServiceCountryChange`](../services/com.webos.service.sdx.md#doservicecountrychange) | private | Method on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getACRPath`](../services/com.webos.service.sdx.md#getacrpath) | private | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getAppPublishFlag`](../services/com.webos.service.sdx.md#getapppublishflag) | private | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getCacheStatus`](../services/com.webos.service.sdx.md#getcachestatus) | private | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getCountryCodePath`](../services/com.webos.service.sdx.md#getcountrycodepath) | private | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getDeviceAuthenticationStatus`](../services/com.webos.service.sdx.md#getdeviceauthenticationstatus) | private | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getEncryptedMac`](../services/com.webos.service.sdx.md#getencryptedmac) | private | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getEulaDownloadStatus`](../services/com.webos.service.sdx.md#geteuladownloadstatus) | private | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getPublishFlag`](../services/com.webos.service.sdx.md#getpublishflag) | private | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getRdxServer`](../services/com.webos.service.sdx.md#getrdxserver) | private | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getRdxServerUrl`](../services/com.webos.service.sdx.md#getrdxserverurl) | private | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getServerList`](../services/com.webos.service.sdx.md#getserverlist) | private | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getServerUrl`](../services/com.webos.service.sdx.md#getserverurl) | public | Getter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/notifySubdivisionChanged`](../services/com.webos.service.sdx.md#notifysubdivisionchanged) | private | Method on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/requestACRVersion`](../services/com.webos.service.sdx.md#requestacrversion) | private | Method on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/requestDeviceAuthentication`](../services/com.webos.service.sdx.md#requestdeviceauthentication) | private | Method on com.webos.service.sdx (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.sdx/requestEulaDownload`](../services/com.webos.service.sdx.md#requesteuladownload) | private | Method on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/requestProvisioningDev`](../services/com.webos.service.sdx.md#requestprovisioningdev) | private | Method on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/setAppPublishFlag`](../services/com.webos.service.sdx.md#setapppublishflag) | private | Setter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/setCountrySettingByAuto`](../services/com.webos.service.sdx.md#setcountrysettingbyauto) | private | Setter on com.webos.service.sdx (introspected on-device; parameters undocumented). ⚠️ |
-| [`luna://com.webos.service.sdx/setCountrySettingByManual`](../services/com.webos.service.sdx.md#setcountrysettingbymanual) | private | Setter on com.webos.service.sdx (introspected on-device; parameters undocumented). ⚠️ |
-| [`luna://com.webos.service.sdx/setServer`](../services/com.webos.service.sdx.md#setserver) | private | Setter on com.webos.service.sdx (introspected on-device; parameters undocumented). ⚠️ |
-| [`luna://com.webos.service.sdx/setTokenRefreshInterval`](../services/com.webos.service.sdx.md#settokenrefreshinterval) | private | Setter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/start`](../services/com.webos.service.sdx.md#start) | private | Method on com.webos.service.sdx (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.sdx/deleteDeviceAuthentication`](../services/com.webos.service.sdx.md#deletedeviceauthentication) | private | Clears the stored SDP device authentication. Documented as existing. ⚠️ |
+| [`luna://com.webos.service.sdx/getDeviceAuthenticationStatus`](../services/com.webos.service.sdx.md#getdeviceauthenticationstatus) | private | Read-only: reports whether the device is authenticated/provisioned with SDP (isDeviceAuthenticated, provisioningCompleted). Glasshouse saw acr stop when this re |
+| [`luna://com.webos.service.sdx/requestDeviceAuthentication`](../services/com.webos.service.sdx.md#requestdeviceauthentication) | private | Starts SDP device authentication/provisioning. Documented as existing; this repo does not cover forging or bypassing it. |
+| [`luna://com.webos.service.sdx/requestProvisioningDev`](../services/com.webos.service.sdx.md#requestprovisioningdev) | private | Developer provisioning request against SDP. Name only. |
+| [`luna://com.webos.service.sdx/setTokenRefreshInterval`](../services/com.webos.service.sdx.md#settokenrefreshinterval) | private | Sets how often the SDP account token is refreshed. |
 | [`luna://com.webos.service.sdxpromo/appListChange`](../services/com.webos.service.sdxpromo.md#applistchange) | public | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.sdxpromo/checkEula`](../services/com.webos.service.sdxpromo.md#checkeula) | public | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.sdxpromo/checkPromos`](../services/com.webos.service.sdxpromo.md#checkpromos) | public | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
@@ -273,33 +251,34 @@
 | [`luna://com.webos.service.utp.acas/setConfirmContractInfo`](../services/com.webos.service.utp.acas.md#setconfirmcontractinfo) | private | Setter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.wampluggable.hbbtv/getCurrBroadcastPipelineId`](../services/com.webos.service.wampluggable.hbbtv.md#getcurrbroadcastpipelineid) | private | Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.widevine/castSign`](../services/com.webos.service.widevine.md#castsign) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/closeSession`](../services/com.webos.service.widevine.md#closesession) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/createCdm`](../services/com.webos.service.widevine.md#createcdm) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/createSession`](../services/com.webos.service.widevine.md#createsession) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/destroyCdm`](../services/com.webos.service.widevine.md#destroycdm) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/generateRequest`](../services/com.webos.service.widevine.md#generaterequest) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.widevine/closeSession`](../services/com.webos.service.widevine.md#closesession) | private | Closes a session. (standard Widevine CDM call.) |
+| [`luna://com.webos.service.widevine/createCdm`](../services/com.webos.service.widevine.md#createcdm) | private | Creates a Widevine CDM instance. (standard Widevine CDM call.) |
+| [`luna://com.webos.service.widevine/createSession`](../services/com.webos.service.widevine.md#createsession) | private | Opens a Widevine license session. (standard Widevine CDM call.) |
+| [`luna://com.webos.service.widevine/destroyCdm`](../services/com.webos.service.widevine.md#destroycdm) | private | Destroys a CDM instance. (standard Widevine CDM call.) |
+| [`luna://com.webos.service.widevine/generateRequest`](../services/com.webos.service.widevine.md#generaterequest) | private | Generates a license request for the server. (standard Widevine CDM call.) |
 | [`luna://com.webos.service.widevine/getCastProvisioningRequest`](../services/com.webos.service.widevine.md#getcastprovisioningrequest) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.widevine/getKeyStatusesChange`](../services/com.webos.service.widevine.md#getkeystatuseschange) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.widevine/getMessage`](../services/com.webos.service.widevine.md#getmessage) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.widevine/getOecSessionId`](../services/com.webos.service.widevine.md#getoecsessionid) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/getProvisioningRequest`](../services/com.webos.service.widevine.md#getprovisioningrequest) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.widevine/getProvisioningRequest`](../services/com.webos.service.widevine.md#getprovisioningrequest) | private | Returns a provisioning request for the Widevine server. (standard Widevine CDM call.) |
 | [`luna://com.webos.service.widevine/getResourceRatingTier`](../services/com.webos.service.widevine.md#getresourceratingtier) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/getStatusForHdcpVersion`](../services/com.webos.service.widevine.md#getstatusforhdcpversion) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.widevine/getStatusForHdcpVersion`](../services/com.webos.service.widevine.md#getstatusforhdcpversion) | private | Reports allowed playback for an HDCP version. (standard Widevine CDM call.) |
 | [`luna://com.webos.service.widevine/getUserAgent`](../services/com.webos.service.widevine.md#getuseragent) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/getVersion`](../services/com.webos.service.widevine.md#getversion) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.widevine/getVersion`](../services/com.webos.service.widevine.md#getversion) | private | Returns the Widevine CDM version. (standard Widevine CDM call.) |
 | [`luna://com.webos.service.widevine/handleCastProvisioningResponse`](../services/com.webos.service.widevine.md#handlecastprovisioningresponse) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.widevine/handleProvisioningResponse`](../services/com.webos.service.widevine.md#handleprovisioningresponse) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.widevine/initDataContainsEmbeddedKeys`](../services/com.webos.service.widevine.md#initdatacontainsembeddedkeys) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.widevine/isExistingLicense`](../services/com.webos.service.widevine.md#isexistinglicense) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/isProvisioned`](../services/com.webos.service.widevine.md#isprovisioned) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.widevine/isProvisioned`](../services/com.webos.service.widevine.md#isprovisioned) | private | Reports whether the CDM is provisioned. (standard Widevine CDM call.) |
 | [`luna://com.webos.service.widevine/loadEmbeddedKeys`](../services/com.webos.service.widevine.md#loadembeddedkeys) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/loadSession`](../services/com.webos.service.widevine.md#loadsession) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.widevine/loadSession`](../services/com.webos.service.widevine.md#loadsession) | private | Loads a persisted session. (standard Widevine CDM call.) |
 | [`luna://com.webos.service.widevine/removeComplete`](../services/com.webos.service.widevine.md#removecomplete) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). ⚠️ |
 | [`luna://com.webos.service.widevine/removeLicense`](../services/com.webos.service.widevine.md#removelicense) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`luna://com.webos.service.widevine/removeSession`](../services/com.webos.service.widevine.md#removesession) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). ⚠️ |
+| [`luna://com.webos.service.widevine/removeSession`](../services/com.webos.service.widevine.md#removesession) | private | Removes a session. (standard Widevine CDM call.) ⚠️ |
 | [`luna://com.webos.service.widevine/selectKey`](../services/com.webos.service.widevine.md#selectkey) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.widevine/setAppParameter`](../services/com.webos.service.widevine.md#setappparameter) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/setVideoResolution`](../services/com.webos.service.widevine.md#setvideoresolution) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.widevine/setVideoResolution`](../services/com.webos.service.widevine.md#setvideoresolution) | private | Sets the resolution the CDM enforces policy for. (standard Widevine CDM call.) |
+| [`luna://com.webos.service.widevine/updateSession`](../services/com.webos.service.widevine.md#updatesession) | private | Applies a license response to a session. (standard Widevine CDM call.) |
 | [`luna://com.webos.service.wowplay/getWowcastEdidInfo`](../services/com.webos.service.wowplay.md#getwowcastedidinfo) | private | Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.wowplay/getWOWCASTState`](../services/com.webos.service.wowplay.md#getwowcaststate) | public | Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
 | [`ssap://pairing/setPin`](../services/ssap_pairing.md#setpin) | ssap | Submit PIN during PIN-type pairing |

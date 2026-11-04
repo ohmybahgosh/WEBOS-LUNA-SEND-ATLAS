@@ -1,6 +1,6 @@
 # System Info
 
-265 methods.  [Back to index](../../README.md#categories)
+289 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -44,6 +44,15 @@
 | [`luna://com.webos.service.accountmanager/registerAccountSwitching`](../services/com.webos.service.accountmanager.md#registeraccountswitching) | private | Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.accountmanager/responseAccountSwitchingRequest`](../services/com.webos.service.accountmanager.md#responseaccountswitchingrequest) | private | Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.accountmanager/setOOBEData`](../services/com.webos.service.accountmanager.md#setoobedata) | private | Setter on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.acr/getACRAppStatus`](../services/com.webos.service.acr.md#getacrappstatus) | private | Reports the ACR app status. |
+| [`luna://com.webos.service.acr/getACRLaunchFlag`](../services/com.webos.service.acr.md#getacrlaunchflag) | private | Reports the ACR launch flag. |
+| [`luna://com.webos.service.acr/getACRSolutionStatus`](../services/com.webos.service.acr.md#getacrsolutionstatus) | private | Read-only: reports whether the ACR fingerprinting solution is active (Glasshouse saw 'false' with consents off). |
+| [`luna://com.webos.service.acr/getACRstatus`](../services/com.webos.service.acr.md#getacrstatus) | private | Read-only: reports ACR on/off status. Starts acr2 if dynamic. |
+| [`luna://com.webos.service.acr/getContentProperty`](../services/com.webos.service.acr.md#getcontentproperty) | private | Returns recognised-content properties. |
+| [`luna://com.webos.service.acr/getProductVersion`](../services/com.webos.service.acr.md#getproductversion) | private | Returns the ACR product/solution version. |
+| [`luna://com.webos.service.acr/getVideoCaptureStatus`](../services/com.webos.service.acr.md#getvideocapturestatus) | private | Reports the ACR video-capture state (Glasshouse: 'stopped', captureSpeed 0 with consents off). |
+| [`luna://com.webos.service.acr/startAcr`](../services/com.webos.service.acr.md#startacr) | private | Starts the ACR service. An activity-manager rule also starts it at boot when consents are on. |
+| [`luna://com.webos.service.acr/subscribeEvent`](../services/com.webos.service.acr.md#subscribeevent) | private | Subscribes to ACR events. |
 | [`luna://com.webos.service.bugreport/account`](../services/com.webos.service.bugreport.md#account) | unknown | Account info to log in to Jira. |
 | [`luna://com.webos.service.bugreport/createBug`](../services/com.webos.service.bugreport.md#createbug) | public | Creates a bug ticket on Jira with the given data. Note: This method is intended to be called by the bugreport app. If you want to use this in other modules, con |
 | [`luna://com.webos.service.bugreport/getConfig`](../services/com.webos.service.bugreport.md#getconfig) | public | Gets Jira configuration and files to be attached to the Jira ticket. Note: This method is intended to be called by the bugreport app. If you want to use this in |
@@ -108,7 +117,22 @@
 | [`luna://com.webos.service.memorymanager/system_view`](../services/com.webos.service.memorymanager.md#system_view) | unknown | Provides system-level memory information. |
 | [`luna://com.webos.service.memorymanager/threshold`](../services/com.webos.service.memorymanager.md#threshold) | unknown | Indicates the memory level threshold. |
 | [`luna://com.webos.service.memorymanager/threshold_item`](../services/com.webos.service.memorymanager.md#threshold_item) | unknown | Indicates the threshold item. |
-| [`luna://com.webos.service.sdx/getDeviceUuid`](../services/com.webos.service.sdx.md#getdeviceuuid) | public | Returns device UUID; billingId carries modelName for otaId derivation |
+| [`luna://com.webos.service.sdx/getACRPath`](../services/com.webos.service.sdx.md#getacrpath) | private | Returns the SDP path used for ACR data. |
+| [`luna://com.webos.service.sdx/getAppPublishFlag`](../services/com.webos.service.sdx.md#getapppublishflag) | private | Returns the per-app SDP publish flag. |
+| [`luna://com.webos.service.sdx/getCacheStatus`](../services/com.webos.service.sdx.md#getcachestatus) | private | Returns the SDP cache status. |
+| [`luna://com.webos.service.sdx/getCountryCodePath`](../services/com.webos.service.sdx.md#getcountrycodepath) | private | Returns the SDP path used for country-code lookup. |
+| [`luna://com.webos.service.sdx/getDeviceUuid`](../services/com.webos.service.sdx.md#getdeviceuuid) | private | Returns the device UUID SDP knows the TV by (billingId carries modelName). |
+| [`luna://com.webos.service.sdx/getEncryptedMac`](../services/com.webos.service.sdx.md#getencryptedmac) | private | Returns the TV's MAC in SDP's encrypted form. |
+| [`luna://com.webos.service.sdx/getEulaDownloadStatus`](../services/com.webos.service.sdx.md#geteuladownloadstatus) | private | Returns the status of an SDP EULA download. |
+| [`luna://com.webos.service.sdx/getPublishFlag`](../services/com.webos.service.sdx.md#getpublishflag) | private | Returns the SDP publish flag. |
+| [`luna://com.webos.service.sdx/getRdxServer`](../services/com.webos.service.sdx.md#getrdxserver) | private | Returns the RDX report-upload server host. |
+| [`luna://com.webos.service.sdx/getRdxServerUrl`](../services/com.webos.service.sdx.md#getrdxserverurl) | private | Returns the RDX (report/diagnostics upload) server URL, e.g. https://US.rdx2.nextlgsdp.com/rdx/9.0.0/. uploadd posts crash/telemetry reports here. |
+| [`luna://com.webos.service.sdx/getServer`](../services/com.webos.service.sdx.md#getserver) | private | Returns the SDP server environment the TV is pointed at (e.g. 'Production'). |
+| [`luna://com.webos.service.sdx/getServerList`](../services/com.webos.service.sdx.md#getserverlist) | private | Returns the configured SDP server list (from sdp/sdx/server_addr_version.conf). |
+| [`luna://com.webos.service.sdx/getServerType`](../services/com.webos.service.sdx.md#getservertype) | private | Returns the SDP server type (e.g. 'sdp'). |
+| [`luna://com.webos.service.sdx/getServerUrl`](../services/com.webos.service.sdx.md#getserverurl) | private | Returns the SDP base URL (e.g. http://US.tv.wiselg.com). |
+| [`luna://com.webos.service.sdx/requestACRVersion`](../services/com.webos.service.sdx.md#requestacrversion) | private | Requests the ACR configuration version from SDP. |
+| [`luna://com.webos.service.sdx/start`](../services/com.webos.service.sdx.md#start) | private | Starts the sdx service worker. Name only. |
 | [`luna://com.webos.service.sm/accessusb/getStatus`](../services/com.webos.service.sm.md#accessusb_getstatus) | private | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.sm/accessusb/requestAuthentication`](../services/com.webos.service.sm.md#accessusb_requestauthentication) | private | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.sm/crypto/checkSeStore`](../services/com.webos.service.sm.md#crypto_checksestore) | private | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |

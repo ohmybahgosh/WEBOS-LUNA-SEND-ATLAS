@@ -2,7 +2,7 @@
 
 These can factory reset the TV, wipe app or user data, break software updates, change panel/factory values, remove your Home launcher, or otherwise leave the TV in a state that is hard to recover.  Several are irreversible.  **Don't run them unless you know exactly how to undo them.**  Nobody here is responsible for your TV.
 
-308 entries.
+309 entries.
 
 | URI | Why | 
 |---|---|
@@ -235,10 +235,11 @@ These can factory reset the TV, wipe app or user data, break software updates, c
 | [`luna://com.webos.service.recent/removeAllRecents`](services/com.webos.service.recent.md#removeallrecents) | Method on com.webos.service.recent (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.rollingscreen/updateMotorMicomFirmware`](services/com.webos.service.rollingscreen.md#updatemotormicomfirmware) | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.ruleengine/deleteRule`](services/com.webos.service.ruleengine.md#deleterule) | Method on com.webos.service.ruleengine (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/deleteDeviceAuthentication`](services/com.webos.service.sdx.md#deletedeviceauthentication) | Method on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/setCountrySettingByAuto`](services/com.webos.service.sdx.md#setcountrysettingbyauto) | Setter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/setCountrySettingByManual`](services/com.webos.service.sdx.md#setcountrysettingbymanual) | Setter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/setServer`](services/com.webos.service.sdx.md#setserver) | Setter on com.webos.service.sdx (introspected on-device; parameters undocumented). |
+| [`luna://com.webos.service.sdx/deleteDeviceAuthentication`](services/com.webos.service.sdx.md#deletedeviceauthentication) | Clears the stored SDP device authentication. Documented as existing. |
+| [`luna://com.webos.service.sdx/doServiceCountryChange`](services/com.webos.service.sdx.md#doservicecountrychange) | Changes the service country SDP uses (which content catalogue / store region the TV talks to). Documented here as what the method is for; this repo does not provide a region-lock bypass procedure. |
+| [`luna://com.webos.service.sdx/setCountrySettingByAuto`](services/com.webos.service.sdx.md#setcountrysettingbyauto) | Sets the SDP service country automatically (from network/geo). Purpose documented; no bypass recipe. |
+| [`luna://com.webos.service.sdx/setCountrySettingByManual`](services/com.webos.service.sdx.md#setcountrysettingbymanual) | Sets the SDP service country manually. Purpose documented; no bypass recipe. |
+| [`luna://com.webos.service.sdx/setServer`](services/com.webos.service.sdx.md#setserver) | Points the TV at a different SDP server environment. Documented as existing; changing it can break store/search/updates. |
 | [`luna://com.webos.service.sdxpromo/deletePromo`](services/com.webos.service.sdxpromo.md#deletepromo) | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.settings/resetSystemSettingDescPriv`](services/com.webos.service.settings.md#resetsystemsettingdescpriv) | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.settings/resetSystemSettingsPriv`](services/com.webos.service.settings.md#resetsystemsettingspriv) | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). |
@@ -304,7 +305,7 @@ These can factory reset the TV, wipe app or user data, break software updates, c
 | [`luna://com.webos.service.wampluggable.hbbtv/resetDialConnection`](services/com.webos.service.wampluggable.hbbtv.md#resetdialconnection) | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.widevine/removeComplete`](services/com.webos.service.widevine.md#removecomplete) | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.widevine/removeLicense`](services/com.webos.service.widevine.md#removelicense) | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/removeSession`](services/com.webos.service.widevine.md#removesession) | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.widevine/removeSession`](services/com.webos.service.widevine.md#removesession) | Removes a session. (standard Widevine CDM call.) |
 | [`luna://com.webos.service.wifi/tv/factoryWifiSearchResult`](services/com.webos.service.wifi.md#tv_factorywifisearchresult) | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.wifi/tv/resetWifiSearchResult`](services/com.webos.service.wifi.md#tv_resetwifisearchresult) | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.wirelessavcontroller/updateZcbMicomFirmware`](services/com.webos.service.wirelessavcontroller.md#updatezcbmicomfirmware) | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |

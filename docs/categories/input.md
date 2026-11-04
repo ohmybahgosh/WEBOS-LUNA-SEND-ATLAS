@@ -1,6 +1,6 @@
 # Input & Keys
 
-761 methods.  [Back to index](../../README.md#categories)
+760 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -73,7 +73,6 @@
 | [`luna://com.webos.sensord/Prox`](../services/com.webos.sensord.md#prox) | public | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.sensord/prox/get_prox`](../services/com.webos.sensord.md#prox_get_prox) | public | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.sensord/RotVec`](../services/com.webos.sensord.md#rotvec) | public | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.acr/setForceAliveTime`](../services/com.webos.service.acr.md#setforcealivetime) | public | Method on com.webos.service.acr (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.ai.voice/getResponse`](../services/com.webos.service.ai.voice.md#getresponse) | public | Returns speech recognition results. This method is asynchronous. |
 | [`luna://com.webos.service.ai.voice/getState`](../services/com.webos.service.ai.voice.md#getstate) | public | Gets the current state of the service. It can have the following states: idle : Before start. waitActivation : Wait for keyword activation. recording : Uploadin |
 | [`luna://com.webos.service.ai.voice/start`](../services/com.webos.service.ai.voice.md#start) | public | Starts the service based on the mode selected. Note: This method is only for allowed clients. |
@@ -289,10 +288,10 @@
 | [`luna://com.webos.service.ics/iot/setIoTDevice`](../services/com.webos.service.ics.md#iot_setiotdevice) | private | Setter on com.webos.service.ics (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.ics/sendDirectCommand`](../services/com.webos.service.ics.md#senddirectcommand) | private | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.ics/setNewDevicePort`](../services/com.webos.service.ics.md#setnewdeviceport) | private | Setter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.ime/deleteCharacters`](../services/com.webos.service.ime.md#deletecharacters) | public | Delete characters in the focused text field |
-| [`luna://com.webos.service.ime/insertText`](../services/com.webos.service.ime.md#inserttext) | public | Insert (or replace) text in the focused text field |
-| [`luna://com.webos.service.ime/registerRemoteKeyboard`](../services/com.webos.service.ime.md#registerremotekeyboard) | public | Subscribe to remote-keyboard (text field focus) events |
-| [`luna://com.webos.service.ime/sendEnterKey`](../services/com.webos.service.ime.md#sendenterkey) | public | Send Enter to the on-screen keyboard/text field |
+| [`luna://com.webos.service.ime/deleteCharacters`](../services/com.webos.service.ime.md#deletecharacters) | ssap | Delete characters in the focused text field |
+| [`luna://com.webos.service.ime/insertText`](../services/com.webos.service.ime.md#inserttext) | ssap | Insert (or replace) text in the focused text field |
+| [`luna://com.webos.service.ime/registerRemoteKeyboard`](../services/com.webos.service.ime.md#registerremotekeyboard) | ssap | Subscribe to remote-keyboard (text field focus) events |
+| [`luna://com.webos.service.ime/sendEnterKey`](../services/com.webos.service.ime.md#sendenterkey) | ssap | Send Enter to the on-screen keyboard/text field |
 | [`luna://com.webos.service.irdbmanager/addDevice`](../services/com.webos.service.irdbmanager.md#adddevice) | private | IR blaster database method: addDevice |
 | [`luna://com.webos.service.irdbmanager/delDevice`](../services/com.webos.service.irdbmanager.md#deldevice) | private | IR blaster database method: delDevice |
 | [`luna://com.webos.service.irdbmanager/getIrData`](../services/com.webos.service.irdbmanager.md#getirdata) | private | IR blaster database method: getIrData |

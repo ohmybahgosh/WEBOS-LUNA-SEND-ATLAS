@@ -1,6 +1,6 @@
 # Software Update
 
-91 methods.  [Back to index](../../README.md#categories)
+90 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -35,9 +35,9 @@
 | [`luna://com.webos.service.pkgUpdate/check`](../services/com.webos.service.pkgUpdate.md#check) | private | Method on com.webos.service.pkgUpdate (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.pkgUpdate/statusAll`](../services/com.webos.service.pkgUpdate.md#statusall) | private | Method on com.webos.service.pkgUpdate (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.ppm/updatePermission`](../services/com.webos.service.ppm.md#updatepermission) | private | Method on com.webos.service.ppm (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/getServer`](../services/com.webos.service.sdx.md#getserver) | private | Returns which LG server environment the TV talks to |
-| [`luna://com.webos.service.sdx/testEulaUpdate`](../services/com.webos.service.sdx.md#testeulaupdate) | public | Method on com.webos.service.sdx (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.sdx/updateEulaInfo`](../services/com.webos.service.sdx.md#updateeulainfo) | private | Method on com.webos.service.sdx (from on-device permission registry; parameters undocumented). |
+| [`luna://com.webos.service.sdx/cancelEulaDownload`](../services/com.webos.service.sdx.md#canceleuladownload) | private | Cancels an in-progress EULA download. |
+| [`luna://com.webos.service.sdx/requestEulaDownload`](../services/com.webos.service.sdx.md#requesteuladownload) | private | Requests download of EULA/legal text from SDP. |
+| [`luna://com.webos.service.sdx/updateEulaInfo`](../services/com.webos.service.sdx.md#updateeulainfo) | private | Updates stored EULA acceptance info. |
 | [`luna://com.webos.service.tsrecord/record/updateMetaData`](../services/com.webos.service.tsrecord.md#record_updatemetadata) | private | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.tv.swupdate/getUpdateStatus`](../services/com.webos.service.tv.swupdate.md#getupdatestatus) | private | Method on com.webos.service.tv.swupdate (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.update/cancelUpdate`](../services/com.webos.service.update.md#cancelupdate) | private | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
@@ -94,4 +94,3 @@
 | [`luna://com.webos.service.updatefw.utilmgr/savePlatformInfo`](../services/com.webos.service.updatefw.utilmgr.md#saveplatforminfo) | public | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.updatefw.utilmgr/writeEnyoTicketInfo`](../services/com.webos.service.updatefw.utilmgr.md#writeenyoticketinfo) | public | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.videosinkmanager/private/update`](../services/com.webos.service.videosinkmanager.md#private_update) | private | Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented). |
-| [`luna://com.webos.service.widevine/updateSession`](../services/com.webos.service.widevine.md#updatesession) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |

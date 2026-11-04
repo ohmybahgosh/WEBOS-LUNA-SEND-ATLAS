@@ -1,6 +1,6 @@
 # Developer Mode & Testing
 
-39 methods.  [Back to index](../../README.md#categories)
+42 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -26,6 +26,7 @@
 | [`luna://com.palm.service.tellurium/subscribeToEvents`](../services/com.palm.service.tellurium.md#subscribetoevents) | public | Subscribes to stages' events (received from stage in notifyEvent) |
 | [`luna://com.palm.service.tellurium/version`](../services/com.palm.service.tellurium.md#version) | public | Returns the tellurium version from the submission tag. |
 | [`luna://com.palm.service.tellurium/window`](../services/com.palm.service.tellurium.md#window) | unknown | Creates a top level window and accesses the screen information. |
+| [`luna://com.webos.service.acr/setDebug`](../services/com.webos.service.acr.md#setdebug) | private | ACR debug control. |
 | [`luna://com.webos.service.devmode/getDevMode`](../services/com.webos.service.devmode.md#getdevmode) | public | Return the current status of developer mode. |
 | [`luna://com.webos.service.devmode/getPassphrase`](../services/com.webos.service.devmode.md#getpassphrase) | public | Returns the current passphrase associated with the SSH key, which is used to connect to the device. This method is only callable by the developer mode app. |
 | [`luna://com.webos.service.devmode/setDevMode`](../services/com.webos.service.devmode.md#setdevmode) | public | Enable or disable developer mode. The device will reboot if the mode is changed. |
@@ -43,3 +44,5 @@
 | [`luna://com.webos.service.sdkagent/outputs.influxdb`](../services/com.webos.service.sdkagent.md#outputs.influxdb) | unknown | Config data for influxdb on host. |
 | [`luna://com.webos.service.sdkagent/webOS.processMonitoring`](../services/com.webos.service.sdkagent.md#webos.processmonitoring) | unknown | Config data for processMonitoring. Lists the background/foreground applications and their process IDs that are running on webOS platform. For more details: http |
 | [`luna://com.webos.service.sdkagent/webOS.webProcessSize`](../services/com.webos.service.sdkagent.md#webos.webprocesssize) | unknown | Config data for webProcessSize. Return the list of apps which the process is running and their size. For information, see com.webos.service.webappmanager/getweb |
+| [`luna://com.webos.service.sdx/debug`](../services/com.webos.service.sdx.md#debug) | private | sdx debug control. Name only. |
+| [`luna://com.webos.service.sdx/testEulaUpdate`](../services/com.webos.service.sdx.md#testeulaupdate) | private | Test hook for EULA update. Name only. |

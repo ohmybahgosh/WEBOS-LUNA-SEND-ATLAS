@@ -6,10 +6,10 @@
 
 | Method | Access | Sub | Category | Description |
 |---|---|---|---|---|
-| [`deleteCharacters`](#deletecharacters) | public |  | input | Delete characters in the focused text field |
-| [`insertText`](#inserttext) | public |  | input | Insert (or replace) text in the focused text field |
-| [`registerRemoteKeyboard`](#registerremotekeyboard) | public | yes | input | Subscribe to remote-keyboard (text field focus) events |
-| [`sendEnterKey`](#sendenterkey) | public |  | input | Send Enter to the on-screen keyboard/text field |
+| [`deleteCharacters`](#deletecharacters) | ssap |  | input | Delete characters in the focused text field |
+| [`insertText`](#inserttext) | ssap |  | input | Insert (or replace) text in the focused text field |
+| [`registerRemoteKeyboard`](#registerremotekeyboard) | ssap | yes | input | Subscribe to remote-keyboard (text field focus) events |
+| [`sendEnterKey`](#sendenterkey) | ssap |  | input | Send Enter to the on-screen keyboard/text field |
 
 <a id="deletecharacters"></a>
 ## `deleteCharacters`
@@ -18,23 +18,23 @@
 
 Delete characters in the focused text field
 
-- **Access:** public  
+- **Access:** ssap  
 - **Subscribe:** no  
-- **Platform:** webOS OSE, webOS TV  
+- **Platform:** webOS TV, webOS OSE  
 - **Versions:** webOS OSE API level 23+  
 - **Confidence:** documented, code
 
 | Param | Type / notes |
 |---|---|
-| `count` | number (required) Number of Unicode characters to delete. |
+| `count` | int number of characters |
 
 ```sh
-luna-send -n 1 luna://com.webos.service.ime/deleteCharacters '{"count": 1}
+{"type":"request","id":"1","uri":"ssap://com.webos.service.ime/deleteCharacters","payload":{"count":1}}
 ```
 
 > ACG: ime.operation \| Returns: returnValue:Boolean; errorText:String; errorCode:Number (int32_t) \| Service: IME and Virtual Keyboard Service.
 
-Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-ime/), [2](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [3](https://github.com/hobbyquaker/lgtv2/blob/master/README.md), [4](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/webos/WebOSTVKeyboardInput.java)
+Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [2](https://github.com/hobbyquaker/lgtv2/blob/master/README.md), [3](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/webos/WebOSTVKeyboardInput.java), [4](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-ime/)
 
 <a id="inserttext"></a>
 ## `insertText`
@@ -43,24 +43,24 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-i
 
 Insert (or replace) text in the focused text field
 
-- **Access:** public  
+- **Access:** ssap  
 - **Subscribe:** no  
-- **Platform:** webOS OSE, webOS TV  
-- **Versions:** webOS OSE API level 23+; webOS 3+  
+- **Platform:** webOS TV, webOS OSE  
+- **Versions:** webOS 3+; webOS OSE API level 23+  
 - **Confidence:** documented, code, community
 
 | Param | Type / notes |
 |---|---|
-| `text` | String (required) Text to insert. |
-| `replace` | Boolean (optional) if true, replace any existing text in field. |
+| `text` | string |
+| `replace` | bool\|0/1 replace existing text |
 
 ```sh
-luna-send -n 1 luna://com.webos.service.ime/insertText '{"text": "hello world", "replace": true}
+{"type":"request","id":"1","uri":"ssap://com.webos.service.ime/insertText","payload":{"text":"abc","replace":0}}
 ```
 
-> ACG: ime.operation \| Returns: returnValue:Boolean; errorText:String; errorCode:Number (int32_t) \| Service: IME and Virtual Keyboard Service. \|\| Also deleteCharacters, sendEnterKey.
+> Also deleteCharacters, sendEnterKey. \|\| ACG: ime.operation \| Returns: returnValue:Boolean; errorText:String; errorCode:Number (int32_t) \| Service: IME and Virtual Keyboard Service.
 
-Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-ime/), [2](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [3](https://github.com/hobbyquaker/lgtv2/blob/master/README.md), [4](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/webos/WebOSTVKeyboardInput.java), [5](https://github.com/JPersson77/LGTVCompanion/blob/master/Docs/Commandline.md)
+Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [2](https://github.com/hobbyquaker/lgtv2/blob/master/README.md), [3](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/webos/WebOSTVKeyboardInput.java), [4](https://github.com/JPersson77/LGTVCompanion/blob/master/Docs/Commandline.md), [5](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-ime/)
 
 <a id="registerremotekeyboard"></a>
 ## `registerRemoteKeyboard`
@@ -69,23 +69,23 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-i
 
 Subscribe to remote-keyboard (text field focus) events
 
-- **Access:** public  
+- **Access:** ssap  
 - **Subscribe:** yes  
-- **Platform:** webOS OSE, webOS TV  
+- **Platform:** webOS TV, webOS OSE  
 - **Versions:** webOS OSE API level 23+  
 - **Confidence:** documented, code
 
 | Param | Type / notes |
 |---|---|
-| `subscribe` | Boolean (required) Must be true. |
+| `subscribe` | true |
 
 ```sh
-luna-send -n 1 luna://com.webos.service.ime/registerRemoteKeyboard '{"subscribe": true}
+{"type":"request","id":"1","uri":"ssap://com.webos.service.ime/registerRemoteKeyboard","payload":{"subscribe":true}}
 ```
 
-> ACG: ime.operation \| Returns: returnValue:Boolean; subscribed:Boolean; errorText:String; errorCode:Number (int32_t) \| Service: IME and Virtual Keyboard Service. \|\| Used by ConnectSDK KeyboardControl; snabb/webostv lists it as unimplemented TODO.
+> Used by ConnectSDK KeyboardControl; snabb/webostv lists it as unimplemented TODO. \|\| ACG: ime.operation \| Returns: returnValue:Boolean; subscribed:Boolean; errorText:String; errorCode:Number (int32_t) \| Service: IME and Virtual Keyboard Service.
 
-Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-ime/), [2](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/webos/WebOSTVKeyboardInput.java), [3](https://github.com/snabb/webostv/blob/master/mmisc.go)
+Sources: [1](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/webos/WebOSTVKeyboardInput.java), [2](https://github.com/snabb/webostv/blob/master/mmisc.go), [3](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-ime/)
 
 <a id="sendenterkey"></a>
 ## `sendEnterKey`
@@ -94,16 +94,16 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-i
 
 Send Enter to the on-screen keyboard/text field
 
-- **Access:** public  
+- **Access:** ssap  
 - **Subscribe:** no  
-- **Platform:** webOS OSE, webOS TV  
+- **Platform:** webOS TV, webOS OSE  
 - **Versions:** webOS OSE API level 23+  
 - **Confidence:** documented, code
 
 ```sh
-luna-send -n 1 luna://com.webos.service.ime/sendEnterKey '{}
+{"type":"request","id":"1","uri":"ssap://com.webos.service.ime/sendEnterKey","payload":{}}
 ```
 
 > ACG: ime.operation \| Returns: returnValue:Boolean \| Service: IME and Virtual Keyboard Service.
 
-Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-ime/), [2](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [3](https://github.com/home-assistant-libs/aiowebostv/blob/main/aiowebostv/endpoints.py), [4](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/webos/WebOSTVKeyboardInput.java)
+Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [2](https://github.com/home-assistant-libs/aiowebostv/blob/main/aiowebostv/endpoints.py), [3](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/webos/WebOSTVKeyboardInput.java), [4](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-ime/)

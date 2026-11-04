@@ -7,38 +7,38 @@
 | Method | Access | Sub | Category | Description |
 |---|---|---|---|---|
 | [`castSign`](#castsign) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`closeSession`](#closesession) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`createCdm`](#createcdm) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`createSession`](#createsession) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`destroyCdm`](#destroycdm) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`generateRequest`](#generaterequest) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`closeSession`](#closesession) | private |  | security | Closes a session. (standard Widevine CDM call.) |
+| [`createCdm`](#createcdm) | private |  | security | Creates a Widevine CDM instance. (standard Widevine CDM call.) |
+| [`createSession`](#createsession) | private |  | security | Opens a Widevine license session. (standard Widevine CDM call.) |
+| [`destroyCdm`](#destroycdm) | private |  | security | Destroys a CDM instance. (standard Widevine CDM call.) |
+| [`generateRequest`](#generaterequest) | private |  | security | Generates a license request for the server. (standard Widevine CDM call.) |
 | [`getCastProvisioningRequest`](#getcastprovisioningrequest) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`getKeyStatusesChange`](#getkeystatuseschange) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`getMessage`](#getmessage) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`getMetrics`](#getmetrics) | public |  | input | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`getOecSessionId`](#getoecsessionid) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`getProvisioningRequest`](#getprovisioningrequest) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`getProvisioningRequest`](#getprovisioningrequest) | private |  | security | Returns a provisioning request for the Widevine server. (standard Widevine CDM call.) |
 | [`getResourceRatingTier`](#getresourceratingtier) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`getServiceCertificateRequest`](#getservicecertificaterequest) | public |  | input | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`getStatusForHdcpVersion`](#getstatusforhdcpversion) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`getStatusForHdcpVersion`](#getstatusforhdcpversion) | private |  | security | Reports allowed playback for an HDCP version. (standard Widevine CDM call.) |
 | [`getUserAgent`](#getuseragent) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`getVersion`](#getversion) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`getVersion`](#getversion) | private |  | security | Returns the Widevine CDM version. (standard Widevine CDM call.) |
 | [`handleCastProvisioningResponse`](#handlecastprovisioningresponse) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`handleProvisioningResponse`](#handleprovisioningresponse) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`initDataContainsEmbeddedKeys`](#initdatacontainsembeddedkeys) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`isExistingLicense`](#isexistinglicense) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`isProvisioned`](#isprovisioned) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`isProvisioned`](#isprovisioned) | private |  | security | Reports whether the CDM is provisioned. (standard Widevine CDM call.) |
 | [`loadEmbeddedKeys`](#loadembeddedkeys) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`loadSession`](#loadsession) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`loadSession`](#loadsession) | private |  | security | Loads a persisted session. (standard Widevine CDM call.) |
 | [`parseServiceCertificateResponse`](#parseservicecertificateresponse) | public |  | input | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`removeComplete`](#removecomplete) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). ⚠️ |
 | [`removeLicense`](#removelicense) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`removeSession`](#removesession) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). ⚠️ |
+| [`removeSession`](#removesession) | private |  | security | Removes a session. (standard Widevine CDM call.) ⚠️ |
 | [`selectKey`](#selectkey) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`setAppParameter`](#setappparameter) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`setServiceCertificate`](#setservicecertificate) | public |  | input | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`setVideoResolution`](#setvideoresolution) | public |  | security | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
-| [`updateSession`](#updatesession) | public |  | update | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
+| [`setVideoResolution`](#setvideoresolution) | private |  | security | Sets the resolution the CDM enforces policy for. (standard Widevine CDM call.) |
+| [`updateSession`](#updatesession) | private |  | security | Applies a license response to a session. (standard Widevine CDM call.) |
 
 <a id="castsign"></a>
 ## `castSign`
@@ -66,105 +66,105 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.widevine/closeSession`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Closes a session. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/closeSession '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="createcdm"></a>
 ## `createCdm`
 
 `luna://com.webos.service.widevine/createCdm`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Creates a Widevine CDM instance. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/createCdm '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="createsession"></a>
 ## `createSession`
 
 `luna://com.webos.service.widevine/createSession`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Opens a Widevine license session. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/createSession '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="destroycdm"></a>
 ## `destroyCdm`
 
 `luna://com.webos.service.widevine/destroyCdm`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Destroys a CDM instance. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/destroyCdm '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="generaterequest"></a>
 ## `generateRequest`
 
 `luna://com.webos.service.widevine/generateRequest`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Generates a license request for the server. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/generateRequest '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getcastprovisioningrequest"></a>
 ## `getCastProvisioningRequest`
@@ -276,21 +276,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.widevine/getProvisioningRequest`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Returns a provisioning request for the Widevine server. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/getProvisioningRequest '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getresourceratingtier"></a>
 ## `getResourceRatingTier`
@@ -339,21 +339,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.widevine/getStatusForHdcpVersion`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Reports allowed playback for an HDCP version. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/getStatusForHdcpVersion '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getuseragent"></a>
 ## `getUserAgent`
@@ -381,21 +381,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.widevine/getVersion`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Returns the Widevine CDM version. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/getVersion '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="handlecastprovisioningresponse"></a>
 ## `handleCastProvisioningResponse`
@@ -486,21 +486,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.widevine/isProvisioned`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Reports whether the CDM is provisioned. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/isProvisioned '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="loadembeddedkeys"></a>
 ## `loadEmbeddedKeys`
@@ -528,21 +528,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.widevine/loadSession`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Loads a persisted session. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/loadSession '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="parseservicecertificateresponse"></a>
 ## `parseServiceCertificateResponse`
@@ -612,21 +612,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.widevine/removeSession`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Removes a session. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/removeSession '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details. Flagged dangerous by name; verify before calling.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details. Flagged dangerous by name; verify before calling.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="selectkey"></a>
 ## `selectKey`
@@ -696,39 +696,39 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.widevine/setVideoResolution`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Sets the resolution the CDM enforces policy for. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/setVideoResolution '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="updatesession"></a>
 ## `updateSession`
 
 `luna://com.webos.service.widevine/updateSession`
 
-Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented).
+Applies a license response to a session. (standard Widevine CDM call.)
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
-- **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
+- **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
 - **Confidence:** code
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.widevine/updateSession '{}'
 ```
 
-> ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
+> Widevine CDM service. Listed by name and purpose only; no key-extraction or protection-bypass details. These are the standard Widevine CDM/session calls used by licensed playback. \|\| ACG groups: com.webos.service.widevine, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Widevine DRM module; name only, no circumvention details.
 
-Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
