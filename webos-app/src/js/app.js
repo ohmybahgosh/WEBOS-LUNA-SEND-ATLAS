@@ -246,6 +246,9 @@
     btn.addEventListener("keydown", function (ev) { if (ev.keyCode === 13) { ev.preventDefault(); openWeb(); } });
     var stop = $("webstop");
     if (stop) { stop.onclick = stopWeb; stop.addEventListener("keydown", function (ev) { if (ev.keyCode === 13) { ev.preventDefault(); stopWeb(); } }); }
+    // Click outside the panel closes it too (pointer fallback for the Magic Remote).
+    var ov = $("weboverlay");
+    if (ov) ov.addEventListener("click", function (ev) { if (ev.target === ov) hideWeb(); });
     // Reflect the current state on the button only.  Never pop the panel open on
     // launch; the panel appears when the user chooses Web access.
     svcCall("webStatus", {}, function (r) { setWeb(r && r.running); });
@@ -297,11 +300,20 @@
   function wireKeys() {
     var panes = ["svclist", "methodlist"];
     document.addEventListener("keydown", function (ev) {
-      var k = ev.keyCode;
-      // Back / Esc: close the web overlay first (server keeps running), else move focus left
-      if (k === 461 || k === 27) {
-        if (webOverlayOpen()) { hideWeb(); ev.preventDefault(); return; }
-        focusPane("svclist"); ev.preventDefault(); return;
+      var k = ev.keyCode, key = ev.key;
+      // Back / Esc: close the web overlay first (server keeps running); then step
+      // up from the method list to the service list; at the top level, leave the
+      // app (otherwise Back feels like it does nothing).
+      if (k === 461 || k === 27 || k === 8 || key === "Back" || key === "GoBack" || key === "BrowserBack") {
+        ev.preventDefault();
+        if (webOverlayOpen()) { hideWeb(); return; }
+        var a = document.activeElement;
+        var deep = a && a.closest && (a.closest("#methodlist") || a.closest("#detail"));
+        if (deep) { focusPane("svclist"); return; }
+        // top level: exit to the launcher
+        try { if (window.webOSSystem && window.webOSSystem.platformBack) { window.webOSSystem.platformBack(); return; } } catch (e) {}
+        try { window.close(); } catch (e) {}
+        return;
       }
       var active = document.activeElement;
       if (k === 38 || k === 40) { // up / down within a pane
