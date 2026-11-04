@@ -1,11 +1,32 @@
 # Media Playback
 
-412 methods.  [Back to index](../../README.md#categories)
+433 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
+| [`luna://airplay.homekit/reset`](../services/airplay.homekit.md#reset) | private | Method on airplay.homekit (from on-device permission registry; parameters undocumented). ⚠️ |
+| [`luna://airplay.homekit/subscribePairingEvent`](../services/airplay.homekit.md#subscribepairingevent) | private | Method on airplay.homekit (from on-device permission registry; parameters undocumented). |
+| [`luna://airplay.homekit/subscribeSetupCodeChanged`](../services/airplay.homekit.md#subscribesetupcodechanged) | private | Method on airplay.homekit (from on-device permission registry; parameters undocumented). |
+| [`luna://airplay.service/changeAppPosition`](../services/airplay.service.md#changeappposition) | public | Method on airplay.service (introspected on-device; parameters undocumented). |
+| [`luna://airplay.service/changeWindowSize`](../services/airplay.service.md#changewindowsize) | public | Method on airplay.service (introspected on-device; parameters undocumented). |
+| [`luna://airplay.service/changeWindowType`](../services/airplay.service.md#changewindowtype) | public | Method on airplay.service (introspected on-device; parameters undocumented). |
+| [`luna://airplay.service/exit`](../services/airplay.service.md#exit) | public | Method on airplay.service (introspected on-device; parameters undocumented). |
+| [`luna://airplay.service/getStatus`](../services/airplay.service.md#getstatus) | public | Getter on airplay.service (introspected on-device; parameters undocumented). |
+| [`luna://airplay.service/mfiKeyDownload`](../services/airplay.service.md#mfikeydownload) | private | Method on airplay.service (from on-device permission registry; parameters undocumented). |
+| [`luna://airplay.service/mfiKeyInfo`](../services/airplay.service.md#mfikeyinfo) | private | Method on airplay.service (from on-device permission registry; parameters undocumented). |
+| [`luna://airplay.service/mfiKeyVerify`](../services/airplay.service.md#mfikeyverify) | private | Method on airplay.service (from on-device permission registry; parameters undocumented). |
+| [`luna://airplay.service/mfiKeyWrite`](../services/airplay.service.md#mfikeywrite) | private | Method on airplay.service (from on-device permission registry; parameters undocumented). |
+| [`luna://airplay.service/notifyMinimizedAppState`](../services/airplay.service.md#notifyminimizedappstate) | private | Method on airplay.service (introspected on-device; parameters undocumented). |
+| [`luna://airplay.service/notifyMirroringState`](../services/airplay.service.md#notifymirroringstate) | private | Method on airplay.service (introspected on-device; parameters undocumented). |
+| [`luna://airplay.service/reset`](../services/airplay.service.md#reset) | private | Method on airplay.service (from on-device permission registry; parameters undocumented). ⚠️ |
+| [`luna://airplay.service/setHomekitInfo`](../services/airplay.service.md#sethomekitinfo) | private | Method on airplay.service (from on-device permission registry; parameters undocumented). |
+| [`luna://airplay.service/sharedKeyDelete`](../services/airplay.service.md#sharedkeydelete) | private | Method on airplay.service (from on-device permission registry; parameters undocumented). ⚠️ |
+| [`luna://airplay.service/showAirplayPage`](../services/airplay.service.md#showairplaypage) | public | Method on airplay.service (introspected on-device; parameters undocumented). |
+| [`luna://airplay.service/showHomekitSettingPage`](../services/airplay.service.md#showhomekitsettingpage) | public | Method on airplay.service (introspected on-device; parameters undocumented). |
+| [`luna://airplay.service/test`](../services/airplay.service.md#test) | public | Method on airplay.service (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.mediadb/image/listalbums`](../services/com.palm.mediadb.md#image_listalbums) | root | Lists photo albums from mediadb |
 | [`luna://com.palm.mediadb/image/listimages`](../services/com.palm.mediadb.md#image_listimages) | root | Lists images from mediadb |
+| [`luna://com.test.interc.service.fake/subtitle/getRatingInfo`](../services/com.test.interc.service.fake.md#subtitle_getratinginfo) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.media/acbs`](../services/com.webos.media.md#acbs) | unknown | Array of objects that gives details of media for foreground application (such as pipeline Id, playstate, position, etc.) |
 | [`luna://com.webos.media/acquire`](../services/com.webos.media.md#acquire) | public | Requests resources from the mediaserver. Typical usage is to request the number of audio and video decoders or other hardware components used by the pipeline. A |
 | [`luna://com.webos.media/acquireComplete`](../services/com.webos.media.md#acquirecomplete) | unknown | This event is invoked when the acquire request is performed and the result comes out. |

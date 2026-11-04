@@ -1,9 +1,41 @@
 # Misc
 
-744 methods.  [Back to index](../../README.md#categories)
+829 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
+| [`luna://alibaba.genie.adapter.plugin/cancelRecognition`](../services/alibaba.genie.adapter.plugin.md#cancelrecognition) | private | Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://alibaba.genie.adapter.plugin/load`](../services/alibaba.genie.adapter.plugin.md#load) | private | Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://alibaba.genie.adapter.plugin/showGuide`](../services/alibaba.genie.adapter.plugin.md#showguide) | private | Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://alibaba.genie.adapter.plugin/unload`](../services/alibaba.genie.adapter.plugin.md#unload) | private | Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld/do/re/me`](../services/com.example.helloworld.md#do_re_me) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld/getCount`](../services/com.example.helloworld.md#getcount) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld/heartbeat`](../services/com.example.helloworld.md#heartbeat) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld/heartbeat2`](../services/com.example.helloworld.md#heartbeat2) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld/hello`](../services/com.example.helloworld.md#hello) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld/increment`](../services/com.example.helloworld.md#increment) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld/info`](../services/com.example.helloworld.md#info) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld/locale`](../services/com.example.helloworld.md#locale) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld/ping`](../services/com.example.helloworld.md#ping) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld/pong`](../services/com.example.helloworld.md#pong) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld/quit`](../services/com.example.helloworld.md#quit) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld2/hello`](../services/com.example.helloworld2.md#hello) | private | Method on com.example.helloworld2 (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld2/info`](../services/com.example.helloworld2.md#info) | private | Method on com.example.helloworld2 (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.helloworld2/quit`](../services/com.example.helloworld2.md#quit) | private | Method on com.example.helloworld2 (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native/hello`](../services/com.example.service.native.md#hello) | private | Method on com.example.service.native (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native/hello_dev`](../services/com.example.service.native.md#hello_dev) | private | Method on com.example.service.native (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native/hello_oem`](../services/com.example.service.native.md#hello_oem) | private | Method on com.example.service.native (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native/hello_partner`](../services/com.example.service.native.md#hello_partner) | private | Method on com.example.service.native (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native2/hello`](../services/com.example.service.native2.md#hello) | private | Method on com.example.service.native2 (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native2/hello_DEV`](../services/com.example.service.native2.md#hello_dev) | private | Method on com.example.service.native2 (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native2/hello_OEM`](../services/com.example.service.native2.md#hello_oem) | private | Method on com.example.service.native2 (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native2/hello_PART`](../services/com.example.service.native2.md#hello_part) | private | Method on com.example.service.native2 (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native3/hello`](../services/com.example.service.native3.md#hello) | private | Method on com.example.service.native3 (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native3/hello_DEV`](../services/com.example.service.native3.md#hello_dev) | private | Method on com.example.service.native3 (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native3/hello_OEM`](../services/com.example.service.native3.md#hello_oem) | private | Method on com.example.service.native3 (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.service.native3/hello_PART`](../services/com.example.service.native3.md#hello_part) | private | Method on com.example.service.native3 (from on-device permission registry; parameters undocumented). |
+| [`luna://com.flutter.app.similarlist/finish`](../services/com.flutter.app.similarlist.md#finish) | public | Method on com.flutter.app.similarlist (from on-device permission registry; parameters undocumented). |
+| [`luna://com.flutter.app.similarlist/request`](../services/com.flutter.app.similarlist.md#request) | public | Method on com.flutter.app.similarlist (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.bus/signal/registerServerStatus`](../services/com.palm.bus.md#signal_registerserverstatus) | private | Method on com.palm.bus (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.certificatemanager/addcertificate`](../services/com.palm.certificatemanager.md#addcertificate) | private | Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.certificatemanager/addcrl`](../services/com.palm.certificatemanager.md#addcrl) | private | Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented). |
@@ -35,6 +67,7 @@
 | [`luna://com.palm.uploadd/uploadCrashReport`](../services/com.palm.uploadd.md#uploadcrashreport) | private | Method on com.palm.uploadd (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.uploadd/uploadLog`](../services/com.palm.uploadd.md#uploadlog) | private | Method on com.palm.uploadd (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.vibrate/vibrate`](../services/com.palm.vibrate.md#vibrate) | root | Activates the vibrator |
+| [`luna://com.test.interc.service.fake/crd/getCRDEvent`](../services/com.test.interc.service.fake.md#crd_getcrdevent) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.app.browser/command`](../services/com.webos.app.browser.md#command) | private | Found by on-device introspection (parameters undocumented). |
 | [`luna://com.webos.app.browser/info`](../services/com.webos.app.browser.md#info) | private | Found by on-device introspection (parameters undocumented). |
 | [`luna://com.webos.app.browser/media`](../services/com.webos.app.browser.md#media) | private | Found by on-device introspection (parameters undocumented). |
@@ -741,6 +774,46 @@
 | [`luna://com.webos.tas.home/request`](../services/com.webos.tas.home.md#request) | public | Method on com.webos.tas.home (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.tas.screensaver/finish`](../services/com.webos.tas.screensaver.md#finish) | public | Method on com.webos.tas.screensaver (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.tas.screensaver/request`](../services/com.webos.tas.screensaver.md#request) | public | Method on com.webos.tas.screensaver (from on-device permission registry; parameters undocumented). |
+| [`luna://dangbei.adapter.plugin/cancelRecognition`](../services/dangbei.adapter.plugin.md#cancelrecognition) | private | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://dangbei.adapter.plugin/load`](../services/dangbei.adapter.plugin.md#load) | private | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://dangbei.adapter.plugin/recognizeIntentByText`](../services/dangbei.adapter.plugin.md#recognizeintentbytext) | private | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://dangbei.adapter.plugin/showGuide`](../services/dangbei.adapter.plugin.md#showguide) | private | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://dangbei.adapter.plugin/unload`](../services/dangbei.adapter.plugin.md#unload) | private | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/cancel`](../services/google.assistant.adapter.plugin.md#cancel) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/cancelRecognition`](../services/google.assistant.adapter.plugin.md#cancelrecognition) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/disableSignIn`](../services/google.assistant.adapter.plugin.md#disablesignin) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/enableSignIn`](../services/google.assistant.adapter.plugin.md#enablesignin) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/getAccountsDetail`](../services/google.assistant.adapter.plugin.md#getaccountsdetail) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/load`](../services/google.assistant.adapter.plugin.md#load) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/recognizeIntentByText`](../services/google.assistant.adapter.plugin.md#recognizeintentbytext) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/request`](../services/google.assistant.adapter.plugin.md#request) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/requestIntent`](../services/google.assistant.adapter.plugin.md#requestintent) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/requestNewConversation`](../services/google.assistant.adapter.plugin.md#requestnewconversation) | public | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/requestSignOut`](../services/google.assistant.adapter.plugin.md#requestsignout) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/requestText`](../services/google.assistant.adapter.plugin.md#requesttext) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/showGuide`](../services/google.assistant.adapter.plugin.md#showguide) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/unload`](../services/google.assistant.adapter.plugin.md#unload) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/cancelRecognition`](../services/lg.thinqai.adapter.md#cancelrecognition) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/deletePrivacyData`](../services/lg.thinqai.adapter.md#deleteprivacydata) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). ⚠️ |
+| [`luna://lg.thinqai.adapter/getKeywordResult`](../services/lg.thinqai.adapter.md#getkeywordresult) | private | Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/getTtsData`](../services/lg.thinqai.adapter.md#getttsdata) | private | Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/load`](../services/lg.thinqai.adapter.md#load) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/recognizeIntentByText`](../services/lg.thinqai.adapter.md#recognizeintentbytext) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/showGuide`](../services/lg.thinqai.adapter.md#showguide) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/unload`](../services/lg.thinqai.adapter.md#unload) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/vid/cancelEnroll`](../services/lg.thinqai.adapter.md#vid_cancelenroll) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/vid/getStatusList`](../services/lg.thinqai.adapter.md#vid_getstatuslist) | private | Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/vid/getVidFirstuseEnabled`](../services/lg.thinqai.adapter.md#vid_getvidfirstuseenabled) | private | Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/vid/listScripts`](../services/lg.thinqai.adapter.md#vid_listscripts) | private | Lister on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://listenserver.service/start`](../services/listenserver.service.md#start) | public | Method on listenserver.service (from on-device permission registry; parameters undocumented). |
+| [`luna://listenserver.service/stop`](../services/listenserver.service.md#stop) | public | Method on listenserver.service (from on-device permission registry; parameters undocumented). |
+| [`luna://netflix.service/clearToken`](../services/netflix.service.md#cleartoken) | public | Method on netflix.service (from on-device permission registry; parameters undocumented). |
+| [`luna://netflix.service/impression`](../services/netflix.service.md#impression) | public | Method on netflix.service (from on-device permission registry; parameters undocumented). |
+| [`luna://netflix.service/saveToken`](../services/netflix.service.md#savetoken) | public | Method on netflix.service (from on-device permission registry; parameters undocumented). |
+| [`luna://netflix.service/search`](../services/netflix.service.md#search) | public | Method on netflix.service (from on-device permission registry; parameters undocumented). |
+| [`luna://nuance.stt.adapter.plugin/cancelRecognition`](../services/nuance.stt.adapter.plugin.md#cancelrecognition) | private | Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://nuance.stt.adapter.plugin/load`](../services/nuance.stt.adapter.plugin.md#load) | private | Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://nuance.stt.adapter.plugin/unload`](../services/nuance.stt.adapter.plugin.md#unload) | private | Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented). |
 | [`ssap://api/getServiceList`](../services/ssap_api.md#getservicelist) | ssap | List the SSAP namespaces exposed to this client |
 | [`ssap://timer/getSettings`](../services/ssap_timer.md#getsettings) | ssap | Timer settings (read) |
 | [`ssap://timer/setSettings`](../services/ssap_timer.md#setsettings) | ssap | Timer settings (write) |
@@ -748,3 +821,15 @@
 | [`ssap://user/setUserData`](../services/ssap_user.md#setuserdata) | ssap | User profile/schedule call setUserData |
 | [`ssap://user/setUserInfo`](../services/ssap_user.md#setuserinfo) | ssap | User profile/schedule call setUserInfo |
 | [`ssap://user/setUserSchedule`](../services/ssap_user.md#setuserschedule) | ssap | User profile/schedule call setUserSchedule |
+| [`luna://tsuploader.service/checkStatus`](../services/tsuploader.service.md#checkstatus) | private | Method on tsuploader.service (from on-device permission registry; parameters undocumented). |
+| [`luna://tsuploader.service/startService`](../services/tsuploader.service.md#startservice) | private | Method on tsuploader.service (from on-device permission registry; parameters undocumented). |
+| [`luna://tsuploader.service/startTsDump`](../services/tsuploader.service.md#starttsdump) | private | Method on tsuploader.service (from on-device permission registry; parameters undocumented). |
+| [`luna://tsuploader.service/startUpload`](../services/tsuploader.service.md#startupload) | private | Method on tsuploader.service (from on-device permission registry; parameters undocumented). |
+| [`luna://tsuploader.service/stopTsDump`](../services/tsuploader.service.md#stoptsdump) | private | Method on tsuploader.service (from on-device permission registry; parameters undocumented). |
+| [`luna://yandex.alice.adapter.plugin/cancelRecognition`](../services/yandex.alice.adapter.plugin.md#cancelrecognition) | public | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://yandex.alice.adapter.plugin/interactor/register`](../services/yandex.alice.adapter.plugin.md#interactor_register) | public | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://yandex.alice.adapter.plugin/interactor/setContext`](../services/yandex.alice.adapter.plugin.md#interactor_setcontext) | public | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://yandex.alice.adapter.plugin/load`](../services/yandex.alice.adapter.plugin.md#load) | private | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://yandex.alice.adapter.plugin/recognizeIntentByText`](../services/yandex.alice.adapter.plugin.md#recognizeintentbytext) | private | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://yandex.alice.adapter.plugin/sendYskCommand`](../services/yandex.alice.adapter.plugin.md#sendyskcommand) | public | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://yandex.alice.adapter.plugin/unload`](../services/yandex.alice.adapter.plugin.md#unload) | private | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |

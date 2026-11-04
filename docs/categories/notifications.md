@@ -1,9 +1,10 @@
 # Notifications & Alerts
 
-81 methods.  [Back to index](../../README.md#categories)
+82 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
+| [`luna://amazon.alexa.adapter.plugin/testToast`](../services/amazon.alexa.adapter.plugin.md#testtoast) | private | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.webappmanager/fireNotificationEvent`](../services/com.palm.webappmanager.md#firenotificationevent) | private | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.notification/$activity`](../services/com.webos.notification.md#_activity) | unknown | Contains detailed information of an activity which is fired by the Actvity Manager . This object is returned from the Activity Manager. For more details, see co |
 | [`luna://com.webos.notification/action`](../services/com.webos.notification.md#action) | unknown | Describes the action parameter for the toast. |

@@ -1,6 +1,6 @@
 # WEBOS-LUNA-SEND-ATLAS
 
-**The most complete public reference of LG webOS TV `luna-send` (Luna Service Bus) commands.**  7,961 methods across 480 Luna services, each with its URI, parameters, example command, access level, platform and sources.
+**The most complete public reference of LG webOS TV `luna-send` (Luna Service Bus) commands.**  8,127 methods across 501 Luna services, each with its URI, parameters, example command, access level, platform and sources.
 
 There are lots of scattered gists, forum posts and library source files that each document a handful of luna calls.  This repo pulls all of them together, plus the official webOS TV and webOS OSE references, plus method lists introspected from a retail TV, into one searchable, machine-readable catalog.
 
@@ -42,10 +42,10 @@ No root?  Developer Mode gives you `luna-send-pub` (public methods only), and a 
 
 | Access | Methods |
 |---|---|
-| `private` | 5035 |
-| `public` | 2377 |
+| `private` | 5141 |
+| `public` | 2438 |
 | `unknown` | 413 |
-| `ssap` | 101 |
+| `ssap` | 100 |
 | `root` | 35 |
 
 `public` = callable by apps with the right permission.  `private` = needs root or system rights.  `ssap` = reachable over the SSAP websocket.  `unknown` = the source didn't say (mostly webOS OSE pages).
@@ -57,29 +57,29 @@ Confidence levels: `documented` (official LG / webOS OSE docs), `code` (seen in 
 
 | Category | Methods |
 |---|---|
-| [TV Broadcast / DVR](docs/categories/tv-broadcast.md) | 1898 |
-| [Input & Keys](docs/categories/input.md) | 760 |
-| [Misc](docs/categories/misc.md) | 744 |
-| [Audio](docs/categories/audio.md) | 693 |
-| [Media Playback](docs/categories/media.md) | 412 |
+| [TV Broadcast / DVR](docs/categories/tv-broadcast.md) | 1901 |
+| [Misc](docs/categories/misc.md) | 829 |
+| [Input & Keys](docs/categories/input.md) | 795 |
+| [Audio](docs/categories/audio.md) | 697 |
+| [Media Playback](docs/categories/media.md) | 433 |
 | [Power](docs/categories/power.md) | 369 |
-| [Applications](docs/categories/apps.md) | 362 |
+| [Applications](docs/categories/apps.md) | 365 |
 | [Bluetooth](docs/categories/bluetooth.md) | 338 |
-| [Network / Wi-Fi](docs/categories/network.md) | 303 |
-| [System Info](docs/categories/system-info.md) | 288 |
-| [Settings](docs/categories/settings.md) | 286 |
-| [Security / Keys](docs/categories/security.md) | 280 |
+| [Network / Wi-Fi](docs/categories/network.md) | 304 |
+| [Settings](docs/categories/settings.md) | 295 |
+| [System Info](docs/categories/system-info.md) | 289 |
+| [Security / Keys](docs/categories/security.md) | 279 |
 | [Database (db8)](docs/categories/db.md) | 274 |
 | [Display / Panel](docs/categories/display.md) | 212 |
 | [Storage & USB](docs/categories/storage.md) | 140 |
 | [Connection Manager](docs/categories/connection.md) | 103 |
-| [Software Update](docs/categories/update.md) | 93 |
-| [Notifications & Alerts](docs/categories/notifications.md) | 81 |
+| [Software Update](docs/categories/update.md) | 90 |
+| [Notifications & Alerts](docs/categories/notifications.md) | 82 |
 | [Camera](docs/categories/camera.md) | 73 |
-| [Activity Manager](docs/categories/activity.md) | 61 |
+| [Activity Manager](docs/categories/activity.md) | 66 |
+| [Developer Mode & Testing](docs/categories/devmode.md) | 44 |
 | [Power Management (sleep/wake)](docs/categories/power-mgmt.md) | 44 |
 | [UI / Compositor](docs/categories/ui.md) | 44 |
-| [Developer Mode & Testing](docs/categories/devmode.md) | 42 |
 | [Picture](docs/categories/picture.md) | 26 |
 | [Location](docs/categories/location.md) | 21 |
 | [Key Management](docs/categories/keys.md) | 13 |
@@ -88,10 +88,21 @@ Confidence levels: `documented` (official LG / webOS OSE docs), `code` (seen in 
 <a id="services"></a>
 ## Services
 
-### webOS TV (424)
+### webOS TV (445)
 
 | Service | Methods | Platforms |
 |---|---|---|
+| [`airplay.homekit`](docs/services/airplay.homekit.md) | 3 | webOS TV |
+| [`airplay.service`](docs/services/airplay.service.md) | 19 | webOS TV |
+| [`alibaba.genie.adapter.plugin`](docs/services/alibaba.genie.adapter.plugin.md) | 6 | webOS TV |
+| [`amazon.alexa.adapter.plugin`](docs/services/amazon.alexa.adapter.plugin.md) | 18 | webOS TV |
+| [`com.example.activityexample`](docs/services/com.example.activityexample.md) | 7 | webOS TV |
+| [`com.example.helloworld`](docs/services/com.example.helloworld.md) | 12 | webOS TV |
+| [`com.example.helloworld2`](docs/services/com.example.helloworld2.md) | 3 | webOS TV |
+| [`com.example.service.native`](docs/services/com.example.service.native.md) | 4 | webOS TV |
+| [`com.example.service.native2`](docs/services/com.example.service.native2.md) | 4 | webOS TV |
+| [`com.example.service.native3`](docs/services/com.example.service.native3.md) | 4 | webOS TV |
+| [`com.flutter.app.similarlist`](docs/services/com.flutter.app.similarlist.md) | 2 | webOS TV |
 | [`com.lge.settingsservice`](docs/services/com.lge.settingsservice.md) | 25 | webOS OSE, webOS TV |
 | [`com.palm.activitymanager`](docs/services/com.palm.activitymanager.md) | 7 | webOS TV |
 | [`com.palm.applicationManager`](docs/services/com.palm.applicationManager.md) | 8 | HP webOS, Palm, webOS TV |
@@ -118,6 +129,8 @@ Confidence levels: `documented` (official LG / webOS OSE docs), `code` (seen in 
 | [`com.palm.tempdb`](docs/services/com.palm.tempdb.md) | 39 | webOS OSE, webOS TV |
 | [`com.palm.uploadd`](docs/services/com.palm.uploadd.md) | 9 | webOS TV |
 | [`com.palm.webappmanager`](docs/services/com.palm.webappmanager.md) | 21 | webOS TV |
+| [`com.palmdts.devmode.service`](docs/services/com.palmdts.devmode.service.md) | 2 | webOS TV |
+| [`com.test.interc.service.fake`](docs/services/com.test.interc.service.fake.md) | 13 | webOS TV |
 | [`com.webos.accountdb`](docs/services/com.webos.accountdb.md) | 28 | webOS TV |
 | [`com.webos.app.browser`](docs/services/com.webos.app.browser.md) | 7 | webOS TV |
 | [`com.webos.app.igallery.preview`](docs/services/com.webos.app.igallery.preview.md) | 7 | webOS TV |
@@ -516,6 +529,14 @@ Confidence levels: `documented` (official LG / webOS OSE docs), `code` (seen in 
 | [`com.webos.tas.home`](docs/services/com.webos.tas.home.md) | 2 | webOS TV |
 | [`com.webos.tas.screensaver`](docs/services/com.webos.tas.screensaver.md) | 2 | webOS TV |
 | [`com.webos.tnp`](docs/services/com.webos.tnp.md) | 3 | webOS TV |
+| [`dangbei.adapter.plugin`](docs/services/dangbei.adapter.plugin.md) | 7 | webOS TV |
+| [`google.assistant.adapter.plugin`](docs/services/google.assistant.adapter.plugin.md) | 17 | webOS TV |
+| [`lg.thinqai.adapter`](docs/services/lg.thinqai.adapter.md) | 18 | webOS TV |
+| [`listenserver.service`](docs/services/listenserver.service.md) | 2 | webOS TV |
+| [`netflix.service`](docs/services/netflix.service.md) | 5 | webOS TV |
+| [`nuance.stt.adapter.plugin`](docs/services/nuance.stt.adapter.plugin.md) | 5 | webOS TV |
+| [`tsuploader.service`](docs/services/tsuploader.service.md) | 5 | webOS TV |
+| [`yandex.alice.adapter.plugin`](docs/services/yandex.alice.adapter.plugin.md) | 10 | webOS TV |
 
 ### SSAP namespaces (14)
 
@@ -625,7 +646,7 @@ The best contribution is a dump from your TV:
 
 Payloads you've worked out with `ls-monitor` tracing are just as welcome.  Please include where you saw it.
 
-Before committing, run `sh scripts/scrub-check.sh`.  It fails on MAC/public-IP/credential/email leaks and on any non-stock service bus.  The catalog deliberately keeps only core system services (`com.webos.*`, `com.palm.*`, `com.lge.*`) and SSAP aliases; homebrew, dev-mode and third-party/vendor app buses are filtered out by the build so a dump never leaks which apps you have installed.
+Before committing, run `sh scripts/scrub-check.sh`.  It fails on MAC/public-IP/credential/email leaks and on homebrew/sideloaded app buses.  The build filters out only homebrew apps (the Homebrew Channel ecosystem `org.webosbrew.*` and sideloaded apps under the bare `app.*` namespace) so a dump never advertises what you installed.  Everything stock is kept: system services, dev mode (`com.palmdts.*`), and the preinstalled vendor integrations (Alexa, Google Assistant, ThinQ, Netflix, AirPlay, and so on).
 
 ## Roadmap
 

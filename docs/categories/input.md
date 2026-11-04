@@ -1,9 +1,29 @@
 # Input & Keys
 
-760 methods.  [Back to index](../../README.md#categories)
+795 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
+| [`luna://alibaba.genie.adapter.plugin/recognizeIntentByVoice`](../services/alibaba.genie.adapter.plugin.md#recognizeintentbyvoice) | private | Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://alibaba.genie.adapter.plugin/stopRecordingVoice`](../services/alibaba.genie.adapter.plugin.md#stoprecordingvoice) | private | Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/cancelRecognition`](../services/amazon.alexa.adapter.plugin.md#cancelrecognition) | private | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/executeFarfieldSetting`](../services/amazon.alexa.adapter.plugin.md#executefarfieldsetting) | private | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/getAccessToken`](../services/amazon.alexa.adapter.plugin.md#getaccesstoken) | public | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/getAppMessage`](../services/amazon.alexa.adapter.plugin.md#getappmessage) | private | Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/getAvsMusic`](../services/amazon.alexa.adapter.plugin.md#getavsmusic) | public | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/getAvsStatus`](../services/amazon.alexa.adapter.plugin.md#getavsstatus) | public | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/getCblData`](../services/amazon.alexa.adapter.plugin.md#getcbldata) | public | Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/getDialogState`](../services/amazon.alexa.adapter.plugin.md#getdialogstate) | private | Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/getForegroundApp`](../services/amazon.alexa.adapter.plugin.md#getforegroundapp) | public | Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/getFornaxVersion`](../services/amazon.alexa.adapter.plugin.md#getfornaxversion) | public | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/isRegistered`](../services/amazon.alexa.adapter.plugin.md#isregistered) | public | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/load`](../services/amazon.alexa.adapter.plugin.md#load) | private | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/recognizeIntentByVoice`](../services/amazon.alexa.adapter.plugin.md#recognizeintentbyvoice) | private | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/sendAvsCommand`](../services/amazon.alexa.adapter.plugin.md#sendavscommand) | public | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/setAppMessage`](../services/amazon.alexa.adapter.plugin.md#setappmessage) | private | Setter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
+| [`luna://amazon.alexa.adapter.plugin/stopRecordingVoice`](../services/amazon.alexa.adapter.plugin.md#stoprecordingvoice) | private | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
+| [`luna://com.example.activityexample/createTimer`](../services/com.example.activityexample.md#createtimer) | public | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.activityexample/timerFired`](../services/com.example.activityexample.md#timerfired) | public | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.keymanager/changePassword`](../services/com.palm.keymanager.md#changepassword) | private | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.keymanager/crypt`](../services/com.palm.keymanager.md#crypt) | public | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.keymanager/export`](../services/com.palm.keymanager.md#export) | public | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
@@ -762,5 +782,20 @@
 | [`luna://com.webos.service.widevine/parseServiceCertificateResponse`](../services/com.webos.service.widevine.md#parseservicecertificateresponse) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.widevine/setServiceCertificate`](../services/com.webos.service.widevine.md#setservicecertificate) | public | Method on com.webos.service.widevine (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.statisticsManager/saveStatistics`](../services/com.webos.statisticsManager.md#savestatistics) | private | Method on com.webos.statisticsManager (from on-device permission registry; parameters undocumented). |
+| [`luna://dangbei.adapter.plugin/recognizeIntentByVoice`](../services/dangbei.adapter.plugin.md#recognizeintentbyvoice) | private | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://dangbei.adapter.plugin/stopRecordingVoice`](../services/dangbei.adapter.plugin.md#stoprecordingvoice) | private | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/recognizeIntentByVoice`](../services/google.assistant.adapter.plugin.md#recognizeintentbyvoice) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/stopRecordingVoice`](../services/google.assistant.adapter.plugin.md#stoprecordingvoice) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/recognizeIntentByVoice`](../services/lg.thinqai.adapter.md#recognizeintentbyvoice) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/recognizeVoice`](../services/lg.thinqai.adapter.md#recognizevoice) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/stopRecordingVoice`](../services/lg.thinqai.adapter.md#stoprecordingvoice) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/vid/deleteVoiceId`](../services/lg.thinqai.adapter.md#vid_deletevoiceid) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). ⚠️ |
+| [`luna://lg.thinqai.adapter/vid/getSupportedLanguagesForVoiceId`](../services/lg.thinqai.adapter.md#vid_getsupportedlanguagesforvoiceid) | private | Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/vid/isVoiceIdRegistered`](../services/lg.thinqai.adapter.md#vid_isvoiceidregistered) | private | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://nuance.stt.adapter.plugin/recognizeVoice`](../services/nuance.stt.adapter.plugin.md#recognizevoice) | private | Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://nuance.stt.adapter.plugin/stopRecordingVoice`](../services/nuance.stt.adapter.plugin.md#stoprecordingvoice) | private | Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented). |
 | [`ssap://tv/getExternalInputList`](../services/ssap_tv.md#getexternalinputlist) | ssap | List external inputs |
 | [`ssap://tv/switchInput`](../services/ssap_tv.md#switchinput) | ssap | Switch to input |
+| [`luna://yandex.alice.adapter.plugin/getVoiceUiEvents`](../services/yandex.alice.adapter.plugin.md#getvoiceuievents) | public | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://yandex.alice.adapter.plugin/recognizeIntentByVoice`](../services/yandex.alice.adapter.plugin.md#recognizeintentbyvoice) | private | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| [`luna://yandex.alice.adapter.plugin/stopRecordingVoice`](../services/yandex.alice.adapter.plugin.md#stoprecordingvoice) | private | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |

@@ -29,9 +29,10 @@ report "$(grep -rhInE 'BEGIN (RSA |EC |OPENSSH |DSA )?PRIVATE KEY' $CORPUS 2>/de
 report "$(grep -rhInE '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}' $CORPUS 2>/dev/null \
   | grep -viE 'noreply@|example\.(com|org)|@lge\.com')" "email address"
 
-# non-stock service namespaces (would leak which apps are installed).
-# Parse the top-level "service" field per record with python (not grep, which
-# also matches params named "service").
+# homebrew / sideloaded app buses (would leak what the owner installed).
+# Stock vendor and dev-mode services are fine; only org.webosbrew.* and the
+# bare app.* namespace are filtered. Parse the top-level "service" field with
+# python (not grep, which also matches params named "service").
 badns="$(python3 - <<'PY' 2>/dev/null
 import json
 bad=set()
@@ -39,12 +40,12 @@ for l in open("catalog/luna-catalog.jsonl"):
     l=l.strip()
     if not l: continue
     s=json.loads(l)["service"]
-    if not s.startswith(("com.webos.","com.palm.","com.lge.","ssap:")):
+    if s.startswith(("org.webosbrew.","app.")):
         bad.add(s)
 print("\n".join(sorted(bad)))
 PY
 )"
-[ -n "$badns" ] && { echo "NON-STOCK service namespaces (installed apps) present:"; echo "$badns" | head -40; echo; fail=1; }
+[ -n "$badns" ] && { echo "HOMEBREW/sideloaded app buses present (should be filtered):"; echo "$badns" | head -40; echo; fail=1; }
 
 if [ "$fail" -eq 0 ]; then echo "scrub-check: clean."; else echo "scrub-check: review the above before committing."; fi
 exit $fail

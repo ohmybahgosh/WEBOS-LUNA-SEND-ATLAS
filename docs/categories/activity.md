@@ -1,9 +1,14 @@
 # Activity Manager
 
-61 methods.  [Back to index](../../README.md#categories)
+66 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
+| [`luna://com.example.activityexample/alarmFired`](../services/com.example.activityexample.md#alarmfired) | public | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.activityexample/cancelActivity`](../services/com.example.activityexample.md#cancelactivity) | public | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.activityexample/createAlarm`](../services/com.example.activityexample.md#createalarm) | public | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.activityexample/info`](../services/com.example.activityexample.md#info) | public | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
+| [`luna://com.example.activityexample/quit`](../services/com.example.activityexample.md#quit) | public | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.activitymanager/adopt`](../services/com.palm.activitymanager.md#adopt) | public | Registers an app or service as willing to take over as the Activity parent. |
 | [`luna://com.palm.activitymanager/cancel`](../services/com.palm.activitymanager.md#cancel) | public | Terminates the specified Activity and sends a cancel event to all subscribers. |
 | [`luna://com.palm.activitymanager/complete`](../services/com.palm.activitymanager.md#complete) | public | Parent ends the Activity and optionally restarts it with new attributes. |

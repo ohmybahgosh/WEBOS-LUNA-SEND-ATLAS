@@ -1,5 +1,1809 @@
 [
  {
+  "service": "airplay.homekit",
+  "method": "reset",
+  "uri": "luna://airplay.homekit/reset",
+  "category": "media",
+  "description": "Method on airplay.homekit (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.homekit/reset '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": true,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.homekit",
+  "method": "subscribePairingEvent",
+  "uri": "luna://airplay.homekit/subscribePairingEvent",
+  "category": "media",
+  "description": "Method on airplay.homekit (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.homekit/subscribePairingEvent '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.homekit",
+  "method": "subscribeSetupCodeChanged",
+  "uri": "luna://airplay.homekit/subscribeSetupCodeChanged",
+  "category": "media",
+  "description": "Method on airplay.homekit (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.homekit/subscribeSetupCodeChanged '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "changeAppPosition",
+  "uri": "luna://airplay.service/changeAppPosition",
+  "category": "media",
+  "description": "Method on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/changeAppPosition '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, airplay.service, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "changeAudioState",
+  "uri": "luna://airplay.service/changeAudioState",
+  "category": "audio",
+  "description": "Method on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/changeAudioState '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, airplay.service, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "changeWindowSize",
+  "uri": "luna://airplay.service/changeWindowSize",
+  "category": "media",
+  "description": "Method on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/changeWindowSize '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, airplay.service, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "changeWindowType",
+  "uri": "luna://airplay.service/changeWindowType",
+  "category": "media",
+  "description": "Method on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/changeWindowType '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, airplay.service, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "exit",
+  "uri": "luna://airplay.service/exit",
+  "category": "media",
+  "description": "Method on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/exit '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, airplay.service, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "getAudioState",
+  "uri": "luna://airplay.service/getAudioState",
+  "category": "audio",
+  "description": "Getter on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/getAudioState '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, airplay.service, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "getStatus",
+  "uri": "luna://airplay.service/getStatus",
+  "category": "media",
+  "description": "Getter on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/getStatus '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, airplay.service, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "mfiKeyDownload",
+  "uri": "luna://airplay.service/mfiKeyDownload",
+  "category": "media",
+  "description": "Method on airplay.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/mfiKeyDownload '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "mfiKeyInfo",
+  "uri": "luna://airplay.service/mfiKeyInfo",
+  "category": "media",
+  "description": "Method on airplay.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/mfiKeyInfo '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "mfiKeyVerify",
+  "uri": "luna://airplay.service/mfiKeyVerify",
+  "category": "media",
+  "description": "Method on airplay.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/mfiKeyVerify '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "mfiKeyWrite",
+  "uri": "luna://airplay.service/mfiKeyWrite",
+  "category": "media",
+  "description": "Method on airplay.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/mfiKeyWrite '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "notifyMinimizedAppState",
+  "uri": "luna://airplay.service/notifyMinimizedAppState",
+  "category": "media",
+  "description": "Method on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/notifyMinimizedAppState '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "notifyMirroringState",
+  "uri": "luna://airplay.service/notifyMirroringState",
+  "category": "media",
+  "description": "Method on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/notifyMirroringState '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "reset",
+  "uri": "luna://airplay.service/reset",
+  "category": "media",
+  "description": "Method on airplay.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/reset '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": true,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "setHomekitInfo",
+  "uri": "luna://airplay.service/setHomekitInfo",
+  "category": "media",
+  "description": "Method on airplay.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/setHomekitInfo '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "sharedKeyDelete",
+  "uri": "luna://airplay.service/sharedKeyDelete",
+  "category": "media",
+  "description": "Method on airplay.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/sharedKeyDelete '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": true,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "showAirplayPage",
+  "uri": "luna://airplay.service/showAirplayPage",
+  "category": "media",
+  "description": "Method on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/showAirplayPage '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, airplay.service, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "showHomekitSettingPage",
+  "uri": "luna://airplay.service/showHomekitSettingPage",
+  "category": "media",
+  "description": "Method on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/showHomekitSettingPage '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, airplay.service, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "airplay.service",
+  "method": "test",
+  "uri": "luna://airplay.service/test",
+  "category": "media",
+  "description": "Method on airplay.service (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://airplay.service/test '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, airplay.service, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "alibaba.genie.adapter.plugin",
+  "method": "cancelRecognition",
+  "uri": "luna://alibaba.genie.adapter.plugin/cancelRecognition",
+  "category": "misc",
+  "description": "Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://alibaba.genie.adapter.plugin/cancelRecognition '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "alibaba.genie.adapter.plugin",
+  "method": "load",
+  "uri": "luna://alibaba.genie.adapter.plugin/load",
+  "category": "misc",
+  "description": "Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://alibaba.genie.adapter.plugin/load '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "alibaba.genie.adapter.plugin",
+  "method": "recognizeIntentByVoice",
+  "uri": "luna://alibaba.genie.adapter.plugin/recognizeIntentByVoice",
+  "category": "input",
+  "description": "Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://alibaba.genie.adapter.plugin/recognizeIntentByVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "alibaba.genie.adapter.plugin",
+  "method": "showGuide",
+  "uri": "luna://alibaba.genie.adapter.plugin/showGuide",
+  "category": "misc",
+  "description": "Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://alibaba.genie.adapter.plugin/showGuide '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "alibaba.genie.adapter.plugin",
+  "method": "stopRecordingVoice",
+  "uri": "luna://alibaba.genie.adapter.plugin/stopRecordingVoice",
+  "category": "input",
+  "description": "Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://alibaba.genie.adapter.plugin/stopRecordingVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "alibaba.genie.adapter.plugin",
+  "method": "unload",
+  "uri": "luna://alibaba.genie.adapter.plugin/unload",
+  "category": "misc",
+  "description": "Method on alibaba.genie.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://alibaba.genie.adapter.plugin/unload '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "cancelRecognition",
+  "uri": "luna://amazon.alexa.adapter.plugin/cancelRecognition",
+  "category": "input",
+  "description": "Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/cancelRecognition '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "executeFarfieldSetting",
+  "uri": "luna://amazon.alexa.adapter.plugin/executeFarfieldSetting",
+  "category": "input",
+  "description": "Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/executeFarfieldSetting '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "getAccessToken",
+  "uri": "luna://amazon.alexa.adapter.plugin/getAccessToken",
+  "category": "input",
+  "description": "Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getAccessToken '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "getAppMessage",
+  "uri": "luna://amazon.alexa.adapter.plugin/getAppMessage",
+  "category": "input",
+  "description": "Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getAppMessage '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "getAvsMusic",
+  "uri": "luna://amazon.alexa.adapter.plugin/getAvsMusic",
+  "category": "input",
+  "description": "Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getAvsMusic '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "getAvsStatus",
+  "uri": "luna://amazon.alexa.adapter.plugin/getAvsStatus",
+  "category": "input",
+  "description": "Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getAvsStatus '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "getCblData",
+  "uri": "luna://amazon.alexa.adapter.plugin/getCblData",
+  "category": "input",
+  "description": "Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getCblData '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "getDialogState",
+  "uri": "luna://amazon.alexa.adapter.plugin/getDialogState",
+  "category": "input",
+  "description": "Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getDialogState '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "getForegroundApp",
+  "uri": "luna://amazon.alexa.adapter.plugin/getForegroundApp",
+  "category": "input",
+  "description": "Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getForegroundApp '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "getFornaxVersion",
+  "uri": "luna://amazon.alexa.adapter.plugin/getFornaxVersion",
+  "category": "input",
+  "description": "Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getFornaxVersion '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "isRegistered",
+  "uri": "luna://amazon.alexa.adapter.plugin/isRegistered",
+  "category": "input",
+  "description": "Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/isRegistered '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "launchShortcutPanel",
+  "uri": "luna://amazon.alexa.adapter.plugin/launchShortcutPanel",
+  "category": "apps",
+  "description": "Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/launchShortcutPanel '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all, public.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "load",
+  "uri": "luna://amazon.alexa.adapter.plugin/load",
+  "category": "input",
+  "description": "Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/load '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: configurator.callbacks, private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "recognizeIntentByVoice",
+  "uri": "luna://amazon.alexa.adapter.plugin/recognizeIntentByVoice",
+  "category": "input",
+  "description": "Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/recognizeIntentByVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "sendAvsCommand",
+  "uri": "luna://amazon.alexa.adapter.plugin/sendAvsCommand",
+  "category": "input",
+  "description": "Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/sendAvsCommand '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "setAppMessage",
+  "uri": "luna://amazon.alexa.adapter.plugin/setAppMessage",
+  "category": "input",
+  "description": "Setter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/setAppMessage '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "stopRecordingVoice",
+  "uri": "luna://amazon.alexa.adapter.plugin/stopRecordingVoice",
+  "category": "input",
+  "description": "Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/stopRecordingVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "amazon.alexa.adapter.plugin",
+  "method": "testToast",
+  "uri": "luna://amazon.alexa.adapter.plugin/testToast",
+  "category": "notifications",
+  "description": "Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/testToast '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.activityexample",
+  "method": "alarmFired",
+  "uri": "luna://com.example.activityexample/alarmFired",
+  "category": "activity",
+  "description": "Method on com.example.activityexample (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.activityexample/alarmFired '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.activityexample",
+  "method": "cancelActivity",
+  "uri": "luna://com.example.activityexample/cancelActivity",
+  "category": "activity",
+  "description": "Method on com.example.activityexample (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.activityexample/cancelActivity '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.activityexample",
+  "method": "createAlarm",
+  "uri": "luna://com.example.activityexample/createAlarm",
+  "category": "activity",
+  "description": "Method on com.example.activityexample (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.activityexample/createAlarm '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.activityexample",
+  "method": "createTimer",
+  "uri": "luna://com.example.activityexample/createTimer",
+  "category": "input",
+  "description": "Method on com.example.activityexample (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.activityexample/createTimer '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.activityexample",
+  "method": "info",
+  "uri": "luna://com.example.activityexample/info",
+  "category": "activity",
+  "description": "Method on com.example.activityexample (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.activityexample/info '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.activityexample",
+  "method": "quit",
+  "uri": "luna://com.example.activityexample/quit",
+  "category": "activity",
+  "description": "Method on com.example.activityexample (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.activityexample/quit '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.activityexample",
+  "method": "timerFired",
+  "uri": "luna://com.example.activityexample/timerFired",
+  "category": "input",
+  "description": "Method on com.example.activityexample (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.activityexample/timerFired '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "config/setGreeting",
+  "uri": "luna://com.example.helloworld/config/setGreeting",
+  "category": "settings",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/config/setGreeting '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "do/re/me",
+  "uri": "luna://com.example.helloworld/do/re/me",
+  "category": "misc",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/do/re/me '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "getCount",
+  "uri": "luna://com.example.helloworld/getCount",
+  "category": "misc",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/getCount '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "heartbeat",
+  "uri": "luna://com.example.helloworld/heartbeat",
+  "category": "misc",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/heartbeat '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "heartbeat2",
+  "uri": "luna://com.example.helloworld/heartbeat2",
+  "category": "misc",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/heartbeat2 '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "hello",
+  "uri": "luna://com.example.helloworld/hello",
+  "category": "misc",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/hello '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "increment",
+  "uri": "luna://com.example.helloworld/increment",
+  "category": "misc",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/increment '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "info",
+  "uri": "luna://com.example.helloworld/info",
+  "category": "misc",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/info '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "locale",
+  "uri": "luna://com.example.helloworld/locale",
+  "category": "misc",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/locale '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "ping",
+  "uri": "luna://com.example.helloworld/ping",
+  "category": "misc",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/ping '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "pong",
+  "uri": "luna://com.example.helloworld/pong",
+  "category": "misc",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/pong '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld",
+  "method": "quit",
+  "uri": "luna://com.example.helloworld/quit",
+  "category": "misc",
+  "description": "Method on com.example.helloworld (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld/quit '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld2",
+  "method": "hello",
+  "uri": "luna://com.example.helloworld2/hello",
+  "category": "misc",
+  "description": "Method on com.example.helloworld2 (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld2/hello '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld2",
+  "method": "info",
+  "uri": "luna://com.example.helloworld2/info",
+  "category": "misc",
+  "description": "Method on com.example.helloworld2 (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld2/info '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.helloworld2",
+  "method": "quit",
+  "uri": "luna://com.example.helloworld2/quit",
+  "category": "misc",
+  "description": "Method on com.example.helloworld2 (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.helloworld2/quit '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, testing. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native",
+  "method": "hello",
+  "uri": "luna://com.example.service.native/hello",
+  "category": "misc",
+  "description": "Method on com.example.service.native (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native/hello '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native.example. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native",
+  "method": "hello_dev",
+  "uri": "luna://com.example.service.native/hello_dev",
+  "category": "misc",
+  "description": "Method on com.example.service.native (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native/hello_dev '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native.example.dev. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native",
+  "method": "hello_oem",
+  "uri": "luna://com.example.service.native/hello_oem",
+  "category": "misc",
+  "description": "Method on com.example.service.native (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native/hello_oem '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native.example.oem. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native",
+  "method": "hello_partner",
+  "uri": "luna://com.example.service.native/hello_partner",
+  "category": "misc",
+  "description": "Method on com.example.service.native (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native/hello_partner '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native.example.part. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native2",
+  "method": "hello",
+  "uri": "luna://com.example.service.native2/hello",
+  "category": "misc",
+  "description": "Method on com.example.service.native2 (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native2/hello '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native2.example. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native2",
+  "method": "hello_DEV",
+  "uri": "luna://com.example.service.native2/hello_DEV",
+  "category": "misc",
+  "description": "Method on com.example.service.native2 (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native2/hello_DEV '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native2_DEV.example. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native2",
+  "method": "hello_OEM",
+  "uri": "luna://com.example.service.native2/hello_OEM",
+  "category": "misc",
+  "description": "Method on com.example.service.native2 (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native2/hello_OEM '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native2_OEM.example. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native2",
+  "method": "hello_PART",
+  "uri": "luna://com.example.service.native2/hello_PART",
+  "category": "misc",
+  "description": "Method on com.example.service.native2 (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native2/hello_PART '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native2_PART.example. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native3",
+  "method": "hello",
+  "uri": "luna://com.example.service.native3/hello",
+  "category": "misc",
+  "description": "Method on com.example.service.native3 (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native3/hello '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native3.example. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native3",
+  "method": "hello_DEV",
+  "uri": "luna://com.example.service.native3/hello_DEV",
+  "category": "misc",
+  "description": "Method on com.example.service.native3 (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native3/hello_DEV '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native3_DEV.example. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native3",
+  "method": "hello_OEM",
+  "uri": "luna://com.example.service.native3/hello_OEM",
+  "category": "misc",
+  "description": "Method on com.example.service.native3 (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native3/hello_OEM '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native3_OEM.example. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.example.service.native3",
+  "method": "hello_PART",
+  "uri": "luna://com.example.service.native3/hello_PART",
+  "category": "misc",
+  "description": "Method on com.example.service.native3 (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.example.service.native3/hello_PART '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: native3_PART.example. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.flutter.app.similarlist",
+  "method": "finish",
+  "uri": "luna://com.flutter.app.similarlist/finish",
+  "category": "misc",
+  "description": "Method on com.flutter.app.similarlist (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.flutter.app.similarlist/finish '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.flutter.app.similarlist",
+  "method": "request",
+  "uri": "luna://com.flutter.app.similarlist/request",
+  "category": "misc",
+  "description": "Method on com.flutter.app.similarlist (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.flutter.app.similarlist/request '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
   "service": "com.lge.settingsservice",
   "method": "batch",
   "uri": "luna://com.lge.settingsservice/batch",
@@ -10929,6 +12733,336 @@
   "confidence": "community",
   "confidence_all": [
    "community"
+  ]
+ },
+ {
+  "service": "com.palmdts.devmode.service",
+  "method": "devSessionTimeStatus",
+  "uri": "luna://com.palmdts.devmode.service/devSessionTimeStatus",
+  "category": "devmode",
+  "description": "Remaining dev session time",
+  "params": {},
+  "example": "luna-send -n 1 luna://com.palmdts.devmode.service/devSessionTimeStatus '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "webOS 4+",
+  "dangerous": false,
+  "notes": "remainSession like 1000h:00m.",
+  "sources": [
+   "https://github.com/lennylxx/lg-devmode-forever/blob/HEAD/service/index.js"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.palmdts.devmode.service",
+  "method": "resetSession",
+  "uri": "luna://com.palmdts.devmode.service/resetSession",
+  "category": "devmode",
+  "description": "Renews the dev mode session",
+  "params": {},
+  "example": "luna-send -n 1 luna://com.palmdts.devmode.service/resetSession '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "webOS 4+",
+  "dangerous": false,
+  "notes": "Reply statusCode \"recreated\".",
+  "sources": [
+   "https://github.com/lennylxx/lg-devmode-forever/blob/HEAD/service/index.js"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "crd/getCRDEvent",
+  "uri": "luna://com.test.interc.service.fake/crd/getCRDEvent",
+  "category": "misc",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/crd/getCRDEvent '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "databroadcast/getAlertInfo",
+  "uri": "luna://com.test.interc.service.fake/databroadcast/getAlertInfo",
+  "category": "tv-broadcast",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/databroadcast/getAlertInfo '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "databroadcast/getCurrentEPGInfo",
+  "uri": "luna://com.test.interc.service.fake/databroadcast/getCurrentEPGInfo",
+  "category": "tv-broadcast",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/databroadcast/getCurrentEPGInfo '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "databroadcast/getCurrentServiceInfo",
+  "uri": "luna://com.test.interc.service.fake/databroadcast/getCurrentServiceInfo",
+  "category": "tv-broadcast",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/databroadcast/getCurrentServiceInfo '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "settingsservice/getSystemSettingsAudioDescriptionAtsc30",
+  "uri": "luna://com.test.interc.service.fake/settingsservice/getSystemSettingsAudioDescriptionAtsc30",
+  "category": "audio",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsAudioDescriptionAtsc30 '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "settingsservice/getSystemSettingsCaption",
+  "uri": "luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaption",
+  "category": "settings",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaption '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "settingsservice/getSystemSettingsCaptionEnable",
+  "uri": "luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaptionEnable",
+  "category": "settings",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaptionEnable '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "settingsservice/getSystemSettingsCaptionLang",
+  "uri": "luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaptionLang",
+  "category": "settings",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaptionLang '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "settingsservice/getSystemSettingsDialogEnhancementPref",
+  "uri": "luna://com.test.interc.service.fake/settingsservice/getSystemSettingsDialogEnhancementPref",
+  "category": "settings",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsDialogEnhancementPref '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "settingsservice/getSystemSettingsEmergencyInformation",
+  "uri": "luna://com.test.interc.service.fake/settingsservice/getSystemSettingsEmergencyInformation",
+  "category": "settings",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsEmergencyInformation '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "settingsservice/getSystemSettingsLocaleInfo",
+  "uri": "luna://com.test.interc.service.fake/settingsservice/getSystemSettingsLocaleInfo",
+  "category": "settings",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsLocaleInfo '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "settingsservice/getSystemSettingsSound",
+  "uri": "luna://com.test.interc.service.fake/settingsservice/getSystemSettingsSound",
+  "category": "settings",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsSound '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "com.test.interc.service.fake",
+  "method": "subtitle/getRatingInfo",
+  "uri": "luna://com.test.interc.service.fake/subtitle/getRatingInfo",
+  "category": "media",
+  "description": "Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://com.test.interc.service.fake/subtitle/getRatingInfo '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: all, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
   ]
  },
  {
@@ -178362,6 +180496,1194 @@
   ]
  },
  {
+  "service": "dangbei.adapter.plugin",
+  "method": "cancelRecognition",
+  "uri": "luna://dangbei.adapter.plugin/cancelRecognition",
+  "category": "misc",
+  "description": "Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://dangbei.adapter.plugin/cancelRecognition '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "dangbei.adapter.plugin",
+  "method": "load",
+  "uri": "luna://dangbei.adapter.plugin/load",
+  "category": "misc",
+  "description": "Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://dangbei.adapter.plugin/load '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "dangbei.adapter.plugin",
+  "method": "recognizeIntentByText",
+  "uri": "luna://dangbei.adapter.plugin/recognizeIntentByText",
+  "category": "misc",
+  "description": "Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://dangbei.adapter.plugin/recognizeIntentByText '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "dangbei.adapter.plugin",
+  "method": "recognizeIntentByVoice",
+  "uri": "luna://dangbei.adapter.plugin/recognizeIntentByVoice",
+  "category": "input",
+  "description": "Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://dangbei.adapter.plugin/recognizeIntentByVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "dangbei.adapter.plugin",
+  "method": "showGuide",
+  "uri": "luna://dangbei.adapter.plugin/showGuide",
+  "category": "misc",
+  "description": "Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://dangbei.adapter.plugin/showGuide '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "dangbei.adapter.plugin",
+  "method": "stopRecordingVoice",
+  "uri": "luna://dangbei.adapter.plugin/stopRecordingVoice",
+  "category": "input",
+  "description": "Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://dangbei.adapter.plugin/stopRecordingVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "dangbei.adapter.plugin",
+  "method": "unload",
+  "uri": "luna://dangbei.adapter.plugin/unload",
+  "category": "misc",
+  "description": "Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://dangbei.adapter.plugin/unload '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "cancel",
+  "uri": "luna://google.assistant.adapter.plugin/cancel",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/cancel '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "cancelRecognition",
+  "uri": "luna://google.assistant.adapter.plugin/cancelRecognition",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/cancelRecognition '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "disableSignIn",
+  "uri": "luna://google.assistant.adapter.plugin/disableSignIn",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/disableSignIn '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "enableSignIn",
+  "uri": "luna://google.assistant.adapter.plugin/enableSignIn",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/enableSignIn '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "getAccountsDetail",
+  "uri": "luna://google.assistant.adapter.plugin/getAccountsDetail",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/getAccountsDetail '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "load",
+  "uri": "luna://google.assistant.adapter.plugin/load",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/load '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "recognizeIntentByText",
+  "uri": "luna://google.assistant.adapter.plugin/recognizeIntentByText",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/recognizeIntentByText '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "recognizeIntentByVoice",
+  "uri": "luna://google.assistant.adapter.plugin/recognizeIntentByVoice",
+  "category": "input",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/recognizeIntentByVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "request",
+  "uri": "luna://google.assistant.adapter.plugin/request",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/request '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "requestIntent",
+  "uri": "luna://google.assistant.adapter.plugin/requestIntent",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/requestIntent '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "requestNewConversation",
+  "uri": "luna://google.assistant.adapter.plugin/requestNewConversation",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/requestNewConversation '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "requestSignOut",
+  "uri": "luna://google.assistant.adapter.plugin/requestSignOut",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/requestSignOut '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "requestText",
+  "uri": "luna://google.assistant.adapter.plugin/requestText",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/requestText '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "showGuide",
+  "uri": "luna://google.assistant.adapter.plugin/showGuide",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/showGuide '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "stopAudioIn",
+  "uri": "luna://google.assistant.adapter.plugin/stopAudioIn",
+  "category": "audio",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/stopAudioIn '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "stopRecordingVoice",
+  "uri": "luna://google.assistant.adapter.plugin/stopRecordingVoice",
+  "category": "input",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/stopRecordingVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "google.assistant.adapter.plugin",
+  "method": "unload",
+  "uri": "luna://google.assistant.adapter.plugin/unload",
+  "category": "misc",
+  "description": "Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://google.assistant.adapter.plugin/unload '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "cancelRecognition",
+  "uri": "luna://lg.thinqai.adapter/cancelRecognition",
+  "category": "misc",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/cancelRecognition '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "deletePrivacyData",
+  "uri": "luna://lg.thinqai.adapter/deletePrivacyData",
+  "category": "misc",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/deletePrivacyData '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": true,
+  "notes": "ACG groups: private, all. Flagged dangerous by name; verify before calling.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "getKeywordResult",
+  "uri": "luna://lg.thinqai.adapter/getKeywordResult",
+  "category": "misc",
+  "description": "Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/getKeywordResult '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "getTtsData",
+  "uri": "luna://lg.thinqai.adapter/getTtsData",
+  "category": "misc",
+  "description": "Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/getTtsData '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "load",
+  "uri": "luna://lg.thinqai.adapter/load",
+  "category": "misc",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/load '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "recognizeIntentByText",
+  "uri": "luna://lg.thinqai.adapter/recognizeIntentByText",
+  "category": "misc",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/recognizeIntentByText '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "recognizeIntentByVoice",
+  "uri": "luna://lg.thinqai.adapter/recognizeIntentByVoice",
+  "category": "input",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/recognizeIntentByVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "recognizeVoice",
+  "uri": "luna://lg.thinqai.adapter/recognizeVoice",
+  "category": "input",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/recognizeVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "showGuide",
+  "uri": "luna://lg.thinqai.adapter/showGuide",
+  "category": "misc",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/showGuide '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "stopRecordingVoice",
+  "uri": "luna://lg.thinqai.adapter/stopRecordingVoice",
+  "category": "input",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/stopRecordingVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "unload",
+  "uri": "luna://lg.thinqai.adapter/unload",
+  "category": "misc",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/unload '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "vid/cancelEnroll",
+  "uri": "luna://lg.thinqai.adapter/vid/cancelEnroll",
+  "category": "misc",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/vid/cancelEnroll '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "vid/deleteVoiceId",
+  "uri": "luna://lg.thinqai.adapter/vid/deleteVoiceId",
+  "category": "input",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/vid/deleteVoiceId '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": true,
+  "notes": "ACG groups: private, all. Flagged dangerous by name; verify before calling.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "vid/getStatusList",
+  "uri": "luna://lg.thinqai.adapter/vid/getStatusList",
+  "category": "misc",
+  "description": "Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/vid/getStatusList '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "vid/getSupportedLanguagesForVoiceId",
+  "uri": "luna://lg.thinqai.adapter/vid/getSupportedLanguagesForVoiceId",
+  "category": "input",
+  "description": "Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/vid/getSupportedLanguagesForVoiceId '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "vid/getVidFirstuseEnabled",
+  "uri": "luna://lg.thinqai.adapter/vid/getVidFirstuseEnabled",
+  "category": "misc",
+  "description": "Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/vid/getVidFirstuseEnabled '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "vid/isVoiceIdRegistered",
+  "uri": "luna://lg.thinqai.adapter/vid/isVoiceIdRegistered",
+  "category": "input",
+  "description": "Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/vid/isVoiceIdRegistered '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "lg.thinqai.adapter",
+  "method": "vid/listScripts",
+  "uri": "luna://lg.thinqai.adapter/vid/listScripts",
+  "category": "misc",
+  "description": "Lister on lg.thinqai.adapter (introspected on-device; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://lg.thinqai.adapter/vid/listScripts '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
+  "dangerous": false,
+  "notes": "ACG groups: private, all.",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "listenserver.service",
+  "method": "start",
+  "uri": "luna://listenserver.service/start",
+  "category": "misc",
+  "description": "Method on listenserver.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://listenserver.service/start '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "listenserver.service",
+  "method": "stop",
+  "uri": "luna://listenserver.service/stop",
+  "category": "misc",
+  "description": "Method on listenserver.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://listenserver.service/stop '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "netflix.service",
+  "method": "clearToken",
+  "uri": "luna://netflix.service/clearToken",
+  "category": "misc",
+  "description": "Method on netflix.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://netflix.service/clearToken '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "netflix.service",
+  "method": "discovery",
+  "uri": "luna://netflix.service/discovery",
+  "category": "network",
+  "description": "Method on netflix.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://netflix.service/discovery '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "netflix.service",
+  "method": "impression",
+  "uri": "luna://netflix.service/impression",
+  "category": "misc",
+  "description": "Method on netflix.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://netflix.service/impression '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "netflix.service",
+  "method": "saveToken",
+  "uri": "luna://netflix.service/saveToken",
+  "category": "misc",
+  "description": "Method on netflix.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://netflix.service/saveToken '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "netflix.service",
+  "method": "search",
+  "uri": "luna://netflix.service/search",
+  "category": "misc",
+  "description": "Method on netflix.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://netflix.service/search '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "nuance.stt.adapter.plugin",
+  "method": "cancelRecognition",
+  "uri": "luna://nuance.stt.adapter.plugin/cancelRecognition",
+  "category": "misc",
+  "description": "Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://nuance.stt.adapter.plugin/cancelRecognition '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "nuance.stt.adapter.plugin",
+  "method": "load",
+  "uri": "luna://nuance.stt.adapter.plugin/load",
+  "category": "misc",
+  "description": "Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://nuance.stt.adapter.plugin/load '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "nuance.stt.adapter.plugin",
+  "method": "recognizeVoice",
+  "uri": "luna://nuance.stt.adapter.plugin/recognizeVoice",
+  "category": "input",
+  "description": "Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://nuance.stt.adapter.plugin/recognizeVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "nuance.stt.adapter.plugin",
+  "method": "stopRecordingVoice",
+  "uri": "luna://nuance.stt.adapter.plugin/stopRecordingVoice",
+  "category": "input",
+  "description": "Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://nuance.stt.adapter.plugin/stopRecordingVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "nuance.stt.adapter.plugin",
+  "method": "unload",
+  "uri": "luna://nuance.stt.adapter.plugin/unload",
+  "category": "misc",
+  "description": "Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://nuance.stt.adapter.plugin/unload '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
   "service": "ssap:api",
   "method": "getServiceList",
   "uri": "ssap://api/getServiceList",
@@ -179700,6 +183022,336 @@
   "sources": [
    "https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/WebOSTVService.java",
    "https://github.com/snabb/webostv/blob/master/mmisc.go"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "tsuploader.service",
+  "method": "checkStatus",
+  "uri": "luna://tsuploader.service/checkStatus",
+  "category": "misc",
+  "description": "Method on tsuploader.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://tsuploader.service/checkStatus '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "tsuploader.service",
+  "method": "startService",
+  "uri": "luna://tsuploader.service/startService",
+  "category": "misc",
+  "description": "Method on tsuploader.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://tsuploader.service/startService '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "tsuploader.service",
+  "method": "startTsDump",
+  "uri": "luna://tsuploader.service/startTsDump",
+  "category": "misc",
+  "description": "Method on tsuploader.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://tsuploader.service/startTsDump '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "tsuploader.service",
+  "method": "startUpload",
+  "uri": "luna://tsuploader.service/startUpload",
+  "category": "misc",
+  "description": "Method on tsuploader.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://tsuploader.service/startUpload '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "tsuploader.service",
+  "method": "stopTsDump",
+  "uri": "luna://tsuploader.service/stopTsDump",
+  "category": "misc",
+  "description": "Method on tsuploader.service (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://tsuploader.service/stopTsDump '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "yandex.alice.adapter.plugin",
+  "method": "cancelRecognition",
+  "uri": "luna://yandex.alice.adapter.plugin/cancelRecognition",
+  "category": "misc",
+  "description": "Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://yandex.alice.adapter.plugin/cancelRecognition '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "yandex.alice.adapter.plugin",
+  "method": "getVoiceUiEvents",
+  "uri": "luna://yandex.alice.adapter.plugin/getVoiceUiEvents",
+  "category": "input",
+  "description": "Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://yandex.alice.adapter.plugin/getVoiceUiEvents '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "yandex.alice.adapter.plugin",
+  "method": "interactor/register",
+  "uri": "luna://yandex.alice.adapter.plugin/interactor/register",
+  "category": "misc",
+  "description": "Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://yandex.alice.adapter.plugin/interactor/register '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "yandex.alice.adapter.plugin",
+  "method": "interactor/setContext",
+  "uri": "luna://yandex.alice.adapter.plugin/interactor/setContext",
+  "category": "misc",
+  "description": "Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://yandex.alice.adapter.plugin/interactor/setContext '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "yandex.alice.adapter.plugin",
+  "method": "load",
+  "uri": "luna://yandex.alice.adapter.plugin/load",
+  "category": "misc",
+  "description": "Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://yandex.alice.adapter.plugin/load '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "yandex.alice.adapter.plugin",
+  "method": "recognizeIntentByText",
+  "uri": "luna://yandex.alice.adapter.plugin/recognizeIntentByText",
+  "category": "misc",
+  "description": "Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://yandex.alice.adapter.plugin/recognizeIntentByText '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "yandex.alice.adapter.plugin",
+  "method": "recognizeIntentByVoice",
+  "uri": "luna://yandex.alice.adapter.plugin/recognizeIntentByVoice",
+  "category": "input",
+  "description": "Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://yandex.alice.adapter.plugin/recognizeIntentByVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "yandex.alice.adapter.plugin",
+  "method": "sendYskCommand",
+  "uri": "luna://yandex.alice.adapter.plugin/sendYskCommand",
+  "category": "misc",
+  "description": "Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://yandex.alice.adapter.plugin/sendYskCommand '{}'",
+  "subscribe": false,
+  "access": "public",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "yandex.alice.adapter.plugin",
+  "method": "stopRecordingVoice",
+  "uri": "luna://yandex.alice.adapter.plugin/stopRecordingVoice",
+  "category": "input",
+  "description": "Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://yandex.alice.adapter.plugin/stopRecordingVoice '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+  ],
+  "confidence": "code",
+  "confidence_all": [
+   "code"
+  ]
+ },
+ {
+  "service": "yandex.alice.adapter.plugin",
+  "method": "unload",
+  "uri": "luna://yandex.alice.adapter.plugin/unload",
+  "category": "misc",
+  "description": "Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).",
+  "params": {},
+  "example": "luna-send -n 1 -f luna://yandex.alice.adapter.plugin/unload '{}'",
+  "subscribe": false,
+  "access": "private",
+  "platform": "webOS TV",
+  "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
+  "dangerous": false,
+  "notes": "ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "sources": [
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
   ],
   "confidence": "code",
   "confidence_all": [

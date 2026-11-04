@@ -1,9 +1,10 @@
 # Applications
 
-364 methods.  [Back to index](../../README.md#categories)
+365 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
+| [`luna://amazon.alexa.adapter.plugin/launchShortcutPanel`](../services/amazon.alexa.adapter.plugin.md#launchshortcutpanel) | public | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.applicationManager/close`](../services/com.palm.applicationManager.md#close) | root | Closes a running process |
 | [`luna://com.palm.applicationManager/closeByAppId`](../services/com.palm.applicationManager.md#closebyappid) | private | Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.applicationManager/launch`](../services/com.palm.applicationManager.md#launch) | root | Launches an app |

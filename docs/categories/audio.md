@@ -1,9 +1,11 @@
 # Audio
 
-693 methods.  [Back to index](../../README.md#categories)
+697 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
+| [`luna://airplay.service/changeAudioState`](../services/airplay.service.md#changeaudiostate) | public | Method on airplay.service (introspected on-device; parameters undocumented). |
+| [`luna://airplay.service/getAudioState`](../services/airplay.service.md#getaudiostate) | public | Getter on airplay.service (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.audio/dtmf/busyTone`](../services/com.palm.audio.md#dtmf_busytone) | public | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.audio/dtmf/emergencyCall`](../services/com.palm.audio.md#dtmf_emergencycall) | public | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.audio/dtmf/playAlert`](../services/com.palm.audio.md#dtmf_playalert) | public | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
@@ -97,6 +99,7 @@
 | [`luna://com.palm.audio/vvm/setCurrentScenario`](../services/com.palm.audio.md#vvm_setcurrentscenario) | public | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.audio/vvm/setVolume`](../services/com.palm.audio.md#vvm_setvolume) | public | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.audio/vvm/status`](../services/com.palm.audio.md#vvm_status) | public | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
+| [`luna://com.test.interc.service.fake/settingsservice/getSystemSettingsAudioDescriptionAtsc30`](../services/com.test.interc.service.fake.md#settingsservice_getsystemsettingsaudiodescriptionatsc30) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.audio/alarm/getAlarmOn`](../services/com.webos.audio.md#alarm_getalarmon) | private | Method registered by com.webos.audio (category '/alarm') |
 | [`luna://com.webos.audio/alarm/getVolume`](../services/com.webos.audio.md#alarm_getvolume) | private | Method registered by com.webos.audio (category '/alarm') |
 | [`luna://com.webos.audio/alarm/offsetVolume`](../services/com.webos.audio.md#alarm_offsetvolume) | private | Method registered by com.webos.audio (category '/alarm') |
@@ -688,6 +691,7 @@
 | [`luna://com.webos.service.utp.extinputs/setMultiAudioOutType`](../services/com.webos.service.utp.extinputs.md#setmultiaudioouttype) | private | Setter on com.webos.service.utp.extinputs (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.utp.sound/getAudioInfo`](../services/com.webos.service.utp.sound.md#getaudioinfo) | private | Getter on com.webos.service.utp.sound (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.service.utp.sound/getDTVAudioRunningState`](../services/com.webos.service.utp.sound.md#getdtvaudiorunningstate) | private | Getter on com.webos.service.utp.sound (introspected on-device; parameters undocumented). |
+| [`luna://google.assistant.adapter.plugin/stopAudioIn`](../services/google.assistant.adapter.plugin.md#stopaudioin) | private | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
 | [`ssap://audio/changeSoundOutput`](../services/ssap_audio.md#changesoundoutput) | ssap | Change sound output (alias of apiadapter variant) |
 | [`ssap://audio/getMute`](../services/ssap_audio.md#getmute) | ssap | Get mute state |
 | [`ssap://audio/getSoundOutput`](../services/ssap_audio.md#getsoundoutput) | ssap | Get sound output (alias) |

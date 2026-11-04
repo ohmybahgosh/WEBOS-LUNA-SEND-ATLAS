@@ -4,8 +4,8 @@ Every record in the catalog lists the exact URLs it came from.  This is the roll
 
 | Source | Records |
 |---|---|
-| https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68) | 3183 |
-| https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device  | 2565 |
+| https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68) | 3225 |
+| https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device  | 2687 |
 | https://www.webosose.org | 1084 |
 | https://github.com/SunnySide007/lumen-webos | 509 |
 | https://github.com/webosose/db8 | 231 |
@@ -57,6 +57,7 @@ Every record in the catalog lists the exact URLs it came from.  This is the roll
 | https://github.com/webosbrew/hyperion-webos | 3 |
 | https://github.com/throwaway96/downgr8 | 3 |
 | https://www.banneret.nl | 2 |
+| https://github.com/lennylxx/lg-devmode-forever | 2 |
 | https://github.com/Tenzer/alga | 2 |
 | https://github.com/webosbrew/webosbrew.github.io | 2 |
 | https://github.com/Staphylococcus/LG_Buddy | 2 |

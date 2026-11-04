@@ -1,6 +1,6 @@
 # Network / Wi-Fi
 
-303 methods.  [Back to index](../../README.md#categories)
+304 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
@@ -307,3 +307,4 @@
 | [`luna://com.webos.service.wirelessavcontroller/test/lsTest`](../services/com.webos.service.wirelessavcontroller.md#test_lstest) | private | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.wirelessavcontroller/test/setDebug`](../services/com.webos.service.wirelessavcontroller.md#test_setdebug) | private | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.service.wirelessavcontroller/test/SPITest`](../services/com.webos.service.wirelessavcontroller.md#test_spitest) | private | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
+| [`luna://netflix.service/discovery`](../services/netflix.service.md#discovery) | public | Method on netflix.service (from on-device permission registry; parameters undocumented). |

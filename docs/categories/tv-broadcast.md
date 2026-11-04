@@ -1,12 +1,15 @@
 # TV Broadcast / DVR
 
-1898 methods.  [Back to index](../../README.md#categories)
+1901 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
 | [`luna://com.palm.db/backupEpg`](../services/com.palm.db.md#backupepg) | private | Method on com.palm.db (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.systemservice/time/getEffectiveBroadcastTime`](../services/com.palm.systemservice.md#time_geteffectivebroadcasttime) | private | Method on com.palm.systemservice (from on-device permission registry; parameters undocumented). |
 | [`luna://com.palm.tempdb/backupEpg`](../services/com.palm.tempdb.md#backupepg) | private | Method on com.palm.tempdb (introspected on-device; parameters undocumented). |
+| [`luna://com.test.interc.service.fake/databroadcast/getAlertInfo`](../services/com.test.interc.service.fake.md#databroadcast_getalertinfo) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
+| [`luna://com.test.interc.service.fake/databroadcast/getCurrentEPGInfo`](../services/com.test.interc.service.fake.md#databroadcast_getcurrentepginfo) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
+| [`luna://com.test.interc.service.fake/databroadcast/getCurrentServiceInfo`](../services/com.test.interc.service.fake.md#databroadcast_getcurrentserviceinfo) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.epgdb/backupEpg`](../services/com.webos.epgdb.md#backupepg) | private | Method on com.webos.epgdb (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.epgdb/cancelSearch`](../services/com.webos.epgdb.md#cancelsearch) | private | Method on com.webos.epgdb (introspected on-device; parameters undocumented). |
 | [`luna://com.webos.epgdb/internal/scheduledBackup`](../services/com.webos.epgdb.md#internal_scheduledbackup) | private | Method on com.webos.epgdb (introspected on-device; parameters undocumented). |

@@ -1,9 +1,10 @@
 # Settings
 
-287 methods.  [Back to index](../../README.md#categories)
+295 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Description |
 |---|---|---|
+| [`luna://com.example.helloworld/config/setGreeting`](../services/com.example.helloworld.md#config_setgreeting) | public | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
 | [`luna://com.lge.settingsservice/batch`](../services/com.lge.settingsservice.md#batch) | private | Executes several settingsservice operations in one call |
 | [`luna://com.lge.settingsservice/deleteSystemSettings`](../services/com.lge.settingsservice.md#deletesystemsettings) | private | Deletes the specified system settings |
 | [`luna://com.lge.settingsservice/getCurrentSettings`](../services/com.lge.settingsservice.md#getcurrentsettings) | unknown | Returns settings of foreground App |
@@ -55,6 +56,13 @@
 | [`luna://com.palm.systemservice/setPreferences`](../services/com.palm.systemservice.md#setpreferences) | root | Sets system preferences (wallpaper, airplaneMode) |
 | [`luna://com.palm.uploadd/getLogSettings`](../services/com.palm.uploadd.md#getlogsettings) | private | Getter on com.palm.uploadd (introspected on-device; parameters undocumented). |
 | [`luna://com.palm.uploadd/setLogSettings`](../services/com.palm.uploadd.md#setlogsettings) | private | Setter on com.palm.uploadd (introspected on-device; parameters undocumented). |
+| [`luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaption`](../services/com.test.interc.service.fake.md#settingsservice_getsystemsettingscaption) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
+| [`luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaptionEnable`](../services/com.test.interc.service.fake.md#settingsservice_getsystemsettingscaptionenable) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
+| [`luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaptionLang`](../services/com.test.interc.service.fake.md#settingsservice_getsystemsettingscaptionlang) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
+| [`luna://com.test.interc.service.fake/settingsservice/getSystemSettingsDialogEnhancementPref`](../services/com.test.interc.service.fake.md#settingsservice_getsystemsettingsdialogenhancementpref) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
+| [`luna://com.test.interc.service.fake/settingsservice/getSystemSettingsEmergencyInformation`](../services/com.test.interc.service.fake.md#settingsservice_getsystemsettingsemergencyinformation) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
+| [`luna://com.test.interc.service.fake/settingsservice/getSystemSettingsLocaleInfo`](../services/com.test.interc.service.fake.md#settingsservice_getsystemsettingslocaleinfo) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
+| [`luna://com.test.interc.service.fake/settingsservice/getSystemSettingsSound`](../services/com.test.interc.service.fake.md#settingsservice_getsystemsettingssound) | public | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.appInstallService/createLSConfigFiles`](../services/com.webos.appInstallService.md#createlsconfigfiles) | private | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.appInstallService/removeLSConfigFiles`](../services/com.webos.appInstallService.md#removelsconfigfiles) | private | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). ⚠️ |
 | [`luna://com.webos.flutter.embedder/getConfigs`](../services/com.webos.flutter.embedder.md#getconfigs) | private | Method on com.webos.flutter.embedder (from on-device permission registry; parameters undocumented). |

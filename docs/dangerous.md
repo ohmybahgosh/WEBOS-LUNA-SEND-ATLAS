@@ -2,10 +2,13 @@
 
 These can factory reset the TV, wipe app or user data, break software updates, change panel/factory values, remove your Home launcher, or otherwise leave the TV in a state that is hard to recover.  Several are irreversible.  **Don't run them unless you know exactly how to undo them.**  Nobody here is responsible for your TV.
 
-309 entries.
+314 entries.
 
 | URI | Why | 
 |---|---|
+| [`luna://airplay.homekit/reset`](services/airplay.homekit.md#reset) | Method on airplay.homekit (from on-device permission registry; parameters undocumented). |
+| [`luna://airplay.service/reset`](services/airplay.service.md#reset) | Method on airplay.service (from on-device permission registry; parameters undocumented). |
+| [`luna://airplay.service/sharedKeyDelete`](services/airplay.service.md#sharedkeydelete) | Method on airplay.service (from on-device permission registry; parameters undocumented). |
 | [`luna://com.lge.settingsservice/resetSystemSettingDescPriv`](services/com.lge.settingsservice.md#resetsystemsettingdescpriv) | Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented). |
 | [`luna://com.lge.settingsservice/resetSystemSettings`](services/com.lge.settingsservice.md#resetsystemsettings) | Resets system settings to their factory/default values |
 | [`luna://com.lge.settingsservice/resetSystemSettingsPriv`](services/com.lge.settingsservice.md#resetsystemsettingspriv) | Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented). |
@@ -315,3 +318,5 @@ These can factory reset the TV, wipe app or user data, break software updates, c
 | [`luna://com.webos.settingsservice/resetSystemSettingsPriv`](services/com.webos.settingsservice.md#resetsystemsettingspriv) | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.settingsservice/setSystemFactorySettingDescPriv`](services/com.webos.settingsservice.md#setsystemfactorysettingdescpriv) | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). |
 | [`luna://com.webos.settingsservice/setSystemSettingFactoryDescPriv`](services/com.webos.settingsservice.md#setsystemsettingfactorydescpriv) | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/deletePrivacyData`](services/lg.thinqai.adapter.md#deleteprivacydata) | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| [`luna://lg.thinqai.adapter/vid/deleteVoiceId`](services/lg.thinqai.adapter.md#vid_deletevoiceid) | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
