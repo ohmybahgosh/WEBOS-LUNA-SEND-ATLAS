@@ -646,7 +646,7 @@ The best contribution is a dump from your TV:
 
 Payloads you've worked out with `ls-monitor` tracing are just as welcome.  Please include where you saw it.
 
-Before committing, run `sh scripts/scrub-check.sh`.  It fails on MAC/public-IP/credential/email leaks and on homebrew/sideloaded app buses.  The build filters out only homebrew apps (the Homebrew Channel ecosystem `org.webosbrew.*` and sideloaded apps under the bare `app.*` namespace) so a dump never advertises what you installed.  Everything stock is kept: system services, dev mode (`com.palmdts.*`), and the preinstalled vendor integrations (Alexa, Google Assistant, ThinQ, Netflix, AirPlay, and so on).
+Before committing, run `sh scripts/scrub-check.sh`.  It fails on MAC/public-IP/credential/email leaks and on homebrew/sideloaded app buses.  The build filters out only homebrew / sideloaded apps so a dump never advertises what you installed.  A dump is sideloaded when its app is installed under `/media/developer` (dev mode), and `scripts/luna-dump.sh` records those service names so `parse_dump.py` drops them by install location; the build and scrub-check also carry a static backstop list (`org.webosbrew.*`, the bare `app.*` namespace, `org.ohmybahgosh.*`, `org.aabytt.*`, `com.beb.plxnative`, ...).  Everything stock is kept: system services, dev mode itself (`com.palmdts.*`), and the preinstalled vendor integrations (Alexa, Google Assistant, ThinQ, Netflix, AirPlay, and so on).
 
 ## Roadmap
 

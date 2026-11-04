@@ -60,6 +60,13 @@ for p in /usr/palm/services/com.webos.service.secondscreen.gateway/interfaces \
   [ -e "$p" ] && { mkdir -p "$DIR/files$(dirname "$p")"; cp -r "$p" "$DIR/files$p" 2>/dev/null; }
 done
 
+# 4b. homebrew / sideloaded service names, so the catalog can filter them out.
+# Any service whose app is installed under /media/developer is dev-sideloaded
+# (homebrew), as opposed to stock (/usr/palm) or store (/media/cryptofs).
+ls /media/developer/apps/usr/palm/services 2>/dev/null | sort -u > "$DIR/homebrew-services.txt"
+ls /media/developer/apps/usr/palm/applications 2>/dev/null | sort -u > "$DIR/homebrew-apps.txt"
+echo "[*] $(wc -l < "$DIR/homebrew-services.txt" 2>/dev/null) homebrew services, $(wc -l < "$DIR/homebrew-apps.txt" 2>/dev/null) homebrew apps (will be filtered out)"
+
 # 5. pack
 cd "$OUT_BASE" && tar czf "luna-dump-$MODEL-$TS.tar.gz" "luna-dump-$MODEL-$TS" \
   && echo "[+] Done: $OUT_BASE/luna-dump-$MODEL-$TS.tar.gz"

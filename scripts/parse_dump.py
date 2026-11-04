@@ -68,12 +68,26 @@ def main():
             r = json.loads(line)
             known.add((r["service"].lower(), r["method"].lower().lstrip("/")))
 
+    # homebrew/sideloaded services (dev-installed) to exclude: exact names the
+    # dump captured from /media/developer, plus the known homebrew publishers.
+    hb_names = set()
+    hbf = os.path.join(root, "homebrew-services.txt")
+    if os.path.exists(hbf):
+        hb_names = {ln.strip().lower() for ln in open(hbf) if ln.strip()}
+    HB_PREFIX = ("org.webosbrew.", "app.", "org.ohmybahgosh.", "org.aabytt.",
+                 "com.beb.plxnative", "com.open.hidden.", "com.tvweb.")
+    def is_homebrew(svc):
+        s = svc.lower()
+        return s in hb_names or any(s.startswith(p) for p in HB_PREFIX)
+
     idir = os.path.join(root, "lsi")
     total, new, seen = 0, [], set()
     for f in sorted(os.listdir(idir)) if os.path.isdir(idir) else []:
         if not f.endswith(".json"):
             continue
         svc = base_name(f[:-5])
+        if is_homebrew(svc):
+            continue
         try:
             doc = json.load(open(os.path.join(idir, f)))
         except Exception:

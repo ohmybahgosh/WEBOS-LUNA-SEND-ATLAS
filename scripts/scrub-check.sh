@@ -40,7 +40,7 @@ for l in open("catalog/luna-catalog.jsonl"):
     l=l.strip()
     if not l: continue
     s=json.loads(l)["service"]
-    if s.startswith(("org.webosbrew.","app.")):
+    if s.startswith(("org.webosbrew.","app.","org.ohmybahgosh.","org.aabytt.","com.beb.plxnative","com.open.hidden.","com.tvweb.")):
         bad.add(s)
 print("\n".join(sorted(bad)))
 PY
