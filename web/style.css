@@ -87,3 +87,4 @@ button.act:disabled{opacity:.45;cursor:default}
 #code:focus{outline:none;border-color:var(--green)}
 .login-err{color:#ff8a84;font-size:14px;margin-bottom:12px}
 .login .act{width:100%}
+.inferred-note{color:var(--warn);font-size:13px;font-style:italic;opacity:.85;margin:-6px 0 14px}

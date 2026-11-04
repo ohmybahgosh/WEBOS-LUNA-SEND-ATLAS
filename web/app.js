@@ -99,6 +99,7 @@
     if (m.d) meta.appendChild(el("span", "badge b-danger", "dangerous"));
     meta.appendChild(el("span", "badge b-unknown", m.c)); d.appendChild(meta);
     if (m.desc) d.appendChild(el("div", "desc", m.desc));
+    if (m.dc === "inferred") d.appendChild(el("div", "inferred-note", "Description inferred from the method name. Parameters are not publicly documented."));
     var pk = Object.keys(m.p || {});
     if (pk.length) { var t = el("table", "p"); pk.forEach(function (k) { var tr = el("tr"); tr.appendChild(el("td", "k", k)); tr.appendChild(el("td", null, m.p[k])); t.appendChild(tr); }); d.appendChild(t); }
     d.appendChild(el("label", "lbl", "Payload (JSON)"));

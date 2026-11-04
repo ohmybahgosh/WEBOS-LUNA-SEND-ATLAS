@@ -116,3 +116,4 @@ footer .right { margin-left: auto; }
 .webact{font-size:24px;font-weight:700;padding:14px 32px;border-radius:14px;border:2px solid var(--bad);background:#2a1312;color:#ff8a84;cursor:pointer}
 .webact:focus{outline:none;border-color:#ff8a84;box-shadow:0 0 0 4px rgba(255,95,87,.35)}
 .webpanel-hint{color:#6f7f78;font-size:22px;margin-top:28px;text-align:center}
+.inferred-note{color:#febc2e;font-size:16px;font-style:italic;opacity:.8;margin:2px 0 12px}

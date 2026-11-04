@@ -123,7 +123,7 @@ Build it with [`webos-app/build.sh`](webos-app/build.sh); details in [`webos-app
 
 ## The catalog
 
-8,127 methods across 501 services.  Machine-readable in [`catalog/luna-catalog.json`](catalog/luna-catalog.json) / [`.jsonl`](catalog/luna-catalog.jsonl); a grep-friendly [`catalog/index.tsv`](catalog/index.tsv) feeds the script.  One page per service under [`docs/services/`](docs/services/), grouped by category under [`docs/categories/`](docs/categories/).
+8,167 methods across 501 services.  Machine-readable in [`catalog/luna-catalog.json`](catalog/luna-catalog.json) / [`.jsonl`](catalog/luna-catalog.jsonl); a grep-friendly [`catalog/index.tsv`](catalog/index.tsv) feeds the script.  One page per service under [`docs/services/`](docs/services/), grouped by category under [`docs/categories/`](docs/categories/).
 
 Deeper references: [luna-send basics](docs/luna-send-basics.md) · [SSAP + the createAlert trick](docs/ssap-and-createalert.md) · [SSAP routing](docs/ssap-routing-W22O.md) · [settings keys](docs/settings-keys.md) · [hidden menus](docs/hidden-menus.md) · [calibration](docs/calibration.md) · [dangerous calls](docs/dangerous.md) · [sensitive services](docs/sensitive-services.md) · [TV dumps](docs/tv-dumps.md).
 
@@ -137,7 +137,19 @@ Deeper references: [luna-send basics](docs/luna-send-basics.md) · [SSAP + the c
 | `ssap` | 100 |
 | `root` | 35 |
 
-`public` = callable by apps with the right permission.  `private` = needs root or system rights.  `ssap` = reachable over the SSAP websocket.  `unknown` = the source didn't say.  Confidence: `documented` (official docs), `code` (source / firmware / introspection), `community` (forums, wikis, gists).
+`public` = callable by apps with the right permission.  `private` = needs root or system rights.  `ssap` = reachable over the SSAP websocket.  `unknown` = the source didn't say.
+
+### How descriptions are sourced
+
+Every method carries a `confidence` flag (column 9 of `index.tsv`, `dc` in the app catalog) so nothing reads as more certain than it is:
+
+| Confidence | Methods | What it means |
+|---|---|---|
+| `documented` | 2,318 | Described from an authoritative source: the [webOS OSE LS2 API reference](https://www.webosose.org/docs/reference/ls2-api/) (CC-BY 4.0), official LG docs, or community tools.  Parameters and return fields are real where shown. |
+| `inferred` | 5,847 | These are LG-proprietary services with no public documentation and no readable source (native firmware binaries).  The one-line description is derived **only from the method's own name** — e.g. `getLockStatusforSubscribe` → "Returns the lock status (subscription variant)".  **No parameters are invented.**  Treat these as a best-effort guide, not verified behaviour. |
+| `stub` | 2 | Name only, no description yet. |
+
+The method names, access levels, ACG permission groups, and danger flags are all real (from the on-device permission registry).  Recovering real parameter schemas for the `inferred` methods needs the running device, which reports what each call requires — a planned follow-up.
 
 ### Categories
 

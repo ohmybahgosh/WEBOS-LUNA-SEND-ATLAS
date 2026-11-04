@@ -104,6 +104,7 @@ cmd_show() {
       printf "  %ssubscribe%s %s\n", d,z,($6=="1"?"yes":"no")
       if($5=="1") printf "  %sDANGEROUS%s this call can change or damage the TV\n", r,z
       printf "  %sabout%s     %s\n", d,z,$8
+      if($9=="inferred") printf "  %snote%s      description inferred from the method name; parameters not publicly documented\n", y,z
       printf "\n  %srun it:%s\n    luna-send -n 1 -f %s %s{}%s\n", b,z,$3,d,z
       exit
     }
