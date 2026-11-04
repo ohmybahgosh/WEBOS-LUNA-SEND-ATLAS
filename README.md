@@ -1,17 +1,55 @@
 # WEBOS-LUNA-SEND-ATLAS
 
-**The most complete public reference of LG webOS TV `luna-send` (Luna Service Bus) commands.**  8,127 methods across 501 Luna services, each with its URI, parameters, example command, access level, platform and sources.
+[![Release](https://img.shields.io/github/v/release/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS?sort=semver)](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS/releases/latest)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Methods](https://img.shields.io/badge/methods-8%2C127-3ddc97)](catalog/luna-catalog.jsonl)
+[![Services](https://img.shields.io/badge/services-501-22e584)](#services)
+[![webOS](https://img.shields.io/badge/webOS-4%2B-22e584)](#the-app)
+[![GitHub stars](https://img.shields.io/github/stars/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS?style=social)](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS/stargazers)
 
-There are lots of scattered gists, forum posts and library source files that each document a handful of luna calls.  This repo pulls all of them together, plus the official webOS TV and webOS OSE references, plus method lists introspected from a retail TV, into one searchable, machine-readable catalog.
+<img src="app/assets/banner.png" width="100%" alt="Luna Atlas: every LG webOS luna-send command, on your TV.  The most complete reference of the webOS Luna Service Bus, 8,127 methods across 501 services, with params, examples and a webOS app to run them from the couch.">
+
+**The most complete public reference of LG webOS TV `luna-send` (Luna Service Bus) commands.**  8,127 methods across 501 Luna services, each with its URI, parameters, example command, access level, platform and sources, plus a webOS app to run them from the remote.
+
+There are lots of scattered gists, forum posts and library source files that each document a handful of luna calls.  This repo pulls all of them together, plus the official webOS TV and webOS OSE references, plus the full method list introspected from a real retail TV, into one searchable, machine-readable catalog.
 
 > ⚠️ Some of these calls can factory reset, wipe, or semi-permanently change your TV.  They're flagged ⚠️ and listed in [docs/dangerous.md](docs/dangerous.md).  Read [docs/luna-send-basics.md](docs/luna-send-basics.md) first.
+
+## Contents
+
+- [The app](#the-app)
+- [Quick start](#quick-start)
+- [What's inside](#whats-inside)
+- [Coverage](#coverage)
+- [Categories](#categories)
+- [Services](#services)
+- [Record schema](#record-schema)
+- [Dump your own TV](#dump-your-own-tv)
+- [Scope and safety](#scope-and-safety)
+- [Credits](#credits)
+- [License](#license)
+- [Author](#author)
+
+## The app
+
+**Luna Atlas** puts the whole catalog on the TV: browse by service or category, search, read the parameters, edit a JSON payload and **run** the call, all from the remote.  Dangerous calls are gated behind a confirm, and every method has a **Copy luna-send** button for pasting into SSH.  It is a webOS app in [`app/`](app/); build the IPK with [`app/README.md`](app/README.md).
+
+<p align="center">
+  <img src="app/assets/app-tv.gif" width="100%" alt="Luna Atlas running on an LG TV: filtering by the power category, searching for createToast and opening its detail with the parameter list, copying the luna-send command, then selecting the dangerous tvpower reboot method and seeing the red confirm gate.">
+</p>
+
+<img src="app/assets/screenshots/detail-createtoast.png" width="100%" alt="Luna Atlas detail view: a search for createToast, the com.webos.notification service selected, and the createToast method open on the right with a green public badge, its luna URI, description and a table of parameters (sourceId, iconUrl, message, onclick, noaction, stale) with their types.">
+
+<img src="app/assets/screenshots/danger-reboot.png" width="100%" alt="Luna Atlas with the tvpower power/reboot method selected: a private badge, a red dangerous badge, an editable JSON payload box, and a red confirmation bar reading 'This call can change or damage the TV' with an I understand checkbox that must be ticked before Run is enabled.">
+
+<img src="app/assets/screenshots/category-power.png" width="100%" alt="Luna Atlas filtered to the power category: the power chip highlighted green, the service list on the left showing power-related services, and their methods in the middle column.">
 
 ## Quick start
 
 ```sh
 # Rooted TV, over SSH
 luna-send -n 1 -f luna://com.webos.notification/createToast '{"message":"Hello from luna-send"}'
-luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getSystemInfo '{"keys":["modelName","firmwareVersion","sdkVersion"]}'
+luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getSystemInfo '{"keys":["modelName","sdkVersion"]}'
 luna-send -n 1 -f luna://com.webos.applicationManager/listApps '{}'
 luna-send -n 1 -f luna://com.webos.settingsservice/getSystemSettings '{"category":"picture","keys":["pictureMode","backlight"]}'
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/turnOffScreen '{}'
@@ -24,18 +62,18 @@ No root?  Developer Mode gives you `luna-send-pub` (public methods only), and a 
 | Path | What |
 |---|---|
 | [`catalog/luna-catalog.json`](catalog/luna-catalog.json) / [`.jsonl`](catalog/luna-catalog.jsonl) | The full machine-readable catalog (schema below) |
+| [`app/`](app/) | **Luna Atlas**: on-TV webOS app to browse the catalog and run commands (IPK) |
 | [`docs/services/`](docs/services/) | One page per service: every method, params, example, sources |
 | [`docs/categories/`](docs/categories/) | Same methods grouped by what they do |
 | [`docs/luna-send-basics.md`](docs/luna-send-basics.md) | Flags, root vs pub, ACG permissions, how to discover methods yourself |
 | [`docs/ssap-and-createalert.md`](docs/ssap-and-createalert.md) | SSAP websocket protocol, SSAP to luna mapping, the createAlert trick |
-| [`docs/ssap-routing-W22O.md`](docs/ssap-routing-W22O.md) | Authoritative SSAP→luna routes + permissions from a real webOS 7.0 TV |
+| [`docs/ssap-routing-W22O.md`](docs/ssap-routing-W22O.md) | Authoritative SSAP->luna routes + permissions from a real TV |
 | [`docs/settings-keys.md`](docs/settings-keys.md) | Every `getSystemSettings` / `setSystemSettings` category, key and allowed value |
 | [`docs/hidden-menus.md`](docs/hidden-menus.md) | Service menus and special app launches |
 | [`docs/calibration.md`](docs/calibration.md) | The `externalpq` calibration API (1D/3D LUTs, gamut, patterns) |
 | [`docs/dangerous.md`](docs/dangerous.md) | Calls that can hurt your TV |
 | [`docs/sensitive-services.md`](docs/sensitive-services.md) | sdx / ACR / DRM / Widevine, documented not weaponized |
 | [`docs/tv-dumps.md`](docs/tv-dumps.md) | Which real TVs / firmware the catalog was introspected from |
-| [`app/`](app/) | **Luna Atlas**: on-TV webOS app to browse the catalog and run commands (IPK) |
 | [`scripts/luna-dump.sh`](scripts/luna-dump.sh) | Read-only on-TV enumerator: dumps every service + method on *your* firmware |
 | [`scripts/parse_dump.py`](scripts/parse_dump.py) | Diffs a dump against the catalog so new methods can be contributed |
 
@@ -53,7 +91,6 @@ No root?  Developer Mode gives you `luna-send-pub` (public methods only), and a 
 
 Confidence levels: `documented` (official LG / webOS OSE docs), `code` (seen in source code, firmware metadata or on-device introspection), `community` (forums, wikis, gists).
 
-<a id="categories"></a>
 ## Categories
 
 | Category | Methods |
@@ -86,7 +123,6 @@ Confidence levels: `documented` (official LG / webOS OSE docs), `code` (seen in 
 | [Key Management](docs/categories/keys.md) | 13 |
 | [Sound](docs/categories/sound.md) | 1 |
 
-<a id="services"></a>
 ## Services
 
 ### webOS TV (445)
@@ -637,34 +673,34 @@ Present in the open source edition.  Many of these also exist on TVs under the s
 }
 ```
 
-## Contributing
+## Dump your own TV
 
-The best contribution is a dump from your TV:
+The best contribution is a dump from your own firmware:
 
-1. Copy `scripts/luna-dump.sh` to a rooted TV and run `sh luna-dump.sh /tmp` (read-only; it never calls a service method).
+1. Copy `scripts/luna-dump.sh` to a rooted TV and run `sh luna-dump.sh /tmp` (read-only; it introspects services, it never calls one).
 2. Run `python3 scripts/parse_dump.py /tmp/luna-dump-*.tar.gz` on your PC.
 3. Open a PR or issue with `new-methods.jsonl` and your model + webOS version.
 
 Payloads you've worked out with `ls-monitor` tracing are just as welcome.  Please include where you saw it.
 
-Before committing, run `sh scripts/scrub-check.sh`.  It fails on MAC/public-IP/credential/email leaks and on homebrew/sideloaded app buses.  The build filters out only homebrew / sideloaded apps so a dump never advertises what you installed.  A dump is sideloaded when its app is installed under `/media/developer` (dev mode), and `scripts/luna-dump.sh` records those service names so `parse_dump.py` drops them by install location; the build and scrub-check also carry a static backstop list (`org.webosbrew.*`, the bare `app.*` namespace, `org.ohmybahgosh.*`, `org.aabytt.*`, `com.beb.plxnative`, ...).  Everything stock is kept: system services, dev mode itself (`com.palmdts.*`), and the preinstalled vendor integrations (Alexa, Google Assistant, ThinQ, Netflix, AirPlay, and so on).
+Before committing, run `sh scripts/scrub-check.sh`.  It fails on MAC / public-IP / credential / email leaks and on homebrew / sideloaded app buses.  The build filters out only homebrew apps (installed under `/media/developer`) so a dump never advertises what you installed; everything stock is kept, including dev mode (`com.palmdts.*`) and the preinstalled vendor integrations (Alexa, Google Assistant, ThinQ, Netflix, AirPlay, ...).
 
-## Roadmap
+## Scope and safety
 
-- [x] Catalog from official docs, community sources, remote-control libraries and on-device introspection
-- [x] Read-only on-device dumper + diff tool
-- [x] First full retail-TV dump folded in (webOS 7.0, W22O)
-- [ ] Dumps from more firmware (webOS 3 through 25) to fill in per-version availability
-- [ ] Params for the ~450 introspection-only TV methods (via `ls-monitor` tracing)
-- [x] Companion webOS app (IPK): browse the catalog and run commands on the TV ([app/](app/))
-- [ ] SSH/CLI helper with search, autocomplete and saved favorites
+Out of scope on purpose: DRM, LG account/store authentication, region or country lock bypass, and anything else that circumvents licensing or security protections.  The sensitive services (sdx, ACR, DRM, Widevine) are documented by what they do, not how to defeat them, see [docs/sensitive-services.md](docs/sensitive-services.md).
 
-## Scope
-
-Out of scope on purpose: DRM, LG account/store authentication, region or country lock bypass, and anything else that circumvents licensing or security protections.
+Running a command here is exactly as safe or unsafe as typing the same `luna-send` yourself.  The ⚠️ flag and the app's confirm gate are there to slow you down on the calls that can hurt the TV.
 
 ## Credits
 
-Built by [OhMyBahGosh](https://github.com/ohmybahgosh).  This catalog stands on the work of the webOS OSE docs team, LG's webOS TV developer docs, [webosbrew](https://github.com/webosbrew), [openlgtv](https://github.com/openlgtv), [bscpylgtv](https://github.com/chros73/bscpylgtv), [LGTV Companion](https://github.com/JPersson77/LGTVCompanion), and many other projects listed in [SOURCES.md](SOURCES.md).
+This catalog stands on the work of the webOS OSE docs team, LG's webOS TV developer docs, [webosbrew](https://github.com/webosbrew), [openlgtv](https://github.com/openlgtv), [bscpylgtv](https://github.com/chros73/bscpylgtv), [LGTV Companion](https://github.com/JPersson77/LGTVCompanion), [Glasshouse](https://github.com/rorygallagher2024/glasshouse), and many other projects listed in [SOURCES.md](SOURCES.md).
 
 Not affiliated with LG Electronics.  webOS is a trademark of LG Electronics.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
+
+## Author
+
+Built by **OhMyBahGosh**.  More LG webOS homebrew (including [TiviBro](https://github.com/ohmybahgosh/TiviBro), [LG-USB-2-ETH0](https://github.com/ohmybahgosh/LG-USB-2-ETH0) and a [one-line Entware installer](https://github.com/ohmybahgosh/WEBOS-ENTWARE-INSTALLER)) at [ohmybahgosh.dev](https://ohmybahgosh.dev).
