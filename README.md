@@ -5,6 +5,7 @@
 [![Methods](https://img.shields.io/badge/methods-8%2C127-3ddc97)](catalog/luna-catalog.jsonl)
 [![Services](https://img.shields.io/badge/services-501-22e584)](#services)
 [![webOS](https://img.shields.io/badge/webOS-4%2B-22e584)](#the-app)
+[![Status](https://img.shields.io/badge/status-heavy%20active%20development-f59e0b)](#status)
 [![GitHub stars](https://img.shields.io/github/stars/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS?style=social)](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS/stargazers)
 
 <img src="app/assets/banner.png" width="100%" alt="Luna Atlas: every LG webOS luna-send command, on your TV.  The most complete reference of the webOS Luna Service Bus, 8,127 methods across 501 services, with params, examples and a webOS app to run them from the couch.">
@@ -13,7 +14,17 @@
 
 There are lots of scattered gists, forum posts and library source files that each document a handful of luna calls.  This repo pulls all of them together, plus the official webOS TV and webOS OSE references, plus the full method list introspected from a real retail TV, into one searchable, machine-readable catalog.
 
-> ⚠️ Some of these calls can factory reset, wipe, or semi-permanently change your TV.  They're flagged ⚠️ and listed in [docs/dangerous.md](docs/dangerous.md).  Read [docs/luna-send-basics.md](docs/luna-send-basics.md) first.
+<a id="status"></a>
+> [!IMPORTANT]
+> **Under heavy active development.**  The catalog, the docs and the Luna Atlas app are all changing fast.  Method names are solid, but many parameters are still being filled in, categories may move, and the app is pre-release.  Expect breaking changes and re-dumps; pin a commit if you need something stable.
+
+> [!WARNING]
+> **This drives real services on your TV.**  Many calls change settings, inputs, power or the panel, and a few can factory reset, wipe data, or brick the set.  Those are flagged ⚠️ and listed in [docs/dangerous.md](docs/dangerous.md).  Running a command here, or in the app, is exactly as safe or unsafe as typing the same `luna-send` yourself.  Use at your own risk; there is no warranty (see [LICENSE](LICENSE)).  `luna-send` needs a rooted TV or Developer Mode.  Read [docs/luna-send-basics.md](docs/luna-send-basics.md) first.
+
+> [!NOTE]
+> **How this is built.**  I, [OhMyBahGosh](https://github.com/ohmybahgosh), build this with AI coding agents (Claude), directed, reviewed and tested by me.  I've been building software for over 17 years; my day job is data engineering, and security and pentesting are what I do for fun.  AI does a lot of the work here: I decide what goes in, check how it's done, and verify it against a real TV (an LG C2 on webOS 22).
+>
+> The catalog is pulled together from the official webOS TV and webOS OSE docs, the homebrew and remote-control community, and the full service list introspected from my own rooted TV.  Where a method is only a name with no parameters yet, it says so.  Nothing is scraped blindly: every record lists the exact source it came from, and a scrub step ([scripts/scrub-check.sh](scripts/scrub-check.sh)) keeps personal data and installed-app names out.  Commits are mine, pushed from my own machine.
 
 ## Contents
 
