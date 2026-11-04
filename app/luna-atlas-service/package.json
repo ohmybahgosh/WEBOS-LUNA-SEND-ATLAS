@@ -1,0 +1,7 @@
+{
+  "name": "org.ohmybahgosh.lunaatlas.service",
+  "version": "1.0.0",
+  "main": "service.js",
+  "private": true,
+  "comment": "webos-service is provided by the TV runtime (/usr/lib/node_modules); not bundled."
+}

@@ -2,3 +2,6 @@ new-methods.jsonl
 ssap-routing.md
 luna-dump-*
 __pycache__/
+
+app/dist/
+app/luna-atlas-service/node_modules/

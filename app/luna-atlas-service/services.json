@@ -1,0 +1,14 @@
+{
+  "id": "org.ohmybahgosh.lunaatlas.service",
+  "description": "Luna Atlas bridge: relays a chosen luna URI + payload to the bus",
+  "services": [
+    {
+      "name": "org.ohmybahgosh.lunaatlas.service",
+      "description": "Luna Atlas bridge",
+      "commands": [
+        { "name": "run", "description": "Relay a luna-send call and return the reply" },
+        { "name": "status", "description": "Report bridge availability and whether it runs as root" }
+      ]
+    }
+  ]
+}

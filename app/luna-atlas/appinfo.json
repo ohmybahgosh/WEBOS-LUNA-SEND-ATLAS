@@ -1,0 +1,19 @@
+{
+  "id": "org.ohmybahgosh.lunaatlas",
+  "version": "1.0.0",
+  "vendor": "OhMyBahGosh",
+  "type": "web",
+  "main": "index.html",
+  "title": "Luna Atlas",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "iconColor": "#0d1117",
+  "bgColor": "#0d1117",
+  "disableBackHistoryAPI": true,
+  "handlesRelaunch": true,
+  "requiredPermissions": [
+    "time.query",
+    "activity.operation",
+    "applications.operation"
+  ]
+}

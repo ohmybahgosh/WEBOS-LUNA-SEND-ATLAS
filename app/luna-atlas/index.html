@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280, initial-scale=1">
+<title>Luna Atlas</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Luna&nbsp;Atlas</h1>
+    <input id="search" type="text" placeholder="Search methods, e.g. toast, setSystemSettings, tvpower">
+    <span id="stats" class="stats"></span>
+  </header>
+  <div id="cats" class="cats"></div>
+  <main>
+    <nav id="svclist" class="pane" tabindex="0"></nav>
+    <section id="methodlist" class="pane" tabindex="0"></section>
+    <section id="detail" class="pane detail"></section>
+  </main>
+  <footer>
+    <span id="hint">Arrow keys move - Enter selects - Back/Esc returns. Red = can change/damage the TV.</span>
+  </footer>
+</div>
+<script src="js/luna.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

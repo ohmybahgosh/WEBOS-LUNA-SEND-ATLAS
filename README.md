@@ -35,6 +35,7 @@ No root?  Developer Mode gives you `luna-send-pub` (public methods only), and a 
 | [`docs/dangerous.md`](docs/dangerous.md) | Calls that can hurt your TV |
 | [`docs/sensitive-services.md`](docs/sensitive-services.md) | sdx / ACR / DRM / Widevine, documented not weaponized |
 | [`docs/tv-dumps.md`](docs/tv-dumps.md) | Which real TVs / firmware the catalog was introspected from |
+| [`app/`](app/) | **Luna Atlas**: on-TV webOS app to browse the catalog and run commands (IPK) |
 | [`scripts/luna-dump.sh`](scripts/luna-dump.sh) | Read-only on-TV enumerator: dumps every service + method on *your* firmware |
 | [`scripts/parse_dump.py`](scripts/parse_dump.py) | Diffs a dump against the catalog so new methods can be contributed |
 
@@ -655,7 +656,7 @@ Before committing, run `sh scripts/scrub-check.sh`.  It fails on MAC/public-IP/c
 - [x] First full retail-TV dump folded in (webOS 7.0, W22O)
 - [ ] Dumps from more firmware (webOS 3 through 25) to fill in per-version availability
 - [ ] Params for the ~450 introspection-only TV methods (via `ls-monitor` tracing)
-- [ ] Companion webOS app (IPK) to browse the catalog and run commands on the TV through a homebrew service
+- [x] Companion webOS app (IPK): browse the catalog and run commands on the TV ([app/](app/))
 - [ ] SSH/CLI helper with search, autocomplete and saved favorites
 
 ## Scope
