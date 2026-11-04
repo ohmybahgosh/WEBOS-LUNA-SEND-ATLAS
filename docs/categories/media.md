@@ -1,0 +1,202 @@
+# Media Playback
+
+196 methods.  [Back to index](../../README.md#categories)
+
+| URI | Access | Description |
+|---|---|---|
+| [`luna://com.palm.mediadb/image/listalbums`](../services/com.palm.mediadb.md#image_listalbums) | root | Lists photo albums from mediadb |
+| [`luna://com.palm.mediadb/image/listimages`](../services/com.palm.mediadb.md#image_listimages) | root | Lists images from mediadb |
+| [`luna://com.webos.media/acbs`](../services/com.webos.media.md#acbs) | unknown | Array of objects that gives details of media for foreground application (such as pipeline Id, playstate, position, etc.) |
+| [`luna://com.webos.media/acquire`](../services/com.webos.media.md#acquire) | public | Requests resources from the mediaserver. Typical usage is to request the number of audio and video decoders or other hardware components used by the pipeline. A |
+| [`luna://com.webos.media/acquireComplete`](../services/com.webos.media.md#acquirecomplete) | unknown | This event is invoked when the acquire request is performed and the result comes out. |
+| [`luna://com.webos.media/attach`](../services/com.webos.media.md#attach) | public | Allows to transfer the control of a pipeline to be handed over to a different client. When this occurs, the original client gets notified that it got detached f |
+| [`luna://com.webos.media/audio`](../services/com.webos.media.md#audio) | unknown | Set a audio information for either video and audio or audio only recording. |
+| [`luna://com.webos.media/audioInfo`](../services/com.webos.media.md#audioinfo) | unknown | Provides information related to audio. |
+| [`luna://com.webos.media/bufferingEnd`](../services/com.webos.media.md#bufferingend) | unknown | Indicates the pipeline is resuming playback after filling buffers. |
+| [`luna://com.webos.media/bufferingStart`](../services/com.webos.media.md#bufferingstart) | unknown | Indicates the pipeline is temporarily pausing playback internally in order to buffer more data. |
+| [`luna://com.webos.media/bufferRange`](../services/com.webos.media.md#bufferrange) | unknown | Indicates the buffering range of the particular media content. It is raised multiple times when specific media is loaded. |
+| [`luna://com.webos.media/contentReady`](../services/com.webos.media.md#contentready) | unknown | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`luna://com.webos.media/currentTime`](../services/com.webos.media.md#currenttime) | unknown | The currentTime event is raised multiple times when a specific media is playing. It indicates the progress of the media being played and provides the current ti |
+| [`luna://com.webos.media/detached`](../services/com.webos.media.md#detached) | unknown | The detached event is raised when a specific media has been detached from the client by another client attaching to the corresponding pipeline. The detached eve |
+| [`luna://com.webos.media/display_attr`](../services/com.webos.media.md#display_attr) | unknown | Provides detailed information for display resource. |
+| [`luna://com.webos.media/endOfStream`](../services/com.webos.media.md#endofstream) | unknown | The endOfStream event is raised when a specific media has received all of its data. |
+| [`luna://com.webos.media/error`](../services/com.webos.media.md#error) | unknown | The error event reports errors thrown by pipelines. |
+| [`luna://com.webos.media/focus`](../services/com.webos.media.md#focus) | unknown | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`luna://com.webos.media/frameRate`](../services/com.webos.media.md#framerate) | unknown | Provides information about the number of frames per second at which the video is being played. It is represented as a combination of numerator and denominator. |
+| [`luna://com.webos.media/getActivePipelines`](../services/com.webos.media.md#getactivepipelines) | public | Gets JSON formatted output of currently active media pipelines. Note: Typically, a luna methods returns a JSON object as response. However, in this case, an arr |
+| [`luna://com.webos.media/getDisplayId`](../services/com.webos.media.md#getdisplayid) | public | Gets information about the display on which the specified application instance is launched. Note: This method supports multi-screen playback. |
+| [`luna://com.webos.media/getForegroundAppInfo`](../services/com.webos.media.md#getforegroundappinfo) | public | Provides the application's foreground information. |
+| [`luna://com.webos.media/getPipelineState`](../services/com.webos.media.md#getpipelinestate) | public | Requests the media server to retrieve pipeline state information. |
+| [`luna://com.webos.media/image`](../services/com.webos.media.md#image) | unknown | Set a image information for snapshot a image. |
+| [`luna://com.webos.media/load`](../services/com.webos.media.md#load) | public | Loads a new pipeline for the specified URI. The media server returns a unique id to the client which is used for subsequent operations on the pipeline. |
+| [`luna://com.webos.media/loadCompleted`](../services/com.webos.media.md#loadcompleted) | unknown | The loadCompleted event is raised when a specific media pipeline has been successfully loaded. |
+| [`luna://com.webos.media/mediaId`](../services/com.webos.media.md#mediaid) | unknown | Unique identifier of the loaded media/camera pipeline. |
+| [`luna://com.webos.media/mediaPipelines`](../services/com.webos.media.md#mediapipelines) | unknown | Contains the AppID-PID mapping of the currently running pipelines. Returns an empty array if no pipelines associated with any applications. Each array element i |
+| [`luna://com.webos.media/notifyActivity`](../services/com.webos.media.md#notifyactivity) | public | Notifies the media server that the specific pipeline is currently in use. This command raises the timestamp record of the corresponding pipeline to lessen the c |
+| [`luna://com.webos.media/notifyBackground`](../services/com.webos.media.md#notifybackground) | public | Marks a pipeline as background. This API is called when the media object in question is carded, deleted, or otherwise removed from view. Note: Background video  |
+| [`luna://com.webos.media/notifyForeground`](../services/com.webos.media.md#notifyforeground) | public | Marks a pipeline as foreground. This API is called when the media object in question is un-carded and made visible. Note: Foreground pipeline video content is c |
+| [`luna://com.webos.media/notifyPipelineStatus`](../services/com.webos.media.md#notifypipelinestatus) | public | Notifies the playback status of media pipelines. |
+| [`luna://com.webos.media/option`](../services/com.webos.media.md#option) | unknown | Provides parameters for pipeline's Information. |
+| [`luna://com.webos.media/pause`](../services/com.webos.media.md#pause) | public | Requests the media server to pause the media object. |
+| [`luna://com.webos.media/paused`](../services/com.webos.media.md#paused) | unknown | The paused event is raised when a specific media has been successfully paused. |
+| [`luna://com.webos.media/payload`](../services/com.webos.media.md#payload) | unknown | Payload format used in load API. It represents the JSON payload object for a specific type of pipeline. |
+| [`luna://com.webos.media/play`](../services/com.webos.media.md#play) | public | Requests the media server to play the media object. |
+| [`luna://com.webos.media/playing`](../services/com.webos.media.md#playing) | unknown | The playing event is raised once, in response to the play method, when a specified media pipeline has transitioned into the playing state. |
+| [`luna://com.webos.media/policyAction`](../services/com.webos.media.md#policyaction) | unknown | The policyAction event is invoked when the resources are short of quantity to playing new media content and request pipeline to release regarding resource. |
+| [`luna://com.webos.media/procUpdate`](../services/com.webos.media.md#procupdate) | unknown | The procUpdate object value is an object of type: {"appId" : string, "exec" : bool, "pid" : number} where exec is true when a pipeline appid mapping is added an |
+| [`luna://com.webos.media/programs`](../services/com.webos.media.md#programs) | unknown | Provides audio/video stream information. |
+| [`luna://com.webos.media/reacquire`](../services/com.webos.media.md#reacquire) | public | Dynamically adds more resources to the pipeline. |
+| [`luna://com.webos.media/registerMedia`](../services/com.webos.media.md#registermedia) | public | Media Content Provider (unmanaged) must register with Media Display Controller to allow proper management of video content and displays or audio outputs. NOTE:  |
+| [`luna://com.webos.media/registerPipeline`](../services/com.webos.media.md#registerpipeline) | public | Registers with the Resource Manager. Session is persistent across all start/end transaction and acquire/release cycles. Registered clients and their current res |
+| [`luna://com.webos.media/release`](../services/com.webos.media.md#release) | public | Informs media server the resources are released correctly and are not being used anymore. Note: This method is applicable for unmanaged pipelines only. |
+| [`luna://com.webos.media/ResourceDetails`](../services/com.webos.media.md#resourcedetails) | unknown | Details of the resource. |
+| [`luna://com.webos.media/resources`](../services/com.webos.media.md#resources) | unknown | Object of resource name, quantity, and index. Resources can hold more than one set of resource, quantity, and index. Example { "resources": " [{ "resource": "DI |
+| [`luna://com.webos.media/resources_new`](../services/com.webos.media.md#resources_new) | unknown | Object indicating the new and old resource. |
+| [`luna://com.webos.media/ResponseObject`](../services/com.webos.media.md#responseobject) | unknown | Provides a detailed description of the object. Limit to 2-3 paragraphs. |
+| [`luna://com.webos.media/seek`](../services/com.webos.media.md#seek) | public | Seeks the media object to a specified time position. |
+| [`luna://com.webos.media/seekDone`](../services/com.webos.media.md#seekdone) | unknown | The seekDone event is raised when a seek operation for a media has been successfully completed. |
+| [`luna://com.webos.media/selectTrack`](../services/com.webos.media.md#selecttrack) | unknown | Selects an audio or subtitle track of an open pipeline |
+| [`luna://com.webos.media/setDisplayWindow`](../services/com.webos.media.md#setdisplaywindow) | unknown | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`luna://com.webos.media/setPlayRate`](../services/com.webos.media.md#setplayrate) | public | Sets the pipeline media play rate. |
+| [`luna://com.webos.media/setSubtitleBackgroundColor`](../services/com.webos.media.md#setsubtitlebackgroundcolor) | unknown | Sets subtitle background color for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleBackgroundOpacity`](../services/com.webos.media.md#setsubtitlebackgroundopacity) | unknown | Sets subtitle background opacity for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleCharacterColor`](../services/com.webos.media.md#setsubtitlecharactercolor) | unknown | Sets subtitle character color (similar to setSubtitleColor, different values) for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleCharacterOpacity`](../services/com.webos.media.md#setsubtitlecharacteropacity) | unknown | Sets subtitle character opacity for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleColor`](../services/com.webos.media.md#setsubtitlecolor) | unknown | Sets subtitle color for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleEnable`](../services/com.webos.media.md#setsubtitleenable) | unknown | Shows or hides subtitles for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleEncoding`](../services/com.webos.media.md#setsubtitleencoding) | unknown | Sets subtitle text encoding for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleFontSize`](../services/com.webos.media.md#setsubtitlefontsize) | unknown | Sets subtitle font size for an open media pipeline |
+| [`luna://com.webos.media/setSubtitlePosition`](../services/com.webos.media.md#setsubtitleposition) | unknown | Sets subtitle vertical position for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleSource`](../services/com.webos.media.md#setsubtitlesource) | unknown | Loads an external subtitle file for an open pipeline |
+| [`luna://com.webos.media/setSubtitleSync`](../services/com.webos.media.md#setsubtitlesync) | unknown | Sets subtitle sync offset in milliseconds for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleWindowColor`](../services/com.webos.media.md#setsubtitlewindowcolor) | unknown | Sets subtitle window color for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleWindowOpacity`](../services/com.webos.media.md#setsubtitlewindowopacity) | unknown | Sets subtitle window opacity for an open media pipeline |
+| [`luna://com.webos.media/setVideoInfo`](../services/com.webos.media.md#setvideoinfo) | unknown | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`luna://com.webos.media/setVisibility`](../services/com.webos.media.md#setvisibility) | unknown | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`luna://com.webos.media/setVolume`](../services/com.webos.media.md#setvolume) | public | Sets the volume for the specified media object. Additionally, it specifies the ease (fade-in and fade-out) properties for the media object. |
+| [`luna://com.webos.media/sourceInfo`](../services/com.webos.media.md#sourceinfo) | unknown | Provides information of the media that has just been loaded. Example { "sourceInfo": { "programs": [{ "audio_stream": 1, "video_stream": 1 }], "seekable": true, |
+| [`luna://com.webos.media/startCameraRecord`](../services/com.webos.media.md#startcamerarecord) | public | Starts camera recording. Camera pipeline stores streamed data from the camera and microphone (if required) at the specified location. |
+| [`luna://com.webos.media/stopCameraRecord`](../services/com.webos.media.md#stopcamerarecord) | public | Requests media server to stop camera recording and change to the preview state. |
+| [`luna://com.webos.media/subscribe`](../services/com.webos.media.md#subscribe) | public | Subscribes the media client to receive events from a media pipeline. These events, described in the tables above, allow the media client (generally an app or te |
+| [`luna://com.webos.media/switchToFullScreen`](../services/com.webos.media.md#switchtofullscreen) | unknown | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`luna://com.webos.media/takeCameraSnapshot`](../services/com.webos.media.md#takecamerasnapshot) | public | Captures a frame from the camera preview. |
+| [`luna://com.webos.media/trackAppProcesses`](../services/com.webos.media.md#trackappprocesses) | public | Subscribes to messages containing the mapping of application ID (appID) and pipeline process ID (PID), i.e. it returns information about which application each  |
+| [`luna://com.webos.media/tryAcquire`](../services/com.webos.media.md#tryacquire) | public | Tries to acquire resources from mediaserver. Note: This API will not issue policyAction to other pipelines in order to force them to release resources. If there |
+| [`luna://com.webos.media/unload`](../services/com.webos.media.md#unload) | public | Unloads the pipeline and releases all AV resources. |
+| [`luna://com.webos.media/unloadCompleted`](../services/com.webos.media.md#unloadcompleted) | unknown | The unloadCompleted event is raised when a specific media pipeline has been successfully unloaded. |
+| [`luna://com.webos.media/unregisterMedia`](../services/com.webos.media.md#unregistermedia) | unknown | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`luna://com.webos.media/unregisterPipeline`](../services/com.webos.media.md#unregisterpipeline) | public | Unregisters pipeline with Resource Manager. Note: This method is applicable to unmanaged pipelines only. |
+| [`luna://com.webos.media/unsubscribe`](../services/com.webos.media.md#unsubscribe) | public | Unsubscribes from media pipeline related events. |
+| [`luna://com.webos.media/video`](../services/com.webos.media.md#video) | unknown | Set a video information for either video and audio or video only recording. |
+| [`luna://com.webos.media/videoInfo`](../services/com.webos.media.md#videoinfo) | unknown | Provides information related to video. |
+| [`luna://com.webos.pipeline.record/audio`](../services/com.webos.pipeline.record.md#audio) | unknown | Details of audio. |
+| [`luna://com.webos.pipeline.record/image`](../services/com.webos.pipeline.record.md#image) | unknown | Details of image. |
+| [`luna://com.webos.pipeline.record/pause`](../services/com.webos.pipeline.record.md#pause) | public | Pauses the recording. |
+| [`luna://com.webos.pipeline.record/resume`](../services/com.webos.pipeline.record.md#resume) | public | Resumes the recording. |
+| [`luna://com.webos.pipeline.record/start`](../services/com.webos.pipeline.record.md#start) | public | Starts recording. |
+| [`luna://com.webos.pipeline.record/stop`](../services/com.webos.pipeline.record.md#stop) | public | Stops recording and saves the output to file. |
+| [`luna://com.webos.pipeline.record/subscribe`](../services/com.webos.pipeline.record.md#subscribe) | public | Gets a notification when there is an event on pipeline. |
+| [`luna://com.webos.pipeline.record/video`](../services/com.webos.pipeline.record.md#video) | unknown | Details of video. |
+| [`luna://com.webos.service.appcasting/getCommand`](../services/com.webos.service.appcasting.md#getcommand) | ssap | Subscribe to appcasting commands from the TV |
+| [`luna://com.webos.service.appcasting/receiveUIBCEvent`](../services/com.webos.service.appcasting.md#receiveuibcevent) | ssap | Subscribe to UIBC user-input events (screen mirroring) |
+| [`luna://com.webos.service.appcasting/sendCommand`](../services/com.webos.service.appcasting.md#sendcommand) | ssap | Send appcasting (LG Cast) command: payload {cmd, service}; cmd values in ConnectSDK: CONNECT, GET_PARAMETER, SET_PARAMETER, PLAY, PAUSE, KEEPALIVE, TEARDOWN (al |
+| [`luna://com.webos.service.mediacontroller/activateMediaSession`](../services/com.webos.service.mediacontroller.md#activatemediasession) | public | Activates the media session. Recommended usage : The API is recommended to be used by the application . Note: Only an active media session can receive the AVRCP |
+| [`luna://com.webos.service.mediacontroller/coverArtInfo`](../services/com.webos.service.mediacontroller.md#coverartinfo) | unknown | Details of media cover art. |
+| [`luna://com.webos.service.mediacontroller/coverArtPathInfo`](../services/com.webos.service.mediacontroller.md#coverartpathinfo) | unknown | Provides cover art source URI and downloaded path. |
+| [`luna://com.webos.service.mediacontroller/deactivateMediaSession`](../services/com.webos.service.mediacontroller.md#deactivatemediasession) | public | Deactivates the media session. Recommended usage : The API is recommended to be used by the application . Note: After the media session is deactivated, the corr |
+| [`luna://com.webos.service.mediacontroller/getActiveMediaSessions`](../services/com.webos.service.mediacontroller.md#getactivemediasessions) | public | Gets the list of all the active media sessions. Recommended usage : The API is recommended to be used by the service . |
+| [`luna://com.webos.service.mediacontroller/getMediaCoverArtPath`](../services/com.webos.service.mediacontroller.md#getmediacoverartpath) | public | Downloads requested cover art URI and provides downloaded path. |
+| [`luna://com.webos.service.mediacontroller/getMediaMetaData`](../services/com.webos.service.mediacontroller.md#getmediametadata) | public | Requests metadata of the media session related to the given mediaId. Recommended usage : The API is recommended to be used by the service . |
+| [`luna://com.webos.service.mediacontroller/getMediaPlayStatus`](../services/com.webos.service.mediacontroller.md#getmediaplaystatus) | public | Gets the current playback status of the given mediaId, status such as stopped, paused, playing, buffering. Recommended usage : The API is recommended to be used |
+| [`luna://com.webos.service.mediacontroller/getMediaSessionId`](../services/com.webos.service.mediacontroller.md#getmediasessionid) | public | Provides the list of mediaId of all the media sessions for a given app. Recommended usage : The API is recommended to be used by the service . |
+| [`luna://com.webos.service.mediacontroller/getMediaSessionInfo`](../services/com.webos.service.mediacontroller.md#getmediasessioninfo) | public | Gets the details of a media session like app id, metadata, volume info. Recommended usage : The API is recommended to be used by the service . |
+| [`luna://com.webos.service.mediacontroller/injectMediaKeyEvent`](../services/com.webos.service.mediacontroller.md#injectmediakeyevent) | public | Sets the keyEvent of the given displayId. Recommended usage : The API is recommended to be used by the service . |
+| [`luna://com.webos.service.mediacontroller/mediaMetaData`](../services/com.webos.service.mediacontroller.md#mediametadata) | unknown | Contains the mediaMetaData information. |
+| [`luna://com.webos.service.mediacontroller/mediaSession`](../services/com.webos.service.mediacontroller.md#mediasession) | unknown | Contains the details about mediaId, appId, and metaData. |
+| [`luna://com.webos.service.mediacontroller/receiveMediaPlaybackInfo`](../services/com.webos.service.mediacontroller.md#receivemediaplaybackinfo) | public | Subscribes to receive the play status, mute status, play position, mediaMetaData information. Recommended usage : The API is recommended to be used by the servi |
+| [`luna://com.webos.service.mediacontroller/registerMediaSession`](../services/com.webos.service.mediacontroller.md#registermediasession) | public | Registers media sessions, subscribes to receive AVRCP key events. Recommended usage : The API is recommended to be used by the application . |
+| [`luna://com.webos.service.mediacontroller/setMediaCoverArt`](../services/com.webos.service.mediacontroller.md#setmediacoverart) | public | Sets the cover art data for media session. |
+| [`luna://com.webos.service.mediacontroller/setMediaMetaData`](../services/com.webos.service.mediacontroller.md#setmediametadata) | public | Sets the metadata information for the session. Example: title, artist. Recommended usage : The API is recommended to be used by the application . |
+| [`luna://com.webos.service.mediacontroller/setMediaMuteStatus`](../services/com.webos.service.mediacontroller.md#setmediamutestatus) | public | Sets the status of the media session. Recommended usage : The API is recommended to be used by the application . |
+| [`luna://com.webos.service.mediacontroller/setMediaPlayPosition`](../services/com.webos.service.mediacontroller.md#setmediaplayposition) | public | Sets the play position for the media session. Recommended usage : The API is recommended to be used by the application . |
+| [`luna://com.webos.service.mediacontroller/setMediaPlayStatus`](../services/com.webos.service.mediacontroller.md#setmediaplaystatus) | public | Sets the playStatus for the session. Example: play, pause, stopped and so on. Recommended usage : The API is recommended to be used by the application . |
+| [`luna://com.webos.service.mediacontroller/setSupportedActions`](../services/com.webos.service.mediacontroller.md#setsupportedactions) | public | Sets the list of supported media actions. |
+| [`luna://com.webos.service.mediacontroller/sizes`](../services/com.webos.service.mediacontroller.md#sizes) | unknown | Provides possible sizes for each cover art |
+| [`luna://com.webos.service.mediacontroller/unregisterMediaSession`](../services/com.webos.service.mediacontroller.md#unregistermediasession) | public | Unsubscribes and unregisters the media session. Recommended usage : The API is recommended to be used by the application . |
+| [`luna://com.webos.service.mediaindexer/AudioList`](../services/com.webos.service.mediaindexer.md#audiolist) | unknown | Contains the detailed information about the audio files. |
+| [`luna://com.webos.service.mediaindexer/AudioMetadata`](../services/com.webos.service.mediaindexer.md#audiometadata) | unknown | Contains the information about the AudioList, and also provides detailed information that are not included in AudioList. |
+| [`luna://com.webos.service.mediaindexer/deviceList`](../services/com.webos.service.mediaindexer.md#devicelist) | unknown | Provides the detailed information about the specific device connected to the media indexer service. |
+| [`luna://com.webos.service.mediaindexer/getAudioList`](../services/com.webos.service.mediaindexer.md#getaudiolist) | public | Gets the available audio file list included in attached devices. Note : If the uri is specified, the audio file list for specified uri is provided. Else the aud |
+| [`luna://com.webos.service.mediaindexer/getAudioMetadata`](../services/com.webos.service.mediaindexer.md#getaudiometadata) | public | Gets the detailed meta data information of the specified uri for the given audio file. |
+| [`luna://com.webos.service.mediaindexer/getDeviceList`](../services/com.webos.service.mediaindexer.md#getdevicelist) | public | Gets the list of all the attached storage devices. Note : The list can contain devices that are currently attached or the devices attached in the past. |
+| [`luna://com.webos.service.mediaindexer/getImageList`](../services/com.webos.service.mediaindexer.md#getimagelist) | public | Gets all the available image file list included in the attached devices. Note : If the uri is specified, the image file list for specified uri is provided. Else |
+| [`luna://com.webos.service.mediaindexer/getImageMetadata`](../services/com.webos.service.mediaindexer.md#getimagemetadata) | public | Gets the detailed meta data information of specified uri of the image file. |
+| [`luna://com.webos.service.mediaindexer/getMediaDbPermission`](../services/com.webos.service.mediaindexer.md#getmediadbpermission) | public | Enables the downloadable services or apps (built-in or downloadable) to acquire, access permission of the DB managed by the media indexer service. |
+| [`luna://com.webos.service.mediaindexer/getPlugin`](../services/com.webos.service.mediaindexer.md#getplugin) | public | Requests to retrieve the plugin from the plugin factory and to then activate the plugin. |
+| [`luna://com.webos.service.mediaindexer/getPluginList`](../services/com.webos.service.mediaindexer.md#getpluginlist) | public | Gets a list of available plugins. |
+| [`luna://com.webos.service.mediaindexer/getVideoList`](../services/com.webos.service.mediaindexer.md#getvideolist) | public | Gets the available video files list included in the attached devices. Note : If the uri is specified, the video file list for specified uri is provided. Else th |
+| [`luna://com.webos.service.mediaindexer/getVideoMetadata`](../services/com.webos.service.mediaindexer.md#getvideometadata) | public | Gets the detailed meta data information for the specified uri of the video file. |
+| [`luna://com.webos.service.mediaindexer/ImageList`](../services/com.webos.service.mediaindexer.md#imagelist) | unknown | Detailed information about video files. |
+| [`luna://com.webos.service.mediaindexer/ImageMetadata`](../services/com.webos.service.mediaindexer.md#imagemetadata) | unknown | Contains the information in the ImageList, and also provides detailed information that are not included in ImageList. |
+| [`luna://com.webos.service.mediaindexer/pluginList`](../services/com.webos.service.mediaindexer.md#pluginlist) | unknown | Defines the supported device types by the media indexer service. |
+| [`luna://com.webos.service.mediaindexer/putPlugin`](../services/com.webos.service.mediaindexer.md#putplugin) | public | Requests to add the plugin to the plugin factory. |
+| [`luna://com.webos.service.mediaindexer/requestDelete`](../services/com.webos.service.mediaindexer.md#requestdelete) | public | Requests deletion of media item from media DB connector. |
+| [`luna://com.webos.service.mediaindexer/requestMediaScan`](../services/com.webos.service.mediaindexer.md#requestmediascan) | public | Scans device for media item. |
+| [`luna://com.webos.service.mediaindexer/runDetect`](../services/com.webos.service.mediaindexer.md#rundetect) | public | Requests to check plugins that are available in the known devices databases and then enables the device detection to notify the observer. |
+| [`luna://com.webos.service.mediaindexer/stopDetect`](../services/com.webos.service.mediaindexer.md#stopdetect) | public | Requests not to detect the plugin in database for the known device and do not enable the device detection to notify the observer. |
+| [`luna://com.webos.service.mediaindexer/VideoList`](../services/com.webos.service.mediaindexer.md#videolist) | unknown | Contains the detailed information about the video files. |
+| [`luna://com.webos.service.mediaindexer/VideoMetadata`](../services/com.webos.service.mediaindexer.md#videometadata) | unknown | Contains the information about the VideoList, provides information about the video files that are not included in the VideoList. |
+| [`luna://com.webos.service.mediarecorder/close`](../services/com.webos.service.mediarecorder.md#close) | public | Closes the recorder and releases all resources. |
+| [`luna://com.webos.service.mediarecorder/open`](../services/com.webos.service.mediarecorder.md#open) | public | Opens a new recorder. Returns a unique ID to the client that is used for subsequent operations to control the recorder. |
+| [`luna://com.webos.service.mediarecorder/pause`](../services/com.webos.service.mediarecorder.md#pause) | public | Pauses recording. Note: Call this API after start() but before stop() or resume() . |
+| [`luna://com.webos.service.mediarecorder/resume`](../services/com.webos.service.mediarecorder.md#resume) | public | Resumes recording. Note: Call this API after pause() but before stop(). |
+| [`luna://com.webos.service.mediarecorder/setAudioFormat`](../services/com.webos.service.mediarecorder.md#setaudioformat) | public | Sets the audio format. Note: Call this API after open() but before start() . |
+| [`luna://com.webos.service.mediarecorder/setOutputFile`](../services/com.webos.service.mediarecorder.md#setoutputfile) | public | Sets the path to store the streaming data. The default file name is of the format "RecordDDMMYYYY-HHMMSS", where DDMMYYYY-HHMMSS is current date and time. Call  |
+| [`luna://com.webos.service.mediarecorder/setOutputFormat`](../services/com.webos.service.mediarecorder.md#setoutputformat) | public | Sets the specified format to store the streaming data. Note: Call this API after open() but before start() . |
+| [`luna://com.webos.service.mediarecorder/setVideoFormat`](../services/com.webos.service.mediarecorder.md#setvideoformat) | public | Sets the video format. Note: Call this API after open() but before start() . |
+| [`luna://com.webos.service.mediarecorder/start`](../services/com.webos.service.mediarecorder.md#start) | public | Starts recording. |
+| [`luna://com.webos.service.mediarecorder/stop`](../services/com.webos.service.mediarecorder.md#stop) | public | Stops recording and saves the output to file. |
+| [`luna://com.webos.service.mediarecorder/takeSnapshot`](../services/com.webos.service.mediarecorder.md#takesnapshot) | public | Takes one video snapshot during recording and save the image to a file. The default file name is of the format "CaptureDDMMYYYY-HHMMSS", where DDMMYYYY-HHMMSS i |
+| [`luna://com.webos.service.miracast/close`](../services/com.webos.service.miracast.md#close) | ssap | Close Miracast session |
+| [`luna://com.webos.service.miracast/getConnectionStatus`](../services/com.webos.service.miracast.md#getconnectionstatus) | ssap | Get Miracast connection status |
+| [`luna://com.webos.service.miracast/getP2pState`](../services/com.webos.service.miracast.md#getp2pstate) | ssap | Get Miracast P2P state |
+| [`luna://com.webos.service.miracast/setUACSettings`](../services/com.webos.service.miracast.md#setuacsettings) | ssap | Set Miracast UAC settings |
+| [`luna://com.webos.service.miracast/uibc/getUibcKeyEvent`](../services/com.webos.service.miracast.md#uibc_getuibckeyevent) | ssap | Get Miracast UIBC key event |
+| [`luna://com.webos.service.tv.capture/createHandle`](../services/com.webos.service.tv.capture.md#createhandle) | private | Screen/video capture service method createHandle (name from community research) |
+| [`luna://com.webos.service.tv.capture/destroyHandle`](../services/com.webos.service.tv.capture.md#destroyhandle) | private | Screen/video capture service method destroyHandle (name from community research) |
+| [`luna://com.webos.service.tv.capture/execute`](../services/com.webos.service.tv.capture.md#execute) | private | Screen/video capture service method execute (name from community research) |
+| [`luna://com.webos.service.tv.capture/getClipRegions`](../services/com.webos.service.tv.capture.md#getclipregions) | private | Screen/video capture service method getClipRegions (name from community research) |
+| [`luna://com.webos.service.tv.capture/getOptions`](../services/com.webos.service.tv.capture.md#getoptions) | private | Screen/video capture service method getOptions (name from community research) |
+| [`luna://com.webos.service.tv.capture/getProperties`](../services/com.webos.service.tv.capture.md#getproperties) | private | Screen/video capture service method getProperties (name from community research) |
+| [`luna://com.webos.service.tv.capture/isLocked`](../services/com.webos.service.tv.capture.md#islocked) | private | Screen/video capture service method isLocked (name from community research) |
+| [`luna://com.webos.service.tv.capture/lock`](../services/com.webos.service.tv.capture.md#lock) | private | Screen/video capture service method lock (name from community research) |
+| [`luna://com.webos.service.tv.capture/setClipRegions`](../services/com.webos.service.tv.capture.md#setclipregions) | private | Screen/video capture service method setClipRegions (name from community research) |
+| [`luna://com.webos.service.tv.capture/setOptions`](../services/com.webos.service.tv.capture.md#setoptions) | private | Screen/video capture service method setOptions (name from community research) |
+| [`luna://com.webos.service.tv.capture/setOutput`](../services/com.webos.service.tv.capture.md#setoutput) | private | Screen/video capture service method setOutput (name from community research) |
+| [`luna://com.webos.service.tv.capture/setProperties`](../services/com.webos.service.tv.capture.md#setproperties) | private | Screen/video capture service method setProperties (name from community research) |
+| [`luna://com.webos.service.tv.capture/unlock`](../services/com.webos.service.tv.capture.md#unlock) | private | Screen/video capture service method unlock (name from community research) |
+| [`luna://com.webos.service.tv.dvr/device/checkStoragePerformance`](../services/com.webos.service.tv.dvr.md#device_checkstorageperformance) | private | DVR/PVR method: device/checkStoragePerformance |
+| [`luna://com.webos.service.tv.dvr/device/isRecordableStorage`](../services/com.webos.service.tv.dvr.md#device_isrecordablestorage) | private | DVR/PVR method: device/isRecordableStorage |
+| [`luna://com.webos.service.tv.dvr/play/openRecordingPlayInstance`](../services/com.webos.service.tv.dvr.md#play_openrecordingplayinstance) | private | DVR/PVR method: play/openRecordingPlayInstance |
+| [`luna://com.webos.service.tv.dvr/play/seek`](../services/com.webos.service.tv.dvr.md#play_seek) | private | DVR/PVR method: play/seek |
+| [`luna://com.webos.service.tv.dvr/play/setPlayRate`](../services/com.webos.service.tv.dvr.md#play_setplayrate) | private | DVR/PVR method: play/setPlayRate |
+| [`luna://com.webos.service.tv.dvr/private/deleteRecordFile`](../services/com.webos.service.tv.dvr.md#private_deleterecordfile) | private | DVR/PVR method: private/deleteRecordFile |
+| [`luna://com.webos.service.tv.dvr/private/getRecordFileList`](../services/com.webos.service.tv.dvr.md#private_getrecordfilelist) | private | DVR/PVR method: private/getRecordFileList |
+| [`luna://com.webos.service.tv.dvr/private/getThumbnail`](../services/com.webos.service.tv.dvr.md#private_getthumbnail) | private | DVR/PVR method: private/getThumbnail |
+| [`luna://com.webos.service.tv.dvr/record/changeToSeriesRecord`](../services/com.webos.service.tv.dvr.md#record_changetoseriesrecord) | private | DVR/PVR method: record/changeToSeriesRecord |
+| [`luna://com.webos.service.tv.dvr/record/openTimeshiftPlayInstance`](../services/com.webos.service.tv.dvr.md#record_opentimeshiftplayinstance) | private | DVR/PVR method: record/openTimeshiftPlayInstance |
+| [`luna://com.webos.service.tv.dvr/record/pauseTimeshiftBuffering`](../services/com.webos.service.tv.dvr.md#record_pausetimeshiftbuffering) | private | DVR/PVR method: record/pauseTimeshiftBuffering |
+| [`luna://com.webos.service.tv.dvr/record/setRecordingEndTime`](../services/com.webos.service.tv.dvr.md#record_setrecordingendtime) | private | DVR/PVR method: record/setRecordingEndTime |
+| [`luna://com.webos.service.tv.dvr/record/startExternalInputRecord`](../services/com.webos.service.tv.dvr.md#record_startexternalinputrecord) | private | Records an external (HDMI/AV) input to USB (subject to HDCP on protected sources) |
+| [`luna://com.webos.service.tv.dvr/record/startManualRecord`](../services/com.webos.service.tv.dvr.md#record_startmanualrecord) | private | DVR/PVR method: record/startManualRecord |
+| [`luna://com.webos.service.tv.dvr/record/startProgramRecord`](../services/com.webos.service.tv.dvr.md#record_startprogramrecord) | private | DVR/PVR method: record/startProgramRecord |
+| [`luna://com.webos.service.tv.dvr/record/startScheduleRecord`](../services/com.webos.service.tv.dvr.md#record_startschedulerecord) | private | DVR/PVR method: record/startScheduleRecord |
+| [`luna://com.webos.service.tv.dvr/record/startTimeshiftBuffering`](../services/com.webos.service.tv.dvr.md#record_starttimeshiftbuffering) | private | DVR/PVR method: record/startTimeshiftBuffering |
+| [`luna://com.webos.service.tv.dvr/record/stopRecord`](../services/com.webos.service.tv.dvr.md#record_stoprecord) | private | DVR/PVR method: record/stopRecord |
+| [`ssap://media.controls/fastForward`](../services/ssap_media.controls.md#fastforward) | ssap | Media control: fastForward |
+| [`ssap://media.controls/pause`](../services/ssap_media.controls.md#pause) | ssap | Media control: pause |
+| [`ssap://media.controls/play`](../services/ssap_media.controls.md#play) | ssap | Media control: play |
+| [`ssap://media.controls/rewind`](../services/ssap_media.controls.md#rewind) | ssap | Media control: rewind |
+| [`ssap://media.controls/stop`](../services/ssap_media.controls.md#stop) | ssap | Media control: stop |
+| [`ssap://media.viewer/close`](../services/ssap_media.viewer.md#close) | ssap | Close media viewer |
+| [`ssap://media.viewer/open`](../services/ssap_media.viewer.md#open) | ssap | Open media viewer with a URL |

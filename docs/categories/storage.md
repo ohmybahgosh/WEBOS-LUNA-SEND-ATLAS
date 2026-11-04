@@ -1,0 +1,68 @@
+# Storage & USB
+
+62 methods.  [Back to index](../../README.md#categories)
+
+| URI | Access | Description |
+|---|---|---|
+| [`luna://com.palm.backup/startBackup`](../services/com.palm.backup.md#startbackup) | root | Starts a manual Palm Backup (after launching com.palm.app.backup) |
+| [`luna://com.palm.downloadmanager/download`](../services/com.palm.downloadmanager.md#download) | root | Downloads a URL to /media/internal/downloads |
+| [`luna://com.palm.storage/diskmode/enterMSM`](../services/com.palm.storage.md#diskmode_entermsm) | root | Enters (and toggles out of) USB mass storage mode |
+| [`luna://com.palm.storage/erase/EraseAll`](../services/com.palm.storage.md#erase_eraseall) | root | Erases all storage (part of ##RTN# sequence) ⚠️ |
+| [`luna://com.webos.service.attachedstoragemanager/ejectDevice`](../services/com.webos.service.attachedstoragemanager.md#ejectdevice) | private | Eject a USB device |
+| [`luna://com.webos.service.attachedstoragemanager/listDevices`](../services/com.webos.service.attachedstoragemanager.md#listdevices) | ssap | List attached storage devices |
+| [`luna://com.webos.service.filecache/ChangeType`](../services/com.webos.service.filecache.md#changetype) | public | Allows apps to modify the parameters of a cache type other than its name. You must specify the name of the cache type, and those cache type parameters that have |
+| [`luna://com.webos.service.filecache/CopyCacheObject`](../services/com.webos.service.filecache.md#copycacheobject) | public | Enables copying of an object from the file cache to a non-cached location. On successful completion, newPathName will be returned as it may be different than ex |
+| [`luna://com.webos.service.filecache/DefineType`](../services/com.webos.service.filecache.md#definetype) | public | Defines a new cache type. This is intended for use by the backup service. Optionally you may specify the default values for the size, cost, and lifetime. These  |
+| [`luna://com.webos.service.filecache/DeleteType`](../services/com.webos.service.filecache.md#deletetype) | public | Allows you to delete a previously defined cache type and frees up its space. All objects in the cache must be expired in order to delete a cache type. The app c |
+| [`luna://com.webos.service.filecache/DescribeType`](../services/com.webos.service.filecache.md#describetype) | public | Returns cache type details. The DescribeType will return the currently assigned values for all cache type parameters. Note: Filesize as it resides on disk after |
+| [`luna://com.webos.service.filecache/ExpireCacheObject`](../services/com.webos.service.filecache.md#expirecacheobject) | public | Objects will normally be automatically expired form the cache as space is needed. If you want to force an item to be removed or if you want to remove items prio |
+| [`luna://com.webos.service.filecache/GetCacheObjectFilename`](../services/com.webos.service.filecache.md#getcacheobjectfilename) | public | Allows you to query the original filename of a particular object in a cache type. In order to get the cache object file name the app must specify the path name  |
+| [`luna://com.webos.service.filecache/GetCacheObjectSize`](../services/com.webos.service.filecache.md#getcacheobjectsize) | public | Allows you to query a particular object size in a cache type. In order to get the cache object size, the app must specify the pathname of the object. |
+| [`luna://com.webos.service.filecache/GetCacheStatus`](../services/com.webos.service.filecache.md#getcachestatus) | public | Give status of the cache as a whole. The GetCacheStatus will return: the number of cache types defined the total space used by the objects in all cache types th |
+| [`luna://com.webos.service.filecache/GetCacheTypes`](../services/com.webos.service.filecache.md#getcachetypes) | public | Returns an array of all defined cache types. |
+| [`luna://com.webos.service.filecache/GetCacheTypeStatus`](../services/com.webos.service.filecache.md#getcachetypestatus) | public | Allows you to query the status of a particular cache type to obtain: the total space used by the objects in the specified cache type the number of objects in th |
+| [`luna://com.webos.service.filecache/GetVersion`](../services/com.webos.service.filecache.md#getversion) | public | Returns the version of the File Cache API. |
+| [`luna://com.webos.service.filecache/InsertCacheObject`](../services/com.webos.service.filecache.md#insertcacheobject) | public | Inserts a new object of the specified type into the cache. The fileName parameter is required. It is stored with the object to ensure that the correct extension |
+| [`luna://com.webos.service.filecache/ResizeCacheObject`](../services/com.webos.service.filecache.md#resizecacheobject) | public | By calling the ResizeCacheObject you can specify the size of the cached object after it is inserted into the cache. Call this method if the final size of the ob |
+| [`luna://com.webos.service.filecache/SubscribeCacheObject`](../services/com.webos.service.filecache.md#subscribecacheobject) | public | Enables you to subscribe an object in the cache and hold a subscription to the object for the duration of your usage. An object cannot be expired from the cache |
+| [`luna://com.webos.service.filecache/TouchCacheObject`](../services/com.webos.service.filecache.md#touchcacheobject) | public | Allows you to mark an object as recently used. This decreases the chances of the object from getting expired from the cache when the space is being reclaimed. |
+| [`luna://com.webos.service.lowlevelstorage/getData`](../services/com.webos.service.lowlevelstorage.md#getdata) | private | Reads low-level storage (factory/model DB) values by dbid and item name |
+| [`luna://com.webos.service.pdm/audioDeviceList`](../services/com.webos.service.pdm.md#audiodevicelist) | unknown | List of audio device(s) connected. |
+| [`luna://com.webos.service.pdm/dev/getAttachedDeviceList`](../services/com.webos.service.pdm.md#dev_getattacheddevicelist) | unknown | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.query); name only |
+| [`luna://com.webos.service.pdm/dev/setDeviceForSession`](../services/com.webos.service.pdm.md#dev_setdeviceforsession) | private | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.management); name only |
+| [`luna://com.webos.service.pdm/deviceListInfo`](../services/com.webos.service.pdm.md#devicelistinfo) | unknown | An array containing information about the currently connected device(s). |
+| [`luna://com.webos.service.pdm/deviceStatusList`](../services/com.webos.service.pdm.md#devicestatuslist) | unknown | List of the storage and non-storage devices connected and their statuses. |
+| [`luna://com.webos.service.pdm/driveStatusList`](../services/com.webos.service.pdm.md#drivestatuslist) | unknown | List of the drives in the connected storage devices and their statuses. |
+| [`luna://com.webos.service.pdm/eject`](../services/com.webos.service.pdm.md#eject) | public | Unmounts all drives of the storage device for safe removal. Prerequisite: The storage device must be connected. |
+| [`luna://com.webos.service.pdm/format`](../services/com.webos.service.pdm.md#format) | public | Formats the connected drive. |
+| [`luna://com.webos.service.pdm/fsck`](../services/com.webos.service.pdm.md#fsck) | public | Checks the file system by performing fsck (File System Check) of the corresponding connected drive. Note : On connecting a USB device with a large number of fil |
+| [`luna://com.webos.service.pdm/getAttachedAllDeviceList`](../services/com.webos.service.pdm.md#getattachedalldevicelist) | unknown | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.query); name only |
+| [`luna://com.webos.service.pdm/getAttachedDeviceStatus`](../services/com.webos.service.pdm.md#getattacheddevicestatus) | public | Gets the status information of connected device(s). |
+| [`luna://com.webos.service.pdm/getAttachedNonStorageDeviceList`](../services/com.webos.service.pdm.md#getattachednonstoragedevicelist) | public | Gets the status information of connected non-storage device(s). |
+| [`luna://com.webos.service.pdm/getAttachedStorageDeviceList`](../services/com.webos.service.pdm.md#getattachedstoragedevicelist) | public | Gets status information of connected storage device(s). |
+| [`luna://com.webos.service.pdm/getExample`](../services/com.webos.service.pdm.md#getexample) | public | Provides debug logs with detailed information of all connected storage and non-storage device list. |
+| [`luna://com.webos.service.pdm/getSpaceInfo`](../services/com.webos.service.pdm.md#getspaceinfo) | public | Gets the space information of the connected drive. Note : The drive must be mounted. |
+| [`luna://com.webos.service.pdm/isWritableDrive`](../services/com.webos.service.pdm.md#iswritabledrive) | public | Checks the file system attribute of the drive and returns whether it is writable. |
+| [`luna://com.webos.service.pdm/mountandFullFsck`](../services/com.webos.service.pdm.md#mountandfullfsck) | public | Mounts the device without performing Fsck. Alternatively, it can be configured to perform Fsck and then mount the device. |
+| [`luna://com.webos.service.pdm/netDeviceList`](../services/com.webos.service.pdm.md#netdevicelist) | unknown | List of Communication Device Class (CDC) device(s) connected. |
+| [`luna://com.webos.service.pdm/nonStorageDeviceList`](../services/com.webos.service.pdm.md#nonstoragedevicelist) | unknown | List of information about the non-storage devices that are currently connected. |
+| [`luna://com.webos.service.pdm/setVolumeLabel`](../services/com.webos.service.pdm.md#setvolumelabel) | public | Sets the volume label of the drive. It is supported only when file system type is FAT. |
+| [`luna://com.webos.service.pdm/spaceInfo`](../services/com.webos.service.pdm.md#spaceinfo) | unknown | Information about the drive space. |
+| [`luna://com.webos.service.pdm/storageDeviceList`](../services/com.webos.service.pdm.md#storagedevicelist) | unknown | List of information about the storage devices that are currently connected. |
+| [`luna://com.webos.service.pdm/storageDriveList`](../services/com.webos.service.pdm.md#storagedrivelist) | unknown | List of the drives in storage devices connected. |
+| [`luna://com.webos.service.pdm/subDeviceList`](../services/com.webos.service.pdm.md#subdevicelist) | unknown | Contains info of sub-devices Note: Sub-devices are multiple camera or sound devices inside single camera or sound device. |
+| [`luna://com.webos.service.pdm/umountAllDrive`](../services/com.webos.service.pdm.md#umountalldrive) | public | Unmounts all drives. |
+| [`luna://com.webos.service.pdm/videoDeviceList`](../services/com.webos.service.pdm.md#videodevicelist) | unknown | List of video device(s) connected. |
+| [`luna://com.webos.service.storageaccess/device/copy`](../services/com.webos.service.storageaccess.md#device_copy) | public | Copies a file or directory from the source location to the destination. |
+| [`luna://com.webos.service.storageaccess/device/eject`](../services/com.webos.service.storageaccess.md#device_eject) | public | Ejects the storage device. In case of "cloud" storage type, it acts as a logout operation. Note: This operation is not applicable for "internal" storage type. |
+| [`luna://com.webos.service.storageaccess/device/getProperties`](../services/com.webos.service.storageaccess.md#device_getproperties) | public | Gets properties of the given storage provider or the specified file or directory. |
+| [`luna://com.webos.service.storageaccess/device/handleExtraCommand`](../services/com.webos.service.storageaccess.md#device_handleextracommand) | public | Handles addtional operation related to various providers. |
+| [`luna://com.webos.service.storageaccess/device/list`](../services/com.webos.service.storageaccess.md#device_list) | public | Lists contents of the specified directory. |
+| [`luna://com.webos.service.storageaccess/device/move`](../services/com.webos.service.storageaccess.md#device_move) | public | Moves a file or directory from the source location to the destination. |
+| [`luna://com.webos.service.storageaccess/device/remove`](../services/com.webos.service.storageaccess.md#device_remove) | public | Deletes the specified file or directory. |
+| [`luna://com.webos.service.storageaccess/device/rename`](../services/com.webos.service.storageaccess.md#device_rename) | public | Renames the specified file or directory. |
+| [`luna://com.webos.service.storageaccess/files`](../services/com.webos.service.storageaccess.md#files) | unknown | Provides information of the file or directory. |
+| [`luna://com.webos.service.storageaccess/listStorageProviders`](../services/com.webos.service.storageaccess.md#liststorageproviders) | public | Provides a list of storages providers and the corresponding drive information. |
+| [`luna://com.webos.service.storageaccess/operation`](../services/com.webos.service.storageaccess.md#operation) | unknown | Provides details of the operation. |
+| [`luna://com.webos.service.storageaccess/payload`](../services/com.webos.service.storageaccess.md#payload) | unknown | Arguments required for the operation in the form of key value pair |
+| [`luna://com.webos.service.storageaccess/storageProviders`](../services/com.webos.service.storageaccess.md#storageproviders) | unknown | Provides information about the storage provider. |
