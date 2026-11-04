@@ -174,11 +174,11 @@
     }
 
     var row = el("div", "btnrow");
-    var runBtn = el("button", null, "Run"); runBtn.id = "runbtn";
+    var runBtn = el("button", "btn primary", "Run"); runBtn.id = "runbtn";
     if (m.d) { runBtn.disabled = true; confirmChk.onchange = function () { runBtn.disabled = !this.checked; }; }
     runBtn.onclick = function () { doRun(m, ta, runBtn); };
     row.appendChild(runBtn);
-    var copy = el("button", "sec", "Copy luna-send");
+    var copy = el("button", "btn", "Copy luna-send");
     copy.onclick = function () { copyCmd(m, ta); };
     row.appendChild(copy);
     d.appendChild(row);
