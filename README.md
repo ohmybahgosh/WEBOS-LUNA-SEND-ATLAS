@@ -2,215 +2,112 @@
 
 [![Release](https://img.shields.io/github/v/release/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS?sort=semver)](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Methods](https://img.shields.io/badge/methods-8%2C167-3ddc97)](catalog/luna-catalog.jsonl)
+[![Methods](https://img.shields.io/badge/methods-8%2C127-3ddc97)](catalog/luna-catalog.jsonl)
 [![Services](https://img.shields.io/badge/services-501-22e584)](#services)
-[![webOS](https://img.shields.io/badge/webOS-4%2B-22e584)](#install)
-[![Status](https://img.shields.io/badge/status-heavy%20active%20development-f59e0b)](#what-this-is)
+[![webOS](https://img.shields.io/badge/webOS-4%2B-22e584)](#the-app)
+[![Status](https://img.shields.io/badge/status-heavy%20active%20development-f59e0b)](#status)
 [![GitHub stars](https://img.shields.io/github/stars/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS?style=social)](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS/stargazers)
 
-<img src="webos-app/assets/banner.png" width="100%" alt="Luna Atlas: every LG webOS luna-send command, on your TV.  8,167 methods across 501 services, with params and examples, usable from a terminal, a browser, or a webOS app on the TV.">
+<img src="app/assets/banner.png" width="100%" alt="Luna Atlas: every LG webOS luna-send command, on your TV.  The most complete reference of the webOS Luna Service Bus, 8,127 methods across 501 services, with params, examples and a webOS app to run them from the couch.">
 
-> **Every LG webOS `luna-send` command in one place.**  8,167 methods across 501 services, each with its parameters, a ready-to-run example, its access level and where it came from.  Drive it from a terminal, a browser, or a webOS app on the TV.
+**The most complete public reference of LG webOS TV `luna-send` (Luna Service Bus) commands.**  8,127 methods across 501 Luna services, each with its URI, parameters, example command, access level, platform and sources, plus a webOS app to run them from the remote.
 
----
+There are lots of scattered gists, forum posts and library source files that each document a handful of luna calls.  This repo pulls all of them together, plus the official webOS TV and webOS OSE references, plus the full method list introspected from a real retail TV, into one searchable, machine-readable catalog.
+
+<a id="status"></a>
+> [!IMPORTANT]
+> **Under heavy active development.**  The catalog, the docs and the Luna Atlas app are all changing fast.  Method names are solid, but many parameters are still being filled in, categories may move, and the app is pre-release.  Expect breaking changes and re-dumps; pin a commit if you need something stable.
+
+> [!WARNING]
+> **This drives real services on your TV.**  Many calls change settings, inputs, power or the panel, and a few can factory reset, wipe data, or brick the set.  Those are flagged ⚠️ and listed in [docs/dangerous.md](docs/dangerous.md).  Running a command here, or in the app, is exactly as safe or unsafe as typing the same `luna-send` yourself.  Use at your own risk; there is no warranty (see [LICENSE](LICENSE)).  `luna-send` needs a rooted TV or Developer Mode.  Read [docs/luna-send-basics.md](docs/luna-send-basics.md) first.
+
+> [!NOTE]
+> **How this is built.**  I, [OhMyBahGosh](https://github.com/ohmybahgosh), build this with AI coding agents (Claude), directed, reviewed and tested by me.  I've been building software for over 17 years; my day job is data engineering, and security and pentesting are what I do for fun.  AI does a lot of the work here: I decide what goes in, check how it's done, and verify it against a real TV (an LG C2 on webOS 22).
+>
+> The catalog is pulled together from the official webOS TV and webOS OSE docs, the homebrew and remote-control community, and the full service list introspected from my own rooted TV.  Where a method is only a name with no parameters yet, it says so.  Nothing is scraped blindly: every record lists the exact source it came from, and a scrub step ([scripts/scrub-check.sh](scripts/scrub-check.sh)) keeps personal data and installed-app names out.  Commits are mine, pushed from my own machine.
 
 ## Contents
 
-|  |  |
-|---|---|
-| **Start here** | [What this is](#what-this-is) &middot; [Install](#install) &middot; [Quick start](#quick-start) |
-| **Use it** | [Script (SSH)](#script-ssh) &middot; [Browser UI](#browser-ui) &middot; [TV app](#tv-app) |
-| **Reference** | [The catalog](#the-catalog) &middot; [Coverage](#coverage) &middot; [How descriptions are sourced](#how-descriptions-are-sourced) &middot; [Categories](#categories) &middot; [Services](#services) |
-| **More** | [Dump your own TV](#dump-your-own-tv) &middot; [Scope & safety](#scope-and-safety) &middot; [Credits](#credits) &middot; [License](#license) |
+- [The app](#the-app)
+- [Quick start](#quick-start)
+- [What's inside](#whats-inside)
+- [Coverage](#coverage)
+- [Categories](#categories)
+- [Services](#services)
+- [Record schema](#record-schema)
+- [Dump your own TV](#dump-your-own-tv)
+- [Scope and safety](#scope-and-safety)
+- [Credits](#credits)
+- [License](#license)
+- [Author](#author)
 
----
+## The app
 
-## What this is
+**Luna Atlas** puts the whole catalog on the TV: browse by service or category, search, read the parameters, edit a JSON payload and **run** the call, all from the remote.  Dangerous calls are gated behind a confirm, and every method has a **Copy luna-send** button for pasting into SSH.  It is a webOS app in [`app/`](app/); build the IPK with [`app/README.md`](app/README.md).
 
-Every LG webOS TV ships a command-line tool called **`luna-send`**.  It talks to the **Luna Service Bus**, the internal message bus that every system service listens on: power, apps, inputs, picture and sound, Wi-Fi, notifications, the panel, software update, and hundreds more.  On a rooted TV or in Developer Mode, `luna-send` is how you drive any of it from a shell:
+<p align="center">
+  <img src="app/assets/app-tv.gif" width="100%" alt="Luna Atlas running on an LG TV: filtering by the power category, searching for createToast and opening its detail with the parameter list, copying the luna-send command, then selecting the dangerous tvpower reboot method and seeing the red confirm gate.">
+</p>
 
-```sh
-luna-send -n 1 -f luna://com.webos.notification/createToast '{"message":"Hello from luna-send"}'
-```
+<img src="app/assets/screenshots/detail-createtoast.png" width="100%" alt="Luna Atlas detail view: a search for createToast, the com.webos.notification service selected, and the createToast method open on the right with a green public badge, its luna URI, description and a table of parameters (sourceId, iconUrl, message, onclick, noaction, stale) with their types.">
 
-There has never been a complete list of what you can *say* to it.  This repo is that list, **8,167 methods across 501 services**, plus three ways to use it that all read one catalog, so they always agree:
+<img src="app/assets/screenshots/danger-reboot.png" width="100%" alt="Luna Atlas with the tvpower power/reboot method selected: a private badge, a red dangerous badge, an editable JSON payload box, and a red confirmation bar reading 'This call can change or damage the TV' with an I understand checkbox that must be ticked before Run is enabled.">
 
-| Tool | What it is | Where |
-|---|---|---|
-| **Script** | `search` / `show` / `run` over SSH, with tab completion | [`luna-atlas.sh`](luna-atlas.sh) |
-| **Browser UI** | browse and test from a phone or PC | [`luna-atlas serve`](#browser-ui) |
-| **webOS app** | the same from the couch, with the remote | [`webos-app/`](webos-app/) |
-
-> [!IMPORTANT]
-> **Under heavy active development.**  The catalog, the script and the app are all changing fast.  Method names are solid, but many parameters are still being filled in, categories may move, and the app and script are pre-1.0.  Expect breaking changes and re-dumps; pin a commit if you need something stable.
-
-> [!WARNING]
-> **This drives real services on your TV.**  Many calls change settings, inputs, power or the panel, and a few can factory reset, wipe data, or brick the set.  Those are flagged ⚠️ and listed in [docs/dangerous.md](docs/dangerous.md).  Running one here is exactly as safe or unsafe as typing the same `luna-send` yourself.  Use at your own risk; there is no warranty (see [LICENSE](LICENSE)).  You need a **rooted TV or Developer Mode**.
-
-<details>
-<summary><b>How this is built</b> &mdash; AI-assisted, directed and verified on a real TV</summary>
-
-<br>
-
-I, [OhMyBahGosh](https://github.com/ohmybahgosh), build this with AI coding agents (Claude), directed, reviewed and tested by me.  I've been building software for over 17 years; my day job is data engineering, and security and pentesting are what I do for fun.  AI does a lot of the work here: I decide what goes in, check how it's done, and verify it against a real TV (an LG C2 on webOS 22).  The catalog is pulled from the official webOS TV and webOS OSE docs, the homebrew and remote-control community, and the full service list introspected from my own rooted TV; every record lists its source, and a scrub step keeps personal data and installed-app names out.
-
-</details>
-
----
-
-## Install
-
-First you need a **rooted TV** (see [RootMyTV](https://rootmy.tv)) or **Developer Mode**, so that `luna-send` and SSH are available.
-
-<details>
-<summary><b>Option A &mdash; the webOS app</b> (no SSH needed)</summary>
-
-<br>
-
-Install the **Luna Atlas** app through the [Homebrew Channel](https://github.com/webosbrew/webos-homebrew-channel):
-
-1. Build or download the IPK (`webos-app/build.sh`, or the [Releases](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS/releases) page once published).
-2. Install it with the Homebrew Channel's **Developer Manager**, or `ares-install org.ohmybahgosh.lunaatlas_*.ipk`.
-3. For private methods, use the Homebrew Channel's **Elevate service** on it; public ones work as-is.
-
-</details>
-
-<details>
-<summary><b>Option B &mdash; the script</b> (SSH)</summary>
-
-<br>
-
-On a rooted TV, drop the repo somewhere writable (e.g. with [Entware](https://github.com/ohmybahgosh/WEBOS-ENTWARE-INSTALLER) for `git`/`curl`, or just `scp` it over):
-
-```sh
-# from your PC:
-scp -r WEBOS-LUNA-SEND-ATLAS root@<tv-ip>:/home/root/luna-atlas
-# on the TV:
-cd /home/root/luna-atlas
-sh luna-atlas.sh search toast
-```
-
-Only `luna-atlas.sh` and the `catalog/` and `web/` folders are needed at runtime.  Put `luna-atlas.sh` on your `PATH` and set `LUNA_ATLAS_DATA` to that folder if you move it.  For **tab completion**, source the right file (bash via Entware, or on your own machine):
-
-```sh
-. completions/luna-atlas.bash     # bash
-# or add completions/luna-atlas.zsh to your $fpath for zsh
-```
-
-</details>
-
----
+<img src="app/assets/screenshots/category-power.png" width="100%" alt="Luna Atlas filtered to the power category: the power chip highlighted green, the service list on the left showing power-related services, and their methods in the middle column.">
 
 ## Quick start
 
 ```sh
-luna-atlas search toast                               # find methods by name, service or description
-luna-atlas show com.webos.notification/createToast    # params + a ready-to-run example
-luna-atlas run luna://com.webos.notification/createToast '{"message":"hi"}'
+# Rooted TV, over SSH
+luna-send -n 1 -f luna://com.webos.notification/createToast '{"message":"Hello from luna-send"}'
+luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getSystemInfo '{"keys":["modelName","sdkVersion"]}'
+luna-send -n 1 -f luna://com.webos.applicationManager/listApps '{}'
+luna-send -n 1 -f luna://com.webos.settingsservice/getSystemSettings '{"category":"picture","keys":["pictureMode","backlight"]}'
+luna-send -n 1 -f luna://com.webos.service.tvpower/power/turnOffScreen '{}'
 ```
 
----
+No root?  Developer Mode gives you `luna-send-pub` (public methods only), and a lot more is reachable over the SSAP websocket, including private calls via the [createAlert trick](docs/ssap-and-createalert.md).
 
-## Usage
+## What's inside
 
-### Script (SSH)
+| Path | What |
+|---|---|
+| [`catalog/luna-catalog.json`](catalog/luna-catalog.json) / [`.jsonl`](catalog/luna-catalog.jsonl) | The full machine-readable catalog (schema below) |
+| [`app/`](app/) | **Luna Atlas**: on-TV webOS app to browse the catalog and run commands (IPK) |
+| [`docs/services/`](docs/services/) | One page per service: every method, params, example, sources |
+| [`docs/categories/`](docs/categories/) | Same methods grouped by what they do |
+| [`docs/luna-send-basics.md`](docs/luna-send-basics.md) | Flags, root vs pub, ACG permissions, how to discover methods yourself |
+| [`docs/ssap-and-createalert.md`](docs/ssap-and-createalert.md) | SSAP websocket protocol, SSAP to luna mapping, the createAlert trick |
+| [`docs/ssap-routing-W22O.md`](docs/ssap-routing-W22O.md) | Authoritative SSAP->luna routes + permissions from a real TV |
+| [`docs/settings-keys.md`](docs/settings-keys.md) | Every `getSystemSettings` / `setSystemSettings` category, key and allowed value |
+| [`docs/hidden-menus.md`](docs/hidden-menus.md) | Service menus and special app launches |
+| [`docs/calibration.md`](docs/calibration.md) | The `externalpq` calibration API (1D/3D LUTs, gamut, patterns) |
+| [`docs/dangerous.md`](docs/dangerous.md) | Calls that can hurt your TV |
+| [`docs/sensitive-services.md`](docs/sensitive-services.md) | sdx / ACR / DRM / Widevine, documented not weaponized |
+| [`docs/tv-dumps.md`](docs/tv-dumps.md) | Which real TVs / firmware the catalog was introspected from |
+| [`scripts/luna-dump.sh`](scripts/luna-dump.sh) | Read-only on-TV enumerator: dumps every service + method on *your* firmware |
+| [`scripts/parse_dump.py`](scripts/parse_dump.py) | Diffs a dump against the catalog so new methods can be contributed |
 
-```sh
-luna-atlas search toast                 # find methods by name, service or description
-luna-atlas show com.webos.notification/createToast   # params + a ready-to-run example
-luna-atlas services tvpower             # list services (optionally filtered)
-luna-atlas categories                   # methods grouped by what they do
-luna-atlas run luna://com.webos.notification/createToast '{"message":"hi"}'
-luna-atlas run luna://com.webos.service.tvpower/power/reboot   # dangerous ones ask first
-luna-atlas serve 28472                  # start the browser UI (see below)
-luna-atlas dump                         # read-only dump of THIS TV's services
-```
-
-`run` passes your call straight to `luna-send`, and asks for a typed **YES** on anything flagged dangerous.  Tab completion fills in service and method names from the catalog.
-
-### Browser UI
-
-`luna-atlas serve` runs a tiny `node` web server (node ships on webOS, so nothing to install) bound to **localhost only**, reached through an SSH tunnel so nothing is exposed on your network:
-
-```sh
-# on the TV:
-luna-atlas serve 28472
-# on your PC/phone, in another terminal:
-ssh -L 28472:127.0.0.1:28472 root@<tv-ip>
-# then open http://localhost:28472
-```
-
-The webOS app has a simpler path: its **Web access** switch starts the same UI on your LAN with a QR code and a one-time code, no SSH needed.  The default port is **28472** (an uncommon one, chosen to avoid SSAP on 3000/3001 and other services).  The page browses the whole catalog, shows parameters, and **runs** commands back on the TV.
-
-### TV app
-
-The **Luna Atlas** webOS app is the same thing with the remote: browse by category or service, search, read the params, edit a payload and run it, with a confirm on the dangerous calls and a **Show command** button that prints the `luna-send` line and a QR code so you can grab it on your phone.
-
-<details>
-<summary>Screenshots</summary>
-
-<br>
-
-<p align="center">
-  <img src="webos-app/assets/app-tv.gif" width="100%" alt="Luna Atlas running on an LG TV: filtering by category, searching for createToast and opening its detail with the parameter list, showing the luna-send command and a QR code, then selecting the dangerous tvpower reboot method and seeing the red confirm gate.">
-</p>
-
-<img src="webos-app/assets/screenshots/detail-createtoast.png" width="100%" alt="Luna Atlas app detail view for createToast: a public badge, the luna URI, and a table of parameters (sourceId, iconUrl, message, onclick, noaction, stale).">
-
-</details>
-
-Build it with [`webos-app/build.sh`](webos-app/build.sh); details in [`webos-app/README.md`](webos-app/README.md).
-
----
-
-## The catalog
-
-8,167 methods across 501 services.  Machine-readable in [`catalog/luna-catalog.json`](catalog/luna-catalog.json) / [`.jsonl`](catalog/luna-catalog.jsonl); a grep-friendly [`catalog/index.tsv`](catalog/index.tsv) feeds the script.  One page per service under [`docs/services/`](docs/services/), grouped by category under [`docs/categories/`](docs/categories/).
-
-<details>
-<summary>Deeper reference docs</summary>
-
-<br>
-
-[luna-send basics](docs/luna-send-basics.md) &middot; [SSAP + the createAlert trick](docs/ssap-and-createalert.md) &middot; [SSAP routing](docs/ssap-routing-W22O.md) &middot; [settings keys](docs/settings-keys.md) &middot; [hidden menus](docs/hidden-menus.md) &middot; [calibration](docs/calibration.md) &middot; [dangerous calls](docs/dangerous.md) &middot; [sensitive services](docs/sensitive-services.md) &middot; [TV dumps](docs/tv-dumps.md)
-
-</details>
-
-### Coverage
+## Coverage
 
 | Access | Methods |
 |---|---|
 | `private` | 5141 |
-| `public` | 2478 |
+| `public` | 2438 |
 | `unknown` | 413 |
 | `ssap` | 100 |
 | `root` | 35 |
 
-`public` = callable by apps with the right permission.  `private` = needs root or system rights.  `ssap` = reachable over the SSAP websocket.  `unknown` = the source didn't say.
+`public` = callable by apps with the right permission.  `private` = needs root or system rights.  `ssap` = reachable over the SSAP websocket.  `unknown` = the source didn't say (mostly webOS OSE pages).
 
-### How descriptions are sourced
+Confidence levels: `documented` (official LG / webOS OSE docs), `code` (seen in source code, firmware metadata or on-device introspection), `community` (forums, wikis, gists).
 
-Every method carries a `confidence` flag (column 9 of `index.tsv`, `dc` in the app catalog) so nothing reads as more certain than it is:
-
-| Confidence | Methods | What it means |
-|---|---|---|
-| `documented` | 1,849 | Described from an authoritative source: the [webOS OSE LS2 API reference](https://www.webosose.org/docs/reference/ls2-api/) (CC-BY 4.0), official LG docs, or community tools.  Parameters and return fields are real where shown. |
-| `inferred` | 6,316 | LG-proprietary services with no public documentation and no readable source (native firmware binaries).  The one-line description is derived **only from the method's own name** &mdash; e.g. `getLockStatusforSubscribe` &rarr; "Returns the lock status (subscription variant)".  **No parameters are invented.**  Treat these as a best-effort guide, not verified behaviour. |
-| `stub` | 2 | Name only, no description yet. |
-
-The method names, access levels, ACG permission groups and danger flags are all real (from the on-device permission registry).  Recovering real parameter schemas for the `inferred` methods needs the running device, which reports what each call requires &mdash; a planned follow-up.
-
-### Categories
-
-<details>
-<summary>All 27 categories</summary>
-
-<br>
+## Categories
 
 | Category | Methods |
 |---|---|
 | [TV Broadcast / DVR](docs/categories/tv-broadcast.md) | 1901 |
-| [Misc](docs/categories/misc.md) | 869 |
+| [Misc](docs/categories/misc.md) | 829 |
 | [Input & Keys](docs/categories/input.md) | 795 |
 | [Audio](docs/categories/audio.md) | 697 |
 | [Media Playback](docs/categories/media.md) | 433 |
@@ -237,17 +134,81 @@ The method names, access levels, ACG permission groups and danger flags are all 
 | [Key Management](docs/categories/keys.md) | 13 |
 | [Sound](docs/categories/sound.md) | 1 |
 
-</details>
+## Services
 
-### Services
-
-**webOS TV &mdash; 445 services**
-
-<details>
-<summary><code>com.webos.service.*</code> &mdash; 355 services, 6241 methods</summary>
+### webOS TV (445)
 
 | Service | Methods | Platforms |
 |---|---|---|
+| [`airplay.homekit`](docs/services/airplay.homekit.md) | 3 | webOS TV |
+| [`airplay.service`](docs/services/airplay.service.md) | 19 | webOS TV |
+| [`alibaba.genie.adapter.plugin`](docs/services/alibaba.genie.adapter.plugin.md) | 6 | webOS TV |
+| [`amazon.alexa.adapter.plugin`](docs/services/amazon.alexa.adapter.plugin.md) | 18 | webOS TV |
+| [`com.example.activityexample`](docs/services/com.example.activityexample.md) | 7 | webOS TV |
+| [`com.example.helloworld`](docs/services/com.example.helloworld.md) | 12 | webOS TV |
+| [`com.example.helloworld2`](docs/services/com.example.helloworld2.md) | 3 | webOS TV |
+| [`com.example.service.native`](docs/services/com.example.service.native.md) | 4 | webOS TV |
+| [`com.example.service.native2`](docs/services/com.example.service.native2.md) | 4 | webOS TV |
+| [`com.example.service.native3`](docs/services/com.example.service.native3.md) | 4 | webOS TV |
+| [`com.flutter.app.similarlist`](docs/services/com.flutter.app.similarlist.md) | 2 | webOS TV |
+| [`com.lge.settingsservice`](docs/services/com.lge.settingsservice.md) | 25 | webOS OSE, webOS TV |
+| [`com.palm.activitymanager`](docs/services/com.palm.activitymanager.md) | 7 | webOS TV |
+| [`com.palm.applicationManager`](docs/services/com.palm.applicationManager.md) | 8 | HP webOS, Palm, webOS TV |
+| [`com.palm.audio`](docs/services/com.palm.audio.md) | 93 | HP webOS, Palm, webOS TV |
+| [`com.palm.bus`](docs/services/com.palm.bus.md) | 1 | webOS TV |
+| [`com.palm.certificatemanager`](docs/services/com.palm.certificatemanager.md) | 6 | webOS TV |
+| [`com.palm.configurator`](docs/services/com.palm.configurator.md) | 4 | webOS TV |
+| [`com.palm.connectionmanager`](docs/services/com.palm.connectionmanager.md) | 1 | webOS TV |
+| [`com.palm.db`](docs/services/com.palm.db.md) | 39 | webOS OSE, webOS TV |
+| [`com.palm.display`](docs/services/com.palm.display.md) | 7 | webOS TV |
+| [`com.palm.download`](docs/services/com.palm.download.md) | 2 | webOS TV |
+| [`com.palm.downloadmanager`](docs/services/com.palm.downloadmanager.md) | 20 | HP webOS, Palm, webOS TV |
+| [`com.palm.filecache`](docs/services/com.palm.filecache.md) | 16 | webOS TV |
+| [`com.palm.keymanager`](docs/services/com.palm.keymanager.md) | 17 | webOS TV |
+| [`com.palm.lunabus`](docs/services/com.palm.lunabus.md) | 1 | webOS TV |
+| [`com.palm.nettools`](docs/services/com.palm.nettools.md) | 2 | webOS TV |
+| [`com.palm.power`](docs/services/com.palm.power.md) | 31 | webOS TV |
+| [`com.palm.preferences`](docs/services/com.palm.preferences.md) | 18 | webOS TV |
+| [`com.palm.service.bugreport`](docs/services/com.palm.service.bugreport.md) | 21 | webOS TV |
+| [`com.palm.service.devmode`](docs/services/com.palm.service.devmode.md) | 5 | webOS TV |
+| [`com.palm.sleep`](docs/services/com.palm.sleep.md) | 31 | webOS OSE, webOS TV |
+| [`com.palm.storage`](docs/services/com.palm.storage.md) | 3 | HP webOS, Palm, webOS TV |
+| [`com.palm.systemservice`](docs/services/com.palm.systemservice.md) | 10 | HP webOS, Palm, all, webOS TV |
+| [`com.palm.tempdb`](docs/services/com.palm.tempdb.md) | 39 | webOS OSE, webOS TV |
+| [`com.palm.uploadd`](docs/services/com.palm.uploadd.md) | 9 | webOS TV |
+| [`com.palm.webappmanager`](docs/services/com.palm.webappmanager.md) | 21 | webOS TV |
+| [`com.palmdts.devmode.service`](docs/services/com.palmdts.devmode.service.md) | 2 | webOS TV |
+| [`com.test.interc.service.fake`](docs/services/com.test.interc.service.fake.md) | 13 | webOS TV |
+| [`com.webos.accountdb`](docs/services/com.webos.accountdb.md) | 28 | webOS TV |
+| [`com.webos.app.browser`](docs/services/com.webos.app.browser.md) | 7 | webOS TV |
+| [`com.webos.app.igallery.preview`](docs/services/com.webos.app.igallery.preview.md) | 7 | webOS TV |
+| [`com.webos.app.music.preview`](docs/services/com.webos.app.music.preview.md) | 2 | webOS TV |
+| [`com.webos.app.photovideo.preview`](docs/services/com.webos.app.photovideo.preview.md) | 2 | webOS TV |
+| [`com.webos.app.teletext`](docs/services/com.webos.app.teletext.md) | 8 | webOS TV |
+| [`com.webos.appInstallService`](docs/services/com.webos.appInstallService.md) | 22 | all, webOS OSE, webOS TV |
+| [`com.webos.applicationManager`](docs/services/com.webos.applicationManager.md) | 76 | webOS OSE, webOS TV |
+| [`com.webos.appUpdateService`](docs/services/com.webos.appUpdateService.md) | 3 | webOS TV |
+| [`com.webos.assetmanager`](docs/services/com.webos.assetmanager.md) | 4 | webOS TV |
+| [`com.webos.audio`](docs/services/com.webos.audio.md) | 137 | webOS TV |
+| [`com.webos.booster`](docs/services/com.webos.booster.md) | 3 | webOS TV |
+| [`com.webos.bootManager`](docs/services/com.webos.bootManager.md) | 4 | webOS OSE, webOS TV |
+| [`com.webos.chromecast.cell`](docs/services/com.webos.chromecast.cell.md) | 6 | webOS TV |
+| [`com.webos.chromecast.log`](docs/services/com.webos.chromecast.log.md) | 2 | webOS TV |
+| [`com.webos.coverUI`](docs/services/com.webos.coverUI.md) | 3 | webOS TV |
+| [`com.webos.epgdb`](docs/services/com.webos.epgdb.md) | 39 | webOS OSE, webOS TV |
+| [`com.webos.favchannels`](docs/services/com.webos.favchannels.md) | 2 | webOS TV |
+| [`com.webos.flutter.embedder`](docs/services/com.webos.flutter.embedder.md) | 2 | webOS TV |
+| [`com.webos.ghp.runtime`](docs/services/com.webos.ghp.runtime.md) | 10 | webOS TV |
+| [`com.webos.iotframework`](docs/services/com.webos.iotframework.md) | 7 | webOS TV |
+| [`com.webos.keyfilter.magicnumber`](docs/services/com.webos.keyfilter.magicnumber.md) | 1 | webOS TV |
+| [`com.webos.media`](docs/services/com.webos.media.md) | 165 | webOS OSE, webOS TV |
+| [`com.webos.mediadb`](docs/services/com.webos.mediadb.md) | 39 | webOS OSE, webOS TV |
+| [`com.webos.memorymanager`](docs/services/com.webos.memorymanager.md) | 12 | webOS TV |
+| [`com.webos.notification`](docs/services/com.webos.notification.md) | 44 | webOS OSE, webOS TV |
+| [`com.webos.pmlogd`](docs/services/com.webos.pmlogd.md) | 12 | webOS TV |
+| [`com.webos.rdxd`](docs/services/com.webos.rdxd.md) | 4 | webOS TV |
+| [`com.webos.rm.client`](docs/services/com.webos.rm.client.md) | 3 | webOS TV |
+| [`com.webos.sensord`](docs/services/com.webos.sensord.md) | 42 | webOS TV |
 | [`com.webos.service.accountmanager`](docs/services/com.webos.service.accountmanager.md) | 16 | webOS TV |
 | [`com.webos.service.acr`](docs/services/com.webos.service.acr.md) | 17 | webOS TV |
 | [`com.webos.service.activityPolicyMgr`](docs/services/com.webos.service.activityPolicyMgr.md) | 2 | webOS TV |
@@ -603,44 +564,6 @@ The method names, access levels, ACG permission groups and danger flags are all 
 | [`com.webos.service.wifi`](docs/services/com.webos.service.wifi.md) | 88 | webOS OSE, webOS TV |
 | [`com.webos.service.wirelessavcontroller`](docs/services/com.webos.service.wirelessavcontroller.md) | 31 | webOS TV |
 | [`com.webos.service.wowplay`](docs/services/com.webos.service.wowplay.md) | 22 | webOS TV |
-
-</details>
-
-<details>
-<summary><code>com.webos.* (other)</code> &mdash; 43 services, 785 methods</summary>
-
-| Service | Methods | Platforms |
-|---|---|---|
-| [`com.webos.accountdb`](docs/services/com.webos.accountdb.md) | 28 | webOS TV |
-| [`com.webos.app.browser`](docs/services/com.webos.app.browser.md) | 7 | webOS TV |
-| [`com.webos.app.igallery.preview`](docs/services/com.webos.app.igallery.preview.md) | 7 | webOS TV |
-| [`com.webos.app.music.preview`](docs/services/com.webos.app.music.preview.md) | 2 | webOS TV |
-| [`com.webos.app.photovideo.preview`](docs/services/com.webos.app.photovideo.preview.md) | 2 | webOS TV |
-| [`com.webos.app.teletext`](docs/services/com.webos.app.teletext.md) | 8 | webOS TV |
-| [`com.webos.appInstallService`](docs/services/com.webos.appInstallService.md) | 22 | all, webOS OSE, webOS TV |
-| [`com.webos.applicationManager`](docs/services/com.webos.applicationManager.md) | 76 | webOS OSE, webOS TV |
-| [`com.webos.appUpdateService`](docs/services/com.webos.appUpdateService.md) | 3 | webOS TV |
-| [`com.webos.assetmanager`](docs/services/com.webos.assetmanager.md) | 4 | webOS TV |
-| [`com.webos.audio`](docs/services/com.webos.audio.md) | 137 | webOS TV |
-| [`com.webos.booster`](docs/services/com.webos.booster.md) | 3 | webOS TV |
-| [`com.webos.bootManager`](docs/services/com.webos.bootManager.md) | 4 | webOS OSE, webOS TV |
-| [`com.webos.chromecast.cell`](docs/services/com.webos.chromecast.cell.md) | 6 | webOS TV |
-| [`com.webos.chromecast.log`](docs/services/com.webos.chromecast.log.md) | 2 | webOS TV |
-| [`com.webos.coverUI`](docs/services/com.webos.coverUI.md) | 3 | webOS TV |
-| [`com.webos.epgdb`](docs/services/com.webos.epgdb.md) | 39 | webOS OSE, webOS TV |
-| [`com.webos.favchannels`](docs/services/com.webos.favchannels.md) | 2 | webOS TV |
-| [`com.webos.flutter.embedder`](docs/services/com.webos.flutter.embedder.md) | 2 | webOS TV |
-| [`com.webos.ghp.runtime`](docs/services/com.webos.ghp.runtime.md) | 10 | webOS TV |
-| [`com.webos.iotframework`](docs/services/com.webos.iotframework.md) | 7 | webOS TV |
-| [`com.webos.keyfilter.magicnumber`](docs/services/com.webos.keyfilter.magicnumber.md) | 1 | webOS TV |
-| [`com.webos.media`](docs/services/com.webos.media.md) | 165 | webOS OSE, webOS TV |
-| [`com.webos.mediadb`](docs/services/com.webos.mediadb.md) | 39 | webOS OSE, webOS TV |
-| [`com.webos.memorymanager`](docs/services/com.webos.memorymanager.md) | 12 | webOS TV |
-| [`com.webos.notification`](docs/services/com.webos.notification.md) | 44 | webOS OSE, webOS TV |
-| [`com.webos.pmlogd`](docs/services/com.webos.pmlogd.md) | 12 | webOS TV |
-| [`com.webos.rdxd`](docs/services/com.webos.rdxd.md) | 4 | webOS TV |
-| [`com.webos.rm.client`](docs/services/com.webos.rm.client.md) | 3 | webOS TV |
-| [`com.webos.sensord`](docs/services/com.webos.sensord.md) | 42 | webOS TV |
 | [`com.webos.settingsservice`](docs/services/com.webos.settingsservice.md) | 29 | all, webOS TV |
 | [`com.webos.statisticsManager`](docs/services/com.webos.statisticsManager.md) | 1 | webOS TV |
 | [`com.webos.surfacemanager`](docs/services/com.webos.surfacemanager.md) | 38 | webOS OSE, webOS TV |
@@ -654,61 +577,6 @@ The method names, access levels, ACG permission groups and danger flags are all 
 | [`com.webos.tas.home`](docs/services/com.webos.tas.home.md) | 2 | webOS TV |
 | [`com.webos.tas.screensaver`](docs/services/com.webos.tas.screensaver.md) | 2 | webOS TV |
 | [`com.webos.tnp`](docs/services/com.webos.tnp.md) | 3 | webOS TV |
-
-</details>
-
-<details>
-<summary><code>com.palm.*</code> &mdash; 25 services, 412 methods</summary>
-
-| Service | Methods | Platforms |
-|---|---|---|
-| [`com.palm.activitymanager`](docs/services/com.palm.activitymanager.md) | 7 | webOS TV |
-| [`com.palm.applicationManager`](docs/services/com.palm.applicationManager.md) | 8 | HP webOS, Palm, webOS TV |
-| [`com.palm.audio`](docs/services/com.palm.audio.md) | 93 | HP webOS, Palm, webOS TV |
-| [`com.palm.bus`](docs/services/com.palm.bus.md) | 1 | webOS TV |
-| [`com.palm.certificatemanager`](docs/services/com.palm.certificatemanager.md) | 6 | webOS TV |
-| [`com.palm.configurator`](docs/services/com.palm.configurator.md) | 4 | webOS TV |
-| [`com.palm.connectionmanager`](docs/services/com.palm.connectionmanager.md) | 1 | webOS TV |
-| [`com.palm.db`](docs/services/com.palm.db.md) | 39 | webOS OSE, webOS TV |
-| [`com.palm.display`](docs/services/com.palm.display.md) | 7 | webOS TV |
-| [`com.palm.download`](docs/services/com.palm.download.md) | 2 | webOS TV |
-| [`com.palm.downloadmanager`](docs/services/com.palm.downloadmanager.md) | 20 | HP webOS, Palm, webOS TV |
-| [`com.palm.filecache`](docs/services/com.palm.filecache.md) | 16 | webOS TV |
-| [`com.palm.keymanager`](docs/services/com.palm.keymanager.md) | 17 | webOS TV |
-| [`com.palm.lunabus`](docs/services/com.palm.lunabus.md) | 1 | webOS TV |
-| [`com.palm.nettools`](docs/services/com.palm.nettools.md) | 2 | webOS TV |
-| [`com.palm.power`](docs/services/com.palm.power.md) | 31 | webOS TV |
-| [`com.palm.preferences`](docs/services/com.palm.preferences.md) | 18 | webOS TV |
-| [`com.palm.service.bugreport`](docs/services/com.palm.service.bugreport.md) | 21 | webOS TV |
-| [`com.palm.service.devmode`](docs/services/com.palm.service.devmode.md) | 5 | webOS TV |
-| [`com.palm.sleep`](docs/services/com.palm.sleep.md) | 31 | webOS OSE, webOS TV |
-| [`com.palm.storage`](docs/services/com.palm.storage.md) | 3 | HP webOS, Palm, webOS TV |
-| [`com.palm.systemservice`](docs/services/com.palm.systemservice.md) | 10 | HP webOS, Palm, all, webOS TV |
-| [`com.palm.tempdb`](docs/services/com.palm.tempdb.md) | 39 | webOS OSE, webOS TV |
-| [`com.palm.uploadd`](docs/services/com.palm.uploadd.md) | 9 | webOS TV |
-| [`com.palm.webappmanager`](docs/services/com.palm.webappmanager.md) | 21 | webOS TV |
-
-</details>
-
-<details>
-<summary><code>Third-party adapters & other</code> &mdash; 22 services, 191 methods</summary>
-
-| Service | Methods | Platforms |
-|---|---|---|
-| [`airplay.homekit`](docs/services/airplay.homekit.md) | 3 | webOS TV |
-| [`airplay.service`](docs/services/airplay.service.md) | 19 | webOS TV |
-| [`alibaba.genie.adapter.plugin`](docs/services/alibaba.genie.adapter.plugin.md) | 6 | webOS TV |
-| [`amazon.alexa.adapter.plugin`](docs/services/amazon.alexa.adapter.plugin.md) | 18 | webOS TV |
-| [`com.example.activityexample`](docs/services/com.example.activityexample.md) | 7 | webOS TV |
-| [`com.example.helloworld`](docs/services/com.example.helloworld.md) | 12 | webOS TV |
-| [`com.example.helloworld2`](docs/services/com.example.helloworld2.md) | 3 | webOS TV |
-| [`com.example.service.native`](docs/services/com.example.service.native.md) | 4 | webOS TV |
-| [`com.example.service.native2`](docs/services/com.example.service.native2.md) | 4 | webOS TV |
-| [`com.example.service.native3`](docs/services/com.example.service.native3.md) | 4 | webOS TV |
-| [`com.flutter.app.similarlist`](docs/services/com.flutter.app.similarlist.md) | 2 | webOS TV |
-| [`com.lge.settingsservice`](docs/services/com.lge.settingsservice.md) | 25 | webOS OSE, webOS TV |
-| [`com.palmdts.devmode.service`](docs/services/com.palmdts.devmode.service.md) | 2 | webOS TV |
-| [`com.test.interc.service.fake`](docs/services/com.test.interc.service.fake.md) | 13 | webOS TV |
 | [`dangbei.adapter.plugin`](docs/services/dangbei.adapter.plugin.md) | 7 | webOS TV |
 | [`google.assistant.adapter.plugin`](docs/services/google.assistant.adapter.plugin.md) | 17 | webOS TV |
 | [`lg.thinqai.adapter`](docs/services/lg.thinqai.adapter.md) | 18 | webOS TV |
@@ -718,12 +586,9 @@ The method names, access levels, ACG permission groups and danger flags are all 
 | [`tsuploader.service`](docs/services/tsuploader.service.md) | 5 | webOS TV |
 | [`yandex.alice.adapter.plugin`](docs/services/yandex.alice.adapter.plugin.md) | 10 | webOS TV |
 
-</details>
+### SSAP namespaces (14)
 
-<details>
-<summary><b>SSAP namespaces</b> (14) &mdash; aliases whose luna target isn't confirmed yet</summary>
-
-<br>
+SSAP aliases whose underlying luna target isn't confirmed yet.
 
 | Service | Methods | Platforms |
 |---|---|---|
@@ -742,16 +607,13 @@ The method names, access levels, ACG permission groups and danger flags are all 
 | [`ssap:user`](docs/services/ssap_user.md) | 4 | webOS TV |
 | [`ssap:webapp`](docs/services/ssap_webapp.md) | 6 | webOS TV |
 
-</details>
+### webOS OSE only (30)
 
-<details>
-<summary><b>webOS OSE only</b> (30) &mdash; may exist on TVs under the same or a different name</summary>
-
-<br>
+Present in the open source edition.  Many of these also exist on TVs under the same or a different name, but that isn't verified yet.
 
 | Service | Methods | Platforms |
 |---|---|---|
-| [`com.palm.service.tellurium`](docs/services/com.palm.service.tellurium.md) | 20 | webOS OSE |
+| [`com.palm.service.tellurium`](docs/services/com.palm.service.tellurium.md) | 17 | webOS OSE |
 | [`com.webos.pipeline.camera`](docs/services/com.webos.pipeline.camera.md) | 5 | webOS OSE |
 | [`com.webos.pipeline.record`](docs/services/com.webos.pipeline.record.md) | 8 | webOS OSE |
 | [`com.webos.service.activitymanager`](docs/services/com.webos.service.activitymanager.md) | 36 | webOS OSE |
@@ -763,7 +625,7 @@ The method names, access levels, ACG permission groups and danger flags are all 
 | [`com.webos.service.cec`](docs/services/com.webos.service.cec.md) | 8 | webOS OSE |
 | [`com.webos.service.configurator`](docs/services/com.webos.service.configurator.md) | 4 | webOS OSE |
 | [`com.webos.service.contextintentmgr`](docs/services/com.webos.service.contextintentmgr.md) | 3 | webOS OSE |
-| [`com.webos.service.db`](docs/services/com.webos.service.db.md) | 89 | webOS OSE |
+| [`com.webos.service.db`](docs/services/com.webos.service.db.md) | 52 | webOS OSE |
 | [`com.webos.service.devmode`](docs/services/com.webos.service.devmode.md) | 3 | webOS OSE |
 | [`com.webos.service.filecache`](docs/services/com.webos.service.filecache.md) | 16 | webOS OSE |
 | [`com.webos.service.hfp`](docs/services/com.webos.service.hfp.md) | 11 | webOS OSE |
@@ -782,12 +644,7 @@ The method names, access levels, ACG permission groups and danger flags are all 
 | [`com.webos.service.unifiedsearch`](docs/services/com.webos.service.unifiedsearch.md) | 8 | webOS OSE |
 | [`com.webos.service.uwb`](docs/services/com.webos.service.uwb.md) | 16 | webOS OSE |
 
-</details>
-
-<details>
-<summary><b>Palm / HP webOS and other</b> (12)</summary>
-
-<br>
+### Palm / HP webOS and other (12)
 
 | Service | Methods | Platforms |
 |---|---|---|
@@ -804,34 +661,50 @@ The method names, access levels, ACG permission groups and danger flags are all 
 | [`com.palm.vibrate`](docs/services/com.palm.vibrate.md) | 1 | HP webOS, Palm |
 | [`com.palm.wifi`](docs/services/com.palm.wifi.md) | 2 | HP webOS, Palm |
 
-</details>
+## Record schema
 
----
+```json
+{
+  "service": "com.webos.notification",
+  "method": "createToast",
+  "uri": "luna://com.webos.notification/createToast",
+  "category": "notifications",
+  "description": "Creates a toast notification.",
+  "params": {"message": "String (required) ..."},
+  "example": "luna-send -n 1 -f luna://com.webos.notification/createToast '{\"message\":\"Hello\"}'",
+  "subscribe": false,
+  "access": "public | private | root | ssap | unknown",
+  "platform": "webOS TV, webOS OSE",
+  "versions": "webOS 3+",
+  "dangerous": false,
+  "notes": "...",
+  "sources": ["https://..."],
+  "confidence": "documented",
+  "confidence_all": ["documented", "code"]
+}
+```
 
 ## Dump your own TV
 
-<details>
-<summary>The best contribution is a dump from your own firmware</summary>
+The best contribution is a dump from your own firmware:
 
-<br>
-
-1. `luna-atlas dump` (or copy `scripts/luna-dump.sh` to a rooted TV and run `sh luna-dump.sh /tmp`).  Read-only: it introspects services, it never calls one.
-2. `python3 scripts/parse_dump.py /tmp/luna-dump-*.tar.gz` on your PC.
+1. Copy `scripts/luna-dump.sh` to a rooted TV and run `sh luna-dump.sh /tmp` (read-only; it introspects services, it never calls one).
+2. Run `python3 scripts/parse_dump.py /tmp/luna-dump-*.tar.gz` on your PC.
 3. Open a PR or issue with `new-methods.jsonl` and your model + webOS version.
 
-Before committing, run `sh scripts/scrub-check.sh`.  It fails on MAC / public-IP / credential / email leaks and on homebrew / sideloaded app buses.  The build keeps only stock services; homebrew apps (installed under `/media/developer`) are filtered so a dump never advertises what you installed.
+Payloads you've worked out with `ls-monitor` tracing are just as welcome.  Please include where you saw it.
 
-</details>
-
----
+Before committing, run `sh scripts/scrub-check.sh`.  It fails on MAC / public-IP / credential / email leaks and on homebrew / sideloaded app buses.  The build filters out only homebrew apps (installed under `/media/developer`) so a dump never advertises what you installed; everything stock is kept, including dev mode (`com.palmdts.*`) and the preinstalled vendor integrations (Alexa, Google Assistant, ThinQ, Netflix, AirPlay, ...).
 
 ## Scope and safety
 
-Out of scope on purpose: DRM, LG account/store authentication, region or country lock bypass, and anything else that circumvents licensing or security protections.  The sensitive services (sdx, ACR, DRM, Widevine) are documented by what they do, not how to defeat them ([docs/sensitive-services.md](docs/sensitive-services.md)).
+Out of scope on purpose: DRM, LG account/store authentication, region or country lock bypass, and anything else that circumvents licensing or security protections.  The sensitive services (sdx, ACR, DRM, Widevine) are documented by what they do, not how to defeat them, see [docs/sensitive-services.md](docs/sensitive-services.md).
+
+Running a command here is exactly as safe or unsafe as typing the same `luna-send` yourself.  The ⚠️ flag and the app's confirm gate are there to slow you down on the calls that can hurt the TV.
 
 ## Credits
 
-Stands on the webOS OSE docs, LG's webOS TV developer docs, [webosbrew](https://github.com/webosbrew), [openlgtv](https://github.com/openlgtv), [bscpylgtv](https://github.com/chros73/bscpylgtv), [LGTV Companion](https://github.com/JPersson77/LGTVCompanion), [Glasshouse](https://github.com/rorygallagher2024/glasshouse), and the projects in [SOURCES.md](SOURCES.md).  QR codes by [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) (MIT).
+This catalog stands on the work of the webOS OSE docs team, LG's webOS TV developer docs, [webosbrew](https://github.com/webosbrew), [openlgtv](https://github.com/openlgtv), [bscpylgtv](https://github.com/chros73/bscpylgtv), [LGTV Companion](https://github.com/JPersson77/LGTVCompanion), [Glasshouse](https://github.com/rorygallagher2024/glasshouse), and many other projects listed in [SOURCES.md](SOURCES.md).
 
 Not affiliated with LG Electronics.  webOS is a trademark of LG Electronics.
 
@@ -841,4 +714,4 @@ MIT, see [LICENSE](LICENSE).
 
 ## Author
 
-Built by **OhMyBahGosh**.  More LG webOS homebrew ([TiviBro](https://github.com/ohmybahgosh/TiviBro), [LG-USB-2-ETH0](https://github.com/ohmybahgosh/LG-USB-2-ETH0), [Entware installer](https://github.com/ohmybahgosh/WEBOS-ENTWARE-INSTALLER)) at [ohmybahgosh.dev](https://ohmybahgosh.dev).
+Built by **OhMyBahGosh**.  More LG webOS homebrew (including [TiviBro](https://github.com/ohmybahgosh/TiviBro), [LG-USB-2-ETH0](https://github.com/ohmybahgosh/LG-USB-2-ETH0) and a [one-line Entware installer](https://github.com/ohmybahgosh/WEBOS-ENTWARE-INSTALLER)) at [ohmybahgosh.dev](https://ohmybahgosh.dev).
