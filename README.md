@@ -19,7 +19,7 @@
 |  |  |
 |---|---|
 | **Start here** | [What this is](#what-this-is) &middot; [Install](#install) &middot; [Quick start](#quick-start) |
-| **Use it** | [Script (SSH)](#script-ssh) &middot; [Browser UI](#browser-ui) |
+| **Use it** | [Finding a command](#finding-a-command) &middot; [Script (SSH)](#script-ssh) &middot; [Browser UI](#browser-ui) |
 | **Reference** | [The catalog](#the-catalog) &middot; [Coverage](#coverage) &middot; [How descriptions are sourced](#how-descriptions-are-sourced) &middot; [Categories](#categories) &middot; [Services](#services) |
 | **More** | [Dump your own TV](#dump-your-own-tv) &middot; [Scope & safety](#scope-and-safety) &middot; [Credits](#credits) &middot; [License](#license) |
 
@@ -89,6 +89,24 @@ Only `luna-atlas.sh` and the `catalog/` and `web/` folders are needed at runtime
 luna-atlas search toast                               # find methods by name, service or description
 luna-atlas show com.webos.notification/createToast    # params + a ready-to-run example
 luna-atlas run luna://com.webos.notification/createToast '{"message":"hi"}'
+```
+
+---
+
+## Finding a command
+
+Five ways to get from "what is it called?" to a line you can run, fastest first.
+
+- **Search on the web.**  [ohmybahgosh.dev/luna-atlas](https://ohmybahgosh.dev/luna-atlas/) has a live search box over the whole catalog.  Type a service, a method, or a few words from a description.
+- **Search from the shell.**  `luna-atlas search <term>` matches method names, services and descriptions, and `luna-atlas show <service>/<method>` prints the parameters and a ready-to-run example.
+- **Browse by category.**  The 27 [category pages](#categories) group every method by what it does: power, picture, network, apps and so on.
+- **Browse by service.**  There is one [page per service](docs/services/) under `docs/services/`, and every method has its own anchor, so you can link straight to it.
+- **Grep the index.**  [`catalog/index.tsv`](catalog/index.tsv) is one tab-separated row per method: `service`, `method`, `uri`, `access`, `dangerous`, `subscribe`, `category`, `description`, `confidence`.
+
+Listing every dangerous call in the power category is then a one-liner:
+
+```sh
+awk -F'\t' '$5==1 && $7=="power" {print $3}' catalog/index.tsv
 ```
 
 ---
