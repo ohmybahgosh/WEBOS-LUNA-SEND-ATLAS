@@ -1,0 +1,10760 @@
+[
+{
+"category": "aiPicture",
+"key": "ai_Brightness",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "aiPicture",
+"key": "ai_Genre",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "aiPicture",
+"key": "ai_Picture",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "aiPicture",
+"key": "isAiPictureActing",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "aspectRatio",
+"key": "allDirZoomHPosition",
+"type": "range",
+"range": {
+"max": 15,
+"min": -15,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "aspectRatio",
+"key": "allDirZoomHRatio",
+"type": "range",
+"range": {
+"max": 15,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "aspectRatio",
+"key": "allDirZoomVPosition",
+"type": "range",
+"range": {
+"max": 15,
+"min": -15,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "aspectRatio",
+"key": "allDirZoomVRatio",
+"type": "range",
+"range": {
+"max": 15,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "aspectRatio",
+"key": "arcMenuBySystem",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "aspectRatio",
+"key": "arcPerApp",
+"type": "enum",
+"values": [
+"16x9",
+"original",
+"full_wide",
+"4x3",
+"vertZoom",
+"allDirZoom",
+"32x9",
+"32x12",
+"twinZoom"
+],
+"dimension": [
+"input",
+"twinMode"
+]
+},
+{
+"category": "aspectRatio",
+"key": "justScan",
+"type": "enum",
+"values": [
+"auto",
+"on",
+"off"
+],
+"dimension": [
+"input",
+"resolution"
+]
+},
+{
+"category": "aspectRatio",
+"key": "twinCinemaVPosition",
+"type": "range",
+"range": {
+"max": 10,
+"min": -10,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "aspectRatio",
+"key": "twinZoomHPosition",
+"type": "range",
+"range": {
+"max": 15,
+"min": -15,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "aspectRatio",
+"key": "twinZoomHRatio",
+"type": "range",
+"range": {
+"max": 15,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "aspectRatio",
+"key": "twinZoomVPosition",
+"type": "range",
+"range": {
+"max": 15,
+"min": -15,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "aspectRatio",
+"key": "twinZoomVRatio",
+"type": "range",
+"range": {
+"max": 15,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "aspectRatio",
+"key": "vertZoomVPosition",
+"type": "range",
+"range": {
+"max": 18,
+"min": -18,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "aspectRatio",
+"key": "vertZoomVRatio",
+"type": "range",
+"range": {
+"max": 9,
+"min": -8,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "caption",
+"key": "aiCaptionEnable",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "caption",
+"key": "caption608PosOption",
+"type": "enum",
+"values": [
+"auto",
+"manual"
+]
+},
+{
+"category": "caption",
+"key": "caption608PosX",
+"type": "enum",
+"values": []
+},
+{
+"category": "caption",
+"key": "caption608PosY",
+"type": "enum",
+"values": []
+},
+{
+"category": "caption",
+"key": "caption708PosOption",
+"type": "enum",
+"values": [
+"auto",
+"manual",
+"autoAi"
+]
+},
+{
+"category": "caption",
+"key": "caption708PosX",
+"type": "enum",
+"values": []
+},
+{
+"category": "caption",
+"key": "caption708PosY",
+"type": "enum",
+"values": []
+},
+{
+"category": "caption",
+"key": "captionAnalog",
+"type": "enum",
+"values": [
+"cc1",
+"cc2",
+"cc3",
+"cc4",
+"t1",
+"t2",
+"t3",
+"t4",
+"eng",
+"kor"
+]
+},
+{
+"category": "caption",
+"key": "captionBgColor",
+"type": "enum",
+"values": [
+"white",
+"black",
+"red",
+"green",
+"blue",
+"cyan",
+"magenta",
+"yellow"
+]
+},
+{
+"category": "caption",
+"key": "captionBgOpacity",
+"type": "enum",
+"values": [
+"flash",
+"translucent",
+"transparent",
+"solid"
+]
+},
+{
+"category": "caption",
+"key": "captionDigital",
+"type": "enum",
+"values": [
+"off",
+"svc1",
+"svc2",
+"svc3",
+"svc4",
+"svc5",
+"svc6",
+"Portuguese",
+"Spanish",
+"English"
+]
+},
+{
+"category": "caption",
+"key": "captionDigitalPosOption",
+"type": "enum",
+"values": [
+"auto",
+"manual",
+"autoAi",
+"splitDown16_9",
+"splitUp16_9"
+]
+},
+{
+"category": "caption",
+"key": "captionDigitalPosX",
+"type": "enum",
+"values": []
+},
+{
+"category": "caption",
+"key": "captionDigitalPosY",
+"type": "enum",
+"values": []
+},
+{
+"category": "caption",
+"key": "captionEdgeColor",
+"type": "enum",
+"values": [
+"white",
+"black",
+"red",
+"green",
+"blue",
+"cyan",
+"magenta",
+"yellow"
+]
+},
+{
+"category": "caption",
+"key": "captionEdgeType",
+"type": "enum",
+"values": [
+"none",
+"uniform",
+"raised",
+"depressed",
+"left_drop_shadow",
+"right_drop_shadow"
+]
+},
+{
+"category": "caption",
+"key": "captionEnable",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "caption",
+"key": "captionFont",
+"type": "enum",
+"values": [
+"font0",
+"font1",
+"font2",
+"font3",
+"font4",
+"font5",
+"font6",
+"font7"
+]
+},
+{
+"category": "caption",
+"key": "captionSize",
+"type": "enum",
+"values": [
+"small",
+"standard",
+"large"
+]
+},
+{
+"category": "caption",
+"key": "captionStyle",
+"type": "enum",
+"values": [
+"auto",
+"manual"
+]
+},
+{
+"category": "caption",
+"key": "captionTextColor",
+"type": "enum",
+"values": [
+"white",
+"black",
+"red",
+"green",
+"blue",
+"cyan",
+"magenta",
+"yellow"
+]
+},
+{
+"category": "caption",
+"key": "captionTextOpacity",
+"type": "enum",
+"values": [
+"flash",
+"translucent",
+"transparent",
+"solid"
+]
+},
+{
+"category": "caption",
+"key": "captionWindowColor",
+"type": "enum",
+"values": [
+"white",
+"black",
+"red",
+"green",
+"blue",
+"cyan",
+"magenta",
+"yellow"
+]
+},
+{
+"category": "caption",
+"key": "captionWindowOpacity",
+"type": "enum",
+"values": [
+"translucent",
+"transparent",
+"solid"
+]
+},
+{
+"category": "caption",
+"key": "digitalPlusCaptionLanguage",
+"type": "enum",
+"values": [
+"eng",
+"spa",
+"fre"
+]
+},
+{
+"category": "caption",
+"key": "hardOfHearing",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "caption",
+"key": "japanCaptionEnable",
+"type": "enum",
+"values": [
+"off",
+"jpn",
+"eng"
+]
+},
+{
+"category": "caption",
+"key": "japanSuperImposeEnable",
+"type": "enum",
+"values": [
+"off",
+"jpn",
+"eng"
+]
+},
+{
+"category": "caption",
+"key": "naisDevicePaired",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "caption",
+"key": "phlCaptionEnable",
+"type": "enum",
+"values": [
+"off",
+"eng",
+"tgl"
+]
+},
+{
+"category": "caption",
+"key": "phlSuperImposeEnable",
+"type": "enum",
+"values": [
+"off",
+"eng",
+"tgl"
+]
+},
+{
+"category": "channel",
+"key": "aiFavoriteGroup4stb",
+"type": "enum",
+"values": [
+"A",
+"B",
+"C",
+"D",
+"E",
+"F",
+"G",
+"H"
+]
+},
+{
+"category": "channel",
+"key": "aiFavoriteGroup4tv",
+"type": "enum",
+"values": [
+"A",
+"B",
+"C",
+"D",
+"E",
+"F",
+"G",
+"H"
+]
+},
+{
+"category": "channel",
+"key": "analogSystemColor",
+"type": "enum",
+"values": [
+"multi",
+"pal-m",
+"pal-n",
+"ntsc"
+]
+},
+{
+"category": "channel",
+"key": "audioLanguage",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "automaticServiceListUpdate",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanAribFreqBand",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "autoscanAribInitalScan",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "autoscanCableBlindsearch",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanCableDigitalOnlySearch",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanCableNetworkscan",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanCableQuickScan",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanCableScan",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanCableSkipScrambleSerarch",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanChannelGroup",
+"type": "enum",
+"values": [
+"primary_channel",
+"all_channel"
+]
+},
+{
+"category": "channel",
+"key": "autoscanFastscanSatellite",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanSatelliteInitialScan",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanSatelliteScan",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanTerrestrialDigitalOnlySearch",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanTerrestrialScan",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "autoscanTerrestrialSecamlSearch",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "channelMute",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "channelsInHome",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "digitalPlus",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "dualMono",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "ewbsTargetChannel",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "favoriteGroupName4stb",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "favoriteGroupName4tv",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "levelSoundSatellite",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "levelSoundTerrestrial",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "manualscanSatelliteNetworkSearch",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "multiAudio",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "multiFeed",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "objectAudio",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "powerSupply",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "programListUpdateCable",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "programListUpdateSatellite",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "recommended",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "recordingRestrictions",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "satelliteHDSD",
+"type": "enum",
+"values": [
+"HD",
+"SD"
+]
+},
+{
+"category": "channel",
+"key": "signalBeepSound",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "signingAtsc30",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "subtitleLanguage",
+"type": "enum",
+"values": []
+},
+{
+"category": "channel",
+"key": "supportOperatorProfile",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "channel",
+"key": "tuningTypeMDUUniversal",
+"type": "enum",
+"values": [
+"Universal",
+"MDU"
+]
+},
+{
+"category": "channel",
+"key": "uhdJackConnected",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "15MinAutoOff",
+"type": "enum",
+"values": [
+"enable",
+"disable"
+]
+},
+{
+"category": "commercial",
+"key": "AV1En",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "AV2En",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "HPDControl",
+"type": "enum",
+"values": [
+"High",
+"Low"
+]
+},
+{
+"category": "commercial",
+"key": "RGBOverlayInRF",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "aMuteTime",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "acOn",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3"
+]
+},
+{
+"category": "commercial",
+"key": "ackMask",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "alarmTimer",
+"type": "enum",
+"values": [
+"enable",
+"disable"
+]
+},
+{
+"category": "commercial",
+"key": "alarmTimerHour",
+"type": "range",
+"range": {
+"max": 23,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "alarmTimerMinute",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "appLaunchMode",
+"type": "enum",
+"values": [
+"none",
+"local",
+"remote",
+"usb"
+]
+},
+{
+"category": "commercial",
+"key": "aspectRatioLock",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "atscBand",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4"
+]
+},
+{
+"category": "commercial",
+"key": "atscTuneMode",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "audioOutput",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"8",
+"9"
+]
+},
+{
+"category": "commercial",
+"key": "audioPtsOffset",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "audioSourceDp",
+"type": "enum",
+"values": [
+"hdmi",
+"audioIn"
+]
+},
+{
+"category": "commercial",
+"key": "audioSourceHdmi1",
+"type": "enum",
+"values": [
+"hdmi",
+"audioIn"
+]
+},
+{
+"category": "commercial",
+"key": "audioSourceHdmi2",
+"type": "enum",
+"values": [
+"hdmi",
+"audioIn"
+]
+},
+{
+"category": "commercial",
+"key": "audioVolumeWatt",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6"
+]
+},
+{
+"category": "commercial",
+"key": "autoCamport",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "autoRearAux",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "autoRearYC",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "autoSensing",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "autoServerIp",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "autoTeletext",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "autoYPrPb",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "auxInputAll",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "auxInputIndependently",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "auxStatus",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "bLanPowerSaving",
+"type": "enum",
+"values": [
+"1",
+"3",
+"7",
+"9"
+]
+},
+{
+"category": "commercial",
+"key": "backlighting",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "bandAfc",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3"
+]
+},
+{
+"category": "commercial",
+"key": "bannerEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "bckAudioM",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "bckChTime",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7"
+]
+},
+{
+"category": "commercial",
+"key": "bckPtlM",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "bckSetupM",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "bckSrcM",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "bckVideoM",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "bed12",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"8",
+"9"
+]
+},
+{
+"category": "commercial",
+"key": "bigUI",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "captionLock",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "care365Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "commercial",
+"key": "chNotAvble",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "chTimeSize",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "channelLock",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "channelOverride",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "checkScreen",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "chksumError",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "commer365CareServiceMode",
+"type": "enum",
+"values": [
+"release",
+"dev1",
+"dev2",
+"dev3",
+"dev4",
+"dev5",
+"dev6",
+"dev7"
+]
+},
+{
+"category": "commercial",
+"key": "commercialFlag",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "component1En",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "contentsRotation",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "contentsSync",
+"type": "enum",
+"values": [
+"off",
+"master",
+"slave"
+]
+},
+{
+"category": "commercial",
+"key": "defaultArc",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4"
+]
+},
+{
+"category": "commercial",
+"key": "defeatXds",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "destination_ip",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "destination_port",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "digitalAudioInput",
+"type": "enum",
+"values": [
+"hdmi",
+"audioIn"
+],
+"dimension": [
+"input"
+]
+},
+{
+"category": "commercial",
+"key": "digitalAudioInputList",
+"type": "enum",
+"values": [
+"hdmi1",
+"hdmi2",
+"dp",
+"dvi"
+]
+},
+{
+"category": "commercial",
+"key": "direction_path",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "disAudioM",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "disAudioMenu",
+"type": "range",
+"range": {
+"max": 7,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "disChTime",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "disPt1M",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "disSetupM",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "disVideoM",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "dispSourceM",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "dmrEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "dpmMode",
+"type": "enum",
+"values": [
+"off",
+"5sec",
+"10sec",
+"15sec",
+"1min",
+"3min",
+"5min",
+"10min"
+]
+},
+{
+"category": "commercial",
+"key": "dtvChannelUpdate",
+"type": "enum",
+"values": [
+"Auto",
+"Manual"
+]
+},
+{
+"category": "commercial",
+"key": "dynamicBrightness",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "commercial",
+"key": "enAlarm",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "enAudioCol",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "enChTCol",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "enNoiseMute",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "enPtlCol",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "enSetupCol",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "enSleepTimer",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "enSrcCol",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "enTimer",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "enVchip",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "enVideoCol",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "enVideoMute",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "enableResetToInitial",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "enableSpeaker",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "enableUsb",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "extClockDimmingPowerOn",
+"type": "range",
+"range": {
+"max": 99,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "extClockDimmingStandBy",
+"type": "range",
+"range": {
+"max": 15,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "extClockDisplay",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "extClockProgram",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "extClockSource",
+"type": "enum",
+"values": [
+"off",
+"ATV",
+"DTV",
+"RADIO",
+"CATV",
+"CADTV",
+"CA-RADIO"
+]
+},
+{
+"category": "commercial",
+"key": "extOffsetTTXClock",
+"type": "range",
+"range": {
+"max": 12,
+"min": -12,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "extSpkVolumeControl",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4"
+]
+},
+{
+"category": "commercial",
+"key": "ezmgr_update_status",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"8",
+"9",
+"10",
+"11"
+]
+},
+{
+"category": "commercial",
+"key": "factoryReset",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "failover",
+"type": "enum",
+"values": [
+"off",
+"auto",
+"manual"
+]
+},
+{
+"category": "commercial",
+"key": "failoverPriority",
+"type": "enum",
+"values": [
+"dtv",
+"atv",
+"av1",
+"av2",
+"av3",
+"comp1",
+"comp2",
+"comp3",
+"rgb",
+"hdmi1",
+"hdmi2",
+"hdmi3",
+"hdmi4",
+"hdmi1_pc",
+"hdmi2_pc",
+"hdmi3_pc",
+"hdmi4_pc",
+"movie",
+"photo",
+"default",
+"scart",
+"dvi",
+"dp",
+"internal_usb",
+"usb"
+]
+},
+{
+"category": "commercial",
+"key": "failoverPriority1",
+"type": "enum",
+"values": [
+"hdmi1",
+"hdmi2",
+"dp",
+"dvi",
+"internal_usb"
+]
+},
+{
+"category": "commercial",
+"key": "failoverPriority2",
+"type": "enum",
+"values": [
+"hdmi1",
+"hdmi2",
+"dp",
+"dvi",
+"internal_usb"
+]
+},
+{
+"category": "commercial",
+"key": "failoverPriority3",
+"type": "enum",
+"values": [
+"hdmi1",
+"hdmi2",
+"dp",
+"dvi",
+"internal_usb"
+]
+},
+{
+"category": "commercial",
+"key": "failoverPriority4",
+"type": "enum",
+"values": [
+"hdmi1",
+"hdmi2",
+"dp",
+"dvi",
+"internal_usb"
+]
+},
+{
+"category": "commercial",
+"key": "failoverPriority5",
+"type": "enum",
+"values": [
+"hdmi1",
+"hdmi2",
+"dp",
+"dvi",
+"internal_usb"
+]
+},
+{
+"category": "commercial",
+"key": "forAudioM",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "forChTime",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7"
+]
+},
+{
+"category": "commercial",
+"key": "forPtlM",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "forSetupM",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "forSrcM",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "forVideoM",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "frntYCEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "functionPre",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "gostChannel",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "guestMenuState",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "guestSetting",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "handshkTime",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5"
+]
+},
+{
+"category": "commercial",
+"key": "hdmi1En",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "hdmi2En",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2"
+]
+},
+{
+"category": "commercial",
+"key": "hdmi3En",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2"
+]
+},
+{
+"category": "commercial",
+"key": "hospitalMode",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingAudioOnlyDisplay",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingLockChannel",
+"type": "enum",
+"values": [
+"enable",
+"disable"
+]
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingLockInput",
+"type": "enum",
+"values": [
+"enable",
+"disable"
+]
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingLockMenuEnter",
+"type": "enum",
+"values": [
+"enable",
+"disable"
+]
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingLockPower",
+"type": "enum",
+"values": [
+"enable",
+"disable"
+]
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingMax",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingOsdDisplayOff",
+"type": "enum",
+"values": [
+"enable",
+"disable"
+]
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingWakeUpHour",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingWakeUpInput",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingWakeUpMinute",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingWakeUpSet",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingWakeUpVolume",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "idHTNGSettingWakeUpVolumeRampUpTime",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "igmpVersion",
+"type": "enum",
+"values": [
+"2",
+"3"
+]
+},
+{
+"category": "commercial",
+"key": "inputSensingAV1",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "inputSensingAll",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "inputSensingComp1",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "inputSensingHDMI1",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "inputSensingHDMI2",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "inputSensingHDMI3",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "installerSeq",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3"
+]
+},
+{
+"category": "commercial",
+"key": "instantOn",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "intelligentAuto",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "irBankEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "irBlaster",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "irMode",
+"type": "enum",
+"values": [
+"0",
+"16",
+"17",
+"18",
+"19",
+"20",
+"21",
+"22",
+"23",
+"24"
+]
+},
+{
+"category": "commercial",
+"key": "istm_reserved_3",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "istm_reserved_4",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "istm_reserved_5",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "istm_reserved_6",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "istm_reserved_7",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "keyDefeat",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "keyLock",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "keyOperation",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "keylessOffHours",
+"type": "range",
+"range": {
+"max": 99,
+"min": 1,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "keylessOffHoursEn",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "ledCalibrator",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "commercial",
+"key": "linkSecuredConnection",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "linkServerEnable",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "linkServerIP",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "linkServerIPv6",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "linkServerIpType",
+"type": "enum",
+"values": [
+"ipv4",
+"ipv6"
+]
+},
+{
+"category": "commercial",
+"key": "linkServerPort",
+"type": "range",
+"range": {
+"max": 65535,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "linkServerStatus",
+"type": "enum",
+"values": [
+"connected",
+"notConnected",
+"notApproval",
+"reject"
+]
+},
+{
+"category": "commercial",
+"key": "localAppUpgrade",
+"type": "enum",
+"values": [
+"fromUsb",
+"fromRemote"
+]
+},
+{
+"category": "commercial",
+"key": "lockModeFactory",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "lockModeUSB",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "log_forwarding_mode",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "log_level",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "mainSpeaker",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "manualServerIp",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "maxBlockHour",
+"type": "range",
+"range": {
+"max": 99,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "maxVolume",
+"type": "range",
+"range": {
+"max": 63,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "minVolume",
+"type": "range",
+"range": {
+"max": 63,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "multiOffTimerHour",
+"type": "range",
+"range": {
+"max": 24,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "multiOffTimerMinute",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "multiOffTimerWeekday",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "multiOnTimerHour",
+"type": "range",
+"range": {
+"max": 24,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "multiOnTimerMinute",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "multiOnTimerSource",
+"type": "enum",
+"values": [
+"dtv",
+"atv",
+"av1",
+"av2",
+"av3",
+"comp1",
+"comp2",
+"comp3",
+"rgb",
+"hdmi1",
+"hdmi2",
+"hdmi3",
+"hdmi4",
+"hdmi1_pc",
+"hdmi2_pc",
+"hdmi3_pc",
+"hdmi4_pc",
+"movie",
+"photo",
+"default",
+"scart",
+"dvi",
+"dp",
+"internal_usb",
+"usb"
+]
+},
+{
+"category": "commercial",
+"key": "multiOnTimerWeekday",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "multiRemoteKey",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "muteDisable",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "naturalMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "ntscScancard",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "offTimerCount",
+"type": "enum",
+"values": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"category": "commercial",
+"key": "offTimerSchedule",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "oldOcv",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "onTimerCount",
+"type": "enum",
+"values": [
+0,
+1,
+2,
+3,
+4,
+5,
+6,
+7
+]
+},
+{
+"category": "commercial",
+"key": "onTimerOperation",
+"type": "enum",
+"values": [
+"once",
+"repeat"
+]
+},
+{
+"category": "commercial",
+"key": "onTimerSchedule",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "oneChannelMap",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "osdEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "osdPortraitMode",
+"type": "enum",
+"values": [
+"off",
+"90",
+"270"
+]
+},
+{
+"category": "commercial",
+"key": "panelCom",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "panelHandshake",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "panelMaxVol",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "panelMinVol",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "panelStartVol",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "panelTunerOnDelay",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "panelType",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "panelVolRepeat",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "pcrOffset",
+"type": "range",
+"range": {
+"max": 500,
+"min": -500,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "permanentBlk",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "permanentBlock",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "pictureId",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "pokeEnable",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "pollRate",
+"type": "range",
+"range": {
+"max": 169,
+"min": 20,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "powerManage",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7"
+]
+},
+{
+"category": "commercial",
+"key": "powerOnDelay",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "powerOnOffHistoroy",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "powerOnOffHistory",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "ppvChannelMode",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"8"
+]
+},
+{
+"category": "commercial",
+"key": "preLoadedApp",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "proCentricClockUpdate",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2"
+]
+},
+{
+"category": "commercial",
+"key": "procentricClockFreq",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricClockIPAdd_a",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricClockIPAdd_b",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricClockIPAdd_c",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricClockIPAdd_d",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricClockIPAddr",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricClockIPPort",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricClockServiceID",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricClockUpdate",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "procentricDataCarouselEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "procentricDataChannel",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricDataChannelSlt",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "procentricIPAddr_a",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricIPAddr_b",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricIPAddr_c",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricIPAddr_d",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricIPPort",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricMediaType",
+"type": "enum",
+"values": [
+"IP",
+"RF"
+]
+},
+{
+"category": "commercial",
+"key": "procentricMode",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3"
+]
+},
+{
+"category": "commercial",
+"key": "procentricModulation",
+"type": "enum",
+"values": [
+"16",
+"32",
+"64",
+"128",
+"256"
+]
+},
+{
+"category": "commercial",
+"key": "procentricRFFreq",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "procentricRFType",
+"type": "enum",
+"values": [
+"DVB-T",
+"DVB-C"
+]
+},
+{
+"category": "commercial",
+"key": "procentricSymbol",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "pseudoPwrOff",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "ptc_Download_Fail",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "quickShutoff",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "radioEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "radioNameDisplay",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "rbg1En",
+"type": "enum",
+"values": [
+"0",
+"1",
+"17"
+]
+},
+{
+"category": "commercial",
+"key": "rearYCEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "remainingBlockHr",
+"type": "range",
+"range": {
+"max": 99,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "remoteJackPack",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6"
+]
+},
+{
+"category": "commercial",
+"key": "reorderLaunchPoint",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "revertCh",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "rfUpdateTImeMin",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "rfUpdateTimeHr",
+"type": "range",
+"range": {
+"max": 23,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "rfUpdateTimeHrEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "rfWakeUpEventEnable",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2"
+]
+},
+{
+"category": "commercial",
+"key": "rfWakeUpEventHour",
+"type": "range",
+"range": {
+"max": 23,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "rfWakeUpEventMin",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "rgb1en",
+"type": "enum",
+"values": [
+"0",
+"1",
+"17"
+]
+},
+{
+"category": "commercial",
+"key": "rjpAvailable",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"5",
+"6"
+]
+},
+{
+"category": "commercial",
+"key": "rmsEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "roomNumber",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "rs232Baudrate",
+"type": "enum",
+"values": [
+"9600",
+"115200"
+]
+},
+{
+"category": "commercial",
+"key": "sapLock",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "sapMenuEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "scanMode",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "scartOut",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "sclActiveStatus",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "sclDisplayMode",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "sendToRs232",
+"type": "range",
+"range": {
+"max": 255,
+"min": 1,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "serverIpMode",
+"type": "enum",
+"values": [
+"ipManualSetting",
+"ipAutoSetting"
+]
+},
+{
+"category": "commercial",
+"key": "serverIpPort",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "serverStatus",
+"type": "enum",
+"values": [
+"connected",
+"notConnected",
+"notApproval",
+"reject"
+]
+},
+{
+"category": "commercial",
+"key": "serviceIp",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "signage365CareAccountName",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "signage365CareAccountNumber",
+"type": "range",
+"range": {
+"max": 999999,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "signage365CareInstall",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "signageMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "signageName",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "signageSetId",
+"type": "range",
+"range": {
+"max": 255,
+"min": 1,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "simplinkEn",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3"
+]
+},
+{
+"category": "commercial",
+"key": "sixKeySys",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "smartEnergy",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "smartParing",
+"type": "enum",
+"values": [
+"enable",
+"disable"
+]
+},
+{
+"category": "commercial",
+"key": "smartShareEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "smoovie",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "smoovieInputSource",
+"type": "enum",
+"values": [
+"ATV",
+"DTV",
+"RADIO",
+"CATV",
+"CADTV",
+"CARADIO"
+]
+},
+{
+"category": "commercial",
+"key": "smoovieProgramme",
+"type": "range",
+"range": {
+"max": 65535,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "smoovieRing1",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "smoovieRing2",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "smoovieStandard",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "softapDefault",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "softapDefaultSecurityKey",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "softapEnable",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "softapOnOff",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "softapSecurityKey",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "softapSsid",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "splashTime",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"8",
+"9",
+"10"
+]
+},
+{
+"category": "commercial",
+"key": "splitscreenEnable",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "standByMode",
+"type": "enum",
+"values": [
+"level1",
+"level2",
+"level3"
+]
+},
+{
+"category": "commercial",
+"key": "startAuxSrc",
+"type": "enum",
+"values": [
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"255"
+]
+},
+{
+"category": "commercial",
+"key": "startChInSm",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "startChMajorNum",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startChnumMinor",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "startIpAddress",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startIpAddress_a",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startIpAddress_b",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startIpAddress_c",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startIpAddress_d",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startIpType",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "startPort",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startProgram",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startSourceIpAddress_a",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startSourceIpAddress_b",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startSourceIpAddress_c",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startSourceIpAddress_d",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "startVolume",
+"type": "range",
+"range": {
+"max": 63,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "staticSaving",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 10
+}
+},
+{
+"category": "commercial",
+"key": "textMode",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "tileCol",
+"type": "range",
+"range": {
+"max": 15,
+"min": 1,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "tileId",
+"type": "range",
+"range": {
+"max": 255,
+"min": 1,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "tileMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "commercial",
+"key": "tileRow",
+"type": "range",
+"range": {
+"max": 15,
+"min": 1,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "timeoutEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "timingPulse",
+"type": "range",
+"range": {
+"max": 227,
+"min": 186,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "tuneAudioPid",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tuneAudioType",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tuneIPAddr_a",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tuneIPAddr_b",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tuneIPAddr_c",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tuneIPAddr_d",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tuneIpType",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tunePcrPid",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tunePort",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tuneProgram",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tuneVideoPid",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tuneVideoType",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "tvlinkHcecControl",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2"
+]
+},
+{
+"category": "commercial",
+"key": "tvlinkHcecDeviceID",
+"type": "enum",
+"values": [
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"8",
+"9",
+"10",
+"11",
+"12",
+"13",
+"14"
+]
+},
+{
+"category": "commercial",
+"key": "tvlinkHcecForcedInitialize",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "tvlinkHcecHotelmode",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "tvlinkHcecIrDecoding",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "tvlinkHcecStandby",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3"
+]
+},
+{
+"category": "commercial",
+"key": "uartPowerOutlet",
+"type": "enum",
+"values": [
+"off",
+"5v",
+"12v"
+]
+},
+{
+"category": "commercial",
+"key": "upnLsb",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "upnMsb",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "upnMsb1",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "upnMsb2",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "usbAutoPlayBack",
+"type": "enum",
+"values": [
+"disable",
+"enable"
+]
+},
+{
+"category": "commercial",
+"key": "usbAutoPlayback",
+"type": "enum",
+"values": [
+"off",
+"movie",
+"photo"
+]
+},
+{
+"category": "commercial",
+"key": "usbAutoPlaybackPath",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "vMuteTime",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "vidOutFormat",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "videoInterface",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "commercial",
+"key": "videoPtsOffset",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "wifiScreenShareEn",
+"type": "enum",
+"values": [
+"0",
+"1"
+]
+},
+{
+"category": "commercial",
+"key": "wifiZone",
+"type": "enum",
+"values": []
+},
+{
+"category": "commercial",
+"key": "wolEnable",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2"
+]
+},
+{
+"category": "commercial",
+"key": "wolMagicPacket",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2"
+]
+},
+{
+"category": "commercial",
+"key": "ycLoopOut",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2"
+]
+},
+{
+"category": "commercial",
+"key": "zone",
+"type": "enum",
+"values": [
+"0",
+"1",
+"2",
+"3",
+"4",
+"5",
+"6",
+"7",
+"8"
+]
+},
+{
+"category": "general",
+"key": "SCA3SystemCountry",
+"type": "enum",
+"values": [
+"BRB",
+"BLZ",
+"CRI",
+"ECU",
+"SLV",
+"GTM",
+"GUY",
+"HTI",
+"HND",
+"JAM",
+"NIC",
+"TTO",
+"VEN",
+"PRI",
+"PAN",
+"___"
+]
+},
+{
+"category": "general",
+"key": "absenceRecognition",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "adCookie",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "aiChannel",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "aiNudge",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "aiSettingsNudge",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "alwaysOn",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "alwaysOnDisableEndHour",
+"type": "range",
+"range": {
+"max": 24,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "general",
+"key": "alwaysOnDisableEndMinute",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "general",
+"key": "alwaysOnDisableStartHour",
+"type": "range",
+"range": {
+"max": 24,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "general",
+"key": "alwaysOnDisableStartMinute",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "general",
+"key": "avmsd",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "bendableSound",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "blueToothSpeakerMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "checkForcedInputPowerOn",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "checkHomeAutoLaunchValue",
+"type": "enum",
+"values": [
+"default",
+"user"
+]
+},
+{
+"category": "general",
+"key": "customizedAd",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "doNotSellMyPersonalInformation",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "gameAlarm",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "globalConditions",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "homeAutoLaunch",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "homeEffect",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "homePromotion",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "ignoreSslCertificate",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "general",
+"key": "lastAppHandlerPolicy",
+"type": "enum",
+"values": [
+"idleApp",
+"lastInputApp"
+]
+},
+{
+"category": "general",
+"key": "lastInputApp",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "lastInputAppType",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "launchEulaByHome",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "general",
+"key": "lifeAlarm",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "lifeOnScreenMode",
+"type": "enum",
+"values": [
+"none",
+"off",
+"lifeOnScreen",
+"alwaysReady",
+"allEnabled"
+]
+},
+{
+"category": "general",
+"key": "lmt",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "mySportAppList",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "mySportTeamList",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "nativeConsentAd",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "noSignalGuideArea",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "noSignalScreenSaver",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "opapp",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "opappReplaceUI",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "personalRecommend",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "physicalLastInputApp",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "physicalLastInputType",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "powerOffBySCA3SystemChanged",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "general",
+"key": "powerOnScreen",
+"type": "enum",
+"values": [
+"todays",
+"liveTv"
+]
+},
+{
+"category": "general",
+"key": "remotePointer",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "remoteserverType",
+"type": "enum",
+"values": [
+"prod",
+"dev",
+"dev2"
+]
+},
+{
+"category": "general",
+"key": "screenRemotePlacement",
+"type": "enum",
+"values": [
+"left",
+"right"
+]
+},
+{
+"category": "general",
+"key": "screenSaverAd",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "screenSaverEnabled",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "screenSaverSensibility",
+"type": "range",
+"range": {
+"max": 4294967295,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "general",
+"key": "selectedInputApp",
+"type": "enum",
+"values": [
+"off",
+"HDMI_1",
+"HDMI_2",
+"HDMI_3",
+"HDMI_4"
+]
+},
+{
+"category": "general",
+"key": "sportsAlarm",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "sportsPicker",
+"type": "enum",
+"values": []
+},
+{
+"category": "general",
+"key": "tnativeShadescreen",
+"type": "enum",
+"values": [
+"shadePoweroff",
+"shadePoweroffon",
+"shadeOff"
+]
+},
+{
+"category": "general",
+"key": "tnativeSound",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "touchLock",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "tvInstallMethod",
+"type": "enum",
+"values": [
+"tv",
+"mobile"
+]
+},
+{
+"category": "general",
+"key": "tvOnScreen",
+"type": "enum",
+"values": [
+"effect",
+"liveTV"
+]
+},
+{
+"category": "general",
+"key": "tvOnSound",
+"type": "enum",
+"values": [
+"off",
+"veryLow",
+"low",
+"medium",
+"high",
+"veryHigh"
+]
+},
+{
+"category": "general",
+"key": "voiceLongDistance",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "wavBoxPosition",
+"type": "enum",
+"values": [
+"none",
+"front",
+"side",
+"bottom"
+]
+},
+{
+"category": "general",
+"key": "wavUpperLedFlag",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "general",
+"key": "welcomeFeature",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "lock",
+"key": "applockByAge",
+"type": "enum",
+"values": [
+"4+",
+"12+",
+"16+",
+"18+",
+"generalAudience"
+]
+},
+{
+"category": "lock",
+"key": "applockPerApp",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "lock",
+"key": "camPinCode",
+"type": "enum",
+"values": []
+},
+{
+"category": "lock",
+"key": "dailyRepeatFlag",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "lock",
+"key": "downloadableRrt",
+"type": "file"
+},
+{
+"category": "lock",
+"key": "initialPinCode",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "lock",
+"key": "inputBlock",
+"type": "range",
+"range": {
+"max": 4294967295,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "lock",
+"key": "installedApplockByAge",
+"type": "enum",
+"values": [
+"4+",
+"10+",
+"12+",
+"16+",
+"18+",
+"generalAudience"
+]
+},
+{
+"category": "lock",
+"key": "lockByAge",
+"type": "range",
+"range": {
+"max": 4294967295,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "lock",
+"key": "movieRating",
+"type": "enum",
+"values": [
+"off",
+"g",
+"pg",
+"pg13",
+"r",
+"nc-17",
+"x"
+]
+},
+{
+"category": "lock",
+"key": "offHearingProtectFlag",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "lock",
+"key": "offHearingProtectMaxVolume",
+"type": "range",
+"range": {
+"max": 60,
+"min": 10,
+"interval": 1
+}
+},
+{
+"category": "lock",
+"key": "offUsageTimeFlag",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "lock",
+"key": "parentalControl",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "lock",
+"key": "parentalGuidance",
+"type": "enum",
+"values": [
+"off",
+"4+",
+"5+",
+"6+",
+"7+",
+"8+",
+"9+",
+"10+",
+"11+",
+"12+",
+"13+",
+"14+",
+"15+",
+"16+",
+"17+",
+"18+"
+]
+},
+{
+"category": "lock",
+"key": "parentalGuidanceAu",
+"type": "enum",
+"values": [
+"off",
+"all",
+"g",
+"pg",
+"m",
+"ma",
+"av",
+"r"
+]
+},
+{
+"category": "lock",
+"key": "parentalGuidanceJp",
+"type": "enum",
+"values": [
+"off",
+"4+",
+"5+",
+"6+",
+"7+",
+"8+",
+"9+",
+"10+",
+"11+",
+"12+",
+"13+",
+"14+",
+"15+",
+"16+",
+"17+",
+"18+",
+"19+",
+"20+"
+]
+},
+{
+"category": "lock",
+"key": "parentalGuidanceNz",
+"type": "enum",
+"values": [
+"off",
+"all",
+"g",
+"pg",
+"m",
+"16+",
+"18+"
+]
+},
+{
+"category": "lock",
+"key": "parentalGuidanceSg",
+"type": "enum",
+"values": [
+"off",
+"g",
+"pg",
+"pg13",
+"nc16",
+"m18",
+"r21"
+]
+},
+{
+"category": "lock",
+"key": "pineValueChangePCS",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "lock",
+"key": "ratingBR",
+"type": "enum",
+"values": [
+"off",
+"10+",
+"12+",
+"14+",
+"16+",
+"18+"
+]
+},
+{
+"category": "lock",
+"key": "ratingPH",
+"type": "enum",
+"values": [
+"off",
+"G",
+"PG",
+"SPG"
+]
+},
+{
+"category": "lock",
+"key": "ratingSA",
+"type": "enum",
+"values": [
+"off",
+"pg10",
+"10+",
+"pg13",
+"13+",
+"16+",
+"18+",
+"r18"
+]
+},
+{
+"category": "lock",
+"key": "secretMode",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "lock",
+"key": "systemPin",
+"type": "enum",
+"values": []
+},
+{
+"category": "lock",
+"key": "systemPinCode",
+"type": "range",
+"range": {
+"max": 9999,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "lock",
+"key": "tvRatingChildrenAge",
+"type": "enum",
+"values": [
+"off",
+"y",
+"y7"
+]
+},
+{
+"category": "lock",
+"key": "tvRatingChildrenFantasy",
+"type": "enum",
+"values": [
+"off",
+"y7"
+]
+},
+{
+"category": "lock",
+"key": "tvRatingEnglish",
+"type": "enum",
+"values": [
+"off",
+"e",
+"c",
+"c8+",
+"g",
+"pg",
+"14+",
+"18+"
+]
+},
+{
+"category": "lock",
+"key": "tvRatingFrench",
+"type": "enum",
+"values": [
+"off",
+"e",
+"g",
+"8+",
+"13+",
+"16+",
+"18+"
+]
+},
+{
+"category": "lock",
+"key": "tvRatingGeneralAge",
+"type": "enum",
+"values": [
+"off",
+"g",
+"pg",
+"14",
+"ma"
+]
+},
+{
+"category": "lock",
+"key": "tvRatingGeneralDialog",
+"type": "enum",
+"values": [
+"off",
+"pg",
+"14"
+]
+},
+{
+"category": "lock",
+"key": "tvRatingGeneralLanguage",
+"type": "enum",
+"values": [
+"off",
+"pg",
+"14",
+"ma"
+]
+},
+{
+"category": "lock",
+"key": "tvRatingGeneralSex",
+"type": "enum",
+"values": [
+"off",
+"pg",
+"14",
+"ma"
+]
+},
+{
+"category": "lock",
+"key": "tvRatingGeneralViolence",
+"type": "enum",
+"values": [
+"off",
+"pg",
+"14",
+"ma"
+]
+},
+{
+"category": "lock",
+"key": "unlockDate",
+"type": "enum",
+"values": []
+},
+{
+"category": "lock",
+"key": "usageTimeEnd",
+"type": "enum",
+"values": []
+},
+{
+"category": "lock",
+"key": "usageTimeStart",
+"type": "enum",
+"values": []
+},
+{
+"category": "lock",
+"key": "vooRating",
+"type": "enum",
+"values": [
+"off",
+"10+",
+"12+",
+"16+",
+"18+"
+]
+},
+{
+"category": "lock",
+"key": "ziggoRaiting",
+"type": "enum",
+"values": [
+"off",
+"all",
+"4+",
+"5+",
+"6+",
+"7+",
+"8+",
+"9+",
+"10+",
+"11+",
+"12+",
+"13+",
+"14+",
+"15+",
+"16+",
+"17+",
+"18+"
+]
+},
+{
+"category": "network",
+"key": "allowMobileDeviceAccess",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "network",
+"key": "bleAdvertisingOnOff",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "network",
+"key": "deviceName",
+"type": "enum",
+"values": []
+},
+{
+"category": "network",
+"key": "ipv6Enable",
+"type": "enum",
+"values": [
+"true",
+"false"
+]
+},
+{
+"category": "network",
+"key": "miracastTxPlaying",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "network",
+"key": "sscNetworkKey",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "network",
+"key": "wifiConnection",
+"type": "enum",
+"values": []
+},
+{
+"category": "network",
+"key": "wiredConnection",
+"type": "enum",
+"values": []
+},
+{
+"category": "network",
+"key": "wolwowlOnOff",
+"type": "enum",
+"values": [
+"true",
+"false"
+]
+},
+{
+"category": "option",
+"key": "IPControlSecureKey",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "a11yQuickList",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "additionalAudioSelection",
+"type": "enum",
+"values": [
+"none",
+"audioDescription",
+"cleanAudio",
+"spokenSubtitles"
+]
+},
+{
+"category": "option",
+"key": "addressInfo",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "adjustments",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "animationGuide",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "aodThemeHistory",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "appInstallDevice",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "appUpdateMode",
+"type": "enum",
+"values": [
+"manual",
+"auto"
+]
+},
+{
+"category": "option",
+"key": "artisticDisplayTimer",
+"type": "enum",
+"values": [
+"off",
+"10",
+"30",
+"60",
+"120"
+]
+},
+{
+"category": "option",
+"key": "audioGuidance",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "audioGuidancePitch",
+"type": "enum",
+"values": [
+"veryLow",
+"low",
+"medium",
+"high",
+"veryHigh"
+]
+},
+{
+"category": "option",
+"key": "audioGuidanceSpeed",
+"type": "enum",
+"values": [
+"veryFast",
+"fast",
+"medium",
+"slow",
+"verySlow"
+]
+},
+{
+"category": "option",
+"key": "audioGuidanceVolume",
+"type": "enum",
+"values": [
+"veryLow",
+"low",
+"medium",
+"high",
+"veryHigh"
+]
+},
+{
+"category": "option",
+"key": "autoComplete",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "autoSmartServiceCountry",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "avatar",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "backupPsm",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "backupPsmDolby",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "baloonHelp",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "bannerPosition",
+"type": "enum",
+"values": [
+"none",
+"lefttop",
+"righttop",
+"leftbottom",
+"rightbottom"
+]
+},
+{
+"category": "option",
+"key": "broadcastInfoNoti",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "cameraResourcePermission",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "channelplus",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "channelplusPopup",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "checkChangedScreenSaverTimerByUser",
+"type": "enum",
+"values": [
+"default",
+"user"
+]
+},
+{
+"category": "option",
+"key": "cicNumber",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "country",
+"type": "file"
+},
+{
+"category": "option",
+"key": "countryBroadcastSystem",
+"type": "file"
+},
+{
+"category": "option",
+"key": "countryGroup",
+"type": "file"
+},
+{
+"category": "option",
+"key": "countryRegion",
+"type": "file"
+},
+{
+"category": "option",
+"key": "curDemoFile",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "curvature",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "dataService",
+"type": "enum",
+"values": [
+"mheg",
+"ttx"
+]
+},
+{
+"category": "option",
+"key": "dbgLogUpload",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "demoFileList",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "demoMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "displayMusicWidget",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "eStreamerPosition",
+"type": "enum",
+"values": [
+"all",
+"left",
+"right",
+"down"
+]
+},
+{
+"category": "option",
+"key": "emergencyAlert",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "emergencyInformationAtsc30",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "emergencyInformationLanguageAtsc30",
+"type": "enum",
+"values": [
+"eng",
+"spa",
+"fre"
+]
+},
+{
+"category": "option",
+"key": "enableIpControl",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "enableSDDP",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "enableToastPopup",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "epgPipMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "estreamerMinimalMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "estreamerStatus",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "faultLogUpload",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "favRecommendResetTime",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "fileapiResourcePermission",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "firstTvSignalStatus",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "focusEmphasis",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "focusedItemEnlarged",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "freeviewMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "freeviewplay",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "googleAssistantTTS",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "graphicSharpnessLevel",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "option",
+"key": "greyscale",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "hbbTV",
+"type": "enum",
+"values": [
+"on",
+"off",
+"onByUser",
+"offByUser"
+]
+},
+{
+"category": "option",
+"key": "hbbTvDeviceId",
+"type": "enum",
+"values": [
+"on",
+"off",
+"onByUser",
+"offByUser"
+]
+},
+{
+"category": "option",
+"key": "hddEcoMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "helpOnSettings",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "highContrast",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "homeWallPaper",
+"type": "enum",
+"values": [
+"opt1",
+"opt2",
+"opt3"
+]
+},
+{
+"category": "option",
+"key": "hybridCast",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "inputDevicesSupportStatus",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "interactive-service",
+"type": "enum",
+"values": [
+"on",
+"off",
+"onByUser",
+"offByUser"
+]
+},
+{
+"category": "option",
+"key": "interactive-service-hdmi",
+"type": "enum",
+"values": [
+"on",
+"off",
+"onByUser",
+"offByUser"
+]
+},
+{
+"category": "option",
+"key": "interactive-service-id",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "interactivity",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "ismMethod",
+"type": "enum",
+"values": [
+"normal",
+"orbiter",
+"inversion",
+"whiteWash",
+"colorWash"
+]
+},
+{
+"category": "option",
+"key": "japanCitySelection",
+"type": "file"
+},
+{
+"category": "option",
+"key": "lifeOnScreenEnergySaving",
+"type": "enum",
+"values": [
+"auto",
+"off"
+]
+},
+{
+"category": "option",
+"key": "lifeOnScreenNotification",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "lifeOnScreenOnTimer",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "lifeOnScreenUsingMotionSensor",
+"type": "enum",
+"values": [
+false,
+true
+]
+},
+{
+"category": "option",
+"key": "lineView",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "option",
+"key": "liveMenuLaunched",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "livePlus",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "livePromotion",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "localeCountryGroup",
+"type": "file"
+},
+{
+"category": "option",
+"key": "logoLight",
+"type": "enum",
+"values": [
+"off",
+"low",
+"medium",
+"high"
+]
+},
+{
+"category": "option",
+"key": "longPressInterval",
+"type": "enum",
+"values": [
+"basic",
+"1.5",
+"2",
+"2.5",
+"3",
+"3.5",
+"4",
+"4.5",
+"5"
+]
+},
+{
+"category": "option",
+"key": "magicNum1",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "magicNum2",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "magicNum3",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "magicNum4",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "magicNum5",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "magicNum6",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "magicNum7",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "magicNum8",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "magicNum9",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "magicNumFvp",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "magicNumHelpShow",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "magnificationValue",
+"type": "enum",
+"values": [
+"0",
+"110",
+"120",
+"130",
+"140",
+"150",
+"160",
+"170",
+"180",
+"190",
+"200"
+]
+},
+{
+"category": "option",
+"key": "medicationInfoAgreement",
+"type": "enum",
+"values": [
+"agree",
+"disagree"
+]
+},
+{
+"category": "option",
+"key": "menuLanguage",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "menuTransparency",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "mhegGuide",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "miracastOverlayAdRecovery",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "miracastOverlayStatus",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "modeSelectFlag",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "motionRecognition",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "motionSensorSensitivity",
+"type": "enum",
+"values": [
+"low",
+"medium",
+"high"
+]
+},
+{
+"category": "option",
+"key": "motionSensorSensitivityForAOD",
+"type": "enum",
+"values": [
+"low",
+"medium",
+"high"
+]
+},
+{
+"category": "option",
+"key": "multiChannelAudio",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "multiViewStatus",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "mySketchSettings",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "nearbyDevicePermission",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "ohtv",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "orbit",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "password_ipcontrol",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "personalizedDemoImgList",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "personalizedDemoString",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "personalizedImgList",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "personalizedString",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "phlCitySelection",
+"type": "file"
+},
+{
+"category": "option",
+"key": "pointerAlignment",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "pointerShape",
+"type": "enum",
+"values": [
+"a",
+"b",
+"c",
+"d"
+]
+},
+{
+"category": "option",
+"key": "pointerSize",
+"type": "enum",
+"values": [
+"small",
+"medium",
+"large"
+]
+},
+{
+"category": "option",
+"key": "pointerSpeed",
+"type": "enum",
+"values": [
+"slow",
+"normal",
+"fast"
+]
+},
+{
+"category": "option",
+"key": "powerOnLight",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "pqPlus",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "promotionOriginEnd",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "promotionOriginStart",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "promotionPeriodEnd",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "promotionPeriodStart",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "promotionStreamer",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "pstreamerUser",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "quickStartMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "remoteSlowInput",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "repeatInterval",
+"type": "enum",
+"values": [
+"basic",
+"0.5",
+"1",
+"1.5",
+"2",
+"2.5",
+"3",
+"3.5",
+"4",
+"4.5",
+"5"
+]
+},
+{
+"category": "option",
+"key": "restoreCurve",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "screenMagnification",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "screenOff",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "screenOffTime",
+"type": "enum",
+"values": [
+"5",
+"10",
+"30",
+"60",
+"120"
+]
+},
+{
+"category": "option",
+"key": "screenRotation",
+"type": "enum",
+"values": [
+"off",
+"90",
+"180",
+"270"
+]
+},
+{
+"category": "option",
+"key": "screenSaverArtEnabled",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "screenSaverTimer",
+"type": "enum",
+"values": [
+"3",
+"10",
+"20",
+"30"
+]
+},
+{
+"category": "option",
+"key": "searchAppTTS",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "seniorMode",
+"type": "enum",
+"values": [
+"general",
+"simple"
+]
+},
+{
+"category": "option",
+"key": "serviceCountryForMagicNum",
+"type": "enum",
+"values": [
+"",
+"GB",
+"ETC"
+]
+},
+{
+"category": "option",
+"key": "setId",
+"type": "range",
+"range": {
+"max": 99,
+"min": 1,
+"interval": 1
+}
+},
+{
+"category": "option",
+"key": "showCursorAlert",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "signLanguageGuidance",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "signLanguageGuidanceAvatarType",
+"type": "enum",
+"values": [
+"female",
+"male"
+]
+},
+{
+"category": "option",
+"key": "signLanguageGuidancePosition",
+"type": "enum",
+"values": [
+"rightTop",
+"rightMiddle",
+"rightBottom"
+]
+},
+{
+"category": "option",
+"key": "signLanguageGuidanceSize",
+"type": "enum",
+"values": [
+"large",
+"medium",
+"small"
+]
+},
+{
+"category": "option",
+"key": "signLanguageGuidanceSpeed",
+"type": "enum",
+"values": [
+"fast",
+"medium",
+"slow"
+]
+},
+{
+"category": "option",
+"key": "smartServiceCountryCode2",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "smartServiceCountryCode3",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "smartSoundDemo",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "soundPlus",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "speakToTv",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "specialRemote",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "standByLight",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "storeHDR",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "storeLogo",
+"type": "range",
+"range": {
+"max": 4294967295,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "option",
+"key": "storeMode",
+"type": "enum",
+"values": [
+"home",
+"store"
+]
+},
+{
+"category": "option",
+"key": "storeMode2",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "storeModeVideo",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "storeUsbAlarm",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "subdivisionCodeOfServiceCountry",
+"type": "enum",
+"values": [
+"",
+"GB-SCT"
+]
+},
+{
+"category": "option",
+"key": "subtitleLanguageFirst",
+"type": "enum",
+"values": [
+"eng",
+"spa",
+"fre"
+]
+},
+{
+"category": "option",
+"key": "subtitleLanguageSecond",
+"type": "enum",
+"values": [
+"eng",
+"spa",
+"fre"
+]
+},
+{
+"category": "option",
+"key": "supplementaryAudio",
+"type": "enum",
+"values": [
+"off",
+"audioDescription",
+"spokenSubtitles",
+"allType"
+]
+},
+{
+"category": "option",
+"key": "syncMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "syncModeTvCondition",
+"type": "enum",
+"values": [
+"master",
+"slave",
+"none"
+]
+},
+{
+"category": "option",
+"key": "teletextLanguageFirst",
+"type": "enum",
+"values": [
+"eng",
+"spa",
+"fre"
+]
+},
+{
+"category": "option",
+"key": "teletextLanguageSecond",
+"type": "enum",
+"values": [
+"eng",
+"spa",
+"fre"
+]
+},
+{
+"category": "option",
+"key": "thirdPartyCookie",
+"type": "enum",
+"values": [
+"on",
+"off",
+"onByUser",
+"offByUser"
+]
+},
+{
+"category": "option",
+"key": "turnOnByVoice",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "usageCare",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "option",
+"key": "usbBuiltInVideo",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "virtualKeyboardLanguage",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "virtualSetTop",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "voiceRecognitionLanguage",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "vsn",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "wakeUpword",
+"type": "enum",
+"values": [
+"LGTV",
+"MYTV"
+]
+},
+{
+"category": "option",
+"key": "wallPaperHistory",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "wallPaperSettings",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "watchedListCollection",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "webOSPromotionVideo",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "option",
+"key": "yourMomentsVersion",
+"type": "enum",
+"values": []
+},
+{
+"category": "option",
+"key": "zipcode",
+"type": "enum",
+"values": []
+},
+{
+"category": "picture",
+"key": "DtmMastering10k",
+"type": "range",
+"range": {
+"max": 100,
+"min": 10,
+"interval": 10
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "DtmMastering1k",
+"type": "range",
+"range": {
+"max": 100,
+"min": 10,
+"interval": 10
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "DtmMastering4k",
+"type": "range",
+"range": {
+"max": 100,
+"min": 10,
+"interval": 10
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "DtmProfessional",
+"type": "enum",
+"values": [
+true,
+false
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "RGBWDotPatternMax",
+"type": "range",
+"range": {
+"max": 255,
+"min": 127,
+"interval": 1
+}
+},
+{
+"category": "picture",
+"key": "RGBWDotPatternMin",
+"type": "range",
+"range": {
+"max": 126,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "picture",
+"key": "RGBWDotPatternOnOff",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "picture",
+"key": "ScreenOff",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "picture",
+"key": "_14_9VPosition",
+"type": "range",
+"range": {
+"max": 8,
+"min": -8,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "adjustingLuminance",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "adjustingLuminance10pt",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "aiPicture",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "aiPictureReset",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "applyToAllInput",
+"type": "enum",
+"values": [
+"picture",
+"done"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "aspectRatio",
+"type": "enum",
+"values": [
+"16x9",
+"just_scan",
+"original",
+"4x3",
+"zoom",
+"cinema_zoom"
+],
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "aspectRatioActive",
+"type": "enum",
+"values": [
+"true",
+"false"
+]
+},
+{
+"category": "picture",
+"key": "aspectRatioActivePerApp",
+"type": "enum",
+"values": [
+"auto",
+"manual"
+]
+},
+{
+"category": "picture",
+"key": "aspectRatioHdmiCinema",
+"type": "enum",
+"values": [
+"16x9",
+"just_scan",
+"original",
+"full_wide",
+"4x3",
+"14x9",
+"zoom",
+"zoom2",
+"cinema_zoom"
+],
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "aspectRatioPerApp",
+"type": "enum",
+"values": [
+"original",
+"full_wide",
+"zoom"
+]
+},
+{
+"category": "picture",
+"key": "aspectRatioSettingActivePerApp",
+"type": "enum",
+"values": [
+"auto",
+"manual"
+]
+},
+{
+"category": "picture",
+"key": "aspectRatioTv",
+"type": "enum",
+"values": [
+"16x9",
+"just_scan",
+"original",
+"4x3",
+"zoom",
+"cinema_zoom"
+],
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "avMode",
+"type": "enum",
+"values": [
+"off",
+"cinema",
+"game"
+],
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "backlight",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "blackLevel",
+"type": "enum",
+"values": [
+"auto",
+"low",
+"high"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "brightness",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "brightnessActive",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "picture",
+"key": "captionZoomRatio",
+"type": "range",
+"range": {
+"max": 9,
+"min": -8,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "captionZoomVPosition",
+"type": "range",
+"range": {
+"max": 18,
+"min": -18,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "cinemaVPosition",
+"type": "range",
+"range": {
+"max": 15,
+"min": -15,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "cinemaZoomRatio",
+"type": "range",
+"range": {
+"max": 15,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "clarityActive",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "picture",
+"key": "color",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorActive",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "picture",
+"key": "colorGamut",
+"type": "enum",
+"values": [
+"auto",
+"native",
+"wide",
+"extended",
+"dynamic",
+"adobeRGB"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementColorSystem",
+"type": "enum",
+"values": [
+"red",
+"green",
+"blue",
+"cyan",
+"magenta",
+"yellow"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementHueBlue",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementHueCyan",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementHueGreen",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementHueMagenta",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementHueRed",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementHueYellow",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementLuminanceBlue",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementLuminanceCyan",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementLuminanceGreen",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementLuminanceMagenta",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementLuminanceRed",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementLuminanceYellow",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementSaturationBlue",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementSaturationCyan",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementSaturationGreen",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementSaturationMagenta",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementSaturationRed",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorManagementSaturationYellow",
+"type": "range",
+"range": {
+"max": 30,
+"min": -30,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "colorTemperature",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "contrast",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "demandResponse",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "picture",
+"key": "doNotShowAbcNotification",
+"type": "enum",
+"values": [
+"true",
+"false"
+]
+},
+{
+"category": "picture",
+"key": "doNotShowMecNotification",
+"type": "enum",
+"values": [
+"true",
+"false"
+]
+},
+{
+"category": "picture",
+"key": "dolbyPrecisionDetail",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "dualPlayMenu",
+"type": "range",
+"range": {
+"max": 10,
+"min": 1,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "dynamicColor",
+"type": "enum",
+"values": [
+"off",
+"low",
+"medium",
+"high",
+"user"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "dynamicContrast",
+"type": "enum",
+"values": [
+"off",
+"low",
+"medium",
+"high"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "energySaving",
+"type": "enum",
+"values": [
+"auto",
+"off",
+"min",
+"med",
+"max"
+]
+},
+{
+"category": "picture",
+"key": "energySavingAutoMin",
+"type": "range",
+"range": {
+"max": 10,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "picture",
+"key": "energySavingModified",
+"type": "enum",
+"values": [
+"true",
+"false"
+]
+},
+{
+"category": "picture",
+"key": "erpUserConfirm",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "picture",
+"key": "expressionEnhancer",
+"type": "enum",
+"values": [
+"off",
+"detail",
+"highlight"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "externalPqlDbType",
+"type": "enum",
+"values": [
+"none",
+"svl",
+"calman"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "eyeComfortMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "picture",
+"key": "filmMakerMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "picture",
+"key": "gamma",
+"type": "enum",
+"values": [
+"low",
+"medium",
+"high1",
+"high2",
+"mediumHavingLevel"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "gammaLevel",
+"type": "range",
+"range": {
+"max": 3,
+"min": -3,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "grassColor",
+"type": "range",
+"range": {
+"max": 5,
+"min": -5,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "hPosition",
+"type": "range",
+"range": {
+"max": 10,
+"min": -10,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "hSize",
+"type": "range",
+"range": {
+"max": 10,
+"min": -10,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "hdrDynamicToneMapping",
+"type": "enum",
+"values": [
+"on",
+"off",
+"HGIG"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "inputListForCopyCms",
+"type": "enum",
+"values": []
+},
+{
+"category": "picture",
+"key": "inputListForCopyPsm",
+"type": "enum",
+"values": []
+},
+{
+"category": "picture",
+"key": "inputListForCopyWb",
+"type": "enum",
+"values": []
+},
+{
+"category": "picture",
+"key": "isfMode",
+"type": "enum",
+"values": [
+"none",
+"day",
+"night"
+],
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "keyListForCopyCms",
+"type": "enum",
+"values": []
+},
+{
+"category": "picture",
+"key": "keyListForCopyPsm",
+"type": "enum",
+"values": [],
+"dimension": [
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "keyListForCopyWb",
+"type": "enum",
+"values": []
+},
+{
+"category": "picture",
+"key": "localDimming",
+"type": "enum",
+"values": [
+"off",
+"low",
+"medium",
+"high"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "logoLuminanceAdjust",
+"type": "enum",
+"values": [
+"off",
+"light",
+"strong"
+]
+},
+{
+"category": "picture",
+"key": "mediaZoomRatio",
+"type": "range",
+"range": {
+"max": 9,
+"min": -8,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "mediaZoomVPosition",
+"type": "range",
+"range": {
+"max": 18,
+"min": -18,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "memcDelayLevel",
+"type": "enum",
+"values": [
+"none",
+"mid",
+"max"
+]
+},
+{
+"category": "picture",
+"key": "motionEyeCare",
+"type": "enum",
+"values": [
+"off",
+"on"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "motionPro",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "motionProOLED",
+"type": "enum",
+"values": [
+"off",
+"low",
+"medium",
+"high",
+"auto"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "mpegNoiseReduction",
+"type": "enum",
+"values": [
+"off",
+"low",
+"medium",
+"high",
+"auto"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "nearBlackDetail",
+"type": "range",
+"range": {
+"max": 3,
+"min": -3,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "noiseReduction",
+"type": "enum",
+"values": [
+"off",
+"low",
+"medium",
+"high",
+"auto"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "oledPanelSettings",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "picture",
+"key": "pcMode",
+"type": "enum",
+"values": []
+},
+{
+"category": "picture",
+"key": "pcScreenSaver",
+"type": "enum",
+"values": [
+"off",
+"20min",
+"1hr",
+"2hr",
+"4hr"
+],
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "peakBrightness",
+"type": "enum",
+"values": [
+"off",
+"low",
+"medium",
+"high"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "pictureControlLimitation",
+"type": "enum",
+"values": [
+"true",
+"false"
+]
+},
+{
+"category": "picture",
+"key": "pictureCustomize",
+"type": "range",
+"range": {
+"max": 10,
+"min": 1,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "pictureMode",
+"type": "enum",
+"values": [
+"personalized",
+"hdrPersonalized",
+"dolbyHdrPersonalized",
+"vivid",
+"hdrVivid",
+"normal",
+"eco",
+"cinema",
+"hdrStandard",
+"hdrEco",
+"hdrCinemaBright",
+"hdrCinema",
+"sports",
+"game",
+"photo",
+"hdrGame",
+"filmMaker",
+"hdrFilmMaker",
+"dolbyHdrVivid",
+"dolbyHdrStandard",
+"dolbyHdrCinemaBright",
+"dolbyHdrCinema",
+"dolbyHdrGame",
+"expert1",
+"expert2"
+],
+"dimension": [
+"input",
+"dynamicRange"
+]
+},
+{
+"category": "picture",
+"key": "pictureModeSettingsActive",
+"type": "enum",
+"values": [
+"true",
+"false"
+]
+},
+{
+"category": "picture",
+"key": "pictureModeSettingsActivePerApp",
+"type": "enum",
+"values": [
+"auto",
+"manual"
+]
+},
+{
+"category": "picture",
+"key": "pictureSettingModified",
+"type": "enum",
+"values": [],
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "pictureSettingsActivePerApp",
+"type": "enum",
+"values": []
+},
+{
+"category": "picture",
+"key": "pictureTempKey",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "pictureTest",
+"type": "range",
+"range": {
+"max": 10,
+"min": 1,
+"interval": 1
+}
+},
+{
+"category": "picture",
+"key": "pictureWizard",
+"type": "range",
+"range": {
+"max": 10,
+"min": 1,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "psmListForExpert",
+"type": "enum",
+"values": []
+},
+{
+"category": "picture",
+"key": "realCinema",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "scheduledPixelCleaning",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "picture",
+"key": "screenShift",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "picture",
+"key": "sharpness",
+"type": "range",
+"range": {
+"max": 50,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "skinColor",
+"type": "range",
+"range": {
+"max": 5,
+"min": -5,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "skyColor",
+"type": "range",
+"range": {
+"max": 5,
+"min": -5,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "smoothGradation",
+"type": "enum",
+"values": [
+"off",
+"low",
+"medium",
+"high"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "superResolution",
+"type": "enum",
+"values": [
+"off",
+"low",
+"medium",
+"high"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "tint",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "truMotionBlur",
+"type": "range",
+"range": {
+"max": 10,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "truMotionJudder",
+"type": "range",
+"range": {
+"max": 10,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "truMotionMode",
+"type": "enum",
+"values": [
+"off",
+"cinemaClear",
+"natural",
+"smooth",
+"user",
+"clear"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "vPosition",
+"type": "range",
+"range": {
+"max": 10,
+"min": -10,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "vSize",
+"type": "range",
+"range": {
+"max": 10,
+"min": -10,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "videoSource",
+"type": "enum",
+"values": [
+"tv",
+"av1",
+"av2",
+"pictest",
+"comp1",
+"comp2",
+"comp3",
+"rgb",
+"hdmi1",
+"hdmi2",
+"hdmi3",
+"hdmi4",
+"hdmi1_pc",
+"hdmi2_pc",
+"hdmi3_pc",
+"hdmi4_pc",
+"smhl",
+"movie",
+"default",
+"browser"
+]
+},
+{
+"category": "picture",
+"key": "wb10PointsGammaValue",
+"type": "enum",
+"values": []
+},
+{
+"category": "picture",
+"key": "wb22PointsGammaValue",
+"type": "enum",
+"values": []
+},
+{
+"category": "picture",
+"key": "whiteBalanceActive",
+"type": "enum",
+"values": [
+"true",
+"false"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceApplyAllInputs",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceBlue",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceBlue10pt",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceBlueGain",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceBlueOffset",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceCodeValue",
+"type": "file",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceCodeValue10pt",
+"type": "file",
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceColorTemperature",
+"type": "enum",
+"values": [
+"cool",
+"medium",
+"warm1",
+"warm2",
+"warm3"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceGreen",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceGreen10pt",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceGreenGain",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceGreenOffset",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceIre",
+"type": "enum",
+"values": [
+"2.5",
+"5",
+"7.5",
+"10",
+"15",
+"20",
+"25",
+"30",
+"35",
+"40",
+"45",
+"50",
+"55",
+"60",
+"65",
+"70",
+"75",
+"80",
+"85",
+"90",
+"95",
+"100"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceIre10pt",
+"type": "enum",
+"values": [
+"10",
+"20",
+"30",
+"40",
+"50",
+"60",
+"70",
+"80",
+"90",
+"100"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceLuminance",
+"type": "range",
+"range": {
+"max": 500,
+"min": 50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceMethod",
+"type": "enum",
+"values": [
+"2",
+"10",
+"22",
+"10code",
+"22code"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalancePoint",
+"type": "enum",
+"values": [
+"low",
+"high"
+],
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceRed",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceRed10pt",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceRedGain",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "whiteBalanceRedOffset",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+},
+"dimension": [
+"input",
+"pictureMode"
+]
+},
+{
+"category": "picture",
+"key": "wssZoomVPosition",
+"type": "range",
+"range": {
+"max": 8,
+"min": -8,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "zoomRatio",
+"type": "range",
+"range": {
+"max": 9,
+"min": -8,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "picture",
+"key": "zoomVPosition",
+"type": "range",
+"range": {
+"max": 18,
+"min": -18,
+"interval": 1
+},
+"dimension": [
+"input"
+]
+},
+{
+"category": "pqsettings",
+"key": "status",
+"type": "enum",
+"values": []
+},
+{
+"category": "sound",
+"key": "TTSMixingRatio",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "sound",
+"key": "ac4DialogueEnhancer",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "aiSound",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "aigamesound",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"audioInput"
+]
+},
+{
+"category": "sound",
+"key": "analogOut",
+"type": "enum",
+"values": [
+"headphone",
+"external"
+]
+},
+{
+"category": "sound",
+"key": "applyToAllInputSSM",
+"type": "enum",
+"values": [
+"sound",
+"done"
+]
+},
+{
+"category": "sound",
+"key": "audioBalance",
+"type": "range",
+"range": {
+"max": 50,
+"min": -50,
+"interval": 1
+}
+},
+{
+"category": "sound",
+"key": "audioDescription",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "audioDescriptionAtsc30",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "audioDescriptionVolume",
+"type": "range",
+"range": {
+"max": 15,
+"min": -15,
+"interval": 1
+}
+},
+{
+"category": "sound",
+"key": "audioLanguageFirst",
+"type": "enum",
+"values": []
+},
+{
+"category": "sound",
+"key": "audioLanguageSecond",
+"type": "enum",
+"values": []
+},
+{
+"category": "sound",
+"key": "auracast",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "autoVolume",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "avSync",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"audioInput"
+]
+},
+{
+"category": "sound",
+"key": "avSyncBtSurround",
+"type": "range",
+"range": {
+"max": 60,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"audioInput"
+]
+},
+{
+"category": "sound",
+"key": "avSyncBypass",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "avSyncBypassInput",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"audioInput"
+]
+},
+{
+"category": "sound",
+"key": "avSyncSpdif",
+"type": "range",
+"range": {
+"max": 60,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"audioInput"
+]
+},
+{
+"category": "sound",
+"key": "avSyncSpeaker",
+"type": "range",
+"range": {
+"max": 60,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"audioInput"
+]
+},
+{
+"category": "sound",
+"key": "avSyncWisa",
+"type": "range",
+"range": {
+"max": 60,
+"min": 0,
+"interval": 1
+},
+"dimension": [
+"audioInput"
+]
+},
+{
+"category": "sound",
+"key": "blegattSoundbar",
+"type": "enum",
+"values": []
+},
+{
+"category": "sound",
+"key": "bluetoothMode",
+"type": "enum",
+"values": [
+"surroundMode",
+"speakerMode"
+]
+},
+{
+"category": "sound",
+"key": "btSpeakerMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "clearVoice",
+"type": "enum",
+"values": [
+"off",
+"level1",
+"level2",
+"level3"
+]
+},
+{
+"category": "sound",
+"key": "coSoundOutput",
+"type": "enum",
+"values": [
+"off",
+"tv_speaker",
+"external_speaker",
+"soundbar",
+"bt_soundbar"
+]
+},
+{
+"category": "sound",
+"key": "coSoundOutputState",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "deviceCntOfBtGeneral",
+"type": "enum",
+"values": [
+"singleConnection",
+"dualConnection"
+]
+},
+{
+"category": "sound",
+"key": "dialogEnhancementAtsc30",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "dialogEnhancementVolumeAtsc30",
+"type": "range",
+"range": {
+"max": 12,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "sound",
+"key": "digitalAudioPriority",
+"type": "enum",
+"values": [
+"mpeg",
+"dolbyDigital",
+"dobyDigitalPlus",
+"heAaC",
+"auto"
+]
+},
+{
+"category": "sound",
+"key": "eArcSupport",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "equalizerStatus",
+"type": "enum",
+"values": [
+"on",
+"off",
+"bypass"
+]
+},
+{
+"category": "sound",
+"key": "forceOutputDDPLUS",
+"type": "enum",
+"values": [
+"true",
+"false"
+]
+},
+{
+"category": "sound",
+"key": "gameTVEqualizer",
+"type": "enum",
+"values": [
+"on",
+"off"
+],
+"dimension": [
+"audioInput"
+]
+},
+{
+"category": "sound",
+"key": "gameTVEqualizer10band",
+"type": "range",
+"range": {
+"max": 10,
+"min": -10,
+"interval": 1
+},
+"dimension": [
+"audioInput"
+]
+},
+{
+"category": "sound",
+"key": "hdmiArcMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "headphoneDetection",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "hearingAid",
+"type": "enum",
+"values": [
+"off",
+"bluetooth",
+"auracast",
+"external_arc"
+]
+},
+{
+"category": "sound",
+"key": "inputAudioFormatDP1",
+"type": "enum",
+"values": [
+"bitstream",
+"pcm"
+]
+},
+{
+"category": "sound",
+"key": "inputAudioFormatDP2",
+"type": "enum",
+"values": [
+"bitstream",
+"pcm"
+]
+},
+{
+"category": "sound",
+"key": "inputAudioFormatHDMI1",
+"type": "enum",
+"values": [
+"bitstream",
+"pcm"
+]
+},
+{
+"category": "sound",
+"key": "inputAudioFormatHDMI2",
+"type": "enum",
+"values": [
+"bitstream",
+"pcm"
+]
+},
+{
+"category": "sound",
+"key": "inputAudioFormatHDMI3",
+"type": "enum",
+"values": [
+"bitstream",
+"pcm"
+]
+},
+{
+"category": "sound",
+"key": "inputAudioFormatHDMI4",
+"type": "enum",
+"values": [
+"bitstream",
+"pcm"
+]
+},
+{
+"category": "sound",
+"key": "inputAudioFormatUSBC1",
+"type": "enum",
+"values": [
+"bitstream",
+"pcm"
+]
+},
+{
+"category": "sound",
+"key": "inputAudioFormatUSBC2",
+"type": "enum",
+"values": [
+"bitstream",
+"pcm"
+]
+},
+{
+"category": "sound",
+"key": "lgSoundSync",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "magicSoundModified",
+"type": "enum",
+"values": [
+"true",
+"false"
+]
+},
+{
+"category": "sound",
+"key": "magicSoundTime",
+"type": "range"
+},
+{
+"category": "sound",
+"key": "magicSpaceSound",
+"type": "enum",
+"values": [
+"off",
+"standard",
+"bass",
+"treble"
+]
+},
+{
+"category": "sound",
+"key": "multiAudioOutputWithBt",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "prevSoundOutput",
+"type": "enum",
+"values": [
+"tv_speaker",
+"external_optical",
+"external_arc",
+"bt_soundbar",
+"wisa_speaker",
+"lgSoundSync",
+"lineout",
+"tv_external_speaker",
+"tv_speaker_bluetooth",
+"wisa_speaker",
+"mobile_phone",
+"tv_speaker_external_arc",
+"tv_speaker_optical_arc",
+"wow_cast",
+"tv_speaker_wow_cast"
+]
+},
+{
+"category": "sound",
+"key": "slidingSpeaker",
+"type": "enum",
+"values": [
+"openAlways",
+"openPowerOn"
+]
+},
+{
+"category": "sound",
+"key": "slidingSpeakerMelody",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "smartSoundMode",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "sound",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "soundAlive",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "soundEffect",
+"type": "enum",
+"values": []
+},
+{
+"category": "sound",
+"key": "soundEngineStatus",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "soundMode",
+"type": "enum",
+"values": [
+"aiSoundPlus",
+"aiSound",
+"aiSound_soundbar",
+"standard",
+"movie",
+"news",
+"sports",
+"music",
+"game",
+"game_rts",
+"game_fps",
+"dtsVirtualX",
+"custom",
+"bassBlast",
+"voiceEnhance",
+"bassBoost",
+"customEq"
+],
+"dimension": [
+"audioInput",
+"soundOutput"
+]
+},
+{
+"category": "sound",
+"key": "soundModeModified",
+"type": "enum",
+"values": [
+"true",
+"false"
+],
+"dimension": [
+"soundMode",
+"soundOutput"
+]
+},
+{
+"category": "sound",
+"key": "soundModeSync",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "soundOptimizer",
+"type": "enum",
+"values": [
+"normal",
+"stand",
+"wall_mount"
+]
+},
+{
+"category": "sound",
+"key": "soundOutput",
+"type": "enum",
+"values": [
+"tv_speaker",
+"tv_speakerbar",
+"external_optical",
+"external_arc",
+"bt_soundbar",
+"wisa_speaker",
+"mobile_phone",
+"lineout",
+"builtin_soundbar",
+"headphone",
+"bt_audio",
+"tv_external_speaker",
+"tv_speaker_headphone",
+"tv_speaker_bluetooth",
+"tv_speakerbar_headphone",
+"tv_speaker_external_arc",
+"usb_speaker",
+"tv_speaker_optical_arc",
+"wow_cast",
+"tv_speaker_wow_cast",
+"flex_connector"
+],
+"dimension": [
+"audioOutput"
+]
+},
+{
+"category": "sound",
+"key": "soundOutputDigital",
+"type": "enum",
+"values": [
+"pcm",
+"auto",
+"passThrough"
+],
+"dimension": [
+"audioInput"
+]
+},
+{
+"category": "sound",
+"key": "soundOutputList",
+"type": "enum",
+"values": []
+},
+{
+"category": "sound",
+"key": "soundOutputs",
+"type": "enum",
+"values": [
+"tv_speaker",
+"external_speaker",
+"soundbar",
+"bt_soundbar",
+"lineout",
+"builtin_soundbar",
+"headphone"
+]
+},
+{
+"category": "sound",
+"key": "soundTest",
+"type": "range"
+},
+{
+"category": "sound",
+"key": "startupSound",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "supportATMOS",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "tvPowerSound",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "tvSetupConfiguration",
+"type": "enum",
+"values": [
+"stand",
+"wall_mount"
+]
+},
+{
+"category": "sound",
+"key": "userEqualizer",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "userEqualizerValues",
+"type": "range",
+"range": {
+"max": 10,
+"min": -10,
+"interval": 1
+}
+},
+{
+"category": "sound",
+"key": "virtualSurround",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "visualImpaired",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "sound",
+"key": "volumeControl",
+"type": "enum",
+"values": [
+"low",
+"medium",
+"high"
+]
+},
+{
+"category": "sound",
+"key": "volumeStep",
+"type": "range",
+"range": {
+"max": 10,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "sound",
+"key": "wisaSpeakerChannelType",
+"type": "enum",
+"values": [
+"2",
+"2.1"
+]
+},
+{
+"category": "sound",
+"key": "wooferLevel",
+"type": "range",
+"range": {
+"max": 13,
+"min": 1,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "autoClock",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "time",
+"key": "autoOff15Min",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "time",
+"key": "autoOff2HourOnTimer",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "time",
+"key": "automaticStandBy",
+"type": "enum",
+"values": [
+"0",
+"2",
+"4",
+"6",
+"8"
+]
+},
+{
+"category": "time",
+"key": "daylightSaving",
+"type": "enum",
+"values": [
+"on",
+"off",
+"auto"
+]
+},
+{
+"category": "time",
+"key": "defaultTimeZone",
+"type": "file"
+},
+{
+"category": "time",
+"key": "dpmsAutoOff",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "time",
+"key": "noOperationAutoOff",
+"type": "enum",
+"values": [
+"off",
+"3",
+"6",
+"12",
+"24"
+]
+},
+{
+"category": "time",
+"key": "noSignalAutoOff",
+"type": "enum",
+"values": [
+"on",
+"off"
+]
+},
+{
+"category": "time",
+"key": "offTimerEnable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "offTimerFlag",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "offTimerHour",
+"type": "range",
+"range": {
+"max": 24,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "offTimerMinute",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "offTimerRepeat",
+"type": "enum",
+"values": [
+"once",
+"manual",
+"everyday",
+"mon_fri",
+"mon_sat",
+"sat_sun",
+"sun"
+]
+},
+{
+"category": "time",
+"key": "offTimerWeekday",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerAppId",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "onTimerAppId2",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "onTimerAppId3",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "onTimerAppId4",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "onTimerAppId5",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "onTimerChannel",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "onTimerChannel2",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "onTimerChannel3",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "onTimerChannel4",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "onTimerChannel5",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "onTimerEnable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "onTimerEnable2",
+"type": "enum",
+"values": [
+"off",
+"on",
+"none"
+]
+},
+{
+"category": "time",
+"key": "onTimerEnable3",
+"type": "enum",
+"values": [
+"off",
+"on",
+"none"
+]
+},
+{
+"category": "time",
+"key": "onTimerEnable4",
+"type": "enum",
+"values": [
+"off",
+"on",
+"none"
+]
+},
+{
+"category": "time",
+"key": "onTimerEnable5",
+"type": "enum",
+"values": [
+"off",
+"on",
+"none"
+]
+},
+{
+"category": "time",
+"key": "onTimerHour",
+"type": "range",
+"range": {
+"max": 24,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerHour3",
+"type": "range",
+"range": {
+"max": 24,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerHour4",
+"type": "range",
+"range": {
+"max": 24,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerHour5",
+"type": "range",
+"range": {
+"max": 24,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerMinute",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerMinute3",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerMinute4",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerMinute5",
+"type": "range",
+"range": {
+"max": 59,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerRepeat",
+"type": "enum",
+"values": [
+"once",
+"manual",
+"everyday",
+"mon_fri",
+"mon_sat",
+"sat_sun",
+"sun"
+]
+},
+{
+"category": "time",
+"key": "onTimerRepeat2",
+"type": "enum",
+"values": [
+"once",
+"manual",
+"everyday",
+"mon_fri",
+"mon_sat",
+"sat_sun",
+"sun"
+]
+},
+{
+"category": "time",
+"key": "onTimerRepeat3",
+"type": "enum",
+"values": [
+"once",
+"manual",
+"everyday",
+"mon_fri",
+"mon_sat",
+"sat_sun",
+"sun"
+]
+},
+{
+"category": "time",
+"key": "onTimerRepeat4",
+"type": "enum",
+"values": [
+"once",
+"manual",
+"everyday",
+"mon_fri",
+"mon_sat",
+"sat_sun",
+"sun"
+]
+},
+{
+"category": "time",
+"key": "onTimerRepeat5",
+"type": "enum",
+"values": [
+"once",
+"manual",
+"everyday",
+"mon_fri",
+"mon_sat",
+"sat_sun",
+"sun"
+]
+},
+{
+"category": "time",
+"key": "onTimerSource",
+"type": "enum",
+"values": [
+"dtv",
+"atv",
+"av1",
+"av2",
+"pictest",
+"comp1",
+"comp2",
+"comp3",
+"rgb",
+"hdmi1",
+"hdmi2",
+"hdmi3",
+"hdmi4",
+"hdmi1_pc",
+"hdmi2_pc",
+"hdmi3_pc",
+"hdmi4_pc",
+"program",
+"scart",
+"smhl"
+]
+},
+{
+"category": "time",
+"key": "onTimerSource2",
+"type": "enum",
+"values": [
+"dtv",
+"atv",
+"av1",
+"av2",
+"pictest",
+"comp1",
+"comp2",
+"comp3",
+"rgb",
+"hdmi1",
+"hdmi2",
+"hdmi3",
+"hdmi4",
+"hdmi1_pc",
+"hdmi2_pc",
+"hdmi3_pc",
+"hdmi4_pc",
+"program",
+"scart"
+]
+},
+{
+"category": "time",
+"key": "onTimerSource3",
+"type": "enum",
+"values": [
+"dtv",
+"atv",
+"av1",
+"av2",
+"pictest",
+"comp1",
+"comp2",
+"comp3",
+"rgb",
+"hdmi1",
+"hdmi2",
+"hdmi3",
+"hdmi4",
+"hdmi1_pc",
+"hdmi2_pc",
+"hdmi3_pc",
+"hdmi4_pc",
+"program",
+"scart"
+]
+},
+{
+"category": "time",
+"key": "onTimerSource4",
+"type": "enum",
+"values": [
+"dtv",
+"atv",
+"av1",
+"av2",
+"pictest",
+"comp1",
+"comp2",
+"comp3",
+"rgb",
+"hdmi1",
+"hdmi2",
+"hdmi3",
+"hdmi4",
+"hdmi1_pc",
+"hdmi2_pc",
+"hdmi3_pc",
+"hdmi4_pc",
+"program",
+"scart"
+]
+},
+{
+"category": "time",
+"key": "onTimerSource5",
+"type": "enum",
+"values": [
+"dtv",
+"atv",
+"av1",
+"av2",
+"pictest",
+"comp1",
+"comp2",
+"comp3",
+"rgb",
+"hdmi1",
+"hdmi2",
+"hdmi3",
+"hdmi4",
+"hdmi1_pc",
+"hdmi2_pc",
+"hdmi3_pc",
+"hdmi4_pc",
+"program",
+"scart"
+]
+},
+{
+"category": "time",
+"key": "onTimerVolume",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerVolume2",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerVolume3",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerVolume4",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerVolume5",
+"type": "range",
+"range": {
+"max": 100,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerWeekday",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerWeekday3",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerWeekday4",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "onTimerWeekday5",
+"type": "range",
+"range": {
+"max": 255,
+"min": 0,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "remindAppId",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "remindChannel",
+"type": "enum",
+"values": []
+},
+{
+"category": "time",
+"key": "remindEnable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "remindVolume",
+"type": "range",
+"range": {
+"max": 100,
+"min": -1,
+"interval": 1
+}
+},
+{
+"category": "time",
+"key": "sleepTimer",
+"type": "enum",
+"values": [
+"off",
+"10",
+"20",
+"30",
+"60",
+"90",
+"120",
+"180",
+"240"
+]
+},
+{
+"category": "time",
+"key": "starttime",
+"type": "enum",
+"values": [
+"0",
+"5"
+]
+},
+{
+"category": "time",
+"key": "timeOffset",
+"type": "enum",
+"values": [
+"GMT-12",
+"GMT-11",
+"GMT-10",
+"GMT-9",
+"GMT-8",
+"GMT-7",
+"GMT-6",
+"GMT-5",
+"GMT-4",
+"GMT-3",
+"GMT-2",
+"GMT-1",
+"GMT",
+"GMT+1",
+"GMT+2",
+"GMT+3",
+"GMT+4",
+"GMT+5",
+"GMT+6",
+"GMT+7",
+"GMT+8",
+"GMT+9",
+"GMT+10",
+"GMT+11",
+"GMT+12",
+"GMT+13"
+]
+},
+{
+"category": "time",
+"key": "timeZone",
+"type": "enum",
+"values": [
+"Offset"
+]
+},
+{
+"category": "time",
+"key": "warmTimerEnable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekday1Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekday2Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekday3Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekday4Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekday5Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekday6Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekday7Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekday8Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekend1Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekend2Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekend3Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekend4Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekend5Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekend6Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekend7Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "time",
+"key": "warmTimerWeekend8Enable",
+"type": "enum",
+"values": [
+"off",
+"on"
+]
+},
+{
+"category": "twinTv",
+"key": "audioMode",
+"type": "enum",
+"values": [
+"wide",
+"split",
+"none",
+"undefined"
+]
+},
+{
+"category": "twinTv",
+"key": "backlightOffset",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "bezelOffsetBottom",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "bezelOffsetLeft",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "bezelOffsetRight",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "bezelOffsetTop",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "dimension",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "dimensionCol",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "dimensionRow",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "masterInfo",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "originalPictureMode",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "originalVividValue",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "originalWhiteBalance",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "pictureModeSettingsDone",
+"type": "enum",
+"values": [
+true,
+false
+]
+},
+{
+"category": "twinTv",
+"key": "positionCol",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "positionRow",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "role",
+"type": "enum",
+"values": [
+"master",
+"slave",
+"none",
+"undefined"
+]
+},
+{
+"category": "twinTv",
+"key": "slaveInfo",
+"type": "enum",
+"values": []
+},
+{
+"category": "twinTv",
+"key": "systemMode",
+"type": "enum",
+"values": [
+"wide",
+"split",
+"none",
+"undefined"
+]
+},
+{
+"category": "twinTv",
+"key": "videoMode",
+"type": "enum",
+"values": [
+"wide",
+"split",
+"none",
+"undefined"
+]
+},
+{
+"category": "twinTv",
+"key": "wideZoomToast",
+"type": "enum",
+"values": []
+}
+]

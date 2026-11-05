@@ -92,6 +92,12 @@ Returns the adc calibration mode.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `mode` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getAdcCalibrationMode '{}'
 ```
@@ -115,6 +121,15 @@ Returns the adc calibration status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `component` |  |
+| `mode` |  |
+| `rgb` |  |
+| `status` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getAdcCalibrationStatus '{}'
 ```
@@ -137,6 +152,30 @@ Returns the EDID status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `edidChecksum` |  |
+| `edidStatus` |  |
+| `hdmi1` |  |
+| `hdmi1block0` |  |
+| `hdmi1block1` |  |
+| `hdmi2` |  |
+| `hdmi2block0` |  |
+| `hdmi2block1` |  |
+| `hdmi3` |  |
+| `hdmi3block0` |  |
+| `hdmi3block1` |  |
+| `hdmi4` |  |
+| `hdmi4block0` |  |
+| `hdmi4block1` |  |
+| `hdmiEdidVersion` |  |
+| `hdmiPortNums` |  |
+| `rgb` |  |
+| `rgbEdidVersion` |  |
+| `rgbPortNums` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getEdidStatus '{}'

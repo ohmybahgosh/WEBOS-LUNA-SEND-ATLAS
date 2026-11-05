@@ -296,6 +296,12 @@ Returns the baud rate.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `baudrate` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/getBaudRate '{}'
 ```
@@ -318,6 +324,12 @@ Returns the RS 232 control.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `rs232control` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/getRS232Control '{}'

@@ -100,6 +100,12 @@ Returns the hallic count.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `count` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/getHallicCount '{}'
 ```
@@ -146,6 +152,12 @@ Returns the self diagnosis oled.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `StatusValue` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/getSelfDiagnosisOled '{}'
 ```
@@ -168,6 +180,12 @@ Returns the special remocon mode.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `specialRemoconMode` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/getSpecialRemoconMode '{}'

@@ -28,6 +28,14 @@ Handles the info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `arguments` |  |
+| `commands` |  |
+| `description` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.jsserver/info '{}'
 ```
@@ -50,6 +58,19 @@ Handles the info services.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `_events` |  |
+| `_eventsCount` |  |
+| `activityCnt` |  |
+| `filename` |  |
+| `isBusy` |  |
+| `isUnloadable` |  |
+| `isUnrequired` |  |
+| `services` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.jsserver/infoServices '{}'

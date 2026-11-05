@@ -31,6 +31,13 @@ Checks the fan.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `fanCount` |  |
+| `fanStatus` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/checkFan '{}'
 ```
@@ -53,6 +60,13 @@ Checks the temperature sensor.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `temperatureSensorCount` |  |
+| `temperatureSensorStatus` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/checkTemperatureSensor '{}'
@@ -77,6 +91,12 @@ Returns the fan data.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `fanData` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/getFanData '{}'
 ```
@@ -100,6 +120,15 @@ Returns the temperature sensor data.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `currentTemperature` |  |
+| `errorCheck` |  |
+| `overheatOffset` |  |
+| `overheatTemp` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/getTemperatureSensorData '{}'
 ```
@@ -122,6 +151,16 @@ Returns the thermal report.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `currentTemperature` |  |
+| `frc` |  |
+| `lastTemperature` |  |
+| `soc` |  |
+| `status` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/getThermalReport '{}'

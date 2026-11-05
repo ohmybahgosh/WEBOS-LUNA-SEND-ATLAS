@@ -228,6 +228,24 @@ Returns the caption position.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `ccSpec` |  |
+| `displayOffsetX` |  |
+| `displaySizeHeight` |  |
+| `displaySizeWidth` |  |
+| `posX` |  |
+| `posXByProgram` |  |
+| `posY` |  |
+| `posYByProgram` |  |
+| `resolutionHeight` |  |
+| `resolutionWidth` |  |
+| `subscribe` |  |
+| `windowSizeHeight` |  |
+| `windowSizeWidth` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/getCaptionPosition '{}'
 ```

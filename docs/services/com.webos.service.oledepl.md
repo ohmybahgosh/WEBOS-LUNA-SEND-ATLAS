@@ -47,6 +47,12 @@ Returns the epl status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `status` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/getEplStatus '{}'
 ```
@@ -70,6 +76,12 @@ Returns the fixed OSD result.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `fixedOSD` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/getFixedOSDResult '{}'
 ```
@@ -91,6 +103,13 @@ OLED care read-only query
 - **Versions:** OLED  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `enable` |  |
+| `stressCount` |  |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.oledepl/getGlobalStressReduction '{}'
 ```
@@ -110,6 +129,12 @@ OLED care read-only query
 - **Versions:** OLED  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `oledPanelUTT` |  |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.oledepl/getOledPanelUTT '{}'
 ```
@@ -128,6 +153,13 @@ OLED care read-only query
 - **Platform:** webOS TV  
 - **Versions:** OLED  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `tempLSB` |  |
+| `tempMSB` |  |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.oledepl/getPanelTemperature '{}'
@@ -215,6 +247,12 @@ Returns the stra status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `status` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/getStraStatus '{}'
 ```
@@ -237,6 +275,12 @@ Returns the temporal peak control.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `enable` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/getTemporalPeakControl '{}'

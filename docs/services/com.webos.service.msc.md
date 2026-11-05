@@ -59,6 +59,12 @@ Checks the DFT.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `ack` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/checkDFT '{}'
 ```
@@ -150,6 +156,12 @@ Returns the motion status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `motionStatus` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/getMotionStatus '{}'

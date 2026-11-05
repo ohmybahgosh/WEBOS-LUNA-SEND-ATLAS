@@ -343,6 +343,12 @@ Returns surface manager currentState (home-chooser polls it for readiness)
 - **Versions:** unknown  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `currentState` |  |
+
 ```sh
 luna-send -n 1 luna://com.webos.surfacemanager/getCurrentState '{}'
 ```
@@ -365,6 +371,14 @@ Returns the focused window info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` |  |
+| `focusedWindowInfo` |  |
+| `type` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getFocusedWindowInfo '{}'
@@ -424,6 +438,14 @@ Returns the foreground app state.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` |  |
+| `foregroundAppState` |  |
+| `state` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getForegroundAppState '{}'
 ```
@@ -447,6 +469,12 @@ Returns the foreground video window.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `foregroundVideoWindow` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getForegroundVideoWindow '{}'
 ```
@@ -469,6 +497,14 @@ Returns the foreground window info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` |  |
+| `windowType` |  |
+| `windows` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getForegroundWindowInfo '{}'
@@ -516,6 +552,12 @@ Returns the multi view layout animation state.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `states` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getMultiViewLayoutAnimationState '{}'
 ```
@@ -561,6 +603,13 @@ Returns the recents app list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `ready` |  |
+| `recentsAppList` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getRecentsAppList '{}'
@@ -608,6 +657,14 @@ Returns the screen visible.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `name` |  |
+| `screens` |  |
+| `visible` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getScreenVisible '{}'
 ```
@@ -654,6 +711,12 @@ Returns the window group info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `windowGroupInfo` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getWindowGroupInfo '{}'
 ```
@@ -676,6 +739,12 @@ Returns the zoom status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `zoomStatus` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getZoomStatus '{}'

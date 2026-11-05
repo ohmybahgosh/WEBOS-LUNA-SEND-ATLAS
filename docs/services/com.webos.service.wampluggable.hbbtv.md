@@ -96,6 +96,14 @@ Returns the am status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `id` |  |
+| `status` |  |
+| `statusCode` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/getAmStatus '{}'
 ```
@@ -210,6 +218,13 @@ Returns the user agent.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `commonUserAgent` |  |
+| `userAgent` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/getUserAgent '{}'

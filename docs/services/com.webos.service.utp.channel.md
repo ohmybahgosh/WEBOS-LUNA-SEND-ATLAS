@@ -2121,6 +2121,17 @@ Returns the channel group.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelGroup` |  |
+| `channelGroupId` |  |
+| `channelGroupName` |  |
+| `isFavoriteGroup` |  |
+| `userEdited` |  |
+| `userEditedName` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelGroup '{}'
 ```
@@ -2143,6 +2154,18 @@ Returns the channel group list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelGroupId` |  |
+| `channelGroupList` |  |
+| `channelGroupListCount` |  |
+| `channelGroupName` |  |
+| `isFavoriteGroup` |  |
+| `userEdited` |  |
+| `userEditedName` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelGroupList '{}'
@@ -2213,6 +2236,14 @@ Returns the channel mode.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelMode` |  |
+| `channelModeId` |  |
+| `channelModeName` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelMode '{}'
 ```
@@ -2236,6 +2267,15 @@ Returns the channel mode list.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelModeId` |  |
+| `channelModeList` |  |
+| `channelModeListCount` |  |
+| `channelModeName` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelModeList '{}'
 ```
@@ -2258,6 +2298,14 @@ Returns the channel sort mode.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelSortMode` |  |
+| `channelSortModeName` |  |
+| `channelSortModeType` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelSortMode '{}'

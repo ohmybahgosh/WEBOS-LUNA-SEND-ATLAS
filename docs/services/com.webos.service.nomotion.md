@@ -77,6 +77,12 @@ Returns the no motion and no operation timer info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `noMotionAndNoOperationTimers` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nomotion/getNoMotionAndNoOperationTimerInfo '{}'
 ```
@@ -99,6 +105,12 @@ Returns the no motion timer info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `noMotionTimers` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nomotion/getNoMotionTimerInfo '{}'

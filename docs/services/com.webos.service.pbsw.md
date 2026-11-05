@@ -311,6 +311,18 @@ Returns the channel group list.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelGroupId` |  |
+| `channelGroupList` |  |
+| `channelGroupListCount` |  |
+| `channelGroupName` |  |
+| `isFavoriteGroup` |  |
+| `userEdited` |  |
+| `userEditedName` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getChannelGroupList '{}'
 ```
@@ -449,6 +461,26 @@ Returns the country policy.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `baseEpgOnline` |  |
+| `guideDetailSupport` |  |
+| `ipAntennaSupport` |  |
+| `ipCableSupport` |  |
+| `ipOPSupport` |  |
+| `ipOnlineChannelSupport` |  |
+| `ipOnlineEPGSupport` |  |
+| `ipSatelliteSupport` |  |
+| `mergedEPGSupport` |  |
+| `ottChannelSupport` |  |
+| `ottEPGSupport` |  |
+| `stbOnlineChannelSupport` |  |
+| `stbOnlineEPGSupport` |  |
+| `tunerOnlineChannelSupport` |  |
+| `tunerOnlineEPGSupport` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getCountryPolicy '{}'
 ```
@@ -494,6 +526,17 @@ Returns the current favorite group.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelGroup` |  |
+| `channelGroupId` |  |
+| `channelGroupName` |  |
+| `enable` |  |
+| `userEdited` |  |
+| `userEditedName` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getCurrentFavoriteGroup '{}'
@@ -587,6 +630,34 @@ Returns the EPG status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `baseEpgOnline` |  |
+| `dataType` |  |
+| `errorCodeNumber` |  |
+| `guideDetailSupport` |  |
+| `ipAntennaSupport` |  |
+| `ipCableSupport` |  |
+| `ipEpgStatus` |  |
+| `ipOPSupport` |  |
+| `ipOnlineChannelSupport` |  |
+| `ipOnlineEPGSupport` |  |
+| `ipSatelliteSupport` |  |
+| `mergedEPGSupport` |  |
+| `networkStatus` |  |
+| `ottChannelSupport` |  |
+| `ottEPGSupport` |  |
+| `statusValue` |  |
+| `stbEpgStatus` |  |
+| `stbOnlineChannelSupport` |  |
+| `stbOnlineEPGSupport` |  |
+| `tunerEpgStatus` |  |
+| `tunerOnlineChannelSupport` |  |
+| `tunerOnlineEPGSupport` |  |
+| `type` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getEpgStatus '{}'
 ```
@@ -656,6 +727,18 @@ Returns the favorite group list.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelGroupId` |  |
+| `channelGroupList` |  |
+| `channelGroupListCount` |  |
+| `channelGroupName` |  |
+| `enable` |  |
+| `userEdited` |  |
+| `userEditedName` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getFavoriteGroupList '{}'
 ```
@@ -679,6 +762,18 @@ Returns the ibs header data.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `deviceUniqueId` |  |
+| `ipWatchFlag` |  |
+| `livetvwatchEula` |  |
+| `stbAcrWatchFlag` |  |
+| `stbScdWatchFlag` |  |
+| `stbUeiWatchFlag` |  |
+| `watchFlag` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getIbsHeaderData '{}'
 ```
@@ -701,6 +796,15 @@ Returns the MCP list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `LGP` |  |
+| `PLT` |  |
+| `channelMapId` |  |
+| `mcpList` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getMCPList '{}'

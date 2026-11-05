@@ -2385,6 +2385,14 @@ Returns the channel group.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelGroup` |  |
+| `channelGroupId` |  |
+| `channelGroupName` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.channel/getChannelGroup '{}'
 ```
@@ -2407,6 +2415,16 @@ Returns the channel group list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelGroupId` |  |
+| `channelGroupList` |  |
+| `channelGroupListCount` |  |
+| `channelGroupName` |  |
+| `userEditedName` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.channel/getChannelGroupList '{}'
@@ -2477,6 +2495,14 @@ Returns the channel mode.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelMode` |  |
+| `channelModeId` |  |
+| `channelModeName` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.channel/getChannelMode '{}'
 ```
@@ -2499,6 +2525,15 @@ Returns the channel mode list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelModeId` |  |
+| `channelModeList` |  |
+| `channelModeListCount` |  |
+| `channelModeName` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.channel/getChannelModeList '{}'
@@ -2569,6 +2604,14 @@ Returns the channel sort mode.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelSortMode` |  |
+| `channelSortModeName` |  |
+| `channelSortModeType` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.channel/getChannelSortMode '{}'
 ```
@@ -2637,6 +2680,12 @@ Returns the channel zapping list count.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelListCount` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.channel/getChannelZappingListCount '{}'

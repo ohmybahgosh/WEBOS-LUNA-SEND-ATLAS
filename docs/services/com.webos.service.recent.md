@@ -26,6 +26,19 @@ Lists the recent apps panel entries
 - **Versions:** unknown  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` |  |
+| `cardSnapShotFilePath` |  |
+| `customImageFilePath` |  |
+| `ready` |  |
+| `recentsAppList` |  |
+| `splashBackground` |  |
+| `subtitle` |  |
+| `title` |  |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.recent/listRecents '{}'
 ```

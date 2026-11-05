@@ -344,6 +344,18 @@ Returns the channel group list.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelGroupId` |  |
+| `channelGroupList` |  |
+| `channelGroupListCount` |  |
+| `channelGroupName` |  |
+| `isFavoriteGroup` |  |
+| `userEdited` |  |
+| `userEditedName` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelGroupList '{}'
 ```
@@ -366,6 +378,19 @@ Returns the channel ID info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `ONID` |  |
+| `SVCID` |  |
+| `TSID` |  |
+| `majorNumber` |  |
+| `minorNumber` |  |
+| `physicalNumber` |  |
+| `playerService` |  |
+| `sourceIndex` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelIdInfo '{}'
@@ -390,6 +415,18 @@ Returns the channel info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `cableAnalogSkipped` |  |
+| `channelList` |  |
+| `channelListCount` |  |
+| `channelLogoServerUrl` |  |
+| `dataSource` |  |
+| `dataType` |  |
+| `deviceSourceIndex` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelInfo '{}'
 ```
@@ -412,6 +449,23 @@ Returns the channel list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelList` |  |
+| `channelListCount` |  |
+| `channelLogoServerUrl` |  |
+| `dataSource` |  |
+| `dataType` |  |
+| `ipAntennaSupport` |  |
+| `ipCableSupport` |  |
+| `ipChanInteractiveUrl` |  |
+| `ipOPSupport` |  |
+| `ipSatelliteSupport` |  |
+| `valueList` |  |
+| `verifyDone` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelList '{}'
@@ -528,6 +582,26 @@ Returns the country policy.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `baseEpgOnline` |  |
+| `guideDetailSupport` |  |
+| `ipAntennaSupport` |  |
+| `ipCableSupport` |  |
+| `ipOPSupport` |  |
+| `ipOnlineChannelSupport` |  |
+| `ipOnlineEPGSupport` |  |
+| `ipSatelliteSupport` |  |
+| `mergedEPGSupport` |  |
+| `ottChannelSupport` |  |
+| `ottEPGSupport` |  |
+| `stbOnlineChannelSupport` |  |
+| `stbOnlineEPGSupport` |  |
+| `tunerOnlineChannelSupport` |  |
+| `tunerOnlineEPGSupport` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getCountryPolicy '{}'
 ```
@@ -573,6 +647,17 @@ Returns the current favorite group.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelGroup` |  |
+| `channelGroupId` |  |
+| `channelGroupName` |  |
+| `isFavoriteGroup` |  |
+| `userEdited` |  |
+| `userEditedName` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getCurrentFavoriteGroup '{}'
@@ -642,6 +727,30 @@ Returns the EPG status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `baseEpgOnline` |  |
+| `dataType` |  |
+| `errorCodeNumber` |  |
+| `guideDetailSupport` |  |
+| `ipEpgStatus` |  |
+| `ipOnlineChannelSupport` |  |
+| `ipOnlineEPGSupport` |  |
+| `mergedEPGSupport` |  |
+| `networkStatus` |  |
+| `ottChannelSupport` |  |
+| `ottEPGSupport` |  |
+| `statusValue` |  |
+| `stbEpgStatus` |  |
+| `stbOnlineChannelSupport` |  |
+| `stbOnlineEPGSupport` |  |
+| `tunerEpgStatus` |  |
+| `tunerOnlineChannelSupport` |  |
+| `tunerOnlineEPGSupport` |  |
+| `type` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getEpgStatus '{}'
@@ -734,6 +843,18 @@ Returns the favorite group list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelGroupId` |  |
+| `channelGroupList` |  |
+| `channelGroupListCount` |  |
+| `channelGroupName` |  |
+| `isFavoriteGroup` |  |
+| `userEdited` |  |
+| `userEditedName` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getFavoriteGroupList '{}'
@@ -850,6 +971,12 @@ Returns the network ID list.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `networkIdList` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getNetworkIdList '{}'
 ```
@@ -918,6 +1045,23 @@ Returns the offline channel list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelList` |  |
+| `channelListCount` |  |
+| `channelLogoServerUrl` |  |
+| `dataSource` |  |
+| `dataType` |  |
+| `ipAntennaSupport` |  |
+| `ipCableSupport` |  |
+| `ipChanInteractiveUrl` |  |
+| `ipOPSupport` |  |
+| `ipSatelliteSupport` |  |
+| `valueList` |  |
+| `verifyDone` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getOfflineChannelList '{}'
@@ -1171,6 +1315,18 @@ Returns the value list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelList` |  |
+| `channelListCount` |  |
+| `channelLogoServerUrl` |  |
+| `dataSource` |  |
+| `dataType` |  |
+| `ipChanInteractiveUrl` |  |
+| `valueList` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getValueList '{}'

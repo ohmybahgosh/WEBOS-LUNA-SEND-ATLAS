@@ -281,6 +281,14 @@ Returns the foreground apps.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appCategory` |  |
+| `appId` |  |
+| `foregroundApps` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getForegroundApps '{}'
 ```
@@ -718,6 +726,19 @@ Lists the extension map.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `bmp` |  |
+| `extensionMap` |  |
+| `gif` |  |
+| `html` |  |
+| `jpe` |  |
+| `jpeg` |  |
+| `jpg` |  |
+| `png` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listExtensionMap '{}'
 ```
@@ -763,6 +784,35 @@ Lists the packages.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `allInOneVoiceUi` |  |
+| `app` |  |
+| `containerInfo` |  |
+| `dependencies` |  |
+| `folderPath` |  |
+| `id` |  |
+| `loc_name` |  |
+| `package_format_version` |  |
+| `packages` |  |
+| `privilegedJail` |  |
+| `requiredEULA` |  |
+| `requiredMemory` |  |
+| `requiredPermissions` |  |
+| `services` |  |
+| `standAloneLaunchable` |  |
+| `sttEngine` |  |
+| `textNlpEngine` |  |
+| `title` |  |
+| `vendor` |  |
+| `version` |  |
+| `voiceManifest` |  |
+| `voiceNlpEngine` |  |
+| `voicePerformer` |  |
+| `webruntimeVersion` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listPackages '{}'

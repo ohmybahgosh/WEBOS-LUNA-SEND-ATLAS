@@ -50,6 +50,51 @@ Returns the decoder test.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `afd` |  |
+| `atsc30CurrentTimeNsec` |  |
+| `atsc30CurrentTimeSec` |  |
+| `atsc30CurrentTimeWallClock` |  |
+| `bIs2Tuner` |  |
+| `bIsSectionEventOccur0` |  |
+| `bIsSectionEventOccur1` |  |
+| `bIsSectionEventOccur2` |  |
+| `bIsSectionEventOccur3` |  |
+| `broadcastId` |  |
+| `checkCis` |  |
+| `colourPrimaries` |  |
+| `detectCard` |  |
+| `eGoodVideo` |  |
+| `eVDECAFD` |  |
+| `h` |  |
+| `hashValueOnceLSB` |  |
+| `hashValueOnceMSB` |  |
+| `hdrTransferCharacteristicIdc` |  |
+| `matrixCoeffs` |  |
+| `numOfHash` |  |
+| `numOfSocName` |  |
+| `scanType` |  |
+| `sdecPort` |  |
+| `secfIndex0` |  |
+| `secfIndex1` |  |
+| `secfIndex2` |  |
+| `secfIndex3` |  |
+| `stc0` |  |
+| `stc1` |  |
+| `stc2` |  |
+| `transferChareristics` |  |
+| `vFreq` |  |
+| `vdecGoodVideoTime` |  |
+| `videoPTS0` |  |
+| `videoPTS1` |  |
+| `videoPTS2` |  |
+| `videoPTS3` |  |
+| `videoPTS4` |  |
+| `w` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.display/getDecoderTest '{}'
 ```

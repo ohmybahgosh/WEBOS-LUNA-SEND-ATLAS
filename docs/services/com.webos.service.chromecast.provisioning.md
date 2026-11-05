@@ -98,6 +98,35 @@ Returns the status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `chromecast_cell_status` |  |
+| `chromecast_core_status` |  |
+| `chromecast_settings_status` |  |
+| `chromecast_status` |  |
+| `clean_device_path` |  |
+| `exhibition_available` |  |
+| `is_available_country` |  |
+| `is_cell_integrated` |  |
+| `is_checked_chromecast_capacity` |  |
+| `is_checked_chromecast_settings_capacity` |  |
+| `is_core_mounted` |  |
+| `is_device_authenticated` |  |
+| `is_gotten_capacity` |  |
+| `is_gotten_package_size` |  |
+| `is_hotel_mode` |  |
+| `is_network_avaliable` |  |
+| `is_permission_updated` |  |
+| `is_store_mode` |  |
+| `is_term_agreed` |  |
+| `locale` |  |
+| `machine_name` |  |
+| `provisioning_status` |  |
+| `sdx_provisioning_completed` |  |
+| `storage_capacity` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.chromecast.provisioning/getStatus '{}'
 ```

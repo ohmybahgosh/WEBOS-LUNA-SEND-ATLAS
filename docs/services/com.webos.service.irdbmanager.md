@@ -285,6 +285,24 @@ Returns the device history.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `brandName` |  |
+| `codeset` |  |
+| `connectedInput` |  |
+| `count` |  |
+| `deviceHistoryList` |  |
+| `deviceIndex` |  |
+| `deviceType` |  |
+| `labelName` |  |
+| `serviceId` |  |
+| `serviceName` |  |
+| `settopProductCode` |  |
+| `settopProductOptionCode` |  |
+| `soundOut` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getDeviceHistory '{}'
 ```
@@ -308,6 +326,35 @@ Returns the devices.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `brandName` |  |
+| `codeset` |  |
+| `connectedInput` |  |
+| `count` |  |
+| `detectedMethod` |  |
+| `deviceList` |  |
+| `deviceType` |  |
+| `hasPowerKey` |  |
+| `isMainSTB` |  |
+| `isManuallySetAfterAuto` |  |
+| `isOTTSettop` |  |
+| `isRestore` |  |
+| `labelName` |  |
+| `ossSetupStatus` |  |
+| `powerSync` |  |
+| `powerSyncPopUpDelay` |  |
+| `powerSyncStatus` |  |
+| `priorityOverCEC` |  |
+| `serviceId` |  |
+| `serviceName` |  |
+| `settopProductCode` |  |
+| `settopProductOptionCode` |  |
+| `soundOut` |  |
+| `soundOutActivated` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getDevices '{}'
 ```
@@ -330,6 +377,13 @@ Returns the IP device list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `IPdeviceList` |  |
+| `count` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getIPDeviceList '{}'
@@ -395,6 +449,12 @@ Returns the IR db version.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `version` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getIrDbVersion '{}'
@@ -555,6 +615,14 @@ Returns the service list.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `count` |  |
+| `serverData` |  |
+| `serviceList` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getServiceList '{}'
 ```
@@ -575,6 +643,18 @@ IR blaster database method: isSupported
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `audio` |  |
+| `dvd` |  |
+| `hts` |  |
+| `isIPControlSupported` |  |
+| `isSupported` |  |
+| `settop` |  |
+| `support` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/isSupported '{}'

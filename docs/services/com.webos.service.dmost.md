@@ -168,6 +168,14 @@ Returns the broadcast state.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `conflictResult` |  |
+| `pipelinePurpose` |  |
+| `state` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getBroadcastState '{}'
 ```
@@ -190,6 +198,13 @@ Returns the cdp beacon info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `configs` |  |
+| `systemSessionId` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getCdpBeaconInfo '{}'
@@ -214,6 +229,14 @@ Returns the channel.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelChange` |  |
+| `channelId` |  |
+| `channelStateCode` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getChannel '{}'
 ```
@@ -236,6 +259,13 @@ Returns the channel change result.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `changeResult` |  |
+| `tunerLock` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getChannelChangeResult '{}'
@@ -260,6 +290,14 @@ Returns the channel state.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelScreensaverType` |  |
+| `channelState` |  |
+| `videoSignalState` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getChannelState '{}'
 ```
@@ -282,6 +320,12 @@ Returns the client MAC info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `mac` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getClientMacInfo '{}'
@@ -329,6 +373,13 @@ Returns the dmost state.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorUrl` |  |
+| `status` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getDmostState '{}'
 ```
@@ -351,6 +402,12 @@ Returns the home app ID.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `id` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getHomeAppId '{}'
@@ -397,6 +454,12 @@ Reports whether the supported country is set.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `supported` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/isSupportedCountry '{}'

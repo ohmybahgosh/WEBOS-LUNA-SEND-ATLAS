@@ -184,6 +184,20 @@ Returns the soundbar status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `modelName` |  |
+| `rearL` |  |
+| `rearLStatus` |  |
+| `rearR` |  |
+| `rearRStatus` |  |
+| `soundbarName` |  |
+| `status` |  |
+| `woofer` |  |
+| `wooferStatus` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/getSoundbarStatus '{}'
 ```
@@ -207,6 +221,18 @@ Returns the wowcast EDID info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `SADB` |  |
+| `SADs` |  |
+| `atmos` |  |
+| `dynamicEdid` |  |
+| `edidInfo` |  |
+| `inputType` |  |
+| `port` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/getWowcastEdidInfo '{}'
 ```
@@ -229,6 +255,20 @@ Returns the WOWCAST state.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `advancedCapability` |  |
+| `capability` |  |
+| `soundModeList` |  |
+| `soundModeType` |  |
+| `supportATMOS` |  |
+| `supportIamf` |  |
+| `wowOrchestra` |  |
+| `wowOrchestraDevice` |  |
+| `wowcastActivation` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/getWOWCASTState '{}'

@@ -51,6 +51,86 @@ Returns the context.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `Clickable` |  |
+| `Default` |  |
+| `Navigation` |  |
+| `SuggestionQueryList` |  |
+| `accuLocationKey` |  |
+| `aodStatus` |  |
+| `appInfoYoutube` |  |
+| `appList` |  |
+| `appUsageHistory` |  |
+| `audioFeedbackStatus` |  |
+| `audioGuidance` |  |
+| `audioSource` |  |
+| `cagConfig` |  |
+| `channelList` |  |
+| `conditionDomain` |  |
+| `configAiArt` |  |
+| `configBeanBrowser` |  |
+| `configMagicLink` |  |
+| `context` |  |
+| `countryPrefix` |  |
+| `cpList` |  |
+| `currentUserNumber` |  |
+| `debugStatus` |  |
+| `detectedChannelNumber` |  |
+| `deviceAuthStatus` |  |
+| `displayType` |  |
+| `epgLastUpdated` |  |
+| `foreAppId` |  |
+| `foreAppIdExt` |  |
+| `foreChannel` |  |
+| `genreCode` |  |
+| `genreCode2` |  |
+| `guide` |  |
+| `httpHeader` |  |
+| `iotList` |  |
+| `lastInputApp` |  |
+| `lifeAlarm` |  |
+| `lifeOnScreen` |  |
+| `lifeOnScreenMode` |  |
+| `loginUserData` |  |
+| `medicationInfoAgreement` |  |
+| `multiview` |  |
+| `mySportTeamList` |  |
+| `networkId` |  |
+| `networkStatus` |  |
+| `ntpTime` |  |
+| `ossInputApp` |  |
+| `ossList` |  |
+| `preferredInfo` |  |
+| `profileHome` |  |
+| `profileList` |  |
+| `programGroupId` |  |
+| `programName` |  |
+| `programRemainTime` |  |
+| `programSubTitle` |  |
+| `recognitionSource` |  |
+| `seniorModeEnable` |  |
+| `serverHost` |  |
+| `storeMode` |  |
+| `subDivision` |  |
+| `supportBnoModel` |  |
+| `supportLedLighting` |  |
+| `supportScreenType` |  |
+| `supportSignLanguageZoom` |  |
+| `supportedLowPowerMode` |  |
+| `switchLivepick` |  |
+| `switchMusicRecognition` |  |
+| `switchRecommendation` |  |
+| `switchUnknownAiAssistant` |  |
+| `tunerlessStatus` |  |
+| `udid` |  |
+| `usbPath` |  |
+| `useBeanBrowser` |  |
+| `userStatus` |  |
+| `viewType` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voice.performer.plugin/getContext '{}'
 ```

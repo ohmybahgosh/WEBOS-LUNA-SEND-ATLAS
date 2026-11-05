@@ -28,6 +28,14 @@ Returns the status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `connectHDMI` |  |
+| `connectLAN` |  |
+| `supportedKeys` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ssc/getStatus '{}'
 ```

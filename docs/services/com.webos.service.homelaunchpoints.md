@@ -130,6 +130,44 @@ Lists the available q cards.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appDescription` |  |
+| `bgColor` |  |
+| `bgImage` |  |
+| `bgImages` |  |
+| `deeplinkingParams` |  |
+| `extraLargeIcon` |  |
+| `favicon` |  |
+| `icon` |  |
+| `iconColor` |  |
+| `id` |  |
+| `imageForRecents` |  |
+| `installTime` |  |
+| `largeIcon` |  |
+| `launchPointId` |  |
+| `launchPoints` |  |
+| `lptype` |  |
+| `mediumLargeIcon` |  |
+| `miniicon` |  |
+| `params` |  |
+| `qCardDescription` |  |
+| `qCardIcon` |  |
+| `qCardImage` |  |
+| `qCardPartnerLogo` |  |
+| `qCardRemoteIcon` |  |
+| `qCardTitle` |  |
+| `qCardbgColor` |  |
+| `relaunch` |  |
+| `removable` |  |
+| `systemApp` |  |
+| `tileSize` |  |
+| `title` |  |
+| `unmovable` |  |
+| `userData` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/listAvailableQCards '{}'
 ```
@@ -175,6 +213,44 @@ Lists the q cards.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appDescription` |  |
+| `bgColor` |  |
+| `bgImage` |  |
+| `bgImages` |  |
+| `deeplinkingParams` |  |
+| `extraLargeIcon` |  |
+| `favicon` |  |
+| `icon` |  |
+| `iconColor` |  |
+| `id` |  |
+| `imageForRecents` |  |
+| `installTime` |  |
+| `largeIcon` |  |
+| `launchPointId` |  |
+| `launchPoints` |  |
+| `lptype` |  |
+| `mediumLargeIcon` |  |
+| `miniicon` |  |
+| `params` |  |
+| `qCardDescription` |  |
+| `qCardIcon` |  |
+| `qCardImage` |  |
+| `qCardPartnerLogo` |  |
+| `qCardRemoteIcon` |  |
+| `qCardTitle` |  |
+| `qCardbgColor` |  |
+| `relaunch` |  |
+| `removable` |  |
+| `systemApp` |  |
+| `tileSize` |  |
+| `title` |  |
+| `unmovable` |  |
+| `userData` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/listQCards '{}'

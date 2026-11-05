@@ -59,6 +59,92 @@ Returns the configs.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `0` |  |
+| `1` |  |
+| `10` |  |
+| `11` |  |
+| `12` |  |
+| `13` |  |
+| `2` |  |
+| `3` |  |
+| `5` |  |
+| `7` |  |
+| `8` |  |
+| `9` |  |
+| `AppBoostingList` |  |
+| `AppGPUMaxSize` |  |
+| `AppHibAnonThreshold` |  |
+| `AppHibernationEnable` |  |
+| `AppHibernationTestMode` |  |
+| `AppMaxHibSize` |  |
+| `Arib4KPolicyCheck` |  |
+| `Atsc3PolicyCheck` |  |
+| `BlockPreloadTarget` |  |
+| `BoostTargetApp` |  |
+| `CriticalCount` |  |
+| `CriticalDelay` |  |
+| `CriticalTimeout` |  |
+| `DecreasedUsableRate` |  |
+| `DefaultRequiredMemory` |  |
+| `DropCachesEnable` |  |
+| `EfsActivate` |  |
+| `EfsDailyWrSize` |  |
+| `EfsStandardWaf` |  |
+| `EfsTarget` |  |
+| `EfsTestMode` |  |
+| `EfsType` |  |
+| `EmergencyActionType` |  |
+| `EmmcLifetimeLimit` |  |
+| `ExtraMemUnits` |  |
+| `FragmentationProfile` |  |
+| `FreezeTarget` |  |
+| `GroupKillTimeout` |  |
+| `HomeGroup` |  |
+| `InputList` |  |
+| `KeepAlive` |  |
+| `KeepAppHib` |  |
+| `KeepOnLaunch` |  |
+| `KeepOnLaunchEx` |  |
+| `LaunchPolicy` |  |
+| `LaunchTimeout` |  |
+| `LaunchTimeoutCount` |  |
+| `LowTimeout` |  |
+| `MaxEfsShrinkerSeeks` |  |
+| `MaxModeledListCount` |  |
+| `MaxTimeout` |  |
+| `MinEfsShrinkerSeeks` |  |
+| `MriHelper` |  |
+| `NoLaunchThreshold` |  |
+| `NrtProfile` |  |
+| `PriorityGroup` |  |
+| `Product` |  |
+| `PsiTargetSize` |  |
+| `QuickLaunch` |  |
+| `Ram` |  |
+| `ReadAheadSize` |  |
+| `ReclaimRetryCountMax` |  |
+| `ReclaimRetryCountMin` |  |
+| `Region` |  |
+| `Resolution` |  |
+| `RestartTimeout` |  |
+| `Soc` |  |
+| `SortByModeledList` |  |
+| `TargetDistroVariant` |  |
+| `enterThresholds` |  |
+| `eventDma32` |  |
+| `eventNrUnevictable` |  |
+| `eventNrZspages` |  |
+| `eventPsiCPU` |  |
+| `eventPsiMEM` |  |
+| `eventSwapFree` |  |
+| `eventZramCompRatios` |  |
+| `leaveThresholds` |  |
+| `lgchannels_boosting` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getConfigs '{}'
 ```
@@ -81,6 +167,14 @@ Returns the current mem state.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `currentLevel` |  |
+| `prevLevel` |  |
+| `usable` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getCurrentMemState '{}'
@@ -128,6 +222,16 @@ Returns the EFS.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `EfsInfo` |  |
+| `HibernationInfo` |  |
+| `activate` |  |
+| `target` |  |
+| `type` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getEFS '{}'
 ```
@@ -150,6 +254,12 @@ Returns the group info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `groupList` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getGroupInfo '{}'
@@ -174,6 +284,26 @@ Returns the policy.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appHibernation` |  |
+| `appList` |  |
+| `critical` |  |
+| `enter` |  |
+| `feature` |  |
+| `inputApp` |  |
+| `keepAlive` |  |
+| `keepAppHib` |  |
+| `keepOnLaunch` |  |
+| `leave` |  |
+| `low` |  |
+| `medium` |  |
+| `memBoundary` |  |
+| `noLaunchThreshold` |  |
+| `reboot` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getPolicy '{}'
 ```
@@ -196,6 +326,24 @@ Returns the unit list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `F2IO_STAT_AccuShrinkSize` |  |
+| `F2IO_STAT_CompactSize` |  |
+| `F2IO_STAT_CurrentSize` |  |
+| `F2IO_STAT_WriteSize` |  |
+| `F2IO_STAT_ZspageSize` |  |
+| `F2IO_STAT_compRate` |  |
+| `F2IO_Stat` |  |
+| `cur_vmallocSize` |  |
+| `init_vmallocSize` |  |
+| `swapUsed` |  |
+| `unitList` |  |
+| `usable_memory` |  |
+| `vmallocInfo` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getUnitList '{}'

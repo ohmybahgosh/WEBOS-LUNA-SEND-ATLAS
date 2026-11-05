@@ -227,7 +227,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "airplayEnabled": ""
+  }
  },
  {
   "service": "airplay.service",
@@ -12427,7 +12430,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "eulaAccepted": ""
+  }
  },
  {
   "service": "com.palm.uploadd",
@@ -14402,7 +14408,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "arguments": "",
+   "commands": "",
+   "description": ""
+  }
  },
  {
   "service": "com.webos.app.igallery.preview",
@@ -15641,7 +15652,53 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "allContents": "",
+   "bgColor": "",
+   "bookmarkTimeSeconds": "",
+   "catalog": "",
+   "category": "",
+   "contentId": "",
+   "contents": "",
+   "defaultImage": "",
+   "episodeNumber": "",
+   "episode_number": "",
+   "focusId": "",
+   "height": "",
+   "icon": "",
+   "image": "",
+   "image_4k": "",
+   "imeMode": "",
+   "isMultipleShelf": "",
+   "lastEngagementTime": "",
+   "lastWatchTime": "",
+   "launchParam": "",
+   "launchPointId": "",
+   "layout": "",
+   "nonUiMode": "",
+   "onClick": "",
+   "onShow": "",
+   "promotionId": "",
+   "pwaMode": "",
+   "rating": "",
+   "release_year": "",
+   "season_number": "",
+   "service": "",
+   "shelfId": "",
+   "subText": "",
+   "target": "",
+   "targetAppId": "",
+   "title": "",
+   "titleText": "",
+   "totalTimeSeconds": "",
+   "type": "",
+   "url": "",
+   "value": "",
+   "watchNextType": "",
+   "watch_state": "",
+   "width": ""
+  }
  },
  {
   "service": "com.webos.applicationManager",
@@ -15847,7 +15904,13 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "appCategory": "",
+   "appId": "",
+   "processId": "",
+   "windowId": ""
+  }
  },
  {
   "service": "com.webos.applicationManager",
@@ -15870,7 +15933,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appCategory": "",
+   "appId": "",
+   "foregroundApps": ""
+  }
  },
  {
   "service": "com.webos.applicationManager",
@@ -16362,7 +16430,205 @@
   "confidence": "code",
   "confidence_all": [
    "code"
-  ]
+  ],
+  "returns": {
+   "BGMode": "",
+   "CPApp": "",
+   "acceptedCommandList": "",
+   "accessibility": "",
+   "activateType": "",
+   "activeFolderPath": "",
+   "age": "",
+   "allowAnonymous": "",
+   "allowAudioCapture": "",
+   "allowCrossDomain": "",
+   "allowVideoCapture": "",
+   "allowWidget": "",
+   "appCategory": "",
+   "appDescription": "",
+   "appDiscoveryPayload": "",
+   "apps": "",
+   "appsize": "",
+   "backgroundColor": "",
+   "bgColor": "",
+   "bgImage": "",
+   "binId": "",
+   "blockMediaPlay": "",
+   "boot": "",
+   "bootLaunchParams": "",
+   "capabilities": "",
+   "checkUpdateOnLaunch": "",
+   "class": "",
+   "clientInfo": "",
+   "closeOnBackground": "",
+   "closeOnRotation": "",
+   "cloudgame_active": "",
+   "clusterRevision": "",
+   "configurations": "",
+   "customPlugin": "",
+   "deeplinkingParams": "",
+   "defaultWindowType": "",
+   "dialAppName": "",
+   "disableBackHistoryAPI": "",
+   "disableClearMediaPlayerOnDetach": "",
+   "disableMainFrameBeforeActivation": "",
+   "disableMediaPlayerManager": "",
+   "disableThreadedAnimation": "",
+   "disableVideoMuteOnInvisible": "",
+   "disallowPromotion": "",
+   "disallowScrollingInMainFrame": "",
+   "discoveryPayloads": "",
+   "enableBackgroundRun": "",
+   "enableCBSPolicy": "",
+   "enableClearMediaPlayerOnDetach": "",
+   "enableClientSideTrick": "",
+   "enableFocusOnPress": "",
+   "enableFourWayNavigation": "",
+   "enableKeyboard": "",
+   "enableMouse": "",
+   "enablePigScreenSaver": "",
+   "enableSetBlockedMedia": "",
+   "extension": "",
+   "extraLargeIcon": "",
+   "featureMap": "",
+   "fileSystemType": "",
+   "fixedAspectRatio": "",
+   "folderPath": "",
+   "handleExitKey": "",
+   "handleScreenRemoteKey": "",
+   "handlesRelaunch": "",
+   "hasAccountService": "",
+   "hasPromotion": "",
+   "hbbtvMode": "",
+   "hidden": "",
+   "historicalLaunchMode": "",
+   "horizontalThreshold": "",
+   "icon": "",
+   "iconColor": "",
+   "id": "",
+   "imageForRecents": "",
+   "inAppSearchParams": "",
+   "inAppSetting": "",
+   "inAppVoiceIntent": "",
+   "inputIcon": "",
+   "inputLargeIcon": "",
+   "inputMediumIcon": "",
+   "inputMiniIcon": "",
+   "inputSmallIcon": "",
+   "inspectable": "",
+   "installTime": "",
+   "interface": "",
+   "internalInstallationOnly": "",
+   "largeIcon": "",
+   "launchMode": "",
+   "layer": "",
+   "layers": "",
+   "loadingMessage": "",
+   "locationHint": "",
+   "lockable": "",
+   "main": "",
+   "matterVersion": "",
+   "mediaExtension": "",
+   "mediumIcon": "",
+   "mediumLargeIcon": "",
+   "mime": "",
+   "mimeTypes": "",
+   "miniicon": "",
+   "mouseMoveForMouseOff": "",
+   "mse": "",
+   "name": "",
+   "nativeLifeCycleInterfaceVersion": "",
+   "networkStableTimeout": "",
+   "noSplashOnLaunch": "",
+   "noWindow": "",
+   "owner": "",
+   "ownerInfo": "",
+   "params": "",
+   "playIcon": "",
+   "portraitResize": "",
+   "preferredType": "",
+   "previewMetadata": "",
+   "privilegedJail": "",
+   "proactivelyReported": "",
+   "properties": "",
+   "pwa": "",
+   "pwaType": "",
+   "removable": "",
+   "requiredACG": "",
+   "requiredAccount": "",
+   "requiredEULA": "",
+   "requiredMemory": "",
+   "requiredPermissions": "",
+   "resolution": "",
+   "resolutionIndependent": "",
+   "retrievable": "",
+   "rotateEffect": "",
+   "scheme": "",
+   "screenSaverProperties": "",
+   "searchKeywordForCustomPlayer": "",
+   "sendKeyToCP": "",
+   "skipDRM": "",
+   "sourceEndpoint": "",
+   "spinnerOnLaunch": "",
+   "splashBackground": "",
+   "splashColor": "",
+   "splashDismissTimeoutMs": "",
+   "splashFitModeOnPortrait": "",
+   "splashicon": "",
+   "standAloneLaunchable": "",
+   "storageUseMode": "",
+   "stream": "",
+   "subType": "",
+   "support360Content": "",
+   "supportChannelName": "",
+   "supportGIP": "",
+   "supportPortraitMode": "",
+   "supportQueryRouting": "",
+   "supportQuickStart": "",
+   "supportRollingScreenMode": "",
+   "supportTouchInputDevice": "",
+   "supportTouchMode": "",
+   "supported": "",
+   "supportsAudioGuidance": "",
+   "supportsVoiceBrowsing": "",
+   "suspendDOMTime": "",
+   "sysAssetsBasePath": "",
+   "systemApp": "",
+   "targetEndpoint": "",
+   "tileSize": "",
+   "title": "",
+   "titleVisible": "",
+   "transparent": "",
+   "trustLevel": "",
+   "type": "",
+   "uiRevision": "",
+   "ums": "",
+   "unmovable": "",
+   "useAllKeyboardKeys": "",
+   "useAllMouseButtons": "",
+   "useAppHibernation": "",
+   "useCORSWhitelist": "",
+   "useCamera": "",
+   "useGalleryMode": "",
+   "useGraphicCamera": "",
+   "useNativeScroll": "",
+   "useNativeScroller": "",
+   "usePrerendering": "",
+   "usesLegacyPreload": "",
+   "v8SnapshotFile": "",
+   "vendor": "",
+   "vendorExtension": "",
+   "version": "",
+   "virtualTouch": "",
+   "virtualTouchHorizontalThreshold": "",
+   "visible": "",
+   "voiceControl": "",
+   "webAppType": "",
+   "webrtc": "",
+   "windowGroup": "",
+   "wolwowlan": "",
+   "z": ""
+  }
  },
  {
   "service": "com.webos.applicationManager",
@@ -16385,7 +16651,17 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "bmp": "",
+   "extensionMap": "",
+   "gif": "",
+   "html": "",
+   "jpe": "",
+   "jpeg": "",
+   "jpg": "",
+   "png": ""
+  }
  },
  {
   "service": "com.webos.applicationManager",
@@ -16462,7 +16738,33 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "allInOneVoiceUi": "",
+   "app": "",
+   "containerInfo": "",
+   "dependencies": "",
+   "folderPath": "",
+   "id": "",
+   "loc_name": "",
+   "package_format_version": "",
+   "packages": "",
+   "privilegedJail": "",
+   "requiredEULA": "",
+   "requiredMemory": "",
+   "requiredPermissions": "",
+   "services": "",
+   "standAloneLaunchable": "",
+   "sttEngine": "",
+   "textNlpEngine": "",
+   "title": "",
+   "vendor": "",
+   "version": "",
+   "voiceManifest": "",
+   "voiceNlpEngine": "",
+   "voicePerformer": "",
+   "webruntimeVersion": ""
+  }
  },
  {
   "service": "com.webos.applicationManager",
@@ -20601,7 +20903,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "accepted": ""
+  }
  },
  {
   "service": "com.webos.chromecast.cell",
@@ -20624,7 +20929,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "status": ""
+  }
  },
  {
   "service": "com.webos.chromecast.cell",
@@ -20647,7 +20955,22 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "cast_build_number": "",
+   "cast_name": "",
+   "cast_state": "",
+   "locale": "",
+   "progress": "",
+   "setup": "",
+   "state": "",
+   "status": "",
+   "time_in_12_hour_format": "",
+   "timezone": "",
+   "update": "",
+   "update_build_number": "",
+   "usage_report": ""
+  }
  },
  {
   "service": "com.webos.chromecast.cell",
@@ -20808,7 +21131,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "isRunning": ""
+  }
  },
  {
   "service": "com.webos.coverUI",
@@ -21942,7 +22268,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "isEnableAppId": "",
+   "isEnabled": ""
+  }
  },
  {
   "service": "com.webos.ghp.runtime",
@@ -21988,7 +22318,27 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "application_version_number": "",
+   "channel_frequency": "",
+   "connectivity_status": "",
+   "debug_mode": "",
+   "developer_mode": "",
+   "device_model": "",
+   "device_version": "",
+   "ethernet_dns_sd_supported": "",
+   "manufacturer": "",
+   "network_id_hash": "",
+   "platform_build_type": "",
+   "platform_name": "",
+   "platform_version_number": "",
+   "snr": "",
+   "standby_capabilities": "",
+   "type": "",
+   "wifi_dns_sd_supported": "",
+   "zone_index": ""
+  }
  },
  {
   "service": "com.webos.ghp.runtime",
@@ -22034,7 +22384,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "status": ""
+  }
  },
  {
   "service": "com.webos.ghp.runtime",
@@ -27366,7 +27719,90 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "0": "",
+   "1": "",
+   "10": "",
+   "11": "",
+   "12": "",
+   "13": "",
+   "2": "",
+   "3": "",
+   "5": "",
+   "7": "",
+   "8": "",
+   "9": "",
+   "AppBoostingList": "",
+   "AppGPUMaxSize": "",
+   "AppHibAnonThreshold": "",
+   "AppHibernationEnable": "",
+   "AppHibernationTestMode": "",
+   "AppMaxHibSize": "",
+   "Arib4KPolicyCheck": "",
+   "Atsc3PolicyCheck": "",
+   "BlockPreloadTarget": "",
+   "BoostTargetApp": "",
+   "CriticalCount": "",
+   "CriticalDelay": "",
+   "CriticalTimeout": "",
+   "DecreasedUsableRate": "",
+   "DefaultRequiredMemory": "",
+   "DropCachesEnable": "",
+   "EfsActivate": "",
+   "EfsDailyWrSize": "",
+   "EfsStandardWaf": "",
+   "EfsTarget": "",
+   "EfsTestMode": "",
+   "EfsType": "",
+   "EmergencyActionType": "",
+   "EmmcLifetimeLimit": "",
+   "ExtraMemUnits": "",
+   "FragmentationProfile": "",
+   "FreezeTarget": "",
+   "GroupKillTimeout": "",
+   "HomeGroup": "",
+   "InputList": "",
+   "KeepAlive": "",
+   "KeepAppHib": "",
+   "KeepOnLaunch": "",
+   "KeepOnLaunchEx": "",
+   "LaunchPolicy": "",
+   "LaunchTimeout": "",
+   "LaunchTimeoutCount": "",
+   "LowTimeout": "",
+   "MaxEfsShrinkerSeeks": "",
+   "MaxModeledListCount": "",
+   "MaxTimeout": "",
+   "MinEfsShrinkerSeeks": "",
+   "MriHelper": "",
+   "NoLaunchThreshold": "",
+   "NrtProfile": "",
+   "PriorityGroup": "",
+   "Product": "",
+   "PsiTargetSize": "",
+   "QuickLaunch": "",
+   "Ram": "",
+   "ReadAheadSize": "",
+   "ReclaimRetryCountMax": "",
+   "ReclaimRetryCountMin": "",
+   "Region": "",
+   "Resolution": "",
+   "RestartTimeout": "",
+   "Soc": "",
+   "SortByModeledList": "",
+   "TargetDistroVariant": "",
+   "enterThresholds": "",
+   "eventDma32": "",
+   "eventNrUnevictable": "",
+   "eventNrZspages": "",
+   "eventPsiCPU": "",
+   "eventPsiMEM": "",
+   "eventSwapFree": "",
+   "eventZramCompRatios": "",
+   "leaveThresholds": "",
+   "lgchannels_boosting": ""
+  }
  },
  {
   "service": "com.webos.memorymanager",
@@ -27389,7 +27825,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "currentLevel": "",
+   "prevLevel": "",
+   "usable": ""
+  }
  },
  {
   "service": "com.webos.memorymanager",
@@ -27435,7 +27876,14 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "EfsInfo": "",
+   "HibernationInfo": "",
+   "activate": "",
+   "target": "",
+   "type": ""
+  }
  },
  {
   "service": "com.webos.memorymanager",
@@ -27458,7 +27906,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "groupList": ""
+  }
  },
  {
   "service": "com.webos.memorymanager",
@@ -27481,7 +27932,24 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appHibernation": "",
+   "appList": "",
+   "critical": "",
+   "enter": "",
+   "feature": "",
+   "inputApp": "",
+   "keepAlive": "",
+   "keepAppHib": "",
+   "keepOnLaunch": "",
+   "leave": "",
+   "low": "",
+   "medium": "",
+   "memBoundary": "",
+   "noLaunchThreshold": "",
+   "reboot": ""
+  }
  },
  {
   "service": "com.webos.memorymanager",
@@ -27504,7 +27972,22 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "F2IO_STAT_AccuShrinkSize": "",
+   "F2IO_STAT_CompactSize": "",
+   "F2IO_STAT_CurrentSize": "",
+   "F2IO_STAT_WriteSize": "",
+   "F2IO_STAT_ZspageSize": "",
+   "F2IO_STAT_compRate": "",
+   "F2IO_Stat": "",
+   "cur_vmallocSize": "",
+   "init_vmallocSize": "",
+   "swapUsed": "",
+   "unitList": "",
+   "usable_memory": "",
+   "vmallocInfo": ""
+  }
  },
  {
   "service": "com.webos.memorymanager",
@@ -29159,7 +29642,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "IsAllowed": ""
+  }
  },
  {
   "service": "com.webos.pmlogd",
@@ -32549,7 +33035,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "DNS": "",
+   "IFA": "",
+   "IFAType": "",
+   "LMT": "",
+   "parentalControl": "",
+   "promotion": "",
+   "recommend": ""
+  }
  },
  {
   "service": "com.webos.service.admanager",
@@ -33260,7 +33755,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "supported": ""
+  }
  },
  {
   "service": "com.webos.service.aiinferencemanager",
@@ -33283,7 +33781,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "processList": "",
+   "usage": ""
+  }
  },
  {
   "service": "com.webos.service.aiinferencemanager",
@@ -33329,7 +33831,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "serviceList": ""
+  }
  },
  {
   "service": "com.webos.service.aiinferencemanager",
@@ -33817,7 +34322,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "alarmObjectArray": ""
+  }
  },
  {
   "service": "com.webos.service.alarm",
@@ -35840,7 +36348,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "state": "",
+   "supportFeatures": ""
+  }
  },
  {
   "service": "com.webos.service.appcasting",
@@ -36483,7 +36995,53 @@
   "confidence": "code",
   "confidence_all": [
    "code"
-  ]
+  ],
+  "returns": {
+   "allContents": "",
+   "bgColor": "",
+   "bookmarkTimeSeconds": "",
+   "catalog": "",
+   "category": "",
+   "contentId": "",
+   "contents": "",
+   "defaultImage": "",
+   "episodeNumber": "",
+   "episode_number": "",
+   "focusId": "",
+   "height": "",
+   "icon": "",
+   "image": "",
+   "image_4k": "",
+   "imeMode": "",
+   "isMultipleShelf": "",
+   "lastEngagementTime": "",
+   "lastWatchTime": "",
+   "launchParam": "",
+   "launchPointId": "",
+   "layout": "",
+   "nonUiMode": "",
+   "onClick": "",
+   "onShow": "",
+   "promotionId": "",
+   "pwaMode": "",
+   "rating": "",
+   "release_year": "",
+   "season_number": "",
+   "service": "",
+   "shelfId": "",
+   "subText": "",
+   "target": "",
+   "targetAppId": "",
+   "title": "",
+   "titleText": "",
+   "totalTimeSeconds": "",
+   "type": "",
+   "url": "",
+   "value": "",
+   "watchNextType": "",
+   "watch_state": "",
+   "width": ""
+  }
  },
  {
   "service": "com.webos.service.applicationmanager",
@@ -36744,7 +37302,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appCategory": "",
+   "appId": "",
+   "foregroundApps": ""
+  }
  },
  {
   "service": "com.webos.service.applicationManager",
@@ -37269,7 +37832,17 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "bmp": "",
+   "extensionMap": "",
+   "gif": "",
+   "html": "",
+   "jpe": "",
+   "jpeg": "",
+   "jpg": "",
+   "png": ""
+  }
  },
  {
   "service": "com.webos.service.applicationmanager",
@@ -37343,7 +37916,33 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "allInOneVoiceUi": "",
+   "app": "",
+   "containerInfo": "",
+   "dependencies": "",
+   "folderPath": "",
+   "id": "",
+   "loc_name": "",
+   "package_format_version": "",
+   "packages": "",
+   "privilegedJail": "",
+   "requiredEULA": "",
+   "requiredMemory": "",
+   "requiredPermissions": "",
+   "services": "",
+   "standAloneLaunchable": "",
+   "sttEngine": "",
+   "textNlpEngine": "",
+   "title": "",
+   "vendor": "",
+   "version": "",
+   "voiceManifest": "",
+   "voiceNlpEngine": "",
+   "voicePerformer": "",
+   "webruntimeVersion": ""
+  }
  },
  {
   "service": "com.webos.service.applicationManager",
@@ -38110,7 +38709,20 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "SADB": "",
+   "SADs": "",
+   "arcHDMIPort": "",
+   "atmos_arc": "",
+   "dynamicEdid": "",
+   "eARC": "",
+   "earcSADB": "",
+   "earcSADs": "",
+   "edidInfo": "",
+   "inputType": "",
+   "port": ""
+  }
  },
  {
   "service": "com.webos.service.arccontroller",
@@ -38133,7 +38745,27 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "advancedEarcCapability": "",
+   "arcActivation": "",
+   "arcProfile": "",
+   "audioCodingType": "",
+   "audioDeviceType": "",
+   "connectionDepth": "",
+   "earcATMOS": "",
+   "earcCapability": "",
+   "earcMatProfile": "",
+   "hexSAD": "",
+   "lgHarmony": "",
+   "lgHarmonyDevice": "",
+   "maxChannelNumber": "",
+   "mpeg4AACLC": "",
+   "soundModeList": "",
+   "soundModeType": "",
+   "supportIamf": "",
+   "volumeSyncable": ""
+  }
  },
  {
   "service": "com.webos.service.arccontroller",
@@ -38202,7 +38834,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "advertising": ""
+  }
  },
  {
   "service": "com.webos.service.asc",
@@ -38225,7 +38860,14 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "address": "",
+   "count": "",
+   "devices": "",
+   "name": "",
+   "user_selection": ""
+  }
  },
  {
   "service": "com.webos.service.asc",
@@ -38737,7 +39379,18 @@
   "confidence": "code",
   "confidence_all": [
    "code"
-  ]
+  ],
+  "returns": {
+   "deviceId": "",
+   "deviceName": "",
+   "deviceType": "",
+   "deviceUri": "",
+   "devices": "",
+   "ipAddress": "",
+   "manufacturer": "",
+   "modelDescription": "",
+   "thumbnailUri": ""
+  }
  },
  {
   "service": "com.webos.service.attachedstoragemanager",
@@ -38760,7 +39413,18 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "deviceId": "",
+   "deviceName": "",
+   "deviceType": "",
+   "deviceUri": "",
+   "devices": "",
+   "ipAddress": "",
+   "manufacturer": "",
+   "modelDescription": "",
+   "thumbnailUri": ""
+  }
  },
  {
   "service": "com.webos.service.attachedstoragemanager",
@@ -47173,7 +47837,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "arguments": "",
+   "commands": "",
+   "description": ""
+  }
  },
  {
   "service": "com.webos.service.billing",
@@ -47797,7 +48466,13 @@
   "confidence": "documented",
   "confidence_all": [
    "documented"
-  ]
+  ],
+  "returns": {
+   "connectedDevice": "",
+   "isScan": "",
+   "pairedDevice": "",
+   "version": ""
+  }
  },
  {
   "service": "com.webos.service.blegatt",
@@ -48150,7 +48825,14 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "connectionState": "",
+   "params": "",
+   "soundbarAddress": "",
+   "soundbarName": "",
+   "supportedFeatures": ""
+  }
  },
  {
   "service": "com.webos.service.blegattsoundbar",
@@ -56929,7 +57611,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "peerBdAddress": "",
+   "peerDeviceName": "",
+   "status": ""
+  }
  },
  {
   "service": "com.webos.service.btaudiosnk",
@@ -57206,7 +57893,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "devices": "",
+   "dualGuaranteedDevices": "",
+   "manufacturer": "",
+   "version": ""
+  }
  },
  {
   "service": "com.webos.service.btaudiosrc",
@@ -58977,7 +59670,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "memberCount": "",
+   "service": ""
+  }
  },
  {
   "service": "com.webos.service.buddyconnector",
@@ -59000,7 +59697,14 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "acceptance": "",
+   "complianceList": "",
+   "eulaList": "",
+   "eulaPath": "",
+   "version": ""
+  }
  },
  {
   "service": "com.webos.service.buddyconnector",
@@ -61129,7 +61833,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "list": ""
+  }
  },
  {
   "service": "com.webos.service.camera2",
@@ -62072,7 +62779,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "coreStatus": "",
+   "status": "",
+   "whitelist": ""
+  }
  },
  {
   "service": "com.webos.service.capturepermission",
@@ -62683,7 +63395,33 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "chromecast_cell_status": "",
+   "chromecast_core_status": "",
+   "chromecast_settings_status": "",
+   "chromecast_status": "",
+   "clean_device_path": "",
+   "exhibition_available": "",
+   "is_available_country": "",
+   "is_cell_integrated": "",
+   "is_checked_chromecast_capacity": "",
+   "is_checked_chromecast_settings_capacity": "",
+   "is_core_mounted": "",
+   "is_device_authenticated": "",
+   "is_gotten_capacity": "",
+   "is_gotten_package_size": "",
+   "is_hotel_mode": "",
+   "is_network_avaliable": "",
+   "is_permission_updated": "",
+   "is_store_mode": "",
+   "is_term_agreed": "",
+   "locale": "",
+   "machine_name": "",
+   "provisioning_status": "",
+   "sdx_provisioning_completed": "",
+   "storage_capacity": ""
+  }
  },
  {
   "service": "com.webos.service.chromecast.provisioning",
@@ -68195,7 +68933,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "Message": "",
+   "errorList": "",
+   "totalErrorCount": ""
+  }
  },
  {
   "service": "com.webos.service.connectionmanager",
@@ -68283,7 +69026,31 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "bluetooth": "",
+   "cellular": "",
+   "checkingInternet": "",
+   "connected": "",
+   "connectedContexts": "",
+   "dns1": "",
+   "enabled": "",
+   "gateway": "",
+   "interfaceName": "",
+   "ipAddress": "",
+   "isInternetConnectionAvailable": "",
+   "netmask": "",
+   "offlineMode": "",
+   "onInternet": "",
+   "plugged": "",
+   "proxyinfo": "",
+   "state": "",
+   "tetheringEnabled": "",
+   "wan": "",
+   "wifi": "",
+   "wifiDirect": "",
+   "wired": ""
+  }
  },
  {
   "service": "com.webos.service.connectionmanager",
@@ -70650,7 +71417,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "country": "",
+   "isBroadcastSystemChanged": "",
+   "subscribe": ""
+  }
  },
  {
   "service": "com.webos.service.devicereset",
@@ -71082,7 +71854,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "arguments": "",
+   "commands": "",
+   "description": ""
+  }
  },
  {
   "service": "com.webos.service.dial",
@@ -71887,7 +72664,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "conflictResult": "",
+   "pipelinePurpose": "",
+   "state": ""
+  }
  },
  {
   "service": "com.webos.service.dmost",
@@ -71910,7 +72692,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "configs": "",
+   "systemSessionId": ""
+  }
  },
  {
   "service": "com.webos.service.dmost",
@@ -71933,7 +72719,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelChange": "",
+   "channelId": "",
+   "channelStateCode": ""
+  }
  },
  {
   "service": "com.webos.service.dmost",
@@ -71956,7 +72747,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "changeResult": "",
+   "tunerLock": ""
+  }
  },
  {
   "service": "com.webos.service.dmost",
@@ -71979,7 +72774,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelScreensaverType": "",
+   "channelState": "",
+   "videoSignalState": ""
+  }
  },
  {
   "service": "com.webos.service.dmost",
@@ -72002,7 +72802,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "mac": ""
+  }
  },
  {
   "service": "com.webos.service.dmost",
@@ -72048,7 +72851,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "errorUrl": "",
+   "status": ""
+  }
  },
  {
   "service": "com.webos.service.dmost",
@@ -72071,7 +72878,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "id": ""
+  }
  },
  {
   "service": "com.webos.service.dmost",
@@ -72117,7 +72927,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "supported": ""
+  }
  },
  {
   "service": "com.webos.service.dmost",
@@ -72761,7 +73574,15 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "clientState": "",
+   "context": "",
+   "name": "",
+   "publishState": "",
+   "publishStatus": "",
+   "serviceType": ""
+  }
  },
  {
   "service": "com.webos.service.dnssd",
@@ -74658,7 +75479,62 @@
   "confidence": "code",
   "confidence_all": [
    "code"
-  ]
+  ],
+  "returns": {
+   "activate": "",
+   "appId": "",
+   "arcDevice": "",
+   "arcDevicePower": "",
+   "atmosDevice": "",
+   "blockedAllInput": "",
+   "brandName": "",
+   "cecPower": "",
+   "cecpDevType": "",
+   "cecpNewType": "",
+   "chosen": "",
+   "codeset": "",
+   "connected": "",
+   "connectedInput": "",
+   "depth": "",
+   "detectedMethod": "",
+   "devices": "",
+   "forceIcon": "",
+   "hasPowerKey": "",
+   "hdmiPlugIn": "",
+   "hdmiSignalExist": "",
+   "icon": "",
+   "iconPrefix": "",
+   "id": "",
+   "isMainSTB": "",
+   "label": "",
+   "labelName": "",
+   "lastUniqueId": "",
+   "maxDisplayportCount": "",
+   "maxHdmiCount": "",
+   "maxUsbcCount": "",
+   "modified": "",
+   "osdName": "",
+   "ossSetupStatus": "",
+   "physicalAddress": "",
+   "port": "",
+   "portId": "",
+   "powerSync": "",
+   "powerSyncPopUpDelay": "",
+   "powerSyncStatus": "",
+   "priorityOverCEC": "",
+   "serviceArea": "",
+   "serviceName": "",
+   "serviceType": "",
+   "settopCode": "",
+   "settopOption": "",
+   "subCount": "",
+   "subList": "",
+   "totalCount": "",
+   "uniqueId": "",
+   "unknownCECPNumber": "",
+   "vendorId": "",
+   "wowcastStatus": ""
+  }
  },
  {
   "service": "com.webos.service.eim",
@@ -74681,7 +75557,14 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "checkSum": "",
+   "devices": "",
+   "edid": "",
+   "id": "",
+   "valid": ""
+  }
  },
  {
   "service": "com.webos.service.eim",
@@ -74704,7 +75587,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "isSupported": ""
+  }
  },
  {
   "service": "com.webos.service.eim",
@@ -74727,7 +75613,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "count": "",
+   "eimStatistics": ""
+  }
  },
  {
   "service": "com.webos.service.eim",
@@ -75172,7 +76062,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "eMMCAvgEC": "",
+   "eMMCLifeTime": "",
+   "eMMCMaxEC": ""
+  }
  },
  {
   "service": "com.webos.service.emmcd",
@@ -75195,7 +76090,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "topList": ""
+  }
  },
  {
   "service": "com.webos.service.emmcd",
@@ -78300,7 +79198,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "mode": ""
+  }
  },
  {
   "service": "com.webos.service.factorymanager",
@@ -78323,7 +79224,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "component": "",
+   "mode": "",
+   "rgb": "",
+   "status": ""
+  }
  },
  {
   "service": "com.webos.service.factorymanager",
@@ -78346,7 +79253,28 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "edidChecksum": "",
+   "edidStatus": "",
+   "hdmi1": "",
+   "hdmi1block0": "",
+   "hdmi1block1": "",
+   "hdmi2": "",
+   "hdmi2block0": "",
+   "hdmi2block1": "",
+   "hdmi3": "",
+   "hdmi3block0": "",
+   "hdmi3block1": "",
+   "hdmi4": "",
+   "hdmi4block0": "",
+   "hdmi4block1": "",
+   "hdmiEdidVersion": "",
+   "hdmiPortNums": "",
+   "rgb": "",
+   "rgbEdidVersion": "",
+   "rgbPortNums": ""
+  }
  },
  {
   "service": "com.webos.service.factorymanager",
@@ -78829,7 +79757,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "arguments": "",
+   "commands": "",
+   "description": ""
+  }
  },
  {
   "service": "com.webos.service.familycare",
@@ -78921,7 +79854,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "fanCount": "",
+   "fanStatus": ""
+  }
  },
  {
   "service": "com.webos.service.fancontroller",
@@ -78944,7 +79881,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "temperatureSensorCount": "",
+   "temperatureSensorStatus": ""
+  }
  },
  {
   "service": "com.webos.service.fancontroller",
@@ -78967,7 +79908,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "fanData": ""
+  }
  },
  {
   "service": "com.webos.service.fancontroller",
@@ -78990,7 +79934,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "currentTemperature": "",
+   "errorCheck": "",
+   "overheatOffset": "",
+   "overheatTemp": ""
+  }
  },
  {
   "service": "com.webos.service.fancontroller",
@@ -79013,7 +79963,14 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "currentTemperature": "",
+   "frc": "",
+   "lastTemperature": "",
+   "soc": "",
+   "status": ""
+  }
  },
  {
   "service": "com.webos.service.fancontroller",
@@ -79150,7 +80107,15 @@
   "confidence": "code",
   "confidence_all": [
    "code"
-  ]
+  ],
+  "returns": {
+   "detected": "",
+   "detectedFaults": "",
+   "faultContent": "",
+   "faultDetectedStatus": "",
+   "faultTime": "",
+   "faultType": ""
+  }
  },
  {
   "service": "com.webos.service.faultmanager",
@@ -79173,7 +80138,27 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "crash": "",
+   "debug": "",
+   "detected": "",
+   "disableFaultAlert": "",
+   "faultDetectId": "",
+   "faultNotiFile": "",
+   "faultRecovery": "",
+   "faultStatus": "",
+   "general": "",
+   "ignoredFilter": "",
+   "kdriver": "",
+   "kernel": "",
+   "normalLog": "",
+   "pid": "",
+   "pname": "",
+   "powerOffRecovery": "",
+   "reason": "",
+   "recovery": ""
+  }
  },
  {
   "service": "com.webos.service.faultmanager",
@@ -80539,7 +81524,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "connectedDevices": "",
+   "isBlockedFgApp": "",
+   "supportExternalContents": "",
+   "trainingDays": ""
+  }
  },
  {
   "service": "com.webos.service.ftms",
@@ -91280,7 +92271,17 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "isAutomaticUpdate": "",
+   "isEnabled": "",
+   "isEnabledCast": "",
+   "isExceedGhpMem": "",
+   "isLifeOnScreenMode": "",
+   "isRunning": "",
+   "isSupported": "",
+   "partnerBeaconId": ""
+  }
  },
  {
   "service": "com.webos.service.googlehomecontroller",
@@ -92037,7 +93038,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "arguments": "",
+   "commands": "",
+   "description": ""
+  }
  },
  {
   "service": "com.webos.service.homeconnect",
@@ -92267,7 +93273,42 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appDescription": "",
+   "bgColor": "",
+   "bgImage": "",
+   "bgImages": "",
+   "deeplinkingParams": "",
+   "extraLargeIcon": "",
+   "favicon": "",
+   "icon": "",
+   "iconColor": "",
+   "id": "",
+   "imageForRecents": "",
+   "installTime": "",
+   "largeIcon": "",
+   "launchPointId": "",
+   "launchPoints": "",
+   "lptype": "",
+   "mediumLargeIcon": "",
+   "miniicon": "",
+   "params": "",
+   "qCardDescription": "",
+   "qCardIcon": "",
+   "qCardImage": "",
+   "qCardPartnerLogo": "",
+   "qCardRemoteIcon": "",
+   "qCardTitle": "",
+   "qCardbgColor": "",
+   "relaunch": "",
+   "removable": "",
+   "systemApp": "",
+   "tileSize": "",
+   "title": "",
+   "unmovable": "",
+   "userData": ""
+  }
  },
  {
   "service": "com.webos.service.homelaunchpoints",
@@ -92313,7 +93354,42 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appDescription": "",
+   "bgColor": "",
+   "bgImage": "",
+   "bgImages": "",
+   "deeplinkingParams": "",
+   "extraLargeIcon": "",
+   "favicon": "",
+   "icon": "",
+   "iconColor": "",
+   "id": "",
+   "imageForRecents": "",
+   "installTime": "",
+   "largeIcon": "",
+   "launchPointId": "",
+   "launchPoints": "",
+   "lptype": "",
+   "mediumLargeIcon": "",
+   "miniicon": "",
+   "params": "",
+   "qCardDescription": "",
+   "qCardIcon": "",
+   "qCardImage": "",
+   "qCardPartnerLogo": "",
+   "qCardRemoteIcon": "",
+   "qCardTitle": "",
+   "qCardbgColor": "",
+   "relaunch": "",
+   "removable": "",
+   "systemApp": "",
+   "tileSize": "",
+   "title": "",
+   "unmovable": "",
+   "userData": ""
+  }
  },
  {
   "service": "com.webos.service.homelaunchpoints",
@@ -93923,7 +94999,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "hdmiPort": ""
+  }
  },
  {
   "service": "com.webos.service.ics",
@@ -93969,7 +95048,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appList": "",
+   "deviceID": ""
+  }
  },
  {
   "service": "com.webos.service.ics",
@@ -94406,7 +95489,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelGroupId": "",
+   "channelGroupList": "",
+   "channelGroupListCount": "",
+   "channelGroupName": "",
+   "isFavoriteGroup": "",
+   "userEdited": "",
+   "userEditedName": ""
+  }
  },
  {
   "service": "com.webos.service.iepg",
@@ -94429,7 +95521,17 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "ONID": "",
+   "SVCID": "",
+   "TSID": "",
+   "majorNumber": "",
+   "minorNumber": "",
+   "physicalNumber": "",
+   "playerService": "",
+   "sourceIndex": ""
+  }
  },
  {
   "service": "com.webos.service.iepg",
@@ -94452,7 +95554,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "cableAnalogSkipped": "",
+   "channelList": "",
+   "channelListCount": "",
+   "channelLogoServerUrl": "",
+   "dataSource": "",
+   "dataType": "",
+   "deviceSourceIndex": ""
+  }
  },
  {
   "service": "com.webos.service.iepg",
@@ -94475,7 +95586,21 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelList": "",
+   "channelListCount": "",
+   "channelLogoServerUrl": "",
+   "dataSource": "",
+   "dataType": "",
+   "ipAntennaSupport": "",
+   "ipCableSupport": "",
+   "ipChanInteractiveUrl": "",
+   "ipOPSupport": "",
+   "ipSatelliteSupport": "",
+   "valueList": "",
+   "verifyDone": ""
+  }
  },
  {
   "service": "com.webos.service.iepg",
@@ -94590,7 +95715,24 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "baseEpgOnline": "",
+   "guideDetailSupport": "",
+   "ipAntennaSupport": "",
+   "ipCableSupport": "",
+   "ipOPSupport": "",
+   "ipOnlineChannelSupport": "",
+   "ipOnlineEPGSupport": "",
+   "ipSatelliteSupport": "",
+   "mergedEPGSupport": "",
+   "ottChannelSupport": "",
+   "ottEPGSupport": "",
+   "stbOnlineChannelSupport": "",
+   "stbOnlineEPGSupport": "",
+   "tunerOnlineChannelSupport": "",
+   "tunerOnlineEPGSupport": ""
+  }
  },
  {
   "service": "com.webos.service.iepg",
@@ -94636,7 +95778,15 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelGroup": "",
+   "channelGroupId": "",
+   "channelGroupName": "",
+   "isFavoriteGroup": "",
+   "userEdited": "",
+   "userEditedName": ""
+  }
  },
  {
   "service": "com.webos.service.iepg",
@@ -94705,7 +95855,28 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "baseEpgOnline": "",
+   "dataType": "",
+   "errorCodeNumber": "",
+   "guideDetailSupport": "",
+   "ipEpgStatus": "",
+   "ipOnlineChannelSupport": "",
+   "ipOnlineEPGSupport": "",
+   "mergedEPGSupport": "",
+   "networkStatus": "",
+   "ottChannelSupport": "",
+   "ottEPGSupport": "",
+   "statusValue": "",
+   "stbEpgStatus": "",
+   "stbOnlineChannelSupport": "",
+   "stbOnlineEPGSupport": "",
+   "tunerEpgStatus": "",
+   "tunerOnlineChannelSupport": "",
+   "tunerOnlineEPGSupport": "",
+   "type": ""
+  }
  },
  {
   "service": "com.webos.service.iepg",
@@ -94797,7 +95968,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelGroupId": "",
+   "channelGroupList": "",
+   "channelGroupListCount": "",
+   "channelGroupName": "",
+   "isFavoriteGroup": "",
+   "userEdited": "",
+   "userEditedName": ""
+  }
  },
  {
   "service": "com.webos.service.iepg",
@@ -94912,7 +96092,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "networkIdList": ""
+  }
  },
  {
   "service": "com.webos.service.iepg",
@@ -94981,7 +96164,21 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelList": "",
+   "channelListCount": "",
+   "channelLogoServerUrl": "",
+   "dataSource": "",
+   "dataType": "",
+   "ipAntennaSupport": "",
+   "ipCableSupport": "",
+   "ipChanInteractiveUrl": "",
+   "ipOPSupport": "",
+   "ipSatelliteSupport": "",
+   "valueList": "",
+   "verifyDone": ""
+  }
  },
  {
   "service": "com.webos.service.iepg",
@@ -95234,7 +96431,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelList": "",
+   "channelListCount": "",
+   "channelLogoServerUrl": "",
+   "dataSource": "",
+   "dataType": "",
+   "ipChanInteractiveUrl": "",
+   "valueList": ""
+  }
  },
  {
   "service": "com.webos.service.iepg",
@@ -97205,7 +98411,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "deviceUuid": ""
+  }
  },
  {
   "service": "com.webos.service.iotclient",
@@ -97274,7 +98483,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "apiKey": "",
+   "serviceId": "",
+   "serviceKey": ""
+  }
  },
  {
   "service": "com.webos.service.iotclient",
@@ -97297,7 +98511,35 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "active": "",
+   "addedMatter": "",
+   "addedThinq": "",
+   "alias": "",
+   "deletedMatter": "",
+   "deletedThinq": "",
+   "deviceId": "",
+   "deviceInfo": "",
+   "deviceList": "",
+   "deviceType": "",
+   "homeHub": "",
+   "homeId": "",
+   "homeName": "",
+   "homes": "",
+   "homeyHubSupported": "",
+   "iotdevices": "",
+   "localMatterControllerSupported": "",
+   "matterVersion": "",
+   "modelName": "",
+   "platform": "",
+   "plugin": "",
+   "reportable": "",
+   "roomId": "",
+   "roomName": "",
+   "rooms": "",
+   "threadSupport": ""
+  }
  },
  {
   "service": "com.webos.service.iotclient",
@@ -97320,7 +98562,31 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "active": "",
+   "alias": "",
+   "deviceId": "",
+   "deviceInfo": "",
+   "deviceList": "",
+   "deviceType": "",
+   "homeHub": "",
+   "homeId": "",
+   "homeName": "",
+   "homes": "",
+   "homeyHubSupported": "",
+   "iotdevices": "",
+   "localMatterControllerSupported": "",
+   "matterVersion": "",
+   "modelName": "",
+   "platform": "",
+   "plugin": "",
+   "reportable": "",
+   "roomId": "",
+   "roomName": "",
+   "rooms": "",
+   "threadSupport": ""
+  }
  },
  {
   "service": "com.webos.service.iotclient",
@@ -97939,7 +99205,22 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "brandName": "",
+   "codeset": "",
+   "connectedInput": "",
+   "count": "",
+   "deviceHistoryList": "",
+   "deviceIndex": "",
+   "deviceType": "",
+   "labelName": "",
+   "serviceId": "",
+   "serviceName": "",
+   "settopProductCode": "",
+   "settopProductOptionCode": "",
+   "soundOut": ""
+  }
  },
  {
   "service": "com.webos.service.irdbmanager",
@@ -97962,7 +99243,33 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "brandName": "",
+   "codeset": "",
+   "connectedInput": "",
+   "count": "",
+   "detectedMethod": "",
+   "deviceList": "",
+   "deviceType": "",
+   "hasPowerKey": "",
+   "isMainSTB": "",
+   "isManuallySetAfterAuto": "",
+   "isOTTSettop": "",
+   "isRestore": "",
+   "labelName": "",
+   "ossSetupStatus": "",
+   "powerSync": "",
+   "powerSyncPopUpDelay": "",
+   "powerSyncStatus": "",
+   "priorityOverCEC": "",
+   "serviceId": "",
+   "serviceName": "",
+   "settopProductCode": "",
+   "settopProductOptionCode": "",
+   "soundOut": "",
+   "soundOutActivated": ""
+  }
  },
  {
   "service": "com.webos.service.irdbmanager",
@@ -97985,7 +99292,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "IPdeviceList": "",
+   "count": ""
+  }
  },
  {
   "service": "com.webos.service.irdbmanager",
@@ -98052,7 +99363,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "version": ""
+  }
  },
  {
   "service": "com.webos.service.irdbmanager",
@@ -98213,7 +99527,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "count": "",
+   "serverData": "",
+   "serviceList": ""
+  }
  },
  {
   "service": "com.webos.service.irdbmanager",
@@ -98235,7 +99554,16 @@
   "confidence": "community",
   "confidence_all": [
    "community"
-  ]
+  ],
+  "returns": {
+   "audio": "",
+   "dvd": "",
+   "hts": "",
+   "isIPControlSupported": "",
+   "isSupported": "",
+   "settop": "",
+   "support": ""
+  }
  },
  {
   "service": "com.webos.service.irdbmanager",
@@ -98628,7 +99956,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "publishedWindows": ""
+  }
  },
  {
   "service": "com.webos.service.iwc",
@@ -98766,7 +100097,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "arguments": "",
+   "commands": "",
+   "description": ""
+  }
  },
  {
   "service": "com.webos.service.jsserver",
@@ -98789,7 +100125,17 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "_events": "",
+   "_eventsCount": "",
+   "activityCnt": "",
+   "filename": "",
+   "isBusy": "",
+   "isUnloadable": "",
+   "isUnrequired": "",
+   "services": ""
+  }
  },
  {
   "service": "com.webos.service.jsserver",
@@ -100045,7 +101391,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "ADStatus": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.broadcast",
@@ -100298,7 +101647,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "networkId": "",
+   "nitVersion": "",
+   "physicalNumber": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.broadcast",
@@ -103035,7 +104389,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelGroup": "",
+   "channelGroupId": "",
+   "channelGroupName": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.channel",
@@ -103058,7 +104417,14 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelGroupId": "",
+   "channelGroupList": "",
+   "channelGroupListCount": "",
+   "channelGroupName": "",
+   "userEditedName": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.channel",
@@ -103127,7 +104493,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelMode": "",
+   "channelModeId": "",
+   "channelModeName": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.channel",
@@ -103150,7 +104521,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelModeId": "",
+   "channelModeList": "",
+   "channelModeListCount": "",
+   "channelModeName": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.channel",
@@ -103219,7 +104596,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelSortMode": "",
+   "channelSortModeName": "",
+   "channelSortModeType": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.channel",
@@ -103288,7 +104670,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelListCount": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.channel",
@@ -109820,7 +111205,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "pathName": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.databroadcast",
@@ -110326,7 +111714,49 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "afd": "",
+   "atsc30CurrentTimeNsec": "",
+   "atsc30CurrentTimeSec": "",
+   "atsc30CurrentTimeWallClock": "",
+   "bIs2Tuner": "",
+   "bIsSectionEventOccur0": "",
+   "bIsSectionEventOccur1": "",
+   "bIsSectionEventOccur2": "",
+   "bIsSectionEventOccur3": "",
+   "broadcastId": "",
+   "checkCis": "",
+   "colourPrimaries": "",
+   "detectCard": "",
+   "eGoodVideo": "",
+   "eVDECAFD": "",
+   "h": "",
+   "hashValueOnceLSB": "",
+   "hashValueOnceMSB": "",
+   "hdrTransferCharacteristicIdc": "",
+   "matrixCoeffs": "",
+   "numOfHash": "",
+   "numOfSocName": "",
+   "scanType": "",
+   "sdecPort": "",
+   "secfIndex0": "",
+   "secfIndex1": "",
+   "secfIndex2": "",
+   "secfIndex3": "",
+   "stc0": "",
+   "stc1": "",
+   "stc2": "",
+   "transferChareristics": "",
+   "vFreq": "",
+   "vdecGoodVideoTime": "",
+   "videoPTS0": "",
+   "videoPTS1": "",
+   "videoPTS2": "",
+   "videoPTS3": "",
+   "videoPTS4": "",
+   "w": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.display",
@@ -112879,7 +114309,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "occuredtime": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.frontend",
@@ -112902,7 +114335,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "shortage": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.frontend",
@@ -113040,7 +114476,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "packeterror": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.frontend",
@@ -113753,7 +115192,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "audCurAnalogStatus": "",
+   "broadcastId": "",
+   "testResult1": "",
+   "testResult2": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.sound",
@@ -114144,7 +115589,22 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "ccSpec": "",
+   "displayOffsetX": "",
+   "displaySizeHeight": "",
+   "displaySizeWidth": "",
+   "posX": "",
+   "posXByProgram": "",
+   "posY": "",
+   "posYByProgram": "",
+   "resolutionHeight": "",
+   "resolutionWidth": "",
+   "subscribe": "",
+   "windowSizeHeight": "",
+   "windowSizeWidth": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.subtitle",
@@ -114167,7 +115627,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "captionResolution": "",
+   "ccSpec": "",
+   "subscribe": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.subtitle",
@@ -114190,7 +115655,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "ccSpec": "",
+   "displayOffsetX": "",
+   "displaySizeHeight": "",
+   "displaySizeWidth": "",
+   "subscribe": "",
+   "windowSizeHeight": "",
+   "windowSizeWidth": ""
+  }
  },
  {
   "service": "com.webos.service.legacybroadcast.subtitle",
@@ -116578,7 +118052,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "arguments": "",
+   "commands": "",
+   "description": ""
+  }
  },
  {
   "service": "com.webos.service.magicnum",
@@ -119125,7 +120604,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "count": ""
+  }
  },
  {
   "service": "com.webos.service.micomservice",
@@ -119171,7 +120653,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "StatusValue": ""
+  }
  },
  {
   "service": "com.webos.service.micomservice",
@@ -119194,7 +120679,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "specialRemoconMode": ""
+  }
  },
  {
   "service": "com.webos.service.micomservice",
@@ -120367,7 +121855,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "deviceList": ""
+  }
  },
  {
   "service": "com.webos.service.microphone",
@@ -122179,7 +123670,10 @@
   "confidence": "documented",
   "confidence_all": [
    "documented"
-  ]
+  ],
+  "returns": {
+   "version": ""
+  }
  },
  {
   "service": "com.webos.service.mrcu",
@@ -122202,7 +123696,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "bIsQueryAvailable": ""
+  }
  },
  {
   "service": "com.webos.service.mrcu",
@@ -122225,7 +123722,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "count": "",
+   "historyArray": "",
+   "startIndex": ""
+  }
  },
  {
   "service": "com.webos.service.mrcu",
@@ -122271,7 +123773,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "count": "",
+   "historyArray": "",
+   "startIndex": ""
+  }
  },
  {
   "service": "com.webos.service.mrcu",
@@ -122340,7 +123847,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "reasonArray": ""
+  }
  },
  {
   "service": "com.webos.service.mrcu",
@@ -122409,7 +123919,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "remainFile": "",
+   "useMotionEngine": ""
+  }
  },
  {
   "service": "com.webos.service.mrcu",
@@ -122432,7 +123946,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "count": "",
+   "historyArray": "",
+   "startIndex": ""
+  }
  },
  {
   "service": "com.webos.service.mrcu",
@@ -122570,7 +124089,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "bTraceLogOn": ""
+  }
  },
  {
   "service": "com.webos.service.mrcu",
@@ -123050,7 +124572,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "bIsCheckingDB": ""
+  }
  },
  {
   "service": "com.webos.service.mrcu",
@@ -123073,7 +124598,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "bIsExistDB": "",
+   "bIsExistScdDB": "",
+   "scdInfo": ""
+  }
  },
  {
   "service": "com.webos.service.mrcu",
@@ -124633,7 +126163,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "ack": ""
+  }
  },
  {
   "service": "com.webos.service.msc",
@@ -124725,7 +126258,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "motionStatus": ""
+  }
  },
  {
   "service": "com.webos.service.msc",
@@ -125369,7 +126905,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appList": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -125415,7 +126954,22 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appPipelineStatus": "",
+   "appViewStatus": "",
+   "eventStatus": "",
+   "focus": "",
+   "guestAppId": "",
+   "guestAppLayout": "",
+   "height": "",
+   "hostAppId": "",
+   "processingStatus": "",
+   "visible": "",
+   "width": "",
+   "x": "",
+   "y": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -125461,7 +127015,15 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appId": "",
+   "constraints": "",
+   "description": "",
+   "layout": "",
+   "notSupportInputMode": "",
+   "notSupportPip": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -125484,7 +127046,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appList": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -125507,7 +127072,26 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "audioOut": "",
+   "audioOutIndexList": "",
+   "controlMode": "",
+   "foregroundAppId": "",
+   "inputMode": "",
+   "is4KHFRSignal": "",
+   "mainAppId": "",
+   "mediaChangeState": "",
+   "mediaControlStatus": "",
+   "mode": "",
+   "processing": "",
+   "requestedMainAppId": "",
+   "requestedMode": "",
+   "requestedSubAppId": "",
+   "subAppId": "",
+   "toolType": "",
+   "usageType": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -125530,7 +127114,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "defalutPresetList": "",
+   "description": "",
+   "mainAppId": "",
+   "mode": "",
+   "multiviewAppList": "",
+   "rank": "",
+   "subAppId": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -125553,7 +127146,28 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appId": "",
+   "apps": "",
+   "audioOut": "",
+   "audioOutList": "",
+   "audioProperty": "",
+   "controlMode": "",
+   "event": "",
+   "foregroundAppId": "",
+   "index": "",
+   "inputMode": "",
+   "mode": "",
+   "multiviewStatus": "",
+   "prepareTargetAppId": "",
+   "processing": "",
+   "releasedAppRole": "",
+   "supportMultiAudioOut": "",
+   "toolType": "",
+   "usageType": "",
+   "volume": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -125576,7 +127190,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "supportDualMonitor": "",
+   "supportMultiScreen": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -125622,7 +127240,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "recentsList": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -125645,7 +127266,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "audioDescription": "",
+   "restrictionStatus": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -125668,7 +127293,48 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appList": "",
+   "apps": "",
+   "audioOut": "",
+   "audioOutList": "",
+   "controlMode": "",
+   "event": "",
+   "foregroundAppId": "",
+   "index": "",
+   "inputMode": "",
+   "is4KHFRSignal": "",
+   "layoutList": "",
+   "mainAppId": "",
+   "mainAppLayout": "",
+   "mediaChangeState": "",
+   "mode": "",
+   "multiviewSuggestionQuery": "",
+   "orientation": "",
+   "prepareTargetAppId": "",
+   "processing": "",
+   "releasedAppRole": "",
+   "requestedAppList": "",
+   "requestedAudioOut": "",
+   "requestedAudioOutList": "",
+   "requestedControlMode": "",
+   "requestedMainAppId": "",
+   "requestedMode": "",
+   "requestedSubAppId": "",
+   "status": "",
+   "subAppId": "",
+   "subAppLayout": "",
+   "subAppPosition": "",
+   "subAppSize": "",
+   "suggestionQueryAppId": "",
+   "supportMultiScreen": "",
+   "supportSubHDR": "",
+   "toolType": "",
+   "usageType": "",
+   "volume": "",
+   "workingEvent": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -125691,7 +127357,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appList": ""
+  }
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -131792,7 +133461,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "noMotionAndNoOperationTimers": ""
+  }
  },
  {
   "service": "com.webos.service.nomotion",
@@ -131815,7 +133487,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "noMotionTimers": ""
+  }
  },
  {
   "service": "com.webos.service.nomotion",
@@ -132114,7 +133789,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "id": "",
+   "isReady": "",
+   "nudgeState": "",
+   "state": ""
+  }
  },
  {
   "service": "com.webos.service.nudge",
@@ -132528,7 +134209,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "tier": "",
+   "tierScore": ""
+  }
  },
  {
   "service": "com.webos.service.oledepl",
@@ -132551,7 +134236,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "status": ""
+  }
  },
  {
   "service": "com.webos.service.oledepl",
@@ -132574,7 +134262,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "fixedOSD": ""
+  }
  },
  {
   "service": "com.webos.service.oledepl",
@@ -132596,7 +134287,11 @@
   "confidence": "code",
   "confidence_all": [
    "code"
-  ]
+  ],
+  "returns": {
+   "enable": "",
+   "stressCount": ""
+  }
  },
  {
   "service": "com.webos.service.oledepl",
@@ -132618,7 +134313,10 @@
   "confidence": "code",
   "confidence_all": [
    "code"
-  ]
+  ],
+  "returns": {
+   "oledPanelUTT": ""
+  }
  },
  {
   "service": "com.webos.service.oledepl",
@@ -132640,7 +134338,11 @@
   "confidence": "code",
   "confidence_all": [
    "code"
-  ]
+  ],
+  "returns": {
+   "tempLSB": "",
+   "tempMSB": ""
+  }
  },
  {
   "service": "com.webos.service.oledepl",
@@ -132731,7 +134433,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "status": ""
+  }
  },
  {
   "service": "com.webos.service.oledepl",
@@ -132754,7 +134459,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "enable": ""
+  }
  },
  {
   "service": "com.webos.service.oledepl",
@@ -133317,7 +135025,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "progress": "",
+   "state": ""
+  }
  },
  {
   "service": "com.webos.service.packagemanager",
@@ -133593,7 +135305,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "isHorizontalReversed": "",
+   "isVerticalReversed": "",
+   "mirrorModeStatus": ""
+  }
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -133616,7 +135333,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "cellInfo": ""
+  }
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -133639,7 +135359,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "totalErrorCount": ""
+  }
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -133662,7 +135385,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "CPCB_PID": "",
+   "Matching": "",
+   "SPCB_PID": ""
+  }
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -133685,7 +135413,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "check": ""
+  }
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -133708,7 +135439,18 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "JbVer": "",
+   "fileNameForTconSU": "",
+   "retCode": "",
+   "tconFpgaFirmwareVer": "",
+   "tconModuleInfo": "",
+   "tconParamForInstart": "",
+   "tconParamForSU": "",
+   "wallRxFwVer": "",
+   "wallTxFwVer": ""
+  }
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -133731,7 +135473,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "code": "",
+   "name": ""
+  }
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -133754,7 +135500,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "height": "",
+   "resolution": "",
+   "width": ""
+  }
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -133846,7 +135597,19 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "initStatus": "",
+   "pwmDB": "",
+   "pwmDcrDuty": "",
+   "pwmInitDuty": "",
+   "pwmMaxDuty": "",
+   "pwmMaxDutyStore": "",
+   "pwmMinDuty": "",
+   "pwmNoSigDuty": "",
+   "pwmPinMask": "",
+   "retCode": ""
+  }
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -134030,7 +135793,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "VPMode": ""
+  }
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -134145,7 +135911,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "isOSLB": ""
+  }
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -135044,7 +136813,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelGroupId": "",
+   "channelGroupList": "",
+   "channelGroupListCount": "",
+   "channelGroupName": "",
+   "isFavoriteGroup": "",
+   "userEdited": "",
+   "userEditedName": ""
+  }
  },
  {
   "service": "com.webos.service.pbsw",
@@ -135182,7 +136960,24 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "baseEpgOnline": "",
+   "guideDetailSupport": "",
+   "ipAntennaSupport": "",
+   "ipCableSupport": "",
+   "ipOPSupport": "",
+   "ipOnlineChannelSupport": "",
+   "ipOnlineEPGSupport": "",
+   "ipSatelliteSupport": "",
+   "mergedEPGSupport": "",
+   "ottChannelSupport": "",
+   "ottEPGSupport": "",
+   "stbOnlineChannelSupport": "",
+   "stbOnlineEPGSupport": "",
+   "tunerOnlineChannelSupport": "",
+   "tunerOnlineEPGSupport": ""
+  }
  },
  {
   "service": "com.webos.service.pbsw",
@@ -135228,7 +137023,15 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelGroup": "",
+   "channelGroupId": "",
+   "channelGroupName": "",
+   "enable": "",
+   "userEdited": "",
+   "userEditedName": ""
+  }
  },
  {
   "service": "com.webos.service.pbsw",
@@ -135320,7 +137123,32 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "baseEpgOnline": "",
+   "dataType": "",
+   "errorCodeNumber": "",
+   "guideDetailSupport": "",
+   "ipAntennaSupport": "",
+   "ipCableSupport": "",
+   "ipEpgStatus": "",
+   "ipOPSupport": "",
+   "ipOnlineChannelSupport": "",
+   "ipOnlineEPGSupport": "",
+   "ipSatelliteSupport": "",
+   "mergedEPGSupport": "",
+   "networkStatus": "",
+   "ottChannelSupport": "",
+   "ottEPGSupport": "",
+   "statusValue": "",
+   "stbEpgStatus": "",
+   "stbOnlineChannelSupport": "",
+   "stbOnlineEPGSupport": "",
+   "tunerEpgStatus": "",
+   "tunerOnlineChannelSupport": "",
+   "tunerOnlineEPGSupport": "",
+   "type": ""
+  }
  },
  {
   "service": "com.webos.service.pbsw",
@@ -135389,7 +137217,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelGroupId": "",
+   "channelGroupList": "",
+   "channelGroupListCount": "",
+   "channelGroupName": "",
+   "enable": "",
+   "userEdited": "",
+   "userEditedName": ""
+  }
  },
  {
   "service": "com.webos.service.pbsw",
@@ -135412,7 +137249,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "deviceUniqueId": "",
+   "ipWatchFlag": "",
+   "livetvwatchEula": "",
+   "stbAcrWatchFlag": "",
+   "stbScdWatchFlag": "",
+   "stbUeiWatchFlag": "",
+   "watchFlag": ""
+  }
  },
  {
   "service": "com.webos.service.pbsw",
@@ -135435,7 +137281,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "LGP": "",
+   "PLT": "",
+   "channelMapId": "",
+   "mcpList": ""
+  }
  },
  {
   "service": "com.webos.service.pbsw",
@@ -140080,7 +141932,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "Eyeqsensorcheck": "",
+   "backlightValue": ""
+  }
  },
  {
   "service": "com.webos.service.pqcontroller",
@@ -142961,7 +144817,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "timeout": ""
+  }
  },
  {
   "service": "com.webos.service.qbd",
@@ -143075,7 +144934,17 @@
   "confidence": "code",
   "confidence_all": [
    "code"
-  ]
+  ],
+  "returns": {
+   "appId": "",
+   "cardSnapShotFilePath": "",
+   "customImageFilePath": "",
+   "ready": "",
+   "recentsAppList": "",
+   "splashBackground": "",
+   "subtitle": "",
+   "title": ""
+  }
  },
  {
   "service": "com.webos.service.recent",
@@ -144205,7 +146074,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "rules": ""
+  }
  },
  {
   "service": "com.webos.service.ruleengine",
@@ -144320,7 +146192,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "curr_status": "",
+   "hallICTest": "",
+   "hallic_count": "",
+   "testHallIC": ""
+  }
  },
  {
   "service": "com.webos.service.screenmanager",
@@ -144343,7 +146221,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "curr_status": "",
+   "hallStatus": "",
+   "hallic_count": ""
+  }
  },
  {
   "service": "com.webos.service.screenmanager",
@@ -144996,7 +146879,10 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "path": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -145021,7 +146907,10 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "appPublishFlag": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -145046,7 +146935,11 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "change": "",
+   "reason": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -145071,7 +146964,10 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "path": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -145096,7 +146992,18 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "authenticationChecked": "",
+   "cacheDataChecked": "",
+   "dataCacheCompleted": "",
+   "detailConfigVer": "",
+   "isDeviceAuthenticated": "",
+   "provisioningCompleted": "",
+   "sdxReady": "",
+   "status": "",
+   "stolenDevice": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -145121,7 +147028,12 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "billingId": "",
+   "deviceUuid": "",
+   "xdeviceId": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -145223,7 +147135,10 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "publishFlag": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -145248,7 +147163,10 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "rdxServerIndex": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -145273,7 +147191,10 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "rdxServerUrl": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -145299,7 +147220,10 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "serverIndex": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -145324,7 +147248,11 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "numberOfServer": "",
+   "serverList": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -145372,7 +147300,11 @@
   "confidence_all": [
    "code",
    "community"
-  ]
+  ],
+  "returns": {
+   "countryPrefix": "",
+   "serverUrl": ""
+  }
  },
  {
   "service": "com.webos.service.sdx",
@@ -146168,7 +148100,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "name": "",
+   "services": "",
+   "version": ""
+  }
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149392,7 +151329,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "verifyStatus": ""
+  }
  },
  {
   "service": "com.webos.service.sm",
@@ -150174,7 +152114,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "arguments": "",
+   "commands": "",
+   "description": ""
+  }
  },
  {
   "service": "com.webos.service.sportsalert",
@@ -150243,7 +152188,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "connectHDMI": "",
+   "connectLAN": "",
+   "supportedKeys": ""
+  }
  },
  {
   "service": "com.webos.service.ssc",
@@ -150748,7 +152698,15 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appStats": "",
+   "fileStats": "",
+   "freeSpace": "",
+   "logicalFreeSpace": "",
+   "spaceStats": "",
+   "totalSpace": ""
+  }
  },
  {
   "service": "com.webos.service.storagestatistics",
@@ -150955,7 +152913,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "finished": "",
+   "firstUse": ""
+  }
  },
  {
   "service": "com.webos.service.systemprofile",
@@ -152567,7 +154529,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "foregroundAppInfo": ""
+  }
  },
  {
   "service": "com.webos.service.systemUIManager",
@@ -152958,7 +154923,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "baudrate": ""
+  }
  },
  {
   "service": "com.webos.service.terminalmanager",
@@ -152981,7 +154949,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "rs232control": ""
+  }
  },
  {
   "service": "com.webos.service.terminalmanager",
@@ -153257,7 +155228,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "version": ""
+  }
  },
  {
   "service": "com.webos.service.trigger.alexa",
@@ -159823,7 +161797,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "bOffTimerEnable": "",
+   "offTimerHour": "",
+   "offTimerMinute": "",
+   "offTimerWeekday": ""
+  }
  },
  {
   "service": "com.webos.service.tvReservationAgent",
@@ -159846,7 +161826,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "bOnTimerEnable": "",
+   "onTimerAppId": "",
+   "onTimerChannel": "",
+   "onTimerHour": "",
+   "onTimerMinute": "",
+   "onTimerVolume": "",
+   "onTimerWeekday": ""
+  }
  },
  {
   "service": "com.webos.service.tvReservationAgent",
@@ -159869,7 +161858,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "bOffTimerEnable": "",
+   "offTimerHour": "",
+   "offTimerMinute": "",
+   "offTimerWeekday": ""
+  }
  },
  {
   "service": "com.webos.service.tvReservationAgent",
@@ -159892,7 +161887,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "bOnTimerEnable": "",
+   "onTimerAppId": "",
+   "onTimerChannel": "",
+   "onTimerHour": "",
+   "onTimerMinute": "",
+   "onTimerVolume": "",
+   "onTimerWeekday": ""
+  }
  },
  {
   "service": "com.webos.service.tvReservationAgent",
@@ -159915,7 +161919,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "CurrentTime": ""
+  }
  },
  {
   "service": "com.webos.service.tvReservationAgent",
@@ -160721,7 +162728,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "simulationResult": ""
+  }
  },
  {
   "service": "com.webos.service.tvrm",
@@ -161380,7 +163390,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "arguments": "",
+   "commands": "",
+   "description": ""
+  }
  },
  {
   "service": "com.webos.service.universalqcard",
@@ -163314,7 +165329,14 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appId": "",
+   "appList": "",
+   "count": "",
+   "eventType": "",
+   "rank": ""
+  }
  },
  {
   "service": "com.webos.service.usercontextmanager",
@@ -164004,7 +166026,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelId": ""
+  }
  },
  {
   "service": "com.webos.service.utp.broadcast",
@@ -164717,7 +166742,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "networkId": "",
+   "nitVersion": "",
+   "physicalNumber": ""
+  }
  },
  {
   "service": "com.webos.service.utp.broadcast",
@@ -164947,7 +166977,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "warmOwner": ""
+  }
  },
  {
   "service": "com.webos.service.utp.broadcast",
@@ -167408,7 +169441,15 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelGroup": "",
+   "channelGroupId": "",
+   "channelGroupName": "",
+   "isFavoriteGroup": "",
+   "userEdited": "",
+   "userEditedName": ""
+  }
  },
  {
   "service": "com.webos.service.utp.channel",
@@ -167431,7 +169472,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelGroupId": "",
+   "channelGroupList": "",
+   "channelGroupListCount": "",
+   "channelGroupName": "",
+   "isFavoriteGroup": "",
+   "userEdited": "",
+   "userEditedName": ""
+  }
  },
  {
   "service": "com.webos.service.utp.channel",
@@ -167500,7 +169550,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelMode": "",
+   "channelModeId": "",
+   "channelModeName": ""
+  }
  },
  {
   "service": "com.webos.service.utp.channel",
@@ -167523,7 +169578,13 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelModeId": "",
+   "channelModeList": "",
+   "channelModeListCount": "",
+   "channelModeName": ""
+  }
  },
  {
   "service": "com.webos.service.utp.channel",
@@ -167546,7 +169607,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "channelSortMode": "",
+   "channelSortModeName": "",
+   "channelSortModeType": ""
+  }
  },
  {
   "service": "com.webos.service.utp.channel",
@@ -173595,7 +175661,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "pathName": ""
+  }
  },
  {
   "service": "com.webos.service.utp.databroadcast",
@@ -177942,7 +180011,22 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "ccSpec": "",
+   "displayOffsetX": "",
+   "displaySizeHeight": "",
+   "displaySizeWidth": "",
+   "posX": "",
+   "posXByProgram": "",
+   "posY": "",
+   "posYByProgram": "",
+   "resolutionHeight": "",
+   "resolutionWidth": "",
+   "subscribe": "",
+   "windowSizeHeight": "",
+   "windowSizeWidth": ""
+  }
  },
  {
   "service": "com.webos.service.utp.subtitle",
@@ -179982,7 +182066,84 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "Clickable": "",
+   "Default": "",
+   "Navigation": "",
+   "SuggestionQueryList": "",
+   "accuLocationKey": "",
+   "aodStatus": "",
+   "appInfoYoutube": "",
+   "appList": "",
+   "appUsageHistory": "",
+   "audioFeedbackStatus": "",
+   "audioGuidance": "",
+   "audioSource": "",
+   "cagConfig": "",
+   "channelList": "",
+   "conditionDomain": "",
+   "configAiArt": "",
+   "configBeanBrowser": "",
+   "configMagicLink": "",
+   "context": "",
+   "countryPrefix": "",
+   "cpList": "",
+   "currentUserNumber": "",
+   "debugStatus": "",
+   "detectedChannelNumber": "",
+   "deviceAuthStatus": "",
+   "displayType": "",
+   "epgLastUpdated": "",
+   "foreAppId": "",
+   "foreAppIdExt": "",
+   "foreChannel": "",
+   "genreCode": "",
+   "genreCode2": "",
+   "guide": "",
+   "httpHeader": "",
+   "iotList": "",
+   "lastInputApp": "",
+   "lifeAlarm": "",
+   "lifeOnScreen": "",
+   "lifeOnScreenMode": "",
+   "loginUserData": "",
+   "medicationInfoAgreement": "",
+   "multiview": "",
+   "mySportTeamList": "",
+   "networkId": "",
+   "networkStatus": "",
+   "ntpTime": "",
+   "ossInputApp": "",
+   "ossList": "",
+   "preferredInfo": "",
+   "profileHome": "",
+   "profileList": "",
+   "programGroupId": "",
+   "programName": "",
+   "programRemainTime": "",
+   "programSubTitle": "",
+   "recognitionSource": "",
+   "seniorModeEnable": "",
+   "serverHost": "",
+   "storeMode": "",
+   "subDivision": "",
+   "supportBnoModel": "",
+   "supportLedLighting": "",
+   "supportScreenType": "",
+   "supportSignLanguageZoom": "",
+   "supportedLowPowerMode": "",
+   "switchLivepick": "",
+   "switchMusicRecognition": "",
+   "switchRecommendation": "",
+   "switchUnknownAiAssistant": "",
+   "tunerlessStatus": "",
+   "udid": "",
+   "usbPath": "",
+   "useBeanBrowser": "",
+   "userStatus": "",
+   "viewType": ""
+  }
  },
  {
   "service": "com.webos.service.voice.performer.plugin",
@@ -180189,7 +182350,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "status": ""
+  }
  },
  {
   "service": "com.webos.service.voiceclick",
@@ -180465,7 +182629,81 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "accuLocationKey": "",
+   "aodStatus": "",
+   "appInfoYoutube": "",
+   "appList": "",
+   "appUsageHistory": "",
+   "audioFeedbackStatus": "",
+   "audioGuidance": "",
+   "audioSource": "",
+   "cagConfig": "",
+   "channelList": "",
+   "conditionDomain": "",
+   "configAiArt": "",
+   "configBeanBrowser": "",
+   "configMagicLink": "",
+   "context": "",
+   "contextType": "",
+   "contexts": "",
+   "countryPrefix": "",
+   "cpList": "",
+   "currentUserNumber": "",
+   "debugStatus": "",
+   "detectedChannelNumber": "",
+   "deviceAuthStatus": "",
+   "displayType": "",
+   "epgLastUpdated": "",
+   "foreAppId": "",
+   "foreAppIdExt": "",
+   "foreChannel": "",
+   "genreCode": "",
+   "genreCode2": "",
+   "httpHeader": "",
+   "iotList": "",
+   "lastInputApp": "",
+   "lifeAlarm": "",
+   "lifeOnScreen": "",
+   "lifeOnScreenMode": "",
+   "loginUserData": "",
+   "medicationInfoAgreement": "",
+   "multiview": "",
+   "mySportTeamList": "",
+   "networkId": "",
+   "networkStatus": "",
+   "ntpTime": "",
+   "ossInputApp": "",
+   "ossList": "",
+   "preferredInfo": "",
+   "profileHome": "",
+   "profileList": "",
+   "programGroupId": "",
+   "programName": "",
+   "programRemainTime": "",
+   "programSubTitle": "",
+   "recognitionSource": "",
+   "seniorModeEnable": "",
+   "serverHost": "",
+   "storeMode": "",
+   "subDivision": "",
+   "supportBnoModel": "",
+   "supportLedLighting": "",
+   "supportScreenType": "",
+   "supportSignLanguageZoom": "",
+   "supportedLowPowerMode": "",
+   "switchLivepick": "",
+   "switchMusicRecognition": "",
+   "switchRecommendation": "",
+   "switchUnknownAiAssistant": "",
+   "tunerlessStatus": "",
+   "udid": "",
+   "usbPath": "",
+   "useBeanBrowser": "",
+   "userStatus": "",
+   "viewType": ""
+  }
  },
  {
   "service": "com.webos.service.voiceconductor",
@@ -180511,7 +182749,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "voiceLanguages": ""
+  }
  },
  {
   "service": "com.webos.service.voiceconductor",
@@ -181270,7 +183511,14 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "deviceName": "",
+   "deviceType": "",
+   "devices": "",
+   "id": "",
+   "key": ""
+  }
  },
  {
   "service": "com.webos.service.voiceinput",
@@ -181730,7 +183978,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "devices": ""
+  }
  },
  {
   "service": "com.webos.service.voiceinput.hidraw",
@@ -181983,7 +184234,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "version": ""
+  }
  },
  {
   "service": "com.webos.service.voiceinput.preprocessor",
@@ -182006,7 +184260,14 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "deviceName": "",
+   "deviceType": "",
+   "devices": "",
+   "id": "",
+   "key": ""
+  }
  },
  {
   "service": "com.webos.service.voiceinput.preprocessor",
@@ -182236,7 +184497,14 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "deviceName": "",
+   "deviceType": "",
+   "devices": "",
+   "id": "",
+   "key": ""
+  }
  },
  {
   "service": "com.webos.service.voiceinput.sound",
@@ -182696,7 +184964,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "id": "",
+   "status": "",
+   "statusCode": ""
+  }
  },
  {
   "service": "com.webos.service.wampluggable.hbbtv",
@@ -182811,7 +185084,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "commonUserAgent": "",
+   "userAgent": ""
+  }
  },
  {
   "service": "com.webos.service.wampluggable.hbbtv",
@@ -185377,7 +187654,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "mode": ""
+  }
  },
  {
   "service": "com.webos.service.wifi",
@@ -188229,7 +190509,18 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "modelName": "",
+   "rearL": "",
+   "rearLStatus": "",
+   "rearR": "",
+   "rearRStatus": "",
+   "soundbarName": "",
+   "status": "",
+   "woofer": "",
+   "wooferStatus": ""
+  }
  },
  {
   "service": "com.webos.service.wowplay",
@@ -188252,7 +190543,16 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "SADB": "",
+   "SADs": "",
+   "atmos": "",
+   "dynamicEdid": "",
+   "edidInfo": "",
+   "inputType": "",
+   "port": ""
+  }
  },
  {
   "service": "com.webos.service.wowplay",
@@ -188275,7 +190575,18 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "advancedCapability": "",
+   "capability": "",
+   "soundModeList": "",
+   "soundModeType": "",
+   "supportATMOS": "",
+   "supportIamf": "",
+   "wowOrchestra": "",
+   "wowOrchestraDevice": "",
+   "wowcastActivation": ""
+  }
  },
  {
   "service": "com.webos.service.wowplay",
@@ -189694,7 +192005,10 @@
   "confidence": "code",
   "confidence_all": [
    "code"
-  ]
+  ],
+  "returns": {
+   "currentState": ""
+  }
  },
  {
   "service": "com.webos.surfacemanager",
@@ -189717,7 +192031,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appId": "",
+   "focusedWindowInfo": "",
+   "type": ""
+  }
  },
  {
   "service": "com.webos.surfacemanager",
@@ -189772,7 +192091,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appId": "",
+   "foregroundAppState": "",
+   "state": ""
+  }
  },
  {
   "service": "com.webos.surfacemanager",
@@ -189795,7 +192119,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "foregroundVideoWindow": ""
+  }
  },
  {
   "service": "com.webos.surfacemanager",
@@ -189818,7 +192145,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "appId": "",
+   "windowType": "",
+   "windows": ""
+  }
  },
  {
   "service": "com.webos.surfacemanager",
@@ -189864,7 +192196,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "states": ""
+  }
  },
  {
   "service": "com.webos.surfacemanager",
@@ -189910,7 +192245,11 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "ready": "",
+   "recentsAppList": ""
+  }
  },
  {
   "service": "com.webos.surfacemanager",
@@ -189956,7 +192295,12 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "name": "",
+   "screens": "",
+   "visible": ""
+  }
  },
  {
   "service": "com.webos.surfacemanager",
@@ -190002,7 +192346,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "windowGroupInfo": ""
+  }
  },
  {
   "service": "com.webos.surfacemanager",
@@ -190025,7 +192372,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "zoomStatus": ""
+  }
  },
  {
   "service": "com.webos.surfacemanager",
@@ -190333,7 +192683,10 @@
   "confidence_all": [
    "code"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "name-inferred",
+  "returns": {
+   "running": ""
+  }
  },
  {
   "service": "com.webos.surfacemanager.extended",

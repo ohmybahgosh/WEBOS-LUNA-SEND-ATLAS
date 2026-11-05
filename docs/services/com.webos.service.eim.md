@@ -547,6 +547,64 @@ External Input Manager method (listed in webosbrew eim.yml; params undocumented 
 - **Versions:** webOS 3+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `activate` |  |
+| `appId` |  |
+| `arcDevice` |  |
+| `arcDevicePower` |  |
+| `atmosDevice` |  |
+| `blockedAllInput` |  |
+| `brandName` |  |
+| `cecPower` |  |
+| `cecpDevType` |  |
+| `cecpNewType` |  |
+| `chosen` |  |
+| `codeset` |  |
+| `connected` |  |
+| `connectedInput` |  |
+| `depth` |  |
+| `detectedMethod` |  |
+| `devices` |  |
+| `forceIcon` |  |
+| `hasPowerKey` |  |
+| `hdmiPlugIn` |  |
+| `hdmiSignalExist` |  |
+| `icon` |  |
+| `iconPrefix` |  |
+| `id` |  |
+| `isMainSTB` |  |
+| `label` |  |
+| `labelName` |  |
+| `lastUniqueId` |  |
+| `maxDisplayportCount` |  |
+| `maxHdmiCount` |  |
+| `maxUsbcCount` |  |
+| `modified` |  |
+| `osdName` |  |
+| `ossSetupStatus` |  |
+| `physicalAddress` |  |
+| `port` |  |
+| `portId` |  |
+| `powerSync` |  |
+| `powerSyncPopUpDelay` |  |
+| `powerSyncStatus` |  |
+| `priorityOverCEC` |  |
+| `serviceArea` |  |
+| `serviceName` |  |
+| `serviceType` |  |
+| `settopCode` |  |
+| `settopOption` |  |
+| `subCount` |  |
+| `subList` |  |
+| `totalCount` |  |
+| `uniqueId` |  |
+| `unknownCECPNumber` |  |
+| `vendorId` |  |
+| `wowcastStatus` |  |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/getDeviceInfo '{}'
 ```
@@ -567,6 +625,16 @@ Returns the EDID status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `checkSum` |  |
+| `devices` |  |
+| `edid` |  |
+| `id` |  |
+| `valid` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/getEdidStatus '{}'
@@ -591,6 +659,12 @@ Returns the EDID supported fhd.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `isSupported` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/getEdidSupportedFhd '{}'
 ```
@@ -613,6 +687,13 @@ Returns the EIM statistics.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `count` |  |
+| `eimStatistics` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/getEIMStatistics '{}'

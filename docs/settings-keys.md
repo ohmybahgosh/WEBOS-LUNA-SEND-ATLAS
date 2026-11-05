@@ -2,7 +2,7 @@
 
 Used with `com.webos.settingsservice/getSystemSettings` and `setSystemSettings`.  Key tables are the union across firmware dumps from 9 LG OLED models (C1, C2, C8, C9, CX, G3, G4, G5, G6) published by bscpylgtv.  Not every key exists on every model.
 
-> **Machine-readable:** a 1,954-key settings schema (key, category, dbtype, dimension) dumped from `/etc/palm/description.json` on a webOS 7.0 TV is in [`../catalog/settings-schema-W22O.json`](../catalog/settings-schema-W22O.json).
+> **Machine-readable:** a 1,954-key settings schema (key, category, dbtype, dimension) dumped from `/etc/palm/description.json` on a webOS 7.0 TV is in [`../catalog/settings-schema-W22O.json`](../catalog/settings-schema-W22O.json).  A companion [`../catalog/settings-schema-desc-W22O.json`](../catalog/settings-schema-desc-W22O.json) adds the value **type** and constraints for 1,086 of those keys (862 enum with their allowed values, 213 numeric ranges, 11 file-backed), read live from `getSystemSettingDesc` on an LG C2 (webOS 22).  Schema only, no personal values.
 
 
 

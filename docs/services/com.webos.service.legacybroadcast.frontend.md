@@ -305,6 +305,12 @@ Returns the LNB shortage occured time.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `occuredtime` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getLNBShortageOccuredTime '{}'
 ```
@@ -327,6 +333,12 @@ Returns the LNB shortage status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `shortage` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getLNBShortageStatus '{}'
@@ -465,6 +477,12 @@ Returns the stacked packet error.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `packeterror` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getStackedPacketError '{}'

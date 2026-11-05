@@ -32,6 +32,12 @@ Returns the advertising status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `advertising` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.asc/getAdvertisingStatus '{}'
 ```
@@ -54,6 +60,16 @@ Reads the ble devices.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `address` |  |
+| `count` |  |
+| `devices` |  |
+| `name` |  |
+| `user_selection` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.asc/readBleDevices '{}'

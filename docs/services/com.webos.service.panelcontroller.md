@@ -245,6 +245,14 @@ Returns the mirror mode.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `isHorizontalReversed` |  |
+| `isVerticalReversed` |  |
+| `mirrorModeStatus` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getMirrorMode '{}'
 ```
@@ -267,6 +275,12 @@ Returns the oled cell info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `cellInfo` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getOledCellInfo '{}'
@@ -291,6 +305,12 @@ Returns the oled panel error history list.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `totalErrorCount` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getOledPanelErrorHistoryList '{}'
 ```
@@ -313,6 +333,14 @@ Returns the oled panel matching.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `CPCB_PID` |  |
+| `Matching` |  |
+| `SPCB_PID` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getOledPanelMatching '{}'
@@ -337,6 +365,12 @@ Returns the oled tcon i 2 c check.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `check` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getOledTconI2CCheck '{}'
 ```
@@ -359,6 +393,20 @@ Returns the oled tcon info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `JbVer` |  |
+| `fileNameForTconSU` |  |
+| `retCode` |  |
+| `tconFpgaFirmwareVer` |  |
+| `tconModuleInfo` |  |
+| `tconParamForInstart` |  |
+| `tconParamForSU` |  |
+| `wallRxFwVer` |  |
+| `wallTxFwVer` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getOledTconInfo '{}'
@@ -383,6 +431,13 @@ Returns the panel maker info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `code` |  |
+| `name` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getPanelMakerInfo '{}'
 ```
@@ -405,6 +460,14 @@ Returns the panel resolution.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `height` |  |
+| `resolution` |  |
+| `width` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getPanelResolution '{}'
@@ -497,6 +560,21 @@ Returns the pwm configuration.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `initStatus` |  |
+| `pwmDB` |  |
+| `pwmDcrDuty` |  |
+| `pwmInitDuty` |  |
+| `pwmMaxDuty` |  |
+| `pwmMaxDutyStore` |  |
+| `pwmMinDuty` |  |
+| `pwmNoSigDuty` |  |
+| `pwmPinMask` |  |
+| `retCode` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getPwmConfiguration '{}'
@@ -682,6 +760,12 @@ Returns the virtual panel mode.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `VPMode` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getVirtualPanelMode '{}'
 ```
@@ -796,6 +880,12 @@ Reports whether the support OSLB is set.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `isOSLB` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/isSupportOSLB '{}'

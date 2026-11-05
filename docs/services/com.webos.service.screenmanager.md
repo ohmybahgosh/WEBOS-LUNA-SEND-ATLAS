@@ -28,6 +28,15 @@ Checks the hall IC.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `curr_status` |  |
+| `hallICTest` |  |
+| `hallic_count` |  |
+| `testHallIC` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.screenmanager/checkHallIC '{}'
 ```
@@ -50,6 +59,14 @@ Returns the hall status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `curr_status` |  |
+| `hallStatus` |  |
+| `hallic_count` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.screenmanager/getHallStatus '{}'

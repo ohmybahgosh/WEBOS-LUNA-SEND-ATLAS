@@ -510,6 +510,12 @@ Gets the MRCU API version.
 - **Versions:** webOS TV 22+ (partial on older)  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `version` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getAPIVersion '{}'
 ```
@@ -530,6 +536,12 @@ Returns the Bluetooth service available.
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `bIsQueryAvailable` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getBtServiceAvailable '{}'
@@ -553,6 +565,14 @@ Returns the button history.
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `count` |  |
+| `historyArray` |  |
+| `startIndex` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getButtonHistory '{}'
@@ -599,6 +619,14 @@ Returns the cursor history.
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `count` |  |
+| `historyArray` |  |
+| `startIndex` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getCursorHistory '{}'
@@ -669,6 +697,12 @@ Returns the diagnosis item.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `reasonArray` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getDiagnosisItem '{}'
 ```
@@ -738,6 +772,13 @@ Returns the motion engine status.
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `remainFile` |  |
+| `useMotionEngine` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getMotionEngineStatus '{}'
 ```
@@ -760,6 +801,14 @@ Returns the MRCU cmd history.
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `count` |  |
+| `historyArray` |  |
+| `startIndex` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getMrcuCmdHistory '{}'
@@ -898,6 +947,12 @@ Returns the trace log status.
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `bTraceLogOn` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getTraceLogStatus '{}'
@@ -1376,6 +1431,12 @@ Reports whether the checking DB is set.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `bIsCheckingDB` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/isCheckingDB '{}'
 ```
@@ -1398,6 +1459,14 @@ Reports whether the exist db file is set.
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `bIsExistDB` |  |
+| `bIsExistScdDB` |  |
+| `scdInfo` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/isExistDbFile '{}'

@@ -163,6 +163,12 @@ Returns the SDP path used for ACR data.
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `path` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getACRPath '{}'
 ```
@@ -183,6 +189,12 @@ Returns the per-app SDP publish flag.
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appPublishFlag` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getAppPublishFlag '{}'
@@ -205,6 +217,13 @@ Returns the SDP cache status.
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `change` |  |
+| `reason` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getCacheStatus '{}'
 ```
@@ -225,6 +244,12 @@ Returns the SDP path used for country-code lookup.
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `path` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getCountryCodePath '{}'
@@ -247,6 +272,20 @@ Read-only: reports whether the device is authenticated/provisioned with SDP (isD
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `authenticationChecked` |  |
+| `cacheDataChecked` |  |
+| `dataCacheCompleted` |  |
+| `detailConfigVer` |  |
+| `isDeviceAuthenticated` |  |
+| `provisioningCompleted` |  |
+| `sdxReady` |  |
+| `status` |  |
+| `stolenDevice` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getDeviceAuthenticationStatus '{}'
 ```
@@ -267,6 +306,14 @@ Returns the device UUID SDP knows the TV by (billingId carries modelName).
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); webOS 3+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `billingId` |  |
+| `deviceUuid` |  |
+| `xdeviceId` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getDeviceUuid '{}'
@@ -356,6 +403,12 @@ Returns the SDP publish flag.
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `publishFlag` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getPublishFlag '{}'
 ```
@@ -376,6 +429,12 @@ Returns the RDX report-upload server host.
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `rdxServerIndex` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getRdxServer '{}'
@@ -398,6 +457,12 @@ Returns the RDX (report/diagnostics upload) server URL, e.g. https://US.rdx2.nex
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `rdxServerUrl` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getRdxServerUrl '{}'
 ```
@@ -419,6 +484,12 @@ Returns the SDP server environment the TV is pointed at (e.g. 'Production').
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11)  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `serverIndex` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getServer '{}'
 ```
@@ -439,6 +510,13 @@ Returns the configured SDP server list (from sdp/sdx/server_addr_version.conf).
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `numberOfServer` |  |
+| `serverList` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getServerList '{}'
@@ -481,6 +559,13 @@ Returns the SDP base URL (e.g. http://US.tv.wiselg.com).
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `countryPrefix` |  |
+| `serverUrl` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getServerUrl '{}'

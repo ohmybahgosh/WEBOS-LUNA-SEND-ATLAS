@@ -354,6 +354,12 @@ Returns the app list.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appList` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getAppList '{}'
 ```
@@ -399,6 +405,24 @@ Returns the app view status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appPipelineStatus` |  |
+| `appViewStatus` |  |
+| `eventStatus` |  |
+| `focus` |  |
+| `guestAppId` |  |
+| `guestAppLayout` |  |
+| `height` |  |
+| `hostAppId` |  |
+| `processingStatus` |  |
+| `visible` |  |
+| `width` |  |
+| `x` |  |
+| `y` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getAppViewStatus '{}'
@@ -446,6 +470,17 @@ Returns the config info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` |  |
+| `constraints` |  |
+| `description` |  |
+| `layout` |  |
+| `notSupportInputMode` |  |
+| `notSupportPip` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getConfigInfo '{}'
 ```
@@ -468,6 +503,12 @@ Returns the main app list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appList` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getMainAppList '{}'
@@ -492,6 +533,28 @@ Returns the media control status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `audioOut` |  |
+| `audioOutIndexList` |  |
+| `controlMode` |  |
+| `foregroundAppId` |  |
+| `inputMode` |  |
+| `is4KHFRSignal` |  |
+| `mainAppId` |  |
+| `mediaChangeState` |  |
+| `mediaControlStatus` |  |
+| `mode` |  |
+| `processing` |  |
+| `requestedMainAppId` |  |
+| `requestedMode` |  |
+| `requestedSubAppId` |  |
+| `subAppId` |  |
+| `toolType` |  |
+| `usageType` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getMediaControlStatus '{}'
 ```
@@ -514,6 +577,18 @@ Returns the multiview app list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `defalutPresetList` |  |
+| `description` |  |
+| `mainAppId` |  |
+| `mode` |  |
+| `multiviewAppList` |  |
+| `rank` |  |
+| `subAppId` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getMultiviewAppList '{}'
@@ -538,6 +613,30 @@ Returns the multiview status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` |  |
+| `apps` |  |
+| `audioOut` |  |
+| `audioOutList` |  |
+| `audioProperty` |  |
+| `controlMode` |  |
+| `event` |  |
+| `foregroundAppId` |  |
+| `index` |  |
+| `inputMode` |  |
+| `mode` |  |
+| `multiviewStatus` |  |
+| `prepareTargetAppId` |  |
+| `processing` |  |
+| `releasedAppRole` |  |
+| `supportMultiAudioOut` |  |
+| `toolType` |  |
+| `usageType` |  |
+| `volume` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getMultiviewStatus '{}'
 ```
@@ -560,6 +659,13 @@ Returns the multiview support option.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `supportDualMonitor` |  |
+| `supportMultiScreen` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getMultiviewSupportOption '{}'
@@ -607,6 +713,12 @@ Returns the recents list.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `recentsList` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getRecentsList '{}'
 ```
@@ -629,6 +741,13 @@ Returns the restriction status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `audioDescription` |  |
+| `restrictionStatus` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getRestrictionStatus '{}'
@@ -653,6 +772,50 @@ Returns the status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appList` |  |
+| `apps` |  |
+| `audioOut` |  |
+| `audioOutList` |  |
+| `controlMode` |  |
+| `event` |  |
+| `foregroundAppId` |  |
+| `index` |  |
+| `inputMode` |  |
+| `is4KHFRSignal` |  |
+| `layoutList` |  |
+| `mainAppId` |  |
+| `mainAppLayout` |  |
+| `mediaChangeState` |  |
+| `mode` |  |
+| `multiviewSuggestionQuery` |  |
+| `orientation` |  |
+| `prepareTargetAppId` |  |
+| `processing` |  |
+| `releasedAppRole` |  |
+| `requestedAppList` |  |
+| `requestedAudioOut` |  |
+| `requestedAudioOutList` |  |
+| `requestedControlMode` |  |
+| `requestedMainAppId` |  |
+| `requestedMode` |  |
+| `requestedSubAppId` |  |
+| `status` |  |
+| `subAppId` |  |
+| `subAppLayout` |  |
+| `subAppPosition` |  |
+| `subAppSize` |  |
+| `suggestionQueryAppId` |  |
+| `supportMultiScreen` |  |
+| `supportSubHDR` |  |
+| `toolType` |  |
+| `usageType` |  |
+| `volume` |  |
+| `workingEvent` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getStatus '{}'
 ```
@@ -675,6 +838,12 @@ Returns the sub app list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appList` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getSubAppList '{}'

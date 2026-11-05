@@ -227,6 +227,15 @@ Returns the current legacy resv off timer info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `bOffTimerEnable` |  |
+| `offTimerHour` |  |
+| `offTimerMinute` |  |
+| `offTimerWeekday` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getCurrentLegacyResvOffTimerInfo '{}'
 ```
@@ -249,6 +258,18 @@ Returns the current legacy resv on timer info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `bOnTimerEnable` |  |
+| `onTimerAppId` |  |
+| `onTimerChannel` |  |
+| `onTimerHour` |  |
+| `onTimerMinute` |  |
+| `onTimerVolume` |  |
+| `onTimerWeekday` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getCurrentLegacyResvOnTimerInfo '{}'
@@ -273,6 +294,15 @@ Returns the current resv off timer info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `bOffTimerEnable` |  |
+| `offTimerHour` |  |
+| `offTimerMinute` |  |
+| `offTimerWeekday` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getCurrentResvOffTimerInfo '{}'
 ```
@@ -296,6 +326,18 @@ Returns the current resv on timer info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `bOnTimerEnable` |  |
+| `onTimerAppId` |  |
+| `onTimerChannel` |  |
+| `onTimerHour` |  |
+| `onTimerMinute` |  |
+| `onTimerVolume` |  |
+| `onTimerWeekday` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getCurrentResvOnTimerInfo '{}'
 ```
@@ -318,6 +360,12 @@ Returns the current time.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `CurrentTime` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getCurrentTime '{}'

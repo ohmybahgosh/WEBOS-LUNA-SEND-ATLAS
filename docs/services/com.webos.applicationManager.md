@@ -443,6 +443,55 @@ Returns the all contents.
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `allContents` |  |
+| `bgColor` |  |
+| `bookmarkTimeSeconds` |  |
+| `catalog` |  |
+| `category` |  |
+| `contentId` |  |
+| `contents` |  |
+| `defaultImage` |  |
+| `episodeNumber` |  |
+| `episode_number` |  |
+| `focusId` |  |
+| `height` |  |
+| `icon` |  |
+| `image` |  |
+| `image_4k` |  |
+| `imeMode` |  |
+| `isMultipleShelf` |  |
+| `lastEngagementTime` |  |
+| `lastWatchTime` |  |
+| `launchParam` |  |
+| `launchPointId` |  |
+| `layout` |  |
+| `nonUiMode` |  |
+| `onClick` |  |
+| `onShow` |  |
+| `promotionId` |  |
+| `pwaMode` |  |
+| `rating` |  |
+| `release_year` |  |
+| `season_number` |  |
+| `service` |  |
+| `shelfId` |  |
+| `subText` |  |
+| `target` |  |
+| `targetAppId` |  |
+| `title` |  |
+| `titleText` |  |
+| `totalTimeSeconds` |  |
+| `type` |  |
+| `url` |  |
+| `value` |  |
+| `watchNextType` |  |
+| `watch_state` |  |
+| `width` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getAllContents '{}'
 ```
@@ -634,6 +683,15 @@ Get (or subscribe to) the foreground app
 | `subscribe` | bool |
 | `extraInfo` | boolean (adds windowType etc.) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appCategory` |  |
+| `appId` |  |
+| `processId` |  |
+| `windowId` |  |
+
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.applicationManager/getForegroundAppInfo","payload":{}}
 ```
@@ -656,6 +714,14 @@ Returns the foreground apps.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appCategory` |  |
+| `appId` |  |
+| `foregroundApps` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getForegroundApps '{}'
@@ -1125,6 +1191,207 @@ Lists installed apps
 - **Versions:** webOS 3+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `BGMode` |  |
+| `CPApp` |  |
+| `acceptedCommandList` |  |
+| `accessibility` |  |
+| `activateType` |  |
+| `activeFolderPath` |  |
+| `age` |  |
+| `allowAnonymous` |  |
+| `allowAudioCapture` |  |
+| `allowCrossDomain` |  |
+| `allowVideoCapture` |  |
+| `allowWidget` |  |
+| `appCategory` |  |
+| `appDescription` |  |
+| `appDiscoveryPayload` |  |
+| `apps` |  |
+| `appsize` |  |
+| `backgroundColor` |  |
+| `bgColor` |  |
+| `bgImage` |  |
+| `binId` |  |
+| `blockMediaPlay` |  |
+| `boot` |  |
+| `bootLaunchParams` |  |
+| `capabilities` |  |
+| `checkUpdateOnLaunch` |  |
+| `class` |  |
+| `clientInfo` |  |
+| `closeOnBackground` |  |
+| `closeOnRotation` |  |
+| `cloudgame_active` |  |
+| `clusterRevision` |  |
+| `configurations` |  |
+| `customPlugin` |  |
+| `deeplinkingParams` |  |
+| `defaultWindowType` |  |
+| `dialAppName` |  |
+| `disableBackHistoryAPI` |  |
+| `disableClearMediaPlayerOnDetach` |  |
+| `disableMainFrameBeforeActivation` |  |
+| `disableMediaPlayerManager` |  |
+| `disableThreadedAnimation` |  |
+| `disableVideoMuteOnInvisible` |  |
+| `disallowPromotion` |  |
+| `disallowScrollingInMainFrame` |  |
+| `discoveryPayloads` |  |
+| `enableBackgroundRun` |  |
+| `enableCBSPolicy` |  |
+| `enableClearMediaPlayerOnDetach` |  |
+| `enableClientSideTrick` |  |
+| `enableFocusOnPress` |  |
+| `enableFourWayNavigation` |  |
+| `enableKeyboard` |  |
+| `enableMouse` |  |
+| `enablePigScreenSaver` |  |
+| `enableSetBlockedMedia` |  |
+| `extension` |  |
+| `extraLargeIcon` |  |
+| `featureMap` |  |
+| `fileSystemType` |  |
+| `fixedAspectRatio` |  |
+| `folderPath` |  |
+| `handleExitKey` |  |
+| `handleScreenRemoteKey` |  |
+| `handlesRelaunch` |  |
+| `hasAccountService` |  |
+| `hasPromotion` |  |
+| `hbbtvMode` |  |
+| `hidden` |  |
+| `historicalLaunchMode` |  |
+| `horizontalThreshold` |  |
+| `icon` |  |
+| `iconColor` |  |
+| `id` |  |
+| `imageForRecents` |  |
+| `inAppSearchParams` |  |
+| `inAppSetting` |  |
+| `inAppVoiceIntent` |  |
+| `inputIcon` |  |
+| `inputLargeIcon` |  |
+| `inputMediumIcon` |  |
+| `inputMiniIcon` |  |
+| `inputSmallIcon` |  |
+| `inspectable` |  |
+| `installTime` |  |
+| `interface` |  |
+| `internalInstallationOnly` |  |
+| `largeIcon` |  |
+| `launchMode` |  |
+| `layer` |  |
+| `layers` |  |
+| `loadingMessage` |  |
+| `locationHint` |  |
+| `lockable` |  |
+| `main` |  |
+| `matterVersion` |  |
+| `mediaExtension` |  |
+| `mediumIcon` |  |
+| `mediumLargeIcon` |  |
+| `mime` |  |
+| `mimeTypes` |  |
+| `miniicon` |  |
+| `mouseMoveForMouseOff` |  |
+| `mse` |  |
+| `name` |  |
+| `nativeLifeCycleInterfaceVersion` |  |
+| `networkStableTimeout` |  |
+| `noSplashOnLaunch` |  |
+| `noWindow` |  |
+| `owner` |  |
+| `ownerInfo` |  |
+| `params` |  |
+| `playIcon` |  |
+| `portraitResize` |  |
+| `preferredType` |  |
+| `previewMetadata` |  |
+| `privilegedJail` |  |
+| `proactivelyReported` |  |
+| `properties` |  |
+| `pwa` |  |
+| `pwaType` |  |
+| `removable` |  |
+| `requiredACG` |  |
+| `requiredAccount` |  |
+| `requiredEULA` |  |
+| `requiredMemory` |  |
+| `requiredPermissions` |  |
+| `resolution` |  |
+| `resolutionIndependent` |  |
+| `retrievable` |  |
+| `rotateEffect` |  |
+| `scheme` |  |
+| `screenSaverProperties` |  |
+| `searchKeywordForCustomPlayer` |  |
+| `sendKeyToCP` |  |
+| `skipDRM` |  |
+| `sourceEndpoint` |  |
+| `spinnerOnLaunch` |  |
+| `splashBackground` |  |
+| `splashColor` |  |
+| `splashDismissTimeoutMs` |  |
+| `splashFitModeOnPortrait` |  |
+| `splashicon` |  |
+| `standAloneLaunchable` |  |
+| `storageUseMode` |  |
+| `stream` |  |
+| `subType` |  |
+| `support360Content` |  |
+| `supportChannelName` |  |
+| `supportGIP` |  |
+| `supportPortraitMode` |  |
+| `supportQueryRouting` |  |
+| `supportQuickStart` |  |
+| `supportRollingScreenMode` |  |
+| `supportTouchInputDevice` |  |
+| `supportTouchMode` |  |
+| `supported` |  |
+| `supportsAudioGuidance` |  |
+| `supportsVoiceBrowsing` |  |
+| `suspendDOMTime` |  |
+| `sysAssetsBasePath` |  |
+| `systemApp` |  |
+| `targetEndpoint` |  |
+| `tileSize` |  |
+| `title` |  |
+| `titleVisible` |  |
+| `transparent` |  |
+| `trustLevel` |  |
+| `type` |  |
+| `uiRevision` |  |
+| `ums` |  |
+| `unmovable` |  |
+| `useAllKeyboardKeys` |  |
+| `useAllMouseButtons` |  |
+| `useAppHibernation` |  |
+| `useCORSWhitelist` |  |
+| `useCamera` |  |
+| `useGalleryMode` |  |
+| `useGraphicCamera` |  |
+| `useNativeScroll` |  |
+| `useNativeScroller` |  |
+| `usePrerendering` |  |
+| `usesLegacyPreload` |  |
+| `v8SnapshotFile` |  |
+| `vendor` |  |
+| `vendorExtension` |  |
+| `version` |  |
+| `virtualTouch` |  |
+| `virtualTouchHorizontalThreshold` |  |
+| `visible` |  |
+| `voiceControl` |  |
+| `webAppType` |  |
+| `webrtc` |  |
+| `windowGroup` |  |
+| `wolwowlan` |  |
+| `z` |  |
+
 ```sh
 luna-send -n 1 luna://com.webos.applicationManager/listApps '{}'
 ```
@@ -1147,6 +1414,19 @@ Lists the extension map.
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `bmp` |  |
+| `extensionMap` |  |
+| `gif` |  |
+| `html` |  |
+| `jpe` |  |
+| `jpeg` |  |
+| `jpg` |  |
+| `png` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listExtensionMap '{}'
@@ -1218,6 +1498,35 @@ Lists the packages.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `allInOneVoiceUi` |  |
+| `app` |  |
+| `containerInfo` |  |
+| `dependencies` |  |
+| `folderPath` |  |
+| `id` |  |
+| `loc_name` |  |
+| `package_format_version` |  |
+| `packages` |  |
+| `privilegedJail` |  |
+| `requiredEULA` |  |
+| `requiredMemory` |  |
+| `requiredPermissions` |  |
+| `services` |  |
+| `standAloneLaunchable` |  |
+| `sttEngine` |  |
+| `textNlpEngine` |  |
+| `title` |  |
+| `vendor` |  |
+| `version` |  |
+| `voiceManifest` |  |
+| `voiceNlpEngine` |  |
+| `voicePerformer` |  |
+| `webruntimeVersion` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listPackages '{}'

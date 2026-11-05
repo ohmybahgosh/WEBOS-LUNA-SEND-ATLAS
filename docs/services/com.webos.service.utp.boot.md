@@ -49,6 +49,12 @@ Returns the last channel ID.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `channelId` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.boot/getLastChannelId '{}'
 ```

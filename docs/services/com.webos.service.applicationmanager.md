@@ -390,6 +390,55 @@ Returns recommended content lists of all apps
 - **Versions:** unknown  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `allContents` |  |
+| `bgColor` |  |
+| `bookmarkTimeSeconds` |  |
+| `catalog` |  |
+| `category` |  |
+| `contentId` |  |
+| `contents` |  |
+| `defaultImage` |  |
+| `episodeNumber` |  |
+| `episode_number` |  |
+| `focusId` |  |
+| `height` |  |
+| `icon` |  |
+| `image` |  |
+| `image_4k` |  |
+| `imeMode` |  |
+| `isMultipleShelf` |  |
+| `lastEngagementTime` |  |
+| `lastWatchTime` |  |
+| `launchParam` |  |
+| `launchPointId` |  |
+| `layout` |  |
+| `nonUiMode` |  |
+| `onClick` |  |
+| `onShow` |  |
+| `promotionId` |  |
+| `pwaMode` |  |
+| `rating` |  |
+| `release_year` |  |
+| `season_number` |  |
+| `service` |  |
+| `shelfId` |  |
+| `subText` |  |
+| `target` |  |
+| `targetAppId` |  |
+| `title` |  |
+| `titleText` |  |
+| `totalTimeSeconds` |  |
+| `type` |  |
+| `url` |  |
+| `value` |  |
+| `watchNextType` |  |
+| `watch_state` |  |
+| `width` |  |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.applicationmanager/getAllContents '{}'
 ```

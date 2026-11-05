@@ -52,6 +52,14 @@ Returns the memory usage.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `eMMCAvgEC` |  |
+| `eMMCLifeTime` |  |
+| `eMMCMaxEC` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.emmcd/getMemoryUsage '{}'
 ```
@@ -74,6 +82,12 @@ Returns the profile info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `topList` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.emmcd/getProfileInfo '{}'

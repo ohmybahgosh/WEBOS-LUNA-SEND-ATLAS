@@ -397,6 +397,20 @@ List attached storage devices
 |---|---|
 | `deviceType` | array of: usb, internal camera, internal samples, internal igallery, dms, internal store demo |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `deviceId` |  |
+| `deviceName` |  |
+| `deviceType` |  |
+| `deviceUri` |  |
+| `devices` |  |
+| `ipAddress` |  |
+| `manufacturer` |  |
+| `modelDescription` |  |
+| `thumbnailUri` |  |
+
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.attachedstoragemanager/listDevices","payload":{"deviceType":["usb"]}}
 ```
@@ -419,6 +433,20 @@ Lists the devices 2.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `deviceId` |  |
+| `deviceName` |  |
+| `deviceType` |  |
+| `deviceUri` |  |
+| `devices` |  |
+| `ipAddress` |  |
+| `manufacturer` |  |
+| `modelDescription` |  |
+| `thumbnailUri` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/listDevices2 '{}'

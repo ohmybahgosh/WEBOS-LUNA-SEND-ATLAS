@@ -995,6 +995,12 @@ Returns the new device info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `hdmiPort` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/getNewDeviceInfo '{}'
 ```
@@ -1040,6 +1046,13 @@ Returns the uei app list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appList` |  |
+| `deviceID` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/getUeiAppList '{}'

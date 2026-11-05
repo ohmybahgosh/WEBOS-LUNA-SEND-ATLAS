@@ -34,6 +34,13 @@ Returns the controller.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `isEnableAppId` |  |
+| `isEnabled` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/getController '{}'
 ```
@@ -80,6 +87,29 @@ Returns the PLPAL.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `application_version_number` |  |
+| `channel_frequency` |  |
+| `connectivity_status` |  |
+| `debug_mode` |  |
+| `developer_mode` |  |
+| `device_model` |  |
+| `device_version` |  |
+| `ethernet_dns_sd_supported` |  |
+| `manufacturer` |  |
+| `network_id_hash` |  |
+| `platform_build_type` |  |
+| `platform_name` |  |
+| `platform_version_number` |  |
+| `snr` |  |
+| `standby_capabilities` |  |
+| `type` |  |
+| `wifi_dns_sd_supported` |  |
+| `zone_index` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/getPLPAL '{}'
 ```
@@ -125,6 +155,12 @@ Returns the status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `status` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/getStatus '{}'

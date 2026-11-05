@@ -28,6 +28,22 @@ Returns the ARCEDID info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `SADB` |  |
+| `SADs` |  |
+| `arcHDMIPort` |  |
+| `atmos_arc` |  |
+| `dynamicEdid` |  |
+| `eARC` |  |
+| `earcSADB` |  |
+| `earcSADs` |  |
+| `edidInfo` |  |
+| `inputType` |  |
+| `port` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.arccontroller/getARCEDIDInfo '{}'
 ```
@@ -50,6 +66,29 @@ Returns the ARC state.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `advancedEarcCapability` |  |
+| `arcActivation` |  |
+| `arcProfile` |  |
+| `audioCodingType` |  |
+| `audioDeviceType` |  |
+| `connectionDepth` |  |
+| `earcATMOS` |  |
+| `earcCapability` |  |
+| `earcMatProfile` |  |
+| `hexSAD` |  |
+| `lgHarmony` |  |
+| `lgHarmonyDevice` |  |
+| `maxChannelNumber` |  |
+| `mpeg4AACLC` |  |
+| `soundModeList` |  |
+| `soundModeType` |  |
+| `supportIamf` |  |
+| `volumeSyncable` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.arccontroller/getARCState '{}'

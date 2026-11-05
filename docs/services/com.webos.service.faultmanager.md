@@ -101,6 +101,17 @@ Lists faults detected during the current boot (keyed by pid and faultTime)
 - **Versions:** unknown  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `detected` |  |
+| `detectedFaults` |  |
+| `faultContent` |  |
+| `faultDetectedStatus` |  |
+| `faultTime` |  |
+| `faultType` |  |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.faultmanager/getFaultDetectedStatus '{}'
 ```
@@ -121,6 +132,29 @@ Returns the fault status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `crash` |  |
+| `debug` |  |
+| `detected` |  |
+| `disableFaultAlert` |  |
+| `faultDetectId` |  |
+| `faultNotiFile` |  |
+| `faultRecovery` |  |
+| `faultStatus` |  |
+| `general` |  |
+| `ignoredFilter` |  |
+| `kdriver` |  |
+| `kernel` |  |
+| `normalLog` |  |
+| `pid` |  |
+| `pname` |  |
+| `powerOffRecovery` |  |
+| `reason` |  |
+| `recovery` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.faultmanager/getFaultStatus '{}'

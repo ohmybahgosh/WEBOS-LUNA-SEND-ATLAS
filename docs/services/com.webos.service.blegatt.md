@@ -489,6 +489,15 @@ Scanning state, connected and paired devices.
 |---|---|
 | `subscribe` | Boolean (optional) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `connectedDevice` |  |
+| `isScan` |  |
+| `pairedDevice` |  |
+| `version` |  |
+
 ```sh
 luna-send -i -f luna://com.webos.service.blegatt/getState '{}'
 ```

@@ -784,6 +784,14 @@ Returns the NIT region info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `networkId` |  |
+| `nitVersion` |  |
+| `physicalNumber` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getNITRegionInfo '{}'
 ```
@@ -1013,6 +1021,12 @@ Returns the warm off status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `warmOwner` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getWarmOffStatus '{}'

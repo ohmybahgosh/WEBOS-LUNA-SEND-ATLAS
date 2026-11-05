@@ -110,6 +110,14 @@ Returns the history.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `Message` |  |
+| `errorList` |  |
+| `totalErrorCount` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/getHistory '{}'
 ```
@@ -198,6 +206,33 @@ Returns the user status.
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `bluetooth` |  |
+| `cellular` |  |
+| `checkingInternet` |  |
+| `connected` |  |
+| `connectedContexts` |  |
+| `dns1` |  |
+| `enabled` |  |
+| `gateway` |  |
+| `interfaceName` |  |
+| `ipAddress` |  |
+| `isInternetConnectionAvailable` |  |
+| `netmask` |  |
+| `offlineMode` |  |
+| `onInternet` |  |
+| `plugged` |  |
+| `proxyinfo` |  |
+| `state` |  |
+| `tetheringEnabled` |  |
+| `wan` |  |
+| `wifi` |  |
+| `wifiDirect` |  |
+| `wired` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/getUserStatus '{}'

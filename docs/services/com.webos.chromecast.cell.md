@@ -30,6 +30,12 @@ Checks the tos.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `accepted` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.chromecast.cell/checkTos '{}'
 ```
@@ -53,6 +59,12 @@ Returns the cell status.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `status` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.chromecast.cell/getCellStatus '{}'
 ```
@@ -75,6 +87,24 @@ Returns the control status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `cast_build_number` |  |
+| `cast_name` |  |
+| `cast_state` |  |
+| `locale` |  |
+| `progress` |  |
+| `setup` |  |
+| `state` |  |
+| `status` |  |
+| `time_in_12_hour_format` |  |
+| `timezone` |  |
+| `update` |  |
+| `update_build_number` |  |
+| `usage_report` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.chromecast.cell/getControlStatus '{}'

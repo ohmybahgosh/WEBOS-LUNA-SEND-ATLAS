@@ -35,6 +35,12 @@ Returns the data version.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `version` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/getDataVersion '{}'
 ```
@@ -57,6 +63,16 @@ Returns the devices.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `deviceName` |  |
+| `deviceType` |  |
+| `devices` |  |
+| `id` |  |
+| `key` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/getDevices '{}'

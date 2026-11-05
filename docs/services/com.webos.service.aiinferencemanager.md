@@ -81,6 +81,12 @@ Returns the device capability.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `supported` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/getDeviceCapability '{}'
 ```
@@ -103,6 +109,13 @@ Returns the device status.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `processList` |  |
+| `usage` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/getDeviceStatus '{}'
@@ -149,6 +162,12 @@ Returns the resource list.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `serviceList` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/getResourceList '{}'

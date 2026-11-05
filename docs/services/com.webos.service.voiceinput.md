@@ -236,6 +236,16 @@ Returns the devices.
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `deviceName` |  |
+| `deviceType` |  |
+| `devices` |  |
+| `id` |  |
+| `key` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/getDevices '{}'
 ```

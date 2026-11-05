@@ -212,6 +212,12 @@ Returns the device uuid.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `deviceUuid` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/getDeviceUuid '{}'
 ```
@@ -281,6 +287,14 @@ Returns the test mode.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `apiKey` |  |
+| `serviceId` |  |
+| `serviceKey` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/getTestMode '{}'
 ```
@@ -304,6 +318,37 @@ Lists the detailed devices info.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `active` |  |
+| `addedMatter` |  |
+| `addedThinq` |  |
+| `alias` |  |
+| `deletedMatter` |  |
+| `deletedThinq` |  |
+| `deviceId` |  |
+| `deviceInfo` |  |
+| `deviceList` |  |
+| `deviceType` |  |
+| `homeHub` |  |
+| `homeId` |  |
+| `homeName` |  |
+| `homes` |  |
+| `homeyHubSupported` |  |
+| `iotdevices` |  |
+| `localMatterControllerSupported` |  |
+| `matterVersion` |  |
+| `modelName` |  |
+| `platform` |  |
+| `plugin` |  |
+| `reportable` |  |
+| `roomId` |  |
+| `roomName` |  |
+| `rooms` |  |
+| `threadSupport` |  |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/listDetailedDevicesInfo '{}'
 ```
@@ -326,6 +371,33 @@ Lists the devices info.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `active` |  |
+| `alias` |  |
+| `deviceId` |  |
+| `deviceInfo` |  |
+| `deviceList` |  |
+| `deviceType` |  |
+| `homeHub` |  |
+| `homeId` |  |
+| `homeName` |  |
+| `homes` |  |
+| `homeyHubSupported` |  |
+| `iotdevices` |  |
+| `localMatterControllerSupported` |  |
+| `matterVersion` |  |
+| `modelName` |  |
+| `platform` |  |
+| `plugin` |  |
+| `reportable` |  |
+| `roomId` |  |
+| `roomName` |  |
+| `rooms` |  |
+| `threadSupport` |  |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/listDevicesInfo '{}'
