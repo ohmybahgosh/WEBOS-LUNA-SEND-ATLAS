@@ -24,10 +24,10 @@ REPO="$HERE/.."
 cp "$REPO/luna-atlas.sh" "$SRC/luna-atlas.sh"
 mkdir -p "$SRC/catalog"; cp "$REPO/catalog/index.tsv" "$SRC/catalog/index.tsv"
 rm -rf "$SRC/web"; mkdir -p "$SRC/web"
-cp "$REPO/web/index.html" "$REPO/web/style.css" "$REPO/web/app.js" "$REPO/web/server.js" "$REPO/web/catalog.json" "$SRC/web/" 2>/dev/null
+cp "$REPO/web/index.html" "$REPO/web/style.css" "$REPO/web/app.js" "$REPO/web/server.js" "$REPO/web/catalog.json" "$REPO/web/favicon.svg" "$SRC/web/" 2>/dev/null
 # the service hosts the LAN web UI, so it needs the same static files
 rm -rf "$SVC/web"; mkdir -p "$SVC/web"
-cp "$SRC/web/index.html" "$SRC/web/style.css" "$SRC/web/app.js" "$SRC/web/catalog.json" "$SVC/web/" 2>/dev/null
+cp "$SRC/web/index.html" "$SRC/web/style.css" "$SRC/web/app.js" "$SRC/web/catalog.json" "$SRC/web/favicon.svg" "$SVC/web/" 2>/dev/null
 
 rm -rf "$OUT"; mkdir -p "$OUT"
 echo "[*] packaging Luna Atlas $VERSION"
