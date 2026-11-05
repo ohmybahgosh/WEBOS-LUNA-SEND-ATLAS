@@ -44,6 +44,9 @@ There has never been a complete list of what you can *say* to it.  This repo is 
 > [!IMPORTANT]
 > **Under heavy active development.**  The catalog, the script and the app are all changing fast.  Method names are solid, but many parameters are still being filled in, categories may move, and the app and script are pre-1.0.  Expect breaking changes and re-dumps; pin a commit if you need something stable.
 
+> [!NOTE]
+> **The catalog is the focus right now — the app, CLI and web UI are not ready for real use yet.**  The priority is documenting every Luna call first; the webOS app and browser panel are early and rough and will get the attention once the catalog is solid.  Treat them as a preview, not a finished tool.
+
 > [!WARNING]
 > **This drives real services on your TV.**  Many calls change settings, inputs, power or the panel, and a few can factory reset, wipe data, or brick the set.  Those are flagged ⚠️ and listed in [docs/dangerous.md](docs/dangerous.md).  Running one here is exactly as safe or unsafe as typing the same `luna-send` yourself.  Use at your own risk; there is no warranty (see [LICENSE](LICENSE)).  You need a **rooted TV or Developer Mode**.
 
