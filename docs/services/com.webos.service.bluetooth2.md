@@ -186,20 +186,20 @@ Bluetooth stack service: manages the adapter, device discovery and pairing, and 
 | [`hfp/sendResult`](#hfp_sendresult) | public |  | bluetooth | inferred | Sends the result (hfp) |
 | [`hid/connect`](#hid_connect) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
 | [`hid/disconnect`](#hid_disconnect) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
-| [`hid/getStatus`](#hid_getstatus) | unknown |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
+| [`hid/getStatus`](#hid_getstatus) | public |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
 | [`hid/internal/getReport`](#hid_internal_getreport) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`hid/internal/sendData`](#hid_internal_senddata) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`hid/internal/setReport`](#hid_internal_setreport) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
 | [`le/configureAdvertisement`](#le_configureadvertisement) | public |  | bluetooth | inferred | Configures the advertisement (le) |
 | [`le/disableAdvertising`](#le_disableadvertising) | public |  | bluetooth | documented | Stops and disables advertising Note: Call this method after le/startAdvertising. |
-| [`le/getStatus`](#le_getstatus) | unknown |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
+| [`le/getStatus`](#le_getstatus) | public |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
 | [`le/internal/startScan`](#le_internal_startscan) | private |  | bluetooth | inferred | Starts the scan (le internal) |
 | [`le/setScanParameters`](#le_setscanparameters) | private |  | bluetooth | inferred | Sets the scan parameters (le) |
 | [`le/startAdvertising`](#le_startadvertising) | public | yes | bluetooth | documented | Starts broadcasting the Bluetooth Low Energy advertisement. |
 | [`le/startMultiScan`](#le_startmultiscan) | private |  | bluetooth | inferred | Starts the multi scan (le) |
 | [`le/startScan`](#le_startscan) | public | yes | bluetooth | documented | Starts scanning only ble devices. |
 | [`le/stopAdvertising`](#le_stopadvertising) | public |  | bluetooth | inferred | Stops the advertising (le) |
-| [`le/updateAdvertising`](#le_updateadvertising) | unknown |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.operation); name only |
+| [`le/updateAdvertising`](#le_updateadvertising) | public |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.operation); name only |
 | [`leaudio/internal/updateBroadcastMetadata`](#leaudio_internal_updatebroadcastmetadata) | private |  | audio | inferred | Updates the broadcast metadata (leaudio internal) |
 | [`map/connect`](#map_connect) | public | yes | bluetooth | documented | Connects to the MAS Instance of the specified remote device. Note: The method is available only for MCE . |
 | [`map/disconnect`](#map_disconnect) | public |  | bluetooth | documented | Disconnects from the MAS Instance on the specified remote device. Note: The method is available only for MCE . |
@@ -5133,7 +5133,7 @@ Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/maste
 
 Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -5273,7 +5273,7 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -5461,7 +5461,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Registered in webOS OSE sysbus api.json (ACG group bluetooth.operation); name only
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  

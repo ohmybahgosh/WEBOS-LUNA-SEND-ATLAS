@@ -18,9 +18,9 @@ Magic Remote Control Unit service: pairs the remote, manages the pointer cursor 
 | [`cursor/setSlideMode`](#cursor_setslidemode) | public |  | input | inferred | Sets the slide mode (cursor) |
 | [`cursor/setWakeUpCondition`](#cursor_setwakeupcondition) | public |  | input | inferred | Sets the wake up condition (cursor) |
 | [`decreasePairingHistoryCount`](#decreasepairinghistorycount) | private |  | input | inferred | Decreases the pairing history count. |
-| [`enableAudioSinkMode`](#enableaudiosinkmode) | private |  | input | inferred | Enables the audio sink mode. |
+| [`enableAudioSinkMode`](#enableaudiosinkmode) | public |  | input | inferred | Enables the audio sink mode. |
 | [`enableDualPairing`](#enabledualpairing) | public |  | input | inferred | Enables the dual pairing. |
-| [`enableLoggingMotion`](#enableloggingmotion) | private |  | input | inferred | Enables the logging motion. |
+| [`enableLoggingMotion`](#enableloggingmotion) | public |  | input | inferred | Enables the logging motion. |
 | [`enableMotionHistory`](#enablemotionhistory) | private |  | input | inferred | Enables the motion history. |
 | [`enablePrintRfStatus`](#enableprintrfstatus) | public |  | input | inferred | Enables the print RF status. |
 | [`eraseIrCodes`](#eraseircodes) | public |  | input | inferred | Erases the IR codes. ⚠️ |
@@ -34,10 +34,10 @@ Magic Remote Control Unit service: pairs the remote, manages the pointer cursor 
 | [`getDiagnosisItem`](#getdiagnosisitem) | private |  | input | inferred | Returns the diagnosis item. |
 | [`getDoingOtaStatus`](#getdoingotastatus) | private |  | input | inferred | Returns the doing ota status. |
 | [`getLongpressKeyInfo`](#getlongpresskeyinfo) | private |  | input | inferred | Returns the longpress key info. |
-| [`getMotionEngineStatus`](#getmotionenginestatus) | private |  | input | inferred | Returns the motion engine status. |
+| [`getMotionEngineStatus`](#getmotionenginestatus) | public |  | input | inferred | Returns the motion engine status. |
 | [`getMrcuCmdHistory`](#getmrcucmdhistory) | private |  | input | inferred | Returns the MRCU cmd history. |
-| [`getPairingHistory`](#getpairinghistory) | private |  | input | inferred | Returns the pairing history. |
-| [`getPairingHistoryCount`](#getpairinghistorycount) | private |  | input | inferred | Returns the pairing history count. |
+| [`getPairingHistory`](#getpairinghistory) | public |  | input | inferred | Returns the pairing history. |
+| [`getPairingHistoryCount`](#getpairinghistorycount) | public |  | input | inferred | Returns the pairing history count. |
 | [`getPairingStatus`](#getpairingstatus) | private |  | input | inferred | Returns the pairing status. |
 | [`getSensorData`](#getsensordata) | public |  | input | inferred | Returns the sensor data. |
 | [`getStatus`](#getstatus) | public |  | input | inferred | Returns the status. |
@@ -86,7 +86,7 @@ Magic Remote Control Unit service: pairs the remote, manages the pointer cursor 
 | [`setAutoAlign`](#setautoalign) | public |  | input | inferred | Sets the auto align. |
 | [`setCursorBounds`](#setcursorbounds) | private |  | input | inferred | Sets the cursor bounds. |
 | [`setHotkeyCursorPolicy`](#sethotkeycursorpolicy) | private |  | input | inferred | Sets the hotkey cursor policy. |
-| [`setPairingHistoryKeyCode`](#setpairinghistorykeycode) | private |  | input | inferred | Sets the pairing history key code. |
+| [`setPairingHistoryKeyCode`](#setpairinghistorykeycode) | public |  | input | inferred | Sets the pairing history key code. |
 | [`setPosition`](#setposition) | public |  | input | inferred | Sets the position. |
 | [`setSensitivity`](#setsensitivity) | public |  | input | inferred | Sets the sensitivity. |
 | [`setSharedMemory`](#setsharedmemory) | public |  | input | inferred | Sets the shared memory. |
@@ -368,7 +368,7 @@ Enables the audio sink mode.
 
 > _Description inferred from the method name; parameters are not publicly documented._
 
-- **Access:** private  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
@@ -414,7 +414,7 @@ Enables the logging motion.
 
 > _Description inferred from the method name; parameters are not publicly documented._
 
-- **Access:** private  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
@@ -732,7 +732,7 @@ Returns the motion engine status.
 
 > _Description inferred from the method name; parameters are not publicly documented._
 
-- **Access:** private  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
@@ -778,7 +778,7 @@ Returns the pairing history.
 
 > _Description inferred from the method name; parameters are not publicly documented._
 
-- **Access:** private  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
@@ -801,7 +801,7 @@ Returns the pairing history count.
 
 > _Description inferred from the method name; parameters are not publicly documented._
 
-- **Access:** private  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
@@ -1904,7 +1904,7 @@ Sets the pairing history key code.
 
 > _Description inferred from the method name; parameters are not publicly documented._
 
-- **Access:** private  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  

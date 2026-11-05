@@ -10,13 +10,13 @@ LG system settings service: reads, writes, resets and describes system settings 
 |---|---|---|---|---|---|
 | [`batch`](#batch) | private |  | settings | documented | Executes several settingsservice operations in one call |
 | [`deleteSystemSettings`](#deletesystemsettings) | private |  | settings | documented | Deletes the specified system settings |
-| [`getCurrentSettings`](#getcurrentsettings) | unknown |  | settings | documented | Returns settings of foreground App |
-| [`getSystemSettingDesc`](#getsystemsettingdesc) | unknown |  | settings | documented | Retrieve the description for the specified key |
+| [`getCurrentSettings`](#getcurrentsettings) | private |  | settings | documented | Returns settings of foreground App |
+| [`getSystemSettingDesc`](#getsystemsettingdesc) | public |  | settings | documented | Retrieve the description for the specified key |
 | [`getSystemSettingDescPriv`](#getsystemsettingdescpriv) | private |  | settings | inferred | Returns the system setting desc priv. |
-| [`getSystemSettingFactoryValue`](#getsystemsettingfactoryvalue) | unknown |  | settings | documented | Retrieve the list of default values for the specified key. |
-| [`getSystemSettings`](#getsystemsettings) | unknown |  | settings | documented | Retrieves the values for keys specified in a passed array on system settings. |
+| [`getSystemSettingFactoryValue`](#getsystemsettingfactoryvalue) | public |  | settings | documented | Retrieve the list of default values for the specified key. |
+| [`getSystemSettings`](#getsystemsettings) | public |  | settings | documented | Retrieves the values for keys specified in a passed array on system settings. |
 | [`getSystemSettingsPriv`](#getsystemsettingspriv) | private |  | settings | inferred | Returns the system settings priv. |
-| [`getSystemSettingValues`](#getsystemsettingvalues) | unknown |  | settings | documented | Retrieve the list of valid values for the specified key |
+| [`getSystemSettingValues`](#getsystemsettingvalues) | public |  | settings | documented | Retrieve the list of valid values for the specified key |
 | [`getSystemSettingValuesPriv`](#getsystemsettingvaluespriv) | private |  | settings | inferred | Returns the system setting values priv. |
 | [`internal/getCurrentSubscriptions`](#internal_getcurrentsubscriptions) | private |  | settings | documented | Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name only |
 | [`internal/instrument`](#internal_instrument) | private |  | settings | documented | Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name only |
@@ -96,7 +96,7 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 Returns settings of foreground App
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -124,7 +124,7 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 Retrieve the description for the specified key
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -177,7 +177,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Retrieve the list of default values for the specified key.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -206,7 +206,7 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 Retrieves the values for keys specified in a passed array on system settings.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -259,7 +259,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Retrieve the list of valid values for the specified key
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  

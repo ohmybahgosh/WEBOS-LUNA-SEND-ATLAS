@@ -34,7 +34,7 @@ Core application lifecycle manager: launches, closes and lists apps and launch p
 | [`params`](#params) | unknown |  | apps | documented | Contains the parameters for the target application. Specify correct parameters for each application. As each application has different param |
 | [`pause`](#pause) | public |  | apps | documented | Pauses an application. Note : At least one parameter is required. ('id', 'launchPointId', 'instanceId') |
 | [`registerApp`](#registerapp) | public | yes | apps | documented | Registers to receive events related to app life cycle. |
-| [`registerNativeApp`](#registernativeapp) | unknown |  | apps | documented | Registered in webOS OSE sysbus api.json (ACG group application.operation); name only |
+| [`registerNativeApp`](#registernativeapp) | public |  | apps | documented | Registered in webOS OSE sysbus api.json (ACG group application.operation); name only |
 | [`removeLaunchPoint`](#removelaunchpoint) | public |  | apps | documented | Removes a dynamic launchpoint. Note: It can cause application uninstall. |
 | [`running`](#running) | public | yes | apps | documented | Lists the background/foreground applications and their process IDs that are running on webOS platform. Note: This API is one of key methods  |
 | [`running_apps`](#running_apps) | unknown |  | apps | documented | Indicates the object that contains the array of the running applications. |
@@ -901,7 +901,7 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 Registered in webOS OSE sysbus api.json (ACG group application.operation); name only
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  

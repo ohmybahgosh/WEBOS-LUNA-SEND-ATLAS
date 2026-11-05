@@ -178,7 +178,7 @@
 | [`luna://com.webos.service.tvpower/power/turnOnScreen`](../services/com.webos.service.tvpower.md#power_turnonscreen) | ssap | documented | Unblank the panel |
 | [`luna://com.webos.service.tvpower/power/turnOnScreenSaver`](../services/com.webos.service.tvpower.md#power_turnonscreensaver) | private | documented | Starts the LG screensaver now |
 | [`luna://com.webos.service.tvpower/power2/turnOffScreen`](../services/com.webos.service.tvpower.md#power2_turnoffscreen) | private | documented | Alternate screen-off path tried as fallback |
-| [`luna://com.webos.service.videooutput/blankVideo`](../services/com.webos.service.videooutput.md#blankvideo) | unknown | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`luna://com.webos.service.videooutput/blankVideo`](../services/com.webos.service.videooutput.md#blankvideo) | public | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
 | [`luna://com.webos.service.videooutput/ComposeOrder`](../services/com.webos.service.videooutput.md#composeorder) | unknown | documented | Object to represent compositing parameters for the video sinks. |
 | [`luna://com.webos.service.videooutput/connect`](../services/com.webos.service.videooutput.md#connect) | public | documented | Connects a video source to a video sink |
 | [`luna://com.webos.service.videooutput/disconnect`](../services/com.webos.service.videooutput.md#disconnect) | public | documented | Disconnects video from sink. |

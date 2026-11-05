@@ -13,7 +13,7 @@ Manages wired and Wi-Fi network connections: reports status and info, sets the d
 | [`getHistory`](#gethistory) | private |  | connection | inferred | Returns the history. |
 | [`getinfo`](#getinfo) | public | yes | connection | documented | Gets the MAC addresses for the Wi-Fi and wired interfaces. When subscribed, getInfo periodically checks for any changes in interface MAC add |
 | [`getStatus`](#getstatus) | public | yes | connection | documented | Provides the current status of Wi-Fi and wired network connections on the system. |
-| [`getUserStatus`](#getuserstatus) | public |  | network | inferred | Returns the user status. |
+| [`getUserStatus`](#getuserstatus) | private |  | network | inferred | Returns the user status. |
 | [`getwolwowlstatus`](#getwolwowlstatus) | private |  | connection | inferred | Handles the getwolwowlstatus. |
 | [`InterfaceInfo`](#interfaceinfo) | unknown |  | connection | documented | This object provides detailed information about the interfaces details Sample "InterfaceInfo" object : { "name" : "eth0", "netmask": "255.25 |
 | [`InterfaceMacInfo`](#interfacemacinfo) | unknown |  | connection | documented | Provides interfaces MAC address and name Sample InterfaceMacinfo object : { "name":"eth0", "macAddress":"AA:BB:CC:DD:EE:FF" } |
@@ -193,7 +193,7 @@ Returns the user status.
 
 > _Description inferred from the method name; parameters are not publicly documented._
 
-- **Access:** public  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  

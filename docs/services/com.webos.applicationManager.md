@@ -26,8 +26,8 @@ Application manager: installs and launches apps, manages launch points and virtu
 | [`getAllContents`](#getallcontents) | private |  | apps | inferred | Returns the all contents. |
 | [`getAppBasePath`](#getappbasepath) | public |  | apps | inferred | Returns the app base path. |
 | [`getAppInfo`](#getappinfo) | ssap |  | apps | documented | Get info for one installed app |
-| [`getAppLifeEvents`](#getapplifeevents) | private |  | apps | inferred | Returns the app life events. |
-| [`getAppLifeStatus`](#getapplifestatus) | private |  | apps | inferred | Returns the app life status. |
+| [`getAppLifeEvents`](#getapplifeevents) | private | yes | apps | inferred | Returns the app life events. |
+| [`getAppLifeStatus`](#getapplifestatus) | private | yes | apps | inferred | Returns the app life status. |
 | [`getAppLoadStatus`](#getapploadstatus) | public |  | apps | documented | Returns whether the app with the given ID is installed (webOS TV 4.0+). |
 | [`getAppStatus`](#getappstatus) | private |  | apps | inferred | Returns the app status. |
 | [`getContents`](#getcontents) | public |  | apps | inferred | Returns the contents. |
@@ -509,7 +509,7 @@ Returns the app life events.
 > _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
-- **Subscribe:** no  
+- **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred
@@ -532,7 +532,7 @@ Returns the app life status.
 > _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
-- **Subscribe:** no  
+- **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
 - **Confidence:** inferred

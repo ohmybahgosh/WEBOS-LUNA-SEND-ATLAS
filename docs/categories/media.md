@@ -98,7 +98,7 @@
 | [`luna://com.webos.media/resumeRecord`](../services/com.webos.media.md#resumerecord) | public | inferred | Resumes the record. |
 | [`luna://com.webos.media/seek`](../services/com.webos.media.md#seek) | public | documented | Seeks the media object to a specified time position. |
 | [`luna://com.webos.media/seekDone`](../services/com.webos.media.md#seekdone) | unknown | documented | The seekDone event is raised when a seek operation for a media has been successfully completed. |
-| [`luna://com.webos.media/selectTrack`](../services/com.webos.media.md#selecttrack) | unknown | documented | Selects an audio or subtitle track of an open pipeline |
+| [`luna://com.webos.media/selectTrack`](../services/com.webos.media.md#selecttrack) | public | documented | Selects an audio or subtitle track of an open pipeline |
 | [`luna://com.webos.media/selectTrackByPreference`](../services/com.webos.media.md#selecttrackbypreference) | public | inferred | Selects the track by preference. |
 | [`luna://com.webos.media/selectTrackByPreferencePayload`](../services/com.webos.media.md#selecttrackbypreferencepayload) | public | inferred | Selects the track by preference payload. |
 | [`luna://com.webos.media/setAppId`](../services/com.webos.media.md#setappid) | public | inferred | Sets the app ID. |
@@ -129,27 +129,27 @@
 | [`luna://com.webos.media/setSlaveClock`](../services/com.webos.media.md#setslaveclock) | public | inferred | Sets the slave clock. |
 | [`luna://com.webos.media/setStreamQuality`](../services/com.webos.media.md#setstreamquality) | public | inferred | Sets the stream quality. |
 | [`luna://com.webos.media/setSubtitleBackgroundBlinking`](../services/com.webos.media.md#setsubtitlebackgroundblinking) | public | inferred | Sets the subtitle background blinking. |
-| [`luna://com.webos.media/setSubtitleBackgroundColor`](../services/com.webos.media.md#setsubtitlebackgroundcolor) | unknown | documented | Sets subtitle background color for an open media pipeline |
-| [`luna://com.webos.media/setSubtitleBackgroundOpacity`](../services/com.webos.media.md#setsubtitlebackgroundopacity) | unknown | documented | Sets subtitle background opacity for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleBackgroundColor`](../services/com.webos.media.md#setsubtitlebackgroundcolor) | public | documented | Sets subtitle background color for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleBackgroundOpacity`](../services/com.webos.media.md#setsubtitlebackgroundopacity) | public | documented | Sets subtitle background opacity for an open media pipeline |
 | [`luna://com.webos.media/setSubtitleCharacterBlinking`](../services/com.webos.media.md#setsubtitlecharacterblinking) | public | inferred | Sets the subtitle character blinking. |
-| [`luna://com.webos.media/setSubtitleCharacterColor`](../services/com.webos.media.md#setsubtitlecharactercolor) | unknown | documented | Sets subtitle character color (similar to setSubtitleColor, different values) for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleCharacterColor`](../services/com.webos.media.md#setsubtitlecharactercolor) | public | documented | Sets subtitle character color (similar to setSubtitleColor, different values) for an open media pipeline |
 | [`luna://com.webos.media/setSubtitleCharacterEdge`](../services/com.webos.media.md#setsubtitlecharacteredge) | public | inferred | Sets the subtitle character edge. |
 | [`luna://com.webos.media/setSubtitleCharacterEdgeColor`](../services/com.webos.media.md#setsubtitlecharacteredgecolor) | public | inferred | Sets the subtitle character edge color. |
 | [`luna://com.webos.media/setSubtitleCharacterFont`](../services/com.webos.media.md#setsubtitlecharacterfont) | public | inferred | Sets the subtitle character font. |
 | [`luna://com.webos.media/setSubtitleCharacterFontSize`](../services/com.webos.media.md#setsubtitlecharacterfontsize) | public | inferred | Sets the subtitle character font size. |
-| [`luna://com.webos.media/setSubtitleCharacterOpacity`](../services/com.webos.media.md#setsubtitlecharacteropacity) | unknown | documented | Sets subtitle character opacity for an open media pipeline |
-| [`luna://com.webos.media/setSubtitleColor`](../services/com.webos.media.md#setsubtitlecolor) | unknown | documented | Sets subtitle color for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleCharacterOpacity`](../services/com.webos.media.md#setsubtitlecharacteropacity) | public | documented | Sets subtitle character opacity for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleColor`](../services/com.webos.media.md#setsubtitlecolor) | public | documented | Sets subtitle color for an open media pipeline |
 | [`luna://com.webos.media/setSubtitleCustomStyleEnable`](../services/com.webos.media.md#setsubtitlecustomstyleenable) | public | inferred | Sets the subtitle custom style enable. |
-| [`luna://com.webos.media/setSubtitleEnable`](../services/com.webos.media.md#setsubtitleenable) | unknown | documented | Shows or hides subtitles for an open media pipeline |
-| [`luna://com.webos.media/setSubtitleEncoding`](../services/com.webos.media.md#setsubtitleencoding) | unknown | documented | Sets subtitle text encoding for an open media pipeline |
-| [`luna://com.webos.media/setSubtitleFontSize`](../services/com.webos.media.md#setsubtitlefontsize) | unknown | documented | Sets subtitle font size for an open media pipeline |
-| [`luna://com.webos.media/setSubtitlePosition`](../services/com.webos.media.md#setsubtitleposition) | unknown | documented | Sets subtitle vertical position for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleEnable`](../services/com.webos.media.md#setsubtitleenable) | public | documented | Shows or hides subtitles for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleEncoding`](../services/com.webos.media.md#setsubtitleencoding) | public | documented | Sets subtitle text encoding for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleFontSize`](../services/com.webos.media.md#setsubtitlefontsize) | public | documented | Sets subtitle font size for an open media pipeline |
+| [`luna://com.webos.media/setSubtitlePosition`](../services/com.webos.media.md#setsubtitleposition) | public | documented | Sets subtitle vertical position for an open media pipeline |
 | [`luna://com.webos.media/setSubtitlePositionByPayload`](../services/com.webos.media.md#setsubtitlepositionbypayload) | public | inferred | Sets the subtitle position by payload. |
 | [`luna://com.webos.media/setSubtitlePresentationMode`](../services/com.webos.media.md#setsubtitlepresentationmode) | public | inferred | Sets the subtitle presentation mode. |
-| [`luna://com.webos.media/setSubtitleSource`](../services/com.webos.media.md#setsubtitlesource) | unknown | documented | Loads an external subtitle file for an open pipeline |
-| [`luna://com.webos.media/setSubtitleSync`](../services/com.webos.media.md#setsubtitlesync) | unknown | documented | Sets subtitle sync offset in milliseconds for an open media pipeline |
-| [`luna://com.webos.media/setSubtitleWindowColor`](../services/com.webos.media.md#setsubtitlewindowcolor) | unknown | documented | Sets subtitle window color for an open media pipeline |
-| [`luna://com.webos.media/setSubtitleWindowOpacity`](../services/com.webos.media.md#setsubtitlewindowopacity) | unknown | documented | Sets subtitle window opacity for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleSource`](../services/com.webos.media.md#setsubtitlesource) | public | documented | Loads an external subtitle file for an open pipeline |
+| [`luna://com.webos.media/setSubtitleSync`](../services/com.webos.media.md#setsubtitlesync) | public | documented | Sets subtitle sync offset in milliseconds for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleWindowColor`](../services/com.webos.media.md#setsubtitlewindowcolor) | public | documented | Sets subtitle window color for an open media pipeline |
+| [`luna://com.webos.media/setSubtitleWindowOpacity`](../services/com.webos.media.md#setsubtitlewindowopacity) | public | documented | Sets subtitle window opacity for an open media pipeline |
 | [`luna://com.webos.media/setUpdateInterval`](../services/com.webos.media.md#setupdateinterval) | public | inferred | Sets the update interval. |
 | [`luna://com.webos.media/setUpdateIntervalKV`](../services/com.webos.media.md#setupdateintervalkv) | public | inferred | Sets the update interval KV. |
 | [`luna://com.webos.media/setUri`](../services/com.webos.media.md#seturi) | public | inferred | Sets the URI. |

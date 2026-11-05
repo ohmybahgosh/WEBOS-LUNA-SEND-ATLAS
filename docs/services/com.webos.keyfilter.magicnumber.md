@@ -8,7 +8,7 @@ Key-filter service for Magic Remote number input; notifies which channel to regi
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`notifyChannelToRegister`](#notifychanneltoregister) | private |  | keys | inferred | Notifies of the channel to register. |
+| [`notifyChannelToRegister`](#notifychanneltoregister) | public |  | keys | inferred | Notifies of the channel to register. |
 
 <a id="notifychanneltoregister"></a>
 ## `notifyChannelToRegister`
@@ -19,7 +19,7 @@ Notifies of the channel to register.
 
 > _Description inferred from the method name; parameters are not publicly documented._
 
-- **Access:** private  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  

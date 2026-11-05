@@ -9,15 +9,15 @@ Temporary (volatile) db8 database instance: same JSON object-store API as the ma
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
 | [`backupEpg`](#backupepg) | private |  | tv-broadcast | inferred | Backs up the EPG. |
-| [`batch`](#batch) | unknown |  | db | documented | The batch method enables apps to execute multiple database operations in one service request. It allows only the following database operatio |
+| [`batch`](#batch) | public |  | db | documented | The batch method enables apps to execute multiple database operations in one service request. It allows only the following database operatio |
 | [`cancelSearch`](#cancelsearch) | private |  | db | inferred | Cancels the search. |
 | [`compact`](#compact) | private |  | db | documented | The compact method invokes the low level garbage collector. When DB8 executes a del operation without Purge:True param, it only marks the ob |
-| [`del`](#del) | unknown |  | db | documented | The del method deletes JSON data objects from the database. Apps can specify the objects to be deleted by providing: a set of IDs to be dele |
-| [`delKind`](#delkind) | unknown |  | db | documented | The delKind method deletes a Kind from the database. Deleting a Kind deletes ALL data objects of that Kind. |
+| [`del`](#del) | public |  | db | documented | The del method deletes JSON data objects from the database. Apps can specify the objects to be deleted by providing: a set of IDs to be dele |
+| [`delKind`](#delkind) | public |  | db | documented | The delKind method deletes a Kind from the database. Deleting a Kind deletes ALL data objects of that Kind. |
 | [`dump`](#dump) | private |  | db | inferred | Dumps the tempdb. |
-| [`find`](#find) | unknown |  | db | documented | The find method returns a set of objects that match the query specified in the query parameter. The app can specify the number of results to |
-| [`get`](#get) | unknown |  | db | documented | The get method retrieves JSON data objects by ids. This is the fastest way to retrieve data. |
-| [`getProfile`](#getprofile) | unknown |  | db | documented | Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time. |
+| [`find`](#find) | public |  | db | documented | The find method returns a set of objects that match the query specified in the query parameter. The app can specify the number of results to |
+| [`get`](#get) | public |  | db | documented | The get method retrieves JSON data objects by ids. This is the fastest way to retrieve data. |
+| [`getProfile`](#getprofile) | private |  | db | documented | Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time. |
 | [`internal/postBackup`](#internal_postbackup) | private |  | db | documented | An internal DB8 method that is called when a backup operation has been completed. |
 | [`internal/postRestore`](#internal_postrestore) | private |  | db | documented | An internal DB8 method that is called when the database finishes a restore process. |
 | [`internal/preBackup`](#internal_prebackup) | private |  | db | documented | Invoked when an internal webOS service wants to restore a database from a backup file. |
@@ -27,26 +27,26 @@ Temporary (volatile) db8 database instance: same JSON object-store API as the ma
 | [`internal/scheduledPurge`](#internal_scheduledpurge) | private |  | db | documented | An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that  |
 | [`internal/scheduledSpaceCheck`](#internal_scheduledspacecheck) | private |  | db | documented | An internal DB8 callback method, that is called by the Activity Manager for checking available disk space. |
 | [`internal/spaceCheck`](#internal_spacecheck) | private |  | db | documented | An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when  |
-| [`listActiveMedia`](#listactivemedia) | unknown |  | db | documented | Returns a list of active attached media, and shards. |
+| [`listActiveMedia`](#listactivemedia) | public |  | db | documented | Returns a list of active attached media, and shards. |
 | [`load`](#load) | private |  | db | inferred | Loads the tempdb. |
-| [`merge`](#merge) | unknown |  | db | documented | The merge method updates the properties of existing objects. The objects can be specified in one of the following ways: A query An array of  |
-| [`mergePut`](#mergeput) | unknown |  | db | documented | The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The o |
-| [`profile`](#profile) | unknown |  | db | documented | Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profili |
-| [`purge`](#purge) | unknown |  | db | documented | The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space chec ⚠️ |
-| [`purgeStatus`](#purgestatus) | unknown |  | db | documented | The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were perm |
-| [`put`](#put) | unknown |  | db | documented | The put method stores JSON data objects of a particular Kind into the database. The put method will: Assign an id field to each object, if i |
-| [`putKind`](#putkind) | unknown |  | db | documented | The putKind method registers a kind with the database. Kinds define the owner, and the indexes for a JSON data object. Indexes can be compos |
-| [`putPermissions`](#putpermissions) | unknown |  | db | documented | The putPermissions method enables other apps or services to access an app's stored DB8 data. The app can give permissions to access data obj |
+| [`merge`](#merge) | public |  | db | documented | The merge method updates the properties of existing objects. The objects can be specified in one of the following ways: A query An array of  |
+| [`mergePut`](#mergeput) | public |  | db | documented | The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The o |
+| [`profile`](#profile) | private |  | db | documented | Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profili |
+| [`purge`](#purge) | private |  | db | documented | The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space chec ⚠️ |
+| [`purgeStatus`](#purgestatus) | public |  | db | documented | The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were perm |
+| [`put`](#put) | public |  | db | documented | The put method stores JSON data objects of a particular Kind into the database. The put method will: Assign an id field to each object, if i |
+| [`putKind`](#putkind) | public |  | db | documented | The putKind method registers a kind with the database. Kinds define the owner, and the indexes for a JSON data object. Indexes can be compos |
+| [`putPermissions`](#putpermissions) | public |  | db | documented | The putPermissions method enables other apps or services to access an app's stored DB8 data. The app can give permissions to access data obj |
 | [`putQuotas`](#putquotas) | private |  | db | documented | The putQuotas method provides the ability to update a quota's current service limits at runtime. This service is used by private webOS servi ⚠️ |
 | [`quotaStats`](#quotastats) | private |  | db | documented | The quotaStats method returns information about a service's used limits. |
-| [`removeAppData`](#removeappdata) | unknown |  | db | documented | The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified  ⚠️ |
-| [`reserveIds`](#reserveids) | unknown |  | db | documented | When a client service creates objects that have references between each other, the service can ask the database through the reserveIds metho |
-| [`search`](#search) | unknown |  | db | documented | Unlike the find method, the search method supports the "?" (question mark) operator. The ? operator can be used for full-text searching. How |
-| [`setShardMode`](#setshardmode) | unknown |  | db | documented | Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by an |
-| [`shardInfo`](#shardinfo) | unknown |  | db | documented | Retrieves the state of a shard, like shard activity, associated media devices, mount point. |
+| [`removeAppData`](#removeappdata) | private |  | db | documented | The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified  ⚠️ |
+| [`reserveIds`](#reserveids) | public |  | db | documented | When a client service creates objects that have references between each other, the service can ask the database through the reserveIds metho |
+| [`search`](#search) | public |  | db | documented | Unlike the find method, the search method supports the "?" (question mark) operator. The ? operator can be used for full-text searching. How |
+| [`setShardMode`](#setshardmode) | public |  | db | documented | Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by an |
+| [`shardInfo`](#shardinfo) | public |  | db | documented | Retrieves the state of a shard, like shard activity, associated media devices, mount point. |
 | [`shardKind`](#shardkind) | public |  | db | inferred | Handles the shard kind. |
-| [`stats`](#stats) | unknown |  | db | documented | The stats method returns detailed information about the storage space used by every service. |
-| [`watch`](#watch) | unknown |  | db | documented | The watch method watches for updates to the database that would change the results of a query. |
+| [`stats`](#stats) | private |  | db | documented | The stats method returns detailed information about the storage space used by every service. |
+| [`watch`](#watch) | public |  | db | documented | The watch method watches for updates to the database that would change the results of a query. |
 
 <a id="backupepg"></a>
 ## `backupEpg`
@@ -78,7 +78,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 The batch method enables apps to execute multiple database operations in one service request. It allows only the following database operations: put get del find (without a watch) merge Atomicity is NOT guaranteed across batched operations.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -147,7 +147,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The del method deletes JSON data objects from the database. Apps can specify the objects to be deleted by providing: a set of IDs to be deleted a DB8 query
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -174,7 +174,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The delKind method deletes a Kind from the database. Deleting a Kind deletes ALL data objects of that Kind.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -222,7 +222,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 The find method returns a set of objects that match the query specified in the query parameter. The app can specify the number of results to return. However, if the app does not want to specify a limit, it can set the count parameter to true . This will cause the find method to return the total number of results. The app can also request to be notified if any of the returned results from the query change in the future. In order to receive change notifications, set the watch parameter to true . The find method supports distinct groups enabling the app to remove duplicate objects.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -250,7 +250,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The get method retrieves JSON data objects by ids. This is the fastest way to retrieve data.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -275,7 +275,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time.
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -521,7 +521,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 Returns a list of active attached media, and shards.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -565,7 +565,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 The merge method updates the properties of existing objects. The objects can be specified in one of the following ways: A query An array of IDs
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -593,7 +593,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The object to be updated can be specified in one of the following ways: A query An array of IDs
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -620,7 +620,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profiling using one of the following approaches: - Self enabling: In this approach, the 3rd-party application enables profiling on itself (see example 1). - Enable profiling using admin-privileged applications: In the approach, an admin-privileged application controls DB8 profiling for 3rd-party applications. Use this approach when you want the admin to control the profiling of 3rd-party applications. You can choose to enable profiling for a single application or for all 3rd-party applications. See example 2 and 3.
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -646,7 +646,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space check, and remove all temporary data
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -671,7 +671,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were permanently deleted, and the purgeStatus method will return the updated database revision number.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -692,7 +692,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The put method stores JSON data objects of a particular Kind into the database. The put method will: Assign an id field to each object, if it was not set. Return the id and rev for each stored object.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -718,7 +718,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The putKind method registers a kind with the database. Kinds define the owner, and the indexes for a JSON data object. Indexes can be composed of single or multiple properties. When you create your index, be aware that queries can only return results that are indexed, and are contiguously ordered. If your app or service wants to be notified only when a subset of an object's properties are updated, then you can use revision sets. If your app or service creates objects that other apps or services need to access, then see the putPermissions method for more information.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -751,7 +751,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The putPermissions method enables other apps or services to access an app's stored DB8 data. The app can give permissions to access data objects of a specific Kind.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -831,7 +831,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified owner .
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -856,7 +856,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 When a client service creates objects that have references between each other, the service can ask the database through the reserveIds method to regenerate ids of objects. The client service can use such ids as objects, and DB8 will use those ids when objects are inserted into the database. By default, DB8 configured to reserve maximum [0:1000] ids, but this limit can vary depending on the platform.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -881,7 +881,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 Unlike the find method, the search method supports the "?" (question mark) operator. The ? operator can be used for full-text searching. However, the search method is significantly slower, and should only be used for full-text type-down search. The search method should not be used for retrieving results that are going to be scrolled in a list. The search method supports: Ordering by any property. Distinct method to remove duplicate objects. %% operator in filter to search in a sub-string. Canceling the search mid-way (using the 'cancelable' parameter). The search method has some limitations: There must be an index for the field you are searching on. The search operation looks for words beginning with the search string.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -908,7 +908,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and will be removed by garbage collector. In other words, marking shard as transient will wipe all data from the shard on the nearest garbage collector call.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -934,7 +934,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 Retrieves the state of a shard, like shard activity, associated media devices, mount point.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -982,7 +982,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 The stats method returns detailed information about the storage space used by every service.
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -1008,7 +1008,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The watch method watches for updates to the database that would change the results of a query.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  

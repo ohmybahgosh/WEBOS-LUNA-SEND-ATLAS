@@ -83,13 +83,13 @@ com.flutter.app.similarlist	finish	luna://com.flutter.app.similarlist/finish	pub
 com.flutter.app.similarlist	request	luna://com.flutter.app.similarlist/request	public	0	0	misc	Requests the flutter app similarlist.	inferred
 com.lge.settingsservice	batch	luna://com.lge.settingsservice/batch	private	0	0	settings	Executes several settingsservice operations in one call	documented
 com.lge.settingsservice	deleteSystemSettings	luna://com.lge.settingsservice/deleteSystemSettings	private	0	0	settings	Deletes the specified system settings	documented
-com.lge.settingsservice	getCurrentSettings	luna://com.lge.settingsservice/getCurrentSettings	unknown	0	0	settings	Returns settings of foreground App	documented
-com.lge.settingsservice	getSystemSettingDesc	luna://com.lge.settingsservice/getSystemSettingDesc	unknown	0	0	settings	Retrieve the description for the specified key	documented
+com.lge.settingsservice	getCurrentSettings	luna://com.lge.settingsservice/getCurrentSettings	private	0	0	settings	Returns settings of foreground App	documented
+com.lge.settingsservice	getSystemSettingDesc	luna://com.lge.settingsservice/getSystemSettingDesc	public	0	0	settings	Retrieve the description for the specified key	documented
 com.lge.settingsservice	getSystemSettingDescPriv	luna://com.lge.settingsservice/getSystemSettingDescPriv	private	0	0	settings	Returns the system setting desc priv.	inferred
-com.lge.settingsservice	getSystemSettingFactoryValue	luna://com.lge.settingsservice/getSystemSettingFactoryValue	unknown	0	0	settings	Retrieve the list of default values for the specified key.	documented
-com.lge.settingsservice	getSystemSettings	luna://com.lge.settingsservice/getSystemSettings	unknown	0	0	settings	Retrieves the values for keys specified in a passed array on system settings.	documented
+com.lge.settingsservice	getSystemSettingFactoryValue	luna://com.lge.settingsservice/getSystemSettingFactoryValue	public	0	0	settings	Retrieve the list of default values for the specified key.	documented
+com.lge.settingsservice	getSystemSettings	luna://com.lge.settingsservice/getSystemSettings	public	0	0	settings	Retrieves the values for keys specified in a passed array on system settings.	documented
 com.lge.settingsservice	getSystemSettingsPriv	luna://com.lge.settingsservice/getSystemSettingsPriv	private	0	0	settings	Returns the system settings priv.	inferred
-com.lge.settingsservice	getSystemSettingValues	luna://com.lge.settingsservice/getSystemSettingValues	unknown	0	0	settings	Retrieve the list of valid values for the specified key	documented
+com.lge.settingsservice	getSystemSettingValues	luna://com.lge.settingsservice/getSystemSettingValues	public	0	0	settings	Retrieve the list of valid values for the specified key	documented
 com.lge.settingsservice	getSystemSettingValuesPriv	luna://com.lge.settingsservice/getSystemSettingValuesPriv	private	0	0	settings	Returns the system setting values priv.	inferred
 com.lge.settingsservice	internal/getCurrentSubscriptions	luna://com.lge.settingsservice/internal/getCurrentSubscriptions	private	0	0	settings	Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name only	documented
 com.lge.settingsservice	internal/instrument	luna://com.lge.settingsservice/internal/instrument	private	0	0	settings	Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name only	documented
@@ -231,14 +231,14 @@ com.palm.configurator	unconfigure	luna://com.palm.configurator/unconfigure	priva
 com.palm.connectionmanager	getStatus	luna://com.palm.connectionmanager/getStatus	public	0	1	connection	Gets the current status of network connections (Wi-Fi and wired).	documented
 com.palm.db	backupEpg	luna://com.palm.db/backupEpg	private	0	0	tv-broadcast	Backs up the EPG.	inferred
 com.palm.db	batch	luna://com.palm.db/batch	public	0	0	db	Executes multiple database operations in one request.	documented
-com.palm.db	cancelSearch	luna://com.palm.db/cancelSearch	unknown	0	0	db	Stops the search operation mid-way. This method can be used when the search operation takes a long time to return results or required to search with another key	documented
+com.palm.db	cancelSearch	luna://com.palm.db/cancelSearch	private	0	0	db	Stops the search operation mid-way. This method can be used when the search operation takes a long time to return results or required to search with another key	documented
 com.palm.db	compact	luna://com.palm.db/compact	private	0	0	db	The compact method invokes the low level garbage collector. When DB8 executes a del operation without Purge:True param, it only marks the object as to be delete	documented
 com.palm.db	del	luna://com.palm.db/del	public	0	0	db	Deletes JSON data objects.	documented
 com.palm.db	delKind	luna://com.palm.db/delKind	public	0	0	db	Deletes a kind and ALL objects of that kind.	documented
 com.palm.db	dump	luna://com.palm.db/dump	private	0	0	db	Backs up a database. The file created by the dump method typically contains JSON statements to recreate all of the Kinds and data of the database from which the	documented
 com.palm.db	find	luna://com.palm.db/find	public	0	1	db	Returns objects matching the query.	documented
 com.palm.db	get	luna://com.palm.db/get	public	0	0	db	Retrieves objects by IDs (fastest retrieval).	documented
-com.palm.db	getProfile	luna://com.palm.db/getProfile	unknown	0	0	db	Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time.	documented
+com.palm.db	getProfile	luna://com.palm.db/getProfile	private	0	0	db	Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time.	documented
 com.palm.db	internal/postBackup	luna://com.palm.db/internal/postBackup	private	0	0	db	An internal DB8 method that is called when a backup operation has been completed.	documented
 com.palm.db	internal/postRestore	luna://com.palm.db/internal/postRestore	private	0	0	db	An internal DB8 method that is called when the database finishes a restore process.	documented
 com.palm.db	internal/preBackup	luna://com.palm.db/internal/preBackup	private	0	0	db	Invoked when an internal webOS service wants to restore a database from a backup file.	documented
@@ -248,25 +248,25 @@ com.palm.db	internal/scheduledBackup	luna://com.palm.db/internal/scheduledBackup
 com.palm.db	internal/scheduledPurge	luna://com.palm.db/internal/scheduledPurge	private	0	0	db	An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that has been marked for 	documented
 com.palm.db	internal/scheduledSpaceCheck	luna://com.palm.db/internal/scheduledSpaceCheck	private	0	0	db	An internal DB8 callback method, that is called by the Activity Manager for checking available disk space.	documented
 com.palm.db	internal/spaceCheck	luna://com.palm.db/internal/spaceCheck	private	0	0	db	An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when DB8 reaches soft and	documented
-com.palm.db	listActiveMedia	luna://com.palm.db/listActiveMedia	unknown	0	0	db	Returns a list of active attached media, and shards.	documented
+com.palm.db	listActiveMedia	luna://com.palm.db/listActiveMedia	public	0	0	db	Returns a list of active attached media, and shards.	documented
 com.palm.db	load	luna://com.palm.db/load	private	1	0	db	Restores a database from a dumped JSON file.	documented
 com.palm.db	merge	luna://com.palm.db/merge	public	0	0	db	Updates properties of existing objects.	documented
-com.palm.db	mergePut	luna://com.palm.db/mergePut	unknown	0	0	db	The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The object to be updated 	documented
-com.palm.db	profile	luna://com.palm.db/profile	unknown	0	0	db	Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profiling using one of the 	documented
-com.palm.db	purge	luna://com.palm.db/purge	unknown	1	0	db	The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space check, and remove all te	documented
-com.palm.db	purgeStatus	luna://com.palm.db/purgeStatus	unknown	0	0	db	The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were permanently deleted, and	documented
+com.palm.db	mergePut	luna://com.palm.db/mergePut	public	0	0	db	The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The object to be updated 	documented
+com.palm.db	profile	luna://com.palm.db/profile	private	0	0	db	Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profiling using one of the 	documented
+com.palm.db	purge	luna://com.palm.db/purge	private	1	0	db	The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space check, and remove all te	documented
+com.palm.db	purgeStatus	luna://com.palm.db/purgeStatus	public	0	0	db	The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were permanently deleted, and	documented
 com.palm.db	put	luna://com.palm.db/put	public	0	0	db	Stores JSON objects of a kind.	documented
 com.palm.db	putKind	luna://com.palm.db/putKind	public	0	0	db	Registers a kind with the database.	documented
 com.palm.db	putPermissions	luna://com.palm.db/putPermissions	public	0	0	db	Grants other apps/services access to the app DB8 data.	documented
 com.palm.db	putQuotas	luna://com.palm.db/putQuotas	private	1	0	db	The putQuotas method provides the ability to update a quota's current service limits at runtime. This service is used by private webOS services to increase/decr	documented
 com.palm.db	quotaStats	luna://com.palm.db/quotaStats	private	0	0	db	The quotaStats method returns information about a service's used limits.	documented
-com.palm.db	removeAppData	luna://com.palm.db/removeAppData	unknown	1	0	db	The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified owner .	documented
+com.palm.db	removeAppData	luna://com.palm.db/removeAppData	private	1	0	db	The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified owner .	documented
 com.palm.db	reserveIds	luna://com.palm.db/reserveIds	public	0	0	db	Reserves a block of object IDs.	documented
 com.palm.db	search	luna://com.palm.db/search	public	0	1	db	Like find but supports the ? full-text operator.	documented
-com.palm.db	setShardMode	luna://com.palm.db/setShardMode	unknown	0	0	db	Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and wi	documented
-com.palm.db	shardInfo	luna://com.palm.db/shardInfo	unknown	0	0	db	Retrieves the state of a shard, like shard activity, associated media devices, mount point.	documented
+com.palm.db	setShardMode	luna://com.palm.db/setShardMode	public	0	0	db	Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and wi	documented
+com.palm.db	shardInfo	luna://com.palm.db/shardInfo	public	0	0	db	Retrieves the state of a shard, like shard activity, associated media devices, mount point.	documented
 com.palm.db	shardKind	luna://com.palm.db/shardKind	public	0	0	db	Handles the shard kind.	inferred
-com.palm.db	stats	luna://com.palm.db/stats	unknown	0	0	db	The stats method returns detailed information about the storage space used by every service.	documented
+com.palm.db	stats	luna://com.palm.db/stats	private	0	0	db	The stats method returns detailed information about the storage space used by every service.	documented
 com.palm.db	watch	luna://com.palm.db/watch	public	0	1	db	Watches for updates that would change a query result.	documented
 com.palm.display	control/dimModeEnable	luna://com.palm.display/control/dimModeEnable	public	0	0	misc	Handles the dim mode enable (control)	inferred
 com.palm.display	control/getProperty	luna://com.palm.display/control/getProperty	public	0	0	misc	Returns the property (control)	inferred
@@ -457,15 +457,15 @@ com.palm.sleep	shutdown/shutdownApplicationsRegister	luna://com.palm.sleep/shutd
 com.palm.sleep	shutdown/shutdownServicesAck	luna://com.palm.sleep/shutdown/shutdownServicesAck	private	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only	documented
 com.palm.sleep	shutdown/shutdownServicesRegister	luna://com.palm.sleep/shutdown/shutdownServicesRegister	private	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only	documented
 com.palm.sleep	shutdown/TESTresetShutdownState	luna://com.palm.sleep/shutdown/TESTresetShutdownState	private	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only	documented
-com.palm.sleep	time/alarmAdd	luna://com.palm.sleep/time/alarmAdd	unknown	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
-com.palm.sleep	time/alarmAddCalendar	luna://com.palm.sleep/time/alarmAddCalendar	unknown	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
-com.palm.sleep	time/alarmQuery	luna://com.palm.sleep/time/alarmQuery	unknown	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
-com.palm.sleep	time/alarmRemove	luna://com.palm.sleep/time/alarmRemove	unknown	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
+com.palm.sleep	time/alarmAdd	luna://com.palm.sleep/time/alarmAdd	private	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
+com.palm.sleep	time/alarmAddCalendar	luna://com.palm.sleep/time/alarmAddCalendar	private	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
+com.palm.sleep	time/alarmQuery	luna://com.palm.sleep/time/alarmQuery	private	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
+com.palm.sleep	time/alarmRemove	luna://com.palm.sleep/time/alarmRemove	private	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
 com.palm.sleep	time/internalAlarmFired	luna://com.palm.sleep/time/internalAlarmFired	private	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
-com.palm.sleep	timeout/clear	luna://com.palm.sleep/timeout/clear	unknown	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
+com.palm.sleep	timeout/clear	luna://com.palm.sleep/timeout/clear	public	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
 com.palm.sleep	timeout/getAllAlarms	luna://com.palm.sleep/timeout/getAllAlarms	private	0	0	power-mgmt	Returns the all alarms (timeout)	inferred
 com.palm.sleep	timeout/getNextWakeupAlarm	luna://com.palm.sleep/timeout/getNextWakeupAlarm	private	0	0	power-mgmt	Returns the next wakeup alarm (timeout)	inferred
-com.palm.sleep	timeout/set	luna://com.palm.sleep/timeout/set	unknown	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
+com.palm.sleep	timeout/set	luna://com.palm.sleep/timeout/set	public	0	0	power	Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only	documented
 com.palm.storage	diskmode/enterMSM	luna://com.palm.storage/diskmode/enterMSM	root	0	0	storage	Enters (and toggles out of) USB mass storage mode	documented
 com.palm.storage	diskmode/queryMSMStatus	luna://com.palm.storage/diskmode/queryMSMStatus	public	0	0	storage	Queries the MSM status (diskmode)	inferred
 com.palm.storage	erase/EraseAll	luna://com.palm.storage/erase/EraseAll	root	1	0	storage	Erases all storage (part of ##RTN# sequence)	documented
@@ -486,15 +486,15 @@ com.palm.telephony	radioDefaultsRestore	luna://com.palm.telephony/radioDefaultsR
 com.palm.telephony	resetRadio	luna://com.palm.telephony/resetRadio	root	1	0	misc	Resets the radio (part of ##RTN# sequence)	documented
 com.palm.telephony	roamModeSet	luna://com.palm.telephony/roamModeSet	root	0	0	misc	Sets roaming mode	documented
 com.palm.tempdb	backupEpg	luna://com.palm.tempdb/backupEpg	private	0	0	tv-broadcast	Backs up the EPG.	inferred
-com.palm.tempdb	batch	luna://com.palm.tempdb/batch	unknown	0	0	db	The batch method enables apps to execute multiple database operations in one service request. It allows only the following database operations: put get del find	documented
+com.palm.tempdb	batch	luna://com.palm.tempdb/batch	public	0	0	db	The batch method enables apps to execute multiple database operations in one service request. It allows only the following database operations: put get del find	documented
 com.palm.tempdb	cancelSearch	luna://com.palm.tempdb/cancelSearch	private	0	0	db	Cancels the search.	inferred
 com.palm.tempdb	compact	luna://com.palm.tempdb/compact	private	0	0	db	The compact method invokes the low level garbage collector. When DB8 executes a del operation without Purge:True param, it only marks the object as to be delete	documented
-com.palm.tempdb	del	luna://com.palm.tempdb/del	unknown	0	0	db	The del method deletes JSON data objects from the database. Apps can specify the objects to be deleted by providing: a set of IDs to be deleted a DB8 query	documented
-com.palm.tempdb	delKind	luna://com.palm.tempdb/delKind	unknown	0	0	db	The delKind method deletes a Kind from the database. Deleting a Kind deletes ALL data objects of that Kind.	documented
+com.palm.tempdb	del	luna://com.palm.tempdb/del	public	0	0	db	The del method deletes JSON data objects from the database. Apps can specify the objects to be deleted by providing: a set of IDs to be deleted a DB8 query	documented
+com.palm.tempdb	delKind	luna://com.palm.tempdb/delKind	public	0	0	db	The delKind method deletes a Kind from the database. Deleting a Kind deletes ALL data objects of that Kind.	documented
 com.palm.tempdb	dump	luna://com.palm.tempdb/dump	private	0	0	db	Dumps the tempdb.	inferred
-com.palm.tempdb	find	luna://com.palm.tempdb/find	unknown	0	0	db	The find method returns a set of objects that match the query specified in the query parameter. The app can specify the number of results to return. However, if	documented
-com.palm.tempdb	get	luna://com.palm.tempdb/get	unknown	0	0	db	The get method retrieves JSON data objects by ids. This is the fastest way to retrieve data.	documented
-com.palm.tempdb	getProfile	luna://com.palm.tempdb/getProfile	unknown	0	0	db	Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time.	documented
+com.palm.tempdb	find	luna://com.palm.tempdb/find	public	0	0	db	The find method returns a set of objects that match the query specified in the query parameter. The app can specify the number of results to return. However, if	documented
+com.palm.tempdb	get	luna://com.palm.tempdb/get	public	0	0	db	The get method retrieves JSON data objects by ids. This is the fastest way to retrieve data.	documented
+com.palm.tempdb	getProfile	luna://com.palm.tempdb/getProfile	private	0	0	db	Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time.	documented
 com.palm.tempdb	internal/postBackup	luna://com.palm.tempdb/internal/postBackup	private	0	0	db	An internal DB8 method that is called when a backup operation has been completed.	documented
 com.palm.tempdb	internal/postRestore	luna://com.palm.tempdb/internal/postRestore	private	0	0	db	An internal DB8 method that is called when the database finishes a restore process.	documented
 com.palm.tempdb	internal/preBackup	luna://com.palm.tempdb/internal/preBackup	private	0	0	db	Invoked when an internal webOS service wants to restore a database from a backup file.	documented
@@ -504,26 +504,26 @@ com.palm.tempdb	internal/scheduledBackup	luna://com.palm.tempdb/internal/schedul
 com.palm.tempdb	internal/scheduledPurge	luna://com.palm.tempdb/internal/scheduledPurge	private	0	0	db	An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that has been marked for 	documented
 com.palm.tempdb	internal/scheduledSpaceCheck	luna://com.palm.tempdb/internal/scheduledSpaceCheck	private	0	0	db	An internal DB8 callback method, that is called by the Activity Manager for checking available disk space.	documented
 com.palm.tempdb	internal/spaceCheck	luna://com.palm.tempdb/internal/spaceCheck	private	0	0	db	An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when DB8 reaches soft and	documented
-com.palm.tempdb	listActiveMedia	luna://com.palm.tempdb/listActiveMedia	unknown	0	0	db	Returns a list of active attached media, and shards.	documented
+com.palm.tempdb	listActiveMedia	luna://com.palm.tempdb/listActiveMedia	public	0	0	db	Returns a list of active attached media, and shards.	documented
 com.palm.tempdb	load	luna://com.palm.tempdb/load	private	0	0	db	Loads the tempdb.	inferred
-com.palm.tempdb	merge	luna://com.palm.tempdb/merge	unknown	0	0	db	The merge method updates the properties of existing objects. The objects can be specified in one of the following ways: A query An array of IDs	documented
-com.palm.tempdb	mergePut	luna://com.palm.tempdb/mergePut	unknown	0	0	db	The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The object to be updated 	documented
-com.palm.tempdb	profile	luna://com.palm.tempdb/profile	unknown	0	0	db	Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profiling using one of the 	documented
-com.palm.tempdb	purge	luna://com.palm.tempdb/purge	unknown	1	0	db	The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space check, and remove all te	documented
-com.palm.tempdb	purgeStatus	luna://com.palm.tempdb/purgeStatus	unknown	0	0	db	The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were permanently deleted, and	documented
-com.palm.tempdb	put	luna://com.palm.tempdb/put	unknown	0	0	db	The put method stores JSON data objects of a particular Kind into the database. The put method will: Assign an id field to each object, if it was not set. Retur	documented
-com.palm.tempdb	putKind	luna://com.palm.tempdb/putKind	unknown	0	0	db	The putKind method registers a kind with the database. Kinds define the owner, and the indexes for a JSON data object. Indexes can be composed of single or mult	documented
-com.palm.tempdb	putPermissions	luna://com.palm.tempdb/putPermissions	unknown	0	0	db	The putPermissions method enables other apps or services to access an app's stored DB8 data. The app can give permissions to access data objects of a specific K	documented
+com.palm.tempdb	merge	luna://com.palm.tempdb/merge	public	0	0	db	The merge method updates the properties of existing objects. The objects can be specified in one of the following ways: A query An array of IDs	documented
+com.palm.tempdb	mergePut	luna://com.palm.tempdb/mergePut	public	0	0	db	The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The object to be updated 	documented
+com.palm.tempdb	profile	luna://com.palm.tempdb/profile	private	0	0	db	Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profiling using one of the 	documented
+com.palm.tempdb	purge	luna://com.palm.tempdb/purge	private	1	0	db	The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space check, and remove all te	documented
+com.palm.tempdb	purgeStatus	luna://com.palm.tempdb/purgeStatus	public	0	0	db	The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were permanently deleted, and	documented
+com.palm.tempdb	put	luna://com.palm.tempdb/put	public	0	0	db	The put method stores JSON data objects of a particular Kind into the database. The put method will: Assign an id field to each object, if it was not set. Retur	documented
+com.palm.tempdb	putKind	luna://com.palm.tempdb/putKind	public	0	0	db	The putKind method registers a kind with the database. Kinds define the owner, and the indexes for a JSON data object. Indexes can be composed of single or mult	documented
+com.palm.tempdb	putPermissions	luna://com.palm.tempdb/putPermissions	public	0	0	db	The putPermissions method enables other apps or services to access an app's stored DB8 data. The app can give permissions to access data objects of a specific K	documented
 com.palm.tempdb	putQuotas	luna://com.palm.tempdb/putQuotas	private	1	0	db	The putQuotas method provides the ability to update a quota's current service limits at runtime. This service is used by private webOS services to increase/decr	documented
 com.palm.tempdb	quotaStats	luna://com.palm.tempdb/quotaStats	private	0	0	db	The quotaStats method returns information about a service's used limits.	documented
-com.palm.tempdb	removeAppData	luna://com.palm.tempdb/removeAppData	unknown	1	0	db	The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified owner .	documented
-com.palm.tempdb	reserveIds	luna://com.palm.tempdb/reserveIds	unknown	0	0	db	When a client service creates objects that have references between each other, the service can ask the database through the reserveIds method to regenerate ids 	documented
-com.palm.tempdb	search	luna://com.palm.tempdb/search	unknown	0	0	db	Unlike the find method, the search method supports the "?" (question mark) operator. The ? operator can be used for full-text searching. However, the search met	documented
-com.palm.tempdb	setShardMode	luna://com.palm.tempdb/setShardMode	unknown	0	0	db	Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and wi	documented
-com.palm.tempdb	shardInfo	luna://com.palm.tempdb/shardInfo	unknown	0	0	db	Retrieves the state of a shard, like shard activity, associated media devices, mount point.	documented
+com.palm.tempdb	removeAppData	luna://com.palm.tempdb/removeAppData	private	1	0	db	The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified owner .	documented
+com.palm.tempdb	reserveIds	luna://com.palm.tempdb/reserveIds	public	0	0	db	When a client service creates objects that have references between each other, the service can ask the database through the reserveIds method to regenerate ids 	documented
+com.palm.tempdb	search	luna://com.palm.tempdb/search	public	0	0	db	Unlike the find method, the search method supports the "?" (question mark) operator. The ? operator can be used for full-text searching. However, the search met	documented
+com.palm.tempdb	setShardMode	luna://com.palm.tempdb/setShardMode	public	0	0	db	Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and wi	documented
+com.palm.tempdb	shardInfo	luna://com.palm.tempdb/shardInfo	public	0	0	db	Retrieves the state of a shard, like shard activity, associated media devices, mount point.	documented
 com.palm.tempdb	shardKind	luna://com.palm.tempdb/shardKind	public	0	0	db	Handles the shard kind.	inferred
-com.palm.tempdb	stats	luna://com.palm.tempdb/stats	unknown	0	0	db	The stats method returns detailed information about the storage space used by every service.	documented
-com.palm.tempdb	watch	luna://com.palm.tempdb/watch	unknown	0	0	db	The watch method watches for updates to the database that would change the results of a query.	documented
+com.palm.tempdb	stats	luna://com.palm.tempdb/stats	private	0	0	db	The stats method returns detailed information about the storage space used by every service.	documented
+com.palm.tempdb	watch	luna://com.palm.tempdb/watch	public	0	0	db	The watch method watches for updates to the database that would change the results of a query.	documented
 com.palm.uploadd	encryptfile	luna://com.palm.uploadd/encryptfile	private	0	0	misc	Handles the encryptfile.	inferred
 com.palm.uploadd	geteulastatus	luna://com.palm.uploadd/geteulastatus	private	0	0	misc	Handles the geteulastatus.	inferred
 com.palm.uploadd	getLogSettings	luna://com.palm.uploadd/getLogSettings	private	0	0	settings	Returns the log settings.	inferred
@@ -666,8 +666,8 @@ com.webos.applicationManager	dev/running	luna://com.webos.applicationManager/dev
 com.webos.applicationManager	getAllContents	luna://com.webos.applicationManager/getAllContents	private	0	0	apps	Returns the all contents.	inferred
 com.webos.applicationManager	getAppBasePath	luna://com.webos.applicationManager/getAppBasePath	public	0	0	apps	Returns the app base path.	inferred
 com.webos.applicationManager	getAppInfo	luna://com.webos.applicationManager/getAppInfo	ssap	0	0	apps	Get info for one installed app	documented
-com.webos.applicationManager	getAppLifeEvents	luna://com.webos.applicationManager/getAppLifeEvents	private	0	0	apps	Returns the app life events.	inferred
-com.webos.applicationManager	getAppLifeStatus	luna://com.webos.applicationManager/getAppLifeStatus	private	0	0	apps	Returns the app life status.	inferred
+com.webos.applicationManager	getAppLifeEvents	luna://com.webos.applicationManager/getAppLifeEvents	private	0	1	apps	Returns the app life events.	inferred
+com.webos.applicationManager	getAppLifeStatus	luna://com.webos.applicationManager/getAppLifeStatus	private	0	1	apps	Returns the app life status.	inferred
 com.webos.applicationManager	getAppLoadStatus	luna://com.webos.applicationManager/getAppLoadStatus	public	0	0	apps	Returns whether the app with the given ID is installed (webOS TV 4.0+).	documented
 com.webos.applicationManager	getAppStatus	luna://com.webos.applicationManager/getAppStatus	private	0	0	apps	Returns the app status.	inferred
 com.webos.applicationManager	getContents	luna://com.webos.applicationManager/getContents	public	0	0	apps	Returns the contents.	inferred
@@ -887,15 +887,15 @@ com.webos.coverUI	close	luna://com.webos.coverUI/close	private	0	0	misc	Closes t
 com.webos.coverUI	getStatus	luna://com.webos.coverUI/getStatus	private	0	0	misc	Returns the status.	inferred
 com.webos.coverUI	open	luna://com.webos.coverUI/open	private	0	0	misc	Opens the cover UI.	inferred
 com.webos.epgdb	backupEpg	luna://com.webos.epgdb/backupEpg	private	0	0	tv-broadcast	Backs up the EPG.	inferred
-com.webos.epgdb	batch	luna://com.webos.epgdb/batch	unknown	0	0	db	The batch method enables apps to execute multiple database operations in one service request. It allows only the following database operations: put get del find	documented
+com.webos.epgdb	batch	luna://com.webos.epgdb/batch	public	0	0	db	The batch method enables apps to execute multiple database operations in one service request. It allows only the following database operations: put get del find	documented
 com.webos.epgdb	cancelSearch	luna://com.webos.epgdb/cancelSearch	private	0	0	tv-broadcast	Cancels the search.	inferred
 com.webos.epgdb	compact	luna://com.webos.epgdb/compact	private	0	0	db	The compact method invokes the low level garbage collector. When DB8 executes a del operation without Purge:True param, it only marks the object as to be delete	documented
-com.webos.epgdb	del	luna://com.webos.epgdb/del	unknown	0	0	db	The del method deletes JSON data objects from the database. Apps can specify the objects to be deleted by providing: a set of IDs to be deleted a DB8 query	documented
-com.webos.epgdb	delKind	luna://com.webos.epgdb/delKind	unknown	0	0	db	The delKind method deletes a Kind from the database. Deleting a Kind deletes ALL data objects of that Kind.	documented
+com.webos.epgdb	del	luna://com.webos.epgdb/del	public	0	0	db	The del method deletes JSON data objects from the database. Apps can specify the objects to be deleted by providing: a set of IDs to be deleted a DB8 query	documented
+com.webos.epgdb	delKind	luna://com.webos.epgdb/delKind	public	0	0	db	The delKind method deletes a Kind from the database. Deleting a Kind deletes ALL data objects of that Kind.	documented
 com.webos.epgdb	dump	luna://com.webos.epgdb/dump	private	0	0	db	Backs up a database. The file created by the dump method typically contains JSON statements to recreate all of the Kinds and data of the database from which the	documented
-com.webos.epgdb	find	luna://com.webos.epgdb/find	unknown	0	0	db	The find method returns a set of objects that match the query specified in the query parameter. The app can specify the number of results to return. However, if	documented
-com.webos.epgdb	get	luna://com.webos.epgdb/get	unknown	0	0	db	The get method retrieves JSON data objects by ids. This is the fastest way to retrieve data.	documented
-com.webos.epgdb	getProfile	luna://com.webos.epgdb/getProfile	unknown	0	0	db	Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time.	documented
+com.webos.epgdb	find	luna://com.webos.epgdb/find	public	0	0	db	The find method returns a set of objects that match the query specified in the query parameter. The app can specify the number of results to return. However, if	documented
+com.webos.epgdb	get	luna://com.webos.epgdb/get	public	0	0	db	The get method retrieves JSON data objects by ids. This is the fastest way to retrieve data.	documented
+com.webos.epgdb	getProfile	luna://com.webos.epgdb/getProfile	private	0	0	db	Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time.	documented
 com.webos.epgdb	internal/postBackup	luna://com.webos.epgdb/internal/postBackup	private	0	0	db	An internal DB8 method that is called when a backup operation has been completed.	documented
 com.webos.epgdb	internal/postRestore	luna://com.webos.epgdb/internal/postRestore	private	0	0	db	An internal DB8 method that is called when the database finishes a restore process.	documented
 com.webos.epgdb	internal/preBackup	luna://com.webos.epgdb/internal/preBackup	private	0	0	db	Invoked when an internal webOS service wants to restore a database from a backup file.	documented
@@ -905,26 +905,26 @@ com.webos.epgdb	internal/scheduledBackup	luna://com.webos.epgdb/internal/schedul
 com.webos.epgdb	internal/scheduledPurge	luna://com.webos.epgdb/internal/scheduledPurge	private	0	0	db	An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that has been marked for 	documented
 com.webos.epgdb	internal/scheduledSpaceCheck	luna://com.webos.epgdb/internal/scheduledSpaceCheck	private	0	0	db	An internal DB8 callback method, that is called by the Activity Manager for checking available disk space.	documented
 com.webos.epgdb	internal/spaceCheck	luna://com.webos.epgdb/internal/spaceCheck	private	0	0	db	An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when DB8 reaches soft and	documented
-com.webos.epgdb	listActiveMedia	luna://com.webos.epgdb/listActiveMedia	unknown	0	0	db	Returns a list of active attached media, and shards.	documented
+com.webos.epgdb	listActiveMedia	luna://com.webos.epgdb/listActiveMedia	public	0	0	db	Returns a list of active attached media, and shards.	documented
 com.webos.epgdb	load	luna://com.webos.epgdb/load	private	1	0	db	Restores a database from a dumped JSON file.	documented
-com.webos.epgdb	merge	luna://com.webos.epgdb/merge	unknown	0	0	db	The merge method updates the properties of existing objects. The objects can be specified in one of the following ways: A query An array of IDs	documented
-com.webos.epgdb	mergePut	luna://com.webos.epgdb/mergePut	unknown	0	0	db	The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The object to be updated 	documented
-com.webos.epgdb	profile	luna://com.webos.epgdb/profile	unknown	0	0	db	Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profiling using one of the 	documented
-com.webos.epgdb	purge	luna://com.webos.epgdb/purge	unknown	1	0	db	The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space check, and remove all te	documented
-com.webos.epgdb	purgeStatus	luna://com.webos.epgdb/purgeStatus	unknown	0	0	db	The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were permanently deleted, and	documented
-com.webos.epgdb	put	luna://com.webos.epgdb/put	unknown	0	0	db	The put method stores JSON data objects of a particular Kind into the database. The put method will: Assign an id field to each object, if it was not set. Retur	documented
-com.webos.epgdb	putKind	luna://com.webos.epgdb/putKind	unknown	0	0	db	The putKind method registers a kind with the database. Kinds define the owner, and the indexes for a JSON data object. Indexes can be composed of single or mult	documented
-com.webos.epgdb	putPermissions	luna://com.webos.epgdb/putPermissions	unknown	0	0	db	The putPermissions method enables other apps or services to access an app's stored DB8 data. The app can give permissions to access data objects of a specific K	documented
+com.webos.epgdb	merge	luna://com.webos.epgdb/merge	public	0	0	db	The merge method updates the properties of existing objects. The objects can be specified in one of the following ways: A query An array of IDs	documented
+com.webos.epgdb	mergePut	luna://com.webos.epgdb/mergePut	public	0	0	db	The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The object to be updated 	documented
+com.webos.epgdb	profile	luna://com.webos.epgdb/profile	private	0	0	db	Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profiling using one of the 	documented
+com.webos.epgdb	purge	luna://com.webos.epgdb/purge	private	1	0	db	The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space check, and remove all te	documented
+com.webos.epgdb	purgeStatus	luna://com.webos.epgdb/purgeStatus	public	0	0	db	The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were permanently deleted, and	documented
+com.webos.epgdb	put	luna://com.webos.epgdb/put	public	0	0	db	The put method stores JSON data objects of a particular Kind into the database. The put method will: Assign an id field to each object, if it was not set. Retur	documented
+com.webos.epgdb	putKind	luna://com.webos.epgdb/putKind	public	0	0	db	The putKind method registers a kind with the database. Kinds define the owner, and the indexes for a JSON data object. Indexes can be composed of single or mult	documented
+com.webos.epgdb	putPermissions	luna://com.webos.epgdb/putPermissions	public	0	0	db	The putPermissions method enables other apps or services to access an app's stored DB8 data. The app can give permissions to access data objects of a specific K	documented
 com.webos.epgdb	putQuotas	luna://com.webos.epgdb/putQuotas	private	1	0	db	The putQuotas method provides the ability to update a quota's current service limits at runtime. This service is used by private webOS services to increase/decr	documented
 com.webos.epgdb	quotaStats	luna://com.webos.epgdb/quotaStats	private	0	0	db	The quotaStats method returns information about a service's used limits.	documented
-com.webos.epgdb	removeAppData	luna://com.webos.epgdb/removeAppData	unknown	1	0	db	The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified owner .	documented
-com.webos.epgdb	reserveIds	luna://com.webos.epgdb/reserveIds	unknown	0	0	db	When a client service creates objects that have references between each other, the service can ask the database through the reserveIds method to regenerate ids 	documented
-com.webos.epgdb	search	luna://com.webos.epgdb/search	unknown	0	0	db	Unlike the find method, the search method supports the "?" (question mark) operator. The ? operator can be used for full-text searching. However, the search met	documented
-com.webos.epgdb	setShardMode	luna://com.webos.epgdb/setShardMode	unknown	0	0	db	Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and wi	documented
-com.webos.epgdb	shardInfo	luna://com.webos.epgdb/shardInfo	unknown	0	0	db	Retrieves the state of a shard, like shard activity, associated media devices, mount point.	documented
+com.webos.epgdb	removeAppData	luna://com.webos.epgdb/removeAppData	private	1	0	db	The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified owner .	documented
+com.webos.epgdb	reserveIds	luna://com.webos.epgdb/reserveIds	public	0	0	db	When a client service creates objects that have references between each other, the service can ask the database through the reserveIds method to regenerate ids 	documented
+com.webos.epgdb	search	luna://com.webos.epgdb/search	public	0	0	db	Unlike the find method, the search method supports the "?" (question mark) operator. The ? operator can be used for full-text searching. However, the search met	documented
+com.webos.epgdb	setShardMode	luna://com.webos.epgdb/setShardMode	public	0	0	db	Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and wi	documented
+com.webos.epgdb	shardInfo	luna://com.webos.epgdb/shardInfo	public	0	0	db	Retrieves the state of a shard, like shard activity, associated media devices, mount point.	documented
 com.webos.epgdb	shardKind	luna://com.webos.epgdb/shardKind	public	0	0	tv-broadcast	Handles the shard kind.	inferred
-com.webos.epgdb	stats	luna://com.webos.epgdb/stats	unknown	0	0	db	The stats method returns detailed information about the storage space used by every service.	documented
-com.webos.epgdb	watch	luna://com.webos.epgdb/watch	unknown	0	0	db	The watch method watches for updates to the database that would change the results of a query.	documented
+com.webos.epgdb	stats	luna://com.webos.epgdb/stats	private	0	0	db	The stats method returns detailed information about the storage space used by every service.	documented
+com.webos.epgdb	watch	luna://com.webos.epgdb/watch	public	0	0	db	The watch method watches for updates to the database that would change the results of a query.	documented
 com.webos.favchannels	deleteAll	luna://com.webos.favchannels/deleteAll	private	1	0	tv-broadcast	Deletes the all.	inferred
 com.webos.favchannels	edit	luna://com.webos.favchannels/edit	private	0	0	tv-broadcast	Edits the favchannels.	inferred
 com.webos.flutter.embedder	getConfigs	luna://com.webos.flutter.embedder/getConfigs	private	0	0	settings	Returns the configs.	inferred
@@ -946,7 +946,7 @@ com.webos.iotframework	sendCommand	luna://com.webos.iotframework/sendCommand	pri
 com.webos.iotframework	setDeviceCustomization	luna://com.webos.iotframework/setDeviceCustomization	private	0	0	input	Sets the device customization.	inferred
 com.webos.iotframework	start	luna://com.webos.iotframework/start	private	0	0	misc	Starts the iotframework.	inferred
 com.webos.iotframework	updateDevices	luna://com.webos.iotframework/updateDevices	private	0	0	update	Updates the devices.	inferred
-com.webos.keyfilter.magicnumber	notifyChannelToRegister	luna://com.webos.keyfilter.magicnumber/notifyChannelToRegister	private	0	0	keys	Notifies of the channel to register.	inferred
+com.webos.keyfilter.magicnumber	notifyChannelToRegister	luna://com.webos.keyfilter.magicnumber/notifyChannelToRegister	public	0	0	keys	Notifies of the channel to register.	inferred
 com.webos.media	acbs	luna://com.webos.media/acbs	unknown	0	0	media	Array of objects that gives details of media for foreground application (such as pipeline Id, playstate, position, etc.)	documented
 com.webos.media	acquire	luna://com.webos.media/acquire	public	0	0	media	Requests resources from the mediaserver. Typical usage is to request the number of audio and video decoders or other hardware components used by the pipeline. A	documented
 com.webos.media	acquireComplete	luna://com.webos.media/acquireComplete	unknown	0	0	media	This event is invoked when the acquire request is performed and the result comes out.	documented
@@ -1018,7 +1018,7 @@ com.webos.media	ResponseObject	luna://com.webos.media/ResponseObject	unknown	0	0
 com.webos.media	resumeRecord	luna://com.webos.media/resumeRecord	public	0	0	media	Resumes the record.	inferred
 com.webos.media	seek	luna://com.webos.media/seek	public	0	0	media	Seeks the media object to a specified time position.	documented
 com.webos.media	seekDone	luna://com.webos.media/seekDone	unknown	0	0	media	The seekDone event is raised when a seek operation for a media has been successfully completed.	documented
-com.webos.media	selectTrack	luna://com.webos.media/selectTrack	unknown	0	0	media	Selects an audio or subtitle track of an open pipeline	documented
+com.webos.media	selectTrack	luna://com.webos.media/selectTrack	public	0	0	media	Selects an audio or subtitle track of an open pipeline	documented
 com.webos.media	selectTrackByPreference	luna://com.webos.media/selectTrackByPreference	public	0	0	media	Selects the track by preference.	inferred
 com.webos.media	selectTrackByPreferencePayload	luna://com.webos.media/selectTrackByPreferencePayload	public	0	0	media	Selects the track by preference payload.	inferred
 com.webos.media	setAppId	luna://com.webos.media/setAppId	public	0	0	media	Sets the app ID.	inferred
@@ -1053,27 +1053,27 @@ com.webos.media	setSlave	luna://com.webos.media/setSlave	public	0	0	media	Sets t
 com.webos.media	setSlaveClock	luna://com.webos.media/setSlaveClock	public	0	0	media	Sets the slave clock.	inferred
 com.webos.media	setStreamQuality	luna://com.webos.media/setStreamQuality	public	0	0	media	Sets the stream quality.	inferred
 com.webos.media	setSubtitleBackgroundBlinking	luna://com.webos.media/setSubtitleBackgroundBlinking	public	0	0	media	Sets the subtitle background blinking.	inferred
-com.webos.media	setSubtitleBackgroundColor	luna://com.webos.media/setSubtitleBackgroundColor	unknown	0	0	media	Sets subtitle background color for an open media pipeline	documented
-com.webos.media	setSubtitleBackgroundOpacity	luna://com.webos.media/setSubtitleBackgroundOpacity	unknown	0	0	media	Sets subtitle background opacity for an open media pipeline	documented
+com.webos.media	setSubtitleBackgroundColor	luna://com.webos.media/setSubtitleBackgroundColor	public	0	0	media	Sets subtitle background color for an open media pipeline	documented
+com.webos.media	setSubtitleBackgroundOpacity	luna://com.webos.media/setSubtitleBackgroundOpacity	public	0	0	media	Sets subtitle background opacity for an open media pipeline	documented
 com.webos.media	setSubtitleCharacterBlinking	luna://com.webos.media/setSubtitleCharacterBlinking	public	0	0	media	Sets the subtitle character blinking.	inferred
-com.webos.media	setSubtitleCharacterColor	luna://com.webos.media/setSubtitleCharacterColor	unknown	0	0	media	Sets subtitle character color (similar to setSubtitleColor, different values) for an open media pipeline	documented
+com.webos.media	setSubtitleCharacterColor	luna://com.webos.media/setSubtitleCharacterColor	public	0	0	media	Sets subtitle character color (similar to setSubtitleColor, different values) for an open media pipeline	documented
 com.webos.media	setSubtitleCharacterEdge	luna://com.webos.media/setSubtitleCharacterEdge	public	0	0	media	Sets the subtitle character edge.	inferred
 com.webos.media	setSubtitleCharacterEdgeColor	luna://com.webos.media/setSubtitleCharacterEdgeColor	public	0	0	media	Sets the subtitle character edge color.	inferred
 com.webos.media	setSubtitleCharacterFont	luna://com.webos.media/setSubtitleCharacterFont	public	0	0	media	Sets the subtitle character font.	inferred
 com.webos.media	setSubtitleCharacterFontSize	luna://com.webos.media/setSubtitleCharacterFontSize	public	0	0	media	Sets the subtitle character font size.	inferred
-com.webos.media	setSubtitleCharacterOpacity	luna://com.webos.media/setSubtitleCharacterOpacity	unknown	0	0	media	Sets subtitle character opacity for an open media pipeline	documented
-com.webos.media	setSubtitleColor	luna://com.webos.media/setSubtitleColor	unknown	0	0	media	Sets subtitle color for an open media pipeline	documented
+com.webos.media	setSubtitleCharacterOpacity	luna://com.webos.media/setSubtitleCharacterOpacity	public	0	0	media	Sets subtitle character opacity for an open media pipeline	documented
+com.webos.media	setSubtitleColor	luna://com.webos.media/setSubtitleColor	public	0	0	media	Sets subtitle color for an open media pipeline	documented
 com.webos.media	setSubtitleCustomStyleEnable	luna://com.webos.media/setSubtitleCustomStyleEnable	public	0	0	media	Sets the subtitle custom style enable.	inferred
-com.webos.media	setSubtitleEnable	luna://com.webos.media/setSubtitleEnable	unknown	0	0	media	Shows or hides subtitles for an open media pipeline	documented
-com.webos.media	setSubtitleEncoding	luna://com.webos.media/setSubtitleEncoding	unknown	0	0	media	Sets subtitle text encoding for an open media pipeline	documented
-com.webos.media	setSubtitleFontSize	luna://com.webos.media/setSubtitleFontSize	unknown	0	0	media	Sets subtitle font size for an open media pipeline	documented
-com.webos.media	setSubtitlePosition	luna://com.webos.media/setSubtitlePosition	unknown	0	0	media	Sets subtitle vertical position for an open media pipeline	documented
+com.webos.media	setSubtitleEnable	luna://com.webos.media/setSubtitleEnable	public	0	0	media	Shows or hides subtitles for an open media pipeline	documented
+com.webos.media	setSubtitleEncoding	luna://com.webos.media/setSubtitleEncoding	public	0	0	media	Sets subtitle text encoding for an open media pipeline	documented
+com.webos.media	setSubtitleFontSize	luna://com.webos.media/setSubtitleFontSize	public	0	0	media	Sets subtitle font size for an open media pipeline	documented
+com.webos.media	setSubtitlePosition	luna://com.webos.media/setSubtitlePosition	public	0	0	media	Sets subtitle vertical position for an open media pipeline	documented
 com.webos.media	setSubtitlePositionByPayload	luna://com.webos.media/setSubtitlePositionByPayload	public	0	0	media	Sets the subtitle position by payload.	inferred
 com.webos.media	setSubtitlePresentationMode	luna://com.webos.media/setSubtitlePresentationMode	public	0	0	media	Sets the subtitle presentation mode.	inferred
-com.webos.media	setSubtitleSource	luna://com.webos.media/setSubtitleSource	unknown	0	0	media	Loads an external subtitle file for an open pipeline	documented
-com.webos.media	setSubtitleSync	luna://com.webos.media/setSubtitleSync	unknown	0	0	media	Sets subtitle sync offset in milliseconds for an open media pipeline	documented
-com.webos.media	setSubtitleWindowColor	luna://com.webos.media/setSubtitleWindowColor	unknown	0	0	media	Sets subtitle window color for an open media pipeline	documented
-com.webos.media	setSubtitleWindowOpacity	luna://com.webos.media/setSubtitleWindowOpacity	unknown	0	0	media	Sets subtitle window opacity for an open media pipeline	documented
+com.webos.media	setSubtitleSource	luna://com.webos.media/setSubtitleSource	public	0	0	media	Loads an external subtitle file for an open pipeline	documented
+com.webos.media	setSubtitleSync	luna://com.webos.media/setSubtitleSync	public	0	0	media	Sets subtitle sync offset in milliseconds for an open media pipeline	documented
+com.webos.media	setSubtitleWindowColor	luna://com.webos.media/setSubtitleWindowColor	public	0	0	media	Sets subtitle window color for an open media pipeline	documented
+com.webos.media	setSubtitleWindowOpacity	luna://com.webos.media/setSubtitleWindowOpacity	public	0	0	media	Sets subtitle window opacity for an open media pipeline	documented
 com.webos.media	setUpdateInterval	luna://com.webos.media/setUpdateInterval	public	0	0	media	Sets the update interval.	inferred
 com.webos.media	setUpdateIntervalKV	luna://com.webos.media/setUpdateIntervalKV	public	0	0	media	Sets the update interval KV.	inferred
 com.webos.media	setUri	luna://com.webos.media/setUri	public	0	0	media	Sets the URI.	inferred
@@ -1121,7 +1121,7 @@ com.webos.mediadb	delKind	luna://com.webos.mediadb/delKind	public	0	0	db	Deletes
 com.webos.mediadb	dump	luna://com.webos.mediadb/dump	private	0	0	db	Backs up a database. The file created by the dump method typically contains JSON statements to recreate all of the Kinds and data of the database from which the	documented
 com.webos.mediadb	find	luna://com.webos.mediadb/find	public	0	1	db	Returns objects matching the query.	documented
 com.webos.mediadb	get	luna://com.webos.mediadb/get	public	0	0	db	Retrieves objects by IDs (fastest retrieval).	documented
-com.webos.mediadb	getProfile	luna://com.webos.mediadb/getProfile	unknown	0	0	db	Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time.	documented
+com.webos.mediadb	getProfile	luna://com.webos.mediadb/getProfile	private	0	0	db	Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time.	documented
 com.webos.mediadb	internal/postBackup	luna://com.webos.mediadb/internal/postBackup	private	0	0	db	An internal DB8 method that is called when a backup operation has been completed.	documented
 com.webos.mediadb	internal/postRestore	luna://com.webos.mediadb/internal/postRestore	private	0	0	db	An internal DB8 method that is called when the database finishes a restore process.	documented
 com.webos.mediadb	internal/preBackup	luna://com.webos.mediadb/internal/preBackup	private	0	0	db	Invoked when an internal webOS service wants to restore a database from a backup file.	documented
@@ -1131,25 +1131,25 @@ com.webos.mediadb	internal/scheduledBackup	luna://com.webos.mediadb/internal/sch
 com.webos.mediadb	internal/scheduledPurge	luna://com.webos.mediadb/internal/scheduledPurge	private	0	0	db	An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that has been marked for 	documented
 com.webos.mediadb	internal/scheduledSpaceCheck	luna://com.webos.mediadb/internal/scheduledSpaceCheck	private	0	0	db	An internal DB8 callback method, that is called by the Activity Manager for checking available disk space.	documented
 com.webos.mediadb	internal/spaceCheck	luna://com.webos.mediadb/internal/spaceCheck	private	0	0	db	An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when DB8 reaches soft and	documented
-com.webos.mediadb	listActiveMedia	luna://com.webos.mediadb/listActiveMedia	unknown	0	0	db	Returns a list of active attached media, and shards.	documented
+com.webos.mediadb	listActiveMedia	luna://com.webos.mediadb/listActiveMedia	public	0	0	db	Returns a list of active attached media, and shards.	documented
 com.webos.mediadb	load	luna://com.webos.mediadb/load	private	1	0	db	Restores a database from a dumped JSON file.	documented
 com.webos.mediadb	merge	luna://com.webos.mediadb/merge	public	0	0	db	Updates properties of existing objects.	documented
-com.webos.mediadb	mergePut	luna://com.webos.mediadb/mergePut	unknown	0	0	db	The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The object to be updated 	documented
-com.webos.mediadb	profile	luna://com.webos.mediadb/profile	unknown	0	0	db	Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profiling using one of the 	documented
-com.webos.mediadb	purge	luna://com.webos.mediadb/purge	unknown	1	0	db	The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space check, and remove all te	documented
-com.webos.mediadb	purgeStatus	luna://com.webos.mediadb/purgeStatus	unknown	0	0	db	The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were permanently deleted, and	documented
+com.webos.mediadb	mergePut	luna://com.webos.mediadb/mergePut	public	0	0	db	The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The object to be updated 	documented
+com.webos.mediadb	profile	luna://com.webos.mediadb/profile	private	0	0	db	Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profiling using one of the 	documented
+com.webos.mediadb	purge	luna://com.webos.mediadb/purge	private	1	0	db	The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space check, and remove all te	documented
+com.webos.mediadb	purgeStatus	luna://com.webos.mediadb/purgeStatus	public	0	0	db	The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were permanently deleted, and	documented
 com.webos.mediadb	put	luna://com.webos.mediadb/put	public	0	0	db	Stores JSON objects of a kind.	documented
 com.webos.mediadb	putKind	luna://com.webos.mediadb/putKind	public	0	0	db	Registers a kind with the database.	documented
 com.webos.mediadb	putPermissions	luna://com.webos.mediadb/putPermissions	public	0	0	db	Grants other apps/services access to the app DB8 data.	documented
 com.webos.mediadb	putQuotas	luna://com.webos.mediadb/putQuotas	private	1	0	db	The putQuotas method provides the ability to update a quota's current service limits at runtime. This service is used by private webOS services to increase/decr	documented
 com.webos.mediadb	quotaStats	luna://com.webos.mediadb/quotaStats	private	0	0	db	The quotaStats method returns information about a service's used limits.	documented
-com.webos.mediadb	removeAppData	luna://com.webos.mediadb/removeAppData	unknown	1	0	db	The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified owner .	documented
+com.webos.mediadb	removeAppData	luna://com.webos.mediadb/removeAppData	private	1	0	db	The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified owner .	documented
 com.webos.mediadb	reserveIds	luna://com.webos.mediadb/reserveIds	public	0	0	db	Reserves a block of object IDs.	documented
 com.webos.mediadb	search	luna://com.webos.mediadb/search	public	0	1	db	Like find but supports the ? full-text operator.	documented
-com.webos.mediadb	setShardMode	luna://com.webos.mediadb/setShardMode	unknown	0	0	db	Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and wi	documented
-com.webos.mediadb	shardInfo	luna://com.webos.mediadb/shardInfo	unknown	0	0	db	Retrieves the state of a shard, like shard activity, associated media devices, mount point.	documented
+com.webos.mediadb	setShardMode	luna://com.webos.mediadb/setShardMode	public	0	0	db	Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and wi	documented
+com.webos.mediadb	shardInfo	luna://com.webos.mediadb/shardInfo	public	0	0	db	Retrieves the state of a shard, like shard activity, associated media devices, mount point.	documented
 com.webos.mediadb	shardKind	luna://com.webos.mediadb/shardKind	public	0	0	media	Handles the shard kind.	inferred
-com.webos.mediadb	stats	luna://com.webos.mediadb/stats	unknown	0	0	db	The stats method returns detailed information about the storage space used by every service.	documented
+com.webos.mediadb	stats	luna://com.webos.mediadb/stats	private	0	0	db	The stats method returns detailed information about the storage space used by every service.	documented
 com.webos.mediadb	watch	luna://com.webos.mediadb/watch	public	0	1	db	Watches for updates that would change a query result.	documented
 com.webos.memorymanager	getCloseAppId	luna://com.webos.memorymanager/getCloseAppId	private	0	0	misc	Returns the close app ID.	inferred
 com.webos.memorymanager	getConfigs	luna://com.webos.memorymanager/getConfigs	private	0	0	settings	Returns the configs.	inferred
@@ -1573,7 +1573,7 @@ com.webos.service.applicationmanager	open	luna://com.webos.service.applicationma
 com.webos.service.applicationmanager	params	luna://com.webos.service.applicationmanager/params	unknown	0	0	apps	Contains the parameters for the target application. Specify correct parameters for each application. As each application has different parameters, the parameter	documented
 com.webos.service.applicationmanager	pause	luna://com.webos.service.applicationmanager/pause	public	0	0	apps	Pauses an application. Note : At least one parameter is required. ('id', 'launchPointId', 'instanceId')	documented
 com.webos.service.applicationmanager	registerApp	luna://com.webos.service.applicationmanager/registerApp	public	0	1	apps	Registers to receive events related to app life cycle.	documented
-com.webos.service.applicationmanager	registerNativeApp	luna://com.webos.service.applicationmanager/registerNativeApp	unknown	0	0	apps	Registered in webOS OSE sysbus api.json (ACG group application.operation); name only	documented
+com.webos.service.applicationmanager	registerNativeApp	luna://com.webos.service.applicationmanager/registerNativeApp	public	0	0	apps	Registered in webOS OSE sysbus api.json (ACG group application.operation); name only	documented
 com.webos.service.applicationManager	registerVerbsForRedirect	luna://com.webos.service.applicationManager/registerVerbsForRedirect	private	0	0	apps	Registers the verbs for redirect.	inferred
 com.webos.service.applicationManager	registerVerbsForResource	luna://com.webos.service.applicationManager/registerVerbsForResource	private	0	0	apps	Registers the verbs for resource.	inferred
 com.webos.service.applicationManager	releaseBlockSystemApp	luna://com.webos.service.applicationManager/releaseBlockSystemApp	private	0	0	apps	Releases the block system app.	inferred
@@ -2211,20 +2211,20 @@ com.webos.service.bluetooth2	hfp/sendAT	luna://com.webos.service.bluetooth2/hfp/
 com.webos.service.bluetooth2	hfp/sendResult	luna://com.webos.service.bluetooth2/hfp/sendResult	public	0	0	bluetooth	Sends the result (hfp)	inferred
 com.webos.service.bluetooth2	hid/connect	luna://com.webos.service.bluetooth2/hid/connect	private	0	0	bluetooth	Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only	documented
 com.webos.service.bluetooth2	hid/disconnect	luna://com.webos.service.bluetooth2/hid/disconnect	private	0	0	bluetooth	Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only	documented
-com.webos.service.bluetooth2	hid/getStatus	luna://com.webos.service.bluetooth2/hid/getStatus	unknown	0	0	bluetooth	Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only	documented
+com.webos.service.bluetooth2	hid/getStatus	luna://com.webos.service.bluetooth2/hid/getStatus	public	0	0	bluetooth	Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only	documented
 com.webos.service.bluetooth2	hid/internal/getReport	luna://com.webos.service.bluetooth2/hid/internal/getReport	private	0	0	bluetooth	Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only	documented
 com.webos.service.bluetooth2	hid/internal/sendData	luna://com.webos.service.bluetooth2/hid/internal/sendData	private	0	0	bluetooth	Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only	documented
 com.webos.service.bluetooth2	hid/internal/setReport	luna://com.webos.service.bluetooth2/hid/internal/setReport	private	0	0	bluetooth	Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only	documented
 com.webos.service.bluetooth2	le/configureAdvertisement	luna://com.webos.service.bluetooth2/le/configureAdvertisement	public	0	0	bluetooth	Configures the advertisement (le)	inferred
 com.webos.service.bluetooth2	le/disableAdvertising	luna://com.webos.service.bluetooth2/le/disableAdvertising	public	0	0	bluetooth	Stops and disables advertising Note: Call this method after le/startAdvertising.	documented
-com.webos.service.bluetooth2	le/getStatus	luna://com.webos.service.bluetooth2/le/getStatus	unknown	0	0	bluetooth	Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only	documented
+com.webos.service.bluetooth2	le/getStatus	luna://com.webos.service.bluetooth2/le/getStatus	public	0	0	bluetooth	Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only	documented
 com.webos.service.bluetooth2	le/internal/startScan	luna://com.webos.service.bluetooth2/le/internal/startScan	private	0	0	bluetooth	Starts the scan (le internal)	inferred
 com.webos.service.bluetooth2	le/setScanParameters	luna://com.webos.service.bluetooth2/le/setScanParameters	private	0	0	bluetooth	Sets the scan parameters (le)	inferred
 com.webos.service.bluetooth2	le/startAdvertising	luna://com.webos.service.bluetooth2/le/startAdvertising	public	0	1	bluetooth	Starts broadcasting the Bluetooth Low Energy advertisement.	documented
 com.webos.service.bluetooth2	le/startMultiScan	luna://com.webos.service.bluetooth2/le/startMultiScan	private	0	0	bluetooth	Starts the multi scan (le)	inferred
 com.webos.service.bluetooth2	le/startScan	luna://com.webos.service.bluetooth2/le/startScan	public	0	1	bluetooth	Starts scanning only ble devices.	documented
 com.webos.service.bluetooth2	le/stopAdvertising	luna://com.webos.service.bluetooth2/le/stopAdvertising	public	0	0	bluetooth	Stops the advertising (le)	inferred
-com.webos.service.bluetooth2	le/updateAdvertising	luna://com.webos.service.bluetooth2/le/updateAdvertising	unknown	0	0	bluetooth	Registered in webOS OSE sysbus api.json (ACG group bluetooth.operation); name only	documented
+com.webos.service.bluetooth2	le/updateAdvertising	luna://com.webos.service.bluetooth2/le/updateAdvertising	public	0	0	bluetooth	Registered in webOS OSE sysbus api.json (ACG group bluetooth.operation); name only	documented
 com.webos.service.bluetooth2	leaudio/internal/updateBroadcastMetadata	luna://com.webos.service.bluetooth2/leaudio/internal/updateBroadcastMetadata	private	0	0	audio	Updates the broadcast metadata (leaudio internal)	inferred
 com.webos.service.bluetooth2	map/connect	luna://com.webos.service.bluetooth2/map/connect	public	0	1	bluetooth	Connects to the MAS Instance of the specified remote device. Note: The method is available only for MCE .	documented
 com.webos.service.bluetooth2	map/disconnect	luna://com.webos.service.bluetooth2/map/disconnect	public	0	0	bluetooth	Disconnects from the MAS Instance on the specified remote device. Note: The method is available only for MCE .	documented
@@ -2337,7 +2337,7 @@ com.webos.service.btaudiosnk	open	luna://com.webos.service.btaudiosnk/open	priva
 com.webos.service.btaudiosnk	removePairedDevices	luna://com.webos.service.btaudiosnk/removePairedDevices	private	1	0	audio	Removes the paired devices.	inferred
 com.webos.service.btaudiosnk	setPlayMode	luna://com.webos.service.btaudiosnk/setPlayMode	private	0	0	audio	Sets the play mode.	inferred
 com.webos.service.btaudiosrc	cancelDiscovery	luna://com.webos.service.btaudiosrc/cancelDiscovery	private	0	0	audio	Cancels the discovery.	inferred
-com.webos.service.btaudiosrc	connect	luna://com.webos.service.btaudiosrc/connect	unknown	0	0	bluetooth	Connects a paired Bluetooth audio device and switches output to it, without the confirmation alert that bluetooth2 a2dp/connect raises	documented
+com.webos.service.btaudiosrc	connect	luna://com.webos.service.btaudiosrc/connect	private	0	0	bluetooth	Connects a paired Bluetooth audio device and switches output to it, without the confirmation alert that bluetooth2 a2dp/connect raises	documented
 com.webos.service.btaudiosrc	customCommand	luna://com.webos.service.btaudiosrc/customCommand	private	0	0	audio	Handles the custom command.	inferred
 com.webos.service.btaudiosrc	disconnect	luna://com.webos.service.btaudiosrc/disconnect	private	0	0	audio	Disconnects the btaudiosrc.	inferred
 com.webos.service.btaudiosrc	getConnectedDevice	luna://com.webos.service.btaudiosrc/getConnectedDevice	private	0	0	audio	Returns the connected device.	inferred
@@ -2811,7 +2811,7 @@ com.webos.service.connectionmanager	findProxyForURL	luna://com.webos.service.con
 com.webos.service.connectionmanager	getHistory	luna://com.webos.service.connectionmanager/getHistory	private	0	0	connection	Returns the history.	inferred
 com.webos.service.connectionmanager	getinfo	luna://com.webos.service.connectionmanager/getinfo	public	0	1	connection	Gets the MAC addresses for the Wi-Fi and wired interfaces. When subscribed, getInfo periodically checks for any changes in interface MAC addresses and notifies 	documented
 com.webos.service.connectionmanager	getStatus	luna://com.webos.service.connectionmanager/getStatus	public	0	1	connection	Provides the current status of Wi-Fi and wired network connections on the system.	documented
-com.webos.service.connectionmanager	getUserStatus	luna://com.webos.service.connectionmanager/getUserStatus	public	0	0	network	Returns the user status.	inferred
+com.webos.service.connectionmanager	getUserStatus	luna://com.webos.service.connectionmanager/getUserStatus	private	0	0	network	Returns the user status.	inferred
 com.webos.service.connectionmanager	getwolwowlstatus	luna://com.webos.service.connectionmanager/getwolwowlstatus	private	0	0	connection	Handles the getwolwowlstatus.	inferred
 com.webos.service.connectionmanager	InterfaceInfo	luna://com.webos.service.connectionmanager/InterfaceInfo	unknown	0	0	connection	This object provides detailed information about the interfaces details Sample "InterfaceInfo" object : { "name" : "eth0", "netmask": "255.255.255.0", "dns1": "1	documented
 com.webos.service.connectionmanager	InterfaceMacInfo	luna://com.webos.service.connectionmanager/InterfaceMacInfo	unknown	0	0	connection	Provides interfaces MAC address and name Sample InterfaceMacinfo object : { "name":"eth0", "macAddress":"AA:BB:CC:DD:EE:FF" }	documented
@@ -5104,9 +5104,9 @@ com.webos.service.mrcu	cursor/setSensitivity	luna://com.webos.service.mrcu/curso
 com.webos.service.mrcu	cursor/setSlideMode	luna://com.webos.service.mrcu/cursor/setSlideMode	public	0	0	input	Sets the slide mode (cursor)	inferred
 com.webos.service.mrcu	cursor/setWakeUpCondition	luna://com.webos.service.mrcu/cursor/setWakeUpCondition	public	0	0	input	Sets the wake up condition (cursor)	inferred
 com.webos.service.mrcu	decreasePairingHistoryCount	luna://com.webos.service.mrcu/decreasePairingHistoryCount	private	0	0	input	Decreases the pairing history count.	inferred
-com.webos.service.mrcu	enableAudioSinkMode	luna://com.webos.service.mrcu/enableAudioSinkMode	private	0	0	input	Enables the audio sink mode.	inferred
+com.webos.service.mrcu	enableAudioSinkMode	luna://com.webos.service.mrcu/enableAudioSinkMode	public	0	0	input	Enables the audio sink mode.	inferred
 com.webos.service.mrcu	enableDualPairing	luna://com.webos.service.mrcu/enableDualPairing	public	0	0	input	Enables the dual pairing.	inferred
-com.webos.service.mrcu	enableLoggingMotion	luna://com.webos.service.mrcu/enableLoggingMotion	private	0	0	input	Enables the logging motion.	inferred
+com.webos.service.mrcu	enableLoggingMotion	luna://com.webos.service.mrcu/enableLoggingMotion	public	0	0	input	Enables the logging motion.	inferred
 com.webos.service.mrcu	enableMotionHistory	luna://com.webos.service.mrcu/enableMotionHistory	private	0	0	input	Enables the motion history.	inferred
 com.webos.service.mrcu	enablePrintRfStatus	luna://com.webos.service.mrcu/enablePrintRfStatus	public	0	0	input	Enables the print RF status.	inferred
 com.webos.service.mrcu	eraseIrCodes	luna://com.webos.service.mrcu/eraseIrCodes	public	1	0	input	Erases the IR codes.	inferred
@@ -5120,10 +5120,10 @@ com.webos.service.mrcu	getDeviceInfo	luna://com.webos.service.mrcu/getDeviceInfo
 com.webos.service.mrcu	getDiagnosisItem	luna://com.webos.service.mrcu/getDiagnosisItem	private	0	0	input	Returns the diagnosis item.	inferred
 com.webos.service.mrcu	getDoingOtaStatus	luna://com.webos.service.mrcu/getDoingOtaStatus	private	0	0	input	Returns the doing ota status.	inferred
 com.webos.service.mrcu	getLongpressKeyInfo	luna://com.webos.service.mrcu/getLongpressKeyInfo	private	0	0	input	Returns the longpress key info.	inferred
-com.webos.service.mrcu	getMotionEngineStatus	luna://com.webos.service.mrcu/getMotionEngineStatus	private	0	0	input	Returns the motion engine status.	inferred
+com.webos.service.mrcu	getMotionEngineStatus	luna://com.webos.service.mrcu/getMotionEngineStatus	public	0	0	input	Returns the motion engine status.	inferred
 com.webos.service.mrcu	getMrcuCmdHistory	luna://com.webos.service.mrcu/getMrcuCmdHistory	private	0	0	input	Returns the MRCU cmd history.	inferred
-com.webos.service.mrcu	getPairingHistory	luna://com.webos.service.mrcu/getPairingHistory	private	0	0	input	Returns the pairing history.	inferred
-com.webos.service.mrcu	getPairingHistoryCount	luna://com.webos.service.mrcu/getPairingHistoryCount	private	0	0	input	Returns the pairing history count.	inferred
+com.webos.service.mrcu	getPairingHistory	luna://com.webos.service.mrcu/getPairingHistory	public	0	0	input	Returns the pairing history.	inferred
+com.webos.service.mrcu	getPairingHistoryCount	luna://com.webos.service.mrcu/getPairingHistoryCount	public	0	0	input	Returns the pairing history count.	inferred
 com.webos.service.mrcu	getPairingStatus	luna://com.webos.service.mrcu/getPairingStatus	private	0	0	input	Returns the pairing status.	inferred
 com.webos.service.mrcu	getSensorData	luna://com.webos.service.mrcu/getSensorData	public	0	0	input	Returns the sensor data.	inferred
 com.webos.service.mrcu	getStatus	luna://com.webos.service.mrcu/getStatus	public	0	0	input	Returns the status.	inferred
@@ -5172,7 +5172,7 @@ com.webos.service.mrcu	sensor2/setSensorInterval	luna://com.webos.service.mrcu/s
 com.webos.service.mrcu	setAutoAlign	luna://com.webos.service.mrcu/setAutoAlign	public	0	0	input	Sets the auto align.	inferred
 com.webos.service.mrcu	setCursorBounds	luna://com.webos.service.mrcu/setCursorBounds	private	0	0	input	Sets the cursor bounds.	inferred
 com.webos.service.mrcu	setHotkeyCursorPolicy	luna://com.webos.service.mrcu/setHotkeyCursorPolicy	private	0	0	input	Sets the hotkey cursor policy.	inferred
-com.webos.service.mrcu	setPairingHistoryKeyCode	luna://com.webos.service.mrcu/setPairingHistoryKeyCode	private	0	0	input	Sets the pairing history key code.	inferred
+com.webos.service.mrcu	setPairingHistoryKeyCode	luna://com.webos.service.mrcu/setPairingHistoryKeyCode	public	0	0	input	Sets the pairing history key code.	inferred
 com.webos.service.mrcu	setPosition	luna://com.webos.service.mrcu/setPosition	public	0	0	input	Sets the position.	inferred
 com.webos.service.mrcu	setSensitivity	luna://com.webos.service.mrcu/setSensitivity	public	0	0	input	Sets the sensitivity.	inferred
 com.webos.service.mrcu	setSharedMemory	luna://com.webos.service.mrcu/setSharedMemory	public	0	0	input	Sets the shared memory.	inferred
@@ -6556,7 +6556,7 @@ com.webos.service.tv.systemproperty	getPgammaCount	luna://com.webos.service.tv.s
 com.webos.service.tv.systemproperty	getPgammaMode	luna://com.webos.service.tv.systemproperty/getPgammaMode	private	0	0	system-info	Returns the pgamma mode.	inferred
 com.webos.service.tv.systemproperty	getPowerOffReason	luna://com.webos.service.tv.systemproperty/getPowerOffReason	private	0	0	system-info	Returns the power off reason.	inferred
 com.webos.service.tv.systemproperty	getPowerOffReasonCount	luna://com.webos.service.tv.systemproperty/getPowerOffReasonCount	private	0	0	system-info	Returns the power off reason count.	inferred
-com.webos.service.tv.systemproperty	getProperties	luna://com.webos.service.tv.systemproperty/getProperties	private	0	0	system-info	Returns the properties.	inferred
+com.webos.service.tv.systemproperty	getProperties	luna://com.webos.service.tv.systemproperty/getProperties	public	0	0	system-info	Returns the properties.	inferred
 com.webos.service.tv.systemproperty	getSystemInfo	luna://com.webos.service.tv.systemproperty/getSystemInfo	public	0	1	system-info	Retrieves system information by keys: boardType, firmwareVersion, modelName, sdkVersion, UHD, _3d.	documented
 com.webos.service.tv.systemproperty	getSystemProperties	luna://com.webos.service.tv.systemproperty/getSystemProperties	private	0	0	system-info	Reads system properties such as panelUsageTime (10-minute units)	documented
 com.webos.service.tv.systemproperty	getTempSensorStatus	luna://com.webos.service.tv.systemproperty/getTempSensorStatus	private	0	0	system-info	Returns the temp sensor status.	inferred
@@ -7506,7 +7506,7 @@ com.webos.service.uwb	startDiscovery	luna://com.webos.service.uwb/startDiscovery
 com.webos.service.uwb	startRanging	luna://com.webos.service.uwb/startRanging	unknown	0	0	connection	Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only	documented
 com.webos.service.uwb	stopDiscovery	luna://com.webos.service.uwb/stopDiscovery	unknown	0	0	connection	Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only	documented
 com.webos.service.uwb	stopRanging	luna://com.webos.service.uwb/stopRanging	unknown	0	0	connection	Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only	documented
-com.webos.service.videooutput	blankVideo	luna://com.webos.service.videooutput/blankVideo	unknown	0	0	display	Registered in webOS OSE sysbus api.json (ACG group media); name only	documented
+com.webos.service.videooutput	blankVideo	luna://com.webos.service.videooutput/blankVideo	public	0	0	display	Registered in webOS OSE sysbus api.json (ACG group media); name only	documented
 com.webos.service.videooutput	ComposeOrder	luna://com.webos.service.videooutput/ComposeOrder	unknown	0	0	display	Object to represent compositing parameters for the video sinks.	documented
 com.webos.service.videooutput	connect	luna://com.webos.service.videooutput/connect	public	0	0	display	Connects a video source to a video sink	documented
 com.webos.service.videooutput	disconnect	luna://com.webos.service.videooutput/disconnect	public	0	0	display	Disconnects video from sink.	documented

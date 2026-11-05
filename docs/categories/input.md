@@ -346,9 +346,9 @@
 | [`luna://com.webos.service.mrcu/cursor/setSlideMode`](../services/com.webos.service.mrcu.md#cursor_setslidemode) | public | inferred | Sets the slide mode (cursor) |
 | [`luna://com.webos.service.mrcu/cursor/setWakeUpCondition`](../services/com.webos.service.mrcu.md#cursor_setwakeupcondition) | public | inferred | Sets the wake up condition (cursor) |
 | [`luna://com.webos.service.mrcu/decreasePairingHistoryCount`](../services/com.webos.service.mrcu.md#decreasepairinghistorycount) | private | inferred | Decreases the pairing history count. |
-| [`luna://com.webos.service.mrcu/enableAudioSinkMode`](../services/com.webos.service.mrcu.md#enableaudiosinkmode) | private | inferred | Enables the audio sink mode. |
+| [`luna://com.webos.service.mrcu/enableAudioSinkMode`](../services/com.webos.service.mrcu.md#enableaudiosinkmode) | public | inferred | Enables the audio sink mode. |
 | [`luna://com.webos.service.mrcu/enableDualPairing`](../services/com.webos.service.mrcu.md#enabledualpairing) | public | inferred | Enables the dual pairing. |
-| [`luna://com.webos.service.mrcu/enableLoggingMotion`](../services/com.webos.service.mrcu.md#enableloggingmotion) | private | inferred | Enables the logging motion. |
+| [`luna://com.webos.service.mrcu/enableLoggingMotion`](../services/com.webos.service.mrcu.md#enableloggingmotion) | public | inferred | Enables the logging motion. |
 | [`luna://com.webos.service.mrcu/enableMotionHistory`](../services/com.webos.service.mrcu.md#enablemotionhistory) | private | inferred | Enables the motion history. |
 | [`luna://com.webos.service.mrcu/enablePrintRfStatus`](../services/com.webos.service.mrcu.md#enableprintrfstatus) | public | inferred | Enables the print RF status. |
 | [`luna://com.webos.service.mrcu/eraseIrCodes`](../services/com.webos.service.mrcu.md#eraseircodes) | public | inferred | Erases the IR codes. ⚠️ |
@@ -362,10 +362,10 @@
 | [`luna://com.webos.service.mrcu/getDiagnosisItem`](../services/com.webos.service.mrcu.md#getdiagnosisitem) | private | inferred | Returns the diagnosis item. |
 | [`luna://com.webos.service.mrcu/getDoingOtaStatus`](../services/com.webos.service.mrcu.md#getdoingotastatus) | private | inferred | Returns the doing ota status. |
 | [`luna://com.webos.service.mrcu/getLongpressKeyInfo`](../services/com.webos.service.mrcu.md#getlongpresskeyinfo) | private | inferred | Returns the longpress key info. |
-| [`luna://com.webos.service.mrcu/getMotionEngineStatus`](../services/com.webos.service.mrcu.md#getmotionenginestatus) | private | inferred | Returns the motion engine status. |
+| [`luna://com.webos.service.mrcu/getMotionEngineStatus`](../services/com.webos.service.mrcu.md#getmotionenginestatus) | public | inferred | Returns the motion engine status. |
 | [`luna://com.webos.service.mrcu/getMrcuCmdHistory`](../services/com.webos.service.mrcu.md#getmrcucmdhistory) | private | inferred | Returns the MRCU cmd history. |
-| [`luna://com.webos.service.mrcu/getPairingHistory`](../services/com.webos.service.mrcu.md#getpairinghistory) | private | inferred | Returns the pairing history. |
-| [`luna://com.webos.service.mrcu/getPairingHistoryCount`](../services/com.webos.service.mrcu.md#getpairinghistorycount) | private | inferred | Returns the pairing history count. |
+| [`luna://com.webos.service.mrcu/getPairingHistory`](../services/com.webos.service.mrcu.md#getpairinghistory) | public | inferred | Returns the pairing history. |
+| [`luna://com.webos.service.mrcu/getPairingHistoryCount`](../services/com.webos.service.mrcu.md#getpairinghistorycount) | public | inferred | Returns the pairing history count. |
 | [`luna://com.webos.service.mrcu/getPairingStatus`](../services/com.webos.service.mrcu.md#getpairingstatus) | private | inferred | Returns the pairing status. |
 | [`luna://com.webos.service.mrcu/getSensorData`](../services/com.webos.service.mrcu.md#getsensordata) | public | inferred | Returns the sensor data. |
 | [`luna://com.webos.service.mrcu/getStatus`](../services/com.webos.service.mrcu.md#getstatus) | public | inferred | Returns the status. |
@@ -414,7 +414,7 @@
 | [`luna://com.webos.service.mrcu/setAutoAlign`](../services/com.webos.service.mrcu.md#setautoalign) | public | inferred | Sets the auto align. |
 | [`luna://com.webos.service.mrcu/setCursorBounds`](../services/com.webos.service.mrcu.md#setcursorbounds) | private | inferred | Sets the cursor bounds. |
 | [`luna://com.webos.service.mrcu/setHotkeyCursorPolicy`](../services/com.webos.service.mrcu.md#sethotkeycursorpolicy) | private | inferred | Sets the hotkey cursor policy. |
-| [`luna://com.webos.service.mrcu/setPairingHistoryKeyCode`](../services/com.webos.service.mrcu.md#setpairinghistorykeycode) | private | inferred | Sets the pairing history key code. |
+| [`luna://com.webos.service.mrcu/setPairingHistoryKeyCode`](../services/com.webos.service.mrcu.md#setpairinghistorykeycode) | public | inferred | Sets the pairing history key code. |
 | [`luna://com.webos.service.mrcu/setPosition`](../services/com.webos.service.mrcu.md#setposition) | public | inferred | Sets the position. |
 | [`luna://com.webos.service.mrcu/setSensitivity`](../services/com.webos.service.mrcu.md#setsensitivity) | public | inferred | Sets the sensitivity. |
 | [`luna://com.webos.service.mrcu/setSharedMemory`](../services/com.webos.service.mrcu.md#setsharedmemory) | public | inferred | Sets the shared memory. |

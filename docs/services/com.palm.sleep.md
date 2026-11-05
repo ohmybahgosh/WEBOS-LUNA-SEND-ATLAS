@@ -30,15 +30,15 @@ Power-management service handling suspend/wake: wake-lock registration, suspend 
 | [`shutdown/shutdownServicesAck`](#shutdown_shutdownservicesack) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
 | [`shutdown/shutdownServicesRegister`](#shutdown_shutdownservicesregister) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
 | [`shutdown/TESTresetShutdownState`](#shutdown_testresetshutdownstate) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`time/alarmAdd`](#time_alarmadd) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`time/alarmAddCalendar`](#time_alarmaddcalendar) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`time/alarmQuery`](#time_alarmquery) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`time/alarmRemove`](#time_alarmremove) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`time/alarmAdd`](#time_alarmadd) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`time/alarmAddCalendar`](#time_alarmaddcalendar) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`time/alarmQuery`](#time_alarmquery) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`time/alarmRemove`](#time_alarmremove) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
 | [`time/internalAlarmFired`](#time_internalalarmfired) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`timeout/clear`](#timeout_clear) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`timeout/clear`](#timeout_clear) | public |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
 | [`timeout/getAllAlarms`](#timeout_getallalarms) | private |  | power-mgmt | inferred | Returns the all alarms (timeout) |
 | [`timeout/getNextWakeupAlarm`](#timeout_getnextwakeupalarm) | private |  | power-mgmt | inferred | Returns the next wakeup alarm (timeout) |
-| [`timeout/set`](#timeout_set) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`timeout/set`](#timeout_set) | public |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
 
 <a id="com_palm_power_activityend"></a>
 ## `com/palm/power/activityEnd`
@@ -517,7 +517,7 @@ Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.web
 
 Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -538,7 +538,7 @@ Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.web
 
 Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -559,7 +559,7 @@ Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.web
 
 Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -580,7 +580,7 @@ Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.web
 
 Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -622,7 +622,7 @@ Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.web
 
 Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -689,7 +689,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  

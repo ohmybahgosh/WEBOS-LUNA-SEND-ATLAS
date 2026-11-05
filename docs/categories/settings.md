@@ -7,13 +7,13 @@
 | [`luna://com.example.helloworld/config/setGreeting`](../services/com.example.helloworld.md#config_setgreeting) | public | inferred | Sets the greeting (config) |
 | [`luna://com.lge.settingsservice/batch`](../services/com.lge.settingsservice.md#batch) | private | documented | Executes several settingsservice operations in one call |
 | [`luna://com.lge.settingsservice/deleteSystemSettings`](../services/com.lge.settingsservice.md#deletesystemsettings) | private | documented | Deletes the specified system settings |
-| [`luna://com.lge.settingsservice/getCurrentSettings`](../services/com.lge.settingsservice.md#getcurrentsettings) | unknown | documented | Returns settings of foreground App |
-| [`luna://com.lge.settingsservice/getSystemSettingDesc`](../services/com.lge.settingsservice.md#getsystemsettingdesc) | unknown | documented | Retrieve the description for the specified key |
+| [`luna://com.lge.settingsservice/getCurrentSettings`](../services/com.lge.settingsservice.md#getcurrentsettings) | private | documented | Returns settings of foreground App |
+| [`luna://com.lge.settingsservice/getSystemSettingDesc`](../services/com.lge.settingsservice.md#getsystemsettingdesc) | public | documented | Retrieve the description for the specified key |
 | [`luna://com.lge.settingsservice/getSystemSettingDescPriv`](../services/com.lge.settingsservice.md#getsystemsettingdescpriv) | private | inferred | Returns the system setting desc priv. |
-| [`luna://com.lge.settingsservice/getSystemSettingFactoryValue`](../services/com.lge.settingsservice.md#getsystemsettingfactoryvalue) | unknown | documented | Retrieve the list of default values for the specified key. |
-| [`luna://com.lge.settingsservice/getSystemSettings`](../services/com.lge.settingsservice.md#getsystemsettings) | unknown | documented | Retrieves the values for keys specified in a passed array on system settings. |
+| [`luna://com.lge.settingsservice/getSystemSettingFactoryValue`](../services/com.lge.settingsservice.md#getsystemsettingfactoryvalue) | public | documented | Retrieve the list of default values for the specified key. |
+| [`luna://com.lge.settingsservice/getSystemSettings`](../services/com.lge.settingsservice.md#getsystemsettings) | public | documented | Retrieves the values for keys specified in a passed array on system settings. |
 | [`luna://com.lge.settingsservice/getSystemSettingsPriv`](../services/com.lge.settingsservice.md#getsystemsettingspriv) | private | inferred | Returns the system settings priv. |
-| [`luna://com.lge.settingsservice/getSystemSettingValues`](../services/com.lge.settingsservice.md#getsystemsettingvalues) | unknown | documented | Retrieve the list of valid values for the specified key |
+| [`luna://com.lge.settingsservice/getSystemSettingValues`](../services/com.lge.settingsservice.md#getsystemsettingvalues) | public | documented | Retrieve the list of valid values for the specified key |
 | [`luna://com.lge.settingsservice/getSystemSettingValuesPriv`](../services/com.lge.settingsservice.md#getsystemsettingvaluespriv) | private | inferred | Returns the system setting values priv. |
 | [`luna://com.lge.settingsservice/internal/getCurrentSubscriptions`](../services/com.lge.settingsservice.md#internal_getcurrentsubscriptions) | private | documented | Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name only |
 | [`luna://com.lge.settingsservice/internal/instrument`](../services/com.lge.settingsservice.md#internal_instrument) | private | documented | Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name only |

@@ -213,6 +213,10 @@ Handles the find.
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
 
+| Param | Type / notes |
+|---|---|
+| `query` | (required; observed via on-device probe) |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/find '{}'
 ```
@@ -235,6 +239,10 @@ Returns the accountdb.
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
 - **Confidence:** inferred
+
+| Param | Type / notes |
+|---|---|
+| `ids` | (required; observed via on-device probe) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/get '{}'

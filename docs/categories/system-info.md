@@ -250,7 +250,7 @@
 | [`luna://com.webos.service.tv.systemproperty/getPgammaMode`](../services/com.webos.service.tv.systemproperty.md#getpgammamode) | private | inferred | Returns the pgamma mode. |
 | [`luna://com.webos.service.tv.systemproperty/getPowerOffReason`](../services/com.webos.service.tv.systemproperty.md#getpoweroffreason) | private | inferred | Returns the power off reason. |
 | [`luna://com.webos.service.tv.systemproperty/getPowerOffReasonCount`](../services/com.webos.service.tv.systemproperty.md#getpoweroffreasoncount) | private | inferred | Returns the power off reason count. |
-| [`luna://com.webos.service.tv.systemproperty/getProperties`](../services/com.webos.service.tv.systemproperty.md#getproperties) | private | inferred | Returns the properties. |
+| [`luna://com.webos.service.tv.systemproperty/getProperties`](../services/com.webos.service.tv.systemproperty.md#getproperties) | public | inferred | Returns the properties. |
 | [`luna://com.webos.service.tv.systemproperty/getSystemInfo`](../services/com.webos.service.tv.systemproperty.md#getsysteminfo) | public | documented | Retrieves system information by keys: boardType, firmwareVersion, modelName, sdkVersion, UHD, _3d. |
 | [`luna://com.webos.service.tv.systemproperty/getSystemProperties`](../services/com.webos.service.tv.systemproperty.md#getsystemproperties) | private | documented | Reads system properties such as panelUsageTime (10-minute units) |
 | [`luna://com.webos.service.tv.systemproperty/getTempSensorStatus`](../services/com.webos.service.tv.systemproperty.md#gettempsensorstatus) | private | inferred | Returns the temp sensor status. |

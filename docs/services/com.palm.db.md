@@ -10,14 +10,14 @@ Legacy alias for the db8 JSON database (com.webos.service.db): stores and querie
 |---|---|---|---|---|---|
 | [`backupEpg`](#backupepg) | private |  | tv-broadcast | inferred | Backs up the EPG. |
 | [`batch`](#batch) | public |  | db | documented | Executes multiple database operations in one request. |
-| [`cancelSearch`](#cancelsearch) | unknown |  | db | documented | Stops the search operation mid-way. This method can be used when the search operation takes a long time to return results or required to sea |
+| [`cancelSearch`](#cancelsearch) | private |  | db | documented | Stops the search operation mid-way. This method can be used when the search operation takes a long time to return results or required to sea |
 | [`compact`](#compact) | private |  | db | documented | The compact method invokes the low level garbage collector. When DB8 executes a del operation without Purge:True param, it only marks the ob |
 | [`del`](#del) | public |  | db | documented | Deletes JSON data objects. |
 | [`delKind`](#delkind) | public |  | db | documented | Deletes a kind and ALL objects of that kind. |
 | [`dump`](#dump) | private |  | db | documented | Backs up a database. The file created by the dump method typically contains JSON statements to recreate all of the Kinds and data of the dat |
 | [`find`](#find) | public | yes | db | documented | Returns objects matching the query. |
 | [`get`](#get) | public |  | db | documented | Retrieves objects by IDs (fastest retrieval). |
-| [`getProfile`](#getprofile) | unknown |  | db | documented | Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time. |
+| [`getProfile`](#getprofile) | private |  | db | documented | Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time. |
 | [`internal/postBackup`](#internal_postbackup) | private |  | db | documented | An internal DB8 method that is called when a backup operation has been completed. |
 | [`internal/postRestore`](#internal_postrestore) | private |  | db | documented | An internal DB8 method that is called when the database finishes a restore process. |
 | [`internal/preBackup`](#internal_prebackup) | private |  | db | documented | Invoked when an internal webOS service wants to restore a database from a backup file. |
@@ -27,25 +27,25 @@ Legacy alias for the db8 JSON database (com.webos.service.db): stores and querie
 | [`internal/scheduledPurge`](#internal_scheduledpurge) | private |  | db | documented | An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that  |
 | [`internal/scheduledSpaceCheck`](#internal_scheduledspacecheck) | private |  | db | documented | An internal DB8 callback method, that is called by the Activity Manager for checking available disk space. |
 | [`internal/spaceCheck`](#internal_spacecheck) | private |  | db | documented | An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when  |
-| [`listActiveMedia`](#listactivemedia) | unknown |  | db | documented | Returns a list of active attached media, and shards. |
+| [`listActiveMedia`](#listactivemedia) | public |  | db | documented | Returns a list of active attached media, and shards. |
 | [`load`](#load) | private |  | db | documented | Restores a database from a dumped JSON file. ⚠️ |
 | [`merge`](#merge) | public |  | db | documented | Updates properties of existing objects. |
-| [`mergePut`](#mergeput) | unknown |  | db | documented | The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The o |
-| [`profile`](#profile) | unknown |  | db | documented | Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profili |
-| [`purge`](#purge) | unknown |  | db | documented | The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space chec ⚠️ |
-| [`purgeStatus`](#purgestatus) | unknown |  | db | documented | The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were perm |
+| [`mergePut`](#mergeput) | public |  | db | documented | The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The o |
+| [`profile`](#profile) | private |  | db | documented | Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profili |
+| [`purge`](#purge) | private |  | db | documented | The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space chec ⚠️ |
+| [`purgeStatus`](#purgestatus) | public |  | db | documented | The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were perm |
 | [`put`](#put) | public |  | db | documented | Stores JSON objects of a kind. |
 | [`putKind`](#putkind) | public |  | db | documented | Registers a kind with the database. |
 | [`putPermissions`](#putpermissions) | public |  | db | documented | Grants other apps/services access to the app DB8 data. |
 | [`putQuotas`](#putquotas) | private |  | db | documented | The putQuotas method provides the ability to update a quota's current service limits at runtime. This service is used by private webOS servi ⚠️ |
 | [`quotaStats`](#quotastats) | private |  | db | documented | The quotaStats method returns information about a service's used limits. |
-| [`removeAppData`](#removeappdata) | unknown |  | db | documented | The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified  ⚠️ |
+| [`removeAppData`](#removeappdata) | private |  | db | documented | The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified  ⚠️ |
 | [`reserveIds`](#reserveids) | public |  | db | documented | Reserves a block of object IDs. |
 | [`search`](#search) | public | yes | db | documented | Like find but supports the ? full-text operator. |
-| [`setShardMode`](#setshardmode) | unknown |  | db | documented | Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by an |
-| [`shardInfo`](#shardinfo) | unknown |  | db | documented | Retrieves the state of a shard, like shard activity, associated media devices, mount point. |
+| [`setShardMode`](#setshardmode) | public |  | db | documented | Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by an |
+| [`shardInfo`](#shardinfo) | public |  | db | documented | Retrieves the state of a shard, like shard activity, associated media devices, mount point. |
 | [`shardKind`](#shardkind) | public |  | db | inferred | Handles the shard kind. |
-| [`stats`](#stats) | unknown |  | db | documented | The stats method returns detailed information about the storage space used by every service. |
+| [`stats`](#stats) | private |  | db | documented | The stats method returns detailed information about the storage space used by every service. |
 | [`watch`](#watch) | public | yes | db | documented | Watches for updates that would change a query result. |
 
 <a id="backupepg"></a>
@@ -101,7 +101,7 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/database)
 
 Stops the search operation mid-way. This method can be used when the search operation takes a long time to return results or required to search with another keyword without waiting for previous search results. It is not applicable to situations where the search method returns results immediately. Note: For this method to work, the search() API must be configured with the 'cancelable' parameter set to 'true'.
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -271,7 +271,7 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/database)
 
 Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time.
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -517,7 +517,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 Returns a list of active attached media, and shards.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -588,7 +588,7 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/database)
 
 The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The object to be updated can be specified in one of the following ways: A query An array of IDs
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -615,7 +615,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profiling using one of the following approaches: - Self enabling: In this approach, the 3rd-party application enables profiling on itself (see example 1). - Enable profiling using admin-privileged applications: In the approach, an admin-privileged application controls DB8 profiling for 3rd-party applications. Use this approach when you want the admin to control the profiling of 3rd-party applications. You can choose to enable profiling for a single application or for all 3rd-party applications. See example 2 and 3.
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -641,7 +641,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space check, and remove all temporary data
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -666,7 +666,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were permanently deleted, and the purgeStatus method will return the updated database revision number.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -811,7 +811,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified owner .
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -883,7 +883,7 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/database)
 
 Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and will be removed by garbage collector. In other words, marking shard as transient will wipe all data from the shard on the nearest garbage collector call.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -909,7 +909,7 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 Retrieves the state of a shard, like shard activity, associated media devices, mount point.
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
@@ -957,7 +957,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 The stats method returns detailed information about the storage space used by every service.
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  

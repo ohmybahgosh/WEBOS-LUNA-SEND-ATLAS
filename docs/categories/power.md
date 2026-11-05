@@ -57,13 +57,13 @@
 | [`luna://com.palm.sleep/shutdown/shutdownServicesAck`](../services/com.palm.sleep.md#shutdown_shutdownservicesack) | private | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
 | [`luna://com.palm.sleep/shutdown/shutdownServicesRegister`](../services/com.palm.sleep.md#shutdown_shutdownservicesregister) | private | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
 | [`luna://com.palm.sleep/shutdown/TESTresetShutdownState`](../services/com.palm.sleep.md#shutdown_testresetshutdownstate) | private | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`luna://com.palm.sleep/time/alarmAdd`](../services/com.palm.sleep.md#time_alarmadd) | unknown | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`luna://com.palm.sleep/time/alarmAddCalendar`](../services/com.palm.sleep.md#time_alarmaddcalendar) | unknown | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`luna://com.palm.sleep/time/alarmQuery`](../services/com.palm.sleep.md#time_alarmquery) | unknown | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`luna://com.palm.sleep/time/alarmRemove`](../services/com.palm.sleep.md#time_alarmremove) | unknown | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`luna://com.palm.sleep/time/alarmAdd`](../services/com.palm.sleep.md#time_alarmadd) | private | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`luna://com.palm.sleep/time/alarmAddCalendar`](../services/com.palm.sleep.md#time_alarmaddcalendar) | private | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`luna://com.palm.sleep/time/alarmQuery`](../services/com.palm.sleep.md#time_alarmquery) | private | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`luna://com.palm.sleep/time/alarmRemove`](../services/com.palm.sleep.md#time_alarmremove) | private | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
 | [`luna://com.palm.sleep/time/internalAlarmFired`](../services/com.palm.sleep.md#time_internalalarmfired) | private | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`luna://com.palm.sleep/timeout/clear`](../services/com.palm.sleep.md#timeout_clear) | unknown | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`luna://com.palm.sleep/timeout/set`](../services/com.palm.sleep.md#timeout_set) | unknown | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`luna://com.palm.sleep/timeout/clear`](../services/com.palm.sleep.md#timeout_clear) | public | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`luna://com.palm.sleep/timeout/set`](../services/com.palm.sleep.md#timeout_set) | public | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
 | [`luna://com.webos.sensord/acc/set_acc_power`](../services/com.webos.sensord.md#acc_set_acc_power) | public | inferred | Sets the acc power (acc) |
 | [`luna://com.webos.sensord/als/set_als_power`](../services/com.webos.sensord.md#als_set_als_power) | public | inferred | Sets the als power (als) |
 | [`luna://com.webos.sensord/getPower`](../services/com.webos.sensord.md#getpower) | public | inferred | Returns the power. |

@@ -183,13 +183,13 @@ Build it with [`webos-app/build.sh`](webos-app/build.sh); details in [`webos-app
 
 | Access | Methods |
 |---|---|
-| `private` | 5141 |
-| `public` | 2438 |
-| `unknown` | 411 |
+| `private` | 5161 |
+| `public` | 2514 |
+| `unknown` | 315 |
 | `ssap` | 100 |
 | `root` | 35 |
 
-`public` = callable by apps with the right permission.  `private` = needs root or system rights.  `ssap` = reachable over the SSAP websocket.  `unknown` = the source didn't say.
+`public` = callable by apps with the right permission.  `private` = needs root or system rights.  `ssap` = reachable over the SSAP websocket.  `unknown` = the source didn't say.  Access levels for methods present on a real LG C2 (webOS 22) are confirmed against the on-device permission groups; 96 previously `unknown` entries were resolved this way.
 
 ### How descriptions are sourced
 

@@ -40,7 +40,7 @@
 | [`luna://com.webos.service.commercial.scapadapter/network/connectWifi`](../services/com.webos.service.commercial.scapadapter.md#network_connectwifi) | public | inferred | Connects the wifi (network) |
 | [`luna://com.webos.service.commercial.scapadapter/network/getWifiList`](../services/com.webos.service.commercial.scapadapter.md#network_getwifilist) | public | inferred | Returns the wifi list (network) |
 | [`luna://com.webos.service.connectionmanager/checkinternetstatus`](../services/com.webos.service.connectionmanager.md#checkinternetstatus) | private | inferred | Handles the checkinternetstatus. |
-| [`luna://com.webos.service.connectionmanager/getUserStatus`](../services/com.webos.service.connectionmanager.md#getuserstatus) | public | inferred | Returns the user status. |
+| [`luna://com.webos.service.connectionmanager/getUserStatus`](../services/com.webos.service.connectionmanager.md#getuserstatus) | private | inferred | Returns the user status. |
 | [`luna://com.webos.service.connectionmanager/setEthernetTethering`](../services/com.webos.service.connectionmanager.md#setethernettethering) | private | inferred | Sets the ethernet tethering. |
 | [`luna://com.webos.service.connectionmanager/tv/createVirtualLan`](../services/com.webos.service.connectionmanager.md#tv_createvirtuallan) | private | inferred | Creates the virtual lan (TV) |
 | [`luna://com.webos.service.connectionmanager/tv/getWolWowlStatus`](../services/com.webos.service.connectionmanager.md#tv_getwolwowlstatus) | private | documented | Gets Wake-on-LAN / Wake-on-WLAN status |

@@ -9,7 +9,7 @@ Bluetooth audio-source service: discovers, connects and manages Bluetooth audio 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
 | [`cancelDiscovery`](#canceldiscovery) | private |  | audio | inferred | Cancels the discovery. |
-| [`connect`](#connect) | unknown |  | bluetooth | documented | Connects a paired Bluetooth audio device and switches output to it, without the confirmation alert that bluetooth2 a2dp/connect raises |
+| [`connect`](#connect) | private |  | bluetooth | documented | Connects a paired Bluetooth audio device and switches output to it, without the confirmation alert that bluetooth2 a2dp/connect raises |
 | [`customCommand`](#customcommand) | private |  | audio | inferred | Handles the custom command. |
 | [`disconnect`](#disconnect) | private |  | audio | inferred | Disconnects the btaudiosrc. |
 | [`getConnectedDevice`](#getconnecteddevice) | private |  | audio | inferred | Returns the connected device. |
@@ -66,7 +66,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Connects a paired Bluetooth audio device and switches output to it, without the confirmation alert that bluetooth2 a2dp/connect raises
 
-- **Access:** unknown  
+- **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** C1-era webOS (user rooted OLED C1)  

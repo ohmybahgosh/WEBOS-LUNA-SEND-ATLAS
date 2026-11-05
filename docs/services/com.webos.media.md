@@ -79,7 +79,7 @@ Core media pipeline service: acquires and manages media resources and pipelines,
 | [`resumeRecord`](#resumerecord) | public |  | media | inferred | Resumes the record. |
 | [`seek`](#seek) | public |  | media | documented | Seeks the media object to a specified time position. |
 | [`seekDone`](#seekdone) | unknown |  | media | documented | The seekDone event is raised when a seek operation for a media has been successfully completed. |
-| [`selectTrack`](#selecttrack) | unknown |  | media | documented | Selects an audio or subtitle track of an open pipeline |
+| [`selectTrack`](#selecttrack) | public |  | media | documented | Selects an audio or subtitle track of an open pipeline |
 | [`selectTrackByPreference`](#selecttrackbypreference) | public |  | media | inferred | Selects the track by preference. |
 | [`selectTrackByPreferencePayload`](#selecttrackbypreferencepayload) | public |  | media | inferred | Selects the track by preference payload. |
 | [`setAppId`](#setappid) | public |  | media | inferred | Sets the app ID. |
@@ -114,27 +114,27 @@ Core media pipeline service: acquires and manages media resources and pipelines,
 | [`setSlaveClock`](#setslaveclock) | public |  | media | inferred | Sets the slave clock. |
 | [`setStreamQuality`](#setstreamquality) | public |  | media | inferred | Sets the stream quality. |
 | [`setSubtitleBackgroundBlinking`](#setsubtitlebackgroundblinking) | public |  | media | inferred | Sets the subtitle background blinking. |
-| [`setSubtitleBackgroundColor`](#setsubtitlebackgroundcolor) | unknown |  | media | documented | Sets subtitle background color for an open media pipeline |
-| [`setSubtitleBackgroundOpacity`](#setsubtitlebackgroundopacity) | unknown |  | media | documented | Sets subtitle background opacity for an open media pipeline |
+| [`setSubtitleBackgroundColor`](#setsubtitlebackgroundcolor) | public |  | media | documented | Sets subtitle background color for an open media pipeline |
+| [`setSubtitleBackgroundOpacity`](#setsubtitlebackgroundopacity) | public |  | media | documented | Sets subtitle background opacity for an open media pipeline |
 | [`setSubtitleCharacterBlinking`](#setsubtitlecharacterblinking) | public |  | media | inferred | Sets the subtitle character blinking. |
-| [`setSubtitleCharacterColor`](#setsubtitlecharactercolor) | unknown |  | media | documented | Sets subtitle character color (similar to setSubtitleColor, different values) for an open media pipeline |
+| [`setSubtitleCharacterColor`](#setsubtitlecharactercolor) | public |  | media | documented | Sets subtitle character color (similar to setSubtitleColor, different values) for an open media pipeline |
 | [`setSubtitleCharacterEdge`](#setsubtitlecharacteredge) | public |  | media | inferred | Sets the subtitle character edge. |
 | [`setSubtitleCharacterEdgeColor`](#setsubtitlecharacteredgecolor) | public |  | media | inferred | Sets the subtitle character edge color. |
 | [`setSubtitleCharacterFont`](#setsubtitlecharacterfont) | public |  | media | inferred | Sets the subtitle character font. |
 | [`setSubtitleCharacterFontSize`](#setsubtitlecharacterfontsize) | public |  | media | inferred | Sets the subtitle character font size. |
-| [`setSubtitleCharacterOpacity`](#setsubtitlecharacteropacity) | unknown |  | media | documented | Sets subtitle character opacity for an open media pipeline |
-| [`setSubtitleColor`](#setsubtitlecolor) | unknown |  | media | documented | Sets subtitle color for an open media pipeline |
+| [`setSubtitleCharacterOpacity`](#setsubtitlecharacteropacity) | public |  | media | documented | Sets subtitle character opacity for an open media pipeline |
+| [`setSubtitleColor`](#setsubtitlecolor) | public |  | media | documented | Sets subtitle color for an open media pipeline |
 | [`setSubtitleCustomStyleEnable`](#setsubtitlecustomstyleenable) | public |  | media | inferred | Sets the subtitle custom style enable. |
-| [`setSubtitleEnable`](#setsubtitleenable) | unknown |  | media | documented | Shows or hides subtitles for an open media pipeline |
-| [`setSubtitleEncoding`](#setsubtitleencoding) | unknown |  | media | documented | Sets subtitle text encoding for an open media pipeline |
-| [`setSubtitleFontSize`](#setsubtitlefontsize) | unknown |  | media | documented | Sets subtitle font size for an open media pipeline |
-| [`setSubtitlePosition`](#setsubtitleposition) | unknown |  | media | documented | Sets subtitle vertical position for an open media pipeline |
+| [`setSubtitleEnable`](#setsubtitleenable) | public |  | media | documented | Shows or hides subtitles for an open media pipeline |
+| [`setSubtitleEncoding`](#setsubtitleencoding) | public |  | media | documented | Sets subtitle text encoding for an open media pipeline |
+| [`setSubtitleFontSize`](#setsubtitlefontsize) | public |  | media | documented | Sets subtitle font size for an open media pipeline |
+| [`setSubtitlePosition`](#setsubtitleposition) | public |  | media | documented | Sets subtitle vertical position for an open media pipeline |
 | [`setSubtitlePositionByPayload`](#setsubtitlepositionbypayload) | public |  | media | inferred | Sets the subtitle position by payload. |
 | [`setSubtitlePresentationMode`](#setsubtitlepresentationmode) | public |  | media | inferred | Sets the subtitle presentation mode. |
-| [`setSubtitleSource`](#setsubtitlesource) | unknown |  | media | documented | Loads an external subtitle file for an open pipeline |
-| [`setSubtitleSync`](#setsubtitlesync) | unknown |  | media | documented | Sets subtitle sync offset in milliseconds for an open media pipeline |
-| [`setSubtitleWindowColor`](#setsubtitlewindowcolor) | unknown |  | media | documented | Sets subtitle window color for an open media pipeline |
-| [`setSubtitleWindowOpacity`](#setsubtitlewindowopacity) | unknown |  | media | documented | Sets subtitle window opacity for an open media pipeline |
+| [`setSubtitleSource`](#setsubtitlesource) | public |  | media | documented | Loads an external subtitle file for an open pipeline |
+| [`setSubtitleSync`](#setsubtitlesync) | public |  | media | documented | Sets subtitle sync offset in milliseconds for an open media pipeline |
+| [`setSubtitleWindowColor`](#setsubtitlewindowcolor) | public |  | media | documented | Sets subtitle window color for an open media pipeline |
+| [`setSubtitleWindowOpacity`](#setsubtitlewindowopacity) | public |  | media | documented | Sets subtitle window opacity for an open media pipeline |
 | [`setUpdateInterval`](#setupdateinterval) | public |  | media | inferred | Sets the update interval. |
 | [`setUpdateIntervalKV`](#setupdateintervalkv) | public |  | media | inferred | Sets the update interval KV. |
 | [`setUri`](#seturi) | public |  | media | inferred | Sets the URI. |
@@ -1942,7 +1942,7 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 Selects an audio or subtitle track of an open pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (unverified)  
@@ -2761,7 +2761,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets subtitle background color for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
@@ -2787,7 +2787,7 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 Sets subtitle background opacity for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
@@ -2836,7 +2836,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets subtitle character color (similar to setSubtitleColor, different values) for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
@@ -2954,7 +2954,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets subtitle character opacity for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
@@ -2980,7 +2980,7 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 Sets subtitle color for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
@@ -3029,7 +3029,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Shows or hides subtitles for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
@@ -3055,7 +3055,7 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 Sets subtitle text encoding for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
@@ -3081,7 +3081,7 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 Sets subtitle font size for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
@@ -3107,7 +3107,7 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 Sets subtitle vertical position for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
@@ -3179,7 +3179,7 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Loads an external subtitle file for an open pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (unverified)  
@@ -3204,7 +3204,7 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 Sets subtitle sync offset in milliseconds for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
@@ -3230,7 +3230,7 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 Sets subtitle window color for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
@@ -3256,7 +3256,7 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 Sets subtitle window opacity for an open media pipeline
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  

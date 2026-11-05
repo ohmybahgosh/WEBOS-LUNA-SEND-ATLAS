@@ -8,7 +8,7 @@ Video output service: connects video sources to the display, sets display window
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`blankVideo`](#blankvideo) | unknown |  | display | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`blankVideo`](#blankvideo) | public |  | display | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
 | [`ComposeOrder`](#composeorder) | unknown |  | display | documented | Object to represent compositing parameters for the video sinks. |
 | [`connect`](#connect) | public |  | display | documented | Connects a video source to a video sink |
 | [`disconnect`](#disconnect) | public |  | display | documented | Disconnects video from sink. |
@@ -49,7 +49,7 @@ Video output service: connects video sources to the display, sets display window
 
 Registered in webOS OSE sysbus api.json (ACG group media); name only
 
-- **Access:** unknown  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  

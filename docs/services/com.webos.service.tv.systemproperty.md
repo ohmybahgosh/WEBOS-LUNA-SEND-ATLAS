@@ -50,7 +50,7 @@ TV system-property service: resets to factory/user defaults, reads/writes EDID a
 | [`getPgammaMode`](#getpgammamode) | private |  | system-info | inferred | Returns the pgamma mode. |
 | [`getPowerOffReason`](#getpoweroffreason) | private |  | system-info | inferred | Returns the power off reason. |
 | [`getPowerOffReasonCount`](#getpoweroffreasoncount) | private |  | system-info | inferred | Returns the power off reason count. |
-| [`getProperties`](#getproperties) | private |  | system-info | inferred | Returns the properties. |
+| [`getProperties`](#getproperties) | public |  | system-info | inferred | Returns the properties. |
 | [`getSystemInfo`](#getsysteminfo) | public | yes | system-info | documented | Retrieves system information by keys: boardType, firmwareVersion, modelName, sdkVersion, UHD, _3d. |
 | [`getSystemProperties`](#getsystemproperties) | private |  | system-info | documented | Reads system properties such as panelUsageTime (10-minute units) |
 | [`getTempSensorStatus`](#gettempsensorstatus) | private |  | system-info | inferred | Returns the temp sensor status. |
@@ -1054,7 +1054,7 @@ Returns the properties.
 
 > _Description inferred from the method name; parameters are not publicly documented._
 
-- **Access:** private  
+- **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
