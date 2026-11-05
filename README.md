@@ -183,39 +183,45 @@ The method names, access levels, ACG permission groups and danger flags are all 
 
 ### Categories
 
-Methods grouped by what they broadly do.  Each opens a page with its full method list, confidence and descriptions.
+Methods grouped by what they broadly do.  Each opens a page with its full method list, confidence and descriptions.  The **⚠️** column counts the dangerous methods in each group (see [docs/dangerous.md](docs/dangerous.md)).
 
-| Category | Methods |
-|---|---|
-| [TV Broadcast / DVR](docs/categories/tv-broadcast.md) | 1901 |
-| [Misc](docs/categories/misc.md) | 829 |
-| [Input & Keys](docs/categories/input.md) | 795 |
-| [Audio](docs/categories/audio.md) | 697 |
-| [Media Playback](docs/categories/media.md) | 433 |
-| [Power](docs/categories/power.md) | 369 |
-| [Applications](docs/categories/apps.md) | 365 |
-| [Bluetooth](docs/categories/bluetooth.md) | 336 |
-| [Network / Wi-Fi](docs/categories/network.md) | 304 |
-| [Settings](docs/categories/settings.md) | 295 |
-| [System Info](docs/categories/system-info.md) | 289 |
-| [Security / Keys](docs/categories/security.md) | 279 |
-| [Database (db8)](docs/categories/db.md) | 274 |
-| [Display / Panel](docs/categories/display.md) | 212 |
-| [Storage & USB](docs/categories/storage.md) | 140 |
-| [Connection Manager](docs/categories/connection.md) | 103 |
-| [Software Update](docs/categories/update.md) | 90 |
-| [Notifications & Alerts](docs/categories/notifications.md) | 82 |
-| [Camera](docs/categories/camera.md) | 73 |
-| [Activity Manager](docs/categories/activity.md) | 66 |
-| [Developer Mode & Testing](docs/categories/devmode.md) | 44 |
-| [Power Management (sleep/wake)](docs/categories/power-mgmt.md) | 44 |
-| [UI / Compositor](docs/categories/ui.md) | 44 |
-| [Picture](docs/categories/picture.md) | 26 |
-| [Location](docs/categories/location.md) | 21 |
-| [Key Management](docs/categories/keys.md) | 13 |
-| [Sound](docs/categories/sound.md) | 1 |
+| Category | Methods | ⚠️ |
+|---|---|---|
+| [TV Broadcast / DVR](docs/categories/tv-broadcast.md) | 1901 | 64 |
+| [Misc](docs/categories/misc.md) | 829 | 25 |
+| [Input & Keys](docs/categories/input.md) | 795 | 23 |
+| [Audio](docs/categories/audio.md) | 697 | 7 |
+| [Media Playback](docs/categories/media.md) | 433 | 9 |
+| [Power](docs/categories/power.md) | 369 | 39 |
+| [Applications](docs/categories/apps.md) | 365 | 11 |
+| [Bluetooth](docs/categories/bluetooth.md) | 336 | 4 |
+| [Network / Wi-Fi](docs/categories/network.md) | 304 | 10 |
+| [Settings](docs/categories/settings.md) | 295 | 28 |
+| [System Info](docs/categories/system-info.md) | 289 | 30 |
+| [Security / Keys](docs/categories/security.md) | 279 | 14 |
+| [Database (db8)](docs/categories/db.md) | 274 | 17 |
+| [Display / Panel](docs/categories/display.md) | 212 | 8 |
+| [Storage & USB](docs/categories/storage.md) | 140 | 7 |
+| [Connection Manager](docs/categories/connection.md) | 103 | 3 |
+| [Software Update](docs/categories/update.md) | 90 | 9 |
+| [Notifications & Alerts](docs/categories/notifications.md) | 82 | 3 |
+| [Camera](docs/categories/camera.md) | 73 | 0 |
+| [Activity Manager](docs/categories/activity.md) | 66 | 0 |
+| [Developer Mode & Testing](docs/categories/devmode.md) | 44 | 0 |
+| [Power Management (sleep/wake)](docs/categories/power-mgmt.md) | 44 | 0 |
+| [UI / Compositor](docs/categories/ui.md) | 44 | 0 |
+| [Picture](docs/categories/picture.md) | 26 | 3 |
+| [Location](docs/categories/location.md) | 21 | 0 |
+| [Key Management](docs/categories/keys.md) | 13 | 0 |
+| [Sound](docs/categories/sound.md) | 1 | 0 |
 
 ### Services
+
+Every service has its own page under [`docs/services/`](docs/services/).  A few big or commonly reached ones:
+
+[`com.webos.service.tvpower`](docs/services/com.webos.service.tvpower.md) &middot; [`com.webos.service.audio`](docs/services/com.webos.service.audio.md) &middot; [`com.webos.service.bluetooth2`](docs/services/com.webos.service.bluetooth2.md) &middot; [`com.webos.service.wifi`](docs/services/com.webos.service.wifi.md) &middot; [`com.webos.applicationManager`](docs/services/com.webos.applicationManager.md) &middot; [`com.webos.media`](docs/services/com.webos.media.md) &middot; [`com.webos.service.mrcu`](docs/services/com.webos.service.mrcu.md) &middot; [`com.webos.service.legacybroadcast.channel`](docs/services/com.webos.service.legacybroadcast.channel.md) &middot; [`com.webos.service.utp.channel`](docs/services/com.webos.service.utp.channel.md) &middot; [`com.webos.service.commercial.scapadapter`](docs/services/com.webos.service.commercial.scapadapter.md)
+
+For anything specific, search the catalog (see [Finding a command](#finding-a-command)).
 
 **webOS TV &mdash; 445 services**
 
