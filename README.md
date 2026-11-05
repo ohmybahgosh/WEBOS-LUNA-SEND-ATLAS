@@ -168,7 +168,7 @@ Build it with [`webos-app/build.sh`](webos-app/build.sh); details in [`webos-app
 
 ## The catalog
 
-8,167 methods across 501 services.  Machine-readable in [`catalog/luna-catalog.json`](catalog/luna-catalog.json) / [`.jsonl`](catalog/luna-catalog.jsonl); a grep-friendly [`catalog/index.tsv`](catalog/index.tsv) feeds the script.  One page per service under [`docs/services/`](docs/services/), grouped by category under [`docs/categories/`](docs/categories/).
+8,167 methods across 501 services.  Machine-readable in [`catalog/luna-catalog.json`](catalog/luna-catalog.json) / [`.jsonl`](catalog/luna-catalog.jsonl); a grep-friendly [`catalog/index.tsv`](catalog/index.tsv) feeds the script.  One page per service under [`docs/services/`](docs/services/), grouped by category under [`docs/categories/`](docs/categories/).  The compact [`web/catalog.json`](web/catalog.json) that the browser panel and [ohmybahgosh.dev/luna-atlas](https://ohmybahgosh.dev/luna-atlas/) read is built from the JSONL: run `python3 scripts/build-web-catalog.py` after changing it.
 
 <details>
 <summary>Deeper reference docs</summary>
