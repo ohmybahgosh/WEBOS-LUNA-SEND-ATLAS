@@ -1,72 +1,76 @@
 # `com.webos.service.update`
 
+Software/firmware update service: checks for, downloads and applies system updates, reports progress and current software/hardware versions, and manages update modes.
+
 48 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelUpdate`](#cancelupdate) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`checkAutoUpdate`](#checkautoupdate) | private |  | update | Method on com.webos.service.update (from on-device permission registry; parameters undocumented). |
-| [`checkLocalizedString`](#checklocalizedstring) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`checkUpdate`](#checkupdate) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`debug`](#debug) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`deleteUpdateInfo`](#deleteupdateinfo) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). ⚠️ |
-| [`downloadPakImage`](#downloadpakimage) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`enterISPMode`](#enterispmode) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getCheckUpdateTimeout`](#getcheckupdatetimeout) | private |  | input | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getContent`](#getcontent) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getCurProgress`](#getcurprogress) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getCurrentSWInformation`](#getcurrentswinformation) | private |  | update | Returns current software/firmware info |
-| [`getCurStatus`](#getcurstatus) | private |  | update | Returns updater state (idle when not busy) |
-| [`getExpertMode`](#getexpertmode) | private |  | update | Update-service expert mode method: getExpertMode |
-| [`getHWVersion`](#gethwversion) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getNSUMode`](#getnsumode) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getNSUType`](#getnsutype) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getProductId`](#getproductid) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getProgress`](#getprogress) | ssap |  | update | Get firmware update progress |
-| [`getSchedule`](#getschedule) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getServerType`](#getservertype) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | update | Updater status (name seen only) |
-| [`getUpdateDetail`](#getupdatedetail) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getUpdateHistory`](#getupdatehistory) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getUpdateInUsb`](#getupdateinusb) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getVersion`](#getversion) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`getVersionChecked`](#getversionchecked) | private |  | update | Getter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`isNSURunning`](#isnsurunning) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`listUpdatesInUsb`](#listupdatesinusb) | private |  | update | Lister on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`reInstallPak`](#reinstallpak) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`ReloadPartInfo`](#reloadpartinfo) | public |  | update | Method on com.webos.service.update (from on-device permission registry; parameters undocumented). |
-| [`revertSWImage`](#revertswimage) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`setCheckUpdateTimeout`](#setcheckupdatetimeout) | private |  | input | Setter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`setDebugSetting`](#setdebugsetting) | private |  | update | Setter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`setExpertMode`](#setexpertmode) | private |  | update | Enables update "expert mode" so the firmware-update UI accepts downgrades/USB images ⚠️ |
-| [`setHWVersion`](#sethwversion) | private |  | update | Setter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`setNSUMode`](#setnsumode) | private |  | update | Setter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`setNSURetryCount`](#setnsuretrycount) | private |  | update | Setter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`setNSUTimeout`](#setnsutimeout) | private |  | input | Setter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`setNSUType`](#setnsutype) | private |  | update | Setter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`setServerType`](#setservertype) | private |  | update | Setter on com.webos.service.update (introspected on-device; parameters undocumented). ⚠️ |
-| [`setUpdateType`](#setupdatetype) | private |  | update | Setter on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`startedByActivitymanager`](#startedbyactivitymanager) | private |  | db | Method on com.webos.service.update (from on-device permission registry; parameters undocumented). |
-| [`startISPStart`](#startispstart) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`startUpdate`](#startupdate) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`startUpdateByRemoteApp`](#startupdatebyremoteapp) | ssap |  | update | Start a firmware update initiated from a remote app ⚠️ |
-| [`startUpdateByRemoteService`](#startupdatebyremoteservice) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
-| [`startUpdateThruUsb`](#startupdatethruusb) | private |  | update | Method on com.webos.service.update (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelUpdate`](#cancelupdate) | private |  | update | inferred | Cancels the update. |
+| [`checkAutoUpdate`](#checkautoupdate) | private |  | update | inferred | Checks the auto update. |
+| [`checkLocalizedString`](#checklocalizedstring) | private |  | update | inferred | Checks the localized string. |
+| [`checkUpdate`](#checkupdate) | private |  | update | inferred | Checks the update. |
+| [`debug`](#debug) | private |  | update | inferred | Handles the debug. |
+| [`deleteUpdateInfo`](#deleteupdateinfo) | private |  | update | inferred | Deletes the update info. ⚠️ |
+| [`downloadPakImage`](#downloadpakimage) | private |  | update | inferred | Downloads the pak image. |
+| [`enterISPMode`](#enterispmode) | private |  | update | inferred | Enters the ISP mode. |
+| [`getCheckUpdateTimeout`](#getcheckupdatetimeout) | private |  | input | inferred | Returns the check update timeout. |
+| [`getContent`](#getcontent) | private |  | update | inferred | Returns the content. |
+| [`getCurProgress`](#getcurprogress) | private |  | update | inferred | Returns the cur progress. |
+| [`getCurrentSWInformation`](#getcurrentswinformation) | private |  | update | documented | Returns current software/firmware info |
+| [`getCurStatus`](#getcurstatus) | private |  | update | documented | Returns updater state (idle when not busy) |
+| [`getExpertMode`](#getexpertmode) | private |  | update | documented | Update-service expert mode method: getExpertMode |
+| [`getHWVersion`](#gethwversion) | private |  | update | inferred | Returns the hardware version. |
+| [`getNSUMode`](#getnsumode) | private |  | update | inferred | Returns the NSU mode. |
+| [`getNSUType`](#getnsutype) | private |  | update | inferred | Returns the NSU type. |
+| [`getProductId`](#getproductid) | private |  | update | inferred | Returns the product ID. |
+| [`getProgress`](#getprogress) | ssap |  | update | documented | Get firmware update progress |
+| [`getSchedule`](#getschedule) | private |  | update | inferred | Returns the schedule. |
+| [`getServerType`](#getservertype) | private |  | update | inferred | Returns the server type. |
+| [`getStatus`](#getstatus) | private |  | update | documented | Updater status (name seen only) |
+| [`getUpdateDetail`](#getupdatedetail) | private |  | update | inferred | Returns the update detail. |
+| [`getUpdateHistory`](#getupdatehistory) | private |  | update | inferred | Returns the update history. |
+| [`getUpdateInUsb`](#getupdateinusb) | private |  | update | inferred | Returns the update in USB. |
+| [`getVersion`](#getversion) | private |  | update | inferred | Returns the version. |
+| [`getVersionChecked`](#getversionchecked) | private |  | update | inferred | Returns the version checked. |
+| [`isNSURunning`](#isnsurunning) | private |  | update | inferred | Reports whether the NSU running is set. |
+| [`listUpdatesInUsb`](#listupdatesinusb) | private |  | update | inferred | Lists the updates in USB. |
+| [`reInstallPak`](#reinstallpak) | private |  | update | inferred | Handles the re install pak. |
+| [`ReloadPartInfo`](#reloadpartinfo) | public |  | update | inferred | Reloads the part info. |
+| [`revertSWImage`](#revertswimage) | private |  | update | inferred | Reverts the software image. |
+| [`setCheckUpdateTimeout`](#setcheckupdatetimeout) | private |  | input | inferred | Sets the check update timeout. |
+| [`setDebugSetting`](#setdebugsetting) | private |  | update | inferred | Sets the debug setting. |
+| [`setExpertMode`](#setexpertmode) | private |  | update | documented | Enables update "expert mode" so the firmware-update UI accepts downgrades/USB images ⚠️ |
+| [`setHWVersion`](#sethwversion) | private |  | update | inferred | Sets the hardware version. |
+| [`setNSUMode`](#setnsumode) | private |  | update | inferred | Sets the NSU mode. |
+| [`setNSURetryCount`](#setnsuretrycount) | private |  | update | inferred | Sets the NSU retry count. |
+| [`setNSUTimeout`](#setnsutimeout) | private |  | input | inferred | Sets the NSU timeout. |
+| [`setNSUType`](#setnsutype) | private |  | update | inferred | Sets the NSU type. |
+| [`setServerType`](#setservertype) | private |  | update | inferred | Sets the server type. ⚠️ |
+| [`setUpdateType`](#setupdatetype) | private |  | update | inferred | Sets the update type. |
+| [`startedByActivitymanager`](#startedbyactivitymanager) | private |  | db | inferred | Handles the started by activitymanager. |
+| [`startISPStart`](#startispstart) | private |  | update | inferred | Starts the ISP start. |
+| [`startUpdate`](#startupdate) | private |  | update | inferred | Starts the update. |
+| [`startUpdateByRemoteApp`](#startupdatebyremoteapp) | ssap |  | update | documented | Start a firmware update initiated from a remote app ⚠️ |
+| [`startUpdateByRemoteService`](#startupdatebyremoteservice) | private |  | update | inferred | Starts the update by remote service. |
+| [`startUpdateThruUsb`](#startupdatethruusb) | private |  | update | inferred | Starts the update thru USB. |
 
 <a id="cancelupdate"></a>
 ## `cancelUpdate`
 
 `luna://com.webos.service.update/cancelUpdate`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Cancels the update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/cancelUpdate '{}'
@@ -81,13 +85,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/checkAutoUpdate`
 
-Method on com.webos.service.update (from on-device permission registry; parameters undocumented).
+Checks the auto update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/checkAutoUpdate '{}'
@@ -102,13 +108,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.update/checkLocalizedString`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Checks the localized string.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/checkLocalizedString '{}'
@@ -123,13 +131,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/checkUpdate`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Checks the update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/checkUpdate '{}'
@@ -144,13 +154,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/debug`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/debug '{}'
@@ -165,13 +177,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/deleteUpdateInfo`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Deletes the update info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/deleteUpdateInfo '{}'
@@ -186,13 +200,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/downloadPakImage`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Downloads the pak image.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/downloadPakImage '{}'
@@ -207,13 +223,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/enterISPMode`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Enters the ISP mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/enterISPMode '{}'
@@ -228,13 +246,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/getCheckUpdateTimeout`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the check update timeout.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getCheckUpdateTimeout '{}'
@@ -249,13 +269,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/getContent`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the content.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getContent '{}'
@@ -270,13 +292,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/getCurProgress`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the cur progress.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getCurProgress '{}'
@@ -297,7 +321,7 @@ Returns current software/firmware info
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -q 'model_name' -n 1 'luna://com.webos.service.update/getCurrentSWInformation' '{}'
@@ -318,7 +342,7 @@ Returns updater state (idle when not busy)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.update/getCurStatus '{}'
@@ -339,7 +363,7 @@ Update-service expert mode method: getExpertMode
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getExpertMode '{}'
@@ -354,13 +378,15 @@ Sources: [1](https://github.com/Powback/LGTV/blob/main/audit/capabilities.md)
 
 `luna://com.webos.service.update/getHWVersion`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the hardware version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getHWVersion '{}'
@@ -375,13 +401,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/getNSUMode`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the NSU mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getNSUMode '{}'
@@ -396,13 +424,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/getNSUType`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the NSU type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getNSUType '{}'
@@ -417,13 +447,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/getProductId`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the product ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getProductId '{}'
@@ -444,7 +476,7 @@ Get firmware update progress
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.update/getProgress","payload":{}}
@@ -459,13 +491,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.update/getSchedule`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the schedule.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getSchedule '{}'
@@ -480,13 +514,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/getServerType`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the server type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getServerType '{}'
@@ -507,7 +543,7 @@ Updater status (name seen only)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.update/getStatus '{}'
@@ -522,13 +558,15 @@ Sources: [1](https://github.com/SmixNZL/webos-display-only/blob/HEAD/tv/probe.js
 
 `luna://com.webos.service.update/getUpdateDetail`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the update detail.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getUpdateDetail '{}'
@@ -543,13 +581,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/getUpdateHistory`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the update history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getUpdateHistory '{}'
@@ -564,13 +604,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/getUpdateInUsb`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the update in USB.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getUpdateInUsb '{}'
@@ -585,13 +627,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/getVersion`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getVersion '{}'
@@ -606,13 +650,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/getVersionChecked`
 
-Getter on com.webos.service.update (introspected on-device; parameters undocumented).
+Returns the version checked.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/getVersionChecked '{}'
@@ -627,13 +673,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/isNSURunning`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Reports whether the NSU running is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/isNSURunning '{}'
@@ -648,13 +696,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/listUpdatesInUsb`
 
-Lister on com.webos.service.update (introspected on-device; parameters undocumented).
+Lists the updates in USB.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/listUpdatesInUsb '{}'
@@ -669,13 +719,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/reInstallPak`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Handles the re install pak.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/reInstallPak '{}'
@@ -690,13 +742,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/ReloadPartInfo`
 
-Method on com.webos.service.update (from on-device permission registry; parameters undocumented).
+Reloads the part info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/ReloadPartInfo '{}'
@@ -711,13 +765,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.update/revertSWImage`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Reverts the software image.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/revertSWImage '{}'
@@ -732,13 +788,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/setCheckUpdateTimeout`
 
-Setter on com.webos.service.update (introspected on-device; parameters undocumented).
+Sets the check update timeout.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/setCheckUpdateTimeout '{}'
@@ -753,13 +811,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/setDebugSetting`
 
-Setter on com.webos.service.update (introspected on-device; parameters undocumented).
+Sets the debug setting.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/setDebugSetting '{}'
@@ -780,7 +840,7 @@ Enables update "expert mode" so the firmware-update UI accepts downgrades/USB im
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** removed/patched on newer firmware (see downgr8)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -799,13 +859,15 @@ Sources: [1](https://github.com/throwaway96/downgr8/blob/HEAD/service.js), [2](h
 
 `luna://com.webos.service.update/setHWVersion`
 
-Setter on com.webos.service.update (introspected on-device; parameters undocumented).
+Sets the hardware version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/setHWVersion '{}'
@@ -820,13 +882,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/setNSUMode`
 
-Setter on com.webos.service.update (introspected on-device; parameters undocumented).
+Sets the NSU mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/setNSUMode '{}'
@@ -841,13 +905,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/setNSURetryCount`
 
-Setter on com.webos.service.update (introspected on-device; parameters undocumented).
+Sets the NSU retry count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/setNSURetryCount '{}'
@@ -862,13 +928,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/setNSUTimeout`
 
-Setter on com.webos.service.update (introspected on-device; parameters undocumented).
+Sets the NSU timeout.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/setNSUTimeout '{}'
@@ -883,13 +951,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/setNSUType`
 
-Setter on com.webos.service.update (introspected on-device; parameters undocumented).
+Sets the NSU type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/setNSUType '{}'
@@ -904,13 +974,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/setServerType`
 
-Setter on com.webos.service.update (introspected on-device; parameters undocumented).
+Sets the server type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/setServerType '{}'
@@ -925,13 +997,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/setUpdateType`
 
-Setter on com.webos.service.update (introspected on-device; parameters undocumented).
+Sets the update type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/setUpdateType '{}'
@@ -946,13 +1020,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/startedByActivitymanager`
 
-Method on com.webos.service.update (from on-device permission registry; parameters undocumented).
+Handles the started by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/startedByActivitymanager '{}'
@@ -967,13 +1043,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.update/startISPStart`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Starts the ISP start.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/startISPStart '{}'
@@ -988,13 +1066,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/startUpdate`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Starts the update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/startUpdate '{}'
@@ -1015,7 +1095,7 @@ Start a firmware update initiated from a remote app
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.update/startUpdateByRemoteApp","payload":{}}
@@ -1030,13 +1110,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.update/startUpdateByRemoteService`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Starts the update by remote service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/startUpdateByRemoteService '{}'
@@ -1051,13 +1133,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.update/startUpdateThruUsb`
 
-Method on com.webos.service.update (introspected on-device; parameters undocumented).
+Starts the update thru USB.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.update/startUpdateThruUsb '{}'

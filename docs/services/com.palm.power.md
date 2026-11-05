@@ -1,55 +1,59 @@
 # `com.palm.power`
 
+Legacy Palm power-management service: handles suspend/resume and shutdown, battery and charger status queries, battery-saver and fake-battery test modes, and activity-based wake management.
+
 31 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`com/palm/power/activityEnd`](#com_palm_power_activityend) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/activityStart`](#com_palm_power_activitystart) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/battchargingStatusQuery`](#com_palm_power_battchargingstatusquery) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/batterySaverOnOff`](#com_palm_power_batterysaveronoff) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/batteryStatusQuery`](#com_palm_power_batterystatusquery) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/chargerStatusQuery`](#com_palm_power_chargerstatusquery) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/forceSuspend`](#com_palm_power_forcesuspend) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/getFakeBatteryMode`](#com_palm_power_getfakebatterymode) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/identify`](#com_palm_power_identify) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/prepareSuspendAck`](#com_palm_power_preparesuspendack) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/prepareSuspendRegister`](#com_palm_power_preparesuspendregister) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/setFakeBatteryMode`](#com_palm_power_setfakebatterymode) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/suspendRequestAck`](#com_palm_power_suspendrequestack) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/suspendRequestRegister`](#com_palm_power_suspendrequestregister) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/systemTimeChanged`](#com_palm_power_systemtimechanged) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/TESTSuspend`](#com_palm_power_testsuspend) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/visualLedSuspend`](#com_palm_power_visualledsuspend) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`shutdown/initiate`](#shutdown_initiate) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`shutdown/machineOff`](#shutdown_machineoff) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`shutdown/machineReboot`](#shutdown_machinereboot) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`shutdown/shutdownApplicationsAck`](#shutdown_shutdownapplicationsack) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`shutdown/shutdownApplicationsRegister`](#shutdown_shutdownapplicationsregister) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`shutdown/shutdownServicesAck`](#shutdown_shutdownservicesack) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`shutdown/shutdownServicesRegister`](#shutdown_shutdownservicesregister) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`shutdown/TESTresetShutdownState`](#shutdown_testresetshutdownstate) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`time/alarmAdd`](#time_alarmadd) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`time/alarmAddCalendar`](#time_alarmaddcalendar) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`time/alarmQuery`](#time_alarmquery) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`time/alarmRemove`](#time_alarmremove) | private |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`timeout/clear`](#timeout_clear) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
-| [`timeout/set`](#timeout_set) | public |  | power | Method on com.palm.power (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`com/palm/power/activityEnd`](#com_palm_power_activityend) | public |  | power | inferred | Handles the activity end (com palm power) |
+| [`com/palm/power/activityStart`](#com_palm_power_activitystart) | public |  | power | inferred | Handles the activity start (com palm power) |
+| [`com/palm/power/battchargingStatusQuery`](#com_palm_power_battchargingstatusquery) | public |  | power | inferred | Handles the battcharging status query (com palm power) |
+| [`com/palm/power/batterySaverOnOff`](#com_palm_power_batterysaveronoff) | public |  | power | inferred | Handles the battery saver on off (com palm power) |
+| [`com/palm/power/batteryStatusQuery`](#com_palm_power_batterystatusquery) | public |  | power | inferred | Handles the battery status query (com palm power) |
+| [`com/palm/power/chargerStatusQuery`](#com_palm_power_chargerstatusquery) | public |  | power | inferred | Handles the charger status query (com palm power) |
+| [`com/palm/power/forceSuspend`](#com_palm_power_forcesuspend) | public |  | power | inferred | Forces the suspend (com palm power) |
+| [`com/palm/power/getFakeBatteryMode`](#com_palm_power_getfakebatterymode) | public |  | power | inferred | Returns the fake battery mode (com palm power) |
+| [`com/palm/power/identify`](#com_palm_power_identify) | public |  | power | inferred | Handles the identify (com palm power) |
+| [`com/palm/power/prepareSuspendAck`](#com_palm_power_preparesuspendack) | public |  | power | inferred | Prepares the suspend ack (com palm power) |
+| [`com/palm/power/prepareSuspendRegister`](#com_palm_power_preparesuspendregister) | public |  | power | inferred | Prepares the suspend register (com palm power) |
+| [`com/palm/power/setFakeBatteryMode`](#com_palm_power_setfakebatterymode) | public |  | power | inferred | Sets the fake battery mode (com palm power) |
+| [`com/palm/power/suspendRequestAck`](#com_palm_power_suspendrequestack) | public |  | power | inferred | Handles the suspend request ack (com palm power) |
+| [`com/palm/power/suspendRequestRegister`](#com_palm_power_suspendrequestregister) | public |  | power | inferred | Handles the suspend request register (com palm power) |
+| [`com/palm/power/systemTimeChanged`](#com_palm_power_systemtimechanged) | public |  | power | inferred | Handles the system time changed (com palm power) |
+| [`com/palm/power/TESTSuspend`](#com_palm_power_testsuspend) | public |  | power | inferred | Tests the suspend (com palm power) |
+| [`com/palm/power/visualLedSuspend`](#com_palm_power_visualledsuspend) | public |  | power | inferred | Handles the visual LED suspend (com palm power) |
+| [`shutdown/initiate`](#shutdown_initiate) | private |  | power | inferred | Handles the initiate (shutdown) ⚠️ |
+| [`shutdown/machineOff`](#shutdown_machineoff) | private |  | power | inferred | Handles the machine off (shutdown) ⚠️ |
+| [`shutdown/machineReboot`](#shutdown_machinereboot) | private |  | power | inferred | Handles the machine reboot (shutdown) ⚠️ |
+| [`shutdown/shutdownApplicationsAck`](#shutdown_shutdownapplicationsack) | private |  | power | inferred | Shuts down the applications ack (shutdown) ⚠️ |
+| [`shutdown/shutdownApplicationsRegister`](#shutdown_shutdownapplicationsregister) | private |  | power | inferred | Shuts down the applications register (shutdown) ⚠️ |
+| [`shutdown/shutdownServicesAck`](#shutdown_shutdownservicesack) | private |  | power | inferred | Shuts down the services ack (shutdown) ⚠️ |
+| [`shutdown/shutdownServicesRegister`](#shutdown_shutdownservicesregister) | private |  | power | inferred | Shuts down the services register (shutdown) ⚠️ |
+| [`shutdown/TESTresetShutdownState`](#shutdown_testresetshutdownstate) | private |  | power | inferred | Handles the TES treset shutdown state (shutdown) ⚠️ |
+| [`time/alarmAdd`](#time_alarmadd) | private |  | power | inferred | Handles the alarm add (time) |
+| [`time/alarmAddCalendar`](#time_alarmaddcalendar) | private |  | power | inferred | Handles the alarm add calendar (time) |
+| [`time/alarmQuery`](#time_alarmquery) | private |  | power | inferred | Handles the alarm query (time) |
+| [`time/alarmRemove`](#time_alarmremove) | private |  | power | inferred | Handles the alarm remove (time) ⚠️ |
+| [`timeout/clear`](#timeout_clear) | public |  | power | inferred | Clears the power (timeout) |
+| [`timeout/set`](#timeout_set) | public |  | power | inferred | Sets the power (timeout) |
 
 <a id="com_palm_power_activityend"></a>
 ## `com/palm/power/activityEnd`
 
 `luna://com.palm.power/com/palm/power/activityEnd`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the activity end (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/activityEnd '{}'
@@ -64,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/activityStart`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the activity start (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/activityStart '{}'
@@ -85,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/battchargingStatusQuery`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the battcharging status query (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/battchargingStatusQuery '{}'
@@ -106,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/batterySaverOnOff`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the battery saver on off (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/batterySaverOnOff '{}'
@@ -127,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/batteryStatusQuery`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the battery status query (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/batteryStatusQuery '{}'
@@ -148,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/chargerStatusQuery`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the charger status query (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/chargerStatusQuery '{}'
@@ -169,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/forceSuspend`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Forces the suspend (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/forceSuspend '{}'
@@ -190,13 +206,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/getFakeBatteryMode`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Returns the fake battery mode (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/getFakeBatteryMode '{}'
@@ -211,13 +229,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/identify`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the identify (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/identify '{}'
@@ -232,13 +252,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/prepareSuspendAck`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Prepares the suspend ack (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/prepareSuspendAck '{}'
@@ -253,13 +275,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/prepareSuspendRegister`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Prepares the suspend register (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/prepareSuspendRegister '{}'
@@ -274,13 +298,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/setFakeBatteryMode`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Sets the fake battery mode (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/setFakeBatteryMode '{}'
@@ -295,13 +321,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/suspendRequestAck`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the suspend request ack (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/suspendRequestAck '{}'
@@ -316,13 +344,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/suspendRequestRegister`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the suspend request register (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/suspendRequestRegister '{}'
@@ -337,13 +367,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/systemTimeChanged`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the system time changed (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/systemTimeChanged '{}'
@@ -358,13 +390,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/TESTSuspend`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Tests the suspend (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/TESTSuspend '{}'
@@ -379,13 +413,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/com/palm/power/visualLedSuspend`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the visual LED suspend (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/com/palm/power/visualLedSuspend '{}'
@@ -400,13 +436,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/shutdown/initiate`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the initiate (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/shutdown/initiate '{}'
@@ -421,13 +459,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/shutdown/machineOff`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the machine off (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/shutdown/machineOff '{}'
@@ -442,13 +482,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/shutdown/machineReboot`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the machine reboot (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/shutdown/machineReboot '{}'
@@ -463,13 +505,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/shutdown/shutdownApplicationsAck`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Shuts down the applications ack (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/shutdown/shutdownApplicationsAck '{}'
@@ -484,13 +528,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/shutdown/shutdownApplicationsRegister`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Shuts down the applications register (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/shutdown/shutdownApplicationsRegister '{}'
@@ -505,13 +551,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/shutdown/shutdownServicesAck`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Shuts down the services ack (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/shutdown/shutdownServicesAck '{}'
@@ -526,13 +574,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/shutdown/shutdownServicesRegister`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Shuts down the services register (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/shutdown/shutdownServicesRegister '{}'
@@ -547,13 +597,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/shutdown/TESTresetShutdownState`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the TES treset shutdown state (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/shutdown/TESTresetShutdownState '{}'
@@ -568,13 +620,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/time/alarmAdd`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the alarm add (time)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/time/alarmAdd '{}'
@@ -589,13 +643,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/time/alarmAddCalendar`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the alarm add calendar (time)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/time/alarmAddCalendar '{}'
@@ -610,13 +666,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/time/alarmQuery`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the alarm query (time)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/time/alarmQuery '{}'
@@ -631,13 +689,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/time/alarmRemove`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Handles the alarm remove (time)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/time/alarmRemove '{}'
@@ -652,13 +712,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/timeout/clear`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Clears the power (timeout)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/timeout/clear '{}'
@@ -673,13 +735,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.power/timeout/set`
 
-Method on com.palm.power (from on-device permission registry; parameters undocumented).
+Sets the power (timeout)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.power/timeout/set '{}'

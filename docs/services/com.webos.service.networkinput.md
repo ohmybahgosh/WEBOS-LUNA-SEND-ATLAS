@@ -1,40 +1,44 @@
 # `com.webos.service.networkinput`
 
+Network/virtual input service: sends key codes and special/long/repeat key events and exposes pointer, gamepad and touch input sockets, plus media transport controls (play, pause, channel). _(inferred from the service's methods)_
+
 16 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`controls/channelDown`](#controls_channeldown) | private |  | input | Method on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`controls/channelUp`](#controls_channelup) | private |  | input | Method on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`controls/fastForward`](#controls_fastforward) | private |  | input | Method on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`controls/pause`](#controls_pause) | private |  | input | Method on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`controls/play`](#controls_play) | private |  | input | Method on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`controls/power`](#controls_power) | private |  | power | Method on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`controls/rewind`](#controls_rewind) | private |  | input | Method on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`controls/stop`](#controls_stop) | private |  | input | Method on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`getGamepadInputSocket`](#getgamepadinputsocket) | private |  | input | Getter on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`getPointerInputSocket`](#getpointerinputsocket) | ssap |  | keys | Returns websocket URL for pointer/button input |
-| [`sendKeyCodes`](#sendkeycodes) | private |  | input | Method on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`sendLongKeyEvent`](#sendlongkeyevent) | private |  | input | Method on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`sendRepeatKeyEvent`](#sendrepeatkeyevent) | private |  | input | Method on com.webos.service.networkinput (introspected on-device; parameters undocumented). |
-| [`sendSpecialKey`](#sendspecialkey) | private |  | keys | Injects a remote key by name |
-| [`test/getTouchpanelInputSocket`](#test_gettouchpanelinputsocket) | private |  | keys | Network input method: test/getTouchpanelInputSocket |
-| [`test/sendKeyCode`](#test_sendkeycode) | private |  | keys | Injects a Linux key code (IR_KEY_* value less 8) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`controls/channelDown`](#controls_channeldown) | private |  | input | inferred | Handles the channel down (controls) |
+| [`controls/channelUp`](#controls_channelup) | private |  | input | inferred | Handles the channel up (controls) |
+| [`controls/fastForward`](#controls_fastforward) | private |  | input | inferred | Handles the fast forward (controls) |
+| [`controls/pause`](#controls_pause) | private |  | input | inferred | Pauses the networkinput (controls) |
+| [`controls/play`](#controls_play) | private |  | input | inferred | Plays the networkinput (controls) |
+| [`controls/power`](#controls_power) | private |  | power | inferred | Powers the networkinput (controls) |
+| [`controls/rewind`](#controls_rewind) | private |  | input | inferred | Rewinds the networkinput (controls) |
+| [`controls/stop`](#controls_stop) | private |  | input | inferred | Stops the networkinput (controls) |
+| [`getGamepadInputSocket`](#getgamepadinputsocket) | private |  | input | inferred | Returns the gamepad input socket. |
+| [`getPointerInputSocket`](#getpointerinputsocket) | ssap |  | keys | documented | Returns websocket URL for pointer/button input |
+| [`sendKeyCodes`](#sendkeycodes) | private |  | input | inferred | Sends the key codes. |
+| [`sendLongKeyEvent`](#sendlongkeyevent) | private |  | input | inferred | Sends the long key event. |
+| [`sendRepeatKeyEvent`](#sendrepeatkeyevent) | private |  | input | inferred | Sends the repeat key event. |
+| [`sendSpecialKey`](#sendspecialkey) | private |  | keys | documented | Injects a remote key by name |
+| [`test/getTouchpanelInputSocket`](#test_gettouchpanelinputsocket) | private |  | keys | documented | Network input method: test/getTouchpanelInputSocket |
+| [`test/sendKeyCode`](#test_sendkeycode) | private |  | keys | documented | Injects a Linux key code (IR_KEY_* value less 8) |
 
 <a id="controls_channeldown"></a>
 ## `controls/channelDown`
 
 `luna://com.webos.service.networkinput/controls/channelDown`
 
-Method on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Handles the channel down (controls)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/controls/channelDown '{}'
@@ -49,13 +53,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.networkinput/controls/channelUp`
 
-Method on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Handles the channel up (controls)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/controls/channelUp '{}'
@@ -70,13 +76,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.networkinput/controls/fastForward`
 
-Method on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Handles the fast forward (controls)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/controls/fastForward '{}'
@@ -91,13 +99,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.networkinput/controls/pause`
 
-Method on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Pauses the networkinput (controls)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/controls/pause '{}'
@@ -112,13 +122,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.networkinput/controls/play`
 
-Method on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Plays the networkinput (controls)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/controls/play '{}'
@@ -133,13 +145,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.networkinput/controls/power`
 
-Method on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Powers the networkinput (controls)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/controls/power '{}'
@@ -154,13 +168,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.networkinput/controls/rewind`
 
-Method on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Rewinds the networkinput (controls)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/controls/rewind '{}'
@@ -175,13 +191,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.networkinput/controls/stop`
 
-Method on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Stops the networkinput (controls)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/controls/stop '{}'
@@ -196,13 +214,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.networkinput/getGamepadInputSocket`
 
-Getter on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Returns the gamepad input socket.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/getGamepadInputSocket '{}'
@@ -223,7 +243,7 @@ Returns websocket URL for pointer/button input
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.networkinput/getPointerInputSocket '{}'
@@ -238,13 +258,15 @@ Sources: [1](https://github.com/JPersson77/LGTVCompanion/blob/master/Common/lg_a
 
 `luna://com.webos.service.networkinput/sendKeyCodes`
 
-Method on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Sends the key codes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/sendKeyCodes '{}'
@@ -259,13 +281,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.networkinput/sendLongKeyEvent`
 
-Method on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Sends the long key event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/sendLongKeyEvent '{}'
@@ -280,13 +304,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.networkinput/sendRepeatKeyEvent`
 
-Method on com.webos.service.networkinput (introspected on-device; parameters undocumented).
+Sends the repeat key event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/sendRepeatKeyEvent '{}'
@@ -307,7 +333,7 @@ Injects a remote key by name
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -330,7 +356,7 @@ Network input method: test/getTouchpanelInputSocket
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.networkinput/test/getTouchpanelInputSocket '{}'
@@ -351,7 +377,7 @@ Injects a Linux key code (IR_KEY_* value less 8)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 10.2 tested  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

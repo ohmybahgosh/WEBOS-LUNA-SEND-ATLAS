@@ -1,13 +1,15 @@
 # `com.palmdts.devmode.service`
 
+TV developer-mode session helper: reports remaining developer-session time and resets the session timer. Part of the webOS TV dev-mode app. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`devSessionTimeStatus`](#devsessiontimestatus) | private |  | devmode | Remaining dev session time |
-| [`resetSession`](#resetsession) | private |  | devmode | Renews the dev mode session |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`devSessionTimeStatus`](#devsessiontimestatus) | private |  | devmode | documented | Remaining dev session time |
+| [`resetSession`](#resetsession) | private |  | devmode | documented | Renews the dev mode session |
 
 <a id="devsessiontimestatus"></a>
 ## `devSessionTimeStatus`
@@ -20,7 +22,7 @@ Remaining dev session time
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.palmdts.devmode.service/devSessionTimeStatus '{}'
@@ -41,7 +43,7 @@ Renews the dev mode session
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.palmdts.devmode.service/resetSession '{}'

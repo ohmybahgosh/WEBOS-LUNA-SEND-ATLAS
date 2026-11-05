@@ -1,34 +1,38 @@
 # `com.webos.service.livepickplus`
 
+Appears to drive a 'Live Pick+' on-screen overlay (e.g. food/ACR overlays): launches and closes overlays and sets bounds and notice-bar settings. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`closeOverlay`](#closeoverlay) | private |  | misc | Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented). |
-| [`getAppStatus`](#getappstatus) | private |  | misc | Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented). |
-| [`isFoodOverlayEnable`](#isfoodoverlayenable) | private |  | misc | Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented). |
-| [`isVideoACROverlayEnable`](#isvideoacroverlayenable) | private |  | misc | Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented). |
-| [`launchOverlay`](#launchoverlay) | private |  | apps | Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented). |
-| [`setBounds`](#setbounds) | private |  | misc | Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented). |
-| [`setNoticeBarSettings`](#setnoticebarsettings) | private |  | settings | Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented). |
-| [`setTestMode`](#settestmode) | private |  | misc | Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | private |  | misc | Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented). |
-| [`wakeup`](#wakeup) | private |  | misc | Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`closeOverlay`](#closeoverlay) | private |  | misc | inferred | Closes the overlay. |
+| [`getAppStatus`](#getappstatus) | private |  | misc | inferred | Returns the app status. |
+| [`isFoodOverlayEnable`](#isfoodoverlayenable) | private |  | misc | inferred | Reports whether the food overlay enable is set. |
+| [`isVideoACROverlayEnable`](#isvideoacroverlayenable) | private |  | misc | inferred | Reports whether the video ACR overlay enable is set. |
+| [`launchOverlay`](#launchoverlay) | private |  | apps | inferred | Launches the overlay. |
+| [`setBounds`](#setbounds) | private |  | misc | inferred | Sets the bounds. |
+| [`setNoticeBarSettings`](#setnoticebarsettings) | private |  | settings | inferred | Sets the notice bar settings. |
+| [`setTestMode`](#settestmode) | private |  | misc | inferred | Sets the test mode. |
+| [`stop`](#stop) | private |  | misc | inferred | Stops the livepickplus. |
+| [`wakeup`](#wakeup) | private |  | misc | inferred | Handles the wakeup. |
 
 <a id="closeoverlay"></a>
 ## `closeOverlay`
 
 `luna://com.webos.service.livepickplus/closeOverlay`
 
-Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented).
+Closes the overlay.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.livepickplus/closeOverlay '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.livepickplus/getAppStatus`
 
-Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented).
+Returns the app status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.livepickplus/getAppStatus '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.livepickplus/isFoodOverlayEnable`
 
-Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented).
+Reports whether the food overlay enable is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.livepickplus/isFoodOverlayEnable '{}'
@@ -85,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.livepickplus/isVideoACROverlayEnable`
 
-Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented).
+Reports whether the video ACR overlay enable is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.livepickplus/isVideoACROverlayEnable '{}'
@@ -106,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.livepickplus/launchOverlay`
 
-Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented).
+Launches the overlay.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.livepickplus/launchOverlay '{}'
@@ -127,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.livepickplus/setBounds`
 
-Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented).
+Sets the bounds.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.livepickplus/setBounds '{}'
@@ -148,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.livepickplus/setNoticeBarSettings`
 
-Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented).
+Sets the notice bar settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.livepickplus/setNoticeBarSettings '{}'
@@ -169,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.livepickplus/setTestMode`
 
-Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented).
+Sets the test mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.livepickplus/setTestMode '{}'
@@ -190,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.livepickplus/stop`
 
-Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented).
+Stops the livepickplus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.livepickplus/stop '{}'
@@ -211,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.livepickplus/wakeup`
 
-Method on com.webos.service.livepickplus (from on-device permission registry; parameters undocumented).
+Handles the wakeup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.livepickplus/wakeup '{}'

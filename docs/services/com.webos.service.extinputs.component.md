@@ -1,37 +1,41 @@
 # `com.webos.service.extinputs.component`
 
+External component-input service: opens/closes and connects component (and similar) inputs, reports signal state and video info, controls audio mute and output type, and switches external input. _(inferred from the service's methods)_
+
 13 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | private |  | input | Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
-| [`connect`](#connect) | private |  | input | Method on com.webos.service.extinputs.component (from on-device permission registry; parameters undocumented). |
-| [`getMultiAudioOutType`](#getmultiaudioouttype) | private |  | audio | Getter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
-| [`getSignalState`](#getsignalstate) | private |  | input | Getter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
-| [`getVideoInfo`](#getvideoinfo) | private |  | input | Getter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
-| [`open`](#open) | private |  | input | Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
-| [`pause`](#pause) | private |  | input | Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
-| [`pin`](#pin) | private |  | input | Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
-| [`setAudioMute`](#setaudiomute) | private |  | audio | Setter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
-| [`setMultiAudioOutType`](#setmultiaudioouttype) | private |  | audio | Setter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
-| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | input | Setter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
-| [`status`](#status) | private |  | input | Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
-| [`switchExternalInput`](#switchexternalinput) | private |  | input | Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | private |  | input | inferred | Closes the extinputs component. |
+| [`connect`](#connect) | private |  | input | inferred | Connects the extinputs component. |
+| [`getMultiAudioOutType`](#getmultiaudioouttype) | private |  | audio | inferred | Returns the multi audio out type. |
+| [`getSignalState`](#getsignalstate) | private |  | input | inferred | Returns the signal state. |
+| [`getVideoInfo`](#getvideoinfo) | private |  | input | inferred | Returns the video info. |
+| [`open`](#open) | private |  | input | inferred | Opens the extinputs component. |
+| [`pause`](#pause) | private |  | input | inferred | Pauses the extinputs component. |
+| [`pin`](#pin) | private |  | input | inferred | Handles the pin. |
+| [`setAudioMute`](#setaudiomute) | private |  | audio | inferred | Sets the audio mute. |
+| [`setMultiAudioOutType`](#setmultiaudioouttype) | private |  | audio | inferred | Sets the multi audio out type. |
+| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | input | inferred | Sets the pipeline window ID. |
+| [`status`](#status) | private |  | input | inferred | Handles the status. |
+| [`switchExternalInput`](#switchexternalinput) | private |  | input | inferred | Switches the external input. |
 
 <a id="close"></a>
 ## `close`
 
 `luna://com.webos.service.extinputs.component/close`
 
-Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Closes the extinputs component.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/close '{}'
@@ -46,13 +50,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.component/connect`
 
-Method on com.webos.service.extinputs.component (from on-device permission registry; parameters undocumented).
+Connects the extinputs component.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/connect '{}'
@@ -67,13 +73,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.extinputs.component/getMultiAudioOutType`
 
-Getter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Returns the multi audio out type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/getMultiAudioOutType '{}'
@@ -88,13 +96,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.component/getSignalState`
 
-Getter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Returns the signal state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/getSignalState '{}'
@@ -109,13 +119,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.component/getVideoInfo`
 
-Getter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Returns the video info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/getVideoInfo '{}'
@@ -130,13 +142,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.component/open`
 
-Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Opens the extinputs component.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/open '{}'
@@ -151,13 +165,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.component/pause`
 
-Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Pauses the extinputs component.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/pause '{}'
@@ -172,13 +188,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.component/pin`
 
-Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Handles the pin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/pin '{}'
@@ -193,13 +211,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.component/setAudioMute`
 
-Setter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Sets the audio mute.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/setAudioMute '{}'
@@ -214,13 +234,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.component/setMultiAudioOutType`
 
-Setter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Sets the multi audio out type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/setMultiAudioOutType '{}'
@@ -235,13 +257,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.component/setPipelineWindowId`
 
-Setter on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Sets the pipeline window ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/setPipelineWindowId '{}'
@@ -256,13 +280,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.component/status`
 
-Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Handles the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/status '{}'
@@ -277,13 +303,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.component/switchExternalInput`
 
-Method on com.webos.service.extinputs.component (introspected on-device; parameters undocumented).
+Switches the external input.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.component/switchExternalInput '{}'

@@ -1,31 +1,35 @@
 # `com.webos.service.googlehomecontroller`
 
+Google Home integration controller: enables, disables, starts, and stops the Google Home service, reports its status, and updates its package. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`disableGhpService`](#disableghpservice) | private |  | misc | Method on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented). |
-| [`enableGhpService`](#enableghpservice) | public |  | misc | Method on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented). |
-| [`getGhpStatus`](#getghpstatus) | public |  | misc | Getter on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented). |
-| [`startGhpService`](#startghpservice) | public |  | misc | Method on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented). |
-| [`stopGhpService`](#stopghpservice) | public |  | misc | Method on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented). |
-| [`test`](#test) | public |  | misc | Method on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented). |
-| [`updateGhpPackage`](#updateghppackage) | public |  | update | Method on com.webos.service.googlehomecontroller (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`disableGhpService`](#disableghpservice) | private |  | misc | inferred | Disables the ghp service. |
+| [`enableGhpService`](#enableghpservice) | public |  | misc | inferred | Enables the ghp service. |
+| [`getGhpStatus`](#getghpstatus) | public |  | misc | inferred | Returns the ghp status. |
+| [`startGhpService`](#startghpservice) | public |  | misc | inferred | Starts the ghp service. |
+| [`stopGhpService`](#stopghpservice) | public |  | misc | inferred | Stops the ghp service. |
+| [`test`](#test) | public |  | misc | inferred | Tests the googlehomecontroller. |
+| [`updateGhpPackage`](#updateghppackage) | public |  | update | inferred | Updates the ghp package. |
 
 <a id="disableghpservice"></a>
 ## `disableGhpService`
 
 `luna://com.webos.service.googlehomecontroller/disableGhpService`
 
-Method on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented).
+Disables the ghp service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.googlehomecontroller/disableGhpService '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.googlehomecontroller/enableGhpService`
 
-Method on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented).
+Enables the ghp service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.googlehomecontroller/enableGhpService '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.googlehomecontroller/getGhpStatus`
 
-Getter on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented).
+Returns the ghp status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.googlehomecontroller/getGhpStatus '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.googlehomecontroller/startGhpService`
 
-Method on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented).
+Starts the ghp service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.googlehomecontroller/startGhpService '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.googlehomecontroller/stopGhpService`
 
-Method on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented).
+Stops the ghp service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.googlehomecontroller/stopGhpService '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.googlehomecontroller/test`
 
-Method on com.webos.service.googlehomecontroller (introspected on-device; parameters undocumented).
+Tests the googlehomecontroller.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.googlehomecontroller/test '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.googlehomecontroller/updateGhpPackage`
 
-Method on com.webos.service.googlehomecontroller (from on-device permission registry; parameters undocumented).
+Updates the ghp package.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.googlehomecontroller/updateGhpPackage '{}'

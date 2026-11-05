@@ -1,42 +1,46 @@
 # `amazon.alexa.adapter.plugin`
 
+Alexa Voice Service (AVS) adapter plugin: handles far-field voice recognition, AVS music and status, access tokens and CBL login data, dialog state, and reports the foreground app. _(inferred from the service's methods)_
+
 18 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelRecognition`](#cancelrecognition) | private |  | input | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
-| [`executeFarfieldSetting`](#executefarfieldsetting) | private |  | input | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`getAccessToken`](#getaccesstoken) | public |  | input | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`getAppMessage`](#getappmessage) | private |  | input | Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
-| [`getAvsMusic`](#getavsmusic) | public |  | input | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`getAvsStatus`](#getavsstatus) | public |  | input | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`getCblData`](#getcbldata) | public |  | input | Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
-| [`getDialogState`](#getdialogstate) | private |  | input | Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
-| [`getForegroundApp`](#getforegroundapp) | public |  | input | Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
-| [`getFornaxVersion`](#getfornaxversion) | public |  | input | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`isRegistered`](#isregistered) | public |  | input | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
-| [`launchShortcutPanel`](#launchshortcutpanel) | public |  | apps | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
-| [`load`](#load) | private |  | input | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
-| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
-| [`sendAvsCommand`](#sendavscommand) | public |  | input | Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`setAppMessage`](#setappmessage) | private |  | input | Setter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
-| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
-| [`testToast`](#testtoast) | private |  | notifications | Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelRecognition`](#cancelrecognition) | private |  | input | inferred | Cancels the recognition. |
+| [`executeFarfieldSetting`](#executefarfieldsetting) | private |  | input | inferred | Runs the farfield setting. |
+| [`getAccessToken`](#getaccesstoken) | public |  | input | inferred | Returns the access token. |
+| [`getAppMessage`](#getappmessage) | private |  | input | inferred | Returns the app message. |
+| [`getAvsMusic`](#getavsmusic) | public |  | input | inferred | Returns the avs music. |
+| [`getAvsStatus`](#getavsstatus) | public |  | input | inferred | Returns the avs status. |
+| [`getCblData`](#getcbldata) | public |  | input | inferred | Returns the cbl data. |
+| [`getDialogState`](#getdialogstate) | private |  | input | inferred | Returns the dialog state. |
+| [`getForegroundApp`](#getforegroundapp) | public |  | input | inferred | Returns the foreground app. |
+| [`getFornaxVersion`](#getfornaxversion) | public |  | input | inferred | Returns the fornax version. |
+| [`isRegistered`](#isregistered) | public |  | input | inferred | Reports whether the registered is set. |
+| [`launchShortcutPanel`](#launchshortcutpanel) | public |  | apps | inferred | Launches the shortcut panel. |
+| [`load`](#load) | private |  | input | inferred | Loads the amazon alexa adapter plugin. |
+| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | inferred | Recognizes the intent by voice. |
+| [`sendAvsCommand`](#sendavscommand) | public |  | input | inferred | Sends the avs command. |
+| [`setAppMessage`](#setappmessage) | private |  | input | inferred | Sets the app message. |
+| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | inferred | Stops the recording voice. |
+| [`testToast`](#testtoast) | private |  | notifications | inferred | Tests the toast. |
 
 <a id="cancelrecognition"></a>
 ## `cancelRecognition`
 
 `luna://amazon.alexa.adapter.plugin/cancelRecognition`
 
-Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Cancels the recognition.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/cancelRecognition '{}'
@@ -51,13 +55,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://amazon.alexa.adapter.plugin/executeFarfieldSetting`
 
-Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).
+Runs the farfield setting.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/executeFarfieldSetting '{}'
@@ -72,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://amazon.alexa.adapter.plugin/getAccessToken`
 
-Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).
+Returns the access token.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getAccessToken '{}'
@@ -93,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://amazon.alexa.adapter.plugin/getAppMessage`
 
-Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Returns the app message.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getAppMessage '{}'
@@ -114,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://amazon.alexa.adapter.plugin/getAvsMusic`
 
-Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).
+Returns the avs music.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getAvsMusic '{}'
@@ -135,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://amazon.alexa.adapter.plugin/getAvsStatus`
 
-Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).
+Returns the avs status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getAvsStatus '{}'
@@ -156,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://amazon.alexa.adapter.plugin/getCblData`
 
-Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Returns the cbl data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getCblData '{}'
@@ -177,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://amazon.alexa.adapter.plugin/getDialogState`
 
-Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Returns the dialog state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getDialogState '{}'
@@ -198,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://amazon.alexa.adapter.plugin/getForegroundApp`
 
-Getter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Returns the foreground app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getForegroundApp '{}'
@@ -219,13 +239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://amazon.alexa.adapter.plugin/getFornaxVersion`
 
-Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).
+Returns the fornax version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/getFornaxVersion '{}'
@@ -240,13 +262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://amazon.alexa.adapter.plugin/isRegistered`
 
-Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Reports whether the registered is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/isRegistered '{}'
@@ -261,13 +285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://amazon.alexa.adapter.plugin/launchShortcutPanel`
 
-Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Launches the shortcut panel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/launchShortcutPanel '{}'
@@ -282,13 +308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://amazon.alexa.adapter.plugin/load`
 
-Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Loads the amazon alexa adapter plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/load '{}'
@@ -303,13 +331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://amazon.alexa.adapter.plugin/recognizeIntentByVoice`
 
-Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Recognizes the intent by voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/recognizeIntentByVoice '{}'
@@ -324,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://amazon.alexa.adapter.plugin/sendAvsCommand`
 
-Method on amazon.alexa.adapter.plugin (from on-device permission registry; parameters undocumented).
+Sends the avs command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/sendAvsCommand '{}'
@@ -345,13 +377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://amazon.alexa.adapter.plugin/setAppMessage`
 
-Setter on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Sets the app message.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/setAppMessage '{}'
@@ -366,13 +400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://amazon.alexa.adapter.plugin/stopRecordingVoice`
 
-Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Stops the recording voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/stopRecordingVoice '{}'
@@ -387,13 +423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://amazon.alexa.adapter.plugin/testToast`
 
-Method on amazon.alexa.adapter.plugin (introspected on-device; parameters undocumented).
+Tests the toast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://amazon.alexa.adapter.plugin/testToast '{}'

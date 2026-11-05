@@ -1,30 +1,34 @@
 # `com.webos.service.dial`
 
+DIAL (Discovery and Launch) service: starts and quits second-screen-launched apps, with heartbeat/ping and a Wake-on-LAN/WoWLAN alert. _(inferred from the service's methods)_
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`heartbeat/notifyNamedSocket`](#heartbeat_notifynamedsocket) | private |  | misc | Method on com.webos.service.dial (introspected on-device; parameters undocumented). |
-| [`heartbeat/ping`](#heartbeat_ping) | private |  | misc | Method on com.webos.service.dial (introspected on-device; parameters undocumented). |
-| [`info`](#info) | public |  | misc | Method on com.webos.service.dial (introspected on-device; parameters undocumented). |
-| [`quit`](#quit) | public |  | misc | Method on com.webos.service.dial (introspected on-device; parameters undocumented). |
-| [`start`](#start) | public |  | misc | Method on com.webos.service.dial (from on-device permission registry; parameters undocumented). |
-| [`wolwowlanAlert`](#wolwowlanalert) | private |  | misc | Method on com.webos.service.dial (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`heartbeat/notifyNamedSocket`](#heartbeat_notifynamedsocket) | private |  | misc | inferred | Notifies of the named socket (heartbeat) |
+| [`heartbeat/ping`](#heartbeat_ping) | private |  | misc | inferred | Pings the dial (heartbeat) |
+| [`info`](#info) | public |  | misc | inferred | Handles the info. |
+| [`quit`](#quit) | public |  | misc | inferred | Quits the dial. |
+| [`start`](#start) | public |  | misc | inferred | Starts the dial. |
+| [`wolwowlanAlert`](#wolwowlanalert) | private |  | misc | inferred | Handles the wolwowlan alert. |
 
 <a id="heartbeat_notifynamedsocket"></a>
 ## `heartbeat/notifyNamedSocket`
 
 `luna://com.webos.service.dial/heartbeat/notifyNamedSocket`
 
-Method on com.webos.service.dial (introspected on-device; parameters undocumented).
+Notifies of the named socket (heartbeat)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dial/heartbeat/notifyNamedSocket '{}'
@@ -39,13 +43,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dial/heartbeat/ping`
 
-Method on com.webos.service.dial (introspected on-device; parameters undocumented).
+Pings the dial (heartbeat)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dial/heartbeat/ping '{}'
@@ -60,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dial/info`
 
-Method on com.webos.service.dial (introspected on-device; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dial/info '{}'
@@ -81,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dial/quit`
 
-Method on com.webos.service.dial (introspected on-device; parameters undocumented).
+Quits the dial.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dial/quit '{}'
@@ -102,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dial/start`
 
-Method on com.webos.service.dial (from on-device permission registry; parameters undocumented).
+Starts the dial.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dial/start '{}'
@@ -123,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.dial/wolwowlanAlert`
 
-Method on com.webos.service.dial (from on-device permission registry; parameters undocumented).
+Handles the wolwowlan alert.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dial/wolwowlanAlert '{}'

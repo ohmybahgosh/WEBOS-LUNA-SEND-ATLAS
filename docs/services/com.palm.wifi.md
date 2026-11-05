@@ -1,13 +1,15 @@
 # `com.palm.wifi`
 
+Legacy Palm/HP webOS Wi-Fi service: finds available networks and sets the Wi-Fi radio state.
+
 2 methods.  Platforms seen: HP webOS, Palm.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`findnetworks`](#findnetworks) | root |  | network | Finds networks / connects to known WAP |
-| [`setstate`](#setstate) | root |  | network | Turns WiFi on/off |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`findnetworks`](#findnetworks) | root |  | network | documented | Finds networks / connects to known WAP |
+| [`setstate`](#setstate) | root |  | network | documented | Turns WiFi on/off |
 
 <a id="findnetworks"></a>
 ## `findnetworks`
@@ -20,7 +22,7 @@ Finds networks / connects to known WAP
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 palm://com.palm.wifi/findnetworks '{}'
@@ -41,7 +43,7 @@ Turns WiFi on/off
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

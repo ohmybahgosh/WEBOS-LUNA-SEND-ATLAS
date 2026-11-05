@@ -1,30 +1,34 @@
 # `com.webos.service.nais`
 
+Appears to provide a QR-code-based service plus subtitle controls, reporting service status and supported-platform info. _(inferred from the service's methods)_
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getQrCodeGenerationUrl`](#getqrcodegenerationurl) | public |  | misc | Method on com.webos.service.nais (from on-device permission registry; parameters undocumented). |
-| [`getServiceStatus`](#getservicestatus) | public |  | misc | Method on com.webos.service.nais (from on-device permission registry; parameters undocumented). |
-| [`getSupportedPlatformInfo`](#getsupportedplatforminfo) | public |  | misc | Method on com.webos.service.nais (from on-device permission registry; parameters undocumented). |
-| [`setSubtitleDisplay`](#setsubtitledisplay) | public |  | media | Method on com.webos.service.nais (from on-device permission registry; parameters undocumented). |
-| [`setSubtitleEnable`](#setsubtitleenable) | public |  | media | Method on com.webos.service.nais (from on-device permission registry; parameters undocumented). |
-| [`setSubtitleLanguage`](#setsubtitlelanguage) | public |  | media | Method on com.webos.service.nais (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getQrCodeGenerationUrl`](#getqrcodegenerationurl) | public |  | misc | inferred | Returns the qr code generation URL. |
+| [`getServiceStatus`](#getservicestatus) | public |  | misc | inferred | Returns the service status. |
+| [`getSupportedPlatformInfo`](#getsupportedplatforminfo) | public |  | misc | inferred | Returns the supported platform info. |
+| [`setSubtitleDisplay`](#setsubtitledisplay) | public |  | media | inferred | Sets the subtitle display. |
+| [`setSubtitleEnable`](#setsubtitleenable) | public |  | media | inferred | Sets the subtitle enable. |
+| [`setSubtitleLanguage`](#setsubtitlelanguage) | public |  | media | inferred | Sets the subtitle language. |
 
 <a id="getqrcodegenerationurl"></a>
 ## `getQrCodeGenerationUrl`
 
 `luna://com.webos.service.nais/getQrCodeGenerationUrl`
 
-Method on com.webos.service.nais (from on-device permission registry; parameters undocumented).
+Returns the qr code generation URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nais/getQrCodeGenerationUrl '{}'
@@ -39,13 +43,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nais/getServiceStatus`
 
-Method on com.webos.service.nais (from on-device permission registry; parameters undocumented).
+Returns the service status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nais/getServiceStatus '{}'
@@ -60,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nais/getSupportedPlatformInfo`
 
-Method on com.webos.service.nais (from on-device permission registry; parameters undocumented).
+Returns the supported platform info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nais/getSupportedPlatformInfo '{}'
@@ -81,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nais/setSubtitleDisplay`
 
-Method on com.webos.service.nais (from on-device permission registry; parameters undocumented).
+Sets the subtitle display.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nais/setSubtitleDisplay '{}'
@@ -102,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nais/setSubtitleEnable`
 
-Method on com.webos.service.nais (from on-device permission registry; parameters undocumented).
+Sets the subtitle enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nais/setSubtitleEnable '{}'
@@ -123,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nais/setSubtitleLanguage`
 
-Method on com.webos.service.nais (from on-device permission registry; parameters undocumented).
+Sets the subtitle language.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nais/setSubtitleLanguage '{}'

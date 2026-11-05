@@ -1,57 +1,61 @@
 # `com.webos.service.admanager`
 
+Advertising manager: issues banner/asset ad requests, manages the advertising ID, tracking contexts and cookies, EULA/consent (CMP) checks and SDK ad contexts. _(inferred from the service's methods)_
+
 33 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkForegroundEula`](#checkforegroundeula) | private |  | apps | Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented). |
-| [`checkForegroundSettings`](#checkforegroundsettings) | private |  | settings | Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented). |
-| [`checkIntantBootComplete`](#checkintantbootcomplete) | private |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`checkSuspendState`](#checksuspendstate) | private |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`cookieStatus`](#cookiestatus) | private |  | apps | Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented). |
-| [`createContextWithTrackingList`](#createcontextwithtrackinglist) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`createSDKContext`](#createsdkcontext) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`deleteCookies`](#deletecookies) | private |  | apps | Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`displayAllContextList`](#displayallcontextlist) | private |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`eulaStatus`](#eulastatus) | private |  | apps | Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented). |
-| [`getAdid`](#getadid) | public |  | apps | Getter on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`getAdRequestInfo`](#getadrequestinfo) | public |  | apps | Getter on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`inactivateCookies`](#inactivatecookies) | private |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`launchCMPApp`](#launchcmpapp) | private |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`reqNormalLog`](#reqnormallog) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`requestAssetClickInfo`](#requestassetclickinfo) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`requestBannerInfo`](#requestbannerinfo) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`requestBannerInfoWithoutContextIndex`](#requestbannerinfowithoutcontextindex) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`requestCampaignInfo`](#requestcampaigninfo) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`requestContextIndex`](#requestcontextindex) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`requestPostRollInfo`](#requestpostrollinfo) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`requestPreAppRollInfo`](#requestpreapprollinfo) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`requestPreRollInfo`](#requestprerollinfo) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`requestRollAndBannerInfo`](#requestrollandbannerinfo) | public |  | db | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`resetIFA`](#resetifa) | private |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`sendClickImpressionTracker`](#sendclickimpressiontracker) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`sendImpressionTracker`](#sendimpressiontracker) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`setDebugOption`](#setdebugoption) | private |  | apps | Setter on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`setParentalControlForAd`](#setparentalcontrolforad) | private |  | apps | Setter on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`setTCF`](#settcf) | private |  | apps | Setter on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`startDownloadUrl`](#startdownloadurl) | public |  | apps | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
-| [`updateDNS`](#updatedns) | private |  | update | Method on com.webos.service.admanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkForegroundEula`](#checkforegroundeula) | private |  | apps | inferred | Checks the foreground eula. |
+| [`checkForegroundSettings`](#checkforegroundsettings) | private |  | settings | inferred | Checks the foreground settings. |
+| [`checkIntantBootComplete`](#checkintantbootcomplete) | private |  | apps | inferred | Checks the intant boot complete. |
+| [`checkSuspendState`](#checksuspendstate) | private |  | apps | inferred | Checks the suspend state. |
+| [`cookieStatus`](#cookiestatus) | private |  | apps | inferred | Handles the cookie status. |
+| [`createContextWithTrackingList`](#createcontextwithtrackinglist) | public |  | apps | inferred | Creates the context with tracking list. |
+| [`createSDKContext`](#createsdkcontext) | public |  | apps | inferred | Creates the SDK context. |
+| [`deleteCookies`](#deletecookies) | private |  | apps | inferred | Deletes the cookies. ⚠️ |
+| [`displayAllContextList`](#displayallcontextlist) | private |  | apps | inferred | Handles the display all context list. |
+| [`eulaStatus`](#eulastatus) | private |  | apps | inferred | Handles the eula status. |
+| [`getAdid`](#getadid) | public |  | apps | inferred | Returns the adid. |
+| [`getAdRequestInfo`](#getadrequestinfo) | public |  | apps | inferred | Returns the ad request info. |
+| [`inactivateCookies`](#inactivatecookies) | private |  | apps | inferred | Handles the inactivate cookies. |
+| [`launchCMPApp`](#launchcmpapp) | private |  | apps | inferred | Launches the CMP app. |
+| [`reqNormalLog`](#reqnormallog) | public |  | apps | inferred | Handles the req normal log. |
+| [`requestAssetClickInfo`](#requestassetclickinfo) | public |  | apps | inferred | Requests the asset click info. |
+| [`requestBannerInfo`](#requestbannerinfo) | public |  | apps | inferred | Requests the banner info. |
+| [`requestBannerInfoWithoutContextIndex`](#requestbannerinfowithoutcontextindex) | public |  | apps | inferred | Requests the banner info without context index. |
+| [`requestCampaignInfo`](#requestcampaigninfo) | public |  | apps | inferred | Requests the campaign info. |
+| [`requestContextIndex`](#requestcontextindex) | public |  | apps | inferred | Requests the context index. |
+| [`requestPostRollInfo`](#requestpostrollinfo) | public |  | apps | inferred | Requests the post roll info. |
+| [`requestPreAppRollInfo`](#requestpreapprollinfo) | public |  | apps | inferred | Requests the pre app roll info. |
+| [`requestPreRollInfo`](#requestprerollinfo) | public |  | apps | inferred | Requests the pre roll info. |
+| [`requestRollAndBannerInfo`](#requestrollandbannerinfo) | public |  | db | inferred | Requests the roll and banner info. |
+| [`resetIFA`](#resetifa) | private |  | apps | inferred | Resets the IFA. ⚠️ |
+| [`sendClickImpressionTracker`](#sendclickimpressiontracker) | public |  | apps | inferred | Sends the click impression tracker. |
+| [`sendImpressionTracker`](#sendimpressiontracker) | public |  | apps | inferred | Sends the impression tracker. |
+| [`setDebugOption`](#setdebugoption) | private |  | apps | inferred | Sets the debug option. |
+| [`setParentalControlForAd`](#setparentalcontrolforad) | private |  | apps | inferred | Sets the parental control for ad. |
+| [`setTCF`](#settcf) | private |  | apps | inferred | Sets the TCF. |
+| [`start`](#start) | private |  | apps | inferred | Starts the admanager. |
+| [`startDownloadUrl`](#startdownloadurl) | public |  | apps | inferred | Starts the download URL. |
+| [`updateDNS`](#updatedns) | private |  | update | inferred | Updates the DNS. |
 
 <a id="checkforegroundeula"></a>
 ## `checkForegroundEula`
 
 `luna://com.webos.service.admanager/checkForegroundEula`
 
-Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented).
+Checks the foreground eula.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/checkForegroundEula '{}'
@@ -66,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.admanager/checkForegroundSettings`
 
-Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented).
+Checks the foreground settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/checkForegroundSettings '{}'
@@ -87,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.admanager/checkIntantBootComplete`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Checks the intant boot complete.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/checkIntantBootComplete '{}'
@@ -108,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/checkSuspendState`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Checks the suspend state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/checkSuspendState '{}'
@@ -129,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/cookieStatus`
 
-Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented).
+Handles the cookie status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/cookieStatus '{}'
@@ -150,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.admanager/createContextWithTrackingList`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Creates the context with tracking list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/createContextWithTrackingList '{}'
@@ -171,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/createSDKContext`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Creates the SDK context.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/createSDKContext '{}'
@@ -192,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/deleteCookies`
 
-Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented).
+Deletes the cookies.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/deleteCookies '{}'
@@ -213,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.admanager/displayAllContextList`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Handles the display all context list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/displayAllContextList '{}'
@@ -234,13 +254,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/eulaStatus`
 
-Method on com.webos.service.admanager (from on-device permission registry; parameters undocumented).
+Handles the eula status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/eulaStatus '{}'
@@ -255,13 +277,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.admanager/getAdid`
 
-Getter on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Returns the adid.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/getAdid '{}'
@@ -276,13 +300,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/getAdRequestInfo`
 
-Getter on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Returns the ad request info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/getAdRequestInfo '{}'
@@ -297,13 +323,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/inactivateCookies`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Handles the inactivate cookies.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/inactivateCookies '{}'
@@ -318,13 +346,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/launchCMPApp`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Launches the CMP app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/launchCMPApp '{}'
@@ -339,13 +369,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/reqNormalLog`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Handles the req normal log.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/reqNormalLog '{}'
@@ -360,13 +392,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/requestAssetClickInfo`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Requests the asset click info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/requestAssetClickInfo '{}'
@@ -381,13 +415,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/requestBannerInfo`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Requests the banner info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/requestBannerInfo '{}'
@@ -402,13 +438,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/requestBannerInfoWithoutContextIndex`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Requests the banner info without context index.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/requestBannerInfoWithoutContextIndex '{}'
@@ -423,13 +461,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/requestCampaignInfo`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Requests the campaign info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/requestCampaignInfo '{}'
@@ -444,13 +484,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/requestContextIndex`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Requests the context index.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/requestContextIndex '{}'
@@ -465,13 +507,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/requestPostRollInfo`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Requests the post roll info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/requestPostRollInfo '{}'
@@ -486,13 +530,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/requestPreAppRollInfo`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Requests the pre app roll info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/requestPreAppRollInfo '{}'
@@ -507,13 +553,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/requestPreRollInfo`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Requests the pre roll info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/requestPreRollInfo '{}'
@@ -528,13 +576,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/requestRollAndBannerInfo`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Requests the roll and banner info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/requestRollAndBannerInfo '{}'
@@ -549,13 +599,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/resetIFA`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Resets the IFA.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/resetIFA '{}'
@@ -570,13 +622,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/sendClickImpressionTracker`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Sends the click impression tracker.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/sendClickImpressionTracker '{}'
@@ -591,13 +645,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/sendImpressionTracker`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Sends the impression tracker.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/sendImpressionTracker '{}'
@@ -612,13 +668,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/setDebugOption`
 
-Setter on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Sets the debug option.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/setDebugOption '{}'
@@ -633,13 +691,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/setParentalControlForAd`
 
-Setter on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Sets the parental control for ad.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/setParentalControlForAd '{}'
@@ -654,13 +714,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/setTCF`
 
-Setter on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Sets the TCF.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/setTCF '{}'
@@ -675,13 +737,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/start`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Starts the admanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/start '{}'
@@ -696,13 +760,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/startDownloadUrl`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Starts the download URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/startDownloadUrl '{}'
@@ -717,13 +783,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.admanager/updateDNS`
 
-Method on com.webos.service.admanager (introspected on-device; parameters undocumented).
+Updates the DNS.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/updateDNS '{}'

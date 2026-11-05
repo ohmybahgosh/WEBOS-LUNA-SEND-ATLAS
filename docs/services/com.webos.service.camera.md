@@ -1,44 +1,46 @@
 # `com.webos.service.camera`
 
+Camera service: acquires, opens and closes the camera, lists devices and properties, reports firmware and cover state, applies photo effects, and exposes audio-recognition diagnostics.
+
 33 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`acquire`](#acquire) | private |  | camera | USB camera method: acquire |
-| [`applyPhotoEffect`](#applyphotoeffect) | private |  | camera | USB camera method: applyPhotoEffect |
-| [`close`](#close) | private |  | camera | USB camera method: close |
-| [`getFirmwareVersion`](#getfirmwareversion) | private |  | camera | USB camera method: getFirmwareVersion |
-| [`getInfo`](#getinfo) | public |  | camera | Returns detailed info of a camera/microphone device. |
-| [`getList`](#getlist) | public | yes | camera | Lists camera and microphone devices connected to the TV. |
-| [`getProperties`](#getproperties) | private |  | camera | USB camera method: getProperties |
-| [`getServiceStatus`](#getservicestatus) | public |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`initializePhotoEffect`](#initializephotoeffect) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`isCovered`](#iscovered) | public | yes | camera | Cover status of the built-in camera. |
-| [`isUpdating`](#isupdating) | public |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`open`](#open) | private |  | camera | USB camera method: open |
-| [`previewPhotoEffect`](#previewphotoeffect) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`recognition/getERLE`](#recognition_geterle) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`recognition/getFrequencyResponse`](#recognition_getfrequencyresponse) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`recognition/getProperties`](#recognition_getproperties) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`recognition/getRecordedTriggerKeyword`](#recognition_getrecordedtriggerkeyword) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`recognition/getReverberationTime`](#recognition_getreverberationtime) | private |  | input | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`recognition/getSignalLevel`](#recognition_getsignallevel) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`recognition/getVoiceActivityDetection`](#recognition_getvoiceactivitydetection) | private |  | input | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`recognition/setProperties`](#recognition_setproperties) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`recognition/subscribeRecognition`](#recognition_subscriberecognition) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`recognition/unsubscribeRecognition`](#recognition_unsubscriberecognition) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`release`](#release) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`requestRefreshFrame`](#requestrefreshframe) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`setProperties`](#setproperties) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`takePicture`](#takepicture) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`updateFirmware`](#updatefirmware) | private |  | update | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`wakeup`](#wakeup) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`yuv/getProperties`](#yuv_getproperties) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
-| [`yuv/setProperties`](#yuv_setproperties) | private |  | camera | Method on com.webos.service.camera (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`acquire`](#acquire) | private |  | camera | documented | USB camera method: acquire |
+| [`applyPhotoEffect`](#applyphotoeffect) | private |  | camera | documented | USB camera method: applyPhotoEffect |
+| [`close`](#close) | private |  | camera | documented | USB camera method: close |
+| [`getFirmwareVersion`](#getfirmwareversion) | private |  | camera | documented | USB camera method: getFirmwareVersion |
+| [`getInfo`](#getinfo) | public |  | camera | documented | Returns detailed info of a camera/microphone device. |
+| [`getList`](#getlist) | public | yes | camera | documented | Lists camera and microphone devices connected to the TV. |
+| [`getProperties`](#getproperties) | private |  | camera | documented | USB camera method: getProperties |
+| [`getServiceStatus`](#getservicestatus) | public |  | camera | inferred | Returns the service status. |
+| [`initializePhotoEffect`](#initializephotoeffect) | private |  | camera | inferred | Initializes the photo effect. |
+| [`isCovered`](#iscovered) | public | yes | camera | documented | Cover status of the built-in camera. |
+| [`isUpdating`](#isupdating) | public |  | camera | inferred | Reports whether the updating is set. |
+| [`open`](#open) | private |  | camera | documented | USB camera method: open |
+| [`previewPhotoEffect`](#previewphotoeffect) | private |  | camera | inferred | Handles the preview photo effect. |
+| [`recognition/getERLE`](#recognition_geterle) | private |  | camera | inferred | Returns the ERLE (recognition) |
+| [`recognition/getFrequencyResponse`](#recognition_getfrequencyresponse) | private |  | camera | inferred | Returns the frequency response (recognition) |
+| [`recognition/getProperties`](#recognition_getproperties) | private |  | camera | inferred | Returns the properties (recognition) |
+| [`recognition/getRecordedTriggerKeyword`](#recognition_getrecordedtriggerkeyword) | private |  | camera | inferred | Returns the recorded trigger keyword (recognition) |
+| [`recognition/getReverberationTime`](#recognition_getreverberationtime) | private |  | input | inferred | Returns the reverberation time (recognition) |
+| [`recognition/getSignalLevel`](#recognition_getsignallevel) | private |  | camera | inferred | Returns the signal level (recognition) |
+| [`recognition/getVoiceActivityDetection`](#recognition_getvoiceactivitydetection) | private |  | input | inferred | Returns the voice activity detection (recognition) |
+| [`recognition/setProperties`](#recognition_setproperties) | private |  | camera | inferred | Sets the properties (recognition) |
+| [`recognition/subscribeRecognition`](#recognition_subscriberecognition) | private |  | camera | inferred | Subscribes to the recognition (recognition) |
+| [`recognition/unsubscribeRecognition`](#recognition_unsubscriberecognition) | private |  | camera | inferred | Unsubscribes from the recognition (recognition) |
+| [`release`](#release) | private |  | camera | inferred | Releases the camera. |
+| [`requestRefreshFrame`](#requestrefreshframe) | private |  | camera | inferred | Requests the refresh frame. |
+| [`setProperties`](#setproperties) | private |  | camera | inferred | Sets the properties. |
+| [`start`](#start) | private |  | camera | inferred | Starts the camera. |
+| [`stop`](#stop) | private |  | camera | inferred | Stops the camera. |
+| [`takePicture`](#takepicture) | private |  | camera | inferred | Handles the take picture. |
+| [`updateFirmware`](#updatefirmware) | private |  | update | inferred | Updates the firmware. ⚠️ |
+| [`wakeup`](#wakeup) | private |  | camera | inferred | Handles the wakeup. |
+| [`yuv/getProperties`](#yuv_getproperties) | private |  | camera | inferred | Returns the properties (yuv) |
+| [`yuv/setProperties`](#yuv_setproperties) | private |  | camera | inferred | Sets the properties (yuv) |
 
 <a id="acquire"></a>
 ## `acquire`
@@ -51,7 +53,7 @@ USB camera method: acquire
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/acquire '{}'
@@ -72,7 +74,7 @@ USB camera method: applyPhotoEffect
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/applyPhotoEffect '{}'
@@ -93,7 +95,7 @@ USB camera method: close
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/close '{}'
@@ -114,7 +116,7 @@ USB camera method: getFirmwareVersion
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/getFirmwareVersion '{}'
@@ -185,7 +187,7 @@ USB camera method: getProperties
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/getProperties '{}'
@@ -200,13 +202,15 @@ Sources: [1](https://github.com/Powback/LGTV/blob/main/audit/capabilities.md)
 
 `luna://com.webos.service.camera/getServiceStatus`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Returns the service status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/getServiceStatus '{}'
@@ -221,13 +225,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/initializePhotoEffect`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Initializes the photo effect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/initializePhotoEffect '{}'
@@ -268,13 +274,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/camera)
 
 `luna://com.webos.service.camera/isUpdating`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Reports whether the updating is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/isUpdating '{}'
@@ -295,7 +303,7 @@ USB camera method: open
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/open '{}'
@@ -310,13 +318,15 @@ Sources: [1](https://github.com/Powback/LGTV/blob/main/audit/capabilities.md)
 
 `luna://com.webos.service.camera/previewPhotoEffect`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Handles the preview photo effect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/previewPhotoEffect '{}'
@@ -331,13 +341,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/recognition/getERLE`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Returns the ERLE (recognition)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/recognition/getERLE '{}'
@@ -352,13 +364,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/recognition/getFrequencyResponse`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Returns the frequency response (recognition)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/recognition/getFrequencyResponse '{}'
@@ -373,13 +387,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/recognition/getProperties`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Returns the properties (recognition)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/recognition/getProperties '{}'
@@ -394,13 +410,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/recognition/getRecordedTriggerKeyword`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Returns the recorded trigger keyword (recognition)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/recognition/getRecordedTriggerKeyword '{}'
@@ -415,13 +433,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/recognition/getReverberationTime`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Returns the reverberation time (recognition)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/recognition/getReverberationTime '{}'
@@ -436,13 +456,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/recognition/getSignalLevel`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Returns the signal level (recognition)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/recognition/getSignalLevel '{}'
@@ -457,13 +479,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/recognition/getVoiceActivityDetection`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Returns the voice activity detection (recognition)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/recognition/getVoiceActivityDetection '{}'
@@ -478,13 +502,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/recognition/setProperties`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Sets the properties (recognition)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/recognition/setProperties '{}'
@@ -499,13 +525,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/recognition/subscribeRecognition`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Subscribes to the recognition (recognition)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/recognition/subscribeRecognition '{}'
@@ -520,13 +548,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/recognition/unsubscribeRecognition`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Unsubscribes from the recognition (recognition)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/recognition/unsubscribeRecognition '{}'
@@ -541,13 +571,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/release`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Releases the camera.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/release '{}'
@@ -562,13 +594,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/requestRefreshFrame`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Requests the refresh frame.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/requestRefreshFrame '{}'
@@ -583,13 +617,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/setProperties`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Sets the properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/setProperties '{}'
@@ -604,13 +640,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/start`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Starts the camera.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/start '{}'
@@ -625,13 +663,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/stop`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Stops the camera.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/stop '{}'
@@ -646,13 +686,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/takePicture`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Handles the take picture.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/takePicture '{}'
@@ -667,13 +709,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/updateFirmware`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Updates the firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/updateFirmware '{}'
@@ -688,13 +732,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/wakeup`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Handles the wakeup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/wakeup '{}'
@@ -709,13 +755,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/yuv/getProperties`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Returns the properties (yuv)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/yuv/getProperties '{}'
@@ -730,13 +778,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.camera/yuv/setProperties`
 
-Method on com.webos.service.camera (from on-device permission registry; parameters undocumented).
+Sets the properties (yuv)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera/yuv/setProperties '{}'

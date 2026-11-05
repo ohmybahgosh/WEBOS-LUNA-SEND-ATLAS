@@ -1,30 +1,34 @@
 # `com.webos.service.pkgInstall`
 
+Package installer service: installs, removes, and cancels packages, queries install capacity, and reports status.
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancel`](#cancel) | private |  | misc | Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented). |
-| [`install`](#install) | private |  | misc | Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented). |
-| [`internal/start`](#internal_start) | private |  | misc | Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented). |
-| [`queryInstallCapacity`](#queryinstallcapacity) | private |  | misc | Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented). |
-| [`remove`](#remove) | private |  | misc | Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`status`](#status) | private |  | misc | Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancel`](#cancel) | private |  | misc | inferred | Cancels the pkg install. |
+| [`install`](#install) | private |  | misc | inferred | Installs the pkg install. |
+| [`internal/start`](#internal_start) | private |  | misc | inferred | Starts the pkg install (internal) |
+| [`queryInstallCapacity`](#queryinstallcapacity) | private |  | misc | inferred | Queries the install capacity. |
+| [`remove`](#remove) | private |  | misc | inferred | Removes the pkg install. ⚠️ |
+| [`status`](#status) | private |  | misc | inferred | Handles the status. |
 
 <a id="cancel"></a>
 ## `cancel`
 
 `luna://com.webos.service.pkgInstall/cancel`
 
-Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented).
+Cancels the pkg install.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgInstall/cancel '{}'
@@ -39,13 +43,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pkgInstall/install`
 
-Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented).
+Installs the pkg install.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgInstall/install '{}'
@@ -60,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pkgInstall/internal/start`
 
-Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented).
+Starts the pkg install (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgInstall/internal/start '{}'
@@ -81,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pkgInstall/queryInstallCapacity`
 
-Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented).
+Queries the install capacity.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgInstall/queryInstallCapacity '{}'
@@ -102,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pkgInstall/remove`
 
-Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented).
+Removes the pkg install.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgInstall/remove '{}'
@@ -123,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pkgInstall/status`
 
-Method on com.webos.service.pkgInstall (from on-device permission registry; parameters undocumented).
+Handles the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgInstall/status '{}'

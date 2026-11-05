@@ -1,41 +1,45 @@
 # `google.assistant.adapter.plugin`
 
+Google Assistant adapter plugin: recognizes intents by voice and text, manages sign-in and conversations, and controls voice recording/audio input. _(inferred from the service's methods)_
+
 17 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancel`](#cancel) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`cancelRecognition`](#cancelrecognition) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`disableSignIn`](#disablesignin) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`enableSignIn`](#enablesignin) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`getAccountsDetail`](#getaccountsdetail) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`load`](#load) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`recognizeIntentByText`](#recognizeintentbytext) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`request`](#request) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`requestIntent`](#requestintent) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`requestNewConversation`](#requestnewconversation) | public |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`requestSignOut`](#requestsignout) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`requestText`](#requesttext) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`showGuide`](#showguide) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`stopAudioIn`](#stopaudioin) | private |  | audio | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`unload`](#unload) | private |  | misc | Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancel`](#cancel) | private |  | misc | inferred | Cancels the google assistant adapter plugin. |
+| [`cancelRecognition`](#cancelrecognition) | private |  | misc | inferred | Cancels the recognition. |
+| [`disableSignIn`](#disablesignin) | private |  | misc | inferred | Disables the sign in. |
+| [`enableSignIn`](#enablesignin) | private |  | misc | inferred | Enables the sign in. |
+| [`getAccountsDetail`](#getaccountsdetail) | private |  | misc | inferred | Returns the accounts detail. |
+| [`load`](#load) | private |  | misc | inferred | Loads the google assistant adapter plugin. |
+| [`recognizeIntentByText`](#recognizeintentbytext) | private |  | misc | inferred | Recognizes the intent by text. |
+| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | inferred | Recognizes the intent by voice. |
+| [`request`](#request) | private |  | misc | inferred | Requests the google assistant adapter plugin. |
+| [`requestIntent`](#requestintent) | private |  | misc | inferred | Requests the intent. |
+| [`requestNewConversation`](#requestnewconversation) | public |  | misc | inferred | Requests the new conversation. |
+| [`requestSignOut`](#requestsignout) | private |  | misc | inferred | Requests the sign out. |
+| [`requestText`](#requesttext) | private |  | misc | inferred | Requests the text. |
+| [`showGuide`](#showguide) | private |  | misc | inferred | Shows the guide. |
+| [`stopAudioIn`](#stopaudioin) | private |  | audio | inferred | Stops the audio in. |
+| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | inferred | Stops the recording voice. |
+| [`unload`](#unload) | private |  | misc | inferred | Unloads the google assistant adapter plugin. |
 
 <a id="cancel"></a>
 ## `cancel`
 
 `luna://google.assistant.adapter.plugin/cancel`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Cancels the google assistant adapter plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/cancel '{}'
@@ -50,13 +54,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/cancelRecognition`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Cancels the recognition.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/cancelRecognition '{}'
@@ -71,13 +77,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/disableSignIn`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Disables the sign in.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/disableSignIn '{}'
@@ -92,13 +100,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/enableSignIn`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Enables the sign in.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/enableSignIn '{}'
@@ -113,13 +123,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/getAccountsDetail`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Returns the accounts detail.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/getAccountsDetail '{}'
@@ -134,13 +146,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/load`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Loads the google assistant adapter plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/load '{}'
@@ -155,13 +169,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/recognizeIntentByText`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Recognizes the intent by text.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/recognizeIntentByText '{}'
@@ -176,13 +192,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/recognizeIntentByVoice`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Recognizes the intent by voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/recognizeIntentByVoice '{}'
@@ -197,13 +215,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/request`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Requests the google assistant adapter plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/request '{}'
@@ -218,13 +238,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/requestIntent`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Requests the intent.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/requestIntent '{}'
@@ -239,13 +261,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/requestNewConversation`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Requests the new conversation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/requestNewConversation '{}'
@@ -260,13 +284,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/requestSignOut`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Requests the sign out.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/requestSignOut '{}'
@@ -281,13 +307,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/requestText`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Requests the text.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/requestText '{}'
@@ -302,13 +330,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/showGuide`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Shows the guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/showGuide '{}'
@@ -323,13 +353,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/stopAudioIn`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Stops the audio in.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/stopAudioIn '{}'
@@ -344,13 +376,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/stopRecordingVoice`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Stops the recording voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/stopRecordingVoice '{}'
@@ -365,13 +399,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://google.assistant.adapter.plugin/unload`
 
-Method on google.assistant.adapter.plugin (from on-device permission registry; parameters undocumented).
+Unloads the google assistant adapter plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://google.assistant.adapter.plugin/unload '{}'

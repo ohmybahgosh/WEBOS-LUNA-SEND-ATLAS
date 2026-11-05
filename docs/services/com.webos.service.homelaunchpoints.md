@@ -1,38 +1,42 @@
 # `com.webos.service.homelaunchpoints`
 
+Home-screen launch-point and QCard manager: lists, adds, moves, hides, removes and updates home-screen launch points and QCards. _(inferred from the service's methods)_
+
 14 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`addLaunchPoint`](#addlaunchpoint) | private |  | apps | Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
-| [`addQCard`](#addqcard) | private |  | apps | Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
-| [`hideLaunchPoint`](#hidelaunchpoint) | private |  | apps | Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
-| [`listAvailableLaunchPoints`](#listavailablelaunchpoints) | private |  | apps | Lister on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
-| [`listAvailableQCards`](#listavailableqcards) | private |  | apps | Lister on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
-| [`listLaunchPoints`](#listlaunchpoints) | private |  | apps | Lister on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
-| [`listQCards`](#listqcards) | private |  | apps | Lister on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
-| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
-| [`moveQCard`](#moveqcard) | private |  | apps | Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
-| [`removeLaunchPoint`](#removelaunchpoint) | private |  | apps | Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). ⚠️ |
-| [`removeQCard`](#removeqcard) | private |  | apps | Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). ⚠️ |
-| [`unhideLaunchPoint`](#unhidelaunchpoint) | private |  | apps | Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
-| [`updateLaunchPoint`](#updatelaunchpoint) | private |  | apps | Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
-| [`updateQCard`](#updateqcard) | public |  | apps | Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`addLaunchPoint`](#addlaunchpoint) | private |  | apps | inferred | Adds the launch point. |
+| [`addQCard`](#addqcard) | private |  | apps | inferred | Adds the q card. |
+| [`hideLaunchPoint`](#hidelaunchpoint) | private |  | apps | inferred | Hides the launch point. |
+| [`listAvailableLaunchPoints`](#listavailablelaunchpoints) | private |  | apps | inferred | Lists the available launch points. |
+| [`listAvailableQCards`](#listavailableqcards) | private |  | apps | inferred | Lists the available q cards. |
+| [`listLaunchPoints`](#listlaunchpoints) | private |  | apps | inferred | Lists the launch points. |
+| [`listQCards`](#listqcards) | private |  | apps | inferred | Lists the q cards. |
+| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | inferred | Moves the launch point. |
+| [`moveQCard`](#moveqcard) | private |  | apps | inferred | Moves the q card. |
+| [`removeLaunchPoint`](#removelaunchpoint) | private |  | apps | inferred | Removes the launch point. ⚠️ |
+| [`removeQCard`](#removeqcard) | private |  | apps | inferred | Removes the q card. ⚠️ |
+| [`unhideLaunchPoint`](#unhidelaunchpoint) | private |  | apps | inferred | Handles the unhide launch point. |
+| [`updateLaunchPoint`](#updatelaunchpoint) | private |  | apps | inferred | Updates the launch point. |
+| [`updateQCard`](#updateqcard) | public |  | apps | inferred | Updates the q card. |
 
 <a id="addlaunchpoint"></a>
 ## `addLaunchPoint`
 
 `luna://com.webos.service.homelaunchpoints/addLaunchPoint`
 
-Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Adds the launch point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/addLaunchPoint '{}'
@@ -47,13 +51,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/addQCard`
 
-Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Adds the q card.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/addQCard '{}'
@@ -68,13 +74,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/hideLaunchPoint`
 
-Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Hides the launch point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/hideLaunchPoint '{}'
@@ -89,13 +97,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/listAvailableLaunchPoints`
 
-Lister on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Lists the available launch points.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/listAvailableLaunchPoints '{}'
@@ -110,13 +120,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/listAvailableQCards`
 
-Lister on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Lists the available q cards.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/listAvailableQCards '{}'
@@ -131,13 +143,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/listLaunchPoints`
 
-Lister on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Lists the launch points.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/listLaunchPoints '{}'
@@ -152,13 +166,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/listQCards`
 
-Lister on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Lists the q cards.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/listQCards '{}'
@@ -173,13 +189,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/moveLaunchPoint`
 
-Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Moves the launch point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/moveLaunchPoint '{}'
@@ -194,13 +212,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/moveQCard`
 
-Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Moves the q card.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/moveQCard '{}'
@@ -215,13 +235,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/removeLaunchPoint`
 
-Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Removes the launch point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/removeLaunchPoint '{}'
@@ -236,13 +258,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/removeQCard`
 
-Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Removes the q card.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/removeQCard '{}'
@@ -257,13 +281,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/unhideLaunchPoint`
 
-Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Handles the unhide launch point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/unhideLaunchPoint '{}'
@@ -278,13 +304,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/updateLaunchPoint`
 
-Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Updates the launch point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/updateLaunchPoint '{}'
@@ -299,13 +327,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.homelaunchpoints/updateQCard`
 
-Method on com.webos.service.homelaunchpoints (introspected on-device; parameters undocumented).
+Updates the q card.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/updateQCard '{}'

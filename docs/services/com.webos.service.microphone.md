@@ -1,31 +1,35 @@
 # `com.webos.service.microphone`
 
+Microphone service: enumerates microphones, opens/starts/stops capture, reports info, and requests microphone permission.
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`closeMicrophone`](#closemicrophone) | private |  | misc | Method on com.webos.service.microphone (introspected on-device; parameters undocumented). |
-| [`getInfo`](#getinfo) | private |  | misc | Getter on com.webos.service.microphone (introspected on-device; parameters undocumented). |
-| [`getMicrophones`](#getmicrophones) | private |  | misc | Getter on com.webos.service.microphone (introspected on-device; parameters undocumented). |
-| [`openMicrophone`](#openmicrophone) | private |  | misc | Method on com.webos.service.microphone (introspected on-device; parameters undocumented). |
-| [`requestMicrophonePermission`](#requestmicrophonepermission) | private |  | misc | Method on com.webos.service.microphone (introspected on-device; parameters undocumented). |
-| [`startMicrophone`](#startmicrophone) | private |  | misc | Method on com.webos.service.microphone (introspected on-device; parameters undocumented). |
-| [`stopMicrophone`](#stopmicrophone) | private |  | misc | Method on com.webos.service.microphone (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`closeMicrophone`](#closemicrophone) | private |  | misc | inferred | Closes the microphone. |
+| [`getInfo`](#getinfo) | private |  | misc | inferred | Returns the info. |
+| [`getMicrophones`](#getmicrophones) | private |  | misc | inferred | Returns the microphones. |
+| [`openMicrophone`](#openmicrophone) | private |  | misc | inferred | Opens the microphone. |
+| [`requestMicrophonePermission`](#requestmicrophonepermission) | private |  | misc | inferred | Requests the microphone permission. |
+| [`startMicrophone`](#startmicrophone) | private |  | misc | inferred | Starts the microphone. |
+| [`stopMicrophone`](#stopmicrophone) | private |  | misc | inferred | Stops the microphone. |
 
 <a id="closemicrophone"></a>
 ## `closeMicrophone`
 
 `luna://com.webos.service.microphone/closeMicrophone`
 
-Method on com.webos.service.microphone (introspected on-device; parameters undocumented).
+Closes the microphone.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.microphone/closeMicrophone '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.microphone/getInfo`
 
-Getter on com.webos.service.microphone (introspected on-device; parameters undocumented).
+Returns the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.microphone/getInfo '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.microphone/getMicrophones`
 
-Getter on com.webos.service.microphone (introspected on-device; parameters undocumented).
+Returns the microphones.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.microphone/getMicrophones '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.microphone/openMicrophone`
 
-Method on com.webos.service.microphone (introspected on-device; parameters undocumented).
+Opens the microphone.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.microphone/openMicrophone '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.microphone/requestMicrophonePermission`
 
-Method on com.webos.service.microphone (introspected on-device; parameters undocumented).
+Requests the microphone permission.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.microphone/requestMicrophonePermission '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.microphone/startMicrophone`
 
-Method on com.webos.service.microphone (introspected on-device; parameters undocumented).
+Starts the microphone.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.microphone/startMicrophone '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.microphone/stopMicrophone`
 
-Method on com.webos.service.microphone (introspected on-device; parameters undocumented).
+Stops the microphone.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.microphone/stopMicrophone '{}'

@@ -1,23 +1,25 @@
 # `com.webos.service.sdkagent`
 
+SDK agent that controls the Telegraf metrics collector and communicates with SDK tools: starts, stops, restarts and configures collection and monitors process and web-process size.
+
 12 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`agent`](#agent) | unknown |  | devmode | Config data for telegraf agent. |
-| [`collector/getConfig`](#collector_getconfig) | public |  | devmode | Gets configurations of the Telegraf service. |
-| [`collector/getData`](#collector_getdata) | public |  | devmode | Gets data from the Telegraf service. |
-| [`collector/getStatus`](#collector_getstatus) | public |  | devmode | Gets status of the Telegraf service. |
-| [`collector/restart`](#collector_restart) | public |  | devmode | Restarts the Telegraf service. |
-| [`collector/setConfig`](#collector_setconfig) | public |  | devmode | Sets configurations of the Telegraf service. |
-| [`collector/start`](#collector_start) | public |  | devmode | Starts the Telegraf service. |
-| [`collector/startOnBoot`](#collector_startonboot) | public |  | devmode | Automatically starts the Telegraf service on device boot-up and starts monitoring. |
-| [`collector/stop`](#collector_stop) | public |  | devmode | Stops the Telegraf service. |
-| [`outputs.influxdb`](#outputs.influxdb) | unknown |  | devmode | Config data for influxdb on host. |
-| [`webOS.processMonitoring`](#webos.processmonitoring) | unknown |  | devmode | Config data for processMonitoring. Lists the background/foreground applications and their process IDs that are running on webOS platform. Fo |
-| [`webOS.webProcessSize`](#webos.webprocesssize) | unknown |  | devmode | Config data for webProcessSize. Return the list of apps which the process is running and their size. For information, see com.webos.service. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`agent`](#agent) | unknown |  | devmode | documented | Config data for telegraf agent. |
+| [`collector/getConfig`](#collector_getconfig) | public |  | devmode | documented | Gets configurations of the Telegraf service. |
+| [`collector/getData`](#collector_getdata) | public |  | devmode | documented | Gets data from the Telegraf service. |
+| [`collector/getStatus`](#collector_getstatus) | public |  | devmode | documented | Gets status of the Telegraf service. |
+| [`collector/restart`](#collector_restart) | public |  | devmode | documented | Restarts the Telegraf service. |
+| [`collector/setConfig`](#collector_setconfig) | public |  | devmode | documented | Sets configurations of the Telegraf service. |
+| [`collector/start`](#collector_start) | public |  | devmode | documented | Starts the Telegraf service. |
+| [`collector/startOnBoot`](#collector_startonboot) | public |  | devmode | documented | Automatically starts the Telegraf service on device boot-up and starts monitoring. |
+| [`collector/stop`](#collector_stop) | public |  | devmode | documented | Stops the Telegraf service. |
+| [`outputs.influxdb`](#outputs.influxdb) | unknown |  | devmode | documented | Config data for influxdb on host. |
+| [`webOS.processMonitoring`](#webos.processmonitoring) | unknown |  | devmode | documented | Config data for processMonitoring. Lists the background/foreground applications and their process IDs that are running on webOS platform. Fo |
+| [`webOS.webProcessSize`](#webos.webprocesssize) | unknown |  | devmode | documented | Config data for webProcessSize. Return the list of apps which the process is running and their size. For information, see com.webos.service. |
 
 <a id="agent"></a>
 ## `agent`
@@ -53,6 +55,12 @@ Gets configurations of the Telegraf service.
 - **Versions:** webOS OSE API level 22+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `config` | Object (optional) Telegraf configurations, converted to a JSON object. Similar to telegraf.conf, available @ https://docs.influxdata.com/telegraf/v1.21/administration/configuration/. Note: Besides the configs that are configured using setConfig method, this method also returns some read-only configu |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.sdkagent/collector/getConfig '{}
 ```
@@ -78,6 +86,12 @@ Gets data from the Telegraf service.
 |---|---|
 | `inputs` | String array (optional) Indicates the inputs to get data from service. The inputs can be obtained from the "Input.*" of the collector/getConfig API. For example, the inputs can be as follows: {"processes", "kernel", "cpu", "system", "diskio", "disk", "mem", "swap"} If argument is empty, return all collected data. For more details: [inputs.processes] https://github.com/influxdata/telegraf/tree/mast |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `dataArray` | Object array (optional) JSON object with data about the specified input. More details on output data: For more details: - \[inputs.processes\] https://github.com/influxdata/telegraf/tree/master/plugins/inputs/processes - \[inputs.kernel\] https://github.com/influxdata/telegraf/tree/master/plugins/in |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.sdkagent/collector/getData '{"inputs": ["processes", "kernel"]}
 ```
@@ -98,6 +112,13 @@ Gets status of the Telegraf service.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 22+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `status` | String (required) Indicates the status of the Telegraf service. Possible values are: - active: Service is running. - inactive: Service is not running. |
+| `startOnBoot` | Boolean (optional) Indicates whether the service is configured to start on booting up of device. Possible values are: - true: Configured to start on boot. - false: Not configured to start on boot. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdkagent/collector/getStatus '{}

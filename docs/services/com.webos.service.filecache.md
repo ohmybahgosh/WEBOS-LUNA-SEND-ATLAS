@@ -1,27 +1,29 @@
 # `com.webos.service.filecache`
 
+File-cache service managing a global shared file cache: defines cache types and inserts, copies, resizes, expires and touches typed cache objects.
+
 16 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`ChangeType`](#changetype) | public |  | storage | Allows apps to modify the parameters of a cache type other than its name. You must specify the name of the cache type, and those cache type  |
-| [`CopyCacheObject`](#copycacheobject) | public |  | storage | Enables copying of an object from the file cache to a non-cached location. On successful completion, newPathName will be returned as it may  |
-| [`DefineType`](#definetype) | public |  | storage | Defines a new cache type. This is intended for use by the backup service. Optionally you may specify the default values for the size, cost,  |
-| [`DeleteType`](#deletetype) | public |  | storage | Allows you to delete a previously defined cache type and frees up its space. All objects in the cache must be expired in order to delete a c |
-| [`DescribeType`](#describetype) | public |  | storage | Returns cache type details. The DescribeType will return the currently assigned values for all cache type parameters. Note: Filesize as it r |
-| [`ExpireCacheObject`](#expirecacheobject) | public |  | storage | Objects will normally be automatically expired form the cache as space is needed. If you want to force an item to be removed or if you want  |
-| [`GetCacheObjectFilename`](#getcacheobjectfilename) | public |  | storage | Allows you to query the original filename of a particular object in a cache type. In order to get the cache object file name the app must sp |
-| [`GetCacheObjectSize`](#getcacheobjectsize) | public |  | storage | Allows you to query a particular object size in a cache type. In order to get the cache object size, the app must specify the pathname of th |
-| [`GetCacheStatus`](#getcachestatus) | public |  | storage | Give status of the cache as a whole. The GetCacheStatus will return: the number of cache types defined the total space used by the objects i |
-| [`GetCacheTypes`](#getcachetypes) | public |  | storage | Returns an array of all defined cache types. |
-| [`GetCacheTypeStatus`](#getcachetypestatus) | public |  | storage | Allows you to query the status of a particular cache type to obtain: the total space used by the objects in the specified cache type the num |
-| [`GetVersion`](#getversion) | public |  | storage | Returns the version of the File Cache API. |
-| [`InsertCacheObject`](#insertcacheobject) | public | yes | storage | Inserts a new object of the specified type into the cache. The fileName parameter is required. It is stored with the object to ensure that t |
-| [`ResizeCacheObject`](#resizecacheobject) | public |  | storage | By calling the ResizeCacheObject you can specify the size of the cached object after it is inserted into the cache. Call this method if the  |
-| [`SubscribeCacheObject`](#subscribecacheobject) | public |  | storage | Enables you to subscribe an object in the cache and hold a subscription to the object for the duration of your usage. An object cannot be ex |
-| [`TouchCacheObject`](#touchcacheobject) | public |  | storage | Allows you to mark an object as recently used. This decreases the chances of the object from getting expired from the cache when the space i |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`ChangeType`](#changetype) | public |  | storage | documented | Allows apps to modify the parameters of a cache type other than its name. You must specify the name of the cache type, and those cache type  |
+| [`CopyCacheObject`](#copycacheobject) | public |  | storage | documented | Enables copying of an object from the file cache to a non-cached location. On successful completion, newPathName will be returned as it may  |
+| [`DefineType`](#definetype) | public |  | storage | documented | Defines a new cache type. This is intended for use by the backup service. Optionally you may specify the default values for the size, cost,  |
+| [`DeleteType`](#deletetype) | public |  | storage | documented | Allows you to delete a previously defined cache type and frees up its space. All objects in the cache must be expired in order to delete a c |
+| [`DescribeType`](#describetype) | public |  | storage | documented | Returns cache type details. The DescribeType will return the currently assigned values for all cache type parameters. Note: Filesize as it r |
+| [`ExpireCacheObject`](#expirecacheobject) | public |  | storage | documented | Objects will normally be automatically expired form the cache as space is needed. If you want to force an item to be removed or if you want  |
+| [`GetCacheObjectFilename`](#getcacheobjectfilename) | public |  | storage | documented | Allows you to query the original filename of a particular object in a cache type. In order to get the cache object file name the app must sp |
+| [`GetCacheObjectSize`](#getcacheobjectsize) | public |  | storage | documented | Allows you to query a particular object size in a cache type. In order to get the cache object size, the app must specify the pathname of th |
+| [`GetCacheStatus`](#getcachestatus) | public |  | storage | documented | Give status of the cache as a whole. The GetCacheStatus will return: the number of cache types defined the total space used by the objects i |
+| [`GetCacheTypes`](#getcachetypes) | public |  | storage | documented | Returns an array of all defined cache types. |
+| [`GetCacheTypeStatus`](#getcachetypestatus) | public |  | storage | documented | Allows you to query the status of a particular cache type to obtain: the total space used by the objects in the specified cache type the num |
+| [`GetVersion`](#getversion) | public |  | storage | documented | Returns the version of the File Cache API. |
+| [`InsertCacheObject`](#insertcacheobject) | public | yes | storage | documented | Inserts a new object of the specified type into the cache. The fileName parameter is required. It is stored with the object to ensure that t |
+| [`ResizeCacheObject`](#resizecacheobject) | public |  | storage | documented | By calling the ResizeCacheObject you can specify the size of the cached object after it is inserted into the cache. Call this method if the  |
+| [`SubscribeCacheObject`](#subscribecacheobject) | public |  | storage | documented | Enables you to subscribe an object in the cache and hold a subscription to the object for the duration of your usage. An object cannot be ex |
+| [`TouchCacheObject`](#touchcacheobject) | public |  | storage | documented | Allows you to mark an object as recently used. This decreases the chances of the object from getting expired from the cache when the space i |
 
 <a id="changetype"></a>
 ## `ChangeType`
@@ -44,6 +46,13 @@ Allows apps to modify the parameters of a cache type other than its name. You mu
 | `size` | Number (optional) Default value in bytes for any object inserted into this cache type that does not specify a value for size. Size must not be negative. |
 | `cost` | Number (optional) Default value between 0 and 100 for any object inserted into this cache type that does not specify a value for cost. |
 | `lifetime` | Number (optional) Default value in seconds for any object inserted into this cache type that does not specify a value for lifetime. lifetime must not be negative. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.filecache/DefineType '{"typeName":"test", "size":1024, "loWatermark":102400, "hiWatermark":409600, "cost":5}'
@@ -71,6 +80,14 @@ Enables copying of an object from the file cache to a non-cached location. On su
 | `pathName` | String (required) The pathName is the path of the cache object to be copied |
 | `destination` | String (optional) The destination is the path to a target directory, this path will be validated to ensure you have write permissions to that directory. |
 | `fileName` | String (optional) The fileName is the name for the target file. If not passed, the fileName will be the value passed when calling InsertCacheObject . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `newPathName` | String (optional) On success, the newPathName will be returned. This file name may be different than expected due to filename collisions. If there is a name collision, the name will be made unique by adding a number to the file basename (i.e. foo.bar may become foo-(1).bar). |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.filecache/CopyCacheObject '{"pathName":"/var/file-cache/test/M/OnRpQABl.bar", "destination":"", "fileName":"foo.bar"}
@@ -103,6 +120,13 @@ Defines a new cache type. This is intended for use by the backup service. Option
 | `lifetime` | Number (optional) Default value in seconds for any object inserted into this cache type that does not specify a value for lifetime . |
 | `dirType` | Boolean (optional) Specifies whether the cache type should create directory entries. This is intended for use by the backup service. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.filecache/DefineType '{"typeName":"test","size":1024,"loWatermark":102400,"hiWatermark":409600,"cost":5}
 ```
@@ -127,6 +151,14 @@ Allows you to delete a previously defined cache type and frees up its space. All
 | Param | Type / notes |
 |---|---|
 | `typeName` | String (required) The typeName is the name of the cache type to be deleted |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `freedSpace` | Number (optional) Show the space freed by the cache being deleted on success. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.filecache/DefineType '{"typeName":"test", "size":1024, "loWatermark":102400, "hiWatermark":409600, "cost":5}'
@@ -153,6 +185,18 @@ Returns cache type details. The DescribeType will return the currently assigned 
 |---|---|
 | `typeName` | String (required) The typeName is the name of the cache type for which more information about the cache type is needed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `loWatermark` | Number (optional) The minimum space in bytes guaranteed to be available for this cache type. |
+| `hiWatermark` | Number (optional) The maximum space in bytes guaranteed to be available for this cache type. |
+| `size` | Number (optional) Default value in bytes for any object inserted into this cache type that does not specify a value for size. |
+| `cost` | Number (optional) Default value between 0 and 100 for any object inserted into this cache type that does not specify a value for cost. |
+| `lifetime` | Number (optional) Default value in seconds for any object inserted into this cache type that does not specify a value for lifetime. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.filecache/DefineType '{"typeName":"test", "size":1024, "loWatermark":102400, "hiWatermark":409600, "cost":5}'
 ```
@@ -177,6 +221,13 @@ Objects will normally be automatically expired form the cache as space is needed
 | Param | Type / notes |
 |---|---|
 | `pathName` | String (required) Path of the object to be manually expired. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.filecache/ExpireCacheObject '{"pathName":"/var/file-cache/test/M/OnRpQABl.bar"}
@@ -203,6 +254,14 @@ Allows you to query the original filename of a particular object in a cache type
 |---|---|
 | `pathName` | String (required) Path of the object for which the filename is to be queried. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `fileName` | String (optional) Original filename of the specified object if the call succeeds. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.filecache/GetCacheObjectFilename '{"pathName":"/var/file-cache/test/L/cvrKwABm.bar"}
 ```
@@ -228,6 +287,14 @@ Allows you to query a particular object size in a cache type. In order to get th
 |---|---|
 | `pathName` | String (required) Path for the cache object to be queried for its size. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `size` | Number (optional) Size of the specified object on success |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.filecache/GetCacheObjectSize '{"pathName":"/var/file-cache/test/L/cvrKwABm.bar"}
 ```
@@ -249,6 +316,15 @@ Give status of the cache as a whole. The GetCacheStatus will return: the number 
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `numTypes` | Number (required) The number of cached types defined |
+| `size` | Number (required) The total space used by the objects in all cache types |
+| `numObjs` | Number (required) The number of objects in all cache types |
+| `availSpace` | Number (required) The available space in the cache |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.filecache/GetCacheStatus '{}
 ```
@@ -269,6 +345,12 @@ Returns an array of all defined cache types.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `types` | String array (optional) Array of all defined cache types. NOTE: If cache types are not defined, the “types” array is not returned. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.filecache/DefineType '{"typeName":"test", "size":1024, "loWatermark":102400, "hiWatermark":409600, "cost":5}'
@@ -295,6 +377,15 @@ Allows you to query the status of a particular cache type to obtain: the total s
 |---|---|
 | `typeName` | String (required) The name of the cache type for which the status information is to be retrieved. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `size` | Number (optional) The total space used by the objects in the specified cache type, if succeed |
+| `numObjs` | Number (optional) The number of objects in the specified cache type, if succeed. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.filecache/DefineType '{"typeName":"test", "size":1024, "loWatermark":102400, "hiWatermark":409600, "cost":5}'
 ```
@@ -315,6 +406,14 @@ Returns the version of the File Cache API.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `version` | String (required) File Cache API version. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.filecache/GetVersion '{}
@@ -346,6 +445,14 @@ Inserts a new object of the specified type into the cache. The fileName paramete
 | `lifetime` | Number (optional) The lifetime is value in seconds. |
 | `subscribe` | Boolean (optional) Subscribe should be set to true so that after the object is inserted one can continues to make updates to the file. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `pathName` | String (optional) The path to the object in the cache is returned on success. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.filecache/DefineType '{"typeName":"test", "size":1024, "loWatermark":102400, "hiWatermark":409600, "cost":5}'
 ```
@@ -372,6 +479,14 @@ By calling the ResizeCacheObject you can specify the size of the cached object a
 | `pathName` | String (required) The path of the object to be resized. |
 | `newSize` | Number (required) The new size of the object in bytes. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `newSize` | Number (optional) The new size of the resized object on success. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.filecache/ResizeCacheObject '{"newSize": 1024, "pathName": "/var/file-cache/test/H/LCWlwAJb.cat"}
 ```
@@ -397,6 +512,13 @@ Enables you to subscribe an object in the cache and hold a subscription to the o
 |---|---|
 | `pathName` | String (required) The path for the object to be subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.filecache/SubscribeCacheObject '{"pathName": "/var/file-cache/test/H/LCWlwAJb.cat"}
 ```
@@ -421,6 +543,13 @@ Allows you to mark an object as recently used. This decreases the chances of the
 | Param | Type / notes |
 |---|---|
 | `pathName` | String (required) path of the object to be marked as touched. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.filecache/TouchCacheObject '{"pathName":"/var/file-cache/test/D2_/aJQCH9.bar"}

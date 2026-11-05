@@ -1,35 +1,39 @@
 # `com.webos.service.commercial.contentmanager`
 
+Content manager for commercial/signage TVs: creates, copies, moves, renames, deletes, and loads content files and reports file-operation and playable status. _(inferred from the service's methods)_
+
 11 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelRequest`](#cancelrequest) | private |  | misc | Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented). |
-| [`copy`](#copy) | private |  | misc | Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented). |
-| [`create`](#create) | private |  | misc | Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented). |
-| [`delete`](#delete) | private |  | misc | Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`getFileOperationStatus`](#getfileoperationstatus) | private |  | misc | Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented). |
-| [`getPlayableState`](#getplayablestate) | private |  | misc | Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented). |
-| [`hello`](#hello) | private |  | misc | Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented). |
-| [`load`](#load) | private |  | misc | Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented). |
-| [`move`](#move) | private |  | misc | Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented). |
-| [`rename`](#rename) | private |  | misc | Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented). |
-| [`update`](#update) | private |  | update | Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelRequest`](#cancelrequest) | private |  | misc | inferred | Cancels the request. |
+| [`copy`](#copy) | private |  | misc | inferred | Copies the commercial contentmanager. |
+| [`create`](#create) | private |  | misc | inferred | Creates the commercial contentmanager. |
+| [`delete`](#delete) | private |  | misc | inferred | Deletes the commercial contentmanager. ⚠️ |
+| [`getFileOperationStatus`](#getfileoperationstatus) | private |  | misc | inferred | Returns the file operation status. |
+| [`getPlayableState`](#getplayablestate) | private |  | misc | inferred | Returns the playable state. |
+| [`hello`](#hello) | private |  | misc | inferred | Handles the hello. |
+| [`load`](#load) | private |  | misc | inferred | Loads the commercial contentmanager. |
+| [`move`](#move) | private |  | misc | inferred | Moves the commercial contentmanager. |
+| [`rename`](#rename) | private |  | misc | inferred | Renames the commercial contentmanager. |
+| [`update`](#update) | private |  | update | inferred | Updates the commercial contentmanager. |
 
 <a id="cancelrequest"></a>
 ## `cancelRequest`
 
 `luna://com.webos.service.commercial.contentmanager/cancelRequest`
 
-Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented).
+Cancels the request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.contentmanager/cancelRequest '{}'
@@ -44,13 +48,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.contentmanager/copy`
 
-Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented).
+Copies the commercial contentmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.contentmanager/copy '{}'
@@ -65,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.contentmanager/create`
 
-Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented).
+Creates the commercial contentmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.contentmanager/create '{}'
@@ -86,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.contentmanager/delete`
 
-Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented).
+Deletes the commercial contentmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.contentmanager/delete '{}'
@@ -107,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.contentmanager/getFileOperationStatus`
 
-Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented).
+Returns the file operation status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.contentmanager/getFileOperationStatus '{}'
@@ -128,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.contentmanager/getPlayableState`
 
-Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented).
+Returns the playable state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.contentmanager/getPlayableState '{}'
@@ -149,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.contentmanager/hello`
 
-Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented).
+Handles the hello.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.contentmanager/hello '{}'
@@ -170,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.contentmanager/load`
 
-Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented).
+Loads the commercial contentmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.contentmanager/load '{}'
@@ -191,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.contentmanager/move`
 
-Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented).
+Moves the commercial contentmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.contentmanager/move '{}'
@@ -212,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.contentmanager/rename`
 
-Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented).
+Renames the commercial contentmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.contentmanager/rename '{}'
@@ -233,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.contentmanager/update`
 
-Method on com.webos.service.commercial.contentmanager (from on-device permission registry; parameters undocumented).
+Updates the commercial contentmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.contentmanager/update '{}'

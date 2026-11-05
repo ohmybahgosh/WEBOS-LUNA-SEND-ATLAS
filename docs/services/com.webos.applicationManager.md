@@ -1,100 +1,104 @@
 # `com.webos.applicationManager`
 
+Application manager: installs and launches apps, manages launch points and virtual apps, reports app/package info, and handles dev-mode app operations.
+
 76 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`addContent`](#addcontent) | private |  | apps | Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`addLaunchPoint`](#addlaunchpoint) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`addVirtualApp`](#addvirtualapp) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`blockSystemApp`](#blocksystemapp) | private |  | apps | Blocks a system app (used by webos-homebar to replace LG Home) ⚠️ |
-| [`changeRunningAppId`](#changerunningappid) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`close`](#close) | ssap |  | apps | Close an app by id (SSAP) |
-| [`closeAllApps`](#closeallapps) | private |  | apps | Closes all running apps (as used by webos-homebar helper) |
-| [`closeByAppId`](#closebyappid) | public |  | apps | Closes a running app by id |
-| [`debug/traceApi`](#debug_traceapi) | private |  | apps | Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`dev/close`](#dev_close) | unknown |  | apps | Registered in webOS OSE sysbus api.json (ACG group application.devmode); name only |
-| [`dev/closeByAppId`](#dev_closebyappid) | public |  | apps | Developer-mode variant of closeByAppId used by ares-launch to close a dev app |
-| [`dev/listApps`](#dev_listapps) | public |  | apps | Lists developer-mode (and dev-visible) apps with id, version, folderPath, icon |
-| [`dev/listPackages`](#dev_listpackages) | private |  | apps | Lister on com.webos.applicationManager (introspected on-device; parameters undocumented). |
-| [`dev/managerInfo`](#dev_managerinfo) | unknown |  | apps | Registered in webOS OSE sysbus api.json (ACG group application.devmode); name only |
-| [`dev/running`](#dev_running) | public |  | apps | Developer-mode listing of running apps (ares-launch --running) |
-| [`getAllContents`](#getallcontents) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`getAppBasePath`](#getappbasepath) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`getAppInfo`](#getappinfo) | ssap |  | apps | Get info for one installed app |
-| [`getAppLifeEvents`](#getapplifeevents) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`getAppLifeStatus`](#getapplifestatus) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`getAppLoadStatus`](#getapploadstatus) | public |  | apps | Returns whether the app with the given ID is installed (webOS TV 4.0+). |
-| [`getAppStatus`](#getappstatus) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`getContents`](#getcontents) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`getForegroundAppInfo`](#getforegroundappinfo) | ssap | yes | apps | Get (or subscribe to) the foreground app |
-| [`getForegroundApps`](#getforegroundapps) | private |  | apps | Getter on com.webos.applicationManager (introspected on-device; parameters undocumented). |
-| [`getHandlerForExtension`](#gethandlerforextension) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`getHandlerForMimeType`](#gethandlerformimetype) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`getHandlerForMimeTypeByVerb`](#gethandlerformimetypebyverb) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`getHandlerForUrl`](#gethandlerforurl) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`getHandlerForUrlByVerb`](#gethandlerforurlbyverb) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`getHistoricalBackInfo`](#gethistoricalbackinfo) | private |  | apps | Getter on com.webos.applicationManager (introspected on-device; parameters undocumented). |
-| [`getLastOrder`](#getlastorder) | private |  | apps | Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`getPackageInfo`](#getpackageinfo) | private |  | apps | Getter on com.webos.applicationManager (introspected on-device; parameters undocumented). |
-| [`isPromotionalAppOn`](#ispromotionalappon) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`launch`](#launch) | public |  | apps | Launches the app with the given app ID, optionally with params. ⚠️ |
-| [`launchDefaultApp`](#launchdefaultapp) | private |  | apps | Launches the default app (listed by ls-monitor -i, parameters unread) |
-| [`launchVirtualApp`](#launchvirtualapp) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`listAllHandlersForMime`](#listallhandlersformime) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`listAllHandlersForMimeByVerb`](#listallhandlersformimebyverb) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`listAllHandlersForMultipleMime`](#listallhandlersformultiplemime) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`listAllHandlersForMultipleUrlPattern`](#listallhandlersformultipleurlpattern) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`listAllHandlersForUrl`](#listallhandlersforurl) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`listAllHandlersForUrlByVerb`](#listallhandlersforurlbyverb) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`listAllHandlersForUrlPattern`](#listallhandlersforurlpattern) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`listApps`](#listapps) | private |  | apps | Lists installed apps |
-| [`listExtensionMap`](#listextensionmap) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`listLaunchPoints`](#listlaunchpoints) | ssap | yes | apps | List launcher launch points (apps visible in launcher) |
-| [`listLaunchPointsForLocale`](#listlaunchpointsforlocale) | private |  | apps | Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`listPackages`](#listpackages) | private |  | apps | Lister on com.webos.applicationManager (introspected on-device; parameters undocumented). |
-| [`lockAllApps`](#lockallapps) | private |  | apps | Method on com.webos.applicationManager (introspected on-device; parameters undocumented). |
-| [`lockApp`](#lockapp) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`mimeTypeForExtension`](#mimetypeforextension) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`notifyAlertClosed`](#notifyalertclosed) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`notifySplashTimeout`](#notifysplashtimeout) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`onLaunch`](#onlaunch) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`open`](#open) | ssap |  | apps | Open an app by id (SSAP) |
-| [`pause`](#pause) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`registerApp`](#registerapp) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`registerNativeApp`](#registernativeapp) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`registerVerbsForRedirect`](#registerverbsforredirect) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`registerVerbsForResource`](#registerverbsforresource) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`releaseBlockSystemApp`](#releaseblocksystemapp) | private |  | apps | Releases a blocked system app |
-| [`removeAllContents`](#removeallcontents) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`removeContent`](#removecontent) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`removeLaunchPoint`](#removelaunchpoint) | private |  | apps | Removes a launch point by id |
-| [`removeVirtualApp`](#removevirtualapp) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`run`](#run) | private |  | apps | Method on com.webos.applicationManager (introspected on-device; parameters undocumented). |
-| [`running`](#running) | private | yes | apps | Lists running apps |
-| [`saveOrder`](#saveorder) | private |  | apps | Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`scan`](#scan) | private |  | apps | Triggers the app manager to rescan app directories |
-| [`searchApps`](#searchapps) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`setContents`](#setcontents) | public |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`setDefaultApp`](#setdefaultapp) | private |  | apps | Setter on com.webos.applicationManager (introspected on-device; parameters undocumented). |
-| [`setOrder`](#setorder) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
-| [`updateLaunchPoint`](#updatelaunchpoint) | private |  | apps | Method registered by com.webos.applicationManager (root category) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`addContent`](#addcontent) | private |  | apps | inferred | Adds the content. |
+| [`addLaunchPoint`](#addlaunchpoint) | private |  | apps | inferred | Adds the launch point. |
+| [`addVirtualApp`](#addvirtualapp) | private |  | apps | inferred | Adds the virtual app. |
+| [`blockSystemApp`](#blocksystemapp) | private |  | apps | documented | Blocks a system app (used by webos-homebar to replace LG Home) ⚠️ |
+| [`changeRunningAppId`](#changerunningappid) | private |  | apps | inferred | Changes the running app ID. |
+| [`close`](#close) | ssap |  | apps | documented | Close an app by id (SSAP) |
+| [`closeAllApps`](#closeallapps) | private |  | apps | documented | Closes all running apps (as used by webos-homebar helper) |
+| [`closeByAppId`](#closebyappid) | public |  | apps | documented | Closes a running app by id |
+| [`debug/traceApi`](#debug_traceapi) | private |  | apps | inferred | Handles the trace api (debug) |
+| [`dev/close`](#dev_close) | unknown |  | apps | documented | Registered in webOS OSE sysbus api.json (ACG group application.devmode); name only |
+| [`dev/closeByAppId`](#dev_closebyappid) | public |  | apps | documented | Developer-mode variant of closeByAppId used by ares-launch to close a dev app |
+| [`dev/listApps`](#dev_listapps) | public |  | apps | documented | Lists developer-mode (and dev-visible) apps with id, version, folderPath, icon |
+| [`dev/listPackages`](#dev_listpackages) | private |  | apps | inferred | Lists the packages (dev) |
+| [`dev/managerInfo`](#dev_managerinfo) | unknown |  | apps | documented | Registered in webOS OSE sysbus api.json (ACG group application.devmode); name only |
+| [`dev/running`](#dev_running) | public |  | apps | documented | Developer-mode listing of running apps (ares-launch --running) |
+| [`getAllContents`](#getallcontents) | private |  | apps | inferred | Returns the all contents. |
+| [`getAppBasePath`](#getappbasepath) | public |  | apps | inferred | Returns the app base path. |
+| [`getAppInfo`](#getappinfo) | ssap |  | apps | documented | Get info for one installed app |
+| [`getAppLifeEvents`](#getapplifeevents) | private |  | apps | inferred | Returns the app life events. |
+| [`getAppLifeStatus`](#getapplifestatus) | private |  | apps | inferred | Returns the app life status. |
+| [`getAppLoadStatus`](#getapploadstatus) | public |  | apps | documented | Returns whether the app with the given ID is installed (webOS TV 4.0+). |
+| [`getAppStatus`](#getappstatus) | private |  | apps | inferred | Returns the app status. |
+| [`getContents`](#getcontents) | public |  | apps | inferred | Returns the contents. |
+| [`getForegroundAppInfo`](#getforegroundappinfo) | ssap | yes | apps | documented | Get (or subscribe to) the foreground app |
+| [`getForegroundApps`](#getforegroundapps) | private |  | apps | inferred | Returns the foreground apps. |
+| [`getHandlerForExtension`](#gethandlerforextension) | public |  | apps | inferred | Returns the handler for extension. |
+| [`getHandlerForMimeType`](#gethandlerformimetype) | public |  | apps | inferred | Returns the handler for mime type. |
+| [`getHandlerForMimeTypeByVerb`](#gethandlerformimetypebyverb) | public |  | apps | inferred | Returns the handler for mime type by verb. |
+| [`getHandlerForUrl`](#gethandlerforurl) | public |  | apps | inferred | Returns the handler for URL. |
+| [`getHandlerForUrlByVerb`](#gethandlerforurlbyverb) | public |  | apps | inferred | Returns the handler for URL by verb. |
+| [`getHistoricalBackInfo`](#gethistoricalbackinfo) | private |  | apps | inferred | Returns the historical back info. |
+| [`getLastOrder`](#getlastorder) | private |  | apps | inferred | Returns the last order. |
+| [`getPackageInfo`](#getpackageinfo) | private |  | apps | inferred | Returns the package info. |
+| [`isPromotionalAppOn`](#ispromotionalappon) | public |  | apps | inferred | Reports whether the promotional app on is set. |
+| [`launch`](#launch) | public |  | apps | documented | Launches the app with the given app ID, optionally with params. ⚠️ |
+| [`launchDefaultApp`](#launchdefaultapp) | private |  | apps | documented | Launches the default app (listed by ls-monitor -i, parameters unread) |
+| [`launchVirtualApp`](#launchvirtualapp) | private |  | apps | inferred | Launches the virtual app. |
+| [`listAllHandlersForMime`](#listallhandlersformime) | public |  | apps | inferred | Lists the all handlers for mime. |
+| [`listAllHandlersForMimeByVerb`](#listallhandlersformimebyverb) | public |  | apps | inferred | Lists the all handlers for mime by verb. |
+| [`listAllHandlersForMultipleMime`](#listallhandlersformultiplemime) | public |  | apps | inferred | Lists the all handlers for multiple mime. |
+| [`listAllHandlersForMultipleUrlPattern`](#listallhandlersformultipleurlpattern) | public |  | apps | inferred | Lists the all handlers for multiple URL pattern. |
+| [`listAllHandlersForUrl`](#listallhandlersforurl) | public |  | apps | inferred | Lists the all handlers for URL. |
+| [`listAllHandlersForUrlByVerb`](#listallhandlersforurlbyverb) | public |  | apps | inferred | Lists the all handlers for URL by verb. |
+| [`listAllHandlersForUrlPattern`](#listallhandlersforurlpattern) | public |  | apps | inferred | Lists the all handlers for URL pattern. |
+| [`listApps`](#listapps) | private |  | apps | documented | Lists installed apps |
+| [`listExtensionMap`](#listextensionmap) | public |  | apps | inferred | Lists the extension map. |
+| [`listLaunchPoints`](#listlaunchpoints) | ssap | yes | apps | documented | List launcher launch points (apps visible in launcher) |
+| [`listLaunchPointsForLocale`](#listlaunchpointsforlocale) | private |  | apps | inferred | Lists the launch points for locale. |
+| [`listPackages`](#listpackages) | private |  | apps | inferred | Lists the packages. |
+| [`lockAllApps`](#lockallapps) | private |  | apps | inferred | Locks the all apps. |
+| [`lockApp`](#lockapp) | private |  | apps | inferred | Locks the app. |
+| [`mimeTypeForExtension`](#mimetypeforextension) | public |  | apps | inferred | Handles the mime type for extension. |
+| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | inferred | Moves the launch point. |
+| [`notifyAlertClosed`](#notifyalertclosed) | private |  | apps | inferred | Notifies of the alert closed. |
+| [`notifySplashTimeout`](#notifysplashtimeout) | private |  | apps | inferred | Notifies of the splash timeout. |
+| [`onLaunch`](#onlaunch) | private |  | apps | inferred | Event handler: fires on the launch. |
+| [`open`](#open) | ssap |  | apps | documented | Open an app by id (SSAP) |
+| [`pause`](#pause) | private |  | apps | inferred | Pauses the application manager. |
+| [`registerApp`](#registerapp) | public |  | apps | inferred | Registers the app. |
+| [`registerNativeApp`](#registernativeapp) | public |  | apps | inferred | Registers the native app. |
+| [`registerVerbsForRedirect`](#registerverbsforredirect) | private |  | apps | inferred | Registers the verbs for redirect. |
+| [`registerVerbsForResource`](#registerverbsforresource) | private |  | apps | inferred | Registers the verbs for resource. |
+| [`releaseBlockSystemApp`](#releaseblocksystemapp) | private |  | apps | documented | Releases a blocked system app |
+| [`removeAllContents`](#removeallcontents) | private |  | apps | inferred | Removes the all contents. |
+| [`removeContent`](#removecontent) | private |  | apps | inferred | Removes the content. |
+| [`removeLaunchPoint`](#removelaunchpoint) | private |  | apps | documented | Removes a launch point by id |
+| [`removeVirtualApp`](#removevirtualapp) | private |  | apps | inferred | Removes the virtual app. |
+| [`run`](#run) | private |  | apps | inferred | Runs the application manager. |
+| [`running`](#running) | private | yes | apps | documented | Lists running apps |
+| [`saveOrder`](#saveorder) | private |  | apps | inferred | Saves the order. |
+| [`scan`](#scan) | private |  | apps | documented | Triggers the app manager to rescan app directories |
+| [`searchApps`](#searchapps) | private |  | apps | inferred | Searches for apps. |
+| [`setContents`](#setcontents) | public |  | apps | inferred | Sets the contents. |
+| [`setDefaultApp`](#setdefaultapp) | private |  | apps | inferred | Sets the default app. |
+| [`setOrder`](#setorder) | private |  | apps | inferred | Sets the order. |
+| [`updateLaunchPoint`](#updatelaunchpoint) | private |  | apps | inferred | Updates the launch point. |
 
 <a id="addcontent"></a>
 ## `addContent`
 
 `luna://com.webos.applicationManager/addContent`
 
-Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented).
+Adds the content.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/addContent '{}'
@@ -109,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.applicationManager/addLaunchPoint`
 
-Method registered by com.webos.applicationManager (root category)
+Adds the launch point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/addLaunchPoint '{}'
@@ -130,13 +136,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/addVirtualApp`
 
-Method registered by com.webos.applicationManager (root category)
+Adds the virtual app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/addVirtualApp '{}'
@@ -157,7 +165,7 @@ Blocks a system app (used by webos-homebar to replace LG Home)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 7+ (not present on webOS 6)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -177,13 +185,15 @@ Sources: [1](https://github.com/rawinek/webos-homebar/blob/HEAD/webos10/home-tak
 
 `luna://com.webos.applicationManager/changeRunningAppId`
 
-Method registered by com.webos.applicationManager (root category)
+Changes the running app ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/changeRunningAppId '{}'
@@ -204,7 +214,7 @@ Close an app by id (SSAP)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -229,7 +239,7 @@ Closes all running apps (as used by webos-homebar helper)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 10  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.applicationManager/closeAllApps '{}'
@@ -250,7 +260,7 @@ Closes a running app by id
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -269,13 +279,15 @@ Sources: [1](https://github.com/webosbrew/pages/blob/HEAD/content/pages/cheatshe
 
 `luna://com.webos.applicationManager/debug/traceApi`
 
-Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented).
+Handles the trace api (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/debug/traceApi '{}'
@@ -296,7 +308,7 @@ Registered in webOS OSE sysbus api.json (ACG group application.devmode); name on
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/dev/close '{}'
@@ -317,7 +329,7 @@ Developer-mode variant of closeByAppId used by ares-launch to close a dev app
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -343,7 +355,7 @@ Lists developer-mode (and dev-visible) apps with id, version, folderPath, icon
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send-pub -n 1 luna://com.webos.applicationManager/dev/listApps '{}'
@@ -358,13 +370,15 @@ Sources: [1](https://github.com/webosbrew/dev-manager-desktop/blob/HEAD/src/app/
 
 `luna://com.webos.applicationManager/dev/listPackages`
 
-Lister on com.webos.applicationManager (introspected on-device; parameters undocumented).
+Lists the packages (dev)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/dev/listPackages '{}'
@@ -385,7 +399,7 @@ Registered in webOS OSE sysbus api.json (ACG group application.devmode); name on
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/dev/managerInfo '{}'
@@ -406,7 +420,7 @@ Developer-mode listing of running apps (ares-launch --running)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send-pub -n 1 luna://com.webos.applicationManager/dev/running '{}'
@@ -419,13 +433,15 @@ Sources: [1](https://github.com/webosbrew/ares-cli-rs/blob/HEAD/ares-launch/src/
 
 `luna://com.webos.applicationManager/getAllContents`
 
-Method registered by com.webos.applicationManager (root category)
+Returns the all contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getAllContents '{}'
@@ -440,13 +456,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/getAppBasePath`
 
-Method registered by com.webos.applicationManager (root category)
+Returns the app base path.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getAppBasePath '{}'
@@ -467,7 +485,7 @@ Get info for one installed app
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -486,13 +504,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mapps.go), [2](https:/
 
 `luna://com.webos.applicationManager/getAppLifeEvents`
 
-Method registered by com.webos.applicationManager (root category)
+Returns the app life events.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getAppLifeEvents '{}'
@@ -507,13 +527,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/getAppLifeStatus`
 
-Method registered by com.webos.applicationManager (root category)
+Returns the app life status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getAppLifeStatus '{}'
@@ -553,13 +575,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/application-ma
 
 `luna://com.webos.applicationManager/getAppStatus`
 
-Method registered by com.webos.applicationManager (root category)
+Returns the app status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getAppStatus '{}'
@@ -574,13 +598,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/getContents`
 
-Method registered by com.webos.applicationManager (root category)
+Returns the contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getContents '{}'
@@ -601,7 +627,7 @@ Get (or subscribe to) the foreground app
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -621,13 +647,15 @@ Sources: [1](https://github.com/home-assistant-libs/aiowebostv/blob/main/aiowebo
 
 `luna://com.webos.applicationManager/getForegroundApps`
 
-Getter on com.webos.applicationManager (introspected on-device; parameters undocumented).
+Returns the foreground apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getForegroundApps '{}'
@@ -642,13 +670,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.applicationManager/getHandlerForExtension`
 
-Method registered by com.webos.applicationManager (root category)
+Returns the handler for extension.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getHandlerForExtension '{}'
@@ -663,13 +693,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/getHandlerForMimeType`
 
-Method registered by com.webos.applicationManager (root category)
+Returns the handler for mime type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getHandlerForMimeType '{}'
@@ -684,13 +716,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/getHandlerForMimeTypeByVerb`
 
-Method registered by com.webos.applicationManager (root category)
+Returns the handler for mime type by verb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getHandlerForMimeTypeByVerb '{}'
@@ -705,13 +739,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/getHandlerForUrl`
 
-Method registered by com.webos.applicationManager (root category)
+Returns the handler for URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getHandlerForUrl '{}'
@@ -726,13 +762,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/getHandlerForUrlByVerb`
 
-Method registered by com.webos.applicationManager (root category)
+Returns the handler for URL by verb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getHandlerForUrlByVerb '{}'
@@ -747,13 +785,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/getHistoricalBackInfo`
 
-Getter on com.webos.applicationManager (introspected on-device; parameters undocumented).
+Returns the historical back info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getHistoricalBackInfo '{}'
@@ -768,13 +808,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.applicationManager/getLastOrder`
 
-Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented).
+Returns the last order.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getLastOrder '{}'
@@ -789,13 +831,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.applicationManager/getPackageInfo`
 
-Getter on com.webos.applicationManager (introspected on-device; parameters undocumented).
+Returns the package info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getPackageInfo '{}'
@@ -810,13 +854,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.applicationManager/isPromotionalAppOn`
 
-Method registered by com.webos.applicationManager (root category)
+Reports whether the promotional app on is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/isPromotionalAppOn '{}'
@@ -837,7 +883,7 @@ Launches the app with the given app ID, optionally with params.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (all versions unless noted); webOS 3+; webOS 1+  
-- **Confidence:** documented, code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -872,7 +918,7 @@ Launches the default app (listed by ls-monitor -i, parameters unread)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.applicationManager/launchDefaultApp '{}'
@@ -887,13 +933,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/HEAD/docs/device/b
 
 `luna://com.webos.applicationManager/launchVirtualApp`
 
-Method registered by com.webos.applicationManager (root category)
+Launches the virtual app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/launchVirtualApp '{}'
@@ -908,13 +956,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/listAllHandlersForMime`
 
-Method registered by com.webos.applicationManager (root category)
+Lists the all handlers for mime.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForMime '{}'
@@ -929,13 +979,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/listAllHandlersForMimeByVerb`
 
-Method registered by com.webos.applicationManager (root category)
+Lists the all handlers for mime by verb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForMimeByVerb '{}'
@@ -950,13 +1002,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/listAllHandlersForMultipleMime`
 
-Method registered by com.webos.applicationManager (root category)
+Lists the all handlers for multiple mime.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForMultipleMime '{}'
@@ -971,13 +1025,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/listAllHandlersForMultipleUrlPattern`
 
-Method registered by com.webos.applicationManager (root category)
+Lists the all handlers for multiple URL pattern.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForMultipleUrlPattern '{}'
@@ -992,13 +1048,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/listAllHandlersForUrl`
 
-Method registered by com.webos.applicationManager (root category)
+Lists the all handlers for URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForUrl '{}'
@@ -1013,13 +1071,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/listAllHandlersForUrlByVerb`
 
-Method registered by com.webos.applicationManager (root category)
+Lists the all handlers for URL by verb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForUrlByVerb '{}'
@@ -1034,13 +1094,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/listAllHandlersForUrlPattern`
 
-Method registered by com.webos.applicationManager (root category)
+Lists the all handlers for URL pattern.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForUrlPattern '{}'
@@ -1061,7 +1123,7 @@ Lists installed apps
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.applicationManager/listApps '{}'
@@ -1076,13 +1138,15 @@ Sources: [1](https://github.com/webosbrew/dev-manager-desktop/blob/HEAD/src/app/
 
 `luna://com.webos.applicationManager/listExtensionMap`
 
-Method registered by com.webos.applicationManager (root category)
+Lists the extension map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listExtensionMap '{}'
@@ -1103,7 +1167,7 @@ List launcher launch points (apps visible in launcher)
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1122,13 +1186,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 `luna://com.webos.applicationManager/listLaunchPointsForLocale`
 
-Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented).
+Lists the launch points for locale.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listLaunchPointsForLocale '{}'
@@ -1143,13 +1209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.applicationManager/listPackages`
 
-Lister on com.webos.applicationManager (introspected on-device; parameters undocumented).
+Lists the packages.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listPackages '{}'
@@ -1164,13 +1232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.applicationManager/lockAllApps`
 
-Method on com.webos.applicationManager (introspected on-device; parameters undocumented).
+Locks the all apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/lockAllApps '{}'
@@ -1185,13 +1255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.applicationManager/lockApp`
 
-Method registered by com.webos.applicationManager (root category)
+Locks the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/lockApp '{}'
@@ -1206,13 +1278,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/mimeTypeForExtension`
 
-Method registered by com.webos.applicationManager (root category)
+Handles the mime type for extension.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/mimeTypeForExtension '{}'
@@ -1227,13 +1301,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/moveLaunchPoint`
 
-Method registered by com.webos.applicationManager (root category)
+Moves the launch point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/moveLaunchPoint '{}'
@@ -1248,13 +1324,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/notifyAlertClosed`
 
-Method registered by com.webos.applicationManager (root category)
+Notifies of the alert closed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/notifyAlertClosed '{}'
@@ -1269,13 +1347,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/notifySplashTimeout`
 
-Method registered by com.webos.applicationManager (root category)
+Notifies of the splash timeout.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/notifySplashTimeout '{}'
@@ -1290,13 +1370,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/onLaunch`
 
-Method registered by com.webos.applicationManager (root category)
+Event handler: fires on the launch.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/onLaunch '{}'
@@ -1317,7 +1399,7 @@ Open an app by id (SSAP)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1336,13 +1418,15 @@ Sources: [1](https://github.com/merdok/homebridge-webos-tv/blob/master/lib/LgTvC
 
 `luna://com.webos.applicationManager/pause`
 
-Method registered by com.webos.applicationManager (root category)
+Pauses the application manager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/pause '{}'
@@ -1357,13 +1441,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/registerApp`
 
-Method registered by com.webos.applicationManager (root category)
+Registers the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/registerApp '{}'
@@ -1378,13 +1464,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/registerNativeApp`
 
-Method registered by com.webos.applicationManager (root category)
+Registers the native app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/registerNativeApp '{}'
@@ -1399,13 +1487,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/registerVerbsForRedirect`
 
-Method registered by com.webos.applicationManager (root category)
+Registers the verbs for redirect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/registerVerbsForRedirect '{}'
@@ -1420,13 +1510,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/registerVerbsForResource`
 
-Method registered by com.webos.applicationManager (root category)
+Registers the verbs for resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/registerVerbsForResource '{}'
@@ -1447,7 +1539,7 @@ Releases a blocked system app
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 7+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1464,13 +1556,15 @@ Sources: [1](https://github.com/rawinek/webos-homebar/blob/HEAD/webos10/home-tak
 
 `luna://com.webos.applicationManager/removeAllContents`
 
-Method registered by com.webos.applicationManager (root category)
+Removes the all contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/removeAllContents '{}'
@@ -1485,13 +1579,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/removeContent`
 
-Method registered by com.webos.applicationManager (root category)
+Removes the content.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/removeContent '{}'
@@ -1512,7 +1608,7 @@ Removes a launch point by id
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1531,13 +1627,15 @@ Sources: [1](https://github.com/rorygallagher2024/glasshouse/blob/HEAD/server/li
 
 `luna://com.webos.applicationManager/removeVirtualApp`
 
-Method registered by com.webos.applicationManager (root category)
+Removes the virtual app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/removeVirtualApp '{}'
@@ -1552,13 +1650,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/run`
 
-Method on com.webos.applicationManager (introspected on-device; parameters undocumented).
+Runs the application manager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/run '{}'
@@ -1579,7 +1679,7 @@ Lists running apps
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1598,13 +1698,15 @@ Sources: [1](https://github.com/Jezzarium/Actually-Good-WebOS/blob/HEAD/tv/setti
 
 `luna://com.webos.applicationManager/saveOrder`
 
-Method on com.webos.applicationManager (from on-device permission registry; parameters undocumented).
+Saves the order.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/saveOrder '{}'
@@ -1625,7 +1727,7 @@ Triggers the app manager to rescan app directories
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.applicationManager/scan '{}'
@@ -1640,13 +1742,15 @@ Sources: [1](https://github.com/rudra-avatar/Hearth/blob/HEAD/src/takeover/takeo
 
 `luna://com.webos.applicationManager/searchApps`
 
-Method registered by com.webos.applicationManager (root category)
+Searches for apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/searchApps '{}'
@@ -1661,13 +1765,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/setContents`
 
-Method registered by com.webos.applicationManager (root category)
+Sets the contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/setContents '{}'
@@ -1682,13 +1788,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/setDefaultApp`
 
-Setter on com.webos.applicationManager (introspected on-device; parameters undocumented).
+Sets the default app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/setDefaultApp '{}'
@@ -1703,13 +1811,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.applicationManager/setOrder`
 
-Method registered by com.webos.applicationManager (root category)
+Sets the order.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/setOrder '{}'
@@ -1724,13 +1834,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.applicationManager/updateLaunchPoint`
 
-Method registered by com.webos.applicationManager (root category)
+Updates the launch point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/updateLaunchPoint '{}'

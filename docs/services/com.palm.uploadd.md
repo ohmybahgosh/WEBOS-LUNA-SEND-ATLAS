@@ -1,33 +1,37 @@
 # `com.palm.uploadd`
 
+Diagnostics upload daemon: uploads crash reports, logs, and analytics to a server, manages log settings, and reports EULA and USB-path status. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`encryptfile`](#encryptfile) | private |  | misc | Method on com.palm.uploadd (introspected on-device; parameters undocumented). |
-| [`geteulastatus`](#geteulastatus) | private |  | misc | Method on com.palm.uploadd (introspected on-device; parameters undocumented). |
-| [`getLogSettings`](#getlogsettings) | private |  | settings | Getter on com.palm.uploadd (introspected on-device; parameters undocumented). |
-| [`getusbpath`](#getusbpath) | private |  | misc | Method on com.palm.uploadd (introspected on-device; parameters undocumented). |
-| [`setLogSettings`](#setlogsettings) | private |  | settings | Setter on com.palm.uploadd (introspected on-device; parameters undocumented). |
-| [`testUploadd`](#testuploadd) | private |  | misc | Method on com.palm.uploadd (introspected on-device; parameters undocumented). |
-| [`uploadAnalyticsReport`](#uploadanalyticsreport) | private |  | input | Method on com.palm.uploadd (introspected on-device; parameters undocumented). |
-| [`uploadCrashReport`](#uploadcrashreport) | private |  | misc | Method on com.palm.uploadd (introspected on-device; parameters undocumented). |
-| [`uploadLog`](#uploadlog) | private |  | misc | Method on com.palm.uploadd (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`encryptfile`](#encryptfile) | private |  | misc | inferred | Handles the encryptfile. |
+| [`geteulastatus`](#geteulastatus) | private |  | misc | inferred | Handles the geteulastatus. |
+| [`getLogSettings`](#getlogsettings) | private |  | settings | inferred | Returns the log settings. |
+| [`getusbpath`](#getusbpath) | private |  | misc | inferred | Handles the getusbpath. |
+| [`setLogSettings`](#setlogsettings) | private |  | settings | inferred | Sets the log settings. |
+| [`testUploadd`](#testuploadd) | private |  | misc | inferred | Tests the uploadd. |
+| [`uploadAnalyticsReport`](#uploadanalyticsreport) | private |  | input | inferred | Uploads the analytics report. |
+| [`uploadCrashReport`](#uploadcrashreport) | private |  | misc | inferred | Uploads the crash report. |
+| [`uploadLog`](#uploadlog) | private |  | misc | inferred | Uploads the log. |
 
 <a id="encryptfile"></a>
 ## `encryptfile`
 
 `luna://com.palm.uploadd/encryptfile`
 
-Method on com.palm.uploadd (introspected on-device; parameters undocumented).
+Handles the encryptfile.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.uploadd/encryptfile '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.uploadd/geteulastatus`
 
-Method on com.palm.uploadd (introspected on-device; parameters undocumented).
+Handles the geteulastatus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.uploadd/geteulastatus '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.uploadd/getLogSettings`
 
-Getter on com.palm.uploadd (introspected on-device; parameters undocumented).
+Returns the log settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.uploadd/getLogSettings '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.uploadd/getusbpath`
 
-Method on com.palm.uploadd (introspected on-device; parameters undocumented).
+Handles the getusbpath.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.uploadd/getusbpath '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.uploadd/setLogSettings`
 
-Setter on com.palm.uploadd (introspected on-device; parameters undocumented).
+Sets the log settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.uploadd/setLogSettings '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.uploadd/testUploadd`
 
-Method on com.palm.uploadd (introspected on-device; parameters undocumented).
+Tests the uploadd.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.uploadd/testUploadd '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.uploadd/uploadAnalyticsReport`
 
-Method on com.palm.uploadd (introspected on-device; parameters undocumented).
+Uploads the analytics report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.uploadd/uploadAnalyticsReport '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.uploadd/uploadCrashReport`
 
-Method on com.palm.uploadd (introspected on-device; parameters undocumented).
+Uploads the crash report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.uploadd/uploadCrashReport '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.uploadd/uploadLog`
 
-Method on com.palm.uploadd (introspected on-device; parameters undocumented).
+Uploads the log.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.uploadd/uploadLog '{}'

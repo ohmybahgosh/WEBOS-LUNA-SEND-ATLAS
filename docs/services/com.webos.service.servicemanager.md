@@ -1,29 +1,33 @@
 # `com.webos.service.servicemanager`
 
+Service manager: launches and closes prerequisite services, sets and reads their priority levels, and reports status. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`closePrerequisiteServices`](#closeprerequisiteservices) | private |  | misc | Method on com.webos.service.servicemanager (introspected on-device; parameters undocumented). |
-| [`getPriorityLevel`](#getprioritylevel) | private |  | misc | Getter on com.webos.service.servicemanager (introspected on-device; parameters undocumented). |
-| [`launchPrerequisiteServices`](#launchprerequisiteservices) | private |  | apps | Method on com.webos.service.servicemanager (introspected on-device; parameters undocumented). |
-| [`setPriorityLevel`](#setprioritylevel) | private |  | misc | Setter on com.webos.service.servicemanager (introspected on-device; parameters undocumented). |
-| [`status`](#status) | private |  | misc | Method on com.webos.service.servicemanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`closePrerequisiteServices`](#closeprerequisiteservices) | private |  | misc | inferred | Closes the prerequisite services. |
+| [`getPriorityLevel`](#getprioritylevel) | private |  | misc | inferred | Returns the priority level. |
+| [`launchPrerequisiteServices`](#launchprerequisiteservices) | private |  | apps | inferred | Launches the prerequisite services. |
+| [`setPriorityLevel`](#setprioritylevel) | private |  | misc | inferred | Sets the priority level. |
+| [`status`](#status) | private |  | misc | inferred | Handles the status. |
 
 <a id="closeprerequisiteservices"></a>
 ## `closePrerequisiteServices`
 
 `luna://com.webos.service.servicemanager/closePrerequisiteServices`
 
-Method on com.webos.service.servicemanager (introspected on-device; parameters undocumented).
+Closes the prerequisite services.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.servicemanager/closePrerequisiteServices '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.servicemanager/getPriorityLevel`
 
-Getter on com.webos.service.servicemanager (introspected on-device; parameters undocumented).
+Returns the priority level.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.servicemanager/getPriorityLevel '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.servicemanager/launchPrerequisiteServices`
 
-Method on com.webos.service.servicemanager (introspected on-device; parameters undocumented).
+Launches the prerequisite services.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.servicemanager/launchPrerequisiteServices '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.servicemanager/setPriorityLevel`
 
-Setter on com.webos.service.servicemanager (introspected on-device; parameters undocumented).
+Sets the priority level.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.servicemanager/setPriorityLevel '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.servicemanager/status`
 
-Method on com.webos.service.servicemanager (introspected on-device; parameters undocumented).
+Handles the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.servicemanager/status '{}'

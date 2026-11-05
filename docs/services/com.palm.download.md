@@ -1,26 +1,30 @@
 # `com.palm.download`
 
+Download manager interface: reports download progress and cancels downloads. Appears limited to progress/cancel based on its methods. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`Cancel`](#cancel) | public |  | misc | Method on com.palm.download (from on-device permission registry; parameters undocumented). |
-| [`Progress`](#progress) | public |  | misc | Method on com.palm.download (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`Cancel`](#cancel) | public |  | misc | inferred | Cancels the download. |
+| [`Progress`](#progress) | public |  | misc | inferred | Handles the progress. |
 
 <a id="cancel"></a>
 ## `Cancel`
 
 `luna://com.palm.download/Cancel`
 
-Method on com.palm.download (from on-device permission registry; parameters undocumented).
+Cancels the download.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.download/Cancel '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.download/Progress`
 
-Method on com.palm.download (from on-device permission registry; parameters undocumented).
+Handles the progress.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.download/Progress '{}'

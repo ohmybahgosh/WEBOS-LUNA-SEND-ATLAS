@@ -1,44 +1,48 @@
 # `com.webos.service.utp.subtitle`
 
+UTP subtitle/caption service: enables and disables subtitles and DVB subtitle PES, reports current subtitle and rating info, and controls caption position and preview. _(inferred from the service's methods)_
+
 20 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`disableAdccPes`](#disableadccpes) | private |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`disablePreview`](#disablepreview) | private |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`disableSubtitle`](#disablesubtitle) | public |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`disableSubtPes`](#disablesubtpes) | private |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`enableAdccPes`](#enableadccpes) | private |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`enablePreview`](#enablepreview) | private |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`enableSubtitle`](#enablesubtitle) | public |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`enableSubtPes`](#enablesubtpes) | private |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`getCaptionPosition`](#getcaptionposition) | private |  | media | Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`getCurrentSubtitle`](#getcurrentsubtitle) | public |  | media | Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`getCurrentSubtitleState`](#getcurrentsubtitlestate) | private |  | media | Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`getRatingInfo`](#getratinginfo) | public |  | media | Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`getSubtitleList`](#getsubtitlelist) | public |  | media | Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`getSubtitleState`](#getsubtitlestate) | public |  | media | Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`offSubtitleDisplay`](#offsubtitledisplay) | private |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`onSubtitleDisplay`](#onsubtitledisplay) | private |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`pipelineShared`](#pipelineshared) | private |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`sendPesDvbSubtitle`](#sendpesdvbsubtitle) | private |  | media | Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`setCaptionPosition`](#setcaptionposition) | private |  | media | Setter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
-| [`setSubtitle`](#setsubtitle) | public |  | media | Setter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`disableAdccPes`](#disableadccpes) | private |  | media | inferred | Disables the adcc pes. |
+| [`disablePreview`](#disablepreview) | private |  | media | inferred | Disables the preview. |
+| [`disableSubtitle`](#disablesubtitle) | public |  | media | inferred | Disables the subtitle. |
+| [`disableSubtPes`](#disablesubtpes) | private |  | media | inferred | Disables the subt pes. |
+| [`enableAdccPes`](#enableadccpes) | private |  | media | inferred | Enables the adcc pes. |
+| [`enablePreview`](#enablepreview) | private |  | media | inferred | Enables the preview. |
+| [`enableSubtitle`](#enablesubtitle) | public |  | media | inferred | Enables the subtitle. |
+| [`enableSubtPes`](#enablesubtpes) | private |  | media | inferred | Enables the subt pes. |
+| [`getCaptionPosition`](#getcaptionposition) | private |  | media | inferred | Returns the caption position. |
+| [`getCurrentSubtitle`](#getcurrentsubtitle) | public |  | media | inferred | Returns the current subtitle. |
+| [`getCurrentSubtitleState`](#getcurrentsubtitlestate) | private |  | media | inferred | Returns the current subtitle state. |
+| [`getRatingInfo`](#getratinginfo) | public |  | media | inferred | Returns the rating info. |
+| [`getSubtitleList`](#getsubtitlelist) | public |  | media | inferred | Returns the subtitle list. |
+| [`getSubtitleState`](#getsubtitlestate) | public |  | media | inferred | Returns the subtitle state. |
+| [`offSubtitleDisplay`](#offsubtitledisplay) | private |  | media | inferred | Handles the off subtitle display. |
+| [`onSubtitleDisplay`](#onsubtitledisplay) | private |  | media | inferred | Event handler: fires on the subtitle display. |
+| [`pipelineShared`](#pipelineshared) | private |  | media | inferred | Handles the pipeline shared. |
+| [`sendPesDvbSubtitle`](#sendpesdvbsubtitle) | private |  | media | inferred | Sends the pes DVB subtitle. |
+| [`setCaptionPosition`](#setcaptionposition) | private |  | media | inferred | Sets the caption position. |
+| [`setSubtitle`](#setsubtitle) | public |  | media | inferred | Sets the subtitle. |
 
 <a id="disableadccpes"></a>
 ## `disableAdccPes`
 
 `luna://com.webos.service.utp.subtitle/disableAdccPes`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Disables the adcc pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/disableAdccPes '{}'
@@ -53,13 +57,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/disablePreview`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Disables the preview.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/disablePreview '{}'
@@ -74,13 +80,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/disableSubtitle`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Disables the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/disableSubtitle '{}'
@@ -95,13 +103,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/disableSubtPes`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Disables the subt pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/disableSubtPes '{}'
@@ -116,13 +126,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/enableAdccPes`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Enables the adcc pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/enableAdccPes '{}'
@@ -137,13 +149,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/enablePreview`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Enables the preview.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/enablePreview '{}'
@@ -158,13 +172,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/enableSubtitle`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Enables the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/enableSubtitle '{}'
@@ -179,13 +195,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/enableSubtPes`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Enables the subt pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/enableSubtPes '{}'
@@ -200,13 +218,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/getCaptionPosition`
 
-Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Returns the caption position.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/getCaptionPosition '{}'
@@ -221,13 +241,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/getCurrentSubtitle`
 
-Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Returns the current subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/getCurrentSubtitle '{}'
@@ -242,13 +264,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/getCurrentSubtitleState`
 
-Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Returns the current subtitle state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/getCurrentSubtitleState '{}'
@@ -263,13 +287,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/getRatingInfo`
 
-Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Returns the rating info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/getRatingInfo '{}'
@@ -284,13 +310,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/getSubtitleList`
 
-Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Returns the subtitle list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/getSubtitleList '{}'
@@ -305,13 +333,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/getSubtitleState`
 
-Getter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Returns the subtitle state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/getSubtitleState '{}'
@@ -326,13 +356,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/offSubtitleDisplay`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Handles the off subtitle display.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/offSubtitleDisplay '{}'
@@ -347,13 +379,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/onSubtitleDisplay`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Event handler: fires on the subtitle display.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/onSubtitleDisplay '{}'
@@ -368,13 +402,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/pipelineShared`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Handles the pipeline shared.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/pipelineShared '{}'
@@ -389,13 +425,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/sendPesDvbSubtitle`
 
-Method on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Sends the pes DVB subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/sendPesDvbSubtitle '{}'
@@ -410,13 +448,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/setCaptionPosition`
 
-Setter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Sets the caption position.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/setCaptionPosition '{}'
@@ -431,13 +471,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.subtitle/setSubtitle`
 
-Setter on com.webos.service.utp.subtitle (introspected on-device; parameters undocumented).
+Sets the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.subtitle/setSubtitle '{}'

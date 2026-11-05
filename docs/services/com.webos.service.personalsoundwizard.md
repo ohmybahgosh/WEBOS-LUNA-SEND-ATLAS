@@ -1,28 +1,32 @@
 # `com.webos.service.personalsoundwizard`
 
+Personal sound wizard service that gets and sets sound-bar status and personalization settings. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getSoundBarStatus`](#getsoundbarstatus) | private |  | db | Method on com.webos.service.personalsoundwizard (from on-device permission registry; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | misc | Method on com.webos.service.personalsoundwizard (from on-device permission registry; parameters undocumented). |
-| [`setSoundBarStatus`](#setsoundbarstatus) | private |  | db | Method on com.webos.service.personalsoundwizard (from on-device permission registry; parameters undocumented). |
-| [`setStatus`](#setstatus) | private |  | misc | Method on com.webos.service.personalsoundwizard (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getSoundBarStatus`](#getsoundbarstatus) | private |  | db | inferred | Returns the sound bar status. |
+| [`getStatus`](#getstatus) | private |  | misc | inferred | Returns the status. |
+| [`setSoundBarStatus`](#setsoundbarstatus) | private |  | db | inferred | Sets the sound bar status. |
+| [`setStatus`](#setstatus) | private |  | misc | inferred | Sets the status. |
 
 <a id="getsoundbarstatus"></a>
 ## `getSoundBarStatus`
 
 `luna://com.webos.service.personalsoundwizard/getSoundBarStatus`
 
-Method on com.webos.service.personalsoundwizard (from on-device permission registry; parameters undocumented).
+Returns the sound bar status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.personalsoundwizard/getSoundBarStatus '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.personalsoundwizard/getStatus`
 
-Method on com.webos.service.personalsoundwizard (from on-device permission registry; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.personalsoundwizard/getStatus '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.personalsoundwizard/setSoundBarStatus`
 
-Method on com.webos.service.personalsoundwizard (from on-device permission registry; parameters undocumented).
+Sets the sound bar status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.personalsoundwizard/setSoundBarStatus '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.personalsoundwizard/setStatus`
 
-Method on com.webos.service.personalsoundwizard (from on-device permission registry; parameters undocumented).
+Sets the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.personalsoundwizard/setStatus '{}'

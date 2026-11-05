@@ -1,54 +1,58 @@
 # `com.webos.service.nabs.dvr`
 
+DVR service (nabs broadcast stack): manages recording and timeshift buffering, reporting recording duration, quality, type, source, and ID, and converting single recordings to series. _(inferred from the service's methods)_
+
 30 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`private/getChangedRecordFile`](#private_getchangedrecordfile) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/changeToSeriesRecord`](#record_changetoseriesrecord) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordableDuration`](#record_getrecordableduration) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingBufferedLength`](#record_getrecordingbufferedlength) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingDuration`](#record_getrecordingduration) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingId`](#record_getrecordingid) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingIdList`](#record_getrecordingidlist) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingQuality`](#record_getrecordingquality) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingRemainDuration`](#record_getrecordingremainduration) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingSourceList`](#record_getrecordingsourcelist) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingStartTime`](#record_getrecordingstarttime) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingType`](#record_getrecordingtype) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getTimeshiftBufferedLength`](#record_gettimeshiftbufferedlength) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getTimeshiftBufferingSourceType`](#record_gettimeshiftbufferingsourcetype) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getTimeshiftRecordingId`](#record_gettimeshiftrecordingid) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/isRecordableInput`](#record_isrecordableinput) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/isRecording`](#record_isrecording) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/isTimeshiftBufferable`](#record_istimeshiftbufferable) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/isTimeshiftBuffering`](#record_istimeshiftbuffering) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/pauseTimeshiftBuffering`](#record_pausetimeshiftbuffering) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/resumeTimeshiftBuffering`](#record_resumetimeshiftbuffering) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/setRecordingEndTime`](#record_setrecordingendtime) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/setRecordingRemainDuration`](#record_setrecordingremainduration) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/startManualRecord`](#record_startmanualrecord) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/startProgramRecord`](#record_startprogramrecord) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/startScheduleRecord`](#record_startschedulerecord) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/startTimeshiftBuffering`](#record_starttimeshiftbuffering) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/stopRecord`](#record_stoprecord) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/stopScheduleRecord`](#record_stopschedulerecord) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/stopTimeshiftBuffering`](#record_stoptimeshiftbuffering) | private |  | tv-broadcast | Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`private/getChangedRecordFile`](#private_getchangedrecordfile) | private |  | tv-broadcast | inferred | Returns the changed record file (private) |
+| [`record/changeToSeriesRecord`](#record_changetoseriesrecord) | private |  | tv-broadcast | inferred | Changes the to series record (record) |
+| [`record/getRecordableDuration`](#record_getrecordableduration) | private |  | tv-broadcast | inferred | Returns the recordable duration (record) |
+| [`record/getRecordingBufferedLength`](#record_getrecordingbufferedlength) | private |  | tv-broadcast | inferred | Returns the recording buffered length (record) |
+| [`record/getRecordingDuration`](#record_getrecordingduration) | private |  | tv-broadcast | inferred | Returns the recording duration (record) |
+| [`record/getRecordingId`](#record_getrecordingid) | private |  | tv-broadcast | inferred | Returns the recording ID (record) |
+| [`record/getRecordingIdList`](#record_getrecordingidlist) | private |  | tv-broadcast | inferred | Returns the recording ID list (record) |
+| [`record/getRecordingQuality`](#record_getrecordingquality) | private |  | tv-broadcast | inferred | Returns the recording quality (record) |
+| [`record/getRecordingRemainDuration`](#record_getrecordingremainduration) | private |  | tv-broadcast | inferred | Returns the recording remain duration (record) |
+| [`record/getRecordingSourceList`](#record_getrecordingsourcelist) | private |  | tv-broadcast | inferred | Returns the recording source list (record) |
+| [`record/getRecordingStartTime`](#record_getrecordingstarttime) | private |  | tv-broadcast | inferred | Returns the recording start time (record) |
+| [`record/getRecordingType`](#record_getrecordingtype) | private |  | tv-broadcast | inferred | Returns the recording type (record) |
+| [`record/getTimeshiftBufferedLength`](#record_gettimeshiftbufferedlength) | private |  | tv-broadcast | inferred | Returns the timeshift buffered length (record) |
+| [`record/getTimeshiftBufferingSourceType`](#record_gettimeshiftbufferingsourcetype) | private |  | tv-broadcast | inferred | Returns the timeshift buffering source type (record) |
+| [`record/getTimeshiftRecordingId`](#record_gettimeshiftrecordingid) | private |  | tv-broadcast | inferred | Returns the timeshift recording ID (record) |
+| [`record/isRecordableInput`](#record_isrecordableinput) | private |  | tv-broadcast | inferred | Reports whether the recordable input is set (record) |
+| [`record/isRecording`](#record_isrecording) | private |  | tv-broadcast | inferred | Reports whether the recording is set (record) |
+| [`record/isTimeshiftBufferable`](#record_istimeshiftbufferable) | private |  | tv-broadcast | inferred | Reports whether the timeshift bufferable is set (record) |
+| [`record/isTimeshiftBuffering`](#record_istimeshiftbuffering) | private |  | tv-broadcast | inferred | Reports whether the timeshift buffering is set (record) |
+| [`record/pauseTimeshiftBuffering`](#record_pausetimeshiftbuffering) | private |  | tv-broadcast | inferred | Pauses the timeshift buffering (record) |
+| [`record/resumeTimeshiftBuffering`](#record_resumetimeshiftbuffering) | private |  | tv-broadcast | inferred | Resumes the timeshift buffering (record) |
+| [`record/setRecordingEndTime`](#record_setrecordingendtime) | private |  | tv-broadcast | inferred | Sets the recording end time (record) |
+| [`record/setRecordingRemainDuration`](#record_setrecordingremainduration) | private |  | tv-broadcast | inferred | Sets the recording remain duration (record) |
+| [`record/startManualRecord`](#record_startmanualrecord) | private |  | tv-broadcast | inferred | Starts the manual record (record) |
+| [`record/startProgramRecord`](#record_startprogramrecord) | private |  | tv-broadcast | inferred | Starts the program record (record) |
+| [`record/startScheduleRecord`](#record_startschedulerecord) | private |  | tv-broadcast | inferred | Starts the schedule record (record) |
+| [`record/startTimeshiftBuffering`](#record_starttimeshiftbuffering) | private |  | tv-broadcast | inferred | Starts the timeshift buffering (record) |
+| [`record/stopRecord`](#record_stoprecord) | private |  | tv-broadcast | inferred | Stops the record (record) |
+| [`record/stopScheduleRecord`](#record_stopschedulerecord) | private |  | tv-broadcast | inferred | Stops the schedule record (record) |
+| [`record/stopTimeshiftBuffering`](#record_stoptimeshiftbuffering) | private |  | tv-broadcast | inferred | Stops the timeshift buffering (record) |
 
 <a id="private_getchangedrecordfile"></a>
 ## `private/getChangedRecordFile`
 
 `luna://com.webos.service.nabs.dvr/private/getChangedRecordFile`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the changed record file (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/private/getChangedRecordFile '{}'
@@ -63,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/changeToSeriesRecord`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Changes the to series record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/changeToSeriesRecord '{}'
@@ -84,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getRecordableDuration`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the recordable duration (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getRecordableDuration '{}'
@@ -105,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getRecordingBufferedLength`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording buffered length (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getRecordingBufferedLength '{}'
@@ -126,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getRecordingDuration`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording duration (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getRecordingDuration '{}'
@@ -147,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getRecordingId`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording ID (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getRecordingId '{}'
@@ -168,13 +182,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getRecordingIdList`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording ID list (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getRecordingIdList '{}'
@@ -189,13 +205,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getRecordingQuality`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording quality (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getRecordingQuality '{}'
@@ -210,13 +228,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getRecordingRemainDuration`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording remain duration (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getRecordingRemainDuration '{}'
@@ -231,13 +251,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getRecordingSourceList`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording source list (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getRecordingSourceList '{}'
@@ -252,13 +274,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getRecordingStartTime`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording start time (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getRecordingStartTime '{}'
@@ -273,13 +297,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getRecordingType`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording type (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getRecordingType '{}'
@@ -294,13 +320,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getTimeshiftBufferedLength`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the timeshift buffered length (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getTimeshiftBufferedLength '{}'
@@ -315,13 +343,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getTimeshiftBufferingSourceType`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the timeshift buffering source type (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getTimeshiftBufferingSourceType '{}'
@@ -336,13 +366,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/getTimeshiftRecordingId`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Returns the timeshift recording ID (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/getTimeshiftRecordingId '{}'
@@ -357,13 +389,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/isRecordableInput`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Reports whether the recordable input is set (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/isRecordableInput '{}'
@@ -378,13 +412,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/isRecording`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Reports whether the recording is set (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/isRecording '{}'
@@ -399,13 +435,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/isTimeshiftBufferable`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Reports whether the timeshift bufferable is set (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/isTimeshiftBufferable '{}'
@@ -420,13 +458,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/isTimeshiftBuffering`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Reports whether the timeshift buffering is set (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/isTimeshiftBuffering '{}'
@@ -441,13 +481,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/pauseTimeshiftBuffering`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Pauses the timeshift buffering (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/pauseTimeshiftBuffering '{}'
@@ -462,13 +504,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/resumeTimeshiftBuffering`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Resumes the timeshift buffering (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/resumeTimeshiftBuffering '{}'
@@ -483,13 +527,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/setRecordingEndTime`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Sets the recording end time (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/setRecordingEndTime '{}'
@@ -504,13 +550,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/setRecordingRemainDuration`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Sets the recording remain duration (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/setRecordingRemainDuration '{}'
@@ -525,13 +573,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/startManualRecord`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Starts the manual record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/startManualRecord '{}'
@@ -546,13 +596,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/startProgramRecord`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Starts the program record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/startProgramRecord '{}'
@@ -567,13 +619,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/startScheduleRecord`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Starts the schedule record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/startScheduleRecord '{}'
@@ -588,13 +642,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/startTimeshiftBuffering`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Starts the timeshift buffering (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/startTimeshiftBuffering '{}'
@@ -609,13 +665,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/stopRecord`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Stops the record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/stopRecord '{}'
@@ -630,13 +688,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/stopScheduleRecord`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Stops the schedule record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/stopScheduleRecord '{}'
@@ -651,13 +711,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.dvr/record/stopTimeshiftBuffering`
 
-Method on com.webos.service.nabs.dvr (from on-device permission registry; parameters undocumented).
+Stops the timeshift buffering (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.dvr/record/stopTimeshiftBuffering '{}'

@@ -1,21 +1,23 @@
 # `ssap:tv`
 
+SSAP TV service (TV remote-control protocol): changes channels, lists channels and programs, reports the current channel, and switches external inputs.
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`channelDown`](#channeldown) | ssap |  | tv-broadcast | Channel down |
-| [`channelUp`](#channelup) | ssap |  | tv-broadcast | Channel up |
-| [`getACRAuthToken`](#getacrauthtoken) | ssap |  | security | Get ACR auth token |
-| [`getChannelCurrentProgramInfo`](#getchannelcurrentprograminfo) | ssap |  | tv-broadcast | Get currently airing program info |
-| [`getChannelList`](#getchannellist) | ssap | yes | tv-broadcast | List tuned channels |
-| [`getChannelProgramInfo`](#getchannelprograminfo) | ssap | yes | tv-broadcast | Get program (EPG) info for a channel |
-| [`getCurrentChannel`](#getcurrentchannel) | ssap | yes | tv-broadcast | Get/subscribe current channel |
-| [`getExternalInputList`](#getexternalinputlist) | ssap | yes | input | List external inputs |
-| [`openChannel`](#openchannel) | ssap |  | tv-broadcast | Tune a channel |
-| [`switchInput`](#switchinput) | ssap |  | input | Switch to input |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`channelDown`](#channeldown) | ssap |  | tv-broadcast | documented | Channel down |
+| [`channelUp`](#channelup) | ssap |  | tv-broadcast | documented | Channel up |
+| [`getACRAuthToken`](#getacrauthtoken) | ssap |  | security | documented | Get ACR auth token |
+| [`getChannelCurrentProgramInfo`](#getchannelcurrentprograminfo) | ssap |  | tv-broadcast | documented | Get currently airing program info |
+| [`getChannelList`](#getchannellist) | ssap | yes | tv-broadcast | documented | List tuned channels |
+| [`getChannelProgramInfo`](#getchannelprograminfo) | ssap | yes | tv-broadcast | documented | Get program (EPG) info for a channel |
+| [`getCurrentChannel`](#getcurrentchannel) | ssap | yes | tv-broadcast | documented | Get/subscribe current channel |
+| [`getExternalInputList`](#getexternalinputlist) | ssap | yes | input | documented | List external inputs |
+| [`openChannel`](#openchannel) | ssap |  | tv-broadcast | documented | Tune a channel |
+| [`switchInput`](#switchinput) | ssap |  | input | documented | Switch to input |
 
 <a id="channeldown"></a>
 ## `channelDown`
@@ -28,7 +30,7 @@ Channel down
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://tv/channelDown","payload":{}}
@@ -49,7 +51,7 @@ Channel up
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://tv/channelUp","payload":{}}
@@ -70,7 +72,7 @@ Get ACR auth token
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://tv/getACRAuthToken","payload":{}}
@@ -91,7 +93,7 @@ Get currently airing program info
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -116,7 +118,7 @@ List tuned channels
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -141,7 +143,7 @@ Get program (EPG) info for a channel
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -166,7 +168,7 @@ Get/subscribe current channel
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -191,7 +193,7 @@ List external inputs
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -216,7 +218,7 @@ Tune a channel
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -242,7 +244,7 @@ Switch to input
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

@@ -1,38 +1,42 @@
 # `com.webos.service.membership`
 
+Membership service that stores and retrieves membership values and device info and runs a local HTTP server for membership requests. _(inferred from the service's methods)_
+
 14 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`conveyRequest`](#conveyrequest) | private |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`conveyRequestPub`](#conveyrequestpub) | public |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`deleteValue`](#deletevalue) | public |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`deviceInfo`](#deviceinfo) | private |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`getPubValue`](#getpubvalue) | public |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`getValue`](#getvalue) | private |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`hello`](#hello) | public |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`notifyResult`](#notifyresult) | public |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`open`](#open) | public |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`openNotify`](#opennotify) | private |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`runLocalHttpServer`](#runlocalhttpserver) | private |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
-| [`setValue`](#setvalue) | private |  | system-info | Method on com.webos.service.membership (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`conveyRequest`](#conveyrequest) | private |  | system-info | inferred | Handles the convey request. |
+| [`conveyRequestPub`](#conveyrequestpub) | public |  | system-info | inferred | Handles the convey request pub. |
+| [`deleteValue`](#deletevalue) | public |  | system-info | inferred | Deletes the value. ⚠️ |
+| [`deviceInfo`](#deviceinfo) | private |  | system-info | inferred | Handles the device info. |
+| [`getPubValue`](#getpubvalue) | public |  | system-info | inferred | Returns the pub value. |
+| [`getValue`](#getvalue) | private |  | system-info | inferred | Returns the value. |
+| [`hello`](#hello) | public |  | system-info | inferred | Handles the hello. |
+| [`info`](#info) | public |  | system-info | inferred | Handles the info. |
+| [`notifyResult`](#notifyresult) | public |  | system-info | inferred | Notifies of the result. |
+| [`open`](#open) | public |  | system-info | inferred | Opens the membership. |
+| [`openNotify`](#opennotify) | private |  | system-info | inferred | Opens the notify. |
+| [`quit`](#quit) | public |  | system-info | inferred | Quits the membership. |
+| [`runLocalHttpServer`](#runlocalhttpserver) | private |  | system-info | inferred | Runs the local http server. |
+| [`setValue`](#setvalue) | private |  | system-info | inferred | Sets the value. |
 
 <a id="conveyrequest"></a>
 ## `conveyRequest`
 
 `luna://com.webos.service.membership/conveyRequest`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Handles the convey request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/conveyRequest '{}'
@@ -47,13 +51,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/conveyRequestPub`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Handles the convey request pub.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/conveyRequestPub '{}'
@@ -68,13 +74,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/deleteValue`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Deletes the value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/deleteValue '{}'
@@ -89,13 +97,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/deviceInfo`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Handles the device info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/deviceInfo '{}'
@@ -110,13 +120,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/getPubValue`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Returns the pub value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/getPubValue '{}'
@@ -131,13 +143,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/getValue`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Returns the value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/getValue '{}'
@@ -152,13 +166,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/hello`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Handles the hello.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/hello '{}'
@@ -173,13 +189,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/info`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/info '{}'
@@ -194,13 +212,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/notifyResult`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Notifies of the result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/notifyResult '{}'
@@ -215,13 +235,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/open`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Opens the membership.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/open '{}'
@@ -236,13 +258,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/openNotify`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Opens the notify.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/openNotify '{}'
@@ -257,13 +281,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/quit`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Quits the membership.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/quit '{}'
@@ -278,13 +304,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/runLocalHttpServer`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Runs the local http server.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/runLocalHttpServer '{}'
@@ -299,13 +327,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.membership/setValue`
 
-Method on com.webos.service.membership (from on-device permission registry; parameters undocumented).
+Sets the value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.membership/setValue '{}'

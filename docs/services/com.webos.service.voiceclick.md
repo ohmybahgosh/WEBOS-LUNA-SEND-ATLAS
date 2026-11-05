@@ -1,35 +1,39 @@
 # `com.webos.service.voiceclick`
 
+Voice-click/point-and-click voice service: detects clickable screen areas and apps, creates click events, captures the screen, and manages activation for voice-driven cursor interaction. _(inferred from the service's methods)_
+
 11 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`createClickEvent`](#createclickevent) | private |  | input | Method on com.webos.service.voiceclick (introspected on-device; parameters undocumented). |
-| [`getActivation`](#getactivation) | private |  | input | Getter on com.webos.service.voiceclick (introspected on-device; parameters undocumented). |
-| [`getClickableAppList`](#getclickableapplist) | private |  | input | Getter on com.webos.service.voiceclick (introspected on-device; parameters undocumented). |
-| [`getClickableArea`](#getclickablearea) | private |  | input | Getter on com.webos.service.voiceclick (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | input | Getter on com.webos.service.voiceclick (introspected on-device; parameters undocumented). |
-| [`screenCapture`](#screencapture) | private |  | input | Method on com.webos.service.voiceclick (introspected on-device; parameters undocumented). |
-| [`setActivation`](#setactivation) | private |  | input | Setter on com.webos.service.voiceclick (introspected on-device; parameters undocumented). |
-| [`setMargin`](#setmargin) | private |  | input | Setter on com.webos.service.voiceclick (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | input | Method on com.webos.service.voiceclick (introspected on-device; parameters undocumented). |
-| [`trigger`](#trigger) | private |  | input | Method on com.webos.service.voiceclick (introspected on-device; parameters undocumented). |
-| [`updateDB`](#updatedb) | private |  | input | Method on com.webos.service.voiceclick (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`createClickEvent`](#createclickevent) | private |  | input | inferred | Creates the click event. |
+| [`getActivation`](#getactivation) | private |  | input | inferred | Returns the activation. |
+| [`getClickableAppList`](#getclickableapplist) | private |  | input | inferred | Returns the clickable app list. |
+| [`getClickableArea`](#getclickablearea) | private |  | input | inferred | Returns the clickable area. |
+| [`getStatus`](#getstatus) | private |  | input | inferred | Returns the status. |
+| [`screenCapture`](#screencapture) | private |  | input | inferred | Handles the screen capture. |
+| [`setActivation`](#setactivation) | private |  | input | inferred | Sets the activation. |
+| [`setMargin`](#setmargin) | private |  | input | inferred | Sets the margin. |
+| [`start`](#start) | private |  | input | inferred | Starts the voiceclick. |
+| [`trigger`](#trigger) | private |  | input | inferred | Triggers the voiceclick. |
+| [`updateDB`](#updatedb) | private |  | input | inferred | Updates the DB. |
 
 <a id="createclickevent"></a>
 ## `createClickEvent`
 
 `luna://com.webos.service.voiceclick/createClickEvent`
 
-Method on com.webos.service.voiceclick (introspected on-device; parameters undocumented).
+Creates the click event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceclick/createClickEvent '{}'
@@ -44,13 +48,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceclick/getActivation`
 
-Getter on com.webos.service.voiceclick (introspected on-device; parameters undocumented).
+Returns the activation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceclick/getActivation '{}'
@@ -65,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceclick/getClickableAppList`
 
-Getter on com.webos.service.voiceclick (introspected on-device; parameters undocumented).
+Returns the clickable app list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceclick/getClickableAppList '{}'
@@ -86,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceclick/getClickableArea`
 
-Getter on com.webos.service.voiceclick (introspected on-device; parameters undocumented).
+Returns the clickable area.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceclick/getClickableArea '{}'
@@ -107,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceclick/getStatus`
 
-Getter on com.webos.service.voiceclick (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceclick/getStatus '{}'
@@ -128,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceclick/screenCapture`
 
-Method on com.webos.service.voiceclick (introspected on-device; parameters undocumented).
+Handles the screen capture.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceclick/screenCapture '{}'
@@ -149,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceclick/setActivation`
 
-Setter on com.webos.service.voiceclick (introspected on-device; parameters undocumented).
+Sets the activation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceclick/setActivation '{}'
@@ -170,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceclick/setMargin`
 
-Setter on com.webos.service.voiceclick (introspected on-device; parameters undocumented).
+Sets the margin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceclick/setMargin '{}'
@@ -191,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceclick/start`
 
-Method on com.webos.service.voiceclick (introspected on-device; parameters undocumented).
+Starts the voiceclick.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceclick/start '{}'
@@ -212,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceclick/trigger`
 
-Method on com.webos.service.voiceclick (introspected on-device; parameters undocumented).
+Triggers the voiceclick.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceclick/trigger '{}'
@@ -233,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceclick/updateDB`
 
-Method on com.webos.service.voiceclick (introspected on-device; parameters undocumented).
+Updates the DB.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceclick/updateDB '{}'

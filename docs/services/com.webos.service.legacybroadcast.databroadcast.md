@@ -1,66 +1,70 @@
 # `com.webos.service.legacybroadcast.databroadcast`
 
+Legacy DVB/ATSC data-broadcast service: adds section filters, attaches stream events, builds DSM-CC/carousel filters, and reports broadcast component, channel, caption and broadcaster info. _(inferred from the service's methods)_
+
 42 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`addSectionFilter`](#addsectionfilter) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`attachStreamEvent`](#attachstreamevent) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`createBmlDsmccFilter`](#createbmldsmccfilter) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`deleteBmlDsmccFilter`](#deletebmldsmccfilter) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). ⚠️ |
-| [`getAncillaryData`](#getancillarydata) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getBootInfo`](#getbootinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getBroadcastComponentInfo`](#getbroadcastcomponentinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getBroadcastInfoByDummy`](#getbroadcastinfobydummy) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getBroadcastInfoByMajor`](#getbroadcastinfobymajor) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getCaptionState`](#getcaptionstate) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getCaptionStatus`](#getcaptionstatus) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getCarouselInfo`](#getcarouselinfo) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getCarouselInfoByCtag`](#getcarouselinfobyctag) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getChannelInfo`](#getchannelinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getCtagByPidSvcid`](#getctagbypidsvcid) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getCurrentBroadcasterInfo`](#getcurrentbroadcasterinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getCurrentStc`](#getcurrentstc) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getDeliverySystemDescriptor`](#getdeliverysystemdescriptor) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getDsmccFile`](#getdsmccfile) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getDvbRIByAtag`](#getdvbribyatag) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getEitDescriptor`](#geteitdescriptor) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getLcnByServiceIdentifier`](#getlcnbyserviceidentifier) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getNamedPipePath`](#getnamedpipepath) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getPmtSectionTable`](#getpmtsectiontable) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getSdtComponetDescInfo`](#getsdtcomponetdescinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getSdtServiceInfo`](#getsdtserviceinfo) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getServiceInfo`](#getserviceinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getServiceOperator`](#getserviceoperator) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getTableInfo`](#gettableinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getVdecAFD`](#getvdecafd) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`getVdecVideoInfo`](#getvdecvideoinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`notifyCurrentEit`](#notifycurrenteit) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`registerStreamEvent`](#registerstreamevent) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`removeSectionFilter`](#removesectionfilter) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). ⚠️ |
-| [`requestAitSection`](#requestaitsection) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`requestDsmSection`](#requestdsmsection) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`requestTemiInfo`](#requesttemiinfo) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`startDripIFrameData`](#startdripiframedata) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`startStream`](#startstream) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`stopDripIFrameData`](#stopdripiframedata) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`stopDsmSection`](#stopdsmsection) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
-| [`subscribeSectionData`](#subscribesectiondata) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`addSectionFilter`](#addsectionfilter) | private |  | tv-broadcast | inferred | Adds the section filter. |
+| [`attachStreamEvent`](#attachstreamevent) | private |  | tv-broadcast | inferred | Handles the attach stream event. |
+| [`createBmlDsmccFilter`](#createbmldsmccfilter) | private |  | tv-broadcast | inferred | Creates the bml dsmcc filter. |
+| [`deleteBmlDsmccFilter`](#deletebmldsmccfilter) | private |  | tv-broadcast | inferred | Deletes the bml dsmcc filter. ⚠️ |
+| [`getAncillaryData`](#getancillarydata) | private |  | tv-broadcast | inferred | Returns the ancillary data. |
+| [`getBootInfo`](#getbootinfo) | private |  | tv-broadcast | inferred | Returns the boot info. |
+| [`getBroadcastComponentInfo`](#getbroadcastcomponentinfo) | private |  | tv-broadcast | inferred | Returns the broadcast component info. |
+| [`getBroadcastInfoByDummy`](#getbroadcastinfobydummy) | private |  | tv-broadcast | inferred | Returns the broadcast info by dummy. |
+| [`getBroadcastInfoByMajor`](#getbroadcastinfobymajor) | private |  | tv-broadcast | inferred | Returns the broadcast info by major. |
+| [`getCaptionState`](#getcaptionstate) | private |  | tv-broadcast | inferred | Returns the caption state. |
+| [`getCaptionStatus`](#getcaptionstatus) | private |  | tv-broadcast | inferred | Returns the caption status. |
+| [`getCarouselInfo`](#getcarouselinfo) | private |  | tv-broadcast | inferred | Returns the carousel info. |
+| [`getCarouselInfoByCtag`](#getcarouselinfobyctag) | private |  | tv-broadcast | inferred | Returns the carousel info by ctag. |
+| [`getChannelInfo`](#getchannelinfo) | private |  | tv-broadcast | inferred | Returns the channel info. |
+| [`getCtagByPidSvcid`](#getctagbypidsvcid) | private |  | tv-broadcast | inferred | Returns the ctag by pid svcid. |
+| [`getCurrentBroadcasterInfo`](#getcurrentbroadcasterinfo) | private |  | tv-broadcast | inferred | Returns the current broadcaster info. |
+| [`getCurrentStc`](#getcurrentstc) | private |  | tv-broadcast | inferred | Returns the current stc. |
+| [`getDeliverySystemDescriptor`](#getdeliverysystemdescriptor) | private |  | tv-broadcast | inferred | Returns the delivery system descriptor. |
+| [`getDsmccFile`](#getdsmccfile) | private |  | tv-broadcast | inferred | Returns the dsmcc file. |
+| [`getDvbRIByAtag`](#getdvbribyatag) | private |  | tv-broadcast | inferred | Returns the DVB RI by atag. |
+| [`getEitDescriptor`](#geteitdescriptor) | private |  | tv-broadcast | inferred | Returns the EIT descriptor. |
+| [`getLcnByServiceIdentifier`](#getlcnbyserviceidentifier) | private |  | tv-broadcast | inferred | Returns the lcn by service identifier. |
+| [`getNamedPipePath`](#getnamedpipepath) | private |  | tv-broadcast | inferred | Returns the named pipe path. |
+| [`getPmtSectionTable`](#getpmtsectiontable) | private |  | tv-broadcast | inferred | Returns the PMT section table. |
+| [`getSdtComponetDescInfo`](#getsdtcomponetdescinfo) | private |  | tv-broadcast | inferred | Returns the SDT componet desc info. |
+| [`getSdtServiceInfo`](#getsdtserviceinfo) | private |  | tv-broadcast | inferred | Returns the SDT service info. |
+| [`getServiceInfo`](#getserviceinfo) | private |  | tv-broadcast | inferred | Returns the service info. |
+| [`getServiceOperator`](#getserviceoperator) | private |  | tv-broadcast | inferred | Returns the service operator. |
+| [`getTableInfo`](#gettableinfo) | private |  | tv-broadcast | inferred | Returns the table info. |
+| [`getVdecAFD`](#getvdecafd) | private |  | tv-broadcast | inferred | Returns the vdec AFD. |
+| [`getVdecVideoInfo`](#getvdecvideoinfo) | private |  | tv-broadcast | inferred | Returns the vdec video info. |
+| [`notifyCurrentEit`](#notifycurrenteit) | private |  | tv-broadcast | inferred | Notifies of the current EIT. |
+| [`registerStreamEvent`](#registerstreamevent) | private |  | tv-broadcast | inferred | Registers the stream event. |
+| [`removeSectionFilter`](#removesectionfilter) | private |  | tv-broadcast | inferred | Removes the section filter. ⚠️ |
+| [`requestAitSection`](#requestaitsection) | private |  | tv-broadcast | inferred | Requests the ait section. |
+| [`requestDsmSection`](#requestdsmsection) | private |  | tv-broadcast | inferred | Requests the dsm section. |
+| [`requestTemiInfo`](#requesttemiinfo) | private |  | tv-broadcast | inferred | Requests the temi info. |
+| [`startDripIFrameData`](#startdripiframedata) | private |  | tv-broadcast | inferred | Starts the drip i frame data. |
+| [`startStream`](#startstream) | private |  | tv-broadcast | inferred | Starts the stream. |
+| [`stopDripIFrameData`](#stopdripiframedata) | private |  | tv-broadcast | inferred | Stops the drip i frame data. |
+| [`stopDsmSection`](#stopdsmsection) | private |  | tv-broadcast | inferred | Stops the dsm section. |
+| [`subscribeSectionData`](#subscribesectiondata) | private |  | tv-broadcast | inferred | Subscribes to the section data. |
 
 <a id="addsectionfilter"></a>
 ## `addSectionFilter`
 
 `luna://com.webos.service.legacybroadcast.databroadcast/addSectionFilter`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Adds the section filter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/addSectionFilter '{}'
@@ -75,13 +79,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/attachStreamEvent`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Handles the attach stream event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/attachStreamEvent '{}'
@@ -96,13 +102,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/createBmlDsmccFilter`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Creates the bml dsmcc filter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/createBmlDsmccFilter '{}'
@@ -117,13 +125,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/deleteBmlDsmccFilter`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Deletes the bml dsmcc filter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/deleteBmlDsmccFilter '{}'
@@ -138,13 +148,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getAncillaryData`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the ancillary data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getAncillaryData '{}'
@@ -159,13 +171,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getBootInfo`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the boot info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getBootInfo '{}'
@@ -180,13 +194,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getBroadcastComponentInfo`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the broadcast component info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getBroadcastComponentInfo '{}'
@@ -201,13 +217,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getBroadcastInfoByDummy`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the broadcast info by dummy.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getBroadcastInfoByDummy '{}'
@@ -222,13 +240,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getBroadcastInfoByMajor`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the broadcast info by major.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getBroadcastInfoByMajor '{}'
@@ -243,13 +263,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getCaptionState`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the caption state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getCaptionState '{}'
@@ -264,13 +286,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getCaptionStatus`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the caption status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getCaptionStatus '{}'
@@ -285,13 +309,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getCarouselInfo`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the carousel info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getCarouselInfo '{}'
@@ -306,13 +332,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getCarouselInfoByCtag`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the carousel info by ctag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getCarouselInfoByCtag '{}'
@@ -327,13 +355,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getChannelInfo`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the channel info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getChannelInfo '{}'
@@ -348,13 +378,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getCtagByPidSvcid`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the ctag by pid svcid.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getCtagByPidSvcid '{}'
@@ -369,13 +401,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getCurrentBroadcasterInfo`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the current broadcaster info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getCurrentBroadcasterInfo '{}'
@@ -390,13 +424,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getCurrentStc`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the current stc.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getCurrentStc '{}'
@@ -411,13 +447,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getDeliverySystemDescriptor`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the delivery system descriptor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getDeliverySystemDescriptor '{}'
@@ -432,13 +470,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getDsmccFile`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the dsmcc file.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getDsmccFile '{}'
@@ -453,13 +493,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getDvbRIByAtag`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the DVB RI by atag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getDvbRIByAtag '{}'
@@ -474,13 +516,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getEitDescriptor`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the EIT descriptor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getEitDescriptor '{}'
@@ -495,13 +539,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getLcnByServiceIdentifier`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the lcn by service identifier.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getLcnByServiceIdentifier '{}'
@@ -516,13 +562,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getNamedPipePath`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the named pipe path.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getNamedPipePath '{}'
@@ -537,13 +585,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getPmtSectionTable`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the PMT section table.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getPmtSectionTable '{}'
@@ -558,13 +608,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getSdtComponetDescInfo`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the SDT componet desc info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getSdtComponetDescInfo '{}'
@@ -579,13 +631,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getSdtServiceInfo`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the SDT service info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getSdtServiceInfo '{}'
@@ -600,13 +654,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getServiceInfo`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the service info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getServiceInfo '{}'
@@ -621,13 +677,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getServiceOperator`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the service operator.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getServiceOperator '{}'
@@ -642,13 +700,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getTableInfo`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the table info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getTableInfo '{}'
@@ -663,13 +723,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getVdecAFD`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the vdec AFD.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getVdecAFD '{}'
@@ -684,13 +746,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/getVdecVideoInfo`
 
-Getter on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Returns the vdec video info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/getVdecVideoInfo '{}'
@@ -705,13 +769,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/notifyCurrentEit`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Notifies of the current EIT.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/notifyCurrentEit '{}'
@@ -726,13 +792,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/registerStreamEvent`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Registers the stream event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/registerStreamEvent '{}'
@@ -747,13 +815,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/removeSectionFilter`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Removes the section filter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/removeSectionFilter '{}'
@@ -768,13 +838,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/requestAitSection`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Requests the ait section.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/requestAitSection '{}'
@@ -789,13 +861,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/requestDsmSection`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Requests the dsm section.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/requestDsmSection '{}'
@@ -810,13 +884,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/requestTemiInfo`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Requests the temi info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/requestTemiInfo '{}'
@@ -831,13 +907,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/startDripIFrameData`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Starts the drip i frame data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/startDripIFrameData '{}'
@@ -852,13 +930,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/startStream`
 
-Method on com.webos.service.legacybroadcast.databroadcast (from on-device permission registry; parameters undocumented).
+Starts the stream.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/startStream '{}'
@@ -873,13 +953,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.databroadcast/stopDripIFrameData`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Stops the drip i frame data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/stopDripIFrameData '{}'
@@ -894,13 +976,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/stopDsmSection`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Stops the dsm section.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/stopDsmSection '{}'
@@ -915,13 +999,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.databroadcast/subscribeSectionData`
 
-Method on com.webos.service.legacybroadcast.databroadcast (introspected on-device; parameters undocumented).
+Subscribes to the section data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.databroadcast/subscribeSectionData '{}'

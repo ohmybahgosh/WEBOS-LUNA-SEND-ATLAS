@@ -1,36 +1,38 @@
 # `com.webos.service.downloadmanager`
 
+Download manager: manages file download and upload on the device, including queueing, pause/resume/cancel, history and status queries.
+
 18 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`allow1x`](#allow1x) | public |  | network |  |
-| [`cancelAllDownloads`](#cancelalldownloads) | public |  | network |  |
-| [`cancelDownload`](#canceldownload) | public |  | network | Cancel a download that is in progress. |
-| [`cancelUpload`](#cancelupload) | public |  | network | Cancel an upload that is in progress. See the cancelDownload method for detailed documentation. |
-| [`clearHistory`](#clearhistory) | public |  | network | Clear the download history for a specific application or for all downloads or uploads. |
-| [`deleteDownloadedFile`](#deletedownloadedfile) | public |  | network | Delete a downloaded file based on the ticket number. The ticket number is a unique ID returned from the download method. |
-| [`download`](#download) | public | yes | network |  |
-| [`downloads`](#downloads) | unknown |  | network | Array containing downloads |
-| [`downloadStatusQuery`](#downloadstatusquery) | public | yes | network |  |
-| [`getAllHistory`](#getallhistory) | public |  | network | Get the download or upload history for a specific application. |
-| [`getTicketHistory`](#gettickethistory) | private |  | apps | Method on com.webos.service.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`is1xMode`](#is1xmode) | public |  | network | Determine if the network connection is in 1x mode. |
-| [`items`](#items) | unknown |  | network | Objects of items which describe information of download history. |
-| [`listPending`](#listpending) | public |  | network | Return the list of all downloads that are currently in progress. |
-| [`pauseDownload`](#pausedownload) | public |  | network | Pause a download. Note that only downloads started with canHandlePause:true can be paused; otherwise, calling pauseDownload on a downloading |
-| [`postParameters`](#postparameters) | unknown |  | network | An object containing key/data/content triplets to support parameters required by the server to which the file is uploaded. |
-| [`resumeDownload`](#resumedownload) | public | yes | network |  |
-| [`upload`](#upload) | public | yes | network | Upload a file to the target URI. If subscribe is set to false , the onSuccess handler is called only once after the initial request. To be n |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`allow1x`](#allow1x) | public |  | network | documented | Enable or disable 1x mode for downloads/uploads. |
+| [`cancelAllDownloads`](#cancelalldownloads) | public |  | network | documented | Cancel all downloads that are in progress. |
+| [`cancelDownload`](#canceldownload) | public |  | network | documented | Cancel a download that is in progress. |
+| [`cancelUpload`](#cancelupload) | public |  | network | documented | Cancel an upload that is in progress. See the cancelDownload method for detailed documentation. |
+| [`clearHistory`](#clearhistory) | public |  | network | documented | Clear the download history for a specific application or for all downloads or uploads. |
+| [`deleteDownloadedFile`](#deletedownloadedfile) | public |  | network | documented | Delete a downloaded file based on the ticket number. The ticket number is a unique ID returned from the download method. |
+| [`download`](#download) | public | yes | network | documented | Start a download. |
+| [`downloads`](#downloads) | unknown |  | network | documented | Array containing downloads |
+| [`downloadStatusQuery`](#downloadstatusquery) | public | yes | network | documented | Get the status of a download for a specific ticket number. The method will return the status of current downloads, or any downloads in the h |
+| [`getAllHistory`](#getallhistory) | public |  | network | documented | Get the download or upload history for a specific application. |
+| [`getTicketHistory`](#gettickethistory) | private |  | apps | inferred | Returns the ticket history. |
+| [`is1xMode`](#is1xmode) | public |  | network | documented | Determine if the network connection is in 1x mode. |
+| [`items`](#items) | unknown |  | network | documented | Objects of items which describe information of download history. |
+| [`listPending`](#listpending) | public |  | network | documented | Return the list of all downloads that are currently in progress. |
+| [`pauseDownload`](#pausedownload) | public |  | network | documented | Pause a download. Note that only downloads started with canHandlePause:true can be paused; otherwise, calling pauseDownload on a downloading |
+| [`postParameters`](#postparameters) | unknown |  | network | documented | An object containing key/data/content triplets to support parameters required by the server to which the file is uploaded. |
+| [`resumeDownload`](#resumedownload) | public | yes | network | documented | Resume a download. |
+| [`upload`](#upload) | public | yes | network | documented | Upload a file to the target URI. If subscribe is set to false , the onSuccess handler is called only once after the initial request. To be n |
 
 <a id="allow1x"></a>
 ## `allow1x`
 
 `luna://com.webos.service.downloadmanager/allow1x`
 
-
+Enable or disable 1x mode for downloads/uploads.
 
 - **Access:** public  
 - **Subscribe:** no  
@@ -41,6 +43,13 @@
 | Param | Type / notes |
 |---|---|
 | `value` | Boolean (required) Indicates whether 1x mode is to be enabled. Possible values are: true - Enable 1x mode false - Disable 1x mode |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `value` | Boolean (optional) Indicates whether 1x mode is to be enabled. Possible values are: - true - Enable 1x mode - false - Disable 1x mode |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.downloadmanager/allow1x '{"value" : true}
@@ -55,7 +64,7 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-d
 
 `luna://com.webos.service.downloadmanager/cancelAllDownloads`
 
-
+Cancel all downloads that are in progress.
 
 - **Access:** public  
 - **Subscribe:** no  
@@ -88,6 +97,16 @@ Cancel a download that is in progress.
 |---|---|
 | `ticket` | Number (int64_t) (required) Download ID to be canceled. The download ID is returned from the download method. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `ticket` | Number (int64\_t) (required) Canceled download ID. |
+| `aborted` | Boolean (optional) If the download was aborted, aborted will contain true. If the download was not aborted, aborted will contain false. |
+| `completed` | Boolean (optional) If the download was completed, completed will contain true. If the download was not completed, completed will contain false. |
+| `completionStatusCode` | Number (int8\_t) (optional) Download completion status code. - -1 - General Error - -2 - Connection Timeout - -3 - File Corrupt - -4 - File System Error - -5 - HTTP Error - -6 - Write Error - 11 - Interrupted - 12 - Canceled |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.downloadmanager/cancelDownload '{"ticket" : 1}
 ```
@@ -112,6 +131,16 @@ Cancel an upload that is in progress. See the cancelDownload method for detailed
 | Param | Type / notes |
 |---|---|
 | `ticket` | Number (int64_t) (required) Upload ID to be canceled. The upload ID is returned from the upload method. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `ticket` | Number (int64\_t) (required) Upload ID to be canceled. The upload ID is returned from the upload method. |
+| `aborted` | Boolean (optional) If the upload was aborted, aborted will contain true. If the upload was not aborted, aborted will contain false. |
+| `completed` | Boolean (optional) If the upload was completed, completed will contain true. If the upload was not completed, completed will contain false. |
+| `completionStatusCode` | Number (int8\_t) (optional) Completion status code. - -1 - General Error - -2 - Connection Timeout - -3 - File Corrupt - -4 - File System Error - -5 - HTTP Error - -6 - Write Error - 11 - Interrupted - 12 - Canceled |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.downloadmanager/cancelUpload '{"ticket" : 1}
@@ -138,6 +167,13 @@ Clear the download history for a specific application or for all downloads or up
 |---|---|
 | `owner` | String (optional) ID of owner requesting the download. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.downloadmanager/clearHistory '{"owner" : "/var/run/ls2/5Htp9Q"}
 ```
@@ -163,6 +199,13 @@ Delete a downloaded file based on the ticket number. The ticket number is a uniq
 |---|---|
 | `ticket` | Number (int64_t) (required) Download ID of the file to be deleted. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `ticket` | String (required) Deleted download ID. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.downloadmanager/deleteDownloadedFile '{"ticket" : 124}
 ```
@@ -176,7 +219,7 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-d
 
 `luna://com.webos.service.downloadmanager/download`
 
-
+Start a download.
 
 - **Access:** public  
 - **Subscribe:** yes  
@@ -203,6 +246,16 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-d
 | `target` | String (required) Target URL to download. |
 | `targetDir` | String (optional) Directory where to save the downloaded file. |
 | `targetFilename` | String (optional) File name to use when saving the downloaded file. If targetFilename is not specified, the file name specified in target is default. If there is the same file name, download manager will internally generate a unique name. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `ticket` | String (optional) Unique download ID. It can be used to get more information about a specific download. |
+| `url` | String (optional) URL of the downloaded file. |
+| `target` | String (optional) Path and name of the downloading file. |
+| `errorCode` | String (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -f -i luna://com.webos.service.downloadmanager/download '{"target" : "http://www.google.co.kr"}
@@ -238,7 +291,7 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-d
 
 `luna://com.webos.service.downloadmanager/downloadStatusQuery`
 
-
+Get the status of a download for a specific ticket number. The method will return the status of current downloads, or any downloads in the history.
 
 - **Access:** public  
 - **Subscribe:** yes  
@@ -250,6 +303,21 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-d
 |---|---|
 | `ticket` | Number (int64_t) (required) Download ID of the file to get the download status. |
 | `subscribe` | Boolean (optional) To get informed when download status has been changed, set subscribe to true . Otherwise, set subscribe to false . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `ticket` | Number (int64\_t) (required) Unique download ID. |
+| `url` | String (optional) URL of the downloaded file. |
+| `amountReceived` | Number (int32\_t) (optional) Number of bytes in integer format received so far. |
+| `e\_amountReceived` | String (optional) Number of bytes in string format(llu) received so far. |
+| `amountTotal` | Number (int32\_t) (optional) Total Number of bytes in integer format downloaded. |
+| `e\_amountTotal` | String (optional) Total Number of bytes in string format(llu) downloaded. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `owner` | String (optional) App ID which requested the download. If the download was completed, owner is returned. |
+| `interface` | String (optional) Can have one of the following values: - wired - wifi - wan - btpan |
+| `state` | String (optional) Can have one of the following values: - running - queued - paused - cancelled |
 
 ```sh
 luna-send -f -i luna://com.webos.service.downloadmanager/downloadStatusQuery '{"ticket" : 125}'
@@ -276,6 +344,13 @@ Get the download or upload history for a specific application.
 |---|---|
 | `owner` | String (required) ID of owner requesting download or upload. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `items` | Object: items (optional) Objects describing information of download history. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.downloadmanager/getAllHistory '{"owner" : "/var/run/ls2/5Htp9Q"}'
 ```
@@ -289,13 +364,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-d
 
 `luna://com.webos.service.downloadmanager/getTicketHistory`
 
-Method on com.webos.service.downloadmanager (from on-device permission registry; parameters undocumented).
+Returns the ticket history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.downloadmanager/getTicketHistory '{}'
@@ -317,6 +394,12 @@ Determine if the network connection is in 1x mode.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `1x` | Boolean (required) If the network connection is in 1x mode, 1x will contain true. If the network connection is not in 1x mode, 1x will contain false. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.downloadmanager/is1xMode '{}
@@ -360,6 +443,13 @@ Return the list of all downloads that are currently in progress.
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `count` | String (required) Number of downloads in progress. |
+| `downloads` | Object: downloads (optional) Array of objects for each pending download. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.downloadmanager/listPending '{}
 ```
@@ -384,6 +474,13 @@ Pause a download. Note that only downloads started with canHandlePause:true can 
 | Param | Type / notes |
 |---|---|
 | `ticket` | Number (int8_t) (required) Download ID to pause. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | String (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.downloadmanager/pauseDownload '{"ticket" : 135}'
@@ -419,7 +516,7 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-d
 
 `luna://com.webos.service.downloadmanager/resumeDownload`
 
-
+Resume a download.
 
 - **Access:** public  
 - **Subscribe:** yes  
@@ -433,6 +530,13 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-d
 | `authToken` | String (optional) Used for curl in "Auth-Token". |
 | `deviceId` | String (optional) used for curl in "Device-Id". |
 | `subscribe` | Boolean (optional) To get informed when download status has been changed, set subscribe to true . Otherwise, set subscribe to false . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | String (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -f -i luna://com.webos.service.downloadmanager/resumeDownload '{"ticket" : 135}'
@@ -463,6 +567,14 @@ Upload a file to the target URI. If subscribe is set to false , the onSuccess ha
 | `contentType` | String (optional) The MIME type of the file, as described at http://www.webmaster-toolkit.com/mime-types.shtml. |
 | `postParameters` | Object: postParameters (optional) An object containing key/data/content triplets to support parameters required by the server to which the file is uploaded. |
 | `subscribe` | Boolean (optional) To get informed when upload status has been changed, set subscribe to true . Otherwise, set subscribe to false . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `ticket` | Number (int64\_t) (optional) Unique upload ID. It can be used to get more information about a specific upload. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.downloadmanager/upload '{"url":"http://www.google.co.kr","fileName":"/media/internal/downloads/test.txt"}'

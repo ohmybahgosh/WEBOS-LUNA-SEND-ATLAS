@@ -1,75 +1,79 @@
 # `com.webos.service.ics`
 
+IR-blaster / universal-control service: manages a database of IR and IP-controlled devices, with brand/model/key lists, device add/delete and history, HDMI plugin info and pin codes. _(inferred from the service's methods)_
+
 51 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`blaster/addDevice`](#blaster_adddevice) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/blockIRDevice`](#blaster_blockirdevice) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/clearSettingCash`](#blaster_clearsettingcash) | private |  | security | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/delDevice`](#blaster_deldevice) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/delDeviceHistory`](#blaster_deldevicehistory) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/deleteIPConnectionHistory`](#blaster_deleteipconnectionhistory) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). ⚠️ |
-| [`blaster/getAutoLookUpVersion`](#blaster_getautolookupversion) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getBrandList`](#blaster_getbrandlist) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getBrandListByPredictive`](#blaster_getbrandlistbypredictive) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getDeviceHistory`](#blaster_getdevicehistory) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getDevices`](#blaster_getdevices) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getHDMIPluginInfo`](#blaster_gethdmiplugininfo) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getIPDeviceList`](#blaster_getipdevicelist) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getIrDbVersion`](#blaster_getirdbversion) | private |  | db | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getKeyList`](#blaster_getkeylist) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getKeyTestResult`](#blaster_getkeytestresult) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getModelList`](#blaster_getmodellist) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getPinCodeInfo`](#blaster_getpincodeinfo) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getSearchedModelInfo`](#blaster_getsearchedmodelinfo) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getUEICountryCode`](#blaster_getueicountrycode) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getUEIDeviceStatus`](#blaster_getueidevicestatus) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getUniversalControlSettingHistory`](#blaster_getuniversalcontrolsettinghistory) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/getURLforUEIDevices`](#blaster_geturlforueidevices) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/isSupported`](#blaster_issupported) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/nextKeyTest`](#blaster_nextkeytest) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/sendCommand`](#blaster_sendcommand) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/setChannel`](#blaster_setchannel) | private |  | input | Setter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/setDeviceBrand`](#blaster_setdevicebrand) | private |  | input | Setter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/setDeviceType`](#blaster_setdevicetype) | private |  | input | Setter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/setModelName`](#blaster_setmodelname) | private |  | input | Setter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/setUEIServer`](#blaster_setueiserver) | private |  | input | Setter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/startDetectDevices`](#blaster_startdetectdevices) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/startKeyTest`](#blaster_startkeytest) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/startService`](#blaster_startservice) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/subscribeChannelChange`](#blaster_subscribechannelchange) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`blaster/updateServerKeyList`](#blaster_updateserverkeylist) | private |  | update | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`debug/setDebugCmd`](#debug_setdebugcmd) | private |  | input | Setter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`getCurrentChannelNumber`](#getcurrentchannelnumber) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`getCurrentChannelNumberDirect`](#getcurrentchannelnumberdirect) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`getMsoEncDecString`](#getmsoencdecstring) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`getNewDeviceInfo`](#getnewdeviceinfo) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`getToastMsg`](#gettoastmsg) | private |  | notifications | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`getUeiAppList`](#getueiapplist) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`iot/getAllIoTDevices`](#iot_getalliotdevices) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`iot/getIoTBrandList`](#iot_getiotbrandlist) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`iot/getIoTDevice`](#iot_getiotdevice) | private |  | input | Getter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`iot/replyEventCallback`](#iot_replyeventcallback) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`iot/selectIoTDevice`](#iot_selectiotdevice) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`iot/setIoTDevice`](#iot_setiotdevice) | private |  | input | Setter on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`sendDirectCommand`](#senddirectcommand) | private |  | input | Method on com.webos.service.ics (introspected on-device; parameters undocumented). |
-| [`setNewDevicePort`](#setnewdeviceport) | private |  | input | Setter on com.webos.service.ics (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`blaster/addDevice`](#blaster_adddevice) | private |  | input | inferred | Adds the device (blaster) |
+| [`blaster/blockIRDevice`](#blaster_blockirdevice) | private |  | input | inferred | Blocks the IR device (blaster) |
+| [`blaster/clearSettingCash`](#blaster_clearsettingcash) | private |  | security | inferred | Clears the setting cash (blaster) |
+| [`blaster/delDevice`](#blaster_deldevice) | private |  | input | inferred | Handles the del device (blaster) |
+| [`blaster/delDeviceHistory`](#blaster_deldevicehistory) | private |  | input | inferred | Handles the del device history (blaster) |
+| [`blaster/deleteIPConnectionHistory`](#blaster_deleteipconnectionhistory) | private |  | input | inferred | Deletes the IP connection history (blaster) ⚠️ |
+| [`blaster/getAutoLookUpVersion`](#blaster_getautolookupversion) | private |  | input | inferred | Returns the auto look up version (blaster) |
+| [`blaster/getBrandList`](#blaster_getbrandlist) | private |  | input | inferred | Returns the brand list (blaster) |
+| [`blaster/getBrandListByPredictive`](#blaster_getbrandlistbypredictive) | private |  | input | inferred | Returns the brand list by predictive (blaster) |
+| [`blaster/getDeviceHistory`](#blaster_getdevicehistory) | private |  | input | inferred | Returns the device history (blaster) |
+| [`blaster/getDevices`](#blaster_getdevices) | private |  | input | inferred | Returns the devices (blaster) |
+| [`blaster/getHDMIPluginInfo`](#blaster_gethdmiplugininfo) | private |  | input | inferred | Returns the HDMI plugin info (blaster) |
+| [`blaster/getIPDeviceList`](#blaster_getipdevicelist) | private |  | input | inferred | Returns the IP device list (blaster) |
+| [`blaster/getIrDbVersion`](#blaster_getirdbversion) | private |  | db | inferred | Returns the IR db version (blaster) |
+| [`blaster/getKeyList`](#blaster_getkeylist) | private |  | input | inferred | Returns the key list (blaster) |
+| [`blaster/getKeyTestResult`](#blaster_getkeytestresult) | private |  | input | inferred | Returns the key test result (blaster) |
+| [`blaster/getModelList`](#blaster_getmodellist) | private |  | input | inferred | Returns the model list (blaster) |
+| [`blaster/getPinCodeInfo`](#blaster_getpincodeinfo) | private |  | input | inferred | Returns the pin code info (blaster) |
+| [`blaster/getSearchedModelInfo`](#blaster_getsearchedmodelinfo) | private |  | input | inferred | Returns the searched model info (blaster) |
+| [`blaster/getUEICountryCode`](#blaster_getueicountrycode) | private |  | input | inferred | Returns the UEI country code (blaster) |
+| [`blaster/getUEIDeviceStatus`](#blaster_getueidevicestatus) | private |  | input | inferred | Returns the UEI device status (blaster) |
+| [`blaster/getUniversalControlSettingHistory`](#blaster_getuniversalcontrolsettinghistory) | private |  | input | inferred | Returns the universal control setting history (blaster) |
+| [`blaster/getURLforUEIDevices`](#blaster_geturlforueidevices) | private |  | input | inferred | Returns the UR lfor UEI devices (blaster) |
+| [`blaster/isSupported`](#blaster_issupported) | private |  | input | inferred | Reports whether the supported is set (blaster) |
+| [`blaster/nextKeyTest`](#blaster_nextkeytest) | private |  | input | inferred | Handles the next key test (blaster) |
+| [`blaster/sendCommand`](#blaster_sendcommand) | private |  | input | inferred | Sends the command (blaster) |
+| [`blaster/setChannel`](#blaster_setchannel) | private |  | input | inferred | Sets the channel (blaster) |
+| [`blaster/setDeviceBrand`](#blaster_setdevicebrand) | private |  | input | inferred | Sets the device brand (blaster) |
+| [`blaster/setDeviceType`](#blaster_setdevicetype) | private |  | input | inferred | Sets the device type (blaster) |
+| [`blaster/setModelName`](#blaster_setmodelname) | private |  | input | inferred | Sets the model name (blaster) |
+| [`blaster/setUEIServer`](#blaster_setueiserver) | private |  | input | inferred | Sets the UEI server (blaster) |
+| [`blaster/startDetectDevices`](#blaster_startdetectdevices) | private |  | input | inferred | Starts the detect devices (blaster) |
+| [`blaster/startKeyTest`](#blaster_startkeytest) | private |  | input | inferred | Starts the key test (blaster) |
+| [`blaster/startService`](#blaster_startservice) | private |  | input | inferred | Starts the service (blaster) |
+| [`blaster/subscribeChannelChange`](#blaster_subscribechannelchange) | private |  | input | inferred | Subscribes to the channel change (blaster) |
+| [`blaster/updateServerKeyList`](#blaster_updateserverkeylist) | private |  | update | inferred | Updates the server key list (blaster) |
+| [`debug/setDebugCmd`](#debug_setdebugcmd) | private |  | input | inferred | Sets the debug cmd (debug) |
+| [`getCurrentChannelNumber`](#getcurrentchannelnumber) | private |  | input | inferred | Returns the current channel number. |
+| [`getCurrentChannelNumberDirect`](#getcurrentchannelnumberdirect) | private |  | input | inferred | Returns the current channel number direct. |
+| [`getMsoEncDecString`](#getmsoencdecstring) | private |  | input | inferred | Returns the mso enc dec string. |
+| [`getNewDeviceInfo`](#getnewdeviceinfo) | private |  | input | inferred | Returns the new device info. |
+| [`getToastMsg`](#gettoastmsg) | private |  | notifications | inferred | Returns the toast msg. |
+| [`getUeiAppList`](#getueiapplist) | private |  | input | inferred | Returns the uei app list. |
+| [`iot/getAllIoTDevices`](#iot_getalliotdevices) | private |  | input | inferred | Returns the all io t devices (iot) |
+| [`iot/getIoTBrandList`](#iot_getiotbrandlist) | private |  | input | inferred | Returns the io t brand list (iot) |
+| [`iot/getIoTDevice`](#iot_getiotdevice) | private |  | input | inferred | Returns the io t device (iot) |
+| [`iot/replyEventCallback`](#iot_replyeventcallback) | private |  | input | inferred | Handles the reply event callback (iot) |
+| [`iot/selectIoTDevice`](#iot_selectiotdevice) | private |  | input | inferred | Selects the io t device (iot) |
+| [`iot/setIoTDevice`](#iot_setiotdevice) | private |  | input | inferred | Sets the io t device (iot) |
+| [`sendDirectCommand`](#senddirectcommand) | private |  | input | inferred | Sends the direct command. |
+| [`setNewDevicePort`](#setnewdeviceport) | private |  | input | inferred | Sets the new device port. |
 
 <a id="blaster_adddevice"></a>
 ## `blaster/addDevice`
 
 `luna://com.webos.service.ics/blaster/addDevice`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Adds the device (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/addDevice '{}'
@@ -84,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/blockIRDevice`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Blocks the IR device (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/blockIRDevice '{}'
@@ -105,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/clearSettingCash`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Clears the setting cash (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/clearSettingCash '{}'
@@ -126,13 +134,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/delDevice`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Handles the del device (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/delDevice '{}'
@@ -147,13 +157,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/delDeviceHistory`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Handles the del device history (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/delDeviceHistory '{}'
@@ -168,13 +180,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/deleteIPConnectionHistory`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Deletes the IP connection history (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/deleteIPConnectionHistory '{}'
@@ -189,13 +203,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getAutoLookUpVersion`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the auto look up version (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getAutoLookUpVersion '{}'
@@ -210,13 +226,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getBrandList`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the brand list (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getBrandList '{}'
@@ -231,13 +249,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getBrandListByPredictive`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the brand list by predictive (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getBrandListByPredictive '{}'
@@ -252,13 +272,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getDeviceHistory`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the device history (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getDeviceHistory '{}'
@@ -273,13 +295,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getDevices`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the devices (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getDevices '{}'
@@ -294,13 +318,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getHDMIPluginInfo`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the HDMI plugin info (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getHDMIPluginInfo '{}'
@@ -315,13 +341,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getIPDeviceList`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the IP device list (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getIPDeviceList '{}'
@@ -336,13 +364,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getIrDbVersion`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the IR db version (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getIrDbVersion '{}'
@@ -357,13 +387,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getKeyList`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the key list (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getKeyList '{}'
@@ -378,13 +410,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getKeyTestResult`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the key test result (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getKeyTestResult '{}'
@@ -399,13 +433,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getModelList`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the model list (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getModelList '{}'
@@ -420,13 +456,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getPinCodeInfo`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the pin code info (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getPinCodeInfo '{}'
@@ -441,13 +479,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getSearchedModelInfo`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the searched model info (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getSearchedModelInfo '{}'
@@ -462,13 +502,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getUEICountryCode`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the UEI country code (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getUEICountryCode '{}'
@@ -483,13 +525,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getUEIDeviceStatus`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the UEI device status (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getUEIDeviceStatus '{}'
@@ -504,13 +548,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getUniversalControlSettingHistory`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the universal control setting history (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getUniversalControlSettingHistory '{}'
@@ -525,13 +571,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/getURLforUEIDevices`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the UR lfor UEI devices (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/getURLforUEIDevices '{}'
@@ -546,13 +594,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/isSupported`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Reports whether the supported is set (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/isSupported '{}'
@@ -567,13 +617,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/nextKeyTest`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Handles the next key test (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/nextKeyTest '{}'
@@ -588,13 +640,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/sendCommand`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Sends the command (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/sendCommand '{}'
@@ -609,13 +663,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/setChannel`
 
-Setter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Sets the channel (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/setChannel '{}'
@@ -630,13 +686,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/setDeviceBrand`
 
-Setter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Sets the device brand (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/setDeviceBrand '{}'
@@ -651,13 +709,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/setDeviceType`
 
-Setter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Sets the device type (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/setDeviceType '{}'
@@ -672,13 +732,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/setModelName`
 
-Setter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Sets the model name (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/setModelName '{}'
@@ -693,13 +755,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/setUEIServer`
 
-Setter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Sets the UEI server (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/setUEIServer '{}'
@@ -714,13 +778,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/startDetectDevices`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Starts the detect devices (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/startDetectDevices '{}'
@@ -735,13 +801,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/startKeyTest`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Starts the key test (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/startKeyTest '{}'
@@ -756,13 +824,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/startService`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Starts the service (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/startService '{}'
@@ -777,13 +847,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/subscribeChannelChange`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Subscribes to the channel change (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/subscribeChannelChange '{}'
@@ -798,13 +870,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/blaster/updateServerKeyList`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Updates the server key list (blaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/blaster/updateServerKeyList '{}'
@@ -819,13 +893,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/debug/setDebugCmd`
 
-Setter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Sets the debug cmd (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/debug/setDebugCmd '{}'
@@ -840,13 +916,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/getCurrentChannelNumber`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the current channel number.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/getCurrentChannelNumber '{}'
@@ -861,13 +939,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/getCurrentChannelNumberDirect`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the current channel number direct.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/getCurrentChannelNumberDirect '{}'
@@ -882,13 +962,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/getMsoEncDecString`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the mso enc dec string.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/getMsoEncDecString '{}'
@@ -903,13 +985,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/getNewDeviceInfo`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the new device info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/getNewDeviceInfo '{}'
@@ -924,13 +1008,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/getToastMsg`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the toast msg.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/getToastMsg '{}'
@@ -945,13 +1031,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/getUeiAppList`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the uei app list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/getUeiAppList '{}'
@@ -966,13 +1054,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/iot/getAllIoTDevices`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the all io t devices (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/iot/getAllIoTDevices '{}'
@@ -987,13 +1077,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/iot/getIoTBrandList`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the io t brand list (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/iot/getIoTBrandList '{}'
@@ -1008,13 +1100,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/iot/getIoTDevice`
 
-Getter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Returns the io t device (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/iot/getIoTDevice '{}'
@@ -1029,13 +1123,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/iot/replyEventCallback`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Handles the reply event callback (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/iot/replyEventCallback '{}'
@@ -1050,13 +1146,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/iot/selectIoTDevice`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Selects the io t device (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/iot/selectIoTDevice '{}'
@@ -1071,13 +1169,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/iot/setIoTDevice`
 
-Setter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Sets the io t device (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/iot/setIoTDevice '{}'
@@ -1092,13 +1192,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/sendDirectCommand`
 
-Method on com.webos.service.ics (introspected on-device; parameters undocumented).
+Sends the direct command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/sendDirectCommand '{}'
@@ -1113,13 +1215,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ics/setNewDevicePort`
 
-Setter on com.webos.service.ics (introspected on-device; parameters undocumented).
+Sets the new device port.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/setNewDevicePort '{}'

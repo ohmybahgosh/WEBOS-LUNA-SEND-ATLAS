@@ -1,34 +1,36 @@
 # `com.webos.service.mediacontroller`
 
+Media controller: registers and activates media sessions and handles AVRCP remote playback control (metadata, cover art, play/mute status, injected media keys).
+
 23 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`activateMediaSession`](#activatemediasession) | public |  | media | Activates the media session. Recommended usage : The API is recommended to be used by the application . Note: Only an active media session c |
-| [`coverArtInfo`](#coverartinfo) | unknown |  | media | Details of media cover art. |
-| [`coverArtPathInfo`](#coverartpathinfo) | unknown |  | media | Provides cover art source URI and downloaded path. |
-| [`deactivateMediaSession`](#deactivatemediasession) | public |  | media | Deactivates the media session. Recommended usage : The API is recommended to be used by the application . Note: After the media session is d |
-| [`getActiveMediaSessions`](#getactivemediasessions) | public |  | media | Gets the list of all the active media sessions. Recommended usage : The API is recommended to be used by the service . |
-| [`getMediaCoverArtPath`](#getmediacoverartpath) | public | yes | media | Downloads requested cover art URI and provides downloaded path. |
-| [`getMediaMetaData`](#getmediametadata) | public |  | media | Requests metadata of the media session related to the given mediaId. Recommended usage : The API is recommended to be used by the service . |
-| [`getMediaPlayStatus`](#getmediaplaystatus) | public |  | media | Gets the current playback status of the given mediaId, status such as stopped, paused, playing, buffering. Recommended usage : The API is re |
-| [`getMediaSessionId`](#getmediasessionid) | public |  | media | Provides the list of mediaId of all the media sessions for a given app. Recommended usage : The API is recommended to be used by the service |
-| [`getMediaSessionInfo`](#getmediasessioninfo) | public |  | media | Gets the details of a media session like app id, metadata, volume info. Recommended usage : The API is recommended to be used by the service |
-| [`injectMediaKeyEvent`](#injectmediakeyevent) | public |  | media | Sets the keyEvent of the given displayId. Recommended usage : The API is recommended to be used by the service . |
-| [`mediaMetaData`](#mediametadata) | unknown |  | media | Contains the mediaMetaData information. |
-| [`mediaSession`](#mediasession) | unknown |  | media | Contains the details about mediaId, appId, and metaData. |
-| [`receiveMediaPlaybackInfo`](#receivemediaplaybackinfo) | public | yes | media | Subscribes to receive the play status, mute status, play position, mediaMetaData information. Recommended usage : The API is recommended to  |
-| [`registerMediaSession`](#registermediasession) | public | yes | media | Registers media sessions, subscribes to receive AVRCP key events. Recommended usage : The API is recommended to be used by the application . |
-| [`setMediaCoverArt`](#setmediacoverart) | public |  | media | Sets the cover art data for media session. |
-| [`setMediaMetaData`](#setmediametadata) | public |  | media | Sets the metadata information for the session. Example: title, artist. Recommended usage : The API is recommended to be used by the applicat |
-| [`setMediaMuteStatus`](#setmediamutestatus) | public |  | media | Sets the status of the media session. Recommended usage : The API is recommended to be used by the application . |
-| [`setMediaPlayPosition`](#setmediaplayposition) | public |  | media | Sets the play position for the media session. Recommended usage : The API is recommended to be used by the application . |
-| [`setMediaPlayStatus`](#setmediaplaystatus) | public |  | media | Sets the playStatus for the session. Example: play, pause, stopped and so on. Recommended usage : The API is recommended to be used by the a |
-| [`setSupportedActions`](#setsupportedactions) | public |  | media | Sets the list of supported media actions. |
-| [`sizes`](#sizes) | unknown |  | media | Provides possible sizes for each cover art |
-| [`unregisterMediaSession`](#unregistermediasession) | public |  | media | Unsubscribes and unregisters the media session. Recommended usage : The API is recommended to be used by the application . |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`activateMediaSession`](#activatemediasession) | public |  | media | documented | Activates the media session. Recommended usage : The API is recommended to be used by the application . Note: Only an active media session c |
+| [`coverArtInfo`](#coverartinfo) | unknown |  | media | documented | Details of media cover art. |
+| [`coverArtPathInfo`](#coverartpathinfo) | unknown |  | media | documented | Provides cover art source URI and downloaded path. |
+| [`deactivateMediaSession`](#deactivatemediasession) | public |  | media | documented | Deactivates the media session. Recommended usage : The API is recommended to be used by the application . Note: After the media session is d |
+| [`getActiveMediaSessions`](#getactivemediasessions) | public |  | media | documented | Gets the list of all the active media sessions. Recommended usage : The API is recommended to be used by the service . |
+| [`getMediaCoverArtPath`](#getmediacoverartpath) | public | yes | media | documented | Downloads requested cover art URI and provides downloaded path. |
+| [`getMediaMetaData`](#getmediametadata) | public |  | media | documented | Requests metadata of the media session related to the given mediaId. Recommended usage : The API is recommended to be used by the service . |
+| [`getMediaPlayStatus`](#getmediaplaystatus) | public |  | media | documented | Gets the current playback status of the given mediaId, status such as stopped, paused, playing, buffering. Recommended usage : The API is re |
+| [`getMediaSessionId`](#getmediasessionid) | public |  | media | documented | Provides the list of mediaId of all the media sessions for a given app. Recommended usage : The API is recommended to be used by the service |
+| [`getMediaSessionInfo`](#getmediasessioninfo) | public |  | media | documented | Gets the details of a media session like app id, metadata, volume info. Recommended usage : The API is recommended to be used by the service |
+| [`injectMediaKeyEvent`](#injectmediakeyevent) | public |  | media | documented | Sets the keyEvent of the given displayId. Recommended usage : The API is recommended to be used by the service . |
+| [`mediaMetaData`](#mediametadata) | unknown |  | media | documented | Contains the mediaMetaData information. |
+| [`mediaSession`](#mediasession) | unknown |  | media | documented | Contains the details about mediaId, appId, and metaData. |
+| [`receiveMediaPlaybackInfo`](#receivemediaplaybackinfo) | public | yes | media | documented | Subscribes to receive the play status, mute status, play position, mediaMetaData information. Recommended usage : The API is recommended to  |
+| [`registerMediaSession`](#registermediasession) | public | yes | media | documented | Registers media sessions, subscribes to receive AVRCP key events. Recommended usage : The API is recommended to be used by the application . |
+| [`setMediaCoverArt`](#setmediacoverart) | public |  | media | documented | Sets the cover art data for media session. |
+| [`setMediaMetaData`](#setmediametadata) | public |  | media | documented | Sets the metadata information for the session. Example: title, artist. Recommended usage : The API is recommended to be used by the applicat |
+| [`setMediaMuteStatus`](#setmediamutestatus) | public |  | media | documented | Sets the status of the media session. Recommended usage : The API is recommended to be used by the application . |
+| [`setMediaPlayPosition`](#setmediaplayposition) | public |  | media | documented | Sets the play position for the media session. Recommended usage : The API is recommended to be used by the application . |
+| [`setMediaPlayStatus`](#setmediaplaystatus) | public |  | media | documented | Sets the playStatus for the session. Example: play, pause, stopped and so on. Recommended usage : The API is recommended to be used by the a |
+| [`setSupportedActions`](#setsupportedactions) | public |  | media | documented | Sets the list of supported media actions. |
+| [`sizes`](#sizes) | unknown |  | media | documented | Provides possible sizes for each cover art |
+| [`unregisterMediaSession`](#unregistermediasession) | public |  | media | documented | Unsubscribes and unregisters the media session. Recommended usage : The API is recommended to be used by the application . |
 
 <a id="activatemediasession"></a>
 ## `activateMediaSession`
@@ -46,6 +48,13 @@ Activates the media session. Recommended usage : The API is recommended to be us
 | Param | Type / notes |
 |---|---|
 | `mediaId` | String (required) Indicates the mediaId of the session to be activated. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/activateMediaSession '{ "mediaId":"xDFNUI" }
@@ -114,6 +123,13 @@ Deactivates the media session. Recommended usage : The API is recommended to be 
 |---|---|
 | `mediaId` | String (required) Indicates the mediaId of the session to be deactivated. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/deactivateMediaSession '{ "mediaId":"xDFNUI" }
 ```
@@ -134,6 +150,14 @@ Gets the list of all the active media sessions. Recommended usage : The API is r
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 12+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `sessionList` | String array (optional) Indicates the list of all active sessions registered with service. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/getActiveMediaSessions '{}
@@ -162,6 +186,12 @@ Downloads requested cover art URI and provides downloaded path.
 | `src` | String array (required) Source URIs of cover art images. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `coverArtPathInfo` | Object array: coverArtPathInfo (required) Provides cover art source and download path. |
+
 ```sh
 luna-send -n 3 -f luna://com.webos.service.mediacontroller/getMediaCoverArtPath '{ "displayId":0, "src":["https://storage.googleapis.com/media-session/sintel/artwork-128.png"], "subscribe":true }
 ```
@@ -186,6 +216,14 @@ Requests metadata of the media session related to the given mediaId. Recommended
 | Param | Type / notes |
 |---|---|
 | `mediaId` | String (required) Indicates the mediaId for meta data information. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `metaData` | Object: mediaMetaData (optional) Indicates details of the object mediaMetaData. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/getMediaMetaData '{ "mediaId":"xDFNUI" }
@@ -212,6 +250,14 @@ Gets the current playback status of the given mediaId, status such as stopped, p
 |---|---|
 | `mediaId` | String (required) Indicates the mediaId of the session registered. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `playStatus` | String (optional) Indicates the current play status of the media. Possible values are: - PLAYSTATE\_NONE - PLAYSTATE\_STOPPED - PLAYSTATE\_PAUSED - PLAYSTATE\_PLAYING - PLAYSTATE\_FAST\_FORWARDING - PLAYSTATE\_REWINDING - PLAYSTATE\_BUFFERING - PLAYSTATE\_ERROR |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/getMediaPlayStatus '{ "mediaId":"xDFNUI" }
 ```
@@ -236,6 +282,14 @@ Provides the list of mediaId of all the media sessions for a given app. Recommen
 | Param | Type / notes |
 |---|---|
 | `appId` | String (required) Indicates the appId for the given media session. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `mediaId` | String array (optional) Indicates the list of all mediaId for the appId received. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/getMediaSessionId '{ "appId":"com.webos.test,youtube" }
@@ -262,6 +316,14 @@ Gets the details of a media session like app id, metadata, volume info. Recommen
 |---|---|
 | `mediaId` | String (required) Indicates the mediaId for the session registered. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `sessionInfo` | Object: mediaSession (optional) Indicates media session information details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/getMediaSessionInfo '{ "mediaId":"xDFNUI" }
 ```
@@ -287,6 +349,13 @@ Sets the keyEvent of the given displayId. Recommended usage : The API is recomme
 |---|---|
 | `displayId` | Number (required) Indicates the displayId for which the key event is sent Possible values are: 0 1 |
 | `keyEvent` | String (required) Indicates the keyEvent for the display. Possible values are: play pause mute unmute next previous |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/injectMediaKeyEvent '{ "displayId":1, "keyEvent":"play" }
@@ -357,6 +426,21 @@ Subscribes to receive the play status, mute status, play position, mediaMetaData
 | `eventType` | String (optional) Indicates the status for the required event type. Note: If not set, eventType will send all the possible values as the response. Possible values are: playStatus muteStatus playPosition mediaMetaData coverArt supportedActions |
 | `subscribe` | Boolean (required) Indicates if subscribed to get notifications. Possible values are: true: Subscribed. false: Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `displayId` | Number (optional) Display ID for the required media play status. |
+| `eventType` | String (optional) Indicates the status for the required subscription response. Note: If not set, eventType will send all the possible values as the response. |
+| `playStatus` | String (optional) Indicates the current play status of the media. Note: Available only if eventType is playStatus. Possible values are: - PLAYSTATE\_NONE - PLAYSTATE\_STOPPED - PLAYSTATE\_PAUSED - PLAYSTATE\_PLAYING - PLAYSTATE\_FAST\_FORWARDING - PLAYSTATE\_REWINDING - PLAYSTATE\_BUFFERING - PLAYST |
+| `muteStatus` | String (optional) Indicates the current status of the media. Note: Available only if eventType is muteStatus. Possible values are: - mute - unmute |
+| `playPosition` | String (optional) Indicates the current play position of the media. Note: Available only if eventType is playPosition. |
+| `mediaMetaData` | Object: mediaMetaData (optional) Indicates the metadata information for the playback. Note: Available only if eventType is mediaMetaData. |
+| `coverArt` | Object array: coverArtInfo (optional) Details of media cover art. Note: Available only if eventType is coverArt. |
+| `supportedActions` | String array (optional) List of supported actions that are specified in setSupportedActions method. Note: Available only if eventType is supportedActions. |
+| `appId` | String (optional) Application Id for media session. |
+| `mediaId` | String (optional) Media Id for media session. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/receiveMediaPlaybackInfo '{ "displayId":0, "eventType":"supportedActions", "subscribe":true }
 ```
@@ -383,6 +467,15 @@ Registers media sessions, subscribes to receive AVRCP key events. Recommended us
 | `mediaId` | String (required) Indicates the mediaId of the session to be registered. |
 | `appId` | String (required) Indicates the appId of the session to be registered. |
 | `subscribe` | Boolean (required) Indicates if subscribe to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `keyEvent` | String (optional) Indicates the key event that is operated. Possible values are: - play - pause - next - previous - mute - unmute |
+| `mediaId` | String (optional) Indicates the mediaId of the registered session. |
+| `errorCode` | Boolean (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/registerMediaSession '{ "mediaId":"xDFNUI", "appId":"com.webos.app.test.youtube", "subscribe":true }
@@ -436,6 +529,13 @@ Sets the metadata information for the session. Example: title, artist. Recommend
 | `mediaId` | String (required) Indicates the mediaId of the session to set metadata. |
 | `mediaMetaData` | Object: mediaMetaData (required) Indicates the meta data details for the session. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/setMediaMetaData '{ "mediaId":"xDFNUI", "mediaMetaData":{ "title":"BigBangTheory", "artist":"BigBang", "totalDuration":"10.10", "album":"BBT", "genre":"drama", "trackNumber":2, "volume":100 } }
 ```
@@ -461,6 +561,13 @@ Sets the status of the media session. Recommended usage : The API is recommended
 |---|---|
 | `mediaId` | String (required) Indicates the mediaId of the session required to set the muteStatus. |
 | `muteStatus` | String (required) Indicates the status of the media session. Possible values are: mute unmute |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/setMediaMuteStatus '{ "mediaId":"xDFNUI", "muteStatus":"mute" }
@@ -488,6 +595,13 @@ Sets the play position for the media session. Recommended usage : The API is rec
 | `mediaId` | String (required) Indicates the mediaId of the session. |
 | `playPosition` | String (required) Indicates the current play position of the media session. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/setMediaPlayPosition '{ "mediaId":"xDFNUI", "playPosition":"10.10" }
 ```
@@ -513,6 +627,13 @@ Sets the playStatus for the session. Example: play, pause, stopped and so on. Re
 |---|---|
 | `mediaId` | String (required) Indicates the mediaId of the session to set playStatus. |
 | `playStatus` | String (required) Indicates the current playStatus of the media. Possible values are: PLAYSTATE_NONE PLAYSTATE_STOPPED PLAYSTATE_PAUSED PLAYSTATE_PLAYING PLAYSTATE_FAST_FORWARDING PLAYSTATE_REWINDING PLAYSTATE_BUFFERING PLAYSTATE_ERROR |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/setMediaPlayStatus '{ "mediaId":"xQWERTY_0", "playStatus":"PLAYSTATE_PLAYING" }
@@ -585,6 +706,13 @@ Unsubscribes and unregisters the media session. Recommended usage : The API is r
 | Param | Type / notes |
 |---|---|
 | `mediaId` | String (required) Indicates the mediaId of the session to be unregistered. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediacontroller/unregisterMediaSession '{ "mediaId":"xDFNUI" }

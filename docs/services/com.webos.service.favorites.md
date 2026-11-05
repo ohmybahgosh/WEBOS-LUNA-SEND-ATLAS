@@ -1,47 +1,51 @@
 # `com.webos.service.favorites`
 
+Favorites service: manages favorite TV channels (add, edit, remove, pair) and favorite/recommended shows, including interactive and recommendation handling. _(inferred from the service's methods)_
+
 23 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`channels/add`](#channels_add) | public |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`channels/edit`](#channels_edit) | public |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`channels/get`](#channels_get) | public |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`channels/pair`](#channels_pair) | public |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`channels/remove`](#channels_remove) | public |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`iepg/update`](#iepg_update) | public |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`interactive`](#interactive) | public |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/add`](#shows_add) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/editPosition`](#shows_editposition) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/getAll`](#shows_getall) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/getById`](#shows_getbyid) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/remove`](#shows_remove) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`shows/removeAll`](#shows_removeall) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`shows/setAsRecommendation`](#shows_setasrecommendation) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/setRecommendationAsFavorite`](#shows_setrecommendationasfavorite) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/updateCPFilter`](#shows_updatecpfilter) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/updateDetails`](#shows_updatedetails) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/updateEpisodeDetail`](#shows_updateepisodedetail) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/updateHomeWedge`](#shows_updatehomewedge) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/updateRecommendations`](#shows_updaterecommendations) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
-| [`shows/updateSponsoredDatabase`](#shows_updatesponsoreddatabase) | private |  | tv-broadcast | Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`channels/add`](#channels_add) | public |  | tv-broadcast | inferred | Adds the favorites (channels) |
+| [`channels/edit`](#channels_edit) | public |  | tv-broadcast | inferred | Edits the favorites (channels) |
+| [`channels/get`](#channels_get) | public |  | tv-broadcast | inferred | Returns the favorites (channels) |
+| [`channels/pair`](#channels_pair) | public |  | tv-broadcast | inferred | Pairs the favorites (channels) |
+| [`channels/remove`](#channels_remove) | public |  | tv-broadcast | inferred | Removes the favorites (channels) ⚠️ |
+| [`iepg/update`](#iepg_update) | public |  | tv-broadcast | inferred | Updates the favorites (IEPG) |
+| [`info`](#info) | public |  | tv-broadcast | inferred | Handles the info. |
+| [`interactive`](#interactive) | public |  | tv-broadcast | inferred | Handles the interactive. |
+| [`quit`](#quit) | public |  | tv-broadcast | inferred | Quits the favorites. |
+| [`shows/add`](#shows_add) | private |  | tv-broadcast | inferred | Adds the favorites (shows) |
+| [`shows/editPosition`](#shows_editposition) | private |  | tv-broadcast | inferred | Edits the position (shows) |
+| [`shows/getAll`](#shows_getall) | private |  | tv-broadcast | inferred | Returns the all (shows) |
+| [`shows/getById`](#shows_getbyid) | private |  | tv-broadcast | inferred | Returns the by ID (shows) |
+| [`shows/remove`](#shows_remove) | private |  | tv-broadcast | inferred | Removes the favorites (shows) ⚠️ |
+| [`shows/removeAll`](#shows_removeall) | private |  | tv-broadcast | inferred | Removes the all (shows) ⚠️ |
+| [`shows/setAsRecommendation`](#shows_setasrecommendation) | private |  | tv-broadcast | inferred | Sets the as recommendation (shows) |
+| [`shows/setRecommendationAsFavorite`](#shows_setrecommendationasfavorite) | private |  | tv-broadcast | inferred | Sets the recommendation as favorite (shows) |
+| [`shows/updateCPFilter`](#shows_updatecpfilter) | private |  | tv-broadcast | inferred | Updates the CP filter (shows) |
+| [`shows/updateDetails`](#shows_updatedetails) | private |  | tv-broadcast | inferred | Updates the details (shows) |
+| [`shows/updateEpisodeDetail`](#shows_updateepisodedetail) | private |  | tv-broadcast | inferred | Updates the episode detail (shows) |
+| [`shows/updateHomeWedge`](#shows_updatehomewedge) | private |  | tv-broadcast | inferred | Updates the home wedge (shows) |
+| [`shows/updateRecommendations`](#shows_updaterecommendations) | private |  | tv-broadcast | inferred | Updates the recommendations (shows) |
+| [`shows/updateSponsoredDatabase`](#shows_updatesponsoreddatabase) | private |  | tv-broadcast | inferred | Updates the sponsored database (shows) |
 
 <a id="channels_add"></a>
 ## `channels/add`
 
 `luna://com.webos.service.favorites/channels/add`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Adds the favorites (channels)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/channels/add '{}'
@@ -56,13 +60,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/channels/edit`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Edits the favorites (channels)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/channels/edit '{}'
@@ -77,13 +83,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/channels/get`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Returns the favorites (channels)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/channels/get '{}'
@@ -98,13 +106,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/channels/pair`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Pairs the favorites (channels)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/channels/pair '{}'
@@ -119,13 +129,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/channels/remove`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Removes the favorites (channels)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/channels/remove '{}'
@@ -140,13 +152,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/iepg/update`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Updates the favorites (IEPG)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/iepg/update '{}'
@@ -161,13 +175,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/info`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/info '{}'
@@ -182,13 +198,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/interactive`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Handles the interactive.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/interactive '{}'
@@ -203,13 +221,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/quit`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Quits the favorites.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/quit '{}'
@@ -224,13 +244,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/add`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Adds the favorites (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/add '{}'
@@ -245,13 +267,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/editPosition`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Edits the position (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/editPosition '{}'
@@ -266,13 +290,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/getAll`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Returns the all (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/getAll '{}'
@@ -287,13 +313,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/getById`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Returns the by ID (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/getById '{}'
@@ -308,13 +336,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/remove`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Removes the favorites (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/remove '{}'
@@ -329,13 +359,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/removeAll`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Removes the all (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/removeAll '{}'
@@ -350,13 +382,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/setAsRecommendation`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Sets the as recommendation (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/setAsRecommendation '{}'
@@ -371,13 +405,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/setRecommendationAsFavorite`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Sets the recommendation as favorite (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/setRecommendationAsFavorite '{}'
@@ -392,13 +428,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/updateCPFilter`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Updates the CP filter (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/updateCPFilter '{}'
@@ -413,13 +451,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/updateDetails`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Updates the details (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/updateDetails '{}'
@@ -434,13 +474,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/updateEpisodeDetail`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Updates the episode detail (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/updateEpisodeDetail '{}'
@@ -455,13 +497,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/updateHomeWedge`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Updates the home wedge (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/updateHomeWedge '{}'
@@ -476,13 +520,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/updateRecommendations`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Updates the recommendations (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/updateRecommendations '{}'
@@ -497,13 +543,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.favorites/shows/updateSponsoredDatabase`
 
-Method on com.webos.service.favorites (from on-device permission registry; parameters undocumented).
+Updates the sponsored database (shows)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.favorites/shows/updateSponsoredDatabase '{}'

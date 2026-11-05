@@ -1,25 +1,29 @@
 # `com.webos.surfacemanager.home`
 
+Surface-manager helper that reports the current Home UI state. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getCurrentHomeUIState`](#getcurrenthomeuistate) | private |  | ui | Method on com.webos.surfacemanager.home (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getCurrentHomeUIState`](#getcurrenthomeuistate) | private |  | ui | inferred | Returns the current home UI state. |
 
 <a id="getcurrenthomeuistate"></a>
 ## `getCurrentHomeUIState`
 
 `luna://com.webos.surfacemanager.home/getCurrentHomeUIState`
 
-Method on com.webos.surfacemanager.home (from on-device permission registry; parameters undocumented).
+Returns the current home UI state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager.home/getCurrentHomeUIState '{}'

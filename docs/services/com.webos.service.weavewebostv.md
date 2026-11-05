@@ -1,28 +1,32 @@
 # `com.webos.service.weavewebostv`
 
+Device-registration service (Weave): returns an auth URL and the registered ID, and requests or releases device registration. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getAuthUrl`](#getauthurl) | public |  | misc | Method on com.webos.service.weavewebostv (from on-device permission registry; parameters undocumented). |
-| [`getRegisteredId`](#getregisteredid) | public |  | misc | Method on com.webos.service.weavewebostv (from on-device permission registry; parameters undocumented). |
-| [`releaseDeviceRegistration`](#releasedeviceregistration) | public |  | misc | Method on com.webos.service.weavewebostv (from on-device permission registry; parameters undocumented). |
-| [`requestDeviceRegistration`](#requestdeviceregistration) | public |  | misc | Method on com.webos.service.weavewebostv (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getAuthUrl`](#getauthurl) | public |  | misc | inferred | Returns the auth URL. |
+| [`getRegisteredId`](#getregisteredid) | public |  | misc | inferred | Returns the registered ID. |
+| [`releaseDeviceRegistration`](#releasedeviceregistration) | public |  | misc | inferred | Releases the device registration. |
+| [`requestDeviceRegistration`](#requestdeviceregistration) | public |  | misc | inferred | Requests the device registration. |
 
 <a id="getauthurl"></a>
 ## `getAuthUrl`
 
 `luna://com.webos.service.weavewebostv/getAuthUrl`
 
-Method on com.webos.service.weavewebostv (from on-device permission registry; parameters undocumented).
+Returns the auth URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.weavewebostv/getAuthUrl '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.weavewebostv/getRegisteredId`
 
-Method on com.webos.service.weavewebostv (from on-device permission registry; parameters undocumented).
+Returns the registered ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.weavewebostv/getRegisteredId '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.weavewebostv/releaseDeviceRegistration`
 
-Method on com.webos.service.weavewebostv (from on-device permission registry; parameters undocumented).
+Releases the device registration.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.weavewebostv/releaseDeviceRegistration '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.weavewebostv/requestDeviceRegistration`
 
-Method on com.webos.service.weavewebostv (from on-device permission registry; parameters undocumented).
+Requests the device registration.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.weavewebostv/requestDeviceRegistration '{}'

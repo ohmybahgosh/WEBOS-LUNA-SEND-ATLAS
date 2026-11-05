@@ -1,29 +1,33 @@
 # `com.webos.service.nabs.subtitle`
 
+NABS subtitle/caption service: enables and disables subtitles and gets/sets caption position. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`disableSubtitle`](#disablesubtitle) | private |  | tv-broadcast | Method on com.webos.service.nabs.subtitle (from on-device permission registry; parameters undocumented). |
-| [`enableSubtitle`](#enablesubtitle) | private |  | tv-broadcast | Method on com.webos.service.nabs.subtitle (from on-device permission registry; parameters undocumented). |
-| [`getCaptionPosition`](#getcaptionposition) | private |  | tv-broadcast | Method on com.webos.service.nabs.subtitle (from on-device permission registry; parameters undocumented). |
-| [`getSubtitleState`](#getsubtitlestate) | private |  | tv-broadcast | Method on com.webos.service.nabs.subtitle (from on-device permission registry; parameters undocumented). |
-| [`setCaptionPosition`](#setcaptionposition) | private |  | tv-broadcast | Method on com.webos.service.nabs.subtitle (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`disableSubtitle`](#disablesubtitle) | private |  | tv-broadcast | inferred | Disables the subtitle. |
+| [`enableSubtitle`](#enablesubtitle) | private |  | tv-broadcast | inferred | Enables the subtitle. |
+| [`getCaptionPosition`](#getcaptionposition) | private |  | tv-broadcast | inferred | Returns the caption position. |
+| [`getSubtitleState`](#getsubtitlestate) | private |  | tv-broadcast | inferred | Returns the subtitle state. |
+| [`setCaptionPosition`](#setcaptionposition) | private |  | tv-broadcast | inferred | Sets the caption position. |
 
 <a id="disablesubtitle"></a>
 ## `disableSubtitle`
 
 `luna://com.webos.service.nabs.subtitle/disableSubtitle`
 
-Method on com.webos.service.nabs.subtitle (from on-device permission registry; parameters undocumented).
+Disables the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.subtitle/disableSubtitle '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.subtitle/enableSubtitle`
 
-Method on com.webos.service.nabs.subtitle (from on-device permission registry; parameters undocumented).
+Enables the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.subtitle/enableSubtitle '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.subtitle/getCaptionPosition`
 
-Method on com.webos.service.nabs.subtitle (from on-device permission registry; parameters undocumented).
+Returns the caption position.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.subtitle/getCaptionPosition '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.subtitle/getSubtitleState`
 
-Method on com.webos.service.nabs.subtitle (from on-device permission registry; parameters undocumented).
+Returns the subtitle state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.subtitle/getSubtitleState '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.subtitle/setCaptionPosition`
 
-Method on com.webos.service.nabs.subtitle (from on-device permission registry; parameters undocumented).
+Sets the caption position.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.subtitle/setCaptionPosition '{}'

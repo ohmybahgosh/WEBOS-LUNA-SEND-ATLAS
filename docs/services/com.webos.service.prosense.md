@@ -1,31 +1,35 @@
 # `com.webos.service.prosense`
 
+ProSense monitoring service: starts/stops monitoring, reports monitor status, and notifies faults. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getMonitorStatus`](#getmonitorstatus) | private |  | misc | Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented). |
-| [`getMonitorStatust`](#getmonitorstatust) | private |  | misc | Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented). |
-| [`notifyFault`](#notifyfault) | private |  | misc | Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented). |
-| [`setMonitor`](#setmonitor) | private |  | misc | Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | private |  | misc | Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented). |
-| [`stopMonitor`](#stopmonitor) | private |  | misc | Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getMonitorStatus`](#getmonitorstatus) | private |  | misc | inferred | Returns the monitor status. |
+| [`getMonitorStatust`](#getmonitorstatust) | private |  | misc | inferred | Returns the monitor statust. |
+| [`notifyFault`](#notifyfault) | private |  | misc | inferred | Notifies of the fault. |
+| [`setMonitor`](#setmonitor) | private |  | misc | inferred | Sets the monitor. |
+| [`start`](#start) | private |  | misc | inferred | Starts the prosense. |
+| [`stop`](#stop) | private |  | misc | inferred | Stops the prosense. |
+| [`stopMonitor`](#stopmonitor) | private |  | misc | inferred | Stops the monitor. |
 
 <a id="getmonitorstatus"></a>
 ## `getMonitorStatus`
 
 `luna://com.webos.service.prosense/getMonitorStatus`
 
-Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented).
+Returns the monitor status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prosense/getMonitorStatus '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prosense/getMonitorStatust`
 
-Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented).
+Returns the monitor statust.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prosense/getMonitorStatust '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prosense/notifyFault`
 
-Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented).
+Notifies of the fault.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prosense/notifyFault '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prosense/setMonitor`
 
-Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented).
+Sets the monitor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prosense/setMonitor '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prosense/start`
 
-Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented).
+Starts the prosense.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prosense/start '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prosense/stop`
 
-Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented).
+Stops the prosense.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prosense/stop '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prosense/stopMonitor`
 
-Method on com.webos.service.prosense (from on-device permission registry; parameters undocumented).
+Stops the monitor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prosense/stopMonitor '{}'

@@ -1,13 +1,15 @@
 # `ssap:externalpq`
 
+SSAP (second-screen protocol) endpoint for external picture-quality data: gets and sets external PQ data. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getExternalPqData`](#getexternalpqdata) | ssap |  | picture | Read back calibration data |
-| [`setExternalPqData`](#setexternalpqdata) | ssap |  | picture | Calibration/picture-quality upload API (CalMAN/ColourSpace style): set 1D/3D LUTs, gamut matrices, UI values, tone-map, iTPG patterns |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getExternalPqData`](#getexternalpqdata) | ssap |  | picture | documented | Read back calibration data |
+| [`setExternalPqData`](#setexternalpqdata) | ssap |  | picture | documented | Calibration/picture-quality upload API (CalMAN/ColourSpace style): set 1D/3D LUTs, gamut matrices, UI values, tone-map, iTPG patterns |
 
 <a id="getexternalpqdata"></a>
 ## `getExternalPqData`
@@ -20,7 +22,7 @@ Read back calibration data
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -45,7 +47,7 @@ Calibration/picture-quality upload API (CalMAN/ColourSpace style): set 1D/3D LUT
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

@@ -1,25 +1,29 @@
 # `com.webos.service.lsa`
 
+Opaque service exposing only a 'start' method; purpose not inferable from its API. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`start`](#start) | private |  | misc | Method on com.webos.service.lsa (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`start`](#start) | private |  | misc | inferred | Starts the lsa. |
 
 <a id="start"></a>
 ## `start`
 
 `luna://com.webos.service.lsa/start`
 
-Method on com.webos.service.lsa (from on-device permission registry; parameters undocumented).
+Starts the lsa.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.lsa/start '{}'

@@ -1,17 +1,19 @@
 # `ssap:webapp`
 
+SSAP (remote control protocol) web-app endpoint: launches, connects to, and closes web apps and pins or unpins them, over the TV's external control socket.
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`closeWebApp`](#closewebapp) | ssap |  | apps | Close web app |
-| [`connectToApp`](#connecttoapp) | ssap |  | apps | Connect to a web app session (ConnectSDK) |
-| [`isWebAppPinned`](#iswebapppinned) | ssap |  | apps | Check whether web app is pinned |
-| [`launchWebApp`](#launchwebapp) | ssap |  | apps | Launch a web app (ConnectSDK) |
-| [`pinWebApp`](#pinwebapp) | ssap |  | apps | Pin web app |
-| [`removePinnedWebApp`](#removepinnedwebapp) | ssap |  | apps | Unpin web app |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`closeWebApp`](#closewebapp) | ssap |  | apps | documented | Close web app |
+| [`connectToApp`](#connecttoapp) | ssap |  | apps | documented | Connect to a web app session (ConnectSDK) |
+| [`isWebAppPinned`](#iswebapppinned) | ssap |  | apps | documented | Check whether web app is pinned |
+| [`launchWebApp`](#launchwebapp) | ssap |  | apps | documented | Launch a web app (ConnectSDK) |
+| [`pinWebApp`](#pinwebapp) | ssap |  | apps | documented | Pin web app |
+| [`removePinnedWebApp`](#removepinnedwebapp) | ssap |  | apps | documented | Unpin web app |
 
 <a id="closewebapp"></a>
 ## `closeWebApp`
@@ -24,7 +26,7 @@ Close web app
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -50,7 +52,7 @@ Connect to a web app session (ConnectSDK)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -75,7 +77,7 @@ Check whether web app is pinned
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -100,7 +102,7 @@ Launch a web app (ConnectSDK)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -126,7 +128,7 @@ Pin web app
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -151,7 +153,7 @@ Unpin web app
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

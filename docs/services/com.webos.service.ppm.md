@@ -1,31 +1,35 @@
 # `com.webos.service.ppm`
 
+Permission manager (PPM): requests, checks, sets, updates, removes and queries app permissions. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkPermission`](#checkpermission) | private |  | misc | Method on com.webos.service.ppm (introspected on-device; parameters undocumented). |
-| [`notifyAlertClosed`](#notifyalertclosed) | private |  | misc | Method on com.webos.service.ppm (introspected on-device; parameters undocumented). |
-| [`queryPermissions`](#querypermissions) | private |  | misc | Method on com.webos.service.ppm (introspected on-device; parameters undocumented). |
-| [`removePermission`](#removepermission) | private |  | misc | Method on com.webos.service.ppm (introspected on-device; parameters undocumented). ⚠️ |
-| [`requestPermission`](#requestpermission) | public |  | misc | Method on com.webos.service.ppm (introspected on-device; parameters undocumented). |
-| [`setPermission`](#setpermission) | private |  | misc | Setter on com.webos.service.ppm (introspected on-device; parameters undocumented). |
-| [`updatePermission`](#updatepermission) | private |  | update | Method on com.webos.service.ppm (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkPermission`](#checkpermission) | private |  | misc | inferred | Checks the permission. |
+| [`notifyAlertClosed`](#notifyalertclosed) | private |  | misc | inferred | Notifies of the alert closed. |
+| [`queryPermissions`](#querypermissions) | private |  | misc | inferred | Queries the permissions. |
+| [`removePermission`](#removepermission) | private |  | misc | inferred | Removes the permission. ⚠️ |
+| [`requestPermission`](#requestpermission) | public |  | misc | inferred | Requests the permission. |
+| [`setPermission`](#setpermission) | private |  | misc | inferred | Sets the permission. |
+| [`updatePermission`](#updatepermission) | private |  | update | inferred | Updates the permission. |
 
 <a id="checkpermission"></a>
 ## `checkPermission`
 
 `luna://com.webos.service.ppm/checkPermission`
 
-Method on com.webos.service.ppm (introspected on-device; parameters undocumented).
+Checks the permission.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ppm/checkPermission '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ppm/notifyAlertClosed`
 
-Method on com.webos.service.ppm (introspected on-device; parameters undocumented).
+Notifies of the alert closed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ppm/notifyAlertClosed '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ppm/queryPermissions`
 
-Method on com.webos.service.ppm (introspected on-device; parameters undocumented).
+Queries the permissions.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ppm/queryPermissions '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ppm/removePermission`
 
-Method on com.webos.service.ppm (introspected on-device; parameters undocumented).
+Removes the permission.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ppm/removePermission '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ppm/requestPermission`
 
-Method on com.webos.service.ppm (introspected on-device; parameters undocumented).
+Requests the permission.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ppm/requestPermission '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ppm/setPermission`
 
-Setter on com.webos.service.ppm (introspected on-device; parameters undocumented).
+Sets the permission.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ppm/setPermission '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ppm/updatePermission`
 
-Method on com.webos.service.ppm (introspected on-device; parameters undocumented).
+Updates the permission.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ppm/updatePermission '{}'

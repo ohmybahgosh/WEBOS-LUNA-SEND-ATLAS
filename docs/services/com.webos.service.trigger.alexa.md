@@ -1,28 +1,32 @@
 # `com.webos.service.trigger.alexa`
 
+Alexa trigger service: gets and sets Alexa activation and reports data version, likely gating the far-field/voice Alexa feature. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getActivation`](#getactivation) | private |  | input | Getter on com.webos.service.trigger.alexa (introspected on-device; parameters undocumented). |
-| [`getDataVersion`](#getdataversion) | private |  | input | Getter on com.webos.service.trigger.alexa (introspected on-device; parameters undocumented). |
-| [`setActivation`](#setactivation) | private |  | input | Setter on com.webos.service.trigger.alexa (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | input | Method on com.webos.service.trigger.alexa (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getActivation`](#getactivation) | private |  | input | inferred | Returns the activation. |
+| [`getDataVersion`](#getdataversion) | private |  | input | inferred | Returns the data version. |
+| [`setActivation`](#setactivation) | private |  | input | inferred | Sets the activation. |
+| [`start`](#start) | private |  | input | inferred | Starts the trigger alexa. |
 
 <a id="getactivation"></a>
 ## `getActivation`
 
 `luna://com.webos.service.trigger.alexa/getActivation`
 
-Getter on com.webos.service.trigger.alexa (introspected on-device; parameters undocumented).
+Returns the activation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.alexa/getActivation '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.trigger.alexa/getDataVersion`
 
-Getter on com.webos.service.trigger.alexa (introspected on-device; parameters undocumented).
+Returns the data version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.alexa/getDataVersion '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.trigger.alexa/setActivation`
 
-Setter on com.webos.service.trigger.alexa (introspected on-device; parameters undocumented).
+Sets the activation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.alexa/setActivation '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.trigger.alexa/start`
 
-Method on com.webos.service.trigger.alexa (introspected on-device; parameters undocumented).
+Starts the trigger alexa.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.alexa/start '{}'

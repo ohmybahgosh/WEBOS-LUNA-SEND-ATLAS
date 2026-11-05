@@ -1,34 +1,38 @@
 # `com.webos.service.gibbips.subtitle`
 
+GIBBIPS subtitle/caption service: enables/disables subtitles, lists them, reports rating and state, and serves hybrid-TV caption data. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`disableSubtitle`](#disablesubtitle) | private |  | tv-broadcast | Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented). |
-| [`enableSubtitle`](#enablesubtitle) | private |  | tv-broadcast | Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented). |
-| [`getRatingInfo`](#getratinginfo) | private |  | tv-broadcast | Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented). |
-| [`getSubtitleList`](#getsubtitlelist) | private |  | tv-broadcast | Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented). |
-| [`getSubtitleState`](#getsubtitlestate) | private |  | tv-broadcast | Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented). |
-| [`hybridtv/getSubtitle`](#hybridtv_getsubtitle) | private |  | tv-broadcast | Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented). |
-| [`hybridtv/registerCaptionData`](#hybridtv_registercaptiondata) | private |  | tv-broadcast | Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented). |
-| [`hybridtv/selectSubtitle`](#hybridtv_selectsubtitle) | private |  | tv-broadcast | Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented). |
-| [`hybridtv/subscribeCaptionData`](#hybridtv_subscribecaptiondata) | private |  | tv-broadcast | Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented). |
-| [`hybridtv/subtitleMute`](#hybridtv_subtitlemute) | private |  | tv-broadcast | Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`disableSubtitle`](#disablesubtitle) | private |  | tv-broadcast | inferred | Disables the subtitle. |
+| [`enableSubtitle`](#enablesubtitle) | private |  | tv-broadcast | inferred | Enables the subtitle. |
+| [`getRatingInfo`](#getratinginfo) | private |  | tv-broadcast | inferred | Returns the rating info. |
+| [`getSubtitleList`](#getsubtitlelist) | private |  | tv-broadcast | inferred | Returns the subtitle list. |
+| [`getSubtitleState`](#getsubtitlestate) | private |  | tv-broadcast | inferred | Returns the subtitle state. |
+| [`hybridtv/getSubtitle`](#hybridtv_getsubtitle) | private |  | tv-broadcast | inferred | Returns the subtitle (hybridtv) |
+| [`hybridtv/registerCaptionData`](#hybridtv_registercaptiondata) | private |  | tv-broadcast | inferred | Registers the caption data (hybridtv) |
+| [`hybridtv/selectSubtitle`](#hybridtv_selectsubtitle) | private |  | tv-broadcast | inferred | Selects the subtitle (hybridtv) |
+| [`hybridtv/subscribeCaptionData`](#hybridtv_subscribecaptiondata) | private |  | tv-broadcast | inferred | Subscribes to the caption data (hybridtv) |
+| [`hybridtv/subtitleMute`](#hybridtv_subtitlemute) | private |  | tv-broadcast | inferred | Handles the subtitle mute (hybridtv) |
 
 <a id="disablesubtitle"></a>
 ## `disableSubtitle`
 
 `luna://com.webos.service.gibbips.subtitle/disableSubtitle`
 
-Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented).
+Disables the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.subtitle/disableSubtitle '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.subtitle/enableSubtitle`
 
-Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented).
+Enables the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.subtitle/enableSubtitle '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.subtitle/getRatingInfo`
 
-Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented).
+Returns the rating info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.subtitle/getRatingInfo '{}'
@@ -85,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.subtitle/getSubtitleList`
 
-Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented).
+Returns the subtitle list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.subtitle/getSubtitleList '{}'
@@ -106,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.subtitle/getSubtitleState`
 
-Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented).
+Returns the subtitle state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.subtitle/getSubtitleState '{}'
@@ -127,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.subtitle/hybridtv/getSubtitle`
 
-Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented).
+Returns the subtitle (hybridtv)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.subtitle/hybridtv/getSubtitle '{}'
@@ -148,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.subtitle/hybridtv/registerCaptionData`
 
-Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented).
+Registers the caption data (hybridtv)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.subtitle/hybridtv/registerCaptionData '{}'
@@ -169,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.subtitle/hybridtv/selectSubtitle`
 
-Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented).
+Selects the subtitle (hybridtv)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.subtitle/hybridtv/selectSubtitle '{}'
@@ -190,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.subtitle/hybridtv/subscribeCaptionData`
 
-Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented).
+Subscribes to the caption data (hybridtv)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.subtitle/hybridtv/subscribeCaptionData '{}'
@@ -211,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.subtitle/hybridtv/subtitleMute`
 
-Method on com.webos.service.gibbips.subtitle (from on-device permission registry; parameters undocumented).
+Handles the subtitle mute (hybridtv)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.subtitle/hybridtv/subtitleMute '{}'

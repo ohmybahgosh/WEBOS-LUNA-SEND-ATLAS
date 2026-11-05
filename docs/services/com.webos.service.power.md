@@ -1,42 +1,46 @@
 # `com.webos.service.power`
 
+System power service: coordinates shutdown and reboot and manages suspend/resume, letting apps and services register for and acknowledge prepare-suspend and shutdown events.
+
 18 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`shutdown/initiate`](#shutdown_initiate) | private |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). ⚠️ |
-| [`shutdown/machineOff`](#shutdown_machineoff) | private |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). ⚠️ |
-| [`shutdown/machineReboot`](#shutdown_machinereboot) | private |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). ⚠️ |
-| [`shutdown/shutdownApplicationsAck`](#shutdown_shutdownapplicationsack) | private |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). ⚠️ |
-| [`shutdown/shutdownApplicationsRegister`](#shutdown_shutdownapplicationsregister) | private |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). ⚠️ |
-| [`shutdown/shutdownServicesAck`](#shutdown_shutdownservicesack) | private |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). ⚠️ |
-| [`shutdown/shutdownServicesRegister`](#shutdown_shutdownservicesregister) | private |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). ⚠️ |
-| [`shutdown/TESTresetShutdownState`](#shutdown_testresetshutdownstate) | private |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). ⚠️ |
-| [`suspend/activityEnd`](#suspend_activityend) | public |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). |
-| [`suspend/activityStart`](#suspend_activitystart) | public |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). |
-| [`suspend/clientCancelByName`](#suspend_clientcancelbyname) | public |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). |
-| [`suspend/forceSuspend`](#suspend_forcesuspend) | public |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). |
-| [`suspend/identify`](#suspend_identify) | public |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). |
-| [`suspend/prepareSuspendAck`](#suspend_preparesuspendack) | public |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). |
-| [`suspend/prepareSuspendRegister`](#suspend_preparesuspendregister) | public |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). |
-| [`suspend/suspendRequestAck`](#suspend_suspendrequestack) | public |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). |
-| [`suspend/suspendRequestRegister`](#suspend_suspendrequestregister) | public |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). |
-| [`suspend/TESTSuspend`](#suspend_testsuspend) | public |  | power | Method on com.webos.service.power (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`shutdown/initiate`](#shutdown_initiate) | private |  | power | inferred | Handles the initiate (shutdown) ⚠️ |
+| [`shutdown/machineOff`](#shutdown_machineoff) | private |  | power | inferred | Handles the machine off (shutdown) ⚠️ |
+| [`shutdown/machineReboot`](#shutdown_machinereboot) | private |  | power | inferred | Handles the machine reboot (shutdown) ⚠️ |
+| [`shutdown/shutdownApplicationsAck`](#shutdown_shutdownapplicationsack) | private |  | power | inferred | Shuts down the applications ack (shutdown) ⚠️ |
+| [`shutdown/shutdownApplicationsRegister`](#shutdown_shutdownapplicationsregister) | private |  | power | inferred | Shuts down the applications register (shutdown) ⚠️ |
+| [`shutdown/shutdownServicesAck`](#shutdown_shutdownservicesack) | private |  | power | inferred | Shuts down the services ack (shutdown) ⚠️ |
+| [`shutdown/shutdownServicesRegister`](#shutdown_shutdownservicesregister) | private |  | power | inferred | Shuts down the services register (shutdown) ⚠️ |
+| [`shutdown/TESTresetShutdownState`](#shutdown_testresetshutdownstate) | private |  | power | inferred | Handles the TES treset shutdown state (shutdown) ⚠️ |
+| [`suspend/activityEnd`](#suspend_activityend) | public |  | power | inferred | Handles the activity end (suspend) |
+| [`suspend/activityStart`](#suspend_activitystart) | public |  | power | inferred | Handles the activity start (suspend) |
+| [`suspend/clientCancelByName`](#suspend_clientcancelbyname) | public |  | power | inferred | Handles the client cancel by name (suspend) |
+| [`suspend/forceSuspend`](#suspend_forcesuspend) | public |  | power | inferred | Forces the suspend (suspend) |
+| [`suspend/identify`](#suspend_identify) | public |  | power | inferred | Handles the identify (suspend) |
+| [`suspend/prepareSuspendAck`](#suspend_preparesuspendack) | public |  | power | inferred | Prepares the suspend ack (suspend) |
+| [`suspend/prepareSuspendRegister`](#suspend_preparesuspendregister) | public |  | power | inferred | Prepares the suspend register (suspend) |
+| [`suspend/suspendRequestAck`](#suspend_suspendrequestack) | public |  | power | inferred | Handles the suspend request ack (suspend) |
+| [`suspend/suspendRequestRegister`](#suspend_suspendrequestregister) | public |  | power | inferred | Handles the suspend request register (suspend) |
+| [`suspend/TESTSuspend`](#suspend_testsuspend) | public |  | power | inferred | Tests the suspend (suspend) |
 
 <a id="shutdown_initiate"></a>
 ## `shutdown/initiate` ⚠️ DANGEROUS
 
 `luna://com.webos.service.power/shutdown/initiate`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Handles the initiate (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/shutdown/initiate '{}'
@@ -51,13 +55,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/shutdown/machineOff`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Handles the machine off (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/shutdown/machineOff '{}'
@@ -72,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/shutdown/machineReboot`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Handles the machine reboot (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/shutdown/machineReboot '{}'
@@ -93,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/shutdown/shutdownApplicationsAck`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Shuts down the applications ack (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/shutdown/shutdownApplicationsAck '{}'
@@ -114,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/shutdown/shutdownApplicationsRegister`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Shuts down the applications register (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/shutdown/shutdownApplicationsRegister '{}'
@@ -135,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/shutdown/shutdownServicesAck`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Shuts down the services ack (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/shutdown/shutdownServicesAck '{}'
@@ -156,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/shutdown/shutdownServicesRegister`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Shuts down the services register (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/shutdown/shutdownServicesRegister '{}'
@@ -177,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/shutdown/TESTresetShutdownState`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Handles the TES treset shutdown state (shutdown)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/shutdown/TESTresetShutdownState '{}'
@@ -198,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/suspend/activityEnd`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Handles the activity end (suspend)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/suspend/activityEnd '{}'
@@ -219,13 +239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/suspend/activityStart`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Handles the activity start (suspend)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/suspend/activityStart '{}'
@@ -240,13 +262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/suspend/clientCancelByName`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Handles the client cancel by name (suspend)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/suspend/clientCancelByName '{}'
@@ -261,13 +285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/suspend/forceSuspend`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Forces the suspend (suspend)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/suspend/forceSuspend '{}'
@@ -282,13 +308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/suspend/identify`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Handles the identify (suspend)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/suspend/identify '{}'
@@ -303,13 +331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/suspend/prepareSuspendAck`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Prepares the suspend ack (suspend)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/suspend/prepareSuspendAck '{}'
@@ -324,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/suspend/prepareSuspendRegister`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Prepares the suspend register (suspend)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/suspend/prepareSuspendRegister '{}'
@@ -345,13 +377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/suspend/suspendRequestAck`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Handles the suspend request ack (suspend)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/suspend/suspendRequestAck '{}'
@@ -366,13 +400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/suspend/suspendRequestRegister`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Handles the suspend request register (suspend)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/suspend/suspendRequestRegister '{}'
@@ -387,13 +423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.power/suspend/TESTSuspend`
 
-Method on com.webos.service.power (introspected on-device; parameters undocumented).
+Tests the suspend (suspend)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.power/suspend/TESTSuspend '{}'

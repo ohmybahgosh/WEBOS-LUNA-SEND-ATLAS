@@ -1,52 +1,56 @@
 # `com.webos.service.legacybroadcast.frontend`
 
+Legacy-broadcast tuner frontend: reports RF lock and signal status, modulation, MPLP, LNB (satellite) shortage status and firmware/diagnostic info. _(inferred from the service's methods)_
+
 28 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`clearStackedPacketError`](#clearstackedpacketerror) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`close`](#close) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`connect`](#connect) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`dbgGetAntennaInfolist`](#dbggetantennainfolist) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`dbgGetHostATVFirmwareVersion`](#dbggethostatvfirmwareversion) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). ⚠️ |
-| [`dbgGetHostCurrentFrequency`](#dbggethostcurrentfrequency) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`dbgGetHostDTVFirmwareVersion`](#dbggethostdtvfirmwareversion) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). ⚠️ |
-| [`dbgGetHostLockStatus`](#dbggethostlockstatus) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`dbgGetHostModulation`](#dbggethostmodulation) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`dbgGetRFHistory`](#dbggetrfhistory) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`dbgGetSignalStatus`](#dbggetsignalstatus) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`getLNBShortageOccuredTime`](#getlnbshortageoccuredtime) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`getLNBShortageStatus`](#getlnbshortagestatus) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`getLockStatus`](#getlockstatus) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`getLockStatusforSubscribe`](#getlockstatusforsubscribe) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`getMPLP`](#getmplp) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`getSignalStatusforSelfCheck`](#getsignalstatusforselfcheck) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`getSignalStatusforSubscribe`](#getsignalstatusforsubscribe) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`getStackedPacketError`](#getstackedpacketerror) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`getTSPath`](#gettspath) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`open`](#open) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`runStackedPacketError`](#runstackedpacketerror) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`setBroadcastSystem`](#setbroadcastsystem) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`setGPIOStatus`](#setgpiostatus) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`setLNBPowerStatus`](#setlnbpowerstatus) | private |  | power | Setter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`setPLP`](#setplp) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`tune`](#tune) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
-| [`tuneforATSC3`](#tuneforatsc3) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`clearStackedPacketError`](#clearstackedpacketerror) | private |  | tv-broadcast | inferred | Clears the stacked packet error. |
+| [`close`](#close) | private |  | tv-broadcast | inferred | Closes the legacybroadcast frontend. |
+| [`connect`](#connect) | private |  | tv-broadcast | inferred | Connects the legacybroadcast frontend. |
+| [`dbgGetAntennaInfolist`](#dbggetantennainfolist) | private |  | tv-broadcast | inferred | Debug: Returns the antenna infolist. |
+| [`dbgGetHostATVFirmwareVersion`](#dbggethostatvfirmwareversion) | private |  | tv-broadcast | inferred | Debug: Returns the host ATV firmware version. ⚠️ |
+| [`dbgGetHostCurrentFrequency`](#dbggethostcurrentfrequency) | private |  | tv-broadcast | inferred | Debug: Returns the host current frequency. |
+| [`dbgGetHostDTVFirmwareVersion`](#dbggethostdtvfirmwareversion) | private |  | tv-broadcast | inferred | Debug: Returns the host DTV firmware version. ⚠️ |
+| [`dbgGetHostLockStatus`](#dbggethostlockstatus) | private |  | tv-broadcast | inferred | Debug: Returns the host lock status. |
+| [`dbgGetHostModulation`](#dbggethostmodulation) | private |  | tv-broadcast | inferred | Debug: Returns the host modulation. |
+| [`dbgGetRFHistory`](#dbggetrfhistory) | private |  | tv-broadcast | inferred | Debug: Returns the RF history. |
+| [`dbgGetSignalStatus`](#dbggetsignalstatus) | private |  | tv-broadcast | inferred | Debug: Returns the signal status. |
+| [`getLNBShortageOccuredTime`](#getlnbshortageoccuredtime) | private |  | tv-broadcast | inferred | Returns the LNB shortage occured time. |
+| [`getLNBShortageStatus`](#getlnbshortagestatus) | private |  | tv-broadcast | inferred | Returns the LNB shortage status. |
+| [`getLockStatus`](#getlockstatus) | private |  | tv-broadcast | inferred | Returns the lock status. |
+| [`getLockStatusforSubscribe`](#getlockstatusforsubscribe) | private |  | tv-broadcast | inferred | Returns the lock status (subscription variant) |
+| [`getMPLP`](#getmplp) | private |  | tv-broadcast | inferred | Returns the MPLP. |
+| [`getSignalStatusforSelfCheck`](#getsignalstatusforselfcheck) | private |  | tv-broadcast | inferred | Returns the signal status (self-check) |
+| [`getSignalStatusforSubscribe`](#getsignalstatusforsubscribe) | private |  | tv-broadcast | inferred | Returns the signal status (subscription variant) |
+| [`getStackedPacketError`](#getstackedpacketerror) | private |  | tv-broadcast | inferred | Returns the stacked packet error. |
+| [`getTSPath`](#gettspath) | private |  | tv-broadcast | inferred | Returns the TS path. |
+| [`open`](#open) | private |  | tv-broadcast | inferred | Opens the legacybroadcast frontend. |
+| [`runStackedPacketError`](#runstackedpacketerror) | private |  | tv-broadcast | inferred | Runs the stacked packet error. |
+| [`setBroadcastSystem`](#setbroadcastsystem) | private |  | tv-broadcast | inferred | Sets the broadcast system. |
+| [`setGPIOStatus`](#setgpiostatus) | private |  | tv-broadcast | inferred | Sets the GPIO status. |
+| [`setLNBPowerStatus`](#setlnbpowerstatus) | private |  | power | inferred | Sets the LNB power status. |
+| [`setPLP`](#setplp) | private |  | tv-broadcast | inferred | Sets the PLP. |
+| [`tune`](#tune) | private |  | tv-broadcast | inferred | Tunes the legacybroadcast frontend. |
+| [`tuneforATSC3`](#tuneforatsc3) | private |  | tv-broadcast | inferred | Handles the tunefor ATSC 3. |
 
 <a id="clearstackedpacketerror"></a>
 ## `clearStackedPacketError`
 
 `luna://com.webos.service.legacybroadcast.frontend/clearStackedPacketError`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Clears the stacked packet error.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/clearStackedPacketError '{}'
@@ -61,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/close`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Closes the legacybroadcast frontend.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/close '{}'
@@ -82,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/connect`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Connects the legacybroadcast frontend.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/connect '{}'
@@ -103,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/dbgGetAntennaInfolist`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Debug: Returns the antenna infolist.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/dbgGetAntennaInfolist '{}'
@@ -124,13 +134,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/dbgGetHostATVFirmwareVersion`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Debug: Returns the host ATV firmware version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/dbgGetHostATVFirmwareVersion '{}'
@@ -145,13 +157,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/dbgGetHostCurrentFrequency`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Debug: Returns the host current frequency.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/dbgGetHostCurrentFrequency '{}'
@@ -166,13 +180,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/dbgGetHostDTVFirmwareVersion`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Debug: Returns the host DTV firmware version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/dbgGetHostDTVFirmwareVersion '{}'
@@ -187,13 +203,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/dbgGetHostLockStatus`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Debug: Returns the host lock status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/dbgGetHostLockStatus '{}'
@@ -208,13 +226,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/dbgGetHostModulation`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Debug: Returns the host modulation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/dbgGetHostModulation '{}'
@@ -229,13 +249,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/dbgGetRFHistory`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Debug: Returns the RF history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/dbgGetRFHistory '{}'
@@ -250,13 +272,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/dbgGetSignalStatus`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Debug: Returns the signal status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/dbgGetSignalStatus '{}'
@@ -271,13 +295,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/getLNBShortageOccuredTime`
 
-Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Returns the LNB shortage occured time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getLNBShortageOccuredTime '{}'
@@ -292,13 +318,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/getLNBShortageStatus`
 
-Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Returns the LNB shortage status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getLNBShortageStatus '{}'
@@ -313,13 +341,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/getLockStatus`
 
-Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Returns the lock status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getLockStatus '{}'
@@ -334,13 +364,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/getLockStatusforSubscribe`
 
-Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Returns the lock status (subscription variant)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getLockStatusforSubscribe '{}'
@@ -355,13 +387,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/getMPLP`
 
-Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Returns the MPLP.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getMPLP '{}'
@@ -376,13 +410,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/getSignalStatusforSelfCheck`
 
-Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Returns the signal status (self-check)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getSignalStatusforSelfCheck '{}'
@@ -397,13 +433,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/getSignalStatusforSubscribe`
 
-Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Returns the signal status (subscription variant)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getSignalStatusforSubscribe '{}'
@@ -418,13 +456,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/getStackedPacketError`
 
-Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Returns the stacked packet error.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getStackedPacketError '{}'
@@ -439,13 +479,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/getTSPath`
 
-Getter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Returns the TS path.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/getTSPath '{}'
@@ -460,13 +502,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/open`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Opens the legacybroadcast frontend.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/open '{}'
@@ -481,13 +525,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/runStackedPacketError`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Runs the stacked packet error.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/runStackedPacketError '{}'
@@ -502,13 +548,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/setBroadcastSystem`
 
-Setter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Sets the broadcast system.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/setBroadcastSystem '{}'
@@ -523,13 +571,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/setGPIOStatus`
 
-Setter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Sets the GPIO status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/setGPIOStatus '{}'
@@ -544,13 +594,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/setLNBPowerStatus`
 
-Setter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Sets the LNB power status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/setLNBPowerStatus '{}'
@@ -565,13 +617,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/setPLP`
 
-Setter on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Sets the PLP.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/setPLP '{}'
@@ -586,13 +640,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/tune`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Tunes the legacybroadcast frontend.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/tune '{}'
@@ -607,13 +663,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.frontend/tuneforATSC3`
 
-Method on com.webos.service.legacybroadcast.frontend (introspected on-device; parameters undocumented).
+Handles the tunefor ATSC 3.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.frontend/tuneforATSC3 '{}'

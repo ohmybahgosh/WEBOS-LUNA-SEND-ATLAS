@@ -1,34 +1,38 @@
 # `com.webos.service.usercontextmanager`
 
+User-context manager: tracks usage history and computes content/usage rankings (overall, categorized, modeled) for personalization, with a monthly report. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`displayMonthlyReport`](#displaymonthlyreport) | private |  | misc | Method on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented). |
-| [`getCategorizedRank`](#getcategorizedrank) | public |  | misc | Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented). |
-| [`getHistory`](#gethistory) | public |  | misc | Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented). |
-| [`getHistoryFromServer`](#gethistoryfromserver) | public |  | misc | Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented). |
-| [`getModeledRank`](#getmodeledrank) | public |  | misc | Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented). |
-| [`getRank`](#getrank) | public |  | misc | Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented). |
-| [`getRankFromServer`](#getrankfromserver) | public |  | misc | Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented). |
-| [`getSubRank`](#getsubrank) | public |  | misc | Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented). |
-| [`reset`](#reset) | public |  | misc | Method on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`test`](#test) | private |  | misc | Method on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`displayMonthlyReport`](#displaymonthlyreport) | private |  | misc | inferred | Handles the display monthly report. |
+| [`getCategorizedRank`](#getcategorizedrank) | public |  | misc | inferred | Returns the categorized rank. |
+| [`getHistory`](#gethistory) | public |  | misc | inferred | Returns the history. |
+| [`getHistoryFromServer`](#gethistoryfromserver) | public |  | misc | inferred | Returns the history from server. |
+| [`getModeledRank`](#getmodeledrank) | public |  | misc | inferred | Returns the modeled rank. |
+| [`getRank`](#getrank) | public |  | misc | inferred | Returns the rank. |
+| [`getRankFromServer`](#getrankfromserver) | public |  | misc | inferred | Returns the rank from server. |
+| [`getSubRank`](#getsubrank) | public |  | misc | inferred | Returns the sub rank. |
+| [`reset`](#reset) | public |  | misc | inferred | Resets the usercontextmanager. ⚠️ |
+| [`test`](#test) | private |  | misc | inferred | Tests the usercontextmanager. |
 
 <a id="displaymonthlyreport"></a>
 ## `displayMonthlyReport`
 
 `luna://com.webos.service.usercontextmanager/displayMonthlyReport`
 
-Method on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented).
+Handles the display monthly report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.usercontextmanager/displayMonthlyReport '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.usercontextmanager/getCategorizedRank`
 
-Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented).
+Returns the categorized rank.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.usercontextmanager/getCategorizedRank '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.usercontextmanager/getHistory`
 
-Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented).
+Returns the history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.usercontextmanager/getHistory '{}'
@@ -85,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.usercontextmanager/getHistoryFromServer`
 
-Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented).
+Returns the history from server.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.usercontextmanager/getHistoryFromServer '{}'
@@ -106,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.usercontextmanager/getModeledRank`
 
-Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented).
+Returns the modeled rank.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.usercontextmanager/getModeledRank '{}'
@@ -127,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.usercontextmanager/getRank`
 
-Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented).
+Returns the rank.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.usercontextmanager/getRank '{}'
@@ -148,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.usercontextmanager/getRankFromServer`
 
-Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented).
+Returns the rank from server.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.usercontextmanager/getRankFromServer '{}'
@@ -169,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.usercontextmanager/getSubRank`
 
-Getter on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented).
+Returns the sub rank.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.usercontextmanager/getSubRank '{}'
@@ -190,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.usercontextmanager/reset`
 
-Method on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented).
+Resets the usercontextmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.usercontextmanager/reset '{}'
@@ -211,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.usercontextmanager/test`
 
-Method on com.webos.service.usercontextmanager (introspected on-device; parameters undocumented).
+Tests the usercontextmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.usercontextmanager/test '{}'

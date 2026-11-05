@@ -1,25 +1,29 @@
 # `com.webos.service.wasupolicymanager`
 
+Opaque policy-manager service exposing only a start method. Role not inferable beyond its name. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`start`](#start) | private |  | misc | Method on com.webos.service.wasupolicymanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`start`](#start) | private |  | misc | inferred | Starts the wasupolicymanager. |
 
 <a id="start"></a>
 ## `start`
 
 `luna://com.webos.service.wasupolicymanager/start`
 
-Method on com.webos.service.wasupolicymanager (from on-device permission registry; parameters undocumented).
+Starts the wasupolicymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wasupolicymanager/start '{}'

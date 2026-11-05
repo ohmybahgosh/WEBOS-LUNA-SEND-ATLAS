@@ -1,15 +1,17 @@
 # `com.webos.service.configurator`
 
+Configurator service that creates the DB8 database schema and registers service configuration, filecache config and app activities (scan/rescan/run/unconfigure).
+
 4 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`rescan`](#rescan) | public |  | settings | Force rescan of resource file for application. Useful when application's resource file has been modified and it wants to update the resource |
-| [`run`](#run) | public |  | settings | This method will scan all folders and process all configuration files. |
-| [`scan`](#scan) | public |  | settings | Within the API call, application can notify Configurator about new resource files and ask Configurator to process those resource files. Exam |
-| [`unconfigure`](#unconfigure) | public |  | settings | Rollback all actions that were made by the scan / rescan API calls. In other words, release used resources. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`rescan`](#rescan) | public |  | settings | documented | Force rescan of resource file for application. Useful when application's resource file has been modified and it wants to update the resource |
+| [`run`](#run) | public |  | settings | documented | This method will scan all folders and process all configuration files. |
+| [`scan`](#scan) | public |  | settings | documented | Within the API call, application can notify Configurator about new resource files and ask Configurator to process those resource files. Exam |
+| [`unconfigure`](#unconfigure) | public |  | settings | documented | Rollback all actions that were made by the scan / rescan API calls. In other words, release used resources. |
 
 <a id="rescan"></a>
 ## `rescan`
@@ -29,6 +31,12 @@ Force rescan of resource file for application. Useful when application's resourc
 | `id` | String (required) Application Id |
 | `type` | String (required) Either 'app' or 'service' |
 | `location` | String (required) Indicates if it is a system app or a third party app. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `configured` | Number (required) The number of resources which were successfully processed |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.configurator/rescan '[{"id":"com.webos.app.settings","type":"app","location" :"system"}]
@@ -54,6 +62,12 @@ This method will scan all folders and process all configuration files.
 | Param | Type / notes |
 |---|---|
 | `types` | array (required) List of different configuration types. Types are dbkinds, filecache, activities. Note: For Auto , "activities" type parameter should be used only inside session or with sessionId. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `configured` | Number (required) The number of resources which were successfully processed |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.configurator/run '{"types":["activities"]}'
@@ -82,6 +96,12 @@ Within the API call, application can notify Configurator about new resource file
 | `type` | String (required) Either 'app' or 'service' |
 | `location` | String (required) Indicates if it is a system app or a third party app. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `configured` | Number (required) The number of resources which were successfully processed |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.configurator/scan '[{"id":"com.webos.app.settings","type":"app","location" :"system"}]
 ```
@@ -108,6 +128,12 @@ Rollback all actions that were made by the scan / rescan API calls. In other wor
 | `id` | String (required) Application or Service Id |
 | `type` | String (required) Either 'app' or 'service' |
 | `location` | String (required) Indicates if it is a system or a third party app. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `configured` | Number (required) The number of resources which were successfully processed |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.configurator/unconfigure '[{"id":"com.webos.app.settings","type":"app","location" :"system"}]

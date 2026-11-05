@@ -1,72 +1,76 @@
 # `com.webos.service.legacybroadcast.broadcast`
 
+Legacy broadcast (Live TV) control: changes channels and services, reports current channel and broadcast state, and queries audio/component lists and channel info. _(inferred from the service's methods)_
+
 48 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`bindFakePipeline`](#bindfakepipeline) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`changeChannel`](#changechannel) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`changeChannelService`](#changechannelservice) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`close`](#close) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getAudioChannelList`](#getaudiochannellist) | private |  | audio | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getAudioDescriptionStatus`](#getaudiodescriptionstatus) | private |  | audio | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getAudioLanguageList`](#getaudiolanguagelist) | private |  | audio | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getBroadcastComponentList`](#getbroadcastcomponentlist) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getBroadcastState`](#getbroadcaststate) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getChannelState`](#getchannelstate) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getCurrentChannel`](#getcurrentchannel) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getCurrentSTC`](#getcurrentstc) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getGingaResolution`](#getgingaresolution) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getLinkageUriInfo`](#getlinkageuriinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getMRSInfo`](#getmrsinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getNITRegionInfo`](#getnitregioninfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getPipelineTemporary`](#getpipelinetemporary) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getPipHotkeyState`](#getpiphotkeystate) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getRegionId`](#getregionid) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getSignalStatus`](#getsignalstatus) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getVideoInfo`](#getvideoinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`getVideoStatus`](#getvideostatus) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`isAudioDescriptionConflict`](#isaudiodescriptionconflict) | private |  | audio | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`isExistSdtActual`](#isexistsdtactual) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`isPauseOnLive`](#ispauseonlive) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`notifyEndOfProcess`](#notifyendofprocess) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`open`](#open) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`pause`](#pause) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (from on-device permission registry; parameters undocumented). |
-| [`pause1`](#pause1) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`pauseOnLive`](#pauseonlive) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`pin`](#pin) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`play`](#play) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (from on-device permission registry; parameters undocumented). |
-| [`playSignaling`](#playsignaling) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`registerDataMfu`](#registerdatamfu) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (from on-device permission registry; parameters undocumented). |
-| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). ⚠️ |
-| [`setAudioChannel`](#setaudiochannel) | private |  | audio | Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`setAudioLanguage`](#setaudiolanguage) | private |  | audio | Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`setAudioMute`](#setaudiomute) | private |  | audio | Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`setBroadcastComponent`](#setbroadcastcomponent) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`setPipHotkey`](#setpiphotkey) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`setSink`](#setsink) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`startService`](#startservice) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`stop`](#stop) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`stopService`](#stopservice) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`subscribeSignalTable`](#subscribesignaltable) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
-| [`unpauseToLive`](#unpausetolive) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`bindFakePipeline`](#bindfakepipeline) | private |  | tv-broadcast | inferred | Binds the fake pipeline. |
+| [`changeChannel`](#changechannel) | private |  | tv-broadcast | inferred | Changes the channel. |
+| [`changeChannelService`](#changechannelservice) | private |  | tv-broadcast | inferred | Changes the channel service. |
+| [`close`](#close) | private |  | tv-broadcast | inferred | Closes the legacybroadcast broadcast. |
+| [`getAudioChannelList`](#getaudiochannellist) | private |  | audio | inferred | Returns the audio channel list. |
+| [`getAudioDescriptionStatus`](#getaudiodescriptionstatus) | private |  | audio | inferred | Returns the audio description status. |
+| [`getAudioLanguageList`](#getaudiolanguagelist) | private |  | audio | inferred | Returns the audio language list. |
+| [`getBroadcastComponentList`](#getbroadcastcomponentlist) | private |  | tv-broadcast | inferred | Returns the broadcast component list. |
+| [`getBroadcastState`](#getbroadcaststate) | private |  | tv-broadcast | inferred | Returns the broadcast state. |
+| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | tv-broadcast | inferred | Returns the channel change result. |
+| [`getChannelState`](#getchannelstate) | private |  | tv-broadcast | inferred | Returns the channel state. |
+| [`getCurrentChannel`](#getcurrentchannel) | private |  | tv-broadcast | inferred | Returns the current channel. |
+| [`getCurrentSTC`](#getcurrentstc) | private |  | tv-broadcast | inferred | Returns the current STC. |
+| [`getGingaResolution`](#getgingaresolution) | private |  | tv-broadcast | inferred | Returns the ginga resolution. |
+| [`getLinkageUriInfo`](#getlinkageuriinfo) | private |  | tv-broadcast | inferred | Returns the linkage URI info. |
+| [`getMRSInfo`](#getmrsinfo) | private |  | tv-broadcast | inferred | Returns the MRS info. |
+| [`getNITRegionInfo`](#getnitregioninfo) | private |  | tv-broadcast | inferred | Returns the NIT region info. |
+| [`getPipelineTemporary`](#getpipelinetemporary) | private |  | tv-broadcast | inferred | Returns the pipeline temporary. |
+| [`getPipHotkeyState`](#getpiphotkeystate) | private |  | tv-broadcast | inferred | Returns the pip hotkey state. |
+| [`getRegionId`](#getregionid) | private |  | tv-broadcast | inferred | Returns the region ID. |
+| [`getSignalStatus`](#getsignalstatus) | private |  | tv-broadcast | inferred | Returns the signal status. |
+| [`getVideoInfo`](#getvideoinfo) | private |  | tv-broadcast | inferred | Returns the video info. |
+| [`getVideoStatus`](#getvideostatus) | private |  | tv-broadcast | inferred | Returns the video status. |
+| [`isAudioDescriptionConflict`](#isaudiodescriptionconflict) | private |  | audio | inferred | Reports whether the audio description conflict is set. |
+| [`isExistSdtActual`](#isexistsdtactual) | private |  | tv-broadcast | inferred | Reports whether the exist SDT actual is set. |
+| [`isPauseOnLive`](#ispauseonlive) | private |  | tv-broadcast | inferred | Reports whether the pause on live is set. |
+| [`notifyEndOfProcess`](#notifyendofprocess) | private |  | tv-broadcast | inferred | Notifies of the end of process. |
+| [`open`](#open) | private |  | tv-broadcast | inferred | Opens the legacybroadcast broadcast. |
+| [`pause`](#pause) | private |  | tv-broadcast | inferred | Pauses the legacybroadcast broadcast. |
+| [`pause1`](#pause1) | private |  | tv-broadcast | inferred | Pauses the 1. |
+| [`pauseOnLive`](#pauseonlive) | private |  | tv-broadcast | inferred | Pauses the on live. |
+| [`pin`](#pin) | private |  | tv-broadcast | inferred | Handles the pin. |
+| [`play`](#play) | private |  | tv-broadcast | inferred | Plays the legacybroadcast broadcast. |
+| [`playSignaling`](#playsignaling) | private |  | tv-broadcast | inferred | Plays the signaling. |
+| [`registerDataMfu`](#registerdatamfu) | private |  | tv-broadcast | inferred | Registers the data mfu. |
+| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | inferred | Scans for detail information. ⚠️ |
+| [`setAudioChannel`](#setaudiochannel) | private |  | audio | inferred | Sets the audio channel. |
+| [`setAudioLanguage`](#setaudiolanguage) | private |  | audio | inferred | Sets the audio language. |
+| [`setAudioMute`](#setaudiomute) | private |  | audio | inferred | Sets the audio mute. |
+| [`setBroadcastComponent`](#setbroadcastcomponent) | private |  | tv-broadcast | inferred | Sets the broadcast component. |
+| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | tv-broadcast | inferred | Sets the pipeline window ID. |
+| [`setPipHotkey`](#setpiphotkey) | private |  | tv-broadcast | inferred | Sets the pip hotkey. |
+| [`setSink`](#setsink) | private |  | tv-broadcast | inferred | Sets the sink. |
+| [`startService`](#startservice) | private |  | tv-broadcast | inferred | Starts the service. |
+| [`stop`](#stop) | private |  | tv-broadcast | inferred | Stops the legacybroadcast broadcast. |
+| [`stopService`](#stopservice) | private |  | tv-broadcast | inferred | Stops the service. |
+| [`subscribeSignalTable`](#subscribesignaltable) | private |  | tv-broadcast | inferred | Subscribes to the signal table. |
+| [`unpauseToLive`](#unpausetolive) | private |  | tv-broadcast | inferred | Handles the unpause to live. |
 
 <a id="bindfakepipeline"></a>
 ## `bindFakePipeline`
 
 `luna://com.webos.service.legacybroadcast.broadcast/bindFakePipeline`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Binds the fake pipeline.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/bindFakePipeline '{}'
@@ -81,13 +85,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/changeChannel`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Changes the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/changeChannel '{}'
@@ -102,13 +108,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/changeChannelService`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Changes the channel service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/changeChannelService '{}'
@@ -123,13 +131,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/close`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Closes the legacybroadcast broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/close '{}'
@@ -144,13 +154,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getAudioChannelList`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the audio channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getAudioChannelList '{}'
@@ -165,13 +177,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getAudioDescriptionStatus`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the audio description status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getAudioDescriptionStatus '{}'
@@ -186,13 +200,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getAudioLanguageList`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the audio language list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getAudioLanguageList '{}'
@@ -207,13 +223,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getBroadcastComponentList`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the broadcast component list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getBroadcastComponentList '{}'
@@ -228,13 +246,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getBroadcastState`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the broadcast state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getBroadcastState '{}'
@@ -249,13 +269,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getChannelChangeResult`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the channel change result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getChannelChangeResult '{}'
@@ -270,13 +292,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getChannelState`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the channel state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getChannelState '{}'
@@ -291,13 +315,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getCurrentChannel`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the current channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getCurrentChannel '{}'
@@ -312,13 +338,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getCurrentSTC`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the current STC.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getCurrentSTC '{}'
@@ -333,13 +361,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getGingaResolution`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the ginga resolution.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getGingaResolution '{}'
@@ -354,13 +384,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getLinkageUriInfo`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the linkage URI info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getLinkageUriInfo '{}'
@@ -375,13 +407,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getMRSInfo`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the MRS info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getMRSInfo '{}'
@@ -396,13 +430,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getNITRegionInfo`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the NIT region info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getNITRegionInfo '{}'
@@ -417,13 +453,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getPipelineTemporary`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the pipeline temporary.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getPipelineTemporary '{}'
@@ -438,13 +476,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getPipHotkeyState`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the pip hotkey state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getPipHotkeyState '{}'
@@ -459,13 +499,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getRegionId`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the region ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getRegionId '{}'
@@ -480,13 +522,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getSignalStatus`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the signal status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getSignalStatus '{}'
@@ -501,13 +545,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getVideoInfo`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the video info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getVideoInfo '{}'
@@ -522,13 +568,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/getVideoStatus`
 
-Getter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Returns the video status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/getVideoStatus '{}'
@@ -543,13 +591,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/isAudioDescriptionConflict`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Reports whether the audio description conflict is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/isAudioDescriptionConflict '{}'
@@ -564,13 +614,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/isExistSdtActual`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Reports whether the exist SDT actual is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/isExistSdtActual '{}'
@@ -585,13 +637,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/isPauseOnLive`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Reports whether the pause on live is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/isPauseOnLive '{}'
@@ -606,13 +660,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/notifyEndOfProcess`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Notifies of the end of process.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/notifyEndOfProcess '{}'
@@ -627,13 +683,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/open`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Opens the legacybroadcast broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/open '{}'
@@ -648,13 +706,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/pause`
 
-Method on com.webos.service.legacybroadcast.broadcast (from on-device permission registry; parameters undocumented).
+Pauses the legacybroadcast broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/pause '{}'
@@ -669,13 +729,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.broadcast/pause1`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Pauses the 1.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/pause1 '{}'
@@ -690,13 +752,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/pauseOnLive`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Pauses the on live.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/pauseOnLive '{}'
@@ -711,13 +775,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/pin`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Handles the pin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/pin '{}'
@@ -732,13 +798,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/play`
 
-Method on com.webos.service.legacybroadcast.broadcast (from on-device permission registry; parameters undocumented).
+Plays the legacybroadcast broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/play '{}'
@@ -753,13 +821,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.broadcast/playSignaling`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Plays the signaling.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/playSignaling '{}'
@@ -774,13 +844,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/registerDataMfu`
 
-Method on com.webos.service.legacybroadcast.broadcast (from on-device permission registry; parameters undocumented).
+Registers the data mfu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/registerDataMfu '{}'
@@ -795,13 +867,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.broadcast/scanDetailInformation`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Scans for detail information.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/scanDetailInformation '{}'
@@ -816,13 +890,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/setAudioChannel`
 
-Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Sets the audio channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/setAudioChannel '{}'
@@ -837,13 +913,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/setAudioLanguage`
 
-Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Sets the audio language.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/setAudioLanguage '{}'
@@ -858,13 +936,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/setAudioMute`
 
-Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Sets the audio mute.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/setAudioMute '{}'
@@ -879,13 +959,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/setBroadcastComponent`
 
-Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Sets the broadcast component.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/setBroadcastComponent '{}'
@@ -900,13 +982,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/setPipelineWindowId`
 
-Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Sets the pipeline window ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/setPipelineWindowId '{}'
@@ -921,13 +1005,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/setPipHotkey`
 
-Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Sets the pip hotkey.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/setPipHotkey '{}'
@@ -942,13 +1028,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/setSink`
 
-Setter on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Sets the sink.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/setSink '{}'
@@ -963,13 +1051,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/startService`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Starts the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/startService '{}'
@@ -984,13 +1074,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/stop`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Stops the legacybroadcast broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/stop '{}'
@@ -1005,13 +1097,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/stopService`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Stops the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/stopService '{}'
@@ -1026,13 +1120,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/subscribeSignalTable`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Subscribes to the signal table.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/subscribeSignalTable '{}'
@@ -1047,13 +1143,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.broadcast/unpauseToLive`
 
-Method on com.webos.service.legacybroadcast.broadcast (introspected on-device; parameters undocumented).
+Handles the unpause to live.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.broadcast/unpauseToLive '{}'

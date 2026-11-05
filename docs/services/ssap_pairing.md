@@ -1,12 +1,14 @@
 # `ssap:pairing`
 
+SSAP (remote control protocol) pairing endpoint exposing setPin, used to complete client pairing with the TV over the external control socket.
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`setPin`](#setpin) | ssap |  | security | Submit PIN during PIN-type pairing |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`setPin`](#setpin) | ssap |  | security | documented | Submit PIN during PIN-type pairing |
 
 <a id="setpin"></a>
 ## `setPin`
@@ -19,7 +21,7 @@ Submit PIN during PIN-type pairing
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

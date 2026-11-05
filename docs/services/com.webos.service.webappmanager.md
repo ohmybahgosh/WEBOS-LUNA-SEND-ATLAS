@@ -1,21 +1,23 @@
 # `com.webos.service.webappmanager`
 
+Web app manager (WAM): launches and closes web apps, kills/pauses apps, lists running apps, clears browsing data, and manages web-process size.
+
 10 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`clearBrowsingData`](#clearbrowsingdata) | public |  | apps | Clears the browsing data of a specific type. |
-| [`closeAllApps`](#closeallapps) | public |  | apps | Closes all the currently running applications. |
-| [`getWebProcessSize`](#getwebprocesssize) | public |  | apps | Gets the size of the current WebProcess. |
-| [`killApp`](#killapp) | public |  | apps | Kills all the windows owned by the specified app. Note : The method is intended to be used by SAM if necessary. |
-| [`launchApp`](#launchapp) | public |  | apps | Launches an application by the app ID. Note : This is the major function used by the SAM to request for launching an application. |
-| [`listRunningApps`](#listrunningapps) | public | yes | apps | Returns the list of applications that the Web App Manager is running. |
-| [`logControl`](#logcontrol) | public |  | apps | Enables or disables displaying the logs with associated keys. |
-| [`pauseApp`](#pauseapp) | public |  | apps | Pauses the web application. Note : The method can be used by SAM to move a specified web application from foreground to background (currentl |
-| [`webProcessCreated`](#webprocesscreated) | public | yes | apps | Returns the process ID of the launched application. |
-| [`WebProcesses`](#webprocesses) | unknown |  | apps | Contains the size of the current running WebProcess. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`clearBrowsingData`](#clearbrowsingdata) | public |  | apps | documented | Clears the browsing data of a specific type. |
+| [`closeAllApps`](#closeallapps) | public |  | apps | documented | Closes all the currently running applications. |
+| [`getWebProcessSize`](#getwebprocesssize) | public |  | apps | documented | Gets the size of the current WebProcess. |
+| [`killApp`](#killapp) | public |  | apps | documented | Kills all the windows owned by the specified app. Note : The method is intended to be used by SAM if necessary. |
+| [`launchApp`](#launchapp) | public |  | apps | documented | Launches an application by the app ID. Note : This is the major function used by the SAM to request for launching an application. |
+| [`listRunningApps`](#listrunningapps) | public | yes | apps | documented | Returns the list of applications that the Web App Manager is running. |
+| [`logControl`](#logcontrol) | public |  | apps | documented | Enables or disables displaying the logs with associated keys. |
+| [`pauseApp`](#pauseapp) | public |  | apps | documented | Pauses the web application. Note : The method can be used by SAM to move a specified web application from foreground to background (currentl |
+| [`webProcessCreated`](#webprocesscreated) | public | yes | apps | documented | Returns the process ID of the launched application. |
+| [`WebProcesses`](#webprocesses) | unknown |  | apps | documented | Contains the size of the current running WebProcess. |
 
 <a id="clearbrowsingdata"></a>
 ## `clearBrowsingData`
@@ -33,6 +35,13 @@ Clears the browsing data of a specific type.
 | Param | Type / notes |
 |---|---|
 | `types` | String array (optional) Indicates the type of the browsing data to be deleted. Possible values are: all (includes browsing data of all other specified types) appcache (dropped since Chromium 85) cache codecache cookies fileSystems localStorage channelIDs serviceWorkers cacheStorage webSQL Note: If no value is provided, by default, the method deletes all browsing data. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.webappmanager/clearBrowsingData '{"types":["all"]}'
@@ -76,6 +85,12 @@ Gets the size of the current WebProcess.
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `WebProcesses` | Object array: WebProcesses (required) Indicates the list of apps which the process is running. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.webappmanager/getWebProcessSize '{}
 ```
@@ -95,12 +110,21 @@ Kills all the windows owned by the specified app. Note : The method is intended 
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 12+; webOS 10  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
 | `appId` | String (required) Indicates the ID of app to kill. |
 | `instanceId` | String (required) Indicates the instance ID of the app to kill. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+| `appId` | String (optional) Indicates the ID of the killed app. |
+| `instanceId` | String (optional) Indicates the instance ID of the killed app. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.webappmanager/killApp '{ "appId":"bareapp", "instanceId":"9a3b4236-3bf5-42bd-b32e-707211f716ac0" }
@@ -131,6 +155,16 @@ Launches an application by the app ID. Note : This is the major function used by
 | `launchingProcId` | Number (optional) Indicates the ID of the process launching the app. |
 | `instanceId` | String (required) Indicates the ID of the instance of the app which will be launched. Note : The instanceId is generated by the SAM for every new launch request. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` | String (optional) Indicates the ID of the launched app. Note: The app is launched according to the properties specified in the appDesc parameter. |
+| `procId` | Number (optional) Indicates the ID of the process assigned to the launch. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+| `instanceId` | String (optional) Indicates the ID for the instance of the app that was launched. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.webappmanager/launchApp '{ "launchingAppId":"com.webos.app.home", "appDesc":{ "defaultWindowType":"card", "uiRevision":"2", "systemApp":true, "version":"1.0.1", "vendor":"LG Electronics, Inc.", "miniicon":"icon.png", "hasPromotion":false, "tileSize":"normal", "icons":[ ], "launchPointId":"bareapp_default", "largeIcon":"/usr/palm/applications/bareapp/icon.png", "lockable":true, "transparent":false, "icon":"/usr/palm/applications/bareapp/icon.png", "checkUpdateOnLaunch":true, "imageForRecents":"", "spinnerOnLaunch":true, "handlesRelaunch":false, "unmovable":false, "id":"bareapp", "inspectable":false, "noSplashOnLaunch":false, "privilegedJail":false, "trustLevel":"default", "title":"Bare App", "deeplinkingParams":"", "lptype":"default", "inAppSetting":false, "favicon":"", "visible":true, "accessibility":{ "supportsAudioGuidance":false }, "folderPath":"/usr/palm/applications/bareapp", "main":"index.html", "removable":true, "type":"web", "disableBackHistoryAPI":false, "bgImage":"" }, "appId":"bareapp", "parameters":{ "displayAffinity":0 }, "reason":"com.webos.app.home", "launchingProcId":"", "instanceId":"188f99b7-1e1a-489f-8e3d-56844a7713030" }
 ```
@@ -156,6 +190,12 @@ Returns the list of applications that the Web App Manager is running.
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true : Subscribed for notifications false : Not subscribed Default: false |
 | `includeSysApps` | Boolean (optional) Includes/excludes the system applications in the running app list. Possible values are: true : Includes the system applications in the running app list. false : Excludes the system applications from the running app list. Default: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `running` | String array (required) Indicates the array that contains the list of all running apps. Each app will be returned in the form of {"id": appId, "instanceId": instanceId, "webprocessid": weprocessid}. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.webappmanager/listRunningApps '{}
@@ -183,6 +223,14 @@ Enables or disables displaying the logs with associated keys.
 | `keys` | String (required) Indicates the keys to determine which log to enable. Note : This parameter will be ignored if it doesn't match with existing keys. |
 | `value` | String (required) Indicates if the log of the specified key is shown/hidden. Possible values are: on : Shows log of the specified key off : Hide log of the specified key Note : The value will be ignored when it is not "on" or "off". |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `event` | Boolean (optional) Indicates whether event logs are shown or not. Possible values are: - true: If enabled to show event logs. - false: If disabled to show event logs. |
+| `bundleMessage` | Boolean (optional) Indicates if the bundleMessage logs are shown or not. Possible values are: - true: If enabled showing bundleMessage logs. - false: If disabled showing bundleMessage logs. |
+| `mouseMove` | Boolean (optional) Indicates whether mouseMove logs are shown or not. - true: If enabled showing mouseMove logs. - false: If disabled showing mouseMove logs. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.webappmanager/logControl '{ "keys":"event", "value":"on" }
 ```
@@ -207,6 +255,15 @@ Pauses the web application. Note : The method can be used by SAM to move a speci
 | Param | Type / notes |
 |---|---|
 | `instanceId` | String (required) Indicates the instance ID of the app to be paused. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` | String (optional) Indicates the ID of the app that is paused. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+| `instanceId` | String (optional) Indicates the instance ID of the app that is paused. |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/pauseApp '{ "instanceId":"7ca4b85d-43b2-4749-b2c3-346f6498c8590" }
@@ -234,6 +291,15 @@ Returns the process ID of the launched application.
 | `appId` | String (required) Indicates the ID of the launched application. |
 | `instanceId` | String (required) Indicates the instance ID of the launched application. |
 | `subscribe` | Boolean (optional) Indicates if subscribed for notifications. Possible values are: true: Subscribe for notifications false: Not subscribed Default: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `id` | String (optional) Indicates the ID of the launched application. |
+| `instanceId` | String (optional) Indicates the instance ID of the launched application. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+| `webprocessid` | Number (optional) Indicates the process ID of the launched application. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.webappmanager/webProcessCreated '{ "instanceId":"de90e74a-b86b-42c8-8785-3efd927a36430", "appId":"bareapp" }

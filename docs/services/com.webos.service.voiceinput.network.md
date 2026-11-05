@@ -1,30 +1,34 @@
 # `com.webos.service.voiceinput.network`
 
+Networked voice-input service: lists devices, starts and streams voice input over the network, and manages a session timer. _(inferred from the service's methods)_
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getDevices`](#getdevices) | private |  | input | Getter on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented). |
-| [`respondEvent`](#respondevent) | private |  | input | Method on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented). |
-| [`restartTimer`](#restarttimer) | private |  | input | Method on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | input | Method on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented). |
-| [`startStreaming`](#startstreaming) | private |  | input | Method on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented). |
-| [`stopStreaming`](#stopstreaming) | private |  | input | Method on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getDevices`](#getdevices) | private |  | input | inferred | Returns the devices. |
+| [`respondEvent`](#respondevent) | private |  | input | inferred | Responds to the event. |
+| [`restartTimer`](#restarttimer) | private |  | input | inferred | Restarts the timer. |
+| [`start`](#start) | private |  | input | inferred | Starts the voiceinput network. |
+| [`startStreaming`](#startstreaming) | private |  | input | inferred | Starts the streaming. |
+| [`stopStreaming`](#stopstreaming) | private |  | input | inferred | Stops the streaming. |
 
 <a id="getdevices"></a>
 ## `getDevices`
 
 `luna://com.webos.service.voiceinput.network/getDevices`
 
-Getter on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented).
+Returns the devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.network/getDevices '{}'
@@ -39,13 +43,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.network/respondEvent`
 
-Method on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented).
+Responds to the event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.network/respondEvent '{}'
@@ -60,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.network/restartTimer`
 
-Method on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented).
+Restarts the timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.network/restartTimer '{}'
@@ -81,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.network/start`
 
-Method on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented).
+Starts the voiceinput network.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.network/start '{}'
@@ -102,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.network/startStreaming`
 
-Method on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented).
+Starts the streaming.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.network/startStreaming '{}'
@@ -123,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.network/stopStreaming`
 
-Method on com.webos.service.voiceinput.network (introspected on-device; parameters undocumented).
+Stops the streaming.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.network/stopStreaming '{}'

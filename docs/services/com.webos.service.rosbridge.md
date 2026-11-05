@@ -1,16 +1,18 @@
 # `com.webos.service.rosbridge`
 
+ROS (Robot Operating System) bridge: calls, publishes to and subscribes to ROS topics/services and reports status. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`call`](#call) | public |  | misc | Calls service in ROS 2 world. |
-| [`list`](#list) | unknown |  | misc | Registered in webOS OSE sysbus api.json (ACG group rosbridge.info); name only |
-| [`publish`](#publish) | public |  | misc | Publishes topic message from LS2 (webOS luna bus) to ROS 2. |
-| [`status`](#status) | unknown |  | misc | Registered in webOS OSE sysbus api.json (ACG group rosbridge.info); name only |
-| [`subscribe`](#subscribe) | public | yes | misc | Subscribe topic message from ROS 2 world. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`call`](#call) | public |  | misc | documented | Calls service in ROS 2 world. |
+| [`list`](#list) | unknown |  | misc | documented | Registered in webOS OSE sysbus api.json (ACG group rosbridge.info); name only |
+| [`publish`](#publish) | public |  | misc | documented | Publishes topic message from LS2 (webOS luna bus) to ROS 2. |
+| [`status`](#status) | unknown |  | misc | documented | Registered in webOS OSE sysbus api.json (ACG group rosbridge.info); name only |
+| [`subscribe`](#subscribe) | public | yes | misc | documented | Subscribe topic message from ROS 2 world. |
 
 <a id="call"></a>
 ## `call`
@@ -31,6 +33,12 @@ Calls service in ROS 2 world.
 | `type` | String (required) ROS 2 type name. |
 | `message` | Object (required) ROS 2 message. The JSON schema depends on ROS 2 message structure. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rosbridge/call '{ "name":"add_two_ints", "type":"example_interfaces/srv/AddTwoInts", "message": { "a": 100, "b": 200} }
 ```
@@ -50,7 +58,7 @@ Registered in webOS OSE sysbus api.json (ACG group rosbridge.info); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rosbridge/list '{}'
@@ -79,6 +87,12 @@ Publishes topic message from LS2 (webOS luna bus) to ROS 2.
 | `type` | String (required) ROS 2 type name. |
 | `message` | Object (required) ROS 2 message. The JSON schema depends on the ROS 2 message structure. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.rosbridge/subscribe '{ "name":"topic_test", "type":"std_msgs/msg/String", "subscribe":true }'
 ```
@@ -98,7 +112,7 @@ Registered in webOS OSE sysbus api.json (ACG group rosbridge.info); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rosbridge/status '{}'
@@ -126,6 +140,12 @@ Subscribe topic message from ROS 2 world.
 | `name` | String (required) Name of ROS 2 message. |
 | `type` | String (required) ROS 2 type name. |
 | `subscribe` | Boolean (required) Subscribe for notifications. This should always to be to true. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.rosbridge/subscribe '{ "name":"topic_test", "type":"std_msgs/msg/String", "subscribe":true }'

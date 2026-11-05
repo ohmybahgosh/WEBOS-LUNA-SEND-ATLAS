@@ -1,35 +1,39 @@
 # `com.webos.service.updatefw.utilmgr`
 
+Firmware-update utility manager: triggers auto-install and master download, manages recurring update times and ticket/build info. _(inferred from the service's methods)_
+
 11 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`autoInstall`](#autoinstall) | public |  | update | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
-| [`downloadMaster`](#downloadmaster) | public |  | update | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
-| [`getRecurTimes`](#getrecurtimes) | public |  | input | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
-| [`getTicketInfo`](#getticketinfo) | public |  | update | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | update | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | update | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
-| [`saveBuildInfo`](#savebuildinfo) | public |  | update | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
-| [`saveJInfo`](#savejinfo) | public |  | update | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
-| [`savePlatformInfo`](#saveplatforminfo) | public |  | update | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
-| [`setRecurTimes`](#setrecurtimes) | public |  | input | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
-| [`writeEnyoTicketInfo`](#writeenyoticketinfo) | public |  | update | Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`autoInstall`](#autoinstall) | public |  | update | inferred | Handles the auto install. |
+| [`downloadMaster`](#downloadmaster) | public |  | update | inferred | Downloads the master. |
+| [`getRecurTimes`](#getrecurtimes) | public |  | input | inferred | Returns the recur times. |
+| [`getTicketInfo`](#getticketinfo) | public |  | update | inferred | Returns the ticket info. |
+| [`info`](#info) | public |  | update | inferred | Handles the info. |
+| [`quit`](#quit) | public |  | update | inferred | Quits the updatefw utilmgr. |
+| [`saveBuildInfo`](#savebuildinfo) | public |  | update | inferred | Saves the build info. |
+| [`saveJInfo`](#savejinfo) | public |  | update | inferred | Saves the j info. |
+| [`savePlatformInfo`](#saveplatforminfo) | public |  | update | inferred | Saves the platform info. |
+| [`setRecurTimes`](#setrecurtimes) | public |  | input | inferred | Sets the recur times. |
+| [`writeEnyoTicketInfo`](#writeenyoticketinfo) | public |  | update | inferred | Writes the enyo ticket info. |
 
 <a id="autoinstall"></a>
 ## `autoInstall`
 
 `luna://com.webos.service.updatefw.utilmgr/autoInstall`
 
-Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented).
+Handles the auto install.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.updatefw.utilmgr/autoInstall '{}'
@@ -44,13 +48,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.updatefw.utilmgr/downloadMaster`
 
-Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented).
+Downloads the master.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.updatefw.utilmgr/downloadMaster '{}'
@@ -65,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.updatefw.utilmgr/getRecurTimes`
 
-Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented).
+Returns the recur times.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.updatefw.utilmgr/getRecurTimes '{}'
@@ -86,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.updatefw.utilmgr/getTicketInfo`
 
-Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented).
+Returns the ticket info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.updatefw.utilmgr/getTicketInfo '{}'
@@ -107,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.updatefw.utilmgr/info`
 
-Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.updatefw.utilmgr/info '{}'
@@ -128,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.updatefw.utilmgr/quit`
 
-Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented).
+Quits the updatefw utilmgr.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.updatefw.utilmgr/quit '{}'
@@ -149,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.updatefw.utilmgr/saveBuildInfo`
 
-Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented).
+Saves the build info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.updatefw.utilmgr/saveBuildInfo '{}'
@@ -170,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.updatefw.utilmgr/saveJInfo`
 
-Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented).
+Saves the j info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.updatefw.utilmgr/saveJInfo '{}'
@@ -191,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.updatefw.utilmgr/savePlatformInfo`
 
-Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented).
+Saves the platform info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.updatefw.utilmgr/savePlatformInfo '{}'
@@ -212,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.updatefw.utilmgr/setRecurTimes`
 
-Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented).
+Sets the recur times.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.updatefw.utilmgr/setRecurTimes '{}'
@@ -233,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.updatefw.utilmgr/writeEnyoTicketInfo`
 
-Method on com.webos.service.updatefw.utilmgr (from on-device permission registry; parameters undocumented).
+Writes the enyo ticket info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.updatefw.utilmgr/writeEnyoTicketInfo '{}'

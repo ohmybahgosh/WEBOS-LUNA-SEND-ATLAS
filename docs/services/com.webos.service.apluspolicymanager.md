@@ -1,27 +1,31 @@
 # `com.webos.service.apluspolicymanager`
 
+Appears to manage an 'A+' content/partial-view policy: launches partial-view apps, toggles situation monitoring and synchronizes a visual ('wow') effect. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`launchPartialViewApp`](#launchpartialviewapp) | public |  | apps | Method on com.webos.service.apluspolicymanager (from on-device permission registry; parameters undocumented). |
-| [`setSituationMonitoring`](#setsituationmonitoring) | public |  | misc | Method on com.webos.service.apluspolicymanager (from on-device permission registry; parameters undocumented). |
-| [`synchronizeWoweffect`](#synchronizewoweffect) | public |  | misc | Method on com.webos.service.apluspolicymanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`launchPartialViewApp`](#launchpartialviewapp) | public |  | apps | inferred | Launches the partial view app. |
+| [`setSituationMonitoring`](#setsituationmonitoring) | public |  | misc | inferred | Sets the situation monitoring. |
+| [`synchronizeWoweffect`](#synchronizewoweffect) | public |  | misc | inferred | Handles the synchronize woweffect. |
 
 <a id="launchpartialviewapp"></a>
 ## `launchPartialViewApp`
 
 `luna://com.webos.service.apluspolicymanager/launchPartialViewApp`
 
-Method on com.webos.service.apluspolicymanager (from on-device permission registry; parameters undocumented).
+Launches the partial view app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apluspolicymanager/launchPartialViewApp '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.apluspolicymanager/setSituationMonitoring`
 
-Method on com.webos.service.apluspolicymanager (from on-device permission registry; parameters undocumented).
+Sets the situation monitoring.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apluspolicymanager/setSituationMonitoring '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.apluspolicymanager/synchronizeWoweffect`
 
-Method on com.webos.service.apluspolicymanager (from on-device permission registry; parameters undocumented).
+Handles the synchronize woweffect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apluspolicymanager/synchronizeWoweffect '{}'

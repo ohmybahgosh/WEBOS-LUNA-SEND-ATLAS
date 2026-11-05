@@ -1,29 +1,33 @@
 # `com.webos.service.eventmonitor`
 
+Event monitor with pluggable handlers: delivers events to plugins and surfaces network/Wi-Fi-Direct notifications. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`mockPlugin/action`](#mockplugin_action) | private |  | misc | Method on com.webos.service.eventmonitor (from on-device permission registry; parameters undocumented). |
-| [`mockPlugin/getEvents`](#mockplugin_getevents) | private |  | misc | Method on com.webos.service.eventmonitor (from on-device permission registry; parameters undocumented). |
-| [`network/starfish/alertClose`](#network_starfish_alertclose) | private |  | misc | Method on com.webos.service.eventmonitor (introspected on-device; parameters undocumented). |
-| [`network/starfish/enableWifiDirectNotifications`](#network_starfish_enablewifidirectnotifications) | private |  | notifications | Method on com.webos.service.eventmonitor (introspected on-device; parameters undocumented). |
-| [`network/starfish/TestWifiDirectPinNotifications`](#network_starfish_testwifidirectpinnotifications) | private |  | notifications | Method on com.webos.service.eventmonitor (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`mockPlugin/action`](#mockplugin_action) | private |  | misc | inferred | Handles the action (mock plugin) |
+| [`mockPlugin/getEvents`](#mockplugin_getevents) | private |  | misc | inferred | Returns the events (mock plugin) |
+| [`network/starfish/alertClose`](#network_starfish_alertclose) | private |  | misc | inferred | Handles the alert close (network starfish) |
+| [`network/starfish/enableWifiDirectNotifications`](#network_starfish_enablewifidirectnotifications) | private |  | notifications | inferred | Enables the wifi direct notifications (network starfish) |
+| [`network/starfish/TestWifiDirectPinNotifications`](#network_starfish_testwifidirectpinnotifications) | private |  | notifications | inferred | Tests the wifi direct pin notifications (network starfish) |
 
 <a id="mockplugin_action"></a>
 ## `mockPlugin/action`
 
 `luna://com.webos.service.eventmonitor/mockPlugin/action`
 
-Method on com.webos.service.eventmonitor (from on-device permission registry; parameters undocumented).
+Handles the action (mock plugin)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eventmonitor/mockPlugin/action '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.eventmonitor/mockPlugin/getEvents`
 
-Method on com.webos.service.eventmonitor (from on-device permission registry; parameters undocumented).
+Returns the events (mock plugin)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eventmonitor/mockPlugin/getEvents '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.eventmonitor/network/starfish/alertClose`
 
-Method on com.webos.service.eventmonitor (introspected on-device; parameters undocumented).
+Handles the alert close (network starfish)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eventmonitor/network/starfish/alertClose '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eventmonitor/network/starfish/enableWifiDirectNotifications`
 
-Method on com.webos.service.eventmonitor (introspected on-device; parameters undocumented).
+Enables the wifi direct notifications (network starfish)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eventmonitor/network/starfish/enableWifiDirectNotifications '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eventmonitor/network/starfish/TestWifiDirectPinNotifications`
 
-Method on com.webos.service.eventmonitor (introspected on-device; parameters undocumented).
+Tests the wifi direct pin notifications (network starfish)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eventmonitor/network/starfish/TestWifiDirectPinNotifications '{}'

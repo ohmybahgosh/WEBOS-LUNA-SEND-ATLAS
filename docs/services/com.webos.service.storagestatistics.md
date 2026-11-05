@@ -1,32 +1,36 @@
 # `com.webos.service.storagestatistics`
 
+Storage statistics: reports per-app storage usage, lists large apps and files, clears app data and removes files.
+
 8 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`check`](#check) | private |  | storage | Method on com.webos.service.storagestatistics (introspected on-device; parameters undocumented). |
-| [`clearAppData`](#clearappdata) | private |  | storage | Method on com.webos.service.storagestatistics (introspected on-device; parameters undocumented). |
-| [`getAllAppStats`](#getallappstats) | private |  | storage | Getter on com.webos.service.storagestatistics (introspected on-device; parameters undocumented). |
-| [`getAppStats`](#getappstats) | private |  | storage | Getter on com.webos.service.storagestatistics (introspected on-device; parameters undocumented). |
-| [`listInternalLargeFiles`](#listinternallargefiles) | private |  | storage | Lister on com.webos.service.storagestatistics (introspected on-device; parameters undocumented). |
-| [`listLargeApps`](#listlargeapps) | private |  | storage | Lister on com.webos.service.storagestatistics (introspected on-device; parameters undocumented). |
-| [`listLargeFiles`](#listlargefiles) | private |  | storage | Lister on com.webos.service.storagestatistics (introspected on-device; parameters undocumented). |
-| [`removeFile`](#removefile) | private |  | storage | Method on com.webos.service.storagestatistics (introspected on-device; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`check`](#check) | private |  | storage | inferred | Checks the storagestatistics. |
+| [`clearAppData`](#clearappdata) | private |  | storage | inferred | Clears the app data. |
+| [`getAllAppStats`](#getallappstats) | private |  | storage | inferred | Returns the all app stats. |
+| [`getAppStats`](#getappstats) | private |  | storage | inferred | Returns the app stats. |
+| [`listInternalLargeFiles`](#listinternallargefiles) | private |  | storage | inferred | Lists the internal large files. |
+| [`listLargeApps`](#listlargeapps) | private |  | storage | inferred | Lists the large apps. |
+| [`listLargeFiles`](#listlargefiles) | private |  | storage | inferred | Lists the large files. |
+| [`removeFile`](#removefile) | private |  | storage | inferred | Removes the file. ⚠️ |
 
 <a id="check"></a>
 ## `check`
 
 `luna://com.webos.service.storagestatistics/check`
 
-Method on com.webos.service.storagestatistics (introspected on-device; parameters undocumented).
+Checks the storagestatistics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/check '{}'
@@ -41,13 +45,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.storagestatistics/clearAppData`
 
-Method on com.webos.service.storagestatistics (introspected on-device; parameters undocumented).
+Clears the app data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/clearAppData '{}'
@@ -62,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.storagestatistics/getAllAppStats`
 
-Getter on com.webos.service.storagestatistics (introspected on-device; parameters undocumented).
+Returns the all app stats.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/getAllAppStats '{}'
@@ -83,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.storagestatistics/getAppStats`
 
-Getter on com.webos.service.storagestatistics (introspected on-device; parameters undocumented).
+Returns the app stats.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/getAppStats '{}'
@@ -104,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.storagestatistics/listInternalLargeFiles`
 
-Lister on com.webos.service.storagestatistics (introspected on-device; parameters undocumented).
+Lists the internal large files.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/listInternalLargeFiles '{}'
@@ -125,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.storagestatistics/listLargeApps`
 
-Lister on com.webos.service.storagestatistics (introspected on-device; parameters undocumented).
+Lists the large apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/listLargeApps '{}'
@@ -146,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.storagestatistics/listLargeFiles`
 
-Lister on com.webos.service.storagestatistics (introspected on-device; parameters undocumented).
+Lists the large files.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/listLargeFiles '{}'
@@ -167,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.storagestatistics/removeFile`
 
-Method on com.webos.service.storagestatistics (introspected on-device; parameters undocumented).
+Removes the file.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/removeFile '{}'

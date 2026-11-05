@@ -1,31 +1,35 @@
 # `com.webos.service.legacybroadcast.sound`
 
+Legacy broadcast audio control: reports DTV audio info and running state and gets/sets the speaker output type. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getAudioInfo`](#getaudioinfo) | private |  | audio | Getter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented). |
-| [`getAudioTest`](#getaudiotest) | private |  | audio | Getter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented). |
-| [`getCurrentAudioType`](#getcurrentaudiotype) | private |  | audio | Getter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented). |
-| [`getDTVAudioRunningState`](#getdtvaudiorunningstate) | private |  | audio | Getter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented). |
-| [`getSpeakerOutType`](#getspeakerouttype) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented). |
-| [`setAudioTest`](#setaudiotest) | private |  | audio | Setter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented). |
-| [`setSpeakerOutType`](#setspeakerouttype) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getAudioInfo`](#getaudioinfo) | private |  | audio | inferred | Returns the audio info. |
+| [`getAudioTest`](#getaudiotest) | private |  | audio | inferred | Returns the audio test. |
+| [`getCurrentAudioType`](#getcurrentaudiotype) | private |  | audio | inferred | Returns the current audio type. |
+| [`getDTVAudioRunningState`](#getdtvaudiorunningstate) | private |  | audio | inferred | Returns the DTV audio running state. |
+| [`getSpeakerOutType`](#getspeakerouttype) | private |  | tv-broadcast | inferred | Returns the speaker out type. |
+| [`setAudioTest`](#setaudiotest) | private |  | audio | inferred | Sets the audio test. |
+| [`setSpeakerOutType`](#setspeakerouttype) | private |  | tv-broadcast | inferred | Sets the speaker out type. |
 
 <a id="getaudioinfo"></a>
 ## `getAudioInfo`
 
 `luna://com.webos.service.legacybroadcast.sound/getAudioInfo`
 
-Getter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented).
+Returns the audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.sound/getAudioInfo '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.sound/getAudioTest`
 
-Getter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented).
+Returns the audio test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.sound/getAudioTest '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.sound/getCurrentAudioType`
 
-Getter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented).
+Returns the current audio type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.sound/getCurrentAudioType '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.sound/getDTVAudioRunningState`
 
-Getter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented).
+Returns the DTV audio running state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.sound/getDTVAudioRunningState '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.sound/getSpeakerOutType`
 
-Getter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented).
+Returns the speaker out type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.sound/getSpeakerOutType '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.sound/setAudioTest`
 
-Setter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented).
+Sets the audio test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.sound/setAudioTest '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.sound/setSpeakerOutType`
 
-Setter on com.webos.service.legacybroadcast.sound (introspected on-device; parameters undocumented).
+Sets the speaker out type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.sound/setSpeakerOutType '{}'

@@ -1,26 +1,30 @@
 # `com.webos.service.gibbips.config`
 
+Broadcast configuration query service (gibbips stack): reports supported broadcast standards and country standards. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getBroadcastStandardsSupport`](#getbroadcaststandardssupport) | private |  | settings | Method on com.webos.service.gibbips.config (from on-device permission registry; parameters undocumented). |
-| [`getCountryStandards`](#getcountrystandards) | private |  | settings | Method on com.webos.service.gibbips.config (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getBroadcastStandardsSupport`](#getbroadcaststandardssupport) | private |  | settings | inferred | Returns the broadcast standards support. |
+| [`getCountryStandards`](#getcountrystandards) | private |  | settings | inferred | Returns the country standards. |
 
 <a id="getbroadcaststandardssupport"></a>
 ## `getBroadcastStandardsSupport`
 
 `luna://com.webos.service.gibbips.config/getBroadcastStandardsSupport`
 
-Method on com.webos.service.gibbips.config (from on-device permission registry; parameters undocumented).
+Returns the broadcast standards support.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.config/getBroadcastStandardsSupport '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.config/getCountryStandards`
 
-Method on com.webos.service.gibbips.config (from on-device permission registry; parameters undocumented).
+Returns the country standards.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.config/getCountryStandards '{}'

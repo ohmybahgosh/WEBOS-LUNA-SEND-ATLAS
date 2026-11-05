@@ -1,55 +1,59 @@
 # `com.webos.service.drm`
 
+Digital Rights Management service: authenticates the device, acquires and checks content rights, manages certificates and decryption keys, and reports rental and activation status.
+
 31 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`acquireRightsAsync`](#acquirerightsasync) | private |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`authenticateDevice`](#authenticatedevice) | public |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`checkContentDrm`](#checkcontentdrm) | private |  | security | Checks whether content is DRM-protected and by which scheme. (licensed-playback CDM lifecycle.) |
-| [`checkRightsAcquired`](#checkrightsacquired) | private |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`deleteDrmStore`](#deletedrmstore) | public |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`deregistrate`](#deregistrate) | public |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`getActivationStatus`](#getactivationstatus) | private |  | security | Reports DRM activation status. (licensed-playback CDM lifecycle.) |
-| [`getCertificateInfo`](#getcertificateinfo) | private |  | security | Returns the DRM certificate info. (licensed-playback CDM lifecycle.) |
-| [`getCustomData`](#getcustomdata) | private |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`getDecryptionKey`](#getdecryptionkey) | private |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`getDeregistrationInfo`](#getderegistrationinfo) | private |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`getDivXDrmStatus`](#getdivxdrmstatus) | private |  | security | Returns DivX DRM registration status/code. (licensed-playback CDM lifecycle.) |
-| [`getDrmMessage`](#getdrmmessage) | private |  | security | Returns a DRM challenge/message for the license server. (licensed-playback CDM lifecycle.) |
-| [`getKeyProvisionInfo`](#getkeyprovisioninfo) | private |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`getKeyProvisionInfoAsync`](#getkeyprovisioninfoasync) | private |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`getMediaStatus`](#getmediastatus) | private |  | security | Returns the protected-media status. (licensed-playback CDM lifecycle.) |
-| [`getRegistrationInfo`](#getregistrationinfo) | private |  | security | Returns device DRM registration info. (licensed-playback CDM lifecycle.) |
-| [`getRentalStatus`](#getrentalstatus) | private |  | security | Returns rental/entitlement status for protected content. (licensed-playback CDM lifecycle.) |
-| [`getRightsError`](#getrightserror) | public | yes | security | Returns DRM rights error info on license errors during playback. |
-| [`getRightsRequestInfo`](#getrightsrequestinfo) | public |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`getVerifyUriSignature`](#getverifyurisignature) | public |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`initializeDrmMemory`](#initializedrmmemory) | private |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`isLoaded`](#isloaded) | private |  | security | Reports whether the DRM module is loaded. (licensed-playback CDM lifecycle.) |
-| [`load`](#load) | private |  | security | Loads the DRM/CDM module. (licensed-playback CDM lifecycle.) |
-| [`notifyRightsAcquired`](#notifyrightsacquired) | public |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`notifyRightsError`](#notifyrightserror) | private |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`parseCustomData`](#parsecustomdata) | private |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`requestDaemonService`](#requestdaemonservice) | private |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`saveRights`](#saverights) | public |  | security | Method on com.webos.service.drm (from on-device permission registry; parameters undocumented). |
-| [`sendDrmMessage`](#senddrmmessage) | private |  | security | Sends a DRM message to the license server. (licensed-playback CDM lifecycle.) |
-| [`unload`](#unload) | private |  | security | Unloads the DRM module. (licensed-playback CDM lifecycle.) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`acquireRightsAsync`](#acquirerightsasync) | private |  | security | inferred | Acquires the rights async. |
+| [`authenticateDevice`](#authenticatedevice) | public |  | security | inferred | Authenticates the device. |
+| [`checkContentDrm`](#checkcontentdrm) | private |  | security | documented | Checks whether content is DRM-protected and by which scheme. (licensed-playback CDM lifecycle.) |
+| [`checkRightsAcquired`](#checkrightsacquired) | private |  | security | inferred | Checks the rights acquired. |
+| [`deleteDrmStore`](#deletedrmstore) | public |  | security | inferred | Deletes the DRM store. ⚠️ |
+| [`deregistrate`](#deregistrate) | public |  | security | inferred | Handles the deregistrate. |
+| [`getActivationStatus`](#getactivationstatus) | private |  | security | documented | Reports DRM activation status. (licensed-playback CDM lifecycle.) |
+| [`getCertificateInfo`](#getcertificateinfo) | private |  | security | documented | Returns the DRM certificate info. (licensed-playback CDM lifecycle.) |
+| [`getCustomData`](#getcustomdata) | private |  | security | inferred | Returns the custom data. |
+| [`getDecryptionKey`](#getdecryptionkey) | private |  | security | inferred | Returns the decryption key. |
+| [`getDeregistrationInfo`](#getderegistrationinfo) | private |  | security | inferred | Returns the deregistration info. |
+| [`getDivXDrmStatus`](#getdivxdrmstatus) | private |  | security | documented | Returns DivX DRM registration status/code. (licensed-playback CDM lifecycle.) |
+| [`getDrmMessage`](#getdrmmessage) | private |  | security | documented | Returns a DRM challenge/message for the license server. (licensed-playback CDM lifecycle.) |
+| [`getKeyProvisionInfo`](#getkeyprovisioninfo) | private |  | security | inferred | Returns the key provision info. |
+| [`getKeyProvisionInfoAsync`](#getkeyprovisioninfoasync) | private |  | security | inferred | Returns the key provision info async. |
+| [`getMediaStatus`](#getmediastatus) | private |  | security | documented | Returns the protected-media status. (licensed-playback CDM lifecycle.) |
+| [`getRegistrationInfo`](#getregistrationinfo) | private |  | security | documented | Returns device DRM registration info. (licensed-playback CDM lifecycle.) |
+| [`getRentalStatus`](#getrentalstatus) | private |  | security | documented | Returns rental/entitlement status for protected content. (licensed-playback CDM lifecycle.) |
+| [`getRightsError`](#getrightserror) | public | yes | security | documented | Returns DRM rights error info on license errors during playback. |
+| [`getRightsRequestInfo`](#getrightsrequestinfo) | public |  | security | inferred | Returns the rights request info. |
+| [`getVerifyUriSignature`](#getverifyurisignature) | public |  | security | inferred | Returns the verify URI signature. |
+| [`initializeDrmMemory`](#initializedrmmemory) | private |  | security | inferred | Initializes the DRM memory. |
+| [`isLoaded`](#isloaded) | private |  | security | documented | Reports whether the DRM module is loaded. (licensed-playback CDM lifecycle.) |
+| [`load`](#load) | private |  | security | documented | Loads the DRM/CDM module. (licensed-playback CDM lifecycle.) |
+| [`notifyRightsAcquired`](#notifyrightsacquired) | public |  | security | inferred | Notifies of the rights acquired. |
+| [`notifyRightsError`](#notifyrightserror) | private |  | security | inferred | Notifies of the rights error. |
+| [`parseCustomData`](#parsecustomdata) | private |  | security | inferred | Parses the custom data. |
+| [`requestDaemonService`](#requestdaemonservice) | private |  | security | inferred | Requests the daemon service. |
+| [`saveRights`](#saverights) | public |  | security | inferred | Saves the rights. |
+| [`sendDrmMessage`](#senddrmmessage) | private |  | security | documented | Sends a DRM message to the license server. (licensed-playback CDM lifecycle.) |
+| [`unload`](#unload) | private |  | security | documented | Unloads the DRM module. (licensed-playback CDM lifecycle.) |
 
 <a id="acquirerightsasync"></a>
 ## `acquireRightsAsync`
 
 `luna://com.webos.service.drm/acquireRightsAsync`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Acquires the rights async.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/acquireRightsAsync '{}'
@@ -64,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/authenticateDevice`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Authenticates the device.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/authenticateDevice '{}'
@@ -91,7 +97,7 @@ Checks whether content is DRM-protected and by which scheme. (licensed-playback 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/checkContentDrm '{}'
@@ -99,20 +105,22 @@ luna-send -n 1 -f luna://com.webos.service.drm/checkContentDrm '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback. \|\| ACG groups: drm.support, media, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). DRM service; name only, no circumvention details.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="checkrightsacquired"></a>
 ## `checkRightsAcquired`
 
 `luna://com.webos.service.drm/checkRightsAcquired`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Checks the rights acquired.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/checkRightsAcquired '{}'
@@ -127,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/deleteDrmStore`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Deletes the DRM store.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/deleteDrmStore '{}'
@@ -148,13 +158,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/deregistrate`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Handles the deregistrate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/deregistrate '{}'
@@ -175,7 +187,7 @@ Reports DRM activation status. (licensed-playback CDM lifecycle.)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getActivationStatus '{}'
@@ -183,7 +195,7 @@ luna-send -n 1 -f luna://com.webos.service.drm/getActivationStatus '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback. \|\| ACG groups: drm.info, media, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). DRM service; name only, no circumvention details.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getcertificateinfo"></a>
 ## `getCertificateInfo`
@@ -196,7 +208,7 @@ Returns the DRM certificate info. (licensed-playback CDM lifecycle.)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getCertificateInfo '{}'
@@ -204,20 +216,22 @@ luna-send -n 1 -f luna://com.webos.service.drm/getCertificateInfo '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback. \|\| ACG groups: drm.info, media, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). DRM service; name only, no circumvention details.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getcustomdata"></a>
 ## `getCustomData`
 
 `luna://com.webos.service.drm/getCustomData`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Returns the custom data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getCustomData '{}'
@@ -232,13 +246,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/getDecryptionKey`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Returns the decryption key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getDecryptionKey '{}'
@@ -253,13 +269,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/getDeregistrationInfo`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Returns the deregistration info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getDeregistrationInfo '{}'
@@ -280,7 +298,7 @@ Returns DivX DRM registration status/code. (licensed-playback CDM lifecycle.)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getDivXDrmStatus '{}'
@@ -288,7 +306,7 @@ luna-send -n 1 -f luna://com.webos.service.drm/getDivXDrmStatus '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback. \|\| ACG groups: drm.info, media, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). DRM service; name only, no circumvention details.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getdrmmessage"></a>
 ## `getDrmMessage`
@@ -301,7 +319,7 @@ Returns a DRM challenge/message for the license server. (licensed-playback CDM l
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getDrmMessage '{}'
@@ -309,20 +327,22 @@ luna-send -n 1 -f luna://com.webos.service.drm/getDrmMessage '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback. \|\| ACG groups: drm.info, media, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). DRM service; name only, no circumvention details.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getkeyprovisioninfo"></a>
 ## `getKeyProvisionInfo`
 
 `luna://com.webos.service.drm/getKeyProvisionInfo`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Returns the key provision info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getKeyProvisionInfo '{}'
@@ -337,13 +357,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/getKeyProvisionInfoAsync`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Returns the key provision info async.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getKeyProvisionInfoAsync '{}'
@@ -364,7 +386,7 @@ Returns the protected-media status. (licensed-playback CDM lifecycle.)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getMediaStatus '{}'
@@ -372,7 +394,7 @@ luna-send -n 1 -f luna://com.webos.service.drm/getMediaStatus '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback. \|\| ACG groups: drm.info, media, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). DRM service; name only, no circumvention details.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getregistrationinfo"></a>
 ## `getRegistrationInfo`
@@ -385,7 +407,7 @@ Returns device DRM registration info. (licensed-playback CDM lifecycle.)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getRegistrationInfo '{}'
@@ -393,7 +415,7 @@ luna-send -n 1 -f luna://com.webos.service.drm/getRegistrationInfo '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback. \|\| ACG groups: drm.info, media, private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). DRM service; name only, no circumvention details.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getrentalstatus"></a>
 ## `getRentalStatus`
@@ -406,7 +428,7 @@ Returns rental/entitlement status for protected content. (licensed-playback CDM 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getRentalStatus '{}'
@@ -414,7 +436,7 @@ luna-send -n 1 -f luna://com.webos.service.drm/getRentalStatus '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback. \|\| ACG groups: drm.info, media, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). DRM service; name only, no circumvention details.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
 <a id="getrightserror"></a>
 ## `getRightsError`
@@ -445,13 +467,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/drm)
 
 `luna://com.webos.service.drm/getRightsRequestInfo`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Returns the rights request info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getRightsRequestInfo '{}'
@@ -466,13 +490,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/getVerifyUriSignature`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Returns the verify URI signature.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/getVerifyUriSignature '{}'
@@ -487,13 +513,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/initializeDrmMemory`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Initializes the DRM memory.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/initializeDrmMemory '{}'
@@ -514,7 +542,7 @@ Reports whether the DRM module is loaded. (licensed-playback CDM lifecycle.)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); webOS TV (all versions unless noted)  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -526,7 +554,7 @@ luna-send -n 1 -f luna://com.webos.service.drm/isLoaded '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://webostv.developer.lge.com/develop/references/drm)
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://webostv.developer.lge.com/develop/references/drm)
 
 <a id="load"></a>
 ## `load`
@@ -539,7 +567,7 @@ Loads the DRM/CDM module. (licensed-playback CDM lifecycle.)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); webOS TV (all versions unless noted)  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -552,20 +580,22 @@ luna-send -n 1 -f luna://com.webos.service.drm/load '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://webostv.developer.lge.com/develop/references/drm)
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://webostv.developer.lge.com/develop/references/drm)
 
 <a id="notifyrightsacquired"></a>
 ## `notifyRightsAcquired`
 
 `luna://com.webos.service.drm/notifyRightsAcquired`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Notifies of the rights acquired.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/notifyRightsAcquired '{}'
@@ -580,13 +610,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/notifyRightsError`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Notifies of the rights error.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/notifyRightsError '{}'
@@ -601,13 +633,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/parseCustomData`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Parses the custom data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/parseCustomData '{}'
@@ -622,13 +656,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/requestDaemonService`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Requests the daemon service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/requestDaemonService '{}'
@@ -643,13 +679,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.drm/saveRights`
 
-Method on com.webos.service.drm (from on-device permission registry; parameters undocumented).
+Saves the rights.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.drm/saveRights '{}'
@@ -670,7 +708,7 @@ Sends a DRM message to the license server. (licensed-playback CDM lifecycle.)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); webOS TV (all versions unless noted)  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -685,7 +723,7 @@ luna-send -n 1 -f luna://com.webos.service.drm/sendDrmMessage '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://webostv.developer.lge.com/develop/references/drm)
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://webostv.developer.lge.com/develop/references/drm)
 
 <a id="unload"></a>
 ## `unload`
@@ -698,7 +736,7 @@ Unloads the DRM module. (licensed-playback CDM lifecycle.)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); webOS TV (all versions unless noted)  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -710,4 +748,4 @@ luna-send -n 1 -f luna://com.webos.service.drm/unload '{}'
 
 > DRM/CDM service. Listed by name and purpose only. This repo does not document how to extract keys, strip protection, or otherwise circumvent DRM. The methods are the normal content-decryption module (CDM) lifecycle used by licensed playback.
 
-Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [2](on-device api-permissions.d (W22O 7.0)), [3](https://webostv.developer.lge.com/develop/references/drm)
+Sources: [1](https://rorygallagher2024.github.io/glasshouse/development/TV-RESEARCH/), [3](https://webostv.developer.lge.com/develop/references/drm)

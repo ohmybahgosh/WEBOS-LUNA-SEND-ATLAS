@@ -1,29 +1,31 @@
 # `com.webos.service.tv.dvr`
 
+TV DVR service: schedules and runs program, manual, scheduled, and external-input recordings, manages timeshift buffering, and plays back recordings (seek, play rate, thumbnails). _(inferred from the service's methods)_
+
 18 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`device/checkStoragePerformance`](#device_checkstorageperformance) | private |  | media | DVR/PVR method: device/checkStoragePerformance |
-| [`device/isRecordableStorage`](#device_isrecordablestorage) | private |  | media | DVR/PVR method: device/isRecordableStorage |
-| [`play/openRecordingPlayInstance`](#play_openrecordingplayinstance) | private |  | media | DVR/PVR method: play/openRecordingPlayInstance |
-| [`play/seek`](#play_seek) | private |  | media | DVR/PVR method: play/seek |
-| [`play/setPlayRate`](#play_setplayrate) | private |  | media | DVR/PVR method: play/setPlayRate |
-| [`private/deleteRecordFile`](#private_deleterecordfile) | private |  | media | DVR/PVR method: private/deleteRecordFile |
-| [`private/getRecordFileList`](#private_getrecordfilelist) | private |  | media | DVR/PVR method: private/getRecordFileList |
-| [`private/getThumbnail`](#private_getthumbnail) | private |  | media | DVR/PVR method: private/getThumbnail |
-| [`record/changeToSeriesRecord`](#record_changetoseriesrecord) | private |  | media | DVR/PVR method: record/changeToSeriesRecord |
-| [`record/openTimeshiftPlayInstance`](#record_opentimeshiftplayinstance) | private |  | media | DVR/PVR method: record/openTimeshiftPlayInstance |
-| [`record/pauseTimeshiftBuffering`](#record_pausetimeshiftbuffering) | private |  | media | DVR/PVR method: record/pauseTimeshiftBuffering |
-| [`record/setRecordingEndTime`](#record_setrecordingendtime) | private |  | media | DVR/PVR method: record/setRecordingEndTime |
-| [`record/startExternalInputRecord`](#record_startexternalinputrecord) | private |  | media | Records an external (HDMI/AV) input to USB (subject to HDCP on protected sources) |
-| [`record/startManualRecord`](#record_startmanualrecord) | private |  | media | DVR/PVR method: record/startManualRecord |
-| [`record/startProgramRecord`](#record_startprogramrecord) | private |  | media | DVR/PVR method: record/startProgramRecord |
-| [`record/startScheduleRecord`](#record_startschedulerecord) | private |  | media | DVR/PVR method: record/startScheduleRecord |
-| [`record/startTimeshiftBuffering`](#record_starttimeshiftbuffering) | private |  | media | DVR/PVR method: record/startTimeshiftBuffering |
-| [`record/stopRecord`](#record_stoprecord) | private |  | media | DVR/PVR method: record/stopRecord |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`device/checkStoragePerformance`](#device_checkstorageperformance) | private |  | media | documented | DVR/PVR method: device/checkStoragePerformance |
+| [`device/isRecordableStorage`](#device_isrecordablestorage) | private |  | media | documented | DVR/PVR method: device/isRecordableStorage |
+| [`play/openRecordingPlayInstance`](#play_openrecordingplayinstance) | private |  | media | documented | DVR/PVR method: play/openRecordingPlayInstance |
+| [`play/seek`](#play_seek) | private |  | media | documented | DVR/PVR method: play/seek |
+| [`play/setPlayRate`](#play_setplayrate) | private |  | media | documented | DVR/PVR method: play/setPlayRate |
+| [`private/deleteRecordFile`](#private_deleterecordfile) | private |  | media | documented | DVR/PVR method: private/deleteRecordFile |
+| [`private/getRecordFileList`](#private_getrecordfilelist) | private |  | media | documented | DVR/PVR method: private/getRecordFileList |
+| [`private/getThumbnail`](#private_getthumbnail) | private |  | media | documented | DVR/PVR method: private/getThumbnail |
+| [`record/changeToSeriesRecord`](#record_changetoseriesrecord) | private |  | media | documented | DVR/PVR method: record/changeToSeriesRecord |
+| [`record/openTimeshiftPlayInstance`](#record_opentimeshiftplayinstance) | private |  | media | documented | DVR/PVR method: record/openTimeshiftPlayInstance |
+| [`record/pauseTimeshiftBuffering`](#record_pausetimeshiftbuffering) | private |  | media | documented | DVR/PVR method: record/pauseTimeshiftBuffering |
+| [`record/setRecordingEndTime`](#record_setrecordingendtime) | private |  | media | documented | DVR/PVR method: record/setRecordingEndTime |
+| [`record/startExternalInputRecord`](#record_startexternalinputrecord) | private |  | media | documented | Records an external (HDMI/AV) input to USB (subject to HDCP on protected sources) |
+| [`record/startManualRecord`](#record_startmanualrecord) | private |  | media | documented | DVR/PVR method: record/startManualRecord |
+| [`record/startProgramRecord`](#record_startprogramrecord) | private |  | media | documented | DVR/PVR method: record/startProgramRecord |
+| [`record/startScheduleRecord`](#record_startschedulerecord) | private |  | media | documented | DVR/PVR method: record/startScheduleRecord |
+| [`record/startTimeshiftBuffering`](#record_starttimeshiftbuffering) | private |  | media | documented | DVR/PVR method: record/startTimeshiftBuffering |
+| [`record/stopRecord`](#record_stoprecord) | private |  | media | documented | DVR/PVR method: record/stopRecord |
 
 <a id="device_checkstorageperformance"></a>
 ## `device/checkStoragePerformance`
@@ -36,7 +38,7 @@ DVR/PVR method: device/checkStoragePerformance
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/device/checkStoragePerformance '{}'
@@ -57,7 +59,7 @@ DVR/PVR method: device/isRecordableStorage
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/device/isRecordableStorage '{}'
@@ -78,7 +80,7 @@ DVR/PVR method: play/openRecordingPlayInstance
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/play/openRecordingPlayInstance '{}'
@@ -99,7 +101,7 @@ DVR/PVR method: play/seek
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/play/seek '{}'
@@ -120,7 +122,7 @@ DVR/PVR method: play/setPlayRate
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/play/setPlayRate '{}'
@@ -141,7 +143,7 @@ DVR/PVR method: private/deleteRecordFile
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/private/deleteRecordFile '{}'
@@ -162,7 +164,7 @@ DVR/PVR method: private/getRecordFileList
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/private/getRecordFileList '{}'
@@ -183,7 +185,7 @@ DVR/PVR method: private/getThumbnail
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/private/getThumbnail '{}'
@@ -204,7 +206,7 @@ DVR/PVR method: record/changeToSeriesRecord
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/record/changeToSeriesRecord '{}'
@@ -225,7 +227,7 @@ DVR/PVR method: record/openTimeshiftPlayInstance
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/record/openTimeshiftPlayInstance '{}'
@@ -246,7 +248,7 @@ DVR/PVR method: record/pauseTimeshiftBuffering
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/record/pauseTimeshiftBuffering '{}'
@@ -267,7 +269,7 @@ DVR/PVR method: record/setRecordingEndTime
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/record/setRecordingEndTime '{}'
@@ -288,7 +290,7 @@ Records an external (HDMI/AV) input to USB (subject to HDCP on protected sources
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/record/startExternalInputRecord '{}'
@@ -309,7 +311,7 @@ DVR/PVR method: record/startManualRecord
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/record/startManualRecord '{}'
@@ -330,7 +332,7 @@ DVR/PVR method: record/startProgramRecord
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/record/startProgramRecord '{}'
@@ -351,7 +353,7 @@ DVR/PVR method: record/startScheduleRecord
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/record/startScheduleRecord '{}'
@@ -372,7 +374,7 @@ DVR/PVR method: record/startTimeshiftBuffering
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/record/startTimeshiftBuffering '{}'
@@ -393,7 +395,7 @@ DVR/PVR method: record/stopRecord
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.dvr/record/stopRecord '{}'

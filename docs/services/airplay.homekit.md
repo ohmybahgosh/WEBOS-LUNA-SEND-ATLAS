@@ -1,27 +1,31 @@
 # `airplay.homekit`
 
+AirPlay/HomeKit integration helper: manages pairing and reports setup-code and pairing events for Apple AirPlay and HomeKit on the TV. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`reset`](#reset) | private |  | media | Method on airplay.homekit (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`subscribePairingEvent`](#subscribepairingevent) | private |  | media | Method on airplay.homekit (from on-device permission registry; parameters undocumented). |
-| [`subscribeSetupCodeChanged`](#subscribesetupcodechanged) | private |  | media | Method on airplay.homekit (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`reset`](#reset) | private |  | media | inferred | Resets the airplay homekit. ⚠️ |
+| [`subscribePairingEvent`](#subscribepairingevent) | private |  | media | inferred | Subscribes to the pairing event. |
+| [`subscribeSetupCodeChanged`](#subscribesetupcodechanged) | private |  | media | inferred | Subscribes to the setup code changed. |
 
 <a id="reset"></a>
 ## `reset` ⚠️ DANGEROUS
 
 `luna://airplay.homekit/reset`
 
-Method on airplay.homekit (from on-device permission registry; parameters undocumented).
+Resets the airplay homekit.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.homekit/reset '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://airplay.homekit/subscribePairingEvent`
 
-Method on airplay.homekit (from on-device permission registry; parameters undocumented).
+Subscribes to the pairing event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.homekit/subscribePairingEvent '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://airplay.homekit/subscribeSetupCodeChanged`
 
-Method on airplay.homekit (from on-device permission registry; parameters undocumented).
+Subscribes to the setup code changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.homekit/subscribeSetupCodeChanged '{}'

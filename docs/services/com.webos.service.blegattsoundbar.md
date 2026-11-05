@@ -1,28 +1,32 @@
 # `com.webos.service.blegattsoundbar`
 
+Soundbar control over Bluetooth LE GATT: starts/terminates the link and sends/gets commands to a paired soundbar. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getCommand`](#getcommand) | private |  | bluetooth | Getter on com.webos.service.blegattsoundbar (introspected on-device; parameters undocumented). |
-| [`setCommand`](#setcommand) | private |  | bluetooth | Setter on com.webos.service.blegattsoundbar (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | bluetooth | Method on com.webos.service.blegattsoundbar (introspected on-device; parameters undocumented). |
-| [`terminate`](#terminate) | private |  | bluetooth | Method on com.webos.service.blegattsoundbar (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getCommand`](#getcommand) | private |  | bluetooth | inferred | Returns the command. |
+| [`setCommand`](#setcommand) | private |  | bluetooth | inferred | Sets the command. |
+| [`start`](#start) | private |  | bluetooth | inferred | Starts the blegattsoundbar. |
+| [`terminate`](#terminate) | private |  | bluetooth | inferred | Handles the terminate. |
 
 <a id="getcommand"></a>
 ## `getCommand`
 
 `luna://com.webos.service.blegattsoundbar/getCommand`
 
-Getter on com.webos.service.blegattsoundbar (introspected on-device; parameters undocumented).
+Returns the command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegattsoundbar/getCommand '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.blegattsoundbar/setCommand`
 
-Setter on com.webos.service.blegattsoundbar (introspected on-device; parameters undocumented).
+Sets the command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegattsoundbar/setCommand '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.blegattsoundbar/start`
 
-Method on com.webos.service.blegattsoundbar (introspected on-device; parameters undocumented).
+Starts the blegattsoundbar.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegattsoundbar/start '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.blegattsoundbar/terminate`
 
-Method on com.webos.service.blegattsoundbar (introspected on-device; parameters undocumented).
+Handles the terminate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegattsoundbar/terminate '{}'

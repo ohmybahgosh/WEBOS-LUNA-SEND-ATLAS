@@ -1,36 +1,40 @@
 # `com.webos.service.msc`
 
+Motion-sensor/accelerometer controller: reads accelerometer and orientation data, reports motion status, and runs calibration and factory (DFT) tests. _(inferred from the service's methods)_
+
 12 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkAccelerometer4DFT`](#checkaccelerometer4dft) | private |  | misc | Method on com.webos.service.msc (introspected on-device; parameters undocumented). |
-| [`checkDFT`](#checkdft) | private |  | misc | Method on com.webos.service.msc (introspected on-device; parameters undocumented). |
-| [`debug`](#debug) | private |  | misc | Method on com.webos.service.msc (introspected on-device; parameters undocumented). |
-| [`getAccelerometerRawData`](#getaccelerometerrawdata) | private |  | misc | Getter on com.webos.service.msc (introspected on-device; parameters undocumented). |
-| [`getMotionSensorInfo`](#getmotionsensorinfo) | private |  | misc | Getter on com.webos.service.msc (introspected on-device; parameters undocumented). |
-| [`getMotionStatus`](#getmotionstatus) | private |  | misc | Getter on com.webos.service.msc (introspected on-device; parameters undocumented). |
-| [`getOrientationInfo`](#getorientationinfo) | private |  | misc | Getter on com.webos.service.msc (introspected on-device; parameters undocumented). |
-| [`resetAccelerometerTestResult`](#resetaccelerometertestresult) | private |  | misc | Method on com.webos.service.msc (introspected on-device; parameters undocumented). ⚠️ |
-| [`setAccelerometerCompensation`](#setaccelerometercompensation) | private |  | misc | Setter on com.webos.service.msc (introspected on-device; parameters undocumented). |
-| [`setAccelerometerDemoMode`](#setaccelerometerdemomode) | private |  | misc | Setter on com.webos.service.msc (introspected on-device; parameters undocumented). |
-| [`setAccelerometerTestMode`](#setaccelerometertestmode) | private |  | misc | Setter on com.webos.service.msc (introspected on-device; parameters undocumented). |
-| [`setMotionSensorInfo`](#setmotionsensorinfo) | private |  | misc | Setter on com.webos.service.msc (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkAccelerometer4DFT`](#checkaccelerometer4dft) | private |  | misc | inferred | Checks the accelerometer 4 DFT. |
+| [`checkDFT`](#checkdft) | private |  | misc | inferred | Checks the DFT. |
+| [`debug`](#debug) | private |  | misc | inferred | Handles the debug. |
+| [`getAccelerometerRawData`](#getaccelerometerrawdata) | private |  | misc | inferred | Returns the accelerometer raw data. |
+| [`getMotionSensorInfo`](#getmotionsensorinfo) | private |  | misc | inferred | Returns the motion sensor info. |
+| [`getMotionStatus`](#getmotionstatus) | private |  | misc | inferred | Returns the motion status. |
+| [`getOrientationInfo`](#getorientationinfo) | private |  | misc | inferred | Returns the orientation info. |
+| [`resetAccelerometerTestResult`](#resetaccelerometertestresult) | private |  | misc | inferred | Resets the accelerometer test result. ⚠️ |
+| [`setAccelerometerCompensation`](#setaccelerometercompensation) | private |  | misc | inferred | Sets the accelerometer compensation. |
+| [`setAccelerometerDemoMode`](#setaccelerometerdemomode) | private |  | misc | inferred | Sets the accelerometer demo mode. |
+| [`setAccelerometerTestMode`](#setaccelerometertestmode) | private |  | misc | inferred | Sets the accelerometer test mode. |
+| [`setMotionSensorInfo`](#setmotionsensorinfo) | private |  | misc | inferred | Sets the motion sensor info. |
 
 <a id="checkaccelerometer4dft"></a>
 ## `checkAccelerometer4DFT`
 
 `luna://com.webos.service.msc/checkAccelerometer4DFT`
 
-Method on com.webos.service.msc (introspected on-device; parameters undocumented).
+Checks the accelerometer 4 DFT.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/checkAccelerometer4DFT '{}'
@@ -45,13 +49,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.msc/checkDFT`
 
-Method on com.webos.service.msc (introspected on-device; parameters undocumented).
+Checks the DFT.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/checkDFT '{}'
@@ -66,13 +72,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.msc/debug`
 
-Method on com.webos.service.msc (introspected on-device; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/debug '{}'
@@ -87,13 +95,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.msc/getAccelerometerRawData`
 
-Getter on com.webos.service.msc (introspected on-device; parameters undocumented).
+Returns the accelerometer raw data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/getAccelerometerRawData '{}'
@@ -108,13 +118,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.msc/getMotionSensorInfo`
 
-Getter on com.webos.service.msc (introspected on-device; parameters undocumented).
+Returns the motion sensor info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/getMotionSensorInfo '{}'
@@ -129,13 +141,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.msc/getMotionStatus`
 
-Getter on com.webos.service.msc (introspected on-device; parameters undocumented).
+Returns the motion status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/getMotionStatus '{}'
@@ -150,13 +164,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.msc/getOrientationInfo`
 
-Getter on com.webos.service.msc (introspected on-device; parameters undocumented).
+Returns the orientation info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/getOrientationInfo '{}'
@@ -171,13 +187,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.msc/resetAccelerometerTestResult`
 
-Method on com.webos.service.msc (introspected on-device; parameters undocumented).
+Resets the accelerometer test result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/resetAccelerometerTestResult '{}'
@@ -192,13 +210,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.msc/setAccelerometerCompensation`
 
-Setter on com.webos.service.msc (introspected on-device; parameters undocumented).
+Sets the accelerometer compensation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/setAccelerometerCompensation '{}'
@@ -213,13 +233,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.msc/setAccelerometerDemoMode`
 
-Setter on com.webos.service.msc (introspected on-device; parameters undocumented).
+Sets the accelerometer demo mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/setAccelerometerDemoMode '{}'
@@ -234,13 +256,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.msc/setAccelerometerTestMode`
 
-Setter on com.webos.service.msc (introspected on-device; parameters undocumented).
+Sets the accelerometer test mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/setAccelerometerTestMode '{}'
@@ -255,13 +279,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.msc/setMotionSensorInfo`
 
-Setter on com.webos.service.msc (introspected on-device; parameters undocumented).
+Sets the motion sensor info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.msc/setMotionSensorInfo '{}'

@@ -1,43 +1,47 @@
 # `airplay.service`
 
+Apple AirPlay and HomeKit integration: manages the AirPlay mirroring window, position and audio state, handles MFi authentication keys, and shows HomeKit settings pages. _(inferred from the service's methods)_
+
 19 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`changeAppPosition`](#changeappposition) | public |  | media | Method on airplay.service (introspected on-device; parameters undocumented). |
-| [`changeAudioState`](#changeaudiostate) | public |  | audio | Method on airplay.service (introspected on-device; parameters undocumented). |
-| [`changeWindowSize`](#changewindowsize) | public |  | media | Method on airplay.service (introspected on-device; parameters undocumented). |
-| [`changeWindowType`](#changewindowtype) | public |  | media | Method on airplay.service (introspected on-device; parameters undocumented). |
-| [`exit`](#exit) | public |  | media | Method on airplay.service (introspected on-device; parameters undocumented). |
-| [`getAudioState`](#getaudiostate) | public |  | audio | Getter on airplay.service (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | public |  | media | Getter on airplay.service (introspected on-device; parameters undocumented). |
-| [`mfiKeyDownload`](#mfikeydownload) | private |  | media | Method on airplay.service (from on-device permission registry; parameters undocumented). |
-| [`mfiKeyInfo`](#mfikeyinfo) | private |  | media | Method on airplay.service (from on-device permission registry; parameters undocumented). |
-| [`mfiKeyVerify`](#mfikeyverify) | private |  | media | Method on airplay.service (from on-device permission registry; parameters undocumented). |
-| [`mfiKeyWrite`](#mfikeywrite) | private |  | media | Method on airplay.service (from on-device permission registry; parameters undocumented). |
-| [`notifyMinimizedAppState`](#notifyminimizedappstate) | private |  | media | Method on airplay.service (introspected on-device; parameters undocumented). |
-| [`notifyMirroringState`](#notifymirroringstate) | private |  | media | Method on airplay.service (introspected on-device; parameters undocumented). |
-| [`reset`](#reset) | private |  | media | Method on airplay.service (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setHomekitInfo`](#sethomekitinfo) | private |  | media | Method on airplay.service (from on-device permission registry; parameters undocumented). |
-| [`sharedKeyDelete`](#sharedkeydelete) | private |  | media | Method on airplay.service (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`showAirplayPage`](#showairplaypage) | public |  | media | Method on airplay.service (introspected on-device; parameters undocumented). |
-| [`showHomekitSettingPage`](#showhomekitsettingpage) | public |  | media | Method on airplay.service (introspected on-device; parameters undocumented). |
-| [`test`](#test) | public |  | media | Method on airplay.service (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`changeAppPosition`](#changeappposition) | public |  | media | inferred | Changes the app position. |
+| [`changeAudioState`](#changeaudiostate) | public |  | audio | inferred | Changes the audio state. |
+| [`changeWindowSize`](#changewindowsize) | public |  | media | inferred | Changes the window size. |
+| [`changeWindowType`](#changewindowtype) | public |  | media | inferred | Changes the window type. |
+| [`exit`](#exit) | public |  | media | inferred | Exits the airplay. |
+| [`getAudioState`](#getaudiostate) | public |  | audio | inferred | Returns the audio state. |
+| [`getStatus`](#getstatus) | public |  | media | inferred | Returns the status. |
+| [`mfiKeyDownload`](#mfikeydownload) | private |  | media | inferred | Handles the mfi key download. |
+| [`mfiKeyInfo`](#mfikeyinfo) | private |  | media | inferred | Handles the mfi key info. |
+| [`mfiKeyVerify`](#mfikeyverify) | private |  | media | inferred | Handles the mfi key verify. |
+| [`mfiKeyWrite`](#mfikeywrite) | private |  | media | inferred | Handles the mfi key write. |
+| [`notifyMinimizedAppState`](#notifyminimizedappstate) | private |  | media | inferred | Notifies of the minimized app state. |
+| [`notifyMirroringState`](#notifymirroringstate) | private |  | media | inferred | Notifies of the mirroring state. |
+| [`reset`](#reset) | private |  | media | inferred | Resets the airplay. ⚠️ |
+| [`setHomekitInfo`](#sethomekitinfo) | private |  | media | inferred | Sets the homekit info. |
+| [`sharedKeyDelete`](#sharedkeydelete) | private |  | media | inferred | Handles the shared key delete. ⚠️ |
+| [`showAirplayPage`](#showairplaypage) | public |  | media | inferred | Shows the airplay page. |
+| [`showHomekitSettingPage`](#showhomekitsettingpage) | public |  | media | inferred | Shows the homekit setting page. |
+| [`test`](#test) | public |  | media | inferred | Tests the airplay. |
 
 <a id="changeappposition"></a>
 ## `changeAppPosition`
 
 `luna://airplay.service/changeAppPosition`
 
-Method on airplay.service (introspected on-device; parameters undocumented).
+Changes the app position.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/changeAppPosition '{}'
@@ -52,13 +56,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://airplay.service/changeAudioState`
 
-Method on airplay.service (introspected on-device; parameters undocumented).
+Changes the audio state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/changeAudioState '{}'
@@ -73,13 +79,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://airplay.service/changeWindowSize`
 
-Method on airplay.service (introspected on-device; parameters undocumented).
+Changes the window size.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/changeWindowSize '{}'
@@ -94,13 +102,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://airplay.service/changeWindowType`
 
-Method on airplay.service (introspected on-device; parameters undocumented).
+Changes the window type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/changeWindowType '{}'
@@ -115,13 +125,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://airplay.service/exit`
 
-Method on airplay.service (introspected on-device; parameters undocumented).
+Exits the airplay.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/exit '{}'
@@ -136,13 +148,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://airplay.service/getAudioState`
 
-Getter on airplay.service (introspected on-device; parameters undocumented).
+Returns the audio state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/getAudioState '{}'
@@ -157,13 +171,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://airplay.service/getStatus`
 
-Getter on airplay.service (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/getStatus '{}'
@@ -178,13 +194,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://airplay.service/mfiKeyDownload`
 
-Method on airplay.service (from on-device permission registry; parameters undocumented).
+Handles the mfi key download.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/mfiKeyDownload '{}'
@@ -199,13 +217,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://airplay.service/mfiKeyInfo`
 
-Method on airplay.service (from on-device permission registry; parameters undocumented).
+Handles the mfi key info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/mfiKeyInfo '{}'
@@ -220,13 +240,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://airplay.service/mfiKeyVerify`
 
-Method on airplay.service (from on-device permission registry; parameters undocumented).
+Handles the mfi key verify.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/mfiKeyVerify '{}'
@@ -241,13 +263,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://airplay.service/mfiKeyWrite`
 
-Method on airplay.service (from on-device permission registry; parameters undocumented).
+Handles the mfi key write.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/mfiKeyWrite '{}'
@@ -262,13 +286,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://airplay.service/notifyMinimizedAppState`
 
-Method on airplay.service (introspected on-device; parameters undocumented).
+Notifies of the minimized app state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/notifyMinimizedAppState '{}'
@@ -283,13 +309,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://airplay.service/notifyMirroringState`
 
-Method on airplay.service (introspected on-device; parameters undocumented).
+Notifies of the mirroring state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/notifyMirroringState '{}'
@@ -304,13 +332,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://airplay.service/reset`
 
-Method on airplay.service (from on-device permission registry; parameters undocumented).
+Resets the airplay.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/reset '{}'
@@ -325,13 +355,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://airplay.service/setHomekitInfo`
 
-Method on airplay.service (from on-device permission registry; parameters undocumented).
+Sets the homekit info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/setHomekitInfo '{}'
@@ -346,13 +378,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://airplay.service/sharedKeyDelete`
 
-Method on airplay.service (from on-device permission registry; parameters undocumented).
+Handles the shared key delete.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/sharedKeyDelete '{}'
@@ -367,13 +401,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://airplay.service/showAirplayPage`
 
-Method on airplay.service (introspected on-device; parameters undocumented).
+Shows the airplay page.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/showAirplayPage '{}'
@@ -388,13 +424,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://airplay.service/showHomekitSettingPage`
 
-Method on airplay.service (introspected on-device; parameters undocumented).
+Shows the homekit setting page.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/showHomekitSettingPage '{}'
@@ -409,13 +447,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://airplay.service/test`
 
-Method on airplay.service (introspected on-device; parameters undocumented).
+Tests the airplay.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://airplay.service/test '{}'

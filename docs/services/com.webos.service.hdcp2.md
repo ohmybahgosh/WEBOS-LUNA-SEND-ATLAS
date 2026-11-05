@@ -1,30 +1,34 @@
 # `com.webos.service.hdcp2`
 
+HDCP 2.x receiver service: opens/closes the HDCP link and reports status, decryption key and key inspection data. _(inferred from the service's methods)_
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`rx/close`](#rx_close) | private |  | misc | Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented). |
-| [`rx/debug`](#rx_debug) | private |  | misc | Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented). |
-| [`rx/getDecryptionKey`](#rx_getdecryptionkey) | private |  | misc | Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented). |
-| [`rx/getStatus`](#rx_getstatus) | private |  | misc | Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented). |
-| [`rx/inspectKey`](#rx_inspectkey) | private |  | misc | Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented). |
-| [`rx/open`](#rx_open) | private |  | misc | Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`rx/close`](#rx_close) | private |  | misc | inferred | Closes the HDCP 2 (rx) |
+| [`rx/debug`](#rx_debug) | private |  | misc | inferred | Handles the debug (rx) |
+| [`rx/getDecryptionKey`](#rx_getdecryptionkey) | private |  | misc | inferred | Returns the decryption key (rx) |
+| [`rx/getStatus`](#rx_getstatus) | private |  | misc | inferred | Returns the status (rx) |
+| [`rx/inspectKey`](#rx_inspectkey) | private |  | misc | inferred | Handles the inspect key (rx) |
+| [`rx/open`](#rx_open) | private |  | misc | inferred | Opens the HDCP 2 (rx) |
 
 <a id="rx_close"></a>
 ## `rx/close`
 
 `luna://com.webos.service.hdcp2/rx/close`
 
-Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented).
+Closes the HDCP 2 (rx)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hdcp2/rx/close '{}'
@@ -39,13 +43,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hdcp2/rx/debug`
 
-Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented).
+Handles the debug (rx)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hdcp2/rx/debug '{}'
@@ -60,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hdcp2/rx/getDecryptionKey`
 
-Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented).
+Returns the decryption key (rx)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hdcp2/rx/getDecryptionKey '{}'
@@ -81,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hdcp2/rx/getStatus`
 
-Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented).
+Returns the status (rx)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hdcp2/rx/getStatus '{}'
@@ -102,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hdcp2/rx/inspectKey`
 
-Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented).
+Handles the inspect key (rx)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hdcp2/rx/inspectKey '{}'
@@ -123,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hdcp2/rx/open`
 
-Method on com.webos.service.hdcp2 (from on-device permission registry; parameters undocumented).
+Opens the HDCP 2 (rx)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hdcp2/rx/open '{}'

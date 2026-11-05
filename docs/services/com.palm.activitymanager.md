@@ -1,18 +1,20 @@
 # `com.palm.activitymanager`
 
+Legacy ActivityManager: schedules, tracks and arbitrates background activities (jobs), letting clients create, start, adopt, complete, release and cancel them.
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`adopt`](#adopt) | public | yes | activity | Registers an app or service as willing to take over as the Activity parent. |
-| [`cancel`](#cancel) | public |  | activity | Terminates the specified Activity and sends a cancel event to all subscribers. |
-| [`complete`](#complete) | public | yes | activity | Parent ends the Activity and optionally restarts it with new attributes. |
-| [`create`](#create) | public | yes | activity | Creates a new Activity and returns its ID. |
-| [`release`](#release) | public |  | activity | Parent frees an Activity and notifies other subscribers. |
-| [`start`](#start) | public |  | activity | Moves an Activity from init to eligible-to-run, or resumes a paused one. |
-| [`stop`](#stop) | public |  | activity | Stops an Activity and sends a stop event to all subscribers. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`adopt`](#adopt) | public | yes | activity | documented | Registers an app or service as willing to take over as the Activity parent. |
+| [`cancel`](#cancel) | public |  | activity | documented | Terminates the specified Activity and sends a cancel event to all subscribers. |
+| [`complete`](#complete) | public | yes | activity | documented | Parent ends the Activity and optionally restarts it with new attributes. |
+| [`create`](#create) | public | yes | activity | documented | Creates a new Activity and returns its ID. |
+| [`release`](#release) | public |  | activity | documented | Parent frees an Activity and notifies other subscribers. |
+| [`start`](#start) | public |  | activity | documented | Moves an Activity from init to eligible-to-run, or resumes a paused one. |
+| [`stop`](#stop) | public |  | activity | documented | Stops an Activity and sends a stop event to all subscribers. |
 
 <a id="adopt"></a>
 ## `adopt`

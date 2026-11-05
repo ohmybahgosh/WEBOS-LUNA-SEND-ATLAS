@@ -1,59 +1,61 @@
 # `com.webos.service.miracast`
 
+Miracast (Wi-Fi Display) service: manages device discovery, pairing and connection, reports connection/media/P2P state and statistics, and handles UIBC and WiDi settings.
+
 48 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | ssap |  | media | Close Miracast session |
-| [`debug`](#debug) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`deletePairedDeviceList`](#deletepaireddevicelist) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). ⚠️ |
-| [`destroyListenModeNotification`](#destroylistenmodenotification) | private |  | notifications | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`get3dMediaInfo`](#get3dmediainfo) | private |  | media | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`getBBDInfo`](#getbbdinfo) | private |  | security | Getter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`getBlockedDeviceInfo`](#getblockeddeviceinfo) | private |  | security | Getter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`getConnectedDeviceInfo`](#getconnecteddeviceinfo) | private |  | security | Getter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`getConnectionStatus`](#getconnectionstatus) | ssap |  | media | Get Miracast connection status |
-| [`getDeviceInfo`](#getdeviceinfo) | private |  | security | Getter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`getMediaInfo`](#getmediainfo) | private |  | media | Getter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`getMiracastStatistics`](#getmiracaststatistics) | private |  | security | Getter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`getOverlayBlockedAppList`](#getoverlayblockedapplist) | private |  | security | Getter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`getP2pState`](#getp2pstate) | ssap |  | media | Get Miracast P2P state |
-| [`getPerformanceStatistics`](#getperformancestatistics) | private |  | security | Getter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`getSourceProperty`](#getsourceproperty) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`getState`](#getstate) | private |  | security | Getter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`getUACSettings`](#getuacsettings) | private |  | settings | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`getWFDConnectionMode`](#getwfdconnectionmode) | private |  | security | Getter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`initProperty`](#initproperty) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`launchFullApp`](#launchfullapp) | private |  | apps | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`launchOverlayApp`](#launchoverlayapp) | private |  | apps | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`notifyAppSettingChanged`](#notifyappsettingchanged) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`notifySettingMenu`](#notifysettingmenu) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`open`](#open) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`popupTest`](#popuptest) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`registerActionHandler`](#registeractionhandler) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`registerInfoCallback`](#registerinfocallback) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`releaseProperty`](#releaseproperty) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`seamlessConnection`](#seamlessconnection) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`sendIDRRequest`](#sendidrrequest) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`sendPauseRequest`](#sendpauserequest) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`sendPlayInfo`](#sendplayinfo) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`sendPlayRequest`](#sendplayrequest) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`sendRTSPRequest`](#sendrtsprequest) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`setForceAvahiPublish`](#setforceavahipublish) | private |  | security | Setter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`setOverlayAvailableState`](#setoverlayavailablestate) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`setOverlayBlockedApp`](#setoverlayblockedapp) | private |  | security | Setter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`setUACSettings`](#setuacsettings) | ssap |  | media | Set Miracast UAC settings |
-| [`setWFDConnectionMode`](#setwfdconnectionmode) | private |  | security | Setter on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`stopP2pThread`](#stopp2pthread) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`uibc/createKeyEvent`](#uibc_createkeyevent) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`uibc/createMouseEvent`](#uibc_createmouseevent) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`uibc/createTouchEvent`](#uibc_createtouchevent) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`uibc/getUibcKeyEvent`](#uibc_getuibckeyevent) | ssap |  | media | Get Miracast UIBC key event |
-| [`unregisterInfoCallback`](#unregisterinfocallback) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
-| [`widi/registerMouseEventCallback`](#widi_registermouseeventcallback) | private |  | security | Method on com.webos.service.miracast (introspected on-device; parameters undocumented). |
-| [`widi/unregisterMouseEventCallback`](#widi_unregistermouseeventcallback) | private |  | security | Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | ssap |  | media | documented | Close Miracast session |
+| [`debug`](#debug) | private |  | security | inferred | Handles the debug. |
+| [`deletePairedDeviceList`](#deletepaireddevicelist) | private |  | security | inferred | Deletes the paired device list. ⚠️ |
+| [`destroyListenModeNotification`](#destroylistenmodenotification) | private |  | notifications | inferred | Handles the destroy listen mode notification. |
+| [`get3dMediaInfo`](#get3dmediainfo) | private |  | media | inferred | Returns the 3 d media info. |
+| [`getBBDInfo`](#getbbdinfo) | private |  | security | inferred | Returns the BBD info. |
+| [`getBlockedDeviceInfo`](#getblockeddeviceinfo) | private |  | security | inferred | Returns the blocked device info. |
+| [`getConnectedDeviceInfo`](#getconnecteddeviceinfo) | private |  | security | inferred | Returns the connected device info. |
+| [`getConnectionStatus`](#getconnectionstatus) | ssap |  | media | documented | Get Miracast connection status |
+| [`getDeviceInfo`](#getdeviceinfo) | private |  | security | inferred | Returns the device info. |
+| [`getMediaInfo`](#getmediainfo) | private |  | media | inferred | Returns the media info. |
+| [`getMiracastStatistics`](#getmiracaststatistics) | private |  | security | inferred | Returns the miracast statistics. |
+| [`getOverlayBlockedAppList`](#getoverlayblockedapplist) | private |  | security | inferred | Returns the overlay blocked app list. |
+| [`getP2pState`](#getp2pstate) | ssap |  | media | documented | Get Miracast P2P state |
+| [`getPerformanceStatistics`](#getperformancestatistics) | private |  | security | inferred | Returns the performance statistics. |
+| [`getSourceProperty`](#getsourceproperty) | private |  | security | inferred | Returns the source property. |
+| [`getState`](#getstate) | private |  | security | inferred | Returns the state. |
+| [`getUACSettings`](#getuacsettings) | private |  | settings | inferred | Returns the UAC settings. |
+| [`getWFDConnectionMode`](#getwfdconnectionmode) | private |  | security | inferred | Returns the WFD connection mode. |
+| [`initProperty`](#initproperty) | private |  | security | inferred | Initializes the property. |
+| [`launchFullApp`](#launchfullapp) | private |  | apps | inferred | Launches the full app. |
+| [`launchOverlayApp`](#launchoverlayapp) | private |  | apps | inferred | Launches the overlay app. |
+| [`notifyAppSettingChanged`](#notifyappsettingchanged) | private |  | security | inferred | Notifies of the app setting changed. |
+| [`notifySettingMenu`](#notifysettingmenu) | private |  | security | inferred | Notifies of the setting menu. |
+| [`open`](#open) | private |  | security | inferred | Opens the miracast. |
+| [`popupTest`](#popuptest) | private |  | security | inferred | Handles the popup test. |
+| [`registerActionHandler`](#registeractionhandler) | private |  | security | inferred | Registers the action handler. |
+| [`registerInfoCallback`](#registerinfocallback) | private |  | security | inferred | Registers the info callback. |
+| [`releaseProperty`](#releaseproperty) | private |  | security | inferred | Releases the property. |
+| [`seamlessConnection`](#seamlessconnection) | private |  | security | inferred | Handles the seamless connection. |
+| [`sendIDRRequest`](#sendidrrequest) | private |  | security | inferred | Sends the IDR request. |
+| [`sendPauseRequest`](#sendpauserequest) | private |  | security | inferred | Sends the pause request. |
+| [`sendPlayInfo`](#sendplayinfo) | private |  | security | inferred | Sends the play info. |
+| [`sendPlayRequest`](#sendplayrequest) | private |  | security | inferred | Sends the play request. |
+| [`sendRTSPRequest`](#sendrtsprequest) | private |  | security | inferred | Sends the RTSP request. |
+| [`setForceAvahiPublish`](#setforceavahipublish) | private |  | security | inferred | Sets the force avahi publish. |
+| [`setOverlayAvailableState`](#setoverlayavailablestate) | private |  | security | inferred | Sets the overlay available state. |
+| [`setOverlayBlockedApp`](#setoverlayblockedapp) | private |  | security | inferred | Sets the overlay blocked app. |
+| [`setUACSettings`](#setuacsettings) | ssap |  | media | documented | Set Miracast UAC settings |
+| [`setWFDConnectionMode`](#setwfdconnectionmode) | private |  | security | inferred | Sets the WFD connection mode. |
+| [`stopP2pThread`](#stopp2pthread) | private |  | security | inferred | Stops the p 2 p thread. |
+| [`uibc/createKeyEvent`](#uibc_createkeyevent) | private |  | security | inferred | Creates the key event (uibc) |
+| [`uibc/createMouseEvent`](#uibc_createmouseevent) | private |  | security | inferred | Creates the mouse event (uibc) |
+| [`uibc/createTouchEvent`](#uibc_createtouchevent) | private |  | security | inferred | Creates the touch event (uibc) |
+| [`uibc/getUibcKeyEvent`](#uibc_getuibckeyevent) | ssap |  | media | documented | Get Miracast UIBC key event |
+| [`unregisterInfoCallback`](#unregisterinfocallback) | private |  | security | inferred | Unregisters the info callback. |
+| [`widi/registerMouseEventCallback`](#widi_registermouseeventcallback) | private |  | security | inferred | Registers the mouse event callback (widi) |
+| [`widi/unregisterMouseEventCallback`](#widi_unregistermouseeventcallback) | private |  | security | inferred | Unregisters the mouse event callback (widi) |
 
 <a id="close"></a>
 ## `close`
@@ -66,7 +68,7 @@ Close Miracast session
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.miracast/close","payload":{}}
@@ -81,13 +83,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.miracast/debug`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/debug '{}'
@@ -102,13 +106,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/deletePairedDeviceList`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Deletes the paired device list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/deletePairedDeviceList '{}'
@@ -123,13 +129,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/destroyListenModeNotification`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Handles the destroy listen mode notification.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/destroyListenModeNotification '{}'
@@ -144,13 +152,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/get3dMediaInfo`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Returns the 3 d media info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/get3dMediaInfo '{}'
@@ -165,13 +175,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/getBBDInfo`
 
-Getter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Returns the BBD info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getBBDInfo '{}'
@@ -186,13 +198,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/getBlockedDeviceInfo`
 
-Getter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Returns the blocked device info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getBlockedDeviceInfo '{}'
@@ -207,13 +221,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/getConnectedDeviceInfo`
 
-Getter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Returns the connected device info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getConnectedDeviceInfo '{}'
@@ -234,7 +250,7 @@ Get Miracast connection status
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.miracast/getConnectionStatus","payload":{}}
@@ -249,13 +265,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.miracast/getDeviceInfo`
 
-Getter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Returns the device info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getDeviceInfo '{}'
@@ -270,13 +288,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/getMediaInfo`
 
-Getter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Returns the media info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getMediaInfo '{}'
@@ -291,13 +311,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/getMiracastStatistics`
 
-Getter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Returns the miracast statistics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getMiracastStatistics '{}'
@@ -312,13 +334,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/getOverlayBlockedAppList`
 
-Getter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Returns the overlay blocked app list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getOverlayBlockedAppList '{}'
@@ -339,7 +363,7 @@ Get Miracast P2P state
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.miracast/getP2pState","payload":{}}
@@ -354,13 +378,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.miracast/getPerformanceStatistics`
 
-Getter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Returns the performance statistics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getPerformanceStatistics '{}'
@@ -375,13 +401,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/getSourceProperty`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Returns the source property.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getSourceProperty '{}'
@@ -396,13 +424,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/getState`
 
-Getter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Returns the state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getState '{}'
@@ -417,13 +447,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/getUACSettings`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Returns the UAC settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getUACSettings '{}'
@@ -438,13 +470,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/getWFDConnectionMode`
 
-Getter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Returns the WFD connection mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/getWFDConnectionMode '{}'
@@ -459,13 +493,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/initProperty`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Initializes the property.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/initProperty '{}'
@@ -480,13 +516,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/launchFullApp`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Launches the full app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/launchFullApp '{}'
@@ -501,13 +539,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/launchOverlayApp`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Launches the overlay app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/launchOverlayApp '{}'
@@ -522,13 +562,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/notifyAppSettingChanged`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Notifies of the app setting changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/notifyAppSettingChanged '{}'
@@ -543,13 +585,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/notifySettingMenu`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Notifies of the setting menu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/notifySettingMenu '{}'
@@ -564,13 +608,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/open`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Opens the miracast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/open '{}'
@@ -585,13 +631,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/popupTest`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Handles the popup test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/popupTest '{}'
@@ -606,13 +654,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/registerActionHandler`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Registers the action handler.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/registerActionHandler '{}'
@@ -627,13 +677,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/registerInfoCallback`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Registers the info callback.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/registerInfoCallback '{}'
@@ -648,13 +700,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/releaseProperty`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Releases the property.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/releaseProperty '{}'
@@ -669,13 +723,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/seamlessConnection`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Handles the seamless connection.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/seamlessConnection '{}'
@@ -690,13 +746,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/sendIDRRequest`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Sends the IDR request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/sendIDRRequest '{}'
@@ -711,13 +769,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/sendPauseRequest`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Sends the pause request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/sendPauseRequest '{}'
@@ -732,13 +792,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/sendPlayInfo`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Sends the play info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/sendPlayInfo '{}'
@@ -753,13 +815,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/sendPlayRequest`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Sends the play request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/sendPlayRequest '{}'
@@ -774,13 +838,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/sendRTSPRequest`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Sends the RTSP request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/sendRTSPRequest '{}'
@@ -795,13 +861,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/setForceAvahiPublish`
 
-Setter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Sets the force avahi publish.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/setForceAvahiPublish '{}'
@@ -816,13 +884,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/setOverlayAvailableState`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Sets the overlay available state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/setOverlayAvailableState '{}'
@@ -837,13 +907,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/setOverlayBlockedApp`
 
-Setter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Sets the overlay blocked app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/setOverlayBlockedApp '{}'
@@ -864,7 +936,7 @@ Set Miracast UAC settings
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.miracast/setUACSettings","payload":{}}
@@ -879,13 +951,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.miracast/setWFDConnectionMode`
 
-Setter on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Sets the WFD connection mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/setWFDConnectionMode '{}'
@@ -900,13 +974,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/stopP2pThread`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Stops the p 2 p thread.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/stopP2pThread '{}'
@@ -921,13 +997,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/uibc/createKeyEvent`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Creates the key event (uibc)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/uibc/createKeyEvent '{}'
@@ -942,13 +1020,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/uibc/createMouseEvent`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Creates the mouse event (uibc)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/uibc/createMouseEvent '{}'
@@ -963,13 +1043,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/uibc/createTouchEvent`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Creates the touch event (uibc)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/uibc/createTouchEvent '{}'
@@ -990,7 +1072,7 @@ Get Miracast UIBC key event
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.miracast/uibc/getUibcKeyEvent","payload":{}}
@@ -1005,13 +1087,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.miracast/unregisterInfoCallback`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Unregisters the info callback.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/unregisterInfoCallback '{}'
@@ -1026,13 +1110,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast/widi/registerMouseEventCallback`
 
-Method on com.webos.service.miracast (introspected on-device; parameters undocumented).
+Registers the mouse event callback (widi)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/widi/registerMouseEventCallback '{}'
@@ -1047,13 +1133,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.miracast/widi/unregisterMouseEventCallback`
 
-Method on com.webos.service.miracast (from on-device permission registry; parameters undocumented).
+Unregisters the mouse event callback (widi)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast/widi/unregisterMouseEventCallback '{}'

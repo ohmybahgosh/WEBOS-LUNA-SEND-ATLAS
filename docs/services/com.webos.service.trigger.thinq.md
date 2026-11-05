@@ -1,33 +1,37 @@
 # `com.webos.service.trigger.thinq`
 
+ThinQ voice wake-word trigger service: gets and sets trigger activation and sensitivity and runs trigger acoustic tests. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getActivation`](#getactivation) | private |  | misc | Getter on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented). |
-| [`getDataVersion`](#getdataversion) | private |  | misc | Getter on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented). |
-| [`getSensitivity`](#getsensitivity) | private |  | misc | Getter on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented). |
-| [`setActivation`](#setactivation) | private |  | misc | Setter on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented). |
-| [`setSensitivity`](#setsensitivity) | private |  | misc | Setter on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented). |
-| [`tas/endTest`](#tas_endtest) | private |  | misc | Method on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented). |
-| [`tas/readyTest`](#tas_readytest) | private |  | misc | Method on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented). |
-| [`tas/runTest`](#tas_runtest) | private |  | misc | Method on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getActivation`](#getactivation) | private |  | misc | inferred | Returns the activation. |
+| [`getDataVersion`](#getdataversion) | private |  | misc | inferred | Returns the data version. |
+| [`getSensitivity`](#getsensitivity) | private |  | misc | inferred | Returns the sensitivity. |
+| [`setActivation`](#setactivation) | private |  | misc | inferred | Sets the activation. |
+| [`setSensitivity`](#setsensitivity) | private |  | misc | inferred | Sets the sensitivity. |
+| [`start`](#start) | private |  | misc | inferred | Starts the trigger thinq. |
+| [`tas/endTest`](#tas_endtest) | private |  | misc | inferred | Handles the end test (tas) |
+| [`tas/readyTest`](#tas_readytest) | private |  | misc | inferred | Handles the ready test (tas) |
+| [`tas/runTest`](#tas_runtest) | private |  | misc | inferred | Runs the test (tas) |
 
 <a id="getactivation"></a>
 ## `getActivation`
 
 `luna://com.webos.service.trigger.thinq/getActivation`
 
-Getter on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented).
+Returns the activation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.thinq/getActivation '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.trigger.thinq/getDataVersion`
 
-Getter on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented).
+Returns the data version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.thinq/getDataVersion '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.trigger.thinq/getSensitivity`
 
-Getter on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented).
+Returns the sensitivity.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.thinq/getSensitivity '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.trigger.thinq/setActivation`
 
-Setter on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented).
+Sets the activation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.thinq/setActivation '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.trigger.thinq/setSensitivity`
 
-Setter on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented).
+Sets the sensitivity.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.thinq/setSensitivity '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.trigger.thinq/start`
 
-Method on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented).
+Starts the trigger thinq.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.thinq/start '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.trigger.thinq/tas/endTest`
 
-Method on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented).
+Handles the end test (tas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.thinq/tas/endTest '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.trigger.thinq/tas/readyTest`
 
-Method on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented).
+Handles the ready test (tas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.thinq/tas/readyTest '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.trigger.thinq/tas/runTest`
 
-Method on com.webos.service.trigger.thinq (introspected on-device; parameters undocumented).
+Runs the test (tas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.trigger.thinq/tas/runTest '{}'

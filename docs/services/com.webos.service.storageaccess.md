@@ -1,24 +1,26 @@
 # `com.webos.service.storageaccess`
 
+Storage-access service: lists storage providers and attached devices, reports device properties, and performs file operations (copy, move, rename, remove, eject).
+
 13 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`device/copy`](#device_copy) | public | yes | storage | Copies a file or directory from the source location to the destination. |
-| [`device/eject`](#device_eject) | public |  | storage | Ejects the storage device. In case of "cloud" storage type, it acts as a logout operation. Note: This operation is not applicable for "inter |
-| [`device/getProperties`](#device_getproperties) | public |  | storage | Gets properties of the given storage provider or the specified file or directory. |
-| [`device/handleExtraCommand`](#device_handleextracommand) | public |  | storage | Handles addtional operation related to various providers. |
-| [`device/list`](#device_list) | public |  | storage | Lists contents of the specified directory. |
-| [`device/move`](#device_move) | public | yes | storage | Moves a file or directory from the source location to the destination. |
-| [`device/remove`](#device_remove) | public |  | storage | Deletes the specified file or directory. |
-| [`device/rename`](#device_rename) | public |  | storage | Renames the specified file or directory. |
-| [`files`](#files) | unknown |  | storage | Provides information of the file or directory. |
-| [`listStorageProviders`](#liststorageproviders) | public | yes | storage | Provides a list of storages providers and the corresponding drive information. |
-| [`operation`](#operation) | unknown |  | storage | Provides details of the operation. |
-| [`payload`](#payload) | unknown |  | storage | Arguments required for the operation in the form of key value pair |
-| [`storageProviders`](#storageproviders) | unknown |  | storage | Provides information about the storage provider. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`device/copy`](#device_copy) | public | yes | storage | documented | Copies a file or directory from the source location to the destination. |
+| [`device/eject`](#device_eject) | public |  | storage | documented | Ejects the storage device. In case of "cloud" storage type, it acts as a logout operation. Note: This operation is not applicable for "inter |
+| [`device/getProperties`](#device_getproperties) | public |  | storage | documented | Gets properties of the given storage provider or the specified file or directory. |
+| [`device/handleExtraCommand`](#device_handleextracommand) | public |  | storage | documented | Handles addtional operation related to various providers. |
+| [`device/list`](#device_list) | public |  | storage | documented | Lists contents of the specified directory. |
+| [`device/move`](#device_move) | public | yes | storage | documented | Moves a file or directory from the source location to the destination. |
+| [`device/remove`](#device_remove) | public |  | storage | documented | Deletes the specified file or directory. |
+| [`device/rename`](#device_rename) | public |  | storage | documented | Renames the specified file or directory. |
+| [`files`](#files) | unknown |  | storage | documented | Provides information of the file or directory. |
+| [`listStorageProviders`](#liststorageproviders) | public | yes | storage | documented | Provides a list of storages providers and the corresponding drive information. |
+| [`operation`](#operation) | unknown |  | storage | documented | Provides details of the operation. |
+| [`payload`](#payload) | unknown |  | storage | documented | Arguments required for the operation in the form of key value pair |
+| [`storageProviders`](#storageproviders) | unknown |  | storage | documented | Provides information about the storage provider. |
 
 <a id="device_copy"></a>
 ## `device/copy`
@@ -43,6 +45,13 @@ Copies a file or directory from the source location to the destination.
 | `destPath` | String (required) Indicates the path of the destination directory. |
 | `overwrite` | Boolean (optional) Indicates if destination file must be overwritten, if it already exists. Possible values are: true : Overwrite existing copy. false : Do not overwrite exisitng copy. |
 | `subscribe` | Boolean (optional) Subscribe to get notified on the progress of the copy operation. Possible values are: true - Subscribed for notifications false - Not subscribed |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) Indicates the error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the API Error Codes Reference section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storageaccess/device/copy '{ "srcStorageType":"cloud", "srcDriveId":"ojydIxW8yBZUV8J3NiyNBvJn", "destStorageType":"cloud", "destDriveId":"ojydIxW8yBZUV8J4NiyNBvJn", "srcPath":"/SAF/SAF_DEMO/test1.PNG", "destPath":"/SAF" }
@@ -69,6 +78,13 @@ Ejects the storage device. In case of "cloud" storage type, it acts as a logout 
 |---|---|
 | `storageType` | String (required) Indicates the storage provider. Possible values are: cloud usb internal network Note: This method is not supported for UPnPmediaserver. |
 | `driveId` | String (required) Indicates the drive ID. Note: The drive ID can be found by using the listStorageProviders method. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | String (optional) Indicates the error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the API Error Codes Reference section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storageaccess/device/eject '{ "storageType":"usb", "driveId":"4C531001600127113005-A7BE-1862" }
@@ -97,6 +113,20 @@ Gets properties of the given storage provider or the specified file or directory
 | `driveId` | String (required) Indicates the drive ID. Note: The drive ID can be found by using the listStorageProviders method. |
 | `path` | String (optional) Indicates the path of the file or directory. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `storageType` | String (optional) Indicates the type of storage provider. |
+| `writable` | Boolean (optional) True if the device is writable. |
+| `deletable` | Boolean (optional) True if the device is deletable. |
+| `totalSpace` | Number (optional) Total storage space |
+| `freeSpace` | Number (optional) Available free space |
+| `attributes` | Object array (optional) Array of key value pair. Example: {"noatime": true} Note: These is just an example format. It may vary depending on the file system. |
+| `extAttributes` | Object array (optional) Array of key value pair. Example: {"user.comment": "saf comment"} Note: These is just an example format. It may vary depending on the file system. |
+| `errorCode` | Number (optional) Indicates the error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the API Error Codes Reference section for details. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.storageaccess/device/getProperties '{ "storageType":"cloud", "driveId":"_4Z7KLy4uyH47NwJTB5FtIoT" }
 ```
@@ -123,6 +153,14 @@ Handles addtional operation related to various providers.
 | `storageType` | String (required) Indicates the source storage provider. Possible values are: cloud usb internal network |
 | `driveId` | String (optional) Indicates the drive ID. Note: The drive ID can be found by using the listStorageProviders method. |
 | `operation` | Object: operation (required) Object consisting of details of the operation. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `responsePayload` | Object array (optional) Response from the storage provider. |
+| `errorCode` | Number (optional) Indicates the error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the API Error Codes Reference section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storageaccess/device/handleExtraCommand '{ "storageType":"cloud", "driveId":"3OVs_ttW39gu", "operation":{ "type":"authenticate", "payload":{ "secretToken":"4/1AY0e-gmLYrDMo0affZ8" } } }
@@ -152,6 +190,16 @@ Lists contents of the specified directory.
 | `path` | String (required) Indicates the path of the directory. |
 | `offset` | Number (required) Indicates the index/offset from where to list the files or directories. |
 | `limit` | Number (required) Indicates the count of entries to be listed (1 - 100). |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `files` | Object array: files (optional) Provides information of the files or directories. |
+| `totalCount` | Number (optional) Total number of files or directories in the given path. |
+| `fullPath` | String (optional) Full path of this file or directory. |
+| `errorCode` | Number (optional) Indicates the error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the API Error Codes Reference section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storageaccess/device/list '{ "storageType":"cloud", "driveId":"ojydIxW8yBZUV8J3NiyNBvJn", "path":"/saf_demo_folder", "limit":10, "offset":1 }
@@ -185,6 +233,13 @@ Moves a file or directory from the source location to the destination.
 | `overwrite` | Boolean (optional) Indicates if destination file must be overwritten, if it already exists. Possible values are: true : Overwrite existing copy. false : Do not overwrite exisitng copy. |
 | `subscribe` | Boolean (optional) Subscribe to get notified on the progress of the copy operation. Possible values are: true - Subscribed for notifications false - Not subscribed |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) Indicates the error code for the failed operation |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the API Error Codes Reference section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storageaccess/device/move '{ "srcStorageType":"cloud", "srcDriveId":"ojydIxW8yBZUV8J3NiyNBvJn", "destStorageType":"cloud", "destDriveId":"ojydIxW8yBZUV8J3NiyNBvJn", "srcPath":"/SAF/SAF_DEMO/test1.PNG", "destPath":"/SAF" }
 ```
@@ -211,6 +266,13 @@ Deletes the specified file or directory.
 | `storageType` | String (required) Indicates the storage provider. Possible values are: cloud usb internal network Note: This method is not supported for UPnPmediaserver. |
 | `driveId` | String (required) Indicates the drive ID. Note: The drive ID can be found by using the listStorageProviders method. |
 | `path` | String (required) Inddicates the path of the file or directory. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | String (optional) Indicates the error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the API Error Codes Reference section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storageaccess/device/remove '{ "storageType": "cloud", "driveId": "ojydIxW8yBZUV8J3NiyNBvJn", "path": "/SAF/test1.PNG" }
@@ -239,6 +301,13 @@ Renames the specified file or directory.
 | `driveId` | String (required) Indicates the drive ID. Note: The drive ID can be found by using the listStorageProviders method. |
 | `path` | String (required) Indicates the path of the file or directory. |
 | `newName` | String (required) Indicates the new name. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) Indicates the error code for the failed operation |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the API Error Codes Reference section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storageaccess/device/rename '{ "storageType":"cloud", "driveId":"ojydIxW8yBZUV8J3NiyNBvJn", "path":"/SAF/test1.PNG", "newName":"17.PNG" }
@@ -285,6 +354,15 @@ Provides a list of storages providers and the corresponding drive information.
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe to get notifications. Possible values are: true - Subscribed for notifications false - Not subscribed |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. |
+| `storageProviders` | Object array: storageProviders (optional) Provides information of the storage providers. |
+| `errorCode` | Number (optional) Indicates the error code for the failed operation |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the API Error Codes Reference section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storageaccess/listStorageProviders '{"subscribe": true}

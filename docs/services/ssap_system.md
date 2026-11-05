@@ -1,15 +1,17 @@
 # `ssap:system`
 
+SSAP system service (TV remote-control protocol): returns system info and host messages and powers the TV on and off.
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getHostMessage`](#gethostmessage) | ssap |  | system-info | Get host message |
-| [`getSystemInfo`](#getsysteminfo) | ssap |  | system-info | Get system info (model name, etc.) |
-| [`turnOff`](#turnoff) | ssap |  | power | Power off TV (standby) |
-| [`turnOn`](#turnon) | ssap |  | power | Power on TV (removed) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getHostMessage`](#gethostmessage) | ssap |  | system-info | documented | Get host message |
+| [`getSystemInfo`](#getsysteminfo) | ssap |  | system-info | documented | Get system info (model name, etc.) |
+| [`turnOff`](#turnoff) | ssap |  | power | documented | Power off TV (standby) |
+| [`turnOn`](#turnon) | ssap |  | power | documented | Power on TV (removed) |
 
 <a id="gethostmessage"></a>
 ## `getHostMessage`
@@ -22,7 +24,7 @@ Get host message
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://system/getHostMessage","payload":{}}
@@ -43,7 +45,7 @@ Get system info (model name, etc.)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://system/getSystemInfo","payload":{}}
@@ -64,7 +66,7 @@ Power off TV (standby)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://system/turnOff","payload":{}}
@@ -85,7 +87,7 @@ Power on TV (removed)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** removed in newer webOS  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://system/turnOn","payload":{}}

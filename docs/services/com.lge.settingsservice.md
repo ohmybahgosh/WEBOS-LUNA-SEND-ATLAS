@@ -1,36 +1,38 @@
 # `com.lge.settingsservice`
 
+LG system settings service: reads, writes, resets and describes system settings along with their current, factory and value-range data, and supports batched settings operations.
+
 25 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`batch`](#batch) | private |  | settings | Executes several settingsservice operations in one call |
-| [`deleteSystemSettings`](#deletesystemsettings) | private |  | settings | Deletes the specified system settings |
-| [`getCurrentSettings`](#getcurrentsettings) | unknown |  | settings | Returns settings of foreground App |
-| [`getSystemSettingDesc`](#getsystemsettingdesc) | unknown |  | settings | Retrieve the description for the specified key |
-| [`getSystemSettingDescPriv`](#getsystemsettingdescpriv) | private |  | settings | Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented). |
-| [`getSystemSettingFactoryValue`](#getsystemsettingfactoryvalue) | unknown |  | settings | Retrieve the list of default values for the specified key. |
-| [`getSystemSettings`](#getsystemsettings) | unknown |  | settings | Retrieves the values for keys specified in a passed array on system settings. |
-| [`getSystemSettingsPriv`](#getsystemsettingspriv) | private |  | settings | Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented). |
-| [`getSystemSettingValues`](#getsystemsettingvalues) | unknown |  | settings | Retrieve the list of valid values for the specified key |
-| [`getSystemSettingValuesPriv`](#getsystemsettingvaluespriv) | private |  | settings | Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented). |
-| [`internal/getCurrentSubscriptions`](#internal_getcurrentsubscriptions) | private |  | settings | Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name only |
-| [`internal/instrument`](#internal_instrument) | private |  | settings | Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name only |
-| [`resetSystemSettingDesc`](#resetsystemsettingdesc) | private |  | settings | Resets setting descriptions to defaults |
-| [`resetSystemSettingDescPriv`](#resetsystemsettingdescpriv) | private |  | settings | Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`resetSystemSettings`](#resetsystemsettings) | private |  | settings | Resets system settings to their factory/default values ⚠️ |
-| [`resetSystemSettingsPriv`](#resetsystemsettingspriv) | private |  | settings | Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setSystemSettingDesc`](#setsystemsettingdesc) | private |  | settings | Update the description for the specified key |
-| [`setSystemSettingDescPriv`](#setsystemsettingdescpriv) | private |  | settings | Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented). |
-| [`setSystemSettingFactoryDesc`](#setsystemsettingfactorydesc) | private |  | settings | Update the description for the specified key |
-| [`setSystemSettingFactoryDescPriv`](#setsystemsettingfactorydescpriv) | private |  | settings | Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setSystemSettingFactoryValue`](#setsystemsettingfactoryvalue) | private |  | settings | Save the specified settings in parameter. |
-| [`setSystemSettings`](#setsystemsettings) | private |  | settings | Save the specified settings in parameter. |
-| [`setSystemSettingsPriv`](#setsystemsettingspriv) | private |  | settings | Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented). |
-| [`setSystemSettingValues`](#setsystemsettingvalues) | private |  | settings | Update the list of valid values for the specified key |
-| [`update`](#update) | private |  | settings | Method on com.lge.settingsservice (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`batch`](#batch) | private |  | settings | documented | Executes several settingsservice operations in one call |
+| [`deleteSystemSettings`](#deletesystemsettings) | private |  | settings | documented | Deletes the specified system settings |
+| [`getCurrentSettings`](#getcurrentsettings) | unknown |  | settings | documented | Returns settings of foreground App |
+| [`getSystemSettingDesc`](#getsystemsettingdesc) | unknown |  | settings | documented | Retrieve the description for the specified key |
+| [`getSystemSettingDescPriv`](#getsystemsettingdescpriv) | private |  | settings | inferred | Returns the system setting desc priv. |
+| [`getSystemSettingFactoryValue`](#getsystemsettingfactoryvalue) | unknown |  | settings | documented | Retrieve the list of default values for the specified key. |
+| [`getSystemSettings`](#getsystemsettings) | unknown |  | settings | documented | Retrieves the values for keys specified in a passed array on system settings. |
+| [`getSystemSettingsPriv`](#getsystemsettingspriv) | private |  | settings | inferred | Returns the system settings priv. |
+| [`getSystemSettingValues`](#getsystemsettingvalues) | unknown |  | settings | documented | Retrieve the list of valid values for the specified key |
+| [`getSystemSettingValuesPriv`](#getsystemsettingvaluespriv) | private |  | settings | inferred | Returns the system setting values priv. |
+| [`internal/getCurrentSubscriptions`](#internal_getcurrentsubscriptions) | private |  | settings | documented | Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name only |
+| [`internal/instrument`](#internal_instrument) | private |  | settings | documented | Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name only |
+| [`resetSystemSettingDesc`](#resetsystemsettingdesc) | private |  | settings | documented | Resets setting descriptions to defaults |
+| [`resetSystemSettingDescPriv`](#resetsystemsettingdescpriv) | private |  | settings | inferred | Resets the system setting desc priv. ⚠️ |
+| [`resetSystemSettings`](#resetsystemsettings) | private |  | settings | documented | Resets system settings to their factory/default values ⚠️ |
+| [`resetSystemSettingsPriv`](#resetsystemsettingspriv) | private |  | settings | inferred | Resets the system settings priv. ⚠️ |
+| [`setSystemSettingDesc`](#setsystemsettingdesc) | private |  | settings | documented | Update the description for the specified key |
+| [`setSystemSettingDescPriv`](#setsystemsettingdescpriv) | private |  | settings | inferred | Sets the system setting desc priv. |
+| [`setSystemSettingFactoryDesc`](#setsystemsettingfactorydesc) | private |  | settings | documented | Update the description for the specified key |
+| [`setSystemSettingFactoryDescPriv`](#setsystemsettingfactorydescpriv) | private |  | settings | inferred | Sets the system setting factory desc priv. ⚠️ |
+| [`setSystemSettingFactoryValue`](#setsystemsettingfactoryvalue) | private |  | settings | documented | Save the specified settings in parameter. |
+| [`setSystemSettings`](#setsystemsettings) | private |  | settings | documented | Save the specified settings in parameter. |
+| [`setSystemSettingsPriv`](#setsystemsettingspriv) | private |  | settings | inferred | Sets the system settings priv. |
+| [`setSystemSettingValues`](#setsystemsettingvalues) | private |  | settings | documented | Update the list of valid values for the specified key |
+| [`update`](#update) | private |  | settings | inferred | Updates the settingsservice. |
 
 <a id="batch"></a>
 ## `batch`
@@ -43,7 +45,7 @@ Executes several settingsservice operations in one call
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -70,7 +72,7 @@ Deletes the specified system settings
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -98,7 +100,7 @@ Returns settings of foreground App
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -126,7 +128,7 @@ Retrieve the description for the specified key
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -150,13 +152,15 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 `luna://com.lge.settingsservice/getSystemSettingDescPriv`
 
-Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented).
+Returns the system setting desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.lge.settingsservice/getSystemSettingDescPriv '{}'
@@ -177,7 +181,7 @@ Retrieve the list of default values for the specified key.
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -206,7 +210,7 @@ Retrieves the values for keys specified in a passed array on system settings.
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -230,13 +234,15 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 `luna://com.lge.settingsservice/getSystemSettingsPriv`
 
-Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented).
+Returns the system settings priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.lge.settingsservice/getSystemSettingsPriv '{}'
@@ -257,7 +263,7 @@ Retrieve the list of valid values for the specified key
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -279,13 +285,15 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 `luna://com.lge.settingsservice/getSystemSettingValuesPriv`
 
-Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented).
+Returns the system setting values priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.lge.settingsservice/getSystemSettingValuesPriv '{}'
@@ -306,7 +314,7 @@ Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name on
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.lge.settingsservice/internal/getCurrentSubscriptions '{}'
@@ -327,7 +335,7 @@ Registered in webOS OSE sysbus api.json (ACG group settings.devutility); name on
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.lge.settingsservice/internal/instrument '{}'
@@ -348,7 +356,7 @@ Resets setting descriptions to defaults
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -369,13 +377,15 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 `luna://com.lge.settingsservice/resetSystemSettingDescPriv`
 
-Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented).
+Resets the system setting desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.lge.settingsservice/resetSystemSettingDescPriv '{}'
@@ -396,7 +406,7 @@ Resets system settings to their factory/default values
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -419,13 +429,15 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 `luna://com.lge.settingsservice/resetSystemSettingsPriv`
 
-Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented).
+Resets the system settings priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.lge.settingsservice/resetSystemSettingsPriv '{}'
@@ -446,7 +458,7 @@ Update the description for the specified key
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -472,13 +484,15 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 `luna://com.lge.settingsservice/setSystemSettingDescPriv`
 
-Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented).
+Sets the system setting desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.lge.settingsservice/setSystemSettingDescPriv '{}'
@@ -499,7 +513,7 @@ Update the description for the specified key
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -526,13 +540,15 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 `luna://com.lge.settingsservice/setSystemSettingFactoryDescPriv`
 
-Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented).
+Sets the system setting factory desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.lge.settingsservice/setSystemSettingFactoryDescPriv '{}'
@@ -553,7 +569,7 @@ Save the specified settings in parameter.
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -584,7 +600,7 @@ Save the specified settings in parameter.
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -610,13 +626,15 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 `luna://com.lge.settingsservice/setSystemSettingsPriv`
 
-Method on com.lge.settingsservice (from on-device permission registry; parameters undocumented).
+Sets the system settings priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.lge.settingsservice/setSystemSettingsPriv '{}'
@@ -637,7 +655,7 @@ Update the list of valid values for the specified key
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -660,13 +678,15 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 `luna://com.lge.settingsservice/update`
 
-Method on com.lge.settingsservice (introspected on-device; parameters undocumented).
+Updates the settingsservice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.lge.settingsservice/update '{}'

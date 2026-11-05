@@ -1,52 +1,54 @@
 # `com.webos.service.eim`
 
+External Input Manager: manages HDMI and other external inputs, including device add/remove, input status, EDID backup, ARC volume, and extensive HDMI-CEC control and vendor commands. _(inferred from the service's methods)_
+
 41 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`addDevice`](#adddevice) | public |  | input | Registers an app as a selectable input (appinfo needs "supportGIP": true) |
-| [`backupEdid`](#backupedid) | public |  | input | Method on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`blockInputPopup`](#blockinputpopup) | public |  | input | Registered on eim (name only; presumably suppresses the new-input popup) |
-| [`cec/getCecDiagnosticsInfo`](#cec_getcecdiagnosticsinfo) | public |  | input | Getter on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`cec/getCECPowerSyncStatus`](#cec_getcecpowersyncstatus) | private |  | input | HDMI-CEC state query |
-| [`cec/getCECState`](#cec_getcecstate) | private |  | input | HDMI-CEC state query |
-| [`cec/notifyInterestingEvents`](#cec_notifyinterestingevents) | public |  | input | Method on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`cec/registerVendorCommand`](#cec_registervendorcommand) | public |  | input | Method on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`cec/requestVendorCommand`](#cec_requestvendorcommand) | public |  | input | Method on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`cec/requestVendorCommandWithID`](#cec_requestvendorcommandwithid) | public |  | input | Method on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`cec/sendKeyEvent`](#cec_sendkeyevent) | private |  | input | Sends an HDMI-CEC key event |
-| [`cec/sendRequestAudioStatus`](#cec_sendrequestaudiostatus) | public |  | audio | Method on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`cec/sendSystemAudioModeRequest`](#cec_sendsystemaudiomoderequest) | public |  | audio | Method on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`cec/setCECState`](#cec_setcecstate) | public |  | input | Setter on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`cec/setCECUniqueId`](#cec_setcecuniqueid) | public |  | input | Setter on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`deleteDevice`](#deletedevice) | public |  | input | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
-| [`getAllInputStatus`](#getallinputstatus) | public | yes | input | Lists all inputs (HDMI 1-4 with labels, CEC sub-devices, ARC) with connection state |
-| [`getArcVolume`](#getarcvolume) | public |  | input | Getter on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`getCECPowerSyncStatus`](#getcecpowersyncstatus) | public |  | power | Getter on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`getConnectionStatus`](#getconnectionstatus) | public |  | input | Method registered by com.webos.service.eim (root category) |
-| [`getCurrentInput`](#getcurrentinput) | public |  | input | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
-| [`getDeviceInfo`](#getdeviceinfo) | public |  | input | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
-| [`getEdidStatus`](#getedidstatus) | public |  | input | Getter on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`getEdidSupportedFhd`](#getedidsupportedfhd) | public |  | input | Getter on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`getEIMStatistics`](#geteimstatistics) | public |  | input | Getter on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`getHDMISignalInfo`](#gethdmisignalinfo) | private |  | input | HDMI signal details (resolution, VRR/ALLM/HDR, cable presence) |
-| [`getInputStatus`](#getinputstatus) | public |  | input | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
-| [`getLastInput`](#getlastinput) | public |  | input | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
-| [`getTotalCECHistoryCount`](#gettotalcechistorycount) | public |  | input | Getter on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`getTotalDeviceList`](#gettotaldevicelist) | public |  | input | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
-| [`listCecHistory`](#listcechistory) | public |  | input | Lister on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`registerAppToBlockNoti`](#registerapptoblocknoti) | public |  | input | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
-| [`resetCECHistory`](#resetcechistory) | public |  | input | Method on com.webos.service.eim (introspected on-device; parameters undocumented). ⚠️ |
-| [`resetExternalInputSettings`](#resetexternalinputsettings) | public |  | settings | Method on com.webos.service.eim (introspected on-device; parameters undocumented). ⚠️ |
-| [`setChosenDevice`](#setchosendevice) | public |  | input | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
-| [`setConnectedDevice`](#setconnecteddevice) | public |  | input | Setter on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`setDeviceInfo`](#setdeviceinfo) | ssap |  | input | Set HDMI input device icon/label (also used to switch an input between PC and non-PC mode) |
-| [`setEdidSupportedFhd`](#setedidsupportedfhd) | public |  | input | Setter on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`setLastInput`](#setlastinput) | private |  | input | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
-| [`updateEdid`](#updateedid) | public |  | update | Method on com.webos.service.eim (introspected on-device; parameters undocumented). |
-| [`updateVirtualDevice`](#updatevirtualdevice) | private |  | input | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`addDevice`](#adddevice) | public |  | input | documented | Registers an app as a selectable input (appinfo needs "supportGIP": true) |
+| [`backupEdid`](#backupedid) | public |  | input | inferred | Backs up the EDID. |
+| [`blockInputPopup`](#blockinputpopup) | public |  | input | documented | Registered on eim (name only; presumably suppresses the new-input popup) |
+| [`cec/getCecDiagnosticsInfo`](#cec_getcecdiagnosticsinfo) | public |  | input | inferred | Returns the CEC diagnostics info (CEC) |
+| [`cec/getCECPowerSyncStatus`](#cec_getcecpowersyncstatus) | private |  | input | documented | HDMI-CEC state query |
+| [`cec/getCECState`](#cec_getcecstate) | private |  | input | documented | HDMI-CEC state query |
+| [`cec/notifyInterestingEvents`](#cec_notifyinterestingevents) | public |  | input | inferred | Notifies of the interesting events (CEC) |
+| [`cec/registerVendorCommand`](#cec_registervendorcommand) | public |  | input | inferred | Registers the vendor command (CEC) |
+| [`cec/requestVendorCommand`](#cec_requestvendorcommand) | public |  | input | inferred | Requests the vendor command (CEC) |
+| [`cec/requestVendorCommandWithID`](#cec_requestvendorcommandwithid) | public |  | input | inferred | Requests the vendor command with ID (CEC) |
+| [`cec/sendKeyEvent`](#cec_sendkeyevent) | private |  | input | documented | Sends an HDMI-CEC key event |
+| [`cec/sendRequestAudioStatus`](#cec_sendrequestaudiostatus) | public |  | audio | inferred | Sends the request audio status (CEC) |
+| [`cec/sendSystemAudioModeRequest`](#cec_sendsystemaudiomoderequest) | public |  | audio | inferred | Sends the system audio mode request (CEC) |
+| [`cec/setCECState`](#cec_setcecstate) | public |  | input | inferred | Sets the CEC state (CEC) |
+| [`cec/setCECUniqueId`](#cec_setcecuniqueid) | public |  | input | inferred | Sets the CEC unique ID (CEC) |
+| [`deleteDevice`](#deletedevice) | public |  | input | documented | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
+| [`getAllInputStatus`](#getallinputstatus) | public | yes | input | documented | Lists all inputs (HDMI 1-4 with labels, CEC sub-devices, ARC) with connection state |
+| [`getArcVolume`](#getarcvolume) | public |  | input | inferred | Returns the ARC volume. |
+| [`getCECPowerSyncStatus`](#getcecpowersyncstatus) | public |  | power | inferred | Returns the CEC power sync status. |
+| [`getConnectionStatus`](#getconnectionstatus) | public |  | input | inferred | Returns the connection status. |
+| [`getCurrentInput`](#getcurrentinput) | public |  | input | documented | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
+| [`getDeviceInfo`](#getdeviceinfo) | public |  | input | documented | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
+| [`getEdidStatus`](#getedidstatus) | public |  | input | inferred | Returns the EDID status. |
+| [`getEdidSupportedFhd`](#getedidsupportedfhd) | public |  | input | inferred | Returns the EDID supported fhd. |
+| [`getEIMStatistics`](#geteimstatistics) | public |  | input | inferred | Returns the EIM statistics. |
+| [`getHDMISignalInfo`](#gethdmisignalinfo) | private |  | input | documented | HDMI signal details (resolution, VRR/ALLM/HDR, cable presence) |
+| [`getInputStatus`](#getinputstatus) | public |  | input | documented | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
+| [`getLastInput`](#getlastinput) | public |  | input | documented | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
+| [`getTotalCECHistoryCount`](#gettotalcechistorycount) | public |  | input | inferred | Returns the total CEC history count. |
+| [`getTotalDeviceList`](#gettotaldevicelist) | public |  | input | documented | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
+| [`listCecHistory`](#listcechistory) | public |  | input | inferred | Lists the CEC history. |
+| [`registerAppToBlockNoti`](#registerapptoblocknoti) | public |  | input | documented | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
+| [`resetCECHistory`](#resetcechistory) | public |  | input | inferred | Resets the CEC history. ⚠️ |
+| [`resetExternalInputSettings`](#resetexternalinputsettings) | public |  | settings | inferred | Resets the external input settings. ⚠️ |
+| [`setChosenDevice`](#setchosendevice) | public |  | input | documented | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
+| [`setConnectedDevice`](#setconnecteddevice) | public |  | input | inferred | Sets the connected device. |
+| [`setDeviceInfo`](#setdeviceinfo) | ssap |  | input | documented | Set HDMI input device icon/label (also used to switch an input between PC and non-PC mode) |
+| [`setEdidSupportedFhd`](#setedidsupportedfhd) | public |  | input | inferred | Sets the EDID supported fhd. |
+| [`setLastInput`](#setlastinput) | private |  | input | documented | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
+| [`updateEdid`](#updateedid) | public |  | update | inferred | Updates the EDID. |
+| [`updateVirtualDevice`](#updatevirtualdevice) | private |  | input | documented | External Input Manager method (listed in webosbrew eim.yml; params undocumented there) |
 
 <a id="adddevice"></a>
 ## `addDevice`
@@ -59,7 +61,7 @@ Registers an app as a selectable input (appinfo needs "supportGIP": true)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -84,13 +86,15 @@ Sources: [1](https://github.com/webosbrew/pages/blob/HEAD/content/pages/luna/eim
 
 `luna://com.webos.service.eim/backupEdid`
 
-Method on com.webos.service.eim (introspected on-device; parameters undocumented).
+Backs up the EDID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/backupEdid '{}'
@@ -111,7 +115,7 @@ Registered on eim (name only; presumably suppresses the new-input popup)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/blockInputPopup '{}'
@@ -126,13 +130,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.eim/cec/getCecDiagnosticsInfo`
 
-Getter on com.webos.service.eim (introspected on-device; parameters undocumented).
+Returns the CEC diagnostics info (CEC)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/cec/getCecDiagnosticsInfo '{}'
@@ -153,7 +159,7 @@ HDMI-CEC state query
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -176,7 +182,7 @@ HDMI-CEC state query
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/cec/getCECState '{}'
@@ -189,13 +195,15 @@ Sources: [1](https://github.com/Osyna/Overglass/blob/HEAD/docs/FINDINGS.md)
 
 `luna://com.webos.service.eim/cec/notifyInterestingEvents`
 
-Method on com.webos.service.eim (introspected on-device; parameters undocumented).
+Notifies of the interesting events (CEC)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/cec/notifyInterestingEvents '{}'
@@ -210,13 +218,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eim/cec/registerVendorCommand`
 
-Method on com.webos.service.eim (introspected on-device; parameters undocumented).
+Registers the vendor command (CEC)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/cec/registerVendorCommand '{}'
@@ -231,13 +241,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eim/cec/requestVendorCommand`
 
-Method on com.webos.service.eim (introspected on-device; parameters undocumented).
+Requests the vendor command (CEC)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/cec/requestVendorCommand '{}'
@@ -252,13 +264,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eim/cec/requestVendorCommandWithID`
 
-Method on com.webos.service.eim (introspected on-device; parameters undocumented).
+Requests the vendor command with ID (CEC)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/cec/requestVendorCommandWithID '{}'
@@ -279,7 +293,7 @@ Sends an HDMI-CEC key event
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 5+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -301,13 +315,15 @@ Sources: [1](https://github.com/andrewfraley/magic_mapper/blob/HEAD/magic_mapper
 
 `luna://com.webos.service.eim/cec/sendRequestAudioStatus`
 
-Method on com.webos.service.eim (introspected on-device; parameters undocumented).
+Sends the request audio status (CEC)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/cec/sendRequestAudioStatus '{}'
@@ -322,13 +338,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eim/cec/sendSystemAudioModeRequest`
 
-Method on com.webos.service.eim (introspected on-device; parameters undocumented).
+Sends the system audio mode request (CEC)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/cec/sendSystemAudioModeRequest '{}'
@@ -343,13 +361,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eim/cec/setCECState`
 
-Setter on com.webos.service.eim (introspected on-device; parameters undocumented).
+Sets the CEC state (CEC)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/cec/setCECState '{}'
@@ -364,13 +384,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eim/cec/setCECUniqueId`
 
-Setter on com.webos.service.eim (introspected on-device; parameters undocumented).
+Sets the CEC unique ID (CEC)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/cec/setCECUniqueId '{}'
@@ -391,7 +413,7 @@ External Input Manager method (listed in webosbrew eim.yml; params undocumented 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/deleteDevice '{}'
@@ -410,7 +432,7 @@ Lists all inputs (HDMI 1-4 with labels, CEC sub-devices, ARC) with connection st
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -429,13 +451,15 @@ Sources: [1](https://github.com/webosbrew/pages/blob/HEAD/content/pages/luna/api
 
 `luna://com.webos.service.eim/getArcVolume`
 
-Getter on com.webos.service.eim (introspected on-device; parameters undocumented).
+Returns the ARC volume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/getArcVolume '{}'
@@ -450,13 +474,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eim/getCECPowerSyncStatus`
 
-Getter on com.webos.service.eim (introspected on-device; parameters undocumented).
+Returns the CEC power sync status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/getCECPowerSyncStatus '{}'
@@ -471,13 +497,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eim/getConnectionStatus`
 
-Method registered by com.webos.service.eim (root category)
+Returns the connection status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/getConnectionStatus '{}'
@@ -498,7 +526,7 @@ External Input Manager method (listed in webosbrew eim.yml; params undocumented 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/getCurrentInput '{}'
@@ -517,7 +545,7 @@ External Input Manager method (listed in webosbrew eim.yml; params undocumented 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/getDeviceInfo '{}'
@@ -530,13 +558,15 @@ Sources: [1](https://github.com/webosbrew/pages/blob/HEAD/content/pages/luna/api
 
 `luna://com.webos.service.eim/getEdidStatus`
 
-Getter on com.webos.service.eim (introspected on-device; parameters undocumented).
+Returns the EDID status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/getEdidStatus '{}'
@@ -551,13 +581,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eim/getEdidSupportedFhd`
 
-Getter on com.webos.service.eim (introspected on-device; parameters undocumented).
+Returns the EDID supported fhd.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/getEdidSupportedFhd '{}'
@@ -572,13 +604,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eim/getEIMStatistics`
 
-Getter on com.webos.service.eim (introspected on-device; parameters undocumented).
+Returns the EIM statistics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/getEIMStatistics '{}'
@@ -599,7 +633,7 @@ HDMI signal details (resolution, VRR/ALLM/HDR, cable presence)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/getHDMISignalInfo '{}'
@@ -618,7 +652,7 @@ External Input Manager method (listed in webosbrew eim.yml; params undocumented 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/getInputStatus '{}'
@@ -637,7 +671,7 @@ External Input Manager method (listed in webosbrew eim.yml; params undocumented 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/getLastInput '{}'
@@ -650,13 +684,15 @@ Sources: [1](https://github.com/webosbrew/pages/blob/HEAD/content/pages/luna/api
 
 `luna://com.webos.service.eim/getTotalCECHistoryCount`
 
-Getter on com.webos.service.eim (introspected on-device; parameters undocumented).
+Returns the total CEC history count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/getTotalCECHistoryCount '{}'
@@ -677,7 +713,7 @@ External Input Manager method (listed in webosbrew eim.yml; params undocumented 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/getTotalDeviceList '{}'
@@ -690,13 +726,15 @@ Sources: [1](https://github.com/webosbrew/pages/blob/HEAD/content/pages/luna/api
 
 `luna://com.webos.service.eim/listCecHistory`
 
-Lister on com.webos.service.eim (introspected on-device; parameters undocumented).
+Lists the CEC history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/listCecHistory '{}'
@@ -717,7 +755,7 @@ External Input Manager method (listed in webosbrew eim.yml; params undocumented 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/registerAppToBlockNoti '{}'
@@ -730,13 +768,15 @@ Sources: [1](https://github.com/webosbrew/pages/blob/HEAD/content/pages/luna/api
 
 `luna://com.webos.service.eim/resetCECHistory`
 
-Method on com.webos.service.eim (introspected on-device; parameters undocumented).
+Resets the CEC history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/resetCECHistory '{}'
@@ -751,13 +791,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eim/resetExternalInputSettings`
 
-Method on com.webos.service.eim (introspected on-device; parameters undocumented).
+Resets the external input settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/resetExternalInputSettings '{}'
@@ -778,7 +820,7 @@ External Input Manager method (listed in webosbrew eim.yml; params undocumented 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/setChosenDevice '{}'
@@ -793,13 +835,15 @@ Sources: [1](https://github.com/webosbrew/pages/blob/HEAD/content/pages/luna/api
 
 `luna://com.webos.service.eim/setConnectedDevice`
 
-Setter on com.webos.service.eim (introspected on-device; parameters undocumented).
+Sets the connected device.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/setConnectedDevice '{}'
@@ -820,7 +864,7 @@ Set HDMI input device icon/label (also used to switch an input between PC and no
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -841,13 +885,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 `luna://com.webos.service.eim/setEdidSupportedFhd`
 
-Setter on com.webos.service.eim (introspected on-device; parameters undocumented).
+Sets the EDID supported fhd.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/setEdidSupportedFhd '{}'
@@ -868,7 +914,7 @@ External Input Manager method (listed in webosbrew eim.yml; params undocumented 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/setLastInput '{}'
@@ -883,13 +929,15 @@ Sources: [1](https://github.com/webosbrew/pages/blob/HEAD/content/pages/luna/api
 
 `luna://com.webos.service.eim/updateEdid`
 
-Method on com.webos.service.eim (introspected on-device; parameters undocumented).
+Updates the EDID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/updateEdid '{}'
@@ -910,7 +958,7 @@ External Input Manager method (listed in webosbrew eim.yml; params undocumented 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.eim/updateVirtualDevice '{}'

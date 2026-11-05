@@ -1,46 +1,48 @@
 # `com.webos.service.irdbmanager`
 
+IR database manager: manages the infrared code database for controlling external devices, listing brands/manufacturers and key lists, adding devices, retrieving IR data, and creating alerts/toasts. _(inferred from the service's methods)_
+
 35 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`addDevice`](#adddevice) | private |  | input | IR blaster database method: addDevice |
-| [`blockIRDevice`](#blockirdevice) | private |  | db | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`channelChanged`](#channelchanged) | private |  | db | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`clearSettingCash`](#clearsettingcash) | private |  | db | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`createAlert`](#createalert) | private |  | db | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`createToast`](#createtoast) | private |  | notifications | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`delDevice`](#deldevice) | private |  | input | IR blaster database method: delDevice |
-| [`delDeviceHistory`](#deldevicehistory) | private |  | db | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`getBrandList`](#getbrandlist) | private |  | db | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`getBrandListByPredictive`](#getbrandlistbypredictive) | private |  | db | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`getDeviceHistory`](#getdevicehistory) | private |  | db | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`getDevices`](#getdevices) | private |  | db | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`getIPDeviceList`](#getipdevicelist) | private |  | db | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`getIrData`](#getirdata) | private |  | input | IR blaster database method: getIrData |
-| [`getIrDb`](#getirdb) | private |  | input | IR blaster database method: getIrDb |
-| [`getIrDbVersion`](#getirdbversion) | private |  | db | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`getKeyList`](#getkeylist) | private |  | keys | Lists valid IR key codes for a device type |
-| [`getManufacturerList`](#getmanufacturerlist) | private |  | input | IR blaster database method: getManufacturerList |
-| [`getModelList`](#getmodellist) | private |  | db | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`getPinCodeInfo`](#getpincodeinfo) | private |  | db | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`getRemoteData`](#getremotedata) | private |  | db | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`getSearchedModelInfo`](#getsearchedmodelinfo) | private |  | db | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`getServiceList`](#getservicelist) | private |  | db | Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`isSupported`](#issupported) | private |  | input | IR blaster database method: isSupported |
-| [`nextKeyTest`](#nextkeytest) | private |  | db | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`requestSettopPowerIr`](#requestsettoppowerir) | private |  | input | IR blaster database method: requestSettopPowerIr |
-| [`sendIrCommand`](#sendircommand) | private |  | keys | Sends an IR blaster command to a configured device such as a soundbar |
-| [`setChannel`](#setchannel) | private |  | input | IR blaster database method: setChannel |
-| [`setDeviceBrand`](#setdevicebrand) | private |  | db | Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`setDeviceType`](#setdevicetype) | private |  | db | Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`setModelName`](#setmodelname) | private |  | db | Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`setSoundOutSetting`](#setsoundoutsetting) | private |  | db | Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`startKeyTest`](#startkeytest) | private |  | db | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`subscribeChannelChange`](#subscribechannelchange) | private |  | db | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
-| [`updateServerKeyList`](#updateserverkeylist) | private |  | db | Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`addDevice`](#adddevice) | private |  | input | documented | IR blaster database method: addDevice |
+| [`blockIRDevice`](#blockirdevice) | private |  | db | inferred | Blocks the IR device. |
+| [`channelChanged`](#channelchanged) | private |  | db | inferred | Handles the channel changed. |
+| [`clearSettingCash`](#clearsettingcash) | private |  | db | inferred | Clears the setting cash. |
+| [`createAlert`](#createalert) | private |  | db | inferred | Creates the alert. |
+| [`createToast`](#createtoast) | private |  | notifications | inferred | Creates the toast. |
+| [`delDevice`](#deldevice) | private |  | input | documented | IR blaster database method: delDevice |
+| [`delDeviceHistory`](#deldevicehistory) | private |  | db | inferred | Handles the del device history. |
+| [`getBrandList`](#getbrandlist) | private |  | db | inferred | Returns the brand list. |
+| [`getBrandListByPredictive`](#getbrandlistbypredictive) | private |  | db | inferred | Returns the brand list by predictive. |
+| [`getDeviceHistory`](#getdevicehistory) | private |  | db | inferred | Returns the device history. |
+| [`getDevices`](#getdevices) | private |  | db | inferred | Returns the devices. |
+| [`getIPDeviceList`](#getipdevicelist) | private |  | db | inferred | Returns the IP device list. |
+| [`getIrData`](#getirdata) | private |  | input | documented | IR blaster database method: getIrData |
+| [`getIrDb`](#getirdb) | private |  | input | documented | IR blaster database method: getIrDb |
+| [`getIrDbVersion`](#getirdbversion) | private |  | db | inferred | Returns the IR db version. |
+| [`getKeyList`](#getkeylist) | private |  | keys | documented | Lists valid IR key codes for a device type |
+| [`getManufacturerList`](#getmanufacturerlist) | private |  | input | documented | IR blaster database method: getManufacturerList |
+| [`getModelList`](#getmodellist) | private |  | db | inferred | Returns the model list. |
+| [`getPinCodeInfo`](#getpincodeinfo) | private |  | db | inferred | Returns the pin code info. |
+| [`getRemoteData`](#getremotedata) | private |  | db | inferred | Returns the remote data. |
+| [`getSearchedModelInfo`](#getsearchedmodelinfo) | private |  | db | inferred | Returns the searched model info. |
+| [`getServiceList`](#getservicelist) | private |  | db | inferred | Returns the service list. |
+| [`isSupported`](#issupported) | private |  | input | documented | IR blaster database method: isSupported |
+| [`nextKeyTest`](#nextkeytest) | private |  | db | inferred | Handles the next key test. |
+| [`requestSettopPowerIr`](#requestsettoppowerir) | private |  | input | documented | IR blaster database method: requestSettopPowerIr |
+| [`sendIrCommand`](#sendircommand) | private |  | keys | documented | Sends an IR blaster command to a configured device such as a soundbar |
+| [`setChannel`](#setchannel) | private |  | input | documented | IR blaster database method: setChannel |
+| [`setDeviceBrand`](#setdevicebrand) | private |  | db | inferred | Sets the device brand. |
+| [`setDeviceType`](#setdevicetype) | private |  | db | inferred | Sets the device type. |
+| [`setModelName`](#setmodelname) | private |  | db | inferred | Sets the model name. |
+| [`setSoundOutSetting`](#setsoundoutsetting) | private |  | db | inferred | Sets the sound out setting. |
+| [`startKeyTest`](#startkeytest) | private |  | db | inferred | Starts the key test. |
+| [`subscribeChannelChange`](#subscribechannelchange) | private |  | db | inferred | Subscribes to the channel change. |
+| [`updateServerKeyList`](#updateserverkeylist) | private |  | db | inferred | Updates the server key list. |
 
 <a id="adddevice"></a>
 ## `addDevice`
@@ -53,7 +55,7 @@ IR blaster database method: addDevice
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/addDevice '{}'
@@ -68,13 +70,15 @@ Sources: [1](https://github.com/Powback/LGTV/blob/main/audit/capabilities.md)
 
 `luna://com.webos.service.irdbmanager/blockIRDevice`
 
-Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Blocks the IR device.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/blockIRDevice '{}'
@@ -89,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/channelChanged`
 
-Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Handles the channel changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/channelChanged '{}'
@@ -110,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/clearSettingCash`
 
-Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Clears the setting cash.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/clearSettingCash '{}'
@@ -131,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/createAlert`
 
-Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Creates the alert.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/createAlert '{}'
@@ -152,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/createToast`
 
-Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Creates the toast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/createToast '{}'
@@ -179,7 +191,7 @@ IR blaster database method: delDevice
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/delDevice '{}'
@@ -194,13 +206,15 @@ Sources: [1](https://github.com/Powback/LGTV/blob/main/audit/capabilities.md)
 
 `luna://com.webos.service.irdbmanager/delDeviceHistory`
 
-Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Handles the del device history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/delDeviceHistory '{}'
@@ -215,13 +229,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/getBrandList`
 
-Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Returns the brand list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getBrandList '{}'
@@ -236,13 +252,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/getBrandListByPredictive`
 
-Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Returns the brand list by predictive.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getBrandListByPredictive '{}'
@@ -257,13 +275,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/getDeviceHistory`
 
-Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Returns the device history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getDeviceHistory '{}'
@@ -278,13 +298,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/getDevices`
 
-Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Returns the devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getDevices '{}'
@@ -299,13 +321,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/getIPDeviceList`
 
-Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Returns the IP device list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getIPDeviceList '{}'
@@ -326,7 +350,7 @@ IR blaster database method: getIrData
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getIrData '{}'
@@ -347,7 +371,7 @@ IR blaster database method: getIrDb
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getIrDb '{}'
@@ -362,13 +386,15 @@ Sources: [1](https://github.com/Powback/LGTV/blob/main/audit/capabilities.md)
 
 `luna://com.webos.service.irdbmanager/getIrDbVersion`
 
-Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Returns the IR db version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getIrDbVersion '{}'
@@ -389,7 +415,7 @@ Lists valid IR key codes for a device type
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -412,7 +438,7 @@ IR blaster database method: getManufacturerList
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getManufacturerList '{}'
@@ -427,13 +453,15 @@ Sources: [1](https://github.com/Powback/LGTV/blob/main/audit/capabilities.md)
 
 `luna://com.webos.service.irdbmanager/getModelList`
 
-Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Returns the model list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getModelList '{}'
@@ -448,13 +476,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/getPinCodeInfo`
 
-Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Returns the pin code info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getPinCodeInfo '{}'
@@ -469,13 +499,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/getRemoteData`
 
-Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Returns the remote data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getRemoteData '{}'
@@ -490,13 +522,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/getSearchedModelInfo`
 
-Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Returns the searched model info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getSearchedModelInfo '{}'
@@ -511,13 +545,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/getServiceList`
 
-Getter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Returns the service list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/getServiceList '{}'
@@ -538,7 +574,7 @@ IR blaster database method: isSupported
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/isSupported '{}'
@@ -553,13 +589,15 @@ Sources: [1](https://github.com/Powback/LGTV/blob/main/audit/capabilities.md)
 
 `luna://com.webos.service.irdbmanager/nextKeyTest`
 
-Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Handles the next key test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/nextKeyTest '{}'
@@ -580,7 +618,7 @@ IR blaster database method: requestSettopPowerIr
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/requestSettopPowerIr '{}'
@@ -601,7 +639,7 @@ Sends an IR blaster command to a configured device such as a soundbar
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -629,7 +667,7 @@ IR blaster database method: setChannel
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/setChannel '{}'
@@ -644,13 +682,15 @@ Sources: [1](https://github.com/Powback/LGTV/blob/main/audit/capabilities.md)
 
 `luna://com.webos.service.irdbmanager/setDeviceBrand`
 
-Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Sets the device brand.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/setDeviceBrand '{}'
@@ -665,13 +705,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/setDeviceType`
 
-Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Sets the device type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/setDeviceType '{}'
@@ -686,13 +728,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/setModelName`
 
-Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Sets the model name.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/setModelName '{}'
@@ -707,13 +751,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/setSoundOutSetting`
 
-Setter on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Sets the sound out setting.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/setSoundOutSetting '{}'
@@ -728,13 +774,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/startKeyTest`
 
-Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Starts the key test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/startKeyTest '{}'
@@ -749,13 +797,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/subscribeChannelChange`
 
-Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Subscribes to the channel change.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/subscribeChannelChange '{}'
@@ -770,13 +820,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.irdbmanager/updateServerKeyList`
 
-Method on com.webos.service.irdbmanager (introspected on-device; parameters undocumented).
+Updates the server key list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.irdbmanager/updateServerKeyList '{}'

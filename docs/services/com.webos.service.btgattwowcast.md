@@ -1,33 +1,37 @@
 # `com.webos.service.btgattwowcast`
 
+Bluetooth LE GATT service (WoWCast): scans for and connects to BLE devices, reads/writes BLE data, and reports remote device info. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`bleConnect`](#bleconnect) | private |  | security | Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented). |
-| [`bleDisconnect`](#bledisconnect) | private |  | security | Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented). |
-| [`bleReadData`](#blereaddata) | private |  | security | Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented). |
-| [`bleSendData`](#blesenddata) | private |  | security | Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented). |
-| [`getRemoteDeviceInfo`](#getremotedeviceinfo) | private |  | security | Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented). |
-| [`sampleRun`](#samplerun) | private |  | apps | Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented). |
-| [`sampleSubscribe`](#samplesubscribe) | private |  | apps | Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented). |
-| [`startScan`](#startscan) | private |  | security | Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented). |
-| [`stopScan`](#stopscan) | private |  | security | Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`bleConnect`](#bleconnect) | private |  | security | inferred | Handles the ble connect. |
+| [`bleDisconnect`](#bledisconnect) | private |  | security | inferred | Handles the ble disconnect. |
+| [`bleReadData`](#blereaddata) | private |  | security | inferred | Handles the ble read data. |
+| [`bleSendData`](#blesenddata) | private |  | security | inferred | Handles the ble send data. |
+| [`getRemoteDeviceInfo`](#getremotedeviceinfo) | private |  | security | inferred | Returns the remote device info. |
+| [`sampleRun`](#samplerun) | private |  | apps | inferred | Handles the sample run. |
+| [`sampleSubscribe`](#samplesubscribe) | private |  | apps | inferred | Handles the sample subscribe. |
+| [`startScan`](#startscan) | private |  | security | inferred | Starts the scan. |
+| [`stopScan`](#stopscan) | private |  | security | inferred | Stops the scan. |
 
 <a id="bleconnect"></a>
 ## `bleConnect`
 
 `luna://com.webos.service.btgattwowcast/bleConnect`
 
-Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented).
+Handles the ble connect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btgattwowcast/bleConnect '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btgattwowcast/bleDisconnect`
 
-Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented).
+Handles the ble disconnect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btgattwowcast/bleDisconnect '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btgattwowcast/bleReadData`
 
-Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented).
+Handles the ble read data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btgattwowcast/bleReadData '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btgattwowcast/bleSendData`
 
-Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented).
+Handles the ble send data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btgattwowcast/bleSendData '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btgattwowcast/getRemoteDeviceInfo`
 
-Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented).
+Returns the remote device info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btgattwowcast/getRemoteDeviceInfo '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btgattwowcast/sampleRun`
 
-Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented).
+Handles the sample run.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btgattwowcast/sampleRun '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btgattwowcast/sampleSubscribe`
 
-Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented).
+Handles the sample subscribe.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btgattwowcast/sampleSubscribe '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btgattwowcast/startScan`
 
-Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented).
+Starts the scan.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btgattwowcast/startScan '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btgattwowcast/stopScan`
 
-Method on com.webos.service.btgattwowcast (from on-device permission registry; parameters undocumented).
+Stops the scan.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btgattwowcast/stopScan '{}'

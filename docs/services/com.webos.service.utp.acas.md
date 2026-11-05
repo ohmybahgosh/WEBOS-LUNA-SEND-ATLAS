@@ -1,35 +1,39 @@
 # `com.webos.service.utp.acas`
 
+ACAS conditional-access service (utp broadcast stack): reports CAS module, contract, ECM, and power-on control info and manages auto-display messages. _(inferred from the service's methods)_
+
 11 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getAutoDisplayMessageInfo`](#getautodisplaymessageinfo) | private |  | security | Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
-| [`getAutoDisplayMessageStatus`](#getautodisplaymessagestatus) | private |  | security | Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
-| [`getCasInfo`](#getcasinfo) | private |  | security | Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
-| [`getCasModuleInfo`](#getcasmoduleinfo) | private |  | security | Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
-| [`getConfirmContractInfo`](#getconfirmcontractinfo) | private |  | security | Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
-| [`getCurrentContractInfo`](#getcurrentcontractinfo) | private |  | security | Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
-| [`getCurrentEcmInfo`](#getcurrentecminfo) | private |  | security | Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
-| [`getPowerOnControlInfo`](#getpoweroncontrolinfo) | private |  | power | Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
-| [`setAutoDisplayMessageInfo`](#setautodisplaymessageinfo) | private |  | security | Setter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
-| [`setCasInfo`](#setcasinfo) | private |  | security | Setter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
-| [`setConfirmContractInfo`](#setconfirmcontractinfo) | private |  | security | Setter on com.webos.service.utp.acas (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getAutoDisplayMessageInfo`](#getautodisplaymessageinfo) | private |  | security | inferred | Returns the auto display message info. |
+| [`getAutoDisplayMessageStatus`](#getautodisplaymessagestatus) | private |  | security | inferred | Returns the auto display message status. |
+| [`getCasInfo`](#getcasinfo) | private |  | security | inferred | Returns the cas info. |
+| [`getCasModuleInfo`](#getcasmoduleinfo) | private |  | security | inferred | Returns the cas module info. |
+| [`getConfirmContractInfo`](#getconfirmcontractinfo) | private |  | security | inferred | Returns the confirm contract info. |
+| [`getCurrentContractInfo`](#getcurrentcontractinfo) | private |  | security | inferred | Returns the current contract info. |
+| [`getCurrentEcmInfo`](#getcurrentecminfo) | private |  | security | inferred | Returns the current ecm info. |
+| [`getPowerOnControlInfo`](#getpoweroncontrolinfo) | private |  | power | inferred | Returns the power on control info. |
+| [`setAutoDisplayMessageInfo`](#setautodisplaymessageinfo) | private |  | security | inferred | Sets the auto display message info. |
+| [`setCasInfo`](#setcasinfo) | private |  | security | inferred | Sets the cas info. |
+| [`setConfirmContractInfo`](#setconfirmcontractinfo) | private |  | security | inferred | Sets the confirm contract info. |
 
 <a id="getautodisplaymessageinfo"></a>
 ## `getAutoDisplayMessageInfo`
 
 `luna://com.webos.service.utp.acas/getAutoDisplayMessageInfo`
 
-Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented).
+Returns the auto display message info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.acas/getAutoDisplayMessageInfo '{}'
@@ -44,13 +48,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.acas/getAutoDisplayMessageStatus`
 
-Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented).
+Returns the auto display message status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.acas/getAutoDisplayMessageStatus '{}'
@@ -65,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.acas/getCasInfo`
 
-Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented).
+Returns the cas info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.acas/getCasInfo '{}'
@@ -86,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.acas/getCasModuleInfo`
 
-Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented).
+Returns the cas module info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.acas/getCasModuleInfo '{}'
@@ -107,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.acas/getConfirmContractInfo`
 
-Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented).
+Returns the confirm contract info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.acas/getConfirmContractInfo '{}'
@@ -128,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.acas/getCurrentContractInfo`
 
-Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented).
+Returns the current contract info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.acas/getCurrentContractInfo '{}'
@@ -149,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.acas/getCurrentEcmInfo`
 
-Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented).
+Returns the current ecm info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.acas/getCurrentEcmInfo '{}'
@@ -170,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.acas/getPowerOnControlInfo`
 
-Getter on com.webos.service.utp.acas (introspected on-device; parameters undocumented).
+Returns the power on control info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.acas/getPowerOnControlInfo '{}'
@@ -191,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.acas/setAutoDisplayMessageInfo`
 
-Setter on com.webos.service.utp.acas (introspected on-device; parameters undocumented).
+Sets the auto display message info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.acas/setAutoDisplayMessageInfo '{}'
@@ -212,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.acas/setCasInfo`
 
-Setter on com.webos.service.utp.acas (introspected on-device; parameters undocumented).
+Sets the cas info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.acas/setCasInfo '{}'
@@ -233,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.acas/setConfirmContractInfo`
 
-Setter on com.webos.service.utp.acas (introspected on-device; parameters undocumented).
+Sets the confirm contract info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.acas/setConfirmContractInfo '{}'

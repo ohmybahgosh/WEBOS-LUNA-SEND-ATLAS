@@ -1,31 +1,35 @@
 # `com.webos.service.utp.lbdsmcc`
 
+DSM-CC data-carousel service (utp stack): mounts and attaches DSM-CC carousels, fetches carousel files, and registers for stream events in digital broadcast. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`attach`](#attach) | private |  | system-info | Method on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`detachDsmccFiles`](#detachdsmccfiles) | private |  | system-info | Method on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`getCarouselInfo`](#getcarouselinfo) | private |  | system-info | Getter on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`getDsmccFile`](#getdsmccfile) | private |  | system-info | Getter on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`mountDsmcc`](#mountdsmcc) | private |  | system-info | Method on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`registerStreamEvent`](#registerstreamevent) | private |  | system-info | Method on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`unregisterStreamEvent`](#unregisterstreamevent) | private |  | system-info | Method on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`attach`](#attach) | private |  | system-info | inferred | Handles the attach. |
+| [`detachDsmccFiles`](#detachdsmccfiles) | private |  | system-info | inferred | Handles the detach dsmcc files. |
+| [`getCarouselInfo`](#getcarouselinfo) | private |  | system-info | inferred | Returns the carousel info. |
+| [`getDsmccFile`](#getdsmccfile) | private |  | system-info | inferred | Returns the dsmcc file. |
+| [`mountDsmcc`](#mountdsmcc) | private |  | system-info | inferred | Mounts the dsmcc. |
+| [`registerStreamEvent`](#registerstreamevent) | private |  | system-info | inferred | Registers the stream event. |
+| [`unregisterStreamEvent`](#unregisterstreamevent) | private |  | system-info | inferred | Unregisters the stream event. |
 
 <a id="attach"></a>
 ## `attach`
 
 `luna://com.webos.service.utp.lbdsmcc/attach`
 
-Method on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented).
+Handles the attach.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.lbdsmcc/attach '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.lbdsmcc/detachDsmccFiles`
 
-Method on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented).
+Handles the detach dsmcc files.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.lbdsmcc/detachDsmccFiles '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.lbdsmcc/getCarouselInfo`
 
-Getter on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented).
+Returns the carousel info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.lbdsmcc/getCarouselInfo '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.lbdsmcc/getDsmccFile`
 
-Getter on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented).
+Returns the dsmcc file.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.lbdsmcc/getDsmccFile '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.lbdsmcc/mountDsmcc`
 
-Method on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented).
+Mounts the dsmcc.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.lbdsmcc/mountDsmcc '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.lbdsmcc/registerStreamEvent`
 
-Method on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented).
+Registers the stream event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.lbdsmcc/registerStreamEvent '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.lbdsmcc/unregisterStreamEvent`
 
-Method on com.webos.service.utp.lbdsmcc (introspected on-device; parameters undocumented).
+Unregisters the stream event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.lbdsmcc/unregisterStreamEvent '{}'

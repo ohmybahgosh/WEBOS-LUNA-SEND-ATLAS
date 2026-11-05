@@ -1,13 +1,15 @@
 # `ssap:timer`
 
+SSAP (second-screen protocol) timer endpoint: gets and sets timer settings. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getSettings`](#getsettings) | ssap |  | misc | Timer settings (read) |
-| [`setSettings`](#setsettings) | ssap |  | misc | Timer settings (write) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getSettings`](#getsettings) | ssap |  | misc | documented | Timer settings (read) |
+| [`setSettings`](#setsettings) | ssap |  | misc | documented | Timer settings (write) |
 
 <a id="getsettings"></a>
 ## `getSettings`
@@ -20,7 +22,7 @@ Timer settings (read)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://timer/getSettings","payload":{}}
@@ -41,7 +43,7 @@ Timer settings (write)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://timer/setSettings","payload":{}}

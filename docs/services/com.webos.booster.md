@@ -1,27 +1,31 @@
 # `com.webos.booster`
 
+Process booster service: launches, closes and reports booster-accelerated (preloaded) processes. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | private |  | misc | Method on com.webos.booster (from on-device permission registry; parameters undocumented). |
-| [`launch`](#launch) | private |  | apps | Method on com.webos.booster (from on-device permission registry; parameters undocumented). |
-| [`running`](#running) | private |  | misc | Method on com.webos.booster (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | private |  | misc | inferred | Closes the booster. |
+| [`launch`](#launch) | private |  | apps | inferred | Launches the booster. |
+| [`running`](#running) | private |  | misc | inferred | Handles the running. |
 
 <a id="close"></a>
 ## `close`
 
 `luna://com.webos.booster/close`
 
-Method on com.webos.booster (from on-device permission registry; parameters undocumented).
+Closes the booster.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.booster/close '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.booster/launch`
 
-Method on com.webos.booster (from on-device permission registry; parameters undocumented).
+Launches the booster.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.booster/launch '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.booster/running`
 
-Method on com.webos.booster (from on-device permission registry; parameters undocumented).
+Handles the running.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.booster/running '{}'

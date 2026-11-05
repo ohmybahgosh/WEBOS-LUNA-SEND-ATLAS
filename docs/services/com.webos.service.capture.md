@@ -1,39 +1,43 @@
 # `com.webos.service.capture`
 
+Screen/video capture service: creates capture handles, configures output, clip regions, and properties, and executes one-shot or continuous captures with locking. _(inferred from the service's methods)_
+
 15 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`createHandle`](#createhandle) | private |  | media | Method on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`destroyHandle`](#destroyhandle) | private |  | media | Method on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`execute`](#execute) | private |  | media | Method on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`executeOneShot`](#executeoneshot) | ssap |  | display | Take a screenshot (SSAP alias: ssap://tv/executeOneShot) |
-| [`getCapability`](#getcapability) | private |  | media | Getter on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`getClipRegions`](#getclipregions) | private |  | media | Getter on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`getOptions`](#getoptions) | private |  | media | Getter on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`getProperties`](#getproperties) | private |  | media | Getter on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`isLocked`](#islocked) | private |  | media | Method on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`lock`](#lock) | private |  | media | Method on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`setClipRegions`](#setclipregions) | private |  | media | Setter on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`setOptions`](#setoptions) | private |  | media | Setter on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`setOutput`](#setoutput) | private |  | media | Setter on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`setProperties`](#setproperties) | private |  | media | Setter on com.webos.service.capture (introspected on-device; parameters undocumented). |
-| [`unlock`](#unlock) | private |  | media | Method on com.webos.service.capture (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`createHandle`](#createhandle) | private |  | media | inferred | Creates the handle. |
+| [`destroyHandle`](#destroyhandle) | private |  | media | inferred | Handles the destroy handle. |
+| [`execute`](#execute) | private |  | media | inferred | Runs the capture. |
+| [`executeOneShot`](#executeoneshot) | ssap |  | display | documented | Take a screenshot (SSAP alias: ssap://tv/executeOneShot) |
+| [`getCapability`](#getcapability) | private |  | media | inferred | Returns the capability. |
+| [`getClipRegions`](#getclipregions) | private |  | media | inferred | Returns the clip regions. |
+| [`getOptions`](#getoptions) | private |  | media | inferred | Returns the options. |
+| [`getProperties`](#getproperties) | private |  | media | inferred | Returns the properties. |
+| [`isLocked`](#islocked) | private |  | media | inferred | Reports whether the locked is set. |
+| [`lock`](#lock) | private |  | media | inferred | Locks the capture. |
+| [`setClipRegions`](#setclipregions) | private |  | media | inferred | Sets the clip regions. |
+| [`setOptions`](#setoptions) | private |  | media | inferred | Sets the options. |
+| [`setOutput`](#setoutput) | private |  | media | inferred | Sets the output. |
+| [`setProperties`](#setproperties) | private |  | media | inferred | Sets the properties. |
+| [`unlock`](#unlock) | private |  | media | inferred | Unlocks the capture. |
 
 <a id="createhandle"></a>
 ## `createHandle`
 
 `luna://com.webos.service.capture/createHandle`
 
-Method on com.webos.service.capture (introspected on-device; parameters undocumented).
+Creates the handle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/createHandle '{}'
@@ -48,13 +52,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/destroyHandle`
 
-Method on com.webos.service.capture (introspected on-device; parameters undocumented).
+Handles the destroy handle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/destroyHandle '{}'
@@ -69,13 +75,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/execute`
 
-Method on com.webos.service.capture (introspected on-device; parameters undocumented).
+Runs the capture.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/execute '{}'
@@ -96,7 +104,7 @@ Take a screenshot (SSAP alias: ssap://tv/executeOneShot)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 9 (com.webos.service.capture); older: com.webos.service.tv.capture per glasshouse; webOS 4+ (older: com.webos.service.tv.capture)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -119,13 +127,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/webos_cl
 
 `luna://com.webos.service.capture/getCapability`
 
-Getter on com.webos.service.capture (introspected on-device; parameters undocumented).
+Returns the capability.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/getCapability '{}'
@@ -140,13 +150,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/getClipRegions`
 
-Getter on com.webos.service.capture (introspected on-device; parameters undocumented).
+Returns the clip regions.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/getClipRegions '{}'
@@ -161,13 +173,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/getOptions`
 
-Getter on com.webos.service.capture (introspected on-device; parameters undocumented).
+Returns the options.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/getOptions '{}'
@@ -182,13 +196,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/getProperties`
 
-Getter on com.webos.service.capture (introspected on-device; parameters undocumented).
+Returns the properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/getProperties '{}'
@@ -203,13 +219,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/isLocked`
 
-Method on com.webos.service.capture (introspected on-device; parameters undocumented).
+Reports whether the locked is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/isLocked '{}'
@@ -224,13 +242,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/lock`
 
-Method on com.webos.service.capture (introspected on-device; parameters undocumented).
+Locks the capture.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/lock '{}'
@@ -245,13 +265,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/setClipRegions`
 
-Setter on com.webos.service.capture (introspected on-device; parameters undocumented).
+Sets the clip regions.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/setClipRegions '{}'
@@ -266,13 +288,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/setOptions`
 
-Setter on com.webos.service.capture (introspected on-device; parameters undocumented).
+Sets the options.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/setOptions '{}'
@@ -287,13 +311,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/setOutput`
 
-Setter on com.webos.service.capture (introspected on-device; parameters undocumented).
+Sets the output.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/setOutput '{}'
@@ -308,13 +334,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/setProperties`
 
-Setter on com.webos.service.capture (introspected on-device; parameters undocumented).
+Sets the properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/setProperties '{}'
@@ -329,13 +357,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.capture/unlock`
 
-Method on com.webos.service.capture (introspected on-device; parameters undocumented).
+Unlocks the capture.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.capture/unlock '{}'

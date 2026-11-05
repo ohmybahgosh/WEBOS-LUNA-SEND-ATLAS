@@ -1,15 +1,17 @@
 # `ssap:user`
 
+SSAP external-control endpoint for user data: sets and resets user info, data and schedule. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`resetUserInfo`](#resetuserinfo) | ssap |  | misc | User profile/schedule call resetUserInfo |
-| [`setUserData`](#setuserdata) | ssap |  | misc | User profile/schedule call setUserData |
-| [`setUserInfo`](#setuserinfo) | ssap |  | misc | User profile/schedule call setUserInfo |
-| [`setUserSchedule`](#setuserschedule) | ssap |  | misc | User profile/schedule call setUserSchedule |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`resetUserInfo`](#resetuserinfo) | ssap |  | misc | documented | User profile/schedule call resetUserInfo |
+| [`setUserData`](#setuserdata) | ssap |  | misc | documented | User profile/schedule call setUserData |
+| [`setUserInfo`](#setuserinfo) | ssap |  | misc | documented | User profile/schedule call setUserInfo |
+| [`setUserSchedule`](#setuserschedule) | ssap |  | misc | documented | User profile/schedule call setUserSchedule |
 
 <a id="resetuserinfo"></a>
 ## `resetUserInfo`
@@ -22,7 +24,7 @@ User profile/schedule call resetUserInfo
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://user/resetUserInfo","payload":{}}
@@ -43,7 +45,7 @@ User profile/schedule call setUserData
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://user/setUserData","payload":{}}
@@ -64,7 +66,7 @@ User profile/schedule call setUserInfo
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://user/setUserInfo","payload":{}}
@@ -85,7 +87,7 @@ User profile/schedule call setUserSchedule
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://user/setUserSchedule","payload":{}}

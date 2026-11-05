@@ -1,53 +1,57 @@
 # `com.webos.service.connectionmanager`
 
+Manages wired and Wi-Fi network connections: reports status and info, sets the default interface, configures IPv4/IPv6, DNS, proxy and tethering, and reports Wake-on-LAN state.
+
 29 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkinternetstatus`](#checkinternetstatus) | private |  | network | Method registered by com.webos.service.connectionmanager (root category) |
-| [`findProxyForURL`](#findproxyforurl) | public |  | connection | Provides the proxy server that was used to reach the target URL. |
-| [`getHistory`](#gethistory) | private |  | connection | Getter on com.webos.service.connectionmanager (introspected on-device; parameters undocumented). |
-| [`getinfo`](#getinfo) | public | yes | connection | Gets the MAC addresses for the Wi-Fi and wired interfaces. When subscribed, getInfo periodically checks for any changes in interface MAC add |
-| [`getStatus`](#getstatus) | public | yes | connection | Provides the current status of Wi-Fi and wired network connections on the system. |
-| [`getUserStatus`](#getuserstatus) | public |  | network | Method registered by com.webos.service.connectionmanager (root category) |
-| [`getwolwowlstatus`](#getwolwowlstatus) | private |  | connection | Method on com.webos.service.connectionmanager (from on-device permission registry; parameters undocumented). |
-| [`InterfaceInfo`](#interfaceinfo) | unknown |  | connection | This object provides detailed information about the interfaces details Sample "InterfaceInfo" object : { "name" : "eth0", "netmask": "255.25 |
-| [`InterfaceMacInfo`](#interfacemacinfo) | unknown |  | connection | Provides interfaces MAC address and name Sample InterfaceMacinfo object : { "name":"eth0", "macAddress":"AA:BB:CC:DD:EE:FF" } |
-| [`ipInfo`](#ipinfo) | unknown |  | connection | The object containing IP configuration information. An example would look like: { "subnet": "255.255.255.0", "dns": [ "192.168.100.10" ], "a |
-| [`monitorActivity`](#monitoractivity) | public | yes | connection | Monitors the data activity on the wired, Wi-Fi and WAN interfaces for bytes received or transmitted, errors, packets and dropped packets. A  |
-| [`proxyInfo`](#proxyinfo) | unknown |  | connection | This object contains the actual system configuration for proxy servers. Sample "proxyInfo" object: { "servers": ["10.10.10.10:80"], "method" |
-| [`setDefaultInterface`](#setdefaultinterface) | public |  | connection | Allows to set the default interface. This API allows to change the current default interface with another interface which is in connected st |
-| [`setdns`](#setdns) | public |  | connection | Changes the DNS servers for the network. If a SSID value is not provided in the request then the modifications are applied to the wired conn |
-| [`setEthernetTethering`](#setethernettethering) | private |  | network | Method registered by com.webos.service.connectionmanager (root category) |
-| [`setipv4`](#setipv4) | public |  | connection | Modifies the parameters of an IPv4 connection (wired or Wi-Fi). If a SSID value is not provided in the request, the modifications are applie |
-| [`setipv6`](#setipv6) | public |  | connection | Modifies the parameters of an IPv6 connection (wired or Wi-Fi). If a SSID value is not provided in the request then the modifications are ap |
-| [`setProxy`](#setproxy) | public |  | connection | Specifies the proxy server for the network. |
-| [`setstate`](#setstate) | public |  | connection | Enables or disables the state of either or both the Wi-Fi and wired connections on the system. Note : While all parameters are optional, at  |
-| [`setTechnologyState`](#settechnologystate) | public |  | connection | Enables or disables the available connection interfaces which can be: Wired (ethernet) Wi-Fi Note : If a technology is not available on the  |
-| [`tv/createVirtualLan`](#tv_createvirtuallan) | private |  | network | Method registered by com.webos.service.connectionmanager (category '/tv') |
-| [`tv/getWolWowlStatus`](#tv_getwolwowlstatus) | private |  | network | Gets Wake-on-LAN / Wake-on-WLAN status |
-| [`tv/setExternalWanStatus`](#tv_setexternalwanstatus) | private |  | network | Method registered by com.webos.service.connectionmanager (category '/tv') |
-| [`tv/setMacAddress`](#tv_setmacaddress) | private |  | connection | Setter on com.webos.service.connectionmanager (introspected on-device; parameters undocumented). |
-| [`tv/setWolWowlStatus`](#tv_setwolwowlstatus) | private |  | network | Sets Wake-on-LAN / Wake-on-WLAN status |
-| [`wifi`](#wifi) | unknown |  | connection | The wifi object provides details on the status of the Wi-Fi connection. If the Wi-Fi connection is available then all the fields of this obj |
-| [`wifiInfo`](#wifiinfo) | unknown |  | connection | This object contains the MAC address for the WI-Fi interface. An example object would like this: { "macAddress": "aa:bb:cc:dd:ee" } |
-| [`wired`](#wired) | unknown |  | connection | The wired object provides details on the status of the wired connections. If the wired connection is available then all the fields of this o |
-| [`wiredInfo`](#wiredinfo) | unknown |  | connection | The object containing the MAC address of the wired interface. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkinternetstatus`](#checkinternetstatus) | private |  | network | inferred | Handles the checkinternetstatus. |
+| [`findProxyForURL`](#findproxyforurl) | public |  | connection | documented | Provides the proxy server that was used to reach the target URL. |
+| [`getHistory`](#gethistory) | private |  | connection | inferred | Returns the history. |
+| [`getinfo`](#getinfo) | public | yes | connection | documented | Gets the MAC addresses for the Wi-Fi and wired interfaces. When subscribed, getInfo periodically checks for any changes in interface MAC add |
+| [`getStatus`](#getstatus) | public | yes | connection | documented | Provides the current status of Wi-Fi and wired network connections on the system. |
+| [`getUserStatus`](#getuserstatus) | public |  | network | inferred | Returns the user status. |
+| [`getwolwowlstatus`](#getwolwowlstatus) | private |  | connection | inferred | Handles the getwolwowlstatus. |
+| [`InterfaceInfo`](#interfaceinfo) | unknown |  | connection | documented | This object provides detailed information about the interfaces details Sample "InterfaceInfo" object : { "name" : "eth0", "netmask": "255.25 |
+| [`InterfaceMacInfo`](#interfacemacinfo) | unknown |  | connection | documented | Provides interfaces MAC address and name Sample InterfaceMacinfo object : { "name":"eth0", "macAddress":"AA:BB:CC:DD:EE:FF" } |
+| [`ipInfo`](#ipinfo) | unknown |  | connection | documented | The object containing IP configuration information. An example would look like: { "subnet": "255.255.255.0", "dns": [ "192.168.100.10" ], "a |
+| [`monitorActivity`](#monitoractivity) | public | yes | connection | documented | Monitors the data activity on the wired, Wi-Fi and WAN interfaces for bytes received or transmitted, errors, packets and dropped packets. A  |
+| [`proxyInfo`](#proxyinfo) | unknown |  | connection | documented | This object contains the actual system configuration for proxy servers. Sample "proxyInfo" object: { "servers": ["10.10.10.10:80"], "method" |
+| [`setDefaultInterface`](#setdefaultinterface) | public |  | connection | documented | Allows to set the default interface. This API allows to change the current default interface with another interface which is in connected st |
+| [`setdns`](#setdns) | public |  | connection | documented | Changes the DNS servers for the network. If a SSID value is not provided in the request then the modifications are applied to the wired conn |
+| [`setEthernetTethering`](#setethernettethering) | private |  | network | inferred | Sets the ethernet tethering. |
+| [`setipv4`](#setipv4) | public |  | connection | documented | Modifies the parameters of an IPv4 connection (wired or Wi-Fi). If a SSID value is not provided in the request, the modifications are applie |
+| [`setipv6`](#setipv6) | public |  | connection | documented | Modifies the parameters of an IPv6 connection (wired or Wi-Fi). If a SSID value is not provided in the request then the modifications are ap |
+| [`setProxy`](#setproxy) | public |  | connection | documented | Specifies the proxy server for the network. |
+| [`setstate`](#setstate) | public |  | connection | documented | Enables or disables the state of either or both the Wi-Fi and wired connections on the system. Note : While all parameters are optional, at  |
+| [`setTechnologyState`](#settechnologystate) | public |  | connection | documented | Enables or disables the available connection interfaces which can be: Wired (ethernet) Wi-Fi Note : If a technology is not available on the  |
+| [`tv/createVirtualLan`](#tv_createvirtuallan) | private |  | network | inferred | Creates the virtual lan (TV) |
+| [`tv/getWolWowlStatus`](#tv_getwolwowlstatus) | private |  | network | documented | Gets Wake-on-LAN / Wake-on-WLAN status |
+| [`tv/setExternalWanStatus`](#tv_setexternalwanstatus) | private |  | network | inferred | Sets the external wan status (TV) |
+| [`tv/setMacAddress`](#tv_setmacaddress) | private |  | connection | inferred | Sets the MAC address (TV) |
+| [`tv/setWolWowlStatus`](#tv_setwolwowlstatus) | private |  | network | documented | Sets Wake-on-LAN / Wake-on-WLAN status |
+| [`wifi`](#wifi) | unknown |  | connection | documented | The wifi object provides details on the status of the Wi-Fi connection. If the Wi-Fi connection is available then all the fields of this obj |
+| [`wifiInfo`](#wifiinfo) | unknown |  | connection | documented | This object contains the MAC address for the WI-Fi interface. An example object would like this: { "macAddress": "aa:bb:cc:dd:ee" } |
+| [`wired`](#wired) | unknown |  | connection | documented | The wired object provides details on the status of the wired connections. If the wired connection is available then all the fields of this o |
+| [`wiredInfo`](#wiredinfo) | unknown |  | connection | documented | The object containing the MAC address of the wired interface. |
 
 <a id="checkinternetstatus"></a>
 ## `checkinternetstatus`
 
 `luna://com.webos.service.connectionmanager/checkinternetstatus`
 
-Method registered by com.webos.service.connectionmanager (root category)
+Handles the checkinternetstatus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/checkinternetstatus '{}'
@@ -75,6 +79,14 @@ Provides the proxy server that was used to reach the target URL.
 | `url` | String (required) The complete URL to be checked for proxy access. |
 | `host` | String (required) The hostname component of a URL for convenience |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `proxy` | String (optional) The proxy address for the target URL. For example, "PROXY <proxy1>:1080". For directly connected sites, the value "DIRECT" is returned. |
+| `errorCode` | String (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/findProxyForURL '{ "url":"http://www.lge.com", "host":"www.lge.com" }
 ```
@@ -88,13 +100,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-c
 
 `luna://com.webos.service.connectionmanager/getHistory`
 
-Getter on com.webos.service.connectionmanager (introspected on-device; parameters undocumented).
+Returns the history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/getHistory '{}'
@@ -115,11 +129,18 @@ Gets the MAC addresses for the Wi-Fi and wired interfaces. When subscribed, getI
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe to be notified of changes in interfaces. Possible values are: true: Subscribed. false (Default): Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `wifiInfo` | Object: wifiInfo (optional) Information about the Wi-Fi interface. |
+| `wiredInfo` | Object: wiredInfo (optional) Information about the wired interface. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/getinfo '{}
@@ -140,11 +161,20 @@ Provides the current status of Wi-Fi and wired network connections on the system
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS OSE API level 23+; webOS 3+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe to this method to get notified on changes to the status of the network connection. Possible values are: true: Subscribed. false (Default): Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `isInternetConnectionAvailable` | Boolean (required) Indicates if internet connection is available. Possible values are: - true - Internet connection available - false - Internet connection is unavailable |
+| `wifi` | Object: wifi (required) Information about the Wi-Fi connection. |
+| `wired` | Object: wired (required) Information about the wired connection. |
+| `offlineMode` | String (optional) Indicates if the system is offline. Possible values are: - enabled- System is offline - disabled- System is online |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/getStatus '{}
@@ -159,13 +189,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-c
 
 `luna://com.webos.service.connectionmanager/getUserStatus`
 
-Method registered by com.webos.service.connectionmanager (root category)
+Returns the user status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/getUserStatus '{}'
@@ -180,13 +212,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.connectionmanager/getwolwowlstatus`
 
-Method on com.webos.service.connectionmanager (from on-device permission registry; parameters undocumented).
+Handles the getwolwowlstatus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/getwolwowlstatus '{}'
@@ -276,6 +310,15 @@ Monitors the data activity on the wired, Wi-Fi and WAN interfaces for bytes rece
 |---|---|
 | `subscribe` | Boolean (required) Indicates if subscribed to get the notifications. Possible values are: true : Subscribed for notifications. false : Not subscribed Note : This parameter needs to be set to true else the method will fail and return an error. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `sampleInterval` | Number (optional) Indicates the time duration for sampling the data activity in msec. |
+| `wired` | Object: dataStats (optional) Indicates the data activity for the wired interface. |
+| `wifi` | Object: dataStats (optional) Indicates the data activity for Wi-Fi interface. |
+| `wan` | Object: dataStats (optional) Indicates the data activity for Wan interface. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.connectionmanager/monitorActivity '{"subscribe":true}
 ```
@@ -322,6 +365,13 @@ Allows to set the default interface. This API allows to change the current defau
 |---|---|
 | `ifName` | String (required) Interface that is to be made as the default. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/setDefaultInterface '{"ifName": "<ifName>"}'
 ```
@@ -362,13 +412,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-c
 
 `luna://com.webos.service.connectionmanager/setEthernetTethering`
 
-Method registered by com.webos.service.connectionmanager (root category)
+Sets the ethernet tethering.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/setEthernetTethering '{}'
@@ -525,13 +577,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-c
 
 `luna://com.webos.service.connectionmanager/tv/createVirtualLan`
 
-Method registered by com.webos.service.connectionmanager (category '/tv')
+Creates the virtual lan (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/tv/createVirtualLan '{}'
@@ -552,7 +606,7 @@ Gets Wake-on-LAN / Wake-on-WLAN status
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -571,13 +625,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.connectionmanager/tv/setExternalWanStatus`
 
-Method registered by com.webos.service.connectionmanager (category '/tv')
+Sets the external wan status (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/tv/setExternalWanStatus '{}'
@@ -592,13 +648,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.connectionmanager/tv/setMacAddress`
 
-Setter on com.webos.service.connectionmanager (introspected on-device; parameters undocumented).
+Sets the MAC address (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/tv/setMacAddress '{}'
@@ -619,7 +677,7 @@ Sets Wake-on-LAN / Wake-on-WLAN status
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.connectionmanager/tv/setWolWowlStatus '{}'

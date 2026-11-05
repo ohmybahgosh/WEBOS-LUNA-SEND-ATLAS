@@ -1,42 +1,46 @@
 # `lg.thinqai.adapter`
 
+LG ThinQ AI adapter: runs voice/intent recognition by voice or text, returns TTS and keyword results, and manages Voice ID enrollment and privacy data. _(inferred from the service's methods)_
+
 18 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelRecognition`](#cancelrecognition) | private |  | misc | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`deletePrivacyData`](#deleteprivacydata) | private |  | misc | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). ⚠️ |
-| [`getKeywordResult`](#getkeywordresult) | private |  | misc | Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`getTtsData`](#getttsdata) | private |  | misc | Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`load`](#load) | private |  | misc | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`recognizeIntentByText`](#recognizeintentbytext) | private |  | misc | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`recognizeVoice`](#recognizevoice) | private |  | input | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`showGuide`](#showguide) | private |  | misc | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`unload`](#unload) | private |  | misc | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`vid/cancelEnroll`](#vid_cancelenroll) | private |  | misc | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`vid/deleteVoiceId`](#vid_deletevoiceid) | private |  | input | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). ⚠️ |
-| [`vid/getStatusList`](#vid_getstatuslist) | private |  | misc | Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`vid/getSupportedLanguagesForVoiceId`](#vid_getsupportedlanguagesforvoiceid) | private |  | input | Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`vid/getVidFirstuseEnabled`](#vid_getvidfirstuseenabled) | private |  | misc | Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`vid/isVoiceIdRegistered`](#vid_isvoiceidregistered) | private |  | input | Method on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
-| [`vid/listScripts`](#vid_listscripts) | private |  | misc | Lister on lg.thinqai.adapter (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelRecognition`](#cancelrecognition) | private |  | misc | inferred | Cancels the recognition. |
+| [`deletePrivacyData`](#deleteprivacydata) | private |  | misc | inferred | Deletes the privacy data. ⚠️ |
+| [`getKeywordResult`](#getkeywordresult) | private |  | misc | inferred | Returns the keyword result. |
+| [`getTtsData`](#getttsdata) | private |  | misc | inferred | Returns the tts data. |
+| [`load`](#load) | private |  | misc | inferred | Loads the lg thinqai adapter. |
+| [`recognizeIntentByText`](#recognizeintentbytext) | private |  | misc | inferred | Recognizes the intent by text. |
+| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | inferred | Recognizes the intent by voice. |
+| [`recognizeVoice`](#recognizevoice) | private |  | input | inferred | Recognizes the voice. |
+| [`showGuide`](#showguide) | private |  | misc | inferred | Shows the guide. |
+| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | inferred | Stops the recording voice. |
+| [`unload`](#unload) | private |  | misc | inferred | Unloads the lg thinqai adapter. |
+| [`vid/cancelEnroll`](#vid_cancelenroll) | private |  | misc | inferred | Cancels the enroll (vid) |
+| [`vid/deleteVoiceId`](#vid_deletevoiceid) | private |  | input | inferred | Deletes the voice ID (vid) ⚠️ |
+| [`vid/getStatusList`](#vid_getstatuslist) | private |  | misc | inferred | Returns the status list (vid) |
+| [`vid/getSupportedLanguagesForVoiceId`](#vid_getsupportedlanguagesforvoiceid) | private |  | input | inferred | Returns the supported languages for voice ID (vid) |
+| [`vid/getVidFirstuseEnabled`](#vid_getvidfirstuseenabled) | private |  | misc | inferred | Returns the vid firstuse enabled (vid) |
+| [`vid/isVoiceIdRegistered`](#vid_isvoiceidregistered) | private |  | input | inferred | Reports whether the voice ID registered is set (vid) |
+| [`vid/listScripts`](#vid_listscripts) | private |  | misc | inferred | Lists the scripts (vid) |
 
 <a id="cancelrecognition"></a>
 ## `cancelRecognition`
 
 `luna://lg.thinqai.adapter/cancelRecognition`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Cancels the recognition.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/cancelRecognition '{}'
@@ -51,13 +55,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/deletePrivacyData`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Deletes the privacy data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/deletePrivacyData '{}'
@@ -72,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/getKeywordResult`
 
-Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Returns the keyword result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/getKeywordResult '{}'
@@ -93,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/getTtsData`
 
-Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Returns the tts data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/getTtsData '{}'
@@ -114,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/load`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Loads the lg thinqai adapter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/load '{}'
@@ -135,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/recognizeIntentByText`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Recognizes the intent by text.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/recognizeIntentByText '{}'
@@ -156,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/recognizeIntentByVoice`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Recognizes the intent by voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/recognizeIntentByVoice '{}'
@@ -177,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/recognizeVoice`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Recognizes the voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/recognizeVoice '{}'
@@ -198,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/showGuide`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Shows the guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/showGuide '{}'
@@ -219,13 +239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/stopRecordingVoice`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Stops the recording voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/stopRecordingVoice '{}'
@@ -240,13 +262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/unload`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Unloads the lg thinqai adapter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/unload '{}'
@@ -261,13 +285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/vid/cancelEnroll`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Cancels the enroll (vid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/vid/cancelEnroll '{}'
@@ -282,13 +308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/vid/deleteVoiceId`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Deletes the voice ID (vid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/vid/deleteVoiceId '{}'
@@ -303,13 +331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/vid/getStatusList`
 
-Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Returns the status list (vid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/vid/getStatusList '{}'
@@ -324,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/vid/getSupportedLanguagesForVoiceId`
 
-Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Returns the supported languages for voice ID (vid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/vid/getSupportedLanguagesForVoiceId '{}'
@@ -345,13 +377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/vid/getVidFirstuseEnabled`
 
-Getter on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Returns the vid firstuse enabled (vid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/vid/getVidFirstuseEnabled '{}'
@@ -366,13 +400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/vid/isVoiceIdRegistered`
 
-Method on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Reports whether the voice ID registered is set (vid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/vid/isVoiceIdRegistered '{}'
@@ -387,13 +423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://lg.thinqai.adapter/vid/listScripts`
 
-Lister on lg.thinqai.adapter (introspected on-device; parameters undocumented).
+Lists the scripts (vid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://lg.thinqai.adapter/vid/listScripts '{}'

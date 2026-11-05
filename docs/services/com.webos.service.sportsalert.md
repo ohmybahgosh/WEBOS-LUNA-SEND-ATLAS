@@ -1,33 +1,37 @@
 # `com.webos.service.sportsalert`
 
+Sports-alert service driven by Activity Manager: fetches account, authentication, event, locale and settings data to deliver sports notifications. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getAccountByActivitymanager`](#getaccountbyactivitymanager) | private |  | activity | Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
-| [`getAuthenticationByActivitymanager`](#getauthenticationbyactivitymanager) | private |  | activity | Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
-| [`getEventByActivitymanager`](#geteventbyactivitymanager) | private |  | activity | Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
-| [`getLocaleInfoByActivitymanager`](#getlocaleinfobyactivitymanager) | private |  | activity | Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
-| [`getstatusByActivitymanager`](#getstatusbyactivitymanager) | private |  | activity | Method on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
-| [`getSystemSettingsByActivitymanager`](#getsystemsettingsbyactivitymanager) | private |  | settings | Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
-| [`info`](#info) | private |  | misc | Method on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
-| [`invoke`](#invoke) | private |  | misc | Method on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
-| [`quit`](#quit) | private |  | misc | Method on com.webos.service.sportsalert (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getAccountByActivitymanager`](#getaccountbyactivitymanager) | private |  | activity | inferred | Returns the account by activitymanager. |
+| [`getAuthenticationByActivitymanager`](#getauthenticationbyactivitymanager) | private |  | activity | inferred | Returns the authentication by activitymanager. |
+| [`getEventByActivitymanager`](#geteventbyactivitymanager) | private |  | activity | inferred | Returns the event by activitymanager. |
+| [`getLocaleInfoByActivitymanager`](#getlocaleinfobyactivitymanager) | private |  | activity | inferred | Returns the locale info by activitymanager. |
+| [`getstatusByActivitymanager`](#getstatusbyactivitymanager) | private |  | activity | inferred | Handles the getstatus by activitymanager. |
+| [`getSystemSettingsByActivitymanager`](#getsystemsettingsbyactivitymanager) | private |  | settings | inferred | Returns the system settings by activitymanager. |
+| [`info`](#info) | private |  | misc | inferred | Handles the info. |
+| [`invoke`](#invoke) | private |  | misc | inferred | Handles the invoke. |
+| [`quit`](#quit) | private |  | misc | inferred | Quits the sportsalert. |
 
 <a id="getaccountbyactivitymanager"></a>
 ## `getAccountByActivitymanager`
 
 `luna://com.webos.service.sportsalert/getAccountByActivitymanager`
 
-Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented).
+Returns the account by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalert/getAccountByActivitymanager '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalert/getAuthenticationByActivitymanager`
 
-Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented).
+Returns the authentication by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalert/getAuthenticationByActivitymanager '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalert/getEventByActivitymanager`
 
-Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented).
+Returns the event by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalert/getEventByActivitymanager '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalert/getLocaleInfoByActivitymanager`
 
-Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented).
+Returns the locale info by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalert/getLocaleInfoByActivitymanager '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalert/getstatusByActivitymanager`
 
-Method on com.webos.service.sportsalert (introspected on-device; parameters undocumented).
+Handles the getstatus by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalert/getstatusByActivitymanager '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalert/getSystemSettingsByActivitymanager`
 
-Getter on com.webos.service.sportsalert (introspected on-device; parameters undocumented).
+Returns the system settings by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalert/getSystemSettingsByActivitymanager '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalert/info`
 
-Method on com.webos.service.sportsalert (introspected on-device; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalert/info '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalert/invoke`
 
-Method on com.webos.service.sportsalert (introspected on-device; parameters undocumented).
+Handles the invoke.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalert/invoke '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalert/quit`
 
-Method on com.webos.service.sportsalert (introspected on-device; parameters undocumented).
+Quits the sportsalert.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalert/quit '{}'

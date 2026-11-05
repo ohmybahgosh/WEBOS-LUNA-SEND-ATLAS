@@ -1,34 +1,38 @@
 # `com.webos.service.legacybroadcast.teletext`
 
+Legacy-broadcast teletext service: enables/disables teletext (and teletext PES), and reports teletext data, lists and state. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`disableTeletextPes`](#disableteletextpes) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented). |
-| [`enableTeletext`](#enableteletext) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented). |
-| [`enableTeletextPes`](#enableteletextpes) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented). |
-| [`getCurrentTeletext`](#getcurrentteletext) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented). |
-| [`getTeletextData`](#getteletextdata) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented). |
-| [`getTeletextInfo`](#getteletextinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented). |
-| [`getTeletextList`](#getteletextlist) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented). |
-| [`getTeletextState`](#getteletextstate) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented). |
-| [`isTimeAvailable`](#istimeavailable) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented). |
-| [`setTeletext`](#setteletext) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`disableTeletextPes`](#disableteletextpes) | private |  | tv-broadcast | inferred | Disables the teletext pes. |
+| [`enableTeletext`](#enableteletext) | private |  | tv-broadcast | inferred | Enables the teletext. |
+| [`enableTeletextPes`](#enableteletextpes) | private |  | tv-broadcast | inferred | Enables the teletext pes. |
+| [`getCurrentTeletext`](#getcurrentteletext) | private |  | tv-broadcast | inferred | Returns the current teletext. |
+| [`getTeletextData`](#getteletextdata) | private |  | tv-broadcast | inferred | Returns the teletext data. |
+| [`getTeletextInfo`](#getteletextinfo) | private |  | tv-broadcast | inferred | Returns the teletext info. |
+| [`getTeletextList`](#getteletextlist) | private |  | tv-broadcast | inferred | Returns the teletext list. |
+| [`getTeletextState`](#getteletextstate) | private |  | tv-broadcast | inferred | Returns the teletext state. |
+| [`isTimeAvailable`](#istimeavailable) | private |  | tv-broadcast | inferred | Reports whether the time available is set. |
+| [`setTeletext`](#setteletext) | private |  | tv-broadcast | inferred | Sets the teletext. |
 
 <a id="disableteletextpes"></a>
 ## `disableTeletextPes`
 
 `luna://com.webos.service.legacybroadcast.teletext/disableTeletextPes`
 
-Method on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented).
+Disables the teletext pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.teletext/disableTeletextPes '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.teletext/enableTeletext`
 
-Method on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented).
+Enables the teletext.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.teletext/enableTeletext '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.teletext/enableTeletextPes`
 
-Method on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented).
+Enables the teletext pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.teletext/enableTeletextPes '{}'
@@ -85,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.teletext/getCurrentTeletext`
 
-Getter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented).
+Returns the current teletext.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.teletext/getCurrentTeletext '{}'
@@ -106,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.teletext/getTeletextData`
 
-Getter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented).
+Returns the teletext data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.teletext/getTeletextData '{}'
@@ -127,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.teletext/getTeletextInfo`
 
-Getter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented).
+Returns the teletext info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.teletext/getTeletextInfo '{}'
@@ -148,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.teletext/getTeletextList`
 
-Getter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented).
+Returns the teletext list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.teletext/getTeletextList '{}'
@@ -169,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.teletext/getTeletextState`
 
-Getter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented).
+Returns the teletext state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.teletext/getTeletextState '{}'
@@ -190,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.teletext/isTimeAvailable`
 
-Method on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented).
+Reports whether the time available is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.teletext/isTimeAvailable '{}'
@@ -211,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.teletext/setTeletext`
 
-Setter on com.webos.service.legacybroadcast.teletext (introspected on-device; parameters undocumented).
+Sets the teletext.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.teletext/setTeletext '{}'

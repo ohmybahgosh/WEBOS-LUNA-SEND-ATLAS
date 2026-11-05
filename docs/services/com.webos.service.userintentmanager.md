@@ -1,32 +1,36 @@
 # `com.webos.service.userintentmanager`
 
+User-intent manager: tracks user context and history, records and ranks intents, and reports intent status. _(inferred from the service's methods)_
+
 8 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getContext`](#getcontext) | private |  | misc | Getter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented). |
-| [`getHistory`](#gethistory) | private |  | misc | Getter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented). |
-| [`getIntentStatus`](#getintentstatus) | private |  | misc | Getter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented). |
-| [`getRank`](#getrank) | private |  | misc | Getter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented). |
-| [`load`](#load) | private |  | misc | Method on com.webos.service.userintentmanager (introspected on-device; parameters undocumented). |
-| [`reset`](#reset) | private |  | misc | Method on com.webos.service.userintentmanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`setContext`](#setcontext) | private |  | misc | Setter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented). |
-| [`setIntent`](#setintent) | private |  | misc | Setter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getContext`](#getcontext) | private |  | misc | inferred | Returns the context. |
+| [`getHistory`](#gethistory) | private |  | misc | inferred | Returns the history. |
+| [`getIntentStatus`](#getintentstatus) | private |  | misc | inferred | Returns the intent status. |
+| [`getRank`](#getrank) | private |  | misc | inferred | Returns the rank. |
+| [`load`](#load) | private |  | misc | inferred | Loads the userintentmanager. |
+| [`reset`](#reset) | private |  | misc | inferred | Resets the userintentmanager. ⚠️ |
+| [`setContext`](#setcontext) | private |  | misc | inferred | Sets the context. |
+| [`setIntent`](#setintent) | private |  | misc | inferred | Sets the intent. |
 
 <a id="getcontext"></a>
 ## `getContext`
 
 `luna://com.webos.service.userintentmanager/getContext`
 
-Getter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented).
+Returns the context.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.userintentmanager/getContext '{}'
@@ -41,13 +45,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.userintentmanager/getHistory`
 
-Getter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented).
+Returns the history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.userintentmanager/getHistory '{}'
@@ -62,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.userintentmanager/getIntentStatus`
 
-Getter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented).
+Returns the intent status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.userintentmanager/getIntentStatus '{}'
@@ -83,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.userintentmanager/getRank`
 
-Getter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented).
+Returns the rank.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.userintentmanager/getRank '{}'
@@ -104,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.userintentmanager/load`
 
-Method on com.webos.service.userintentmanager (introspected on-device; parameters undocumented).
+Loads the userintentmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.userintentmanager/load '{}'
@@ -125,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.userintentmanager/reset`
 
-Method on com.webos.service.userintentmanager (introspected on-device; parameters undocumented).
+Resets the userintentmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.userintentmanager/reset '{}'
@@ -146,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.userintentmanager/setContext`
 
-Setter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented).
+Sets the context.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.userintentmanager/setContext '{}'
@@ -167,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.userintentmanager/setIntent`
 
-Setter on com.webos.service.userintentmanager (introspected on-device; parameters undocumented).
+Sets the intent.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.userintentmanager/setIntent '{}'

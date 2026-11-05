@@ -1,43 +1,47 @@
 # `com.webos.service.terminalmanager`
 
+Terminal manager: controls RS-232 serial ports (baud rate, attributes, RS232 control), attaches a debug console, and registers/routes terminal commands. _(inferred from the service's methods)_
+
 19 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`command/registerCommand`](#command_registercommand) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`command/registerCommandList`](#command_registercommandlist) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`command/requestCommandPriority`](#command_requestcommandpriority) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`command/returnCommandPriority`](#command_returncommandpriority) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`command/sendCommandThruVirtualInput`](#command_sendcommandthruvirtualinput) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`command/test1`](#command_test1) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`console/attachDevice`](#console_attachdevice) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`console/detachDevice`](#console_detachdevice) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`console/requestDebugConsolName`](#console_requestdebugconsolname) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`console/startConsole2`](#console_startconsole2) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`getAttr`](#getattr) | private |  | input | Getter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`getBaudRate`](#getbaudrate) | private |  | input | Getter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`getRS232Control`](#getrs232control) | private |  | input | Getter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`printMessage`](#printmessage) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`setAttr`](#setattr) | private |  | input | Setter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`setAttrOneShot`](#setattroneshot) | private |  | input | Setter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`setBaudRate`](#setbaudrate) | private |  | input | Setter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`setRS232Control`](#setrs232control) | private |  | input | Setter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
-| [`svcOutput`](#svcoutput) | private |  | input | Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`command/registerCommand`](#command_registercommand) | private |  | input | inferred | Registers the command (command) |
+| [`command/registerCommandList`](#command_registercommandlist) | private |  | input | inferred | Registers the command list (command) |
+| [`command/requestCommandPriority`](#command_requestcommandpriority) | private |  | input | inferred | Requests the command priority (command) |
+| [`command/returnCommandPriority`](#command_returncommandpriority) | private |  | input | inferred | Handles the return command priority (command) |
+| [`command/sendCommandThruVirtualInput`](#command_sendcommandthruvirtualinput) | private |  | input | inferred | Sends the command thru virtual input (command) |
+| [`command/test1`](#command_test1) | private |  | input | inferred | Tests the 1 (command) |
+| [`console/attachDevice`](#console_attachdevice) | private |  | input | inferred | Handles the attach device (console) |
+| [`console/detachDevice`](#console_detachdevice) | private |  | input | inferred | Handles the detach device (console) |
+| [`console/requestDebugConsolName`](#console_requestdebugconsolname) | private |  | input | inferred | Requests the debug consol name (console) |
+| [`console/startConsole2`](#console_startconsole2) | private |  | input | inferred | Starts the console 2 (console) |
+| [`getAttr`](#getattr) | private |  | input | inferred | Returns the attr. |
+| [`getBaudRate`](#getbaudrate) | private |  | input | inferred | Returns the baud rate. |
+| [`getRS232Control`](#getrs232control) | private |  | input | inferred | Returns the RS 232 control. |
+| [`printMessage`](#printmessage) | private |  | input | inferred | Prints the message. |
+| [`setAttr`](#setattr) | private |  | input | inferred | Sets the attr. |
+| [`setAttrOneShot`](#setattroneshot) | private |  | input | inferred | Sets the attr one shot. |
+| [`setBaudRate`](#setbaudrate) | private |  | input | inferred | Sets the baud rate. |
+| [`setRS232Control`](#setrs232control) | private |  | input | inferred | Sets the RS 232 control. |
+| [`svcOutput`](#svcoutput) | private |  | input | inferred | Handles the svc output. |
 
 <a id="command_registercommand"></a>
 ## `command/registerCommand`
 
 `luna://com.webos.service.terminalmanager/command/registerCommand`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Registers the command (command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/command/registerCommand '{}'
@@ -52,13 +56,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/command/registerCommandList`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Registers the command list (command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/command/registerCommandList '{}'
@@ -73,13 +79,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/command/requestCommandPriority`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Requests the command priority (command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/command/requestCommandPriority '{}'
@@ -94,13 +102,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/command/returnCommandPriority`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Handles the return command priority (command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/command/returnCommandPriority '{}'
@@ -115,13 +125,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/command/sendCommandThruVirtualInput`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Sends the command thru virtual input (command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/command/sendCommandThruVirtualInput '{}'
@@ -136,13 +148,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/command/test1`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Tests the 1 (command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/command/test1 '{}'
@@ -157,13 +171,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/console/attachDevice`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Handles the attach device (console)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/console/attachDevice '{}'
@@ -178,13 +194,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/console/detachDevice`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Handles the detach device (console)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/console/detachDevice '{}'
@@ -199,13 +217,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/console/requestDebugConsolName`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Requests the debug consol name (console)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/console/requestDebugConsolName '{}'
@@ -220,13 +240,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/console/startConsole2`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Starts the console 2 (console)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/console/startConsole2 '{}'
@@ -241,13 +263,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/getAttr`
 
-Getter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Returns the attr.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/getAttr '{}'
@@ -262,13 +286,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/getBaudRate`
 
-Getter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Returns the baud rate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/getBaudRate '{}'
@@ -283,13 +309,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/getRS232Control`
 
-Getter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Returns the RS 232 control.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/getRS232Control '{}'
@@ -304,13 +332,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/printMessage`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Prints the message.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/printMessage '{}'
@@ -325,13 +355,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/setAttr`
 
-Setter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Sets the attr.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/setAttr '{}'
@@ -346,13 +378,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/setAttrOneShot`
 
-Setter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Sets the attr one shot.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/setAttrOneShot '{}'
@@ -367,13 +401,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/setBaudRate`
 
-Setter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Sets the baud rate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/setBaudRate '{}'
@@ -388,13 +424,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/setRS232Control`
 
-Setter on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Sets the RS 232 control.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/setRS232Control '{}'
@@ -409,13 +447,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.terminalmanager/svcOutput`
 
-Method on com.webos.service.terminalmanager (introspected on-device; parameters undocumented).
+Handles the svc output.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.terminalmanager/svcOutput '{}'

@@ -1,34 +1,38 @@
 # `com.webos.service.videosinkmanager`
 
+Video sink manager: connects and disconnects video sinks, reports connection state, and registers and resolves sink conflicts. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`connect`](#connect) | private |  | misc | Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented). |
-| [`disconnect`](#disconnect) | private |  | misc | Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented). |
-| [`getConnectionState`](#getconnectionstate) | private |  | misc | Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented). |
-| [`private/add`](#private_add) | private |  | misc | Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented). |
-| [`private/connect`](#private_connect) | private |  | misc | Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented). |
-| [`private/delete`](#private_delete) | private |  | misc | Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`private/register`](#private_register) | private |  | misc | Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented). |
-| [`private/skipConflictNotify`](#private_skipconflictnotify) | private |  | misc | Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented). |
-| [`private/unregister`](#private_unregister) | private |  | misc | Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented). |
-| [`private/update`](#private_update) | private |  | update | Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`connect`](#connect) | private |  | misc | inferred | Connects the videosinkmanager. |
+| [`disconnect`](#disconnect) | private |  | misc | inferred | Disconnects the videosinkmanager. |
+| [`getConnectionState`](#getconnectionstate) | private |  | misc | inferred | Returns the connection state. |
+| [`private/add`](#private_add) | private |  | misc | inferred | Adds the videosinkmanager (private) |
+| [`private/connect`](#private_connect) | private |  | misc | inferred | Connects the videosinkmanager (private) |
+| [`private/delete`](#private_delete) | private |  | misc | inferred | Deletes the videosinkmanager (private) ⚠️ |
+| [`private/register`](#private_register) | private |  | misc | inferred | Registers the videosinkmanager (private) |
+| [`private/skipConflictNotify`](#private_skipconflictnotify) | private |  | misc | inferred | Skips the conflict notify (private) |
+| [`private/unregister`](#private_unregister) | private |  | misc | inferred | Unregisters the videosinkmanager (private) |
+| [`private/update`](#private_update) | private |  | update | inferred | Updates the videosinkmanager (private) |
 
 <a id="connect"></a>
 ## `connect`
 
 `luna://com.webos.service.videosinkmanager/connect`
 
-Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented).
+Connects the videosinkmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videosinkmanager/connect '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videosinkmanager/disconnect`
 
-Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented).
+Disconnects the videosinkmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videosinkmanager/disconnect '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videosinkmanager/getConnectionState`
 
-Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented).
+Returns the connection state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videosinkmanager/getConnectionState '{}'
@@ -85,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videosinkmanager/private/add`
 
-Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented).
+Adds the videosinkmanager (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videosinkmanager/private/add '{}'
@@ -106,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videosinkmanager/private/connect`
 
-Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented).
+Connects the videosinkmanager (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videosinkmanager/private/connect '{}'
@@ -127,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videosinkmanager/private/delete`
 
-Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented).
+Deletes the videosinkmanager (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videosinkmanager/private/delete '{}'
@@ -148,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videosinkmanager/private/register`
 
-Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented).
+Registers the videosinkmanager (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videosinkmanager/private/register '{}'
@@ -169,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videosinkmanager/private/skipConflictNotify`
 
-Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented).
+Skips the conflict notify (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videosinkmanager/private/skipConflictNotify '{}'
@@ -190,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videosinkmanager/private/unregister`
 
-Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented).
+Unregisters the videosinkmanager (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videosinkmanager/private/unregister '{}'
@@ -211,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videosinkmanager/private/update`
 
-Method on com.webos.service.videosinkmanager (from on-device permission registry; parameters undocumented).
+Updates the videosinkmanager (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videosinkmanager/private/update '{}'

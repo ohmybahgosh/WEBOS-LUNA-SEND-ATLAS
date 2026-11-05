@@ -1,44 +1,46 @@
 # `com.webos.service.videooutput`
 
+Video output service: connects video sources to the display, sets display window, resolution, scaling, and compositing, and reports output capabilities and supported resolutions.
+
 33 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`blankVideo`](#blankvideo) | unknown |  | display | Registered in webOS OSE sysbus api.json (ACG group media); name only |
-| [`ComposeOrder`](#composeorder) | unknown |  | display | Object to represent compositing parameters for the video sinks. |
-| [`connect`](#connect) | public |  | display | Connects a video source to a video sink |
-| [`disconnect`](#disconnect) | public |  | display | Disconnects video from sink. |
-| [`display/debugScalerStatus`](#display_debugscalerstatus) | public |  | display | Method on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/getApplyDoneWindowRegion`](#display_getapplydonewindowregion) | public |  | display | Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/getOutputCapabilities`](#display_getoutputcapabilities) | public |  | display | Helper method to query the set video limits |
-| [`display/getParam`](#display_getparam) | public |  | display | Gets information of parameters for video sinks to render video frames |
-| [`display/getSupportedResolution`](#display_getsupportedresolution) | public |  | display | Method on com.webos.service.videooutput (from on-device permission registry; parameters undocumented). |
-| [`display/getSupportedResolutions`](#display_getsupportedresolutions) | private |  | display | Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/getVideoLimits`](#display_getvideolimits) | public |  | display | Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/requestVideoDelay`](#display_requestvideodelay) | public |  | display | Method on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/setBBD`](#display_setbbd) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/setCompositing`](#display_setcompositing) | public |  | display | Sets compositing parameters for the video sinks. This maps directly to adapter call and changes the compositing parameters for both video ou |
-| [`display/setDisplayResolution`](#display_setdisplayresolution) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/setDisplayScreen`](#display_setdisplayscreen) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/setDisplayWindow`](#display_setdisplaywindow) | public |  | display | Setup video output location on the screen for specified sink. |
-| [`display/setDisplayWindowProperty`](#display_setdisplaywindowproperty) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/setFrameDelay`](#display_setframedelay) | private |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/setNMRM`](#display_setnmrm) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/setParam`](#display_setparam) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`display/setReportBspError`](#display_setreportbsperror) | public |  | display | Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | public | yes | display | Lists all video sinks and their status. |
-| [`orbit/debug`](#orbit_debug) | public |  | display | Method on com.webos.service.videooutput (introspected on-device; parameters undocumented). |
-| [`Planes`](#planes) | unknown |  | display | Object to represent video planes and available size of scaling. |
-| [`register`](#register) | public |  | display | Registers pipeline ID to videooutputd. Note: If this API is required to be called, make sure it is called before the connect API call. |
-| [`reset/resetVideoSettings`](#reset_resetvideosettings) | public |  | settings | Method on com.webos.service.videooutput (introspected on-device; parameters undocumented). ⚠️ |
-| [`setVideoData`](#setvideodata) | public |  | display | Sets video data needed for playback. |
-| [`systemproperty/getProperties`](#systemproperty_getproperties) | public |  | system-info | Method on com.webos.service.videooutput (from on-device permission registry; parameters undocumented). |
-| [`unregister`](#unregister) | public |  | display | Unregisters pipeline ID from videooutputd. |
-| [`Video`](#video) | unknown |  | display | Object to represent the status of video sinks. |
-| [`VideoRect`](#videorect) | unknown |  | display | Object to represent the video window coordinates. |
-| [`VideoSize`](#videosize) | unknown |  | display | Object to represent video size. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`blankVideo`](#blankvideo) | unknown |  | display | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`ComposeOrder`](#composeorder) | unknown |  | display | documented | Object to represent compositing parameters for the video sinks. |
+| [`connect`](#connect) | public |  | display | documented | Connects a video source to a video sink |
+| [`disconnect`](#disconnect) | public |  | display | documented | Disconnects video from sink. |
+| [`display/debugScalerStatus`](#display_debugscalerstatus) | public |  | display | inferred | Handles the debug scaler status (display) |
+| [`display/getApplyDoneWindowRegion`](#display_getapplydonewindowregion) | public |  | display | inferred | Returns the apply done window region (display) |
+| [`display/getOutputCapabilities`](#display_getoutputcapabilities) | public |  | display | documented | Helper method to query the set video limits |
+| [`display/getParam`](#display_getparam) | public |  | display | documented | Gets information of parameters for video sinks to render video frames |
+| [`display/getSupportedResolution`](#display_getsupportedresolution) | public |  | display | inferred | Returns the supported resolution (display) |
+| [`display/getSupportedResolutions`](#display_getsupportedresolutions) | private |  | display | inferred | Returns the supported resolutions (display) |
+| [`display/getVideoLimits`](#display_getvideolimits) | public |  | display | inferred | Returns the video limits (display) |
+| [`display/requestVideoDelay`](#display_requestvideodelay) | public |  | display | inferred | Requests the video delay (display) |
+| [`display/setBBD`](#display_setbbd) | public |  | display | inferred | Sets the BBD (display) |
+| [`display/setCompositing`](#display_setcompositing) | public |  | display | documented | Sets compositing parameters for the video sinks. This maps directly to adapter call and changes the compositing parameters for both video ou |
+| [`display/setDisplayResolution`](#display_setdisplayresolution) | public |  | display | inferred | Sets the display resolution (display) |
+| [`display/setDisplayScreen`](#display_setdisplayscreen) | public |  | display | inferred | Sets the display screen (display) |
+| [`display/setDisplayWindow`](#display_setdisplaywindow) | public |  | display | documented | Setup video output location on the screen for specified sink. |
+| [`display/setDisplayWindowProperty`](#display_setdisplaywindowproperty) | public |  | display | inferred | Sets the display window property (display) |
+| [`display/setFrameDelay`](#display_setframedelay) | private |  | display | inferred | Sets the frame delay (display) |
+| [`display/setNMRM`](#display_setnmrm) | public |  | display | inferred | Sets the NMRM (display) |
+| [`display/setParam`](#display_setparam) | public |  | display | inferred | Sets the param (display) |
+| [`display/setReportBspError`](#display_setreportbsperror) | public |  | display | inferred | Sets the report bsp error (display) |
+| [`getStatus`](#getstatus) | public | yes | display | documented | Lists all video sinks and their status. |
+| [`orbit/debug`](#orbit_debug) | public |  | display | inferred | Handles the debug (orbit) |
+| [`Planes`](#planes) | unknown |  | display | documented | Object to represent video planes and available size of scaling. |
+| [`register`](#register) | public |  | display | documented | Registers pipeline ID to videooutputd. Note: If this API is required to be called, make sure it is called before the connect API call. |
+| [`reset/resetVideoSettings`](#reset_resetvideosettings) | public |  | settings | inferred | Resets the video settings (reset) ⚠️ |
+| [`setVideoData`](#setvideodata) | public |  | display | documented | Sets video data needed for playback. |
+| [`systemproperty/getProperties`](#systemproperty_getproperties) | public |  | system-info | inferred | Returns the properties (systemproperty) |
+| [`unregister`](#unregister) | public |  | display | documented | Unregisters pipeline ID from videooutputd. |
+| [`Video`](#video) | unknown |  | display | documented | Object to represent the status of video sinks. |
+| [`VideoRect`](#videorect) | unknown |  | display | documented | Object to represent the video window coordinates. |
+| [`VideoSize`](#videosize) | unknown |  | display | documented | Object to represent video size. |
 
 <a id="blankvideo"></a>
 ## `blankVideo`
@@ -51,7 +53,7 @@ Registered in webOS OSE sysbus api.json (ACG group media); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/blankVideo '{}'
@@ -103,6 +105,12 @@ Connects a video source to a video sink
 | `context` | String (optional) Registered pipeline ID. |
 | `appId` | String (optional) Registered application ID. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `planeID` | Number (int8\_t) (required) Numeric plane ID of the sink. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/connect '{"source": "VDEC", "sourcePort":0, "sink":"MAIN"}
 ```
@@ -129,6 +137,13 @@ Disconnects video from sink.
 | `sink` | String (required) Video sink. Each value corresponds to overlay plane ID of display. For example, raspberrypi have overlay planes whose IDs are 44, 45, 46, 47. Each possible string value corresponds to the ID values above. Possible values are: MAIN SUB0 |
 | `context` | String (optional) Specifies registered pipeline ID |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorMessage` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/disconnect '{"sink":"MAIN"}
 ```
@@ -142,13 +157,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-v
 
 `luna://com.webos.service.videooutput/display/debugScalerStatus`
 
-Method on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Handles the debug scaler status (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/debugScalerStatus '{}'
@@ -163,13 +180,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.videooutput/display/getApplyDoneWindowRegion`
 
-Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Returns the apply done window region (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/getApplyDoneWindowRegion '{}'
@@ -191,6 +210,15 @@ Helper method to query the set video limits
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `numPlanes` | Number (int8\_t) (required) Total hardware planes available on the platform for rendering |
+| `planes` | Object array: Planes (required) See "Planes" object. |
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorMessage` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/getOutputCapabilities '{}
@@ -218,6 +246,18 @@ Gets information of parameters for video sinks to render video frames
 | `command` | String (required) Type of command. Possible values are: DRMResources - Get DRM/KMS related information. NumConnector - Get the number of connected displays. |
 | `sink` | String (optional) Video sink. Each value corresponds to overlay plane ID of display. For example, raspberrypi have overlay planes whose IDs are 44, 45, 46, 47. Each possible string value corresponds to the ID values above. Possible values are: MAIN SUB0 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorMessage` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+| `sink` | String (optional) Video sink. Each value corresponds to overlay plane ID of display. For example, raspberrypi have overlay planes whose IDs are 44, 45, 46, 47. Each possible string value corresponds to the ID values above. Possible values are: - MAIN - SUB0 |
+| `planeId` | Number (int32\_t) (optional) Numeric plane ID of the sink. |
+| `crtcId` | Number (int32\_t) (optional) Numeric crtc ID of the sink. |
+| `connId` | Number (int32\_t) (optional) Numeric connector ID of the sink. |
+| `numConnector` | Number (int32\_t) (optional) Number of connected displays |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/getParam '{"command":"DRMResources","sink":"MAIN"}
 ```
@@ -231,13 +271,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-v
 
 `luna://com.webos.service.videooutput/display/getSupportedResolution`
 
-Method on com.webos.service.videooutput (from on-device permission registry; parameters undocumented).
+Returns the supported resolution (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/getSupportedResolution '{}'
@@ -252,13 +294,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videooutput/display/getSupportedResolutions`
 
-Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Returns the supported resolutions (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/getSupportedResolutions '{}'
@@ -273,13 +317,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.videooutput/display/getVideoLimits`
 
-Getter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Returns the video limits (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/getVideoLimits '{}'
@@ -294,13 +340,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.videooutput/display/requestVideoDelay`
 
-Method on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Requests the video delay (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/requestVideoDelay '{}'
@@ -315,13 +363,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.videooutput/display/setBBD`
 
-Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Sets the BBD (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/setBBD '{}'
@@ -361,13 +411,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-v
 
 `luna://com.webos.service.videooutput/display/setDisplayResolution`
 
-Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Sets the display resolution (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/setDisplayResolution '{}'
@@ -382,13 +434,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.videooutput/display/setDisplayScreen`
 
-Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Sets the display screen (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/setDisplayScreen '{}'
@@ -418,6 +472,13 @@ Setup video output location on the screen for specified sink.
 | `sourceInput` | Object: VideoRect (optional) Source input rectangle. Note : Full video frame if not set. |
 | `displayOutput` | Object: VideoRect (optional) Display output rectangle. Note : Required if fullscreen is false. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorMessage` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/setDisplayWindow '{ "sink":"MAIN", "fullScreen":false, "displayOutput":{ "x":1000, "y":500, "width":920, "height":580 } }
 ```
@@ -431,13 +492,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-v
 
 `luna://com.webos.service.videooutput/display/setDisplayWindowProperty`
 
-Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Sets the display window property (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/setDisplayWindowProperty '{}'
@@ -452,13 +515,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.videooutput/display/setFrameDelay`
 
-Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Sets the frame delay (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/setFrameDelay '{}'
@@ -473,13 +538,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.videooutput/display/setNMRM`
 
-Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Sets the NMRM (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/setNMRM '{}'
@@ -494,13 +561,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.videooutput/display/setParam`
 
-Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Sets the param (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/setParam '{}'
@@ -515,13 +584,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.videooutput/display/setReportBspError`
 
-Setter on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Sets the report bsp error (display)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/setReportBspError '{}'
@@ -542,11 +613,19 @@ Lists all video sinks and their status.
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 4+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe for notifications when value changes. Possible values are: true - Get notifications false - Notifications are not required Note: This returns one entry for each video sink |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorMessage` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+| `video` | Object array: Video (optional) See "Video" object. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/getStatus '{"subscribe":true}
@@ -561,13 +640,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-v
 
 `luna://com.webos.service.videooutput/orbit/debug`
 
-Method on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Handles the debug (orbit)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/orbit/debug '{}'
@@ -615,6 +696,13 @@ Registers pipeline ID to videooutputd. Note: If this API is required to be calle
 |---|---|
 | `context` | String (required) Pipeline ID for registration. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorMessage` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/register '{"context":"_rf8D3OiiIsX6Wk"}
 ```
@@ -628,13 +716,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-v
 
 `luna://com.webos.service.videooutput/reset/resetVideoSettings`
 
-Method on com.webos.service.videooutput (introspected on-device; parameters undocumented).
+Resets the video settings (reset)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/reset/resetVideoSettings '{}'
@@ -667,6 +757,13 @@ Sets video data needed for playback.
 | `scanType` | String (optional) Type of scan. Possible values are: progressive interlaced |
 | `sink` | String (required) Video sink. Each value corresponds to overlay plane ID of display. For example, raspberrypi have overlay planes whose IDs are 44, 45, 46, 47. Each possible string value corresponds to the ID values above. Possible values are: MAIN SUB0 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorMessage` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/setVideoData '{"sink":"MAIN","frameRate":24,"width":854,"height":480}
 ```
@@ -680,13 +777,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-v
 
 `luna://com.webos.service.videooutput/systemproperty/getProperties`
 
-Method on com.webos.service.videooutput (from on-device permission registry; parameters undocumented).
+Returns the properties (systemproperty)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/systemproperty/getProperties '{}'
@@ -712,6 +811,13 @@ Unregisters pipeline ID from videooutputd.
 | Param | Type / notes |
 |---|---|
 | `context` | String (required) Registered pipeline ID. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorMessage` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/unregister '{"context":"_fkluA2iyTUgqNM"}

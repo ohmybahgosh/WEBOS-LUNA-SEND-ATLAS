@@ -1,27 +1,31 @@
 # `com.webos.service.systemUIManager`
 
+System-UI manager: launches and closes apps by ID and reports the foreground app info. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`closeByAppId`](#closebyappid) | public |  | misc | Method on com.webos.service.systemUIManager (introspected on-device; parameters undocumented). |
-| [`getForegroundAppInfo`](#getforegroundappinfo) | public |  | misc | Getter on com.webos.service.systemUIManager (introspected on-device; parameters undocumented). |
-| [`launch`](#launch) | public |  | apps | Method on com.webos.service.systemUIManager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`closeByAppId`](#closebyappid) | public |  | misc | inferred | Closes the by app ID. |
+| [`getForegroundAppInfo`](#getforegroundappinfo) | public |  | misc | inferred | Returns the foreground app info. |
+| [`launch`](#launch) | public |  | apps | inferred | Launches the system UI manager. |
 
 <a id="closebyappid"></a>
 ## `closeByAppId`
 
 `luna://com.webos.service.systemUIManager/closeByAppId`
 
-Method on com.webos.service.systemUIManager (introspected on-device; parameters undocumented).
+Closes the by app ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.systemUIManager/closeByAppId '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.systemUIManager/getForegroundAppInfo`
 
-Getter on com.webos.service.systemUIManager (introspected on-device; parameters undocumented).
+Returns the foreground app info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.systemUIManager/getForegroundAppInfo '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.systemUIManager/launch`
 
-Method on com.webos.service.systemUIManager (introspected on-device; parameters undocumented).
+Launches the system UI manager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.systemUIManager/launch '{}'

@@ -1,40 +1,44 @@
 # `com.webos.service.accountmanager`
 
+Account manager: logs user accounts in and out, stores and updates account data, tracks login history, and manages onboarding (OOBE) data and account switching.
+
 16 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`debug`](#debug) | private |  | system-info | Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`deleteAccount`](#deleteaccount) | private |  | system-info | Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`deleteOOBEData`](#deleteoobedata) | public |  | system-info | Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`getAccountData`](#getaccountdata) | private |  | system-info | Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`getAccountTerm`](#getaccountterm) | private |  | system-info | Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`getLoginHistory`](#getloginhistory) | private |  | system-info | Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`getLoginID`](#getloginid) | private |  | system-info | Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`getLoginUserData`](#getloginuserdata) | private |  | system-info | Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`getOOBEData`](#getoobedata) | public |  | system-info | Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`loginAccount`](#loginaccount) | private |  | system-info | Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`loginAccountByExtDevice`](#loginaccountbyextdevice) | private |  | system-info | Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`logoutAccount`](#logoutaccount) | private |  | system-info | Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`registerAccountSwitching`](#registeraccountswitching) | private |  | system-info | Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`responseAccountSwitchingRequest`](#responseaccountswitchingrequest) | private |  | system-info | Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`setOOBEData`](#setoobedata) | private |  | system-info | Setter on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
-| [`updateAccountData`](#updateaccountdata) | private |  | update | Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`debug`](#debug) | private |  | system-info | inferred | Handles the debug. |
+| [`deleteAccount`](#deleteaccount) | private |  | system-info | inferred | Deletes the account. ⚠️ |
+| [`deleteOOBEData`](#deleteoobedata) | public |  | system-info | inferred | Deletes the OOBE data. ⚠️ |
+| [`getAccountData`](#getaccountdata) | private |  | system-info | inferred | Returns the account data. |
+| [`getAccountTerm`](#getaccountterm) | private |  | system-info | inferred | Returns the account term. |
+| [`getLoginHistory`](#getloginhistory) | private |  | system-info | inferred | Returns the login history. |
+| [`getLoginID`](#getloginid) | private |  | system-info | inferred | Returns the login ID. |
+| [`getLoginUserData`](#getloginuserdata) | private |  | system-info | inferred | Returns the login user data. |
+| [`getOOBEData`](#getoobedata) | public |  | system-info | inferred | Returns the OOBE data. |
+| [`loginAccount`](#loginaccount) | private |  | system-info | inferred | Logs in to the account. |
+| [`loginAccountByExtDevice`](#loginaccountbyextdevice) | private |  | system-info | inferred | Logs in to the account by ext device. |
+| [`logoutAccount`](#logoutaccount) | private |  | system-info | inferred | Logs out of the account. |
+| [`registerAccountSwitching`](#registeraccountswitching) | private |  | system-info | inferred | Registers the account switching. |
+| [`responseAccountSwitchingRequest`](#responseaccountswitchingrequest) | private |  | system-info | inferred | Handles the response account switching request. |
+| [`setOOBEData`](#setoobedata) | private |  | system-info | inferred | Sets the OOBE data. |
+| [`updateAccountData`](#updateaccountdata) | private |  | update | inferred | Updates the account data. |
 
 <a id="debug"></a>
 ## `debug`
 
 `luna://com.webos.service.accountmanager/debug`
 
-Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/debug '{}'
@@ -49,13 +53,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/deleteAccount`
 
-Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Deletes the account.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/deleteAccount '{}'
@@ -70,13 +76,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/deleteOOBEData`
 
-Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Deletes the OOBE data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/deleteOOBEData '{}'
@@ -91,13 +99,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/getAccountData`
 
-Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Returns the account data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/getAccountData '{}'
@@ -112,13 +122,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/getAccountTerm`
 
-Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Returns the account term.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/getAccountTerm '{}'
@@ -133,13 +145,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/getLoginHistory`
 
-Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Returns the login history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/getLoginHistory '{}'
@@ -154,13 +168,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/getLoginID`
 
-Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Returns the login ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/getLoginID '{}'
@@ -175,13 +191,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/getLoginUserData`
 
-Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Returns the login user data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/getLoginUserData '{}'
@@ -196,13 +214,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/getOOBEData`
 
-Getter on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Returns the OOBE data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/getOOBEData '{}'
@@ -217,13 +237,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/loginAccount`
 
-Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Logs in to the account.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/loginAccount '{}'
@@ -238,13 +260,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/loginAccountByExtDevice`
 
-Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Logs in to the account by ext device.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/loginAccountByExtDevice '{}'
@@ -259,13 +283,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/logoutAccount`
 
-Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Logs out of the account.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/logoutAccount '{}'
@@ -280,13 +306,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/registerAccountSwitching`
 
-Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Registers the account switching.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/registerAccountSwitching '{}'
@@ -301,13 +329,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/responseAccountSwitchingRequest`
 
-Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Handles the response account switching request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/responseAccountSwitchingRequest '{}'
@@ -322,13 +352,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/setOOBEData`
 
-Setter on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Sets the OOBE data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/setOOBEData '{}'
@@ -343,13 +375,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.accountmanager/updateAccountData`
 
-Method on com.webos.service.accountmanager (introspected on-device; parameters undocumented).
+Updates the account data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/updateAccountData '{}'

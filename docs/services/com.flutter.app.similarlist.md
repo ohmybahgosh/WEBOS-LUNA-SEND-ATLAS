@@ -1,26 +1,30 @@
 # `com.flutter.app.similarlist`
 
+Appears to be a Flutter-based app helper exposing generic request and finish calls, likely serving a 'similar items' content list. Purpose. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`finish`](#finish) | public |  | misc | Method on com.flutter.app.similarlist (from on-device permission registry; parameters undocumented). |
-| [`request`](#request) | public |  | misc | Method on com.flutter.app.similarlist (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`finish`](#finish) | public |  | misc | inferred | Finishes the flutter app similarlist. |
+| [`request`](#request) | public |  | misc | inferred | Requests the flutter app similarlist. |
 
 <a id="finish"></a>
 ## `finish`
 
 `luna://com.flutter.app.similarlist/finish`
 
-Method on com.flutter.app.similarlist (from on-device permission registry; parameters undocumented).
+Finishes the flutter app similarlist.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.flutter.app.similarlist/finish '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.flutter.app.similarlist/request`
 
-Method on com.flutter.app.similarlist (from on-device permission registry; parameters undocumented).
+Requests the flutter app similarlist.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.flutter.app.similarlist/request '{}'

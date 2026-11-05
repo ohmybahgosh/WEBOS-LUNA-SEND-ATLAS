@@ -1,26 +1,30 @@
 # `com.webos.service.iotproxy`
 
+IoT proxy; starts and relays (send) data to IoT endpoints. Opaque beyond that. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`send`](#send) | private |  | misc | Method on com.webos.service.iotproxy (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.iotproxy (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`send`](#send) | private |  | misc | inferred | Sends the iotproxy. |
+| [`start`](#start) | private |  | misc | inferred | Starts the iotproxy. |
 
 <a id="send"></a>
 ## `send`
 
 `luna://com.webos.service.iotproxy/send`
 
-Method on com.webos.service.iotproxy (from on-device permission registry; parameters undocumented).
+Sends the iotproxy.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotproxy/send '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iotproxy/start`
 
-Method on com.webos.service.iotproxy (from on-device permission registry; parameters undocumented).
+Starts the iotproxy.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotproxy/start '{}'

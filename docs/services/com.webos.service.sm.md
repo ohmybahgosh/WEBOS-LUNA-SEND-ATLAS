@@ -1,58 +1,62 @@
 # `com.webos.service.sm`
 
+Security manager: handles app security permissions, USB-access authentication, device IDs, licensing, and cryptographic operations (file decryption, digital signing, key handling). _(inferred from the service's methods)_
+
 34 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`accessusb/getStatus`](#accessusb_getstatus) | private |  | system-info | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`accessusb/requestAuthentication`](#accessusb_requestauthentication) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`appsec/configAppPermissions`](#appsec_configapppermissions) | private |  | settings | Method on com.webos.service.sm (from on-device permission registry; parameters undocumented). |
-| [`crypto/checkSeStore`](#crypto_checksestore) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`crypto/commerDecryptFileWithPrvKey`](#crypto_commerdecryptfilewithprvkey) | private |  | system-info | Method on com.webos.service.sm (from on-device permission registry; parameters undocumented). |
-| [`crypto/commerGetCertDataFromSDPFile`](#crypto_commergetcertdatafromsdpfile) | private |  | system-info | Method on com.webos.service.sm (from on-device permission registry; parameters undocumented). |
-| [`crypto/commerGetKeyFile`](#crypto_commergetkeyfile) | private |  | system-info | Method on com.webos.service.sm (from on-device permission registry; parameters undocumented). |
-| [`crypto/commerGetSecretFromSDPFile`](#crypto_commergetsecretfromsdpfile) | private |  | system-info | Method on com.webos.service.sm (from on-device permission registry; parameters undocumented). |
-| [`crypto/decryptFile`](#crypto_decryptfile) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`crypto/decryptPkeyFile`](#crypto_decryptpkeyfile) | private |  | system-info | Method on com.webos.service.sm (from on-device permission registry; parameters undocumented). |
-| [`crypto/decryptSdpFile`](#crypto_decryptsdpfile) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`crypto/doDigitalSign`](#crypto_dodigitalsign) | public |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`crypto/getKbsCipher`](#crypto_getkbscipher) | public |  | system-info | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`crypto/getSSGSSL`](#crypto_getssgssl) | private |  | system-info | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`deviceid/getIDList`](#deviceid_getidlist) | public |  | system-info | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`deviceid/getIDs`](#deviceid_getids) | public |  | security | Returns device IDs provided by webOS TV (LGUDID). |
-| [`getStatusVerifyPartitionByDFT`](#getstatusverifypartitionbydft) | private |  | system-info | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`license/apps/getDbPath`](#license_apps_getdbpath) | private |  | db | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`license/apps/getDrmStatus`](#license_apps_getdrmstatus) | private |  | security | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`license/apps/getSdpTime`](#license_apps_getsdptime) | private |  | input | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`license/apps/installRights`](#license_apps_installrights) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`license/apps/uninstallRights`](#license_apps_uninstallrights) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`pin/change`](#pin_change) | private |  | system-info | Method on com.webos.service.sm (from on-device permission registry; parameters undocumented). |
-| [`pin/store`](#pin_store) | private |  | system-info | Method on com.webos.service.sm (from on-device permission registry; parameters undocumented). |
-| [`pin/verify`](#pin_verify) | private |  | system-info | Method on com.webos.service.sm (from on-device permission registry; parameters undocumented). |
-| [`sa/getPaypalMsg`](#sa_getpaypalmsg) | public |  | system-info | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`sdi/getAuthToken`](#sdi_getauthtoken) | public |  | system-info | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`signApp`](#signapp) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`tauth/getAuthToken`](#tauth_getauthtoken) | public |  | system-info | Getter on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`verifyAppSigning`](#verifyappsigning) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`verifyPartitionByDFT`](#verifypartitionbydft) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`verifyPartitionByFragment`](#verifypartitionbyfragment) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`verifyPartitionByOffset`](#verifypartitionbyoffset) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
-| [`verifyPartitions`](#verifypartitions) | private |  | system-info | Method on com.webos.service.sm (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`accessusb/getStatus`](#accessusb_getstatus) | private |  | system-info | inferred | Returns the status (accessusb) |
+| [`accessusb/requestAuthentication`](#accessusb_requestauthentication) | private |  | system-info | inferred | Requests the authentication (accessusb) |
+| [`appsec/configAppPermissions`](#appsec_configapppermissions) | private |  | settings | inferred | Handles the config app permissions (appsec) |
+| [`crypto/checkSeStore`](#crypto_checksestore) | private |  | system-info | inferred | Checks the se store (crypto) |
+| [`crypto/commerDecryptFileWithPrvKey`](#crypto_commerdecryptfilewithprvkey) | private |  | system-info | inferred | Handles the commer decrypt file with prv key (crypto) |
+| [`crypto/commerGetCertDataFromSDPFile`](#crypto_commergetcertdatafromsdpfile) | private |  | system-info | inferred | Handles the commer get cert data from SDP file (crypto) |
+| [`crypto/commerGetKeyFile`](#crypto_commergetkeyfile) | private |  | system-info | inferred | Handles the commer get key file (crypto) |
+| [`crypto/commerGetSecretFromSDPFile`](#crypto_commergetsecretfromsdpfile) | private |  | system-info | inferred | Handles the commer get secret from SDP file (crypto) |
+| [`crypto/decryptFile`](#crypto_decryptfile) | private |  | system-info | inferred | Decrypts the file (crypto) |
+| [`crypto/decryptPkeyFile`](#crypto_decryptpkeyfile) | private |  | system-info | inferred | Decrypts the pkey file (crypto) |
+| [`crypto/decryptSdpFile`](#crypto_decryptsdpfile) | private |  | system-info | inferred | Decrypts the sdp file (crypto) |
+| [`crypto/doDigitalSign`](#crypto_dodigitalsign) | public |  | system-info | inferred | Handles the do digital sign (crypto) |
+| [`crypto/getKbsCipher`](#crypto_getkbscipher) | public |  | system-info | inferred | Returns the kbs cipher (crypto) |
+| [`crypto/getSSGSSL`](#crypto_getssgssl) | private |  | system-info | inferred | Returns the SSGSSL (crypto) |
+| [`deviceid/getIDList`](#deviceid_getidlist) | public |  | system-info | inferred | Returns the ID list (deviceid) |
+| [`deviceid/getIDs`](#deviceid_getids) | public |  | security | documented | Returns device IDs provided by webOS TV (LGUDID). |
+| [`getStatusVerifyPartitionByDFT`](#getstatusverifypartitionbydft) | private |  | system-info | inferred | Returns the status verify partition by DFT. |
+| [`license/apps/getDbPath`](#license_apps_getdbpath) | private |  | db | inferred | Returns the db path (license apps) |
+| [`license/apps/getDrmStatus`](#license_apps_getdrmstatus) | private |  | security | inferred | Returns the DRM status (license apps) |
+| [`license/apps/getSdpTime`](#license_apps_getsdptime) | private |  | input | inferred | Returns the sdp time (license apps) |
+| [`license/apps/installRights`](#license_apps_installrights) | private |  | system-info | inferred | Installs the rights (license apps) |
+| [`license/apps/uninstallRights`](#license_apps_uninstallrights) | private |  | system-info | inferred | Uninstalls the rights (license apps) |
+| [`pin/change`](#pin_change) | private |  | system-info | inferred | Changes the sm (pin) |
+| [`pin/store`](#pin_store) | private |  | system-info | inferred | Stores the sm (pin) |
+| [`pin/verify`](#pin_verify) | private |  | system-info | inferred | Verifies the sm (pin) |
+| [`sa/getPaypalMsg`](#sa_getpaypalmsg) | public |  | system-info | inferred | Returns the paypal msg (sa) |
+| [`sdi/getAuthToken`](#sdi_getauthtoken) | public |  | system-info | inferred | Returns the auth token (sdi) |
+| [`signApp`](#signapp) | private |  | system-info | inferred | Signs the app. |
+| [`tauth/getAuthToken`](#tauth_getauthtoken) | public |  | system-info | inferred | Returns the auth token (tauth) |
+| [`verifyAppSigning`](#verifyappsigning) | private |  | system-info | inferred | Verifies the app signing. |
+| [`verifyPartitionByDFT`](#verifypartitionbydft) | private |  | system-info | inferred | Verifies the partition by DFT. |
+| [`verifyPartitionByFragment`](#verifypartitionbyfragment) | private |  | system-info | inferred | Verifies the partition by fragment. |
+| [`verifyPartitionByOffset`](#verifypartitionbyoffset) | private |  | system-info | inferred | Verifies the partition by offset. |
+| [`verifyPartitions`](#verifypartitions) | private |  | system-info | inferred | Verifies the partitions. |
 
 <a id="accessusb_getstatus"></a>
 ## `accessusb/getStatus`
 
 `luna://com.webos.service.sm/accessusb/getStatus`
 
-Getter on com.webos.service.sm (introspected on-device; parameters undocumented).
+Returns the status (accessusb)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/accessusb/getStatus '{}'
@@ -67,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/accessusb/requestAuthentication`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Requests the authentication (accessusb)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/accessusb/requestAuthentication '{}'
@@ -88,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/appsec/configAppPermissions`
 
-Method on com.webos.service.sm (from on-device permission registry; parameters undocumented).
+Handles the config app permissions (appsec)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/appsec/configAppPermissions '{}'
@@ -109,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sm/crypto/checkSeStore`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Checks the se store (crypto)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/crypto/checkSeStore '{}'
@@ -130,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/crypto/commerDecryptFileWithPrvKey`
 
-Method on com.webos.service.sm (from on-device permission registry; parameters undocumented).
+Handles the commer decrypt file with prv key (crypto)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/crypto/commerDecryptFileWithPrvKey '{}'
@@ -151,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sm/crypto/commerGetCertDataFromSDPFile`
 
-Method on com.webos.service.sm (from on-device permission registry; parameters undocumented).
+Handles the commer get cert data from SDP file (crypto)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/crypto/commerGetCertDataFromSDPFile '{}'
@@ -172,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sm/crypto/commerGetKeyFile`
 
-Method on com.webos.service.sm (from on-device permission registry; parameters undocumented).
+Handles the commer get key file (crypto)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/crypto/commerGetKeyFile '{}'
@@ -193,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sm/crypto/commerGetSecretFromSDPFile`
 
-Method on com.webos.service.sm (from on-device permission registry; parameters undocumented).
+Handles the commer get secret from SDP file (crypto)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/crypto/commerGetSecretFromSDPFile '{}'
@@ -214,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sm/crypto/decryptFile`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Decrypts the file (crypto)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/crypto/decryptFile '{}'
@@ -235,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/crypto/decryptPkeyFile`
 
-Method on com.webos.service.sm (from on-device permission registry; parameters undocumented).
+Decrypts the pkey file (crypto)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/crypto/decryptPkeyFile '{}'
@@ -256,13 +278,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sm/crypto/decryptSdpFile`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Decrypts the sdp file (crypto)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/crypto/decryptSdpFile '{}'
@@ -277,13 +301,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/crypto/doDigitalSign`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Handles the do digital sign (crypto)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/crypto/doDigitalSign '{}'
@@ -298,13 +324,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/crypto/getKbsCipher`
 
-Getter on com.webos.service.sm (introspected on-device; parameters undocumented).
+Returns the kbs cipher (crypto)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/crypto/getKbsCipher '{}'
@@ -319,13 +347,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/crypto/getSSGSSL`
 
-Getter on com.webos.service.sm (introspected on-device; parameters undocumented).
+Returns the SSGSSL (crypto)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/crypto/getSSGSSL '{}'
@@ -340,13 +370,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/deviceid/getIDList`
 
-Getter on com.webos.service.sm (introspected on-device; parameters undocumented).
+Returns the ID list (deviceid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/deviceid/getIDList '{}'
@@ -384,13 +416,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/device-unique-
 
 `luna://com.webos.service.sm/getStatusVerifyPartitionByDFT`
 
-Getter on com.webos.service.sm (introspected on-device; parameters undocumented).
+Returns the status verify partition by DFT.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/getStatusVerifyPartitionByDFT '{}'
@@ -405,13 +439,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/license/apps/getDbPath`
 
-Getter on com.webos.service.sm (introspected on-device; parameters undocumented).
+Returns the db path (license apps)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/license/apps/getDbPath '{}'
@@ -426,13 +462,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/license/apps/getDrmStatus`
 
-Getter on com.webos.service.sm (introspected on-device; parameters undocumented).
+Returns the DRM status (license apps)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/license/apps/getDrmStatus '{}'
@@ -447,13 +485,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/license/apps/getSdpTime`
 
-Getter on com.webos.service.sm (introspected on-device; parameters undocumented).
+Returns the sdp time (license apps)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/license/apps/getSdpTime '{}'
@@ -468,13 +508,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/license/apps/installRights`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Installs the rights (license apps)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/license/apps/installRights '{}'
@@ -489,13 +531,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/license/apps/uninstallRights`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Uninstalls the rights (license apps)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/license/apps/uninstallRights '{}'
@@ -510,13 +554,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/pin/change`
 
-Method on com.webos.service.sm (from on-device permission registry; parameters undocumented).
+Changes the sm (pin)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/pin/change '{}'
@@ -531,13 +577,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sm/pin/store`
 
-Method on com.webos.service.sm (from on-device permission registry; parameters undocumented).
+Stores the sm (pin)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/pin/store '{}'
@@ -552,13 +600,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sm/pin/verify`
 
-Method on com.webos.service.sm (from on-device permission registry; parameters undocumented).
+Verifies the sm (pin)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/pin/verify '{}'
@@ -573,13 +623,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sm/sa/getPaypalMsg`
 
-Getter on com.webos.service.sm (introspected on-device; parameters undocumented).
+Returns the paypal msg (sa)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/sa/getPaypalMsg '{}'
@@ -594,13 +646,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/sdi/getAuthToken`
 
-Getter on com.webos.service.sm (introspected on-device; parameters undocumented).
+Returns the auth token (sdi)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/sdi/getAuthToken '{}'
@@ -615,13 +669,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/signApp`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Signs the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/signApp '{}'
@@ -636,13 +692,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/tauth/getAuthToken`
 
-Getter on com.webos.service.sm (introspected on-device; parameters undocumented).
+Returns the auth token (tauth)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/tauth/getAuthToken '{}'
@@ -657,13 +715,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/verifyAppSigning`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Verifies the app signing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/verifyAppSigning '{}'
@@ -678,13 +738,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/verifyPartitionByDFT`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Verifies the partition by DFT.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/verifyPartitionByDFT '{}'
@@ -699,13 +761,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/verifyPartitionByFragment`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Verifies the partition by fragment.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/verifyPartitionByFragment '{}'
@@ -720,13 +784,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/verifyPartitionByOffset`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Verifies the partition by offset.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/verifyPartitionByOffset '{}'
@@ -741,13 +807,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sm/verifyPartitions`
 
-Method on com.webos.service.sm (introspected on-device; parameters undocumented).
+Verifies the partitions.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/verifyPartitions '{}'

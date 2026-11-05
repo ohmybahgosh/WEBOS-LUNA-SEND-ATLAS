@@ -1,26 +1,30 @@
 # `com.webos.tas.aiplatform`
 
+TAS AI-platform service exposing request/finish calls to submit and complete AI requests. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`finish`](#finish) | public |  | misc | Method on com.webos.tas.aiplatform (from on-device permission registry; parameters undocumented). |
-| [`request`](#request) | public |  | misc | Method on com.webos.tas.aiplatform (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`finish`](#finish) | public |  | misc | inferred | Finishes the tas aiplatform. |
+| [`request`](#request) | public |  | misc | inferred | Requests the tas aiplatform. |
 
 <a id="finish"></a>
 ## `finish`
 
 `luna://com.webos.tas.aiplatform/finish`
 
-Method on com.webos.tas.aiplatform (from on-device permission registry; parameters undocumented).
+Finishes the tas aiplatform.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.tas.aiplatform/finish '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.tas.aiplatform/request`
 
-Method on com.webos.tas.aiplatform (from on-device permission registry; parameters undocumented).
+Requests the tas aiplatform.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.tas.aiplatform/request '{}'

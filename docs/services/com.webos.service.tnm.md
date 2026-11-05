@@ -1,28 +1,32 @@
 # `com.webos.service.tnm`
 
+Thumbnail manager: generates, retrieves and cleans up thumbnails. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancel`](#cancel) | private |  | misc | Method on com.webos.service.tnm (from on-device permission registry; parameters undocumented). |
-| [`clean`](#clean) | private |  | misc | Method on com.webos.service.tnm (from on-device permission registry; parameters undocumented). |
-| [`debug`](#debug) | private |  | misc | Method on com.webos.service.tnm (from on-device permission registry; parameters undocumented). |
-| [`getThumbnail`](#getthumbnail) | private |  | misc | Method on com.webos.service.tnm (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancel`](#cancel) | private |  | misc | inferred | Cancels the tnm. |
+| [`clean`](#clean) | private |  | misc | inferred | Handles the clean. |
+| [`debug`](#debug) | private |  | misc | inferred | Handles the debug. |
+| [`getThumbnail`](#getthumbnail) | private |  | misc | inferred | Returns the thumbnail. |
 
 <a id="cancel"></a>
 ## `cancel`
 
 `luna://com.webos.service.tnm/cancel`
 
-Method on com.webos.service.tnm (from on-device permission registry; parameters undocumented).
+Cancels the tnm.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tnm/cancel '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tnm/clean`
 
-Method on com.webos.service.tnm (from on-device permission registry; parameters undocumented).
+Handles the clean.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tnm/clean '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tnm/debug`
 
-Method on com.webos.service.tnm (from on-device permission registry; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tnm/debug '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tnm/getThumbnail`
 
-Method on com.webos.service.tnm (from on-device permission registry; parameters undocumented).
+Returns the thumbnail.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tnm/getThumbnail '{}'

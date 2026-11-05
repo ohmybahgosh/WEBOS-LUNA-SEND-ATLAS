@@ -1,28 +1,32 @@
 # `com.webos.service.wampluggable`
 
+Web app/WAM helper: reads and sets cookies per domain, returns the user-agent string, and reloads the page. Supports the web-app runtime. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getCookiesForDomain`](#getcookiesfordomain) | private |  | misc | Getter on com.webos.service.wampluggable (introspected on-device; parameters undocumented). |
-| [`getUserAgentString`](#getuseragentstring) | private |  | misc | Getter on com.webos.service.wampluggable (introspected on-device; parameters undocumented). |
-| [`reloadPage`](#reloadpage) | private |  | misc | Method on com.webos.service.wampluggable (introspected on-device; parameters undocumented). |
-| [`setDomainForCookies`](#setdomainforcookies) | private |  | misc | Setter on com.webos.service.wampluggable (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getCookiesForDomain`](#getcookiesfordomain) | private |  | misc | inferred | Returns the cookies for domain. |
+| [`getUserAgentString`](#getuseragentstring) | private |  | misc | inferred | Returns the user agent string. |
+| [`reloadPage`](#reloadpage) | private |  | misc | inferred | Reloads the page. |
+| [`setDomainForCookies`](#setdomainforcookies) | private |  | misc | inferred | Sets the domain for cookies. |
 
 <a id="getcookiesfordomain"></a>
 ## `getCookiesForDomain`
 
 `luna://com.webos.service.wampluggable/getCookiesForDomain`
 
-Getter on com.webos.service.wampluggable (introspected on-device; parameters undocumented).
+Returns the cookies for domain.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable/getCookiesForDomain '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable/getUserAgentString`
 
-Getter on com.webos.service.wampluggable (introspected on-device; parameters undocumented).
+Returns the user agent string.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable/getUserAgentString '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable/reloadPage`
 
-Method on com.webos.service.wampluggable (introspected on-device; parameters undocumented).
+Reloads the page.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable/reloadPage '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable/setDomainForCookies`
 
-Setter on com.webos.service.wampluggable (introspected on-device; parameters undocumented).
+Sets the domain for cookies.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable/setDomainForCookies '{}'

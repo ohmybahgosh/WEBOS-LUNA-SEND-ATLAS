@@ -1,114 +1,118 @@
 # `com.webos.service.iepg`
 
+iEPG channel/program-guide service: manages the channel map and lists, channel numbers, favorites and shortcut keys, and EPG data for live TV. _(inferred from the service's methods)_
+
 90 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`changeChannelFavoritePriority`](#changechannelfavoritepriority) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`changeChannelNumber`](#changechannelnumber) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`clearChannelMap`](#clearchannelmap) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`debug`](#debug) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`debugiEPG`](#debugiepg) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`debugPrint`](#debugprint) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`deleteChannel`](#deletechannel) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). ⚠️ |
-| [`downChannel`](#downchannel) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`dumpEPG`](#dumpepg) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`exportChannelMap`](#exportchannelmap) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getChannelGroupList`](#getchannelgrouplist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getChannelIdInfo`](#getchannelidinfo) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getChannelInfo`](#getchannelinfo) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getChannelList`](#getchannellist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getChannelListbySignalChId`](#getchannellistbysignalchid) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getChannelShortcutKey`](#getchannelshortcutkey) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getChannelShortcutKeyList`](#getchannelshortcutkeylist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getChannelStatus`](#getchannelstatus) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`getCountryPolicy`](#getcountrypolicy) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getCurrentEventList`](#getcurrenteventlist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getCurrentFavoriteGroup`](#getcurrentfavoritegroup) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getCurrentNextEventList`](#getcurrentnexteventlist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getDvbiServiceList`](#getdvbiservicelist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getEpgStatus`](#getepgstatus) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getEventInfo`](#geteventinfo) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getEventList`](#geteventlist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getFallbackInfo`](#getfallbackinfo) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getFavoriteGroupList`](#getfavoritegrouplist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getGenreMapTable`](#getgenremaptable) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getHbbtvPfInfo`](#gethbbtvpfinfo) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getMoreEpisodes`](#getmoreepisodes) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getMultiImg`](#getmultiimg) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getNetworkIdList`](#getnetworkidlist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getNextEvent`](#getnextevent) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getNextEventList`](#getnexteventlist) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`getOfflineChannelList`](#getofflinechannellist) | public |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getPrimaryChannelList`](#getprimarychannellist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getProgramImg`](#getprogramimg) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getRecommendedList`](#getrecommendedlist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getRelatedProgram`](#getrelatedprogram) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getReservationEventList`](#getreservationeventlist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getSearchEventList`](#getsearcheventlist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getSeriesEventList`](#getserieseventlist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getServiceStatus`](#getservicestatus) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`getSimilarChannelList`](#getsimilarchannellist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getSimilarEvent`](#getsimilarevent) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`getValueList`](#getvaluelist) | private |  | tv-broadcast | Getter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`importChannelMap`](#importchannelmap) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`isAvailableTemplateAit`](#isavailabletemplateait) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`loadDefaultChannelList`](#loaddefaultchannellist) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`moveChannel`](#movechannel) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`moveChannelFavoritePriority`](#movechannelfavoritepriority) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`notifyChannelEditedListChanged`](#notifychanneleditedlistchanged) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`notifyChannelListChanged`](#notifychannellistchanged) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`notifyEventChanged`](#notifyeventchanged) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`notifyEventListReady`](#notifyeventlistready) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`notifyFvpEventChanged`](#notifyfvpeventchanged) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`notifyGenreMapUpdate`](#notifygenremapupdate) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`notifyHbbtvEventChanged`](#notifyhbbtveventchanged) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`notifyOfflineChannelListChanged`](#notifyofflinechannellistchanged) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`notifyOfflineEventChanged`](#notifyofflineeventchanged) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`notifyOnlineEventChanged`](#notifyonlineeventchanged) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`passAitUrl`](#passaiturl) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`ping`](#ping) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`pingSub`](#pingsub) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`releaseChannelBlock`](#releasechannelblock) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`releaseChannelFavoriteGroup`](#releasechannelfavoritegroup) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`releaseChannelShortcutKey`](#releasechannelshortcutkey) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`releaseChannelSkip`](#releasechannelskip) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`releaseConfiguredChannel`](#releaseconfiguredchannel) | private |  | settings | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`releaseMyChannel`](#releasemychannel) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`resetChannelFavoritePriority`](#resetchannelfavoritepriority) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). ⚠️ |
-| [`resetChannelShortcutKeyList`](#resetchannelshortcutkeylist) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). ⚠️ |
-| [`runTimeDebug`](#runtimedebug) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`runTypeDebug`](#runtypedebug) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`saveChannelList`](#savechannellist) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`setChannel`](#setchannel) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`setChannelBlock`](#setchannelblock) | private |  | tv-broadcast | Setter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`setChannelFavoriteGroup`](#setchannelfavoritegroup) | public |  | tv-broadcast | Setter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`setChannelShortcutKey`](#setchannelshortcutkey) | private |  | tv-broadcast | Setter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`setChannelSkip`](#setchannelskip) | private |  | tv-broadcast | Setter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`setConfiguredChannel`](#setconfiguredchannel) | private |  | settings | Setter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`setCurrentFavoriteGroup`](#setcurrentfavoritegroup) | private |  | tv-broadcast | Setter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`setGroupName`](#setgroupname) | private |  | tv-broadcast | Setter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`setHbbtvPfInfo`](#sethbbtvpfinfo) | private |  | tv-broadcast | Setter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`setMyChannel`](#setmychannel) | private |  | tv-broadcast | Setter on com.webos.service.iepg (introspected on-device; parameters undocumented). |
-| [`setReservationEventInfo`](#setreservationeventinfo) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`test`](#test) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`upChannel`](#upchannel) | private |  | tv-broadcast | Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented). |
-| [`updateChannelList`](#updatechannellist) | private |  | tv-broadcast | Method on com.webos.service.iepg (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`changeChannelFavoritePriority`](#changechannelfavoritepriority) | private |  | tv-broadcast | inferred | Changes the channel favorite priority. |
+| [`changeChannelNumber`](#changechannelnumber) | private |  | tv-broadcast | inferred | Changes the channel number. |
+| [`clearChannelMap`](#clearchannelmap) | private |  | tv-broadcast | inferred | Clears the channel map. |
+| [`debug`](#debug) | private |  | tv-broadcast | inferred | Handles the debug. |
+| [`debugiEPG`](#debugiepg) | private |  | tv-broadcast | inferred | Handles the debugi EPG. |
+| [`debugPrint`](#debugprint) | private |  | tv-broadcast | inferred | Handles the debug print. |
+| [`deleteChannel`](#deletechannel) | private |  | tv-broadcast | inferred | Deletes the channel. ⚠️ |
+| [`downChannel`](#downchannel) | private |  | tv-broadcast | inferred | Handles the down channel. |
+| [`dumpEPG`](#dumpepg) | private |  | tv-broadcast | inferred | Dumps the EPG. |
+| [`exportChannelMap`](#exportchannelmap) | private |  | tv-broadcast | inferred | Exports the channel map. |
+| [`getChannelGroupList`](#getchannelgrouplist) | private |  | tv-broadcast | inferred | Returns the channel group list. |
+| [`getChannelIdInfo`](#getchannelidinfo) | private |  | tv-broadcast | inferred | Returns the channel ID info. |
+| [`getChannelInfo`](#getchannelinfo) | private |  | tv-broadcast | inferred | Returns the channel info. |
+| [`getChannelList`](#getchannellist) | private |  | tv-broadcast | inferred | Returns the channel list. |
+| [`getChannelListbySignalChId`](#getchannellistbysignalchid) | private |  | tv-broadcast | inferred | Returns the channel listby signal channel ID. |
+| [`getChannelShortcutKey`](#getchannelshortcutkey) | private |  | tv-broadcast | inferred | Returns the channel shortcut key. |
+| [`getChannelShortcutKeyList`](#getchannelshortcutkeylist) | private |  | tv-broadcast | inferred | Returns the channel shortcut key list. |
+| [`getChannelStatus`](#getchannelstatus) | private |  | tv-broadcast | inferred | Returns the channel status. |
+| [`getCountryPolicy`](#getcountrypolicy) | private |  | tv-broadcast | inferred | Returns the country policy. |
+| [`getCurrentEventList`](#getcurrenteventlist) | private |  | tv-broadcast | inferred | Returns the current event list. |
+| [`getCurrentFavoriteGroup`](#getcurrentfavoritegroup) | private |  | tv-broadcast | inferred | Returns the current favorite group. |
+| [`getCurrentNextEventList`](#getcurrentnexteventlist) | private |  | tv-broadcast | inferred | Returns the current next event list. |
+| [`getDvbiServiceList`](#getdvbiservicelist) | private |  | tv-broadcast | inferred | Returns the dvbi service list. |
+| [`getEpgStatus`](#getepgstatus) | private |  | tv-broadcast | inferred | Returns the EPG status. |
+| [`getEventInfo`](#geteventinfo) | private |  | tv-broadcast | inferred | Returns the event info. |
+| [`getEventList`](#geteventlist) | private |  | tv-broadcast | inferred | Returns the event list. |
+| [`getFallbackInfo`](#getfallbackinfo) | private |  | tv-broadcast | inferred | Returns the fallback info. |
+| [`getFavoriteGroupList`](#getfavoritegrouplist) | private |  | tv-broadcast | inferred | Returns the favorite group list. |
+| [`getGenreMapTable`](#getgenremaptable) | private |  | tv-broadcast | inferred | Returns the genre map table. |
+| [`getHbbtvPfInfo`](#gethbbtvpfinfo) | private |  | tv-broadcast | inferred | Returns the hbbtv pf info. |
+| [`getMoreEpisodes`](#getmoreepisodes) | private |  | tv-broadcast | inferred | Returns the more episodes. |
+| [`getMultiImg`](#getmultiimg) | private |  | tv-broadcast | inferred | Returns the multi img. |
+| [`getNetworkIdList`](#getnetworkidlist) | private |  | tv-broadcast | inferred | Returns the network ID list. |
+| [`getNextEvent`](#getnextevent) | private |  | tv-broadcast | inferred | Returns the next event. |
+| [`getNextEventList`](#getnexteventlist) | private |  | tv-broadcast | inferred | Returns the next event list. |
+| [`getOfflineChannelList`](#getofflinechannellist) | public |  | tv-broadcast | inferred | Returns the offline channel list. |
+| [`getPrimaryChannelList`](#getprimarychannellist) | private |  | tv-broadcast | inferred | Returns the primary channel list. |
+| [`getProgramImg`](#getprogramimg) | private |  | tv-broadcast | inferred | Returns the program img. |
+| [`getRecommendedList`](#getrecommendedlist) | private |  | tv-broadcast | inferred | Returns the recommended list. |
+| [`getRelatedProgram`](#getrelatedprogram) | private |  | tv-broadcast | inferred | Returns the related program. |
+| [`getReservationEventList`](#getreservationeventlist) | private |  | tv-broadcast | inferred | Returns the reservation event list. |
+| [`getSearchEventList`](#getsearcheventlist) | private |  | tv-broadcast | inferred | Returns the search event list. |
+| [`getSeriesEventList`](#getserieseventlist) | private |  | tv-broadcast | inferred | Returns the series event list. |
+| [`getServiceStatus`](#getservicestatus) | private |  | tv-broadcast | inferred | Returns the service status. |
+| [`getSimilarChannelList`](#getsimilarchannellist) | private |  | tv-broadcast | inferred | Returns the similar channel list. |
+| [`getSimilarEvent`](#getsimilarevent) | private |  | tv-broadcast | inferred | Returns the similar event. |
+| [`getValueList`](#getvaluelist) | private |  | tv-broadcast | inferred | Returns the value list. |
+| [`importChannelMap`](#importchannelmap) | private |  | tv-broadcast | inferred | Imports the channel map. |
+| [`isAvailableTemplateAit`](#isavailabletemplateait) | private |  | tv-broadcast | inferred | Reports whether the available template ait is set. |
+| [`loadDefaultChannelList`](#loaddefaultchannellist) | private |  | tv-broadcast | inferred | Loads the default channel list. |
+| [`moveChannel`](#movechannel) | private |  | tv-broadcast | inferred | Moves the channel. |
+| [`moveChannelFavoritePriority`](#movechannelfavoritepriority) | private |  | tv-broadcast | inferred | Moves the channel favorite priority. |
+| [`notifyChannelEditedListChanged`](#notifychanneleditedlistchanged) | private |  | tv-broadcast | inferred | Notifies of the channel edited list changed. |
+| [`notifyChannelListChanged`](#notifychannellistchanged) | private |  | tv-broadcast | inferred | Notifies of the channel list changed. |
+| [`notifyEventChanged`](#notifyeventchanged) | private |  | tv-broadcast | inferred | Notifies of the event changed. |
+| [`notifyEventListReady`](#notifyeventlistready) | private |  | tv-broadcast | inferred | Notifies of the event list ready. |
+| [`notifyFvpEventChanged`](#notifyfvpeventchanged) | private |  | tv-broadcast | inferred | Notifies of the fvp event changed. |
+| [`notifyGenreMapUpdate`](#notifygenremapupdate) | private |  | tv-broadcast | inferred | Notifies of the genre map update. |
+| [`notifyHbbtvEventChanged`](#notifyhbbtveventchanged) | private |  | tv-broadcast | inferred | Notifies of the hbbtv event changed. |
+| [`notifyOfflineChannelListChanged`](#notifyofflinechannellistchanged) | private |  | tv-broadcast | inferred | Notifies of the offline channel list changed. |
+| [`notifyOfflineEventChanged`](#notifyofflineeventchanged) | private |  | tv-broadcast | inferred | Notifies of the offline event changed. |
+| [`notifyOnlineEventChanged`](#notifyonlineeventchanged) | private |  | tv-broadcast | inferred | Notifies of the online event changed. |
+| [`passAitUrl`](#passaiturl) | private |  | tv-broadcast | inferred | Handles the pass ait URL. |
+| [`ping`](#ping) | private |  | tv-broadcast | inferred | Pings the IEPG. |
+| [`pingSub`](#pingsub) | private |  | tv-broadcast | inferred | Pings the sub. |
+| [`releaseChannelBlock`](#releasechannelblock) | private |  | tv-broadcast | inferred | Releases the channel block. |
+| [`releaseChannelFavoriteGroup`](#releasechannelfavoritegroup) | private |  | tv-broadcast | inferred | Releases the channel favorite group. |
+| [`releaseChannelShortcutKey`](#releasechannelshortcutkey) | private |  | tv-broadcast | inferred | Releases the channel shortcut key. |
+| [`releaseChannelSkip`](#releasechannelskip) | private |  | tv-broadcast | inferred | Releases the channel skip. |
+| [`releaseConfiguredChannel`](#releaseconfiguredchannel) | private |  | settings | inferred | Releases the configured channel. |
+| [`releaseMyChannel`](#releasemychannel) | private |  | tv-broadcast | inferred | Releases the my channel. |
+| [`resetChannelFavoritePriority`](#resetchannelfavoritepriority) | private |  | tv-broadcast | inferred | Resets the channel favorite priority. ⚠️ |
+| [`resetChannelShortcutKeyList`](#resetchannelshortcutkeylist) | private |  | tv-broadcast | inferred | Resets the channel shortcut key list. ⚠️ |
+| [`runTimeDebug`](#runtimedebug) | private |  | tv-broadcast | inferred | Runs the time debug. |
+| [`runTypeDebug`](#runtypedebug) | private |  | tv-broadcast | inferred | Runs the type debug. |
+| [`saveChannelList`](#savechannellist) | private |  | tv-broadcast | inferred | Saves the channel list. |
+| [`setChannel`](#setchannel) | private |  | tv-broadcast | inferred | Sets the channel. |
+| [`setChannelBlock`](#setchannelblock) | private |  | tv-broadcast | inferred | Sets the channel block. |
+| [`setChannelFavoriteGroup`](#setchannelfavoritegroup) | public |  | tv-broadcast | inferred | Sets the channel favorite group. |
+| [`setChannelShortcutKey`](#setchannelshortcutkey) | private |  | tv-broadcast | inferred | Sets the channel shortcut key. |
+| [`setChannelSkip`](#setchannelskip) | private |  | tv-broadcast | inferred | Sets the channel skip. |
+| [`setConfiguredChannel`](#setconfiguredchannel) | private |  | settings | inferred | Sets the configured channel. |
+| [`setCurrentFavoriteGroup`](#setcurrentfavoritegroup) | private |  | tv-broadcast | inferred | Sets the current favorite group. |
+| [`setGroupName`](#setgroupname) | private |  | tv-broadcast | inferred | Sets the group name. |
+| [`setHbbtvPfInfo`](#sethbbtvpfinfo) | private |  | tv-broadcast | inferred | Sets the hbbtv pf info. |
+| [`setMyChannel`](#setmychannel) | private |  | tv-broadcast | inferred | Sets the my channel. |
+| [`setReservationEventInfo`](#setreservationeventinfo) | private |  | tv-broadcast | inferred | Sets the reservation event info. |
+| [`test`](#test) | private |  | tv-broadcast | inferred | Tests the IEPG. |
+| [`upChannel`](#upchannel) | private |  | tv-broadcast | inferred | Handles the up channel. |
+| [`updateChannelList`](#updatechannellist) | private |  | tv-broadcast | inferred | Updates the channel list. |
 
 <a id="changechannelfavoritepriority"></a>
 ## `changeChannelFavoritePriority`
 
 `luna://com.webos.service.iepg/changeChannelFavoritePriority`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Changes the channel favorite priority.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/changeChannelFavoritePriority '{}'
@@ -123,13 +127,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/changeChannelNumber`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Changes the channel number.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/changeChannelNumber '{}'
@@ -144,13 +150,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/clearChannelMap`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Clears the channel map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/clearChannelMap '{}'
@@ -165,13 +173,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/debug`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/debug '{}'
@@ -186,13 +196,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/debugiEPG`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Handles the debugi EPG.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/debugiEPG '{}'
@@ -207,13 +219,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/debugPrint`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Handles the debug print.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/debugPrint '{}'
@@ -228,13 +242,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/deleteChannel`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Deletes the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/deleteChannel '{}'
@@ -249,13 +265,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/downChannel`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Handles the down channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/downChannel '{}'
@@ -270,13 +288,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/dumpEPG`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Dumps the EPG.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/dumpEPG '{}'
@@ -291,13 +311,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/exportChannelMap`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Exports the channel map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/exportChannelMap '{}'
@@ -312,13 +334,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getChannelGroupList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the channel group list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelGroupList '{}'
@@ -333,13 +357,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getChannelIdInfo`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the channel ID info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelIdInfo '{}'
@@ -354,13 +380,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getChannelInfo`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the channel info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelInfo '{}'
@@ -375,13 +403,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getChannelList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelList '{}'
@@ -396,13 +426,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getChannelListbySignalChId`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the channel listby signal channel ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelListbySignalChId '{}'
@@ -417,13 +449,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getChannelShortcutKey`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the channel shortcut key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelShortcutKey '{}'
@@ -438,13 +472,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getChannelShortcutKeyList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the channel shortcut key list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelShortcutKeyList '{}'
@@ -459,13 +495,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getChannelStatus`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Returns the channel status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelStatus '{}'
@@ -480,13 +518,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/getCountryPolicy`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the country policy.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getCountryPolicy '{}'
@@ -501,13 +541,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getCurrentEventList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the current event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getCurrentEventList '{}'
@@ -522,13 +564,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getCurrentFavoriteGroup`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the current favorite group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getCurrentFavoriteGroup '{}'
@@ -543,13 +587,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getCurrentNextEventList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the current next event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getCurrentNextEventList '{}'
@@ -564,13 +610,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getDvbiServiceList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the dvbi service list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getDvbiServiceList '{}'
@@ -585,13 +633,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getEpgStatus`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the EPG status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getEpgStatus '{}'
@@ -606,13 +656,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getEventInfo`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the event info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getEventInfo '{}'
@@ -627,13 +679,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getEventList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getEventList '{}'
@@ -648,13 +702,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getFallbackInfo`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the fallback info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getFallbackInfo '{}'
@@ -669,13 +725,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getFavoriteGroupList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the favorite group list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getFavoriteGroupList '{}'
@@ -690,13 +748,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getGenreMapTable`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the genre map table.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getGenreMapTable '{}'
@@ -711,13 +771,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getHbbtvPfInfo`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the hbbtv pf info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getHbbtvPfInfo '{}'
@@ -732,13 +794,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getMoreEpisodes`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the more episodes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getMoreEpisodes '{}'
@@ -753,13 +817,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getMultiImg`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the multi img.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getMultiImg '{}'
@@ -774,13 +840,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getNetworkIdList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the network ID list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getNetworkIdList '{}'
@@ -795,13 +863,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getNextEvent`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the next event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getNextEvent '{}'
@@ -816,13 +886,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getNextEventList`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Returns the next event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getNextEventList '{}'
@@ -837,13 +909,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/getOfflineChannelList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the offline channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getOfflineChannelList '{}'
@@ -858,13 +932,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getPrimaryChannelList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the primary channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getPrimaryChannelList '{}'
@@ -879,13 +955,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getProgramImg`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the program img.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getProgramImg '{}'
@@ -900,13 +978,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getRecommendedList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the recommended list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getRecommendedList '{}'
@@ -921,13 +1001,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getRelatedProgram`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the related program.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getRelatedProgram '{}'
@@ -942,13 +1024,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getReservationEventList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the reservation event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getReservationEventList '{}'
@@ -963,13 +1047,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getSearchEventList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the search event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getSearchEventList '{}'
@@ -984,13 +1070,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getSeriesEventList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the series event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getSeriesEventList '{}'
@@ -1005,13 +1093,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getServiceStatus`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Returns the service status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getServiceStatus '{}'
@@ -1026,13 +1116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/getSimilarChannelList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the similar channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getSimilarChannelList '{}'
@@ -1047,13 +1139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getSimilarEvent`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the similar event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getSimilarEvent '{}'
@@ -1068,13 +1162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/getValueList`
 
-Getter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Returns the value list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/getValueList '{}'
@@ -1089,13 +1185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/importChannelMap`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Imports the channel map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/importChannelMap '{}'
@@ -1110,13 +1208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/isAvailableTemplateAit`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Reports whether the available template ait is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/isAvailableTemplateAit '{}'
@@ -1131,13 +1231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/loadDefaultChannelList`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Loads the default channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/loadDefaultChannelList '{}'
@@ -1152,13 +1254,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/moveChannel`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Moves the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/moveChannel '{}'
@@ -1173,13 +1277,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/moveChannelFavoritePriority`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Moves the channel favorite priority.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/moveChannelFavoritePriority '{}'
@@ -1194,13 +1300,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/notifyChannelEditedListChanged`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Notifies of the channel edited list changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/notifyChannelEditedListChanged '{}'
@@ -1215,13 +1323,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/notifyChannelListChanged`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Notifies of the channel list changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/notifyChannelListChanged '{}'
@@ -1236,13 +1346,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/notifyEventChanged`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Notifies of the event changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/notifyEventChanged '{}'
@@ -1257,13 +1369,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/notifyEventListReady`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Notifies of the event list ready.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/notifyEventListReady '{}'
@@ -1278,13 +1392,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/notifyFvpEventChanged`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Notifies of the fvp event changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/notifyFvpEventChanged '{}'
@@ -1299,13 +1415,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/notifyGenreMapUpdate`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Notifies of the genre map update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/notifyGenreMapUpdate '{}'
@@ -1320,13 +1438,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/notifyHbbtvEventChanged`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Notifies of the hbbtv event changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/notifyHbbtvEventChanged '{}'
@@ -1341,13 +1461,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/notifyOfflineChannelListChanged`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Notifies of the offline channel list changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/notifyOfflineChannelListChanged '{}'
@@ -1362,13 +1484,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/notifyOfflineEventChanged`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Notifies of the offline event changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/notifyOfflineEventChanged '{}'
@@ -1383,13 +1507,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/notifyOnlineEventChanged`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Notifies of the online event changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/notifyOnlineEventChanged '{}'
@@ -1404,13 +1530,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/passAitUrl`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Handles the pass ait URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/passAitUrl '{}'
@@ -1425,13 +1553,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/ping`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Pings the IEPG.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/ping '{}'
@@ -1446,13 +1576,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/pingSub`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Pings the sub.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/pingSub '{}'
@@ -1467,13 +1599,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/releaseChannelBlock`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Releases the channel block.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/releaseChannelBlock '{}'
@@ -1488,13 +1622,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/releaseChannelFavoriteGroup`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Releases the channel favorite group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/releaseChannelFavoriteGroup '{}'
@@ -1509,13 +1645,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/releaseChannelShortcutKey`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Releases the channel shortcut key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/releaseChannelShortcutKey '{}'
@@ -1530,13 +1668,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/releaseChannelSkip`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Releases the channel skip.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/releaseChannelSkip '{}'
@@ -1551,13 +1691,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/releaseConfiguredChannel`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Releases the configured channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/releaseConfiguredChannel '{}'
@@ -1572,13 +1714,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/releaseMyChannel`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Releases the my channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/releaseMyChannel '{}'
@@ -1593,13 +1737,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/resetChannelFavoritePriority`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Resets the channel favorite priority.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/resetChannelFavoritePriority '{}'
@@ -1614,13 +1760,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/resetChannelShortcutKeyList`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Resets the channel shortcut key list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/resetChannelShortcutKeyList '{}'
@@ -1635,13 +1783,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/runTimeDebug`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Runs the time debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/runTimeDebug '{}'
@@ -1656,13 +1806,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/runTypeDebug`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Runs the type debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/runTypeDebug '{}'
@@ -1677,13 +1829,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/saveChannelList`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Saves the channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/saveChannelList '{}'
@@ -1698,13 +1852,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/setChannel`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Sets the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/setChannel '{}'
@@ -1719,13 +1875,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/setChannelBlock`
 
-Setter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Sets the channel block.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/setChannelBlock '{}'
@@ -1740,13 +1898,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/setChannelFavoriteGroup`
 
-Setter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Sets the channel favorite group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/setChannelFavoriteGroup '{}'
@@ -1761,13 +1921,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/setChannelShortcutKey`
 
-Setter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Sets the channel shortcut key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/setChannelShortcutKey '{}'
@@ -1782,13 +1944,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/setChannelSkip`
 
-Setter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Sets the channel skip.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/setChannelSkip '{}'
@@ -1803,13 +1967,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/setConfiguredChannel`
 
-Setter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Sets the configured channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/setConfiguredChannel '{}'
@@ -1824,13 +1990,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/setCurrentFavoriteGroup`
 
-Setter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Sets the current favorite group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/setCurrentFavoriteGroup '{}'
@@ -1845,13 +2013,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/setGroupName`
 
-Setter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Sets the group name.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/setGroupName '{}'
@@ -1866,13 +2036,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/setHbbtvPfInfo`
 
-Setter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Sets the hbbtv pf info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/setHbbtvPfInfo '{}'
@@ -1887,13 +2059,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/setMyChannel`
 
-Setter on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Sets the my channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/setMyChannel '{}'
@@ -1908,13 +2082,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iepg/setReservationEventInfo`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Sets the reservation event info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/setReservationEventInfo '{}'
@@ -1929,13 +2105,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/test`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Tests the IEPG.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/test '{}'
@@ -1950,13 +2128,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/upChannel`
 
-Method on com.webos.service.iepg (from on-device permission registry; parameters undocumented).
+Handles the up channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/upChannel '{}'
@@ -1971,13 +2151,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.iepg/updateChannelList`
 
-Method on com.webos.service.iepg (introspected on-device; parameters undocumented).
+Updates the channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iepg/updateChannelList '{}'

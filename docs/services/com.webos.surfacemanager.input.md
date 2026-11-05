@@ -1,29 +1,33 @@
 # `com.webos.surfacemanager.input`
 
+Surface-manager input service: blocks and unblocks key input, reports key-input block state, and registers allowed keys and per-app keymasks. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`blockKeyInput`](#blockkeyinput) | private |  | ui | Method on com.webos.surfacemanager.input (introspected on-device; parameters undocumented). |
-| [`cancelBlockKeyInput`](#cancelblockkeyinput) | private |  | ui | Method on com.webos.surfacemanager.input (introspected on-device; parameters undocumented). |
-| [`getForegroundAppKeymask`](#getforegroundappkeymask) | private |  | ui | Getter on com.webos.surfacemanager.input (introspected on-device; parameters undocumented). |
-| [`getKeyInputBlockState`](#getkeyinputblockstate) | private |  | ui | Getter on com.webos.surfacemanager.input (introspected on-device; parameters undocumented). |
-| [`registerAllowedKey`](#registerallowedkey) | private |  | ui | Method on com.webos.surfacemanager.input (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`blockKeyInput`](#blockkeyinput) | private |  | ui | inferred | Blocks the key input. |
+| [`cancelBlockKeyInput`](#cancelblockkeyinput) | private |  | ui | inferred | Cancels the block key input. |
+| [`getForegroundAppKeymask`](#getforegroundappkeymask) | private |  | ui | inferred | Returns the foreground app keymask. |
+| [`getKeyInputBlockState`](#getkeyinputblockstate) | private |  | ui | inferred | Returns the key input block state. |
+| [`registerAllowedKey`](#registerallowedkey) | private |  | ui | inferred | Registers the allowed key. |
 
 <a id="blockkeyinput"></a>
 ## `blockKeyInput`
 
 `luna://com.webos.surfacemanager.input/blockKeyInput`
 
-Method on com.webos.surfacemanager.input (introspected on-device; parameters undocumented).
+Blocks the key input.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager.input/blockKeyInput '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager.input/cancelBlockKeyInput`
 
-Method on com.webos.surfacemanager.input (introspected on-device; parameters undocumented).
+Cancels the block key input.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager.input/cancelBlockKeyInput '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager.input/getForegroundAppKeymask`
 
-Getter on com.webos.surfacemanager.input (introspected on-device; parameters undocumented).
+Returns the foreground app keymask.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager.input/getForegroundAppKeymask '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager.input/getKeyInputBlockState`
 
-Getter on com.webos.surfacemanager.input (introspected on-device; parameters undocumented).
+Returns the key input block state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager.input/getKeyInputBlockState '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager.input/registerAllowedKey`
 
-Method on com.webos.surfacemanager.input (introspected on-device; parameters undocumented).
+Registers the allowed key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager.input/registerAllowedKey '{}'

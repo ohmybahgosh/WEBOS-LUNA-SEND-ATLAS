@@ -1,32 +1,36 @@
 # `com.webos.service.legacybroadcast.lbdsmcc`
 
+Legacy broadcast DSM-CC service: mounts and attaches DSM-CC object carousels, retrieves carousel files, and registers stream events for data/interactive broadcasting. _(inferred from the service's methods)_
+
 8 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`attach`](#attach) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`detachDsmccFiles`](#detachdsmccfiles) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`getCarouselInfo`](#getcarouselinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`getDebugDsmccInfo`](#getdebugdsmccinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`getDsmccFile`](#getdsmccfile) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`mountDsmcc`](#mountdsmcc) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`registerStreamEvent`](#registerstreamevent) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented). |
-| [`unregisterStreamEvent`](#unregisterstreamevent) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`attach`](#attach) | private |  | tv-broadcast | inferred | Handles the attach. |
+| [`detachDsmccFiles`](#detachdsmccfiles) | private |  | tv-broadcast | inferred | Handles the detach dsmcc files. |
+| [`getCarouselInfo`](#getcarouselinfo) | private |  | tv-broadcast | inferred | Returns the carousel info. |
+| [`getDebugDsmccInfo`](#getdebugdsmccinfo) | private |  | tv-broadcast | inferred | Returns the debug dsmcc info. |
+| [`getDsmccFile`](#getdsmccfile) | private |  | tv-broadcast | inferred | Returns the dsmcc file. |
+| [`mountDsmcc`](#mountdsmcc) | private |  | tv-broadcast | inferred | Mounts the dsmcc. |
+| [`registerStreamEvent`](#registerstreamevent) | private |  | tv-broadcast | inferred | Registers the stream event. |
+| [`unregisterStreamEvent`](#unregisterstreamevent) | private |  | tv-broadcast | inferred | Unregisters the stream event. |
 
 <a id="attach"></a>
 ## `attach`
 
 `luna://com.webos.service.legacybroadcast.lbdsmcc/attach`
 
-Method on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented).
+Handles the attach.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.lbdsmcc/attach '{}'
@@ -41,13 +45,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.lbdsmcc/detachDsmccFiles`
 
-Method on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented).
+Handles the detach dsmcc files.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.lbdsmcc/detachDsmccFiles '{}'
@@ -62,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.lbdsmcc/getCarouselInfo`
 
-Getter on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented).
+Returns the carousel info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.lbdsmcc/getCarouselInfo '{}'
@@ -83,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.lbdsmcc/getDebugDsmccInfo`
 
-Getter on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented).
+Returns the debug dsmcc info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.lbdsmcc/getDebugDsmccInfo '{}'
@@ -104,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.lbdsmcc/getDsmccFile`
 
-Getter on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented).
+Returns the dsmcc file.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.lbdsmcc/getDsmccFile '{}'
@@ -125,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.lbdsmcc/mountDsmcc`
 
-Method on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented).
+Mounts the dsmcc.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.lbdsmcc/mountDsmcc '{}'
@@ -146,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.lbdsmcc/registerStreamEvent`
 
-Method on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented).
+Registers the stream event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.lbdsmcc/registerStreamEvent '{}'
@@ -167,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.lbdsmcc/unregisterStreamEvent`
 
-Method on com.webos.service.legacybroadcast.lbdsmcc (introspected on-device; parameters undocumented).
+Unregisters the stream event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.lbdsmcc/unregisterStreamEvent '{}'

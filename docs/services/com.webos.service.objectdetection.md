@@ -1,28 +1,32 @@
 # `com.webos.service.objectdetection`
 
+Object-detection service that runs detection and reports its state (start/stop/detect/getState), likely camera-based. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`detect`](#detect) | private |  | misc | Method on com.webos.service.objectdetection (from on-device permission registry; parameters undocumented). |
-| [`getState`](#getstate) | private |  | misc | Method on com.webos.service.objectdetection (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.objectdetection (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | private |  | misc | Method on com.webos.service.objectdetection (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`detect`](#detect) | private |  | misc | inferred | Detects the objectdetection. |
+| [`getState`](#getstate) | private |  | misc | inferred | Returns the state. |
+| [`start`](#start) | private |  | misc | inferred | Starts the objectdetection. |
+| [`stop`](#stop) | private |  | misc | inferred | Stops the objectdetection. |
 
 <a id="detect"></a>
 ## `detect`
 
 `luna://com.webos.service.objectdetection/detect`
 
-Method on com.webos.service.objectdetection (from on-device permission registry; parameters undocumented).
+Detects the objectdetection.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.objectdetection/detect '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.objectdetection/getState`
 
-Method on com.webos.service.objectdetection (from on-device permission registry; parameters undocumented).
+Returns the state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.objectdetection/getState '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.objectdetection/start`
 
-Method on com.webos.service.objectdetection (from on-device permission registry; parameters undocumented).
+Starts the objectdetection.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.objectdetection/start '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.objectdetection/stop`
 
-Method on com.webos.service.objectdetection (from on-device permission registry; parameters undocumented).
+Stops the objectdetection.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.objectdetection/stop '{}'

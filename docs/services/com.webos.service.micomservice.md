@@ -1,77 +1,81 @@
 # `com.webos.service.micomservice`
 
+MICOM microcontroller service: reports power on/off history, OLED self-diagnosis, IR custom codes and hardware diagnostics, and controls standby/always-ready and LED functions. _(inferred from the service's methods)_
+
 53 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`backupPowerOnOffHistory`](#backuppoweronoffhistory) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`getHallicCount`](#gethalliccount) | public |  | power | Getter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`getIRCustomCode`](#getircustomcode) | public |  | power | Getter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`getSelfDiagnosisOled`](#getselfdiagnosisoled) | public |  | power | Getter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`getSpecialRemoconMode`](#getspecialremoconmode) | public |  | power | Getter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`listFactoryKeyHistory`](#listfactorykeyhistory) | public |  | power | Lister on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`listPowerOnOffHistory`](#listpoweronoffhistory) | public |  | power | Lister on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`listPowerOnOffHistoryForDiagnosisMenu`](#listpoweronoffhistoryfordiagnosismenu) | public |  | power | Lister on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`listPowerOnOffHistoryHexWithUTT`](#listpoweronoffhistoryhexwithutt) | public |  | power | Lister on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`listPowerOnOffHistoryWithUTT`](#listpoweronoffhistorywithutt) | public |  | power | Lister on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestAlwaysReadyControlCommand`](#requestalwaysreadycontrolcommand) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestAplusCenterLedCtrl`](#requestapluscenterledctrl) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestAplusLedBarCtrl`](#requestaplusledbarctrl) | public |  | db | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestAutoPowerOffOn`](#requestautopoweroffon) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestBifDisconnectCount`](#requestbifdisconnectcount) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestBifRepairingCount`](#requestbifrepairingcount) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestBifRfChNum`](#requestbifrfchnum) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestBifVersion`](#requestbifversion) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestDisplayMicomVersion`](#requestdisplaymicomversion) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestHostReadyCommand`](#requesthostreadycommand) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestInstantControlCommand`](#requestinstantcontrolcommand) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestPowerControlCommand`](#requestpowercontrolcommand) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestPowerOnOffHistory`](#requestpoweronoffhistory) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestUpdate`](#requestupdate) | public |  | update | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`requestZerowattMicomVersion`](#requestzerowattmicomversion) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`resetPowerOnOffHistory`](#resetpoweronoffhistory) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). ⚠️ |
-| [`resetWifiVbus`](#resetwifivbus) | public |  | network | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). ⚠️ |
-| [`sendHotelKeyOperationMode`](#sendhotelkeyoperationmode) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`sendKeycode`](#sendkeycode) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`sendPNWashKeyLock`](#sendpnwashkeylock) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`sendWBModeEnable`](#sendwbmodeenable) | public |  | power | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setAplusCenterLed`](#setapluscenterled) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setAplusLedBar`](#setaplusledbar) | public |  | db | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setCPHotKeyListLock`](#setcphotkeylistlock) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setCPHotKeyLock`](#setcphotkeylock) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setFactoryKeySaveMode`](#setfactorykeysavemode) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). ⚠️ |
-| [`setHotelModeKeyOperation`](#sethotelmodekeyoperation) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setPanelWashKeyLock`](#setpanelwashkeylock) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setRGBLedTest`](#setrgbledtest) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setSpecialRemoconMode`](#setspecialremoconmode) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setWhiteBalanceMode`](#setwhitebalancemode) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setWOBLEMode`](#setwoblemode) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setWOLMode`](#setwolmode) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setWOVMode`](#setwovmode) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`setWOWLMode`](#setwowlmode) | public |  | power | Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`updateBifFirmware`](#updatebiffirmware) | public |  | update | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). ⚠️ |
-| [`updateDisplayMicomFirmware`](#updatedisplaymicomfirmware) | public |  | update | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). ⚠️ |
-| [`updateMicroLedMicomFirmware`](#updatemicroledmicomfirmware) | public |  | update | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). ⚠️ |
-| [`updateWOBLEModeEnable`](#updatewoblemodeenable) | public |  | update | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`updateWOLModeEnable`](#updatewolmodeenable) | public |  | update | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`updateWOVModeEnable`](#updatewovmodeenable) | public |  | update | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`updateWOWLModeEnable`](#updatewowlmodeenable) | public |  | update | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). |
-| [`updateZerowattMicomFirmware`](#updatezerowattmicomfirmware) | public |  | update | Method on com.webos.service.micomservice (introspected on-device; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`backupPowerOnOffHistory`](#backuppoweronoffhistory) | public |  | power | inferred | Backs up the power on off history. |
+| [`getHallicCount`](#gethalliccount) | public |  | power | inferred | Returns the hallic count. |
+| [`getIRCustomCode`](#getircustomcode) | public |  | power | inferred | Returns the IR custom code. |
+| [`getSelfDiagnosisOled`](#getselfdiagnosisoled) | public |  | power | inferred | Returns the self diagnosis oled. |
+| [`getSpecialRemoconMode`](#getspecialremoconmode) | public |  | power | inferred | Returns the special remocon mode. |
+| [`listFactoryKeyHistory`](#listfactorykeyhistory) | public |  | power | inferred | Lists the factory key history. |
+| [`listPowerOnOffHistory`](#listpoweronoffhistory) | public |  | power | inferred | Lists the power on off history. |
+| [`listPowerOnOffHistoryForDiagnosisMenu`](#listpoweronoffhistoryfordiagnosismenu) | public |  | power | inferred | Lists the power on off history for diagnosis menu. |
+| [`listPowerOnOffHistoryHexWithUTT`](#listpoweronoffhistoryhexwithutt) | public |  | power | inferred | Lists the power on off history hex with UTT. |
+| [`listPowerOnOffHistoryWithUTT`](#listpoweronoffhistorywithutt) | public |  | power | inferred | Lists the power on off history with UTT. |
+| [`requestAlwaysReadyControlCommand`](#requestalwaysreadycontrolcommand) | public |  | power | inferred | Requests the always ready control command. |
+| [`requestAplusCenterLedCtrl`](#requestapluscenterledctrl) | public |  | power | inferred | Requests the aplus center LED ctrl. |
+| [`requestAplusLedBarCtrl`](#requestaplusledbarctrl) | public |  | db | inferred | Requests the aplus LED bar ctrl. |
+| [`requestAutoPowerOffOn`](#requestautopoweroffon) | public |  | power | inferred | Requests the auto power off on. |
+| [`requestBifDisconnectCount`](#requestbifdisconnectcount) | public |  | power | inferred | Requests the bif disconnect count. |
+| [`requestBifRepairingCount`](#requestbifrepairingcount) | public |  | power | inferred | Requests the bif repairing count. |
+| [`requestBifRfChNum`](#requestbifrfchnum) | public |  | power | inferred | Requests the bif RF channel num. |
+| [`requestBifVersion`](#requestbifversion) | public |  | power | inferred | Requests the bif version. |
+| [`requestDisplayMicomVersion`](#requestdisplaymicomversion) | public |  | power | inferred | Requests the display MICOM version. |
+| [`requestHostReadyCommand`](#requesthostreadycommand) | public |  | power | inferred | Requests the host ready command. |
+| [`requestInstantControlCommand`](#requestinstantcontrolcommand) | public |  | power | inferred | Requests the instant control command. |
+| [`requestPowerControlCommand`](#requestpowercontrolcommand) | public |  | power | inferred | Requests the power control command. |
+| [`requestPowerOnOffHistory`](#requestpoweronoffhistory) | public |  | power | inferred | Requests the power on off history. |
+| [`requestUpdate`](#requestupdate) | public |  | update | inferred | Requests the update. |
+| [`requestZerowattMicomVersion`](#requestzerowattmicomversion) | public |  | power | inferred | Requests the zerowatt MICOM version. |
+| [`resetPowerOnOffHistory`](#resetpoweronoffhistory) | public |  | power | inferred | Resets the power on off history. ⚠️ |
+| [`resetWifiVbus`](#resetwifivbus) | public |  | network | inferred | Resets the wifi vbus. ⚠️ |
+| [`sendHotelKeyOperationMode`](#sendhotelkeyoperationmode) | public |  | power | inferred | Sends the hotel key operation mode. |
+| [`sendKeycode`](#sendkeycode) | public |  | power | inferred | Sends the keycode. |
+| [`sendPNWashKeyLock`](#sendpnwashkeylock) | public |  | power | inferred | Sends the PN wash key lock. |
+| [`sendWBModeEnable`](#sendwbmodeenable) | public |  | power | inferred | Sends the WB mode enable. |
+| [`setAplusCenterLed`](#setapluscenterled) | public |  | power | inferred | Sets the aplus center LED. |
+| [`setAplusLedBar`](#setaplusledbar) | public |  | db | inferred | Sets the aplus LED bar. |
+| [`setCPHotKeyListLock`](#setcphotkeylistlock) | public |  | power | inferred | Sets the CP hot key list lock. |
+| [`setCPHotKeyLock`](#setcphotkeylock) | public |  | power | inferred | Sets the CP hot key lock. |
+| [`setFactoryKeySaveMode`](#setfactorykeysavemode) | public |  | power | inferred | Sets the factory key save mode. ⚠️ |
+| [`setHotelModeKeyOperation`](#sethotelmodekeyoperation) | public |  | power | inferred | Sets the hotel mode key operation. |
+| [`setPanelWashKeyLock`](#setpanelwashkeylock) | public |  | power | inferred | Sets the panel wash key lock. |
+| [`setRGBLedTest`](#setrgbledtest) | public |  | power | inferred | Sets the RGB LED test. |
+| [`setSpecialRemoconMode`](#setspecialremoconmode) | public |  | power | inferred | Sets the special remocon mode. |
+| [`setWhiteBalanceMode`](#setwhitebalancemode) | public |  | power | inferred | Sets the white balance mode. |
+| [`setWOBLEMode`](#setwoblemode) | public |  | power | inferred | Sets the WOBLE mode. |
+| [`setWOLMode`](#setwolmode) | public |  | power | inferred | Sets the WoL mode. |
+| [`setWOVMode`](#setwovmode) | public |  | power | inferred | Sets the WOV mode. |
+| [`setWOWLMode`](#setwowlmode) | public |  | power | inferred | Sets the WOWL mode. |
+| [`updateBifFirmware`](#updatebiffirmware) | public |  | update | inferred | Updates the bif firmware. ⚠️ |
+| [`updateDisplayMicomFirmware`](#updatedisplaymicomfirmware) | public |  | update | inferred | Updates the display MICOM firmware. ⚠️ |
+| [`updateMicroLedMicomFirmware`](#updatemicroledmicomfirmware) | public |  | update | inferred | Updates the micro LED MICOM firmware. ⚠️ |
+| [`updateWOBLEModeEnable`](#updatewoblemodeenable) | public |  | update | inferred | Updates the WOBLE mode enable. |
+| [`updateWOLModeEnable`](#updatewolmodeenable) | public |  | update | inferred | Updates the WoL mode enable. |
+| [`updateWOVModeEnable`](#updatewovmodeenable) | public |  | update | inferred | Updates the WOV mode enable. |
+| [`updateWOWLModeEnable`](#updatewowlmodeenable) | public |  | update | inferred | Updates the WOWL mode enable. |
+| [`updateZerowattMicomFirmware`](#updatezerowattmicomfirmware) | public |  | update | inferred | Updates the zerowatt MICOM firmware. ⚠️ |
 
 <a id="backuppoweronoffhistory"></a>
 ## `backupPowerOnOffHistory`
 
 `luna://com.webos.service.micomservice/backupPowerOnOffHistory`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Backs up the power on off history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/backupPowerOnOffHistory '{}'
@@ -86,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/getHallicCount`
 
-Getter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Returns the hallic count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/getHallicCount '{}'
@@ -107,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/getIRCustomCode`
 
-Getter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Returns the IR custom code.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/getIRCustomCode '{}'
@@ -128,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/getSelfDiagnosisOled`
 
-Getter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Returns the self diagnosis oled.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/getSelfDiagnosisOled '{}'
@@ -149,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/getSpecialRemoconMode`
 
-Getter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Returns the special remocon mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/getSpecialRemoconMode '{}'
@@ -170,13 +182,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/listFactoryKeyHistory`
 
-Lister on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Lists the factory key history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/listFactoryKeyHistory '{}'
@@ -191,13 +205,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/listPowerOnOffHistory`
 
-Lister on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Lists the power on off history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/listPowerOnOffHistory '{}'
@@ -212,13 +228,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/listPowerOnOffHistoryForDiagnosisMenu`
 
-Lister on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Lists the power on off history for diagnosis menu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/listPowerOnOffHistoryForDiagnosisMenu '{}'
@@ -233,13 +251,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/listPowerOnOffHistoryHexWithUTT`
 
-Lister on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Lists the power on off history hex with UTT.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/listPowerOnOffHistoryHexWithUTT '{}'
@@ -254,13 +274,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/listPowerOnOffHistoryWithUTT`
 
-Lister on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Lists the power on off history with UTT.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/listPowerOnOffHistoryWithUTT '{}'
@@ -275,13 +297,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestAlwaysReadyControlCommand`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the always ready control command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestAlwaysReadyControlCommand '{}'
@@ -296,13 +320,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestAplusCenterLedCtrl`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the aplus center LED ctrl.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestAplusCenterLedCtrl '{}'
@@ -317,13 +343,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestAplusLedBarCtrl`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the aplus LED bar ctrl.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestAplusLedBarCtrl '{}'
@@ -338,13 +366,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestAutoPowerOffOn`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the auto power off on.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestAutoPowerOffOn '{}'
@@ -359,13 +389,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestBifDisconnectCount`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the bif disconnect count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestBifDisconnectCount '{}'
@@ -380,13 +412,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestBifRepairingCount`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the bif repairing count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestBifRepairingCount '{}'
@@ -401,13 +435,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestBifRfChNum`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the bif RF channel num.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestBifRfChNum '{}'
@@ -422,13 +458,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestBifVersion`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the bif version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestBifVersion '{}'
@@ -443,13 +481,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestDisplayMicomVersion`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the display MICOM version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestDisplayMicomVersion '{}'
@@ -464,13 +504,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestHostReadyCommand`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the host ready command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestHostReadyCommand '{}'
@@ -485,13 +527,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestInstantControlCommand`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the instant control command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestInstantControlCommand '{}'
@@ -506,13 +550,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestPowerControlCommand`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the power control command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestPowerControlCommand '{}'
@@ -527,13 +573,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestPowerOnOffHistory`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the power on off history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestPowerOnOffHistory '{}'
@@ -548,13 +596,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestUpdate`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestUpdate '{}'
@@ -569,13 +619,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/requestZerowattMicomVersion`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Requests the zerowatt MICOM version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/requestZerowattMicomVersion '{}'
@@ -590,13 +642,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/resetPowerOnOffHistory`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Resets the power on off history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/resetPowerOnOffHistory '{}'
@@ -611,13 +665,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/resetWifiVbus`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Resets the wifi vbus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/resetWifiVbus '{}'
@@ -632,13 +688,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/sendHotelKeyOperationMode`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sends the hotel key operation mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/sendHotelKeyOperationMode '{}'
@@ -653,13 +711,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/sendKeycode`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sends the keycode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/sendKeycode '{}'
@@ -674,13 +734,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/sendPNWashKeyLock`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sends the PN wash key lock.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/sendPNWashKeyLock '{}'
@@ -695,13 +757,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/sendWBModeEnable`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sends the WB mode enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/sendWBModeEnable '{}'
@@ -716,13 +780,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setAplusCenterLed`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the aplus center LED.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setAplusCenterLed '{}'
@@ -737,13 +803,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setAplusLedBar`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the aplus LED bar.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setAplusLedBar '{}'
@@ -758,13 +826,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setCPHotKeyListLock`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the CP hot key list lock.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setCPHotKeyListLock '{}'
@@ -779,13 +849,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setCPHotKeyLock`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the CP hot key lock.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setCPHotKeyLock '{}'
@@ -800,13 +872,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setFactoryKeySaveMode`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the factory key save mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setFactoryKeySaveMode '{}'
@@ -821,13 +895,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setHotelModeKeyOperation`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the hotel mode key operation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setHotelModeKeyOperation '{}'
@@ -842,13 +918,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setPanelWashKeyLock`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the panel wash key lock.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setPanelWashKeyLock '{}'
@@ -863,13 +941,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setRGBLedTest`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the RGB LED test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setRGBLedTest '{}'
@@ -884,13 +964,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setSpecialRemoconMode`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the special remocon mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setSpecialRemoconMode '{}'
@@ -905,13 +987,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setWhiteBalanceMode`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the white balance mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setWhiteBalanceMode '{}'
@@ -926,13 +1010,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setWOBLEMode`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the WOBLE mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setWOBLEMode '{}'
@@ -947,13 +1033,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setWOLMode`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the WoL mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setWOLMode '{}'
@@ -968,13 +1056,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setWOVMode`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the WOV mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setWOVMode '{}'
@@ -989,13 +1079,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/setWOWLMode`
 
-Setter on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Sets the WOWL mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/setWOWLMode '{}'
@@ -1010,13 +1102,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/updateBifFirmware`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Updates the bif firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/updateBifFirmware '{}'
@@ -1031,13 +1125,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/updateDisplayMicomFirmware`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Updates the display MICOM firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/updateDisplayMicomFirmware '{}'
@@ -1052,13 +1148,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/updateMicroLedMicomFirmware`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Updates the micro LED MICOM firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/updateMicroLedMicomFirmware '{}'
@@ -1073,13 +1171,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/updateWOBLEModeEnable`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Updates the WOBLE mode enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/updateWOBLEModeEnable '{}'
@@ -1094,13 +1194,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/updateWOLModeEnable`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Updates the WoL mode enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/updateWOLModeEnable '{}'
@@ -1115,13 +1217,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/updateWOVModeEnable`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Updates the WOV mode enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/updateWOVModeEnable '{}'
@@ -1136,13 +1240,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/updateWOWLModeEnable`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Updates the WOWL mode enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/updateWOWLModeEnable '{}'
@@ -1157,13 +1263,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.micomservice/updateZerowattMicomFirmware`
 
-Method on com.webos.service.micomservice (introspected on-device; parameters undocumented).
+Updates the zerowatt MICOM firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.micomservice/updateZerowattMicomFirmware '{}'

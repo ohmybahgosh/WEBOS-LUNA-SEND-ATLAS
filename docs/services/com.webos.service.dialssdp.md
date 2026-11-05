@@ -1,26 +1,30 @@
 # `com.webos.service.dialssdp`
 
+DIAL/SSDP discovery service for cast-style app launch; reports info and quits. Opaque beyond that. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`info`](#info) | private |  | misc | Method on com.webos.service.dialssdp (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | private |  | misc | Method on com.webos.service.dialssdp (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`info`](#info) | private |  | misc | inferred | Handles the info. |
+| [`quit`](#quit) | private |  | misc | inferred | Quits the dialssdp. |
 
 <a id="info"></a>
 ## `info`
 
 `luna://com.webos.service.dialssdp/info`
 
-Method on com.webos.service.dialssdp (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dialssdp/info '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.dialssdp/quit`
 
-Method on com.webos.service.dialssdp (from on-device permission registry; parameters undocumented).
+Quits the dialssdp.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dialssdp/quit '{}'

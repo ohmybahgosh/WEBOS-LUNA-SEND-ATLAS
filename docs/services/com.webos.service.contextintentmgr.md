@@ -1,14 +1,16 @@
 # `com.webos.service.contextintentmgr`
 
+Context Intent Manager (CIM): adds AI logic to a web app without changing its source, injecting data into and reading data from workflows to make the app context-aware.
+
 3 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getDataFromWorkflow`](#getdatafromworkflow) | public | yes | apps | Publishes data from the workflow to the app. The data can be consumed by an app which has subscribed to it. |
-| [`injectDataToWorkflow`](#injectdatatoworkflow) | public |  | apps | Injects data from the app to the workflow. |
-| [`result`](#result) | unknown |  | apps | Contains the results. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getDataFromWorkflow`](#getdatafromworkflow) | public | yes | apps | documented | Publishes data from the workflow to the app. The data can be consumed by an app which has subscribed to it. |
+| [`injectDataToWorkflow`](#injectdatatoworkflow) | public |  | apps | documented | Injects data from the app to the workflow. |
+| [`result`](#result) | unknown |  | apps | documented | Contains the results. |
 
 <a id="getdatafromworkflow"></a>
 ## `getDataFromWorkflow`
@@ -27,6 +29,14 @@ Publishes data from the workflow to the app. The data can be consumed by an app 
 |---|---|
 | `key` | String (required) Identifies the 'data-publish' node that is defined in the workflow. Note: Make sure that the key is associated with the relevant 'data-publish' node. |
 | `subscribe` | Boolean (required) Subscribe for notifications when value changes. Possible values are: true - Get notifications false - Notifications are not required |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+| `result` | Object: result (required) Contains the result. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.contextintentmgr/getDataFromWorkflow '{"key": "<key>", "subscribe": true}'
@@ -53,6 +63,14 @@ Injects data from the app to the workflow.
 |---|---|
 | `key` | String (required) Identifies the 'data-inject' node that is defined in the workflow. Note: Make sure that the key is associated with the relevant 'data-inject' node. |
 | `data` | String (required) The actual data that must be sent to the workflow. It must be a stringified object. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+| `result` | Object: result (required) Contains the result. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.contextintentmgr/injectDataToWorkflow '{"key": "<key>", "data": "<data>"}'

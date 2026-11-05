@@ -1,33 +1,37 @@
 # `com.webos.service.appcasting`
 
+Appears to handle app casting/second-screen control: exchanges commands and app messages, relays UIBC (user input back channel) events, and reports media info and state. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`debug`](#debug) | private |  | security | Method on com.webos.service.appcasting (introspected on-device; parameters undocumented). |
-| [`getCommand`](#getcommand) | ssap | yes | media | Subscribe to appcasting commands from the TV |
-| [`getMediaInfo`](#getmediainfo) | private |  | media | Getter on com.webos.service.appcasting (introspected on-device; parameters undocumented). |
-| [`getState`](#getstate) | private |  | security | Getter on com.webos.service.appcasting (introspected on-device; parameters undocumented). |
-| [`localizationTest`](#localizationtest) | private |  | security | Method on com.webos.service.appcasting (introspected on-device; parameters undocumented). |
-| [`receiveUIBCEvent`](#receiveuibcevent) | ssap | yes | media | Subscribe to UIBC user-input events (screen mirroring) |
-| [`sendAppMsg`](#sendappmsg) | private |  | security | Method on com.webos.service.appcasting (introspected on-device; parameters undocumented). |
-| [`sendCommand`](#sendcommand) | ssap |  | media | Send appcasting (LG Cast) command: payload {cmd, service}; cmd values in ConnectSDK: CONNECT, GET_PARAMETER, SET_PARAMETER, PLAY, PAUSE, KEE |
-| [`sendUIBCEvent`](#senduibcevent) | private |  | security | Method on com.webos.service.appcasting (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`debug`](#debug) | private |  | security | inferred | Handles the debug. |
+| [`getCommand`](#getcommand) | ssap | yes | media | documented | Subscribe to appcasting commands from the TV |
+| [`getMediaInfo`](#getmediainfo) | private |  | media | inferred | Returns the media info. |
+| [`getState`](#getstate) | private |  | security | inferred | Returns the state. |
+| [`localizationTest`](#localizationtest) | private |  | security | inferred | Handles the localization test. |
+| [`receiveUIBCEvent`](#receiveuibcevent) | ssap | yes | media | documented | Subscribe to UIBC user-input events (screen mirroring) |
+| [`sendAppMsg`](#sendappmsg) | private |  | security | inferred | Sends the app msg. |
+| [`sendCommand`](#sendcommand) | ssap |  | media | documented | Send appcasting (LG Cast) command: payload {cmd, service}; cmd values in ConnectSDK: CONNECT, GET_PARAMETER, SET_PARAMETER, PLAY, PAUSE, KEE |
+| [`sendUIBCEvent`](#senduibcevent) | private |  | security | inferred | Sends the UIBC event. |
 
 <a id="debug"></a>
 ## `debug`
 
 `luna://com.webos.service.appcasting/debug`
 
-Method on com.webos.service.appcasting (introspected on-device; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.appcasting/debug '{}'
@@ -48,7 +52,7 @@ Subscribe to appcasting commands from the TV
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -67,13 +71,15 @@ Sources: [1](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/
 
 `luna://com.webos.service.appcasting/getMediaInfo`
 
-Getter on com.webos.service.appcasting (introspected on-device; parameters undocumented).
+Returns the media info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.appcasting/getMediaInfo '{}'
@@ -88,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.appcasting/getState`
 
-Getter on com.webos.service.appcasting (introspected on-device; parameters undocumented).
+Returns the state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.appcasting/getState '{}'
@@ -109,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.appcasting/localizationTest`
 
-Method on com.webos.service.appcasting (introspected on-device; parameters undocumented).
+Handles the localization test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.appcasting/localizationTest '{}'
@@ -136,7 +146,7 @@ Subscribe to UIBC user-input events (screen mirroring)
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -155,13 +165,15 @@ Sources: [1](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/
 
 `luna://com.webos.service.appcasting/sendAppMsg`
 
-Method on com.webos.service.appcasting (introspected on-device; parameters undocumented).
+Sends the app msg.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.appcasting/sendAppMsg '{}'
@@ -182,7 +194,7 @@ Send appcasting (LG Cast) command: payload {cmd, service}; cmd values in Connect
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -203,13 +215,15 @@ Sources: [1](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/
 
 `luna://com.webos.service.appcasting/sendUIBCEvent`
 
-Method on com.webos.service.appcasting (introspected on-device; parameters undocumented).
+Sends the UIBC event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.appcasting/sendUIBCEvent '{}'

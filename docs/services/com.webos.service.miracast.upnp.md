@@ -1,26 +1,30 @@
 # `com.webos.service.miracast.upnp`
 
+UPnP helper for Miracast, exposing only open and close. Narrow role supporting Miracast screen mirroring. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | private |  | network | Method on com.webos.service.miracast.upnp (from on-device permission registry; parameters undocumented). |
-| [`open`](#open) | private |  | network | Method on com.webos.service.miracast.upnp (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | private |  | network | inferred | Closes the miracast upnp. |
+| [`open`](#open) | private |  | network | inferred | Opens the miracast upnp. |
 
 <a id="close"></a>
 ## `close`
 
 `luna://com.webos.service.miracast.upnp/close`
 
-Method on com.webos.service.miracast.upnp (from on-device permission registry; parameters undocumented).
+Closes the miracast upnp.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast.upnp/close '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.miracast.upnp/open`
 
-Method on com.webos.service.miracast.upnp (from on-device permission registry; parameters undocumented).
+Opens the miracast upnp.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.miracast.upnp/open '{}'

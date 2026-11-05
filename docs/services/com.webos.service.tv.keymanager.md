@@ -1,15 +1,17 @@
 # `com.webos.service.tv.keymanager`
 
+TV input-event service: injects key, keyboard and mouse events and lists events of interest. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`createKeyboardEvent`](#createkeyboardevent) | private |  | keys | Injects a keyboard event (LG key injection service) |
-| [`createKeyEvent`](#createkeyevent) | private |  | keys | Creates a key event (LG key injection) |
-| [`createMouseEvent`](#createmouseevent) | private |  | keys | Injects a mouse/pointer event (LG key injection service) |
-| [`listInterestingEvents`](#listinterestingevents) | ssap | yes | keys | List key events of interest (requires subscribe) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`createKeyboardEvent`](#createkeyboardevent) | private |  | keys | documented | Injects a keyboard event (LG key injection service) |
+| [`createKeyEvent`](#createkeyevent) | private |  | keys | documented | Creates a key event (LG key injection) |
+| [`createMouseEvent`](#createmouseevent) | private |  | keys | documented | Injects a mouse/pointer event (LG key injection service) |
+| [`listInterestingEvents`](#listinterestingevents) | ssap | yes | keys | documented | List key events of interest (requires subscribe) |
 
 <a id="createkeyboardevent"></a>
 ## `createKeyboardEvent`
@@ -22,7 +24,7 @@ Injects a keyboard event (LG key injection service)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.keymanager/createKeyboardEvent '{}'
@@ -43,7 +45,7 @@ Creates a key event (LG key injection)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS <5 per magic_mapper  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -69,7 +71,7 @@ Injects a mouse/pointer event (LG key injection service)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.keymanager/createMouseEvent '{}'
@@ -90,7 +92,7 @@ List key events of interest (requires subscribe)
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

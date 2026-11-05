@@ -1,26 +1,30 @@
 # `com.webos.service.opappmanager`
 
+Operator-app (OpApp) manager; exposes start and popup notification. Opaque/. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`notifyPopup`](#notifypopup) | private |  | apps | Method on com.webos.service.opappmanager (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | private |  | apps | Method on com.webos.service.opappmanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`notifyPopup`](#notifypopup) | private |  | apps | inferred | Notifies of the popup. |
+| [`start`](#start) | private |  | apps | inferred | Starts the opappmanager. |
 
 <a id="notifypopup"></a>
 ## `notifyPopup`
 
 `luna://com.webos.service.opappmanager/notifyPopup`
 
-Method on com.webos.service.opappmanager (from on-device permission registry; parameters undocumented).
+Notifies of the popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.opappmanager/notifyPopup '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.opappmanager/start`
 
-Method on com.webos.service.opappmanager (from on-device permission registry; parameters undocumented).
+Starts the opappmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.opappmanager/start '{}'

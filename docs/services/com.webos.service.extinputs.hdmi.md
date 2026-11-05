@@ -1,50 +1,54 @@
 # `com.webos.service.extinputs.hdmi`
 
+HDMI external-input service: opens/connects HDMI inputs and reports signal state, video/audio codec info, VRR, Dolby conflict status, and HDMI diagnostics/error history.
+
 26 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | private |  | input | Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`connect`](#connect) | private |  | input | Method on com.webos.service.extinputs.hdmi (from on-device permission registry; parameters undocumented). |
-| [`getCurrentAudioCodecType`](#getcurrentaudiocodectype) | private |  | audio | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getDolbyConflictStatus`](#getdolbyconflictstatus) | private |  | input | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getHDMIDiagnosticsInfo`](#gethdmidiagnosticsinfo) | private |  | input | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getHDMIErrorHistory`](#gethdmierrorhistory) | private |  | input | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getHDMIErrorHistoryCount`](#gethdmierrorhistorycount) | private |  | input | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getHDMIInfo`](#gethdmiinfo) | private |  | input | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getHDMISelfDiagnostics`](#gethdmiselfdiagnostics) | private |  | input | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getHDMIServiceDiagnosticsHistory`](#gethdmiservicediagnosticshistory) | private |  | input | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getMultiAudioOutType`](#getmultiaudioouttype) | private |  | audio | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getProperties`](#getproperties) | private |  | input | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getSignalState`](#getsignalstate) | private |  | input | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getVideoInfo`](#getvideoinfo) | private |  | input | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`getVRRInfo`](#getvrrinfo) | private |  | input | Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`open`](#open) | private |  | input | Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`pause`](#pause) | private |  | input | Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`pin`](#pin) | private |  | input | Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`resetHDMIErrorHistory`](#resethdmierrorhistory) | private |  | input | Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). ⚠️ |
-| [`setAudioMute`](#setaudiomute) | private |  | audio | Setter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`setMultiAudioOutType`](#setmultiaudioouttype) | private |  | audio | Setter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | input | Setter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`setProperties`](#setproperties) | private |  | input | Setter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`status`](#status) | private |  | input | Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`stop`](#stop) | private |  | input | Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
-| [`switchExternalInput`](#switchexternalinput) | private |  | input | Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | private |  | input | inferred | Closes the extinputs HDMI. |
+| [`connect`](#connect) | private |  | input | inferred | Connects the extinputs HDMI. |
+| [`getCurrentAudioCodecType`](#getcurrentaudiocodectype) | private |  | audio | inferred | Returns the current audio codec type. |
+| [`getDolbyConflictStatus`](#getdolbyconflictstatus) | private |  | input | inferred | Returns the dolby conflict status. |
+| [`getHDMIDiagnosticsInfo`](#gethdmidiagnosticsinfo) | private |  | input | inferred | Returns the HDMI diagnostics info. |
+| [`getHDMIErrorHistory`](#gethdmierrorhistory) | private |  | input | inferred | Returns the HDMI error history. |
+| [`getHDMIErrorHistoryCount`](#gethdmierrorhistorycount) | private |  | input | inferred | Returns the HDMI error history count. |
+| [`getHDMIInfo`](#gethdmiinfo) | private |  | input | inferred | Returns the HDMI info. |
+| [`getHDMISelfDiagnostics`](#gethdmiselfdiagnostics) | private |  | input | inferred | Returns the HDMI self diagnostics. |
+| [`getHDMIServiceDiagnosticsHistory`](#gethdmiservicediagnosticshistory) | private |  | input | inferred | Returns the HDMI service diagnostics history. |
+| [`getMultiAudioOutType`](#getmultiaudioouttype) | private |  | audio | inferred | Returns the multi audio out type. |
+| [`getProperties`](#getproperties) | private |  | input | inferred | Returns the properties. |
+| [`getSignalState`](#getsignalstate) | private |  | input | inferred | Returns the signal state. |
+| [`getVideoInfo`](#getvideoinfo) | private |  | input | inferred | Returns the video info. |
+| [`getVRRInfo`](#getvrrinfo) | private |  | input | inferred | Returns the VRR info. |
+| [`open`](#open) | private |  | input | inferred | Opens the extinputs HDMI. |
+| [`pause`](#pause) | private |  | input | inferred | Pauses the extinputs HDMI. |
+| [`pin`](#pin) | private |  | input | inferred | Handles the pin. |
+| [`resetHDMIErrorHistory`](#resethdmierrorhistory) | private |  | input | inferred | Resets the HDMI error history. ⚠️ |
+| [`setAudioMute`](#setaudiomute) | private |  | audio | inferred | Sets the audio mute. |
+| [`setMultiAudioOutType`](#setmultiaudioouttype) | private |  | audio | inferred | Sets the multi audio out type. |
+| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | input | inferred | Sets the pipeline window ID. |
+| [`setProperties`](#setproperties) | private |  | input | inferred | Sets the properties. |
+| [`status`](#status) | private |  | input | inferred | Handles the status. |
+| [`stop`](#stop) | private |  | input | inferred | Stops the extinputs HDMI. |
+| [`switchExternalInput`](#switchexternalinput) | private |  | input | inferred | Switches the external input. |
 
 <a id="close"></a>
 ## `close`
 
 `luna://com.webos.service.extinputs.hdmi/close`
 
-Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Closes the extinputs HDMI.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/close '{}'
@@ -59,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/connect`
 
-Method on com.webos.service.extinputs.hdmi (from on-device permission registry; parameters undocumented).
+Connects the extinputs HDMI.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/connect '{}'
@@ -80,13 +86,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.extinputs.hdmi/getCurrentAudioCodecType`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the current audio codec type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getCurrentAudioCodecType '{}'
@@ -101,13 +109,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getDolbyConflictStatus`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the dolby conflict status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getDolbyConflictStatus '{}'
@@ -122,13 +132,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getHDMIDiagnosticsInfo`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the HDMI diagnostics info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getHDMIDiagnosticsInfo '{}'
@@ -143,13 +155,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getHDMIErrorHistory`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the HDMI error history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getHDMIErrorHistory '{}'
@@ -164,13 +178,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getHDMIErrorHistoryCount`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the HDMI error history count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getHDMIErrorHistoryCount '{}'
@@ -185,13 +201,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getHDMIInfo`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the HDMI info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getHDMIInfo '{}'
@@ -206,13 +224,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getHDMISelfDiagnostics`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the HDMI self diagnostics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getHDMISelfDiagnostics '{}'
@@ -227,13 +247,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getHDMIServiceDiagnosticsHistory`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the HDMI service diagnostics history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getHDMIServiceDiagnosticsHistory '{}'
@@ -248,13 +270,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getMultiAudioOutType`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the multi audio out type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getMultiAudioOutType '{}'
@@ -269,13 +293,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getProperties`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getProperties '{}'
@@ -290,13 +316,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getSignalState`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the signal state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getSignalState '{}'
@@ -311,13 +339,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getVideoInfo`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the video info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getVideoInfo '{}'
@@ -332,13 +362,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/getVRRInfo`
 
-Getter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Returns the VRR info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/getVRRInfo '{}'
@@ -353,13 +385,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/open`
 
-Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Opens the extinputs HDMI.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/open '{}'
@@ -374,13 +408,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/pause`
 
-Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Pauses the extinputs HDMI.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/pause '{}'
@@ -395,13 +431,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/pin`
 
-Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Handles the pin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/pin '{}'
@@ -416,13 +454,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/resetHDMIErrorHistory`
 
-Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Resets the HDMI error history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/resetHDMIErrorHistory '{}'
@@ -437,13 +477,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/setAudioMute`
 
-Setter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Sets the audio mute.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/setAudioMute '{}'
@@ -458,13 +500,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/setMultiAudioOutType`
 
-Setter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Sets the multi audio out type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/setMultiAudioOutType '{}'
@@ -479,13 +523,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/setPipelineWindowId`
 
-Setter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Sets the pipeline window ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/setPipelineWindowId '{}'
@@ -500,13 +546,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/setProperties`
 
-Setter on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Sets the properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/setProperties '{}'
@@ -521,13 +569,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/status`
 
-Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Handles the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/status '{}'
@@ -542,13 +592,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/stop`
 
-Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Stops the extinputs HDMI.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/stop '{}'
@@ -563,13 +615,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.hdmi/switchExternalInput`
 
-Method on com.webos.service.extinputs.hdmi (introspected on-device; parameters undocumented).
+Switches the external input.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.hdmi/switchExternalInput '{}'

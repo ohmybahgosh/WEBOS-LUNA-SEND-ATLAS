@@ -1,45 +1,49 @@
 # `com.palm.service.bugreport`
 
+Bug- and crash-reporting service: files bug and crash reports, enables/disables crash reporting and popups, and configures JIRA submission settings.
+
 21 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`disableCrashPopup`](#disablecrashpopup) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`disableCrashReporting`](#disablecrashreporting) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`doHeadlessBugReport`](#doheadlessbugreport) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`enableCrashPopup`](#enablecrashpopup) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`enableCrashReporting`](#enablecrashreporting) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`fileBugReport`](#filebugreport) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`fileCrashReport`](#filecrashreport) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`getBugReportingConfig`](#getbugreportingconfig) | public |  | settings | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`getCrashReportingJira`](#getcrashreportingjira) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`isCrashPopupEnabled`](#iscrashpopupenabled) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`isCrashReportingEnabled`](#iscrashreportingenabled) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`prepareBugReport`](#preparebugreport) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`removeCredential`](#removecredential) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`resetScreenshots`](#resetscreenshots) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setCrashReportingJira`](#setcrashreportingjira) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`signInToJira`](#signintojira) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`signOutFromJira`](#signoutfromjira) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`storeCredential`](#storecredential) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
-| [`takeScreenshot`](#takescreenshot) | public |  | system-info | Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`disableCrashPopup`](#disablecrashpopup) | public |  | system-info | inferred | Disables the crash popup. |
+| [`disableCrashReporting`](#disablecrashreporting) | public |  | system-info | inferred | Disables the crash reporting. |
+| [`doHeadlessBugReport`](#doheadlessbugreport) | public |  | system-info | inferred | Handles the do headless bug report. |
+| [`enableCrashPopup`](#enablecrashpopup) | public |  | system-info | inferred | Enables the crash popup. |
+| [`enableCrashReporting`](#enablecrashreporting) | public |  | system-info | inferred | Enables the crash reporting. |
+| [`fileBugReport`](#filebugreport) | public |  | system-info | inferred | Handles the file bug report. |
+| [`fileCrashReport`](#filecrashreport) | public |  | system-info | inferred | Handles the file crash report. |
+| [`getBugReportingConfig`](#getbugreportingconfig) | public |  | settings | inferred | Returns the bug reporting config. |
+| [`getCrashReportingJira`](#getcrashreportingjira) | public |  | system-info | inferred | Returns the crash reporting jira. |
+| [`info`](#info) | public |  | system-info | inferred | Handles the info. |
+| [`isCrashPopupEnabled`](#iscrashpopupenabled) | public |  | system-info | inferred | Reports whether the crash popup enabled is set. |
+| [`isCrashReportingEnabled`](#iscrashreportingenabled) | public |  | system-info | inferred | Reports whether the crash reporting enabled is set. |
+| [`prepareBugReport`](#preparebugreport) | public |  | system-info | inferred | Prepares the bug report. |
+| [`quit`](#quit) | public |  | system-info | inferred | Quits the bugreport. |
+| [`removeCredential`](#removecredential) | public |  | system-info | inferred | Removes the credential. ⚠️ |
+| [`resetScreenshots`](#resetscreenshots) | public |  | system-info | inferred | Resets the screenshots. ⚠️ |
+| [`setCrashReportingJira`](#setcrashreportingjira) | public |  | system-info | inferred | Sets the crash reporting jira. |
+| [`signInToJira`](#signintojira) | public |  | system-info | inferred | Signs the in to jira. |
+| [`signOutFromJira`](#signoutfromjira) | public |  | system-info | inferred | Signs the out from jira. |
+| [`storeCredential`](#storecredential) | public |  | system-info | inferred | Stores the credential. |
+| [`takeScreenshot`](#takescreenshot) | public |  | system-info | inferred | Handles the take screenshot. |
 
 <a id="disablecrashpopup"></a>
 ## `disableCrashPopup`
 
 `luna://com.palm.service.bugreport/disableCrashPopup`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Disables the crash popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/disableCrashPopup '{}'
@@ -54,13 +58,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/disableCrashReporting`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Disables the crash reporting.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/disableCrashReporting '{}'
@@ -75,13 +81,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/doHeadlessBugReport`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Handles the do headless bug report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/doHeadlessBugReport '{}'
@@ -96,13 +104,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/enableCrashPopup`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Enables the crash popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/enableCrashPopup '{}'
@@ -117,13 +127,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/enableCrashReporting`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Enables the crash reporting.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/enableCrashReporting '{}'
@@ -138,13 +150,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/fileBugReport`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Handles the file bug report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/fileBugReport '{}'
@@ -159,13 +173,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/fileCrashReport`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Handles the file crash report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/fileCrashReport '{}'
@@ -180,13 +196,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/getBugReportingConfig`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Returns the bug reporting config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/getBugReportingConfig '{}'
@@ -201,13 +219,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/getCrashReportingJira`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Returns the crash reporting jira.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/getCrashReportingJira '{}'
@@ -222,13 +242,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/info`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/info '{}'
@@ -243,13 +265,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/isCrashPopupEnabled`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Reports whether the crash popup enabled is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/isCrashPopupEnabled '{}'
@@ -264,13 +288,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/isCrashReportingEnabled`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Reports whether the crash reporting enabled is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/isCrashReportingEnabled '{}'
@@ -285,13 +311,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/prepareBugReport`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Prepares the bug report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/prepareBugReport '{}'
@@ -306,13 +334,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/quit`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Quits the bugreport.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/quit '{}'
@@ -327,13 +357,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/removeCredential`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Removes the credential.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/removeCredential '{}'
@@ -348,13 +380,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/resetScreenshots`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Resets the screenshots.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/resetScreenshots '{}'
@@ -369,13 +403,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/setCrashReportingJira`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Sets the crash reporting jira.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/setCrashReportingJira '{}'
@@ -390,13 +426,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/signInToJira`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Signs the in to jira.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/signInToJira '{}'
@@ -411,13 +449,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/signOutFromJira`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Signs the out from jira.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/signOutFromJira '{}'
@@ -432,13 +472,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/storeCredential`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Stores the credential.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/storeCredential '{}'
@@ -453,13 +495,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.bugreport/takeScreenshot`
 
-Method on com.palm.service.bugreport (from on-device permission registry; parameters undocumented).
+Handles the take screenshot.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.bugreport/takeScreenshot '{}'

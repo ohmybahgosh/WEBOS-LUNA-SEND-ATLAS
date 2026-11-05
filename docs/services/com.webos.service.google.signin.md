@@ -1,26 +1,30 @@
 # `com.webos.service.google.signin`
 
+Google sign-in helper; starts and stops the Google authentication flow. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`start`](#start) | private |  | misc | Method on com.webos.service.google.signin (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | private |  | misc | Method on com.webos.service.google.signin (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`start`](#start) | private |  | misc | inferred | Starts the google signin. |
+| [`stop`](#stop) | private |  | misc | inferred | Stops the google signin. |
 
 <a id="start"></a>
 ## `start`
 
 `luna://com.webos.service.google.signin/start`
 
-Method on com.webos.service.google.signin (from on-device permission registry; parameters undocumented).
+Starts the google signin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.google.signin/start '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.google.signin/stop`
 
-Method on com.webos.service.google.signin (from on-device permission registry; parameters undocumented).
+Stops the google signin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.google.signin/stop '{}'

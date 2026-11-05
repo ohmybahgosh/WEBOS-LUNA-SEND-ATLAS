@@ -1,14 +1,16 @@
 # `com.palm.location`
 
+Legacy location service: returns the current geographic position and configures GPS and auto-locate settings.
+
 3 methods.  Platforms seen: HP webOS, Palm.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getCurrentPosition`](#getcurrentposition) | root |  | location | Gets current position |
-| [`setAutoLocate`](#setautolocate) | root |  | location | Enables auto locate |
-| [`setUseGps`](#setusegps) | root |  | location | Enables GPS use |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getCurrentPosition`](#getcurrentposition) | root |  | location | documented | Gets current position |
+| [`setAutoLocate`](#setautolocate) | root |  | location | documented | Enables auto locate |
+| [`setUseGps`](#setusegps) | root |  | location | documented | Enables GPS use |
 
 <a id="getcurrentposition"></a>
 ## `getCurrentPosition`
@@ -21,7 +23,7 @@ Gets current position
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -46,7 +48,7 @@ Enables auto locate
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -69,7 +71,7 @@ Enables GPS use
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

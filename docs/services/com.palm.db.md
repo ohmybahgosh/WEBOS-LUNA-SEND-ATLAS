@@ -1,63 +1,67 @@
 # `com.palm.db`
 
+Legacy alias for the db8 JSON database (com.webos.service.db): stores and queries objects with find/get/del/batch, manages kinds, and compacts, dumps and backs up/restores the store.
+
 39 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`backupEpg`](#backupepg) | private |  | tv-broadcast | Method on com.palm.db (introspected on-device; parameters undocumented). |
-| [`batch`](#batch) | public |  | db | Executes multiple database operations in one request. |
-| [`cancelSearch`](#cancelsearch) | unknown |  | db | Stops the search operation mid-way. This method can be used when the search operation takes a long time to return results or required to sea |
-| [`compact`](#compact) | private |  | db | The compact method invokes the low level garbage collector. When DB8 executes a del operation without Purge:True param, it only marks the ob |
-| [`del`](#del) | public |  | db | Deletes JSON data objects. |
-| [`delKind`](#delkind) | public |  | db | Deletes a kind and ALL objects of that kind. |
-| [`dump`](#dump) | private |  | db | Backs up a database. The file created by the dump method typically contains JSON statements to recreate all of the Kinds and data of the dat |
-| [`find`](#find) | public | yes | db | Returns objects matching the query. |
-| [`get`](#get) | public |  | db | Retrieves objects by IDs (fastest retrieval). |
-| [`getProfile`](#getprofile) | unknown |  | db | Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time. |
-| [`internal/postBackup`](#internal_postbackup) | private |  | db | An internal DB8 method that is called when a backup operation has been completed. |
-| [`internal/postRestore`](#internal_postrestore) | private |  | db | An internal DB8 method that is called when the database finishes a restore process. |
-| [`internal/preBackup`](#internal_prebackup) | private |  | db | Invoked when an internal webOS service wants to restore a database from a backup file. |
-| [`internal/preRestore`](#internal_prerestore) | private |  | db | Used by the webOS service to correctly respond to a database restore command. This method must be called before restoring a database. |
-| [`internal/releaseAdminProfile`](#internal_releaseadminprofile) | private |  | db | For applications whose profiling is controlled by admin-privileged applications, this method relinquishes the profiling control from admin-p |
-| [`internal/scheduledBackup`](#internal_scheduledbackup) | private |  | db | Method on com.palm.db (introspected on-device; parameters undocumented). |
-| [`internal/scheduledPurge`](#internal_scheduledpurge) | private |  | db | An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that  |
-| [`internal/scheduledSpaceCheck`](#internal_scheduledspacecheck) | private |  | db | An internal DB8 callback method, that is called by the Activity Manager for checking available disk space. |
-| [`internal/spaceCheck`](#internal_spacecheck) | private |  | db | An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when  |
-| [`listActiveMedia`](#listactivemedia) | unknown |  | db | Returns a list of active attached media, and shards. |
-| [`load`](#load) | private |  | db | Restores a database from a dumped JSON file. ⚠️ |
-| [`merge`](#merge) | public |  | db | Updates properties of existing objects. |
-| [`mergePut`](#mergeput) | unknown |  | db | The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The o |
-| [`profile`](#profile) | unknown |  | db | Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profili |
-| [`purge`](#purge) | unknown |  | db | The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space chec ⚠️ |
-| [`purgeStatus`](#purgestatus) | unknown |  | db | The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were perm |
-| [`put`](#put) | public |  | db | Stores JSON objects of a kind. |
-| [`putKind`](#putkind) | public |  | db | Registers a kind with the database. |
-| [`putPermissions`](#putpermissions) | public |  | db | Grants other apps/services access to the app DB8 data. |
-| [`putQuotas`](#putquotas) | private |  | db | The putQuotas method provides the ability to update a quota's current service limits at runtime. This service is used by private webOS servi ⚠️ |
-| [`quotaStats`](#quotastats) | private |  | db | The quotaStats method returns information about a service's used limits. |
-| [`removeAppData`](#removeappdata) | unknown |  | db | The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified  ⚠️ |
-| [`reserveIds`](#reserveids) | public |  | db | Reserves a block of object IDs. |
-| [`search`](#search) | public | yes | db | Like find but supports the ? full-text operator. |
-| [`setShardMode`](#setshardmode) | unknown |  | db | Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by an |
-| [`shardInfo`](#shardinfo) | unknown |  | db | Retrieves the state of a shard, like shard activity, associated media devices, mount point. |
-| [`shardKind`](#shardkind) | public |  | db | Method on com.palm.db (introspected on-device; parameters undocumented). |
-| [`stats`](#stats) | unknown |  | db | The stats method returns detailed information about the storage space used by every service. |
-| [`watch`](#watch) | public | yes | db | Watches for updates that would change a query result. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`backupEpg`](#backupepg) | private |  | tv-broadcast | inferred | Backs up the EPG. |
+| [`batch`](#batch) | public |  | db | documented | Executes multiple database operations in one request. |
+| [`cancelSearch`](#cancelsearch) | unknown |  | db | documented | Stops the search operation mid-way. This method can be used when the search operation takes a long time to return results or required to sea |
+| [`compact`](#compact) | private |  | db | documented | The compact method invokes the low level garbage collector. When DB8 executes a del operation without Purge:True param, it only marks the ob |
+| [`del`](#del) | public |  | db | documented | Deletes JSON data objects. |
+| [`delKind`](#delkind) | public |  | db | documented | Deletes a kind and ALL objects of that kind. |
+| [`dump`](#dump) | private |  | db | documented | Backs up a database. The file created by the dump method typically contains JSON statements to recreate all of the Kinds and data of the dat |
+| [`find`](#find) | public | yes | db | documented | Returns objects matching the query. |
+| [`get`](#get) | public |  | db | documented | Retrieves objects by IDs (fastest retrieval). |
+| [`getProfile`](#getprofile) | unknown |  | db | documented | Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time. |
+| [`internal/postBackup`](#internal_postbackup) | private |  | db | documented | An internal DB8 method that is called when a backup operation has been completed. |
+| [`internal/postRestore`](#internal_postrestore) | private |  | db | documented | An internal DB8 method that is called when the database finishes a restore process. |
+| [`internal/preBackup`](#internal_prebackup) | private |  | db | documented | Invoked when an internal webOS service wants to restore a database from a backup file. |
+| [`internal/preRestore`](#internal_prerestore) | private |  | db | documented | Used by the webOS service to correctly respond to a database restore command. This method must be called before restoring a database. |
+| [`internal/releaseAdminProfile`](#internal_releaseadminprofile) | private |  | db | documented | For applications whose profiling is controlled by admin-privileged applications, this method relinquishes the profiling control from admin-p |
+| [`internal/scheduledBackup`](#internal_scheduledbackup) | private |  | db | inferred | Handles the scheduled backup (internal) |
+| [`internal/scheduledPurge`](#internal_scheduledpurge) | private |  | db | documented | An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that  |
+| [`internal/scheduledSpaceCheck`](#internal_scheduledspacecheck) | private |  | db | documented | An internal DB8 callback method, that is called by the Activity Manager for checking available disk space. |
+| [`internal/spaceCheck`](#internal_spacecheck) | private |  | db | documented | An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when  |
+| [`listActiveMedia`](#listactivemedia) | unknown |  | db | documented | Returns a list of active attached media, and shards. |
+| [`load`](#load) | private |  | db | documented | Restores a database from a dumped JSON file. ⚠️ |
+| [`merge`](#merge) | public |  | db | documented | Updates properties of existing objects. |
+| [`mergePut`](#mergeput) | unknown |  | db | documented | The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The o |
+| [`profile`](#profile) | unknown |  | db | documented | Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profili |
+| [`purge`](#purge) | unknown |  | db | documented | The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space chec ⚠️ |
+| [`purgeStatus`](#purgestatus) | unknown |  | db | documented | The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were perm |
+| [`put`](#put) | public |  | db | documented | Stores JSON objects of a kind. |
+| [`putKind`](#putkind) | public |  | db | documented | Registers a kind with the database. |
+| [`putPermissions`](#putpermissions) | public |  | db | documented | Grants other apps/services access to the app DB8 data. |
+| [`putQuotas`](#putquotas) | private |  | db | documented | The putQuotas method provides the ability to update a quota's current service limits at runtime. This service is used by private webOS servi ⚠️ |
+| [`quotaStats`](#quotastats) | private |  | db | documented | The quotaStats method returns information about a service's used limits. |
+| [`removeAppData`](#removeappdata) | unknown |  | db | documented | The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified  ⚠️ |
+| [`reserveIds`](#reserveids) | public |  | db | documented | Reserves a block of object IDs. |
+| [`search`](#search) | public | yes | db | documented | Like find but supports the ? full-text operator. |
+| [`setShardMode`](#setshardmode) | unknown |  | db | documented | Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by an |
+| [`shardInfo`](#shardinfo) | unknown |  | db | documented | Retrieves the state of a shard, like shard activity, associated media devices, mount point. |
+| [`shardKind`](#shardkind) | public |  | db | inferred | Handles the shard kind. |
+| [`stats`](#stats) | unknown |  | db | documented | The stats method returns detailed information about the storage space used by every service. |
+| [`watch`](#watch) | public | yes | db | documented | Watches for updates that would change a query result. |
 
 <a id="backupepg"></a>
 ## `backupEpg`
 
 `luna://com.palm.db/backupEpg`
 
-Method on com.palm.db (introspected on-device; parameters undocumented).
+Backs up the EPG.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.db/backupEpg '{}'
@@ -101,7 +105,7 @@ Stops the search operation mid-way. This method can be used when the search oper
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -126,7 +130,7 @@ The compact method invokes the low level garbage collector. When DB8 executes a 
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.db/compact '{}'
@@ -197,7 +201,7 @@ Backs up a database. The file created by the dump method typically contains JSON
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -271,7 +275,7 @@ Get profiling data for applications. Profile data includes the queries made and 
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -297,7 +301,7 @@ An internal DB8 method that is called when a backup operation has been completed
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.db/internal/postBackup '{}'
@@ -318,7 +322,7 @@ An internal DB8 method that is called when the database finishes a restore proce
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -344,7 +348,7 @@ Invoked when an internal webOS service wants to restore a database from a backup
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -373,7 +377,7 @@ Used by the webOS service to correctly respond to a database restore command. Th
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -398,7 +402,7 @@ For applications whose profiling is controlled by admin-privileged applications,
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -417,13 +421,15 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 `luna://com.palm.db/internal/scheduledBackup`
 
-Method on com.palm.db (introspected on-device; parameters undocumented).
+Handles the scheduled backup (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.db/internal/scheduledBackup '{}'
@@ -444,7 +450,7 @@ An internal DB8 private method, used by activityManager . Activity manager perio
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -469,7 +475,7 @@ An internal DB8 callback method, that is called by the Activity Manager for chec
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -494,7 +500,7 @@ An internal DB8 private method, used by webOS private services. Services can sub
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.db/internal/spaceCheck '{}'
@@ -515,7 +521,7 @@ Returns a list of active attached media, and shards.
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.db/listActiveMedia '{}'
@@ -536,7 +542,7 @@ Restores a database from a dumped JSON file.
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -586,7 +592,7 @@ The mergePut method updates the properties of existing objects. If an object doe
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -613,7 +619,7 @@ Enables or disables DB8 profiling for an application. When enabled, profiling da
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -639,7 +645,7 @@ The purge method invokes the garbage collector. The purge method will: Remove al
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -664,7 +670,7 @@ The purgeStatus method returns the status of the last run purge command. If the 
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.db/purgeStatus '{}'
@@ -761,7 +767,7 @@ The putQuotas method provides the ability to update a quota's current service li
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -788,7 +794,7 @@ The quotaStats method returns information about a service's used limits.
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.db/quotaStats '{}'
@@ -809,7 +815,7 @@ The removeAppData method removes all data associated with the given owner. In ot
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -881,7 +887,7 @@ Marks an external media as transient for the specified DB8 shard Id. This means 
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -907,7 +913,7 @@ Retrieves the state of a shard, like shard activity, associated media devices, m
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -926,13 +932,15 @@ Sources: [1](https://github.com/webosose/db8/blob/master/files/sysbus/dynamic/co
 
 `luna://com.palm.db/shardKind`
 
-Method on com.palm.db (introspected on-device; parameters undocumented).
+Handles the shard kind.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.db/shardKind '{}'
@@ -953,7 +961,7 @@ The stats method returns detailed information about the storage space used by ev
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

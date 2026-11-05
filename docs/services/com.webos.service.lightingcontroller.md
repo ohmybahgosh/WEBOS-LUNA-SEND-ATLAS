@@ -1,28 +1,32 @@
 # `com.webos.service.lightingcontroller`
 
+Ambient/gaming LED lighting controller: reads the ambient and gaming LED MICOM microcontroller firmware versions and updates that firmware. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getAmbientLedMicomVersion`](#getambientledmicomversion) | public |  | power | Method on com.webos.service.lightingcontroller (from on-device permission registry; parameters undocumented). |
-| [`getGamingLedMicomVersion`](#getgamingledmicomversion) | public |  | power | Method on com.webos.service.lightingcontroller (from on-device permission registry; parameters undocumented). |
-| [`updateAmbientLedMicomFirmware`](#updateambientledmicomfirmware) | public |  | power | Method on com.webos.service.lightingcontroller (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`updateGamingLedMicomFirmware`](#updategamingledmicomfirmware) | public |  | power | Method on com.webos.service.lightingcontroller (from on-device permission registry; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getAmbientLedMicomVersion`](#getambientledmicomversion) | public |  | power | inferred | Returns the ambient LED MICOM version. |
+| [`getGamingLedMicomVersion`](#getgamingledmicomversion) | public |  | power | inferred | Returns the gaming LED MICOM version. |
+| [`updateAmbientLedMicomFirmware`](#updateambientledmicomfirmware) | public |  | power | inferred | Updates the ambient LED MICOM firmware. ⚠️ |
+| [`updateGamingLedMicomFirmware`](#updategamingledmicomfirmware) | public |  | power | inferred | Updates the gaming LED MICOM firmware. ⚠️ |
 
 <a id="getambientledmicomversion"></a>
 ## `getAmbientLedMicomVersion`
 
 `luna://com.webos.service.lightingcontroller/getAmbientLedMicomVersion`
 
-Method on com.webos.service.lightingcontroller (from on-device permission registry; parameters undocumented).
+Returns the ambient LED MICOM version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.lightingcontroller/getAmbientLedMicomVersion '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.lightingcontroller/getGamingLedMicomVersion`
 
-Method on com.webos.service.lightingcontroller (from on-device permission registry; parameters undocumented).
+Returns the gaming LED MICOM version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.lightingcontroller/getGamingLedMicomVersion '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.lightingcontroller/updateAmbientLedMicomFirmware`
 
-Method on com.webos.service.lightingcontroller (from on-device permission registry; parameters undocumented).
+Updates the ambient LED MICOM firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.lightingcontroller/updateAmbientLedMicomFirmware '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.lightingcontroller/updateGamingLedMicomFirmware`
 
-Method on com.webos.service.lightingcontroller (from on-device permission registry; parameters undocumented).
+Updates the gaming LED MICOM firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.lightingcontroller/updateGamingLedMicomFirmware '{}'

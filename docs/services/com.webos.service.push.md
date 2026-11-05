@@ -1,42 +1,46 @@
 # `com.webos.service.push`
 
+Push-notification service: registers apps and manages push tokens and receivers, relays messages to APNS/GCM providers, and controls per-app push acceptance. _(inferred from the service's methods)_
+
 18 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`createToken`](#createtoken) | public |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`deleteReceiver`](#deletereceiver) | private |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`deleteToken`](#deletetoken) | private |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`getPaStatus`](#getpastatus) | private |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`getPushServerURL`](#getpushserverurl) | public |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`getReceiver`](#getreceiver) | public |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`getReceiverStatus`](#getreceiverstatus) | public |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`getServiceOption`](#getserviceoption) | private |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`listApps`](#listapps) | private |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`registerApp`](#registerapp) | public |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`sendApnsMessageToProvider`](#sendapnsmessagetoprovider) | private |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`sendGcmMessageToProvider`](#sendgcmmessagetoprovider) | private |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`sendMessageToProvider`](#sendmessagetoprovider) | private |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`sendTokenToProvider`](#sendtokentoprovider) | private |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`setAcceptableStatus`](#setacceptablestatus) | public |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`setDeviceKey`](#setdevicekey) | private |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`setReceiverStatus`](#setreceiverstatus) | public |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
-| [`unregisterApp`](#unregisterapp) | public |  | network | Method on com.webos.service.push (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`createToken`](#createtoken) | public |  | network | inferred | Creates the token. |
+| [`deleteReceiver`](#deletereceiver) | private |  | network | inferred | Deletes the receiver. ⚠️ |
+| [`deleteToken`](#deletetoken) | private |  | network | inferred | Deletes the token. ⚠️ |
+| [`getPaStatus`](#getpastatus) | private |  | network | inferred | Returns the pa status. |
+| [`getPushServerURL`](#getpushserverurl) | public |  | network | inferred | Returns the push server URL. |
+| [`getReceiver`](#getreceiver) | public |  | network | inferred | Returns the receiver. |
+| [`getReceiverStatus`](#getreceiverstatus) | public |  | network | inferred | Returns the receiver status. |
+| [`getServiceOption`](#getserviceoption) | private |  | network | inferred | Returns the service option. |
+| [`listApps`](#listapps) | private |  | network | inferred | Lists the apps. |
+| [`registerApp`](#registerapp) | public |  | network | inferred | Registers the app. |
+| [`sendApnsMessageToProvider`](#sendapnsmessagetoprovider) | private |  | network | inferred | Sends the apns message to provider. |
+| [`sendGcmMessageToProvider`](#sendgcmmessagetoprovider) | private |  | network | inferred | Sends the gcm message to provider. |
+| [`sendMessageToProvider`](#sendmessagetoprovider) | private |  | network | inferred | Sends the message to provider. |
+| [`sendTokenToProvider`](#sendtokentoprovider) | private |  | network | inferred | Sends the token to provider. |
+| [`setAcceptableStatus`](#setacceptablestatus) | public |  | network | inferred | Sets the acceptable status. |
+| [`setDeviceKey`](#setdevicekey) | private |  | network | inferred | Sets the device key. |
+| [`setReceiverStatus`](#setreceiverstatus) | public |  | network | inferred | Sets the receiver status. |
+| [`unregisterApp`](#unregisterapp) | public |  | network | inferred | Unregisters the app. |
 
 <a id="createtoken"></a>
 ## `createToken`
 
 `luna://com.webos.service.push/createToken`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Creates the token.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/createToken '{}'
@@ -51,13 +55,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/deleteReceiver`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Deletes the receiver.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/deleteReceiver '{}'
@@ -72,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/deleteToken`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Deletes the token.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/deleteToken '{}'
@@ -93,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/getPaStatus`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Returns the pa status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/getPaStatus '{}'
@@ -114,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/getPushServerURL`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Returns the push server URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/getPushServerURL '{}'
@@ -135,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/getReceiver`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Returns the receiver.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/getReceiver '{}'
@@ -156,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/getReceiverStatus`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Returns the receiver status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/getReceiverStatus '{}'
@@ -177,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/getServiceOption`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Returns the service option.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/getServiceOption '{}'
@@ -198,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/listApps`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Lists the apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/listApps '{}'
@@ -219,13 +239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/registerApp`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Registers the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/registerApp '{}'
@@ -240,13 +262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/sendApnsMessageToProvider`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Sends the apns message to provider.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/sendApnsMessageToProvider '{}'
@@ -261,13 +285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/sendGcmMessageToProvider`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Sends the gcm message to provider.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/sendGcmMessageToProvider '{}'
@@ -282,13 +308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/sendMessageToProvider`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Sends the message to provider.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/sendMessageToProvider '{}'
@@ -303,13 +331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/sendTokenToProvider`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Sends the token to provider.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/sendTokenToProvider '{}'
@@ -324,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/setAcceptableStatus`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Sets the acceptable status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/setAcceptableStatus '{}'
@@ -345,13 +377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/setDeviceKey`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Sets the device key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/setDeviceKey '{}'
@@ -366,13 +400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/setReceiverStatus`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Sets the receiver status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/setReceiverStatus '{}'
@@ -387,13 +423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.push/unregisterApp`
 
-Method on com.webos.service.push (from on-device permission registry; parameters undocumented).
+Unregisters the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.push/unregisterApp '{}'

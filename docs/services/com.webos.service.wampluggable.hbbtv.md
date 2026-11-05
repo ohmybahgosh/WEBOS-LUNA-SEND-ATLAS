@@ -1,50 +1,54 @@
 # `com.webos.service.wampluggable.hbbtv`
 
+HbbTV (Hybrid Broadcast Broadband TV) service: manages HbbTV app lifecycle, reserves and releases broadcast resources, makes HTTP requests, and handles key sets, user agent and device ID. _(inferred from the service's methods)_
+
 26 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`debug`](#debug) | private |  | tv-broadcast | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`exitHbbtvApp`](#exithbbtvapp) | private |  | tv-broadcast | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`getAmStatus`](#getamstatus) | private |  | tv-broadcast | Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`getCurrBroadcastPipelineId`](#getcurrbroadcastpipelineid) | private |  | security | Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`getKeySetStatus`](#getkeysetstatus) | private |  | tv-broadcast | Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`getResourceClientStatus`](#getresourceclientstatus) | private |  | input | Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`getResourceStatus`](#getresourcestatus) | private |  | tv-broadcast | Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`getUserAgent`](#getuseragent) | private |  | tv-broadcast | Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`getUserAgentString`](#getuseragentstring) | private |  | bluetooth | Method on com.webos.service.wampluggable.hbbtv (from on-device permission registry; parameters undocumented). |
-| [`httpRequest`](#httprequest) | private |  | tv-broadcast | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`onAitxUserConfirm`](#onaitxuserconfirm) | private |  | tv-broadcast | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`onDeviceIdUserNotificationChanged`](#ondeviceidusernotificationchanged) | private |  | notifications | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`putKey`](#putkey) | private |  | tv-broadcast | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`registerResourceClient`](#registerresourceclient) | private |  | input | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`releaseResource`](#releaseresource) | private |  | tv-broadcast | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`reloadPage`](#reloadpage) | private |  | bluetooth | Method on com.webos.service.wampluggable.hbbtv (from on-device permission registry; parameters undocumented). |
-| [`reserveResource`](#reserveresource) | private |  | tv-broadcast | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`resetDeviceId`](#resetdeviceid) | private |  | tv-broadcast | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). ⚠️ |
-| [`resetDialConnection`](#resetdialconnection) | private |  | tv-broadcast | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). ⚠️ |
-| [`setAmLaunchMode`](#setamlaunchmode) | private |  | apps | Setter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`setHbbtvAppVisibility`](#sethbbtvappvisibility) | private |  | tv-broadcast | Setter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`setQueryOrganisations`](#setqueryorganisations) | private |  | tv-broadcast | Setter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`setResourcePriority`](#setresourcepriority) | private |  | tv-broadcast | Setter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`subscribeOipfAppLoadChange`](#subscribeoipfapploadchange) | private |  | tv-broadcast | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`test`](#test) | private |  | tv-broadcast | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
-| [`unregisterResourceClient`](#unregisterresourceclient) | private |  | input | Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`debug`](#debug) | private |  | tv-broadcast | inferred | Handles the debug. |
+| [`exitHbbtvApp`](#exithbbtvapp) | private |  | tv-broadcast | inferred | Exits the hbbtv app. |
+| [`getAmStatus`](#getamstatus) | private |  | tv-broadcast | inferred | Returns the am status. |
+| [`getCurrBroadcastPipelineId`](#getcurrbroadcastpipelineid) | private |  | security | inferred | Returns the curr broadcast pipeline ID. |
+| [`getKeySetStatus`](#getkeysetstatus) | private |  | tv-broadcast | inferred | Returns the key set status. |
+| [`getResourceClientStatus`](#getresourceclientstatus) | private |  | input | inferred | Returns the resource client status. |
+| [`getResourceStatus`](#getresourcestatus) | private |  | tv-broadcast | inferred | Returns the resource status. |
+| [`getUserAgent`](#getuseragent) | private |  | tv-broadcast | inferred | Returns the user agent. |
+| [`getUserAgentString`](#getuseragentstring) | private |  | bluetooth | inferred | Returns the user agent string. |
+| [`httpRequest`](#httprequest) | private |  | tv-broadcast | inferred | Handles the http request. |
+| [`onAitxUserConfirm`](#onaitxuserconfirm) | private |  | tv-broadcast | inferred | Event handler: fires on the aitx user confirm. |
+| [`onDeviceIdUserNotificationChanged`](#ondeviceidusernotificationchanged) | private |  | notifications | inferred | Event handler: fires on the device ID user notification changed. |
+| [`putKey`](#putkey) | private |  | tv-broadcast | inferred | Writes the key. |
+| [`registerResourceClient`](#registerresourceclient) | private |  | input | inferred | Registers the resource client. |
+| [`releaseResource`](#releaseresource) | private |  | tv-broadcast | inferred | Releases the resource. |
+| [`reloadPage`](#reloadpage) | private |  | bluetooth | inferred | Reloads the page. |
+| [`reserveResource`](#reserveresource) | private |  | tv-broadcast | inferred | Handles the reserve resource. |
+| [`resetDeviceId`](#resetdeviceid) | private |  | tv-broadcast | inferred | Resets the device ID. ⚠️ |
+| [`resetDialConnection`](#resetdialconnection) | private |  | tv-broadcast | inferred | Resets the dial connection. ⚠️ |
+| [`setAmLaunchMode`](#setamlaunchmode) | private |  | apps | inferred | Sets the am launch mode. |
+| [`setHbbtvAppVisibility`](#sethbbtvappvisibility) | private |  | tv-broadcast | inferred | Sets the hbbtv app visibility. |
+| [`setQueryOrganisations`](#setqueryorganisations) | private |  | tv-broadcast | inferred | Sets the query organisations. |
+| [`setResourcePriority`](#setresourcepriority) | private |  | tv-broadcast | inferred | Sets the resource priority. |
+| [`subscribeOipfAppLoadChange`](#subscribeoipfapploadchange) | private |  | tv-broadcast | inferred | Subscribes to the oipf app load change. |
+| [`test`](#test) | private |  | tv-broadcast | inferred | Tests the wampluggable hbbtv. |
+| [`unregisterResourceClient`](#unregisterresourceclient) | private |  | input | inferred | Unregisters the resource client. |
 
 <a id="debug"></a>
 ## `debug`
 
 `luna://com.webos.service.wampluggable.hbbtv/debug`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/debug '{}'
@@ -59,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/exitHbbtvApp`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Exits the hbbtv app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/exitHbbtvApp '{}'
@@ -80,13 +86,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/getAmStatus`
 
-Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Returns the am status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/getAmStatus '{}'
@@ -101,13 +109,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/getCurrBroadcastPipelineId`
 
-Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Returns the curr broadcast pipeline ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/getCurrBroadcastPipelineId '{}'
@@ -122,13 +132,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/getKeySetStatus`
 
-Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Returns the key set status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/getKeySetStatus '{}'
@@ -143,13 +155,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/getResourceClientStatus`
 
-Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Returns the resource client status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/getResourceClientStatus '{}'
@@ -164,13 +178,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/getResourceStatus`
 
-Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Returns the resource status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/getResourceStatus '{}'
@@ -185,13 +201,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/getUserAgent`
 
-Getter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Returns the user agent.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/getUserAgent '{}'
@@ -206,13 +224,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/getUserAgentString`
 
-Method on com.webos.service.wampluggable.hbbtv (from on-device permission registry; parameters undocumented).
+Returns the user agent string.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/getUserAgentString '{}'
@@ -227,13 +247,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wampluggable.hbbtv/httpRequest`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Handles the http request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/httpRequest '{}'
@@ -248,13 +270,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/onAitxUserConfirm`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Event handler: fires on the aitx user confirm.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/onAitxUserConfirm '{}'
@@ -269,13 +293,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/onDeviceIdUserNotificationChanged`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Event handler: fires on the device ID user notification changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/onDeviceIdUserNotificationChanged '{}'
@@ -290,13 +316,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/putKey`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Writes the key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/putKey '{}'
@@ -311,13 +339,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/registerResourceClient`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Registers the resource client.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/registerResourceClient '{}'
@@ -332,13 +362,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/releaseResource`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Releases the resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/releaseResource '{}'
@@ -353,13 +385,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/reloadPage`
 
-Method on com.webos.service.wampluggable.hbbtv (from on-device permission registry; parameters undocumented).
+Reloads the page.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/reloadPage '{}'
@@ -374,13 +408,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wampluggable.hbbtv/reserveResource`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Handles the reserve resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/reserveResource '{}'
@@ -395,13 +431,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/resetDeviceId`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Resets the device ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/resetDeviceId '{}'
@@ -416,13 +454,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/resetDialConnection`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Resets the dial connection.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/resetDialConnection '{}'
@@ -437,13 +477,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/setAmLaunchMode`
 
-Setter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Sets the am launch mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/setAmLaunchMode '{}'
@@ -458,13 +500,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/setHbbtvAppVisibility`
 
-Setter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Sets the hbbtv app visibility.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/setHbbtvAppVisibility '{}'
@@ -479,13 +523,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/setQueryOrganisations`
 
-Setter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Sets the query organisations.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/setQueryOrganisations '{}'
@@ -500,13 +546,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/setResourcePriority`
 
-Setter on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Sets the resource priority.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/setResourcePriority '{}'
@@ -521,13 +569,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/subscribeOipfAppLoadChange`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Subscribes to the oipf app load change.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/subscribeOipfAppLoadChange '{}'
@@ -542,13 +592,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/test`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Tests the wampluggable hbbtv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/test '{}'
@@ -563,13 +615,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.hbbtv/unregisterResourceClient`
 
-Method on com.webos.service.wampluggable.hbbtv (introspected on-device; parameters undocumented).
+Unregisters the resource client.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.hbbtv/unregisterResourceClient '{}'

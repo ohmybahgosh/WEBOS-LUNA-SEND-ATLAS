@@ -1,14 +1,16 @@
 # `com.webos.service.lowlevelstorage`
 
+Low-level key/value storage service exposing get/set data and shutdown. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getData`](#getdata) | private |  | storage | Reads low-level storage (factory/model DB) values by dbid and item name |
-| [`setData`](#setdata) | private |  | storage | Setter on com.webos.service.lowlevelstorage (introspected on-device; parameters undocumented). |
-| [`shutdown`](#shutdown) | private |  | storage | Method on com.webos.service.lowlevelstorage (introspected on-device; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getData`](#getdata) | private |  | storage | documented | Reads low-level storage (factory/model DB) values by dbid and item name |
+| [`setData`](#setdata) | private |  | storage | inferred | Sets the data. |
+| [`shutdown`](#shutdown) | private |  | storage | inferred | Shuts down the lowlevelstorage. ⚠️ |
 
 <a id="getdata"></a>
 ## `getData`
@@ -21,7 +23,7 @@ Reads low-level storage (factory/model DB) values by dbid and item name
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -40,13 +42,15 @@ Sources: [1](https://github.com/webosbrew/webosbrew.github.io/blob/HEAD/src/view
 
 `luna://com.webos.service.lowlevelstorage/setData`
 
-Setter on com.webos.service.lowlevelstorage (introspected on-device; parameters undocumented).
+Sets the data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.lowlevelstorage/setData '{}'
@@ -61,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.lowlevelstorage/shutdown`
 
-Method on com.webos.service.lowlevelstorage (introspected on-device; parameters undocumented).
+Shuts down the lowlevelstorage.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.lowlevelstorage/shutdown '{}'

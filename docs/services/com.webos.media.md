@@ -1,176 +1,178 @@
 # `com.webos.media`
 
+Core media pipeline service: acquires and manages media resources and pipelines, attaches audio/video, reports buffering and playback timing, and changes resolution. Low-level backend for media playback.
+
 165 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`acbs`](#acbs) | unknown |  | media | Array of objects that gives details of media for foreground application (such as pipeline Id, playstate, position, etc.) |
-| [`acquire`](#acquire) | public |  | media | Requests resources from the mediaserver. Typical usage is to request the number of audio and video decoders or other hardware components use |
-| [`acquireComplete`](#acquirecomplete) | unknown |  | media | This event is invoked when the acquire request is performed and the result comes out. |
-| [`addResource`](#addresource) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`attach`](#attach) | public |  | media | Allows to transfer the control of a pipeline to be handed over to a different client. When this occurs, the original client gets notified th |
-| [`audio`](#audio) | unknown |  | media | Set a audio information for either video and audio or audio only recording. |
-| [`audioInfo`](#audioinfo) | unknown |  | media | Provides information related to audio. |
-| [`bufferingEnd`](#bufferingend) | unknown |  | media | Indicates the pipeline is resuming playback after filling buffers. |
-| [`bufferingStart`](#bufferingstart) | unknown |  | media | Indicates the pipeline is temporarily pausing playback internally in order to buffer more data. |
-| [`bufferRange`](#bufferrange) | unknown |  | media | Indicates the buffering range of the particular media content. It is raised multiple times when specific media is loaded. |
-| [`changeResolution`](#changeresolution) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`closeAllConnections`](#closeallconnections) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`closeMediaPipeline`](#closemediapipeline) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`contentReady`](#contentready) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
-| [`currentTime`](#currenttime) | unknown |  | media | The currentTime event is raised multiple times when a specific media is playing. It indicates the progress of the media being played and pro |
-| [`detached`](#detached) | unknown |  | media | The detached event is raised when a specific media has been detached from the client by another client attaching to the corresponding pipeli |
-| [`display_attr`](#display_attr) | unknown |  | media | Provides detailed information for display resource. |
-| [`downSubLevel`](#downsublevel) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`enableDebug`](#enabledebug) | private |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
-| [`endOfStream`](#endofstream) | unknown |  | media | The endOfStream event is raised when a specific media has received all of its data. |
-| [`error`](#error) | unknown |  | media | The error event reports errors thrown by pipelines. |
-| [`exit`](#exit) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`focus`](#focus) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
-| [`frameRate`](#framerate) | unknown |  | media | Provides information about the number of frames per second at which the video is being played. It is represented as a combination of numerat |
-| [`getActivePipelines`](#getactivepipelines) | public |  | media | Gets JSON formatted output of currently active media pipelines. Note: Typically, a luna methods returns a JSON object as response. However,  |
-| [`getDisplayId`](#getdisplayid) | public |  | media | Gets information about the display on which the specified application instance is launched. Note: This method supports multi-screen playback |
-| [`getForegroundAppInfo`](#getforegroundappinfo) | public | yes | media | Provides the application's foreground information. |
-| [`getPipelineState`](#getpipelinestate) | public |  | media | Requests the media server to retrieve pipeline state information. |
-| [`getProidiomDiag`](#getproidiomdiag) | private |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
-| [`getResourceList`](#getresourcelist) | public |  | media | Getter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`image`](#image) | unknown |  | media | Set a image information for snapshot a image. |
-| [`keepAlive`](#keepalive) | public |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
-| [`kill`](#kill) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`load`](#load) | public |  | media | Loads a new pipeline for the specified URI. The media server returns a unique id to the client which is used for subsequent operations on th |
-| [`loadCompleted`](#loadcompleted) | unknown |  | media | The loadCompleted event is raised when a specific media pipeline has been successfully loaded. |
-| [`logPipelineState`](#logpipelinestate) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`mediaId`](#mediaid) | unknown |  | media | Unique identifier of the loaded media/camera pipeline. |
-| [`mediaPipelines`](#mediapipelines) | unknown |  | media | Contains the AppID-PID mapping of the currently running pipelines. Returns an empty array if no pipelines associated with any applications.  |
-| [`notifyActivity`](#notifyactivity) | public |  | media | Notifies the media server that the specific pipeline is currently in use. This command raises the timestamp record of the corresponding pipe |
-| [`notifyAppLifeStatus`](#notifyapplifestatus) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`notifyBackground`](#notifybackground) | public |  | media | Marks a pipeline as background. This API is called when the media object in question is carded, deleted, or otherwise removed from view. Not |
-| [`notifyDelay`](#notifydelay) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`notifyFocus`](#notifyfocus) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`notifyForeground`](#notifyforeground) | public |  | media | Marks a pipeline as foreground. This API is called when the media object in question is un-carded and made visible. Note: Foreground pipelin |
-| [`notifyMultiviewControlMode`](#notifymultiviewcontrolmode) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`notifyPipelineStatus`](#notifypipelinestatus) | public |  | media | Notifies the playback status of media pipelines. |
-| [`option`](#option) | unknown |  | media | Provides parameters for pipeline's Information. |
-| [`pause`](#pause) | public |  | media | Requests the media server to pause the media object. |
-| [`paused`](#paused) | unknown |  | media | The paused event is raised when a specific media has been successfully paused. |
-| [`pauseRecord`](#pauserecord) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`payload`](#payload) | unknown |  | media | Payload format used in load API. It represents the JSON payload object for a specific type of pipeline. |
-| [`play`](#play) | public |  | media | Requests the media server to play the media object. |
-| [`playing`](#playing) | unknown |  | media | The playing event is raised once, in response to the play method, when a specified media pipeline has transitioned into the playing state. |
-| [`policyAction`](#policyaction) | unknown |  | media | The policyAction event is invoked when the resources are short of quantity to playing new media content and request pipeline to release rega |
-| [`preload`](#preload) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`procUpdate`](#procupdate) | unknown |  | media | The procUpdate object value is an object of type: {"appId" : string, "exec" : bool, "pid" : number} where exec is true when a pipeline appid |
-| [`programs`](#programs) | unknown |  | media | Provides audio/video stream information. |
-| [`reacquire`](#reacquire) | public |  | media | Dynamically adds more resources to the pipeline. |
-| [`registerMedia`](#registermedia) | public |  | media | Media Content Provider (unmanaged) must register with Media Display Controller to allow proper management of video content and displays or a |
-| [`registerPipeline`](#registerpipeline) | public |  | media | Registers with the Resource Manager. Session is persistent across all start/end transaction and acquire/release cycles. Registered clients a |
-| [`release`](#release) | public |  | media | Informs media server the resources are released correctly and are not being used anymore. Note: This method is applicable for unmanaged pipe |
-| [`removeResource`](#removeresource) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). ⚠️ |
-| [`resetOwnerPipeline`](#resetownerpipeline) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). ⚠️ |
-| [`resetSubLevel`](#resetsublevel) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). ⚠️ |
-| [`ResourceDetails`](#resourcedetails) | unknown |  | media | Details of the resource. |
-| [`resources`](#resources) | unknown |  | media | Object of resource name, quantity, and index. Resources can hold more than one set of resource, quantity, and index. Example { "resources":  |
-| [`resources_new`](#resources_new) | unknown |  | media | Object indicating the new and old resource. |
-| [`ResponseObject`](#responseobject) | unknown |  | media | Provides a detailed description of the object. Limit to 2-3 paragraphs. |
-| [`resumeRecord`](#resumerecord) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`seek`](#seek) | public |  | media | Seeks the media object to a specified time position. |
-| [`seekDone`](#seekdone) | unknown |  | media | The seekDone event is raised when a seek operation for a media has been successfully completed. |
-| [`selectTrack`](#selecttrack) | unknown |  | media | Selects an audio or subtitle track of an open pipeline |
-| [`selectTrackByPreference`](#selecttrackbypreference) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`selectTrackByPreferencePayload`](#selecttrackbypreferencepayload) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setAppId`](#setappid) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setAppWindowType`](#setappwindowtype) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setAudioDualMono`](#setaudiodualmono) | public |  | audio | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setAudioMute`](#setaudiomute) | public |  | audio | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setAudioStreamPitch`](#setaudiostreampitch) | public |  | audio | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setClearKey`](#setclearkey) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setDebugLevel`](#setdebuglevel) | private |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setDebugLevelPipeline`](#setdebuglevelpipeline) | private |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setDefaultPrl`](#setdefaultprl) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setDescriptiveVideoService`](#setdescriptivevideoservice) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setDialogEnhancement`](#setdialogenhancement) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setDisplayWindow`](#setdisplaywindow) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
-| [`setDrmOperation`](#setdrmoperation) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setMaster`](#setmaster) | public |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
-| [`setMasterClock`](#setmasterclock) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setMediaStartTime`](#setmediastarttime) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setMediaStopTime`](#setmediastoptime) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setMediaSynchronizerControlTimestamp`](#setmediasynchronizercontroltimestamp) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setMediaSynchronizerOptions`](#setmediasynchronizeroptions) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setMpeghAudioConfig`](#setmpeghaudioconfig) | public |  | audio | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setOwnerPipeline`](#setownerpipeline) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setPipelineDebugState`](#setpipelinedebugstate) | private |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setPlayRate`](#setplayrate) | public |  | media | Sets the pipeline media play rate. |
-| [`setPriorityLevel`](#setprioritylevel) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setProperty`](#setproperty) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setPurpose`](#setpurpose) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setResourcePolicyExtraInfo`](#setresourcepolicyextrainfo) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSink`](#setsink) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSlave`](#setslave) | public |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
-| [`setSlaveClock`](#setslaveclock) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setStreamQuality`](#setstreamquality) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSubtitleBackgroundBlinking`](#setsubtitlebackgroundblinking) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSubtitleBackgroundColor`](#setsubtitlebackgroundcolor) | unknown |  | media | Sets subtitle background color for an open media pipeline |
-| [`setSubtitleBackgroundOpacity`](#setsubtitlebackgroundopacity) | unknown |  | media | Sets subtitle background opacity for an open media pipeline |
-| [`setSubtitleCharacterBlinking`](#setsubtitlecharacterblinking) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSubtitleCharacterColor`](#setsubtitlecharactercolor) | unknown |  | media | Sets subtitle character color (similar to setSubtitleColor, different values) for an open media pipeline |
-| [`setSubtitleCharacterEdge`](#setsubtitlecharacteredge) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSubtitleCharacterEdgeColor`](#setsubtitlecharacteredgecolor) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSubtitleCharacterFont`](#setsubtitlecharacterfont) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSubtitleCharacterFontSize`](#setsubtitlecharacterfontsize) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSubtitleCharacterOpacity`](#setsubtitlecharacteropacity) | unknown |  | media | Sets subtitle character opacity for an open media pipeline |
-| [`setSubtitleColor`](#setsubtitlecolor) | unknown |  | media | Sets subtitle color for an open media pipeline |
-| [`setSubtitleCustomStyleEnable`](#setsubtitlecustomstyleenable) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSubtitleEnable`](#setsubtitleenable) | unknown |  | media | Shows or hides subtitles for an open media pipeline |
-| [`setSubtitleEncoding`](#setsubtitleencoding) | unknown |  | media | Sets subtitle text encoding for an open media pipeline |
-| [`setSubtitleFontSize`](#setsubtitlefontsize) | unknown |  | media | Sets subtitle font size for an open media pipeline |
-| [`setSubtitlePosition`](#setsubtitleposition) | unknown |  | media | Sets subtitle vertical position for an open media pipeline |
-| [`setSubtitlePositionByPayload`](#setsubtitlepositionbypayload) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSubtitlePresentationMode`](#setsubtitlepresentationmode) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setSubtitleSource`](#setsubtitlesource) | unknown |  | media | Loads an external subtitle file for an open pipeline |
-| [`setSubtitleSync`](#setsubtitlesync) | unknown |  | media | Sets subtitle sync offset in milliseconds for an open media pipeline |
-| [`setSubtitleWindowColor`](#setsubtitlewindowcolor) | unknown |  | media | Sets subtitle window color for an open media pipeline |
-| [`setSubtitleWindowOpacity`](#setsubtitlewindowopacity) | unknown |  | media | Sets subtitle window opacity for an open media pipeline |
-| [`setUpdateInterval`](#setupdateinterval) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setUpdateIntervalKV`](#setupdateintervalkv) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setUri`](#seturi) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setVideoInfo`](#setvideoinfo) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
-| [`setVisibility`](#setvisibility) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
-| [`setVolume`](#setvolume) | public |  | media | Sets the volume for the specified media object. Additionally, it specifies the ease (fade-in and fade-out) properties for the media object. |
-| [`setWindowId`](#setwindowid) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`setXlinkResolution`](#setxlinkresolution) | public |  | media | Setter on com.webos.media (introspected on-device; parameters undocumented). |
-| [`sourceInfo`](#sourceinfo) | unknown |  | media | Provides information of the media that has just been loaded. Example { "sourceInfo": { "programs": [{ "audio_stream": 1, "video_stream": 1 } |
-| [`startCameraRecord`](#startcamerarecord) | public |  | media | Starts camera recording. Camera pipeline stores streamed data from the camera and microphone (if required) at the specified location. |
-| [`startRecord`](#startrecord) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`stopCameraRecord`](#stopcamerarecord) | public |  | media | Requests media server to stop camera recording and change to the preview state. |
-| [`stopRecord`](#stoprecord) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`subscribe`](#subscribe) | public | yes | media | Subscribes the media client to receive events from a media pipeline. These events, described in the tables above, allow the media client (ge |
-| [`switchToAutoLayout`](#switchtoautolayout) | public |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
-| [`switchToFullScreen`](#switchtofullscreen) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
-| [`takeCameraSnapshot`](#takecamerasnapshot) | public |  | media | Captures a frame from the camera preview. |
-| [`takeSnapshot`](#takesnapshot) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`testPipelineEvent`](#testpipelineevent) | private |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
-| [`trackAcquireResultInfo`](#trackacquireresultinfo) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`trackAppProcesses`](#trackappprocesses) | public | yes | media | Subscribes to messages containing the mapping of application ID (appID) and pipeline process ID (PID), i.e. it returns information about whi |
-| [`trackAppStatus`](#trackappstatus) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`trackPipelineInfo`](#trackpipelineinfo) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`trackPolicyActionInfo`](#trackpolicyactioninfo) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`trackResourcesStatus`](#trackresourcesstatus) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`tryAcquire`](#tryacquire) | public |  | media | Tries to acquire resources from mediaserver. Note: This API will not issue policyAction to other pipelines in order to force them to release |
-| [`unload`](#unload) | public |  | media | Unloads the pipeline and releases all AV resources. |
-| [`unloadCompleted`](#unloadcompleted) | unknown |  | media | The unloadCompleted event is raised when a specific media pipeline has been successfully unloaded. |
-| [`unregisterMedia`](#unregistermedia) | unknown |  | media | Registered in webOS OSE sysbus api.json (ACG group media); name only |
-| [`unregisterPipeline`](#unregisterpipeline) | public |  | media | Unregisters pipeline with Resource Manager. Note: This method is applicable to unmanaged pipelines only. |
-| [`unsubscribe`](#unsubscribe) | public |  | media | Unsubscribes from media pipeline related events. |
-| [`updateMetadata`](#updatemetadata) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`updatePeriodStart`](#updateperiodstart) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`updatePipelineStateEvent`](#updatepipelinestateevent) | public |  | media | Method on com.webos.media (from on-device permission registry; parameters undocumented). |
-| [`updateResource`](#updateresource) | private |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`upSubLevel`](#upsublevel) | public |  | media | Method on com.webos.media (introspected on-device; parameters undocumented). |
-| [`video`](#video) | unknown |  | media | Set a video information for either video and audio or video only recording. |
-| [`videoInfo`](#videoinfo) | unknown |  | media | Provides information related to video. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`acbs`](#acbs) | unknown |  | media | documented | Array of objects that gives details of media for foreground application (such as pipeline Id, playstate, position, etc.) |
+| [`acquire`](#acquire) | public |  | media | documented | Requests resources from the mediaserver. Typical usage is to request the number of audio and video decoders or other hardware components use |
+| [`acquireComplete`](#acquirecomplete) | unknown |  | media | documented | This event is invoked when the acquire request is performed and the result comes out. |
+| [`addResource`](#addresource) | private |  | media | inferred | Adds the resource. |
+| [`attach`](#attach) | public |  | media | documented | Allows to transfer the control of a pipeline to be handed over to a different client. When this occurs, the original client gets notified th |
+| [`audio`](#audio) | unknown |  | media | documented | Set a audio information for either video and audio or audio only recording. |
+| [`audioInfo`](#audioinfo) | unknown |  | media | documented | Provides information related to audio. |
+| [`bufferingEnd`](#bufferingend) | unknown |  | media | documented | Indicates the pipeline is resuming playback after filling buffers. |
+| [`bufferingStart`](#bufferingstart) | unknown |  | media | documented | Indicates the pipeline is temporarily pausing playback internally in order to buffer more data. |
+| [`bufferRange`](#bufferrange) | unknown |  | media | documented | Indicates the buffering range of the particular media content. It is raised multiple times when specific media is loaded. |
+| [`changeResolution`](#changeresolution) | public |  | media | inferred | Changes the resolution. |
+| [`closeAllConnections`](#closeallconnections) | private |  | media | inferred | Closes the all connections. |
+| [`closeMediaPipeline`](#closemediapipeline) | private |  | media | inferred | Closes the media pipeline. |
+| [`contentReady`](#contentready) | unknown |  | media | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`currentTime`](#currenttime) | unknown |  | media | documented | The currentTime event is raised multiple times when a specific media is playing. It indicates the progress of the media being played and pro |
+| [`detached`](#detached) | unknown |  | media | documented | The detached event is raised when a specific media has been detached from the client by another client attaching to the corresponding pipeli |
+| [`display_attr`](#display_attr) | unknown |  | media | documented | Provides detailed information for display resource. |
+| [`downSubLevel`](#downsublevel) | public |  | media | inferred | Handles the down sub level. |
+| [`enableDebug`](#enabledebug) | private |  | media | inferred | Enables the debug. |
+| [`endOfStream`](#endofstream) | unknown |  | media | documented | The endOfStream event is raised when a specific media has received all of its data. |
+| [`error`](#error) | unknown |  | media | documented | The error event reports errors thrown by pipelines. |
+| [`exit`](#exit) | public |  | media | inferred | Exits the media. |
+| [`focus`](#focus) | unknown |  | media | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`frameRate`](#framerate) | unknown |  | media | documented | Provides information about the number of frames per second at which the video is being played. It is represented as a combination of numerat |
+| [`getActivePipelines`](#getactivepipelines) | public |  | media | documented | Gets JSON formatted output of currently active media pipelines. Note: Typically, a luna methods returns a JSON object as response. However,  |
+| [`getDisplayId`](#getdisplayid) | public |  | media | documented | Gets information about the display on which the specified application instance is launched. Note: This method supports multi-screen playback |
+| [`getForegroundAppInfo`](#getforegroundappinfo) | public | yes | media | documented | Provides the application's foreground information. |
+| [`getPipelineState`](#getpipelinestate) | public |  | media | documented | Requests the media server to retrieve pipeline state information. |
+| [`getProidiomDiag`](#getproidiomdiag) | private |  | media | inferred | Returns the proidiom diag. |
+| [`getResourceList`](#getresourcelist) | public |  | media | inferred | Returns the resource list. |
+| [`image`](#image) | unknown |  | media | documented | Set a image information for snapshot a image. |
+| [`keepAlive`](#keepalive) | public |  | media | inferred | Handles the keep alive. |
+| [`kill`](#kill) | public |  | media | inferred | Handles the kill. |
+| [`load`](#load) | public |  | media | documented | Loads a new pipeline for the specified URI. The media server returns a unique id to the client which is used for subsequent operations on th |
+| [`loadCompleted`](#loadcompleted) | unknown |  | media | documented | The loadCompleted event is raised when a specific media pipeline has been successfully loaded. |
+| [`logPipelineState`](#logpipelinestate) | private |  | media | inferred | Handles the log pipeline state. |
+| [`mediaId`](#mediaid) | unknown |  | media | documented | Unique identifier of the loaded media/camera pipeline. |
+| [`mediaPipelines`](#mediapipelines) | unknown |  | media | documented | Contains the AppID-PID mapping of the currently running pipelines. Returns an empty array if no pipelines associated with any applications.  |
+| [`notifyActivity`](#notifyactivity) | public |  | media | documented | Notifies the media server that the specific pipeline is currently in use. This command raises the timestamp record of the corresponding pipe |
+| [`notifyAppLifeStatus`](#notifyapplifestatus) | public |  | media | inferred | Notifies of the app life status. |
+| [`notifyBackground`](#notifybackground) | public |  | media | documented | Marks a pipeline as background. This API is called when the media object in question is carded, deleted, or otherwise removed from view. Not |
+| [`notifyDelay`](#notifydelay) | private |  | media | inferred | Notifies of the delay. |
+| [`notifyFocus`](#notifyfocus) | public |  | media | inferred | Notifies of the focus. |
+| [`notifyForeground`](#notifyforeground) | public |  | media | documented | Marks a pipeline as foreground. This API is called when the media object in question is un-carded and made visible. Note: Foreground pipelin |
+| [`notifyMultiviewControlMode`](#notifymultiviewcontrolmode) | public |  | media | inferred | Notifies of the multiview control mode. |
+| [`notifyPipelineStatus`](#notifypipelinestatus) | public |  | media | documented | Notifies the playback status of media pipelines. |
+| [`option`](#option) | unknown |  | media | documented | Provides parameters for pipeline's Information. |
+| [`pause`](#pause) | public |  | media | documented | Requests the media server to pause the media object. |
+| [`paused`](#paused) | unknown |  | media | documented | The paused event is raised when a specific media has been successfully paused. |
+| [`pauseRecord`](#pauserecord) | public |  | media | inferred | Pauses the record. |
+| [`payload`](#payload) | unknown |  | media | documented | Payload format used in load API. It represents the JSON payload object for a specific type of pipeline. |
+| [`play`](#play) | public |  | media | documented | Requests the media server to play the media object. |
+| [`playing`](#playing) | unknown |  | media | documented | The playing event is raised once, in response to the play method, when a specified media pipeline has transitioned into the playing state. |
+| [`policyAction`](#policyaction) | unknown |  | media | documented | The policyAction event is invoked when the resources are short of quantity to playing new media content and request pipeline to release rega |
+| [`preload`](#preload) | public |  | media | inferred | Handles the preload. |
+| [`procUpdate`](#procupdate) | unknown |  | media | documented | The procUpdate object value is an object of type: {"appId" : string, "exec" : bool, "pid" : number} where exec is true when a pipeline appid |
+| [`programs`](#programs) | unknown |  | media | documented | Provides audio/video stream information. |
+| [`reacquire`](#reacquire) | public |  | media | documented | Dynamically adds more resources to the pipeline. |
+| [`registerMedia`](#registermedia) | public |  | media | documented | Media Content Provider (unmanaged) must register with Media Display Controller to allow proper management of video content and displays or a |
+| [`registerPipeline`](#registerpipeline) | public |  | media | documented | Registers with the Resource Manager. Session is persistent across all start/end transaction and acquire/release cycles. Registered clients a |
+| [`release`](#release) | public |  | media | documented | Informs media server the resources are released correctly and are not being used anymore. Note: This method is applicable for unmanaged pipe |
+| [`removeResource`](#removeresource) | private |  | media | inferred | Removes the resource. ⚠️ |
+| [`resetOwnerPipeline`](#resetownerpipeline) | public |  | media | inferred | Resets the owner pipeline. ⚠️ |
+| [`resetSubLevel`](#resetsublevel) | public |  | media | inferred | Resets the sub level. ⚠️ |
+| [`ResourceDetails`](#resourcedetails) | unknown |  | media | documented | Details of the resource. |
+| [`resources`](#resources) | unknown |  | media | documented | Object of resource name, quantity, and index. Resources can hold more than one set of resource, quantity, and index. Example { "resources":  |
+| [`resources_new`](#resources_new) | unknown |  | media | documented | Object indicating the new and old resource. |
+| [`ResponseObject`](#responseobject) | unknown |  | media | documented | Provides a detailed description of the object. Limit to 2-3 paragraphs. |
+| [`resumeRecord`](#resumerecord) | public |  | media | inferred | Resumes the record. |
+| [`seek`](#seek) | public |  | media | documented | Seeks the media object to a specified time position. |
+| [`seekDone`](#seekdone) | unknown |  | media | documented | The seekDone event is raised when a seek operation for a media has been successfully completed. |
+| [`selectTrack`](#selecttrack) | unknown |  | media | documented | Selects an audio or subtitle track of an open pipeline |
+| [`selectTrackByPreference`](#selecttrackbypreference) | public |  | media | inferred | Selects the track by preference. |
+| [`selectTrackByPreferencePayload`](#selecttrackbypreferencepayload) | public |  | media | inferred | Selects the track by preference payload. |
+| [`setAppId`](#setappid) | public |  | media | inferred | Sets the app ID. |
+| [`setAppWindowType`](#setappwindowtype) | public |  | media | inferred | Sets the app window type. |
+| [`setAudioDualMono`](#setaudiodualmono) | public |  | audio | inferred | Sets the audio dual mono. |
+| [`setAudioMute`](#setaudiomute) | public |  | audio | inferred | Sets the audio mute. |
+| [`setAudioStreamPitch`](#setaudiostreampitch) | public |  | audio | inferred | Sets the audio stream pitch. |
+| [`setClearKey`](#setclearkey) | public |  | media | inferred | Sets the clear key. |
+| [`setDebugLevel`](#setdebuglevel) | private |  | media | inferred | Sets the debug level. |
+| [`setDebugLevelPipeline`](#setdebuglevelpipeline) | private |  | media | inferred | Sets the debug level pipeline. |
+| [`setDefaultPrl`](#setdefaultprl) | public |  | media | inferred | Sets the default prl. |
+| [`setDescriptiveVideoService`](#setdescriptivevideoservice) | public |  | media | inferred | Sets the descriptive video service. |
+| [`setDialogEnhancement`](#setdialogenhancement) | public |  | media | inferred | Sets the dialog enhancement. |
+| [`setDisplayWindow`](#setdisplaywindow) | unknown |  | media | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`setDrmOperation`](#setdrmoperation) | public |  | media | inferred | Sets the DRM operation. |
+| [`setMaster`](#setmaster) | public |  | media | inferred | Sets the master. |
+| [`setMasterClock`](#setmasterclock) | public |  | media | inferred | Sets the master clock. |
+| [`setMediaStartTime`](#setmediastarttime) | public |  | media | inferred | Sets the media start time. |
+| [`setMediaStopTime`](#setmediastoptime) | public |  | media | inferred | Sets the media stop time. |
+| [`setMediaSynchronizerControlTimestamp`](#setmediasynchronizercontroltimestamp) | public |  | media | inferred | Sets the media synchronizer control timestamp. |
+| [`setMediaSynchronizerOptions`](#setmediasynchronizeroptions) | public |  | media | inferred | Sets the media synchronizer options. |
+| [`setMpeghAudioConfig`](#setmpeghaudioconfig) | public |  | audio | inferred | Sets the mpegh audio config. |
+| [`setOwnerPipeline`](#setownerpipeline) | public |  | media | inferred | Sets the owner pipeline. |
+| [`setPipelineDebugState`](#setpipelinedebugstate) | private |  | media | inferred | Sets the pipeline debug state. |
+| [`setPlayRate`](#setplayrate) | public |  | media | documented | Sets the pipeline media play rate. |
+| [`setPriorityLevel`](#setprioritylevel) | public |  | media | inferred | Sets the priority level. |
+| [`setProperty`](#setproperty) | public |  | media | inferred | Sets the property. |
+| [`setPurpose`](#setpurpose) | public |  | media | inferred | Sets the purpose. |
+| [`setResourcePolicyExtraInfo`](#setresourcepolicyextrainfo) | public |  | media | inferred | Sets the resource policy extra info. |
+| [`setSink`](#setsink) | public |  | media | inferred | Sets the sink. |
+| [`setSlave`](#setslave) | public |  | media | inferred | Sets the slave. |
+| [`setSlaveClock`](#setslaveclock) | public |  | media | inferred | Sets the slave clock. |
+| [`setStreamQuality`](#setstreamquality) | public |  | media | inferred | Sets the stream quality. |
+| [`setSubtitleBackgroundBlinking`](#setsubtitlebackgroundblinking) | public |  | media | inferred | Sets the subtitle background blinking. |
+| [`setSubtitleBackgroundColor`](#setsubtitlebackgroundcolor) | unknown |  | media | documented | Sets subtitle background color for an open media pipeline |
+| [`setSubtitleBackgroundOpacity`](#setsubtitlebackgroundopacity) | unknown |  | media | documented | Sets subtitle background opacity for an open media pipeline |
+| [`setSubtitleCharacterBlinking`](#setsubtitlecharacterblinking) | public |  | media | inferred | Sets the subtitle character blinking. |
+| [`setSubtitleCharacterColor`](#setsubtitlecharactercolor) | unknown |  | media | documented | Sets subtitle character color (similar to setSubtitleColor, different values) for an open media pipeline |
+| [`setSubtitleCharacterEdge`](#setsubtitlecharacteredge) | public |  | media | inferred | Sets the subtitle character edge. |
+| [`setSubtitleCharacterEdgeColor`](#setsubtitlecharacteredgecolor) | public |  | media | inferred | Sets the subtitle character edge color. |
+| [`setSubtitleCharacterFont`](#setsubtitlecharacterfont) | public |  | media | inferred | Sets the subtitle character font. |
+| [`setSubtitleCharacterFontSize`](#setsubtitlecharacterfontsize) | public |  | media | inferred | Sets the subtitle character font size. |
+| [`setSubtitleCharacterOpacity`](#setsubtitlecharacteropacity) | unknown |  | media | documented | Sets subtitle character opacity for an open media pipeline |
+| [`setSubtitleColor`](#setsubtitlecolor) | unknown |  | media | documented | Sets subtitle color for an open media pipeline |
+| [`setSubtitleCustomStyleEnable`](#setsubtitlecustomstyleenable) | public |  | media | inferred | Sets the subtitle custom style enable. |
+| [`setSubtitleEnable`](#setsubtitleenable) | unknown |  | media | documented | Shows or hides subtitles for an open media pipeline |
+| [`setSubtitleEncoding`](#setsubtitleencoding) | unknown |  | media | documented | Sets subtitle text encoding for an open media pipeline |
+| [`setSubtitleFontSize`](#setsubtitlefontsize) | unknown |  | media | documented | Sets subtitle font size for an open media pipeline |
+| [`setSubtitlePosition`](#setsubtitleposition) | unknown |  | media | documented | Sets subtitle vertical position for an open media pipeline |
+| [`setSubtitlePositionByPayload`](#setsubtitlepositionbypayload) | public |  | media | inferred | Sets the subtitle position by payload. |
+| [`setSubtitlePresentationMode`](#setsubtitlepresentationmode) | public |  | media | inferred | Sets the subtitle presentation mode. |
+| [`setSubtitleSource`](#setsubtitlesource) | unknown |  | media | documented | Loads an external subtitle file for an open pipeline |
+| [`setSubtitleSync`](#setsubtitlesync) | unknown |  | media | documented | Sets subtitle sync offset in milliseconds for an open media pipeline |
+| [`setSubtitleWindowColor`](#setsubtitlewindowcolor) | unknown |  | media | documented | Sets subtitle window color for an open media pipeline |
+| [`setSubtitleWindowOpacity`](#setsubtitlewindowopacity) | unknown |  | media | documented | Sets subtitle window opacity for an open media pipeline |
+| [`setUpdateInterval`](#setupdateinterval) | public |  | media | inferred | Sets the update interval. |
+| [`setUpdateIntervalKV`](#setupdateintervalkv) | public |  | media | inferred | Sets the update interval KV. |
+| [`setUri`](#seturi) | public |  | media | inferred | Sets the URI. |
+| [`setVideoInfo`](#setvideoinfo) | unknown |  | media | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`setVisibility`](#setvisibility) | unknown |  | media | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`setVolume`](#setvolume) | public |  | media | documented | Sets the volume for the specified media object. Additionally, it specifies the ease (fade-in and fade-out) properties for the media object. |
+| [`setWindowId`](#setwindowid) | public |  | media | inferred | Sets the window ID. |
+| [`setXlinkResolution`](#setxlinkresolution) | public |  | media | inferred | Sets the xlink resolution. |
+| [`sourceInfo`](#sourceinfo) | unknown |  | media | documented | Provides information of the media that has just been loaded. Example { "sourceInfo": { "programs": [{ "audio_stream": 1, "video_stream": 1 } |
+| [`startCameraRecord`](#startcamerarecord) | public |  | media | documented | Starts camera recording. Camera pipeline stores streamed data from the camera and microphone (if required) at the specified location. |
+| [`startRecord`](#startrecord) | public |  | media | inferred | Starts the record. |
+| [`stopCameraRecord`](#stopcamerarecord) | public |  | media | documented | Requests media server to stop camera recording and change to the preview state. |
+| [`stopRecord`](#stoprecord) | public |  | media | inferred | Stops the record. |
+| [`subscribe`](#subscribe) | public | yes | media | documented | Subscribes the media client to receive events from a media pipeline. These events, described in the tables above, allow the media client (ge |
+| [`switchToAutoLayout`](#switchtoautolayout) | public |  | media | inferred | Switches the to auto layout. |
+| [`switchToFullScreen`](#switchtofullscreen) | unknown |  | media | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`takeCameraSnapshot`](#takecamerasnapshot) | public |  | media | documented | Captures a frame from the camera preview. |
+| [`takeSnapshot`](#takesnapshot) | private |  | media | inferred | Handles the take snapshot. |
+| [`testPipelineEvent`](#testpipelineevent) | private |  | media | inferred | Tests the pipeline event. |
+| [`trackAcquireResultInfo`](#trackacquireresultinfo) | private |  | media | inferred | Handles the track acquire result info. |
+| [`trackAppProcesses`](#trackappprocesses) | public | yes | media | documented | Subscribes to messages containing the mapping of application ID (appID) and pipeline process ID (PID), i.e. it returns information about whi |
+| [`trackAppStatus`](#trackappstatus) | private |  | media | inferred | Handles the track app status. |
+| [`trackPipelineInfo`](#trackpipelineinfo) | public |  | media | inferred | Handles the track pipeline info. |
+| [`trackPolicyActionInfo`](#trackpolicyactioninfo) | private |  | media | inferred | Handles the track policy action info. |
+| [`trackResourcesStatus`](#trackresourcesstatus) | private |  | media | inferred | Handles the track resources status. |
+| [`tryAcquire`](#tryacquire) | public |  | media | documented | Tries to acquire resources from mediaserver. Note: This API will not issue policyAction to other pipelines in order to force them to release |
+| [`unload`](#unload) | public |  | media | documented | Unloads the pipeline and releases all AV resources. |
+| [`unloadCompleted`](#unloadcompleted) | unknown |  | media | documented | The unloadCompleted event is raised when a specific media pipeline has been successfully unloaded. |
+| [`unregisterMedia`](#unregistermedia) | unknown |  | media | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
+| [`unregisterPipeline`](#unregisterpipeline) | public |  | media | documented | Unregisters pipeline with Resource Manager. Note: This method is applicable to unmanaged pipelines only. |
+| [`unsubscribe`](#unsubscribe) | public |  | media | documented | Unsubscribes from media pipeline related events. |
+| [`updateMetadata`](#updatemetadata) | public |  | media | inferred | Updates the metadata. |
+| [`updatePeriodStart`](#updateperiodstart) | public |  | media | inferred | Updates the period start. |
+| [`updatePipelineStateEvent`](#updatepipelinestateevent) | public |  | media | inferred | Updates the pipeline state event. |
+| [`updateResource`](#updateresource) | private |  | media | inferred | Updates the resource. |
+| [`upSubLevel`](#upsublevel) | public |  | media | inferred | Handles the up sub level. |
+| [`video`](#video) | unknown |  | media | documented | Set a video information for either video and audio or video only recording. |
+| [`videoInfo`](#videoinfo) | unknown |  | media | documented | Provides information related to video. |
 
 <a id="acbs"></a>
 ## `acbs`
@@ -211,6 +213,13 @@ Requests resources from the mediaserver. Typical usage is to request the number 
 | `resources` | String (required) Resource information. Note: Resources information must be provided as a stringified form of the "resources" object array. |
 | `connectionId` | String (required) Indicates the unique identifier of the pipeline to acquire resources. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/acquire '{ "resources": "[{\"resource\":\"DISP0\",\"qty\":1}, {\"resource\":\"VDEC\",\"qty\":1},{\"resource\":\"ADEC\",\"qty\":1}]", "connectionId": "_UZRkgE3EJgXvwl" }
 ```
@@ -245,13 +254,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/addResource`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Adds the resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/addResource '{}'
@@ -277,6 +288,14 @@ Allows to transfer the control of a pipeline to be handed over to a different cl
 | Param | Type / notes |
 |---|---|
 | `mediaId` | String (required) Indicates the unique identifier of the loaded media/camera pipeline. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the operation Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+| `mediaId` | String (optional) Indicates the unique identifier of the loaded media pipeline which is requested to subscribe. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/attach '{ "mediaId":"_IsGbw614gu7xRB" }
@@ -396,13 +415,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/changeResolution`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Changes the resolution.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/changeResolution '{}'
@@ -417,13 +438,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/closeAllConnections`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Closes the all connections.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/closeAllConnections '{}'
@@ -438,13 +461,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/closeMediaPipeline`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Closes the media pipeline.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/closeMediaPipeline '{}'
@@ -465,7 +490,7 @@ Registered in webOS OSE sysbus api.json (ACG group media); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/contentReady '{}'
@@ -543,13 +568,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/downSubLevel`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Handles the down sub level.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/downSubLevel '{}'
@@ -564,13 +591,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/enableDebug`
 
-Method on com.webos.media (from on-device permission registry; parameters undocumented).
+Enables the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/enableDebug '{}'
@@ -627,13 +656,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/exit`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Exits the media.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/exit '{}'
@@ -654,7 +685,7 @@ Registered in webOS OSE sysbus api.json (ACG group media); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/focus '{}'
@@ -702,6 +733,27 @@ Gets JSON formatted output of currently active media pipelines. Note: Typically,
 |---|---|
 | `mediaId` | String (optional) Indicates unique identifier of the media object. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `Id` | String (optional) Indicates unique identifier of the media object. |
+| `type` | String (optional) Indicates the type of media. |
+| `pid` | Number (int16\_t) (optional) Indicates the process id of media content provider. |
+| `is\_managed` | Boolean (optional) Indicates whether media Content Provider is a managed pipeline or not. - true: Managed - false: Not managed |
+| `is\_foreground` | Boolean (optional) Indicates whether media object is currently in the foreground or not - true: Media object is currently in the foreground - false: Media object is currently in the background |
+| `mediaState` | String (optional) Indicates the current state of Media Content Provider. Possible values are: - MEDIA\_LOAD: Media is loaded and ready to play. - MEDIA\_UNLOAD: Media is unloaded. - MEDIA\_PLAY: Media is currently in play state. - MEDIA\_PAUSE: Media is in pause state. - MEDIA\_STOP: Media is in sto |
+| `policy\_state` | Boolean (optional) Media is currently selected for Resource Management Policy Action and is in suspended state |
+| `uri` | String (optional) Indicate the uri of media object. |
+| `appId` | String (optional) Indicates the application id of application using media object. |
+| `processState` | String (optional) Indicates the status of the media content provider process. Possible values are: - PIPELINE\_STARTING: Media pipeline is starting but currently unable to process or respond to commands. - PIPELINE\_RESTARTING: Media pipeline is being restarted due to crash recovery or resume from R |
+| `is\_focus` | String (optional) Indicates that the media object is currently selected for focus. Note: Focus is not the same thing as "visible". |
+| `timestamp` | String (optional) Indicates the timestamp of the last activity on Media Content Provider pipeline. Pipeline activity is used to adjust the Resource Manager Policy Action Candidate Selection Policy. Events which update pipeline activity are: - PLAY - SEEK - LOAD - notifyForeground - notifyActivity |
+| `resources` | Object array: resources (required) See "resources" object. |
+| `mediaId` | String (optional) Indicates mediaId of the object. |
+| `errorCode` | Number (optional) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/getActivePipelines '{}
 ```
@@ -727,6 +779,14 @@ Gets information about the display on which the specified application instance i
 |---|---|
 | `instanceId` | String (required) Indicates the unique identifier of the application instance. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `displayId` | Number (optional) Indicates the identifier of the display used. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/getDisplayId '{"instanceId": "9582089b-3a1c-4a37-acf8-83df8d1b6eec0"}
 ```
@@ -746,11 +806,18 @@ Provides the application's foreground information.
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
 | `subscribe` | bool |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` | String (required) Indicates the application ID (appId). |
+| `acbs` | Object array: acbs (required) Contains an array of objects that gives details of the media. (pipeline ID, playstate, position and so on) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/getForegroundAppInfo '{}
@@ -777,6 +844,15 @@ Requests the media server to retrieve pipeline state information.
 |---|---|
 | `mediaId` | String (required) Indicates the unique identifier of the loaded media/camera pipeline. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the operation. Returns 0 when the returnValue is true and returns '-1' if JSON parsing fails. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Returns "No Error" if there is no failure. |
+| `data` | String (optional) Pipeline state information. |
+| `mediaId` | String (optional) Media ID of the object. |
+
 ```sh
 luna-send -n 2 -f luna://com.webos.media/getPipelineState '{"mediaId":"_pwvgD9ivrcVkYV"}
 ```
@@ -790,13 +866,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/getProidiomDiag`
 
-Method on com.webos.media (from on-device permission registry; parameters undocumented).
+Returns the proidiom diag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/getProidiomDiag '{}'
@@ -811,13 +889,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.media/getResourceList`
 
-Getter on com.webos.media (introspected on-device; parameters undocumented).
+Returns the resource list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/getResourceList '{}'
@@ -853,13 +933,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/keepAlive`
 
-Method on com.webos.media (from on-device permission registry; parameters undocumented).
+Handles the keep alive.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/keepAlive '{}'
@@ -874,13 +956,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.media/kill`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Handles the kill.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/kill '{}'
@@ -908,6 +992,14 @@ Loads a new pipeline for the specified URI. The media server returns a unique id
 | `uri` | String (required) Indicates the uri of the media object. Example: http://mymovie.mp4, file://mymovie.mp4 |
 | `type` | String (required) Indicates the type of pipeline to load. Note: Currently, media playback pipeline is supported. The media server also supports run-time installation of additional pipelines which is outside the scope of this API document. type: "camera" is to preview the supported USB camera. type: "record" is to record and save video and audio, video or audio, and snapshots. Applications are reco |
 | `payload` | Object: payload (optional) See "payload" object. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the operation. Note: Currently, it returns '0' even when the returnValue is true and returns '-1' if JSON parsing fails. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+| `mediaId` | String (optional) Indicates the unique identifier of the loaded media/camera pipeline which is used for subsequent operations. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/load '{ "uri":"https://media.w3.org/2010/05/sintel/trailer.mp4", "type":"media", "payload":{ "option":{ "appId":"com.webos.app.enactbrowser", "windowId":"_Window_Id_2" } } }
@@ -943,13 +1035,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/logPipelineState`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Handles the log pipeline state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/logPipelineState '{}'
@@ -1018,6 +1112,13 @@ Notifies the media server that the specific pipeline is currently in use. This c
 |---|---|
 | `connectionId` | String (required) Indicates the unique identifier of the registered pipeline. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/notifyActivity '{"connectionId":"_EYv0VPazu3aGo0"}
 ```
@@ -1031,13 +1132,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/notifyAppLifeStatus`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Notifies of the app life status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/notifyAppLifeStatus '{}'
@@ -1064,6 +1167,13 @@ Marks a pipeline as background. This API is called when the media object in ques
 |---|---|
 | `connectionId` | String (required) Indicates the unique identifier of the registered pipeline. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/notifyBackground '{"connectionId":"_c5zE4w2k7rqmC5"}
 ```
@@ -1077,13 +1187,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/notifyDelay`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Notifies of the delay.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/notifyDelay '{}'
@@ -1098,13 +1210,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/notifyFocus`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Notifies of the focus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/notifyFocus '{}'
@@ -1131,6 +1245,13 @@ Marks a pipeline as foreground. This API is called when the media object in ques
 |---|---|
 | `connectionId` | String (required) Indicates the unique identifier of the registered pipeline. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/notifyForeground '{"connectionId":"_z6SJt11Yx0mVp1"}
 ```
@@ -1144,13 +1265,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/notifyMultiviewControlMode`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Notifies of the multiview control mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/notifyMultiviewControlMode '{}'
@@ -1225,6 +1348,14 @@ Requests the media server to pause the media object.
 |---|---|
 | `mediaId` | String (required) Indicates the unique identifier of the loaded media/camera pipeline. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the operation Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+| `mediaId` | String (optional) Indicates the unique identifier of the loaded media/camera pipeline which is requested to pause. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/pause '{ "mediaId":"_IsGbw614gu7xRB" }
 ```
@@ -1259,13 +1390,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/pauseRecord`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Pauses the record.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/pauseRecord '{}'
@@ -1312,6 +1445,14 @@ Requests the media server to play the media object.
 | Param | Type / notes |
 |---|---|
 | `mediaId` | String (required) Indicates the unique identifier of the loaded media/camera pipeline. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+| `mediaId` | String (optional) Indicates the unique identifier of the loaded media/camera pipeline which is requested to play. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/play '{"mediaId":"_IsGbw614gu7xRB"}
@@ -1368,13 +1509,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/preload`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Handles the preload.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/preload '{}'
@@ -1444,6 +1587,14 @@ Dynamically adds more resources to the pipeline.
 | `connectionId` | String (required) The unique identifier of the pipeline to add resources. |
 | `resources` | String (required) Resource list to be allocated. Note: Resources information must be provided as a stringified form of one of the following objects: resources (recommended) resources_new (supported to provide backward compatibility) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of this method for details. |
+| `mediaId` | String (optional) Indicates the unique identifier of the loaded media pipeline which is requested. Note: This parameter is returned only in error cases. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/reacquire '{ "connectionId": "_dqEYC2bXztCwsj", "resources":"{ \"new\":\"[{\\\"qty\\\":3,\\\"resource\\\":\\\"VDEC\\\"}]\", \"old\":\"[{\\\"index\\\":31,\\\"resource\\\":\\\"VDEC\\\"}]\"}" }
 ```
@@ -1469,6 +1620,14 @@ Media Content Provider (unmanaged) must register with Media Display Controller t
 |---|---|
 | `mediaId` | String (required) Unique identifier of the media object to be registered |
 | `appId` | String (required) Application ID |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+| `mediaId` | String (optional) Unique identifier of the media object registered |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/registerMedia '{"mediaId":"_IsGbw614gu7xRB", "appId":"com.webos.app.enactbrowser"}
@@ -1496,6 +1655,14 @@ Registers with the Resource Manager. Session is persistent across all start/end 
 | `type` | String (required) Indicates the type of pipeline to register. Possible values are: ref media sim |
 | `appId` | String (optional) Application ID Note : appId is required parameter for signage. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `connectionId` | String (required) Indicates the unique identifier of the registered pipeline. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/registerPipeline '{"type":"media"}
 ```
@@ -1522,6 +1689,13 @@ Informs media server the resources are released correctly and are not being used
 | `resources` | String (required) Resource information. Note: Resources information must be provided as a stringified form of the "resources" object array. |
 | `connectionId` | String (required) Indicates the unique identifier of the pipeline to release resources. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/release '{ "resources":"[{\"resource\":\"DISP0\",\"qty\":1,\"index\":3},{\"resource\":\"VDEC\",\"qty\":1,\"index\":3},{\"resource\":\"ADEC\",\"qty\":1,\"index\":3}}]", "connectionId":"_QY7tkX1XEfBct3" }
 ```
@@ -1535,13 +1709,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/removeResource`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Removes the resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/removeResource '{}'
@@ -1556,13 +1732,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/resetOwnerPipeline`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Resets the owner pipeline.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/resetOwnerPipeline '{}'
@@ -1577,13 +1755,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/resetSubLevel`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Resets the sub level.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/resetSubLevel '{}'
@@ -1682,13 +1862,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/resumeRecord`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Resumes the record.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/resumeRecord '{}'
@@ -1715,6 +1897,14 @@ Seeks the media object to a specified time position.
 |---|---|
 | `position` | Number (required) Indicates the position (in milliseconds) from the start position to seek position. |
 | `mediaId` | String (required) Indicates the unique identifier of the loaded media/camera pipeline. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+| `mediaId` | String (optional) Indicates the unique identifier of the loaded media pipeline which is requested to seek. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/seek '{ "position":64935, "mediaId":"_IsGbw614gu7xRB" }
@@ -1756,7 +1946,7 @@ Selects an audio or subtitle track of an open pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (unverified)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1777,13 +1967,15 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 `luna://com.webos.media/selectTrackByPreference`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Selects the track by preference.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/selectTrackByPreference '{}'
@@ -1798,13 +1990,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/selectTrackByPreferencePayload`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Selects the track by preference payload.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/selectTrackByPreferencePayload '{}'
@@ -1819,13 +2013,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setAppId`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the app ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setAppId '{}'
@@ -1840,13 +2036,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setAppWindowType`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the app window type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setAppWindowType '{}'
@@ -1861,13 +2059,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setAudioDualMono`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the audio dual mono.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setAudioDualMono '{}'
@@ -1882,13 +2082,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setAudioMute`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the audio mute.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setAudioMute '{}'
@@ -1903,13 +2105,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setAudioStreamPitch`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the audio stream pitch.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setAudioStreamPitch '{}'
@@ -1924,13 +2128,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setClearKey`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the clear key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setClearKey '{}'
@@ -1945,13 +2151,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setDebugLevel`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the debug level.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setDebugLevel '{}'
@@ -1966,13 +2174,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setDebugLevelPipeline`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the debug level pipeline.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setDebugLevelPipeline '{}'
@@ -1987,13 +2197,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setDefaultPrl`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the default prl.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setDefaultPrl '{}'
@@ -2008,13 +2220,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setDescriptiveVideoService`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the descriptive video service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setDescriptiveVideoService '{}'
@@ -2029,13 +2243,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setDialogEnhancement`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the dialog enhancement.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setDialogEnhancement '{}'
@@ -2056,7 +2272,7 @@ Registered in webOS OSE sysbus api.json (ACG group media); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setDisplayWindow '{}'
@@ -2071,13 +2287,15 @@ Sources: [1](https://github.com/webosose/umediaserver/blob/master/files/sysbus/c
 
 `luna://com.webos.media/setDrmOperation`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the DRM operation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setDrmOperation '{}'
@@ -2092,13 +2310,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setMaster`
 
-Method on com.webos.media (from on-device permission registry; parameters undocumented).
+Sets the master.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setMaster '{}'
@@ -2113,13 +2333,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.media/setMasterClock`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the master clock.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setMasterClock '{}'
@@ -2134,13 +2356,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setMediaStartTime`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the media start time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setMediaStartTime '{}'
@@ -2155,13 +2379,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setMediaStopTime`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the media stop time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setMediaStopTime '{}'
@@ -2176,13 +2402,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setMediaSynchronizerControlTimestamp`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the media synchronizer control timestamp.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setMediaSynchronizerControlTimestamp '{}'
@@ -2197,13 +2425,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setMediaSynchronizerOptions`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the media synchronizer options.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setMediaSynchronizerOptions '{}'
@@ -2218,13 +2448,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setMpeghAudioConfig`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the mpegh audio config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setMpeghAudioConfig '{}'
@@ -2239,13 +2471,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setOwnerPipeline`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the owner pipeline.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setOwnerPipeline '{}'
@@ -2260,13 +2494,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setPipelineDebugState`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the pipeline debug state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setPipelineDebugState '{}'
@@ -2295,6 +2531,14 @@ Sets the pipeline media play rate.
 | `mediaId` | String (required) Indicates the unique identifier for the requested loaded media pipeline. |
 | `audioOutput` | Boolean (required) Determine to mute audio |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+| `mediaId` | String (optional) Indicates the unique identifier of the media object. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setPlayRate '{ "playRate":2.0, "mediaId":"_QnGGXr7BdWsOV1", "audioOutput":true }
 ```
@@ -2308,13 +2552,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/setPriorityLevel`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the priority level.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setPriorityLevel '{}'
@@ -2329,13 +2575,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setProperty`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the property.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setProperty '{}'
@@ -2350,13 +2598,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setPurpose`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the purpose.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setPurpose '{}'
@@ -2371,13 +2621,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setResourcePolicyExtraInfo`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the resource policy extra info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setResourcePolicyExtraInfo '{}'
@@ -2392,13 +2644,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setSink`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the sink.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSink '{}'
@@ -2413,13 +2667,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setSlave`
 
-Method on com.webos.media (from on-device permission registry; parameters undocumented).
+Sets the slave.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSlave '{}'
@@ -2434,13 +2690,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.media/setSlaveClock`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the slave clock.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSlaveClock '{}'
@@ -2455,13 +2713,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setStreamQuality`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the stream quality.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setStreamQuality '{}'
@@ -2476,13 +2736,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setSubtitleBackgroundBlinking`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the subtitle background blinking.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSubtitleBackgroundBlinking '{}'
@@ -2503,7 +2765,7 @@ Sets subtitle background color for an open media pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2529,7 +2791,7 @@ Sets subtitle background opacity for an open media pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2549,13 +2811,15 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 `luna://com.webos.media/setSubtitleCharacterBlinking`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the subtitle character blinking.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSubtitleCharacterBlinking '{}'
@@ -2576,7 +2840,7 @@ Sets subtitle character color (similar to setSubtitleColor, different values) fo
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2596,13 +2860,15 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 `luna://com.webos.media/setSubtitleCharacterEdge`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the subtitle character edge.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSubtitleCharacterEdge '{}'
@@ -2617,13 +2883,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setSubtitleCharacterEdgeColor`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the subtitle character edge color.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSubtitleCharacterEdgeColor '{}'
@@ -2638,13 +2906,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setSubtitleCharacterFont`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the subtitle character font.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSubtitleCharacterFont '{}'
@@ -2659,13 +2929,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setSubtitleCharacterFontSize`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the subtitle character font size.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSubtitleCharacterFontSize '{}'
@@ -2686,7 +2958,7 @@ Sets subtitle character opacity for an open media pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2712,7 +2984,7 @@ Sets subtitle color for an open media pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2732,13 +3004,15 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 `luna://com.webos.media/setSubtitleCustomStyleEnable`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the subtitle custom style enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSubtitleCustomStyleEnable '{}'
@@ -2759,7 +3033,7 @@ Shows or hides subtitles for an open media pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2785,7 +3059,7 @@ Sets subtitle text encoding for an open media pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2811,7 +3085,7 @@ Sets subtitle font size for an open media pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2837,7 +3111,7 @@ Sets subtitle vertical position for an open media pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2857,13 +3131,15 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 `luna://com.webos.media/setSubtitlePositionByPayload`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the subtitle position by payload.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSubtitlePositionByPayload '{}'
@@ -2878,13 +3154,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setSubtitlePresentationMode`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the subtitle presentation mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setSubtitlePresentationMode '{}'
@@ -2905,7 +3183,7 @@ Loads an external subtitle file for an open pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (unverified)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2930,7 +3208,7 @@ Sets subtitle sync offset in milliseconds for an open media pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2956,7 +3234,7 @@ Sets subtitle window color for an open media pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -2982,7 +3260,7 @@ Sets subtitle window opacity for an open media pipeline
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 3.x-6+ (per gist; unverified per model)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -3002,13 +3280,15 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737)
 
 `luna://com.webos.media/setUpdateInterval`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the update interval.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setUpdateInterval '{}'
@@ -3023,13 +3303,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setUpdateIntervalKV`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the update interval KV.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setUpdateIntervalKV '{}'
@@ -3044,13 +3326,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setUri`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the URI.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setUri '{}'
@@ -3071,7 +3355,7 @@ Registered in webOS OSE sysbus api.json (ACG group media); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setVideoInfo '{}'
@@ -3092,7 +3376,7 @@ Registered in webOS OSE sysbus api.json (ACG group media); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setVisibility '{}'
@@ -3120,6 +3404,14 @@ Sets the volume for the specified media object. Additionally, it specifies the e
 | `mediaId` | String (required) Unique identifier of the media object. |
 | `volume` | Number (required) The volume to be set. Can be set to any value between 0 and 100. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+| `mediaId` | String (optional) Unique identifier of the media object. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setVolume '{"mediaId":"_IsGbw614gu7xRB","volume":60}
 ```
@@ -3133,13 +3425,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/setWindowId`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the window ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setWindowId '{}'
@@ -3154,13 +3448,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/setXlinkResolution`
 
-Setter on com.webos.media (introspected on-device; parameters undocumented).
+Sets the xlink resolution.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setXlinkResolution '{}'
@@ -3212,6 +3508,14 @@ Starts camera recording. Camera pipeline stores streamed data from the camera an
 | `audio` | Boolean (required) Indicates whether the audio data from the microphone also has to be recorded along with video. Possible values are: true : Include audio data along with video false: Does not include audio data along with video Note: For Signage, record with audio is not supported. |
 | `audioSrc` | String (required) Indicates the name of the microphone device from which the audio data has to be captured. Note: Supports only one audio source (pcm_input). |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. Note: errorCode always defaults to 0. Details of the error will be available in the logs. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. Note: errorText is always empty. Details of the error will be available in the logs. |
+| `mediaId` | String (required) Indicates the unique identifier of the camera pipeline. |
+
 ```sh
 luna-send -n 1 luna://com.webos.media/startCameraRecord '{ "mediaId" :"_5nxnM2Xiw55PYS" , "location":"/media/internal/", "format" :"MP4", "audio":false, "audioSrc":"pcm_input" }
 ```
@@ -3225,13 +3529,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/startRecord`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Starts the record.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/startRecord '{}'
@@ -3258,6 +3564,14 @@ Requests media server to stop camera recording and change to the preview state.
 |---|---|
 | `mediaId` | String (required) Indicates the unique identifier of the camera pipeline obtained using the load() API. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the failed operation. Note: errorCode always defaults to 0. Details of the error will be available in the logs. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: errorText is always empty. Details of the error will be available in the logs. |
+| `mediaId` | String (optional) Indicates the unique identifier of the camera pipeline. |
+
 ```sh
 luna-send -n 1 luna://com.webos.media/stopCameraRecord '{"mediaId":"_JtLZrGoEAoRa1d"}
 ```
@@ -3271,13 +3585,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/stopRecord`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Stops the record.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/stopRecord '{}'
@@ -3304,6 +3620,15 @@ Subscribes the media client to receive events from a media pipeline. These event
 |---|---|
 | `mediaId` | String (required) Indicates the unique identifier of the loaded media/camera pipeline. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the operation Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+| `mediaId` | String (optional) Indicates the unique identifier of the loaded media pipeline which is requested to subscribe. |
+| `subscription` | String (optional) Indicates the current subscription status. Possible values are: - true: Subscription is ON - false: Subscription is OFF. Note: This property is returned in a separate object from the returns object. |
+
 ```sh
 luna-send -n 2 -f luna://com.webos.media/subscribe '{"mediaId":"_rTNwzp81clPsxX"}
 ```
@@ -3317,13 +3642,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/switchToAutoLayout`
 
-Method on com.webos.media (from on-device permission registry; parameters undocumented).
+Switches the to auto layout.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/switchToAutoLayout '{}'
@@ -3344,7 +3671,7 @@ Registered in webOS OSE sysbus api.json (ACG group media); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/switchToFullScreen '{}'
@@ -3376,6 +3703,14 @@ Captures a frame from the camera preview.
 | `height` | Number (required) Indicates the height of the captured image in pixels. Note: Height should be within the range supported by the camera hardware. |
 | `pictureQuality` | Number (required) Indicates the percentage of the picture quality. Possible values are: 0-100 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the failed operation. Note: errorCode always defaults to 0. Details of the error will be available in the logs. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: errorText is always empty. Details of the error will be available in the logs. |
+| `mediaId` | String (optional) Indicates the unique identifier the camera pipeline. |
+
 ```sh
 luna-send -n 1 luna://com.webos.media/takeCameraSnapshot '{ "mediaId":"", "location":"/tmp/", "format":"jpg", "width":640, "height":480, "pictureQuality":30 }
 ```
@@ -3389,13 +3724,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/takeSnapshot`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Handles the take snapshot.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/takeSnapshot '{}'
@@ -3410,13 +3747,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/testPipelineEvent`
 
-Method on com.webos.media (from on-device permission registry; parameters undocumented).
+Tests the pipeline event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/testPipelineEvent '{}'
@@ -3431,13 +3770,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.media/trackAcquireResultInfo`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Handles the track acquire result info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/trackAcquireResultInfo '{}'
@@ -3460,6 +3801,13 @@ Subscribes to messages containing the mapping of application ID (appID) and pipe
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `mediaPipelines` | Object array: mediaPipelines (required) See "mediaPipelines" object. |
+| `subscription` | Boolean (required) Indicates the current subscription status. Possible values are: - true: Subscription is ON - false: Subscription is OFF Note: This property is returned in a separate object from the returns object. |
+
 ```sh
 luna-send -n 2 -f luna://com.webos.media/trackAppProcesses '{}
 ```
@@ -3473,13 +3821,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/trackAppStatus`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Handles the track app status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/trackAppStatus '{}'
@@ -3494,13 +3844,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/trackPipelineInfo`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Handles the track pipeline info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/trackPipelineInfo '{}'
@@ -3515,13 +3867,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/trackPolicyActionInfo`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Handles the track policy action info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/trackPolicyActionInfo '{}'
@@ -3536,13 +3890,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/trackResourcesStatus`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Handles the track resources status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/trackResourcesStatus '{}'
@@ -3570,6 +3926,13 @@ Tries to acquire resources from mediaserver. Note: This API will not issue polic
 | `resources` | String (required) Resource information. Note: Resources information must be provided as a stringified form of the "resources" object array. |
 | `connectionId` | String (required) Indicates the unique identifier of the pipeline to acquire resources. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 luna://com.webos.media/tryAcquire '{ "resources": "[{\"resource\":\"DISP0\",\"qty\":1},{\"resource\":\"VDEC\",\"qty\":1},{\"resource\":\"ADEC\",\"qty\":1}]", "connectionId": "_7P3y7e9AcPv8t1" }
 ```
@@ -3594,6 +3957,14 @@ Unloads the pipeline and releases all AV resources.
 | Param | Type / notes |
 |---|---|
 | `mediaId` | String (required) Indicates the unique identifier of the loaded media/camera pipeline. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | String (required) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+| `mediaId` | String (optional) Indicates the unique identifier of the loaded media/camera pipeline which is requested to unload. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/unload '{"mediaId":"_Pvzj2FRn42sL99"}
@@ -3635,7 +4006,7 @@ Registered in webOS OSE sysbus api.json (ACG group media); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/unregisterMedia '{}'
@@ -3662,6 +4033,14 @@ Unregisters pipeline with Resource Manager. Note: This method is applicable to u
 |---|---|
 | `connectionId` | String (required) Indicates the unique identifier of the pipeline to unregister. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+| `mediaId` | String (optional) Indicates the unique identifier of the loaded media pipeline which is requested. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/unregisterPipeline '{"connectionId":"_KXpMET1Sxc1eGO"}
 ```
@@ -3687,6 +4066,14 @@ Unsubscribes from media pipeline related events.
 |---|---|
 | `mediaId` | String (required) Indicates the unique identifier of the media object to unsubscribe. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+| `mediaId` | String (optional) Indicates the unique identifier of the loaded media pipeline requested to unsubscribe. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.media/unsubscribe '{"mediaId":"_gmkaR0OtGWxr6z"}
 ```
@@ -3700,13 +4087,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 `luna://com.webos.media/updateMetadata`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Updates the metadata.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/updateMetadata '{}'
@@ -3721,13 +4110,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/updatePeriodStart`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Updates the period start.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/updatePeriodStart '{}'
@@ -3742,13 +4133,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/updatePipelineStateEvent`
 
-Method on com.webos.media (from on-device permission registry; parameters undocumented).
+Updates the pipeline state event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/updatePipelineStateEvent '{}'
@@ -3763,13 +4156,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.media/updateResource`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Updates the resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/updateResource '{}'
@@ -3784,13 +4179,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.media/upSubLevel`
 
-Method on com.webos.media (introspected on-device; parameters undocumented).
+Handles the up sub level.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/upSubLevel '{}'

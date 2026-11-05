@@ -1,40 +1,44 @@
 # `com.webos.service.tvrm`
 
+TV resource manager: requests, releases and arbitrates tuner/pipeline resources through transactions, policy actions and foreground/background state, with a simulation mode. _(inferred from the service's methods)_
+
 16 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`beginTransaction`](#begintransaction) | private |  | tv-broadcast | Method on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`dbgFeature`](#dbgfeature) | private |  | tv-broadcast | Method on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`endTransaction`](#endtransaction) | private |  | tv-broadcast | Method on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`getResourceToRelease`](#getresourcetorelease) | private |  | tv-broadcast | Getter on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`getSimulationResult`](#getsimulationresult) | private |  | tv-broadcast | Getter on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`notifyBackground`](#notifybackground) | private |  | tv-broadcast | Method on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`notifyForeground`](#notifyforeground) | private |  | tv-broadcast | Method on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`policyActionEvent`](#policyactionevent) | private |  | misc | Method on com.webos.service.tvrm (from on-device permission registry; parameters undocumented). |
-| [`presetTuner`](#presettuner) | private |  | tv-broadcast | Method on com.webos.service.tvrm (introspected on-device; parameters undocumented). ⚠️ |
-| [`registerHandledResource`](#registerhandledresource) | private |  | tv-broadcast | Method on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`releaseResource`](#releaseresource) | private |  | tv-broadcast | Method on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`requestResource`](#requestresource) | private |  | tv-broadcast | Method on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`setPipelineState`](#setpipelinestate) | private |  | tv-broadcast | Setter on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`setSimulationMode`](#setsimulationmode) | private |  | tv-broadcast | Setter on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`simulateResource`](#simulateresource) | private |  | tv-broadcast | Method on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
-| [`updatePipelineInfo`](#updatepipelineinfo) | private |  | tv-broadcast | Method on com.webos.service.tvrm (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`beginTransaction`](#begintransaction) | private |  | tv-broadcast | inferred | Begins the transaction. |
+| [`dbgFeature`](#dbgfeature) | private |  | tv-broadcast | inferred | Debug: Handles the feature. |
+| [`endTransaction`](#endtransaction) | private |  | tv-broadcast | inferred | Handles the end transaction. |
+| [`getResourceToRelease`](#getresourcetorelease) | private |  | tv-broadcast | inferred | Returns the resource to release. |
+| [`getSimulationResult`](#getsimulationresult) | private |  | tv-broadcast | inferred | Returns the simulation result. |
+| [`notifyBackground`](#notifybackground) | private |  | tv-broadcast | inferred | Notifies of the background. |
+| [`notifyForeground`](#notifyforeground) | private |  | tv-broadcast | inferred | Notifies of the foreground. |
+| [`policyActionEvent`](#policyactionevent) | private |  | misc | inferred | Handles the policy action event. |
+| [`presetTuner`](#presettuner) | private |  | tv-broadcast | inferred | Handles the preset tuner. ⚠️ |
+| [`registerHandledResource`](#registerhandledresource) | private |  | tv-broadcast | inferred | Registers the handled resource. |
+| [`releaseResource`](#releaseresource) | private |  | tv-broadcast | inferred | Releases the resource. |
+| [`requestResource`](#requestresource) | private |  | tv-broadcast | inferred | Requests the resource. |
+| [`setPipelineState`](#setpipelinestate) | private |  | tv-broadcast | inferred | Sets the pipeline state. |
+| [`setSimulationMode`](#setsimulationmode) | private |  | tv-broadcast | inferred | Sets the simulation mode. |
+| [`simulateResource`](#simulateresource) | private |  | tv-broadcast | inferred | Handles the simulate resource. |
+| [`updatePipelineInfo`](#updatepipelineinfo) | private |  | tv-broadcast | inferred | Updates the pipeline info. |
 
 <a id="begintransaction"></a>
 ## `beginTransaction`
 
 `luna://com.webos.service.tvrm/beginTransaction`
 
-Method on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Begins the transaction.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/beginTransaction '{}'
@@ -49,13 +53,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/dbgFeature`
 
-Method on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Debug: Handles the feature.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/dbgFeature '{}'
@@ -70,13 +76,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/endTransaction`
 
-Method on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Handles the end transaction.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/endTransaction '{}'
@@ -91,13 +99,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/getResourceToRelease`
 
-Getter on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Returns the resource to release.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/getResourceToRelease '{}'
@@ -112,13 +122,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/getSimulationResult`
 
-Getter on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Returns the simulation result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/getSimulationResult '{}'
@@ -133,13 +145,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/notifyBackground`
 
-Method on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Notifies of the background.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/notifyBackground '{}'
@@ -154,13 +168,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/notifyForeground`
 
-Method on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Notifies of the foreground.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/notifyForeground '{}'
@@ -175,13 +191,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/policyActionEvent`
 
-Method on com.webos.service.tvrm (from on-device permission registry; parameters undocumented).
+Handles the policy action event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/policyActionEvent '{}'
@@ -196,13 +214,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tvrm/presetTuner`
 
-Method on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Handles the preset tuner.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/presetTuner '{}'
@@ -217,13 +237,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/registerHandledResource`
 
-Method on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Registers the handled resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/registerHandledResource '{}'
@@ -238,13 +260,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/releaseResource`
 
-Method on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Releases the resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/releaseResource '{}'
@@ -259,13 +283,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/requestResource`
 
-Method on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Requests the resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/requestResource '{}'
@@ -280,13 +306,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/setPipelineState`
 
-Setter on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Sets the pipeline state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/setPipelineState '{}'
@@ -301,13 +329,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/setSimulationMode`
 
-Setter on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Sets the simulation mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/setSimulationMode '{}'
@@ -322,13 +352,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/simulateResource`
 
-Method on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Handles the simulate resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/simulateResource '{}'
@@ -343,13 +375,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvrm/updatePipelineInfo`
 
-Method on com.webos.service.tvrm (introspected on-device; parameters undocumented).
+Updates the pipeline info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/updatePipelineInfo '{}'

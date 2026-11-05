@@ -1,37 +1,41 @@
 # `com.webos.service.commercialinputdevice`
 
+Commercial-signage input-device service: manages key tables and white-list keys, injects key items, and reports key, mouse, and touch events. _(inferred from the service's methods)_
+
 13 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`clearKeyTable`](#clearkeytable) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
-| [`enableWhiteListKeys`](#enablewhitelistkeys) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
-| [`getCurrentKeyTable`](#getcurrentkeytable) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
-| [`getHcapKeyTable`](#gethcapkeytable) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
-| [`getKeyEvents`](#getkeyevents) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
-| [`getMouseButtonEvent`](#getmousebuttonevent) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
-| [`getMousePoint`](#getmousepoint) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
-| [`getTouchEvent`](#gettouchevent) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
-| [`getWhiteListKeys`](#getwhitelistkeys) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
-| [`removeKeyItems`](#removekeyitems) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`sendKeyItems`](#sendkeyitems) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
-| [`setKeyItems`](#setkeyitems) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
-| [`setWhiteListKeys`](#setwhitelistkeys) | private |  | misc | Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`clearKeyTable`](#clearkeytable) | private |  | misc | inferred | Clears the key table. |
+| [`enableWhiteListKeys`](#enablewhitelistkeys) | private |  | misc | inferred | Enables the white list keys. |
+| [`getCurrentKeyTable`](#getcurrentkeytable) | private |  | misc | inferred | Returns the current key table. |
+| [`getHcapKeyTable`](#gethcapkeytable) | private |  | misc | inferred | Returns the hcap key table. |
+| [`getKeyEvents`](#getkeyevents) | private |  | misc | inferred | Returns the key events. |
+| [`getMouseButtonEvent`](#getmousebuttonevent) | private |  | misc | inferred | Returns the mouse button event. |
+| [`getMousePoint`](#getmousepoint) | private |  | misc | inferred | Returns the mouse point. |
+| [`getTouchEvent`](#gettouchevent) | private |  | misc | inferred | Returns the touch event. |
+| [`getWhiteListKeys`](#getwhitelistkeys) | private |  | misc | inferred | Returns the white list keys. |
+| [`removeKeyItems`](#removekeyitems) | private |  | misc | inferred | Removes the key items. ⚠️ |
+| [`sendKeyItems`](#sendkeyitems) | private |  | misc | inferred | Sends the key items. |
+| [`setKeyItems`](#setkeyitems) | private |  | misc | inferred | Sets the key items. |
+| [`setWhiteListKeys`](#setwhitelistkeys) | private |  | misc | inferred | Sets the white list keys. |
 
 <a id="clearkeytable"></a>
 ## `clearKeyTable`
 
 `luna://com.webos.service.commercialinputdevice/clearKeyTable`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Clears the key table.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/clearKeyTable '{}'
@@ -46,13 +50,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/enableWhiteListKeys`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Enables the white list keys.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/enableWhiteListKeys '{}'
@@ -67,13 +73,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/getCurrentKeyTable`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Returns the current key table.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/getCurrentKeyTable '{}'
@@ -88,13 +96,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/getHcapKeyTable`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Returns the hcap key table.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/getHcapKeyTable '{}'
@@ -109,13 +119,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/getKeyEvents`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Returns the key events.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/getKeyEvents '{}'
@@ -130,13 +142,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/getMouseButtonEvent`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Returns the mouse button event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/getMouseButtonEvent '{}'
@@ -151,13 +165,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/getMousePoint`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Returns the mouse point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/getMousePoint '{}'
@@ -172,13 +188,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/getTouchEvent`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Returns the touch event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/getTouchEvent '{}'
@@ -193,13 +211,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/getWhiteListKeys`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Returns the white list keys.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/getWhiteListKeys '{}'
@@ -214,13 +234,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/removeKeyItems`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Removes the key items.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/removeKeyItems '{}'
@@ -235,13 +257,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/sendKeyItems`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Sends the key items.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/sendKeyItems '{}'
@@ -256,13 +280,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/setKeyItems`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Sets the key items.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/setKeyItems '{}'
@@ -277,13 +303,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercialinputdevice/setWhiteListKeys`
 
-Method on com.webos.service.commercialinputdevice (from on-device permission registry; parameters undocumented).
+Sets the white list keys.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercialinputdevice/setWhiteListKeys '{}'

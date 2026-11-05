@@ -1,36 +1,40 @@
 # `com.webos.service.avmutemanager`
 
+Audio/video mute manager: coordinates AV mute across clients, tracking mute status, owners, timing, and registered services, and setting the overall AV mute state. _(inferred from the service's methods)_
+
 12 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getInternalMuteStatus`](#getinternalmutestatus) | private |  | misc | Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
-| [`getInternalMuteTime`](#getinternalmutetime) | private |  | input | Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
-| [`getMuteInfo`](#getmuteinfo) | public |  | misc | Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
-| [`getMuteOwnerList`](#getmuteownerlist) | public |  | misc | Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
-| [`getMuteStatus`](#getmutestatus) | public |  | misc | Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
-| [`getRegisterDB`](#getregisterdb) | public |  | db | Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
-| [`listDebugRegisteredServices`](#listdebugregisteredservices) | public |  | misc | Lister on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
-| [`listMuteStatus`](#listmutestatus) | public |  | misc | Lister on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
-| [`register`](#register) | public |  | misc | Method on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
-| [`setAvMute`](#setavmute) | public |  | misc | Setter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
-| [`unregister`](#unregister) | public |  | misc | Method on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
-| [`updateAvResource`](#updateavresource) | public |  | update | Method on com.webos.service.avmutemanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getInternalMuteStatus`](#getinternalmutestatus) | private |  | misc | inferred | Returns the internal mute status. |
+| [`getInternalMuteTime`](#getinternalmutetime) | private |  | input | inferred | Returns the internal mute time. |
+| [`getMuteInfo`](#getmuteinfo) | public |  | misc | inferred | Returns the mute info. |
+| [`getMuteOwnerList`](#getmuteownerlist) | public |  | misc | inferred | Returns the mute owner list. |
+| [`getMuteStatus`](#getmutestatus) | public |  | misc | inferred | Returns the mute status. |
+| [`getRegisterDB`](#getregisterdb) | public |  | db | inferred | Returns the register DB. |
+| [`listDebugRegisteredServices`](#listdebugregisteredservices) | public |  | misc | inferred | Lists the debug registered services. |
+| [`listMuteStatus`](#listmutestatus) | public |  | misc | inferred | Lists the mute status. |
+| [`register`](#register) | public |  | misc | inferred | Registers the avmutemanager. |
+| [`setAvMute`](#setavmute) | public |  | misc | inferred | Sets the A/V mute. |
+| [`unregister`](#unregister) | public |  | misc | inferred | Unregisters the avmutemanager. |
+| [`updateAvResource`](#updateavresource) | public |  | update | inferred | Updates the A/V resource. |
 
 <a id="getinternalmutestatus"></a>
 ## `getInternalMuteStatus`
 
 `luna://com.webos.service.avmutemanager/getInternalMuteStatus`
 
-Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Returns the internal mute status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/getInternalMuteStatus '{}'
@@ -45,13 +49,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.avmutemanager/getInternalMuteTime`
 
-Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Returns the internal mute time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/getInternalMuteTime '{}'
@@ -66,13 +72,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.avmutemanager/getMuteInfo`
 
-Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Returns the mute info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/getMuteInfo '{}'
@@ -87,13 +95,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.avmutemanager/getMuteOwnerList`
 
-Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Returns the mute owner list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/getMuteOwnerList '{}'
@@ -108,13 +118,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.avmutemanager/getMuteStatus`
 
-Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Returns the mute status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/getMuteStatus '{}'
@@ -129,13 +141,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.avmutemanager/getRegisterDB`
 
-Getter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Returns the register DB.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/getRegisterDB '{}'
@@ -150,13 +164,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.avmutemanager/listDebugRegisteredServices`
 
-Lister on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Lists the debug registered services.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/listDebugRegisteredServices '{}'
@@ -171,13 +187,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.avmutemanager/listMuteStatus`
 
-Lister on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Lists the mute status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/listMuteStatus '{}'
@@ -192,13 +210,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.avmutemanager/register`
 
-Method on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Registers the avmutemanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/register '{}'
@@ -213,13 +233,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.avmutemanager/setAvMute`
 
-Setter on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Sets the A/V mute.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/setAvMute '{}'
@@ -234,13 +256,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.avmutemanager/unregister`
 
-Method on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Unregisters the avmutemanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/unregister '{}'
@@ -255,13 +279,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.avmutemanager/updateAvResource`
 
-Method on com.webos.service.avmutemanager (introspected on-device; parameters undocumented).
+Updates the A/V resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/updateAvResource '{}'

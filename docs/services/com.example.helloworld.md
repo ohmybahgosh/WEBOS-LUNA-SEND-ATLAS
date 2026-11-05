@@ -1,36 +1,40 @@
 # `com.example.helloworld`
 
+Sample/demonstration service bundled as a webOS development example; exposes trivial methods (hello, ping/pong, counters, heartbeat) for testing the Luna bus. _(inferred from the service's methods)_
+
 12 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`config/setGreeting`](#config_setgreeting) | public |  | settings | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
-| [`do/re/me`](#do_re_me) | public |  | misc | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
-| [`getCount`](#getcount) | public |  | misc | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
-| [`heartbeat`](#heartbeat) | public |  | misc | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
-| [`heartbeat2`](#heartbeat2) | public |  | misc | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
-| [`hello`](#hello) | public |  | misc | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
-| [`increment`](#increment) | public |  | misc | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | misc | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
-| [`locale`](#locale) | public |  | misc | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
-| [`ping`](#ping) | public |  | misc | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
-| [`pong`](#pong) | public |  | misc | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | misc | Method on com.example.helloworld (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`config/setGreeting`](#config_setgreeting) | public |  | settings | inferred | Sets the greeting (config) |
+| [`do/re/me`](#do_re_me) | public |  | misc | inferred | Handles the me (do re) |
+| [`getCount`](#getcount) | public |  | misc | inferred | Returns the count. |
+| [`heartbeat`](#heartbeat) | public |  | misc | inferred | Handles the heartbeat. |
+| [`heartbeat2`](#heartbeat2) | public |  | misc | inferred | Handles the heartbeat 2. |
+| [`hello`](#hello) | public |  | misc | inferred | Handles the hello. |
+| [`increment`](#increment) | public |  | misc | inferred | Handles the increment. |
+| [`info`](#info) | public |  | misc | inferred | Handles the info. |
+| [`locale`](#locale) | public |  | misc | inferred | Handles the locale. |
+| [`ping`](#ping) | public |  | misc | inferred | Pings the example helloworld. |
+| [`pong`](#pong) | public |  | misc | inferred | Handles the pong. |
+| [`quit`](#quit) | public |  | misc | inferred | Quits the example helloworld. |
 
 <a id="config_setgreeting"></a>
 ## `config/setGreeting`
 
 `luna://com.example.helloworld/config/setGreeting`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Sets the greeting (config)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/config/setGreeting '{}'
@@ -45,13 +49,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.helloworld/do/re/me`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Handles the me (do re)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/do/re/me '{}'
@@ -66,13 +72,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.helloworld/getCount`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Returns the count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/getCount '{}'
@@ -87,13 +95,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.helloworld/heartbeat`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Handles the heartbeat.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/heartbeat '{}'
@@ -108,13 +118,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.helloworld/heartbeat2`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Handles the heartbeat 2.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/heartbeat2 '{}'
@@ -129,13 +141,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.helloworld/hello`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Handles the hello.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/hello '{}'
@@ -150,13 +164,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.helloworld/increment`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Handles the increment.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/increment '{}'
@@ -171,13 +187,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.helloworld/info`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/info '{}'
@@ -192,13 +210,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.helloworld/locale`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Handles the locale.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/locale '{}'
@@ -213,13 +233,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.helloworld/ping`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Pings the example helloworld.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/ping '{}'
@@ -234,13 +256,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.helloworld/pong`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Handles the pong.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/pong '{}'
@@ -255,13 +279,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.helloworld/quit`
 
-Method on com.example.helloworld (from on-device permission registry; parameters undocumented).
+Quits the example helloworld.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.helloworld/quit '{}'

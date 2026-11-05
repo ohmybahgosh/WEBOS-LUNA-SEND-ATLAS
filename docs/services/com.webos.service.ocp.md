@@ -1,29 +1,33 @@
 # `com.webos.service.ocp`
 
+Opaque service with accept/refuse/restore/start/status methods, suggesting an agreement or request-handling flow. Specific 'OCP' domain not inferable. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`accept`](#accept) | private |  | misc | Method on com.webos.service.ocp (introspected on-device; parameters undocumented). |
-| [`refuse`](#refuse) | private |  | misc | Method on com.webos.service.ocp (introspected on-device; parameters undocumented). |
-| [`restore`](#restore) | private |  | misc | Method on com.webos.service.ocp (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.ocp (from on-device permission registry; parameters undocumented). |
-| [`status`](#status) | private |  | misc | Method on com.webos.service.ocp (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`accept`](#accept) | private |  | misc | inferred | Handles the accept. |
+| [`refuse`](#refuse) | private |  | misc | inferred | Handles the refuse. |
+| [`restore`](#restore) | private |  | misc | inferred | Restores the ocp. |
+| [`start`](#start) | private |  | misc | inferred | Starts the ocp. |
+| [`status`](#status) | private |  | misc | inferred | Handles the status. |
 
 <a id="accept"></a>
 ## `accept`
 
 `luna://com.webos.service.ocp/accept`
 
-Method on com.webos.service.ocp (introspected on-device; parameters undocumented).
+Handles the accept.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ocp/accept '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ocp/refuse`
 
-Method on com.webos.service.ocp (introspected on-device; parameters undocumented).
+Handles the refuse.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ocp/refuse '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ocp/restore`
 
-Method on com.webos.service.ocp (introspected on-device; parameters undocumented).
+Restores the ocp.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ocp/restore '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ocp/start`
 
-Method on com.webos.service.ocp (from on-device permission registry; parameters undocumented).
+Starts the ocp.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ocp/start '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.ocp/status`
 
-Method on com.webos.service.ocp (introspected on-device; parameters undocumented).
+Handles the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ocp/status '{}'

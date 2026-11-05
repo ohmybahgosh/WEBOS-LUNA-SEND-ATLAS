@@ -1,29 +1,33 @@
 # `com.webos.service.aos`
 
+Appears to manage an 'always-on' display or standby feature: enables and disables always-on and gets/sets its reset time. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`disableAlwaysOn`](#disablealwayson) | private |  | misc | Method on com.webos.service.aos (introspected on-device; parameters undocumented). |
-| [`enableAlwaysOn`](#enablealwayson) | private |  | misc | Method on com.webos.service.aos (introspected on-device; parameters undocumented). |
-| [`getResetTime`](#getresettime) | private |  | input | Getter on com.webos.service.aos (introspected on-device; parameters undocumented). |
-| [`setResetTime`](#setresettime) | private |  | input | Setter on com.webos.service.aos (introspected on-device; parameters undocumented). ⚠️ |
-| [`test`](#test) | private |  | misc | Method on com.webos.service.aos (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`disableAlwaysOn`](#disablealwayson) | private |  | misc | inferred | Disables the always on. |
+| [`enableAlwaysOn`](#enablealwayson) | private |  | misc | inferred | Enables the always on. |
+| [`getResetTime`](#getresettime) | private |  | input | inferred | Returns the reset time. |
+| [`setResetTime`](#setresettime) | private |  | input | inferred | Sets the reset time. ⚠️ |
+| [`test`](#test) | private |  | misc | inferred | Tests the aos. |
 
 <a id="disablealwayson"></a>
 ## `disableAlwaysOn`
 
 `luna://com.webos.service.aos/disableAlwaysOn`
 
-Method on com.webos.service.aos (introspected on-device; parameters undocumented).
+Disables the always on.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aos/disableAlwaysOn '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aos/enableAlwaysOn`
 
-Method on com.webos.service.aos (introspected on-device; parameters undocumented).
+Enables the always on.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aos/enableAlwaysOn '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aos/getResetTime`
 
-Getter on com.webos.service.aos (introspected on-device; parameters undocumented).
+Returns the reset time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aos/getResetTime '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aos/setResetTime`
 
-Setter on com.webos.service.aos (introspected on-device; parameters undocumented).
+Sets the reset time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aos/setResetTime '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aos/test`
 
-Method on com.webos.service.aos (introspected on-device; parameters undocumented).
+Tests the aos.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aos/test '{}'

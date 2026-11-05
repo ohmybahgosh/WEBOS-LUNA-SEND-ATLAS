@@ -1,27 +1,31 @@
 # `com.webos.service.interactivecontent.webserver`
 
+Local web server for interactive content: starts and stops the server and reports its URL. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getServerUrl`](#getserverurl) | public |  | misc | Method on com.webos.service.interactivecontent.webserver (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | public |  | misc | Method on com.webos.service.interactivecontent.webserver (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | public |  | misc | Method on com.webos.service.interactivecontent.webserver (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getServerUrl`](#getserverurl) | public |  | misc | inferred | Returns the server URL. |
+| [`start`](#start) | public |  | misc | inferred | Starts the interactivecontent webserver. |
+| [`stop`](#stop) | public |  | misc | inferred | Stops the interactivecontent webserver. |
 
 <a id="getserverurl"></a>
 ## `getServerUrl`
 
 `luna://com.webos.service.interactivecontent.webserver/getServerUrl`
 
-Method on com.webos.service.interactivecontent.webserver (from on-device permission registry; parameters undocumented).
+Returns the server URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.interactivecontent.webserver/getServerUrl '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.interactivecontent.webserver/start`
 
-Method on com.webos.service.interactivecontent.webserver (from on-device permission registry; parameters undocumented).
+Starts the interactivecontent webserver.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.interactivecontent.webserver/start '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.interactivecontent.webserver/stop`
 
-Method on com.webos.service.interactivecontent.webserver (from on-device permission registry; parameters undocumented).
+Stops the interactivecontent webserver.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.interactivecontent.webserver/stop '{}'

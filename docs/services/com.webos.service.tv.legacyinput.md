@@ -1,12 +1,14 @@
 # `com.webos.service.tv.legacyinput`
 
+Legacy input service that injects a key event (createKeyEvent). _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`createKeyEvent`](#createkeyevent) | private |  | keys | Injects a key event via the legacy input service |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`createKeyEvent`](#createkeyevent) | private |  | keys | documented | Injects a key event via the legacy input service |
 
 <a id="createkeyevent"></a>
 ## `createKeyEvent`
@@ -19,7 +21,7 @@ Injects a key event via the legacy input service
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.legacyinput/createKeyEvent '{}'

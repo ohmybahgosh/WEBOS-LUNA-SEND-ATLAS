@@ -1,47 +1,51 @@
 # `com.webos.service.discovery`
 
+Content discovery/recommendation service: performs search and prefix-search, returns categories, recommendations, sponsored data, and content-provider details for the TV's content hub. _(inferred from the service's methods)_
+
 23 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`autoSuggest`](#autosuggest) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`checkEula`](#checkeula) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getCategoryData`](#getcategorydata) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getCPAppStatus`](#getcpappstatus) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getDetails`](#getdetails) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getExecOptions`](#getexecoptions) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getRecommendationData`](#getrecommendationdata) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getSdpServices`](#getsdpservices) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getSeasonEpisodes`](#getseasonepisodes) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getSponsoredData`](#getsponsoreddata) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getSupportedCategories`](#getsupportedcategories) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getSupportedEvents`](#getsupportedevents) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getUnratedList`](#getunratedlist) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getUserSettings`](#getusersettings) | private |  | settings | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`getUserTastes`](#getusertastes) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`prefixsearch`](#prefixsearch) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`search`](#search) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`sendUserEvent`](#senduserevent) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`setUnratedList`](#setunratedlist) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`test/setImageServer`](#test_setimageserver) | private |  | network | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
-| [`updateUserSettings`](#updateusersettings) | private |  | settings | Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`autoSuggest`](#autosuggest) | private |  | network | inferred | Handles the auto suggest. |
+| [`checkEula`](#checkeula) | private |  | network | inferred | Checks the eula. |
+| [`getCategoryData`](#getcategorydata) | private |  | network | inferred | Returns the category data. |
+| [`getCPAppStatus`](#getcpappstatus) | private |  | network | inferred | Returns the CP app status. |
+| [`getDetails`](#getdetails) | private |  | network | inferred | Returns the details. |
+| [`getExecOptions`](#getexecoptions) | private |  | network | inferred | Returns the exec options. |
+| [`getRecommendationData`](#getrecommendationdata) | private |  | network | inferred | Returns the recommendation data. |
+| [`getSdpServices`](#getsdpservices) | private |  | network | inferred | Returns the sdp services. |
+| [`getSeasonEpisodes`](#getseasonepisodes) | private |  | network | inferred | Returns the season episodes. |
+| [`getSponsoredData`](#getsponsoreddata) | private |  | network | inferred | Returns the sponsored data. |
+| [`getSupportedCategories`](#getsupportedcategories) | private |  | network | inferred | Returns the supported categories. |
+| [`getSupportedEvents`](#getsupportedevents) | private |  | network | inferred | Returns the supported events. |
+| [`getUnratedList`](#getunratedlist) | private |  | network | inferred | Returns the unrated list. |
+| [`getUserSettings`](#getusersettings) | private |  | settings | inferred | Returns the user settings. |
+| [`getUserTastes`](#getusertastes) | private |  | network | inferred | Returns the user tastes. |
+| [`info`](#info) | private |  | network | inferred | Handles the info. |
+| [`prefixsearch`](#prefixsearch) | private |  | network | inferred | Handles the prefixsearch. |
+| [`quit`](#quit) | private |  | network | inferred | Quits the discovery. |
+| [`search`](#search) | private |  | network | inferred | Searches for discovery. |
+| [`sendUserEvent`](#senduserevent) | private |  | network | inferred | Sends the user event. |
+| [`setUnratedList`](#setunratedlist) | private |  | network | inferred | Sets the unrated list. |
+| [`test/setImageServer`](#test_setimageserver) | private |  | network | inferred | Sets the image server (test) |
+| [`updateUserSettings`](#updateusersettings) | private |  | settings | inferred | Updates the user settings. |
 
 <a id="autosuggest"></a>
 ## `autoSuggest`
 
 `luna://com.webos.service.discovery/autoSuggest`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Handles the auto suggest.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/autoSuggest '{}'
@@ -56,13 +60,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/checkEula`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Checks the eula.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/checkEula '{}'
@@ -77,13 +83,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getCategoryData`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the category data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getCategoryData '{}'
@@ -98,13 +106,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getCPAppStatus`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the CP app status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getCPAppStatus '{}'
@@ -119,13 +129,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getDetails`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the details.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getDetails '{}'
@@ -140,13 +152,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getExecOptions`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the exec options.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getExecOptions '{}'
@@ -161,13 +175,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getRecommendationData`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the recommendation data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getRecommendationData '{}'
@@ -182,13 +198,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getSdpServices`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the sdp services.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getSdpServices '{}'
@@ -203,13 +221,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getSeasonEpisodes`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the season episodes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getSeasonEpisodes '{}'
@@ -224,13 +244,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getSponsoredData`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the sponsored data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getSponsoredData '{}'
@@ -245,13 +267,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getSupportedCategories`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the supported categories.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getSupportedCategories '{}'
@@ -266,13 +290,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getSupportedEvents`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the supported events.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getSupportedEvents '{}'
@@ -287,13 +313,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getUnratedList`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the unrated list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getUnratedList '{}'
@@ -308,13 +336,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getUserSettings`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the user settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getUserSettings '{}'
@@ -329,13 +359,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/getUserTastes`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Returns the user tastes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/getUserTastes '{}'
@@ -350,13 +382,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/info`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/info '{}'
@@ -371,13 +405,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/prefixsearch`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Handles the prefixsearch.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/prefixsearch '{}'
@@ -392,13 +428,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/quit`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Quits the discovery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/quit '{}'
@@ -413,13 +451,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/search`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Searches for discovery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/search '{}'
@@ -434,13 +474,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/sendUserEvent`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Sends the user event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/sendUserEvent '{}'
@@ -455,13 +497,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/setUnratedList`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Sets the unrated list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/setUnratedList '{}'
@@ -476,13 +520,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/test/setImageServer`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Sets the image server (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/test/setImageServer '{}'
@@ -497,13 +543,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.discovery/updateUserSettings`
 
-Method on com.webos.service.discovery (from on-device permission registry; parameters undocumented).
+Updates the user settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.discovery/updateUserSettings '{}'

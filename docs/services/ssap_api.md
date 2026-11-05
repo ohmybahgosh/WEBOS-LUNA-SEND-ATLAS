@@ -1,12 +1,14 @@
 # `ssap:api`
 
+SSAP (external control websocket) endpoint; returns the list of available SSAP services. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getServiceList`](#getservicelist) | ssap |  | misc | List the SSAP namespaces exposed to this client |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getServiceList`](#getservicelist) | ssap |  | misc | documented | List the SSAP namespaces exposed to this client |
 
 <a id="getservicelist"></a>
 ## `getServiceList`
@@ -19,7 +21,7 @@ List the SSAP namespaces exposed to this client
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://api/getServiceList","payload":{}}

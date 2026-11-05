@@ -1,46 +1,50 @@
 # `com.webos.service.nabs.channel`
 
+ATSC broadcast channel and scan service: tunes channels, reports signal level and audio language, and runs ATSC automatic and manual channel scanning. _(inferred from the service's methods)_
+
 22 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`callSqliteMethod`](#callsqlitemethod) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`getChannelTypeList`](#getchanneltypelist) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`getCurrentAudioCodecType`](#getcurrentaudiocodectype) | private |  | audio | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`getCurrentAudioLanguage`](#getcurrentaudiolanguage) | private |  | audio | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`getDirectTuneChannel`](#getdirecttunechannel) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`getSignalLevel`](#getsignallevel) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/bindToBroadcast`](#scan_bindtobroadcast) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/deleteAtscManualTuning`](#scan_deleteatscmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`scan/getAtscScanInfo`](#scan_getatscscaninfo) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAtscTuningStatus`](#scan_getatsctuningstatus) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAutoScanChannelType`](#scan_getautoscanchanneltype) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAutoScanChannelTypeOrder`](#scan_getautoscanchanneltypeorder) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAutoScanProgress`](#scan_getautoscanprogress) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAutoScanSourceOrderStatus`](#scan_getautoscansourceorderstatus) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAutoScanStatus`](#scan_getautoscanstatus) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/releaseBroadcast`](#scan_releasebroadcast) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/saveAtscManualTuning`](#scan_saveatscmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/setAtscManualTuning`](#scan_setatscmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/setAutoScanChannelType`](#scan_setautoscanchanneltype) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/skipAutoScan`](#scan_skipautoscan) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/startAutoScan`](#scan_startautoscan) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/stopAutoScan`](#scan_stopautoscan) | private |  | tv-broadcast | Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`callSqliteMethod`](#callsqlitemethod) | private |  | tv-broadcast | inferred | Calls the sqlite method. |
+| [`getChannelTypeList`](#getchanneltypelist) | private |  | tv-broadcast | inferred | Returns the channel type list. |
+| [`getCurrentAudioCodecType`](#getcurrentaudiocodectype) | private |  | audio | inferred | Returns the current audio codec type. |
+| [`getCurrentAudioLanguage`](#getcurrentaudiolanguage) | private |  | audio | inferred | Returns the current audio language. |
+| [`getDirectTuneChannel`](#getdirecttunechannel) | private |  | tv-broadcast | inferred | Returns the direct tune channel. |
+| [`getSignalLevel`](#getsignallevel) | private |  | tv-broadcast | inferred | Returns the signal level. |
+| [`scan/bindToBroadcast`](#scan_bindtobroadcast) | private |  | tv-broadcast | inferred | Binds the to broadcast (scan) |
+| [`scan/deleteAtscManualTuning`](#scan_deleteatscmanualtuning) | private |  | tv-broadcast | inferred | Deletes the ATSC manual tuning (scan) ⚠️ |
+| [`scan/getAtscScanInfo`](#scan_getatscscaninfo) | private |  | tv-broadcast | inferred | Returns the ATSC scan info (scan) |
+| [`scan/getAtscTuningStatus`](#scan_getatsctuningstatus) | private |  | tv-broadcast | inferred | Returns the ATSC tuning status (scan) |
+| [`scan/getAutoScanChannelType`](#scan_getautoscanchanneltype) | private |  | tv-broadcast | inferred | Returns the auto scan channel type (scan) |
+| [`scan/getAutoScanChannelTypeOrder`](#scan_getautoscanchanneltypeorder) | private |  | tv-broadcast | inferred | Returns the auto scan channel type order (scan) |
+| [`scan/getAutoScanProgress`](#scan_getautoscanprogress) | private |  | tv-broadcast | inferred | Returns the auto scan progress (scan) |
+| [`scan/getAutoScanSourceOrderStatus`](#scan_getautoscansourceorderstatus) | private |  | tv-broadcast | inferred | Returns the auto scan source order status (scan) |
+| [`scan/getAutoScanStatus`](#scan_getautoscanstatus) | private |  | tv-broadcast | inferred | Returns the auto scan status (scan) |
+| [`scan/releaseBroadcast`](#scan_releasebroadcast) | private |  | tv-broadcast | inferred | Releases the broadcast (scan) |
+| [`scan/saveAtscManualTuning`](#scan_saveatscmanualtuning) | private |  | tv-broadcast | inferred | Saves the ATSC manual tuning (scan) |
+| [`scan/setAtscManualTuning`](#scan_setatscmanualtuning) | private |  | tv-broadcast | inferred | Sets the ATSC manual tuning (scan) |
+| [`scan/setAutoScanChannelType`](#scan_setautoscanchanneltype) | private |  | tv-broadcast | inferred | Sets the auto scan channel type (scan) |
+| [`scan/skipAutoScan`](#scan_skipautoscan) | private |  | tv-broadcast | inferred | Skips the auto scan (scan) |
+| [`scan/startAutoScan`](#scan_startautoscan) | private |  | tv-broadcast | inferred | Starts the auto scan (scan) |
+| [`scan/stopAutoScan`](#scan_stopautoscan) | private |  | tv-broadcast | inferred | Stops the auto scan (scan) |
 
 <a id="callsqlitemethod"></a>
 ## `callSqliteMethod`
 
 `luna://com.webos.service.nabs.channel/callSqliteMethod`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Calls the sqlite method.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/callSqliteMethod '{}'
@@ -55,13 +59,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/getChannelTypeList`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the channel type list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/getChannelTypeList '{}'
@@ -76,13 +82,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/getCurrentAudioCodecType`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the current audio codec type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/getCurrentAudioCodecType '{}'
@@ -97,13 +105,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/getCurrentAudioLanguage`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the current audio language.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/getCurrentAudioLanguage '{}'
@@ -118,13 +128,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/getDirectTuneChannel`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the direct tune channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/getDirectTuneChannel '{}'
@@ -139,13 +151,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/getSignalLevel`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the signal level.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/getSignalLevel '{}'
@@ -160,13 +174,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/bindToBroadcast`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Binds the to broadcast (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/bindToBroadcast '{}'
@@ -181,13 +197,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/deleteAtscManualTuning`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Deletes the ATSC manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/deleteAtscManualTuning '{}'
@@ -202,13 +220,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/getAtscScanInfo`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the ATSC scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/getAtscScanInfo '{}'
@@ -223,13 +243,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/getAtscTuningStatus`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the ATSC tuning status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/getAtscTuningStatus '{}'
@@ -244,13 +266,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/getAutoScanChannelType`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the auto scan channel type (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/getAutoScanChannelType '{}'
@@ -265,13 +289,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/getAutoScanChannelTypeOrder`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the auto scan channel type order (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/getAutoScanChannelTypeOrder '{}'
@@ -286,13 +312,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/getAutoScanProgress`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the auto scan progress (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/getAutoScanProgress '{}'
@@ -307,13 +335,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/getAutoScanSourceOrderStatus`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the auto scan source order status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/getAutoScanSourceOrderStatus '{}'
@@ -328,13 +358,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/getAutoScanStatus`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Returns the auto scan status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/getAutoScanStatus '{}'
@@ -349,13 +381,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/releaseBroadcast`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Releases the broadcast (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/releaseBroadcast '{}'
@@ -370,13 +404,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/saveAtscManualTuning`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Saves the ATSC manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/saveAtscManualTuning '{}'
@@ -391,13 +427,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/setAtscManualTuning`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Sets the ATSC manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/setAtscManualTuning '{}'
@@ -412,13 +450,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/setAutoScanChannelType`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Sets the auto scan channel type (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/setAutoScanChannelType '{}'
@@ -433,13 +473,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/skipAutoScan`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Skips the auto scan (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/skipAutoScan '{}'
@@ -454,13 +496,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/startAutoScan`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Starts the auto scan (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/startAutoScan '{}'
@@ -475,13 +519,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.channel/scan/stopAutoScan`
 
-Method on com.webos.service.nabs.channel (from on-device permission registry; parameters undocumented).
+Stops the auto scan (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.channel/scan/stopAutoScan '{}'

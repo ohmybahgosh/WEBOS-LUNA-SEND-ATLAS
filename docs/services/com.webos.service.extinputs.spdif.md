@@ -1,31 +1,35 @@
 # `com.webos.service.extinputs.spdif`
 
+External S/PDIF digital-audio input service: opens, connects and switches the S/PDIF input and reports its current audio codec.
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | private |  | input | Method on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented). |
-| [`connect`](#connect) | private |  | input | Method on com.webos.service.extinputs.spdif (from on-device permission registry; parameters undocumented). |
-| [`getCurrentAudioCodecType`](#getcurrentaudiocodectype) | private |  | audio | Getter on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented). |
-| [`open`](#open) | private |  | input | Method on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented). |
-| [`pause`](#pause) | private |  | input | Method on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented). |
-| [`stop`](#stop) | private |  | input | Method on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented). |
-| [`switchExternalInput`](#switchexternalinput) | private |  | input | Method on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | private |  | input | inferred | Closes the extinputs SPDIF. |
+| [`connect`](#connect) | private |  | input | inferred | Connects the extinputs SPDIF. |
+| [`getCurrentAudioCodecType`](#getcurrentaudiocodectype) | private |  | audio | inferred | Returns the current audio codec type. |
+| [`open`](#open) | private |  | input | inferred | Opens the extinputs SPDIF. |
+| [`pause`](#pause) | private |  | input | inferred | Pauses the extinputs SPDIF. |
+| [`stop`](#stop) | private |  | input | inferred | Stops the extinputs SPDIF. |
+| [`switchExternalInput`](#switchexternalinput) | private |  | input | inferred | Switches the external input. |
 
 <a id="close"></a>
 ## `close`
 
 `luna://com.webos.service.extinputs.spdif/close`
 
-Method on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented).
+Closes the extinputs SPDIF.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.spdif/close '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.spdif/connect`
 
-Method on com.webos.service.extinputs.spdif (from on-device permission registry; parameters undocumented).
+Connects the extinputs SPDIF.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.spdif/connect '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.extinputs.spdif/getCurrentAudioCodecType`
 
-Getter on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented).
+Returns the current audio codec type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.spdif/getCurrentAudioCodecType '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.spdif/open`
 
-Method on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented).
+Opens the extinputs SPDIF.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.spdif/open '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.spdif/pause`
 
-Method on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented).
+Pauses the extinputs SPDIF.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.spdif/pause '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.spdif/stop`
 
-Method on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented).
+Stops the extinputs SPDIF.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.spdif/stop '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.spdif/switchExternalInput`
 
-Method on com.webos.service.extinputs.spdif (introspected on-device; parameters undocumented).
+Switches the external input.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.spdif/switchExternalInput '{}'

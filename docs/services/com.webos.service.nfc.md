@@ -1,58 +1,62 @@
 # `com.webos.service.nfc`
 
+NFC service: manages the NFC adapter, card emulation, tag read/write (NDEF), secure-element (eSE) communication, and connection handover.
+
 34 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`adapter/getStatus`](#adapter_getstatus) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`adapter/setState`](#adapter_setstate) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`card/getStatus`](#card_getstatus) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`card/getTransaction`](#card_gettransaction) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`dynamicTag/getStatus`](#dynamictag_getstatus) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`dynamicTag/setState`](#dynamictag_setstate) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`dynamicTag/writeNDEF`](#dynamictag_writendef) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`ese/close`](#ese_close) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`ese/open`](#ese_open) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`ese/transceive`](#ese_transceive) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`formattag`](#formattag) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`getstatus`](#getstatus) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`gettransaction`](#gettransaction) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`handover/getStatus`](#handover_getstatus) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`internal/choose`](#internal_choose) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`internal/disableRFEmission`](#internal_disablerfemission) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`internal/enableRFEmission`](#internal_enablerfemission) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`internal/testSWPConnection`](#internal_testswpconnection) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`peer/getStatus`](#peer_getstatus) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`peer/receiveNDEF`](#peer_receivendef) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`peer/sendNDEF`](#peer_sendndef) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`pushp2p`](#pushp2p) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`readtag`](#readtag) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`receivep2p`](#receivep2p) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`rfetest`](#rfetest) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`setexclusivemode`](#setexclusivemode) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`setreadonlytag`](#setreadonlytag) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`setstate`](#setstate) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`swpselftest`](#swpselftest) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`tag/getStatus`](#tag_getstatus) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`tag/readNDEF`](#tag_readndef) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`tag/writeNDEF`](#tag_writendef) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`transceivetag`](#transceivetag) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
-| [`writetag`](#writetag) | public |  | connection | Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`adapter/getStatus`](#adapter_getstatus) | public |  | connection | inferred | Returns the status (adapter) |
+| [`adapter/setState`](#adapter_setstate) | public |  | connection | inferred | Sets the state (adapter) |
+| [`card/getStatus`](#card_getstatus) | public |  | connection | inferred | Returns the status (card) |
+| [`card/getTransaction`](#card_gettransaction) | public |  | connection | inferred | Returns the transaction (card) |
+| [`dynamicTag/getStatus`](#dynamictag_getstatus) | public |  | connection | inferred | Returns the status (dynamic tag) |
+| [`dynamicTag/setState`](#dynamictag_setstate) | public |  | connection | inferred | Sets the state (dynamic tag) |
+| [`dynamicTag/writeNDEF`](#dynamictag_writendef) | public |  | connection | inferred | Writes the NDEF (dynamic tag) |
+| [`ese/close`](#ese_close) | public |  | connection | inferred | Closes the nfc (ese) |
+| [`ese/open`](#ese_open) | public |  | connection | inferred | Opens the nfc (ese) |
+| [`ese/transceive`](#ese_transceive) | public |  | connection | inferred | Handles the transceive (ese) |
+| [`formattag`](#formattag) | public |  | connection | inferred | Handles the formattag. ⚠️ |
+| [`getstatus`](#getstatus) | public |  | connection | inferred | Handles the getstatus. |
+| [`gettransaction`](#gettransaction) | public |  | connection | inferred | Handles the gettransaction. |
+| [`handover/getStatus`](#handover_getstatus) | public |  | connection | inferred | Returns the status (handover) |
+| [`internal/choose`](#internal_choose) | public |  | connection | inferred | Handles the choose (internal) |
+| [`internal/disableRFEmission`](#internal_disablerfemission) | public |  | connection | inferred | Disables the RF emission (internal) |
+| [`internal/enableRFEmission`](#internal_enablerfemission) | public |  | connection | inferred | Enables the RF emission (internal) |
+| [`internal/testSWPConnection`](#internal_testswpconnection) | public |  | connection | inferred | Tests the SWP connection (internal) |
+| [`peer/getStatus`](#peer_getstatus) | public |  | connection | inferred | Returns the status (peer) |
+| [`peer/receiveNDEF`](#peer_receivendef) | public |  | connection | inferred | Handles the receive NDEF (peer) |
+| [`peer/sendNDEF`](#peer_sendndef) | public |  | connection | inferred | Sends the NDEF (peer) |
+| [`pushp2p`](#pushp2p) | public |  | connection | inferred | Handles the pushp 2 p. |
+| [`readtag`](#readtag) | public |  | connection | inferred | Handles the readtag. |
+| [`receivep2p`](#receivep2p) | public |  | connection | inferred | Handles the receivep 2 p. |
+| [`rfetest`](#rfetest) | public |  | connection | inferred | Handles the rfetest. |
+| [`setexclusivemode`](#setexclusivemode) | public |  | connection | inferred | Handles the setexclusivemode. |
+| [`setreadonlytag`](#setreadonlytag) | public |  | connection | inferred | Handles the setreadonlytag. |
+| [`setstate`](#setstate) | public |  | connection | inferred | Handles the setstate. |
+| [`swpselftest`](#swpselftest) | public |  | connection | inferred | Handles the swpselftest. |
+| [`tag/getStatus`](#tag_getstatus) | public |  | connection | inferred | Returns the status (tag) |
+| [`tag/readNDEF`](#tag_readndef) | public |  | connection | inferred | Reads the NDEF (tag) |
+| [`tag/writeNDEF`](#tag_writendef) | public |  | connection | inferred | Writes the NDEF (tag) |
+| [`transceivetag`](#transceivetag) | public |  | connection | inferred | Handles the transceivetag. |
+| [`writetag`](#writetag) | public |  | connection | inferred | Handles the writetag. |
 
 <a id="adapter_getstatus"></a>
 ## `adapter/getStatus`
 
 `luna://com.webos.service.nfc/adapter/getStatus`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Returns the status (adapter)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/adapter/getStatus '{}'
@@ -67,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/adapter/setState`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Sets the state (adapter)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/adapter/setState '{}'
@@ -88,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/card/getStatus`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Returns the status (card)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/card/getStatus '{}'
@@ -109,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/card/getTransaction`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Returns the transaction (card)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/card/getTransaction '{}'
@@ -130,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/dynamicTag/getStatus`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Returns the status (dynamic tag)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/dynamicTag/getStatus '{}'
@@ -151,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/dynamicTag/setState`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Sets the state (dynamic tag)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/dynamicTag/setState '{}'
@@ -172,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/dynamicTag/writeNDEF`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Writes the NDEF (dynamic tag)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/dynamicTag/writeNDEF '{}'
@@ -193,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/ese/close`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Closes the nfc (ese)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/ese/close '{}'
@@ -214,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/ese/open`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Opens the nfc (ese)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/ese/open '{}'
@@ -235,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/ese/transceive`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the transceive (ese)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/ese/transceive '{}'
@@ -256,13 +278,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/formattag`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the formattag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/formattag '{}'
@@ -277,13 +301,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/getstatus`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the getstatus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/getstatus '{}'
@@ -298,13 +324,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/gettransaction`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the gettransaction.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/gettransaction '{}'
@@ -319,13 +347,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/handover/getStatus`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Returns the status (handover)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/handover/getStatus '{}'
@@ -340,13 +370,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/internal/choose`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the choose (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/internal/choose '{}'
@@ -361,13 +393,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/internal/disableRFEmission`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Disables the RF emission (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/internal/disableRFEmission '{}'
@@ -382,13 +416,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/internal/enableRFEmission`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Enables the RF emission (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/internal/enableRFEmission '{}'
@@ -403,13 +439,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/internal/testSWPConnection`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Tests the SWP connection (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/internal/testSWPConnection '{}'
@@ -424,13 +462,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/peer/getStatus`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Returns the status (peer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/peer/getStatus '{}'
@@ -445,13 +485,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/peer/receiveNDEF`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the receive NDEF (peer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/peer/receiveNDEF '{}'
@@ -466,13 +508,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/peer/sendNDEF`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Sends the NDEF (peer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/peer/sendNDEF '{}'
@@ -487,13 +531,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/pushp2p`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the pushp 2 p.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/pushp2p '{}'
@@ -508,13 +554,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/readtag`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the readtag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/readtag '{}'
@@ -529,13 +577,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/receivep2p`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the receivep 2 p.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/receivep2p '{}'
@@ -550,13 +600,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/rfetest`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the rfetest.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/rfetest '{}'
@@ -571,13 +623,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/setexclusivemode`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the setexclusivemode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/setexclusivemode '{}'
@@ -592,13 +646,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/setreadonlytag`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the setreadonlytag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/setreadonlytag '{}'
@@ -613,13 +669,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/setstate`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the setstate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/setstate '{}'
@@ -634,13 +692,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/swpselftest`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the swpselftest.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/swpselftest '{}'
@@ -655,13 +715,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/tag/getStatus`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Returns the status (tag)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/tag/getStatus '{}'
@@ -676,13 +738,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/tag/readNDEF`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Reads the NDEF (tag)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/tag/readNDEF '{}'
@@ -697,13 +761,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/tag/writeNDEF`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Writes the NDEF (tag)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/tag/writeNDEF '{}'
@@ -718,13 +784,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/transceivetag`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the transceivetag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/transceivetag '{}'
@@ -739,13 +807,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nfc/writetag`
 
-Method on com.webos.service.nfc (from on-device permission registry; parameters undocumented).
+Handles the writetag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nfc/writetag '{}'

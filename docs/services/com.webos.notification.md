@@ -1,55 +1,57 @@
 # `com.webos.notification`
 
+System notification service: creates and closes toasts, alerts, input alerts, PIN-code prompts and app/remote notifications.
+
 44 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`$activity`](#_activity) | unknown |  | notifications | Contains detailed information of an activity which is fired by the Actvity Manager . This object is returned from the Activity Manager. For  |
-| [`action`](#action) | unknown |  | notifications | Describes the action parameter for the toast. |
-| [`alertInfo`](#alertinfo) | unknown |  | notifications | Contains the alert information. |
-| [`button`](#button) | unknown |  | notifications | Contains alert button information |
-| [`callback/wakeUp`](#callback_wakeup) | private |  | misc | Found by on-device introspection (parameters undocumented). |
-| [`closeAlert`](#closealert) | public |  | notifications | Closes the currently displayed alert notification. |
-| [`closeAllAlerts`](#closeallalerts) | public |  | notifications | Closes all the open alerts. Note: This method is for internal use. It must only be used by com.webos.service.battest during BAT test . If th |
-| [`closeInputAlert`](#closeinputalert) | private |  | notifications | Method registered by com.webos.notification (root category) |
-| [`closePincodePrompt`](#closepincodeprompt) | private |  | notifications | Method registered by com.webos.notification (root category) |
-| [`closeToast`](#closetoast) | public |  | notifications | Removes a toast notification from the database. |
-| [`createAlert`](#createalert) | public |  | notifications | Creates a system alert notification. |
-| [`createInputAlert`](#createinputalert) | private |  | notifications | Method registered by com.webos.notification (root category) |
-| [`createNotification`](#createnotification) | private |  | notifications | Method registered by com.webos.notification (root category) |
-| [`createPincodePrompt`](#createpincodeprompt) | public |  | notifications | Method registered by com.webos.notification (root category) |
-| [`createRemoteNotification`](#createremotenotification) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). |
-| [`createSignageAlert`](#createsignagealert) | public |  | notifications | Method registered by com.webos.notification (root category) |
-| [`createToast`](#createtoast) | public |  | notifications | Creates a toast notification. |
-| [`disable`](#disable) | public |  | notifications | Disables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note: Only a privileged application or service can call this met |
-| [`disableToast`](#disabletoast) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). |
-| [`enable`](#enable) | public |  | notifications | Enables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note: Only a privileged app/service can call this method. |
-| [`enableToast`](#enabletoast) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). |
-| [`getAlertNotification`](#getalertnotification) | public | yes | notifications | Subscribe to create alert notifications. Note: This method should only be used by the Surface Manager . |
-| [`getInputAlertNotification`](#getinputalertnotification) | private |  | notifications | Method registered by com.webos.notification (root category) |
-| [`getNotification`](#getnotification) | private |  | notifications | Method registered by com.webos.notification (root category) |
-| [`getNotificationInfo`](#getnotificationinfo) | private |  | notifications | Method registered by com.webos.notification (root category) |
-| [`getPincodePromptNotification`](#getpincodepromptnotification) | private |  | notifications | Method registered by com.webos.notification (root category) |
-| [`getRemoteNotificationInfo`](#getremotenotificationinfo) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). |
-| [`getToastCount`](#gettoastcount) | public | yes | notifications | Queries the toast notification details of the stored messages and provides the read/unread count of the toast notifications. Note: Only "com |
-| [`getToastList`](#gettoastlist) | public |  | notifications | Lists the toasts created for the app/client based on the user logged into the particular session. |
-| [`getToastNotification`](#gettoastnotification) | public | yes | notifications | Subscribe to created toast notification. Note: This method should only be used by Surface Manager only. |
-| [`image`](#image) | unknown |  | notifications | Defines extra toast image. |
-| [`input`](#input) | unknown |  | notifications | Contain information about an input alert. |
-| [`onclick`](#onclick) | unknown |  | notifications | Contains action information when a user clicks the toast |
-| [`onclose`](#onclose) | unknown |  | notifications | Contains close action when alert is closed with close button or automatically |
-| [`onfail`](#onfail) | unknown |  | notifications | Action to be performed on failure to create alert from view side (LSM). |
-| [`onFailAction`](#onfailaction) | unknown |  | notifications | Action to be performed on failure to create alert. |
-| [`purgeHistory`](#purgehistory) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). |
-| [`removeAllNotification`](#removeallnotification) | public |  | notifications | Removes all notifications that are currently being displayed. |
-| [`removeNotification`](#removenotification) | public |  | notifications | Deletes the given notification(s) from DB. We can remove given set of notifications or remove all notifications from a given sourceId. |
-| [`removeRemoteNotification`](#removeremotenotification) | private |  | notifications | Method on com.webos.notification (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`schedule`](#schedule) | unknown |  | notifications | Creates a toast notification as a persistent message and define its schedule. |
-| [`setAlertProgress`](#setalertprogress) | private |  | misc | Found by on-device introspection (parameters undocumented). |
-| [`setToastStatus`](#settoaststatus) | public |  | notifications | Specifies whether the toast is to be marked as read or unread. |
-| [`toastInfo`](#toastinfo) | unknown |  | notifications | Contains information about the stored toasts |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`$activity`](#_activity) | unknown |  | notifications | documented | Contains detailed information of an activity which is fired by the Actvity Manager . This object is returned from the Activity Manager. For  |
+| [`action`](#action) | unknown |  | notifications | documented | Describes the action parameter for the toast. |
+| [`alertInfo`](#alertinfo) | unknown |  | notifications | documented | Contains the alert information. |
+| [`button`](#button) | unknown |  | notifications | documented | Contains alert button information |
+| [`callback/wakeUp`](#callback_wakeup) | private |  | misc | documented | Found by on-device introspection (parameters undocumented). |
+| [`closeAlert`](#closealert) | public |  | notifications | documented | Closes the currently displayed alert notification. |
+| [`closeAllAlerts`](#closeallalerts) | public |  | notifications | documented | Closes all the open alerts. Note: This method is for internal use. It must only be used by com.webos.service.battest during BAT test . If th |
+| [`closeInputAlert`](#closeinputalert) | private |  | notifications | inferred | Closes the input alert. |
+| [`closePincodePrompt`](#closepincodeprompt) | private |  | notifications | inferred | Closes the pincode prompt. |
+| [`closeToast`](#closetoast) | public |  | notifications | documented | Removes a toast notification from the database. |
+| [`createAlert`](#createalert) | public |  | notifications | documented | Creates a system alert notification. |
+| [`createInputAlert`](#createinputalert) | private |  | notifications | inferred | Creates the input alert. |
+| [`createNotification`](#createnotification) | private |  | notifications | inferred | Creates the notification. |
+| [`createPincodePrompt`](#createpincodeprompt) | public |  | notifications | inferred | Creates the pincode prompt. |
+| [`createRemoteNotification`](#createremotenotification) | private |  | notifications | inferred | Creates the remote notification. |
+| [`createSignageAlert`](#createsignagealert) | public |  | notifications | inferred | Creates the signage alert. |
+| [`createToast`](#createtoast) | public |  | notifications | documented | Creates a toast notification. |
+| [`disable`](#disable) | public |  | notifications | documented | Disables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note: Only a privileged application or service can call this met |
+| [`disableToast`](#disabletoast) | private |  | notifications | inferred | Disables the toast. |
+| [`enable`](#enable) | public |  | notifications | documented | Enables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note: Only a privileged app/service can call this method. |
+| [`enableToast`](#enabletoast) | private |  | notifications | inferred | Enables the toast. |
+| [`getAlertNotification`](#getalertnotification) | public | yes | notifications | documented | Subscribe to create alert notifications. Note: This method should only be used by the Surface Manager . |
+| [`getInputAlertNotification`](#getinputalertnotification) | private |  | notifications | inferred | Returns the input alert notification. |
+| [`getNotification`](#getnotification) | private |  | notifications | inferred | Returns the notification. |
+| [`getNotificationInfo`](#getnotificationinfo) | private |  | notifications | inferred | Returns the notification info. |
+| [`getPincodePromptNotification`](#getpincodepromptnotification) | private |  | notifications | inferred | Returns the pincode prompt notification. |
+| [`getRemoteNotificationInfo`](#getremotenotificationinfo) | private |  | notifications | inferred | Returns the remote notification info. |
+| [`getToastCount`](#gettoastcount) | public | yes | notifications | documented | Queries the toast notification details of the stored messages and provides the read/unread count of the toast notifications. Note: Only "com |
+| [`getToastList`](#gettoastlist) | public |  | notifications | documented | Lists the toasts created for the app/client based on the user logged into the particular session. |
+| [`getToastNotification`](#gettoastnotification) | public | yes | notifications | documented | Subscribe to created toast notification. Note: This method should only be used by Surface Manager only. |
+| [`image`](#image) | unknown |  | notifications | documented | Defines extra toast image. |
+| [`input`](#input) | unknown |  | notifications | documented | Contain information about an input alert. |
+| [`onclick`](#onclick) | unknown |  | notifications | documented | Contains action information when a user clicks the toast |
+| [`onclose`](#onclose) | unknown |  | notifications | documented | Contains close action when alert is closed with close button or automatically |
+| [`onfail`](#onfail) | unknown |  | notifications | documented | Action to be performed on failure to create alert from view side (LSM). |
+| [`onFailAction`](#onfailaction) | unknown |  | notifications | documented | Action to be performed on failure to create alert. |
+| [`purgeHistory`](#purgehistory) | private |  | notifications | inferred | Handles the purge history. |
+| [`removeAllNotification`](#removeallnotification) | public |  | notifications | documented | Removes all notifications that are currently being displayed. |
+| [`removeNotification`](#removenotification) | public |  | notifications | documented | Deletes the given notification(s) from DB. We can remove given set of notifications or remove all notifications from a given sourceId. |
+| [`removeRemoteNotification`](#removeremotenotification) | private |  | notifications | inferred | Removes the remote notification. ⚠️ |
+| [`schedule`](#schedule) | unknown |  | notifications | documented | Creates a toast notification as a persistent message and define its schedule. |
+| [`setAlertProgress`](#setalertprogress) | private |  | misc | documented | Found by on-device introspection (parameters undocumented). |
+| [`setToastStatus`](#settoaststatus) | public |  | notifications | documented | Specifies whether the toast is to be marked as read or unread. |
+| [`toastInfo`](#toastinfo) | unknown |  | notifications | documented | Contains information about the stored toasts |
 
 <a id="_activity"></a>
 ## `$activity`
@@ -146,7 +148,7 @@ Found by on-device introspection (parameters undocumented).
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on HE_DTV_W22O_AFABATPU  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/callback/wakeUp '{}'
@@ -154,7 +156,7 @@ luna-send -n 1 -f luna://com.webos.notification/callback/wakeUp '{}'
 
 > ACG groups: all Confirmed on webOS 7.0 (W22O) dump.
 
-Sources: [1](luna-dump HE_DTV_W22O_AFABATPU)
+Sources: 
 
 <a id="closealert"></a>
 ## `closeAlert`
@@ -167,7 +169,7 @@ Closes the currently displayed alert notification.
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 3+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -207,13 +209,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notificat
 
 `luna://com.webos.notification/closeInputAlert`
 
-Method registered by com.webos.notification (root category)
+Closes the input alert.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/closeInputAlert '{}'
@@ -228,13 +232,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.notification/closePincodePrompt`
 
-Method registered by com.webos.notification (root category)
+Closes the pincode prompt.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/closePincodePrompt '{}'
@@ -255,7 +261,7 @@ Removes a toast notification from the database.
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -281,7 +287,7 @@ Creates a system alert notification.
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 3+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -297,6 +303,12 @@ Creates a system alert notification.
 | `timeout` | int (0) |
 | `sourceId` | string |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `alertId` | String (required) The ID of the created alert notification. This would be sourceId + "-" + Timestamp. |
+
 ```sh
 luna-send -n 1 -f -a com.webos.surfacemanager luna://com.webos.notification/createAlert '{ "message":"hello world", "buttons":[ { "label":"launch", "params":{ "id":"youtube.leanback.v4" } } ] }
 ```
@@ -310,13 +322,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notificat
 
 `luna://com.webos.notification/createInputAlert`
 
-Method registered by com.webos.notification (root category)
+Creates the input alert.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/createInputAlert '{}'
@@ -331,13 +345,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.notification/createNotification`
 
-Method registered by com.webos.notification (root category)
+Creates the notification.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/createNotification '{}'
@@ -352,13 +368,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.notification/createPincodePrompt`
 
-Method registered by com.webos.notification (root category)
+Creates the pincode prompt.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/createPincodePrompt '{}'
@@ -373,13 +391,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.notification/createRemoteNotification`
 
-Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+Creates the remote notification.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/createRemoteNotification '{}'
@@ -394,13 +414,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.notification/createSignageAlert`
 
-Method registered by com.webos.notification (root category)
+Creates the signage alert.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/createSignageAlert '{}'
@@ -421,7 +443,7 @@ Creates a toast notification.
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 3+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -440,6 +462,12 @@ Creates a toast notification.
 | `iconData` | base64 string |
 | `iconExtension` | png/jpg |
 | `onClick` | {appId, params} |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `toastId` | String (required) The id of the created toast notification. This would be sourceId + "-" + Timestamp. |
 
 ```sh
 luna-send -n 1 -f -a com.webos.app.test luna://com.webos.notification/createToast '{ "sourceId":"com.webos.app.test", "onclick": {"appId":"com.webos.app.test"}, "message":"hello world", "noaction": false, "persistent":true }
@@ -460,7 +488,7 @@ Disables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 21+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f -a com.webos.app.test luna://com.webos.notification/disable '{}
@@ -475,13 +503,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notificat
 
 `luna://com.webos.notification/disableToast`
 
-Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+Disables the toast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/disableToast '{}'
@@ -502,7 +532,7 @@ Enables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note:
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 21+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f -a com.webos.app.test luna://com.webos.notification/enable '{}
@@ -517,13 +547,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notificat
 
 `luna://com.webos.notification/enableToast`
 
-Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+Enables the toast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/enableToast '{}'
@@ -544,7 +576,7 @@ Subscribe to create alert notifications. Note: This method should only be used b
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 12+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -563,13 +595,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notificat
 
 `luna://com.webos.notification/getInputAlertNotification`
 
-Method registered by com.webos.notification (root category)
+Returns the input alert notification.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/getInputAlertNotification '{}'
@@ -584,13 +618,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.notification/getNotification`
 
-Method registered by com.webos.notification (root category)
+Returns the notification.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/getNotification '{}'
@@ -605,13 +641,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.notification/getNotificationInfo`
 
-Method registered by com.webos.notification (root category)
+Returns the notification info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/getNotificationInfo '{}'
@@ -626,13 +664,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.notification/getPincodePromptNotification`
 
-Method registered by com.webos.notification (root category)
+Returns the pincode prompt notification.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/getPincodePromptNotification '{}'
@@ -647,13 +687,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.notification/getRemoteNotificationInfo`
 
-Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+Returns the remote notification info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/getRemoteNotificationInfo '{}'
@@ -705,6 +747,12 @@ Lists the toasts created for the app/client based on the user logged into the pa
 | Param | Type / notes |
 |---|---|
 | `displayId` | Number (optional) Identifier of the display where the notification is to be displayed. Possible values are: 0 1 |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `toastInfo` | Object array: toastInfo (required) Contains information of the stored toasts. |
 
 ```sh
 luna-send -n 1 -f -a com.webos.app.notification luna://com.webos.notification/getToastList '{"displayId": 0}
@@ -870,13 +918,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notificat
 
 `luna://com.webos.notification/purgeHistory`
 
-Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+Handles the purge history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/purgeHistory '{}'
@@ -902,6 +952,13 @@ Removes all notifications that are currently being displayed.
 | Param | Type / notes |
 |---|---|
 | `displayId` | Number (optional) Identifier of the display where the notification is to be displayed. Possible values are: 0 1 |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `removeAllNotiId` | Boolean (optional) Indicates whether all notifications were removed successfully. Possible values are: - true: Notifications were removed successfully. - false: Notification removal failed. |
+| `displayId` | Number (optional) Identifier of the display where the notification is to be displayed. Possible values are: - 0 - 1 |
 
 ```sh
 luna-send -a com.webos.surfacemanager -n 1 luna://com.webos.notification/removeAllNotification '{"displayId": 0}
@@ -929,6 +986,13 @@ Deletes the given notification(s) from DB. We can remove given set of notificati
 | `removeNotiId` | String array (optional) A list of IDs of the notifications to be deleted. Notification ID is composed of the URI of the notification source, a dash, and the timestamp of the time when the notification was issued. Format: "Source URI-Timestamp" Example "com.webos.surfacemanager-1393548223764" Note: Either one of "removeNotiId" or "sourceId" is mandatory to be provided. |
 | `sourceId` | String (optional) Identifies the app or service that created the notification to be deleted. Format: URI Note: Either one of "removeNotiId" or "sourceId" is mandatory to be provided. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `removeNotiId` | String array (optional) A list of IDs of the notification that has been deleted. Format: "Source URI-Timestamp" Example: "com.webos.surfacemanager-1393548223764" Note: Returned when "removeNotiId" is passed as input parameter |
+| `sourceId` | String (optional) The app or service that created the notification that are deleted. Format: URI Example:"com.webos.surfacemanager" Note: Returned when "sourceId" is passed as input parameter |
+
 ```sh
 luna-send -a com.webos.surfacemanager -n 1 -f luna://com.webos.notification/removeNotification '{"removeNotiId": ["com.sloy.jbnotif-1393548393417"]}
 ```
@@ -942,13 +1006,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notificat
 
 `luna://com.webos.notification/removeRemoteNotification`
 
-Method on com.webos.notification (from on-device permission registry; parameters undocumented).
+Removes the remote notification.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/removeRemoteNotification '{}'
@@ -990,7 +1056,7 @@ Found by on-device introspection (parameters undocumented).
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on HE_DTV_W22O_AFABATPU  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/setAlertProgress '{}'
@@ -998,7 +1064,7 @@ luna-send -n 1 -f luna://com.webos.notification/setAlertProgress '{}'
 
 > ACG groups: all Confirmed on webOS 7.0 (W22O) dump.
 
-Sources: [1](luna-dump HE_DTV_W22O_AFABATPU)
+Sources: 
 
 <a id="settoaststatus"></a>
 ## `setToastStatus`
@@ -1017,6 +1083,13 @@ Specifies whether the toast is to be marked as read or unread.
 |---|---|
 | `toastId` | String (required) Indicates the unique ID of the toast created. |
 | `readStatus` | Boolean (required) Indicates the status of a toast to be set by the user. Possible values are: true: toast is read. false: toast is unread. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `toastId` | String (optional) Contains the unique ID of the toast created. |
+| `readStatus` | Boolean (optional) Indicates the status of a toast set by the user. |
 
 ```sh
 luna-send -i -f -a com.webos.app.notification luna://com.webos.notification/setToastStatus '{ "toastId" : "com.webos.app.notification-1584349101435", "readStatus" : true }

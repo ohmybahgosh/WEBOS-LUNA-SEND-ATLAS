@@ -198,7 +198,7 @@ These can factory reset the TV, wipe app or user data, break software updates, c
 | [`luna://com.webos.service.mrcu/eraseIrCodes`](services/com.webos.service.mrcu.md#eraseircodes) | Erases the IR codes. |
 | [`luna://com.webos.service.mrcu/hid/delete`](services/com.webos.service.mrcu.md#hid_delete) | Deletes the MRCU (hid) |
 | [`luna://com.webos.service.mrcu/resetQuaternion`](services/com.webos.service.mrcu.md#resetquaternion) | Resets the quaternion. |
-| [`luna://com.webos.service.mrcu/startFirmwareUpdate`](services/com.webos.service.mrcu.md#startfirmwareupdate) | Method registered by com.webos.service.mrcu (root category) |
+| [`luna://com.webos.service.mrcu/startFirmwareUpdate`](services/com.webos.service.mrcu.md#startfirmwareupdate) | Starts the firmware update. |
 | [`luna://com.webos.service.msc/resetAccelerometerTestResult`](services/com.webos.service.msc.md#resetaccelerometertestresult) | Resets the accelerometer test result. |
 | [`luna://com.webos.service.multiviewcontroller/addPreset`](services/com.webos.service.multiviewcontroller.md#addpreset) | Adds the preset. |
 | [`luna://com.webos.service.multiviewcontroller/removeClient`](services/com.webos.service.multiviewcontroller.md#removeclient) | Removes the client. |
@@ -257,20 +257,20 @@ These can factory reset the TV, wipe app or user data, break software updates, c
 | [`luna://com.webos.service.tv.display/requestClearPanelNoise`](services/com.webos.service.tv.display.md#requestclearpanelnoise) | OLED pixel refresh scheduling |
 | [`luna://com.webos.service.tv.systemproperty/doFactoryDefault`](services/com.webos.service.tv.systemproperty.md#dofactorydefault) | Factory default operation (listed in Powback capabilities audit under panel calibration/service-menu controls) |
 | [`luna://com.webos.service.tv.systemproperty/doUserDefault`](services/com.webos.service.tv.systemproperty.md#douserdefault) | Factory reset / user-default restore. The db8 no-space handler calls it right after the comment "do factory reset" |
-| [`luna://com.webos.service.tv.systemproperty/downloadEdid`](services/com.webos.service.tv.systemproperty.md#downloadedid) | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`luna://com.webos.service.tv.systemproperty/flexSetFakeInit`](services/com.webos.service.tv.systemproperty.md#flexsetfakeinit) | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`luna://com.webos.service.tv.systemproperty/flexSetStepMotor`](services/com.webos.service.tv.systemproperty.md#flexsetstepmotor) | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`luna://com.webos.service.tv.systemproperty/resetAdcCalibration`](services/com.webos.service.tv.systemproperty.md#resetadccalibration) | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`luna://com.webos.service.tv.systemproperty/resetEdid`](services/com.webos.service.tv.systemproperty.md#resetedid) | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`luna://com.webos.service.tv.systemproperty/resetVcom`](services/com.webos.service.tv.systemproperty.md#resetvcom) | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`luna://com.webos.service.tv.systemproperty/savePgamma`](services/com.webos.service.tv.systemproperty.md#savepgamma) | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`luna://com.webos.service.tv.systemproperty/setAdcCalibrationValue`](services/com.webos.service.tv.systemproperty.md#setadccalibrationvalue) | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`luna://com.webos.service.tv.systemproperty/setNpointWhiteBalance`](services/com.webos.service.tv.systemproperty.md#setnpointwhitebalance) | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`luna://com.webos.service.tv.systemproperty/setPgamma`](services/com.webos.service.tv.systemproperty.md#setpgamma) | Method registered by com.webos.service.tv.systemproperty (root category) |
+| [`luna://com.webos.service.tv.systemproperty/downloadEdid`](services/com.webos.service.tv.systemproperty.md#downloadedid) | Downloads the EDID. |
+| [`luna://com.webos.service.tv.systemproperty/flexSetFakeInit`](services/com.webos.service.tv.systemproperty.md#flexsetfakeinit) | Handles the flex set fake init. |
+| [`luna://com.webos.service.tv.systemproperty/flexSetStepMotor`](services/com.webos.service.tv.systemproperty.md#flexsetstepmotor) | Handles the flex set step motor. |
+| [`luna://com.webos.service.tv.systemproperty/resetAdcCalibration`](services/com.webos.service.tv.systemproperty.md#resetadccalibration) | Resets the adc calibration. |
+| [`luna://com.webos.service.tv.systemproperty/resetEdid`](services/com.webos.service.tv.systemproperty.md#resetedid) | Resets the EDID. |
+| [`luna://com.webos.service.tv.systemproperty/resetVcom`](services/com.webos.service.tv.systemproperty.md#resetvcom) | Resets the vcom. |
+| [`luna://com.webos.service.tv.systemproperty/savePgamma`](services/com.webos.service.tv.systemproperty.md#savepgamma) | Saves the pgamma. |
+| [`luna://com.webos.service.tv.systemproperty/setAdcCalibrationValue`](services/com.webos.service.tv.systemproperty.md#setadccalibrationvalue) | Sets the adc calibration value. |
+| [`luna://com.webos.service.tv.systemproperty/setNpointWhiteBalance`](services/com.webos.service.tv.systemproperty.md#setnpointwhitebalance) | Sets the npoint white balance. |
+| [`luna://com.webos.service.tv.systemproperty/setPgamma`](services/com.webos.service.tv.systemproperty.md#setpgamma) | Sets the pgamma. |
 | [`luna://com.webos.service.tv.systemproperty/setProperties`](services/com.webos.service.tv.systemproperty.md#setproperties) | Writes system properties (ColorControl SetSystemProperty; Glasshouse toggles OLED TPC/GSR flags OledTPC/OledGSR) |
-| [`luna://com.webos.service.tv.systemproperty/setVcom`](services/com.webos.service.tv.systemproperty.md#setvcom) | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`luna://com.webos.service.tv.systemproperty/setWhiteBalance`](services/com.webos.service.tv.systemproperty.md#setwhitebalance) | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`luna://com.webos.service.tv.systemproperty/startAdcCalibration`](services/com.webos.service.tv.systemproperty.md#startadccalibration) | Method registered by com.webos.service.tv.systemproperty (root category) |
+| [`luna://com.webos.service.tv.systemproperty/setVcom`](services/com.webos.service.tv.systemproperty.md#setvcom) | Sets the vcom. |
+| [`luna://com.webos.service.tv.systemproperty/setWhiteBalance`](services/com.webos.service.tv.systemproperty.md#setwhitebalance) | Sets the white balance. |
+| [`luna://com.webos.service.tv.systemproperty/startAdcCalibration`](services/com.webos.service.tv.systemproperty.md#startadccalibration) | Starts the adc calibration. |
 | [`luna://com.webos.service.tvpower/power2/shutDown`](services/com.webos.service.tvpower.md#power2_shutdown) | Handles the shut down (power 2) |
 | [`luna://com.webos.service.tvReservationAgent/delete`](services/com.webos.service.tvReservationAgent.md#delete) | Deletes the TV reservation agent. |
 | [`luna://com.webos.service.tvrm/presetTuner`](services/com.webos.service.tvrm.md#presettuner) | Handles the preset tuner. |

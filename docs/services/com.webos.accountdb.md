@@ -1,52 +1,56 @@
 # `com.webos.accountdb`
 
+DB8 database instance for user-account data: stores typed records (kinds) with find/get/put/del/batch queries, plus compaction, backup/restore and space checks.
+
 28 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`batch`](#batch) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`compact`](#compact) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`del`](#del) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`deleteWorkSpace`](#deleteworkspace) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). ⚠️ |
-| [`delKind`](#delkind) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`dump`](#dump) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`fill`](#fill) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`find`](#find) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`get`](#get) | private |  | db | Getter on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`internal/postBackup`](#internal_postbackup) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`internal/postRestore`](#internal_postrestore) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`internal/preBackup`](#internal_prebackup) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`internal/preRestore`](#internal_prerestore) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`internal/releaseAdminProfile`](#internal_releaseadminprofile) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`internal/scheduledBackup`](#internal_scheduledbackup) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`internal/scheduledPurge`](#internal_scheduledpurge) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`internal/scheduledSpaceCheck`](#internal_scheduledspacecheck) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`internal/spaceCheck`](#internal_spacecheck) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`merge`](#merge) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`mergePut`](#mergeput) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`purge`](#purge) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`put`](#put) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`putKind`](#putkind) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`putPermissions`](#putpermissions) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`resetWorkSpaceData`](#resetworkspacedata) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). ⚠️ |
-| [`search`](#search) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`setCurrentWorkSpace`](#setcurrentworkspace) | private |  | db | Setter on com.webos.accountdb (introspected on-device; parameters undocumented). |
-| [`watch`](#watch) | private |  | db | Method on com.webos.accountdb (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`batch`](#batch) | private |  | db | inferred | Handles the batch. |
+| [`compact`](#compact) | private |  | db | inferred | Handles the compact. |
+| [`del`](#del) | private |  | db | inferred | Handles the del. |
+| [`deleteWorkSpace`](#deleteworkspace) | private |  | db | inferred | Deletes the work space. ⚠️ |
+| [`delKind`](#delkind) | private |  | db | inferred | Handles the del kind. |
+| [`dump`](#dump) | private |  | db | inferred | Dumps the accountdb. |
+| [`fill`](#fill) | private |  | db | inferred | Handles the fill. |
+| [`find`](#find) | private |  | db | inferred | Handles the find. |
+| [`get`](#get) | private |  | db | inferred | Returns the accountdb. |
+| [`internal/postBackup`](#internal_postbackup) | private |  | db | inferred | Posts the backup (internal) |
+| [`internal/postRestore`](#internal_postrestore) | private |  | db | inferred | Posts the restore (internal) |
+| [`internal/preBackup`](#internal_prebackup) | private |  | db | inferred | Handles the pre backup (internal) |
+| [`internal/preRestore`](#internal_prerestore) | private |  | db | inferred | Handles the pre restore (internal) |
+| [`internal/releaseAdminProfile`](#internal_releaseadminprofile) | private |  | db | inferred | Releases the admin profile (internal) |
+| [`internal/scheduledBackup`](#internal_scheduledbackup) | private |  | db | inferred | Handles the scheduled backup (internal) |
+| [`internal/scheduledPurge`](#internal_scheduledpurge) | private |  | db | inferred | Handles the scheduled purge (internal) |
+| [`internal/scheduledSpaceCheck`](#internal_scheduledspacecheck) | private |  | db | inferred | Handles the scheduled space check (internal) |
+| [`internal/spaceCheck`](#internal_spacecheck) | private |  | db | inferred | Handles the space check (internal) |
+| [`merge`](#merge) | private |  | db | inferred | Merges the accountdb. |
+| [`mergePut`](#mergeput) | private |  | db | inferred | Merges the put. |
+| [`purge`](#purge) | private |  | db | inferred | Handles the purge. |
+| [`put`](#put) | private |  | db | inferred | Writes the accountdb. |
+| [`putKind`](#putkind) | private |  | db | inferred | Writes the kind. |
+| [`putPermissions`](#putpermissions) | private |  | db | inferred | Writes the permissions. |
+| [`resetWorkSpaceData`](#resetworkspacedata) | private |  | db | inferred | Resets the work space data. ⚠️ |
+| [`search`](#search) | private |  | db | inferred | Searches for accountdb. |
+| [`setCurrentWorkSpace`](#setcurrentworkspace) | private |  | db | inferred | Sets the current work space. |
+| [`watch`](#watch) | private |  | db | inferred | Handles the watch. |
 
 <a id="batch"></a>
 ## `batch`
 
 `luna://com.webos.accountdb/batch`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the batch.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/batch '{}'
@@ -61,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/compact`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the compact.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/compact '{}'
@@ -82,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/del`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the del.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/del '{}'
@@ -103,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/deleteWorkSpace`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Deletes the work space.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/deleteWorkSpace '{}'
@@ -124,13 +134,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/delKind`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the del kind.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/delKind '{}'
@@ -145,13 +157,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/dump`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Dumps the accountdb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/dump '{}'
@@ -166,13 +180,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/fill`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the fill.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/fill '{}'
@@ -187,13 +203,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/find`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the find.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/find '{}'
@@ -208,13 +226,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/get`
 
-Getter on com.webos.accountdb (introspected on-device; parameters undocumented).
+Returns the accountdb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/get '{}'
@@ -229,13 +249,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/internal/postBackup`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Posts the backup (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/internal/postBackup '{}'
@@ -250,13 +272,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/internal/postRestore`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Posts the restore (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/internal/postRestore '{}'
@@ -271,13 +295,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/internal/preBackup`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the pre backup (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/internal/preBackup '{}'
@@ -292,13 +318,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/internal/preRestore`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the pre restore (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/internal/preRestore '{}'
@@ -313,13 +341,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/internal/releaseAdminProfile`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Releases the admin profile (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/internal/releaseAdminProfile '{}'
@@ -334,13 +364,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/internal/scheduledBackup`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the scheduled backup (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/internal/scheduledBackup '{}'
@@ -355,13 +387,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/internal/scheduledPurge`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the scheduled purge (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/internal/scheduledPurge '{}'
@@ -376,13 +410,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/internal/scheduledSpaceCheck`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the scheduled space check (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/internal/scheduledSpaceCheck '{}'
@@ -397,13 +433,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/internal/spaceCheck`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the space check (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/internal/spaceCheck '{}'
@@ -418,13 +456,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/merge`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Merges the accountdb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/merge '{}'
@@ -439,13 +479,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/mergePut`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Merges the put.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/mergePut '{}'
@@ -460,13 +502,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/purge`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the purge.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/purge '{}'
@@ -481,13 +525,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/put`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Writes the accountdb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/put '{}'
@@ -502,13 +548,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/putKind`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Writes the kind.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/putKind '{}'
@@ -523,13 +571,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/putPermissions`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Writes the permissions.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/putPermissions '{}'
@@ -544,13 +594,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/resetWorkSpaceData`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Resets the work space data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/resetWorkSpaceData '{}'
@@ -565,13 +617,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/search`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Searches for accountdb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/search '{}'
@@ -586,13 +640,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/setCurrentWorkSpace`
 
-Setter on com.webos.accountdb (introspected on-device; parameters undocumented).
+Sets the current work space.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/setCurrentWorkSpace '{}'
@@ -607,13 +663,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.accountdb/watch`
 
-Method on com.webos.accountdb (introspected on-device; parameters undocumented).
+Handles the watch.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/watch '{}'

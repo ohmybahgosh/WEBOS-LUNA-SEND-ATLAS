@@ -1,31 +1,35 @@
 # `com.webos.app.igallery.preview`
 
+Appears to back the image-gallery preview app: creates gallery database and account folders, lists view themes, and reports status via the activity manager. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`createAccountFolder`](#createaccountfolder) | private |  | misc | Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented). |
-| [`createGalleryDB`](#creategallerydb) | private |  | db | Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented). |
-| [`getMyViewThemelist`](#getmyviewthemelist) | private |  | misc | Getter on com.webos.app.igallery.preview (introspected on-device; parameters undocumented). |
-| [`getstatusByActivitymanager`](#getstatusbyactivitymanager) | private |  | activity | Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented). |
-| [`info`](#info) | private |  | misc | Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented). |
-| [`invoke`](#invoke) | private |  | misc | Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented). |
-| [`quit`](#quit) | private |  | misc | Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`createAccountFolder`](#createaccountfolder) | private |  | misc | inferred | Creates the account folder. |
+| [`createGalleryDB`](#creategallerydb) | private |  | db | inferred | Creates the gallery DB. |
+| [`getMyViewThemelist`](#getmyviewthemelist) | private |  | misc | inferred | Returns the my view themelist. |
+| [`getstatusByActivitymanager`](#getstatusbyactivitymanager) | private |  | activity | inferred | Handles the getstatus by activitymanager. |
+| [`info`](#info) | private |  | misc | inferred | Handles the info. |
+| [`invoke`](#invoke) | private |  | misc | inferred | Handles the invoke. |
+| [`quit`](#quit) | private |  | misc | inferred | Quits the app igallery preview. |
 
 <a id="createaccountfolder"></a>
 ## `createAccountFolder`
 
 `luna://com.webos.app.igallery.preview/createAccountFolder`
 
-Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented).
+Creates the account folder.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.app.igallery.preview/createAccountFolder '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.app.igallery.preview/createGalleryDB`
 
-Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented).
+Creates the gallery DB.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.app.igallery.preview/createGalleryDB '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.app.igallery.preview/getMyViewThemelist`
 
-Getter on com.webos.app.igallery.preview (introspected on-device; parameters undocumented).
+Returns the my view themelist.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.app.igallery.preview/getMyViewThemelist '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.app.igallery.preview/getstatusByActivitymanager`
 
-Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented).
+Handles the getstatus by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.app.igallery.preview/getstatusByActivitymanager '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.app.igallery.preview/info`
 
-Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.app.igallery.preview/info '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.app.igallery.preview/invoke`
 
-Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented).
+Handles the invoke.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.app.igallery.preview/invoke '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.app.igallery.preview/quit`
 
-Method on com.webos.app.igallery.preview (introspected on-device; parameters undocumented).
+Quits the app igallery preview.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.app.igallery.preview/quit '{}'

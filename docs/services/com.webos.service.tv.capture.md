@@ -1,25 +1,27 @@
 # `com.webos.service.tv.capture`
 
+TV screen-capture service: creates capture handles, executes captures (including one-shot), and configures clip regions, options, output and locking. _(inferred from the service's methods)_
+
 14 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`createHandle`](#createhandle) | private |  | media | Screen/video capture service method createHandle (name from community research) |
-| [`destroyHandle`](#destroyhandle) | private |  | media | Screen/video capture service method destroyHandle (name from community research) |
-| [`execute`](#execute) | private |  | media | Screen/video capture service method execute (name from community research) |
-| [`executeOneShot`](#executeoneshot) | private |  | display | Legacy screenshot service name |
-| [`getClipRegions`](#getclipregions) | private |  | media | Screen/video capture service method getClipRegions (name from community research) |
-| [`getOptions`](#getoptions) | private |  | media | Screen/video capture service method getOptions (name from community research) |
-| [`getProperties`](#getproperties) | private |  | media | Screen/video capture service method getProperties (name from community research) |
-| [`isLocked`](#islocked) | private |  | media | Screen/video capture service method isLocked (name from community research) |
-| [`lock`](#lock) | private |  | media | Screen/video capture service method lock (name from community research) |
-| [`setClipRegions`](#setclipregions) | private |  | media | Screen/video capture service method setClipRegions (name from community research) |
-| [`setOptions`](#setoptions) | private |  | media | Screen/video capture service method setOptions (name from community research) |
-| [`setOutput`](#setoutput) | private |  | media | Screen/video capture service method setOutput (name from community research) |
-| [`setProperties`](#setproperties) | private |  | media | Screen/video capture service method setProperties (name from community research) |
-| [`unlock`](#unlock) | private |  | media | Screen/video capture service method unlock (name from community research) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`createHandle`](#createhandle) | private |  | media | documented | Screen/video capture service method createHandle (name from community research) |
+| [`destroyHandle`](#destroyhandle) | private |  | media | documented | Screen/video capture service method destroyHandle (name from community research) |
+| [`execute`](#execute) | private |  | media | documented | Screen/video capture service method execute (name from community research) |
+| [`executeOneShot`](#executeoneshot) | private |  | display | documented | Legacy screenshot service name |
+| [`getClipRegions`](#getclipregions) | private |  | media | documented | Screen/video capture service method getClipRegions (name from community research) |
+| [`getOptions`](#getoptions) | private |  | media | documented | Screen/video capture service method getOptions (name from community research) |
+| [`getProperties`](#getproperties) | private |  | media | documented | Screen/video capture service method getProperties (name from community research) |
+| [`isLocked`](#islocked) | private |  | media | documented | Screen/video capture service method isLocked (name from community research) |
+| [`lock`](#lock) | private |  | media | documented | Screen/video capture service method lock (name from community research) |
+| [`setClipRegions`](#setclipregions) | private |  | media | documented | Screen/video capture service method setClipRegions (name from community research) |
+| [`setOptions`](#setoptions) | private |  | media | documented | Screen/video capture service method setOptions (name from community research) |
+| [`setOutput`](#setoutput) | private |  | media | documented | Screen/video capture service method setOutput (name from community research) |
+| [`setProperties`](#setproperties) | private |  | media | documented | Screen/video capture service method setProperties (name from community research) |
+| [`unlock`](#unlock) | private |  | media | documented | Screen/video capture service method unlock (name from community research) |
 
 <a id="createhandle"></a>
 ## `createHandle`
@@ -32,7 +34,7 @@ Screen/video capture service method createHandle (name from community research)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/createHandle '{}'
@@ -53,7 +55,7 @@ Screen/video capture service method destroyHandle (name from community research)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/destroyHandle '{}'
@@ -74,7 +76,7 @@ Screen/video capture service method execute (name from community research)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/execute '{}'
@@ -95,7 +97,7 @@ Legacy screenshot service name
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** older webOS  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -122,7 +124,7 @@ Screen/video capture service method getClipRegions (name from community research
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/getClipRegions '{}'
@@ -143,7 +145,7 @@ Screen/video capture service method getOptions (name from community research)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/getOptions '{}'
@@ -164,7 +166,7 @@ Screen/video capture service method getProperties (name from community research)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/getProperties '{}'
@@ -185,7 +187,7 @@ Screen/video capture service method isLocked (name from community research)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/isLocked '{}'
@@ -206,7 +208,7 @@ Screen/video capture service method lock (name from community research)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/lock '{}'
@@ -227,7 +229,7 @@ Screen/video capture service method setClipRegions (name from community research
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/setClipRegions '{}'
@@ -248,7 +250,7 @@ Screen/video capture service method setOptions (name from community research)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/setOptions '{}'
@@ -269,7 +271,7 @@ Screen/video capture service method setOutput (name from community research)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/setOutput '{}'
@@ -290,7 +292,7 @@ Screen/video capture service method setProperties (name from community research)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/setProperties '{}'
@@ -311,7 +313,7 @@ Screen/video capture service method unlock (name from community research)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.capture/unlock '{}'

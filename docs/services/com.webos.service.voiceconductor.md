@@ -1,56 +1,60 @@
 # `com.webos.service.voiceconductor`
 
+Voice-assistant orchestration service: recognizes intents by voice or text, reports recognition status and supported languages, and registers voice interactors and their action results. _(inferred from the service's methods)_
+
 32 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelRecognition`](#cancelrecognition) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`checkUpdate`](#checkupdate) | public |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`debug/eulaAlert`](#debug_eulaalert) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`debug/networkAlert`](#debug_networkalert) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`debug/streamDisconnectToast`](#debug_streamdisconnecttoast) | private |  | notifications | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`getContext`](#getcontext) | public |  | input | Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`getRecognitionStatus`](#getrecognitionstatus) | private |  | input | Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`getSupportedLanguages`](#getsupportedlanguages) | public |  | input | Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`getUtteranceEvents`](#getutteranceevents) | private |  | input | Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`getVoiceKey`](#getvoicekey) | private |  | input | Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`getVoiceUiEvents`](#getvoiceuievents) | public |  | input | Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`interactor/register`](#interactor_register) | public |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`interactor/reportActionResult`](#interactor_reportactionresult) | public |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`interactor/setContext`](#interactor_setcontext) | public |  | input | Setter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`launchApp`](#launchapp) | private |  | apps | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`recognizeIntentByText`](#recognizeintentbytext) | public |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`recognizeVoice`](#recognizevoice) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`recognizeVoiceWithDetails`](#recognizevoicewithdetails) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`recordVoice`](#recordvoice) | public |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`setInputEvent`](#setinputevent) | private |  | input | Setter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`showGuide`](#showguide) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`stopRecordingVoice`](#stoprecordingvoice) | public |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`system/cancelRecognition`](#system_cancelrecognition) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`system/checkUpdate`](#system_checkupdate) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`system/getSupportedLanguages`](#system_getsupportedlanguages) | private |  | input | Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`system/recognizeIntentByText`](#system_recognizeintentbytext) | public |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`system/recognizeIntentByVoice`](#system_recognizeintentbyvoice) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`system/recognizeVoice`](#system_recognizevoice) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`system/recognizeVoiceWithDetails`](#system_recognizevoicewithdetails) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`system/setInputEvent`](#system_setinputevent) | private |  | input | Setter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
-| [`system/stopRecordingVoice`](#system_stoprecordingvoice) | private |  | input | Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelRecognition`](#cancelrecognition) | private |  | input | inferred | Cancels the recognition. |
+| [`checkUpdate`](#checkupdate) | public |  | input | inferred | Checks the update. |
+| [`debug/eulaAlert`](#debug_eulaalert) | private |  | input | inferred | Handles the eula alert (debug) |
+| [`debug/networkAlert`](#debug_networkalert) | private |  | input | inferred | Handles the network alert (debug) |
+| [`debug/streamDisconnectToast`](#debug_streamdisconnecttoast) | private |  | notifications | inferred | Handles the stream disconnect toast (debug) |
+| [`getContext`](#getcontext) | public |  | input | inferred | Returns the context. |
+| [`getRecognitionStatus`](#getrecognitionstatus) | private |  | input | inferred | Returns the recognition status. |
+| [`getSupportedLanguages`](#getsupportedlanguages) | public |  | input | inferred | Returns the supported languages. |
+| [`getUtteranceEvents`](#getutteranceevents) | private |  | input | inferred | Returns the utterance events. |
+| [`getVoiceKey`](#getvoicekey) | private |  | input | inferred | Returns the voice key. |
+| [`getVoiceUiEvents`](#getvoiceuievents) | public |  | input | inferred | Returns the voice ui events. |
+| [`interactor/register`](#interactor_register) | public |  | input | inferred | Registers the voiceconductor (interactor) |
+| [`interactor/reportActionResult`](#interactor_reportactionresult) | public |  | input | inferred | Reports the action result (interactor) |
+| [`interactor/setContext`](#interactor_setcontext) | public |  | input | inferred | Sets the context (interactor) |
+| [`launchApp`](#launchapp) | private |  | apps | inferred | Launches the app. |
+| [`recognizeIntentByText`](#recognizeintentbytext) | public |  | input | inferred | Recognizes the intent by text. |
+| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | inferred | Recognizes the intent by voice. |
+| [`recognizeVoice`](#recognizevoice) | private |  | input | inferred | Recognizes the voice. |
+| [`recognizeVoiceWithDetails`](#recognizevoicewithdetails) | private |  | input | inferred | Recognizes the voice with details. |
+| [`recordVoice`](#recordvoice) | public |  | input | inferred | Records the voice. |
+| [`setInputEvent`](#setinputevent) | private |  | input | inferred | Sets the input event. |
+| [`showGuide`](#showguide) | private |  | input | inferred | Shows the guide. |
+| [`stopRecordingVoice`](#stoprecordingvoice) | public |  | input | inferred | Stops the recording voice. |
+| [`system/cancelRecognition`](#system_cancelrecognition) | private |  | input | inferred | Cancels the recognition (system) |
+| [`system/checkUpdate`](#system_checkupdate) | private |  | input | inferred | Checks the update (system) |
+| [`system/getSupportedLanguages`](#system_getsupportedlanguages) | private |  | input | inferred | Returns the supported languages (system) |
+| [`system/recognizeIntentByText`](#system_recognizeintentbytext) | public |  | input | inferred | Recognizes the intent by text (system) |
+| [`system/recognizeIntentByVoice`](#system_recognizeintentbyvoice) | private |  | input | inferred | Recognizes the intent by voice (system) |
+| [`system/recognizeVoice`](#system_recognizevoice) | private |  | input | inferred | Recognizes the voice (system) |
+| [`system/recognizeVoiceWithDetails`](#system_recognizevoicewithdetails) | private |  | input | inferred | Recognizes the voice with details (system) |
+| [`system/setInputEvent`](#system_setinputevent) | private |  | input | inferred | Sets the input event (system) |
+| [`system/stopRecordingVoice`](#system_stoprecordingvoice) | private |  | input | inferred | Stops the recording voice (system) |
 
 <a id="cancelrecognition"></a>
 ## `cancelRecognition`
 
 `luna://com.webos.service.voiceconductor/cancelRecognition`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Cancels the recognition.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/cancelRecognition '{}'
@@ -65,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/checkUpdate`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Checks the update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/checkUpdate '{}'
@@ -86,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/debug/eulaAlert`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Handles the eula alert (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/debug/eulaAlert '{}'
@@ -107,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/debug/networkAlert`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Handles the network alert (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/debug/networkAlert '{}'
@@ -128,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/debug/streamDisconnectToast`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Handles the stream disconnect toast (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/debug/streamDisconnectToast '{}'
@@ -149,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/getContext`
 
-Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Returns the context.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/getContext '{}'
@@ -170,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/getRecognitionStatus`
 
-Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Returns the recognition status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/getRecognitionStatus '{}'
@@ -191,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/getSupportedLanguages`
 
-Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Returns the supported languages.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/getSupportedLanguages '{}'
@@ -212,13 +230,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/getUtteranceEvents`
 
-Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Returns the utterance events.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/getUtteranceEvents '{}'
@@ -233,13 +253,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/getVoiceKey`
 
-Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Returns the voice key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/getVoiceKey '{}'
@@ -254,13 +276,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/getVoiceUiEvents`
 
-Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Returns the voice ui events.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/getVoiceUiEvents '{}'
@@ -275,13 +299,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/interactor/register`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Registers the voiceconductor (interactor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/interactor/register '{}'
@@ -296,13 +322,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/interactor/reportActionResult`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Reports the action result (interactor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/interactor/reportActionResult '{}'
@@ -317,13 +345,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/interactor/setContext`
 
-Setter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Sets the context (interactor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/interactor/setContext '{}'
@@ -338,13 +368,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/launchApp`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Launches the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/launchApp '{}'
@@ -359,13 +391,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/recognizeIntentByText`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Recognizes the intent by text.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/recognizeIntentByText '{}'
@@ -380,13 +414,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/recognizeIntentByVoice`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Recognizes the intent by voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/recognizeIntentByVoice '{}'
@@ -401,13 +437,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/recognizeVoice`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Recognizes the voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/recognizeVoice '{}'
@@ -422,13 +460,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/recognizeVoiceWithDetails`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Recognizes the voice with details.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/recognizeVoiceWithDetails '{}'
@@ -443,13 +483,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/recordVoice`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Records the voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/recordVoice '{}'
@@ -464,13 +506,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/setInputEvent`
 
-Setter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Sets the input event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/setInputEvent '{}'
@@ -485,13 +529,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/showGuide`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Shows the guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/showGuide '{}'
@@ -506,13 +552,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/stopRecordingVoice`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Stops the recording voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/stopRecordingVoice '{}'
@@ -527,13 +575,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/system/cancelRecognition`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Cancels the recognition (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/system/cancelRecognition '{}'
@@ -548,13 +598,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/system/checkUpdate`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Checks the update (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/system/checkUpdate '{}'
@@ -569,13 +621,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/system/getSupportedLanguages`
 
-Getter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Returns the supported languages (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/system/getSupportedLanguages '{}'
@@ -590,13 +644,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/system/recognizeIntentByText`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Recognizes the intent by text (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/system/recognizeIntentByText '{}'
@@ -611,13 +667,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/system/recognizeIntentByVoice`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Recognizes the intent by voice (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/system/recognizeIntentByVoice '{}'
@@ -632,13 +690,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/system/recognizeVoice`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Recognizes the voice (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/system/recognizeVoice '{}'
@@ -653,13 +713,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/system/recognizeVoiceWithDetails`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Recognizes the voice with details (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/system/recognizeVoiceWithDetails '{}'
@@ -674,13 +736,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/system/setInputEvent`
 
-Setter on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Sets the input event (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/system/setInputEvent '{}'
@@ -695,13 +759,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceconductor/system/stopRecordingVoice`
 
-Method on com.webos.service.voiceconductor (introspected on-device; parameters undocumented).
+Stops the recording voice (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/system/stopRecordingVoice '{}'

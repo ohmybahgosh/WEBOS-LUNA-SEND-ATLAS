@@ -1,68 +1,70 @@
 # `com.webos.service.apiadapter`
 
+API adapter that bridges remote/second-screen clients to on-device functions: audio (sound output, mute), system settings, external picture-quality data and a media viewer. _(inferred from the service's methods)_
+
 57 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`audio/changeSoundOutput`](#audio_changesoundoutput) | ssap |  | audio | Change sound output |
-| [`audio/getMute`](#audio_getmute) | private |  | audio | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`audio/getSoundOutput`](#audio_getsoundoutput) | ssap | yes | audio | Get (or subscribe to) current sound output |
-| [`audio/getStatus`](#audio_getstatus) | private |  | audio | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`audio/setMute`](#audio_setmute) | private |  | audio | Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`config/getConfigs`](#config_getconfigs) | private |  | settings | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`externalpq/getExternalPqData`](#externalpq_getexternalpqdata) | private |  | picture | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`externalpq/setExternalPqData`](#externalpq_setexternalpqdata) | private |  | picture | Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`info`](#info) | private |  | network | Method on com.webos.service.apiadapter (from on-device permission registry; parameters undocumented). |
-| [`media_viewer/close`](#media_viewer_close) | private |  | media | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`media_viewer/open`](#media_viewer_open) | private |  | media | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`quit`](#quit) | private |  | network | Method on com.webos.service.apiadapter (from on-device permission registry; parameters undocumented). |
-| [`settings/getSystemSettingDesc`](#settings_getsystemsettingdesc) | private |  | settings | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`settings/getSystemSettings`](#settings_getsystemsettings) | private |  | settings | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`settings/getSystemSettingsHDRInfo`](#settings_getsystemsettingshdrinfo) | private |  | settings | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`settings/getSystemSettingValues`](#settings_getsystemsettingvalues) | private |  | settings | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`settings/resetSystemSettingDesc`](#settings_resetsystemsettingdesc) | private |  | settings | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). ⚠️ |
-| [`settings/resetSystemSettings`](#settings_resetsystemsettings) | private |  | settings | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). ⚠️ |
-| [`settings/setSystemSettings`](#settings_setsystemsettings) | private |  | settings | Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`system/getCountryInfo`](#system_getcountryinfo) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`system/getSystemInfo`](#system_getsysteminfo) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`system/isValidPin`](#system_isvalidpin) | private |  | network | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`system_launcher/close`](#system_launcher_close) | private |  | apps | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`system_launcher/getAppState`](#system_launcher_getappstate) | private |  | apps | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`system_launcher/launch`](#system_launcher_launch) | private |  | apps | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`system_launcher/open`](#system_launcher_open) | private |  | apps | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`system_notifications/closeAlert`](#system_notifications_closealert) | private |  | notifications | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`system_notifications/closeToast`](#system_notifications_closetoast) | private |  | notifications | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`system_notifications/createAlert`](#system_notifications_createalert) | private |  | notifications | Method on com.webos.service.apiadapter (from on-device permission registry; parameters undocumented). |
-| [`system_notifications/createToast`](#system_notifications_createtoast) | private |  | notifications | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`systemprofile/getProfiles`](#systemprofile_getprofiles) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`timer/getSettings`](#timer_getsettings) | private |  | settings | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`timer/setSettings`](#timer_setsettings) | private |  | settings | Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`tv/executeOneShot`](#tv_executeoneshot) | private |  | network | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`tv/getACRAuthToken`](#tv_getacrauthtoken) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`tv/getChannelCurrentProgramInfo`](#tv_getchannelcurrentprograminfo) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`tv/getChannelList`](#tv_getchannellist) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`tv/getChannelProgramInfo`](#tv_getchannelprograminfo) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`tv/getContentState`](#tv_getcontentstate) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`tv/getCurrentChannel`](#tv_getcurrentchannel) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`tv/getExternalInputList`](#tv_getexternalinputlist) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`tv/getSimilarChannelList`](#tv_getsimilarchannellist) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`tv/openChannel`](#tv_openchannel) | private |  | network | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`tv/switchInput`](#tv_switchinput) | private |  | network | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`user/getUserData`](#user_getuserdata) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`user/resetUserData`](#user_resetuserdata) | private |  | network | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). ⚠️ |
-| [`user/resetUserInfo`](#user_resetuserinfo) | private |  | network | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). ⚠️ |
-| [`user/resetUserSchedule`](#user_resetuserschedule) | private |  | network | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). ⚠️ |
-| [`user/setUserData`](#user_setuserdata) | private |  | network | Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`user/setUserInfo`](#user_setuserinfo) | private |  | network | Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`user/setUserSchedule`](#user_setuserschedule) | private |  | network | Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`webapp/closeWebApp`](#webapp_closewebapp) | private |  | network | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`webapp/getAppIdForWebApp`](#webapp_getappidforwebapp) | private |  | network | Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`webapp/isWebAppPinned`](#webapp_iswebapppinned) | private |  | network | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`webapp/launchWebApp`](#webapp_launchwebapp) | private |  | apps | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`webapp/pinWebApp`](#webapp_pinwebapp) | private |  | network | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). |
-| [`webapp/removePinnedWebApp`](#webapp_removepinnedwebapp) | private |  | network | Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`audio/changeSoundOutput`](#audio_changesoundoutput) | ssap |  | audio | documented | Change sound output |
+| [`audio/getMute`](#audio_getmute) | private |  | audio | inferred | Returns the mute (audio) |
+| [`audio/getSoundOutput`](#audio_getsoundoutput) | ssap | yes | audio | documented | Get (or subscribe to) current sound output |
+| [`audio/getStatus`](#audio_getstatus) | private |  | audio | inferred | Returns the status (audio) |
+| [`audio/setMute`](#audio_setmute) | private |  | audio | inferred | Sets the mute (audio) |
+| [`config/getConfigs`](#config_getconfigs) | private |  | settings | inferred | Returns the configs (config) |
+| [`externalpq/getExternalPqData`](#externalpq_getexternalpqdata) | private |  | picture | inferred | Returns the external PQ data (externalpq) |
+| [`externalpq/setExternalPqData`](#externalpq_setexternalpqdata) | private |  | picture | inferred | Sets the external PQ data (externalpq) |
+| [`info`](#info) | private |  | network | inferred | Handles the info. |
+| [`media_viewer/close`](#media_viewer_close) | private |  | media | inferred | Closes the apiadapter (media viewer) |
+| [`media_viewer/open`](#media_viewer_open) | private |  | media | inferred | Opens the apiadapter (media viewer) |
+| [`quit`](#quit) | private |  | network | inferred | Quits the apiadapter. |
+| [`settings/getSystemSettingDesc`](#settings_getsystemsettingdesc) | private |  | settings | inferred | Returns the system setting desc (settings) |
+| [`settings/getSystemSettings`](#settings_getsystemsettings) | private |  | settings | inferred | Returns the system settings (settings) |
+| [`settings/getSystemSettingsHDRInfo`](#settings_getsystemsettingshdrinfo) | private |  | settings | inferred | Returns the system settings HDR info (settings) |
+| [`settings/getSystemSettingValues`](#settings_getsystemsettingvalues) | private |  | settings | inferred | Returns the system setting values (settings) |
+| [`settings/resetSystemSettingDesc`](#settings_resetsystemsettingdesc) | private |  | settings | inferred | Resets the system setting desc (settings) ⚠️ |
+| [`settings/resetSystemSettings`](#settings_resetsystemsettings) | private |  | settings | inferred | Resets the system settings (settings) ⚠️ |
+| [`settings/setSystemSettings`](#settings_setsystemsettings) | private |  | settings | inferred | Sets the system settings (settings) |
+| [`system/getCountryInfo`](#system_getcountryinfo) | private |  | network | inferred | Returns the country info (system) |
+| [`system/getSystemInfo`](#system_getsysteminfo) | private |  | network | inferred | Returns the system info (system) |
+| [`system/isValidPin`](#system_isvalidpin) | private |  | network | inferred | Reports whether the valid pin is set (system) |
+| [`system_launcher/close`](#system_launcher_close) | private |  | apps | inferred | Closes the apiadapter (system launcher) |
+| [`system_launcher/getAppState`](#system_launcher_getappstate) | private |  | apps | inferred | Returns the app state (system launcher) |
+| [`system_launcher/launch`](#system_launcher_launch) | private |  | apps | inferred | Launches the apiadapter (system launcher) |
+| [`system_launcher/open`](#system_launcher_open) | private |  | apps | inferred | Opens the apiadapter (system launcher) |
+| [`system_notifications/closeAlert`](#system_notifications_closealert) | private |  | notifications | inferred | Closes the alert (system notifications) |
+| [`system_notifications/closeToast`](#system_notifications_closetoast) | private |  | notifications | inferred | Closes the toast (system notifications) |
+| [`system_notifications/createAlert`](#system_notifications_createalert) | private |  | notifications | inferred | Creates the alert (system notifications) |
+| [`system_notifications/createToast`](#system_notifications_createtoast) | private |  | notifications | inferred | Creates the toast (system notifications) |
+| [`systemprofile/getProfiles`](#systemprofile_getprofiles) | private |  | network | inferred | Returns the profiles (systemprofile) |
+| [`timer/getSettings`](#timer_getsettings) | private |  | settings | inferred | Returns the settings (timer) |
+| [`timer/setSettings`](#timer_setsettings) | private |  | settings | inferred | Sets the settings (timer) |
+| [`tv/executeOneShot`](#tv_executeoneshot) | private |  | network | inferred | Runs the one shot (TV) |
+| [`tv/getACRAuthToken`](#tv_getacrauthtoken) | private |  | network | inferred | Returns the ACR auth token (TV) |
+| [`tv/getChannelCurrentProgramInfo`](#tv_getchannelcurrentprograminfo) | private |  | network | inferred | Returns the channel current program info (TV) |
+| [`tv/getChannelList`](#tv_getchannellist) | private |  | network | inferred | Returns the channel list (TV) |
+| [`tv/getChannelProgramInfo`](#tv_getchannelprograminfo) | private |  | network | inferred | Returns the channel program info (TV) |
+| [`tv/getContentState`](#tv_getcontentstate) | private |  | network | inferred | Returns the content state (TV) |
+| [`tv/getCurrentChannel`](#tv_getcurrentchannel) | private |  | network | inferred | Returns the current channel (TV) |
+| [`tv/getExternalInputList`](#tv_getexternalinputlist) | private |  | network | inferred | Returns the external input list (TV) |
+| [`tv/getSimilarChannelList`](#tv_getsimilarchannellist) | private |  | network | inferred | Returns the similar channel list (TV) |
+| [`tv/openChannel`](#tv_openchannel) | private |  | network | inferred | Opens the channel (TV) |
+| [`tv/switchInput`](#tv_switchinput) | private |  | network | inferred | Switches the input (TV) |
+| [`user/getUserData`](#user_getuserdata) | private |  | network | inferred | Returns the user data (user) |
+| [`user/resetUserData`](#user_resetuserdata) | private |  | network | inferred | Resets the user data (user) ⚠️ |
+| [`user/resetUserInfo`](#user_resetuserinfo) | private |  | network | inferred | Resets the user info (user) ⚠️ |
+| [`user/resetUserSchedule`](#user_resetuserschedule) | private |  | network | inferred | Resets the user schedule (user) ⚠️ |
+| [`user/setUserData`](#user_setuserdata) | private |  | network | inferred | Sets the user data (user) |
+| [`user/setUserInfo`](#user_setuserinfo) | private |  | network | inferred | Sets the user info (user) |
+| [`user/setUserSchedule`](#user_setuserschedule) | private |  | network | inferred | Sets the user schedule (user) |
+| [`webapp/closeWebApp`](#webapp_closewebapp) | private |  | network | inferred | Closes the web app (webapp) |
+| [`webapp/getAppIdForWebApp`](#webapp_getappidforwebapp) | private |  | network | inferred | Returns the app ID for web app (webapp) |
+| [`webapp/isWebAppPinned`](#webapp_iswebapppinned) | private |  | network | inferred | Reports whether the web app pinned is set (webapp) |
+| [`webapp/launchWebApp`](#webapp_launchwebapp) | private |  | apps | inferred | Launches the web app (webapp) |
+| [`webapp/pinWebApp`](#webapp_pinwebapp) | private |  | network | inferred | Handles the pin web app (webapp) |
+| [`webapp/removePinnedWebApp`](#webapp_removepinnedwebapp) | private |  | network | inferred | Removes the pinned web app (webapp) ⚠️ |
 
 <a id="audio_changesoundoutput"></a>
 ## `audio/changeSoundOutput`
@@ -75,7 +77,7 @@ Change sound output
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -94,13 +96,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 `luna://com.webos.service.apiadapter/audio/getMute`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the mute (audio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/audio/getMute '{}'
@@ -121,7 +125,7 @@ Get (or subscribe to) current sound output
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -140,13 +144,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 `luna://com.webos.service.apiadapter/audio/getStatus`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the status (audio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/audio/getStatus '{}'
@@ -161,13 +167,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/audio/setMute`
 
-Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Sets the mute (audio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/audio/setMute '{}'
@@ -182,13 +190,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/config/getConfigs`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the configs (config)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/config/getConfigs '{}'
@@ -203,13 +213,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/externalpq/getExternalPqData`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the external PQ data (externalpq)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/externalpq/getExternalPqData '{}'
@@ -224,13 +236,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/externalpq/setExternalPqData`
 
-Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Sets the external PQ data (externalpq)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/externalpq/setExternalPqData '{}'
@@ -245,13 +259,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/info`
 
-Method on com.webos.service.apiadapter (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/info '{}'
@@ -266,13 +282,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.apiadapter/media_viewer/close`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Closes the apiadapter (media viewer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/media_viewer/close '{}'
@@ -287,13 +305,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/media_viewer/open`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Opens the apiadapter (media viewer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/media_viewer/open '{}'
@@ -308,13 +328,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/quit`
 
-Method on com.webos.service.apiadapter (from on-device permission registry; parameters undocumented).
+Quits the apiadapter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/quit '{}'
@@ -329,13 +351,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.apiadapter/settings/getSystemSettingDesc`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the system setting desc (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettingDesc '{}'
@@ -350,13 +374,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/settings/getSystemSettings`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the system settings (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettings '{}'
@@ -371,13 +397,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/settings/getSystemSettingsHDRInfo`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the system settings HDR info (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettingsHDRInfo '{}'
@@ -392,13 +420,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/settings/getSystemSettingValues`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the system setting values (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettingValues '{}'
@@ -413,13 +443,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/settings/resetSystemSettingDesc`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Resets the system setting desc (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/resetSystemSettingDesc '{}'
@@ -434,13 +466,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/settings/resetSystemSettings`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Resets the system settings (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/resetSystemSettings '{}'
@@ -455,13 +489,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/settings/setSystemSettings`
 
-Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Sets the system settings (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/setSystemSettings '{}'
@@ -476,13 +512,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/system/getCountryInfo`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the country info (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system/getCountryInfo '{}'
@@ -497,13 +535,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/system/getSystemInfo`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the system info (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system/getSystemInfo '{}'
@@ -518,13 +558,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/system/isValidPin`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Reports whether the valid pin is set (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system/isValidPin '{}'
@@ -539,13 +581,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/system_launcher/close`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Closes the apiadapter (system launcher)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/close '{}'
@@ -560,13 +604,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/system_launcher/getAppState`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the app state (system launcher)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/getAppState '{}'
@@ -581,13 +627,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/system_launcher/launch`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Launches the apiadapter (system launcher)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/launch '{}'
@@ -602,13 +650,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/system_launcher/open`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Opens the apiadapter (system launcher)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/open '{}'
@@ -623,13 +673,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/system_notifications/closeAlert`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Closes the alert (system notifications)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_notifications/closeAlert '{}'
@@ -644,13 +696,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/system_notifications/closeToast`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Closes the toast (system notifications)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_notifications/closeToast '{}'
@@ -665,13 +719,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/system_notifications/createAlert`
 
-Method on com.webos.service.apiadapter (from on-device permission registry; parameters undocumented).
+Creates the alert (system notifications)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_notifications/createAlert '{}'
@@ -686,13 +742,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.apiadapter/system_notifications/createToast`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Creates the toast (system notifications)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_notifications/createToast '{}'
@@ -707,13 +765,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/systemprofile/getProfiles`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the profiles (systemprofile)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/systemprofile/getProfiles '{}'
@@ -728,13 +788,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/timer/getSettings`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the settings (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/timer/getSettings '{}'
@@ -749,13 +811,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/timer/setSettings`
 
-Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Sets the settings (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/timer/setSettings '{}'
@@ -770,13 +834,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/tv/executeOneShot`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Runs the one shot (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/executeOneShot '{}'
@@ -791,13 +857,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/tv/getACRAuthToken`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the ACR auth token (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getACRAuthToken '{}'
@@ -812,13 +880,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/tv/getChannelCurrentProgramInfo`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the channel current program info (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getChannelCurrentProgramInfo '{}'
@@ -833,13 +903,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/tv/getChannelList`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the channel list (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getChannelList '{}'
@@ -854,13 +926,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/tv/getChannelProgramInfo`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the channel program info (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getChannelProgramInfo '{}'
@@ -875,13 +949,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/tv/getContentState`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the content state (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getContentState '{}'
@@ -896,13 +972,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/tv/getCurrentChannel`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the current channel (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getCurrentChannel '{}'
@@ -917,13 +995,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/tv/getExternalInputList`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the external input list (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getExternalInputList '{}'
@@ -938,13 +1018,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/tv/getSimilarChannelList`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the similar channel list (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getSimilarChannelList '{}'
@@ -959,13 +1041,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/tv/openChannel`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Opens the channel (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/openChannel '{}'
@@ -980,13 +1064,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/tv/switchInput`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Switches the input (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/switchInput '{}'
@@ -1001,13 +1087,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/user/getUserData`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the user data (user)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/getUserData '{}'
@@ -1022,13 +1110,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/user/resetUserData`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Resets the user data (user)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/resetUserData '{}'
@@ -1043,13 +1133,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/user/resetUserInfo`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Resets the user info (user)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/resetUserInfo '{}'
@@ -1064,13 +1156,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/user/resetUserSchedule`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Resets the user schedule (user)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/resetUserSchedule '{}'
@@ -1085,13 +1179,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/user/setUserData`
 
-Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Sets the user data (user)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/setUserData '{}'
@@ -1106,13 +1202,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/user/setUserInfo`
 
-Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Sets the user info (user)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/setUserInfo '{}'
@@ -1127,13 +1225,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/user/setUserSchedule`
 
-Setter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Sets the user schedule (user)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/setUserSchedule '{}'
@@ -1148,13 +1248,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/webapp/closeWebApp`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Closes the web app (webapp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/closeWebApp '{}'
@@ -1169,13 +1271,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/webapp/getAppIdForWebApp`
 
-Getter on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Returns the app ID for web app (webapp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/getAppIdForWebApp '{}'
@@ -1190,13 +1294,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/webapp/isWebAppPinned`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Reports whether the web app pinned is set (webapp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/isWebAppPinned '{}'
@@ -1211,13 +1317,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/webapp/launchWebApp`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Launches the web app (webapp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/launchWebApp '{}'
@@ -1232,13 +1340,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/webapp/pinWebApp`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Handles the pin web app (webapp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/pinWebApp '{}'
@@ -1253,13 +1363,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.apiadapter/webapp/removePinnedWebApp`
 
-Method on com.webos.service.apiadapter (introspected on-device; parameters undocumented).
+Removes the pinned web app (webapp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/removePinnedWebApp '{}'

@@ -1,99 +1,101 @@
 # `com.webos.service.wifi`
 
+Wi-Fi service: finds available networks, connects and disconnects, manages saved profiles, WPS and enterprise security, and reports country code, status and diagnostics.
+
 88 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`bssInfo`](#bssinfo) | unknown |  | network | Information on one station in a Basic Service Set. Example "bssInfo": { "frequency": 2462, "bssid": "AA:BB:CC:DD:EE:FF", "signal": -65 } |
-| [`cancel`](#cancel) | public |  | network | Cancels an ongoing connection attempt. Once the connection is canceled, the state is switched back to idle and the credentials are not saved |
-| [`cancelwps`](#cancelwps) | public |  | network | Cancels an ongoing WPS connection attempt. |
-| [`changeNetwork`](#changenetwork) | public |  | network | Allows users to change the properties of already stored Wi-Fi profiles . For non-enterprise networks, only the passphrase can be changed for |
-| [`connect`](#connect) | public |  | network | Connects to a given SSID, which can be an open network requiring no passphrase (i.e no security field in its argument), hidden network(requi |
-| [`createwpspin`](#createwpspin) | public |  | network | Generates an 8 digit random PIN required for the WPS PIN connection method. |
-| [`deleteprofile`](#deleteprofile) | public |  | network | Deletes the profile with the given profile ID. |
-| [`enterpriseSecurity`](#enterprisesecurity) | unknown |  | network | Different security fields for connecting to enterprise networks. Example "enterpriseSecurity": { "eapType": "tls", "identity": "work", "pass |
-| [`findnetworks`](#findnetworks) | public | yes | network | Lists all the available Wi-Fi access points found in the area (from a previous Wi-Fi scan) and lists their details like SSID Name, available |
-| [`getconnectedprofile`](#getconnectedprofile) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`getCountryCode`](#getcountrycode) | public |  | network | Gets the current country code of the Wi-Fi adapter. Format of the country code follows the alpha-2 code of ISO-3166-1. |
-| [`getmultichannelschedmode`](#getmultichannelschedmode) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`getNetworks`](#getnetworks) | public | yes | network | Returns a list of available, configured but not available (out of range) networks without triggering an active scan. The users can subscribe |
-| [`getprofile`](#getprofile) | public |  | network | Lists the profile with the given profile ID on the system. |
-| [`getprofilelist`](#getprofilelist) | public |  | network | Lists all the stored Wi-Fi profiles on the system. |
-| [`getstatus`](#getstatus) | public | yes | network | Returns the following: The current status of Wi-Fi connection on the system. If the system is connected to an access point, then the details |
-| [`getTSF`](#gettsf) | private |  | network | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
-| [`getwifidiagnostics`](#getwifidiagnostics) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`ipInfo`](#ipinfo) | unknown |  | network | IP information for the connected network i.e. connected Wi-Fi interface returned as a response from the getstatus method. Example "ipInfo":  |
-| [`networkInfo`](#networkinfo) | unknown |  | network | Information of each of the networks found by the findNetworks, getNetworks or getstatus method. Example "networkInfo": { "available": true,  |
-| [`p2p/addservice`](#p2p_addservice) | public |  | network | Adds a Wi-Fi Direct service. |
-| [`p2p/cancel`](#p2p_cancel) | public |  | network | Cancels any ongoing Wi-Fi direct connection attempts. If there is no ongoing connection attempt then this method does nothing. |
-| [`p2p/connect`](#p2p_connect) | public |  | network | Connects to a given Wi-Fi direct peer. |
-| [`p2p/createautogo`](#p2p_createautogo) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/creategroup`](#p2p_creategroup) | public |  | network | Creates an autonomous Wi-Fi direct group. |
-| [`p2p/deleteprofile`](#p2p_deleteprofile) | public |  | network | Deletes a persistent profile for a specific MAC address or all profiles and also disconnect the peer(s) if connected. |
-| [`p2p/deleteservice`](#p2p_deleteservice) | public |  | network | Deletes a Wi-Fi Direct service. |
-| [`p2p/disconnect`](#p2p_disconnect) | public |  | network | Disconnects the given Wi-Fi direct peer. |
-| [`p2p/disconnectgroup`](#p2p_disconnectgroup) | public |  | network | Disconnects a P2P group. |
-| [`p2p/findservice`](#p2p_findservice) | public |  | network | Finds all the Wi-Fi Direct services or a specific service based on a service type. Peer-to-peer must be enabled for this method to work. Onc |
-| [`p2p/getdevicename`](#p2p_getdevicename) | public |  | network | Gets the device name used for Wi-Fi direct communication, which appears as the peer name for this device on the other neighboring Wi-Fi dire |
-| [`p2p/getgrouppeers`](#p2p_getgrouppeers) | public |  | network | Gets the list of peers for an existing Wi-Fi direct group. |
-| [`p2p/getgroups`](#p2p_getgroups) | public | yes | network | Gets information about all Wi-Fi Direct groups. Callers can subscribe to this method to be notified of any changes in the list of groups. |
-| [`p2p/getp2prequests`](#p2p_getp2prequests) | public | yes | network | Subscribe the caller for notifications of the incoming Wi-Fi direct connection requests. |
-| [`p2p/getpeers`](#p2p_getpeers) | public | yes | network | Gets information about the Wi-Fi Direct peers. Callers can subscribe to this method to be notified of changes in the list of neighboring pee |
-| [`p2p/getstate`](#p2p_getstate) | public | yes | network | Gets the current state of Wi-Fi direct connection on this device. |
-| [`p2p/getwifidisplayinfo`](#p2p_getwifidisplayinfo) | public |  | network | Gets the Wi-Fi display parameters. |
-| [`p2p/invite`](#p2p_invite) | public |  | network | Invites a Wi-Fi direct peer to the group to which this device belongs. |
-| [`p2p/rejectpeer`](#p2p_rejectpeer) | public |  | network | Reject a connection attempt from a peer (specified with a device address). This is a mechanism to reject a pending GO Negotiation with a pee |
-| [`p2p/setdevicename`](#p2p_setdevicename) | public |  | network | Sets the device name for the Wi-Fi direct communication. This name appears as peer name for this device on other neighboring Wi-Fi direct de |
-| [`p2p/setgointent`](#p2p_setgointent) | public |  | network | Changes the group owner intent value used by Miracast service. Miracast service uses this API when TV needs to change the role in the P2P (P |
-| [`p2p/setlistenchannel`](#p2p_setlistenchannel) | public |  | network | Before any connection can be formed, P2P devices have to find each other. For this they alternately listen and send probe requests with addi |
-| [`p2p/setlistenparams`](#p2p_setlistenparams) | public |  | network | Control P2P extended listen parameters like period and interval, which determines the frequency at which the TV is listening for new connect |
-| [`p2p/setstate`](#p2p_setstate) | public |  | network | Enables or disables the Wi-Fi Direct connection, as well as to set listen and persistent modes. |
-| [`p2p/settethering`](#p2p_settethering) | public |  | network | Enables or disables a groups' tethering property. |
-| [`p2p/setwifidisplayinfo`](#p2p_setwifidisplayinfo) | public |  | network | Sets the Wi-Fi display parameters. |
-| [`p2p/wfds/advertiseService`](#p2p_wfds_advertiseservice) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/boundPort`](#p2p_wfds_boundport) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/cancelAdvertiseService`](#p2p_wfds_canceladvertiseservice) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/closeSession`](#p2p_wfds_closesession) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/confirmSession`](#p2p_wfds_confirmsession) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/connectSessions`](#p2p_wfds_connectsessions) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/createContext`](#p2p_wfds_createcontext) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/findService`](#p2p_wfds_findservice) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/getSession`](#p2p_wfds_getsession) | private |  | network | Getter on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/getStatus`](#p2p_wfds_getstatus) | private |  | network | Getter on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/releaseContext`](#p2p_wfds_releasecontext) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/releasePort`](#p2p_wfds_releaseport) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/setServiceStatus`](#p2p_wfds_setservicestatus) | private |  | network | Setter on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`p2p/wfds/setSessionReady`](#p2p_wfds_setsessionready) | private |  | network | Setter on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`scan`](#scan) | public |  | network | Triggers a manual scan for the Wi-Fi networks. It should not be used together with the findnetworks method as using both at the same time wi |
-| [`security`](#security) | unknown |  | network | This object is used to provide security information for establishing a connection. Example "security": { "securityType": "psk", "simpleSecur |
-| [`securityType`](#securitytype) | unknown |  | network | A list of array types. Example "securityType": [ "open", "psk", "wps" ] |
-| [`setCountryCode`](#setcountrycode) | public |  | network | Sets the current country code of the Wi-Fi adapter. This affects the allowed Wi-Fi channel for both AP (Access Point) and STA (Station) mode |
-| [`setmultichannelschedmode`](#setmultichannelschedmode) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`setPassthroughParams`](#setpassthroughparams) | private |  | network | Setter on com.webos.service.wifi (introspected on-device; parameters undocumented). |
-| [`setstate`](#setstate) | public |  | network | Enables or disables Wi-Fi on the system by enabling/disabling the Wi-Fi interface. |
-| [`simpleSecurity`](#simplesecurity) | unknown |  | network | Connection information for a simple connection. Example "simpleSecurity": { "passKey": "1234" } |
-| [`startwps`](#startwps) | public |  | network | Starts the WPS authentication process. If wpsPin argument is provided then the WPS-PIN method will be used, else WPS-PBC method will be used |
-| [`tethering/getMaxStationCount`](#tethering_getmaxstationcount) | public |  | network | Gets the maximum number of stations allowed to connect to the AP. |
-| [`tethering/getState`](#tethering_getstate) | public | yes | network | Gets the current Wi-Fi tethering state. |
-| [`tethering/getStationCount`](#tethering_getstationcount) | public | yes | network | Gets the number of devices that are connected to the signage softAP. |
-| [`tethering/getvlan`](#tethering_getvlan) | private |  | network | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
-| [`tethering/setMaxStationCount`](#tethering_setmaxstationcount) | public |  | network | Sets the maximum number of stations allowed to connect to the AP. |
-| [`tethering/setState`](#tethering_setstate) | public |  | network | Sets the Wi-Fi tethering state. Wi-Fi tethering can either be enabled or disabled. At least the ssid field needs to be set before enabling t |
-| [`tethering/setvlan`](#tethering_setvlan) | private |  | network | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
-| [`tv/factoryWifiSearchResult`](#tv_factorywifisearchresult) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). ⚠️ |
-| [`tv/resetWifiSearchResult`](#tv_resetwifisearchresult) | private |  | network | Method on com.webos.service.wifi (introspected on-device; parameters undocumented). ⚠️ |
-| [`wearable/getSleepMode`](#wearable_getsleepmode) | private |  | power-mgmt | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
-| [`wearable/scanLps`](#wearable_scanlps) | private |  | network | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
-| [`wearable/setSleepMode`](#wearable_setsleepmode) | private |  | power-mgmt | Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented). |
-| [`WifiGroupInfo`](#wifigroupinfo) | unknown |  | network | This object contains information on a Wi-Fi peer-to-peer group. Example "groupInfo": { "frequency": 5180, "owner": true, "ssid": "DIRECT-vG- |
-| [`WifiGroups`](#wifigroups) | unknown |  | network | Group information. |
-| [`WifiPeerInfo`](#wifipeerinfo) | unknown |  | network | This object contains information on a peer-to-peer client. Example "peerInfo": { "connected": true, "configMethod": 128, "deviceAddress": "A |
-| [`WifiPeers`](#wifipeers) | unknown |  | network | List of peers and the related info. |
-| [`wifiProfile`](#wifiprofile) | unknown |  | network | A Wi-Fi profile stores all information for a previously successfully connected wireless network. However, it does not store critical securit |
-| [`WifiWfdInfo`](#wifiwfdinfo) | unknown |  | network | This object contains information on the Wi-Fi Direct settings of a Wi-Fi Peer connection. It is used in Wi-Fi Peer Info and is only present  |
-| [`wpsInfo`](#wpsinfo) | unknown |  | network | WPS information to connect to the peer. Example "wpsInfo":{ "wps":true, "wpspin": "1234" } |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`bssInfo`](#bssinfo) | unknown |  | network | documented | Information on one station in a Basic Service Set. Example "bssInfo": { "frequency": 2462, "bssid": "AA:BB:CC:DD:EE:FF", "signal": -65 } |
+| [`cancel`](#cancel) | public |  | network | documented | Cancels an ongoing connection attempt. Once the connection is canceled, the state is switched back to idle and the credentials are not saved |
+| [`cancelwps`](#cancelwps) | public |  | network | documented | Cancels an ongoing WPS connection attempt. |
+| [`changeNetwork`](#changenetwork) | public |  | network | documented | Allows users to change the properties of already stored Wi-Fi profiles . For non-enterprise networks, only the passphrase can be changed for |
+| [`connect`](#connect) | public |  | network | documented | Connects to a given SSID, which can be an open network requiring no passphrase (i.e no security field in its argument), hidden network(requi |
+| [`createwpspin`](#createwpspin) | public |  | network | documented | Generates an 8 digit random PIN required for the WPS PIN connection method. |
+| [`deleteprofile`](#deleteprofile) | public |  | network | documented | Deletes the profile with the given profile ID. |
+| [`enterpriseSecurity`](#enterprisesecurity) | unknown |  | network | documented | Different security fields for connecting to enterprise networks. Example "enterpriseSecurity": { "eapType": "tls", "identity": "work", "pass |
+| [`findnetworks`](#findnetworks) | public | yes | network | documented | Lists all the available Wi-Fi access points found in the area (from a previous Wi-Fi scan) and lists their details like SSID Name, available |
+| [`getconnectedprofile`](#getconnectedprofile) | private |  | network | inferred | Handles the getconnectedprofile. |
+| [`getCountryCode`](#getcountrycode) | public |  | network | documented | Gets the current country code of the Wi-Fi adapter. Format of the country code follows the alpha-2 code of ISO-3166-1. |
+| [`getmultichannelschedmode`](#getmultichannelschedmode) | private |  | network | inferred | Handles the getmultichannelschedmode. |
+| [`getNetworks`](#getnetworks) | public | yes | network | documented | Returns a list of available, configured but not available (out of range) networks without triggering an active scan. The users can subscribe |
+| [`getprofile`](#getprofile) | public |  | network | documented | Lists the profile with the given profile ID on the system. |
+| [`getprofilelist`](#getprofilelist) | public |  | network | documented | Lists all the stored Wi-Fi profiles on the system. |
+| [`getstatus`](#getstatus) | public | yes | network | documented | Returns the following: The current status of Wi-Fi connection on the system. If the system is connected to an access point, then the details |
+| [`getTSF`](#gettsf) | private |  | network | inferred | Returns the TSF. |
+| [`getwifidiagnostics`](#getwifidiagnostics) | private |  | network | inferred | Handles the getwifidiagnostics. |
+| [`ipInfo`](#ipinfo) | unknown |  | network | documented | IP information for the connected network i.e. connected Wi-Fi interface returned as a response from the getstatus method. Example "ipInfo":  |
+| [`networkInfo`](#networkinfo) | unknown |  | network | documented | Information of each of the networks found by the findNetworks, getNetworks or getstatus method. Example "networkInfo": { "available": true,  |
+| [`p2p/addservice`](#p2p_addservice) | public |  | network | documented | Adds a Wi-Fi Direct service. |
+| [`p2p/cancel`](#p2p_cancel) | public |  | network | documented | Cancels any ongoing Wi-Fi direct connection attempts. If there is no ongoing connection attempt then this method does nothing. |
+| [`p2p/connect`](#p2p_connect) | public |  | network | documented | Connects to a given Wi-Fi direct peer. |
+| [`p2p/createautogo`](#p2p_createautogo) | private |  | network | inferred | Handles the createautogo (p 2 p) |
+| [`p2p/creategroup`](#p2p_creategroup) | public |  | network | documented | Creates an autonomous Wi-Fi direct group. |
+| [`p2p/deleteprofile`](#p2p_deleteprofile) | public |  | network | documented | Deletes a persistent profile for a specific MAC address or all profiles and also disconnect the peer(s) if connected. |
+| [`p2p/deleteservice`](#p2p_deleteservice) | public |  | network | documented | Deletes a Wi-Fi Direct service. |
+| [`p2p/disconnect`](#p2p_disconnect) | public |  | network | documented | Disconnects the given Wi-Fi direct peer. |
+| [`p2p/disconnectgroup`](#p2p_disconnectgroup) | public |  | network | documented | Disconnects a P2P group. |
+| [`p2p/findservice`](#p2p_findservice) | public |  | network | documented | Finds all the Wi-Fi Direct services or a specific service based on a service type. Peer-to-peer must be enabled for this method to work. Onc |
+| [`p2p/getdevicename`](#p2p_getdevicename) | public |  | network | documented | Gets the device name used for Wi-Fi direct communication, which appears as the peer name for this device on the other neighboring Wi-Fi dire |
+| [`p2p/getgrouppeers`](#p2p_getgrouppeers) | public |  | network | documented | Gets the list of peers for an existing Wi-Fi direct group. |
+| [`p2p/getgroups`](#p2p_getgroups) | public | yes | network | documented | Gets information about all Wi-Fi Direct groups. Callers can subscribe to this method to be notified of any changes in the list of groups. |
+| [`p2p/getp2prequests`](#p2p_getp2prequests) | public | yes | network | documented | Subscribe the caller for notifications of the incoming Wi-Fi direct connection requests. |
+| [`p2p/getpeers`](#p2p_getpeers) | public | yes | network | documented | Gets information about the Wi-Fi Direct peers. Callers can subscribe to this method to be notified of changes in the list of neighboring pee |
+| [`p2p/getstate`](#p2p_getstate) | public | yes | network | documented | Gets the current state of Wi-Fi direct connection on this device. |
+| [`p2p/getwifidisplayinfo`](#p2p_getwifidisplayinfo) | public |  | network | documented | Gets the Wi-Fi display parameters. |
+| [`p2p/invite`](#p2p_invite) | public |  | network | documented | Invites a Wi-Fi direct peer to the group to which this device belongs. |
+| [`p2p/rejectpeer`](#p2p_rejectpeer) | public |  | network | documented | Reject a connection attempt from a peer (specified with a device address). This is a mechanism to reject a pending GO Negotiation with a pee |
+| [`p2p/setdevicename`](#p2p_setdevicename) | public |  | network | documented | Sets the device name for the Wi-Fi direct communication. This name appears as peer name for this device on other neighboring Wi-Fi direct de |
+| [`p2p/setgointent`](#p2p_setgointent) | public |  | network | documented | Changes the group owner intent value used by Miracast service. Miracast service uses this API when TV needs to change the role in the P2P (P |
+| [`p2p/setlistenchannel`](#p2p_setlistenchannel) | public |  | network | documented | Before any connection can be formed, P2P devices have to find each other. For this they alternately listen and send probe requests with addi |
+| [`p2p/setlistenparams`](#p2p_setlistenparams) | public |  | network | documented | Control P2P extended listen parameters like period and interval, which determines the frequency at which the TV is listening for new connect |
+| [`p2p/setstate`](#p2p_setstate) | public |  | network | documented | Enables or disables the Wi-Fi Direct connection, as well as to set listen and persistent modes. |
+| [`p2p/settethering`](#p2p_settethering) | public |  | network | documented | Enables or disables a groups' tethering property. |
+| [`p2p/setwifidisplayinfo`](#p2p_setwifidisplayinfo) | public |  | network | documented | Sets the Wi-Fi display parameters. |
+| [`p2p/wfds/advertiseService`](#p2p_wfds_advertiseservice) | private |  | network | inferred | Handles the advertise service (p 2 p wfds) |
+| [`p2p/wfds/boundPort`](#p2p_wfds_boundport) | private |  | network | inferred | Handles the bound port (p 2 p wfds) |
+| [`p2p/wfds/cancelAdvertiseService`](#p2p_wfds_canceladvertiseservice) | private |  | network | inferred | Cancels the advertise service (p 2 p wfds) |
+| [`p2p/wfds/closeSession`](#p2p_wfds_closesession) | private |  | network | inferred | Closes the session (p 2 p wfds) |
+| [`p2p/wfds/confirmSession`](#p2p_wfds_confirmsession) | private |  | network | inferred | Handles the confirm session (p 2 p wfds) |
+| [`p2p/wfds/connectSessions`](#p2p_wfds_connectsessions) | private |  | network | inferred | Connects the sessions (p 2 p wfds) |
+| [`p2p/wfds/createContext`](#p2p_wfds_createcontext) | private |  | network | inferred | Creates the context (p 2 p wfds) |
+| [`p2p/wfds/findService`](#p2p_wfds_findservice) | private |  | network | inferred | Handles the find service (p 2 p wfds) |
+| [`p2p/wfds/getSession`](#p2p_wfds_getsession) | private |  | network | inferred | Returns the session (p 2 p wfds) |
+| [`p2p/wfds/getStatus`](#p2p_wfds_getstatus) | private |  | network | inferred | Returns the status (p 2 p wfds) |
+| [`p2p/wfds/releaseContext`](#p2p_wfds_releasecontext) | private |  | network | inferred | Releases the context (p 2 p wfds) |
+| [`p2p/wfds/releasePort`](#p2p_wfds_releaseport) | private |  | network | inferred | Releases the port (p 2 p wfds) |
+| [`p2p/wfds/setServiceStatus`](#p2p_wfds_setservicestatus) | private |  | network | inferred | Sets the service status (p 2 p wfds) |
+| [`p2p/wfds/setSessionReady`](#p2p_wfds_setsessionready) | private |  | network | inferred | Sets the session ready (p 2 p wfds) |
+| [`scan`](#scan) | public |  | network | documented | Triggers a manual scan for the Wi-Fi networks. It should not be used together with the findnetworks method as using both at the same time wi |
+| [`security`](#security) | unknown |  | network | documented | This object is used to provide security information for establishing a connection. Example "security": { "securityType": "psk", "simpleSecur |
+| [`securityType`](#securitytype) | unknown |  | network | documented | A list of array types. Example "securityType": [ "open", "psk", "wps" ] |
+| [`setCountryCode`](#setcountrycode) | public |  | network | documented | Sets the current country code of the Wi-Fi adapter. This affects the allowed Wi-Fi channel for both AP (Access Point) and STA (Station) mode |
+| [`setmultichannelschedmode`](#setmultichannelschedmode) | private |  | network | inferred | Handles the setmultichannelschedmode. |
+| [`setPassthroughParams`](#setpassthroughparams) | private |  | network | inferred | Sets the passthrough params. |
+| [`setstate`](#setstate) | public |  | network | documented | Enables or disables Wi-Fi on the system by enabling/disabling the Wi-Fi interface. |
+| [`simpleSecurity`](#simplesecurity) | unknown |  | network | documented | Connection information for a simple connection. Example "simpleSecurity": { "passKey": "1234" } |
+| [`startwps`](#startwps) | public |  | network | documented | Starts the WPS authentication process. If wpsPin argument is provided then the WPS-PIN method will be used, else WPS-PBC method will be used |
+| [`tethering/getMaxStationCount`](#tethering_getmaxstationcount) | public |  | network | documented | Gets the maximum number of stations allowed to connect to the AP. |
+| [`tethering/getState`](#tethering_getstate) | public | yes | network | documented | Gets the current Wi-Fi tethering state. |
+| [`tethering/getStationCount`](#tethering_getstationcount) | public | yes | network | documented | Gets the number of devices that are connected to the signage softAP. |
+| [`tethering/getvlan`](#tethering_getvlan) | private |  | network | inferred | Handles the getvlan (tethering) |
+| [`tethering/setMaxStationCount`](#tethering_setmaxstationcount) | public |  | network | documented | Sets the maximum number of stations allowed to connect to the AP. |
+| [`tethering/setState`](#tethering_setstate) | public |  | network | documented | Sets the Wi-Fi tethering state. Wi-Fi tethering can either be enabled or disabled. At least the ssid field needs to be set before enabling t |
+| [`tethering/setvlan`](#tethering_setvlan) | private |  | network | inferred | Handles the setvlan (tethering) |
+| [`tv/factoryWifiSearchResult`](#tv_factorywifisearchresult) | private |  | network | inferred | Handles the factory wifi search result (TV) ⚠️ |
+| [`tv/resetWifiSearchResult`](#tv_resetwifisearchresult) | private |  | network | inferred | Resets the wifi search result (TV) ⚠️ |
+| [`wearable/getSleepMode`](#wearable_getsleepmode) | private |  | power-mgmt | inferred | Returns the sleep mode (wearable) |
+| [`wearable/scanLps`](#wearable_scanlps) | private |  | network | inferred | Scans for lps (wearable) |
+| [`wearable/setSleepMode`](#wearable_setsleepmode) | private |  | power-mgmt | inferred | Sets the sleep mode (wearable) |
+| [`WifiGroupInfo`](#wifigroupinfo) | unknown |  | network | documented | This object contains information on a Wi-Fi peer-to-peer group. Example "groupInfo": { "frequency": 5180, "owner": true, "ssid": "DIRECT-vG- |
+| [`WifiGroups`](#wifigroups) | unknown |  | network | documented | Group information. |
+| [`WifiPeerInfo`](#wifipeerinfo) | unknown |  | network | documented | This object contains information on a peer-to-peer client. Example "peerInfo": { "connected": true, "configMethod": 128, "deviceAddress": "A |
+| [`WifiPeers`](#wifipeers) | unknown |  | network | documented | List of peers and the related info. |
+| [`wifiProfile`](#wifiprofile) | unknown |  | network | documented | A Wi-Fi profile stores all information for a previously successfully connected wireless network. However, it does not store critical securit |
+| [`WifiWfdInfo`](#wifiwfdinfo) | unknown |  | network | documented | This object contains information on the Wi-Fi Direct settings of a Wi-Fi Peer connection. It is used in Wi-Fi Peer Info and is only present  |
+| [`wpsInfo`](#wpsinfo) | unknown |  | network | documented | WPS information to connect to the peer. Example "wpsInfo":{ "wps":true, "wpspin": "1234" } |
 
 <a id="bssinfo"></a>
 ## `bssInfo`
@@ -226,6 +228,12 @@ Generates an 8 digit random PIN required for the WPS PIN connection method.
 - **Versions:** webOS OSE API level 27+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `wpspin` | String (required) An 8 digit random WPS pin. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/createwpspin '{}
 ```
@@ -298,6 +306,12 @@ Lists all the available Wi-Fi access points found in the area (from a previous W
 | `subscribe` | Boolean (optional) Subscribe for notifications of change in the list of found networks. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 | `interval` | Number (optional) Interval in milliseconds which is used to trigger a scan for new networks. Only the first subscriber is allowed to specify an interval. If any other subscriber provides an interval and error is returned. The default interval is 15000 milliseconds (15 seconds). |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `foundNetworks` | Object: networkInfo (required) List of found networks. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/findnetworks '{"interval": 15000}
 ```
@@ -311,13 +325,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-w
 
 `luna://com.webos.service.wifi/getconnectedprofile`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Handles the getconnectedprofile.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/getconnectedprofile '{}'
@@ -340,6 +356,12 @@ Gets the current country code of the Wi-Fi adapter. Format of the country code f
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `countryCode` | String (required) Current country code of the Wi-Fi adapter. For possible values, see List of ISO 3166 country codes. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/getCountryCode '{}
 ```
@@ -353,13 +375,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-w
 
 `luna://com.webos.service.wifi/getmultichannelschedmode`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Handles the getmultichannelschedmode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/getmultichannelschedmode '{}'
@@ -386,6 +410,12 @@ Returns a list of available, configured but not available (out of range) network
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe for notifications of change in the list of found networks. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `foundNetworks` | Object array: networkInfo (required) List of networks found. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/getNetworks '{}
 ```
@@ -411,6 +441,12 @@ Lists the profile with the given profile ID on the system.
 |---|---|
 | `profileId` | String (required) ID of the profile to be listed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `wifiProfile` | Object: wifiProfile (required) Profile corresponding to the given ID. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/getprofile '{"profileId": 777}
 ```
@@ -431,6 +467,12 @@ Lists all the stored Wi-Fi profiles on the system.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `profileList` | Object: wifiProfile (required) List of stored profiles. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/getprofilelist '{}
@@ -457,6 +499,13 @@ Returns the following: The current status of Wi-Fi connection on the system. If 
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe for notifications when Wi-Fi connection status changes. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `status` | String (required) Indicates the status of the Wi-Fi. Possible values are: - serviceEnabled: Wi-Fi is enabled - serviceDisabled: Wi-Fi is disabled - connectionStateChanged: Wi-Fi connection is established |
+| `networkInfo` | Object: networkInfo (optional) Provides information on the current Wi-Fi network. Applicable only if the Wi-Fi is connected. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/getstatus {}
 ```
@@ -470,13 +519,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-w
 
 `luna://com.webos.service.wifi/getTSF`
 
-Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+Returns the TSF.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/getTSF '{}'
@@ -491,13 +542,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wifi/getwifidiagnostics`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Handles the getwifidiagnostics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/getwifidiagnostics '{}'
@@ -569,6 +622,13 @@ Adds a Wi-Fi Direct service.
 | `query` | String (optional) Bonjour query. Required for bonjour service type. |
 | `response` | String (optional) Bonjour response. Required for bonjour service type. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/addservice '{"type": "upnp", "description": "printer" }
 ```
@@ -616,6 +676,13 @@ Connects to a given Wi-Fi direct peer.
 | `peerAddress` | String (required) Device address of the peer to connect. |
 | `wpsInfo` | Object: wpsInfo (required) WPS information for peer connection. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/connect '{"peerAddress": "AA:BB:CC:DD:EE:FF","wpsInfo":{"wps":true}}
 ```
@@ -629,13 +696,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-w
 
 `luna://com.webos.service.wifi/p2p/createautogo`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Handles the createautogo (p 2 p)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/createautogo '{}'
@@ -663,6 +732,13 @@ Creates an autonomous Wi-Fi direct group.
 | `ssid` | String (required) SSID of group to create. |
 | `passPhrase` | String (required) Passphrase for connecting to this group. A valid passphrase should have 8 to 63 characters. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/creategroup '{"ssid": "group1", "passPhrase": "12345678" }
 ```
@@ -687,6 +763,13 @@ Deletes a persistent profile for a specific MAC address or all profiles and also
 | Param | Type / notes |
 |---|---|
 | `deviceAddress` | String (required) Device address or 'all' to delete all existing profiles. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/deleteprofile '{"deviceAddress": "all" }
@@ -715,6 +798,13 @@ Deletes a Wi-Fi Direct service.
 | `description` | String (optional) Description. Required for upnp service type. |
 | `query` | String (optional) Bonjour query. Required for bonjour service type. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/deleteservice '{"type": "upnp", "description": "printer" }
 ```
@@ -740,6 +830,13 @@ Disconnects the given Wi-Fi direct peer.
 |---|---|
 | `peerAddress` | String (required) Device address of the peer to disconnect. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/disconnect '{"peerAddress": "AA:BB:CC:DD:EE:FF"}
 ```
@@ -764,6 +861,13 @@ Disconnects a P2P group.
 | Param | Type / notes |
 |---|---|
 | `ssid` | String (required) Name of the group to disconnect. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/disconnectgroup '{"ssid": "group1"}
@@ -794,6 +898,13 @@ Finds all the Wi-Fi Direct services or a specific service based on a service typ
 | `description` | String (optional) Description. Required for upnp service type. |
 | `query` | String (optional) Bonjour query. Required for bonjour service type. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/findservice '{"type": "upnp", "description": "", "version": 10 }
 ```
@@ -814,6 +925,14 @@ Gets the device name used for Wi-Fi direct communication, which appears as the p
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 13+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `deviceName` | String (required) The P2P device name. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/getdevicename '{}
@@ -840,6 +959,14 @@ Gets the list of peers for an existing Wi-Fi direct group.
 |---|---|
 | `ssid` | String (required) Name of the group. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `peers` | Object array: WifiPeers (optional) An array of Wi-Fi Peer Info objects. If there are no peers found then this array will be empty. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/getgrouppeers '{"ssid": "DIRECT-vG-[LG] webOS TV WEBOS1"}'
 ```
@@ -865,6 +992,14 @@ Gets information about all Wi-Fi Direct groups. Callers can subscribe to this me
 |---|---|
 | `subscribe` | Boolean (optional) To be notified if a group is added, set subscribe to true . To be notified if a group is deleted, set subscribe to false . The default value of subscribe is false . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `groups` | Object array: WifiGroups (optional) Array of objects containing information on Wi-Fi Direct groups. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/getgroups '{}
 ```
@@ -889,6 +1024,14 @@ Subscribe the caller for notifications of the incoming Wi-Fi direct connection r
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (required) Subscribe to be notified about any incoming Wi-Fi direct connections. Possible values are: true - Subscribe for changes. false - Not subscribed. Default value: false Note: Setting subscribe to false will be a no-op , since nothing will be done by this method then. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `deviceType` | String (optional) Type of the remote device that initiates incoming p2p connection. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.wifi/p2p/getp2prequests '{"subscribe":true}
@@ -916,6 +1059,14 @@ Gets information about the Wi-Fi Direct peers. Callers can subscribe to this met
 | `subscribe` | Boolean (optional) Subscribe and get notified of the changes in the list of peers found. Possible values are: true - Subscribe for changes. false - Not subscribed. Default value : false |
 | `scan` | Boolean (optional) Indicates if a new scan is to be triggered. Possible values are: true - Runs an active scan. false - Avoids an active scan. Default value : true |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `peers` | Object array: WifiPeers (optional) Array of objects containing information about the available peers. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.wifi/p2p/getpeers '{"subscribe":true}
 ```
@@ -941,6 +1092,16 @@ Gets the current state of Wi-Fi direct connection on this device.
 |---|---|
 | `subscribe` | Boolean (optional) Possible values are: true false Default value: false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `P2P` | String (required) If P2P is enabled then this value is enabled, otherwise it is disabled. |
+| `listenState` | String (required) If listening for incoming connections is enabled then this value is enabled , otherwise disabled. |
+| `persistentMode` | String (required) If persistent state is enabled then this value enabled" , "disabled" otherwise. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/getstate '{}
 ```
@@ -961,6 +1122,18 @@ Gets the Wi-Fi display parameters.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 13+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `enabled` | Boolean (required) true if Wi-Fi Display feature is enabled, false otherwise. |
+| `wfdDeviceType` | String (optional) Device type. One of the following: source, primary-sink, secondary-sink, or dual-role. |
+| `wfdSessionAvail` | Boolean (optional) true if Wi-Fi Direct Session is enabled, false otherwise. |
+| `wfdRtspPort` | number (optional) Session management control port. |
+| `wfdCpSupport` | Boolean (optional) true if Content Protection using HDCP System 2.0/2.1 enabled, false otherwise. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/getwifidisplayinfo '{}
@@ -987,6 +1160,13 @@ Invites a Wi-Fi direct peer to the group to which this device belongs.
 |---|---|
 | `peerAddress` | String (required) Device address of the peer to invite. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/invite '{"peerAddress": "AA:BB:CC:DD:EE:FF" }
 ```
@@ -1011,6 +1191,13 @@ Reject a connection attempt from a peer (specified with a device address). This 
 | Param | Type / notes |
 |---|---|
 | `peerAddress` | String (required) Device address of the peer to reject the connection attempt from. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/rejectpeer '{"peerAddress": "AA:BB:CC:DD:EE:FF"}
@@ -1037,6 +1224,13 @@ Sets the device name for the Wi-Fi direct communication. This name appears as pe
 |---|---|
 | `deviceName` | String (required) Device name to be used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/setdevicename '{"deviceName": "TV1"}
 ```
@@ -1061,6 +1255,13 @@ Changes the group owner intent value used by Miracast service. Miracast service 
 | Param | Type / notes |
 |---|---|
 | `GOIntent` | Number (required) The intent value to be set. webOS device becomes GO (Group Owner) when its intent value is higher than the peer device. webOS device becomes GC (Group Client) when its intent value is lower than the peer device. Default value of the webOS TV is 1. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.wifi/p2p/setgointent '{"GOIntent":10}
@@ -1087,6 +1288,13 @@ Before any connection can be formed, P2P devices have to find each other. For th
 |---|---|
 | `listenChannel` | Number (required) Set listen channel. ( Default value is 11) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/setlistenchannel '{"listenChannel" : 6}
 ```
@@ -1112,6 +1320,13 @@ Control P2P extended listen parameters like period and interval, which determine
 |---|---|
 | `period` | Number (required) Set the listen state period in ms (Time for which the device will listen each time) Default value is 50 ms. |
 | `interval` | Number (required) Set the listen state interval in ms (Frequency at whcih the device will listen) . Default value is 400 ms. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/setlistenparams '{"period" : 100, "interval": 500}
@@ -1140,6 +1355,13 @@ Enables or disables the Wi-Fi Direct connection, as well as to set listen and pe
 | `listenState` | String (optional) Set the Wi-Fi direct listen state to either enabled or disabled . Enabling listen state will make this device visible on other Wi-Fi direct devices so that it can initiate connection to them. |
 | `persistentMode` | String (optional) Set the P2P persistent mode to enabled or disabled . Enabling persistent mode will save any group created on this device across reboots. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/setstate '{"P2P": "enabled", "listenState": "disabled", "persistentMode": "disabled"}
 ```
@@ -1165,6 +1387,13 @@ Enables or disables a groups' tethering property.
 |---|---|
 | `ssid` | String (required) SSID of the group. |
 | `tethering` | Boolean (required) To enable tethering , set tethering to true . To disable tethering , set tethering to false . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/settethering '{"ssid": "group1", "tethering": true }
@@ -1195,6 +1424,13 @@ Sets the Wi-Fi display parameters.
 | `rtspPort` | number (optional) Session management control port. |
 | `cpSupport` | Boolean (optional) Set to true to enable Content Protection using HDCP System 2.0/2.1 and false to disable. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/setwifidisplayinfo '{"enabled": true, "deviceType": "primary-sink", "sessionAvailable": true, "rtspPort": 7236, "cpSupport": false}
 ```
@@ -1208,13 +1444,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-w
 
 `luna://com.webos.service.wifi/p2p/wfds/advertiseService`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Handles the advertise service (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/advertiseService '{}'
@@ -1229,13 +1467,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/boundPort`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Handles the bound port (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/boundPort '{}'
@@ -1250,13 +1490,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/cancelAdvertiseService`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Cancels the advertise service (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/cancelAdvertiseService '{}'
@@ -1271,13 +1513,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/closeSession`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Closes the session (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/closeSession '{}'
@@ -1292,13 +1536,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/confirmSession`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Handles the confirm session (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/confirmSession '{}'
@@ -1313,13 +1559,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/connectSessions`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Connects the sessions (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/connectSessions '{}'
@@ -1334,13 +1582,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/createContext`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Creates the context (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/createContext '{}'
@@ -1355,13 +1605,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/findService`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Handles the find service (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/findService '{}'
@@ -1376,13 +1628,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/getSession`
 
-Getter on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Returns the session (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/getSession '{}'
@@ -1397,13 +1651,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/getStatus`
 
-Getter on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Returns the status (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/getStatus '{}'
@@ -1418,13 +1674,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/releaseContext`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Releases the context (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/releaseContext '{}'
@@ -1439,13 +1697,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/releasePort`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Releases the port (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/releasePort '{}'
@@ -1460,13 +1720,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/setServiceStatus`
 
-Setter on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Sets the service status (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/setServiceStatus '{}'
@@ -1481,13 +1743,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/p2p/wfds/setSessionReady`
 
-Setter on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Sets the session ready (p 2 p wfds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/p2p/wfds/setSessionReady '{}'
@@ -1577,6 +1841,13 @@ Sets the current country code of the Wi-Fi adapter. This affects the allowed Wi-
 |---|---|
 | `countryCode` | String (required) Alpha-2 country code. For possible values, see List of ISO 3166 country codes . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the Error Codes Reference section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/setCountryCode '{"countryCode":"US"}
 ```
@@ -1590,13 +1861,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-w
 
 `luna://com.webos.service.wifi/setmultichannelschedmode`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Handles the setmultichannelschedmode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/setmultichannelschedmode '{}'
@@ -1611,13 +1884,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/setPassthroughParams`
 
-Setter on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Sets the passthrough params.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/setPassthroughParams '{}'
@@ -1711,6 +1986,14 @@ Gets the maximum number of stations allowed to connect to the AP.
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `maxStationCount` | Number (required) Number of stations allowed to connect to the AP. Range : 1 ~ 254. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the Error Codes Reference section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/tethering/getMaxStationCount '{}
 ```
@@ -1735,6 +2018,17 @@ Gets the current Wi-Fi tethering state.
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe for notifications when there is a change in the list of found peers. Possible values are: true: Subscribed. false (Default): Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `enabled` | Boolean (required) Indicates if Wi-Fi tethering is enabled or disabled. |
+| `ssid` | String (optional) The identifier used as SSID for Wi-Fi tethering. This field cannot be set when Wi-Fi tethering is enabled. |
+| `securityType` | String (optional) Security type to use for authenticating clients. Possible values are: - open: When open is used, the passphrase is cleared. - psk: When PSK is used, the passphrase needs to be set before enabling Wi-Fi tethering. |
+| `timeout` | Number (required) A timeout in minutes after which the Wi-Fi tethering is disabled, when no client is connected. Default value is 5 minutes. |
+| `channel` | Number (optional) Channel of the SoftAP |
+| `ipAddress` | String (optional) IP address of the SoftAP |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/tethering/getState '{}
@@ -1761,6 +2055,13 @@ Gets the number of devices that are connected to the signage softAP.
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe to this method to get notified when a device connects or disconnects from the signage softAP. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `stationCount` | Number (required) Number of devices that are connected to the signage softAP. |
+| `connectedStations` | String array (required) MAC addresses of the connected clients. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.wifi/tethering/getStationCount '{"subscribe":true}
 ```
@@ -1774,13 +2075,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-w
 
 `luna://com.webos.service.wifi/tethering/getvlan`
 
-Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+Handles the getvlan (tethering)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/tethering/getvlan '{}'
@@ -1806,6 +2109,13 @@ Sets the maximum number of stations allowed to connect to the AP.
 | Param | Type / notes |
 |---|---|
 | `maxStationCount` | Number (required) Number of stations allowed to connect to the AP. Range : 1 ~ 254. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the Error Codes Reference section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/tethering/setMaxStationCount '{"maxStationCount" : 1}
@@ -1851,13 +2161,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-w
 
 `luna://com.webos.service.wifi/tethering/setvlan`
 
-Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+Handles the setvlan (tethering)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/tethering/setvlan '{}'
@@ -1872,13 +2184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wifi/tv/factoryWifiSearchResult`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Handles the factory wifi search result (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/tv/factoryWifiSearchResult '{}'
@@ -1893,13 +2207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/tv/resetWifiSearchResult`
 
-Method on com.webos.service.wifi (introspected on-device; parameters undocumented).
+Resets the wifi search result (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/tv/resetWifiSearchResult '{}'
@@ -1914,13 +2230,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wifi/wearable/getSleepMode`
 
-Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+Returns the sleep mode (wearable)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/wearable/getSleepMode '{}'
@@ -1935,13 +2253,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wifi/wearable/scanLps`
 
-Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+Scans for lps (wearable)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/wearable/scanLps '{}'
@@ -1956,13 +2276,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wifi/wearable/setSleepMode`
 
-Method on com.webos.service.wifi (from on-device permission registry; parameters undocumented).
+Sets the sleep mode (wearable)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wifi/wearable/setSleepMode '{}'

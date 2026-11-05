@@ -1,84 +1,88 @@
 # `com.webos.service.panelcontroller`
 
+Controls and monitors the display panel (OLED/LED): panel/TCON firmware and chip versions, OLED cell info and error logs, usage-time tracking and resolution.
+
 60 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`addOledPanelErrorLog`](#addoledpanelerrorlog) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`backupPanelUsageTime`](#backuppanelusagetime) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getBackendChipVersion`](#getbackendchipversion) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getCurrentLedFirmwareInfo`](#getcurrentledfirmwareinfo) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getExternalFrcUpdateStatus`](#getexternalfrcupdatestatus) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getInputLagOptimizationStatus`](#getinputlagoptimizationstatus) | private |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getManualGain`](#getmanualgain) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getMirrorMode`](#getmirrormode) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getOledCellInfo`](#getoledcellinfo) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getOledPanelErrorHistoryList`](#getoledpanelerrorhistorylist) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getOledPanelMatching`](#getoledpanelmatching) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getOledTconI2CCheck`](#getoledtconi2ccheck) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getOledTconInfo`](#getoledtconinfo) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getPanelMakerInfo`](#getpanelmakerinfo) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getPanelResolution`](#getpanelresolution) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getPanelTconPackageVersion`](#getpaneltconpackageversion) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getPanelUsageTime`](#getpanelusagetime) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getProperties`](#getproperties) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getPwmConfiguration`](#getpwmconfiguration) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getScreenMuteStatus`](#getscreenmutestatus) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getSpreadSpectrum`](#getspreadspectrum) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getTouchFirmwareVersion`](#gettouchfirmwareversion) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getTscicDemuraOnOff`](#gettscicdemuraonoff) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getTscicStatus`](#gettscicstatus) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getVACSupportStatus`](#getvacsupportstatus) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getVcom`](#getvcom) | public |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`getVirtualPanelMode`](#getvirtualpanelmode) | private |  | display | Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`isModeSelectAccessible`](#ismodeselectaccessible) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`isOledScreenVisible`](#isoledscreenvisible) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`isOledTconAccessible`](#isoledtconaccessible) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`isPwmAccessible`](#ispwmaccessible) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`isSupportOSLB`](#issupportoslb) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`isTconAccessible`](#istconaccessible) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`listLedFirmwareFile`](#listledfirmwarefile) | public |  | display | Lister on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`resetVcom`](#resetvcom) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). ⚠️ |
-| [`saveManualGain`](#savemanualgain) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setAGP`](#setagp) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setDftPanelOutputMode`](#setdftpaneloutputmode) | private |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setExternalFrcUpdateEnable`](#setexternalfrcupdateenable) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setManualGain`](#setmanualgain) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setModeSelect`](#setmodeselect) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setMplusMode`](#setmplusmode) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setOledDpcOnOff`](#setoleddpconoff) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setOledPowerSequenceMode`](#setoledpowersequencemode) | public |  | power | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setPanelUsageTime`](#setpanelusagetime) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setPowerOffSequence`](#setpoweroffsequence) | public |  | power | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setProperties`](#setproperties) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setRepairMode`](#setrepairmode) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setScreenMute`](#setscreenmute) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setScreenOnOff`](#setscreenonoff) | ssap |  | display | Toggle panel on/off (can behave differently from tvpower turnOn/OffScreen) |
-| [`setSpreadSpectrum`](#setspreadspectrum) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setTscicDemuraOnOff`](#settscicdemuraonoff) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setVACActive`](#setvacactive) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setVcom`](#setvcom) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setVcomVideoProperty`](#setvcomvideoproperty) | public |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`setVirtualPanelMode`](#setvirtualpanelmode) | private |  | display | Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`swapExternalChipImage`](#swapexternalchipimage) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`updateExternalChipImage`](#updateexternalchipimage) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`updateLLsDBbyScript`](#updatellsdbbyscript) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). |
-| [`updateTouchFirmware`](#updatetouchfirmware) | public |  | display | Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`addOledPanelErrorLog`](#addoledpanelerrorlog) | public |  | display | inferred | Adds the oled panel error log. |
+| [`backupPanelUsageTime`](#backuppanelusagetime) | public |  | display | inferred | Backs up the panel usage time. |
+| [`getBackendChipVersion`](#getbackendchipversion) | public |  | display | inferred | Returns the backend chip version. |
+| [`getCurrentLedFirmwareInfo`](#getcurrentledfirmwareinfo) | public |  | display | inferred | Returns the current LED firmware info. |
+| [`getExternalFrcUpdateStatus`](#getexternalfrcupdatestatus) | public |  | display | inferred | Returns the external frc update status. |
+| [`getInputLagOptimizationStatus`](#getinputlagoptimizationstatus) | private |  | display | inferred | Returns the input lag optimization status. |
+| [`getManualGain`](#getmanualgain) | public |  | display | inferred | Returns the manual gain. |
+| [`getMirrorMode`](#getmirrormode) | public |  | display | inferred | Returns the mirror mode. |
+| [`getOledCellInfo`](#getoledcellinfo) | public |  | display | inferred | Returns the oled cell info. |
+| [`getOledPanelErrorHistoryList`](#getoledpanelerrorhistorylist) | public |  | display | inferred | Returns the oled panel error history list. |
+| [`getOledPanelMatching`](#getoledpanelmatching) | public |  | display | inferred | Returns the oled panel matching. |
+| [`getOledTconI2CCheck`](#getoledtconi2ccheck) | public |  | display | inferred | Returns the oled tcon i 2 c check. |
+| [`getOledTconInfo`](#getoledtconinfo) | public |  | display | inferred | Returns the oled tcon info. |
+| [`getPanelMakerInfo`](#getpanelmakerinfo) | public |  | display | inferred | Returns the panel maker info. |
+| [`getPanelResolution`](#getpanelresolution) | public |  | display | inferred | Returns the panel resolution. |
+| [`getPanelTconPackageVersion`](#getpaneltconpackageversion) | public |  | display | inferred | Returns the panel tcon package version. |
+| [`getPanelUsageTime`](#getpanelusagetime) | public |  | display | inferred | Returns the panel usage time. |
+| [`getProperties`](#getproperties) | public |  | display | inferred | Returns the properties. |
+| [`getPwmConfiguration`](#getpwmconfiguration) | public |  | display | inferred | Returns the pwm configuration. |
+| [`getScreenMuteStatus`](#getscreenmutestatus) | public |  | display | inferred | Returns the screen mute status. |
+| [`getSpreadSpectrum`](#getspreadspectrum) | public |  | display | inferred | Returns the spread spectrum. |
+| [`getTouchFirmwareVersion`](#gettouchfirmwareversion) | public |  | display | inferred | Returns the touch firmware version. |
+| [`getTscicDemuraOnOff`](#gettscicdemuraonoff) | public |  | display | inferred | Returns the tscic demura on off. |
+| [`getTscicStatus`](#gettscicstatus) | public |  | display | inferred | Returns the tscic status. |
+| [`getVACSupportStatus`](#getvacsupportstatus) | public |  | display | inferred | Returns the VAC support status. |
+| [`getVcom`](#getvcom) | public |  | display | inferred | Returns the vcom. |
+| [`getVirtualPanelMode`](#getvirtualpanelmode) | private |  | display | inferred | Returns the virtual panel mode. |
+| [`isModeSelectAccessible`](#ismodeselectaccessible) | public |  | display | inferred | Reports whether the mode select accessible is set. |
+| [`isOledScreenVisible`](#isoledscreenvisible) | public |  | display | inferred | Reports whether the oled screen visible is set. |
+| [`isOledTconAccessible`](#isoledtconaccessible) | public |  | display | inferred | Reports whether the oled tcon accessible is set. |
+| [`isPwmAccessible`](#ispwmaccessible) | public |  | display | inferred | Reports whether the pwm accessible is set. |
+| [`isSupportOSLB`](#issupportoslb) | public |  | display | inferred | Reports whether the support OSLB is set. |
+| [`isTconAccessible`](#istconaccessible) | public |  | display | inferred | Reports whether the tcon accessible is set. |
+| [`listLedFirmwareFile`](#listledfirmwarefile) | public |  | display | inferred | Lists the LED firmware file. |
+| [`resetVcom`](#resetvcom) | public |  | display | inferred | Resets the vcom. ⚠️ |
+| [`saveManualGain`](#savemanualgain) | public |  | display | inferred | Saves the manual gain. |
+| [`setAGP`](#setagp) | public |  | display | inferred | Sets the AGP. |
+| [`setDftPanelOutputMode`](#setdftpaneloutputmode) | private |  | display | inferred | Sets the dft panel output mode. |
+| [`setExternalFrcUpdateEnable`](#setexternalfrcupdateenable) | public |  | display | inferred | Sets the external frc update enable. |
+| [`setManualGain`](#setmanualgain) | public |  | display | inferred | Sets the manual gain. |
+| [`setModeSelect`](#setmodeselect) | public |  | display | inferred | Sets the mode select. |
+| [`setMplusMode`](#setmplusmode) | public |  | display | inferred | Sets the mplus mode. |
+| [`setOledDpcOnOff`](#setoleddpconoff) | public |  | display | inferred | Sets the oled dpc on off. |
+| [`setOledPowerSequenceMode`](#setoledpowersequencemode) | public |  | power | inferred | Sets the oled power sequence mode. |
+| [`setPanelUsageTime`](#setpanelusagetime) | public |  | display | inferred | Sets the panel usage time. |
+| [`setPowerOffSequence`](#setpoweroffsequence) | public |  | power | inferred | Sets the power off sequence. |
+| [`setProperties`](#setproperties) | public |  | display | inferred | Sets the properties. |
+| [`setRepairMode`](#setrepairmode) | public |  | display | inferred | Sets the repair mode. |
+| [`setScreenMute`](#setscreenmute) | public |  | display | inferred | Sets the screen mute. |
+| [`setScreenOnOff`](#setscreenonoff) | ssap |  | display | documented | Toggle panel on/off (can behave differently from tvpower turnOn/OffScreen) |
+| [`setSpreadSpectrum`](#setspreadspectrum) | public |  | display | inferred | Sets the spread spectrum. |
+| [`setTscicDemuraOnOff`](#settscicdemuraonoff) | public |  | display | inferred | Sets the tscic demura on off. |
+| [`setVACActive`](#setvacactive) | public |  | display | inferred | Sets the VAC active. |
+| [`setVcom`](#setvcom) | public |  | display | inferred | Sets the vcom. |
+| [`setVcomVideoProperty`](#setvcomvideoproperty) | public |  | display | inferred | Sets the vcom video property. |
+| [`setVirtualPanelMode`](#setvirtualpanelmode) | private |  | display | inferred | Sets the virtual panel mode. |
+| [`swapExternalChipImage`](#swapexternalchipimage) | public |  | display | inferred | Handles the swap external chip image. |
+| [`updateExternalChipImage`](#updateexternalchipimage) | public |  | display | inferred | Updates the external chip image. |
+| [`updateLLsDBbyScript`](#updatellsdbbyscript) | public |  | display | inferred | Updates the l ls d bby script. |
+| [`updateTouchFirmware`](#updatetouchfirmware) | public |  | display | inferred | Updates the touch firmware. ⚠️ |
 
 <a id="addoledpanelerrorlog"></a>
 ## `addOledPanelErrorLog`
 
 `luna://com.webos.service.panelcontroller/addOledPanelErrorLog`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Adds the oled panel error log.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/addOledPanelErrorLog '{}'
@@ -93,13 +97,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/backupPanelUsageTime`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Backs up the panel usage time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/backupPanelUsageTime '{}'
@@ -114,13 +120,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getBackendChipVersion`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the backend chip version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getBackendChipVersion '{}'
@@ -135,13 +143,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getCurrentLedFirmwareInfo`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the current LED firmware info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getCurrentLedFirmwareInfo '{}'
@@ -156,13 +166,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getExternalFrcUpdateStatus`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the external frc update status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getExternalFrcUpdateStatus '{}'
@@ -177,13 +189,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getInputLagOptimizationStatus`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the input lag optimization status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getInputLagOptimizationStatus '{}'
@@ -198,13 +212,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getManualGain`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the manual gain.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getManualGain '{}'
@@ -219,13 +235,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getMirrorMode`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the mirror mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getMirrorMode '{}'
@@ -240,13 +258,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getOledCellInfo`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the oled cell info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getOledCellInfo '{}'
@@ -261,13 +281,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getOledPanelErrorHistoryList`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the oled panel error history list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getOledPanelErrorHistoryList '{}'
@@ -282,13 +304,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getOledPanelMatching`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the oled panel matching.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getOledPanelMatching '{}'
@@ -303,13 +327,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getOledTconI2CCheck`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the oled tcon i 2 c check.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getOledTconI2CCheck '{}'
@@ -324,13 +350,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getOledTconInfo`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the oled tcon info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getOledTconInfo '{}'
@@ -345,13 +373,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getPanelMakerInfo`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the panel maker info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getPanelMakerInfo '{}'
@@ -366,13 +396,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getPanelResolution`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the panel resolution.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getPanelResolution '{}'
@@ -387,13 +419,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getPanelTconPackageVersion`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the panel tcon package version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getPanelTconPackageVersion '{}'
@@ -408,13 +442,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getPanelUsageTime`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the panel usage time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getPanelUsageTime '{}'
@@ -429,13 +465,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getProperties`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getProperties '{}'
@@ -450,13 +488,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getPwmConfiguration`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the pwm configuration.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getPwmConfiguration '{}'
@@ -471,13 +511,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getScreenMuteStatus`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the screen mute status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getScreenMuteStatus '{}'
@@ -492,13 +534,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getSpreadSpectrum`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the spread spectrum.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getSpreadSpectrum '{}'
@@ -513,13 +557,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getTouchFirmwareVersion`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the touch firmware version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getTouchFirmwareVersion '{}'
@@ -534,13 +580,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getTscicDemuraOnOff`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the tscic demura on off.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getTscicDemuraOnOff '{}'
@@ -555,13 +603,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getTscicStatus`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the tscic status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getTscicStatus '{}'
@@ -576,13 +626,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getVACSupportStatus`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the VAC support status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getVACSupportStatus '{}'
@@ -597,13 +649,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getVcom`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the vcom.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getVcom '{}'
@@ -618,13 +672,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/getVirtualPanelMode`
 
-Getter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Returns the virtual panel mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/getVirtualPanelMode '{}'
@@ -639,13 +695,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/isModeSelectAccessible`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Reports whether the mode select accessible is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/isModeSelectAccessible '{}'
@@ -660,13 +718,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/isOledScreenVisible`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Reports whether the oled screen visible is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/isOledScreenVisible '{}'
@@ -681,13 +741,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/isOledTconAccessible`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Reports whether the oled tcon accessible is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/isOledTconAccessible '{}'
@@ -702,13 +764,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/isPwmAccessible`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Reports whether the pwm accessible is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/isPwmAccessible '{}'
@@ -723,13 +787,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/isSupportOSLB`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Reports whether the support OSLB is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/isSupportOSLB '{}'
@@ -744,13 +810,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/isTconAccessible`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Reports whether the tcon accessible is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/isTconAccessible '{}'
@@ -765,13 +833,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/listLedFirmwareFile`
 
-Lister on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Lists the LED firmware file.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/listLedFirmwareFile '{}'
@@ -786,13 +856,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/resetVcom`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Resets the vcom.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/resetVcom '{}'
@@ -807,13 +879,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/saveManualGain`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Saves the manual gain.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/saveManualGain '{}'
@@ -828,13 +902,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setAGP`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the AGP.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setAGP '{}'
@@ -849,13 +925,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setDftPanelOutputMode`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the dft panel output mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setDftPanelOutputMode '{}'
@@ -870,13 +948,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setExternalFrcUpdateEnable`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the external frc update enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setExternalFrcUpdateEnable '{}'
@@ -891,13 +971,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setManualGain`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the manual gain.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setManualGain '{}'
@@ -912,13 +994,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setModeSelect`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the mode select.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setModeSelect '{}'
@@ -933,13 +1017,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setMplusMode`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the mplus mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setMplusMode '{}'
@@ -954,13 +1040,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setOledDpcOnOff`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the oled dpc on off.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setOledDpcOnOff '{}'
@@ -975,13 +1063,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setOledPowerSequenceMode`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the oled power sequence mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setOledPowerSequenceMode '{}'
@@ -996,13 +1086,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setPanelUsageTime`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the panel usage time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setPanelUsageTime '{}'
@@ -1017,13 +1109,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setPowerOffSequence`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the power off sequence.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setPowerOffSequence '{}'
@@ -1038,13 +1132,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setProperties`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setProperties '{}'
@@ -1059,13 +1155,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setRepairMode`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the repair mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setRepairMode '{}'
@@ -1080,13 +1178,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setScreenMute`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the screen mute.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setScreenMute '{}'
@@ -1107,7 +1207,7 @@ Toggle panel on/off (can behave differently from tvpower turnOn/OffScreen)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1124,13 +1224,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 `luna://com.webos.service.panelcontroller/setSpreadSpectrum`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the spread spectrum.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setSpreadSpectrum '{}'
@@ -1145,13 +1247,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setTscicDemuraOnOff`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the tscic demura on off.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setTscicDemuraOnOff '{}'
@@ -1166,13 +1270,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setVACActive`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the VAC active.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setVACActive '{}'
@@ -1187,13 +1293,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setVcom`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the vcom.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setVcom '{}'
@@ -1208,13 +1316,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setVcomVideoProperty`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the vcom video property.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setVcomVideoProperty '{}'
@@ -1229,13 +1339,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/setVirtualPanelMode`
 
-Setter on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Sets the virtual panel mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/setVirtualPanelMode '{}'
@@ -1250,13 +1362,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/swapExternalChipImage`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Handles the swap external chip image.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/swapExternalChipImage '{}'
@@ -1271,13 +1385,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/updateExternalChipImage`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Updates the external chip image.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/updateExternalChipImage '{}'
@@ -1292,13 +1408,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/updateLLsDBbyScript`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Updates the l ls d bby script.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/updateLLsDBbyScript '{}'
@@ -1313,13 +1431,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.panelcontroller/updateTouchFirmware`
 
-Method on com.webos.service.panelcontroller (introspected on-device; parameters undocumented).
+Updates the touch firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.panelcontroller/updateTouchFirmware '{}'

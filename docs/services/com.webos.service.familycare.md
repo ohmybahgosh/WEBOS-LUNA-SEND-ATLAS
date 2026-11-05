@@ -1,31 +1,35 @@
 # `com.webos.service.familycare`
 
+Family-care/parental-controls service: checks parental settings, monitors usage, and launches usage-care flows. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkParentalForPine`](#checkparentalforpine) | private |  | misc | Method on com.webos.service.familycare (introspected on-device; parameters undocumented). |
-| [`getPowerActiveByActivitymanager`](#getpoweractivebyactivitymanager) | private |  | power | Getter on com.webos.service.familycare (introspected on-device; parameters undocumented). |
-| [`getSystemSettingsByActivitymanager`](#getsystemsettingsbyactivitymanager) | private |  | settings | Getter on com.webos.service.familycare (introspected on-device; parameters undocumented). |
-| [`info`](#info) | private |  | misc | Method on com.webos.service.familycare (introspected on-device; parameters undocumented). |
-| [`invoke`](#invoke) | private |  | misc | Method on com.webos.service.familycare (introspected on-device; parameters undocumented). |
-| [`launchUsageCareByPCS`](#launchusagecarebypcs) | private |  | apps | Method on com.webos.service.familycare (introspected on-device; parameters undocumented). |
-| [`quit`](#quit) | private |  | misc | Method on com.webos.service.familycare (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkParentalForPine`](#checkparentalforpine) | private |  | misc | inferred | Checks the parental for pine. |
+| [`getPowerActiveByActivitymanager`](#getpoweractivebyactivitymanager) | private |  | power | inferred | Returns the power active by activitymanager. |
+| [`getSystemSettingsByActivitymanager`](#getsystemsettingsbyactivitymanager) | private |  | settings | inferred | Returns the system settings by activitymanager. |
+| [`info`](#info) | private |  | misc | inferred | Handles the info. |
+| [`invoke`](#invoke) | private |  | misc | inferred | Handles the invoke. |
+| [`launchUsageCareByPCS`](#launchusagecarebypcs) | private |  | apps | inferred | Launches the usage care by PCS. |
+| [`quit`](#quit) | private |  | misc | inferred | Quits the familycare. |
 
 <a id="checkparentalforpine"></a>
 ## `checkParentalForPine`
 
 `luna://com.webos.service.familycare/checkParentalForPine`
 
-Method on com.webos.service.familycare (introspected on-device; parameters undocumented).
+Checks the parental for pine.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.familycare/checkParentalForPine '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.familycare/getPowerActiveByActivitymanager`
 
-Getter on com.webos.service.familycare (introspected on-device; parameters undocumented).
+Returns the power active by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.familycare/getPowerActiveByActivitymanager '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.familycare/getSystemSettingsByActivitymanager`
 
-Getter on com.webos.service.familycare (introspected on-device; parameters undocumented).
+Returns the system settings by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.familycare/getSystemSettingsByActivitymanager '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.familycare/info`
 
-Method on com.webos.service.familycare (introspected on-device; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.familycare/info '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.familycare/invoke`
 
-Method on com.webos.service.familycare (introspected on-device; parameters undocumented).
+Handles the invoke.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.familycare/invoke '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.familycare/launchUsageCareByPCS`
 
-Method on com.webos.service.familycare (introspected on-device; parameters undocumented).
+Launches the usage care by PCS.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.familycare/launchUsageCareByPCS '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.familycare/quit`
 
-Method on com.webos.service.familycare (introspected on-device; parameters undocumented).
+Quits the familycare.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.familycare/quit '{}'

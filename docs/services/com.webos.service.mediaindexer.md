@@ -1,34 +1,36 @@
 # `com.webos.service.mediaindexer`
 
+Media indexer: scans internal and USB storage for audio, video and image files and extracts metadata, exposing media lists and per-device plugins.
+
 23 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`AudioList`](#audiolist) | unknown |  | media | Contains the detailed information about the audio files. |
-| [`AudioMetadata`](#audiometadata) | unknown |  | media | Contains the information about the AudioList, and also provides detailed information that are not included in AudioList. |
-| [`deviceList`](#devicelist) | unknown |  | media | Provides the detailed information about the specific device connected to the media indexer service. |
-| [`getAudioList`](#getaudiolist) | public | yes | media | Gets the available audio file list included in attached devices. Note : If the uri is specified, the audio file list for specified uri is pr |
-| [`getAudioMetadata`](#getaudiometadata) | public |  | media | Gets the detailed meta data information of the specified uri for the given audio file. |
-| [`getDeviceList`](#getdevicelist) | public | yes | media | Gets the list of all the attached storage devices. Note : The list can contain devices that are currently attached or the devices attached i |
-| [`getImageList`](#getimagelist) | public | yes | media | Gets all the available image file list included in the attached devices. Note : If the uri is specified, the image file list for specified u |
-| [`getImageMetadata`](#getimagemetadata) | public |  | media | Gets the detailed meta data information of specified uri of the image file. |
-| [`getMediaDbPermission`](#getmediadbpermission) | public |  | media | Enables the downloadable services or apps (built-in or downloadable) to acquire, access permission of the DB managed by the media indexer se |
-| [`getPlugin`](#getplugin) | public |  | media | Requests to retrieve the plugin from the plugin factory and to then activate the plugin. |
-| [`getPluginList`](#getpluginlist) | public |  | media | Gets a list of available plugins. |
-| [`getVideoList`](#getvideolist) | public | yes | media | Gets the available video files list included in the attached devices. Note : If the uri is specified, the video file list for specified uri  |
-| [`getVideoMetadata`](#getvideometadata) | public |  | media | Gets the detailed meta data information for the specified uri of the video file. |
-| [`ImageList`](#imagelist) | unknown |  | media | Detailed information about video files. |
-| [`ImageMetadata`](#imagemetadata) | unknown |  | media | Contains the information in the ImageList, and also provides detailed information that are not included in ImageList. |
-| [`pluginList`](#pluginlist) | unknown |  | media | Defines the supported device types by the media indexer service. |
-| [`putPlugin`](#putplugin) | public |  | media | Requests to add the plugin to the plugin factory. |
-| [`requestDelete`](#requestdelete) | public |  | media | Requests deletion of media item from media DB connector. |
-| [`requestMediaScan`](#requestmediascan) | public |  | media | Scans device for media item. |
-| [`runDetect`](#rundetect) | public |  | media | Requests to check plugins that are available in the known devices databases and then enables the device detection to notify the observer. |
-| [`stopDetect`](#stopdetect) | public |  | media | Requests not to detect the plugin in database for the known device and do not enable the device detection to notify the observer. |
-| [`VideoList`](#videolist) | unknown |  | media | Contains the detailed information about the video files. |
-| [`VideoMetadata`](#videometadata) | unknown |  | media | Contains the information about the VideoList, provides information about the video files that are not included in the VideoList. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`AudioList`](#audiolist) | unknown |  | media | documented | Contains the detailed information about the audio files. |
+| [`AudioMetadata`](#audiometadata) | unknown |  | media | documented | Contains the information about the AudioList, and also provides detailed information that are not included in AudioList. |
+| [`deviceList`](#devicelist) | unknown |  | media | documented | Provides the detailed information about the specific device connected to the media indexer service. |
+| [`getAudioList`](#getaudiolist) | public | yes | media | documented | Gets the available audio file list included in attached devices. Note : If the uri is specified, the audio file list for specified uri is pr |
+| [`getAudioMetadata`](#getaudiometadata) | public |  | media | documented | Gets the detailed meta data information of the specified uri for the given audio file. |
+| [`getDeviceList`](#getdevicelist) | public | yes | media | documented | Gets the list of all the attached storage devices. Note : The list can contain devices that are currently attached or the devices attached i |
+| [`getImageList`](#getimagelist) | public | yes | media | documented | Gets all the available image file list included in the attached devices. Note : If the uri is specified, the image file list for specified u |
+| [`getImageMetadata`](#getimagemetadata) | public |  | media | documented | Gets the detailed meta data information of specified uri of the image file. |
+| [`getMediaDbPermission`](#getmediadbpermission) | public |  | media | documented | Enables the downloadable services or apps (built-in or downloadable) to acquire, access permission of the DB managed by the media indexer se |
+| [`getPlugin`](#getplugin) | public |  | media | documented | Requests to retrieve the plugin from the plugin factory and to then activate the plugin. |
+| [`getPluginList`](#getpluginlist) | public |  | media | documented | Gets a list of available plugins. |
+| [`getVideoList`](#getvideolist) | public | yes | media | documented | Gets the available video files list included in the attached devices. Note : If the uri is specified, the video file list for specified uri  |
+| [`getVideoMetadata`](#getvideometadata) | public |  | media | documented | Gets the detailed meta data information for the specified uri of the video file. |
+| [`ImageList`](#imagelist) | unknown |  | media | documented | Detailed information about video files. |
+| [`ImageMetadata`](#imagemetadata) | unknown |  | media | documented | Contains the information in the ImageList, and also provides detailed information that are not included in ImageList. |
+| [`pluginList`](#pluginlist) | unknown |  | media | documented | Defines the supported device types by the media indexer service. |
+| [`putPlugin`](#putplugin) | public |  | media | documented | Requests to add the plugin to the plugin factory. |
+| [`requestDelete`](#requestdelete) | public |  | media | documented | Requests deletion of media item from media DB connector. |
+| [`requestMediaScan`](#requestmediascan) | public |  | media | documented | Scans device for media item. |
+| [`runDetect`](#rundetect) | public |  | media | documented | Requests to check plugins that are available in the known devices databases and then enables the device detection to notify the observer. |
+| [`stopDetect`](#stopdetect) | public |  | media | documented | Requests not to detect the plugin in database for the known device and do not enable the device detection to notify the observer. |
+| [`VideoList`](#videolist) | unknown |  | media | documented | Contains the detailed information about the video files. |
+| [`VideoMetadata`](#videometadata) | unknown |  | media | documented | Contains the information about the VideoList, provides information about the video files that are not included in the VideoList. |
 
 <a id="audiolist"></a>
 ## `AudioList`
@@ -112,6 +114,14 @@ Gets the available audio file list included in attached devices. Note : If the u
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Default: false Note : Notifications are not provided when an entry is removed from the list (physical devices are detached). In this case, the user is notified from other services such as physical device manager. |
 | `count` | Number (optional) Limits the number of entries in the returned audio file list. Default: 500 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `audioList` | Object: audioList (optional) Indicates the supported device types. |
+| `errorCode` | Number (optional) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/getAudioList '{"uri":"msc://D94A-BE4D"}
 ```
@@ -137,6 +147,14 @@ Gets the detailed meta data information of the specified uri for the given audio
 |---|---|
 | `uri` | String (required) Indicates the uri of the audio file. Example: msc://D94A-BE4D/tmp/usb/sdg/sdg1/SampleAudio.mp3 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `metadata` | Object array: AudioMetadata (optional) Indicates the meta data information of specified audio file. |
+| `errorCode` | Number (optional) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/getAudioMetadata '{"uri": "<uri>"}'
 ```
@@ -161,6 +179,14 @@ Gets the list of all the attached storage devices. Note : The list can contain d
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (required) Indicates if subscribed to get the notifications. Possible values are: true : Subscribe for notifications. false : Not subscribed Default: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `pluginList` | Object array: pluginList (required) Indicates the supported device types. |
+| `errorCode` | Number (optional) The error code for the operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
 
 ```sh
 luna-send -n 2 -f luna://com.webos.service.mediaindexer/getDeviceList '{"subscribe":true}
@@ -189,6 +215,14 @@ Gets all the available image file list included in the attached devices. Note : 
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Default: false Note : Notifications are not provided when an entry is removed from the list (physical devices are detached). In this case, the user is notified from other services such as physical device manager. |
 | `count` | Number (optional) Limits the number of entries in the returned image file list. Default: 500 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `imageList` | Object: imageList (optional) Specifies the supported device types. See imageList for details. |
+| `errorCode` | Number (optional) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/getImageList '{}
 ```
@@ -213,6 +247,14 @@ Gets the detailed meta data information of specified uri of the image file.
 | Param | Type / notes |
 |---|---|
 | `uri` | String (required) Indicates the uri of the audio file. Example: msc://D94A-BE4D/tmp/usb/sdg/sdg1/SampleImage.jpg |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `metadata` | Object array: imageList (optional) Indicates the metadata information of specified audio file. |
+| `errorCode` | Number (optional) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/getImageMetadata '{"uri":"msc://D94A-BE4D/tmp/usb/sdh/sdh1/SampleImage2.jpg"}
@@ -239,6 +281,13 @@ Enables the downloadable services or apps (built-in or downloadable) to acquire,
 |---|---|
 | `serviceName` | String (required) Indicates the name of the downloadable services or apps (built-in or downloadable) to access the DB of the media indexer service. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/getMediaDbPermission '{"serviceName":"com.webos.mediaindexer.app.qml"}
 ```
@@ -264,6 +313,13 @@ Requests to retrieve the plugin from the plugin factory and to then activate the
 |---|---|
 | `uri` | String (optional) URI of the plugin to be retrieved and activated. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/getPlugin '{"uri": "mtp"}
 ```
@@ -284,6 +340,12 @@ Gets a list of available plugins.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 24+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `pluginList` | Object array: pluginList (optional) Contains list of all installed plugins. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/getPluginList '{}
@@ -312,6 +374,14 @@ Gets the available video files list included in the attached devices. Note : If 
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Default: false Note : Notifications are not provided when an entry is removed from the list (physical devices are detached). In this case, the user is notified from other services such as physical device manager. |
 | `count` | Number (optional) Limits the number of entries in the returned video file list. Default: 500 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `videoList` | Object: videoList (optional) Indicates the supported device types. |
+| `errorCode` | Number (optional) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/getVideoList '{}
 ```
@@ -336,6 +406,14 @@ Gets the detailed meta data information for the specified uri of the video file.
 | Param | Type / notes |
 |---|---|
 | `uri` | String (required) Indicates the uri of the video file. Example: msc://D94A-BE4D/tmp/usb/sdg/sdg1/SampleVideo.mp4 |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `metadata` | Object array: VideoMetadata (optional) Indicates the meta data information of specified video file. |
+| `errorCode` | Number (optional) The error code for the operation. Note: Currently, it returns 0 even when the returnValue is true and returns -1 if JSON parsing fails. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. Note: Currently, it returns "No Error" even when the returnValue is true. If JSON parsing fails, then errorText is updated accordingly. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/getVideoMetadata '{"uri":"msc://D94A-BE4D/tmp/usb/sdh/sdh1/SampleVideofiles2.mp4"}
@@ -425,6 +503,13 @@ Requests to add the plugin to the plugin factory.
 |---|---|
 | `uri` | String (required) URI of the plugin to be added. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/putPlugin '{"uri": "mtp"}
 ```
@@ -449,6 +534,14 @@ Requests deletion of media item from media DB connector.
 | Param | Type / notes |
 |---|---|
 | `uri` | String (required) Playback URI for the given media item. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+| `count` | Number (optional) Provides the list of medial files which are deleted from database. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/requestDelete '{"uri": "/home/root/resolution_4.mp4"}
@@ -475,6 +568,13 @@ Scans device for media item.
 |---|---|
 | `path` | String (required) Playback URI for the given media item. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/requestMediaScan '{"path": "/media"}
 ```
@@ -500,6 +600,13 @@ Requests to check plugins that are available in the known devices databases and 
 |---|---|
 | `uri` | String (optional) URI of the plugin. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/runDetect '{"uri": "msc"}
 ```
@@ -524,6 +631,13 @@ Requests not to detect the plugin in database for the known device and do not en
 | Param | Type / notes |
 |---|---|
 | `uri` | String (optional) URI of the plugin. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediaindexer/stopDetect '{"uri": "mtp"}

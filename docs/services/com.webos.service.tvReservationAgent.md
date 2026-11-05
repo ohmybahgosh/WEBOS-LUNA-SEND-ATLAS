@@ -1,66 +1,70 @@
 # `com.webos.service.tvReservationAgent`
 
+TV reservation/scheduling agent: adds, edits, cancels and lists scheduled recordings and power on/off timers, and reports power state and power-on reason. _(inferred from the service's methods)_
+
 42 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`add`](#add) | public |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`cancel`](#cancel) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`checkOverlap`](#checkoverlap) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`clear`](#clear) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`delete`](#delete) | public |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). ⚠️ |
-| [`edit`](#edit) | public |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`getChangedList`](#getchangedlist) | public |  | tv-broadcast | Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`getCurrentLegacyResvOffTimerInfo`](#getcurrentlegacyresvofftimerinfo) | private |  | tv-broadcast | Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`getCurrentLegacyResvOnTimerInfo`](#getcurrentlegacyresvontimerinfo) | private |  | tv-broadcast | Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`getCurrentResvOffTimerInfo`](#getcurrentresvofftimerinfo) | private |  | tv-broadcast | Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`getCurrentResvOnTimerInfo`](#getcurrentresvontimerinfo) | private |  | tv-broadcast | Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`getCurrentTime`](#getcurrenttime) | private |  | tv-broadcast | Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`getPowerOnReason`](#getpoweronreason) | private |  | power | Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`getPowerState`](#getpowerstate) | private |  | power | Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`getRepeatedList`](#getrepeatedlist) | public |  | tv-broadcast | Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`isExistScheduleStartSoon`](#isexistschedulestartsoon) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`record/addStopReason`](#record_addstopreason) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`record/epgProgram/add`](#record_epgprogram_add) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`record/fullEpgProgram/add`](#record_fullepgprogram_add) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`record/manual/add`](#record_manual_add) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`setReservationLogStatus`](#setreservationlogstatus) | private |  | tv-broadcast | Setter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`stopScheduler`](#stopscheduler) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testAlertPopup`](#testalertpopup) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testChannelInfo`](#testchannelinfo) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testCmdApi`](#testcmdapi) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testCountryCode`](#testcountrycode) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testLegacyEtcAdapter`](#testlegacyetcadapter) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testLegacyiEPGAdapter`](#testlegacyiepgadapter) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testLegacyUTPAdapter`](#testlegacyutpadapter) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testOptionInfo`](#testoptioninfo) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testPopup`](#testpopup) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testReservationDb`](#testreservationdb) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testResvHDDLog`](#testresvhddlog) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testSetDebugMode`](#testsetdebugmode) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testTimerCallback`](#testtimercallback) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`testToastPopup`](#testtoastpopup) | private |  | notifications | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`timer/sleep/add`](#timer_sleep_add) | private |  | power | Sets the sleep timer in minutes |
-| [`timer/sleep/getRemainTime`](#timer_sleep_getremaintime) | private |  | power | Returns remaining sleep timer |
-| [`watch/epgProgram/add`](#watch_epgprogram_add) | public |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`watch/fullEpgProgram/add`](#watch_fullepgprogram_add) | public |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`watch/manual/add`](#watch_manual_add) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
-| [`watch/okBtn`](#watch_okbtn) | private |  | tv-broadcast | Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`add`](#add) | public |  | tv-broadcast | inferred | Adds the TV reservation agent. |
+| [`cancel`](#cancel) | private |  | tv-broadcast | inferred | Cancels the TV reservation agent. |
+| [`checkOverlap`](#checkoverlap) | private |  | tv-broadcast | inferred | Checks the overlap. |
+| [`clear`](#clear) | private |  | tv-broadcast | inferred | Clears the TV reservation agent. |
+| [`delete`](#delete) | public |  | tv-broadcast | inferred | Deletes the TV reservation agent. ⚠️ |
+| [`edit`](#edit) | public |  | tv-broadcast | inferred | Edits the TV reservation agent. |
+| [`getChangedList`](#getchangedlist) | public |  | tv-broadcast | inferred | Returns the changed list. |
+| [`getCurrentLegacyResvOffTimerInfo`](#getcurrentlegacyresvofftimerinfo) | private |  | tv-broadcast | inferred | Returns the current legacy resv off timer info. |
+| [`getCurrentLegacyResvOnTimerInfo`](#getcurrentlegacyresvontimerinfo) | private |  | tv-broadcast | inferred | Returns the current legacy resv on timer info. |
+| [`getCurrentResvOffTimerInfo`](#getcurrentresvofftimerinfo) | private |  | tv-broadcast | inferred | Returns the current resv off timer info. |
+| [`getCurrentResvOnTimerInfo`](#getcurrentresvontimerinfo) | private |  | tv-broadcast | inferred | Returns the current resv on timer info. |
+| [`getCurrentTime`](#getcurrenttime) | private |  | tv-broadcast | inferred | Returns the current time. |
+| [`getPowerOnReason`](#getpoweronreason) | private |  | power | inferred | Returns the power on reason. |
+| [`getPowerState`](#getpowerstate) | private |  | power | inferred | Returns the power state. |
+| [`getRepeatedList`](#getrepeatedlist) | public |  | tv-broadcast | inferred | Returns the repeated list. |
+| [`isExistScheduleStartSoon`](#isexistschedulestartsoon) | private |  | tv-broadcast | inferred | Reports whether the exist schedule start soon is set. |
+| [`record/addStopReason`](#record_addstopreason) | private |  | tv-broadcast | inferred | Adds the stop reason (record) |
+| [`record/epgProgram/add`](#record_epgprogram_add) | private |  | tv-broadcast | inferred | Adds the TV reservation agent (record EPG program) |
+| [`record/fullEpgProgram/add`](#record_fullepgprogram_add) | private |  | tv-broadcast | inferred | Adds the TV reservation agent (record full EPG program) |
+| [`record/manual/add`](#record_manual_add) | private |  | tv-broadcast | inferred | Adds the TV reservation agent (record manual) |
+| [`setReservationLogStatus`](#setreservationlogstatus) | private |  | tv-broadcast | inferred | Sets the reservation log status. |
+| [`stopScheduler`](#stopscheduler) | private |  | tv-broadcast | inferred | Stops the scheduler. |
+| [`testAlertPopup`](#testalertpopup) | private |  | tv-broadcast | inferred | Tests the alert popup. |
+| [`testChannelInfo`](#testchannelinfo) | private |  | tv-broadcast | inferred | Tests the channel info. |
+| [`testCmdApi`](#testcmdapi) | private |  | tv-broadcast | inferred | Tests the cmd api. |
+| [`testCountryCode`](#testcountrycode) | private |  | tv-broadcast | inferred | Tests the country code. |
+| [`testLegacyEtcAdapter`](#testlegacyetcadapter) | private |  | tv-broadcast | inferred | Tests the legacy etc adapter. |
+| [`testLegacyiEPGAdapter`](#testlegacyiepgadapter) | private |  | tv-broadcast | inferred | Tests the legacyi EPG adapter. |
+| [`testLegacyUTPAdapter`](#testlegacyutpadapter) | private |  | tv-broadcast | inferred | Tests the legacy UTP adapter. |
+| [`testOptionInfo`](#testoptioninfo) | private |  | tv-broadcast | inferred | Tests the option info. |
+| [`testPopup`](#testpopup) | private |  | tv-broadcast | inferred | Tests the popup. |
+| [`testReservationDb`](#testreservationdb) | private |  | tv-broadcast | inferred | Tests the reservation db. |
+| [`testResvHDDLog`](#testresvhddlog) | private |  | tv-broadcast | inferred | Tests the resv HDD log. |
+| [`testSetDebugMode`](#testsetdebugmode) | private |  | tv-broadcast | inferred | Tests the set debug mode. |
+| [`testTimerCallback`](#testtimercallback) | private |  | tv-broadcast | inferred | Tests the timer callback. |
+| [`testToastPopup`](#testtoastpopup) | private |  | notifications | inferred | Tests the toast popup. |
+| [`timer/sleep/add`](#timer_sleep_add) | private |  | power | documented | Sets the sleep timer in minutes |
+| [`timer/sleep/getRemainTime`](#timer_sleep_getremaintime) | private |  | power | documented | Returns remaining sleep timer |
+| [`watch/epgProgram/add`](#watch_epgprogram_add) | public |  | tv-broadcast | inferred | Adds the TV reservation agent (watch EPG program) |
+| [`watch/fullEpgProgram/add`](#watch_fullepgprogram_add) | public |  | tv-broadcast | inferred | Adds the TV reservation agent (watch full EPG program) |
+| [`watch/manual/add`](#watch_manual_add) | private |  | tv-broadcast | inferred | Adds the TV reservation agent (watch manual) |
+| [`watch/okBtn`](#watch_okbtn) | private |  | tv-broadcast | inferred | Handles the ok btn (watch) |
 
 <a id="add"></a>
 ## `add`
 
 `luna://com.webos.service.tvReservationAgent/add`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Adds the TV reservation agent.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/add '{}'
@@ -75,13 +79,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/cancel`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Cancels the TV reservation agent.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/cancel '{}'
@@ -96,13 +102,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/checkOverlap`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Checks the overlap.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/checkOverlap '{}'
@@ -117,13 +125,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/clear`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Clears the TV reservation agent.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/clear '{}'
@@ -138,13 +148,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/delete`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Deletes the TV reservation agent.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/delete '{}'
@@ -159,13 +171,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/edit`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Edits the TV reservation agent.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/edit '{}'
@@ -180,13 +194,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/getChangedList`
 
-Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Returns the changed list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getChangedList '{}'
@@ -201,13 +217,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/getCurrentLegacyResvOffTimerInfo`
 
-Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Returns the current legacy resv off timer info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getCurrentLegacyResvOffTimerInfo '{}'
@@ -222,13 +240,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/getCurrentLegacyResvOnTimerInfo`
 
-Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Returns the current legacy resv on timer info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getCurrentLegacyResvOnTimerInfo '{}'
@@ -243,13 +263,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/getCurrentResvOffTimerInfo`
 
-Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Returns the current resv off timer info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getCurrentResvOffTimerInfo '{}'
@@ -264,13 +286,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/getCurrentResvOnTimerInfo`
 
-Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Returns the current resv on timer info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getCurrentResvOnTimerInfo '{}'
@@ -285,13 +309,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/getCurrentTime`
 
-Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Returns the current time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getCurrentTime '{}'
@@ -306,13 +332,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/getPowerOnReason`
 
-Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Returns the power on reason.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getPowerOnReason '{}'
@@ -327,13 +355,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/getPowerState`
 
-Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Returns the power state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getPowerState '{}'
@@ -348,13 +378,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/getRepeatedList`
 
-Getter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Returns the repeated list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/getRepeatedList '{}'
@@ -369,13 +401,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/isExistScheduleStartSoon`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Reports whether the exist schedule start soon is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/isExistScheduleStartSoon '{}'
@@ -390,13 +424,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/record/addStopReason`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Adds the stop reason (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/record/addStopReason '{}'
@@ -411,13 +447,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/record/epgProgram/add`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Adds the TV reservation agent (record EPG program)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/record/epgProgram/add '{}'
@@ -432,13 +470,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/record/fullEpgProgram/add`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Adds the TV reservation agent (record full EPG program)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/record/fullEpgProgram/add '{}'
@@ -453,13 +493,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/record/manual/add`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Adds the TV reservation agent (record manual)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/record/manual/add '{}'
@@ -474,13 +516,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/setReservationLogStatus`
 
-Setter on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Sets the reservation log status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/setReservationLogStatus '{}'
@@ -495,13 +539,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/stopScheduler`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Stops the scheduler.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/stopScheduler '{}'
@@ -516,13 +562,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testAlertPopup`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the alert popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testAlertPopup '{}'
@@ -537,13 +585,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testChannelInfo`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the channel info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testChannelInfo '{}'
@@ -558,13 +608,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testCmdApi`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the cmd api.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testCmdApi '{}'
@@ -579,13 +631,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testCountryCode`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the country code.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testCountryCode '{}'
@@ -600,13 +654,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testLegacyEtcAdapter`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the legacy etc adapter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testLegacyEtcAdapter '{}'
@@ -621,13 +677,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testLegacyiEPGAdapter`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the legacyi EPG adapter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testLegacyiEPGAdapter '{}'
@@ -642,13 +700,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testLegacyUTPAdapter`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the legacy UTP adapter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testLegacyUTPAdapter '{}'
@@ -663,13 +723,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testOptionInfo`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the option info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testOptionInfo '{}'
@@ -684,13 +746,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testPopup`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testPopup '{}'
@@ -705,13 +769,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testReservationDb`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the reservation db.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testReservationDb '{}'
@@ -726,13 +792,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testResvHDDLog`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the resv HDD log.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testResvHDDLog '{}'
@@ -747,13 +815,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testSetDebugMode`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the set debug mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testSetDebugMode '{}'
@@ -768,13 +838,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testTimerCallback`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the timer callback.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testTimerCallback '{}'
@@ -789,13 +861,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/testToastPopup`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Tests the toast popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/testToastPopup '{}'
@@ -816,7 +890,7 @@ Sets the sleep timer in minutes
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -841,7 +915,7 @@ Returns remaining sleep timer
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.tvReservationAgent/timer/sleep/getRemainTime '{}'
@@ -854,13 +928,15 @@ Sources: [1](https://github.com/Jezzarium/Actually-Good-WebOS/blob/HEAD/control/
 
 `luna://com.webos.service.tvReservationAgent/watch/epgProgram/add`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Adds the TV reservation agent (watch EPG program)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/watch/epgProgram/add '{}'
@@ -875,13 +951,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/watch/fullEpgProgram/add`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Adds the TV reservation agent (watch full EPG program)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/watch/fullEpgProgram/add '{}'
@@ -896,13 +974,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/watch/manual/add`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Adds the TV reservation agent (watch manual)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/watch/manual/add '{}'
@@ -917,13 +997,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvReservationAgent/watch/okBtn`
 
-Method on com.webos.service.tvReservationAgent (introspected on-device; parameters undocumented).
+Handles the ok btn (watch)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvReservationAgent/watch/okBtn '{}'

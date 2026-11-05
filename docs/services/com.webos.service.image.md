@@ -1,29 +1,33 @@
 # `com.webos.service.image`
 
+Image-processing utility: converts, resizes, crops and combines images and reports image info.
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`combine`](#combine) | private |  | misc | Method on com.webos.service.image (from on-device permission registry; parameters undocumented). |
-| [`convert`](#convert) | public |  | misc | Method on com.webos.service.image (from on-device permission registry; parameters undocumented). |
-| [`cropMultiple`](#cropmultiple) | private |  | misc | Method on com.webos.service.image (from on-device permission registry; parameters undocumented). |
-| [`ezResize`](#ezresize) | public |  | misc | Method on com.webos.service.image (from on-device permission registry; parameters undocumented). |
-| [`imageInfo`](#imageinfo) | public |  | misc | Method on com.webos.service.image (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`combine`](#combine) | private |  | misc | inferred | Handles the combine. |
+| [`convert`](#convert) | public |  | misc | inferred | Handles the convert. |
+| [`cropMultiple`](#cropmultiple) | private |  | misc | inferred | Handles the crop multiple. |
+| [`ezResize`](#ezresize) | public |  | misc | inferred | Handles the ez resize. |
+| [`imageInfo`](#imageinfo) | public |  | misc | inferred | Handles the image info. |
 
 <a id="combine"></a>
 ## `combine`
 
 `luna://com.webos.service.image/combine`
 
-Method on com.webos.service.image (from on-device permission registry; parameters undocumented).
+Handles the combine.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.image/combine '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.image/convert`
 
-Method on com.webos.service.image (from on-device permission registry; parameters undocumented).
+Handles the convert.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.image/convert '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.image/cropMultiple`
 
-Method on com.webos.service.image (from on-device permission registry; parameters undocumented).
+Handles the crop multiple.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.image/cropMultiple '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.image/ezResize`
 
-Method on com.webos.service.image (from on-device permission registry; parameters undocumented).
+Handles the ez resize.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.image/ezResize '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.image/imageInfo`
 
-Method on com.webos.service.image (from on-device permission registry; parameters undocumented).
+Handles the image info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.image/imageInfo '{}'

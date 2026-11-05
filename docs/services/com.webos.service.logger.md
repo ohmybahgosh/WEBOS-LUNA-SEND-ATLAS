@@ -1,25 +1,29 @@
 # `com.webos.service.logger`
 
+Logging service: writes a log entry. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`writeLog`](#writelog) | private |  | misc | Method on com.webos.service.logger (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`writeLog`](#writelog) | private |  | misc | inferred | Writes the log. |
 
 <a id="writelog"></a>
 ## `writeLog`
 
 `luna://com.webos.service.logger/writeLog`
 
-Method on com.webos.service.logger (introspected on-device; parameters undocumented).
+Writes the log.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.logger/writeLog '{}'

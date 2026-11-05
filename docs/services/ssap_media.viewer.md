@@ -1,13 +1,15 @@
 # `ssap:media.viewer`
 
+SSAP external-control endpoint for the media viewer: opens and closes it. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | ssap |  | media | Close media viewer |
-| [`open`](#open) | ssap |  | media | Open media viewer with a URL |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | ssap |  | media | documented | Close media viewer |
+| [`open`](#open) | ssap |  | media | documented | Open media viewer with a URL |
 
 <a id="close"></a>
 ## `close`
@@ -20,7 +22,7 @@ Close media viewer
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -45,7 +47,7 @@ Open media viewer with a URL
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

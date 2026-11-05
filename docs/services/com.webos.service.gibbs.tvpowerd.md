@@ -1,40 +1,44 @@
 # `com.webos.service.gibbs.tvpowerd`
 
+TV power daemon (gibbs stack): coordinates power-off, suspend, resume, and active-standby transitions by registering requests and exchanging prepare/response acknowledgements. _(inferred from the service's methods)_
+
 16 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`registerActiveStandbyRequest`](#registeractivestandbyrequest) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`registerPowerOffRequest`](#registerpoweroffrequest) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`registerPrepareActiveStandby`](#registerprepareactivestandby) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`registerPreparePowerOff`](#registerpreparepoweroff) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`registerPreparePowerOn`](#registerpreparepoweron) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`registerPrepareResume`](#registerprepareresume) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`registerPrepareSuspend`](#registerpreparesuspend) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`registerSuspendRequest`](#registersuspendrequest) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`responsePrepareResume`](#responseprepareresume) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`responsePrepareSuspend`](#responsepreparesuspend) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`responseSuspendRequest`](#responsesuspendrequest) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`sendActiveStandbyRequestAck`](#sendactivestandbyrequestack) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`sendPowerOffRequestAck`](#sendpoweroffrequestack) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`sendPrepareActiveStandbyAck`](#sendprepareactivestandbyack) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`sendPreparePowerOffAck`](#sendpreparepoweroffack) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
-| [`sendPreparePowerOnAck`](#sendpreparepoweronack) | private |  | power | Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`registerActiveStandbyRequest`](#registeractivestandbyrequest) | private |  | power | inferred | Registers the active standby request. |
+| [`registerPowerOffRequest`](#registerpoweroffrequest) | private |  | power | inferred | Registers the power off request. |
+| [`registerPrepareActiveStandby`](#registerprepareactivestandby) | private |  | power | inferred | Registers the prepare active standby. |
+| [`registerPreparePowerOff`](#registerpreparepoweroff) | private |  | power | inferred | Registers the prepare power off. |
+| [`registerPreparePowerOn`](#registerpreparepoweron) | private |  | power | inferred | Registers the prepare power on. |
+| [`registerPrepareResume`](#registerprepareresume) | private |  | power | inferred | Registers the prepare resume. |
+| [`registerPrepareSuspend`](#registerpreparesuspend) | private |  | power | inferred | Registers the prepare suspend. |
+| [`registerSuspendRequest`](#registersuspendrequest) | private |  | power | inferred | Registers the suspend request. |
+| [`responsePrepareResume`](#responseprepareresume) | private |  | power | inferred | Handles the response prepare resume. |
+| [`responsePrepareSuspend`](#responsepreparesuspend) | private |  | power | inferred | Handles the response prepare suspend. |
+| [`responseSuspendRequest`](#responsesuspendrequest) | private |  | power | inferred | Handles the response suspend request. |
+| [`sendActiveStandbyRequestAck`](#sendactivestandbyrequestack) | private |  | power | inferred | Sends the active standby request ack. |
+| [`sendPowerOffRequestAck`](#sendpoweroffrequestack) | private |  | power | inferred | Sends the power off request ack. |
+| [`sendPrepareActiveStandbyAck`](#sendprepareactivestandbyack) | private |  | power | inferred | Sends the prepare active standby ack. |
+| [`sendPreparePowerOffAck`](#sendpreparepoweroffack) | private |  | power | inferred | Sends the prepare power off ack. |
+| [`sendPreparePowerOnAck`](#sendpreparepoweronack) | private |  | power | inferred | Sends the prepare power on ack. |
 
 <a id="registeractivestandbyrequest"></a>
 ## `registerActiveStandbyRequest`
 
 `luna://com.webos.service.gibbs.tvpowerd/registerActiveStandbyRequest`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Registers the active standby request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/registerActiveStandbyRequest '{}'
@@ -49,13 +53,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/registerPowerOffRequest`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Registers the power off request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/registerPowerOffRequest '{}'
@@ -70,13 +76,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/registerPrepareActiveStandby`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Registers the prepare active standby.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/registerPrepareActiveStandby '{}'
@@ -91,13 +99,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/registerPreparePowerOff`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Registers the prepare power off.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/registerPreparePowerOff '{}'
@@ -112,13 +122,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/registerPreparePowerOn`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Registers the prepare power on.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/registerPreparePowerOn '{}'
@@ -133,13 +145,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/registerPrepareResume`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Registers the prepare resume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/registerPrepareResume '{}'
@@ -154,13 +168,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/registerPrepareSuspend`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Registers the prepare suspend.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/registerPrepareSuspend '{}'
@@ -175,13 +191,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/registerSuspendRequest`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Registers the suspend request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/registerSuspendRequest '{}'
@@ -196,13 +214,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/responsePrepareResume`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Handles the response prepare resume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/responsePrepareResume '{}'
@@ -217,13 +237,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/responsePrepareSuspend`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Handles the response prepare suspend.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/responsePrepareSuspend '{}'
@@ -238,13 +260,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/responseSuspendRequest`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Handles the response suspend request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/responseSuspendRequest '{}'
@@ -259,13 +283,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/sendActiveStandbyRequestAck`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Sends the active standby request ack.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/sendActiveStandbyRequestAck '{}'
@@ -280,13 +306,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/sendPowerOffRequestAck`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Sends the power off request ack.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/sendPowerOffRequestAck '{}'
@@ -301,13 +329,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/sendPrepareActiveStandbyAck`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Sends the prepare active standby ack.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/sendPrepareActiveStandbyAck '{}'
@@ -322,13 +352,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/sendPreparePowerOffAck`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Sends the prepare power off ack.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/sendPreparePowerOffAck '{}'
@@ -343,13 +375,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.tvpowerd/sendPreparePowerOnAck`
 
-Method on com.webos.service.gibbs.tvpowerd (from on-device permission registry; parameters undocumented).
+Sends the prepare power on ack.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.tvpowerd/sendPreparePowerOnAck '{}'

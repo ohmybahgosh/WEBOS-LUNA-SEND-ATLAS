@@ -1,28 +1,32 @@
 # `com.webos.rdxd`
 
+Remote Diagnostics daemon (RDX): configures logging levels and generates diagnostic log reports. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getLogSettings`](#getlogsettings) | private |  | settings | Getter on com.webos.rdxd (introspected on-device; parameters undocumented). |
-| [`makeLogReport`](#makelogreport) | private |  | misc | Method on com.webos.rdxd (introspected on-device; parameters undocumented). |
-| [`makeReport`](#makereport) | private |  | misc | Method on com.webos.rdxd (introspected on-device; parameters undocumented). |
-| [`setLogSettings`](#setlogsettings) | private |  | settings | Setter on com.webos.rdxd (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getLogSettings`](#getlogsettings) | private |  | settings | inferred | Returns the log settings. |
+| [`makeLogReport`](#makelogreport) | private |  | misc | inferred | Makes the log report. |
+| [`makeReport`](#makereport) | private |  | misc | inferred | Makes the report. |
+| [`setLogSettings`](#setlogsettings) | private |  | settings | inferred | Sets the log settings. |
 
 <a id="getlogsettings"></a>
 ## `getLogSettings`
 
 `luna://com.webos.rdxd/getLogSettings`
 
-Getter on com.webos.rdxd (introspected on-device; parameters undocumented).
+Returns the log settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.rdxd/getLogSettings '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.rdxd/makeLogReport`
 
-Method on com.webos.rdxd (introspected on-device; parameters undocumented).
+Makes the log report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.rdxd/makeLogReport '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.rdxd/makeReport`
 
-Method on com.webos.rdxd (introspected on-device; parameters undocumented).
+Makes the report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.rdxd/makeReport '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.rdxd/setLogSettings`
 
-Setter on com.webos.rdxd (introspected on-device; parameters undocumented).
+Sets the log settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.rdxd/setLogSettings '{}'

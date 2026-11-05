@@ -1,48 +1,52 @@
 # `com.webos.service.attachedstoragemanager`
 
+Manages attached USB storage: lists devices and folder contents, copies, deletes, decompresses and formats, ejects devices, and extracts media metadata.
+
 24 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelRequest`](#cancelrequest) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`changeDeviceStatus`](#changedevicestatus) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`checkDevicePerformance`](#checkdeviceperformance) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`cleanDevice`](#cleandevice) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`copy`](#copy) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`decompress`](#decompress) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`delete`](#delete) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`ejectDevice`](#ejectdevice) | private |  | storage | Eject a USB device |
-| [`format`](#format) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`getAudioMetadata`](#getaudiometadata) | private |  | audio | Getter on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`getChangedContent`](#getchangedcontent) | private |  | storage | Getter on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`getCopyStatus`](#getcopystatus) | private |  | storage | Getter on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`getFileOperationStatus`](#getfileoperationstatus) | private |  | storage | Method on com.webos.service.attachedstoragemanager (from on-device permission registry; parameters undocumented). |
-| [`getProperties`](#getproperties) | private |  | storage | Getter on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`listContentsByCamera`](#listcontentsbycamera) | private |  | storage | Lister on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`listDevices`](#listdevices) | ssap |  | storage | List attached storage devices |
-| [`listDevices2`](#listdevices2) | private |  | storage | Lister on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`listFolderContents`](#listfoldercontents) | private |  | storage | Lister on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`move`](#move) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`refreshDeviceList`](#refreshdevicelist) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`registerDeviceStatus`](#registerdevicestatus) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`responseDeviceStatus`](#responsedevicestatus) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`triggeredActivity`](#triggeredactivity) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
-| [`unregisterDeviceStatus`](#unregisterdevicestatus) | private |  | storage | Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelRequest`](#cancelrequest) | private |  | storage | inferred | Cancels the request. |
+| [`changeDeviceStatus`](#changedevicestatus) | private |  | storage | inferred | Changes the device status. |
+| [`checkDevicePerformance`](#checkdeviceperformance) | private |  | storage | inferred | Checks the device performance. |
+| [`cleanDevice`](#cleandevice) | private |  | storage | inferred | Handles the clean device. |
+| [`copy`](#copy) | private |  | storage | inferred | Copies the attachedstoragemanager. |
+| [`decompress`](#decompress) | private |  | storage | inferred | Handles the decompress. |
+| [`delete`](#delete) | private |  | storage | inferred | Deletes the attachedstoragemanager. ⚠️ |
+| [`ejectDevice`](#ejectdevice) | private |  | storage | documented | Eject a USB device |
+| [`format`](#format) | private |  | storage | inferred | Formats the attachedstoragemanager. ⚠️ |
+| [`getAudioMetadata`](#getaudiometadata) | private |  | audio | inferred | Returns the audio metadata. |
+| [`getChangedContent`](#getchangedcontent) | private |  | storage | inferred | Returns the changed content. |
+| [`getCopyStatus`](#getcopystatus) | private |  | storage | inferred | Returns the copy status. |
+| [`getFileOperationStatus`](#getfileoperationstatus) | private |  | storage | inferred | Returns the file operation status. |
+| [`getProperties`](#getproperties) | private |  | storage | inferred | Returns the properties. |
+| [`listContentsByCamera`](#listcontentsbycamera) | private |  | storage | inferred | Lists the contents by camera. |
+| [`listDevices`](#listdevices) | ssap |  | storage | documented | List attached storage devices |
+| [`listDevices2`](#listdevices2) | private |  | storage | inferred | Lists the devices 2. |
+| [`listFolderContents`](#listfoldercontents) | private |  | storage | inferred | Lists the folder contents. |
+| [`move`](#move) | private |  | storage | inferred | Moves the attachedstoragemanager. |
+| [`refreshDeviceList`](#refreshdevicelist) | private |  | storage | inferred | Refreshes the device list. |
+| [`registerDeviceStatus`](#registerdevicestatus) | private |  | storage | inferred | Registers the device status. |
+| [`responseDeviceStatus`](#responsedevicestatus) | private |  | storage | inferred | Handles the response device status. |
+| [`triggeredActivity`](#triggeredactivity) | private |  | storage | inferred | Handles the triggered activity. |
+| [`unregisterDeviceStatus`](#unregisterdevicestatus) | private |  | storage | inferred | Unregisters the device status. |
 
 <a id="cancelrequest"></a>
 ## `cancelRequest`
 
 `luna://com.webos.service.attachedstoragemanager/cancelRequest`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Cancels the request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/cancelRequest '{}'
@@ -57,13 +61,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/changeDeviceStatus`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Changes the device status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/changeDeviceStatus '{}'
@@ -78,13 +84,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/checkDevicePerformance`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Checks the device performance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/checkDevicePerformance '{}'
@@ -99,13 +107,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/cleanDevice`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Handles the clean device.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/cleanDevice '{}'
@@ -120,13 +130,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/copy`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Copies the attachedstoragemanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/copy '{}'
@@ -141,13 +153,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/decompress`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Handles the decompress.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/decompress '{}'
@@ -162,13 +176,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/delete`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Deletes the attachedstoragemanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/delete '{}'
@@ -189,7 +205,7 @@ Eject a USB device
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** older webOS only; not newer webOS  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -208,13 +224,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 `luna://com.webos.service.attachedstoragemanager/format`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Formats the attachedstoragemanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/format '{}'
@@ -229,13 +247,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/getAudioMetadata`
 
-Getter on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Returns the audio metadata.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/getAudioMetadata '{}'
@@ -250,13 +270,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/getChangedContent`
 
-Getter on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Returns the changed content.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/getChangedContent '{}'
@@ -271,13 +293,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/getCopyStatus`
 
-Getter on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Returns the copy status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/getCopyStatus '{}'
@@ -292,13 +316,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/getFileOperationStatus`
 
-Method on com.webos.service.attachedstoragemanager (from on-device permission registry; parameters undocumented).
+Returns the file operation status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/getFileOperationStatus '{}'
@@ -313,13 +339,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.attachedstoragemanager/getProperties`
 
-Getter on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Returns the properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/getProperties '{}'
@@ -334,13 +362,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/listContentsByCamera`
 
-Lister on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Lists the contents by camera.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/listContentsByCamera '{}'
@@ -361,7 +391,7 @@ List attached storage devices
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -380,13 +410,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 `luna://com.webos.service.attachedstoragemanager/listDevices2`
 
-Lister on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Lists the devices 2.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/listDevices2 '{}'
@@ -401,13 +433,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/listFolderContents`
 
-Lister on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Lists the folder contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/listFolderContents '{}'
@@ -422,13 +456,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/move`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Moves the attachedstoragemanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/move '{}'
@@ -443,13 +479,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/refreshDeviceList`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Refreshes the device list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/refreshDeviceList '{}'
@@ -464,13 +502,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/registerDeviceStatus`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Registers the device status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/registerDeviceStatus '{}'
@@ -485,13 +525,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/responseDeviceStatus`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Handles the response device status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/responseDeviceStatus '{}'
@@ -506,13 +548,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/triggeredActivity`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Handles the triggered activity.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/triggeredActivity '{}'
@@ -527,13 +571,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.attachedstoragemanager/unregisterDeviceStatus`
 
-Method on com.webos.service.attachedstoragemanager (introspected on-device; parameters undocumented).
+Unregisters the device status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/unregisterDeviceStatus '{}'

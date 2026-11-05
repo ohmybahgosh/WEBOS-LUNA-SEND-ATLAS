@@ -1,107 +1,111 @@
 # `com.webos.service.tvpower`
 
+TV power daemon: powers the TV on/off, reboots (including MICOM), reports power state and power-on reason/time, and registers suspend/resume/standby/screensaver handshakes.
+
 83 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`power/cancelPowerOff`](#power_cancelpoweroff) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power/getClientList`](#power_getclientlist) | private |  | power | Lists clients registered with tvpower for the power-state lifecycle (name from introspection; behaviour undocumented) |
-| [`power/getPowerOnReason`](#power_getpoweronreason) | private |  | power | Returns why the TV was last powered on (e.g. ON_BY_REMOTE_KEY) |
-| [`power/getPowerOnTime`](#power_getpowerontime) | private |  | power | Returns uptime since boot in seconds |
-| [`power/getPowerState`](#power_getpowerstate) | ssap | yes | power | Get (or subscribe to) TV power state |
-| [`power/powerOff`](#power_poweroff) | private |  | power | Puts the TV into standby (quick-start suspend when Quick Start+ is on) |
-| [`power/powerOn`](#power_poweron) | private |  | power | Brings a TV back from Active Standby/Always-on |
-| [`power/reboot`](#power_reboot) | private |  | power | Soft reboots the TV |
-| [`power/rebootMicom`](#power_rebootmicom) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power/registerActiveStandbyRequest`](#power_registeractivestandbyrequest) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/registerPowerOffLogoRequest`](#power_registerpowerofflogorequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power/registerPowerOffRequest`](#power_registerpoweroffrequest) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/registerPrepareActiveStandby`](#power_registerprepareactivestandby) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/registerPreparePowerOff`](#power_registerpreparepoweroff) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/registerPreparePowerOn`](#power_registerpreparepoweron) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/registerPrepareResume`](#power_registerprepareresume) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/registerPrepareSuspend`](#power_registerpreparesuspend) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/registerScreenSaverRequest`](#power_registerscreensaverrequest) | private | yes | display | Subscription: LG asks before starting its screensaver; the subscriber replies via responseScreenSaverRequest |
-| [`power/registerSuspendRequest`](#power_registersuspendrequest) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/responseActiveStandbyRequest`](#power_responseactivestandbyrequest) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/responsePowerOffLogoRequest`](#power_responsepowerofflogorequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power/responsePowerOffRequest`](#power_responsepoweroffrequest) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/responsePrepareActiveStandby`](#power_responseprepareactivestandby) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/responsePreparePowerOff`](#power_responsepreparepoweroff) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/responsePreparePowerOn`](#power_responsepreparepoweron) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/responsePrepareResume`](#power_responseprepareresume) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/responsePrepareSuspend`](#power_responsepreparesuspend) | public |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/responseScreenSaverRequest`](#power_responsescreensaverrequest) | private |  | display | Answers a screensaver request |
-| [`power/responseSuspendRequest`](#power_responsesuspendrequest) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/sendActiveStandbyRequestAck`](#power_sendactivestandbyrequestack) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/sendPowerOffRequestAck`](#power_sendpoweroffrequestack) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/sendPrepareActiveStandbyAck`](#power_sendprepareactivestandbyack) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/sendPreparePowerOffAck`](#power_sendpreparepoweroffack) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/sendPreparePowerOnAck`](#power_sendpreparepoweronack) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/setHostReady`](#power_sethostready) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power/setPowerInitState`](#power_setpowerinitstate) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/setPowerOffTimeout`](#power_setpowerofftimeout) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power/setPowerOnReason`](#power_setpoweronreason) | private |  | power | Sets the recorded power-on reason (counterpart of power/getPowerOnReason) |
-| [`power/setScreenBlock`](#power_setscreenblock) | private |  | power | Screen block control on tvpower (name only) |
-| [`power/shutDown`](#power_shutdown) | private |  | power | Full power off, cold boot next start; Wake-on-LAN no longer wakes the TV |
-| [`power/test`](#power_test) | private |  | power | Method registered by com.webos.service.tvpower (category '/power') |
-| [`power/turnOffScreen`](#power_turnoffscreen) | ssap |  | display | Blank the panel (screen off) while keeping the TV powered |
-| [`power/turnOnScreen`](#power_turnonscreen) | ssap |  | display | Unblank the panel |
-| [`power/turnOnScreenSaver`](#power_turnonscreensaver) | private |  | display | Starts the LG screensaver now |
-| [`power2/cancelPowerOff`](#power2_cancelpoweroff) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/getClientList`](#power2_getclientlist) | private |  | power | Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/getPowerOnReason`](#power2_getpoweronreason) | private |  | power | Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/getPowerOnTime`](#power2_getpowerontime) | private |  | power | Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/getPowerState`](#power2_getpowerstate) | private |  | power | Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/power`](#power2_power) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/powerOff`](#power2_poweroff) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/powerOn`](#power2_poweron) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/reboot`](#power2_reboot) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/rebootMicom`](#power2_rebootmicom) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/registerActiveStandbyRequest`](#power2_registeractivestandbyrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/registerAlwaysOnDisplayRequest`](#power2_registeralwaysondisplayrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/registerAlwaysReadyRequest`](#power2_registeralwaysreadyrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/registerPowerOffLogoRequest`](#power2_registerpowerofflogorequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/registerPowerOffRequest`](#power2_registerpoweroffrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/registerPreparePowerOff`](#power2_registerpreparepoweroff) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/registerPreparePowerOn`](#power2_registerpreparepoweron) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/registerScreenSaverRequest`](#power2_registerscreensaverrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/registerSuspendRequest`](#power2_registersuspendrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/responseActiveStandbyRequest`](#power2_responseactivestandbyrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/responseAlwaysOnDisplayRequest`](#power2_responsealwaysondisplayrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/responseAlwaysReadyRequest`](#power2_responsealwaysreadyrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/responsePowerOffLogoRequest`](#power2_responsepowerofflogorequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/responsePowerOffRequest`](#power2_responsepoweroffrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/responsePreparePowerOff`](#power2_responsepreparepoweroff) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/responsePreparePowerOn`](#power2_responsepreparepoweron) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/responseScreenSaverRequest`](#power2_responsescreensaverrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/responseSuspendRequest`](#power2_responsesuspendrequest) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/setHostReady`](#power2_sethostready) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/setPowerInitState`](#power2_setpowerinitstate) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/setPowerOffTimeout`](#power2_setpowerofftimeout) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/setScreenBlock`](#power2_setscreenblock) | private |  | power | Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/shutDown`](#power2_shutdown) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). ⚠️ |
-| [`power2/test`](#power2_test) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/turnOffAoD`](#power2_turnoffaod) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/turnOffScreen`](#power2_turnoffscreen) | private |  | display | Alternate screen-off path tried as fallback |
-| [`power2/turnOnAoD`](#power2_turnonaod) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/turnOnScreen`](#power2_turnonscreen) | private |  | power | Method on com.webos.service.tvpower (introspected on-device; parameters undocumented). |
-| [`power2/turnOnScreenSaver`](#power2_turnonscreensaver) | private |  | power | Starts the screen saver (webOS 7+ variant; webOS 6 uses power/turnOnScreenSaver) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`power/cancelPowerOff`](#power_cancelpoweroff) | private |  | power | inferred | Cancels the power off (power) |
+| [`power/getClientList`](#power_getclientlist) | private |  | power | documented | Lists clients registered with tvpower for the power-state lifecycle (name from introspection; behaviour undocumented) |
+| [`power/getPowerOnReason`](#power_getpoweronreason) | private |  | power | documented | Returns why the TV was last powered on (e.g. ON_BY_REMOTE_KEY) |
+| [`power/getPowerOnTime`](#power_getpowerontime) | private |  | power | documented | Returns uptime since boot in seconds |
+| [`power/getPowerState`](#power_getpowerstate) | ssap | yes | power | documented | Get (or subscribe to) TV power state |
+| [`power/powerOff`](#power_poweroff) | private |  | power | documented | Puts the TV into standby (quick-start suspend when Quick Start+ is on) |
+| [`power/powerOn`](#power_poweron) | private |  | power | documented | Brings a TV back from Active Standby/Always-on |
+| [`power/reboot`](#power_reboot) | private |  | power | documented | Soft reboots the TV |
+| [`power/rebootMicom`](#power_rebootmicom) | private |  | power | inferred | Reboots the MICOM (power) |
+| [`power/registerActiveStandbyRequest`](#power_registeractivestandbyrequest) | private |  | power | inferred | Registers the active standby request (power) |
+| [`power/registerPowerOffLogoRequest`](#power_registerpowerofflogorequest) | private |  | power | inferred | Registers the power off logo request (power) |
+| [`power/registerPowerOffRequest`](#power_registerpoweroffrequest) | private |  | power | inferred | Registers the power off request (power) |
+| [`power/registerPrepareActiveStandby`](#power_registerprepareactivestandby) | public |  | power | inferred | Registers the prepare active standby (power) |
+| [`power/registerPreparePowerOff`](#power_registerpreparepoweroff) | public |  | power | inferred | Registers the prepare power off (power) |
+| [`power/registerPreparePowerOn`](#power_registerpreparepoweron) | public |  | power | inferred | Registers the prepare power on (power) |
+| [`power/registerPrepareResume`](#power_registerprepareresume) | public |  | power | inferred | Registers the prepare resume (power) |
+| [`power/registerPrepareSuspend`](#power_registerpreparesuspend) | public |  | power | inferred | Registers the prepare suspend (power) |
+| [`power/registerScreenSaverRequest`](#power_registerscreensaverrequest) | private | yes | display | documented | Subscription: LG asks before starting its screensaver; the subscriber replies via responseScreenSaverRequest |
+| [`power/registerSuspendRequest`](#power_registersuspendrequest) | private |  | power | inferred | Registers the suspend request (power) |
+| [`power/responseActiveStandbyRequest`](#power_responseactivestandbyrequest) | private |  | power | inferred | Handles the response active standby request (power) |
+| [`power/responsePowerOffLogoRequest`](#power_responsepowerofflogorequest) | private |  | power | inferred | Handles the response power off logo request (power) |
+| [`power/responsePowerOffRequest`](#power_responsepoweroffrequest) | private |  | power | inferred | Handles the response power off request (power) |
+| [`power/responsePrepareActiveStandby`](#power_responseprepareactivestandby) | public |  | power | inferred | Handles the response prepare active standby (power) |
+| [`power/responsePreparePowerOff`](#power_responsepreparepoweroff) | public |  | power | inferred | Handles the response prepare power off (power) |
+| [`power/responsePreparePowerOn`](#power_responsepreparepoweron) | public |  | power | inferred | Handles the response prepare power on (power) |
+| [`power/responsePrepareResume`](#power_responseprepareresume) | public |  | power | inferred | Handles the response prepare resume (power) |
+| [`power/responsePrepareSuspend`](#power_responsepreparesuspend) | public |  | power | inferred | Handles the response prepare suspend (power) |
+| [`power/responseScreenSaverRequest`](#power_responsescreensaverrequest) | private |  | display | documented | Answers a screensaver request |
+| [`power/responseSuspendRequest`](#power_responsesuspendrequest) | private |  | power | inferred | Handles the response suspend request (power) |
+| [`power/sendActiveStandbyRequestAck`](#power_sendactivestandbyrequestack) | private |  | power | inferred | Sends the active standby request ack (power) |
+| [`power/sendPowerOffRequestAck`](#power_sendpoweroffrequestack) | private |  | power | inferred | Sends the power off request ack (power) |
+| [`power/sendPrepareActiveStandbyAck`](#power_sendprepareactivestandbyack) | private |  | power | inferred | Sends the prepare active standby ack (power) |
+| [`power/sendPreparePowerOffAck`](#power_sendpreparepoweroffack) | private |  | power | inferred | Sends the prepare power off ack (power) |
+| [`power/sendPreparePowerOnAck`](#power_sendpreparepoweronack) | private |  | power | inferred | Sends the prepare power on ack (power) |
+| [`power/setHostReady`](#power_sethostready) | private |  | power | inferred | Sets the host ready (power) |
+| [`power/setPowerInitState`](#power_setpowerinitstate) | private |  | power | inferred | Sets the power init state (power) |
+| [`power/setPowerOffTimeout`](#power_setpowerofftimeout) | private |  | power | inferred | Sets the power off timeout (power) |
+| [`power/setPowerOnReason`](#power_setpoweronreason) | private |  | power | documented | Sets the recorded power-on reason (counterpart of power/getPowerOnReason) |
+| [`power/setScreenBlock`](#power_setscreenblock) | private |  | power | documented | Screen block control on tvpower (name only) |
+| [`power/shutDown`](#power_shutdown) | private |  | power | documented | Full power off, cold boot next start; Wake-on-LAN no longer wakes the TV |
+| [`power/test`](#power_test) | private |  | power | inferred | Tests the tvpower (power) |
+| [`power/turnOffScreen`](#power_turnoffscreen) | ssap |  | display | documented | Blank the panel (screen off) while keeping the TV powered |
+| [`power/turnOnScreen`](#power_turnonscreen) | ssap |  | display | documented | Unblank the panel |
+| [`power/turnOnScreenSaver`](#power_turnonscreensaver) | private |  | display | documented | Starts the LG screensaver now |
+| [`power2/cancelPowerOff`](#power2_cancelpoweroff) | private |  | power | inferred | Cancels the power off (power 2) |
+| [`power2/getClientList`](#power2_getclientlist) | private |  | power | inferred | Returns the client list (power 2) |
+| [`power2/getPowerOnReason`](#power2_getpoweronreason) | private |  | power | inferred | Returns the power on reason (power 2) |
+| [`power2/getPowerOnTime`](#power2_getpowerontime) | private |  | power | inferred | Returns the power on time (power 2) |
+| [`power2/getPowerState`](#power2_getpowerstate) | private |  | power | inferred | Returns the power state (power 2) |
+| [`power2/power`](#power2_power) | private |  | power | inferred | Powers the tvpower (power 2) |
+| [`power2/powerOff`](#power2_poweroff) | private |  | power | inferred | Powers the off (power 2) |
+| [`power2/powerOn`](#power2_poweron) | private |  | power | inferred | Powers the on (power 2) |
+| [`power2/reboot`](#power2_reboot) | private |  | power | inferred | Reboots the tvpower (power 2) |
+| [`power2/rebootMicom`](#power2_rebootmicom) | private |  | power | inferred | Reboots the MICOM (power 2) |
+| [`power2/registerActiveStandbyRequest`](#power2_registeractivestandbyrequest) | private |  | power | inferred | Registers the active standby request (power 2) |
+| [`power2/registerAlwaysOnDisplayRequest`](#power2_registeralwaysondisplayrequest) | private |  | power | inferred | Registers the always on display request (power 2) |
+| [`power2/registerAlwaysReadyRequest`](#power2_registeralwaysreadyrequest) | private |  | power | inferred | Registers the always ready request (power 2) |
+| [`power2/registerPowerOffLogoRequest`](#power2_registerpowerofflogorequest) | private |  | power | inferred | Registers the power off logo request (power 2) |
+| [`power2/registerPowerOffRequest`](#power2_registerpoweroffrequest) | private |  | power | inferred | Registers the power off request (power 2) |
+| [`power2/registerPreparePowerOff`](#power2_registerpreparepoweroff) | private |  | power | inferred | Registers the prepare power off (power 2) |
+| [`power2/registerPreparePowerOn`](#power2_registerpreparepoweron) | private |  | power | inferred | Registers the prepare power on (power 2) |
+| [`power2/registerScreenSaverRequest`](#power2_registerscreensaverrequest) | private |  | power | inferred | Registers the screen saver request (power 2) |
+| [`power2/registerSuspendRequest`](#power2_registersuspendrequest) | private |  | power | inferred | Registers the suspend request (power 2) |
+| [`power2/responseActiveStandbyRequest`](#power2_responseactivestandbyrequest) | private |  | power | inferred | Handles the response active standby request (power 2) |
+| [`power2/responseAlwaysOnDisplayRequest`](#power2_responsealwaysondisplayrequest) | private |  | power | inferred | Handles the response always on display request (power 2) |
+| [`power2/responseAlwaysReadyRequest`](#power2_responsealwaysreadyrequest) | private |  | power | inferred | Handles the response always ready request (power 2) |
+| [`power2/responsePowerOffLogoRequest`](#power2_responsepowerofflogorequest) | private |  | power | inferred | Handles the response power off logo request (power 2) |
+| [`power2/responsePowerOffRequest`](#power2_responsepoweroffrequest) | private |  | power | inferred | Handles the response power off request (power 2) |
+| [`power2/responsePreparePowerOff`](#power2_responsepreparepoweroff) | private |  | power | inferred | Handles the response prepare power off (power 2) |
+| [`power2/responsePreparePowerOn`](#power2_responsepreparepoweron) | private |  | power | inferred | Handles the response prepare power on (power 2) |
+| [`power2/responseScreenSaverRequest`](#power2_responsescreensaverrequest) | private |  | power | inferred | Handles the response screen saver request (power 2) |
+| [`power2/responseSuspendRequest`](#power2_responsesuspendrequest) | private |  | power | inferred | Handles the response suspend request (power 2) |
+| [`power2/setHostReady`](#power2_sethostready) | private |  | power | inferred | Sets the host ready (power 2) |
+| [`power2/setPowerInitState`](#power2_setpowerinitstate) | private |  | power | inferred | Sets the power init state (power 2) |
+| [`power2/setPowerOffTimeout`](#power2_setpowerofftimeout) | private |  | power | inferred | Sets the power off timeout (power 2) |
+| [`power2/setScreenBlock`](#power2_setscreenblock) | private |  | power | inferred | Sets the screen block (power 2) |
+| [`power2/shutDown`](#power2_shutdown) | private |  | power | inferred | Handles the shut down (power 2) ⚠️ |
+| [`power2/test`](#power2_test) | private |  | power | inferred | Tests the tvpower (power 2) |
+| [`power2/turnOffAoD`](#power2_turnoffaod) | private |  | power | inferred | Turns the off ao d (power 2) |
+| [`power2/turnOffScreen`](#power2_turnoffscreen) | private |  | display | documented | Alternate screen-off path tried as fallback |
+| [`power2/turnOnAoD`](#power2_turnonaod) | private |  | power | inferred | Turns the on ao d (power 2) |
+| [`power2/turnOnScreen`](#power2_turnonscreen) | private |  | power | inferred | Turns the on screen (power 2) |
+| [`power2/turnOnScreenSaver`](#power2_turnonscreensaver) | private |  | power | documented | Starts the screen saver (webOS 7+ variant; webOS 6 uses power/turnOnScreenSaver) |
 
 <a id="power_cancelpoweroff"></a>
 ## `power/cancelPowerOff`
 
 `luna://com.webos.service.tvpower/power/cancelPowerOff`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Cancels the power off (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/cancelPowerOff '{}'
@@ -122,7 +126,7 @@ Lists clients registered with tvpower for the power-state lifecycle (name from i
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/getClientList '{}'
@@ -143,7 +147,7 @@ Returns why the TV was last powered on (e.g. ON_BY_REMOTE_KEY)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 7.6  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.tvpower/power/getPowerOnReason '{}'
@@ -162,7 +166,7 @@ Returns uptime since boot in seconds
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.tvpower/power/getPowerOnTime '{}'
@@ -181,7 +185,7 @@ Get (or subscribe to) TV power state
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -206,7 +210,7 @@ Puts the TV into standby (quick-start suspend when Quick Start+ is on)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** confirmed on webOS 22 (65QNED866QA)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -231,7 +235,7 @@ Brings a TV back from Active Standby/Always-on
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 9.2 (C2) confirmed  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -256,7 +260,7 @@ Soft reboots the TV
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3-4 (variant tv.power/reboot on 5+); older webOS only  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -275,13 +279,15 @@ Sources: [1](https://github.com/webosbrew/webos-homebrew-channel/blob/HEAD/servi
 
 `luna://com.webos.service.tvpower/power/rebootMicom`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Reboots the MICOM (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/rebootMicom '{}'
@@ -296,13 +302,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power/registerActiveStandbyRequest`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Registers the active standby request (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/registerActiveStandbyRequest '{}'
@@ -317,13 +325,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/registerPowerOffLogoRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Registers the power off logo request (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/registerPowerOffLogoRequest '{}'
@@ -338,13 +348,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power/registerPowerOffRequest`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Registers the power off request (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/registerPowerOffRequest '{}'
@@ -359,13 +371,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/registerPrepareActiveStandby`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Registers the prepare active standby (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/registerPrepareActiveStandby '{}'
@@ -380,13 +394,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/registerPreparePowerOff`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Registers the prepare power off (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/registerPreparePowerOff '{}'
@@ -401,13 +417,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/registerPreparePowerOn`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Registers the prepare power on (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/registerPreparePowerOn '{}'
@@ -422,13 +440,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/registerPrepareResume`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Registers the prepare resume (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/registerPrepareResume '{}'
@@ -443,13 +463,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/registerPrepareSuspend`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Registers the prepare suspend (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/registerPrepareSuspend '{}'
@@ -470,7 +492,7 @@ Subscription: LG asks before starting its screensaver; the subscriber replies vi
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS 4.5 (LG B9)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -489,13 +511,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/HEAD/shell/crates/
 
 `luna://com.webos.service.tvpower/power/registerSuspendRequest`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Registers the suspend request (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/registerSuspendRequest '{}'
@@ -510,13 +534,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/responseActiveStandbyRequest`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Handles the response active standby request (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/responseActiveStandbyRequest '{}'
@@ -531,13 +557,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/responsePowerOffLogoRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Handles the response power off logo request (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/responsePowerOffLogoRequest '{}'
@@ -552,13 +580,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power/responsePowerOffRequest`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Handles the response power off request (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/responsePowerOffRequest '{}'
@@ -573,13 +603,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/responsePrepareActiveStandby`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Handles the response prepare active standby (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/responsePrepareActiveStandby '{}'
@@ -594,13 +626,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/responsePreparePowerOff`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Handles the response prepare power off (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/responsePreparePowerOff '{}'
@@ -615,13 +649,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/responsePreparePowerOn`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Handles the response prepare power on (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/responsePreparePowerOn '{}'
@@ -636,13 +672,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/responsePrepareResume`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Handles the response prepare resume (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/responsePrepareResume '{}'
@@ -657,13 +695,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/responsePrepareSuspend`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Handles the response prepare suspend (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/responsePrepareSuspend '{}'
@@ -684,7 +724,7 @@ Answers a screensaver request
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -704,13 +744,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/HEAD/shell/crates/
 
 `luna://com.webos.service.tvpower/power/responseSuspendRequest`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Handles the response suspend request (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/responseSuspendRequest '{}'
@@ -725,13 +767,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/sendActiveStandbyRequestAck`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Sends the active standby request ack (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/sendActiveStandbyRequestAck '{}'
@@ -746,13 +790,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/sendPowerOffRequestAck`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Sends the power off request ack (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/sendPowerOffRequestAck '{}'
@@ -767,13 +813,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/sendPrepareActiveStandbyAck`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Sends the prepare active standby ack (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/sendPrepareActiveStandbyAck '{}'
@@ -788,13 +836,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/sendPreparePowerOffAck`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Sends the prepare power off ack (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/sendPreparePowerOffAck '{}'
@@ -809,13 +859,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/sendPreparePowerOnAck`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Sends the prepare power on ack (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/sendPreparePowerOnAck '{}'
@@ -830,13 +882,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/setHostReady`
 
-Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Sets the host ready (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/setHostReady '{}'
@@ -851,13 +905,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power/setPowerInitState`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Sets the power init state (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/setPowerInitState '{}'
@@ -872,13 +928,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tvpower/power/setPowerOffTimeout`
 
-Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Sets the power off timeout (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/setPowerOffTimeout '{}'
@@ -899,7 +957,7 @@ Sets the recorded power-on reason (counterpart of power/getPowerOnReason)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/setPowerOnReason '{}'
@@ -920,7 +978,7 @@ Screen block control on tvpower (name only)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/setScreenBlock '{}'
@@ -941,7 +999,7 @@ Full power off, cold boot next start; Wake-on-LAN no longer wakes the TV
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** confirmed on webOS 22 (65QNED866QA)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -960,13 +1018,15 @@ Sources: [1](https://github.com/lasharor/cleanyourtv-WebOS/blob/HEAD/docs/troubl
 
 `luna://com.webos.service.tvpower/power/test`
 
-Method registered by com.webos.service.tvpower (category '/power')
+Tests the tvpower (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power/test '{}'
@@ -987,7 +1047,7 @@ Blank the panel (screen off) while keeping the TV powered
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.5+ (per homebridge-lgwebos-tv: webOS >= 4.5); webOS 4+  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1012,7 +1072,7 @@ Unblank the panel
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.5+; webOS 4+  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1037,7 +1097,7 @@ Starts the LG screensaver now
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+ (bscpylgtv: does not work on newer webOS); older webOS only (disabled on newer, per bscpylgtv)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.tvpower/power/turnOnScreenSaver '{}'
@@ -1052,13 +1112,15 @@ Sources: [1](https://github.com/merdok/homebridge-webos-tv/blob/master/lib/LgTvC
 
 `luna://com.webos.service.tvpower/power2/cancelPowerOff`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Cancels the power off (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/cancelPowerOff '{}'
@@ -1073,13 +1135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/getClientList`
 
-Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Returns the client list (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/getClientList '{}'
@@ -1094,13 +1158,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/getPowerOnReason`
 
-Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Returns the power on reason (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/getPowerOnReason '{}'
@@ -1115,13 +1181,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/getPowerOnTime`
 
-Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Returns the power on time (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/getPowerOnTime '{}'
@@ -1136,13 +1204,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/getPowerState`
 
-Getter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Returns the power state (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/getPowerState '{}'
@@ -1157,13 +1227,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/power`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Powers the tvpower (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/power '{}'
@@ -1178,13 +1250,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/powerOff`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Powers the off (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/powerOff '{}'
@@ -1199,13 +1273,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/powerOn`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Powers the on (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/powerOn '{}'
@@ -1220,13 +1296,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/reboot`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Reboots the tvpower (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/reboot '{}'
@@ -1241,13 +1319,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/rebootMicom`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Reboots the MICOM (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/rebootMicom '{}'
@@ -1262,13 +1342,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/registerActiveStandbyRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Registers the active standby request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerActiveStandbyRequest '{}'
@@ -1283,13 +1365,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/registerAlwaysOnDisplayRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Registers the always on display request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerAlwaysOnDisplayRequest '{}'
@@ -1304,13 +1388,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/registerAlwaysReadyRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Registers the always ready request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerAlwaysReadyRequest '{}'
@@ -1325,13 +1411,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/registerPowerOffLogoRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Registers the power off logo request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPowerOffLogoRequest '{}'
@@ -1346,13 +1434,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/registerPowerOffRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Registers the power off request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPowerOffRequest '{}'
@@ -1367,13 +1457,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/registerPreparePowerOff`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Registers the prepare power off (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPreparePowerOff '{}'
@@ -1388,13 +1480,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/registerPreparePowerOn`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Registers the prepare power on (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPreparePowerOn '{}'
@@ -1409,13 +1503,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/registerScreenSaverRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Registers the screen saver request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerScreenSaverRequest '{}'
@@ -1430,13 +1526,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/registerSuspendRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Registers the suspend request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerSuspendRequest '{}'
@@ -1451,13 +1549,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/responseActiveStandbyRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Handles the response active standby request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responseActiveStandbyRequest '{}'
@@ -1472,13 +1572,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/responseAlwaysOnDisplayRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Handles the response always on display request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responseAlwaysOnDisplayRequest '{}'
@@ -1493,13 +1595,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/responseAlwaysReadyRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Handles the response always ready request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responseAlwaysReadyRequest '{}'
@@ -1514,13 +1618,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/responsePowerOffLogoRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Handles the response power off logo request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responsePowerOffLogoRequest '{}'
@@ -1535,13 +1641,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/responsePowerOffRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Handles the response power off request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responsePowerOffRequest '{}'
@@ -1556,13 +1664,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/responsePreparePowerOff`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Handles the response prepare power off (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responsePreparePowerOff '{}'
@@ -1577,13 +1687,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/responsePreparePowerOn`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Handles the response prepare power on (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responsePreparePowerOn '{}'
@@ -1598,13 +1710,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/responseScreenSaverRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Handles the response screen saver request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responseScreenSaverRequest '{}'
@@ -1619,13 +1733,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/responseSuspendRequest`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Handles the response suspend request (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/responseSuspendRequest '{}'
@@ -1640,13 +1756,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/setHostReady`
 
-Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Sets the host ready (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/setHostReady '{}'
@@ -1661,13 +1779,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/setPowerInitState`
 
-Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Sets the power init state (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/setPowerInitState '{}'
@@ -1682,13 +1802,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/setPowerOffTimeout`
 
-Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Sets the power off timeout (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/setPowerOffTimeout '{}'
@@ -1703,13 +1825,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/setScreenBlock`
 
-Setter on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Sets the screen block (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/setScreenBlock '{}'
@@ -1724,13 +1848,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/shutDown`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Handles the shut down (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/shutDown '{}'
@@ -1745,13 +1871,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/test`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Tests the tvpower (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/test '{}'
@@ -1766,13 +1894,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/turnOffAoD`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Turns the off ao d (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/turnOffAoD '{}'
@@ -1793,7 +1923,7 @@ Alternate screen-off path tried as fallback
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** newer firmware  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.tvpower/power2/turnOffScreen '{}'
@@ -1806,13 +1936,15 @@ Sources: [1](https://github.com/gprot42/webos-launch-home/blob/HEAD/voice/daemon
 
 `luna://com.webos.service.tvpower/power2/turnOnAoD`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Turns the on ao d (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/turnOnAoD '{}'
@@ -1827,13 +1959,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.tvpower/power2/turnOnScreen`
 
-Method on com.webos.service.tvpower (introspected on-device; parameters undocumented).
+Turns the on screen (power 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/turnOnScreen '{}'
@@ -1854,7 +1988,7 @@ Starts the screen saver (webOS 7+ variant; webOS 6 uses power/turnOnScreenSaver)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 7+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.tvpower/power2/turnOnScreenSaver '{}'

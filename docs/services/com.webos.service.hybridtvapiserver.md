@@ -1,33 +1,37 @@
 # `com.webos.service.hybridtvapiserver`
 
+Hybrid-TV (HbbTV/broadband) API server: selects and plays channels, selects stream components, positions the video window, and provides a server URL. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getChannelStatus`](#getchannelstatus) | public |  | tv-broadcast | Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented). |
-| [`getServerUrl`](#getserverurl) | public |  | misc | Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented). |
-| [`playChannel`](#playchannel) | public |  | tv-broadcast | Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented). |
-| [`selectChannel`](#selectchannel) | public |  | tv-broadcast | Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented). |
-| [`selectComponents`](#selectcomponents) | public |  | misc | Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented). |
-| [`setVideoWindow`](#setvideowindow) | public |  | misc | Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | public |  | misc | Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | public |  | misc | Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented). |
-| [`stopChannel`](#stopchannel) | public |  | tv-broadcast | Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getChannelStatus`](#getchannelstatus) | public |  | tv-broadcast | inferred | Returns the channel status. |
+| [`getServerUrl`](#getserverurl) | public |  | misc | inferred | Returns the server URL. |
+| [`playChannel`](#playchannel) | public |  | tv-broadcast | inferred | Plays the channel. |
+| [`selectChannel`](#selectchannel) | public |  | tv-broadcast | inferred | Selects the channel. |
+| [`selectComponents`](#selectcomponents) | public |  | misc | inferred | Selects the components. |
+| [`setVideoWindow`](#setvideowindow) | public |  | misc | inferred | Sets the video window. |
+| [`start`](#start) | public |  | misc | inferred | Starts the hybridtvapiserver. |
+| [`stop`](#stop) | public |  | misc | inferred | Stops the hybridtvapiserver. |
+| [`stopChannel`](#stopchannel) | public |  | tv-broadcast | inferred | Stops the channel. |
 
 <a id="getchannelstatus"></a>
 ## `getChannelStatus`
 
 `luna://com.webos.service.hybridtvapiserver/getChannelStatus`
 
-Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented).
+Returns the channel status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvapiserver/getChannelStatus '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvapiserver/getServerUrl`
 
-Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented).
+Returns the server URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvapiserver/getServerUrl '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvapiserver/playChannel`
 
-Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented).
+Plays the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvapiserver/playChannel '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvapiserver/selectChannel`
 
-Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented).
+Selects the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvapiserver/selectChannel '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvapiserver/selectComponents`
 
-Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented).
+Selects the components.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvapiserver/selectComponents '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvapiserver/setVideoWindow`
 
-Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented).
+Sets the video window.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvapiserver/setVideoWindow '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvapiserver/start`
 
-Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented).
+Starts the hybridtvapiserver.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvapiserver/start '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvapiserver/stop`
 
-Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented).
+Stops the hybridtvapiserver.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvapiserver/stop '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvapiserver/stopChannel`
 
-Method on com.webos.service.hybridtvapiserver (from on-device permission registry; parameters undocumented).
+Stops the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvapiserver/stopChannel '{}'

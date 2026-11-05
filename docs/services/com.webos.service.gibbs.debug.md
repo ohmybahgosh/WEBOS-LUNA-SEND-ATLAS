@@ -1,33 +1,37 @@
 # `com.webos.service.gibbs.debug`
 
+GIBBS broadcast-stack debug interface: dumps channel, media, memory and NRT state, imports/exports the channel list and reports pipeline IDs. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`channel`](#channel) | private |  | tv-broadcast | Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented). |
-| [`dump`](#dump) | private |  | tv-broadcast | Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented). |
-| [`exportChannelList`](#exportchannellist) | private |  | tv-broadcast | Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented). |
-| [`getPipelineId`](#getpipelineid) | private |  | tv-broadcast | Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented). |
-| [`importChannelList`](#importchannellist) | private |  | tv-broadcast | Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented). |
-| [`media`](#media) | private |  | tv-broadcast | Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented). |
-| [`memgr`](#memgr) | private |  | tv-broadcast | Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented). |
-| [`nrt`](#nrt) | private |  | tv-broadcast | Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented). |
-| [`setScreenSaverType`](#setscreensavertype) | private |  | tv-broadcast | Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`channel`](#channel) | private |  | tv-broadcast | inferred | Handles the channel. |
+| [`dump`](#dump) | private |  | tv-broadcast | inferred | Dumps the gibbs debug. |
+| [`exportChannelList`](#exportchannellist) | private |  | tv-broadcast | inferred | Exports the channel list. |
+| [`getPipelineId`](#getpipelineid) | private |  | tv-broadcast | inferred | Returns the pipeline ID. |
+| [`importChannelList`](#importchannellist) | private |  | tv-broadcast | inferred | Imports the channel list. |
+| [`media`](#media) | private |  | tv-broadcast | inferred | Handles the media. |
+| [`memgr`](#memgr) | private |  | tv-broadcast | inferred | Handles the memgr. |
+| [`nrt`](#nrt) | private |  | tv-broadcast | inferred | Handles the nrt. |
+| [`setScreenSaverType`](#setscreensavertype) | private |  | tv-broadcast | inferred | Sets the screen saver type. |
 
 <a id="channel"></a>
 ## `channel`
 
 `luna://com.webos.service.gibbs.debug/channel`
 
-Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented).
+Handles the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.debug/channel '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.debug/dump`
 
-Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented).
+Dumps the gibbs debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.debug/dump '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.debug/exportChannelList`
 
-Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented).
+Exports the channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.debug/exportChannelList '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.debug/getPipelineId`
 
-Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented).
+Returns the pipeline ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.debug/getPipelineId '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.debug/importChannelList`
 
-Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented).
+Imports the channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.debug/importChannelList '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.debug/media`
 
-Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented).
+Handles the media.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.debug/media '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.debug/memgr`
 
-Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented).
+Handles the memgr.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.debug/memgr '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.debug/nrt`
 
-Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented).
+Handles the nrt.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.debug/nrt '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.debug/setScreenSaverType`
 
-Method on com.webos.service.gibbs.debug (from on-device permission registry; parameters undocumented).
+Sets the screen saver type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.debug/setScreenSaverType '{}'

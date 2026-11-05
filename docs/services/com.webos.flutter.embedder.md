@@ -1,26 +1,30 @@
 # `com.webos.flutter.embedder`
 
+Support service for the webOS Flutter embedder: returns runtime configuration and provides a timer callback method. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getConfigs`](#getconfigs) | private |  | settings | Method on com.webos.flutter.embedder (from on-device permission registry; parameters undocumented). |
-| [`timerMethod`](#timermethod) | public |  | input | Method on com.webos.flutter.embedder (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getConfigs`](#getconfigs) | private |  | settings | inferred | Returns the configs. |
+| [`timerMethod`](#timermethod) | public |  | input | inferred | Handles the timer method. |
 
 <a id="getconfigs"></a>
 ## `getConfigs`
 
 `luna://com.webos.flutter.embedder/getConfigs`
 
-Method on com.webos.flutter.embedder (from on-device permission registry; parameters undocumented).
+Returns the configs.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.flutter.embedder/getConfigs '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.flutter.embedder/timerMethod`
 
-Method on com.webos.flutter.embedder (from on-device permission registry; parameters undocumented).
+Handles the timer method.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.flutter.embedder/timerMethod '{}'

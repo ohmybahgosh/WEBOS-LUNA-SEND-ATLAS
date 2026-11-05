@@ -1,29 +1,33 @@
 # `com.webos.service.datamigrator`
 
+Data migration service: runs a migration between software versions and reports its result and version information. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getDescriptionInfo`](#getdescriptioninfo) | private |  | misc | Method on com.webos.service.datamigrator (from on-device permission registry; parameters undocumented). |
-| [`getMigrationResult`](#getmigrationresult) | private |  | misc | Method on com.webos.service.datamigrator (from on-device permission registry; parameters undocumented). |
-| [`getVersionInfo`](#getversioninfo) | private |  | misc | Method on com.webos.service.datamigrator (from on-device permission registry; parameters undocumented). |
-| [`run`](#run) | private |  | misc | Method on com.webos.service.datamigrator (from on-device permission registry; parameters undocumented). |
-| [`writeVersion`](#writeversion) | private |  | misc | Method on com.webos.service.datamigrator (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getDescriptionInfo`](#getdescriptioninfo) | private |  | misc | inferred | Returns the description info. |
+| [`getMigrationResult`](#getmigrationresult) | private |  | misc | inferred | Returns the migration result. |
+| [`getVersionInfo`](#getversioninfo) | private |  | misc | inferred | Returns the version info. |
+| [`run`](#run) | private |  | misc | inferred | Runs the datamigrator. |
+| [`writeVersion`](#writeversion) | private |  | misc | inferred | Writes the version. |
 
 <a id="getdescriptioninfo"></a>
 ## `getDescriptionInfo`
 
 `luna://com.webos.service.datamigrator/getDescriptionInfo`
 
-Method on com.webos.service.datamigrator (from on-device permission registry; parameters undocumented).
+Returns the description info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.datamigrator/getDescriptionInfo '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.datamigrator/getMigrationResult`
 
-Method on com.webos.service.datamigrator (from on-device permission registry; parameters undocumented).
+Returns the migration result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.datamigrator/getMigrationResult '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.datamigrator/getVersionInfo`
 
-Method on com.webos.service.datamigrator (from on-device permission registry; parameters undocumented).
+Returns the version info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.datamigrator/getVersionInfo '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.datamigrator/run`
 
-Method on com.webos.service.datamigrator (from on-device permission registry; parameters undocumented).
+Runs the datamigrator.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.datamigrator/run '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.datamigrator/writeVersion`
 
-Method on com.webos.service.datamigrator (from on-device permission registry; parameters undocumented).
+Writes the version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.datamigrator/writeVersion '{}'

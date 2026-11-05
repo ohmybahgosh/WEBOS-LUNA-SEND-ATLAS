@@ -1,12 +1,14 @@
 # `com.palm.systemmanager`
 
+Legacy Palm system manager service; the sole exposed method runs a progress animation, suggesting a UI/system-shell helper role. Largely opaque beyond that. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: HP webOS, Palm.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`runProgressAnimation`](#runprogressanimation) | root |  | ui | Starts/stops the pulsing Palm logo progress animation |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`runProgressAnimation`](#runprogressanimation) | root |  | ui | documented | Starts/stops the pulsing Palm logo progress animation |
 
 <a id="runprogressanimation"></a>
 ## `runProgressAnimation`
@@ -19,7 +21,7 @@ Starts/stops the pulsing Palm logo progress animation
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

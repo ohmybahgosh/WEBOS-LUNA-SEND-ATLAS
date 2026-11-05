@@ -1,25 +1,29 @@
 # `com.webos.service.gibbips.power`
 
+GIBBIPS power-coordination helper exposing warm-standby completion registration for the broadcast stack. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`registerWarmStandByComplete`](#registerwarmstandbycomplete) | private |  | power | Method on com.webos.service.gibbips.power (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`registerWarmStandByComplete`](#registerwarmstandbycomplete) | private |  | power | inferred | Registers the warm stand by complete. |
 
 <a id="registerwarmstandbycomplete"></a>
 ## `registerWarmStandByComplete`
 
 `luna://com.webos.service.gibbips.power/registerWarmStandByComplete`
 
-Method on com.webos.service.gibbips.power (from on-device permission registry; parameters undocumented).
+Registers the warm stand by complete.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.power/registerWarmStandByComplete '{}'

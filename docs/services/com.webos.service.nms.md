@@ -1,34 +1,38 @@
 # `com.webos.service.nms`
 
+Appears to be a network management/connection service handling connect, resume, suspend-prepare and notification events. Opaque;. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`clearAlertStatus`](#clearalertstatus) | private |  | misc | Method on com.webos.service.nms (from on-device permission registry; parameters undocumented). |
-| [`connHandler`](#connhandler) | public |  | misc | Method on com.webos.service.nms (from on-device permission registry; parameters undocumented). |
-| [`createp2pquestionHandler`](#createp2pquestionhandler) | private |  | misc | Method on com.webos.service.nms (from on-device permission registry; parameters undocumented). |
-| [`createresumeHandler`](#createresumehandler) | private |  | misc | Method on com.webos.service.nms (from on-device permission registry; parameters undocumented). |
-| [`disConnHandler`](#disconnhandler) | public |  | misc | Method on com.webos.service.nms (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | misc | Method on com.webos.service.nms (from on-device permission registry; parameters undocumented). |
-| [`prepareSuspend`](#preparesuspend) | public |  | misc | Method on com.webos.service.nms (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | misc | Method on com.webos.service.nms (from on-device permission registry; parameters undocumented). |
-| [`setnotificationstatus`](#setnotificationstatus) | private |  | notifications | Method on com.webos.service.nms (from on-device permission registry; parameters undocumented). |
-| [`startHandler`](#starthandler) | public |  | misc | Method on com.webos.service.nms (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`clearAlertStatus`](#clearalertstatus) | private |  | misc | inferred | Clears the alert status. |
+| [`connHandler`](#connhandler) | public |  | misc | inferred | Handles the conn handler. |
+| [`createp2pquestionHandler`](#createp2pquestionhandler) | private |  | misc | inferred | Handles the createp 2 pquestion handler. |
+| [`createresumeHandler`](#createresumehandler) | private |  | misc | inferred | Handles the createresume handler. |
+| [`disConnHandler`](#disconnhandler) | public |  | misc | inferred | Handles the dis conn handler. |
+| [`info`](#info) | public |  | misc | inferred | Handles the info. |
+| [`prepareSuspend`](#preparesuspend) | public |  | misc | inferred | Prepares the suspend. |
+| [`quit`](#quit) | public |  | misc | inferred | Quits the nms. |
+| [`setnotificationstatus`](#setnotificationstatus) | private |  | notifications | inferred | Handles the setnotificationstatus. |
+| [`startHandler`](#starthandler) | public |  | misc | inferred | Starts the handler. |
 
 <a id="clearalertstatus"></a>
 ## `clearAlertStatus`
 
 `luna://com.webos.service.nms/clearAlertStatus`
 
-Method on com.webos.service.nms (from on-device permission registry; parameters undocumented).
+Clears the alert status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nms/clearAlertStatus '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nms/connHandler`
 
-Method on com.webos.service.nms (from on-device permission registry; parameters undocumented).
+Handles the conn handler.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nms/connHandler '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nms/createp2pquestionHandler`
 
-Method on com.webos.service.nms (from on-device permission registry; parameters undocumented).
+Handles the createp 2 pquestion handler.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nms/createp2pquestionHandler '{}'
@@ -85,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nms/createresumeHandler`
 
-Method on com.webos.service.nms (from on-device permission registry; parameters undocumented).
+Handles the createresume handler.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nms/createresumeHandler '{}'
@@ -106,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nms/disConnHandler`
 
-Method on com.webos.service.nms (from on-device permission registry; parameters undocumented).
+Handles the dis conn handler.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nms/disConnHandler '{}'
@@ -127,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nms/info`
 
-Method on com.webos.service.nms (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nms/info '{}'
@@ -148,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nms/prepareSuspend`
 
-Method on com.webos.service.nms (from on-device permission registry; parameters undocumented).
+Prepares the suspend.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nms/prepareSuspend '{}'
@@ -169,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nms/quit`
 
-Method on com.webos.service.nms (from on-device permission registry; parameters undocumented).
+Quits the nms.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nms/quit '{}'
@@ -190,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nms/setnotificationstatus`
 
-Method on com.webos.service.nms (from on-device permission registry; parameters undocumented).
+Handles the setnotificationstatus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nms/setnotificationstatus '{}'
@@ -211,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nms/startHandler`
 
-Method on com.webos.service.nms (from on-device permission registry; parameters undocumented).
+Starts the handler.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nms/startHandler '{}'

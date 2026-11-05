@@ -1,55 +1,59 @@
 # `com.webos.service.buddyconnector`
 
+Connects the TV to a paired companion ('buddy') mobile app: exchanges credentials, member and content lists, QR and EULA info, push events, SOS and video-call actions. _(inferred from the service's methods)_
+
 31 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cmd`](#cmd) | private |  | connection | Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`debug/getDataSession`](#debug_getdatasession) | private |  | connection | Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`debug/setBoost`](#debug_setboost) | private |  | connection | Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`debug/setDataSession`](#debug_setdatasession) | private |  | connection | Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`deleteContentList`](#deletecontentlist) | private |  | connection | Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). ⚠️ |
-| [`executeSOS`](#executesos) | private |  | connection | Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`executeVideoCall`](#executevideocall) | private |  | connection | Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`getAlarmFlag`](#getalarmflag) | private |  | connection | Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`getContentList`](#getcontentlist) | private |  | connection | Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`getCredentials`](#getcredentials) | private |  | connection | Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`getCurrentInfo`](#getcurrentinfo) | private |  | connection | Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`getEulaInfo`](#geteulainfo) | private |  | connection | Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`getMemberList`](#getmemberlist) | private |  | connection | Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`getPushEvent`](#getpushevent) | private |  | connection | Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`getQRInfo`](#getqrinfo) | private |  | connection | Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | connection | Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`getVideoCallEvent`](#getvideocallevent) | private |  | connection | Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`launchAppOnSOS`](#launchapponsos) | private |  | apps | Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`onCloseSharingContents`](#onclosesharingcontents) | private |  | connection | Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`push`](#push) | private |  | connection | Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`releaseSOS`](#releasesos) | private |  | connection | Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`resetEulaStatus`](#reseteulastatus) | private |  | connection | Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). ⚠️ |
-| [`setAlarmFlag`](#setalarmflag) | private |  | connection | Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`setEulaStatus`](#seteulastatus) | private |  | connection | Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`setMemberStatus`](#setmemberstatus) | private |  | connection | Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`setModeStatus`](#setmodestatus) | private |  | connection | Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`setRemoteControl`](#setremotecontrol) | private |  | connection | Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`setSystemSettings`](#setsystemsettings) | private |  | settings | Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`setVideoCallStatus`](#setvideocallstatus) | private |  | connection | Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`startVideoCall`](#startvideocall) | private |  | connection | Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
-| [`stopVideoCall`](#stopvideocall) | private |  | connection | Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cmd`](#cmd) | private |  | connection | inferred | Handles the cmd. |
+| [`debug/getDataSession`](#debug_getdatasession) | private |  | connection | inferred | Returns the data session (debug) |
+| [`debug/setBoost`](#debug_setboost) | private |  | connection | inferred | Sets the boost (debug) |
+| [`debug/setDataSession`](#debug_setdatasession) | private |  | connection | inferred | Sets the data session (debug) |
+| [`deleteContentList`](#deletecontentlist) | private |  | connection | inferred | Deletes the content list. ⚠️ |
+| [`executeSOS`](#executesos) | private |  | connection | inferred | Runs the SOS. |
+| [`executeVideoCall`](#executevideocall) | private |  | connection | inferred | Runs the video call. |
+| [`getAlarmFlag`](#getalarmflag) | private |  | connection | inferred | Returns the alarm flag. |
+| [`getContentList`](#getcontentlist) | private |  | connection | inferred | Returns the content list. |
+| [`getCredentials`](#getcredentials) | private |  | connection | inferred | Returns the credentials. |
+| [`getCurrentInfo`](#getcurrentinfo) | private |  | connection | inferred | Returns the current info. |
+| [`getEulaInfo`](#geteulainfo) | private |  | connection | inferred | Returns the eula info. |
+| [`getMemberList`](#getmemberlist) | private |  | connection | inferred | Returns the member list. |
+| [`getPushEvent`](#getpushevent) | private |  | connection | inferred | Returns the push event. |
+| [`getQRInfo`](#getqrinfo) | private |  | connection | inferred | Returns the QR info. |
+| [`getStatus`](#getstatus) | private |  | connection | inferred | Returns the status. |
+| [`getVideoCallEvent`](#getvideocallevent) | private |  | connection | inferred | Returns the video call event. |
+| [`launchAppOnSOS`](#launchapponsos) | private |  | apps | inferred | Launches the app on SOS. |
+| [`onCloseSharingContents`](#onclosesharingcontents) | private |  | connection | inferred | Event handler: fires on the close sharing contents. |
+| [`push`](#push) | private |  | connection | inferred | Pushes the buddyconnector. |
+| [`releaseSOS`](#releasesos) | private |  | connection | inferred | Releases the SOS. |
+| [`resetEulaStatus`](#reseteulastatus) | private |  | connection | inferred | Resets the eula status. ⚠️ |
+| [`setAlarmFlag`](#setalarmflag) | private |  | connection | inferred | Sets the alarm flag. |
+| [`setEulaStatus`](#seteulastatus) | private |  | connection | inferred | Sets the eula status. |
+| [`setMemberStatus`](#setmemberstatus) | private |  | connection | inferred | Sets the member status. |
+| [`setModeStatus`](#setmodestatus) | private |  | connection | inferred | Sets the mode status. |
+| [`setRemoteControl`](#setremotecontrol) | private |  | connection | inferred | Sets the remote control. |
+| [`setSystemSettings`](#setsystemsettings) | private |  | settings | inferred | Sets the system settings. |
+| [`setVideoCallStatus`](#setvideocallstatus) | private |  | connection | inferred | Sets the video call status. |
+| [`startVideoCall`](#startvideocall) | private |  | connection | inferred | Starts the video call. |
+| [`stopVideoCall`](#stopvideocall) | private |  | connection | inferred | Stops the video call. |
 
 <a id="cmd"></a>
 ## `cmd`
 
 `luna://com.webos.service.buddyconnector/cmd`
 
-Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Handles the cmd.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/cmd '{}'
@@ -64,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/debug/getDataSession`
 
-Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Returns the data session (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/debug/getDataSession '{}'
@@ -85,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/debug/setBoost`
 
-Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Sets the boost (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/debug/setBoost '{}'
@@ -106,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/debug/setDataSession`
 
-Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Sets the data session (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/debug/setDataSession '{}'
@@ -127,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/deleteContentList`
 
-Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Deletes the content list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/deleteContentList '{}'
@@ -148,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/executeSOS`
 
-Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Runs the SOS.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/executeSOS '{}'
@@ -169,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/executeVideoCall`
 
-Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Runs the video call.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/executeVideoCall '{}'
@@ -190,13 +206,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/getAlarmFlag`
 
-Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Returns the alarm flag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/getAlarmFlag '{}'
@@ -211,13 +229,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/getContentList`
 
-Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Returns the content list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/getContentList '{}'
@@ -232,13 +252,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/getCredentials`
 
-Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Returns the credentials.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/getCredentials '{}'
@@ -253,13 +275,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/getCurrentInfo`
 
-Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Returns the current info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/getCurrentInfo '{}'
@@ -274,13 +298,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/getEulaInfo`
 
-Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Returns the eula info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/getEulaInfo '{}'
@@ -295,13 +321,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/getMemberList`
 
-Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Returns the member list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/getMemberList '{}'
@@ -316,13 +344,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/getPushEvent`
 
-Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Returns the push event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/getPushEvent '{}'
@@ -337,13 +367,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/getQRInfo`
 
-Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Returns the QR info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/getQRInfo '{}'
@@ -358,13 +390,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/getStatus`
 
-Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/getStatus '{}'
@@ -379,13 +413,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/getVideoCallEvent`
 
-Getter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Returns the video call event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/getVideoCallEvent '{}'
@@ -400,13 +436,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/launchAppOnSOS`
 
-Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Launches the app on SOS.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/launchAppOnSOS '{}'
@@ -421,13 +459,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/onCloseSharingContents`
 
-Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Event handler: fires on the close sharing contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/onCloseSharingContents '{}'
@@ -442,13 +482,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/push`
 
-Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Pushes the buddyconnector.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/push '{}'
@@ -463,13 +505,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/releaseSOS`
 
-Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Releases the SOS.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/releaseSOS '{}'
@@ -484,13 +528,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/resetEulaStatus`
 
-Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Resets the eula status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/resetEulaStatus '{}'
@@ -505,13 +551,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/setAlarmFlag`
 
-Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Sets the alarm flag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/setAlarmFlag '{}'
@@ -526,13 +574,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/setEulaStatus`
 
-Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Sets the eula status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/setEulaStatus '{}'
@@ -547,13 +597,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/setMemberStatus`
 
-Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Sets the member status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/setMemberStatus '{}'
@@ -568,13 +620,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/setModeStatus`
 
-Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Sets the mode status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/setModeStatus '{}'
@@ -589,13 +643,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/setRemoteControl`
 
-Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Sets the remote control.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/setRemoteControl '{}'
@@ -610,13 +666,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/setSystemSettings`
 
-Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Sets the system settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/setSystemSettings '{}'
@@ -631,13 +689,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/setVideoCallStatus`
 
-Setter on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Sets the video call status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/setVideoCallStatus '{}'
@@ -652,13 +712,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/startVideoCall`
 
-Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Starts the video call.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/startVideoCall '{}'
@@ -673,13 +735,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.buddyconnector/stopVideoCall`
 
-Method on com.webos.service.buddyconnector (introspected on-device; parameters undocumented).
+Stops the video call.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.buddyconnector/stopVideoCall '{}'

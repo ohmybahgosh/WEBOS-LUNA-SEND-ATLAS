@@ -1,25 +1,29 @@
 # `com.webos.service.mycar`
 
+Opaque service exposing a single handlePushMessage method, apparently handling a 'MyCar' push-message feature. Role not inferable beyond that. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`handlePushMessage`](#handlepushmessage) | private |  | misc | Method on com.webos.service.mycar (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`handlePushMessage`](#handlepushmessage) | private |  | misc | inferred | Handles the push message. |
 
 <a id="handlepushmessage"></a>
 ## `handlePushMessage`
 
 `luna://com.webos.service.mycar/handlePushMessage`
 
-Method on com.webos.service.mycar (introspected on-device; parameters undocumented).
+Handles the push message.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mycar/handlePushMessage '{}'

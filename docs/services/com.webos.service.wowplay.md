@@ -1,46 +1,50 @@
 # `com.webos.service.wowplay`
 
+WOWCAST wireless-audio/soundbar service: pairs and connects soundbars over BLE and Wi-Fi P2P, reports soundbar status, calibration and EDID, and controls playback. _(inferred from the service's methods)_
+
 22 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`bleConnect`](#bleconnect) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`bleDisconnect`](#bledisconnect) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`cancelDiscovery`](#canceldiscovery) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`getCalibrationStatus`](#getcalibrationstatus) | private |  | media | Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`getLatestConnectionInfo`](#getlatestconnectioninfo) | private |  | media | Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`getProperty`](#getproperty) | private |  | media | Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`getSoundbarStatus`](#getsoundbarstatus) | private |  | db | Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`getWowcastEdidInfo`](#getwowcastedidinfo) | private |  | security | Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`getWOWCASTState`](#getwowcaststate) | public |  | security | Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`p2pConnect`](#p2pconnect) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`p2pDisconnect`](#p2pdisconnect) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`p2pSearch`](#p2psearch) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`p2pStopSearch`](#p2pstopsearch) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`pause`](#pause) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`play`](#play) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`playRingToneSound`](#playringtonesound) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`removePairedDevice`](#removepaireddevice) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). ⚠️ |
-| [`requestSoundbarStatus`](#requestsoundbarstatus) | private |  | db | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`setProperty`](#setproperty) | private |  | media | Setter on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`startCalibration`](#startcalibration) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`startDiscovery`](#startdiscovery) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
-| [`stopCalibration`](#stopcalibration) | private |  | media | Method on com.webos.service.wowplay (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`bleConnect`](#bleconnect) | private |  | media | inferred | Handles the ble connect. |
+| [`bleDisconnect`](#bledisconnect) | private |  | media | inferred | Handles the ble disconnect. |
+| [`cancelDiscovery`](#canceldiscovery) | private |  | media | inferred | Cancels the discovery. |
+| [`getCalibrationStatus`](#getcalibrationstatus) | private |  | media | inferred | Returns the calibration status. |
+| [`getLatestConnectionInfo`](#getlatestconnectioninfo) | private |  | media | inferred | Returns the latest connection info. |
+| [`getProperty`](#getproperty) | private |  | media | inferred | Returns the property. |
+| [`getSoundbarStatus`](#getsoundbarstatus) | private |  | db | inferred | Returns the soundbar status. |
+| [`getWowcastEdidInfo`](#getwowcastedidinfo) | private |  | security | inferred | Returns the wowcast EDID info. |
+| [`getWOWCASTState`](#getwowcaststate) | public |  | security | inferred | Returns the WOWCAST state. |
+| [`p2pConnect`](#p2pconnect) | private |  | media | inferred | Handles the p 2 p connect. |
+| [`p2pDisconnect`](#p2pdisconnect) | private |  | media | inferred | Handles the p 2 p disconnect. |
+| [`p2pSearch`](#p2psearch) | private |  | media | inferred | Handles the p 2 p search. |
+| [`p2pStopSearch`](#p2pstopsearch) | private |  | media | inferred | Handles the p 2 p stop search. |
+| [`pause`](#pause) | private |  | media | inferred | Pauses the wowplay. |
+| [`play`](#play) | private |  | media | inferred | Plays the wowplay. |
+| [`playRingToneSound`](#playringtonesound) | private |  | media | inferred | Plays the ring tone sound. |
+| [`removePairedDevice`](#removepaireddevice) | private |  | media | inferred | Removes the paired device. ⚠️ |
+| [`requestSoundbarStatus`](#requestsoundbarstatus) | private |  | db | inferred | Requests the soundbar status. |
+| [`setProperty`](#setproperty) | private |  | media | inferred | Sets the property. |
+| [`startCalibration`](#startcalibration) | private |  | media | inferred | Starts the calibration. |
+| [`startDiscovery`](#startdiscovery) | private |  | media | inferred | Starts the discovery. |
+| [`stopCalibration`](#stopcalibration) | private |  | media | inferred | Stops the calibration. |
 
 <a id="bleconnect"></a>
 ## `bleConnect`
 
 `luna://com.webos.service.wowplay/bleConnect`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Handles the ble connect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/bleConnect '{}'
@@ -55,13 +59,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/bleDisconnect`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Handles the ble disconnect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/bleDisconnect '{}'
@@ -76,13 +82,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/cancelDiscovery`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Cancels the discovery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/cancelDiscovery '{}'
@@ -97,13 +105,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/getCalibrationStatus`
 
-Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Returns the calibration status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/getCalibrationStatus '{}'
@@ -118,13 +128,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/getLatestConnectionInfo`
 
-Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Returns the latest connection info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/getLatestConnectionInfo '{}'
@@ -139,13 +151,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/getProperty`
 
-Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Returns the property.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/getProperty '{}'
@@ -160,13 +174,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/getSoundbarStatus`
 
-Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Returns the soundbar status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/getSoundbarStatus '{}'
@@ -181,13 +197,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/getWowcastEdidInfo`
 
-Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Returns the wowcast EDID info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/getWowcastEdidInfo '{}'
@@ -202,13 +220,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/getWOWCASTState`
 
-Getter on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Returns the WOWCAST state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/getWOWCASTState '{}'
@@ -223,13 +243,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/p2pConnect`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Handles the p 2 p connect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/p2pConnect '{}'
@@ -244,13 +266,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/p2pDisconnect`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Handles the p 2 p disconnect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/p2pDisconnect '{}'
@@ -265,13 +289,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/p2pSearch`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Handles the p 2 p search.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/p2pSearch '{}'
@@ -286,13 +312,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/p2pStopSearch`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Handles the p 2 p stop search.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/p2pStopSearch '{}'
@@ -307,13 +335,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/pause`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Pauses the wowplay.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/pause '{}'
@@ -328,13 +358,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/play`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Plays the wowplay.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/play '{}'
@@ -349,13 +381,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/playRingToneSound`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Plays the ring tone sound.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/playRingToneSound '{}'
@@ -370,13 +404,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/removePairedDevice`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Removes the paired device.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/removePairedDevice '{}'
@@ -391,13 +427,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/requestSoundbarStatus`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Requests the soundbar status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/requestSoundbarStatus '{}'
@@ -412,13 +450,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/setProperty`
 
-Setter on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Sets the property.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/setProperty '{}'
@@ -433,13 +473,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/startCalibration`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Starts the calibration.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/startCalibration '{}'
@@ -454,13 +496,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/startDiscovery`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Starts the discovery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/startDiscovery '{}'
@@ -475,13 +519,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wowplay/stopCalibration`
 
-Method on com.webos.service.wowplay (introspected on-device; parameters undocumented).
+Stops the calibration.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wowplay/stopCalibration '{}'

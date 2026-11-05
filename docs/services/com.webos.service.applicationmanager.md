@@ -1,43 +1,45 @@
 # `com.webos.service.applicationmanager`
 
+Core application lifecycle manager: launches, closes and lists apps and launch points, and reports foreground/running app status and life-cycle events.
+
 32 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`addLaunchPoint`](#addlaunchpoint) | public |  | apps | Adds a dynamic launchpoint. According to the information on launchpoint, application is displayed in the Launcher. If a parameter is not def |
-| [`appInfo`](#appinfo) | unknown |  | apps | Contains the information about the application. |
-| [`close`](#close) | public |  | apps | Closes an application. Note A: At least one parameter is required. ('id', 'launchPointId', 'instanceId') Note B: Don't use this API in TV an |
-| [`closeByAppId`](#closebyappid) | public |  | apps | Closes an application by appId in the system manager. |
-| [`dev/close`](#dev_close) | public |  | apps | Closes application by either of application id, instance id and launchpoint id . Note: At least one parameter is required. Available only in |
-| [`dev/closeByAppId`](#dev_closebyappid) | public |  | apps | Closes an application by the application id. Note: Available only in developer mode (devmode). To enable devmode, call 'com.webos.service.de |
-| [`dev/listApps`](#dev_listapps) | public | yes | apps | Lists all of the registered applications. Note: Available only in developer mode (devmode). To enable devmode, call 'com.webos.service.devmo |
-| [`dev/managerInfo`](#dev_managerinfo) | public |  | apps | Provides information provided by listLaunchPoints,running, and listApps APIs. Gets all of the launchpoints and lists all of the registered a |
-| [`dev/running`](#dev_running) | public | yes | apps | Lists the background/foreground applications and their process IDs that are running on the webOS platform. Note: Available only in developer |
-| [`foregroundAppInfo`](#foregroundappinfo) | unknown |  | apps | The object contains sorted foreground applications in ascending order. |
-| [`getAllContents`](#getallcontents) | private |  | apps | Returns recommended content lists of all apps |
-| [`getAppBasePath`](#getappbasepath) | public |  | apps | Gets the path of the application. Note: This API is useful to get base directory path of installed application. |
-| [`getAppInfo`](#getappinfo) | public |  | apps | Gets the application information. Note: The information is generated from appinfo.json file. |
-| [`getAppLifeEvents`](#getapplifeevents) | public | yes | apps | Provides the application's event status in its life cycle. |
-| [`getAppLifeStatus`](#getapplifestatus) | public | yes | apps | Provides the application's life cycle status. Note: This API is useful to do something based on application's life cycle status. |
-| [`getAppStatus`](#getappstatus) | public | yes | apps | Gets the application status and information. |
-| [`getForegroundAppInfo`](#getforegroundappinfo) | public | yes | apps | Gets the information on the foreground application. Note: The information comes from LSM. Please use extraInfo parameter to get raw response |
-| [`launch`](#launch) | public |  | apps | Launches an application corresponding to the given application ID. Opens the service or app. Example: The user can download a content with a |
-| [`launchPoints`](#launchpoints) | unknown |  | apps | Contains the array of launchpoints. |
-| [`listApps`](#listapps) | public | yes | apps | Lists all of the registered applications. Note: Client can get all installed application information using this API. |
-| [`listLaunchPoints`](#listlaunchpoints) | public | yes | apps | Gets all of the launchpoints. Note: LaunchPoint is the virtual instance of an application. The webOS provides shortcut based on launchPoint. |
-| [`lockApp`](#lockapp) | public |  | apps | Locks an application. Note: Once it is locked, the application cannot be launched. This method is only called internally. Do not use this me |
-| [`open`](#open) | public |  | apps | The open method implicitly opens an application based on the target URL or MIME type. Caution : Using this method is not recommended due to  |
-| [`params`](#params) | unknown |  | apps | Contains the parameters for the target application. Specify correct parameters for each application. As each application has different param |
-| [`pause`](#pause) | public |  | apps | Pauses an application. Note : At least one parameter is required. ('id', 'launchPointId', 'instanceId') |
-| [`registerApp`](#registerapp) | public | yes | apps | Registers to receive events related to app life cycle. |
-| [`registerNativeApp`](#registernativeapp) | unknown |  | apps | Registered in webOS OSE sysbus api.json (ACG group application.operation); name only |
-| [`removeLaunchPoint`](#removelaunchpoint) | public |  | apps | Removes a dynamic launchpoint. Note: It can cause application uninstall. |
-| [`running`](#running) | public | yes | apps | Lists the background/foreground applications and their process IDs that are running on webOS platform. Note: This API is one of key methods  |
-| [`running_apps`](#running_apps) | unknown |  | apps | Indicates the object that contains the array of the running applications. |
-| [`setDefaultApp`](#setdefaultapp) | private |  | apps | Sets the default app for a category such as home (replaces the Home button target) ⚠️ |
-| [`updateLaunchPoint`](#updatelaunchpoint) | public |  | apps | Updates a dynamic launchpoint. Note: If a user changes the HDMI application icon to another icon like a game icon using Input Manager on a T |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`addLaunchPoint`](#addlaunchpoint) | public |  | apps | documented | Adds a dynamic launchpoint. According to the information on launchpoint, application is displayed in the Launcher. If a parameter is not def |
+| [`appInfo`](#appinfo) | unknown |  | apps | documented | Contains the information about the application. |
+| [`close`](#close) | public |  | apps | documented | Closes an application. Note A: At least one parameter is required. ('id', 'launchPointId', 'instanceId') Note B: Don't use this API in TV an |
+| [`closeByAppId`](#closebyappid) | public |  | apps | documented | Closes an application by appId in the system manager. |
+| [`dev/close`](#dev_close) | public |  | apps | documented | Closes application by either of application id, instance id and launchpoint id . Note: At least one parameter is required. Available only in |
+| [`dev/closeByAppId`](#dev_closebyappid) | public |  | apps | documented | Closes an application by the application id. Note: Available only in developer mode (devmode). To enable devmode, call 'com.webos.service.de |
+| [`dev/listApps`](#dev_listapps) | public | yes | apps | documented | Lists all of the registered applications. Note: Available only in developer mode (devmode). To enable devmode, call 'com.webos.service.devmo |
+| [`dev/managerInfo`](#dev_managerinfo) | public |  | apps | documented | Provides information provided by listLaunchPoints,running, and listApps APIs. Gets all of the launchpoints and lists all of the registered a |
+| [`dev/running`](#dev_running) | public | yes | apps | documented | Lists the background/foreground applications and their process IDs that are running on the webOS platform. Note: Available only in developer |
+| [`foregroundAppInfo`](#foregroundappinfo) | unknown |  | apps | documented | The object contains sorted foreground applications in ascending order. |
+| [`getAllContents`](#getallcontents) | private |  | apps | documented | Returns recommended content lists of all apps |
+| [`getAppBasePath`](#getappbasepath) | public |  | apps | documented | Gets the path of the application. Note: This API is useful to get base directory path of installed application. |
+| [`getAppInfo`](#getappinfo) | public |  | apps | documented | Gets the application information. Note: The information is generated from appinfo.json file. |
+| [`getAppLifeEvents`](#getapplifeevents) | public | yes | apps | documented | Provides the application's event status in its life cycle. |
+| [`getAppLifeStatus`](#getapplifestatus) | public | yes | apps | documented | Provides the application's life cycle status. Note: This API is useful to do something based on application's life cycle status. |
+| [`getAppStatus`](#getappstatus) | public | yes | apps | documented | Gets the application status and information. |
+| [`getForegroundAppInfo`](#getforegroundappinfo) | public | yes | apps | documented | Gets the information on the foreground application. Note: The information comes from LSM. Please use extraInfo parameter to get raw response |
+| [`launch`](#launch) | public |  | apps | documented | Launches an application corresponding to the given application ID. Opens the service or app. Example: The user can download a content with a |
+| [`launchPoints`](#launchpoints) | unknown |  | apps | documented | Contains the array of launchpoints. |
+| [`listApps`](#listapps) | public | yes | apps | documented | Lists all of the registered applications. Note: Client can get all installed application information using this API. |
+| [`listLaunchPoints`](#listlaunchpoints) | public | yes | apps | documented | Gets all of the launchpoints. Note: LaunchPoint is the virtual instance of an application. The webOS provides shortcut based on launchPoint. |
+| [`lockApp`](#lockapp) | public |  | apps | documented | Locks an application. Note: Once it is locked, the application cannot be launched. This method is only called internally. Do not use this me |
+| [`open`](#open) | public |  | apps | documented | The open method implicitly opens an application based on the target URL or MIME type. Caution : Using this method is not recommended due to  |
+| [`params`](#params) | unknown |  | apps | documented | Contains the parameters for the target application. Specify correct parameters for each application. As each application has different param |
+| [`pause`](#pause) | public |  | apps | documented | Pauses an application. Note : At least one parameter is required. ('id', 'launchPointId', 'instanceId') |
+| [`registerApp`](#registerapp) | public | yes | apps | documented | Registers to receive events related to app life cycle. |
+| [`registerNativeApp`](#registernativeapp) | unknown |  | apps | documented | Registered in webOS OSE sysbus api.json (ACG group application.operation); name only |
+| [`removeLaunchPoint`](#removelaunchpoint) | public |  | apps | documented | Removes a dynamic launchpoint. Note: It can cause application uninstall. |
+| [`running`](#running) | public | yes | apps | documented | Lists the background/foreground applications and their process IDs that are running on webOS platform. Note: This API is one of key methods  |
+| [`running_apps`](#running_apps) | unknown |  | apps | documented | Indicates the object that contains the array of the running applications. |
+| [`setDefaultApp`](#setdefaultapp) | private |  | apps | documented | Sets the default app for a category such as home (replaces the Home button target) ⚠️ |
+| [`updateLaunchPoint`](#updatelaunchpoint) | public |  | apps | documented | Updates a dynamic launchpoint. Note: If a user changes the HDMI application icon to another icon like a game icon using Input Manager on a T |
 
 <a id="addlaunchpoint"></a>
 ## `addLaunchPoint`
@@ -50,7 +52,7 @@ Adds a dynamic launchpoint. According to the information on launchpoint, applica
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 10  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -75,6 +77,14 @@ Adds a dynamic launchpoint. According to the information on launchpoint, applica
 | `supportI18nTitle` | Boolean (optional) If "supportI18nTitle" is set to true , i18n will be supported for title when any information of this launch point is changed. If "supportI18nTitle" is set to false , i18n will be supported for title when any information of this launch point is changed. The default value of supportI18nTitle is true |
 | `favicon` | String (optional) Indicates the paths of the favorite icon for the launchpoint. |
 | `relaunch` | Boolean (optional) If it is set to true , the app will be fresh-launched(re-randering) whenever user clicks the launchpoint. Note : This parameter is deprecated in IvyLeague. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `launchPointId` | String (optional) Indicates the launchpoint ID to be added. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/addLaunchPoint '{ "id":"com.webos.app.test", "title":"TestLP" }
@@ -124,6 +134,18 @@ Closes an application. Note A: At least one parameter is required. ('id', 'launc
 | `launchPointId` | String (optional) Indicates the launchPointId of the application. |
 | `instanceId` | String (optional) Indicates the instanceId of the application. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `processId` | String (optional) Indicates the processId of the closed application. |
+| `instanceId` | String (optional) Indicates the instanceId of the running application. |
+| `launchPointId` | String (optional) Indicates the launchPointId of the running application. |
+| `appId` | String (optional) Indicates the appId of the running application. |
+| `displayId` | Number (int32\_t) (optional) Indicates the displayId of running application. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/close '{ "id":"com.webos.app.test" }
 ```
@@ -149,6 +171,15 @@ Closes an application by appId in the system manager.
 |---|---|
 | `id` | String (optional) Indicates the id of the application. |
 | `reason` | String (optional) Indicates the reason of why the app was closed. Subscribers who are watching app status will get the reason. Note: This parameter is only for reserved caller such as surfacemanager. Other services or apps should not use this parameter. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `instanceId` | String (optional) Indicates the instanceId of the running application. |
+| `launchPointId` | String (optional) Indicates the launchPointId of the running application. |
+| `displayId` | String (optional) Indicates the displayId of the running application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/closeByAppId '{ "id":"com.webos.app.test" }
@@ -177,6 +208,17 @@ Closes application by either of application id, instance id and launchpoint id .
 | `launchPointId` | String (optional) Indicates the launchPointId of the application. Note : At least one parameter of 'id', 'launchPointId', or 'instanceId' is mandatory. |
 | `instanceId` | String (optional) Indicates the instanceId of the application. Note : At least one parameter of 'id', 'launchPointId', or 'instanceId' is mandatory. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of this method for details. |
+| `processId` | String (optional) Process ID of the closed application. |
+| `launchPointId` | String (optional) Launch point ID of the running application. |
+| `appId` | String (optional) App ID of the running application. |
+| `displayId` | Number (int32\_t) (optional) Display ID of running application. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/launch '{"id":"com.lgsi.test.app" }'
 ```
@@ -201,6 +243,15 @@ Closes an application by the application id. Note: Available only in developer m
 | Param | Type / notes |
 |---|---|
 | `id` | String (required) Indicates the application id to be closed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `instanceId` | String (optional) Indicates the instanceId of running application. |
+| `launchPointId` | String (optional) Indicates the launchPointId of running application. |
+| `appId` | String (optional) Indicates the appld of the closed application. |
+| `displayId` | Number (int32\_t) (optional) Indicates the displayId of the running application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/dev/closeByAppId '{"id":"com.webos.app.test"}
@@ -228,6 +279,12 @@ Lists all of the registered applications. Note: Available only in developer mode
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribe to get notifications false : Do not subscribe Default: false |
 | `properties` | String array (optional) Indicates the name of properties to be extracted from appinfo.json file. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `apps` | Object array: appInfo (required) If the dev/listApps method succeeds, the array of the applications will be returned. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.applicationmanager/dev/listApps '{ "subscribe":true }'
 ```
@@ -248,6 +305,17 @@ Provides information provided by listLaunchPoints,running, and listApps APIs. Ge
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 23+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of this method for details. |
+| `launchPoints` | Object array: launchPoints (optional) Array of the launch points. |
+| `lunaTasks` | Object array (optional) Provides information of caller of dev/managerInfo API. |
+| `running` | Object array: running\_apps (optional) Indicates the background/foreground applications and their process IDs that are running on device. |
+| `apps` | Object array: appInfo (optional) Lists all of the registered applications. |
 
 ```sh
 luna-send -i -f luna://com.webos.applicationManager/dev/managerInfo '{}
@@ -273,6 +341,12 @@ Lists the background/foreground applications and their process IDs that are runn
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribe to get notifications false: Not subscribed Default: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `running` | Object array: running\_apps (required) If the dev/running method succeeds, the array of the running applications will be returned. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.applicationmanager/dev/running '{ "subscribe":true }
@@ -314,7 +388,7 @@ Returns recommended content lists of all apps
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.applicationmanager/getAllContents '{}'
@@ -340,6 +414,15 @@ Gets the path of the application. Note: This API is useful to get base directory
 | Param | Type / notes |
 |---|---|
 | `appId` | String (required) Indicates the appId. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` | String (optional) Indicates the appId. |
+| `basePath` | String (optional) Indicates the application path. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -a "bareapp" -f luna://com.webos.service.applicationmanager/getAppBasePath '{ "appId":"bareapp" }
@@ -367,6 +450,15 @@ Gets the application information. Note: The information is generated from appinf
 | `id` | String (required) Indicates the id of the application. |
 | `properties` | String array (optional) Indicates the value to be extracted from appinfo.json file. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` | String (optional) Indicates the appld. |
+| `appInfo` | Object: appInfo (optional) If the getAppinfo method succeeds, the appInfo object contains information about the application. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/getAppInfo '{ "id":"com.webos.app.test" }
 ```
@@ -392,6 +484,13 @@ Provides the application's event status in its life cycle.
 |---|---|
 | `subscribe` | Boolean (required) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Default: false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.applicationmanager/getAppLifeEvents '{"subscribe":true}
 ```
@@ -416,6 +515,12 @@ Provides the application's life cycle status. Note: This API is useful to do som
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (required) Indicates if subscribed to get the notifications. Possible values are: true: Subscribe to get notifications false: Not subscribed. Default: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.applicationmanager/getAppLifeStatus '{ "subscribe":true }
@@ -443,6 +548,19 @@ Gets the application status and information.
 | `appId` | String (required) Indicates the appld. |
 | `appInfo` | Object: appInfo (optional) Indicates the information of the application. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` | String (required) Indicates the target appld. |
+| `event` | String (required) Indicates event according to the target app status. |
+| `status` | String (required) Indicates the current app status. |
+| `exist` | Boolean (required) Indicates if target app is present on the device. Possible values are: - true: Target app exists on the device. - false: Target app does not exist on the device. |
+| `launchable` | Boolean (required) Indicates whether the target app could be launched or not. Possible values are: - true: Target app could be launched. - false: Target app could not be launched. |
+| `appInfo` | Object: appInfo (optional) If the getAppStatus method succeeds and the parameter "appInfo" is true, the appInfo object contains information about the application. |
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/getAppStatus '{ "appId":"com.webos.app.browser" }
 ```
@@ -468,6 +586,18 @@ Gets the information on the foreground application. Note: The information comes 
 |---|---|
 | `extraInfo` | Boolean (optional) Indicates if enabled, the method returns an array of foreground applications. true: Enable. false: Disable. Default: false . |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed to get notifications false: Not subscribed Default: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `appId` | String (optional) Indicates the appId running in the foreground. |
+| `launchPointId` | String (optional) Indicates the launchPointId of the application. |
+| `instanceId` | String (optional) Indicates the instanceId of the application. |
+| `displayId` | Number (optional) Indicates the displayId of the application. |
+| `windowId` | String (required) Indicates the windowId of the application running in the foreground. |
+| `processId` | String (optional) Indicates the processId of the application running in the foreground. |
+| `foregroundAppInfo` | Object array: foregroundAppInfo (optional) Indicates an array of the foreground application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/getForegroundAppInfo '{}
@@ -497,6 +627,17 @@ Launches an application corresponding to the given application ID. Opens the ser
 | `instanceId` | String (optional) Indicates the instance ID of the app. |
 | `params` | Object: params (optional) If params is used, it should contain information on the target application. Specify correct parameters for each application. See the following parameter examples: YouTube application: "params":{ "contentTarget" : "https://www.youtube.com/tv?v=9bZkp7q19f0"} Today application: "params":{"type":"showRecordedList"} |
 | `keepAlive` | Boolean (optional) Indicates the status of the application running in the background. Possible values are: true: To run the application in the background, set keepAlive to true . false: To terminate the application, set keepAlive to false . Default: keepAlive is set to false . Note: Only applicable to web app. Do not use keepAlive for native app launching. An web App, which is launched with this p |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section of this method for details. |
+| `instanceId` | String (optional) Indicates the instanceId of the running application. |
+| `launchPointId` | String (optional) Indicates the launchPointId of running application. |
+| `appId` | String (optional) Indicates the appld of the running application. |
+| `displayId` | Number (uint32\_t) (optional) Indicates the displayId of the running application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/launch '{ "id":"com.yourdomain.callee" }
@@ -545,6 +686,12 @@ Lists all of the registered applications. Note: Client can get all installed app
 | `subscribe` | Boolean (optional) Indicates if subscribe to get notifications. Possible values are: true: Subscribe for notifications false: Not subscribed Default: false |
 | `properties` | String array (optional) Indicates the value to be extracted from appinfo.json file. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `apps` | Object array: appInfo (required) If the listApps method succeeds, the array of the applications will be returned. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.applicationmanager/listApps '{ "subscribe":true }'
 ```
@@ -569,6 +716,12 @@ Gets all of the launchpoints. Note: LaunchPoint is the virtual instance of an ap
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Default: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `launchPoints` | Object array: launchPoints (required) If the listLaunchPoints method succeeds, the array of the launchpoints will be returned. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/listLaunchPoints '{ "subscribe":true }
@@ -595,6 +748,15 @@ Locks an application. Note: Once it is locked, the application cannot be launche
 |---|---|
 | `id` | String (required) The application ID to be locked. |
 | `lock` | Boolean (required) Indicates if the application is locked. Possible values are: true : The application is locked, set lock to true . If set to true , the application cannot be launched. false : The application is unlocked. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `locked` | Boolean (optional) Indicates if the application is locked or unlocked. Possible values are: - true: The application is locked - false: The application is unlocked |
+| `id` | String (optional) Indicates the application ID which is locked or unlocked. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/lockApp '{"id": "<id>", "lock": true}'
@@ -623,6 +785,13 @@ The open method implicitly opens an application based on the target URL or MIME 
 | `target` | String (required) A specific URL that is used in the browser application. It is automatically included under params object. The id parameter is substituted with the target parameter. If application ID is not specified, the target is open with an appropriate application. |
 | `mime` | String (required) The mime identifies which application should be used for the specific file or URL. The MIME type usually identifies files, such as mp3, on all operation systems as well as stores the unique application signatures for application launching. |
 | `params` | Object: params (optional) If params is used, it should contain information on the target application. You should specify correct parameters for each application. See the following parameter examples: YouTube application: "params":{ "contentTarget" : "https://www.youtube.com/tv?v=9bZkp7q19f0"} Today application: "params":{"type":"showRecordedList"} |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | String (optional) The open method will return errorCode only if it fails. See the API Error Codes Reference of this service for more details. |
+| `errorText` | String (optional) The open method will return errorText only if it fails. See the API Error Codes Reference of this service for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/open '{"mime": "text/html" }'
@@ -673,6 +842,17 @@ Pauses an application. Note : At least one parameter is required. ('id', 'launch
 | `instanceId` | String (optional) Indicates the instanceId of the application. |
 | `params` | Object (optional) If params is used, it should contain information on the target application. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+| `instanceId` | String (optional) Indicates the instanceId of the running application. |
+| `launchPointId` | String (optional) Indicates the launchPointId of the running application. |
+| `appId` | String (optional) Indicates the appId of the running application. |
+| `displayId` | Number (int32\_t) (optional) Indicates the displayId of the running application. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/pause '{ "id":"com.webos.app.test" }
 ```
@@ -698,6 +878,14 @@ Registers to receive events related to app life cycle.
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get events. Possible values are: true: (default) Subscribed to get events data false: Not subscribed |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `event` | String (optional) Possible value is "registered", this is return when calling registerApp for the first time. |
+| `errorCode` | Number (optional) Please refer to the errorcode reference. |
+| `errorText` | String (optional) Please refer to the errorcode reference. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.applicationmanager/registerApp '{"subscribe": true}'
 ```
@@ -717,7 +905,7 @@ Registered in webOS OSE sysbus api.json (ACG group application.operation); name 
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/registerNativeApp '{}'
@@ -744,6 +932,13 @@ Removes a dynamic launchpoint. Note: It can cause application uninstall.
 |---|---|
 | `launchPointId` | String (required) Indicates the launchpoint ID to be removed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/removeLaunchPoint '{ "launchPointId":"178884" }
 ```
@@ -768,6 +963,12 @@ Lists the background/foreground applications and their process IDs that are runn
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribe to get notifications false: Not subscribed Default: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `running` | Object array: running\_apps (required) If the running method succeeds, the array of the running applications will be returned. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.applicationmanager/running '{ "subscribe":true }
@@ -809,7 +1010,7 @@ Sets the default app for a category such as home (replaces the Home button targe
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 6+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -859,6 +1060,13 @@ Updates a dynamic launchpoint. Note: If a user changes the HDMI application icon
 | `default` | Any 9 |
 | `*$RESERVED_VALUE` | $RESERVED_LP $RESERVED_POSITION |
 | `relaunch` | Boolean (optional) Indicates if the target app is re-launched whenever the launch point is clicked. (Not fast-switching) Note: This parameter is deprecated in IvyLeague. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/updateLaunchPoint '{ "launchPointId":"178884", "title":"Test" }

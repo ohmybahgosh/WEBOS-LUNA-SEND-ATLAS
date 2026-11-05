@@ -1,34 +1,38 @@
 # `com.webos.service.faultmanager`
 
+Fault manager: detects and recovers from system faults, enabling/disabling detection and recovery, reporting fault status, and notifying or registering for fault events. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`disableFaultDetect`](#disablefaultdetect) | private |  | system-info | Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented). |
-| [`enableFaultDetect`](#enablefaultdetect) | private |  | system-info | Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented). |
-| [`enableFaultRecovery`](#enablefaultrecovery) | private |  | system-info | Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented). |
-| [`getFaultDetectedStatus`](#getfaultdetectedstatus) | private |  | misc | Lists faults detected during the current boot (keyed by pid and faultTime) |
-| [`getFaultStatus`](#getfaultstatus) | private |  | system-info | Getter on com.webos.service.faultmanager (introspected on-device; parameters undocumented). |
-| [`invalidateFault`](#invalidatefault) | private |  | system-info | Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented). |
-| [`notifyFault`](#notifyfault) | private |  | system-info | Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented). |
-| [`registerAndNotifyFault`](#registerandnotifyfault) | private |  | system-info | Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented). |
-| [`registerFault`](#registerfault) | private |  | system-info | Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented). |
-| [`test`](#test) | private |  | system-info | Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`disableFaultDetect`](#disablefaultdetect) | private |  | system-info | inferred | Disables the fault detect. |
+| [`enableFaultDetect`](#enablefaultdetect) | private |  | system-info | inferred | Enables the fault detect. |
+| [`enableFaultRecovery`](#enablefaultrecovery) | private |  | system-info | inferred | Enables the fault recovery. |
+| [`getFaultDetectedStatus`](#getfaultdetectedstatus) | private |  | misc | documented | Lists faults detected during the current boot (keyed by pid and faultTime) |
+| [`getFaultStatus`](#getfaultstatus) | private |  | system-info | inferred | Returns the fault status. |
+| [`invalidateFault`](#invalidatefault) | private |  | system-info | inferred | Handles the invalidate fault. |
+| [`notifyFault`](#notifyfault) | private |  | system-info | inferred | Notifies of the fault. |
+| [`registerAndNotifyFault`](#registerandnotifyfault) | private |  | system-info | inferred | Registers the and notify fault. |
+| [`registerFault`](#registerfault) | private |  | system-info | inferred | Registers the fault. |
+| [`test`](#test) | private |  | system-info | inferred | Tests the faultmanager. |
 
 <a id="disablefaultdetect"></a>
 ## `disableFaultDetect`
 
 `luna://com.webos.service.faultmanager/disableFaultDetect`
 
-Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented).
+Disables the fault detect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.faultmanager/disableFaultDetect '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.faultmanager/enableFaultDetect`
 
-Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented).
+Enables the fault detect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.faultmanager/enableFaultDetect '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.faultmanager/enableFaultRecovery`
 
-Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented).
+Enables the fault recovery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.faultmanager/enableFaultRecovery '{}'
@@ -91,7 +99,7 @@ Lists faults detected during the current boot (keyed by pid and faultTime)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.faultmanager/getFaultDetectedStatus '{}'
@@ -104,13 +112,15 @@ Sources: [1](https://github.com/webosbrew/home-chooser/blob/main/e2e/hc_e2e/step
 
 `luna://com.webos.service.faultmanager/getFaultStatus`
 
-Getter on com.webos.service.faultmanager (introspected on-device; parameters undocumented).
+Returns the fault status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.faultmanager/getFaultStatus '{}'
@@ -125,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.faultmanager/invalidateFault`
 
-Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented).
+Handles the invalidate fault.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.faultmanager/invalidateFault '{}'
@@ -146,13 +158,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.faultmanager/notifyFault`
 
-Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented).
+Notifies of the fault.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.faultmanager/notifyFault '{}'
@@ -167,13 +181,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.faultmanager/registerAndNotifyFault`
 
-Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented).
+Registers the and notify fault.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.faultmanager/registerAndNotifyFault '{}'
@@ -188,13 +204,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.faultmanager/registerFault`
 
-Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented).
+Registers the fault.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.faultmanager/registerFault '{}'
@@ -209,13 +227,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.faultmanager/test`
 
-Method on com.webos.service.faultmanager (introspected on-device; parameters undocumented).
+Tests the faultmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.faultmanager/test '{}'

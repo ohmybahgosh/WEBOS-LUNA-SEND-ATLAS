@@ -1,30 +1,34 @@
 # `com.webos.chromecast.cell`
 
+Appears to manage the Chromecast-built-in (Cast) runtime: checks terms of service, reports cell/control/runtime-manager status, and starts and stops the service. _(inferred from the service's methods)_
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkTos`](#checktos) | private |  | security | Method on com.webos.chromecast.cell (introspected on-device; parameters undocumented). |
-| [`getCellStatus`](#getcellstatus) | private |  | security | Getter on com.webos.chromecast.cell (introspected on-device; parameters undocumented). |
-| [`getControlStatus`](#getcontrolstatus) | private |  | security | Getter on com.webos.chromecast.cell (introspected on-device; parameters undocumented). |
-| [`getRuntimeManagerStatus`](#getruntimemanagerstatus) | private |  | input | Getter on com.webos.chromecast.cell (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | security | Method on com.webos.chromecast.cell (introspected on-device; parameters undocumented). |
-| [`stop`](#stop) | private |  | security | Method on com.webos.chromecast.cell (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkTos`](#checktos) | private |  | security | inferred | Checks the tos. |
+| [`getCellStatus`](#getcellstatus) | private |  | security | inferred | Returns the cell status. |
+| [`getControlStatus`](#getcontrolstatus) | private |  | security | inferred | Returns the control status. |
+| [`getRuntimeManagerStatus`](#getruntimemanagerstatus) | private |  | input | inferred | Returns the runtime manager status. |
+| [`start`](#start) | private |  | security | inferred | Starts the chromecast cell. |
+| [`stop`](#stop) | private |  | security | inferred | Stops the chromecast cell. |
 
 <a id="checktos"></a>
 ## `checkTos`
 
 `luna://com.webos.chromecast.cell/checkTos`
 
-Method on com.webos.chromecast.cell (introspected on-device; parameters undocumented).
+Checks the tos.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.chromecast.cell/checkTos '{}'
@@ -39,13 +43,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.chromecast.cell/getCellStatus`
 
-Getter on com.webos.chromecast.cell (introspected on-device; parameters undocumented).
+Returns the cell status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.chromecast.cell/getCellStatus '{}'
@@ -60,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.chromecast.cell/getControlStatus`
 
-Getter on com.webos.chromecast.cell (introspected on-device; parameters undocumented).
+Returns the control status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.chromecast.cell/getControlStatus '{}'
@@ -81,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.chromecast.cell/getRuntimeManagerStatus`
 
-Getter on com.webos.chromecast.cell (introspected on-device; parameters undocumented).
+Returns the runtime manager status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.chromecast.cell/getRuntimeManagerStatus '{}'
@@ -102,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.chromecast.cell/start`
 
-Method on com.webos.chromecast.cell (introspected on-device; parameters undocumented).
+Starts the chromecast cell.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.chromecast.cell/start '{}'
@@ -123,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.chromecast.cell/stop`
 
-Method on com.webos.chromecast.cell (introspected on-device; parameters undocumented).
+Stops the chromecast cell.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.chromecast.cell/stop '{}'

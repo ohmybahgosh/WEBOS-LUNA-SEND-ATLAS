@@ -1,13 +1,15 @@
 # `com.palm.btmonitor`
 
+Legacy Palm/HP webOS Bluetooth radio monitor that reports the Bluetooth radio powering on and off. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: HP webOS, Palm.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`monitor/radiooff`](#monitor_radiooff) | root |  | bluetooth | Turns Bluetooth radio off |
-| [`monitor/radioon`](#monitor_radioon) | root |  | bluetooth | Turns Bluetooth radio on |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`monitor/radiooff`](#monitor_radiooff) | root |  | bluetooth | documented | Turns Bluetooth radio off |
+| [`monitor/radioon`](#monitor_radioon) | root |  | bluetooth | documented | Turns Bluetooth radio on |
 
 <a id="monitor_radiooff"></a>
 ## `monitor/radiooff`
@@ -20,7 +22,7 @@ Turns Bluetooth radio off
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 palm://com.palm.btmonitor/monitor/radiooff {}
@@ -39,7 +41,7 @@ Turns Bluetooth radio on
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

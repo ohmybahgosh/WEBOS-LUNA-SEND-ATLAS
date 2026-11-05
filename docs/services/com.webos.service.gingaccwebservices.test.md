@@ -1,38 +1,42 @@
 # `com.webos.service.gingaccwebservices.test`
 
+Test interface for Ginga interactive-TV middleware (ISDB) web services: dev mode, consent history, key sets, media controller/key sessions and Ginga subscriptions. _(inferred from the service's methods)_
+
 14 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`dump`](#dump) | public |  | misc | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`enableDevmode`](#enabledevmode) | public |  | devmode | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`getGingaConsentHistory`](#getgingaconsenthistory) | public |  | misc | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`getkeyset`](#getkeyset) | public |  | misc | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`getServerUrl`](#getserverurl) | public |  | misc | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`mediaController`](#mediacontroller) | public |  | media | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`mediaKeySession`](#mediakeysession) | public |  | media | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`setAppsInfo`](#setappsinfo) | public |  | misc | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`setGingaConsentHistory`](#setgingaconsenthistory) | public |  | misc | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`setStatus`](#setstatus) | public |  | misc | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`setValue`](#setvalue) | public |  | misc | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | public |  | misc | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | public |  | misc | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
-| [`subscribeForGinga`](#subscribeforginga) | public |  | misc | Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`dump`](#dump) | public |  | misc | inferred | Dumps the gingaccwebservices test. |
+| [`enableDevmode`](#enabledevmode) | public |  | devmode | inferred | Enables the devmode. |
+| [`getGingaConsentHistory`](#getgingaconsenthistory) | public |  | misc | inferred | Returns the ginga consent history. |
+| [`getkeyset`](#getkeyset) | public |  | misc | inferred | Handles the getkeyset. |
+| [`getServerUrl`](#getserverurl) | public |  | misc | inferred | Returns the server URL. |
+| [`mediaController`](#mediacontroller) | public |  | media | inferred | Handles the media controller. |
+| [`mediaKeySession`](#mediakeysession) | public |  | media | inferred | Handles the media key session. |
+| [`setAppsInfo`](#setappsinfo) | public |  | misc | inferred | Sets the apps info. |
+| [`setGingaConsentHistory`](#setgingaconsenthistory) | public |  | misc | inferred | Sets the ginga consent history. |
+| [`setStatus`](#setstatus) | public |  | misc | inferred | Sets the status. |
+| [`setValue`](#setvalue) | public |  | misc | inferred | Sets the value. |
+| [`start`](#start) | public |  | misc | inferred | Starts the gingaccwebservices test. |
+| [`stop`](#stop) | public |  | misc | inferred | Stops the gingaccwebservices test. |
+| [`subscribeForGinga`](#subscribeforginga) | public |  | misc | inferred | Subscribes to the for ginga. |
 
 <a id="dump"></a>
 ## `dump`
 
 `luna://com.webos.service.gingaccwebservices.test/dump`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Dumps the gingaccwebservices test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/dump '{}'
@@ -47,13 +51,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/enableDevmode`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Enables the devmode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/enableDevmode '{}'
@@ -68,13 +74,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/getGingaConsentHistory`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Returns the ginga consent history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/getGingaConsentHistory '{}'
@@ -89,13 +97,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/getkeyset`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Handles the getkeyset.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/getkeyset '{}'
@@ -110,13 +120,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/getServerUrl`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Returns the server URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/getServerUrl '{}'
@@ -131,13 +143,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/mediaController`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Handles the media controller.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/mediaController '{}'
@@ -152,13 +166,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/mediaKeySession`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Handles the media key session.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/mediaKeySession '{}'
@@ -173,13 +189,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/setAppsInfo`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Sets the apps info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/setAppsInfo '{}'
@@ -194,13 +212,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/setGingaConsentHistory`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Sets the ginga consent history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/setGingaConsentHistory '{}'
@@ -215,13 +235,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/setStatus`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Sets the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/setStatus '{}'
@@ -236,13 +258,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/setValue`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Sets the value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/setValue '{}'
@@ -257,13 +281,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/start`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Starts the gingaccwebservices test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/start '{}'
@@ -278,13 +304,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/stop`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Stops the gingaccwebservices test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/stop '{}'
@@ -299,13 +327,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gingaccwebservices.test/subscribeForGinga`
 
-Method on com.webos.service.gingaccwebservices.test (from on-device permission registry; parameters undocumented).
+Subscribes to the for ginga.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gingaccwebservices.test/subscribeForGinga '{}'

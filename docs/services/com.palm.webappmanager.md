@@ -1,45 +1,49 @@
 # `com.palm.webappmanager`
 
+Web app manager: launches apps and URLs, kills/pauses apps, lists running apps, clears browsing data, and manages web-process memory.
+
 21 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`changeWindowType`](#changewindowtype) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`clearBrowsingData`](#clearbrowsingdata) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`closeAllApps`](#closeallapps) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`closeByProcessId`](#closebyprocessid) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`deliverPushMessage`](#deliverpushmessage) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`discardCodeCache`](#discardcodecache) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`fireNotificationEvent`](#firenotificationevent) | private |  | notifications | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`getMemoryStatus`](#getmemorystatus) | private |  | apps | Method on com.palm.webappmanager (from on-device permission registry; parameters undocumented). |
-| [`getWebProcessSize`](#getwebprocesssize) | private |  | apps | Getter on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`killApp`](#killapp) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`launchApp`](#launchapp) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`launchUrl`](#launchurl) | private |  | apps | Method on com.palm.webappmanager (from on-device permission registry; parameters undocumented). |
-| [`launchUrlChild`](#launchurlchild) | private |  | apps | Method on com.palm.webappmanager (from on-device permission registry; parameters undocumented). |
-| [`listRunningApps`](#listrunningapps) | private |  | apps | Lister on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`logControl`](#logcontrol) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`pauseApp`](#pauseapp) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`performLowMemoryActions`](#performlowmemoryactions) | private |  | apps | Method on com.palm.webappmanager (from on-device permission registry; parameters undocumented). |
-| [`requestUsbFileAccessPermission`](#requestusbfileaccesspermission) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`setInspectorEnable`](#setinspectorenable) | private |  | apps | Setter on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`setWindowGeometry`](#setwindowgeometry) | private |  | apps | Setter on com.palm.webappmanager (introspected on-device; parameters undocumented). |
-| [`webProcessCreated`](#webprocesscreated) | private |  | apps | Method on com.palm.webappmanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`changeWindowType`](#changewindowtype) | private |  | apps | inferred | Changes the window type. |
+| [`clearBrowsingData`](#clearbrowsingdata) | private |  | apps | inferred | Clears the browsing data. |
+| [`closeAllApps`](#closeallapps) | private |  | apps | inferred | Closes the all apps. |
+| [`closeByProcessId`](#closebyprocessid) | private |  | apps | inferred | Closes the by process ID. |
+| [`deliverPushMessage`](#deliverpushmessage) | private |  | apps | inferred | Handles the deliver push message. |
+| [`discardCodeCache`](#discardcodecache) | private |  | apps | inferred | Handles the discard code cache. |
+| [`fireNotificationEvent`](#firenotificationevent) | private |  | notifications | inferred | Handles the fire notification event. |
+| [`getMemoryStatus`](#getmemorystatus) | private |  | apps | inferred | Returns the memory status. |
+| [`getWebProcessSize`](#getwebprocesssize) | private |  | apps | inferred | Returns the web process size. |
+| [`killApp`](#killapp) | private |  | apps | inferred | Handles the kill app. |
+| [`launchApp`](#launchapp) | private |  | apps | inferred | Launches the app. |
+| [`launchUrl`](#launchurl) | private |  | apps | inferred | Launches the URL. |
+| [`launchUrlChild`](#launchurlchild) | private |  | apps | inferred | Launches the URL child. |
+| [`listRunningApps`](#listrunningapps) | private |  | apps | inferred | Lists the running apps. |
+| [`logControl`](#logcontrol) | private |  | apps | inferred | Handles the log control. |
+| [`pauseApp`](#pauseapp) | private |  | apps | inferred | Pauses the app. |
+| [`performLowMemoryActions`](#performlowmemoryactions) | private |  | apps | inferred | Handles the perform low memory actions. |
+| [`requestUsbFileAccessPermission`](#requestusbfileaccesspermission) | private |  | apps | inferred | Requests the USB file access permission. |
+| [`setInspectorEnable`](#setinspectorenable) | private |  | apps | inferred | Sets the inspector enable. |
+| [`setWindowGeometry`](#setwindowgeometry) | private |  | apps | inferred | Sets the window geometry. |
+| [`webProcessCreated`](#webprocesscreated) | private |  | apps | inferred | Handles the web process created. |
 
 <a id="changewindowtype"></a>
 ## `changeWindowType`
 
 `luna://com.palm.webappmanager/changeWindowType`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Changes the window type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/changeWindowType '{}'
@@ -54,13 +58,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/clearBrowsingData`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Clears the browsing data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/clearBrowsingData '{}'
@@ -75,13 +81,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/closeAllApps`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Closes the all apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/closeAllApps '{}'
@@ -96,13 +104,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/closeByProcessId`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Closes the by process ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/closeByProcessId '{}'
@@ -117,13 +127,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/deliverPushMessage`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Handles the deliver push message.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/deliverPushMessage '{}'
@@ -138,13 +150,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/discardCodeCache`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Handles the discard code cache.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/discardCodeCache '{}'
@@ -159,13 +173,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/fireNotificationEvent`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Handles the fire notification event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/fireNotificationEvent '{}'
@@ -180,13 +196,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/getMemoryStatus`
 
-Method on com.palm.webappmanager (from on-device permission registry; parameters undocumented).
+Returns the memory status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/getMemoryStatus '{}'
@@ -201,13 +219,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.webappmanager/getWebProcessSize`
 
-Getter on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Returns the web process size.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/getWebProcessSize '{}'
@@ -222,13 +242,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/killApp`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Handles the kill app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/killApp '{}'
@@ -243,13 +265,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/launchApp`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Launches the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/launchApp '{}'
@@ -264,13 +288,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/launchUrl`
 
-Method on com.palm.webappmanager (from on-device permission registry; parameters undocumented).
+Launches the URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/launchUrl '{}'
@@ -285,13 +311,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.webappmanager/launchUrlChild`
 
-Method on com.palm.webappmanager (from on-device permission registry; parameters undocumented).
+Launches the URL child.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/launchUrlChild '{}'
@@ -306,13 +334,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.webappmanager/listRunningApps`
 
-Lister on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Lists the running apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/listRunningApps '{}'
@@ -327,13 +357,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/logControl`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Handles the log control.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/logControl '{}'
@@ -348,13 +380,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/pauseApp`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Pauses the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/pauseApp '{}'
@@ -369,13 +403,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/performLowMemoryActions`
 
-Method on com.palm.webappmanager (from on-device permission registry; parameters undocumented).
+Handles the perform low memory actions.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/performLowMemoryActions '{}'
@@ -390,13 +426,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.webappmanager/requestUsbFileAccessPermission`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Requests the USB file access permission.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/requestUsbFileAccessPermission '{}'
@@ -411,13 +449,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/setInspectorEnable`
 
-Setter on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Sets the inspector enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/setInspectorEnable '{}'
@@ -432,13 +472,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/setWindowGeometry`
 
-Setter on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Sets the window geometry.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/setWindowGeometry '{}'
@@ -453,13 +495,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.webappmanager/webProcessCreated`
 
-Method on com.palm.webappmanager (introspected on-device; parameters undocumented).
+Handles the web process created.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/webProcessCreated '{}'

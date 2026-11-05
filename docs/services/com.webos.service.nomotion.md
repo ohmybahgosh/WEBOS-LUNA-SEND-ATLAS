@@ -1,31 +1,35 @@
 # `com.webos.service.nomotion`
 
+No-motion/no-operation power-saving timers: adds, queries and removes timers that fire when no remote motion or operation is detected. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`addNoMotionAndNoOperationTimer`](#addnomotionandnooperationtimer) | private |  | input | Method on com.webos.service.nomotion (introspected on-device; parameters undocumented). |
-| [`addNoMotionTimer`](#addnomotiontimer) | private |  | input | Method on com.webos.service.nomotion (introspected on-device; parameters undocumented). |
-| [`getNoMotionAndNoOperationTimerInfo`](#getnomotionandnooperationtimerinfo) | private |  | input | Getter on com.webos.service.nomotion (introspected on-device; parameters undocumented). |
-| [`getNoMotionTimerInfo`](#getnomotiontimerinfo) | private |  | input | Getter on com.webos.service.nomotion (introspected on-device; parameters undocumented). |
-| [`removeNoMotionAndNoOperationTimer`](#removenomotionandnooperationtimer) | private |  | input | Method on com.webos.service.nomotion (introspected on-device; parameters undocumented). ⚠️ |
-| [`removeNoMotionTimer`](#removenomotiontimer) | private |  | input | Method on com.webos.service.nomotion (introspected on-device; parameters undocumented). ⚠️ |
-| [`test`](#test) | private |  | misc | Method on com.webos.service.nomotion (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`addNoMotionAndNoOperationTimer`](#addnomotionandnooperationtimer) | private |  | input | inferred | Adds the no motion and no operation timer. |
+| [`addNoMotionTimer`](#addnomotiontimer) | private |  | input | inferred | Adds the no motion timer. |
+| [`getNoMotionAndNoOperationTimerInfo`](#getnomotionandnooperationtimerinfo) | private |  | input | inferred | Returns the no motion and no operation timer info. |
+| [`getNoMotionTimerInfo`](#getnomotiontimerinfo) | private |  | input | inferred | Returns the no motion timer info. |
+| [`removeNoMotionAndNoOperationTimer`](#removenomotionandnooperationtimer) | private |  | input | inferred | Removes the no motion and no operation timer. ⚠️ |
+| [`removeNoMotionTimer`](#removenomotiontimer) | private |  | input | inferred | Removes the no motion timer. ⚠️ |
+| [`test`](#test) | private |  | misc | inferred | Tests the nomotion. |
 
 <a id="addnomotionandnooperationtimer"></a>
 ## `addNoMotionAndNoOperationTimer`
 
 `luna://com.webos.service.nomotion/addNoMotionAndNoOperationTimer`
 
-Method on com.webos.service.nomotion (introspected on-device; parameters undocumented).
+Adds the no motion and no operation timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nomotion/addNoMotionAndNoOperationTimer '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nomotion/addNoMotionTimer`
 
-Method on com.webos.service.nomotion (introspected on-device; parameters undocumented).
+Adds the no motion timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nomotion/addNoMotionTimer '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nomotion/getNoMotionAndNoOperationTimerInfo`
 
-Getter on com.webos.service.nomotion (introspected on-device; parameters undocumented).
+Returns the no motion and no operation timer info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nomotion/getNoMotionAndNoOperationTimerInfo '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nomotion/getNoMotionTimerInfo`
 
-Getter on com.webos.service.nomotion (introspected on-device; parameters undocumented).
+Returns the no motion timer info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nomotion/getNoMotionTimerInfo '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nomotion/removeNoMotionAndNoOperationTimer`
 
-Method on com.webos.service.nomotion (introspected on-device; parameters undocumented).
+Removes the no motion and no operation timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nomotion/removeNoMotionAndNoOperationTimer '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nomotion/removeNoMotionTimer`
 
-Method on com.webos.service.nomotion (introspected on-device; parameters undocumented).
+Removes the no motion timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nomotion/removeNoMotionTimer '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nomotion/test`
 
-Method on com.webos.service.nomotion (introspected on-device; parameters undocumented).
+Tests the nomotion.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nomotion/test '{}'

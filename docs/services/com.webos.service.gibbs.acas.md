@@ -1,35 +1,39 @@
 # `com.webos.service.gibbs.acas`
 
+ACAS conditional-access service (gibbs broadcast stack): reports CAS module, contract, ECM, and power-on control information and manages auto-display messages. _(inferred from the service's methods)_
+
 11 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getAutoDisplayMessageInfo`](#getautodisplaymessageinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented). |
-| [`getAutoDisplayMessageStatus`](#getautodisplaymessagestatus) | private |  | tv-broadcast | Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented). |
-| [`getCasInfo`](#getcasinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented). |
-| [`getCasModuleInfo`](#getcasmoduleinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented). |
-| [`getConfirmContractInfo`](#getconfirmcontractinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented). |
-| [`getCurrentContractInfo`](#getcurrentcontractinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented). |
-| [`getCurrentEcmInfo`](#getcurrentecminfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented). |
-| [`getPowerOnControlInfo`](#getpoweroncontrolinfo) | private |  | power | Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented). |
-| [`setAutoDisplayMessageInfo`](#setautodisplaymessageinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented). |
-| [`setCasInfo`](#setcasinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented). |
-| [`setConfirmContractInfo`](#setconfirmcontractinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getAutoDisplayMessageInfo`](#getautodisplaymessageinfo) | private |  | tv-broadcast | inferred | Returns the auto display message info. |
+| [`getAutoDisplayMessageStatus`](#getautodisplaymessagestatus) | private |  | tv-broadcast | inferred | Returns the auto display message status. |
+| [`getCasInfo`](#getcasinfo) | private |  | tv-broadcast | inferred | Returns the cas info. |
+| [`getCasModuleInfo`](#getcasmoduleinfo) | private |  | tv-broadcast | inferred | Returns the cas module info. |
+| [`getConfirmContractInfo`](#getconfirmcontractinfo) | private |  | tv-broadcast | inferred | Returns the confirm contract info. |
+| [`getCurrentContractInfo`](#getcurrentcontractinfo) | private |  | tv-broadcast | inferred | Returns the current contract info. |
+| [`getCurrentEcmInfo`](#getcurrentecminfo) | private |  | tv-broadcast | inferred | Returns the current ecm info. |
+| [`getPowerOnControlInfo`](#getpoweroncontrolinfo) | private |  | power | inferred | Returns the power on control info. |
+| [`setAutoDisplayMessageInfo`](#setautodisplaymessageinfo) | private |  | tv-broadcast | inferred | Sets the auto display message info. |
+| [`setCasInfo`](#setcasinfo) | private |  | tv-broadcast | inferred | Sets the cas info. |
+| [`setConfirmContractInfo`](#setconfirmcontractinfo) | private |  | tv-broadcast | inferred | Sets the confirm contract info. |
 
 <a id="getautodisplaymessageinfo"></a>
 ## `getAutoDisplayMessageInfo`
 
 `luna://com.webos.service.gibbs.acas/getAutoDisplayMessageInfo`
 
-Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented).
+Returns the auto display message info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.acas/getAutoDisplayMessageInfo '{}'
@@ -44,13 +48,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.acas/getAutoDisplayMessageStatus`
 
-Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented).
+Returns the auto display message status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.acas/getAutoDisplayMessageStatus '{}'
@@ -65,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.acas/getCasInfo`
 
-Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented).
+Returns the cas info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.acas/getCasInfo '{}'
@@ -86,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.acas/getCasModuleInfo`
 
-Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented).
+Returns the cas module info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.acas/getCasModuleInfo '{}'
@@ -107,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.acas/getConfirmContractInfo`
 
-Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented).
+Returns the confirm contract info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.acas/getConfirmContractInfo '{}'
@@ -128,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.acas/getCurrentContractInfo`
 
-Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented).
+Returns the current contract info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.acas/getCurrentContractInfo '{}'
@@ -149,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.acas/getCurrentEcmInfo`
 
-Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented).
+Returns the current ecm info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.acas/getCurrentEcmInfo '{}'
@@ -170,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.acas/getPowerOnControlInfo`
 
-Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented).
+Returns the power on control info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.acas/getPowerOnControlInfo '{}'
@@ -191,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.acas/setAutoDisplayMessageInfo`
 
-Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented).
+Sets the auto display message info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.acas/setAutoDisplayMessageInfo '{}'
@@ -212,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.acas/setCasInfo`
 
-Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented).
+Sets the cas info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.acas/setCasInfo '{}'
@@ -233,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.acas/setConfirmContractInfo`
 
-Method on com.webos.service.gibbs.acas (from on-device permission registry; parameters undocumented).
+Sets the confirm contract info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.acas/setConfirmContractInfo '{}'

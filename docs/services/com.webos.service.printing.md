@@ -1,47 +1,51 @@
 # `com.webos.service.printing`
 
+Printing service: adds, removes and configures printers, sets the default printer and options, and manages print jobs (list, cancel, complete). _(inferred from the service's methods)_
+
 23 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`autoprint`](#autoprint) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`configuration/addPrinter`](#configuration_addprinter) | public |  | settings | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`configuration/deletePrinter`](#configuration_deleteprinter) | public |  | settings | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`configuration/disable`](#configuration_disable) | public |  | settings | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`configuration/enable`](#configuration_enable) | public |  | settings | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`configuration/findPrinter`](#configuration_findprinter) | public |  | settings | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`configuration/setDefaultPrinter`](#configuration_setdefaultprinter) | public |  | settings | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`configuration/setOptions`](#configuration_setoptions) | public |  | settings | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`info/acceptPrinter`](#info_acceptprinter) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`info/defaultPrinter`](#info_defaultprinter) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`info/displayConfig`](#info_displayconfig) | public |  | settings | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`info/enablePrinter`](#info_enableprinter) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`info/listPrinters`](#info_listprinters) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`jobs/all`](#jobs_all) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`jobs/cancel`](#jobs_cancel) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`jobs/cancelAll`](#jobs_cancelall) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`jobs/cancelPrinter`](#jobs_cancelprinter) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`jobs/completeJobs`](#jobs_completejobs) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`jobs/move`](#jobs_move) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`jobs/printNow`](#jobs_printnow) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`jobs/queue`](#jobs_queue) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`jobs/stop`](#jobs_stop) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
-| [`print`](#print) | public |  | storage | Method on com.webos.service.printing (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`autoprint`](#autoprint) | public |  | storage | inferred | Handles the autoprint. |
+| [`configuration/addPrinter`](#configuration_addprinter) | public |  | settings | inferred | Adds the printer (configuration) |
+| [`configuration/deletePrinter`](#configuration_deleteprinter) | public |  | settings | inferred | Deletes the printer (configuration) ⚠️ |
+| [`configuration/disable`](#configuration_disable) | public |  | settings | inferred | Disables the printing (configuration) |
+| [`configuration/enable`](#configuration_enable) | public |  | settings | inferred | Enables the printing (configuration) |
+| [`configuration/findPrinter`](#configuration_findprinter) | public |  | settings | inferred | Handles the find printer (configuration) |
+| [`configuration/setDefaultPrinter`](#configuration_setdefaultprinter) | public |  | settings | inferred | Sets the default printer (configuration) |
+| [`configuration/setOptions`](#configuration_setoptions) | public |  | settings | inferred | Sets the options (configuration) |
+| [`info/acceptPrinter`](#info_acceptprinter) | public |  | storage | inferred | Handles the accept printer (info) |
+| [`info/defaultPrinter`](#info_defaultprinter) | public |  | storage | inferred | Handles the default printer (info) |
+| [`info/displayConfig`](#info_displayconfig) | public |  | settings | inferred | Handles the display config (info) |
+| [`info/enablePrinter`](#info_enableprinter) | public |  | storage | inferred | Enables the printer (info) |
+| [`info/listPrinters`](#info_listprinters) | public |  | storage | inferred | Lists the printers (info) |
+| [`jobs/all`](#jobs_all) | public |  | storage | inferred | Handles the all (jobs) |
+| [`jobs/cancel`](#jobs_cancel) | public |  | storage | inferred | Cancels the printing (jobs) |
+| [`jobs/cancelAll`](#jobs_cancelall) | public |  | storage | inferred | Cancels the all (jobs) |
+| [`jobs/cancelPrinter`](#jobs_cancelprinter) | public |  | storage | inferred | Cancels the printer (jobs) |
+| [`jobs/completeJobs`](#jobs_completejobs) | public |  | storage | inferred | Completes the jobs (jobs) |
+| [`jobs/move`](#jobs_move) | public |  | storage | inferred | Moves the printing (jobs) |
+| [`jobs/printNow`](#jobs_printnow) | public |  | storage | inferred | Prints the now (jobs) |
+| [`jobs/queue`](#jobs_queue) | public |  | storage | inferred | Handles the queue (jobs) |
+| [`jobs/stop`](#jobs_stop) | public |  | storage | inferred | Stops the printing (jobs) |
+| [`print`](#print) | public |  | storage | inferred | Prints the printing. |
 
 <a id="autoprint"></a>
 ## `autoprint`
 
 `luna://com.webos.service.printing/autoprint`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Handles the autoprint.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/autoprint '{}'
@@ -56,13 +60,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/configuration/addPrinter`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Adds the printer (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/configuration/addPrinter '{}'
@@ -77,13 +83,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/configuration/deletePrinter`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Deletes the printer (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/configuration/deletePrinter '{}'
@@ -98,13 +106,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/configuration/disable`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Disables the printing (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/configuration/disable '{}'
@@ -119,13 +129,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/configuration/enable`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Enables the printing (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/configuration/enable '{}'
@@ -140,13 +152,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/configuration/findPrinter`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Handles the find printer (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/configuration/findPrinter '{}'
@@ -161,13 +175,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/configuration/setDefaultPrinter`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Sets the default printer (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/configuration/setDefaultPrinter '{}'
@@ -182,13 +198,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/configuration/setOptions`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Sets the options (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/configuration/setOptions '{}'
@@ -203,13 +221,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/info/acceptPrinter`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Handles the accept printer (info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/info/acceptPrinter '{}'
@@ -224,13 +244,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/info/defaultPrinter`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Handles the default printer (info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/info/defaultPrinter '{}'
@@ -245,13 +267,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/info/displayConfig`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Handles the display config (info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/info/displayConfig '{}'
@@ -266,13 +290,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/info/enablePrinter`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Enables the printer (info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/info/enablePrinter '{}'
@@ -287,13 +313,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/info/listPrinters`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Lists the printers (info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/info/listPrinters '{}'
@@ -308,13 +336,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/jobs/all`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Handles the all (jobs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/all '{}'
@@ -329,13 +359,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/jobs/cancel`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Cancels the printing (jobs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/cancel '{}'
@@ -350,13 +382,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/jobs/cancelAll`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Cancels the all (jobs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/cancelAll '{}'
@@ -371,13 +405,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/jobs/cancelPrinter`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Cancels the printer (jobs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/cancelPrinter '{}'
@@ -392,13 +428,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/jobs/completeJobs`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Completes the jobs (jobs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/completeJobs '{}'
@@ -413,13 +451,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/jobs/move`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Moves the printing (jobs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/move '{}'
@@ -434,13 +474,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/jobs/printNow`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Prints the now (jobs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/printNow '{}'
@@ -455,13 +497,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/jobs/queue`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Handles the queue (jobs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/queue '{}'
@@ -476,13 +520,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/jobs/stop`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Stops the printing (jobs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/stop '{}'
@@ -497,13 +543,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.printing/print`
 
-Method on com.webos.service.printing (from on-device permission registry; parameters undocumented).
+Prints the printing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/print '{}'

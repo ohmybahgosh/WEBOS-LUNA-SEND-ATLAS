@@ -1,26 +1,30 @@
 # `com.webos.service.dass`
 
+Opaque service exposing only connect and disconnect, associated with media. Its exact role (likely a streaming or device link) is not inferable. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`connect`](#connect) | private |  | misc | Method on com.webos.service.dass (from on-device permission registry; parameters undocumented). |
-| [`disconnect`](#disconnect) | private |  | misc | Method on com.webos.service.dass (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`connect`](#connect) | private |  | misc | inferred | Connects the dass. |
+| [`disconnect`](#disconnect) | private |  | misc | inferred | Disconnects the dass. |
 
 <a id="connect"></a>
 ## `connect`
 
 `luna://com.webos.service.dass/connect`
 
-Method on com.webos.service.dass (from on-device permission registry; parameters undocumented).
+Connects the dass.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dass/connect '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.dass/disconnect`
 
-Method on com.webos.service.dass (from on-device permission registry; parameters undocumented).
+Disconnects the dass.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dass/disconnect '{}'

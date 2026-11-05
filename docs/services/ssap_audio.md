@@ -1,20 +1,22 @@
 # `ssap:audio`
 
+SSAP (remote control protocol) audio endpoint: gets and sets volume and mute, steps volume up/down, reports status, and changes/queries the sound output. Used over the TV's external control socket.
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`changeSoundOutput`](#changesoundoutput) | ssap |  | audio | Change sound output (alias of apiadapter variant) |
-| [`getMute`](#getmute) | ssap |  | audio | Get mute state |
-| [`getSoundOutput`](#getsoundoutput) | ssap |  | audio | Get sound output (alias) |
-| [`getStatus`](#getstatus) | ssap | yes | audio | Get/subscribe audio status |
-| [`getVolume`](#getvolume) | ssap | yes | audio | Get/subscribe volume |
-| [`setMute`](#setmute) | ssap |  | audio | Mute/unmute |
-| [`setVolume`](#setvolume) | ssap |  | audio | Set volume |
-| [`volumeDown`](#volumedown) | ssap |  | audio | Volume down one step |
-| [`volumeUp`](#volumeup) | ssap |  | audio | Volume up one step |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`changeSoundOutput`](#changesoundoutput) | ssap |  | audio | documented | Change sound output (alias of apiadapter variant) |
+| [`getMute`](#getmute) | ssap |  | audio | documented | Get mute state |
+| [`getSoundOutput`](#getsoundoutput) | ssap |  | audio | documented | Get sound output (alias) |
+| [`getStatus`](#getstatus) | ssap | yes | audio | documented | Get/subscribe audio status |
+| [`getVolume`](#getvolume) | ssap | yes | audio | documented | Get/subscribe volume |
+| [`setMute`](#setmute) | ssap |  | audio | documented | Mute/unmute |
+| [`setVolume`](#setvolume) | ssap |  | audio | documented | Set volume |
+| [`volumeDown`](#volumedown) | ssap |  | audio | documented | Volume down one step |
+| [`volumeUp`](#volumeup) | ssap |  | audio | documented | Volume up one step |
 
 <a id="changesoundoutput"></a>
 ## `changeSoundOutput`
@@ -27,7 +29,7 @@ Change sound output (alias of apiadapter variant)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -52,7 +54,7 @@ Get mute state
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://audio/getMute","payload":{}}
@@ -73,7 +75,7 @@ Get sound output (alias)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://audio/getSoundOutput","payload":{}}
@@ -94,7 +96,7 @@ Get/subscribe audio status
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -119,7 +121,7 @@ Get/subscribe volume
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -144,7 +146,7 @@ Mute/unmute
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -169,7 +171,7 @@ Set volume
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -194,7 +196,7 @@ Volume down one step
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://audio/volumeDown","payload":{}}
@@ -215,7 +217,7 @@ Volume up one step
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://audio/volumeUp","payload":{}}

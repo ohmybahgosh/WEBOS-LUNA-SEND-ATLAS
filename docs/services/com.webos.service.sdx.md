@@ -1,47 +1,49 @@
 # `com.webos.service.sdx`
 
+SDX device-provisioning/server service: reports device UUID, encrypted MAC, device-authentication and EULA-download status, country code, and backend server URLs. _(inferred from the service's methods)_
+
 36 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`callbackNotice`](#callbacknotice) | private |  | apps | SDP callback notification sink. Name only. |
-| [`cancelEulaDownload`](#canceleuladownload) | private |  | update | Cancels an in-progress EULA download. |
-| [`debug`](#debug) | private |  | devmode | sdx debug control. Name only. |
-| [`deleteDeviceAuthentication`](#deletedeviceauthentication) | private |  | security | Clears the stored SDP device authentication. Documented as existing. ⚠️ |
-| [`doServiceCountryChange`](#doservicecountrychange) | private |  | settings | Changes the service country SDP uses (which content catalogue / store region the TV talks to). Documented here as what the method is for; th ⚠️ |
-| [`getACRPath`](#getacrpath) | private |  | system-info | Returns the SDP path used for ACR data. |
-| [`getAppPublishFlag`](#getapppublishflag) | private |  | system-info | Returns the per-app SDP publish flag. |
-| [`getCacheStatus`](#getcachestatus) | private |  | system-info | Returns the SDP cache status. |
-| [`getCountryCodePath`](#getcountrycodepath) | private |  | system-info | Returns the SDP path used for country-code lookup. |
-| [`getDeviceAuthenticationStatus`](#getdeviceauthenticationstatus) | private |  | security | Read-only: reports whether the device is authenticated/provisioned with SDP (isDeviceAuthenticated, provisioningCompleted). Glasshouse saw a |
-| [`getDeviceUuid`](#getdeviceuuid) | private |  | system-info | Returns the device UUID SDP knows the TV by (billingId carries modelName). |
-| [`getEncryptedMac`](#getencryptedmac) | private |  | system-info | Returns the TV's MAC in SDP's encrypted form. |
-| [`getEulaDownloadStatus`](#geteuladownloadstatus) | private |  | system-info | Returns the status of an SDP EULA download. |
-| [`getHttpHeaderForServiceRequest`](#gethttpheaderforservicerequest) | private |  | apps | Returns the HTTP headers (including the SDP HOST) to use for a named SDP service. Glasshouse reads only the HOST from it (e.g. GB.nextlgsdp. |
-| [`getPublishFlag`](#getpublishflag) | private |  | system-info | Returns the SDP publish flag. |
-| [`getRdxServer`](#getrdxserver) | private |  | system-info | Returns the RDX report-upload server host. |
-| [`getRdxServerUrl`](#getrdxserverurl) | private |  | system-info | Returns the RDX (report/diagnostics upload) server URL, e.g. https://US.rdx2.nextlgsdp.com/rdx/9.0.0/. uploadd posts crash/telemetry reports |
-| [`getServer`](#getserver) | private |  | system-info | Returns the SDP server environment the TV is pointed at (e.g. 'Production'). |
-| [`getServerList`](#getserverlist) | private |  | system-info | Returns the configured SDP server list (from sdp/sdx/server_addr_version.conf). |
-| [`getServerType`](#getservertype) | private |  | system-info | Returns the SDP server type (e.g. 'sdp'). |
-| [`getServerUrl`](#getserverurl) | private |  | system-info | Returns the SDP base URL (e.g. http://US.tv.wiselg.com). |
-| [`notifySubdivisionChanged`](#notifysubdivisionchanged) | private |  | settings | Notifies SDP that the region subdivision changed. |
-| [`requestACRVersion`](#requestacrversion) | private |  | system-info | Requests the ACR configuration version from SDP. |
-| [`requestDeviceAuthentication`](#requestdeviceauthentication) | private |  | security | Starts SDP device authentication/provisioning. Documented as existing; this repo does not cover forging or bypassing it. |
-| [`requestEulaDownload`](#requesteuladownload) | private |  | update | Requests download of EULA/legal text from SDP. |
-| [`requestProvisioningDev`](#requestprovisioningdev) | private |  | security | Developer provisioning request against SDP. Name only. |
-| [`send`](#send) | private |  | apps | Generic SDP request. Glasshouse uses it with serviceName 'sdp_onnow', url 'content_discovery/item-detail' and bodyData {item_id, item_type}  |
-| [`setAppPublishFlag`](#setapppublishflag) | private |  | settings | Sets the per-app SDP publish flag. |
-| [`setCountrySettingByAuto`](#setcountrysettingbyauto) | private |  | settings | Sets the SDP service country automatically (from network/geo). Purpose documented; no bypass recipe. ⚠️ |
-| [`setCountrySettingByManual`](#setcountrysettingbymanual) | private |  | settings | Sets the SDP service country manually. Purpose documented; no bypass recipe. ⚠️ |
-| [`setPublishFlag`](#setpublishflag) | private |  | settings | Sets the SDP publish flag. |
-| [`setServer`](#setserver) | private |  | settings | Points the TV at a different SDP server environment. Documented as existing; changing it can break store/search/updates. ⚠️ |
-| [`setTokenRefreshInterval`](#settokenrefreshinterval) | private |  | security | Sets how often the SDP account token is refreshed. |
-| [`start`](#start) | private |  | system-info | Starts the sdx service worker. Name only. |
-| [`testEulaUpdate`](#testeulaupdate) | private |  | devmode | Test hook for EULA update. Name only. |
-| [`updateEulaInfo`](#updateeulainfo) | private |  | update | Updates stored EULA acceptance info. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`callbackNotice`](#callbacknotice) | private |  | apps | documented | SDP callback notification sink. Name only. |
+| [`cancelEulaDownload`](#canceleuladownload) | private |  | update | documented | Cancels an in-progress EULA download. |
+| [`debug`](#debug) | private |  | devmode | documented | sdx debug control. Name only. |
+| [`deleteDeviceAuthentication`](#deletedeviceauthentication) | private |  | security | documented | Clears the stored SDP device authentication. Documented as existing. ⚠️ |
+| [`doServiceCountryChange`](#doservicecountrychange) | private |  | settings | documented | Changes the service country SDP uses (which content catalogue / store region the TV talks to). Documented here as what the method is for; th ⚠️ |
+| [`getACRPath`](#getacrpath) | private |  | system-info | documented | Returns the SDP path used for ACR data. |
+| [`getAppPublishFlag`](#getapppublishflag) | private |  | system-info | documented | Returns the per-app SDP publish flag. |
+| [`getCacheStatus`](#getcachestatus) | private |  | system-info | documented | Returns the SDP cache status. |
+| [`getCountryCodePath`](#getcountrycodepath) | private |  | system-info | documented | Returns the SDP path used for country-code lookup. |
+| [`getDeviceAuthenticationStatus`](#getdeviceauthenticationstatus) | private |  | security | documented | Read-only: reports whether the device is authenticated/provisioned with SDP (isDeviceAuthenticated, provisioningCompleted). Glasshouse saw a |
+| [`getDeviceUuid`](#getdeviceuuid) | private |  | system-info | documented | Returns the device UUID SDP knows the TV by (billingId carries modelName). |
+| [`getEncryptedMac`](#getencryptedmac) | private |  | system-info | documented | Returns the TV's MAC in SDP's encrypted form. |
+| [`getEulaDownloadStatus`](#geteuladownloadstatus) | private |  | system-info | documented | Returns the status of an SDP EULA download. |
+| [`getHttpHeaderForServiceRequest`](#gethttpheaderforservicerequest) | private |  | apps | documented | Returns the HTTP headers (including the SDP HOST) to use for a named SDP service. Glasshouse reads only the HOST from it (e.g. GB.nextlgsdp. |
+| [`getPublishFlag`](#getpublishflag) | private |  | system-info | documented | Returns the SDP publish flag. |
+| [`getRdxServer`](#getrdxserver) | private |  | system-info | documented | Returns the RDX report-upload server host. |
+| [`getRdxServerUrl`](#getrdxserverurl) | private |  | system-info | documented | Returns the RDX (report/diagnostics upload) server URL, e.g. https://US.rdx2.nextlgsdp.com/rdx/9.0.0/. uploadd posts crash/telemetry reports |
+| [`getServer`](#getserver) | private |  | system-info | documented | Returns the SDP server environment the TV is pointed at (e.g. 'Production'). |
+| [`getServerList`](#getserverlist) | private |  | system-info | documented | Returns the configured SDP server list (from sdp/sdx/server_addr_version.conf). |
+| [`getServerType`](#getservertype) | private |  | system-info | documented | Returns the SDP server type (e.g. 'sdp'). |
+| [`getServerUrl`](#getserverurl) | private |  | system-info | documented | Returns the SDP base URL (e.g. http://US.tv.wiselg.com). |
+| [`notifySubdivisionChanged`](#notifysubdivisionchanged) | private |  | settings | documented | Notifies SDP that the region subdivision changed. |
+| [`requestACRVersion`](#requestacrversion) | private |  | system-info | documented | Requests the ACR configuration version from SDP. |
+| [`requestDeviceAuthentication`](#requestdeviceauthentication) | private |  | security | documented | Starts SDP device authentication/provisioning. Documented as existing; this repo does not cover forging or bypassing it. |
+| [`requestEulaDownload`](#requesteuladownload) | private |  | update | documented | Requests download of EULA/legal text from SDP. |
+| [`requestProvisioningDev`](#requestprovisioningdev) | private |  | security | documented | Developer provisioning request against SDP. Name only. |
+| [`send`](#send) | private |  | apps | documented | Generic SDP request. Glasshouse uses it with serviceName 'sdp_onnow', url 'content_discovery/item-detail' and bodyData {item_id, item_type}  |
+| [`setAppPublishFlag`](#setapppublishflag) | private |  | settings | documented | Sets the per-app SDP publish flag. |
+| [`setCountrySettingByAuto`](#setcountrysettingbyauto) | private |  | settings | documented | Sets the SDP service country automatically (from network/geo). Purpose documented; no bypass recipe. ⚠️ |
+| [`setCountrySettingByManual`](#setcountrysettingbymanual) | private |  | settings | documented | Sets the SDP service country manually. Purpose documented; no bypass recipe. ⚠️ |
+| [`setPublishFlag`](#setpublishflag) | private |  | settings | documented | Sets the SDP publish flag. |
+| [`setServer`](#setserver) | private |  | settings | documented | Points the TV at a different SDP server environment. Documented as existing; changing it can break store/search/updates. ⚠️ |
+| [`setTokenRefreshInterval`](#settokenrefreshinterval) | private |  | security | documented | Sets how often the SDP account token is refreshed. |
+| [`start`](#start) | private |  | system-info | documented | Starts the sdx service worker. Name only. |
+| [`testEulaUpdate`](#testeulaupdate) | private |  | devmode | documented | Test hook for EULA update. Name only. |
+| [`updateEulaInfo`](#updateeulainfo) | private |  | update | documented | Updates stored EULA acceptance info. |
 
 <a id="callbacknotice"></a>
 ## `callbackNotice`
@@ -54,7 +56,7 @@ SDP callback notification sink. Name only.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/callbackNotice '{}'
@@ -75,7 +77,7 @@ Cancels an in-progress EULA download.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/cancelEulaDownload '{}'
@@ -96,7 +98,7 @@ sdx debug control. Name only.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/debug '{}'
@@ -117,7 +119,7 @@ Clears the stored SDP device authentication. Documented as existing.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/deleteDeviceAuthentication '{}'
@@ -138,7 +140,7 @@ Changes the service country SDP uses (which content catalogue / store region the
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/doServiceCountryChange '{}'
@@ -159,7 +161,7 @@ Returns the SDP path used for ACR data.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getACRPath '{}'
@@ -180,7 +182,7 @@ Returns the per-app SDP publish flag.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getAppPublishFlag '{}'
@@ -201,7 +203,7 @@ Returns the SDP cache status.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getCacheStatus '{}'
@@ -222,7 +224,7 @@ Returns the SDP path used for country-code lookup.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getCountryCodePath '{}'
@@ -243,7 +245,7 @@ Read-only: reports whether the device is authenticated/provisioned with SDP (isD
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getDeviceAuthenticationStatus '{}'
@@ -264,7 +266,7 @@ Returns the device UUID SDP knows the TV by (billingId carries modelName).
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); webOS 3+  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getDeviceUuid '{}'
@@ -285,7 +287,7 @@ Returns the TV's MAC in SDP's encrypted form.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getEncryptedMac '{}'
@@ -306,7 +308,7 @@ Returns the status of an SDP EULA download.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getEulaDownloadStatus '{}'
@@ -327,7 +329,7 @@ Returns the HTTP headers (including the SDP HOST) to use for a named SDP service
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -352,7 +354,7 @@ Returns the SDP publish flag.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getPublishFlag '{}'
@@ -373,7 +375,7 @@ Returns the RDX report-upload server host.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getRdxServer '{}'
@@ -394,7 +396,7 @@ Returns the RDX (report/diagnostics upload) server URL, e.g. https://US.rdx2.nex
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getRdxServerUrl '{}'
@@ -415,7 +417,7 @@ Returns the SDP server environment the TV is pointed at (e.g. 'Production').
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getServer '{}'
@@ -436,7 +438,7 @@ Returns the configured SDP server list (from sdp/sdx/server_addr_version.conf).
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getServerList '{}'
@@ -457,7 +459,7 @@ Returns the SDP server type (e.g. 'sdp').
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getServerType '{}'
@@ -478,7 +480,7 @@ Returns the SDP base URL (e.g. http://US.tv.wiselg.com).
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/getServerUrl '{}'
@@ -499,7 +501,7 @@ Notifies SDP that the region subdivision changed.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/notifySubdivisionChanged '{}'
@@ -520,7 +522,7 @@ Requests the ACR configuration version from SDP.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/requestACRVersion '{}'
@@ -541,7 +543,7 @@ Starts SDP device authentication/provisioning. Documented as existing; this repo
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/requestDeviceAuthentication '{}'
@@ -562,7 +564,7 @@ Requests download of EULA/legal text from SDP.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/requestEulaDownload '{}'
@@ -583,7 +585,7 @@ Developer provisioning request against SDP. Name only.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/requestProvisioningDev '{}'
@@ -604,7 +606,7 @@ Generic SDP request. Glasshouse uses it with serviceName 'sdp_onnow', url 'conte
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -631,7 +633,7 @@ Sets the per-app SDP publish flag.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/setAppPublishFlag '{}'
@@ -652,7 +654,7 @@ Sets the SDP service country automatically (from network/geo). Purpose documente
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/setCountrySettingByAuto '{}'
@@ -673,7 +675,7 @@ Sets the SDP service country manually. Purpose documented; no bypass recipe.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/setCountrySettingByManual '{}'
@@ -694,7 +696,7 @@ Sets the SDP publish flag.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -719,7 +721,7 @@ Points the TV at a different SDP server environment. Documented as existing; cha
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/setServer '{}'
@@ -740,7 +742,7 @@ Sets how often the SDP account token is refreshed.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/setTokenRefreshInterval '{}'
@@ -761,7 +763,7 @@ Starts the sdx service worker. Name only.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/start '{}'
@@ -782,7 +784,7 @@ Test hook for EULA update. Name only.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/testEulaUpdate '{}'
@@ -803,7 +805,7 @@ Updates stored EULA acceptance info.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdx/updateEulaInfo '{}'

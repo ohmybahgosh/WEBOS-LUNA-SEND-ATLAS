@@ -1,27 +1,31 @@
 # `com.webos.service.videothumbnailer`
 
+Video thumbnailer that generates video thumbnails (including from elementary streams) and reports video info.
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getThumbnail`](#getthumbnail) | private |  | misc | Method on com.webos.service.videothumbnailer (from on-device permission registry; parameters undocumented). |
-| [`getThumbnailEs`](#getthumbnailes) | private |  | misc | Method on com.webos.service.videothumbnailer (from on-device permission registry; parameters undocumented). |
-| [`getVideoInfo`](#getvideoinfo) | private |  | misc | Method on com.webos.service.videothumbnailer (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getThumbnail`](#getthumbnail) | private |  | misc | inferred | Returns the thumbnail. |
+| [`getThumbnailEs`](#getthumbnailes) | private |  | misc | inferred | Returns the thumbnail es. |
+| [`getVideoInfo`](#getvideoinfo) | private |  | misc | inferred | Returns the video info. |
 
 <a id="getthumbnail"></a>
 ## `getThumbnail`
 
 `luna://com.webos.service.videothumbnailer/getThumbnail`
 
-Method on com.webos.service.videothumbnailer (from on-device permission registry; parameters undocumented).
+Returns the thumbnail.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videothumbnailer/getThumbnail '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videothumbnailer/getThumbnailEs`
 
-Method on com.webos.service.videothumbnailer (from on-device permission registry; parameters undocumented).
+Returns the thumbnail es.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videothumbnailer/getThumbnailEs '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.videothumbnailer/getVideoInfo`
 
-Method on com.webos.service.videothumbnailer (from on-device permission registry; parameters undocumented).
+Returns the video info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videothumbnailer/getVideoInfo '{}'

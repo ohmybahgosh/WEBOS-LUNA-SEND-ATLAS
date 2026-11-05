@@ -1,12 +1,14 @@
 # `com.webos.service.appstatus`
 
+Reports the status of applications via a single getAppStatus method. Narrow app-state query role. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getAppStatus`](#getappstatus) | ssap | yes | apps | Get (subscribe) app status |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getAppStatus`](#getappstatus) | ssap | yes | apps | documented | Get (subscribe) app status |
 
 <a id="getappstatus"></a>
 ## `getAppStatus`
@@ -19,7 +21,7 @@ Get (subscribe) app status
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

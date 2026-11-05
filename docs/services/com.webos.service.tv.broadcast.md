@@ -1,35 +1,37 @@
 # `com.webos.service.tv.broadcast`
 
+TV broadcast/tuner control: changes channel, play speed and volatile channel, reports broadcast and channel state and the current channel, and manages PIP and tuner pipelines.
+
 24 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`changeChannel`](#changechannel) | private |  | tv-broadcast | Broadcast pipeline control method changeChannel (listed in community research; semantics not documented) |
-| [`changeChannelDown`](#changechanneldown) | private |  | tv-broadcast | Broadcast pipeline control method changeChannelDown (listed in community research; semantics not documented) |
-| [`changeChannelPrevious`](#changechannelprevious) | private |  | tv-broadcast | Broadcast pipeline control method changeChannelPrevious (listed in community research; semantics not documented) |
-| [`changeChannelUp`](#changechannelup) | private |  | tv-broadcast | Broadcast pipeline control method changeChannelUp (listed in community research; semantics not documented) |
-| [`changePlaySpeed`](#changeplayspeed) | private |  | tv-broadcast | Broadcast pipeline control method changePlaySpeed (listed in community research; semantics not documented) |
-| [`changeVolatileChannel`](#changevolatilechannel) | private |  | tv-broadcast | Broadcast pipeline control method changeVolatileChannel (listed in community research; semantics not documented) |
-| [`checkPipHotkey`](#checkpiphotkey) | private |  | tv-broadcast | Broadcast pipeline control method checkPipHotkey (listed in community research; semantics not documented) |
-| [`close`](#close) | private |  | tv-broadcast | Broadcast pipeline control method close (listed in community research; semantics not documented) |
-| [`getBroadcastState`](#getbroadcaststate) | private |  | tv-broadcast | Broadcast pipeline control method getBroadcastState (listed in community research; semantics not documented) |
-| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | tv-broadcast | Broadcast pipeline control method getChannelChangeResult (listed in community research; semantics not documented) |
-| [`getChannelState`](#getchannelstate) | private |  | tv-broadcast | Broadcast pipeline control method getChannelState (listed in community research; semantics not documented) |
-| [`getCurrentChannel`](#getcurrentchannel) | private |  | tv-broadcast | Broadcast pipeline control method getCurrentChannel (listed in community research; semantics not documented) |
-| [`getPipeline4BootUp`](#getpipeline4bootup) | private |  | tv-broadcast | Broadcast pipeline control method getPipeline4BootUp (listed in community research; semantics not documented) |
-| [`getPipelineTemporary`](#getpipelinetemporary) | private |  | tv-broadcast | Broadcast pipeline control method getPipelineTemporary (listed in community research; semantics not documented) |
-| [`getVodPauseState`](#getvodpausestate) | private |  | tv-broadcast | Broadcast pipeline control method getVodPauseState (listed in community research; semantics not documented) |
-| [`halt`](#halt) | private |  | tv-broadcast | Broadcast pipeline control method halt (listed in community research; semantics not documented) |
-| [`open`](#open) | private |  | tv-broadcast | Broadcast pipeline control method open (listed in community research; semantics not documented) |
-| [`pause`](#pause) | private |  | tv-broadcast | Broadcast pipeline control method pause (listed in community research; semantics not documented) |
-| [`pause1`](#pause1) | private |  | tv-broadcast | Broadcast pipeline control method pause1 (listed in community research; semantics not documented) |
-| [`pin`](#pin) | private |  | tv-broadcast | Broadcast pipeline control method pin (listed in community research; semantics not documented) |
-| [`resume`](#resume) | private |  | tv-broadcast | Broadcast pipeline control method resume (listed in community research; semantics not documented) |
-| [`seek`](#seek) | private |  | tv-broadcast | Broadcast pipeline control method seek (listed in community research; semantics not documented) |
-| [`startMVPD`](#startmvpd) | private |  | tv-broadcast | Broadcast pipeline control method startMVPD (listed in community research; semantics not documented) |
-| [`stop`](#stop) | private |  | tv-broadcast | Broadcast pipeline control method stop (listed in community research; semantics not documented) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`changeChannel`](#changechannel) | private |  | tv-broadcast | documented | Broadcast pipeline control method changeChannel (listed in community research; semantics not documented) |
+| [`changeChannelDown`](#changechanneldown) | private |  | tv-broadcast | documented | Broadcast pipeline control method changeChannelDown (listed in community research; semantics not documented) |
+| [`changeChannelPrevious`](#changechannelprevious) | private |  | tv-broadcast | documented | Broadcast pipeline control method changeChannelPrevious (listed in community research; semantics not documented) |
+| [`changeChannelUp`](#changechannelup) | private |  | tv-broadcast | documented | Broadcast pipeline control method changeChannelUp (listed in community research; semantics not documented) |
+| [`changePlaySpeed`](#changeplayspeed) | private |  | tv-broadcast | documented | Broadcast pipeline control method changePlaySpeed (listed in community research; semantics not documented) |
+| [`changeVolatileChannel`](#changevolatilechannel) | private |  | tv-broadcast | documented | Broadcast pipeline control method changeVolatileChannel (listed in community research; semantics not documented) |
+| [`checkPipHotkey`](#checkpiphotkey) | private |  | tv-broadcast | documented | Broadcast pipeline control method checkPipHotkey (listed in community research; semantics not documented) |
+| [`close`](#close) | private |  | tv-broadcast | documented | Broadcast pipeline control method close (listed in community research; semantics not documented) |
+| [`getBroadcastState`](#getbroadcaststate) | private |  | tv-broadcast | documented | Broadcast pipeline control method getBroadcastState (listed in community research; semantics not documented) |
+| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | tv-broadcast | documented | Broadcast pipeline control method getChannelChangeResult (listed in community research; semantics not documented) |
+| [`getChannelState`](#getchannelstate) | private |  | tv-broadcast | documented | Broadcast pipeline control method getChannelState (listed in community research; semantics not documented) |
+| [`getCurrentChannel`](#getcurrentchannel) | private |  | tv-broadcast | documented | Broadcast pipeline control method getCurrentChannel (listed in community research; semantics not documented) |
+| [`getPipeline4BootUp`](#getpipeline4bootup) | private |  | tv-broadcast | documented | Broadcast pipeline control method getPipeline4BootUp (listed in community research; semantics not documented) |
+| [`getPipelineTemporary`](#getpipelinetemporary) | private |  | tv-broadcast | documented | Broadcast pipeline control method getPipelineTemporary (listed in community research; semantics not documented) |
+| [`getVodPauseState`](#getvodpausestate) | private |  | tv-broadcast | documented | Broadcast pipeline control method getVodPauseState (listed in community research; semantics not documented) |
+| [`halt`](#halt) | private |  | tv-broadcast | documented | Broadcast pipeline control method halt (listed in community research; semantics not documented) |
+| [`open`](#open) | private |  | tv-broadcast | documented | Broadcast pipeline control method open (listed in community research; semantics not documented) |
+| [`pause`](#pause) | private |  | tv-broadcast | documented | Broadcast pipeline control method pause (listed in community research; semantics not documented) |
+| [`pause1`](#pause1) | private |  | tv-broadcast | documented | Broadcast pipeline control method pause1 (listed in community research; semantics not documented) |
+| [`pin`](#pin) | private |  | tv-broadcast | documented | Broadcast pipeline control method pin (listed in community research; semantics not documented) |
+| [`resume`](#resume) | private |  | tv-broadcast | documented | Broadcast pipeline control method resume (listed in community research; semantics not documented) |
+| [`seek`](#seek) | private |  | tv-broadcast | documented | Broadcast pipeline control method seek (listed in community research; semantics not documented) |
+| [`startMVPD`](#startmvpd) | private |  | tv-broadcast | documented | Broadcast pipeline control method startMVPD (listed in community research; semantics not documented) |
+| [`stop`](#stop) | private |  | tv-broadcast | documented | Broadcast pipeline control method stop (listed in community research; semantics not documented) |
 
 <a id="changechannel"></a>
 ## `changeChannel`
@@ -42,7 +44,7 @@ Broadcast pipeline control method changeChannel (listed in community research; s
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/changeChannel '{}'
@@ -63,7 +65,7 @@ Broadcast pipeline control method changeChannelDown (listed in community researc
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -88,7 +90,7 @@ Broadcast pipeline control method changeChannelPrevious (listed in community res
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/changeChannelPrevious '{}'
@@ -109,7 +111,7 @@ Broadcast pipeline control method changeChannelUp (listed in community research;
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -134,7 +136,7 @@ Broadcast pipeline control method changePlaySpeed (listed in community research;
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/changePlaySpeed '{}'
@@ -155,7 +157,7 @@ Broadcast pipeline control method changeVolatileChannel (listed in community res
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/changeVolatileChannel '{}'
@@ -176,7 +178,7 @@ Broadcast pipeline control method checkPipHotkey (listed in community research; 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/checkPipHotkey '{}'
@@ -197,7 +199,7 @@ Broadcast pipeline control method close (listed in community research; semantics
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/close '{}'
@@ -218,7 +220,7 @@ Broadcast pipeline control method getBroadcastState (listed in community researc
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/getBroadcastState '{}'
@@ -239,7 +241,7 @@ Broadcast pipeline control method getChannelChangeResult (listed in community re
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/getChannelChangeResult '{}'
@@ -260,7 +262,7 @@ Broadcast pipeline control method getChannelState (listed in community research;
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/getChannelState '{}'
@@ -281,7 +283,7 @@ Broadcast pipeline control method getCurrentChannel (listed in community researc
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/getCurrentChannel '{}'
@@ -302,7 +304,7 @@ Broadcast pipeline control method getPipeline4BootUp (listed in community resear
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/getPipeline4BootUp '{}'
@@ -323,7 +325,7 @@ Broadcast pipeline control method getPipelineTemporary (listed in community rese
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/getPipelineTemporary '{}'
@@ -344,7 +346,7 @@ Broadcast pipeline control method getVodPauseState (listed in community research
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/getVodPauseState '{}'
@@ -365,7 +367,7 @@ Broadcast pipeline control method halt (listed in community research; semantics 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/halt '{}'
@@ -386,7 +388,7 @@ Broadcast pipeline control method open (listed in community research; semantics 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/open '{}'
@@ -407,7 +409,7 @@ Broadcast pipeline control method pause (listed in community research; semantics
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/pause '{}'
@@ -428,7 +430,7 @@ Broadcast pipeline control method pause1 (listed in community research; semantic
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/pause1 '{}'
@@ -449,7 +451,7 @@ Broadcast pipeline control method pin (listed in community research; semantics n
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/pin '{}'
@@ -470,7 +472,7 @@ Broadcast pipeline control method resume (listed in community research; semantic
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/resume '{}'
@@ -491,7 +493,7 @@ Broadcast pipeline control method seek (listed in community research; semantics 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/seek '{}'
@@ -512,7 +514,7 @@ Broadcast pipeline control method startMVPD (listed in community research; seman
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/startMVPD '{}'
@@ -533,7 +535,7 @@ Broadcast pipeline control method stop (listed in community research; semantics 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (version not stated)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/stop '{}'

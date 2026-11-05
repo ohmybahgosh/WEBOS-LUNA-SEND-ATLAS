@@ -1,260 +1,264 @@
 # `com.webos.service.audio`
 
+webOS audio policy service: implements audio routing and volume control across scenarios (alarm, alert, media), manages mute, capture, and DTMF tones. Primary audio control bus on modern firmware.
+
 236 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`alarm/getAlarmOn`](#alarm_getalarmon) | private |  | audio | Method registered by com.webos.service.audio (category '/alarm') |
-| [`alarm/getVolume`](#alarm_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/alarm') |
-| [`alarm/offsetVolume`](#alarm_offsetvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/alarm') |
-| [`alarm/setAlarmOn`](#alarm_setalarmon) | private |  | audio | Method registered by com.webos.service.audio (category '/alarm') |
-| [`alarm/setMuted`](#alarm_setmuted) | private |  | audio | Method registered by com.webos.service.audio (category '/alarm') |
-| [`alarm/setVolume`](#alarm_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/alarm') |
-| [`alarm/status`](#alarm_status) | private |  | audio | Method registered by com.webos.service.audio (category '/alarm') |
-| [`alert/getVolume`](#alert_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/alert') |
-| [`alert/offsetVolume`](#alert_offsetvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/alert') |
-| [`alert/setMuted`](#alert_setmuted) | private |  | audio | Method registered by com.webos.service.audio (category '/alert') |
-| [`alert/setVolume`](#alert_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/alert') |
-| [`alert/status`](#alert_status) | private |  | audio | Method registered by com.webos.service.audio (category '/alert') |
-| [`audio`](#audio) | unknown |  | audio | Object returned by the UMI/getStatus. |
-| [`broadcastEvent`](#broadcastevent) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`capture/getStatus`](#capture_getstatus) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`capture/resetParams`](#capture_resetparams) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). ⚠️ |
-| [`capture/setParams`](#capture_setparams) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`capture/start`](#capture_start) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`capture/stop`](#capture_stop) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`checkAudioEffectStatus`](#checkaudioeffectstatus) | public |  | audio | Check the status of an audio effect. |
-| [`connectSoundInput`](#connectsoundinput) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`controlPlayback`](#controlplayback) | public |  | audio | Controls playback operations like stop, pause/resume for audio samples that are played using the playSound method. |
-| [`deviceList`](#devicelist) | unknown |  | audio | Provides information about all supported input and output devices and their type and connection status. |
-| [`disableScenario`](#disablescenario) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`dtmf/busyTone`](#dtmf_busytone) | private |  | audio | Method registered by com.webos.service.audio (category '/dtmf') |
-| [`dtmf/emergencyCall`](#dtmf_emergencycall) | private |  | audio | Method registered by com.webos.service.audio (category '/dtmf') |
-| [`dtmf/playAlert`](#dtmf_playalert) | private |  | audio | Method registered by com.webos.service.audio (category '/dtmf') |
-| [`dtmf/playDTMF`](#dtmf_playdtmf) | private |  | audio | Method registered by com.webos.service.audio (category '/dtmf') |
-| [`dtmf/stopDTMF`](#dtmf_stopdtmf) | private |  | audio | Method registered by com.webos.service.audio (category '/dtmf') |
-| [`effectStatus`](#effectstatus) | unknown |  | audio | Provides the name of the audio effects and their status. |
-| [`enableScenario`](#enablescenario) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`getAudioEffectList`](#getaudioeffectlist) | public |  | audio | Lists all the supported audio effects. |
-| [`getAudioEffectsStatus`](#getaudioeffectsstatus) | public | yes | audio | Gets the status of all the audio effects. |
-| [`getCurrentScenario`](#getcurrentscenario) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`getInputVolume`](#getinputvolume) | public | yes | audio | Gets the input volume for audio streams. |
-| [`getPlaybackStatus`](#getplaybackstatus) | public | yes | audio | Checks the status of playback which is played using playSound method. |
-| [`getSoundInput`](#getsoundinput) | public | yes | audio | Gets the current active sound input device. |
-| [`getSoundInputList`](#getsoundinputlist) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`getSoundOut`](#getsoundout) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`getSoundOutput`](#getsoundoutput) | public | yes | audio | Gets the current active sound output device. |
-| [`getSourceInputVolume`](#getsourceinputvolume) | public | yes | audio | Gets input volume of the source. |
-| [`getSourceStatus`](#getsourcestatus) | public | yes | audio | Gets the status of the source. |
-| [`getStreamStatus`](#getstreamstatus) | public | yes | audio | Gets the status and information of the active stream. |
-| [`getVolume`](#getvolume) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`listScenarios`](#listscenarios) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`listSupportedDevices`](#listsupporteddevices) | public | yes | audio | Gets the list of supported audio input and output devices and their connection status. |
-| [`master/getMicVolume`](#master_getmicvolume) | public | yes | audio | Gets volume of currently active microphone input. |
-| [`master/getVolume`](#master_getvolume) | public | yes | audio | Gives the current master volume of the audio output device. |
-| [`master/muteMic`](#master_mutemic) | public |  | audio | Mutes/unmutes the currently active microphone input device. |
-| [`master/muteVolume`](#master_mutevolume) | public |  | audio | Mutes or unmutes the master volume of the audio output device. |
-| [`master/setMicVolume`](#master_setmicvolume) | public |  | audio | Sets the volume of the currently active microphone input device. |
-| [`master/setVolume`](#master_setvolume) | public |  | audio | Sets the master volume of the audio output device. |
-| [`master/volumeDown`](#master_volumedown) | public |  | audio | Reduces the master volume of the device. |
-| [`master/volumeUp`](#master_volumeup) | public |  | audio | Increases the master volume of the device. |
-| [`media/broadcastEvent`](#media_broadcastevent) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/disableScenario`](#media_disablescenario) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/enableScenario`](#media_enablescenario) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/getCurrentScenario`](#media_getcurrentscenario) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/getLatency`](#media_getlatency) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/getMicGain`](#media_getmicgain) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/getVolume`](#media_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/listScenarios`](#media_listscenarios) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/lockVolumeKeys`](#media_lockvolumekeys) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/offsetMicGain`](#media_offsetmicgain) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/offsetVolume`](#media_offsetvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/setCurrentScenario`](#media_setcurrentscenario) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/setLatency`](#media_setlatency) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/setMicGain`](#media_setmicgain) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`media/setVolume`](#media_setvolume) | public |  | audio | Sets the volume level of the current or the specified scenario. |
-| [`media/status`](#media_status) | private |  | audio | Method registered by com.webos.service.audio (category '/media') |
-| [`muteSink`](#mutesink) | public |  | audio | Mutes the sink volume. |
-| [`muteSource`](#mutesource) | public |  | audio | Mutes the source volume. |
-| [`nav/status`](#nav_status) | private |  | audio | Method registered by com.webos.service.audio (category '/nav') |
-| [`notification/getVolume`](#notification_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/notification') |
-| [`notification/offsetVolume`](#notification_offsetvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/notification') |
-| [`notification/setVolume`](#notification_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/notification') |
-| [`notification/status`](#notification_status) | private |  | audio | Method registered by com.webos.service.audio (category '/notification') |
-| [`phone/bluetoothAudioPropertiesSet`](#phone_bluetoothaudiopropertiesset) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/broadcastEvent`](#phone_broadcastevent) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/CallStatusUpdate`](#phone_callstatusupdate) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/disableScenario`](#phone_disablescenario) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/enableScenario`](#phone_enablescenario) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/getCurrentScenario`](#phone_getcurrentscenario) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/getVolume`](#phone_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/hacGet`](#phone_hacget) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/hacSet`](#phone_hacset) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/listScenarios`](#phone_listscenarios) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/lockVolumeKeys`](#phone_lockvolumekeys) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/museSet`](#phone_museset) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/offsetVolume`](#phone_offsetvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/setCurrentScenario`](#phone_setcurrentscenario) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/setMuted`](#phone_setmuted) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/setVolume`](#phone_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`phone/status`](#phone_status) | private |  | audio | Method registered by com.webos.service.audio (category '/phone') |
-| [`playSound`](#playsound) | public |  | audio | Plays PCM audio files through PulseAudio sound server. |
-| [`quality/setQualityAttribute`](#quality_setqualityattribute) | public |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
-| [`quality/setSoundOutputMode`](#quality_setsoundoutputmode) | public |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
-| [`registerTrack`](#registertrack) | public |  | audio | Registers a playback by an application/service and returns a track ID. The track ID must be used to control the volume of that particular pl |
-| [`ringtone/getVolume`](#ringtone_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/ringtone') |
-| [`ringtone/lockVolumeKeys`](#ringtone_lockvolumekeys) | private |  | audio | Method registered by com.webos.service.audio (category '/ringtone') |
-| [`ringtone/offsetVolume`](#ringtone_offsetvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/ringtone') |
-| [`ringtone/setMuted`](#ringtone_setmuted) | private |  | audio | Method registered by com.webos.service.audio (category '/ringtone') |
-| [`ringtone/setVolume`](#ringtone_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/ringtone') |
-| [`ringtone/status`](#ringtone_status) | private |  | audio | Method registered by com.webos.service.audio (category '/ringtone') |
-| [`setAudioEffect`](#setaudioeffect) | public |  | audio | Sets the status of an audio effect. |
-| [`setAudioEqualizerBandLevel`](#setaudioequalizerbandlevel) | public |  | audio | Sets the equalizer band level. |
-| [`setAudioEqualizerPreset`](#setaudioequalizerpreset) | public |  | audio | Sets the equalizer preset value. |
-| [`setCurrentScenario`](#setcurrentscenario) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`setInputVolume`](#setinputvolume) | public |  | audio | Sets the input volume for audio streams. |
-| [`setMuted`](#setmuted) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`setSoundInput`](#setsoundinput) | public |  | audio | Sets the sound input device for recording. |
-| [`setSoundOutput`](#setsoundoutput) | public |  | audio | Sets the sound output device. |
-| [`setSourceInputVolume`](#setsourceinputvolume) | public |  | audio | Sets input volume of the source. |
-| [`setTrackVolume`](#settrackvolume) | public |  | audio | Sets the volume for a specific playback that is identified by the track ID (obtained by using registerTrack() ). The effective playback volu |
-| [`setVolume`](#setvolume) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`setVolume2`](#setvolume2) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`soundSettings/setSoundOut`](#soundsettings_setsoundout) | public |  | audio | Sets the audio output device. |
-| [`sourceObject`](#sourceobject) | unknown |  | audio | Indicates the list of active source connection |
-| [`state/get`](#state_get) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/getPreference`](#state_getpreference) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/getSoundProfile`](#state_getsoundprofile) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/getTouchSound`](#state_gettouchsound) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/getVolumeBalance`](#state_getvolumebalance) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/loadRTPModule`](#state_loadrtpmodule) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/loopback`](#state_loopback) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/pulse/setFilter`](#state_pulse_setfilter) | private |  | audio | Method registered by com.webos.service.audio (category '/state/pulse') |
-| [`state/pulse/sinkStatus`](#state_pulse_sinkstatus) | private |  | audio | Method registered by com.webos.service.audio (category '/state/pulse') |
-| [`state/pulse/suspend`](#state_pulse_suspend) | private |  | audio | Method registered by com.webos.service.audio (category '/state/pulse') |
-| [`state/set`](#state_set) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/setNREC`](#state_setnrec) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/setPreference`](#state_setpreference) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/setRingerSwitch`](#state_setringerswitch) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/setSoundProfile`](#state_setsoundprofile) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/setTouchSound`](#state_settouchsound) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/setVolumeBalance`](#state_setvolumebalance) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/unloadRTPModule`](#state_unloadrtpmodule) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`state/volumeRamp`](#state_volumeramp) | private |  | audio | Method registered by com.webos.service.audio (category '/state') |
-| [`status`](#status) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`streamObject`](#streamobject) | unknown |  | audio | Contains the list of active connections. |
-| [`system/getVolume`](#system_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/system') |
-| [`system/offsetVolume`](#system_offsetvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/system') |
-| [`system/setMuted`](#system_setmuted) | private |  | audio | Method registered by com.webos.service.audio (category '/system') |
-| [`system/setVolume`](#system_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/system') |
-| [`system/status`](#system_status) | private |  | audio | Method registered by com.webos.service.audio (category '/system') |
-| [`systemsounds/playFeedback`](#systemsounds_playfeedback) | public |  | audio | Plays the various system alert sounds based on the name passed to it. |
-| [`telephony/answered`](#telephony_answered) | private |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
-| [`telephony/callAudio`](#telephony_callaudio) | private |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
-| [`telephony/startCall`](#telephony_startcall) | private |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
-| [`timer/getTimerOn`](#timer_gettimeron) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
-| [`timer/getVolume`](#timer_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
-| [`timer/offsetVolume`](#timer_offsetvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
-| [`timer/setMuted`](#timer_setmuted) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
-| [`timer/setTimerOn`](#timer_settimeron) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
-| [`timer/setVolume`](#timer_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
-| [`timer/status`](#timer_status) | private |  | audio | Method registered by com.webos.service.audio (category '/timer') |
-| [`timer/tonegenerator`](#timer_tonegenerator) | public |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
-| [`tonegenerator/playCallertone`](#tonegenerator_playcallertone) | private |  | audio | Method registered by com.webos.service.audio (category '/tonegenerator') |
-| [`tv/activateWisaSpeaker`](#tv_activatewisaspeaker) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/ctrMicSwitch`](#tv_ctrmicswitch) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/getAmplifierState`](#tv_getamplifierstate) | public |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/getArcAvSyncTime`](#tv_getarcavsynctime) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/getAudioEffectData`](#tv_getaudioeffectdata) | private |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
-| [`tv/getAudioInputProperty`](#tv_getaudioinputproperty) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/getExtDeviceFwVersion`](#tv_getextdevicefwversion) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/getGainAsInput`](#tv_getgainasinput) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/getHeadphoneStatus`](#tv_getheadphonestatus) | public |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/getSoundCardsState`](#tv_getsoundcardsstate) | private |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/mixDigitalSoundOutput`](#tv_mixdigitalsoundoutput) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/playOnPowerState`](#tv_playonpowerstate) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/readI2cDataFromAmplifier`](#tv_readi2cdatafromamplifier) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/resetSoundSettings`](#tv_resetsoundsettings) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). ⚠️ |
-| [`tv/setAmplifierState`](#tv_setamplifierstate) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setARCDeviceInfo`](#tv_setarcdeviceinfo) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setAudioEffectState`](#tv_setaudioeffectstate) | private |  | audio | Method on com.webos.service.audio (from on-device permission registry; parameters undocumented). |
-| [`tv/setAudioVideoSync`](#tv_setaudiovideosync) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setDolbyOTTMode`](#tv_setdolbyottmode) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setDolbyVisionPopup`](#tv_setdolbyvisionpopup) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setEqualizerStatus`](#tv_setequalizerstatus) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setInputVolume`](#tv_setinputvolume) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setMSSProperties`](#tv_setmssproperties) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setNpuProperties`](#tv_setnpuproperties) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setOffsetDelay`](#tv_setoffsetdelay) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setOutputMute`](#tv_setoutputmute) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setPopupDisplayStatus`](#tv_setpopupdisplaystatus) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setPSWProperties`](#tv_setpswproperties) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setQualityAttribute`](#tv_setqualityattribute) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setSCMS`](#tv_setscms) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setSoundEngineStatus`](#tv_setsoundenginestatus) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setSoundOutputMode`](#tv_setsoundoutputmode) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/setVideoLatencyTime`](#tv_setvideolatencytime) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/switchMicrophone`](#tv_switchmicrophone) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/updateExtFw`](#tv_updateextfw) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`tv/writeI2cDataToAmplifier`](#tv_writei2cdatatoamplifier) | private |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`udev/event`](#udev_event) | public |  | audio | Gives the audiod information regarding the USB Mic/Headset Connected/Disconnected events based on the udev rules. It also provides the sound |
-| [`UMI/activateConnection`](#umi_activateconnection) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`UMI/connect`](#umi_connect) | public |  | audio | Establishes connection for the audio resource. |
-| [`UMI/disconnect`](#umi_disconnect) | public |  | audio | Disconnects the connection. |
-| [`UMI/getInputVolume`](#umi_getinputvolume) | public |  | audio | Getter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`UMI/getStatus`](#umi_getstatus) | public |  | audio | Shows the connection status of audio resources. |
-| [`UMI/mute`](#umi_mute) | public |  | audio | Mutes or unmutes the input volume of the requested connection. Note: This method is added for future-use. It does not have any impact on the |
-| [`UMI/register`](#umi_register) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`UMI/setInputDownMix`](#umi_setinputdownmix) | private |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`UMI/setInputVolume`](#umi_setinputvolume) | public |  | audio | Setter on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`UMI/unregister`](#umi_unregister) | public |  | audio | Method on com.webos.service.audio (introspected on-device; parameters undocumented). |
-| [`unregisterTrack`](#unregistertrack) | public |  | audio | Unregisters a playback by an application/service. |
-| [`vibrate/get`](#vibrate_get) | private |  | audio | Method registered by com.webos.service.audio (category '/vibrate') |
-| [`vibrate/set`](#vibrate_set) | private |  | audio | Method registered by com.webos.service.audio (category '/vibrate') |
-| [`voiceCommand/broadcastEvent`](#voicecommand_broadcastevent) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/control`](#voicecommand_control) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/disableScenario`](#voicecommand_disablescenario) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/enableScenario`](#voicecommand_enablescenario) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/getCurrentScenario`](#voicecommand_getcurrentscenario) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/getMicGain`](#voicecommand_getmicgain) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/getVolume`](#voicecommand_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/listScenarios`](#voicecommand_listscenarios) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/offsetMicGain`](#voicecommand_offsetmicgain) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/offsetVolume`](#voicecommand_offsetvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/setCurrentScenario`](#voicecommand_setcurrentscenario) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/setMicGain`](#voicecommand_setmicgain) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/setVolume`](#voicecommand_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`voiceCommand/status`](#voicecommand_status) | private |  | audio | Method registered by com.webos.service.audio (category '/voiceCommand') |
-| [`volumeDown`](#volumedown) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`volumeKeeping`](#volumekeeping) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`VolumeStatus`](#volumestatus) | unknown |  | audio | Provides the volume details of the target sound output device. |
-| [`volumeUp`](#volumeup) | private |  | audio | Method registered by com.webos.service.audio (root category) |
-| [`vvm/broadcastEvent`](#vvm_broadcastevent) | private |  | audio | Method registered by com.webos.service.audio (category '/vvm') |
-| [`vvm/control`](#vvm_control) | private |  | audio | Method registered by com.webos.service.audio (category '/vvm') |
-| [`vvm/disableScenario`](#vvm_disablescenario) | private |  | audio | Method registered by com.webos.service.audio (category '/vvm') |
-| [`vvm/enableScenario`](#vvm_enablescenario) | private |  | audio | Method registered by com.webos.service.audio (category '/vvm') |
-| [`vvm/getCurrentScenario`](#vvm_getcurrentscenario) | private |  | audio | Method registered by com.webos.service.audio (category '/vvm') |
-| [`vvm/getVolume`](#vvm_getvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/vvm') |
-| [`vvm/listScenarios`](#vvm_listscenarios) | private |  | audio | Method registered by com.webos.service.audio (category '/vvm') |
-| [`vvm/offsetVolume`](#vvm_offsetvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/vvm') |
-| [`vvm/setCurrentScenario`](#vvm_setcurrentscenario) | private |  | audio | Method registered by com.webos.service.audio (category '/vvm') |
-| [`vvm/setVolume`](#vvm_setvolume) | private |  | audio | Method registered by com.webos.service.audio (category '/vvm') |
-| [`vvm/status`](#vvm_status) | private |  | audio | Method registered by com.webos.service.audio (category '/vvm') |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`alarm/getAlarmOn`](#alarm_getalarmon) | private |  | audio | inferred | Returns the alarm on (alarm) |
+| [`alarm/getVolume`](#alarm_getvolume) | private |  | audio | inferred | Returns the volume (alarm) |
+| [`alarm/offsetVolume`](#alarm_offsetvolume) | private |  | audio | inferred | Handles the offset volume (alarm) |
+| [`alarm/setAlarmOn`](#alarm_setalarmon) | private |  | audio | inferred | Sets the alarm on (alarm) |
+| [`alarm/setMuted`](#alarm_setmuted) | private |  | audio | inferred | Sets the muted (alarm) |
+| [`alarm/setVolume`](#alarm_setvolume) | private |  | audio | inferred | Sets the volume (alarm) |
+| [`alarm/status`](#alarm_status) | private |  | audio | inferred | Handles the status (alarm) |
+| [`alert/getVolume`](#alert_getvolume) | private |  | audio | inferred | Returns the volume (alert) |
+| [`alert/offsetVolume`](#alert_offsetvolume) | private |  | audio | inferred | Handles the offset volume (alert) |
+| [`alert/setMuted`](#alert_setmuted) | private |  | audio | inferred | Sets the muted (alert) |
+| [`alert/setVolume`](#alert_setvolume) | private |  | audio | inferred | Sets the volume (alert) |
+| [`alert/status`](#alert_status) | private |  | audio | inferred | Handles the status (alert) |
+| [`audio`](#audio) | unknown |  | audio | documented | Object returned by the UMI/getStatus. |
+| [`broadcastEvent`](#broadcastevent) | private |  | audio | inferred | Handles the broadcast event. |
+| [`capture/getStatus`](#capture_getstatus) | private |  | audio | inferred | Returns the status (capture) |
+| [`capture/resetParams`](#capture_resetparams) | private |  | audio | inferred | Resets the params (capture) ⚠️ |
+| [`capture/setParams`](#capture_setparams) | private |  | audio | inferred | Sets the params (capture) |
+| [`capture/start`](#capture_start) | private |  | audio | inferred | Starts the audio (capture) |
+| [`capture/stop`](#capture_stop) | private |  | audio | inferred | Stops the audio (capture) |
+| [`checkAudioEffectStatus`](#checkaudioeffectstatus) | public |  | audio | documented | Check the status of an audio effect. |
+| [`connectSoundInput`](#connectsoundinput) | private |  | audio | inferred | Connects the sound input. |
+| [`controlPlayback`](#controlplayback) | public |  | audio | documented | Controls playback operations like stop, pause/resume for audio samples that are played using the playSound method. |
+| [`deviceList`](#devicelist) | unknown |  | audio | documented | Provides information about all supported input and output devices and their type and connection status. |
+| [`disableScenario`](#disablescenario) | private |  | audio | inferred | Disables the scenario. |
+| [`dtmf/busyTone`](#dtmf_busytone) | private |  | audio | inferred | Handles the busy tone (dtmf) |
+| [`dtmf/emergencyCall`](#dtmf_emergencycall) | private |  | audio | inferred | Handles the emergency call (dtmf) |
+| [`dtmf/playAlert`](#dtmf_playalert) | private |  | audio | inferred | Plays the alert (dtmf) |
+| [`dtmf/playDTMF`](#dtmf_playdtmf) | private |  | audio | inferred | Plays the DTMF (dtmf) |
+| [`dtmf/stopDTMF`](#dtmf_stopdtmf) | private |  | audio | inferred | Stops the DTMF (dtmf) |
+| [`effectStatus`](#effectstatus) | unknown |  | audio | documented | Provides the name of the audio effects and their status. |
+| [`enableScenario`](#enablescenario) | private |  | audio | inferred | Enables the scenario. |
+| [`getAudioEffectList`](#getaudioeffectlist) | public |  | audio | documented | Lists all the supported audio effects. |
+| [`getAudioEffectsStatus`](#getaudioeffectsstatus) | public | yes | audio | documented | Gets the status of all the audio effects. |
+| [`getCurrentScenario`](#getcurrentscenario) | private |  | audio | inferred | Returns the current scenario. |
+| [`getInputVolume`](#getinputvolume) | public | yes | audio | documented | Gets the input volume for audio streams. |
+| [`getPlaybackStatus`](#getplaybackstatus) | public | yes | audio | documented | Checks the status of playback which is played using playSound method. |
+| [`getSoundInput`](#getsoundinput) | public | yes | audio | documented | Gets the current active sound input device. |
+| [`getSoundInputList`](#getsoundinputlist) | private |  | audio | inferred | Returns the sound input list. |
+| [`getSoundOut`](#getsoundout) | private |  | audio | inferred | Returns the sound out. |
+| [`getSoundOutput`](#getsoundoutput) | public | yes | audio | documented | Gets the current active sound output device. |
+| [`getSourceInputVolume`](#getsourceinputvolume) | public | yes | audio | documented | Gets input volume of the source. |
+| [`getSourceStatus`](#getsourcestatus) | public | yes | audio | documented | Gets the status of the source. |
+| [`getStreamStatus`](#getstreamstatus) | public | yes | audio | documented | Gets the status and information of the active stream. |
+| [`getVolume`](#getvolume) | private |  | audio | inferred | Returns the volume. |
+| [`listScenarios`](#listscenarios) | private |  | audio | inferred | Lists the scenarios. |
+| [`listSupportedDevices`](#listsupporteddevices) | public | yes | audio | documented | Gets the list of supported audio input and output devices and their connection status. |
+| [`master/getMicVolume`](#master_getmicvolume) | public | yes | audio | documented | Gets volume of currently active microphone input. |
+| [`master/getVolume`](#master_getvolume) | public | yes | audio | documented | Gives the current master volume of the audio output device. |
+| [`master/muteMic`](#master_mutemic) | public |  | audio | documented | Mutes/unmutes the currently active microphone input device. |
+| [`master/muteVolume`](#master_mutevolume) | public |  | audio | documented | Mutes or unmutes the master volume of the audio output device. |
+| [`master/setMicVolume`](#master_setmicvolume) | public |  | audio | documented | Sets the volume of the currently active microphone input device. |
+| [`master/setVolume`](#master_setvolume) | public |  | audio | documented | Sets the master volume of the audio output device. |
+| [`master/volumeDown`](#master_volumedown) | public |  | audio | documented | Reduces the master volume of the device. |
+| [`master/volumeUp`](#master_volumeup) | public |  | audio | documented | Increases the master volume of the device. |
+| [`media/broadcastEvent`](#media_broadcastevent) | private |  | audio | inferred | Handles the broadcast event (media) |
+| [`media/disableScenario`](#media_disablescenario) | private |  | audio | inferred | Disables the scenario (media) |
+| [`media/enableScenario`](#media_enablescenario) | private |  | audio | inferred | Enables the scenario (media) |
+| [`media/getCurrentScenario`](#media_getcurrentscenario) | private |  | audio | inferred | Returns the current scenario (media) |
+| [`media/getLatency`](#media_getlatency) | private |  | audio | inferred | Returns the latency (media) |
+| [`media/getMicGain`](#media_getmicgain) | private |  | audio | inferred | Returns the mic gain (media) |
+| [`media/getVolume`](#media_getvolume) | private |  | audio | inferred | Returns the volume (media) |
+| [`media/listScenarios`](#media_listscenarios) | private |  | audio | inferred | Lists the scenarios (media) |
+| [`media/lockVolumeKeys`](#media_lockvolumekeys) | private |  | audio | inferred | Locks the volume keys (media) |
+| [`media/offsetMicGain`](#media_offsetmicgain) | private |  | audio | inferred | Handles the offset mic gain (media) |
+| [`media/offsetVolume`](#media_offsetvolume) | private |  | audio | inferred | Handles the offset volume (media) |
+| [`media/setCurrentScenario`](#media_setcurrentscenario) | private |  | audio | inferred | Sets the current scenario (media) |
+| [`media/setLatency`](#media_setlatency) | private |  | audio | inferred | Sets the latency (media) |
+| [`media/setMicGain`](#media_setmicgain) | private |  | audio | inferred | Sets the mic gain (media) |
+| [`media/setVolume`](#media_setvolume) | public |  | audio | documented | Sets the volume level of the current or the specified scenario. |
+| [`media/status`](#media_status) | private |  | audio | inferred | Handles the status (media) |
+| [`muteSink`](#mutesink) | public |  | audio | documented | Mutes the sink volume. |
+| [`muteSource`](#mutesource) | public |  | audio | documented | Mutes the source volume. |
+| [`nav/status`](#nav_status) | private |  | audio | inferred | Handles the status (nav) |
+| [`notification/getVolume`](#notification_getvolume) | private |  | audio | inferred | Returns the volume (notification) |
+| [`notification/offsetVolume`](#notification_offsetvolume) | private |  | audio | inferred | Handles the offset volume (notification) |
+| [`notification/setVolume`](#notification_setvolume) | private |  | audio | inferred | Sets the volume (notification) |
+| [`notification/status`](#notification_status) | private |  | audio | inferred | Handles the status (notification) |
+| [`phone/bluetoothAudioPropertiesSet`](#phone_bluetoothaudiopropertiesset) | private |  | audio | inferred | Handles the bluetooth audio properties set (phone) |
+| [`phone/broadcastEvent`](#phone_broadcastevent) | private |  | audio | inferred | Handles the broadcast event (phone) |
+| [`phone/CallStatusUpdate`](#phone_callstatusupdate) | private |  | audio | inferred | Calls the status update (phone) |
+| [`phone/disableScenario`](#phone_disablescenario) | private |  | audio | inferred | Disables the scenario (phone) |
+| [`phone/enableScenario`](#phone_enablescenario) | private |  | audio | inferred | Enables the scenario (phone) |
+| [`phone/getCurrentScenario`](#phone_getcurrentscenario) | private |  | audio | inferred | Returns the current scenario (phone) |
+| [`phone/getVolume`](#phone_getvolume) | private |  | audio | inferred | Returns the volume (phone) |
+| [`phone/hacGet`](#phone_hacget) | private |  | audio | inferred | Handles the hac get (phone) |
+| [`phone/hacSet`](#phone_hacset) | private |  | audio | inferred | Handles the hac set (phone) |
+| [`phone/listScenarios`](#phone_listscenarios) | private |  | audio | inferred | Lists the scenarios (phone) |
+| [`phone/lockVolumeKeys`](#phone_lockvolumekeys) | private |  | audio | inferred | Locks the volume keys (phone) |
+| [`phone/museSet`](#phone_museset) | private |  | audio | inferred | Handles the muse set (phone) |
+| [`phone/offsetVolume`](#phone_offsetvolume) | private |  | audio | inferred | Handles the offset volume (phone) |
+| [`phone/setCurrentScenario`](#phone_setcurrentscenario) | private |  | audio | inferred | Sets the current scenario (phone) |
+| [`phone/setMuted`](#phone_setmuted) | private |  | audio | inferred | Sets the muted (phone) |
+| [`phone/setVolume`](#phone_setvolume) | private |  | audio | inferred | Sets the volume (phone) |
+| [`phone/status`](#phone_status) | private |  | audio | inferred | Handles the status (phone) |
+| [`playSound`](#playsound) | public |  | audio | documented | Plays PCM audio files through PulseAudio sound server. |
+| [`quality/setQualityAttribute`](#quality_setqualityattribute) | public |  | audio | inferred | Sets the quality attribute (quality) |
+| [`quality/setSoundOutputMode`](#quality_setsoundoutputmode) | public |  | audio | inferred | Sets the sound output mode (quality) |
+| [`registerTrack`](#registertrack) | public |  | audio | documented | Registers a playback by an application/service and returns a track ID. The track ID must be used to control the volume of that particular pl |
+| [`ringtone/getVolume`](#ringtone_getvolume) | private |  | audio | inferred | Returns the volume (ringtone) |
+| [`ringtone/lockVolumeKeys`](#ringtone_lockvolumekeys) | private |  | audio | inferred | Locks the volume keys (ringtone) |
+| [`ringtone/offsetVolume`](#ringtone_offsetvolume) | private |  | audio | inferred | Handles the offset volume (ringtone) |
+| [`ringtone/setMuted`](#ringtone_setmuted) | private |  | audio | inferred | Sets the muted (ringtone) |
+| [`ringtone/setVolume`](#ringtone_setvolume) | private |  | audio | inferred | Sets the volume (ringtone) |
+| [`ringtone/status`](#ringtone_status) | private |  | audio | inferred | Handles the status (ringtone) |
+| [`setAudioEffect`](#setaudioeffect) | public |  | audio | documented | Sets the status of an audio effect. |
+| [`setAudioEqualizerBandLevel`](#setaudioequalizerbandlevel) | public |  | audio | documented | Sets the equalizer band level. |
+| [`setAudioEqualizerPreset`](#setaudioequalizerpreset) | public |  | audio | documented | Sets the equalizer preset value. |
+| [`setCurrentScenario`](#setcurrentscenario) | private |  | audio | inferred | Sets the current scenario. |
+| [`setInputVolume`](#setinputvolume) | public |  | audio | documented | Sets the input volume for audio streams. |
+| [`setMuted`](#setmuted) | private |  | audio | inferred | Sets the muted. |
+| [`setSoundInput`](#setsoundinput) | public |  | audio | documented | Sets the sound input device for recording. |
+| [`setSoundOutput`](#setsoundoutput) | public |  | audio | documented | Sets the sound output device. |
+| [`setSourceInputVolume`](#setsourceinputvolume) | public |  | audio | documented | Sets input volume of the source. |
+| [`setTrackVolume`](#settrackvolume) | public |  | audio | documented | Sets the volume for a specific playback that is identified by the track ID (obtained by using registerTrack() ). The effective playback volu |
+| [`setVolume`](#setvolume) | private |  | audio | inferred | Sets the volume. |
+| [`setVolume2`](#setvolume2) | private |  | audio | inferred | Sets the volume 2. |
+| [`soundSettings/setSoundOut`](#soundsettings_setsoundout) | public |  | audio | documented | Sets the audio output device. |
+| [`sourceObject`](#sourceobject) | unknown |  | audio | documented | Indicates the list of active source connection |
+| [`state/get`](#state_get) | private |  | audio | inferred | Returns the audio (state) |
+| [`state/getPreference`](#state_getpreference) | private |  | audio | inferred | Returns the preference (state) |
+| [`state/getSoundProfile`](#state_getsoundprofile) | private |  | audio | inferred | Returns the sound profile (state) |
+| [`state/getTouchSound`](#state_gettouchsound) | private |  | audio | inferred | Returns the touch sound (state) |
+| [`state/getVolumeBalance`](#state_getvolumebalance) | private |  | audio | inferred | Returns the volume balance (state) |
+| [`state/loadRTPModule`](#state_loadrtpmodule) | private |  | audio | inferred | Loads the RTP module (state) |
+| [`state/loopback`](#state_loopback) | private |  | audio | inferred | Handles the loopback (state) |
+| [`state/pulse/setFilter`](#state_pulse_setfilter) | private |  | audio | inferred | Sets the filter (state pulse) |
+| [`state/pulse/sinkStatus`](#state_pulse_sinkstatus) | private |  | audio | inferred | Handles the sink status (state pulse) |
+| [`state/pulse/suspend`](#state_pulse_suspend) | private |  | audio | inferred | Handles the suspend (state pulse) |
+| [`state/set`](#state_set) | private |  | audio | inferred | Sets the audio (state) |
+| [`state/setNREC`](#state_setnrec) | private |  | audio | inferred | Sets the NREC (state) |
+| [`state/setPreference`](#state_setpreference) | private |  | audio | inferred | Sets the preference (state) |
+| [`state/setRingerSwitch`](#state_setringerswitch) | private |  | audio | inferred | Sets the ringer switch (state) |
+| [`state/setSoundProfile`](#state_setsoundprofile) | private |  | audio | inferred | Sets the sound profile (state) |
+| [`state/setTouchSound`](#state_settouchsound) | private |  | audio | inferred | Sets the touch sound (state) |
+| [`state/setVolumeBalance`](#state_setvolumebalance) | private |  | audio | inferred | Sets the volume balance (state) |
+| [`state/unloadRTPModule`](#state_unloadrtpmodule) | private |  | audio | inferred | Unloads the RTP module (state) |
+| [`state/volumeRamp`](#state_volumeramp) | private |  | audio | inferred | Handles the volume ramp (state) |
+| [`status`](#status) | private |  | audio | inferred | Handles the status. |
+| [`streamObject`](#streamobject) | unknown |  | audio | documented | Contains the list of active connections. |
+| [`system/getVolume`](#system_getvolume) | private |  | audio | inferred | Returns the volume (system) |
+| [`system/offsetVolume`](#system_offsetvolume) | private |  | audio | inferred | Handles the offset volume (system) |
+| [`system/setMuted`](#system_setmuted) | private |  | audio | inferred | Sets the muted (system) |
+| [`system/setVolume`](#system_setvolume) | private |  | audio | inferred | Sets the volume (system) |
+| [`system/status`](#system_status) | private |  | audio | inferred | Handles the status (system) |
+| [`systemsounds/playFeedback`](#systemsounds_playfeedback) | public |  | audio | documented | Plays the various system alert sounds based on the name passed to it. |
+| [`telephony/answered`](#telephony_answered) | private |  | audio | inferred | Handles the answered (telephony) |
+| [`telephony/callAudio`](#telephony_callaudio) | private |  | audio | inferred | Calls the audio (telephony) |
+| [`telephony/startCall`](#telephony_startcall) | private |  | audio | inferred | Starts the call (telephony) |
+| [`timer/getTimerOn`](#timer_gettimeron) | private |  | audio | inferred | Returns the timer on (timer) |
+| [`timer/getVolume`](#timer_getvolume) | private |  | audio | inferred | Returns the volume (timer) |
+| [`timer/offsetVolume`](#timer_offsetvolume) | private |  | audio | inferred | Handles the offset volume (timer) |
+| [`timer/setMuted`](#timer_setmuted) | private |  | audio | inferred | Sets the muted (timer) |
+| [`timer/setTimerOn`](#timer_settimeron) | private |  | audio | inferred | Sets the timer on (timer) |
+| [`timer/setVolume`](#timer_setvolume) | private |  | audio | inferred | Sets the volume (timer) |
+| [`timer/status`](#timer_status) | private |  | audio | inferred | Handles the status (timer) |
+| [`timer/tonegenerator`](#timer_tonegenerator) | public |  | audio | inferred | Handles the tonegenerator (timer) |
+| [`tonegenerator/playCallertone`](#tonegenerator_playcallertone) | private |  | audio | inferred | Plays the callertone (tonegenerator) |
+| [`tv/activateWisaSpeaker`](#tv_activatewisaspeaker) | private |  | audio | inferred | Activates the wisa speaker (TV) |
+| [`tv/ctrMicSwitch`](#tv_ctrmicswitch) | private |  | audio | inferred | Handles the ctr mic switch (TV) |
+| [`tv/getAmplifierState`](#tv_getamplifierstate) | public |  | audio | inferred | Returns the amplifier state (TV) |
+| [`tv/getArcAvSyncTime`](#tv_getarcavsynctime) | private |  | audio | inferred | Returns the ARC A/V sync time (TV) |
+| [`tv/getAudioEffectData`](#tv_getaudioeffectdata) | private |  | audio | inferred | Returns the audio effect data (TV) |
+| [`tv/getAudioInputProperty`](#tv_getaudioinputproperty) | private |  | audio | inferred | Returns the audio input property (TV) |
+| [`tv/getExtDeviceFwVersion`](#tv_getextdevicefwversion) | private |  | audio | inferred | Returns the ext device firmware version (TV) |
+| [`tv/getGainAsInput`](#tv_getgainasinput) | private |  | audio | inferred | Returns the gain as input (TV) |
+| [`tv/getHeadphoneStatus`](#tv_getheadphonestatus) | public |  | audio | inferred | Returns the headphone status (TV) |
+| [`tv/getSoundCardsState`](#tv_getsoundcardsstate) | private |  | audio | inferred | Returns the sound cards state (TV) |
+| [`tv/mixDigitalSoundOutput`](#tv_mixdigitalsoundoutput) | public |  | audio | inferred | Handles the mix digital sound output (TV) |
+| [`tv/playOnPowerState`](#tv_playonpowerstate) | public |  | audio | inferred | Plays the on power state (TV) |
+| [`tv/readI2cDataFromAmplifier`](#tv_readi2cdatafromamplifier) | private |  | audio | inferred | Reads the i 2 c data from amplifier (TV) |
+| [`tv/resetSoundSettings`](#tv_resetsoundsettings) | public |  | audio | inferred | Resets the sound settings (TV) ⚠️ |
+| [`tv/setAmplifierState`](#tv_setamplifierstate) | public |  | audio | inferred | Sets the amplifier state (TV) |
+| [`tv/setARCDeviceInfo`](#tv_setarcdeviceinfo) | private |  | audio | inferred | Sets the ARC device info (TV) |
+| [`tv/setAudioEffectState`](#tv_setaudioeffectstate) | private |  | audio | inferred | Sets the audio effect state (TV) |
+| [`tv/setAudioVideoSync`](#tv_setaudiovideosync) | public |  | audio | inferred | Sets the audio video sync (TV) |
+| [`tv/setDolbyOTTMode`](#tv_setdolbyottmode) | public |  | audio | inferred | Sets the dolby OTT mode (TV) |
+| [`tv/setDolbyVisionPopup`](#tv_setdolbyvisionpopup) | private |  | audio | inferred | Sets the dolby vision popup (TV) |
+| [`tv/setEqualizerStatus`](#tv_setequalizerstatus) | public |  | audio | inferred | Sets the equalizer status (TV) |
+| [`tv/setInputVolume`](#tv_setinputvolume) | private |  | audio | inferred | Sets the input volume (TV) |
+| [`tv/setMSSProperties`](#tv_setmssproperties) | public |  | audio | inferred | Sets the MSS properties (TV) |
+| [`tv/setNpuProperties`](#tv_setnpuproperties) | private |  | audio | inferred | Sets the npu properties (TV) |
+| [`tv/setOffsetDelay`](#tv_setoffsetdelay) | public |  | audio | inferred | Sets the offset delay (TV) |
+| [`tv/setOutputMute`](#tv_setoutputmute) | private |  | audio | inferred | Sets the output mute (TV) |
+| [`tv/setPopupDisplayStatus`](#tv_setpopupdisplaystatus) | private |  | audio | inferred | Sets the popup display status (TV) |
+| [`tv/setPSWProperties`](#tv_setpswproperties) | private |  | audio | inferred | Sets the PSW properties (TV) |
+| [`tv/setQualityAttribute`](#tv_setqualityattribute) | public |  | audio | inferred | Sets the quality attribute (TV) |
+| [`tv/setSCMS`](#tv_setscms) | public |  | audio | inferred | Sets the SCMS (TV) |
+| [`tv/setSoundEngineStatus`](#tv_setsoundenginestatus) | public |  | audio | inferred | Sets the sound engine status (TV) |
+| [`tv/setSoundOutputMode`](#tv_setsoundoutputmode) | public |  | audio | inferred | Sets the sound output mode (TV) |
+| [`tv/setVideoLatencyTime`](#tv_setvideolatencytime) | private |  | audio | inferred | Sets the video latency time (TV) |
+| [`tv/switchMicrophone`](#tv_switchmicrophone) | private |  | audio | inferred | Switches the microphone (TV) |
+| [`tv/updateExtFw`](#tv_updateextfw) | private |  | audio | inferred | Updates the ext firmware (TV) |
+| [`tv/writeI2cDataToAmplifier`](#tv_writei2cdatatoamplifier) | private |  | audio | inferred | Writes the i 2 c data to amplifier (TV) |
+| [`udev/event`](#udev_event) | public |  | audio | documented | Gives the audiod information regarding the USB Mic/Headset Connected/Disconnected events based on the udev rules. It also provides the sound |
+| [`UMI/activateConnection`](#umi_activateconnection) | public |  | audio | inferred | Activates the connection (UMI) |
+| [`UMI/connect`](#umi_connect) | public |  | audio | documented | Establishes connection for the audio resource. |
+| [`UMI/disconnect`](#umi_disconnect) | public |  | audio | documented | Disconnects the connection. |
+| [`UMI/getInputVolume`](#umi_getinputvolume) | public |  | audio | inferred | Returns the input volume (UMI) |
+| [`UMI/getStatus`](#umi_getstatus) | public |  | audio | documented | Shows the connection status of audio resources. |
+| [`UMI/mute`](#umi_mute) | public |  | audio | documented | Mutes or unmutes the input volume of the requested connection. Note: This method is added for future-use. It does not have any impact on the |
+| [`UMI/register`](#umi_register) | public |  | audio | inferred | Registers the audio (UMI) |
+| [`UMI/setInputDownMix`](#umi_setinputdownmix) | private |  | audio | inferred | Sets the input down mix (UMI) |
+| [`UMI/setInputVolume`](#umi_setinputvolume) | public |  | audio | inferred | Sets the input volume (UMI) |
+| [`UMI/unregister`](#umi_unregister) | public |  | audio | inferred | Unregisters the audio (UMI) |
+| [`unregisterTrack`](#unregistertrack) | public |  | audio | documented | Unregisters a playback by an application/service. |
+| [`vibrate/get`](#vibrate_get) | private |  | audio | inferred | Returns the audio (vibrate) |
+| [`vibrate/set`](#vibrate_set) | private |  | audio | inferred | Sets the audio (vibrate) |
+| [`voiceCommand/broadcastEvent`](#voicecommand_broadcastevent) | private |  | audio | inferred | Handles the broadcast event (voice command) |
+| [`voiceCommand/control`](#voicecommand_control) | private |  | audio | inferred | Controls the audio (voice command) |
+| [`voiceCommand/disableScenario`](#voicecommand_disablescenario) | private |  | audio | inferred | Disables the scenario (voice command) |
+| [`voiceCommand/enableScenario`](#voicecommand_enablescenario) | private |  | audio | inferred | Enables the scenario (voice command) |
+| [`voiceCommand/getCurrentScenario`](#voicecommand_getcurrentscenario) | private |  | audio | inferred | Returns the current scenario (voice command) |
+| [`voiceCommand/getMicGain`](#voicecommand_getmicgain) | private |  | audio | inferred | Returns the mic gain (voice command) |
+| [`voiceCommand/getVolume`](#voicecommand_getvolume) | private |  | audio | inferred | Returns the volume (voice command) |
+| [`voiceCommand/listScenarios`](#voicecommand_listscenarios) | private |  | audio | inferred | Lists the scenarios (voice command) |
+| [`voiceCommand/offsetMicGain`](#voicecommand_offsetmicgain) | private |  | audio | inferred | Handles the offset mic gain (voice command) |
+| [`voiceCommand/offsetVolume`](#voicecommand_offsetvolume) | private |  | audio | inferred | Handles the offset volume (voice command) |
+| [`voiceCommand/setCurrentScenario`](#voicecommand_setcurrentscenario) | private |  | audio | inferred | Sets the current scenario (voice command) |
+| [`voiceCommand/setMicGain`](#voicecommand_setmicgain) | private |  | audio | inferred | Sets the mic gain (voice command) |
+| [`voiceCommand/setVolume`](#voicecommand_setvolume) | private |  | audio | inferred | Sets the volume (voice command) |
+| [`voiceCommand/status`](#voicecommand_status) | private |  | audio | inferred | Handles the status (voice command) |
+| [`volumeDown`](#volumedown) | private |  | audio | inferred | Handles the volume down. |
+| [`volumeKeeping`](#volumekeeping) | private |  | audio | inferred | Handles the volume keeping. |
+| [`VolumeStatus`](#volumestatus) | unknown |  | audio | documented | Provides the volume details of the target sound output device. |
+| [`volumeUp`](#volumeup) | private |  | audio | inferred | Handles the volume up. |
+| [`vvm/broadcastEvent`](#vvm_broadcastevent) | private |  | audio | inferred | Handles the broadcast event (vvm) |
+| [`vvm/control`](#vvm_control) | private |  | audio | inferred | Controls the audio (vvm) |
+| [`vvm/disableScenario`](#vvm_disablescenario) | private |  | audio | inferred | Disables the scenario (vvm) |
+| [`vvm/enableScenario`](#vvm_enablescenario) | private |  | audio | inferred | Enables the scenario (vvm) |
+| [`vvm/getCurrentScenario`](#vvm_getcurrentscenario) | private |  | audio | inferred | Returns the current scenario (vvm) |
+| [`vvm/getVolume`](#vvm_getvolume) | private |  | audio | inferred | Returns the volume (vvm) |
+| [`vvm/listScenarios`](#vvm_listscenarios) | private |  | audio | inferred | Lists the scenarios (vvm) |
+| [`vvm/offsetVolume`](#vvm_offsetvolume) | private |  | audio | inferred | Handles the offset volume (vvm) |
+| [`vvm/setCurrentScenario`](#vvm_setcurrentscenario) | private |  | audio | inferred | Sets the current scenario (vvm) |
+| [`vvm/setVolume`](#vvm_setvolume) | private |  | audio | inferred | Sets the volume (vvm) |
+| [`vvm/status`](#vvm_status) | private |  | audio | inferred | Handles the status (vvm) |
 
 <a id="alarm_getalarmon"></a>
 ## `alarm/getAlarmOn`
 
 `luna://com.webos.service.audio/alarm/getAlarmOn`
 
-Method registered by com.webos.service.audio (category '/alarm')
+Returns the alarm on (alarm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alarm/getAlarmOn '{}'
@@ -269,13 +273,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/alarm/getVolume`
 
-Method registered by com.webos.service.audio (category '/alarm')
+Returns the volume (alarm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alarm/getVolume '{}'
@@ -290,13 +296,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/alarm/offsetVolume`
 
-Method registered by com.webos.service.audio (category '/alarm')
+Handles the offset volume (alarm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alarm/offsetVolume '{}'
@@ -311,13 +319,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/alarm/setAlarmOn`
 
-Method registered by com.webos.service.audio (category '/alarm')
+Sets the alarm on (alarm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alarm/setAlarmOn '{}'
@@ -332,13 +342,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/alarm/setMuted`
 
-Method registered by com.webos.service.audio (category '/alarm')
+Sets the muted (alarm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alarm/setMuted '{}'
@@ -353,13 +365,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/alarm/setVolume`
 
-Method registered by com.webos.service.audio (category '/alarm')
+Sets the volume (alarm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alarm/setVolume '{}'
@@ -374,13 +388,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/alarm/status`
 
-Method registered by com.webos.service.audio (category '/alarm')
+Handles the status (alarm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alarm/status '{}'
@@ -395,13 +411,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/alert/getVolume`
 
-Method registered by com.webos.service.audio (category '/alert')
+Returns the volume (alert)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alert/getVolume '{}'
@@ -416,13 +434,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/alert/offsetVolume`
 
-Method registered by com.webos.service.audio (category '/alert')
+Handles the offset volume (alert)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alert/offsetVolume '{}'
@@ -437,13 +457,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/alert/setMuted`
 
-Method registered by com.webos.service.audio (category '/alert')
+Sets the muted (alert)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alert/setMuted '{}'
@@ -458,13 +480,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/alert/setVolume`
 
-Method registered by com.webos.service.audio (category '/alert')
+Sets the volume (alert)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alert/setVolume '{}'
@@ -479,13 +503,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/alert/status`
 
-Method registered by com.webos.service.audio (category '/alert')
+Handles the status (alert)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/alert/status '{}'
@@ -521,13 +547,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/broadcastEvent`
 
-Method registered by com.webos.service.audio (root category)
+Handles the broadcast event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/broadcastEvent '{}'
@@ -542,13 +570,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/capture/getStatus`
 
-Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Returns the status (capture)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/capture/getStatus '{}'
@@ -563,13 +593,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/capture/resetParams`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Resets the params (capture)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/capture/resetParams '{}'
@@ -584,13 +616,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/capture/setParams`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the params (capture)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/capture/setParams '{}'
@@ -605,13 +639,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/capture/start`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Starts the audio (capture)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/capture/start '{}'
@@ -626,13 +662,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/capture/stop`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Stops the audio (capture)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/capture/stop '{}'
@@ -659,6 +697,14 @@ Check the status of an audio effect.
 |---|---|
 | `effectName` | String (required) Audio effect name. Possible values are: speech enhancement gain control beamforming dynamic compressor equalizer bass boost |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `enabled` | Boolean (optional) Indicates the current state of the audio effect. Possible values are: - true: Audio effect is enabled. - false: Audio effect is not enabled. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/checkAudioEffectStatus '{"effectName":"speech enhancement"}
 ```
@@ -672,13 +718,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/connectSoundInput`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Connects the sound input.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/connectSoundInput '{}'
@@ -705,6 +753,13 @@ Controls playback operations like stop, pause/resume for audio samples that are 
 |---|---|
 | `playbackId` | String (required) Playback ID of the played stream. |
 | `requestType` | String (required) Audio control type. Possible formats are: pause resume stop |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'API Error Codes Reference' section for details. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/controlPlayback '{"playbackId":"_utg7654h", "requestType":"stop" }
@@ -740,13 +795,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/disableScenario`
 
-Method registered by com.webos.service.audio (root category)
+Disables the scenario.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/disableScenario '{}'
@@ -761,13 +818,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/dtmf/busyTone`
 
-Method registered by com.webos.service.audio (category '/dtmf')
+Handles the busy tone (dtmf)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/dtmf/busyTone '{}'
@@ -782,13 +841,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/dtmf/emergencyCall`
 
-Method registered by com.webos.service.audio (category '/dtmf')
+Handles the emergency call (dtmf)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/dtmf/emergencyCall '{}'
@@ -803,13 +864,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/dtmf/playAlert`
 
-Method registered by com.webos.service.audio (category '/dtmf')
+Plays the alert (dtmf)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/dtmf/playAlert '{}'
@@ -824,13 +887,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/dtmf/playDTMF`
 
-Method registered by com.webos.service.audio (category '/dtmf')
+Plays the DTMF (dtmf)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/dtmf/playDTMF '{}'
@@ -845,13 +910,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/dtmf/stopDTMF`
 
-Method registered by com.webos.service.audio (category '/dtmf')
+Stops the DTMF (dtmf)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/dtmf/stopDTMF '{}'
@@ -887,13 +954,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/enableScenario`
 
-Method registered by com.webos.service.audio (root category)
+Enables the scenario.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/enableScenario '{}'
@@ -915,6 +984,14 @@ Lists all the supported audio effects.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 21+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `audioEffectList` | String array (optional) List of the available audio effects. Possible values are: - speech enhancement - gain control - beamforming (not listed if none of the array microphones support beamforming) - dynamic compressor - equalizer - bass boost |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'API Error Codes Reference' section for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/getAudioEffectList '{}
@@ -941,6 +1018,14 @@ Gets the status of all the audio effects.
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe for notifications on changes to the status of audio effects. Possible values are: true: Subscribed. false: (default) Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of this method for details. |
+| `status` | Object array: effectStatus (optional) Indicates status of audio effects. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/getAudioEffectsStatus '{"subscribe":false }
 ```
@@ -954,13 +1039,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/getCurrentScenario`
 
-Method registered by com.webos.service.audio (root category)
+Returns the current scenario.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/getCurrentScenario '{}'
@@ -988,6 +1075,15 @@ Gets the input volume for audio streams.
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true: Subscribed to get notifications. false: Not subscribed (default). |
 | `streamType` | String (required) Indicates the stream name of the input volume to be received. Possible values are: palerts pfeedback pringtones pmedia pdefaultapp peffects pvoicerecognition ptts default1 default2 tts1 tts2 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `streamType` | String (optional) Indicates the stream name of the input volume to be applied. Check "Parameters" section for list of possible values. |
+| `volume` | Number (optional) Returns the value of applied volume in case of success. Possible range: 0-100 |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.audio/getInputVolume '{ "streamType":"default1", "subscribe":true }
 ```
@@ -1013,6 +1109,14 @@ Checks the status of playback which is played using playSound method.
 |---|---|
 | `playbackId` | String (required) Playback ID of the played stream. |
 | `subscribe` | Boolean (optional) Subscribe for notifications on changes. Possible values are: true: Subscribed. false: (default) Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `playbackStatus` | String (optional) Playback status. Possible values are - playing - paused - stopped |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'API Error Codes Reference' section for details. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/getPlaybackStatus '{ "playbackId":"_utg7654h", "subscribe":false }
@@ -1040,6 +1144,13 @@ Gets the current active sound input device.
 | `subscribe` | String (optional) Subscribe for notifications on changes in the sound input device. Possible values are: true : Subscribed. false : Not subscribed. |
 | `displayId` | Number (optional) Display ID with which the sound input device is associated. Possible values are: 0 1 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `soundInput` | String (optional) The active sound input device. |
+| `displayId` | Number (optional) The display ID with which the sound input device is associated. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/getSoundInput '{}
 ```
@@ -1053,13 +1164,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/getSoundInputList`
 
-Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Returns the sound input list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/getSoundInputList '{}'
@@ -1074,13 +1187,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/getSoundOut`
 
-Method registered by com.webos.service.audio (root category)
+Returns the sound out.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/getSoundOut '{}'
@@ -1108,6 +1223,13 @@ Gets the current active sound output device.
 | `subscribe` | Boolean (optional) Subscribe for notifications on changes in the sound output device. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 | `displayId` | Number (optional) The display ID with which the sound output device is associated. Possible values are: 0 1 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `soundOutput` | String (optional) Current sound output. Possible values are: - tv\_speaker - external\_optical - external\_arc - lineout - headphone - tv\_external\_speaker - tv\_speaker\_headphone - alsa - wisa\_speaker - lgSoundSync |
+| `displayId` | Number (optional) The display ID with which the sound output device is associated. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/getSoundOutput '{"subscribe":false}
 ```
@@ -1133,6 +1255,13 @@ Gets input volume of the source.
 |---|---|
 | `sourceType` | String (required) The source for which volume is required. Possible values are: record btcallsource alexa webcall voiceassistance |
 | `subscribe` | Boolean (optional) Subscribe for notifications on changes in the source volume. Possible values are: true: Subscribed. false (Default): Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `sourceType` | String (required) The source for the volume. |
+| `volume` | Number (required) The source volume. |
 
 ```sh
 luna-send -n -i luna://com.webos.service.audio/getSourceInputVolume '{"sourceType":"record"}
@@ -1160,6 +1289,12 @@ Gets the status of the source.
 | `sourceType` | String (optional) Type of source. Note: If not specified, all active source details are provided. Possible values are: record btcallsource alexa webcall voiceassistance |
 | `subscribe` | Boolean (optional) Subscribe for notifications on changes in the source. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `sourceObject` | Object array: sourceObject (required) The list of active source connections. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/getSourceStatus '{"subscribe":true}
 ```
@@ -1186,6 +1321,12 @@ Gets the status and information of the active stream.
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 | `streamType` | String (optional) Indicates the type of the stream. Note: If not specified, all active stream details are provided. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `streamObject` | Object array: streamObject (required) Indicates the list of active connections. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.audio/getStreamStatus '{ "streamType":"default1", "subscribe":true }
 ```
@@ -1199,13 +1340,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/getVolume`
 
-Method registered by com.webos.service.audio (root category)
+Returns the volume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/getVolume '{}'
@@ -1220,13 +1363,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/listScenarios`
 
-Method registered by com.webos.service.audio (root category)
+Lists the scenarios.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/listScenarios '{}'
@@ -1253,6 +1398,14 @@ Gets the list of supported audio input and output devices and their connection s
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe for notifications on changes. Possible values are: true: Subscribed. false: Not subscribed. |
 | `query` | String (optional) Requested category of sound devices. Possible values are: input output all (default) |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of the method for details. |
+| `deviceList` | Object array: deviceList (optional) List of input and output devices. |
 
 ```sh
 luna-send –n –i luna://com.webos.service.audio/listSupportedDevices '{"subscribe":true,"query":"all"}
@@ -1281,6 +1434,16 @@ Gets volume of currently active microphone input.
 | `displayId` | Number (int8_t) (optional) The display associated with the microphone. Possible values are: 0 (default value) 1 |
 | `soundInput` | String (optional) Indicates the audio input device. Possible values are: usb_mic0 usb_mic1 pcm_input (available only for OSE Emulator) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of the method for details. |
+| `soundInput` | String (optional) Input device name. Possible values are: - usb\_mic0 - usb\_mic1 - pcm\_input (Applicable only for OSE Emulator) |
+| `volume` | Number (int8\_t) (optional) Device volume. Possible values 0 - 100. |
+| `muteStatus` | Boolean (optional) Mute status of input device. Possible values are: - true: Device is muted. - false: Device is not muted. |
+
 ```sh
 luna-send –n 1 luna://com.webos.service.audio/master/getMicVolume '{}
 ```
@@ -1300,12 +1463,19 @@ Gives the current master volume of the audio output device.
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+  
-- **Confidence:** documented, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed. false: Not subscribed. |
 | `soundOutput` | String (optional) Indicates the audio output device. Possible values are: alsa pcm_output pcm_output1 pcm_headphone usb_speaker0 usb_speaker1 bluetooth_speaker0 |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `volumeStatus` | Object: VolumeStatus (required) Indicates the status of volume for different audio output devices. |
+| `callerId` | String (required) Indicates the luna service name of the calling application. |
 
 ```sh
 luna-send -n i -f luna://com.webos.service.audio/master/getVolume '{"subscribe":true}
@@ -1334,6 +1504,15 @@ Mutes/unmutes the currently active microphone input device.
 | `mute` | Boolean (required) Mute status of the device. Possible values are: true: Muted. false: Not muted. |
 | `soundInput` | String (optional) Indicates the audio input device. Possible values are: usb_mic0 usb_mic1 pcm_input (available only for OSE Emulator) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of the method for details. |
+| `soundInput` | String (optional) Input device name. Possible values are: - usb\_mic0 - usb\_mic1 - pcm\_input (Applicable only for OSE Emulator) |
+| `mute` | Boolean (optional) Device mute status. |
+
 ```sh
 luna-send –n 1 luna://com.webos.service.audio/master/muteMic '{"soundInput":"usb_mic0","mute":true}
 ```
@@ -1360,6 +1539,13 @@ Mutes or unmutes the master volume of the audio output device.
 | `mute` | Boolean (required) Indicates if the master volume is to be muted. Possible values are: true: Master volume to be muted. false: Master volume not to be muted. |
 | `sessionId` | Number (optional) Indicates the display/session applicable to the operation. Note: If not provided, the operation is applied to the audio device connected to both the displays/sessions. Possible values are: 0 1 |
 | `soundOutput` | String (required) Indicates the audio output device. Possible values are: pcm_output pcm_output1 pcm_headphone usb_speaker0 usb_speaker1 bluetooth_speaker0 alsa |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `mute` | Boolean (required) Indicates if the master volume is on mute or not. Possible values are: - true: Master volume is on mute. - false: Master volume is not on mute. |
+| `soundOutput` | String (required) Indicates the audio output device. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/master/muteVolume '{ "soundOutput":"pcm_output", "mute":true, "sessionId":0 }
@@ -1388,6 +1574,15 @@ Sets the volume of the currently active microphone input device.
 | `volume` | Number (int8_t) (required) The volume to be set. Possible values : 0 - 100. |
 | `soundInput` | String (optional) Indicates the audio input device. Possible values are: usb_mic0 usb_mic1 pcm_input (available only for OSE Emulator) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of the method for details. |
+| `soundInput` | String (optional) Input device name. Possible values are: - usb\_mic0 - usb\_mic1 - pcm\_input (Applicable only for OSE Emulator) |
+| `volume` | Number (int8\_t) (optional) Device volume. |
+
 ```sh
 luna-send –n 1 luna://com.webos.service.audio/master/setMicVolume '{"soundInput":usb_mic0,"volume":50}
 ```
@@ -1407,13 +1602,20 @@ Sets the master volume of the audio output device.
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 5+  
-- **Confidence:** documented, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
 | `sessionId` | Number (optional) Indicates the display/session applicable to the operation. Possible values are: 0 (Default) 1 |
 | `soundOutput` | String (required) Indicates the target sound output device. Possible values are: pcm_output pcm_output1 pcm_headphone usb_speaker0 usb_speaker1 bluetooth_speaker0 alsa |
 | `volume` | Number (required) Indicates the volume level to be set. The value can range from 0 to 100. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `volume` | Number (required) Indicates the current volume level. The value can range from 0 to 100. |
+| `soundOutput` | String (required) Indicates the target sound output device. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/master/setVolume '{ "soundOutput":"pcm_output", "volume":57, "sessionId":0 }
@@ -1434,12 +1636,19 @@ Reduces the master volume of the device.
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+  
-- **Confidence:** documented, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
 | `soundOutput` | String (required) Indicates the audio output device. Possible values are: alsa pcm_output pcm_output1 pcm_headphone usb_speaker0 usb_speaker1 bluetooth_speaker0 |
 | `sessionId` | Number (optional) Indicates the display/session applicable to the operation. Possible values are: 0 (Default) 1 |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `volume` | Number (required) Indicates the current level of volume. The value can range from 0 to 100. |
+| `soundOutput` | String (required) Indicates the audio sound output device. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/master/volumeDown '{"soundOutput":"pcm_output", "sessionId":0}
@@ -1460,12 +1669,19 @@ Increases the master volume of the device.
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+  
-- **Confidence:** documented, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
 | `sessionId` | Number (optional) Indicates the display/session applicable to the operation. Possible values are: 0 (Default) 0 |
 | `soundOutput` | String (optional) Indicates the audio output device Possible values are: alsa pcm_output pcm_output1 pcm_headphone usb_speaker0 usb_speaker1 bluetooth_speaker0 |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `volume` | Number (required) Indicates the current level of volume. The value can range from 0 to 100. |
+| `soundOutput` | String (required) Indicates the audio output device. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/master/volumeUp '{ "soundOutput":"pcm_output", "sessionId":0 }
@@ -1480,13 +1696,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/media/broadcastEvent`
 
-Method registered by com.webos.service.audio (category '/media')
+Handles the broadcast event (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/broadcastEvent '{}'
@@ -1501,13 +1719,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/disableScenario`
 
-Method registered by com.webos.service.audio (category '/media')
+Disables the scenario (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/disableScenario '{}'
@@ -1522,13 +1742,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/enableScenario`
 
-Method registered by com.webos.service.audio (category '/media')
+Enables the scenario (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/enableScenario '{}'
@@ -1543,13 +1765,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/getCurrentScenario`
 
-Method registered by com.webos.service.audio (category '/media')
+Returns the current scenario (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/getCurrentScenario '{}'
@@ -1564,13 +1788,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/getLatency`
 
-Method registered by com.webos.service.audio (category '/media')
+Returns the latency (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/getLatency '{}'
@@ -1585,13 +1811,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/getMicGain`
 
-Method registered by com.webos.service.audio (category '/media')
+Returns the mic gain (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/getMicGain '{}'
@@ -1606,13 +1834,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/getVolume`
 
-Method registered by com.webos.service.audio (category '/media')
+Returns the volume (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/getVolume '{}'
@@ -1627,13 +1857,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/listScenarios`
 
-Method registered by com.webos.service.audio (category '/media')
+Lists the scenarios (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/listScenarios '{}'
@@ -1648,13 +1880,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/lockVolumeKeys`
 
-Method registered by com.webos.service.audio (category '/media')
+Locks the volume keys (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/lockVolumeKeys '{}'
@@ -1669,13 +1903,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/offsetMicGain`
 
-Method registered by com.webos.service.audio (category '/media')
+Handles the offset mic gain (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/offsetMicGain '{}'
@@ -1690,13 +1926,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/offsetVolume`
 
-Method registered by com.webos.service.audio (category '/media')
+Handles the offset volume (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/offsetVolume '{}'
@@ -1711,13 +1949,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/setCurrentScenario`
 
-Method registered by com.webos.service.audio (category '/media')
+Sets the current scenario (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/setCurrentScenario '{}'
@@ -1732,13 +1972,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/setLatency`
 
-Method registered by com.webos.service.audio (category '/media')
+Sets the latency (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/setLatency '{}'
@@ -1753,13 +1995,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/media/setMicGain`
 
-Method registered by com.webos.service.audio (category '/media')
+Sets the mic gain (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/setMicGain '{}'
@@ -1787,6 +2031,13 @@ Sets the volume level of the current or the specified scenario.
 | `volume` | Number (required) Indicates the volume level to be set. |
 | `sessionId` | Number (optional) Indicates the display/session to which the operation is applicable. Possible values are: 0 1 Note: If not provided, the operation is applied to session 0. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes " section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/media/setVolume '{"volume":10}
 ```
@@ -1800,13 +2051,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/media/status`
 
-Method registered by com.webos.service.audio (category '/media')
+Handles the status (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/media/status '{}'
@@ -1834,6 +2087,15 @@ Mutes the sink volume.
 | `streamType` | String (required) The sink to be muted. Possible values are: palerts pfeedback pringtones pmedia pdefaultapp peffects pvoicerecognition ptts default1 default2 tts1 tts2 |
 | `mute` | Boolean (required) Mute or unmute the sink. Possible values are: true : Mute the sink. false : Unmute the sink. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `streamType` | String (optional) The sink that is muted/unmuted. |
+| `mute` | Boolean (optional) Indicates the mute status of the sink. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/muteSink '{"streamType":"default1","mute":true}
 ```
@@ -1860,6 +2122,13 @@ Mutes the source volume.
 | `sourceType` | String (required) The source to be muted. Possible values are: record btcallsource alexa webcall voiceassistance |
 | `mute` | Boolean (required) Mute or unmute the source. Possible values are: true: Mute the source. false: Unmute the source. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `sourceType` | String (required) The source that is muted/unmuted. |
+| `mute` | Boolean (required) Indicates the mute status of the source. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/muteSource '{"sourceType":"record","mute":true}
 ```
@@ -1873,13 +2142,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/nav/status`
 
-Method registered by com.webos.service.audio (category '/nav')
+Handles the status (nav)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/nav/status '{}'
@@ -1894,13 +2165,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/notification/getVolume`
 
-Method registered by com.webos.service.audio (category '/notification')
+Returns the volume (notification)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/notification/getVolume '{}'
@@ -1915,13 +2188,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/notification/offsetVolume`
 
-Method registered by com.webos.service.audio (category '/notification')
+Handles the offset volume (notification)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/notification/offsetVolume '{}'
@@ -1936,13 +2211,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/notification/setVolume`
 
-Method registered by com.webos.service.audio (category '/notification')
+Sets the volume (notification)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/notification/setVolume '{}'
@@ -1957,13 +2234,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/notification/status`
 
-Method registered by com.webos.service.audio (category '/notification')
+Handles the status (notification)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/notification/status '{}'
@@ -1978,13 +2257,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/bluetoothAudioPropertiesSet`
 
-Method registered by com.webos.service.audio (category '/phone')
+Handles the bluetooth audio properties set (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/bluetoothAudioPropertiesSet '{}'
@@ -1999,13 +2280,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/broadcastEvent`
 
-Method registered by com.webos.service.audio (category '/phone')
+Handles the broadcast event (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/broadcastEvent '{}'
@@ -2020,13 +2303,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/CallStatusUpdate`
 
-Method registered by com.webos.service.audio (category '/phone')
+Calls the status update (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/CallStatusUpdate '{}'
@@ -2041,13 +2326,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/disableScenario`
 
-Method registered by com.webos.service.audio (category '/phone')
+Disables the scenario (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/disableScenario '{}'
@@ -2062,13 +2349,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/enableScenario`
 
-Method registered by com.webos.service.audio (category '/phone')
+Enables the scenario (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/enableScenario '{}'
@@ -2083,13 +2372,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/getCurrentScenario`
 
-Method registered by com.webos.service.audio (category '/phone')
+Returns the current scenario (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/getCurrentScenario '{}'
@@ -2104,13 +2395,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/getVolume`
 
-Method registered by com.webos.service.audio (category '/phone')
+Returns the volume (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/getVolume '{}'
@@ -2125,13 +2418,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/hacGet`
 
-Method registered by com.webos.service.audio (category '/phone')
+Handles the hac get (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/hacGet '{}'
@@ -2146,13 +2441,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/hacSet`
 
-Method registered by com.webos.service.audio (category '/phone')
+Handles the hac set (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/hacSet '{}'
@@ -2167,13 +2464,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/listScenarios`
 
-Method registered by com.webos.service.audio (category '/phone')
+Lists the scenarios (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/listScenarios '{}'
@@ -2188,13 +2487,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/lockVolumeKeys`
 
-Method registered by com.webos.service.audio (category '/phone')
+Locks the volume keys (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/lockVolumeKeys '{}'
@@ -2209,13 +2510,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/museSet`
 
-Method registered by com.webos.service.audio (category '/phone')
+Handles the muse set (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/museSet '{}'
@@ -2230,13 +2533,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/offsetVolume`
 
-Method registered by com.webos.service.audio (category '/phone')
+Handles the offset volume (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/offsetVolume '{}'
@@ -2251,13 +2556,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/setCurrentScenario`
 
-Method registered by com.webos.service.audio (category '/phone')
+Sets the current scenario (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/setCurrentScenario '{}'
@@ -2272,13 +2579,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/setMuted`
 
-Method registered by com.webos.service.audio (category '/phone')
+Sets the muted (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/setMuted '{}'
@@ -2293,13 +2602,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/setVolume`
 
-Method registered by com.webos.service.audio (category '/phone')
+Sets the volume (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/setVolume '{}'
@@ -2314,13 +2625,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/phone/status`
 
-Method registered by com.webos.service.audio (category '/phone')
+Handles the status (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/phone/status '{}'
@@ -2351,6 +2664,12 @@ Plays PCM audio files through PulseAudio sound server.
 | `sampleRate` | Number (optional) Indicates the sample rate to be set. Possible values are: 44100 48000 (Default) 32000 22050 |
 | `channels` | Number (optional) Indicates the number of audio channels to be used while playing the file. Possible values are: 1: mono 2 (Default): stereo 3 4 5 6 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `playbackId` | String (required) Playback ID of the played stream. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/playSound '{ "fileName":"/usr/share/audiod/systemsounds/voicestart-ondemand.pcm", "sink":"default1", "sampleRate":48000, "format":"PA_SAMPLE_S16LE", "channels":2 }
 ```
@@ -2364,13 +2683,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/quality/setQualityAttribute`
 
-Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+Sets the quality attribute (quality)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/quality/setQualityAttribute '{}'
@@ -2385,13 +2706,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.audio/quality/setSoundOutputMode`
 
-Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+Sets the sound output mode (quality)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/quality/setSoundOutputMode '{}'
@@ -2418,6 +2741,15 @@ Registers a playback by an application/service and returns a track ID. The track
 |---|---|
 | `streamType` | String (required) Type of the audio stream. Possible values are: palerts pfeedback pringtones pmedia pdefaultapp peffects pvoicerecognition ptts default1 default2 tts1 tts2 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'API Error Codes Reference' section for details. |
+| `trackId` | String (optional) Track ID of the registered playback. |
+| `streamType` | String (optional) Type of the audio stream. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/registerTrack '{"streamType":"default1"}
 ```
@@ -2431,13 +2763,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/ringtone/getVolume`
 
-Method registered by com.webos.service.audio (category '/ringtone')
+Returns the volume (ringtone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/ringtone/getVolume '{}'
@@ -2452,13 +2786,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/ringtone/lockVolumeKeys`
 
-Method registered by com.webos.service.audio (category '/ringtone')
+Locks the volume keys (ringtone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/ringtone/lockVolumeKeys '{}'
@@ -2473,13 +2809,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/ringtone/offsetVolume`
 
-Method registered by com.webos.service.audio (category '/ringtone')
+Handles the offset volume (ringtone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/ringtone/offsetVolume '{}'
@@ -2494,13 +2832,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/ringtone/setMuted`
 
-Method registered by com.webos.service.audio (category '/ringtone')
+Sets the muted (ringtone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/ringtone/setMuted '{}'
@@ -2515,13 +2855,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/ringtone/setVolume`
 
-Method registered by com.webos.service.audio (category '/ringtone')
+Sets the volume (ringtone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/ringtone/setVolume '{}'
@@ -2536,13 +2878,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/ringtone/status`
 
-Method registered by com.webos.service.audio (category '/ringtone')
+Handles the status (ringtone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/ringtone/status '{}'
@@ -2570,6 +2914,13 @@ Sets the status of an audio effect.
 | `effectName` | String (required) Audio effect name. Possible values are: speech enhancement gain control beamforming dynamic compressor equalizer bass boost |
 | `enabled` | Boolean (required) Status of the audio effect. Possible values are: true: Audio effect is enabled. false: Audio effect is disabled. Note: By default, all the audio effects are disabled. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/setAudioEffect '{"effectName":"speech enhancement", "enabled":true}
 ```
@@ -2596,6 +2947,13 @@ Sets the equalizer band level.
 | `band` | Number (required) Band index of the equalizer band. Value range: [0, 5] (6 bands) |
 | `level` | Number (required) New gain (in decibels) for the specified band. Value range: [-10, 10] |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'API Error Codes Reference' section for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/setAudioEqualizerBandLevel '{"band":1, "level":-5}
 ```
@@ -2621,6 +2979,13 @@ Sets the equalizer preset value.
 |---|---|
 | `preset` | Number (required) ID of equalizer preset. Possible values are: 0: CLASSIC 1: JAZZ 2: POP 3: ROCK |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'API Error Codes Reference' section for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/setAudioEqualizerPreset '{"preset":1}
 ```
@@ -2634,13 +2999,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/setCurrentScenario`
 
-Method registered by com.webos.service.audio (root category)
+Sets the current scenario.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/setCurrentScenario '{}'
@@ -2669,6 +3036,13 @@ Sets the input volume for audio streams.
 | `volume` | Number (required) Indicates the volume to be applied. The value can range from 0 to 100. |
 | `ramp` | Boolean (optional) Indicates if the volume is to be applied in steps. Possible values are: true: Volume is applied in steps. false (Default): Volume is not applied in steps. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `volume` | Number (required) Returns the value of applied volume in case of success. The value can range from 0 to 100. |
+| `streamType` | String (required) Returns the stream name of the volume applied. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/setInputVolume '{ "streamType":"default1", "volume":50 }
 ```
@@ -2682,13 +3056,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/setMuted`
 
-Method registered by com.webos.service.audio (root category)
+Sets the muted.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/setMuted '{}'
@@ -2715,6 +3091,12 @@ Sets the sound input device for recording.
 |---|---|
 | `soundInput` | String (required) Sound input device. Possible values are: pcm_input: For AVN usb_mic0 usb_mic1 usb_mic2 usb_mic3 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `soundInput` | String (required) The sound input device that is set. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/setSoundInput '{"soundInput":"pcm_input"}
 ```
@@ -2739,6 +3121,12 @@ Sets the sound output device.
 | Param | Type / notes |
 |---|---|
 | `soundOutput` | String (required) The audio output device. Possible values are: pcm_output pcm_output1 usb_speaker0 bluetooth_speaker0 usb_speaker1 |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `soundOutput` | String (required) The audio output device. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/setSoundOutput '{"soundOutput":"pcm_output"}
@@ -2767,6 +3155,13 @@ Sets input volume of the source.
 | `volume` | Number (required) The volume level to be applied to the source. The value can range from 0 to 100. |
 | `ramp` | Boolean (optional) Indicates if the volume is to be applied in steps. Possible values are: true: Applied in steps. false (Default): Not applied in steps. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `volume` | Number (required) The updated volume level. |
+| `sourceType` | String (required) The source to which the volume is set. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/setSourceInputVolume '{"sourceType":"record","volume":10}
 ```
@@ -2793,6 +3188,16 @@ Sets the volume for a specific playback that is identified by the track ID (obta
 | `trackId` | String (required) Track ID of the registered playback. |
 | `volume` | Number (required) Volume level to be set. The valid volume range is 0-100 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'API Error Codes Reference' section for details. |
+| `trackId` | String (optional) Track ID for which the volume is set. |
+| `volume` | Number (optional) Volume level that is set. |
+| `streamType` | String (optional) Type of audio stream. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/setTrackVolume '{"trackId":"_rKjYAlq3r","volume":50}
 ```
@@ -2806,13 +3211,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/setVolume`
 
-Method registered by com.webos.service.audio (root category)
+Sets the volume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/setVolume '{}'
@@ -2827,13 +3234,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/setVolume2`
 
-Method registered by com.webos.service.audio (root category)
+Sets the volume 2.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/setVolume2 '{}'
@@ -2859,6 +3268,12 @@ Sets the audio output device.
 | Param | Type / notes |
 |---|---|
 | `soundOut` | String (required) Indicates the audio output device. Possible values are: alsa |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `soundOut` | String (required) Indicates the audio output device. Possible values are: - alsa |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/soundSettings/setSoundOut '{"soundOut":"alsa"}
@@ -2894,13 +3309,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/state/get`
 
-Method registered by com.webos.service.audio (category '/state')
+Returns the audio (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/get '{}'
@@ -2915,13 +3332,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/getPreference`
 
-Method registered by com.webos.service.audio (category '/state')
+Returns the preference (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/getPreference '{}'
@@ -2936,13 +3355,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/getSoundProfile`
 
-Method registered by com.webos.service.audio (category '/state')
+Returns the sound profile (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/getSoundProfile '{}'
@@ -2957,13 +3378,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/getTouchSound`
 
-Method registered by com.webos.service.audio (category '/state')
+Returns the touch sound (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/getTouchSound '{}'
@@ -2978,13 +3401,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/getVolumeBalance`
 
-Method registered by com.webos.service.audio (category '/state')
+Returns the volume balance (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/getVolumeBalance '{}'
@@ -2999,13 +3424,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/loadRTPModule`
 
-Method registered by com.webos.service.audio (category '/state')
+Loads the RTP module (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/loadRTPModule '{}'
@@ -3020,13 +3447,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/loopback`
 
-Method registered by com.webos.service.audio (category '/state')
+Handles the loopback (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/loopback '{}'
@@ -3041,13 +3470,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/pulse/setFilter`
 
-Method registered by com.webos.service.audio (category '/state/pulse')
+Sets the filter (state pulse)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/pulse/setFilter '{}'
@@ -3062,13 +3493,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/pulse/sinkStatus`
 
-Method registered by com.webos.service.audio (category '/state/pulse')
+Handles the sink status (state pulse)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/pulse/sinkStatus '{}'
@@ -3083,13 +3516,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/pulse/suspend`
 
-Method registered by com.webos.service.audio (category '/state/pulse')
+Handles the suspend (state pulse)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/pulse/suspend '{}'
@@ -3104,13 +3539,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/set`
 
-Method registered by com.webos.service.audio (category '/state')
+Sets the audio (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/set '{}'
@@ -3125,13 +3562,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/setNREC`
 
-Method registered by com.webos.service.audio (category '/state')
+Sets the NREC (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/setNREC '{}'
@@ -3146,13 +3585,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/setPreference`
 
-Method registered by com.webos.service.audio (category '/state')
+Sets the preference (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/setPreference '{}'
@@ -3167,13 +3608,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/setRingerSwitch`
 
-Method registered by com.webos.service.audio (category '/state')
+Sets the ringer switch (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/setRingerSwitch '{}'
@@ -3188,13 +3631,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/setSoundProfile`
 
-Method registered by com.webos.service.audio (category '/state')
+Sets the sound profile (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/setSoundProfile '{}'
@@ -3209,13 +3654,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/setTouchSound`
 
-Method registered by com.webos.service.audio (category '/state')
+Sets the touch sound (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/setTouchSound '{}'
@@ -3230,13 +3677,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/setVolumeBalance`
 
-Method registered by com.webos.service.audio (category '/state')
+Sets the volume balance (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/setVolumeBalance '{}'
@@ -3251,13 +3700,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/unloadRTPModule`
 
-Method registered by com.webos.service.audio (category '/state')
+Unloads the RTP module (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/unloadRTPModule '{}'
@@ -3272,13 +3723,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/state/volumeRamp`
 
-Method registered by com.webos.service.audio (category '/state')
+Handles the volume ramp (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/state/volumeRamp '{}'
@@ -3293,13 +3746,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/status`
 
-Method registered by com.webos.service.audio (root category)
+Handles the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/status '{}'
@@ -3335,13 +3790,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/system/getVolume`
 
-Method registered by com.webos.service.audio (category '/system')
+Returns the volume (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/system/getVolume '{}'
@@ -3356,13 +3813,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/system/offsetVolume`
 
-Method registered by com.webos.service.audio (category '/system')
+Handles the offset volume (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/system/offsetVolume '{}'
@@ -3377,13 +3836,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/system/setMuted`
 
-Method registered by com.webos.service.audio (category '/system')
+Sets the muted (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/system/setMuted '{}'
@@ -3398,13 +3859,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/system/setVolume`
 
-Method registered by com.webos.service.audio (category '/system')
+Sets the volume (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/system/setVolume '{}'
@@ -3419,13 +3882,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/system/status`
 
-Method registered by com.webos.service.audio (category '/system')
+Handles the status (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/system/status '{}'
@@ -3468,13 +3933,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/telephony/answered`
 
-Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+Handles the answered (telephony)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/telephony/answered '{}'
@@ -3489,13 +3956,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.audio/telephony/callAudio`
 
-Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+Calls the audio (telephony)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/telephony/callAudio '{}'
@@ -3510,13 +3979,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.audio/telephony/startCall`
 
-Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+Starts the call (telephony)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/telephony/startCall '{}'
@@ -3531,13 +4002,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.audio/timer/getTimerOn`
 
-Method registered by com.webos.service.audio (category '/timer')
+Returns the timer on (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/timer/getTimerOn '{}'
@@ -3552,13 +4025,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/timer/getVolume`
 
-Method registered by com.webos.service.audio (category '/timer')
+Returns the volume (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/timer/getVolume '{}'
@@ -3573,13 +4048,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/timer/offsetVolume`
 
-Method registered by com.webos.service.audio (category '/timer')
+Handles the offset volume (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/timer/offsetVolume '{}'
@@ -3594,13 +4071,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/timer/setMuted`
 
-Method registered by com.webos.service.audio (category '/timer')
+Sets the muted (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/timer/setMuted '{}'
@@ -3615,13 +4094,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/timer/setTimerOn`
 
-Method registered by com.webos.service.audio (category '/timer')
+Sets the timer on (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/timer/setTimerOn '{}'
@@ -3636,13 +4117,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/timer/setVolume`
 
-Method registered by com.webos.service.audio (category '/timer')
+Sets the volume (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/timer/setVolume '{}'
@@ -3657,13 +4140,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/timer/status`
 
-Method registered by com.webos.service.audio (category '/timer')
+Handles the status (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/timer/status '{}'
@@ -3678,13 +4163,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/timer/tonegenerator`
 
-Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+Handles the tonegenerator (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/timer/tonegenerator '{}'
@@ -3699,13 +4186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.audio/tonegenerator/playCallertone`
 
-Method registered by com.webos.service.audio (category '/tonegenerator')
+Plays the callertone (tonegenerator)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tonegenerator/playCallertone '{}'
@@ -3720,13 +4209,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/tv/activateWisaSpeaker`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Activates the wisa speaker (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/activateWisaSpeaker '{}'
@@ -3741,13 +4232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/ctrMicSwitch`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Handles the ctr mic switch (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/ctrMicSwitch '{}'
@@ -3762,13 +4255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/getAmplifierState`
 
-Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Returns the amplifier state (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/getAmplifierState '{}'
@@ -3783,13 +4278,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/getArcAvSyncTime`
 
-Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Returns the ARC A/V sync time (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/getArcAvSyncTime '{}'
@@ -3804,13 +4301,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/getAudioEffectData`
 
-Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+Returns the audio effect data (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/getAudioEffectData '{}'
@@ -3825,13 +4324,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.audio/tv/getAudioInputProperty`
 
-Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Returns the audio input property (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/getAudioInputProperty '{}'
@@ -3846,13 +4347,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/getExtDeviceFwVersion`
 
-Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Returns the ext device firmware version (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/getExtDeviceFwVersion '{}'
@@ -3867,13 +4370,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/getGainAsInput`
 
-Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Returns the gain as input (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/getGainAsInput '{}'
@@ -3888,13 +4393,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/getHeadphoneStatus`
 
-Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Returns the headphone status (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/getHeadphoneStatus '{}'
@@ -3909,13 +4416,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/getSoundCardsState`
 
-Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Returns the sound cards state (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/getSoundCardsState '{}'
@@ -3930,13 +4439,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/mixDigitalSoundOutput`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Handles the mix digital sound output (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/mixDigitalSoundOutput '{}'
@@ -3951,13 +4462,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/playOnPowerState`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Plays the on power state (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/playOnPowerState '{}'
@@ -3972,13 +4485,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/readI2cDataFromAmplifier`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Reads the i 2 c data from amplifier (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/readI2cDataFromAmplifier '{}'
@@ -3993,13 +4508,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/resetSoundSettings`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Resets the sound settings (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/resetSoundSettings '{}'
@@ -4014,13 +4531,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setAmplifierState`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the amplifier state (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setAmplifierState '{}'
@@ -4035,13 +4554,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setARCDeviceInfo`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the ARC device info (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setARCDeviceInfo '{}'
@@ -4056,13 +4577,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setAudioEffectState`
 
-Method on com.webos.service.audio (from on-device permission registry; parameters undocumented).
+Sets the audio effect state (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setAudioEffectState '{}'
@@ -4077,13 +4600,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.audio/tv/setAudioVideoSync`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the audio video sync (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setAudioVideoSync '{}'
@@ -4098,13 +4623,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setDolbyOTTMode`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the dolby OTT mode (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setDolbyOTTMode '{}'
@@ -4119,13 +4646,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setDolbyVisionPopup`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the dolby vision popup (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setDolbyVisionPopup '{}'
@@ -4140,13 +4669,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setEqualizerStatus`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the equalizer status (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setEqualizerStatus '{}'
@@ -4161,13 +4692,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setInputVolume`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the input volume (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setInputVolume '{}'
@@ -4182,13 +4715,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setMSSProperties`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the MSS properties (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setMSSProperties '{}'
@@ -4203,13 +4738,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setNpuProperties`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the npu properties (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setNpuProperties '{}'
@@ -4224,13 +4761,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setOffsetDelay`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the offset delay (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setOffsetDelay '{}'
@@ -4245,13 +4784,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setOutputMute`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the output mute (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setOutputMute '{}'
@@ -4266,13 +4807,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setPopupDisplayStatus`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the popup display status (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setPopupDisplayStatus '{}'
@@ -4287,13 +4830,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setPSWProperties`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the PSW properties (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setPSWProperties '{}'
@@ -4308,13 +4853,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setQualityAttribute`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the quality attribute (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setQualityAttribute '{}'
@@ -4329,13 +4876,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setSCMS`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the SCMS (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setSCMS '{}'
@@ -4350,13 +4899,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setSoundEngineStatus`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the sound engine status (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setSoundEngineStatus '{}'
@@ -4371,13 +4922,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setSoundOutputMode`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the sound output mode (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setSoundOutputMode '{}'
@@ -4392,13 +4945,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/setVideoLatencyTime`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the video latency time (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setVideoLatencyTime '{}'
@@ -4413,13 +4968,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/switchMicrophone`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Switches the microphone (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/switchMicrophone '{}'
@@ -4434,13 +4991,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/updateExtFw`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Updates the ext firmware (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/updateExtFw '{}'
@@ -4455,13 +5014,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/tv/writeI2cDataToAmplifier`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Writes the i 2 c data to amplifier (TV)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/writeI2cDataToAmplifier '{}'
@@ -4490,6 +5051,13 @@ Gives the audiod information regarding the USB Mic/Headset Connected/Disconnecte
 | `soundcard_no` | Number (optional) Sound card number. As of now it is being extracted from the device path where USB sound card is detected by udev. |
 | `device_no` | Number (optional) Device number. As of now it is being extracted from the device path where USB sound card is detected by udev. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. |
+
 ```sh
 luna-send -n 1 luna://com.webos.service.audio/udev/event '{"event":"headset-inserted"}
 ```
@@ -4503,13 +5071,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/UMI/activateConnection`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Activates the connection (UMI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/UMI/activateConnection '{}'
@@ -4541,6 +5111,13 @@ Establishes connection for the audio resource.
 | `sourcePort` | Number (required) Audio source port. Possible values are: 0 ~ 7: For AMIXER source. |
 | `context` | String (optional) Indicates the audio pipeline ID. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `source` | String (optional) Indicates the audio source. |
+| `sink` | String (optional) Indicates the audio sink. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/UMI/connect '{ "outputMode":"alsa", "audioType":"umimedia", "sink":"ALSA", "source":"AMIXER", "sourcePort":0 }
 ```
@@ -4570,6 +5147,13 @@ Disconnects the connection.
 | `audioType` | String (required) Indicates the audio stream type. Possible values are: umimedia |
 | `context` | String (optional) Indicates the audio pipeline ID. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `source` | String (required) Indicates the audio source. |
+| `sink` | String (required) Indicates the audio sink. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/UMI/disconnect '{ "sink":"ALSA", "source":"AMIXER", "sourcePort":0, "audioType":"umimedia" }
 ```
@@ -4583,13 +5167,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/UMI/getInputVolume`
 
-Getter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Returns the input volume (UMI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/UMI/getInputVolume '{}'
@@ -4611,6 +5197,12 @@ Shows the connection status of audio resources.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `audio` | Object array: audio (required) Audio connection details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.audio/UMI/getStatus '{}
@@ -4653,13 +5245,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/UMI/register`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Registers the audio (UMI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/UMI/register '{}'
@@ -4674,13 +5268,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/UMI/setInputDownMix`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the input down mix (UMI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/UMI/setInputDownMix '{}'
@@ -4695,13 +5291,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/UMI/setInputVolume`
 
-Setter on com.webos.service.audio (introspected on-device; parameters undocumented).
+Sets the input volume (UMI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/UMI/setInputVolume '{}'
@@ -4716,13 +5314,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.audio/UMI/unregister`
 
-Method on com.webos.service.audio (introspected on-device; parameters undocumented).
+Unregisters the audio (UMI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/UMI/unregister '{}'
@@ -4749,6 +5349,14 @@ Unregisters a playback by an application/service.
 |---|---|
 | `trackId` | String (required) Track ID of the registered playback. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'API Error Codes Reference' section for details. |
+| `trackId` | String (optional) Track ID that is unregistered. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/unregisterTrack '{"trackId":"_OOWR1nOw9"}
 ```
@@ -4762,13 +5370,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/vibrate/get`
 
-Method registered by com.webos.service.audio (category '/vibrate')
+Returns the audio (vibrate)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vibrate/get '{}'
@@ -4783,13 +5393,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vibrate/set`
 
-Method registered by com.webos.service.audio (category '/vibrate')
+Sets the audio (vibrate)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vibrate/set '{}'
@@ -4804,13 +5416,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/broadcastEvent`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Handles the broadcast event (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/broadcastEvent '{}'
@@ -4825,13 +5439,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/control`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Controls the audio (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/control '{}'
@@ -4846,13 +5462,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/disableScenario`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Disables the scenario (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/disableScenario '{}'
@@ -4867,13 +5485,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/enableScenario`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Enables the scenario (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/enableScenario '{}'
@@ -4888,13 +5508,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/getCurrentScenario`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Returns the current scenario (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/getCurrentScenario '{}'
@@ -4909,13 +5531,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/getMicGain`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Returns the mic gain (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/getMicGain '{}'
@@ -4930,13 +5554,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/getVolume`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Returns the volume (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/getVolume '{}'
@@ -4951,13 +5577,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/listScenarios`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Lists the scenarios (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/listScenarios '{}'
@@ -4972,13 +5600,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/offsetMicGain`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Handles the offset mic gain (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/offsetMicGain '{}'
@@ -4993,13 +5623,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/offsetVolume`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Handles the offset volume (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/offsetVolume '{}'
@@ -5014,13 +5646,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/setCurrentScenario`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Sets the current scenario (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/setCurrentScenario '{}'
@@ -5035,13 +5669,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/setMicGain`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Sets the mic gain (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/setMicGain '{}'
@@ -5056,13 +5692,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/setVolume`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Sets the volume (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/setVolume '{}'
@@ -5077,13 +5715,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/voiceCommand/status`
 
-Method registered by com.webos.service.audio (category '/voiceCommand')
+Handles the status (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/voiceCommand/status '{}'
@@ -5098,13 +5738,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/volumeDown`
 
-Method registered by com.webos.service.audio (root category)
+Handles the volume down.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/volumeDown '{}'
@@ -5119,13 +5761,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/volumeKeeping`
 
-Method registered by com.webos.service.audio (root category)
+Handles the volume keeping.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/volumeKeeping '{}'
@@ -5161,13 +5805,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.audio/volumeUp`
 
-Method registered by com.webos.service.audio (root category)
+Handles the volume up.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/volumeUp '{}'
@@ -5182,13 +5828,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vvm/broadcastEvent`
 
-Method registered by com.webos.service.audio (category '/vvm')
+Handles the broadcast event (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vvm/broadcastEvent '{}'
@@ -5203,13 +5851,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vvm/control`
 
-Method registered by com.webos.service.audio (category '/vvm')
+Controls the audio (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vvm/control '{}'
@@ -5224,13 +5874,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vvm/disableScenario`
 
-Method registered by com.webos.service.audio (category '/vvm')
+Disables the scenario (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vvm/disableScenario '{}'
@@ -5245,13 +5897,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vvm/enableScenario`
 
-Method registered by com.webos.service.audio (category '/vvm')
+Enables the scenario (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vvm/enableScenario '{}'
@@ -5266,13 +5920,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vvm/getCurrentScenario`
 
-Method registered by com.webos.service.audio (category '/vvm')
+Returns the current scenario (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vvm/getCurrentScenario '{}'
@@ -5287,13 +5943,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vvm/getVolume`
 
-Method registered by com.webos.service.audio (category '/vvm')
+Returns the volume (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vvm/getVolume '{}'
@@ -5308,13 +5966,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vvm/listScenarios`
 
-Method registered by com.webos.service.audio (category '/vvm')
+Lists the scenarios (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vvm/listScenarios '{}'
@@ -5329,13 +5989,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vvm/offsetVolume`
 
-Method registered by com.webos.service.audio (category '/vvm')
+Handles the offset volume (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vvm/offsetVolume '{}'
@@ -5350,13 +6012,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vvm/setCurrentScenario`
 
-Method registered by com.webos.service.audio (category '/vvm')
+Sets the current scenario (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vvm/setCurrentScenario '{}'
@@ -5371,13 +6035,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vvm/setVolume`
 
-Method registered by com.webos.service.audio (category '/vvm')
+Sets the volume (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vvm/setVolume '{}'
@@ -5392,13 +6058,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.audio/vvm/status`
 
-Method registered by com.webos.service.audio (category '/vvm')
+Handles the status (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/vvm/status '{}'

@@ -1,64 +1,68 @@
 # `com.webos.service.gibbips.broadcast`
 
+GIBBIPS live-broadcast service: changes channels and reports broadcast/channel/play state, audio and component info, emergency info and media time for live TV. _(inferred from the service's methods)_
+
 40 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`changeChannel`](#changechannel) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`changeChannelService`](#changechannelservice) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`close`](#close) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getAudioDescriptionInfo`](#getaudiodescriptioninfo) | private |  | audio | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getAudioInfo`](#getaudioinfo) | private |  | audio | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getAudioLanguageList`](#getaudiolanguagelist) | private |  | audio | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getBroadcastComponentList`](#getbroadcastcomponentlist) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getBroadcastState`](#getbroadcaststate) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getChannelState`](#getchannelstate) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getCurrentChannel`](#getcurrentchannel) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getDialogEnhancementInfo`](#getdialogenhancementinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getEmergencyInfo`](#getemergencyinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getLinkageUriInfoType`](#getlinkageuriinfotype) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getMediaTime`](#getmediatime) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getObjectAudioInfo`](#getobjectaudioinfo) | private |  | audio | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getPipHotkeyState`](#getpiphotkeystate) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getPlayState`](#getplaystate) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getSignalStatus`](#getsignalstatus) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getVideoInfo`](#getvideoinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`isSupportFvp`](#issupportfvp) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`open`](#open) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`pause`](#pause) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`pause1`](#pause1) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`pin`](#pin) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`play`](#play) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`registerDataMfu`](#registerdatamfu) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setAliveMode`](#setalivemode) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setAudioLanguage`](#setaudiolanguage) | private |  | audio | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setAudioMute`](#setaudiomute) | private |  | audio | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setBroadcastComponent`](#setbroadcastcomponent) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setBroadcastComponentList`](#setbroadcastcomponentlist) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setLinkageUriInfo`](#setlinkageuriinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setObjectAudioInfo`](#setobjectaudioinfo) | private |  | audio | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setPipHotkey`](#setpiphotkey) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setSink`](#setsink) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
-| [`subscribeSignalTable`](#subscribesignaltable) | private |  | tv-broadcast | Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`changeChannel`](#changechannel) | private |  | tv-broadcast | inferred | Changes the channel. |
+| [`changeChannelService`](#changechannelservice) | private |  | tv-broadcast | inferred | Changes the channel service. |
+| [`close`](#close) | private |  | tv-broadcast | inferred | Closes the gibbips broadcast. |
+| [`getAudioDescriptionInfo`](#getaudiodescriptioninfo) | private |  | audio | inferred | Returns the audio description info. |
+| [`getAudioInfo`](#getaudioinfo) | private |  | audio | inferred | Returns the audio info. |
+| [`getAudioLanguageList`](#getaudiolanguagelist) | private |  | audio | inferred | Returns the audio language list. |
+| [`getBroadcastComponentList`](#getbroadcastcomponentlist) | private |  | tv-broadcast | inferred | Returns the broadcast component list. |
+| [`getBroadcastState`](#getbroadcaststate) | private |  | tv-broadcast | inferred | Returns the broadcast state. |
+| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | tv-broadcast | inferred | Returns the channel change result. |
+| [`getChannelState`](#getchannelstate) | private |  | tv-broadcast | inferred | Returns the channel state. |
+| [`getCurrentChannel`](#getcurrentchannel) | private |  | tv-broadcast | inferred | Returns the current channel. |
+| [`getDialogEnhancementInfo`](#getdialogenhancementinfo) | private |  | tv-broadcast | inferred | Returns the dialog enhancement info. |
+| [`getEmergencyInfo`](#getemergencyinfo) | private |  | tv-broadcast | inferred | Returns the emergency info. |
+| [`getLinkageUriInfoType`](#getlinkageuriinfotype) | private |  | tv-broadcast | inferred | Returns the linkage URI info type. |
+| [`getMediaTime`](#getmediatime) | private |  | tv-broadcast | inferred | Returns the media time. |
+| [`getObjectAudioInfo`](#getobjectaudioinfo) | private |  | audio | inferred | Returns the object audio info. |
+| [`getPipHotkeyState`](#getpiphotkeystate) | private |  | tv-broadcast | inferred | Returns the pip hotkey state. |
+| [`getPlayState`](#getplaystate) | private |  | tv-broadcast | inferred | Returns the play state. |
+| [`getSignalStatus`](#getsignalstatus) | private |  | tv-broadcast | inferred | Returns the signal status. |
+| [`getVideoInfo`](#getvideoinfo) | private |  | tv-broadcast | inferred | Returns the video info. |
+| [`isSupportFvp`](#issupportfvp) | private |  | tv-broadcast | inferred | Reports whether the support fvp is set. |
+| [`open`](#open) | private |  | tv-broadcast | inferred | Opens the gibbips broadcast. |
+| [`pause`](#pause) | private |  | tv-broadcast | inferred | Pauses the gibbips broadcast. |
+| [`pause1`](#pause1) | private |  | tv-broadcast | inferred | Pauses the 1. |
+| [`pin`](#pin) | private |  | tv-broadcast | inferred | Handles the pin. |
+| [`play`](#play) | private |  | tv-broadcast | inferred | Plays the gibbips broadcast. |
+| [`registerDataMfu`](#registerdatamfu) | private |  | tv-broadcast | inferred | Registers the data mfu. |
+| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | inferred | Scans for detail information. ⚠️ |
+| [`setAliveMode`](#setalivemode) | private |  | tv-broadcast | inferred | Sets the alive mode. |
+| [`setAudioLanguage`](#setaudiolanguage) | private |  | audio | inferred | Sets the audio language. |
+| [`setAudioMute`](#setaudiomute) | private |  | audio | inferred | Sets the audio mute. |
+| [`setBroadcastComponent`](#setbroadcastcomponent) | private |  | tv-broadcast | inferred | Sets the broadcast component. |
+| [`setBroadcastComponentList`](#setbroadcastcomponentlist) | private |  | tv-broadcast | inferred | Sets the broadcast component list. |
+| [`setLinkageUriInfo`](#setlinkageuriinfo) | private |  | tv-broadcast | inferred | Sets the linkage URI info. |
+| [`setObjectAudioInfo`](#setobjectaudioinfo) | private |  | audio | inferred | Sets the object audio info. |
+| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | tv-broadcast | inferred | Sets the pipeline window ID. |
+| [`setPipHotkey`](#setpiphotkey) | private |  | tv-broadcast | inferred | Sets the pip hotkey. |
+| [`setSink`](#setsink) | private |  | tv-broadcast | inferred | Sets the sink. |
+| [`stop`](#stop) | private |  | tv-broadcast | inferred | Stops the gibbips broadcast. |
+| [`subscribeSignalTable`](#subscribesignaltable) | private |  | tv-broadcast | inferred | Subscribes to the signal table. |
 
 <a id="changechannel"></a>
 ## `changeChannel`
 
 `luna://com.webos.service.gibbips.broadcast/changeChannel`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Changes the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/changeChannel '{}'
@@ -73,13 +77,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/changeChannelService`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Changes the channel service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/changeChannelService '{}'
@@ -94,13 +100,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/close`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Closes the gibbips broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/close '{}'
@@ -115,13 +123,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getAudioDescriptionInfo`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the audio description info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getAudioDescriptionInfo '{}'
@@ -136,13 +146,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getAudioInfo`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getAudioInfo '{}'
@@ -157,13 +169,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getAudioLanguageList`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the audio language list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getAudioLanguageList '{}'
@@ -178,13 +192,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getBroadcastComponentList`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the broadcast component list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getBroadcastComponentList '{}'
@@ -199,13 +215,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getBroadcastState`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the broadcast state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getBroadcastState '{}'
@@ -220,13 +238,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getChannelChangeResult`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the channel change result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getChannelChangeResult '{}'
@@ -241,13 +261,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getChannelState`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the channel state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getChannelState '{}'
@@ -262,13 +284,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getCurrentChannel`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the current channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getCurrentChannel '{}'
@@ -283,13 +307,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getDialogEnhancementInfo`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the dialog enhancement info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getDialogEnhancementInfo '{}'
@@ -304,13 +330,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getEmergencyInfo`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the emergency info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getEmergencyInfo '{}'
@@ -325,13 +353,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getLinkageUriInfoType`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the linkage URI info type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getLinkageUriInfoType '{}'
@@ -346,13 +376,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getMediaTime`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the media time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getMediaTime '{}'
@@ -367,13 +399,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getObjectAudioInfo`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the object audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getObjectAudioInfo '{}'
@@ -388,13 +422,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getPipHotkeyState`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the pip hotkey state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getPipHotkeyState '{}'
@@ -409,13 +445,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getPlayState`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the play state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getPlayState '{}'
@@ -430,13 +468,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getSignalStatus`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the signal status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getSignalStatus '{}'
@@ -451,13 +491,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/getVideoInfo`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Returns the video info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/getVideoInfo '{}'
@@ -472,13 +514,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/isSupportFvp`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Reports whether the support fvp is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/isSupportFvp '{}'
@@ -493,13 +537,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/open`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Opens the gibbips broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/open '{}'
@@ -514,13 +560,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/pause`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Pauses the gibbips broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/pause '{}'
@@ -535,13 +583,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/pause1`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Pauses the 1.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/pause1 '{}'
@@ -556,13 +606,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/pin`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Handles the pin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/pin '{}'
@@ -577,13 +629,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/play`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Plays the gibbips broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/play '{}'
@@ -598,13 +652,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/registerDataMfu`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Registers the data mfu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/registerDataMfu '{}'
@@ -619,13 +675,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/scanDetailInformation`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Scans for detail information.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/scanDetailInformation '{}'
@@ -640,13 +698,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/setAliveMode`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Sets the alive mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/setAliveMode '{}'
@@ -661,13 +721,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/setAudioLanguage`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Sets the audio language.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/setAudioLanguage '{}'
@@ -682,13 +744,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/setAudioMute`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Sets the audio mute.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/setAudioMute '{}'
@@ -703,13 +767,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/setBroadcastComponent`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Sets the broadcast component.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/setBroadcastComponent '{}'
@@ -724,13 +790,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/setBroadcastComponentList`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Sets the broadcast component list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/setBroadcastComponentList '{}'
@@ -745,13 +813,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/setLinkageUriInfo`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Sets the linkage URI info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/setLinkageUriInfo '{}'
@@ -766,13 +836,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/setObjectAudioInfo`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Sets the object audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/setObjectAudioInfo '{}'
@@ -787,13 +859,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/setPipelineWindowId`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Sets the pipeline window ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/setPipelineWindowId '{}'
@@ -808,13 +882,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/setPipHotkey`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Sets the pip hotkey.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/setPipHotkey '{}'
@@ -829,13 +905,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/setSink`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Sets the sink.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/setSink '{}'
@@ -850,13 +928,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/stop`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Stops the gibbips broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/stop '{}'
@@ -871,13 +951,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.broadcast/subscribeSignalTable`
 
-Method on com.webos.service.gibbips.broadcast (from on-device permission registry; parameters undocumented).
+Subscribes to the signal table.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.broadcast/subscribeSignalTable '{}'

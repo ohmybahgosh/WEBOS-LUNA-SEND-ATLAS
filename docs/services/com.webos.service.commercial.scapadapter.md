@@ -1,188 +1,192 @@
 # `com.webos.service.commercial.scapadapter`
 
+Commercial/pro-TV SCAP adapter (set-top/conditional-access integration) with a large configuration surface: OSD language and lock, picture mode, proxy and server settings, USB lock, screen capture and logo. _(inferred from the service's methods)_
+
 164 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`captureScreen`](#capturescreen) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`changeLogoImage`](#changelogoimage) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`clearCache`](#clearcache) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/getLocaleList`](#configuration_getlocalelist) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/getOSDLanguage`](#configuration_getosdlanguage) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/getOSDLock`](#configuration_getosdlock) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/getPictureMode`](#configuration_getpicturemode) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/getPictureProperty`](#configuration_getpictureproperty) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/getProxyBypassList`](#configuration_getproxybypasslist) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/getServerProperty`](#configuration_getserverproperty) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/getUSBLock`](#configuration_getusblock) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/getVirtualKeyboardLanguage`](#configuration_getvirtualkeyboardlanguage) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/setOSDLanguage`](#configuration_setosdlanguage) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/setOSDLock`](#configuration_setosdlock) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/setPictureMode`](#configuration_setpicturemode) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/setPictureProperty`](#configuration_setpictureproperty) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/setProxyBypassList`](#configuration_setproxybypasslist) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/setServerProperty`](#configuration_setserverproperty) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`configuration/setTimeZone`](#configuration_settimezone) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/setUSBLock`](#configuration_setusblock) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`configuration/setVirtualKeyboardLanguage`](#configuration_setvirtualkeyboardlanguage) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`createToast`](#createtoast) | public |  | notifications | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`debug`](#debug) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`deviceInfo/addBlockedPortList`](#deviceinfo_addblockedportlist) | public |  | db | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`deviceInfo/deleteBlockedPortList`](#deviceinfo_deleteblockedportlist) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`deviceInfo/getBlockedPortList`](#deviceinfo_getblockedportlist) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`deviceInfo/getEddystoneInfo`](#deviceinfo_geteddystoneinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`deviceInfo/getiBeaconInfo`](#deviceinfo_getibeaconinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`deviceinfo/getNetworkMacInfo`](#deviceinfo_getnetworkmacinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`deviceInfo/getPlatformInfo`](#deviceinfo_getplatforminfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`deviceInfo/getProxyInfo`](#deviceinfo_getproxyinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`deviceinfo/getSoftApClientInfo`](#deviceinfo_getsoftapclientinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`deviceInfo/setEddystoneInfo`](#deviceinfo_seteddystoneinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`deviceInfo/setiBeaconInfo`](#deviceinfo_setibeaconinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`deviceInfo/setProxyInfo`](#deviceinfo_setproxyinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`downloadFirmware`](#downloadfirmware) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`eventManager/getConfig`](#eventmanager_getconfig) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`eventManager/getValue`](#eventmanager_getvalue) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`eventManager/setConfig`](#eventmanager_setconfig) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`eventManager/stopWatcher`](#eventmanager_stopwatcher) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/copyFile`](#fs_copyfile) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/decryptFile`](#fs_decryptfile) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/exists`](#fs_exists) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/fsyncFile`](#fs_fsyncfile) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/getMD5Hash`](#fs_getmd5hash) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/listFiles`](#fs_listfiles) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/mkdir`](#fs_mkdir) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/moveFile`](#fs_movefile) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/readFile`](#fs_readfile) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/removeAll`](#fs_removeall) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`fs/removeFile`](#fs_removefile) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`fs/statFile`](#fs_statfile) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/storageInfo`](#fs_storageinfo) | public |  | storage | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/unzip`](#fs_unzip) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`fs/writeFile`](#fs_writefile) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`getExternalInputList`](#getexternalinputlist) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`getFailoverPrioirty`](#getfailoverprioirty) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`getFirmwareUpgradeStatus`](#getfirmwareupgradestatus) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`getHolidaySchedule`](#getholidayschedule) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`getOnOffTimeSchedule`](#getonofftimeschedule) | public |  | input | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`getPowerSaveMode`](#getpowersavemode) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`getSignageInformation`](#getsignageinformation) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`getSystemUsageInfo`](#getsystemusageinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`getVideoSize`](#getvideosize) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`inputsource/getInputLabelForVideoTag`](#inputsource_getinputlabelforvideotag) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`inputSource/getInputSourceStatus`](#inputsource_getinputsourcestatus) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/getBindingIdList`](#iot_getbindingidlist) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/getBridgeStatus`](#iot_getbridgestatus) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/getFrameworkStatus`](#iot_getframeworkstatus) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/getThingList`](#iot_getthinglist) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/getThingListPrivate`](#iot_getthinglistprivate) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/getVersions`](#iot_getversions) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/requestFactoryReset`](#iot_requestfactoryreset) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`iot/requestRegisterThing`](#iot_requestregisterthing) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/requestRejectThing`](#iot_requestrejectthing) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/requestSetBridgeStatus`](#iot_requestsetbridgestatus) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/requestSetComponent`](#iot_requestsetcomponent) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/requestSynchronizeThing`](#iot_requestsynchronizething) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/requestUnregisterThing`](#iot_requestunregisterthing) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/setThingNickname`](#iot_setthingnickname) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`iot/subscribeIoTEvent`](#iot_subscribeiotevent) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`launchApplication`](#launchapplication) | public |  | apps | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`network/connectWifi`](#network_connectwifi) | public |  | network | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`network/getBeaconInfo`](#network_getbeaconinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`network/getNetworkInfo`](#network_getnetworkinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`network/getSoftApInfo`](#network_getsoftapinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`network/getWifiList`](#network_getwifilist) | public |  | network | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`network/notifyUpdatingBeaconInfo`](#network_notifyupdatingbeaconinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`network/setBeaconInfo`](#network_setbeaconinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`network/setNetworkInfo`](#network_setnetworkinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`network/setSoftApInfo`](#network_setsoftapinfo) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`network/startWps`](#network_startwps) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`network/stopWps`](#network_stopwps) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`ping_local_server`](#ping_local_server) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`power/enableWakeOnLan`](#power_enablewakeonlan) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`power/executePowerCommand`](#power_executepowercommand) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`power/getDPMWakeup`](#power_getdpmwakeup) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`power/getPMMode`](#power_getpmmode) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`power/getPowerOnDelay`](#power_getpowerondelay) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`power/getPowerStatus`](#power_getpowerstatus) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`power/setDisplayMode`](#power_setdisplaymode) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`power/setDPMWakeup`](#power_setdpmwakeup) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`power/setPMMode`](#power_setpmmode) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`power/setPowerOnDelay`](#power_setpowerondelay) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`removeApplication`](#removeapplication) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`restart_application`](#restart_application) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`security/existServerCertificate`](#security_existservercertificate) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`security/getServerCertificateList`](#security_getservercertificatelist) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`security/registerServerCertificate`](#security_registerservercertificate) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`security/registerServerCertificateList`](#security_registerservercertificatelist) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`security/unregisterAllServerCertificateList`](#security_unregisterallservercertificatelist) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`security/unregisterServerCertificate`](#security_unregisterservercertificate) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`security/unregisterServerCertificateList`](#security_unregisterservercertificatelist) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`setDigitalAudioInputList`](#setdigitalaudioinputlist) | public |  | audio | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`setHolidaySchedule`](#setholidayschedule) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`setManualFailoverPrioirty`](#setmanualfailoverprioirty) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`setOnOffTimeSchedule`](#setonofftimeschedule) | public |  | input | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`setOsdPortraitMode`](#setosdportraitmode) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`setPowerSaveMode`](#setpowersavemode) | public |  | power | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`setProperty`](#setproperty) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`settings/get`](#settings_get) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`settings/getSystemTime`](#settings_getsystemtime) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`settings/getTimeZone`](#settings_gettimezone) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`settings/getTimeZoneList`](#settings_gettimezonelist) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`settings/set`](#settings_set) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`settings/setSystemTime`](#settings_setsystemtime) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`settings/setTimeZone`](#settings_settimezone) | public |  | settings | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`setVideoSize`](#setvideosize) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`sound/getSoundMode`](#sound_getsoundmode) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`sound/getSoundOut`](#sound_getsoundout) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`sound/getSoundStatus`](#sound_getsoundstatus) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`sound/setExternalSpeaker`](#sound_setexternalspeaker) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`sound/setMuted`](#sound_setmuted) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`sound/setSoundMode`](#sound_setsoundmode) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`sound/setSoundOut`](#sound_setsoundout) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`sound/setVolumeLevel`](#sound_setvolumelevel) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`start_local_server`](#start_local_server) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`start_service`](#start_service) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`stop_local_server`](#stop_local_server) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`systemMonitor/doNotify`](#systemmonitor_donotify) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`systemMonitor/getFanEvent`](#systemmonitor_getfanevent) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`systemMonitor/getLampEvent`](#systemmonitor_getlampevent) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`systemMonitor/getScreenEvent`](#systemmonitor_getscreenevent) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`systemMonitor/getSignalEvent`](#systemmonitor_getsignalevent) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`systemMonitor/getTemperature`](#systemmonitor_gettemperature) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`systemMonitor/startMonitor`](#systemmonitor_startmonitor) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`systemMonitor/startMonitorRS232C`](#systemmonitor_startmonitorrs232c) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`systemMonitor/stopMonitor`](#systemmonitor_stopmonitor) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`systemMonitor/stopMonitorRS232C`](#systemmonitor_stopmonitorrs232c) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`time/cancelOnOffTimer`](#time_cancelonofftimer) | public |  | input | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`time/clearAllOnOffTimers`](#time_clearallonofftimers) | public |  | input | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`time/getAllOnOffTimers`](#time_getallonofftimers) | public |  | input | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`time/reserveOnOffTimer`](#time_reserveonofftimer) | public |  | input | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`unsetHolidaySchedule`](#unsetholidayschedule) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`unsetOnOffTimeSchedule`](#unsetonofftimeschedule) | public |  | input | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`upgradeApplication`](#upgradeapplication) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`upgradeFirmware`](#upgradefirmware) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`version`](#version) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`video/getContentRotation`](#video_getcontentrotation) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`video/getMediaID`](#video_getmediaid) | public |  | media | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`video/getVideoStatus`](#video_getvideostatus) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
-| [`video/setContentRotation`](#video_setcontentrotation) | public |  | security | Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`captureScreen`](#capturescreen) | public |  | security | inferred | Captures the screen. |
+| [`changeLogoImage`](#changelogoimage) | public |  | security | inferred | Changes the logo image. |
+| [`clearCache`](#clearcache) | public |  | security | inferred | Clears the cache. |
+| [`configuration/getLocaleList`](#configuration_getlocalelist) | public |  | settings | inferred | Returns the locale list (configuration) |
+| [`configuration/getOSDLanguage`](#configuration_getosdlanguage) | public |  | settings | inferred | Returns the OSD language (configuration) |
+| [`configuration/getOSDLock`](#configuration_getosdlock) | public |  | settings | inferred | Returns the OSD lock (configuration) |
+| [`configuration/getPictureMode`](#configuration_getpicturemode) | public |  | settings | inferred | Returns the picture mode (configuration) |
+| [`configuration/getPictureProperty`](#configuration_getpictureproperty) | public |  | settings | inferred | Returns the picture property (configuration) |
+| [`configuration/getProxyBypassList`](#configuration_getproxybypasslist) | public |  | settings | inferred | Returns the proxy bypass list (configuration) |
+| [`configuration/getServerProperty`](#configuration_getserverproperty) | public |  | settings | inferred | Returns the server property (configuration) |
+| [`configuration/getUSBLock`](#configuration_getusblock) | public |  | settings | inferred | Returns the USB lock (configuration) |
+| [`configuration/getVirtualKeyboardLanguage`](#configuration_getvirtualkeyboardlanguage) | public |  | settings | inferred | Returns the virtual keyboard language (configuration) |
+| [`configuration/setOSDLanguage`](#configuration_setosdlanguage) | public |  | settings | inferred | Sets the OSD language (configuration) |
+| [`configuration/setOSDLock`](#configuration_setosdlock) | public |  | settings | inferred | Sets the OSD lock (configuration) |
+| [`configuration/setPictureMode`](#configuration_setpicturemode) | public |  | settings | inferred | Sets the picture mode (configuration) |
+| [`configuration/setPictureProperty`](#configuration_setpictureproperty) | public |  | settings | inferred | Sets the picture property (configuration) |
+| [`configuration/setProxyBypassList`](#configuration_setproxybypasslist) | public |  | settings | inferred | Sets the proxy bypass list (configuration) |
+| [`configuration/setServerProperty`](#configuration_setserverproperty) | public |  | settings | inferred | Sets the server property (configuration) ⚠️ |
+| [`configuration/setTimeZone`](#configuration_settimezone) | public |  | settings | inferred | Sets the time zone (configuration) |
+| [`configuration/setUSBLock`](#configuration_setusblock) | public |  | settings | inferred | Sets the USB lock (configuration) |
+| [`configuration/setVirtualKeyboardLanguage`](#configuration_setvirtualkeyboardlanguage) | public |  | settings | inferred | Sets the virtual keyboard language (configuration) |
+| [`createToast`](#createtoast) | public |  | notifications | inferred | Creates the toast. |
+| [`debug`](#debug) | public |  | security | inferred | Handles the debug. |
+| [`deviceInfo/addBlockedPortList`](#deviceinfo_addblockedportlist) | public |  | db | inferred | Adds the blocked port list (device info) |
+| [`deviceInfo/deleteBlockedPortList`](#deviceinfo_deleteblockedportlist) | public |  | security | inferred | Deletes the blocked port list (device info) ⚠️ |
+| [`deviceInfo/getBlockedPortList`](#deviceinfo_getblockedportlist) | public |  | security | inferred | Returns the blocked port list (device info) |
+| [`deviceInfo/getEddystoneInfo`](#deviceinfo_geteddystoneinfo) | public |  | security | inferred | Returns the eddystone info (device info) |
+| [`deviceInfo/getiBeaconInfo`](#deviceinfo_getibeaconinfo) | public |  | security | inferred | Handles the geti beacon info (device info) |
+| [`deviceinfo/getNetworkMacInfo`](#deviceinfo_getnetworkmacinfo) | public |  | security | inferred | Returns the network MAC info (deviceinfo) |
+| [`deviceInfo/getPlatformInfo`](#deviceinfo_getplatforminfo) | public |  | security | inferred | Returns the platform info (device info) |
+| [`deviceInfo/getProxyInfo`](#deviceinfo_getproxyinfo) | public |  | security | inferred | Returns the proxy info (device info) |
+| [`deviceinfo/getSoftApClientInfo`](#deviceinfo_getsoftapclientinfo) | public |  | security | inferred | Returns the soft ap client info (deviceinfo) |
+| [`deviceInfo/setEddystoneInfo`](#deviceinfo_seteddystoneinfo) | public |  | security | inferred | Sets the eddystone info (device info) |
+| [`deviceInfo/setiBeaconInfo`](#deviceinfo_setibeaconinfo) | public |  | security | inferred | Handles the seti beacon info (device info) |
+| [`deviceInfo/setProxyInfo`](#deviceinfo_setproxyinfo) | public |  | security | inferred | Sets the proxy info (device info) |
+| [`downloadFirmware`](#downloadfirmware) | public |  | security | inferred | Downloads the firmware. ⚠️ |
+| [`eventManager/getConfig`](#eventmanager_getconfig) | public |  | settings | inferred | Returns the config (event manager) |
+| [`eventManager/getValue`](#eventmanager_getvalue) | public |  | security | inferred | Returns the value (event manager) |
+| [`eventManager/setConfig`](#eventmanager_setconfig) | public |  | settings | inferred | Sets the config (event manager) |
+| [`eventManager/stopWatcher`](#eventmanager_stopwatcher) | public |  | security | inferred | Stops the watcher (event manager) |
+| [`fs/copyFile`](#fs_copyfile) | public |  | security | inferred | Copies the file (fs) |
+| [`fs/decryptFile`](#fs_decryptfile) | public |  | security | inferred | Decrypts the file (fs) |
+| [`fs/exists`](#fs_exists) | public |  | security | inferred | Handles the exists (fs) |
+| [`fs/fsyncFile`](#fs_fsyncfile) | public |  | security | inferred | Handles the fsync file (fs) |
+| [`fs/getMD5Hash`](#fs_getmd5hash) | public |  | security | inferred | Returns the MD 5 hash (fs) |
+| [`fs/listFiles`](#fs_listfiles) | public |  | security | inferred | Lists the files (fs) |
+| [`fs/mkdir`](#fs_mkdir) | public |  | security | inferred | Handles the mkdir (fs) |
+| [`fs/moveFile`](#fs_movefile) | public |  | security | inferred | Moves the file (fs) |
+| [`fs/readFile`](#fs_readfile) | public |  | security | inferred | Reads the file (fs) |
+| [`fs/removeAll`](#fs_removeall) | public |  | security | inferred | Removes the all (fs) ⚠️ |
+| [`fs/removeFile`](#fs_removefile) | public |  | security | inferred | Removes the file (fs) ⚠️ |
+| [`fs/statFile`](#fs_statfile) | public |  | security | inferred | Handles the stat file (fs) |
+| [`fs/storageInfo`](#fs_storageinfo) | public |  | storage | inferred | Handles the storage info (fs) |
+| [`fs/unzip`](#fs_unzip) | public |  | security | inferred | Handles the unzip (fs) |
+| [`fs/writeFile`](#fs_writefile) | public |  | security | inferred | Writes the file (fs) |
+| [`getExternalInputList`](#getexternalinputlist) | public |  | security | inferred | Returns the external input list. |
+| [`getFailoverPrioirty`](#getfailoverprioirty) | public |  | security | inferred | Returns the failover prioirty. |
+| [`getFirmwareUpgradeStatus`](#getfirmwareupgradestatus) | public |  | security | inferred | Returns the firmware upgrade status. |
+| [`getHolidaySchedule`](#getholidayschedule) | public |  | security | inferred | Returns the holiday schedule. |
+| [`getOnOffTimeSchedule`](#getonofftimeschedule) | public |  | input | inferred | Returns the on off time schedule. |
+| [`getPowerSaveMode`](#getpowersavemode) | public |  | power | inferred | Returns the power save mode. |
+| [`getSignageInformation`](#getsignageinformation) | public |  | security | inferred | Returns the signage information. |
+| [`getSystemUsageInfo`](#getsystemusageinfo) | public |  | security | inferred | Returns the system usage info. |
+| [`getVideoSize`](#getvideosize) | public |  | security | inferred | Returns the video size. |
+| [`info`](#info) | public |  | security | inferred | Handles the info. |
+| [`inputsource/getInputLabelForVideoTag`](#inputsource_getinputlabelforvideotag) | public |  | security | inferred | Returns the input label for video tag (inputsource) |
+| [`inputSource/getInputSourceStatus`](#inputsource_getinputsourcestatus) | public |  | security | inferred | Returns the input source status (input source) |
+| [`iot/getBindingIdList`](#iot_getbindingidlist) | public |  | security | inferred | Returns the binding ID list (iot) |
+| [`iot/getBridgeStatus`](#iot_getbridgestatus) | public |  | security | inferred | Returns the bridge status (iot) |
+| [`iot/getFrameworkStatus`](#iot_getframeworkstatus) | public |  | security | inferred | Returns the framework status (iot) |
+| [`iot/getThingList`](#iot_getthinglist) | public |  | security | inferred | Returns the thing list (iot) |
+| [`iot/getThingListPrivate`](#iot_getthinglistprivate) | public |  | security | inferred | Returns the thing list private (iot) |
+| [`iot/getVersions`](#iot_getversions) | public |  | security | inferred | Returns the versions (iot) |
+| [`iot/requestFactoryReset`](#iot_requestfactoryreset) | public |  | security | inferred | Requests the factory reset (iot) ⚠️ |
+| [`iot/requestRegisterThing`](#iot_requestregisterthing) | public |  | security | inferred | Requests the register thing (iot) |
+| [`iot/requestRejectThing`](#iot_requestrejectthing) | public |  | security | inferred | Requests the reject thing (iot) |
+| [`iot/requestSetBridgeStatus`](#iot_requestsetbridgestatus) | public |  | security | inferred | Requests the set bridge status (iot) |
+| [`iot/requestSetComponent`](#iot_requestsetcomponent) | public |  | security | inferred | Requests the set component (iot) |
+| [`iot/requestSynchronizeThing`](#iot_requestsynchronizething) | public |  | security | inferred | Requests the synchronize thing (iot) |
+| [`iot/requestUnregisterThing`](#iot_requestunregisterthing) | public |  | security | inferred | Requests the unregister thing (iot) |
+| [`iot/setThingNickname`](#iot_setthingnickname) | public |  | security | inferred | Sets the thing nickname (iot) |
+| [`iot/subscribeIoTEvent`](#iot_subscribeiotevent) | public |  | security | inferred | Subscribes to the io t event (iot) |
+| [`launchApplication`](#launchapplication) | public |  | apps | inferred | Launches the application. |
+| [`network/connectWifi`](#network_connectwifi) | public |  | network | inferred | Connects the wifi (network) |
+| [`network/getBeaconInfo`](#network_getbeaconinfo) | public |  | security | inferred | Returns the beacon info (network) |
+| [`network/getNetworkInfo`](#network_getnetworkinfo) | public |  | security | inferred | Returns the network info (network) |
+| [`network/getSoftApInfo`](#network_getsoftapinfo) | public |  | security | inferred | Returns the soft ap info (network) |
+| [`network/getWifiList`](#network_getwifilist) | public |  | network | inferred | Returns the wifi list (network) |
+| [`network/notifyUpdatingBeaconInfo`](#network_notifyupdatingbeaconinfo) | public |  | security | inferred | Notifies of the updating beacon info (network) |
+| [`network/setBeaconInfo`](#network_setbeaconinfo) | public |  | security | inferred | Sets the beacon info (network) |
+| [`network/setNetworkInfo`](#network_setnetworkinfo) | public |  | security | inferred | Sets the network info (network) |
+| [`network/setSoftApInfo`](#network_setsoftapinfo) | public |  | security | inferred | Sets the soft ap info (network) |
+| [`network/startWps`](#network_startwps) | public |  | security | inferred | Starts the wps (network) |
+| [`network/stopWps`](#network_stopwps) | public |  | security | inferred | Stops the wps (network) |
+| [`ping_local_server`](#ping_local_server) | public |  | security | inferred | Pings the local server. |
+| [`power/enableWakeOnLan`](#power_enablewakeonlan) | public |  | power | inferred | Enables the wake on lan (power) |
+| [`power/executePowerCommand`](#power_executepowercommand) | public |  | power | inferred | Runs the power command (power) |
+| [`power/getDPMWakeup`](#power_getdpmwakeup) | public |  | power | inferred | Returns the DPM wakeup (power) |
+| [`power/getPMMode`](#power_getpmmode) | public |  | power | inferred | Returns the PM mode (power) |
+| [`power/getPowerOnDelay`](#power_getpowerondelay) | public |  | power | inferred | Returns the power on delay (power) |
+| [`power/getPowerStatus`](#power_getpowerstatus) | public |  | power | inferred | Returns the power status (power) |
+| [`power/setDisplayMode`](#power_setdisplaymode) | public |  | power | inferred | Sets the display mode (power) |
+| [`power/setDPMWakeup`](#power_setdpmwakeup) | public |  | power | inferred | Sets the DPM wakeup (power) |
+| [`power/setPMMode`](#power_setpmmode) | public |  | power | inferred | Sets the PM mode (power) |
+| [`power/setPowerOnDelay`](#power_setpowerondelay) | public |  | power | inferred | Sets the power on delay (power) |
+| [`quit`](#quit) | public |  | security | inferred | Quits the commercial scapadapter. |
+| [`removeApplication`](#removeapplication) | public |  | security | inferred | Removes the application. ⚠️ |
+| [`restart_application`](#restart_application) | public |  | security | inferred | Restarts the application. |
+| [`security/existServerCertificate`](#security_existservercertificate) | public |  | security | inferred | Handles the exist server certificate (security) |
+| [`security/getServerCertificateList`](#security_getservercertificatelist) | public |  | security | inferred | Returns the server certificate list (security) |
+| [`security/registerServerCertificate`](#security_registerservercertificate) | public |  | security | inferred | Registers the server certificate (security) |
+| [`security/registerServerCertificateList`](#security_registerservercertificatelist) | public |  | security | inferred | Registers the server certificate list (security) |
+| [`security/unregisterAllServerCertificateList`](#security_unregisterallservercertificatelist) | public |  | security | inferred | Unregisters the all server certificate list (security) |
+| [`security/unregisterServerCertificate`](#security_unregisterservercertificate) | public |  | security | inferred | Unregisters the server certificate (security) |
+| [`security/unregisterServerCertificateList`](#security_unregisterservercertificatelist) | public |  | security | inferred | Unregisters the server certificate list (security) |
+| [`setDigitalAudioInputList`](#setdigitalaudioinputlist) | public |  | audio | inferred | Sets the digital audio input list. |
+| [`setHolidaySchedule`](#setholidayschedule) | public |  | security | inferred | Sets the holiday schedule. |
+| [`setManualFailoverPrioirty`](#setmanualfailoverprioirty) | public |  | security | inferred | Sets the manual failover prioirty. |
+| [`setOnOffTimeSchedule`](#setonofftimeschedule) | public |  | input | inferred | Sets the on off time schedule. |
+| [`setOsdPortraitMode`](#setosdportraitmode) | public |  | security | inferred | Sets the OSD portrait mode. |
+| [`setPowerSaveMode`](#setpowersavemode) | public |  | power | inferred | Sets the power save mode. |
+| [`setProperty`](#setproperty) | public |  | security | inferred | Sets the property. |
+| [`settings/get`](#settings_get) | public |  | settings | inferred | Returns the commercial scapadapter (settings) |
+| [`settings/getSystemTime`](#settings_getsystemtime) | public |  | settings | inferred | Returns the system time (settings) |
+| [`settings/getTimeZone`](#settings_gettimezone) | public |  | settings | inferred | Returns the time zone (settings) |
+| [`settings/getTimeZoneList`](#settings_gettimezonelist) | public |  | settings | inferred | Returns the time zone list (settings) |
+| [`settings/set`](#settings_set) | public |  | settings | inferred | Sets the commercial scapadapter (settings) |
+| [`settings/setSystemTime`](#settings_setsystemtime) | public |  | settings | inferred | Sets the system time (settings) |
+| [`settings/setTimeZone`](#settings_settimezone) | public |  | settings | inferred | Sets the time zone (settings) |
+| [`setVideoSize`](#setvideosize) | public |  | security | inferred | Sets the video size. |
+| [`sound/getSoundMode`](#sound_getsoundmode) | public |  | security | inferred | Returns the sound mode (sound) |
+| [`sound/getSoundOut`](#sound_getsoundout) | public |  | security | inferred | Returns the sound out (sound) |
+| [`sound/getSoundStatus`](#sound_getsoundstatus) | public |  | security | inferred | Returns the sound status (sound) |
+| [`sound/setExternalSpeaker`](#sound_setexternalspeaker) | public |  | security | inferred | Sets the external speaker (sound) |
+| [`sound/setMuted`](#sound_setmuted) | public |  | security | inferred | Sets the muted (sound) |
+| [`sound/setSoundMode`](#sound_setsoundmode) | public |  | security | inferred | Sets the sound mode (sound) |
+| [`sound/setSoundOut`](#sound_setsoundout) | public |  | security | inferred | Sets the sound out (sound) |
+| [`sound/setVolumeLevel`](#sound_setvolumelevel) | public |  | security | inferred | Sets the volume level (sound) |
+| [`start_local_server`](#start_local_server) | public |  | security | inferred | Starts the local server. |
+| [`start_service`](#start_service) | public |  | security | inferred | Starts the service. |
+| [`stop_local_server`](#stop_local_server) | public |  | security | inferred | Stops the local server. |
+| [`systemMonitor/doNotify`](#systemmonitor_donotify) | public |  | security | inferred | Handles the do notify (system monitor) |
+| [`systemMonitor/getFanEvent`](#systemmonitor_getfanevent) | public |  | security | inferred | Returns the fan event (system monitor) |
+| [`systemMonitor/getLampEvent`](#systemmonitor_getlampevent) | public |  | security | inferred | Returns the lamp event (system monitor) |
+| [`systemMonitor/getScreenEvent`](#systemmonitor_getscreenevent) | public |  | security | inferred | Returns the screen event (system monitor) |
+| [`systemMonitor/getSignalEvent`](#systemmonitor_getsignalevent) | public |  | security | inferred | Returns the signal event (system monitor) |
+| [`systemMonitor/getTemperature`](#systemmonitor_gettemperature) | public |  | security | inferred | Returns the temperature (system monitor) |
+| [`systemMonitor/startMonitor`](#systemmonitor_startmonitor) | public |  | security | inferred | Starts the monitor (system monitor) |
+| [`systemMonitor/startMonitorRS232C`](#systemmonitor_startmonitorrs232c) | public |  | security | inferred | Starts the monitor RS 232 c (system monitor) |
+| [`systemMonitor/stopMonitor`](#systemmonitor_stopmonitor) | public |  | security | inferred | Stops the monitor (system monitor) |
+| [`systemMonitor/stopMonitorRS232C`](#systemmonitor_stopmonitorrs232c) | public |  | security | inferred | Stops the monitor RS 232 c (system monitor) |
+| [`time/cancelOnOffTimer`](#time_cancelonofftimer) | public |  | input | inferred | Cancels the on off timer (time) |
+| [`time/clearAllOnOffTimers`](#time_clearallonofftimers) | public |  | input | inferred | Clears the all on off timers (time) |
+| [`time/getAllOnOffTimers`](#time_getallonofftimers) | public |  | input | inferred | Returns the all on off timers (time) |
+| [`time/reserveOnOffTimer`](#time_reserveonofftimer) | public |  | input | inferred | Handles the reserve on off timer (time) |
+| [`unsetHolidaySchedule`](#unsetholidayschedule) | public |  | security | inferred | Handles the unset holiday schedule. |
+| [`unsetOnOffTimeSchedule`](#unsetonofftimeschedule) | public |  | input | inferred | Handles the unset on off time schedule. |
+| [`upgradeApplication`](#upgradeapplication) | public |  | security | inferred | Upgrades the application. |
+| [`upgradeFirmware`](#upgradefirmware) | public |  | security | inferred | Upgrades the firmware. ⚠️ |
+| [`version`](#version) | public |  | security | inferred | Handles the version. |
+| [`video/getContentRotation`](#video_getcontentrotation) | public |  | security | inferred | Returns the content rotation (video) |
+| [`video/getMediaID`](#video_getmediaid) | public |  | media | inferred | Returns the media ID (video) |
+| [`video/getVideoStatus`](#video_getvideostatus) | public |  | security | inferred | Returns the video status (video) |
+| [`video/setContentRotation`](#video_setcontentrotation) | public |  | security | inferred | Sets the content rotation (video) |
 
 <a id="capturescreen"></a>
 ## `captureScreen`
 
 `luna://com.webos.service.commercial.scapadapter/captureScreen`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Captures the screen.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/captureScreen '{}'
@@ -197,13 +201,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/changeLogoImage`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Changes the logo image.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/changeLogoImage '{}'
@@ -218,13 +224,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/clearCache`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Clears the cache.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/clearCache '{}'
@@ -239,13 +247,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/getLocaleList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the locale list (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/getLocaleList '{}'
@@ -260,13 +270,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/getOSDLanguage`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the OSD language (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/getOSDLanguage '{}'
@@ -281,13 +293,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/getOSDLock`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the OSD lock (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/getOSDLock '{}'
@@ -302,13 +316,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/getPictureMode`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the picture mode (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/getPictureMode '{}'
@@ -323,13 +339,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/getPictureProperty`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the picture property (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/getPictureProperty '{}'
@@ -344,13 +362,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/getProxyBypassList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the proxy bypass list (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/getProxyBypassList '{}'
@@ -365,13 +385,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/getServerProperty`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the server property (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/getServerProperty '{}'
@@ -386,13 +408,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/getUSBLock`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the USB lock (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/getUSBLock '{}'
@@ -407,13 +431,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/getVirtualKeyboardLanguage`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the virtual keyboard language (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/getVirtualKeyboardLanguage '{}'
@@ -428,13 +454,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/setOSDLanguage`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the OSD language (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/setOSDLanguage '{}'
@@ -449,13 +477,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/setOSDLock`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the OSD lock (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/setOSDLock '{}'
@@ -470,13 +500,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/setPictureMode`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the picture mode (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/setPictureMode '{}'
@@ -491,13 +523,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/setPictureProperty`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the picture property (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/setPictureProperty '{}'
@@ -512,13 +546,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/setProxyBypassList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the proxy bypass list (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/setProxyBypassList '{}'
@@ -533,13 +569,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/setServerProperty`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the server property (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/setServerProperty '{}'
@@ -554,13 +592,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/setTimeZone`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the time zone (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/setTimeZone '{}'
@@ -575,13 +615,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/setUSBLock`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the USB lock (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/setUSBLock '{}'
@@ -596,13 +638,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/configuration/setVirtualKeyboardLanguage`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the virtual keyboard language (configuration)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/configuration/setVirtualKeyboardLanguage '{}'
@@ -617,13 +661,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/createToast`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Creates the toast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/createToast '{}'
@@ -638,13 +684,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/debug`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/debug '{}'
@@ -659,13 +707,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceInfo/addBlockedPortList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Adds the blocked port list (device info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceInfo/addBlockedPortList '{}'
@@ -680,13 +730,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceInfo/deleteBlockedPortList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Deletes the blocked port list (device info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceInfo/deleteBlockedPortList '{}'
@@ -701,13 +753,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceInfo/getBlockedPortList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the blocked port list (device info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceInfo/getBlockedPortList '{}'
@@ -722,13 +776,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceInfo/getEddystoneInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the eddystone info (device info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceInfo/getEddystoneInfo '{}'
@@ -743,13 +799,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceInfo/getiBeaconInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the geti beacon info (device info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceInfo/getiBeaconInfo '{}'
@@ -764,13 +822,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceinfo/getNetworkMacInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the network MAC info (deviceinfo)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceinfo/getNetworkMacInfo '{}'
@@ -785,13 +845,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceInfo/getPlatformInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the platform info (device info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceInfo/getPlatformInfo '{}'
@@ -806,13 +868,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceInfo/getProxyInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the proxy info (device info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceInfo/getProxyInfo '{}'
@@ -827,13 +891,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceinfo/getSoftApClientInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the soft ap client info (deviceinfo)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceinfo/getSoftApClientInfo '{}'
@@ -848,13 +914,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceInfo/setEddystoneInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the eddystone info (device info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceInfo/setEddystoneInfo '{}'
@@ -869,13 +937,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceInfo/setiBeaconInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the seti beacon info (device info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceInfo/setiBeaconInfo '{}'
@@ -890,13 +960,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/deviceInfo/setProxyInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the proxy info (device info)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/deviceInfo/setProxyInfo '{}'
@@ -911,13 +983,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/downloadFirmware`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Downloads the firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/downloadFirmware '{}'
@@ -932,13 +1006,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/eventManager/getConfig`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the config (event manager)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/eventManager/getConfig '{}'
@@ -953,13 +1029,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/eventManager/getValue`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the value (event manager)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/eventManager/getValue '{}'
@@ -974,13 +1052,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/eventManager/setConfig`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the config (event manager)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/eventManager/setConfig '{}'
@@ -995,13 +1075,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/eventManager/stopWatcher`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Stops the watcher (event manager)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/eventManager/stopWatcher '{}'
@@ -1016,13 +1098,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/copyFile`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Copies the file (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/copyFile '{}'
@@ -1037,13 +1121,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/decryptFile`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Decrypts the file (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/decryptFile '{}'
@@ -1058,13 +1144,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/exists`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the exists (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/exists '{}'
@@ -1079,13 +1167,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/fsyncFile`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the fsync file (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/fsyncFile '{}'
@@ -1100,13 +1190,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/getMD5Hash`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the MD 5 hash (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/getMD5Hash '{}'
@@ -1121,13 +1213,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/listFiles`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Lists the files (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/listFiles '{}'
@@ -1142,13 +1236,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/mkdir`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the mkdir (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/mkdir '{}'
@@ -1163,13 +1259,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/moveFile`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Moves the file (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/moveFile '{}'
@@ -1184,13 +1282,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/readFile`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Reads the file (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/readFile '{}'
@@ -1205,13 +1305,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/removeAll`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Removes the all (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/removeAll '{}'
@@ -1226,13 +1328,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/removeFile`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Removes the file (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/removeFile '{}'
@@ -1247,13 +1351,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/statFile`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the stat file (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/statFile '{}'
@@ -1268,13 +1374,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/storageInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the storage info (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/storageInfo '{}'
@@ -1289,13 +1397,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/unzip`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the unzip (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/unzip '{}'
@@ -1310,13 +1420,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/fs/writeFile`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Writes the file (fs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/fs/writeFile '{}'
@@ -1331,13 +1443,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/getExternalInputList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the external input list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/getExternalInputList '{}'
@@ -1352,13 +1466,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/getFailoverPrioirty`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the failover prioirty.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/getFailoverPrioirty '{}'
@@ -1373,13 +1489,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/getFirmwareUpgradeStatus`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the firmware upgrade status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/getFirmwareUpgradeStatus '{}'
@@ -1394,13 +1512,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/getHolidaySchedule`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the holiday schedule.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/getHolidaySchedule '{}'
@@ -1415,13 +1535,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/getOnOffTimeSchedule`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the on off time schedule.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/getOnOffTimeSchedule '{}'
@@ -1436,13 +1558,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/getPowerSaveMode`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the power save mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/getPowerSaveMode '{}'
@@ -1457,13 +1581,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/getSignageInformation`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the signage information.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/getSignageInformation '{}'
@@ -1478,13 +1604,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/getSystemUsageInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the system usage info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/getSystemUsageInfo '{}'
@@ -1499,13 +1627,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/getVideoSize`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the video size.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/getVideoSize '{}'
@@ -1520,13 +1650,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/info`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/info '{}'
@@ -1541,13 +1673,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/inputsource/getInputLabelForVideoTag`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the input label for video tag (inputsource)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/inputsource/getInputLabelForVideoTag '{}'
@@ -1562,13 +1696,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/inputSource/getInputSourceStatus`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the input source status (input source)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/inputSource/getInputSourceStatus '{}'
@@ -1583,13 +1719,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/getBindingIdList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the binding ID list (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/getBindingIdList '{}'
@@ -1604,13 +1742,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/getBridgeStatus`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the bridge status (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/getBridgeStatus '{}'
@@ -1625,13 +1765,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/getFrameworkStatus`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the framework status (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/getFrameworkStatus '{}'
@@ -1646,13 +1788,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/getThingList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the thing list (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/getThingList '{}'
@@ -1667,13 +1811,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/getThingListPrivate`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the thing list private (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/getThingListPrivate '{}'
@@ -1688,13 +1834,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/getVersions`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the versions (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/getVersions '{}'
@@ -1709,13 +1857,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/requestFactoryReset`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Requests the factory reset (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/requestFactoryReset '{}'
@@ -1730,13 +1880,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/requestRegisterThing`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Requests the register thing (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/requestRegisterThing '{}'
@@ -1751,13 +1903,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/requestRejectThing`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Requests the reject thing (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/requestRejectThing '{}'
@@ -1772,13 +1926,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/requestSetBridgeStatus`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Requests the set bridge status (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/requestSetBridgeStatus '{}'
@@ -1793,13 +1949,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/requestSetComponent`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Requests the set component (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/requestSetComponent '{}'
@@ -1814,13 +1972,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/requestSynchronizeThing`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Requests the synchronize thing (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/requestSynchronizeThing '{}'
@@ -1835,13 +1995,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/requestUnregisterThing`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Requests the unregister thing (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/requestUnregisterThing '{}'
@@ -1856,13 +2018,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/setThingNickname`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the thing nickname (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/setThingNickname '{}'
@@ -1877,13 +2041,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/iot/subscribeIoTEvent`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Subscribes to the io t event (iot)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/iot/subscribeIoTEvent '{}'
@@ -1898,13 +2064,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/launchApplication`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Launches the application.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/launchApplication '{}'
@@ -1919,13 +2087,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/network/connectWifi`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Connects the wifi (network)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/network/connectWifi '{}'
@@ -1940,13 +2110,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/network/getBeaconInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the beacon info (network)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/network/getBeaconInfo '{}'
@@ -1961,13 +2133,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/network/getNetworkInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the network info (network)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/network/getNetworkInfo '{}'
@@ -1982,13 +2156,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/network/getSoftApInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the soft ap info (network)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/network/getSoftApInfo '{}'
@@ -2003,13 +2179,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/network/getWifiList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the wifi list (network)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/network/getWifiList '{}'
@@ -2024,13 +2202,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/network/notifyUpdatingBeaconInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Notifies of the updating beacon info (network)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/network/notifyUpdatingBeaconInfo '{}'
@@ -2045,13 +2225,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/network/setBeaconInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the beacon info (network)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/network/setBeaconInfo '{}'
@@ -2066,13 +2248,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/network/setNetworkInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the network info (network)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/network/setNetworkInfo '{}'
@@ -2087,13 +2271,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/network/setSoftApInfo`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the soft ap info (network)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/network/setSoftApInfo '{}'
@@ -2108,13 +2294,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/network/startWps`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Starts the wps (network)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/network/startWps '{}'
@@ -2129,13 +2317,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/network/stopWps`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Stops the wps (network)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/network/stopWps '{}'
@@ -2150,13 +2340,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/ping_local_server`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Pings the local server.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/ping_local_server '{}'
@@ -2171,13 +2363,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/power/enableWakeOnLan`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Enables the wake on lan (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/power/enableWakeOnLan '{}'
@@ -2192,13 +2386,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/power/executePowerCommand`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Runs the power command (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/power/executePowerCommand '{}'
@@ -2213,13 +2409,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/power/getDPMWakeup`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the DPM wakeup (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/power/getDPMWakeup '{}'
@@ -2234,13 +2432,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/power/getPMMode`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the PM mode (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/power/getPMMode '{}'
@@ -2255,13 +2455,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/power/getPowerOnDelay`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the power on delay (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/power/getPowerOnDelay '{}'
@@ -2276,13 +2478,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/power/getPowerStatus`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the power status (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/power/getPowerStatus '{}'
@@ -2297,13 +2501,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/power/setDisplayMode`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the display mode (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/power/setDisplayMode '{}'
@@ -2318,13 +2524,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/power/setDPMWakeup`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the DPM wakeup (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/power/setDPMWakeup '{}'
@@ -2339,13 +2547,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/power/setPMMode`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the PM mode (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/power/setPMMode '{}'
@@ -2360,13 +2570,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/power/setPowerOnDelay`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the power on delay (power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/power/setPowerOnDelay '{}'
@@ -2381,13 +2593,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/quit`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Quits the commercial scapadapter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/quit '{}'
@@ -2402,13 +2616,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/removeApplication`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Removes the application.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/removeApplication '{}'
@@ -2423,13 +2639,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/restart_application`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Restarts the application.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/restart_application '{}'
@@ -2444,13 +2662,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/security/existServerCertificate`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the exist server certificate (security)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/security/existServerCertificate '{}'
@@ -2465,13 +2685,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/security/getServerCertificateList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the server certificate list (security)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/security/getServerCertificateList '{}'
@@ -2486,13 +2708,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/security/registerServerCertificate`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Registers the server certificate (security)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/security/registerServerCertificate '{}'
@@ -2507,13 +2731,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/security/registerServerCertificateList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Registers the server certificate list (security)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/security/registerServerCertificateList '{}'
@@ -2528,13 +2754,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/security/unregisterAllServerCertificateList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Unregisters the all server certificate list (security)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/security/unregisterAllServerCertificateList '{}'
@@ -2549,13 +2777,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/security/unregisterServerCertificate`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Unregisters the server certificate (security)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/security/unregisterServerCertificate '{}'
@@ -2570,13 +2800,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/security/unregisterServerCertificateList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Unregisters the server certificate list (security)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/security/unregisterServerCertificateList '{}'
@@ -2591,13 +2823,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/setDigitalAudioInputList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the digital audio input list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/setDigitalAudioInputList '{}'
@@ -2612,13 +2846,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/setHolidaySchedule`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the holiday schedule.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/setHolidaySchedule '{}'
@@ -2633,13 +2869,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/setManualFailoverPrioirty`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the manual failover prioirty.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/setManualFailoverPrioirty '{}'
@@ -2654,13 +2892,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/setOnOffTimeSchedule`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the on off time schedule.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/setOnOffTimeSchedule '{}'
@@ -2675,13 +2915,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/setOsdPortraitMode`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the OSD portrait mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/setOsdPortraitMode '{}'
@@ -2696,13 +2938,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/setPowerSaveMode`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the power save mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/setPowerSaveMode '{}'
@@ -2717,13 +2961,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/setProperty`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the property.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/setProperty '{}'
@@ -2738,13 +2984,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/settings/get`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the commercial scapadapter (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/settings/get '{}'
@@ -2759,13 +3007,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/settings/getSystemTime`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the system time (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/settings/getSystemTime '{}'
@@ -2780,13 +3030,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/settings/getTimeZone`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the time zone (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/settings/getTimeZone '{}'
@@ -2801,13 +3053,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/settings/getTimeZoneList`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the time zone list (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/settings/getTimeZoneList '{}'
@@ -2822,13 +3076,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/settings/set`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the commercial scapadapter (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/settings/set '{}'
@@ -2843,13 +3099,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/settings/setSystemTime`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the system time (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/settings/setSystemTime '{}'
@@ -2864,13 +3122,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/settings/setTimeZone`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the time zone (settings)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/settings/setTimeZone '{}'
@@ -2885,13 +3145,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/setVideoSize`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the video size.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/setVideoSize '{}'
@@ -2906,13 +3168,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/sound/getSoundMode`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the sound mode (sound)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/sound/getSoundMode '{}'
@@ -2927,13 +3191,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/sound/getSoundOut`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the sound out (sound)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/sound/getSoundOut '{}'
@@ -2948,13 +3214,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/sound/getSoundStatus`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the sound status (sound)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/sound/getSoundStatus '{}'
@@ -2969,13 +3237,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/sound/setExternalSpeaker`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the external speaker (sound)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/sound/setExternalSpeaker '{}'
@@ -2990,13 +3260,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/sound/setMuted`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the muted (sound)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/sound/setMuted '{}'
@@ -3011,13 +3283,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/sound/setSoundMode`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the sound mode (sound)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/sound/setSoundMode '{}'
@@ -3032,13 +3306,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/sound/setSoundOut`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the sound out (sound)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/sound/setSoundOut '{}'
@@ -3053,13 +3329,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/sound/setVolumeLevel`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the volume level (sound)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/sound/setVolumeLevel '{}'
@@ -3074,13 +3352,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/start_local_server`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Starts the local server.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/start_local_server '{}'
@@ -3095,13 +3375,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/start_service`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Starts the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/start_service '{}'
@@ -3116,13 +3398,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/stop_local_server`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Stops the local server.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/stop_local_server '{}'
@@ -3137,13 +3421,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/systemMonitor/doNotify`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the do notify (system monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/systemMonitor/doNotify '{}'
@@ -3158,13 +3444,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/systemMonitor/getFanEvent`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the fan event (system monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/systemMonitor/getFanEvent '{}'
@@ -3179,13 +3467,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/systemMonitor/getLampEvent`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the lamp event (system monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/systemMonitor/getLampEvent '{}'
@@ -3200,13 +3490,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/systemMonitor/getScreenEvent`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the screen event (system monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/systemMonitor/getScreenEvent '{}'
@@ -3221,13 +3513,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/systemMonitor/getSignalEvent`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the signal event (system monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/systemMonitor/getSignalEvent '{}'
@@ -3242,13 +3536,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/systemMonitor/getTemperature`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the temperature (system monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/systemMonitor/getTemperature '{}'
@@ -3263,13 +3559,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/systemMonitor/startMonitor`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Starts the monitor (system monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/systemMonitor/startMonitor '{}'
@@ -3284,13 +3582,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/systemMonitor/startMonitorRS232C`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Starts the monitor RS 232 c (system monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/systemMonitor/startMonitorRS232C '{}'
@@ -3305,13 +3605,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/systemMonitor/stopMonitor`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Stops the monitor (system monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/systemMonitor/stopMonitor '{}'
@@ -3326,13 +3628,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/systemMonitor/stopMonitorRS232C`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Stops the monitor RS 232 c (system monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/systemMonitor/stopMonitorRS232C '{}'
@@ -3347,13 +3651,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/time/cancelOnOffTimer`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Cancels the on off timer (time)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/time/cancelOnOffTimer '{}'
@@ -3368,13 +3674,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/time/clearAllOnOffTimers`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Clears the all on off timers (time)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/time/clearAllOnOffTimers '{}'
@@ -3389,13 +3697,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/time/getAllOnOffTimers`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the all on off timers (time)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/time/getAllOnOffTimers '{}'
@@ -3410,13 +3720,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/time/reserveOnOffTimer`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the reserve on off timer (time)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/time/reserveOnOffTimer '{}'
@@ -3431,13 +3743,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/unsetHolidaySchedule`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the unset holiday schedule.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/unsetHolidaySchedule '{}'
@@ -3452,13 +3766,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/unsetOnOffTimeSchedule`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the unset on off time schedule.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/unsetOnOffTimeSchedule '{}'
@@ -3473,13 +3789,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/upgradeApplication`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Upgrades the application.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/upgradeApplication '{}'
@@ -3494,13 +3812,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/upgradeFirmware`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Upgrades the firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/upgradeFirmware '{}'
@@ -3515,13 +3835,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/version`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Handles the version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/version '{}'
@@ -3536,13 +3858,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/video/getContentRotation`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the content rotation (video)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/video/getContentRotation '{}'
@@ -3557,13 +3881,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/video/getMediaID`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the media ID (video)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/video/getMediaID '{}'
@@ -3578,13 +3904,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/video/getVideoStatus`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Returns the video status (video)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/video/getVideoStatus '{}'
@@ -3599,13 +3927,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.scapadapter/video/setContentRotation`
 
-Method on com.webos.service.commercial.scapadapter (from on-device permission registry; parameters undocumented).
+Sets the content rotation (video)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.scapadapter/video/setContentRotation '{}'

@@ -1,25 +1,29 @@
 # `com.webos.service.applaunchmanager`
 
+App launch manager; exposes only a status query, so its role beyond reporting launch status is not inferable. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getStatus`](#getstatus) | private |  | apps | Method on com.webos.service.applaunchmanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getStatus`](#getstatus) | private |  | apps | inferred | Returns the status. |
 
 <a id="getstatus"></a>
 ## `getStatus`
 
 `luna://com.webos.service.applaunchmanager/getStatus`
 
-Method on com.webos.service.applaunchmanager (from on-device permission registry; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applaunchmanager/getStatus '{}'

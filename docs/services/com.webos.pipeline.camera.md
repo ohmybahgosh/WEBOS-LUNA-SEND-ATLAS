@@ -1,16 +1,18 @@
 # `com.webos.pipeline.camera`
 
+Camera preview pipeline service (webOS OSE): starts and stops a camera preview, sets its window and input position, and reports pipeline info.
+
 5 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`inputPos`](#inputpos) | unknown |  | camera | Input position details. |
-| [`setWindow`](#setwindow) | public |  | camera | Sets the window's position and size, display ID, and overlay/mirror options. |
-| [`start`](#start) | public |  | camera | Starts the preview. |
-| [`stop`](#stop) | public |  | camera | Stops the preview. |
-| [`subscribePipeLineInfo`](#subscribepipelineinfo) | public | yes | camera | Gets notification when there is an error event from pipeline. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`inputPos`](#inputpos) | unknown |  | camera | documented | Input position details. |
+| [`setWindow`](#setwindow) | public |  | camera | documented | Sets the window's position and size, display ID, and overlay/mirror options. |
+| [`start`](#start) | public |  | camera | documented | Starts the preview. |
+| [`stop`](#stop) | public |  | camera | documented | Stops the preview. |
+| [`subscribePipeLineInfo`](#subscribepipelineinfo) | public | yes | camera | documented | Gets notification when there is an error event from pipeline. |
 
 <a id="inputpos"></a>
 ## `inputPos`
@@ -90,6 +92,12 @@ Starts the preview.
 | `memSrc` | String (required) Indicates the memory source. |
 | `primary` | Boolean (required) Indicates the priority. |
 | `cameraId` | String (required) Camera ID. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `pid` | Number (required) Process ID |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.pipeline.camera._ZuqSwL30000AlU/start '{ "appId": "com.webos.app.mediaevents-test", "windowId": "_Window_Id_1", "videoDisplayMode": "Textured", "width": 1280, "height": 720, "format": "JPEG", "frameRate": 30, "memType": "shmem", "memSrc": "7010", "primary": true, "cameraId": "camera1" }

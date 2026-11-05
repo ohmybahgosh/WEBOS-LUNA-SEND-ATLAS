@@ -1,94 +1,98 @@
 # `com.webos.service.utp.broadcast`
 
+Unified broadcast (Live TV) control: changes channels and volatile channels, reports broadcast state and channel-change status, and queries audio/component lists and info. _(inferred from the service's methods)_
+
 70 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`bind`](#bind) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`changeChannel`](#changechannel) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`changeChannelByProperty`](#changechannelbyproperty) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`changeChannelDown`](#changechanneldown) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`changeChannelPrevious`](#changechannelprevious) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`changeChannelService`](#changechannelservice) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`changeChannelUp`](#changechannelup) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`changeVolatileChannel`](#changevolatilechannel) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (from on-device permission registry; parameters undocumented). |
-| [`close`](#close) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getAudioChannelList`](#getaudiochannellist) | private |  | audio | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getAudioDescriptionStatus`](#getaudiodescriptionstatus) | private |  | audio | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getAudioInfo`](#getaudioinfo) | public |  | audio | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getAudioLanguageList`](#getaudiolanguagelist) | private |  | audio | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getBroadcastComponentList`](#getbroadcastcomponentlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getBroadcastState`](#getbroadcaststate) | public |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getBroadcastSystemUIStatus`](#getbroadcastsystemuistatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getChannelChangeResult`](#getchannelchangeresult) | public |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getChannelChangeStatus`](#getchannelchangestatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getChannelState`](#getchannelstate) | public |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getCurrentChannel`](#getcurrentchannel) | public |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getCurrentSTC`](#getcurrentstc) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getCurrentVideoInfo`](#getcurrentvideoinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getDialogEnhancementGainInfo`](#getdialogenhancementgaininfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getDialogEnhancementLimitInfo`](#getdialogenhancementlimitinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getEmergencyInfo`](#getemergencyinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getFallbackStatus`](#getfallbackstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getGingaResolution`](#getgingaresolution) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getMediaTime`](#getmediatime) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getMRSInfo`](#getmrsinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getNextChannelId`](#getnextchannelid) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getNITRegionInfo`](#getnitregioninfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getObjectAudioInfo`](#getobjectaudioinfo) | private |  | audio | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getPipHotkeyState`](#getpiphotkeystate) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getPlayState`](#getplaystate) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getRegionId`](#getregionid) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getResolutionInfo`](#getresolutioninfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getScreenSaverStatus`](#getscreensaverstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getSignalStatus`](#getsignalstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getVideoInfo`](#getvideoinfo) | public |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getVideoStatus`](#getvideostatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`getWarmOffStatus`](#getwarmoffstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`hybridtv/getAstData`](#hybridtv_getastdata) | private |  | tv-broadcast | Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`hybridtv/notifyChannelChange`](#hybridtv_notifychannelchange) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`isAudioDescriptionConflict`](#isaudiodescriptionconflict) | private |  | audio | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`isExistSdtActual`](#isexistsdtactual) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`isPauseOnLive`](#ispauseonlive) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`isPossibleChChange`](#ispossiblechchange) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (from on-device permission registry; parameters undocumented). |
-| [`isSupportDvbi`](#issupportdvbi) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`isSupportFvp`](#issupportfvp) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`open`](#open) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`pause`](#pause) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`pauseOnLive`](#pauseonlive) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`pin`](#pin) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`play`](#play) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`playSignaling`](#playsignaling) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`registerDataMfu`](#registerdatamfu) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). ⚠️ |
-| [`setAudioChannel`](#setaudiochannel) | private |  | audio | Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`setAudioLanguage`](#setaudiolanguage) | private |  | audio | Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`setAudioMute`](#setaudiomute) | private |  | audio | Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`setBroadcastComponent`](#setbroadcastcomponent) | private |  | tv-broadcast | Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`setBroadcastComponentList`](#setbroadcastcomponentlist) | private |  | tv-broadcast | Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`setDialogEnhancementGain`](#setdialogenhancementgain) | private |  | tv-broadcast | Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`setObjectAudioInfo`](#setobjectaudioinfo) | private |  | audio | Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`setPipHotkey`](#setpiphotkey) | private |  | tv-broadcast | Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`setSink`](#setsink) | private |  | tv-broadcast | Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`stop`](#stop) | public |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`stopRecordAndChangeChannel`](#stoprecordandchangechannel) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`subscribeSignalTable`](#subscribesignaltable) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
-| [`unpauseToLive`](#unpausetolive) | private |  | tv-broadcast | Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`bind`](#bind) | private |  | tv-broadcast | inferred | Binds the UTP broadcast. |
+| [`changeChannel`](#changechannel) | public |  | tv-broadcast | inferred | Changes the channel. |
+| [`changeChannelByProperty`](#changechannelbyproperty) | private |  | tv-broadcast | inferred | Changes the channel by property. |
+| [`changeChannelDown`](#changechanneldown) | public |  | tv-broadcast | inferred | Changes the channel down. |
+| [`changeChannelPrevious`](#changechannelprevious) | public |  | tv-broadcast | inferred | Changes the channel previous. |
+| [`changeChannelService`](#changechannelservice) | private |  | tv-broadcast | inferred | Changes the channel service. |
+| [`changeChannelUp`](#changechannelup) | public |  | tv-broadcast | inferred | Changes the channel up. |
+| [`changeVolatileChannel`](#changevolatilechannel) | public |  | tv-broadcast | inferred | Changes the volatile channel. |
+| [`close`](#close) | public |  | tv-broadcast | inferred | Closes the UTP broadcast. |
+| [`getAudioChannelList`](#getaudiochannellist) | private |  | audio | inferred | Returns the audio channel list. |
+| [`getAudioDescriptionStatus`](#getaudiodescriptionstatus) | private |  | audio | inferred | Returns the audio description status. |
+| [`getAudioInfo`](#getaudioinfo) | public |  | audio | inferred | Returns the audio info. |
+| [`getAudioLanguageList`](#getaudiolanguagelist) | private |  | audio | inferred | Returns the audio language list. |
+| [`getBroadcastComponentList`](#getbroadcastcomponentlist) | private |  | tv-broadcast | inferred | Returns the broadcast component list. |
+| [`getBroadcastState`](#getbroadcaststate) | public |  | tv-broadcast | inferred | Returns the broadcast state. |
+| [`getBroadcastSystemUIStatus`](#getbroadcastsystemuistatus) | private |  | tv-broadcast | inferred | Returns the broadcast system UI status. |
+| [`getChannelChangeResult`](#getchannelchangeresult) | public |  | tv-broadcast | inferred | Returns the channel change result. |
+| [`getChannelChangeStatus`](#getchannelchangestatus) | private |  | tv-broadcast | inferred | Returns the channel change status. |
+| [`getChannelState`](#getchannelstate) | public |  | tv-broadcast | inferred | Returns the channel state. |
+| [`getCurrentChannel`](#getcurrentchannel) | public |  | tv-broadcast | inferred | Returns the current channel. |
+| [`getCurrentSTC`](#getcurrentstc) | private |  | tv-broadcast | inferred | Returns the current STC. |
+| [`getCurrentVideoInfo`](#getcurrentvideoinfo) | private |  | tv-broadcast | inferred | Returns the current video info. |
+| [`getDialogEnhancementGainInfo`](#getdialogenhancementgaininfo) | private |  | tv-broadcast | inferred | Returns the dialog enhancement gain info. |
+| [`getDialogEnhancementLimitInfo`](#getdialogenhancementlimitinfo) | private |  | tv-broadcast | inferred | Returns the dialog enhancement limit info. |
+| [`getEmergencyInfo`](#getemergencyinfo) | private |  | tv-broadcast | inferred | Returns the emergency info. |
+| [`getFallbackStatus`](#getfallbackstatus) | private |  | tv-broadcast | inferred | Returns the fallback status. |
+| [`getGingaResolution`](#getgingaresolution) | private |  | tv-broadcast | inferred | Returns the ginga resolution. |
+| [`getMediaTime`](#getmediatime) | private |  | tv-broadcast | inferred | Returns the media time. |
+| [`getMRSInfo`](#getmrsinfo) | private |  | tv-broadcast | inferred | Returns the MRS info. |
+| [`getNextChannelId`](#getnextchannelid) | public |  | tv-broadcast | inferred | Returns the next channel ID. |
+| [`getNITRegionInfo`](#getnitregioninfo) | private |  | tv-broadcast | inferred | Returns the NIT region info. |
+| [`getObjectAudioInfo`](#getobjectaudioinfo) | private |  | audio | inferred | Returns the object audio info. |
+| [`getPipHotkeyState`](#getpiphotkeystate) | private |  | tv-broadcast | inferred | Returns the pip hotkey state. |
+| [`getPlayState`](#getplaystate) | private |  | tv-broadcast | inferred | Returns the play state. |
+| [`getRegionId`](#getregionid) | private |  | tv-broadcast | inferred | Returns the region ID. |
+| [`getResolutionInfo`](#getresolutioninfo) | private |  | tv-broadcast | inferred | Returns the resolution info. |
+| [`getScreenSaverStatus`](#getscreensaverstatus) | private |  | tv-broadcast | inferred | Returns the screen saver status. |
+| [`getSignalStatus`](#getsignalstatus) | private |  | tv-broadcast | inferred | Returns the signal status. |
+| [`getVideoInfo`](#getvideoinfo) | public |  | tv-broadcast | inferred | Returns the video info. |
+| [`getVideoStatus`](#getvideostatus) | private |  | tv-broadcast | inferred | Returns the video status. |
+| [`getWarmOffStatus`](#getwarmoffstatus) | private |  | tv-broadcast | inferred | Returns the warm off status. |
+| [`hybridtv/getAstData`](#hybridtv_getastdata) | private |  | tv-broadcast | inferred | Returns the ast data (hybridtv) |
+| [`hybridtv/notifyChannelChange`](#hybridtv_notifychannelchange) | private |  | tv-broadcast | inferred | Notifies of the channel change (hybridtv) |
+| [`isAudioDescriptionConflict`](#isaudiodescriptionconflict) | private |  | audio | inferred | Reports whether the audio description conflict is set. |
+| [`isExistSdtActual`](#isexistsdtactual) | private |  | tv-broadcast | inferred | Reports whether the exist SDT actual is set. |
+| [`isPauseOnLive`](#ispauseonlive) | private |  | tv-broadcast | inferred | Reports whether the pause on live is set. |
+| [`isPossibleChChange`](#ispossiblechchange) | public |  | tv-broadcast | inferred | Reports whether the possible channel change is set. |
+| [`isSupportDvbi`](#issupportdvbi) | private |  | tv-broadcast | inferred | Reports whether the support dvbi is set. |
+| [`isSupportFvp`](#issupportfvp) | private |  | tv-broadcast | inferred | Reports whether the support fvp is set. |
+| [`open`](#open) | public |  | tv-broadcast | inferred | Opens the UTP broadcast. |
+| [`pause`](#pause) | public |  | tv-broadcast | inferred | Pauses the UTP broadcast. |
+| [`pauseOnLive`](#pauseonlive) | private |  | tv-broadcast | inferred | Pauses the on live. |
+| [`pin`](#pin) | public |  | tv-broadcast | inferred | Handles the pin. |
+| [`play`](#play) | private |  | tv-broadcast | inferred | Plays the UTP broadcast. |
+| [`playSignaling`](#playsignaling) | private |  | tv-broadcast | inferred | Plays the signaling. |
+| [`registerDataMfu`](#registerdatamfu) | private |  | tv-broadcast | inferred | Registers the data mfu. |
+| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | inferred | Scans for detail information. ⚠️ |
+| [`setAudioChannel`](#setaudiochannel) | private |  | audio | inferred | Sets the audio channel. |
+| [`setAudioLanguage`](#setaudiolanguage) | private |  | audio | inferred | Sets the audio language. |
+| [`setAudioMute`](#setaudiomute) | private |  | audio | inferred | Sets the audio mute. |
+| [`setBroadcastComponent`](#setbroadcastcomponent) | private |  | tv-broadcast | inferred | Sets the broadcast component. |
+| [`setBroadcastComponentList`](#setbroadcastcomponentlist) | private |  | tv-broadcast | inferred | Sets the broadcast component list. |
+| [`setDialogEnhancementGain`](#setdialogenhancementgain) | private |  | tv-broadcast | inferred | Sets the dialog enhancement gain. |
+| [`setObjectAudioInfo`](#setobjectaudioinfo) | private |  | audio | inferred | Sets the object audio info. |
+| [`setPipHotkey`](#setpiphotkey) | private |  | tv-broadcast | inferred | Sets the pip hotkey. |
+| [`setSink`](#setsink) | private |  | tv-broadcast | inferred | Sets the sink. |
+| [`stop`](#stop) | public |  | tv-broadcast | inferred | Stops the UTP broadcast. |
+| [`stopRecordAndChangeChannel`](#stoprecordandchangechannel) | private |  | tv-broadcast | inferred | Stops the record and change channel. |
+| [`subscribeSignalTable`](#subscribesignaltable) | private |  | tv-broadcast | inferred | Subscribes to the signal table. |
+| [`unpauseToLive`](#unpausetolive) | private |  | tv-broadcast | inferred | Handles the unpause to live. |
 
 <a id="bind"></a>
 ## `bind`
 
 `luna://com.webos.service.utp.broadcast/bind`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Binds the UTP broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/bind '{}'
@@ -103,13 +107,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/changeChannel`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Changes the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeChannel '{}'
@@ -124,13 +130,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/changeChannelByProperty`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Changes the channel by property.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeChannelByProperty '{}'
@@ -145,13 +153,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/changeChannelDown`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Changes the channel down.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeChannelDown '{}'
@@ -166,13 +176,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/changeChannelPrevious`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Changes the channel previous.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeChannelPrevious '{}'
@@ -187,13 +199,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/changeChannelService`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Changes the channel service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeChannelService '{}'
@@ -208,13 +222,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/changeChannelUp`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Changes the channel up.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeChannelUp '{}'
@@ -229,13 +245,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/changeVolatileChannel`
 
-Method on com.webos.service.utp.broadcast (from on-device permission registry; parameters undocumented).
+Changes the volatile channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeVolatileChannel '{}'
@@ -250,13 +268,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.broadcast/close`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Closes the UTP broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/close '{}'
@@ -271,13 +291,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getAudioChannelList`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the audio channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getAudioChannelList '{}'
@@ -292,13 +314,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getAudioDescriptionStatus`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the audio description status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getAudioDescriptionStatus '{}'
@@ -313,13 +337,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getAudioInfo`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getAudioInfo '{}'
@@ -334,13 +360,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getAudioLanguageList`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the audio language list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getAudioLanguageList '{}'
@@ -355,13 +383,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getBroadcastComponentList`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the broadcast component list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getBroadcastComponentList '{}'
@@ -376,13 +406,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getBroadcastState`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the broadcast state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getBroadcastState '{}'
@@ -397,13 +429,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getBroadcastSystemUIStatus`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the broadcast system UI status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getBroadcastSystemUIStatus '{}'
@@ -418,13 +452,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getChannelChangeResult`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the channel change result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getChannelChangeResult '{}'
@@ -439,13 +475,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getChannelChangeStatus`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the channel change status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getChannelChangeStatus '{}'
@@ -460,13 +498,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getChannelState`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the channel state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getChannelState '{}'
@@ -481,13 +521,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getCurrentChannel`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the current channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getCurrentChannel '{}'
@@ -502,13 +544,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getCurrentSTC`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the current STC.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getCurrentSTC '{}'
@@ -523,13 +567,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getCurrentVideoInfo`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the current video info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getCurrentVideoInfo '{}'
@@ -544,13 +590,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getDialogEnhancementGainInfo`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the dialog enhancement gain info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getDialogEnhancementGainInfo '{}'
@@ -565,13 +613,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getDialogEnhancementLimitInfo`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the dialog enhancement limit info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getDialogEnhancementLimitInfo '{}'
@@ -586,13 +636,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getEmergencyInfo`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the emergency info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getEmergencyInfo '{}'
@@ -607,13 +659,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getFallbackStatus`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the fallback status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getFallbackStatus '{}'
@@ -628,13 +682,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getGingaResolution`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the ginga resolution.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getGingaResolution '{}'
@@ -649,13 +705,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getMediaTime`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the media time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getMediaTime '{}'
@@ -670,13 +728,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getMRSInfo`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the MRS info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getMRSInfo '{}'
@@ -691,13 +751,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getNextChannelId`
 
-Method on com.webos.service.utp.broadcast (from on-device permission registry; parameters undocumented).
+Returns the next channel ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getNextChannelId '{}'
@@ -712,13 +774,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.broadcast/getNITRegionInfo`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the NIT region info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getNITRegionInfo '{}'
@@ -733,13 +797,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getObjectAudioInfo`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the object audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getObjectAudioInfo '{}'
@@ -754,13 +820,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getPipHotkeyState`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the pip hotkey state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getPipHotkeyState '{}'
@@ -775,13 +843,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getPlayState`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the play state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getPlayState '{}'
@@ -796,13 +866,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getRegionId`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the region ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getRegionId '{}'
@@ -817,13 +889,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getResolutionInfo`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the resolution info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getResolutionInfo '{}'
@@ -838,13 +912,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getScreenSaverStatus`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the screen saver status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getScreenSaverStatus '{}'
@@ -859,13 +935,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getSignalStatus`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the signal status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getSignalStatus '{}'
@@ -880,13 +958,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getVideoInfo`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the video info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getVideoInfo '{}'
@@ -901,13 +981,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getVideoStatus`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the video status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getVideoStatus '{}'
@@ -922,13 +1004,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/getWarmOffStatus`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the warm off status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/getWarmOffStatus '{}'
@@ -943,13 +1027,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/hybridtv/getAstData`
 
-Getter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Returns the ast data (hybridtv)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/hybridtv/getAstData '{}'
@@ -964,13 +1050,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/hybridtv/notifyChannelChange`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Notifies of the channel change (hybridtv)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/hybridtv/notifyChannelChange '{}'
@@ -985,13 +1073,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/isAudioDescriptionConflict`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Reports whether the audio description conflict is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/isAudioDescriptionConflict '{}'
@@ -1006,13 +1096,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/isExistSdtActual`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Reports whether the exist SDT actual is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/isExistSdtActual '{}'
@@ -1027,13 +1119,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/isPauseOnLive`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Reports whether the pause on live is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/isPauseOnLive '{}'
@@ -1048,13 +1142,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/isPossibleChChange`
 
-Method on com.webos.service.utp.broadcast (from on-device permission registry; parameters undocumented).
+Reports whether the possible channel change is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/isPossibleChChange '{}'
@@ -1069,13 +1165,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.broadcast/isSupportDvbi`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Reports whether the support dvbi is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/isSupportDvbi '{}'
@@ -1090,13 +1188,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/isSupportFvp`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Reports whether the support fvp is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/isSupportFvp '{}'
@@ -1111,13 +1211,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/open`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Opens the UTP broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/open '{}'
@@ -1132,13 +1234,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/pause`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Pauses the UTP broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/pause '{}'
@@ -1153,13 +1257,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/pauseOnLive`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Pauses the on live.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/pauseOnLive '{}'
@@ -1174,13 +1280,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/pin`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Handles the pin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/pin '{}'
@@ -1195,13 +1303,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/play`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Plays the UTP broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/play '{}'
@@ -1216,13 +1326,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/playSignaling`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Plays the signaling.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/playSignaling '{}'
@@ -1237,13 +1349,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/registerDataMfu`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Registers the data mfu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/registerDataMfu '{}'
@@ -1258,13 +1372,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/scanDetailInformation`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Scans for detail information.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/scanDetailInformation '{}'
@@ -1279,13 +1395,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/setAudioChannel`
 
-Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Sets the audio channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/setAudioChannel '{}'
@@ -1300,13 +1418,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/setAudioLanguage`
 
-Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Sets the audio language.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/setAudioLanguage '{}'
@@ -1321,13 +1441,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/setAudioMute`
 
-Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Sets the audio mute.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/setAudioMute '{}'
@@ -1342,13 +1464,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/setBroadcastComponent`
 
-Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Sets the broadcast component.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/setBroadcastComponent '{}'
@@ -1363,13 +1487,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/setBroadcastComponentList`
 
-Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Sets the broadcast component list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/setBroadcastComponentList '{}'
@@ -1384,13 +1510,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/setDialogEnhancementGain`
 
-Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Sets the dialog enhancement gain.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/setDialogEnhancementGain '{}'
@@ -1405,13 +1533,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/setObjectAudioInfo`
 
-Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Sets the object audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/setObjectAudioInfo '{}'
@@ -1426,13 +1556,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/setPipHotkey`
 
-Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Sets the pip hotkey.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/setPipHotkey '{}'
@@ -1447,13 +1579,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/setSink`
 
-Setter on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Sets the sink.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/setSink '{}'
@@ -1468,13 +1602,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/stop`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Stops the UTP broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/stop '{}'
@@ -1489,13 +1625,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/stopRecordAndChangeChannel`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Stops the record and change channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/stopRecordAndChangeChannel '{}'
@@ -1510,13 +1648,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/subscribeSignalTable`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Subscribes to the signal table.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/subscribeSignalTable '{}'
@@ -1531,13 +1671,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.broadcast/unpauseToLive`
 
-Method on com.webos.service.utp.broadcast (introspected on-device; parameters undocumented).
+Handles the unpause to live.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/unpauseToLive '{}'

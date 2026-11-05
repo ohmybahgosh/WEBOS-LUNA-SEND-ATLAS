@@ -1,13 +1,15 @@
 # `com.webos.service.camera.gesture`
 
+Camera-based gesture service that reports status of and sets the mode for finger-gesture recognition. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`finger/getStatus`](#finger_getstatus) | private |  | camera | Camera gesture method: finger/getStatus |
-| [`finger/setMode`](#finger_setmode) | private |  | camera | Camera gesture method: finger/setMode |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`finger/getStatus`](#finger_getstatus) | private |  | camera | documented | Camera gesture method: finger/getStatus |
+| [`finger/setMode`](#finger_setmode) | private |  | camera | documented | Camera gesture method: finger/setMode |
 
 <a id="finger_getstatus"></a>
 ## `finger/getStatus`
@@ -20,7 +22,7 @@ Camera gesture method: finger/getStatus
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera.gesture/finger/getStatus '{}'
@@ -41,7 +43,7 @@ Camera gesture method: finger/setMode
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.camera.gesture/finger/setMode '{}'

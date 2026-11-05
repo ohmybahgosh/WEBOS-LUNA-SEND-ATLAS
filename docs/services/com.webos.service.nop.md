@@ -1,29 +1,33 @@
 # `com.webos.service.nop`
 
+Appears to manage 'NOP' timers: adds and removes timers, reports timer info, and notifies on expiry. Specific purpose not inferable; marked. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`addNopTimer`](#addnoptimer) | private |  | input | Method on com.webos.service.nop (introspected on-device; parameters undocumented). |
-| [`getInformation`](#getinformation) | private |  | misc | Getter on com.webos.service.nop (introspected on-device; parameters undocumented). |
-| [`getTimerInfo`](#gettimerinfo) | private |  | input | Getter on com.webos.service.nop (introspected on-device; parameters undocumented). |
-| [`notifyExpireTimer`](#notifyexpiretimer) | private |  | input | Method on com.webos.service.nop (introspected on-device; parameters undocumented). |
-| [`removeNopTimer`](#removenoptimer) | private |  | input | Method on com.webos.service.nop (introspected on-device; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`addNopTimer`](#addnoptimer) | private |  | input | inferred | Adds the nop timer. |
+| [`getInformation`](#getinformation) | private |  | misc | inferred | Returns the information. |
+| [`getTimerInfo`](#gettimerinfo) | private |  | input | inferred | Returns the timer info. |
+| [`notifyExpireTimer`](#notifyexpiretimer) | private |  | input | inferred | Notifies of the expire timer. |
+| [`removeNopTimer`](#removenoptimer) | private |  | input | inferred | Removes the nop timer. ⚠️ |
 
 <a id="addnoptimer"></a>
 ## `addNopTimer`
 
 `luna://com.webos.service.nop/addNopTimer`
 
-Method on com.webos.service.nop (introspected on-device; parameters undocumented).
+Adds the nop timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nop/addNopTimer '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nop/getInformation`
 
-Getter on com.webos.service.nop (introspected on-device; parameters undocumented).
+Returns the information.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nop/getInformation '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nop/getTimerInfo`
 
-Getter on com.webos.service.nop (introspected on-device; parameters undocumented).
+Returns the timer info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nop/getTimerInfo '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nop/notifyExpireTimer`
 
-Method on com.webos.service.nop (introspected on-device; parameters undocumented).
+Notifies of the expire timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nop/notifyExpireTimer '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nop/removeNopTimer`
 
-Method on com.webos.service.nop (introspected on-device; parameters undocumented).
+Removes the nop timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nop/removeNopTimer '{}'

@@ -1,12 +1,14 @@
 # `com.palm.vibrate`
 
+Legacy Palm vibration service: triggers device vibration. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: HP webOS, Palm.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`vibrate`](#vibrate) | root |  | misc | Activates the vibrator |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`vibrate`](#vibrate) | root |  | misc | documented | Activates the vibrator |
 
 <a id="vibrate"></a>
 ## `vibrate`
@@ -19,7 +21,7 @@ Activates the vibrator
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

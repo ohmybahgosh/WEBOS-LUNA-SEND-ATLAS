@@ -1,25 +1,29 @@
 # `com.webos.service.broadcast-conf-downloader`
 
+Appears to download broadcast configuration data; only a test method is exposed, so its full behavior is not inferable. Marked. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`test`](#test) | public |  | tv-broadcast | Method on com.webos.service.broadcast-conf-downloader (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`test`](#test) | public |  | tv-broadcast | inferred | Tests the broadcast conf downloader. |
 
 <a id="test"></a>
 ## `test`
 
 `luna://com.webos.service.broadcast-conf-downloader/test`
 
-Method on com.webos.service.broadcast-conf-downloader (from on-device permission registry; parameters undocumented).
+Tests the broadcast conf downloader.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.broadcast-conf-downloader/test '{}'

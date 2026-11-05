@@ -1,32 +1,36 @@
 # `com.webos.service.mfi`
 
+Apple MFi (Made for iPhone/iPod/iPad) authentication service: downloads and stores MFi keys, retrieves certificates and signatures, and verifies keys for Apple device interoperability. _(inferred from the service's methods)_
+
 8 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`deleteKey`](#deletekey) | public |  | misc | Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`downloadKey`](#downloadkey) | public |  | misc | Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented). |
-| [`getCertificate`](#getcertificate) | public |  | misc | Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented). |
-| [`getKeyInfo`](#getkeyinfo) | public |  | misc | Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented). |
-| [`getKeyLength`](#getkeylength) | public |  | misc | Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented). |
-| [`getSignature`](#getsignature) | public |  | misc | Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented). |
-| [`verifyKey`](#verifykey) | public |  | misc | Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented). |
-| [`writeKey`](#writekey) | public |  | misc | Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`deleteKey`](#deletekey) | public |  | misc | inferred | Deletes the key. ⚠️ |
+| [`downloadKey`](#downloadkey) | public |  | misc | inferred | Downloads the key. |
+| [`getCertificate`](#getcertificate) | public |  | misc | inferred | Returns the certificate. |
+| [`getKeyInfo`](#getkeyinfo) | public |  | misc | inferred | Returns the key info. |
+| [`getKeyLength`](#getkeylength) | public |  | misc | inferred | Returns the key length. |
+| [`getSignature`](#getsignature) | public |  | misc | inferred | Returns the signature. |
+| [`verifyKey`](#verifykey) | public |  | misc | inferred | Verifies the key. |
+| [`writeKey`](#writekey) | public |  | misc | inferred | Writes the key. |
 
 <a id="deletekey"></a>
 ## `deleteKey` ⚠️ DANGEROUS
 
 `luna://com.webos.service.mfi/deleteKey`
 
-Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented).
+Deletes the key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mfi/deleteKey '{}'
@@ -41,13 +45,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mfi/downloadKey`
 
-Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented).
+Downloads the key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mfi/downloadKey '{}'
@@ -62,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mfi/getCertificate`
 
-Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented).
+Returns the certificate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mfi/getCertificate '{}'
@@ -83,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mfi/getKeyInfo`
 
-Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented).
+Returns the key info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mfi/getKeyInfo '{}'
@@ -104,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mfi/getKeyLength`
 
-Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented).
+Returns the key length.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mfi/getKeyLength '{}'
@@ -125,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mfi/getSignature`
 
-Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented).
+Returns the signature.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mfi/getSignature '{}'
@@ -146,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mfi/verifyKey`
 
-Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented).
+Verifies the key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mfi/verifyKey '{}'
@@ -167,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mfi/writeKey`
 
-Method on com.webos.service.mfi (from on-device permission registry; parameters undocumented).
+Writes the key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mfi/writeKey '{}'

@@ -1,26 +1,30 @@
 # `com.webos.service.pkgUpdate`
 
+Package update service: checks for package updates and reports their status. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`check`](#check) | private |  | update | Method on com.webos.service.pkgUpdate (from on-device permission registry; parameters undocumented). |
-| [`statusAll`](#statusall) | private |  | update | Method on com.webos.service.pkgUpdate (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`check`](#check) | private |  | update | inferred | Checks the pkg update. |
+| [`statusAll`](#statusall) | private |  | update | inferred | Handles the status all. |
 
 <a id="check"></a>
 ## `check`
 
 `luna://com.webos.service.pkgUpdate/check`
 
-Method on com.webos.service.pkgUpdate (from on-device permission registry; parameters undocumented).
+Checks the pkg update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgUpdate/check '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pkgUpdate/statusAll`
 
-Method on com.webos.service.pkgUpdate (from on-device permission registry; parameters undocumented).
+Handles the status all.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgUpdate/statusAll '{}'

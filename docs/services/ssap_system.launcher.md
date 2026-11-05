@@ -1,15 +1,17 @@
 # `ssap:system.launcher`
 
+SSAP external-control endpoint for the system launcher: launches, opens and closes apps and reports app state. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | ssap |  | apps | Close app |
-| [`getAppState`](#getappstate) | ssap | yes | apps | Get app running/visible state |
-| [`launch`](#launch) | ssap |  | apps | Launch app (returns sessionId) |
-| [`open`](#open) | ssap |  | apps | Open URL in browser app |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | ssap |  | apps | documented | Close app |
+| [`getAppState`](#getappstate) | ssap | yes | apps | documented | Get app running/visible state |
+| [`launch`](#launch) | ssap |  | apps | documented | Launch app (returns sessionId) |
+| [`open`](#open) | ssap |  | apps | documented | Open URL in browser app |
 
 <a id="close"></a>
 ## `close`
@@ -22,7 +24,7 @@ Close app
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -48,7 +50,7 @@ Get app running/visible state
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -73,7 +75,7 @@ Launch app (returns sessionId)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -100,7 +102,7 @@ Open URL in browser app
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

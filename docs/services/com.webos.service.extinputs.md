@@ -1,25 +1,29 @@
 # `com.webos.service.extinputs`
 
+External-inputs service exposing a single method to reset external-input audio/video settings. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`resetAudioVideoSettings`](#resetaudiovideosettings) | private |  | audio | Method on com.webos.service.extinputs (from on-device permission registry; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`resetAudioVideoSettings`](#resetaudiovideosettings) | private |  | audio | inferred | Resets the audio video settings. ⚠️ |
 
 <a id="resetaudiovideosettings"></a>
 ## `resetAudioVideoSettings` ⚠️ DANGEROUS
 
 `luna://com.webos.service.extinputs/resetAudioVideoSettings`
 
-Method on com.webos.service.extinputs (from on-device permission registry; parameters undocumented).
+Resets the audio video settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs/resetAudioVideoSettings '{}'

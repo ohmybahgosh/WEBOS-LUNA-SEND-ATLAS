@@ -1,117 +1,121 @@
 # `com.palm.audio`
 
+Legacy Palm/HP webOS audio service: plays DTMF and call tones, manages audio scenarios, routing latency, microphone gain, and output volume. The predecessor of the modern webOS audio service.
+
 93 methods.  Platforms seen: HP webOS, Palm, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`dtmf/busyTone`](#dtmf_busytone) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`dtmf/emergencyCall`](#dtmf_emergencycall) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`dtmf/playAlert`](#dtmf_playalert) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`dtmf/playDTMF`](#dtmf_playdtmf) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`dtmf/stopDTMF`](#dtmf_stopdtmf) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/broadcastEvent`](#media_broadcastevent) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/disableScenario`](#media_disablescenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/enableScenario`](#media_enablescenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/getCurrentScenario`](#media_getcurrentscenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/getLatency`](#media_getlatency) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/getMicGain`](#media_getmicgain) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/getVolume`](#media_getvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/listScenarios`](#media_listscenarios) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/lockVolumeKeys`](#media_lockvolumekeys) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/offsetMicGain`](#media_offsetmicgain) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/offsetVolume`](#media_offsetvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/setCurrentScenario`](#media_setcurrentscenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/setLatency`](#media_setlatency) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/setMicGain`](#media_setmicgain) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`media/setVolume`](#media_setvolume) | root |  | audio | Sets media volume (0-100) |
-| [`media/status`](#media_status) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`nav/status`](#nav_status) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`notification/getVolume`](#notification_getvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`notification/offsetVolume`](#notification_offsetvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`notification/setVolume`](#notification_setvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/bluetoothAudioPropertiesSet`](#phone_bluetoothaudiopropertiesset) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/broadcastEvent`](#phone_broadcastevent) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/CallStatusUpdate`](#phone_callstatusupdate) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/disableScenario`](#phone_disablescenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/enableScenario`](#phone_enablescenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/getCurrentScenario`](#phone_getcurrentscenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/getVolume`](#phone_getvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/hacGet`](#phone_hacget) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/hacSet`](#phone_hacset) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/listScenarios`](#phone_listscenarios) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/lockVolumeKeys`](#phone_lockvolumekeys) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/museSet`](#phone_museset) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/offsetVolume`](#phone_offsetvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/setCurrentScenario`](#phone_setcurrentscenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/setMuted`](#phone_setmuted) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/setVolume`](#phone_setvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`phone/status`](#phone_status) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`ringtone/getVolume`](#ringtone_getvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`ringtone/lockVolumeKeys`](#ringtone_lockvolumekeys) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`ringtone/offsetVolume`](#ringtone_offsetvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`ringtone/setMuted`](#ringtone_setmuted) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`ringtone/setVolume`](#ringtone_setvolume) | root |  | audio | Sets ringtone volume (0-100) |
-| [`ringtone/status`](#ringtone_status) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`state/get`](#state_get) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`state/getPreference`](#state_getpreference) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`state/pulse/setFilter`](#state_pulse_setfilter) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`state/pulse/sinkStatus`](#state_pulse_sinkstatus) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`state/pulse/suspend`](#state_pulse_suspend) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`state/set`](#state_set) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`state/setPreference`](#state_setpreference) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`state/setSoundProfile`](#state_setsoundprofile) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`system/getVolume`](#system_getvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`system/offsetVolume`](#system_offsetvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`system/setMuted`](#system_setmuted) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`system/setVolume`](#system_setvolume) | root |  | audio | Sets system volume (0-100) |
-| [`system/status`](#system_status) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`systemsounds/playFeedback`](#systemsounds_playfeedback) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`telephony/answered`](#telephony_answered) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`telephony/callAudio`](#telephony_callaudio) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`telephony/startCall`](#telephony_startcall) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`udev/event`](#udev_event) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vibrate/get`](#vibrate_get) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vibrate/set`](#vibrate_set) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/broadcastEvent`](#voicecommand_broadcastevent) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/control`](#voicecommand_control) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/disableScenario`](#voicecommand_disablescenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/enableScenario`](#voicecommand_enablescenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/getCurrentScenario`](#voicecommand_getcurrentscenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/getMicGain`](#voicecommand_getmicgain) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/getVolume`](#voicecommand_getvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/listScenarios`](#voicecommand_listscenarios) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/offsetMicGain`](#voicecommand_offsetmicgain) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/offsetVolume`](#voicecommand_offsetvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/setCurrentScenario`](#voicecommand_setcurrentscenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/setMicGain`](#voicecommand_setmicgain) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/setVolume`](#voicecommand_setvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`voiceCommand/status`](#voicecommand_status) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vvm/broadcastEvent`](#vvm_broadcastevent) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vvm/control`](#vvm_control) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vvm/disableScenario`](#vvm_disablescenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vvm/enableScenario`](#vvm_enablescenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vvm/getCurrentScenario`](#vvm_getcurrentscenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vvm/getVolume`](#vvm_getvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vvm/listScenarios`](#vvm_listscenarios) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vvm/offsetVolume`](#vvm_offsetvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vvm/setCurrentScenario`](#vvm_setcurrentscenario) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vvm/setVolume`](#vvm_setvolume) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
-| [`vvm/status`](#vvm_status) | public |  | audio | Method on com.palm.audio (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`dtmf/busyTone`](#dtmf_busytone) | public |  | audio | inferred | Handles the busy tone (dtmf) |
+| [`dtmf/emergencyCall`](#dtmf_emergencycall) | public |  | audio | inferred | Handles the emergency call (dtmf) |
+| [`dtmf/playAlert`](#dtmf_playalert) | public |  | audio | inferred | Plays the alert (dtmf) |
+| [`dtmf/playDTMF`](#dtmf_playdtmf) | public |  | audio | inferred | Plays the DTMF (dtmf) |
+| [`dtmf/stopDTMF`](#dtmf_stopdtmf) | public |  | audio | inferred | Stops the DTMF (dtmf) |
+| [`media/broadcastEvent`](#media_broadcastevent) | public |  | audio | inferred | Handles the broadcast event (media) |
+| [`media/disableScenario`](#media_disablescenario) | public |  | audio | inferred | Disables the scenario (media) |
+| [`media/enableScenario`](#media_enablescenario) | public |  | audio | inferred | Enables the scenario (media) |
+| [`media/getCurrentScenario`](#media_getcurrentscenario) | public |  | audio | inferred | Returns the current scenario (media) |
+| [`media/getLatency`](#media_getlatency) | public |  | audio | inferred | Returns the latency (media) |
+| [`media/getMicGain`](#media_getmicgain) | public |  | audio | inferred | Returns the mic gain (media) |
+| [`media/getVolume`](#media_getvolume) | public |  | audio | inferred | Returns the volume (media) |
+| [`media/listScenarios`](#media_listscenarios) | public |  | audio | inferred | Lists the scenarios (media) |
+| [`media/lockVolumeKeys`](#media_lockvolumekeys) | public |  | audio | inferred | Locks the volume keys (media) |
+| [`media/offsetMicGain`](#media_offsetmicgain) | public |  | audio | inferred | Handles the offset mic gain (media) |
+| [`media/offsetVolume`](#media_offsetvolume) | public |  | audio | inferred | Handles the offset volume (media) |
+| [`media/setCurrentScenario`](#media_setcurrentscenario) | public |  | audio | inferred | Sets the current scenario (media) |
+| [`media/setLatency`](#media_setlatency) | public |  | audio | inferred | Sets the latency (media) |
+| [`media/setMicGain`](#media_setmicgain) | public |  | audio | inferred | Sets the mic gain (media) |
+| [`media/setVolume`](#media_setvolume) | root |  | audio | documented | Sets media volume (0-100) |
+| [`media/status`](#media_status) | public |  | audio | inferred | Handles the status (media) |
+| [`nav/status`](#nav_status) | public |  | audio | inferred | Handles the status (nav) |
+| [`notification/getVolume`](#notification_getvolume) | public |  | audio | inferred | Returns the volume (notification) |
+| [`notification/offsetVolume`](#notification_offsetvolume) | public |  | audio | inferred | Handles the offset volume (notification) |
+| [`notification/setVolume`](#notification_setvolume) | public |  | audio | inferred | Sets the volume (notification) |
+| [`phone/bluetoothAudioPropertiesSet`](#phone_bluetoothaudiopropertiesset) | public |  | audio | inferred | Handles the bluetooth audio properties set (phone) |
+| [`phone/broadcastEvent`](#phone_broadcastevent) | public |  | audio | inferred | Handles the broadcast event (phone) |
+| [`phone/CallStatusUpdate`](#phone_callstatusupdate) | public |  | audio | inferred | Calls the status update (phone) |
+| [`phone/disableScenario`](#phone_disablescenario) | public |  | audio | inferred | Disables the scenario (phone) |
+| [`phone/enableScenario`](#phone_enablescenario) | public |  | audio | inferred | Enables the scenario (phone) |
+| [`phone/getCurrentScenario`](#phone_getcurrentscenario) | public |  | audio | inferred | Returns the current scenario (phone) |
+| [`phone/getVolume`](#phone_getvolume) | public |  | audio | inferred | Returns the volume (phone) |
+| [`phone/hacGet`](#phone_hacget) | public |  | audio | inferred | Handles the hac get (phone) |
+| [`phone/hacSet`](#phone_hacset) | public |  | audio | inferred | Handles the hac set (phone) |
+| [`phone/listScenarios`](#phone_listscenarios) | public |  | audio | inferred | Lists the scenarios (phone) |
+| [`phone/lockVolumeKeys`](#phone_lockvolumekeys) | public |  | audio | inferred | Locks the volume keys (phone) |
+| [`phone/museSet`](#phone_museset) | public |  | audio | inferred | Handles the muse set (phone) |
+| [`phone/offsetVolume`](#phone_offsetvolume) | public |  | audio | inferred | Handles the offset volume (phone) |
+| [`phone/setCurrentScenario`](#phone_setcurrentscenario) | public |  | audio | inferred | Sets the current scenario (phone) |
+| [`phone/setMuted`](#phone_setmuted) | public |  | audio | inferred | Sets the muted (phone) |
+| [`phone/setVolume`](#phone_setvolume) | public |  | audio | inferred | Sets the volume (phone) |
+| [`phone/status`](#phone_status) | public |  | audio | inferred | Handles the status (phone) |
+| [`ringtone/getVolume`](#ringtone_getvolume) | public |  | audio | inferred | Returns the volume (ringtone) |
+| [`ringtone/lockVolumeKeys`](#ringtone_lockvolumekeys) | public |  | audio | inferred | Locks the volume keys (ringtone) |
+| [`ringtone/offsetVolume`](#ringtone_offsetvolume) | public |  | audio | inferred | Handles the offset volume (ringtone) |
+| [`ringtone/setMuted`](#ringtone_setmuted) | public |  | audio | inferred | Sets the muted (ringtone) |
+| [`ringtone/setVolume`](#ringtone_setvolume) | root |  | audio | documented | Sets ringtone volume (0-100) |
+| [`ringtone/status`](#ringtone_status) | public |  | audio | inferred | Handles the status (ringtone) |
+| [`state/get`](#state_get) | public |  | audio | inferred | Returns the audio (state) |
+| [`state/getPreference`](#state_getpreference) | public |  | audio | inferred | Returns the preference (state) |
+| [`state/pulse/setFilter`](#state_pulse_setfilter) | public |  | audio | inferred | Sets the filter (state pulse) |
+| [`state/pulse/sinkStatus`](#state_pulse_sinkstatus) | public |  | audio | inferred | Handles the sink status (state pulse) |
+| [`state/pulse/suspend`](#state_pulse_suspend) | public |  | audio | inferred | Handles the suspend (state pulse) |
+| [`state/set`](#state_set) | public |  | audio | inferred | Sets the audio (state) |
+| [`state/setPreference`](#state_setpreference) | public |  | audio | inferred | Sets the preference (state) |
+| [`state/setSoundProfile`](#state_setsoundprofile) | public |  | audio | inferred | Sets the sound profile (state) |
+| [`system/getVolume`](#system_getvolume) | public |  | audio | inferred | Returns the volume (system) |
+| [`system/offsetVolume`](#system_offsetvolume) | public |  | audio | inferred | Handles the offset volume (system) |
+| [`system/setMuted`](#system_setmuted) | public |  | audio | inferred | Sets the muted (system) |
+| [`system/setVolume`](#system_setvolume) | root |  | audio | documented | Sets system volume (0-100) |
+| [`system/status`](#system_status) | public |  | audio | inferred | Handles the status (system) |
+| [`systemsounds/playFeedback`](#systemsounds_playfeedback) | public |  | audio | inferred | Plays the feedback (systemsounds) |
+| [`telephony/answered`](#telephony_answered) | public |  | audio | inferred | Handles the answered (telephony) |
+| [`telephony/callAudio`](#telephony_callaudio) | public |  | audio | inferred | Calls the audio (telephony) |
+| [`telephony/startCall`](#telephony_startcall) | public |  | audio | inferred | Starts the call (telephony) |
+| [`udev/event`](#udev_event) | public |  | audio | inferred | Handles the event (udev) |
+| [`vibrate/get`](#vibrate_get) | public |  | audio | inferred | Returns the audio (vibrate) |
+| [`vibrate/set`](#vibrate_set) | public |  | audio | inferred | Sets the audio (vibrate) |
+| [`voiceCommand/broadcastEvent`](#voicecommand_broadcastevent) | public |  | audio | inferred | Handles the broadcast event (voice command) |
+| [`voiceCommand/control`](#voicecommand_control) | public |  | audio | inferred | Controls the audio (voice command) |
+| [`voiceCommand/disableScenario`](#voicecommand_disablescenario) | public |  | audio | inferred | Disables the scenario (voice command) |
+| [`voiceCommand/enableScenario`](#voicecommand_enablescenario) | public |  | audio | inferred | Enables the scenario (voice command) |
+| [`voiceCommand/getCurrentScenario`](#voicecommand_getcurrentscenario) | public |  | audio | inferred | Returns the current scenario (voice command) |
+| [`voiceCommand/getMicGain`](#voicecommand_getmicgain) | public |  | audio | inferred | Returns the mic gain (voice command) |
+| [`voiceCommand/getVolume`](#voicecommand_getvolume) | public |  | audio | inferred | Returns the volume (voice command) |
+| [`voiceCommand/listScenarios`](#voicecommand_listscenarios) | public |  | audio | inferred | Lists the scenarios (voice command) |
+| [`voiceCommand/offsetMicGain`](#voicecommand_offsetmicgain) | public |  | audio | inferred | Handles the offset mic gain (voice command) |
+| [`voiceCommand/offsetVolume`](#voicecommand_offsetvolume) | public |  | audio | inferred | Handles the offset volume (voice command) |
+| [`voiceCommand/setCurrentScenario`](#voicecommand_setcurrentscenario) | public |  | audio | inferred | Sets the current scenario (voice command) |
+| [`voiceCommand/setMicGain`](#voicecommand_setmicgain) | public |  | audio | inferred | Sets the mic gain (voice command) |
+| [`voiceCommand/setVolume`](#voicecommand_setvolume) | public |  | audio | inferred | Sets the volume (voice command) |
+| [`voiceCommand/status`](#voicecommand_status) | public |  | audio | inferred | Handles the status (voice command) |
+| [`vvm/broadcastEvent`](#vvm_broadcastevent) | public |  | audio | inferred | Handles the broadcast event (vvm) |
+| [`vvm/control`](#vvm_control) | public |  | audio | inferred | Controls the audio (vvm) |
+| [`vvm/disableScenario`](#vvm_disablescenario) | public |  | audio | inferred | Disables the scenario (vvm) |
+| [`vvm/enableScenario`](#vvm_enablescenario) | public |  | audio | inferred | Enables the scenario (vvm) |
+| [`vvm/getCurrentScenario`](#vvm_getcurrentscenario) | public |  | audio | inferred | Returns the current scenario (vvm) |
+| [`vvm/getVolume`](#vvm_getvolume) | public |  | audio | inferred | Returns the volume (vvm) |
+| [`vvm/listScenarios`](#vvm_listscenarios) | public |  | audio | inferred | Lists the scenarios (vvm) |
+| [`vvm/offsetVolume`](#vvm_offsetvolume) | public |  | audio | inferred | Handles the offset volume (vvm) |
+| [`vvm/setCurrentScenario`](#vvm_setcurrentscenario) | public |  | audio | inferred | Sets the current scenario (vvm) |
+| [`vvm/setVolume`](#vvm_setvolume) | public |  | audio | inferred | Sets the volume (vvm) |
+| [`vvm/status`](#vvm_status) | public |  | audio | inferred | Handles the status (vvm) |
 
 <a id="dtmf_busytone"></a>
 ## `dtmf/busyTone`
 
 `luna://com.palm.audio/dtmf/busyTone`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the busy tone (dtmf)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/dtmf/busyTone '{}'
@@ -126,13 +130,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/dtmf/emergencyCall`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the emergency call (dtmf)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/dtmf/emergencyCall '{}'
@@ -147,13 +153,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/dtmf/playAlert`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Plays the alert (dtmf)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/dtmf/playAlert '{}'
@@ -168,13 +176,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/dtmf/playDTMF`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Plays the DTMF (dtmf)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/dtmf/playDTMF '{}'
@@ -189,13 +199,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/dtmf/stopDTMF`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Stops the DTMF (dtmf)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/dtmf/stopDTMF '{}'
@@ -210,13 +222,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/broadcastEvent`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the broadcast event (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/broadcastEvent '{}'
@@ -231,13 +245,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/disableScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Disables the scenario (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/disableScenario '{}'
@@ -252,13 +268,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/enableScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Enables the scenario (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/enableScenario '{}'
@@ -273,13 +291,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/getCurrentScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the current scenario (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/getCurrentScenario '{}'
@@ -294,13 +314,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/getLatency`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the latency (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/getLatency '{}'
@@ -315,13 +337,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/getMicGain`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the mic gain (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/getMicGain '{}'
@@ -336,13 +360,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/getVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the volume (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/getVolume '{}'
@@ -357,13 +383,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/listScenarios`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Lists the scenarios (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/listScenarios '{}'
@@ -378,13 +406,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/lockVolumeKeys`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Locks the volume keys (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/lockVolumeKeys '{}'
@@ -399,13 +429,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/offsetMicGain`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the offset mic gain (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/offsetMicGain '{}'
@@ -420,13 +452,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/offsetVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the offset volume (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/offsetVolume '{}'
@@ -441,13 +475,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/setCurrentScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the current scenario (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/setCurrentScenario '{}'
@@ -462,13 +498,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/setLatency`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the latency (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/setLatency '{}'
@@ -483,13 +521,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/media/setMicGain`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the mic gain (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/setMicGain '{}'
@@ -510,7 +550,7 @@ Sets media volume (0-100)
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -527,13 +567,15 @@ Sources: [1](https://wiki.webos-internals.org/wiki/Luna_Send)
 
 `luna://com.palm.audio/media/status`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the status (media)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/media/status '{}'
@@ -548,13 +590,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/nav/status`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the status (nav)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/nav/status '{}'
@@ -569,13 +613,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/notification/getVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the volume (notification)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/notification/getVolume '{}'
@@ -590,13 +636,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/notification/offsetVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the offset volume (notification)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/notification/offsetVolume '{}'
@@ -611,13 +659,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/notification/setVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the volume (notification)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/notification/setVolume '{}'
@@ -632,13 +682,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/bluetoothAudioPropertiesSet`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the bluetooth audio properties set (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/bluetoothAudioPropertiesSet '{}'
@@ -653,13 +705,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/broadcastEvent`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the broadcast event (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/broadcastEvent '{}'
@@ -674,13 +728,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/CallStatusUpdate`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Calls the status update (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/CallStatusUpdate '{}'
@@ -695,13 +751,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/disableScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Disables the scenario (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/disableScenario '{}'
@@ -716,13 +774,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/enableScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Enables the scenario (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/enableScenario '{}'
@@ -737,13 +797,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/getCurrentScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the current scenario (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/getCurrentScenario '{}'
@@ -758,13 +820,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/getVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the volume (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/getVolume '{}'
@@ -779,13 +843,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/hacGet`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the hac get (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/hacGet '{}'
@@ -800,13 +866,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/hacSet`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the hac set (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/hacSet '{}'
@@ -821,13 +889,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/listScenarios`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Lists the scenarios (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/listScenarios '{}'
@@ -842,13 +912,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/lockVolumeKeys`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Locks the volume keys (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/lockVolumeKeys '{}'
@@ -863,13 +935,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/museSet`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the muse set (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/museSet '{}'
@@ -884,13 +958,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/offsetVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the offset volume (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/offsetVolume '{}'
@@ -905,13 +981,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/setCurrentScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the current scenario (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/setCurrentScenario '{}'
@@ -926,13 +1004,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/setMuted`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the muted (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/setMuted '{}'
@@ -947,13 +1027,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/setVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the volume (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/setVolume '{}'
@@ -968,13 +1050,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/phone/status`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the status (phone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/phone/status '{}'
@@ -989,13 +1073,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/ringtone/getVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the volume (ringtone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/ringtone/getVolume '{}'
@@ -1010,13 +1096,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/ringtone/lockVolumeKeys`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Locks the volume keys (ringtone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/ringtone/lockVolumeKeys '{}'
@@ -1031,13 +1119,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/ringtone/offsetVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the offset volume (ringtone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/ringtone/offsetVolume '{}'
@@ -1052,13 +1142,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/ringtone/setMuted`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the muted (ringtone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/ringtone/setMuted '{}'
@@ -1079,7 +1171,7 @@ Sets ringtone volume (0-100)
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1096,13 +1188,15 @@ Sources: [1](https://wiki.webos-internals.org/wiki/Luna_Send)
 
 `luna://com.palm.audio/ringtone/status`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the status (ringtone)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/ringtone/status '{}'
@@ -1117,13 +1211,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/state/get`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the audio (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/state/get '{}'
@@ -1138,13 +1234,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/state/getPreference`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the preference (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/state/getPreference '{}'
@@ -1159,13 +1257,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/state/pulse/setFilter`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the filter (state pulse)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/state/pulse/setFilter '{}'
@@ -1180,13 +1280,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/state/pulse/sinkStatus`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the sink status (state pulse)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/state/pulse/sinkStatus '{}'
@@ -1201,13 +1303,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/state/pulse/suspend`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the suspend (state pulse)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/state/pulse/suspend '{}'
@@ -1222,13 +1326,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/state/set`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the audio (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/state/set '{}'
@@ -1243,13 +1349,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/state/setPreference`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the preference (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/state/setPreference '{}'
@@ -1264,13 +1372,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/state/setSoundProfile`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the sound profile (state)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/state/setSoundProfile '{}'
@@ -1285,13 +1395,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/system/getVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the volume (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/system/getVolume '{}'
@@ -1306,13 +1418,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/system/offsetVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the offset volume (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/system/offsetVolume '{}'
@@ -1327,13 +1441,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/system/setMuted`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the muted (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/system/setMuted '{}'
@@ -1354,7 +1470,7 @@ Sets system volume (0-100)
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1371,13 +1487,15 @@ Sources: [1](https://wiki.webos-internals.org/wiki/Luna_Send)
 
 `luna://com.palm.audio/system/status`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the status (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/system/status '{}'
@@ -1392,13 +1510,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/systemsounds/playFeedback`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Plays the feedback (systemsounds)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/systemsounds/playFeedback '{}'
@@ -1413,13 +1533,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/telephony/answered`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the answered (telephony)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/telephony/answered '{}'
@@ -1434,13 +1556,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/telephony/callAudio`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Calls the audio (telephony)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/telephony/callAudio '{}'
@@ -1455,13 +1579,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/telephony/startCall`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Starts the call (telephony)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/telephony/startCall '{}'
@@ -1476,13 +1602,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/udev/event`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the event (udev)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/udev/event '{}'
@@ -1497,13 +1625,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vibrate/get`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the audio (vibrate)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vibrate/get '{}'
@@ -1518,13 +1648,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vibrate/set`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the audio (vibrate)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vibrate/set '{}'
@@ -1539,13 +1671,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/broadcastEvent`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the broadcast event (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/broadcastEvent '{}'
@@ -1560,13 +1694,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/control`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Controls the audio (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/control '{}'
@@ -1581,13 +1717,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/disableScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Disables the scenario (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/disableScenario '{}'
@@ -1602,13 +1740,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/enableScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Enables the scenario (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/enableScenario '{}'
@@ -1623,13 +1763,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/getCurrentScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the current scenario (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/getCurrentScenario '{}'
@@ -1644,13 +1786,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/getMicGain`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the mic gain (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/getMicGain '{}'
@@ -1665,13 +1809,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/getVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the volume (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/getVolume '{}'
@@ -1686,13 +1832,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/listScenarios`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Lists the scenarios (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/listScenarios '{}'
@@ -1707,13 +1855,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/offsetMicGain`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the offset mic gain (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/offsetMicGain '{}'
@@ -1728,13 +1878,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/offsetVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the offset volume (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/offsetVolume '{}'
@@ -1749,13 +1901,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/setCurrentScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the current scenario (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/setCurrentScenario '{}'
@@ -1770,13 +1924,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/setMicGain`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the mic gain (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/setMicGain '{}'
@@ -1791,13 +1947,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/setVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the volume (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/setVolume '{}'
@@ -1812,13 +1970,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/voiceCommand/status`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the status (voice command)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/voiceCommand/status '{}'
@@ -1833,13 +1993,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vvm/broadcastEvent`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the broadcast event (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vvm/broadcastEvent '{}'
@@ -1854,13 +2016,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vvm/control`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Controls the audio (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vvm/control '{}'
@@ -1875,13 +2039,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vvm/disableScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Disables the scenario (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vvm/disableScenario '{}'
@@ -1896,13 +2062,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vvm/enableScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Enables the scenario (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vvm/enableScenario '{}'
@@ -1917,13 +2085,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vvm/getCurrentScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the current scenario (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vvm/getCurrentScenario '{}'
@@ -1938,13 +2108,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vvm/getVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Returns the volume (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vvm/getVolume '{}'
@@ -1959,13 +2131,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vvm/listScenarios`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Lists the scenarios (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vvm/listScenarios '{}'
@@ -1980,13 +2154,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vvm/offsetVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the offset volume (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vvm/offsetVolume '{}'
@@ -2001,13 +2177,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vvm/setCurrentScenario`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the current scenario (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vvm/setCurrentScenario '{}'
@@ -2022,13 +2200,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vvm/setVolume`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Sets the volume (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vvm/setVolume '{}'
@@ -2043,13 +2223,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.audio/vvm/status`
 
-Method on com.palm.audio (from on-device permission registry; parameters undocumented).
+Handles the status (vvm)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.audio/vvm/status '{}'

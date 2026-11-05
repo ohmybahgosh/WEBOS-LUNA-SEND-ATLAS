@@ -1,54 +1,56 @@
 # `com.webos.service.peripheralmanager`
 
+Peripheral manager: monitors sensors and controls actuators on I/O peripherals over industry-standard buses, exposing GPIO and I2C (and similar) open, read, write and configure operations.
+
 43 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`config`](#config) | unknown |  | input | Configurations to be set for the opened UART Interface. |
-| [`gpio/close`](#gpio_close) | public |  | input | Closes the opened GPIO pin, so that the pin is available for other applications to use. |
-| [`gpio/getDirection`](#gpio_getdirection) | public |  | input | Returns the direction of the required GPIO pin. |
-| [`gpio/getPollingFd`](#gpio_getpollingfd) | public |  | input | Returns the file descriptor for the GPIO pin specified in the input. |
-| [`gpio/getValue`](#gpio_getvalue) | public | yes | input | Reads the value of the opened input pin |
-| [`gpio/list`](#gpio_list) | public | yes | input | Provides the list of available GPIO pins in the target hardware. |
-| [`gpio/open`](#gpio_open) | public |  | input | Opens the GPIO pin, if not already opened by other applications. |
-| [`gpio/setDirection`](#gpio_setdirection) | public |  | input | Sets the direction of the GPIO pin to input or output |
-| [`gpio/setValue`](#gpio_setvalue) | public |  | input | Sets the value of the opened output pin to "low" or "high" |
-| [`gpioList`](#gpiolist) | unknown |  | input | Provides the list of available GPIO pins with the status. |
-| [`i2c/close`](#i2c_close) | public |  | input | Closes the opened I2C device connected to the bus. |
-| [`i2c/getPollingFd`](#i2c_getpollingfd) | public |  | input | Returns the file descriptor for the I2c if specified in the input. |
-| [`i2c/list`](#i2c_list) | public |  | input | Provides the list of available I2C buses. |
-| [`i2c/open`](#i2c_open) | public |  | input | Opens the device connected to I2C bus. |
-| [`i2c/read`](#i2c_read) | public |  | input | Reads data from the I2C device. |
-| [`i2c/readRegBuffer`](#i2c_readregbuffer) | public |  | input | Reads a value from the register buffer. |
-| [`i2c/readRegByte`](#i2c_readregbyte) | public |  | input | Reads a byte from a given register of the I2C device. |
-| [`i2c/readRegWord`](#i2c_readregword) | public |  | input | Reads a word from the register of the i2c device. |
-| [`i2c/write`](#i2c_write) | public |  | input | Writes the data to the opened I2C device. |
-| [`i2c/writeRegBuffer`](#i2c_writeregbuffer) | public |  | input | Writes data to the register buffer of the connected I2C device. |
-| [`i2c/writeRegByte`](#i2c_writeregbyte) | public |  | input | Writes a byte from a given register. |
-| [`i2c/writeRegWord`](#i2c_writeregword) | public |  | input | Writes a word to the register of the I2C device. |
-| [`i2cBusList`](#i2cbuslist) | unknown |  | input | List of I2C buses and the slave address. |
-| [`spi/close`](#spi_close) | public |  | input | Closes the opened SPI bus, for other applications to use. |
-| [`spi/list`](#spi_list) | public |  | input | Provides the list of available SPI buses in the target hardware. |
-| [`spi/open`](#spi_open) | public |  | input | Opens the SPI bus, if not already opened by other applications. |
-| [`spi/setBitJustification`](#spi_setbitjustification) | public |  | input | Sets bit justification of the data transferred in the SPI bus i.e MSB-first or LSB-first |
-| [`spi/setBitsPerWord`](#spi_setbitsperword) | public |  | input | Configures the number of bits in each SPI transfer word. |
-| [`spi/setDelay`](#spi_setdelay) | public |  | input | Sets the delay after a transfer before the chip select status is changed and the next transfer is triggered. |
-| [`spi/setFrequency`](#spi_setfrequency) | public |  | input | Sets the rate of data transfer (Hz) |
-| [`spi/setMode`](#spi_setmode) | public |  | input | Sets modes that correspond to the possible clocking configurations. |
-| [`spi/transfer`](#spi_transfer) | public |  | input | Opens a connection for receiving/transmitting data to/from a particular slave device. |
-| [`spi/writeBuffer`](#spi_writebuffer) | public |  | input | Writes a chunk of data to SPI device. |
-| [`spi/writeByte`](#spi_writebyte) | public |  | input | Writes a byte of data to the SPI device connected to the bus. |
-| [`uart/close`](#uart_close) | public |  | input | Closes the opened UART device so that the interface is available for other apps to use. |
-| [`uart/getBaudrate`](#uart_getbaudrate) | public |  | input | Reads the baud rate of the opened UART device. |
-| [`uart/getPollingFd`](#uart_getpollingfd) | public |  | input | Returns the file descriptor for the UART interface specified in the input. |
-| [`uart/list`](#uart_list) | public | yes | input | Provides the list of available UART interfaces in the target hardware. |
-| [`uart/open`](#uart_open) | public |  | input | Opens the UART interface, if not already opened by other applications. |
-| [`uart/read`](#uart_read) | public |  | input | Reads the data from the opened UART device. |
-| [`uart/setBaudrate`](#uart_setbaudrate) | public |  | input | Sets the baud rate of the opened UART device to the required value. |
-| [`uart/write`](#uart_write) | public |  | input | Writes the data to the opened UART device. |
-| [`uartList`](#uartlist) | unknown |  | input | Provide List of UART interfaces along with the status |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`config`](#config) | unknown |  | input | documented | Configurations to be set for the opened UART Interface. |
+| [`gpio/close`](#gpio_close) | public |  | input | documented | Closes the opened GPIO pin, so that the pin is available for other applications to use. |
+| [`gpio/getDirection`](#gpio_getdirection) | public |  | input | documented | Returns the direction of the required GPIO pin. |
+| [`gpio/getPollingFd`](#gpio_getpollingfd) | public |  | input | documented | Returns the file descriptor for the GPIO pin specified in the input. |
+| [`gpio/getValue`](#gpio_getvalue) | public | yes | input | documented | Reads the value of the opened input pin |
+| [`gpio/list`](#gpio_list) | public | yes | input | documented | Provides the list of available GPIO pins in the target hardware. |
+| [`gpio/open`](#gpio_open) | public |  | input | documented | Opens the GPIO pin, if not already opened by other applications. |
+| [`gpio/setDirection`](#gpio_setdirection) | public |  | input | documented | Sets the direction of the GPIO pin to input or output |
+| [`gpio/setValue`](#gpio_setvalue) | public |  | input | documented | Sets the value of the opened output pin to "low" or "high" |
+| [`gpioList`](#gpiolist) | unknown |  | input | documented | Provides the list of available GPIO pins with the status. |
+| [`i2c/close`](#i2c_close) | public |  | input | documented | Closes the opened I2C device connected to the bus. |
+| [`i2c/getPollingFd`](#i2c_getpollingfd) | public |  | input | documented | Returns the file descriptor for the I2c if specified in the input. |
+| [`i2c/list`](#i2c_list) | public |  | input | documented | Provides the list of available I2C buses. |
+| [`i2c/open`](#i2c_open) | public |  | input | documented | Opens the device connected to I2C bus. |
+| [`i2c/read`](#i2c_read) | public |  | input | documented | Reads data from the I2C device. |
+| [`i2c/readRegBuffer`](#i2c_readregbuffer) | public |  | input | documented | Reads a value from the register buffer. |
+| [`i2c/readRegByte`](#i2c_readregbyte) | public |  | input | documented | Reads a byte from a given register of the I2C device. |
+| [`i2c/readRegWord`](#i2c_readregword) | public |  | input | documented | Reads a word from the register of the i2c device. |
+| [`i2c/write`](#i2c_write) | public |  | input | documented | Writes the data to the opened I2C device. |
+| [`i2c/writeRegBuffer`](#i2c_writeregbuffer) | public |  | input | documented | Writes data to the register buffer of the connected I2C device. |
+| [`i2c/writeRegByte`](#i2c_writeregbyte) | public |  | input | documented | Writes a byte from a given register. |
+| [`i2c/writeRegWord`](#i2c_writeregword) | public |  | input | documented | Writes a word to the register of the I2C device. |
+| [`i2cBusList`](#i2cbuslist) | unknown |  | input | documented | List of I2C buses and the slave address. |
+| [`spi/close`](#spi_close) | public |  | input | documented | Closes the opened SPI bus, for other applications to use. |
+| [`spi/list`](#spi_list) | public |  | input | documented | Provides the list of available SPI buses in the target hardware. |
+| [`spi/open`](#spi_open) | public |  | input | documented | Opens the SPI bus, if not already opened by other applications. |
+| [`spi/setBitJustification`](#spi_setbitjustification) | public |  | input | documented | Sets bit justification of the data transferred in the SPI bus i.e MSB-first or LSB-first |
+| [`spi/setBitsPerWord`](#spi_setbitsperword) | public |  | input | documented | Configures the number of bits in each SPI transfer word. |
+| [`spi/setDelay`](#spi_setdelay) | public |  | input | documented | Sets the delay after a transfer before the chip select status is changed and the next transfer is triggered. |
+| [`spi/setFrequency`](#spi_setfrequency) | public |  | input | documented | Sets the rate of data transfer (Hz) |
+| [`spi/setMode`](#spi_setmode) | public |  | input | documented | Sets modes that correspond to the possible clocking configurations. |
+| [`spi/transfer`](#spi_transfer) | public |  | input | documented | Opens a connection for receiving/transmitting data to/from a particular slave device. |
+| [`spi/writeBuffer`](#spi_writebuffer) | public |  | input | documented | Writes a chunk of data to SPI device. |
+| [`spi/writeByte`](#spi_writebyte) | public |  | input | documented | Writes a byte of data to the SPI device connected to the bus. |
+| [`uart/close`](#uart_close) | public |  | input | documented | Closes the opened UART device so that the interface is available for other apps to use. |
+| [`uart/getBaudrate`](#uart_getbaudrate) | public |  | input | documented | Reads the baud rate of the opened UART device. |
+| [`uart/getPollingFd`](#uart_getpollingfd) | public |  | input | documented | Returns the file descriptor for the UART interface specified in the input. |
+| [`uart/list`](#uart_list) | public | yes | input | documented | Provides the list of available UART interfaces in the target hardware. |
+| [`uart/open`](#uart_open) | public |  | input | documented | Opens the UART interface, if not already opened by other applications. |
+| [`uart/read`](#uart_read) | public |  | input | documented | Reads the data from the opened UART device. |
+| [`uart/setBaudrate`](#uart_setbaudrate) | public |  | input | documented | Sets the baud rate of the opened UART device to the required value. |
+| [`uart/write`](#uart_write) | public |  | input | documented | Writes the data to the opened UART device. |
+| [`uartList`](#uartlist) | unknown |  | input | documented | Provide List of UART interfaces along with the status |
 
 <a id="config"></a>
 ## `config`
@@ -88,6 +90,13 @@ Closes the opened GPIO pin, so that the pin is available for other applications 
 |---|---|
 | `pin` | String (required) ID of the pin. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/gpio/close '{"pin":"gpio4"}
 ```
@@ -113,6 +122,14 @@ Returns the direction of the required GPIO pin.
 |---|---|
 | `pin` | String (required) ID of the pin. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `direction` | String (optional) Indicates the direction of the pin. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/gpio/getDirection '{"pin":"gpio4"}
 ```
@@ -137,6 +154,14 @@ Returns the file descriptor for the GPIO pin specified in the input.
 | Param | Type / notes |
 |---|---|
 | `id` | String (required) ID of the pin. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation |
+| `fd` | String (optional) File descriptor of the interface. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/gpio/getPollingFd '{"id" : "gpio4"}
@@ -164,6 +189,14 @@ Reads the value of the opened input pin
 | `pin` | String (required) ID of the pin. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notified when there is a change in value. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default : false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `value` | String (optional) Indicates the value. Possible values are: "low" or "high". |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/gpio/getValue '{"pin":"gpio4"}
 ```
@@ -189,6 +222,14 @@ Provides the list of available GPIO pins in the target hardware.
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notified when there is a change in available pins. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default : false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `gpioList` | Object array: gpioList (optional) List of available GPIO pins with the status. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/gpio/list '{}
 ```
@@ -213,6 +254,13 @@ Opens the GPIO pin, if not already opened by other applications.
 | Param | Type / notes |
 |---|---|
 | `pin` | String (required) ID of the pin. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/gpio/open ' {"pin":"gpio4"}
@@ -240,6 +288,13 @@ Sets the direction of the GPIO pin to input or output
 | `pin` | String (required) ID of the pin. |
 | `direction` | String (required) Direction of the pin. Possible values are: "in", "outLow", "outHigh" |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/gpio/setDirection ' {"pin":"gpio4", "direction":"outHigh"}
 ```
@@ -265,6 +320,13 @@ Sets the value of the opened output pin to "low" or "high"
 |---|---|
 | `pin` | String (required) ID of the pin. |
 | `value` | String (required) Value of the output pin. Possible values are: "low" or "high". |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/gpio/setValue ' {"pin":"gpio4", "value":"low"}
@@ -313,6 +375,13 @@ Closes the opened I2C device connected to the bus.
 | `name` | String (required) Name of the I2C interface. |
 | `address` | Number (required) Address of the I2C device to be closed, which is connected to the I2C bus. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/close '{"name":"I2C1", "address":104}
 ```
@@ -339,6 +408,14 @@ Returns the file descriptor for the I2c if specified in the input.
 | `name` | String (required) Name of the I2C pin. |
 | `address` | Number (required) Address of the I2C device connected to the interface. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `fd` | String (optional) File descriptor of the interface. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/getPollingFd '{"name" : "I2C1", "address" :104}
 ```
@@ -363,6 +440,14 @@ Provides the list of available I2C buses.
 | Param | Type / notes |
 |---|---|
 | `verbose` | Boolean (optional) Provide a list of I2C buses with slaveAddress and more details. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `i2cList` | String array (optional) List of I2C buses. If verbose input parameter is set, also returns the slave address. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/list '{}
@@ -390,6 +475,13 @@ Opens the device connected to I2C bus.
 | `name` | String (required) Name of the I2C interface. |
 | `address` | Number (required) Address of the I2C device to be opened, which is connected to the I2C bus |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/open '{"name":"I2C1", "address":104}
 ```
@@ -415,6 +507,15 @@ Reads data from the I2C device.
 |---|---|
 | `name` | String (required) Name of the I2C device. |
 | `address` | String (required) Address of the device that is being used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `size` | Number (optional) Size of the data read. |
+| `data` | Object array (optional) Data read from the device. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/read '{"name":"I2C1", "address":104, "size":4}
@@ -443,6 +544,14 @@ Reads a value from the register buffer.
 | `address` | Number (required) Address of the I2C device connected to the interface. |
 | `reg` | Number (required) Register address. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `data` | Object array (optional) Data read. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/readRegBuffer '{"name":"I2C1", "address":104, "reg":0, "size":4}
 ```
@@ -469,6 +578,14 @@ Reads a byte from a given register of the I2C device.
 | `name` | String (required) Name of the I2C interface. |
 | `address` | Number (required) Address of the I2C device connected to the interface. |
 | `reg` | Number (required) Register address. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `data` | Number (optional) Read value from the register. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/readRegByte '{"name":"I2C1","address":104, "reg":0}
@@ -497,6 +614,14 @@ Reads a word from the register of the i2c device.
 | `address` | Number (required) Address of the I2C device connected to the interface. |
 | `reg` | Number (required) Register address. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `data` | Number (optional) Read value from the register. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/readRegWord '{"name":"I2C1","address":104, "reg":0}
 ```
@@ -524,6 +649,14 @@ Writes the data to the opened I2C device.
 | `address` | Number (required) Address of the I2C device connected to the interface. |
 | `data` | Object array (required) Data to be written. |
 | `size` | Number (optional) Size of data to be written. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `size` | Number (optional) Bytes written. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/write '{"name":"I2C1", "address":104, "data":[1,2,3,4]}
@@ -554,6 +687,14 @@ Writes data to the register buffer of the connected I2C device.
 | `data` | Object array (required) Data that needs to be written. |
 | `size` | Number (required) Size of the data. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `size` | Number (required) Bytes to be written into register. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/writeRegBuffer '{"name":"I2C1", "address":104, "reg":0, "data":[1,2,3,4]}
 ```
@@ -582,6 +723,13 @@ Writes a byte from a given register.
 | `reg` | Number (required) Register address. |
 | `data` | Number (required) Data to write into register. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/writeRegByte '{"name":"I2C1", "address":104, "reg":0, "data":22}
 ```
@@ -609,6 +757,13 @@ Writes a word to the register of the I2C device.
 | `address` | Number (required) Address of the I2C device connected to the interface. |
 | `reg` | Number (required) Register address. |
 | `data` | Number (required) Data to write into register. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/i2c/writeRegWord '{"name":"I2C1","address":104, "reg":0, "data":1111}
@@ -652,6 +807,13 @@ Closes the opened SPI bus, for other applications to use.
 - **Versions:** webOS OSE API level 13+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/spi/close '{"name":"SPI00"}
 ```
@@ -672,6 +834,14 @@ Provides the list of available SPI buses in the target hardware.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 13+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `list` | String array (optional) List of available SPI buses. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/spi/list '{}
@@ -697,6 +867,13 @@ Opens the SPI bus, if not already opened by other applications.
 | Param | Type / notes |
 |---|---|
 | `name` | String (required) ID of the SPI bus interface. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/spi/open '{"name" :"SPI00"}
@@ -724,6 +901,13 @@ Sets bit justification of the data transferred in the SPI bus i.e MSB-first or L
 | `name` | String (required) ID of the SPI interface. |
 | `lsb_first` | Boolean (required) Bit Justification for the data transfer ( true = LSB-first, false* = MSB-first) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/spi/setBitJustification '{"name":"SPI00", "lsb_first": false}
 ```
@@ -749,6 +933,13 @@ Configures the number of bits in each SPI transfer word.
 |---|---|
 | `name` | String (required) ID of the SPI interface. |
 | `nbits` | Number (required) Setting up bit PerWord. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/spi/setBitsPerWord '{"name":"SPI00", "nbits":8}
@@ -776,6 +967,13 @@ Sets the delay after a transfer before the chip select status is changed and the
 | `name` | String (required) ID of the SPI interface. |
 | `delay_usecs` | Number (required) Delay time in micro seconds. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/spi/setDelay '{"name":"SPI00", "delay_usecs":0}
 ```
@@ -802,6 +1000,13 @@ Sets the rate of data transfer (Hz)
 | `name` | String (required) ID of the SPI interface. |
 | `frequency` | Number (required) Setting the frequency of the bus upto value that is allowed based on the bus max speed |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/spi/setFrequency '{"name":"SPI00", "frequency":9600}
 ```
@@ -827,6 +1032,13 @@ Sets modes that correspond to the possible clocking configurations.
 |---|---|
 | `name` | String (required) ID of the SPI interface. |
 | `mode` | Number (required) Mode to be set for the SPI device (possible values: 0 to 3). |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/spi/setMode '{"name":"SPI00", "mode":0}
@@ -855,6 +1067,16 @@ Opens a connection for receiving/transmitting data to/from a particular slave de
 | `data` | Object array (optional) Data to be transferred to the SPI device. |
 | `size` | Number (required) Size of the data to be written/read, if data field is not present. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `tx\_size` | Number (optional) Size of the data transferred to the SPI device. |
+| `rx\_size` | Number (optional) Size of the data read from the SPI device. |
+| `rx\_data` | Object array (optional) Receiving of the data from slave. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/spi/transfer '{"name":"SPI00", "data":[1,2,3,4], "size":4}
 ```
@@ -882,6 +1104,14 @@ Writes a chunk of data to SPI device.
 | `data` | Object array (required) Data to be written to the SPI device. |
 | `size` | Number (required) Size of the data. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `size` | Number (optional) Size of the data written to the device. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/spi/writeBuffer '{"name":"SPI00", "data":[1,2,3,4]}
 ```
@@ -908,6 +1138,13 @@ Writes a byte of data to the SPI device connected to the bus.
 | `data` | Number (required) Data to be written. |
 | `name` | String (required) ID of the SPI interface. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/spi/writeByte '{"name":"SPI00", "data":10}
 ```
@@ -932,6 +1169,13 @@ Closes the opened UART device so that the interface is available for other apps 
 | Param | Type / notes |
 |---|---|
 | `interfaceId` | String (required) ID of the UART interface. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/uart/close '{"interfaceId":"UART1"}
@@ -958,6 +1202,14 @@ Reads the baud rate of the opened UART device.
 |---|---|
 | `interfaceId` | String (required) ID of the UART interface. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `baudrate` | Number (optional) Value of the baud rate. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/uart/getBaudrate '{"interfaceId":"UART1"}
 ```
@@ -982,6 +1234,14 @@ Returns the file descriptor for the UART interface specified in the input.
 | Param | Type / notes |
 |---|---|
 | `id` | String (required) ID of the UART interface. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `fd` | String (optional) File descriptor of the interface. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/uart/getPollingFd '{"id" : "UART1"}
@@ -1008,6 +1268,14 @@ Provides the list of available UART interfaces in the target hardware.
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notified when there is a change in available interfaces. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default : false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `uartList` | Object array: uartList (optional) List of available UART interfaces. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/uart/list '{}
 ```
@@ -1033,6 +1301,13 @@ Opens the UART interface, if not already opened by other applications.
 |---|---|
 | `interfaceId` | String (required) ID of the UART interface. |
 | `config` | Object: config (optional) The configurations to be set for the opened UART Interface. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/uart/open '{"interfaceId":"UART1"}
@@ -1061,6 +1336,15 @@ Reads the data from the opened UART device.
 | `dataType` | String (optional) The format of data to be returned. |
 | `size` | Number (optional) Size of the data to be read. If not specified, all available data is read. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `data` | String (optional) Value read from the opened UART interface. |
+| `dataType` | String (optional) Type of data in the data field. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/uart/read '{"interfaceId":"ttyACM0", "dataType":"text"}
 ```
@@ -1086,6 +1370,13 @@ Sets the baud rate of the opened UART device to the required value.
 |---|---|
 | `interfaceId` | String (required) ID of the UART interface. |
 | `baudrate` | Number (required) Value of the baud rate. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | String (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/uart/setBaudrate '{"interfaceId":"UART1", "baudrate":9600}
@@ -1114,6 +1405,14 @@ Writes the data to the opened UART device.
 | `data` | String (required) Data to write into the UART device. |
 | `dataType` | String (required) Type of data in the data field. |
 | `size` | String (required) Size of the data passed to be written. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) The reason for the failure of the operation. See the API Error Codes Reference section for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `size` | Number (optional) Size of the data written to the device. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.peripheralmanager/uart/write '{ "interfaceId":"ttyACM0", "data": "xyzabc", "dataType":"text", "size":6 }

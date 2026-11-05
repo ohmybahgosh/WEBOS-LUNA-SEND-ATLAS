@@ -1,31 +1,35 @@
 # `com.palm.display`
 
+Legacy Palm display control service: reads and sets display properties and state, reports status, and toggles dim mode (screen dimming) for power saving. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`control/dimModeEnable`](#control_dimmodeenable) | public |  | misc | Method on com.palm.display (from on-device permission registry; parameters undocumented). |
-| [`control/getProperty`](#control_getproperty) | public |  | misc | Method on com.palm.display (from on-device permission registry; parameters undocumented). |
-| [`control/setProperty`](#control_setproperty) | public |  | misc | Method on com.palm.display (from on-device permission registry; parameters undocumented). |
-| [`control/setState`](#control_setstate) | public |  | misc | Method on com.palm.display (from on-device permission registry; parameters undocumented). |
-| [`control/status`](#control_status) | public |  | misc | Method on com.palm.display (from on-device permission registry; parameters undocumented). |
-| [`dimModeEnable`](#dimmodeenable) | public |  | misc | Method on com.palm.display (from on-device permission registry; parameters undocumented). |
-| [`status`](#status) | public |  | misc | Method on com.palm.display (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`control/dimModeEnable`](#control_dimmodeenable) | public |  | misc | inferred | Handles the dim mode enable (control) |
+| [`control/getProperty`](#control_getproperty) | public |  | misc | inferred | Returns the property (control) |
+| [`control/setProperty`](#control_setproperty) | public |  | misc | inferred | Sets the property (control) |
+| [`control/setState`](#control_setstate) | public |  | misc | inferred | Sets the state (control) |
+| [`control/status`](#control_status) | public |  | misc | inferred | Handles the status (control) |
+| [`dimModeEnable`](#dimmodeenable) | public |  | misc | inferred | Handles the dim mode enable. |
+| [`status`](#status) | public |  | misc | inferred | Handles the status. |
 
 <a id="control_dimmodeenable"></a>
 ## `control/dimModeEnable`
 
 `luna://com.palm.display/control/dimModeEnable`
 
-Method on com.palm.display (from on-device permission registry; parameters undocumented).
+Handles the dim mode enable (control)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.display/control/dimModeEnable '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.display/control/getProperty`
 
-Method on com.palm.display (from on-device permission registry; parameters undocumented).
+Returns the property (control)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.display/control/getProperty '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.display/control/setProperty`
 
-Method on com.palm.display (from on-device permission registry; parameters undocumented).
+Sets the property (control)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.display/control/setProperty '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.display/control/setState`
 
-Method on com.palm.display (from on-device permission registry; parameters undocumented).
+Sets the state (control)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.display/control/setState '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.display/control/status`
 
-Method on com.palm.display (from on-device permission registry; parameters undocumented).
+Handles the status (control)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.display/control/status '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.display/dimModeEnable`
 
-Method on com.palm.display (from on-device permission registry; parameters undocumented).
+Handles the dim mode enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.display/dimModeEnable '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.display/status`
 
-Method on com.palm.display (from on-device permission registry; parameters undocumented).
+Handles the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.display/status '{}'

@@ -1,29 +1,33 @@
 # `tsuploader.service`
 
+Transport-stream (TS) uploader: dumps the broadcast transport stream and uploads it, reporting status. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkStatus`](#checkstatus) | private |  | misc | Method on tsuploader.service (from on-device permission registry; parameters undocumented). |
-| [`startService`](#startservice) | private |  | misc | Method on tsuploader.service (from on-device permission registry; parameters undocumented). |
-| [`startTsDump`](#starttsdump) | private |  | misc | Method on tsuploader.service (from on-device permission registry; parameters undocumented). |
-| [`startUpload`](#startupload) | private |  | misc | Method on tsuploader.service (from on-device permission registry; parameters undocumented). |
-| [`stopTsDump`](#stoptsdump) | private |  | misc | Method on tsuploader.service (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkStatus`](#checkstatus) | private |  | misc | inferred | Checks the status. |
+| [`startService`](#startservice) | private |  | misc | inferred | Starts the service. |
+| [`startTsDump`](#starttsdump) | private |  | misc | inferred | Starts the TS dump. |
+| [`startUpload`](#startupload) | private |  | misc | inferred | Starts the upload. |
+| [`stopTsDump`](#stoptsdump) | private |  | misc | inferred | Stops the TS dump. |
 
 <a id="checkstatus"></a>
 ## `checkStatus`
 
 `luna://tsuploader.service/checkStatus`
 
-Method on tsuploader.service (from on-device permission registry; parameters undocumented).
+Checks the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://tsuploader.service/checkStatus '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://tsuploader.service/startService`
 
-Method on tsuploader.service (from on-device permission registry; parameters undocumented).
+Starts the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://tsuploader.service/startService '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://tsuploader.service/startTsDump`
 
-Method on tsuploader.service (from on-device permission registry; parameters undocumented).
+Starts the TS dump.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://tsuploader.service/startTsDump '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://tsuploader.service/startUpload`
 
-Method on tsuploader.service (from on-device permission registry; parameters undocumented).
+Starts the upload.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://tsuploader.service/startUpload '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://tsuploader.service/stopTsDump`
 
-Method on tsuploader.service (from on-device permission registry; parameters undocumented).
+Stops the TS dump.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://tsuploader.service/stopTsDump '{}'

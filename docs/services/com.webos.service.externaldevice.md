@@ -1,39 +1,43 @@
 # `com.webos.service.externaldevice`
 
+External-device I/O service: reads and writes GPIO and ADC pins and reads attached humidity, light, temperature and RFID peripherals. _(inferred from the service's methods)_
+
 15 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`gpio/getState`](#gpio_getstate) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`gpio/getStatus`](#gpio_getstatus) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`gpio/readADC`](#gpio_readadc) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`gpio/readAll`](#gpio_readall) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`gpio/setState`](#gpio_setstate) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`gpio/writeAll`](#gpio_writeall) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`humidity/getStatus`](#humidity_getstatus) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`humidity/read`](#humidity_read) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`light/getStatus`](#light_getstatus) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`light/read`](#light_read) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`rfid/getState`](#rfid_getstate) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`rfid/readTag`](#rfid_readtag) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`rfid/setState`](#rfid_setstate) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`temperature/getStatus`](#temperature_getstatus) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
-| [`temperature/read`](#temperature_read) | public |  | input | Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`gpio/getState`](#gpio_getstate) | public |  | input | inferred | Returns the state (gpio) |
+| [`gpio/getStatus`](#gpio_getstatus) | public |  | input | inferred | Returns the status (gpio) |
+| [`gpio/readADC`](#gpio_readadc) | public |  | input | inferred | Reads the ADC (gpio) |
+| [`gpio/readAll`](#gpio_readall) | public |  | input | inferred | Reads the all (gpio) |
+| [`gpio/setState`](#gpio_setstate) | public |  | input | inferred | Sets the state (gpio) |
+| [`gpio/writeAll`](#gpio_writeall) | public |  | input | inferred | Writes the all (gpio) |
+| [`humidity/getStatus`](#humidity_getstatus) | public |  | input | inferred | Returns the status (humidity) |
+| [`humidity/read`](#humidity_read) | public |  | input | inferred | Reads the externaldevice (humidity) |
+| [`light/getStatus`](#light_getstatus) | public |  | input | inferred | Returns the status (light) |
+| [`light/read`](#light_read) | public |  | input | inferred | Reads the externaldevice (light) |
+| [`rfid/getState`](#rfid_getstate) | public |  | input | inferred | Returns the state (rfid) |
+| [`rfid/readTag`](#rfid_readtag) | public |  | input | inferred | Reads the tag (rfid) |
+| [`rfid/setState`](#rfid_setstate) | public |  | input | inferred | Sets the state (rfid) |
+| [`temperature/getStatus`](#temperature_getstatus) | public |  | input | inferred | Returns the status (temperature) |
+| [`temperature/read`](#temperature_read) | public |  | input | inferred | Reads the externaldevice (temperature) |
 
 <a id="gpio_getstate"></a>
 ## `gpio/getState`
 
 `luna://com.webos.service.externaldevice/gpio/getState`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Returns the state (gpio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/gpio/getState '{}'
@@ -48,13 +52,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/gpio/getStatus`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Returns the status (gpio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/gpio/getStatus '{}'
@@ -69,13 +75,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/gpio/readADC`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Reads the ADC (gpio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/gpio/readADC '{}'
@@ -90,13 +98,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/gpio/readAll`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Reads the all (gpio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/gpio/readAll '{}'
@@ -111,13 +121,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/gpio/setState`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Sets the state (gpio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/gpio/setState '{}'
@@ -132,13 +144,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/gpio/writeAll`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Writes the all (gpio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/gpio/writeAll '{}'
@@ -153,13 +167,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/humidity/getStatus`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Returns the status (humidity)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/humidity/getStatus '{}'
@@ -174,13 +190,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/humidity/read`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Reads the externaldevice (humidity)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/humidity/read '{}'
@@ -195,13 +213,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/light/getStatus`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Returns the status (light)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/light/getStatus '{}'
@@ -216,13 +236,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/light/read`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Reads the externaldevice (light)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/light/read '{}'
@@ -237,13 +259,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/rfid/getState`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Returns the state (rfid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/rfid/getState '{}'
@@ -258,13 +282,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/rfid/readTag`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Reads the tag (rfid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/rfid/readTag '{}'
@@ -279,13 +305,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/rfid/setState`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Sets the state (rfid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/rfid/setState '{}'
@@ -300,13 +328,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/temperature/getStatus`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Returns the status (temperature)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/temperature/getStatus '{}'
@@ -321,13 +351,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldevice/temperature/read`
 
-Method on com.webos.service.externaldevice (from on-device permission registry; parameters undocumented).
+Reads the externaldevice (temperature)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldevice/temperature/read '{}'

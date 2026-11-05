@@ -1,25 +1,29 @@
 # `com.webos.service.tvdataexchanger`
 
+Opaque service exposing a single startPowerOnDefault method, apparently exchanging TV data at power-on. Role not inferable beyond that. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`startPowerOnDefault`](#startpowerondefault) | private |  | power | Method on com.webos.service.tvdataexchanger (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`startPowerOnDefault`](#startpowerondefault) | private |  | power | inferred | Starts the power on default. |
 
 <a id="startpowerondefault"></a>
 ## `startPowerOnDefault`
 
 `luna://com.webos.service.tvdataexchanger/startPowerOnDefault`
 
-Method on com.webos.service.tvdataexchanger (from on-device permission registry; parameters undocumented).
+Starts the power on default.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvdataexchanger/startPowerOnDefault '{}'

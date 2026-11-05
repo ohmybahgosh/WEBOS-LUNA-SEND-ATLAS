@@ -1,30 +1,34 @@
 # `com.webos.service.magicnum`
 
+Appears to validate or resolve 'magic number' shortcuts for apps, channels, and launchers and set the country. Purpose. _(inferred from the service's methods)_
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkApp`](#checkapp) | public |  | misc | Method on com.webos.service.magicnum (from on-device permission registry; parameters undocumented). |
-| [`checkChannel`](#checkchannel) | public |  | misc | Method on com.webos.service.magicnum (introspected on-device; parameters undocumented). |
-| [`checkLauncher`](#checklauncher) | private |  | apps | Method on com.webos.service.magicnum (introspected on-device; parameters undocumented). |
-| [`info`](#info) | private |  | misc | Method on com.webos.service.magicnum (introspected on-device; parameters undocumented). |
-| [`quit`](#quit) | private |  | misc | Method on com.webos.service.magicnum (introspected on-device; parameters undocumented). |
-| [`setCountry`](#setcountry) | private |  | misc | Setter on com.webos.service.magicnum (introspected on-device; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkApp`](#checkapp) | public |  | misc | inferred | Checks the app. |
+| [`checkChannel`](#checkchannel) | public |  | misc | inferred | Checks the channel. |
+| [`checkLauncher`](#checklauncher) | private |  | apps | inferred | Checks the launcher. |
+| [`info`](#info) | private |  | misc | inferred | Handles the info. |
+| [`quit`](#quit) | private |  | misc | inferred | Quits the magicnum. |
+| [`setCountry`](#setcountry) | private |  | misc | inferred | Sets the country. ⚠️ |
 
 <a id="checkapp"></a>
 ## `checkApp`
 
 `luna://com.webos.service.magicnum/checkApp`
 
-Method on com.webos.service.magicnum (from on-device permission registry; parameters undocumented).
+Checks the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.magicnum/checkApp '{}'
@@ -39,13 +43,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.magicnum/checkChannel`
 
-Method on com.webos.service.magicnum (introspected on-device; parameters undocumented).
+Checks the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.magicnum/checkChannel '{}'
@@ -60,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.magicnum/checkLauncher`
 
-Method on com.webos.service.magicnum (introspected on-device; parameters undocumented).
+Checks the launcher.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.magicnum/checkLauncher '{}'
@@ -81,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.magicnum/info`
 
-Method on com.webos.service.magicnum (introspected on-device; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.magicnum/info '{}'
@@ -102,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.magicnum/quit`
 
-Method on com.webos.service.magicnum (introspected on-device; parameters undocumented).
+Quits the magicnum.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.magicnum/quit '{}'
@@ -123,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.magicnum/setCountry`
 
-Setter on com.webos.service.magicnum (introspected on-device; parameters undocumented).
+Sets the country.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.magicnum/setCountry '{}'

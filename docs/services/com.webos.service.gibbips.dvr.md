@@ -1,40 +1,44 @@
 # `com.webos.service.gibbips.dvr`
 
+IP-broadcast DVR recording: starts and stops manual, scheduled and program recordings and reports recording duration, source, type and status. _(inferred from the service's methods)_
+
 16 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`private/getChangedRecordFile`](#private_getchangedrecordfile) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingBufferedLength`](#record_getrecordingbufferedlength) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingDuration`](#record_getrecordingduration) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingEventRelayInfo`](#record_getrecordingeventrelayinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingIdList`](#record_getrecordingidlist) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingRemainDuration`](#record_getrecordingremainduration) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingSourceList`](#record_getrecordingsourcelist) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingStartTime`](#record_getrecordingstarttime) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingType`](#record_getrecordingtype) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/resumeRecord`](#record_resumerecord) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/setRecordingRemainDuration`](#record_setrecordingremainduration) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/startManualRecord`](#record_startmanualrecord) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/startProgramRecord`](#record_startprogramrecord) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/startScheduleRecord`](#record_startschedulerecord) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/stopRecord`](#record_stoprecord) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/stopScheduleRecord`](#record_stopschedulerecord) | private |  | tv-broadcast | Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`private/getChangedRecordFile`](#private_getchangedrecordfile) | private |  | tv-broadcast | inferred | Returns the changed record file (private) |
+| [`record/getRecordingBufferedLength`](#record_getrecordingbufferedlength) | private |  | tv-broadcast | inferred | Returns the recording buffered length (record) |
+| [`record/getRecordingDuration`](#record_getrecordingduration) | private |  | tv-broadcast | inferred | Returns the recording duration (record) |
+| [`record/getRecordingEventRelayInfo`](#record_getrecordingeventrelayinfo) | private |  | tv-broadcast | inferred | Returns the recording event relay info (record) |
+| [`record/getRecordingIdList`](#record_getrecordingidlist) | private |  | tv-broadcast | inferred | Returns the recording ID list (record) |
+| [`record/getRecordingRemainDuration`](#record_getrecordingremainduration) | private |  | tv-broadcast | inferred | Returns the recording remain duration (record) |
+| [`record/getRecordingSourceList`](#record_getrecordingsourcelist) | private |  | tv-broadcast | inferred | Returns the recording source list (record) |
+| [`record/getRecordingStartTime`](#record_getrecordingstarttime) | private |  | tv-broadcast | inferred | Returns the recording start time (record) |
+| [`record/getRecordingType`](#record_getrecordingtype) | private |  | tv-broadcast | inferred | Returns the recording type (record) |
+| [`record/resumeRecord`](#record_resumerecord) | private |  | tv-broadcast | inferred | Resumes the record (record) |
+| [`record/setRecordingRemainDuration`](#record_setrecordingremainduration) | private |  | tv-broadcast | inferred | Sets the recording remain duration (record) |
+| [`record/startManualRecord`](#record_startmanualrecord) | private |  | tv-broadcast | inferred | Starts the manual record (record) |
+| [`record/startProgramRecord`](#record_startprogramrecord) | private |  | tv-broadcast | inferred | Starts the program record (record) |
+| [`record/startScheduleRecord`](#record_startschedulerecord) | private |  | tv-broadcast | inferred | Starts the schedule record (record) |
+| [`record/stopRecord`](#record_stoprecord) | private |  | tv-broadcast | inferred | Stops the record (record) |
+| [`record/stopScheduleRecord`](#record_stopschedulerecord) | private |  | tv-broadcast | inferred | Stops the schedule record (record) |
 
 <a id="private_getchangedrecordfile"></a>
 ## `private/getChangedRecordFile`
 
 `luna://com.webos.service.gibbips.dvr/private/getChangedRecordFile`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Returns the changed record file (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/private/getChangedRecordFile '{}'
@@ -49,13 +53,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/getRecordingBufferedLength`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording buffered length (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/getRecordingBufferedLength '{}'
@@ -70,13 +76,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/getRecordingDuration`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording duration (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/getRecordingDuration '{}'
@@ -91,13 +99,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/getRecordingEventRelayInfo`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording event relay info (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/getRecordingEventRelayInfo '{}'
@@ -112,13 +122,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/getRecordingIdList`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording ID list (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/getRecordingIdList '{}'
@@ -133,13 +145,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/getRecordingRemainDuration`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording remain duration (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/getRecordingRemainDuration '{}'
@@ -154,13 +168,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/getRecordingSourceList`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording source list (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/getRecordingSourceList '{}'
@@ -175,13 +191,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/getRecordingStartTime`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording start time (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/getRecordingStartTime '{}'
@@ -196,13 +214,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/getRecordingType`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording type (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/getRecordingType '{}'
@@ -217,13 +237,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/resumeRecord`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Resumes the record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/resumeRecord '{}'
@@ -238,13 +260,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/setRecordingRemainDuration`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Sets the recording remain duration (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/setRecordingRemainDuration '{}'
@@ -259,13 +283,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/startManualRecord`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Starts the manual record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/startManualRecord '{}'
@@ -280,13 +306,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/startProgramRecord`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Starts the program record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/startProgramRecord '{}'
@@ -301,13 +329,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/startScheduleRecord`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Starts the schedule record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/startScheduleRecord '{}'
@@ -322,13 +352,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/stopRecord`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Stops the record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/stopRecord '{}'
@@ -343,13 +375,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.dvr/record/stopScheduleRecord`
 
-Method on com.webos.service.gibbips.dvr (from on-device permission registry; parameters undocumented).
+Stops the schedule record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.dvr/record/stopScheduleRecord '{}'

@@ -1,44 +1,48 @@
 # `com.palm.downloadmanager`
 
+Legacy download/upload manager: queues and controls file downloads and uploads, tracks history and status, and exposes debug helpers.
+
 20 methods.  Platforms seen: HP webOS, Palm, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`_dbg_addHistory`](#_dbg_addhistory) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`_dbg_checkPath`](#_dbg_checkpath) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`_dbg_gcd`](#_dbg_gcd) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`_dbg_getMaxKey`](#_dbg_getmaxkey) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`_dbg_selfdestruct`](#_dbg_selfdestruct) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`_dbg_setTicketBase`](#_dbg_setticketbase) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`allow1x`](#allow1x) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`cancelAllDownloads`](#cancelalldownloads) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`cancelDownload`](#canceldownload) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`cancelUpload`](#cancelupload) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`clearHistory`](#clearhistory) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`deleteDownloadedFile`](#deletedownloadedfile) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`download`](#download) | root |  | storage | Downloads a URL to /media/internal/downloads |
-| [`downloadStatusQuery`](#downloadstatusquery) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`getAllHistory`](#getallhistory) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`is1xMode`](#is1xmode) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`listPending`](#listpending) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`pauseDownload`](#pausedownload) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`resumeDownload`](#resumedownload) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
-| [`upload`](#upload) | private |  | apps | Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`_dbg_addHistory`](#_dbg_addhistory) | private |  | apps | inferred | Handles the dbg add history. |
+| [`_dbg_checkPath`](#_dbg_checkpath) | private |  | apps | inferred | Handles the dbg check path. |
+| [`_dbg_gcd`](#_dbg_gcd) | private |  | apps | inferred | Handles the dbg gcd. |
+| [`_dbg_getMaxKey`](#_dbg_getmaxkey) | private |  | apps | inferred | Handles the dbg get max key. |
+| [`_dbg_selfdestruct`](#_dbg_selfdestruct) | private |  | apps | inferred | Handles the dbg selfdestruct. |
+| [`_dbg_setTicketBase`](#_dbg_setticketbase) | private |  | apps | inferred | Handles the dbg set ticket base. |
+| [`allow1x`](#allow1x) | private |  | apps | inferred | Allows the 1 x. |
+| [`cancelAllDownloads`](#cancelalldownloads) | private |  | apps | inferred | Cancels the all downloads. |
+| [`cancelDownload`](#canceldownload) | private |  | apps | inferred | Cancels the download. |
+| [`cancelUpload`](#cancelupload) | private |  | apps | inferred | Cancels the upload. |
+| [`clearHistory`](#clearhistory) | private |  | apps | inferred | Clears the history. |
+| [`deleteDownloadedFile`](#deletedownloadedfile) | private |  | apps | inferred | Deletes the downloaded file. ⚠️ |
+| [`download`](#download) | root |  | storage | documented | Downloads a URL to /media/internal/downloads |
+| [`downloadStatusQuery`](#downloadstatusquery) | private |  | apps | inferred | Downloads the status query. |
+| [`getAllHistory`](#getallhistory) | private |  | apps | inferred | Returns the all history. |
+| [`is1xMode`](#is1xmode) | private |  | apps | inferred | Reports whether the 1 x mode is set. |
+| [`listPending`](#listpending) | private |  | apps | inferred | Lists the pending. |
+| [`pauseDownload`](#pausedownload) | private |  | apps | inferred | Pauses the download. |
+| [`resumeDownload`](#resumedownload) | private |  | apps | inferred | Resumes the download. |
+| [`upload`](#upload) | private |  | apps | inferred | Uploads the downloadmanager. |
 
 <a id="_dbg_addhistory"></a>
 ## `_dbg_addHistory`
 
 `luna://com.palm.downloadmanager/_dbg_addHistory`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Handles the dbg add history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/_dbg_addHistory '{}'
@@ -53,13 +57,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/_dbg_checkPath`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Handles the dbg check path.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/_dbg_checkPath '{}'
@@ -74,13 +80,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/_dbg_gcd`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Handles the dbg gcd.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/_dbg_gcd '{}'
@@ -95,13 +103,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/_dbg_getMaxKey`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Handles the dbg get max key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/_dbg_getMaxKey '{}'
@@ -116,13 +126,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/_dbg_selfdestruct`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Handles the dbg selfdestruct.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/_dbg_selfdestruct '{}'
@@ -137,13 +149,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/_dbg_setTicketBase`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Handles the dbg set ticket base.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/_dbg_setTicketBase '{}'
@@ -158,13 +172,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/allow1x`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Allows the 1 x.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/allow1x '{}'
@@ -179,13 +195,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/cancelAllDownloads`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Cancels the all downloads.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/cancelAllDownloads '{}'
@@ -200,13 +218,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/cancelDownload`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Cancels the download.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/cancelDownload '{}'
@@ -221,13 +241,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/cancelUpload`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Cancels the upload.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/cancelUpload '{}'
@@ -242,13 +264,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/clearHistory`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Clears the history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/clearHistory '{}'
@@ -263,13 +287,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/deleteDownloadedFile`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Deletes the downloaded file.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/deleteDownloadedFile '{}'
@@ -290,7 +316,7 @@ Downloads a URL to /media/internal/downloads
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -307,13 +333,15 @@ Sources: [1](https://wiki.webos-internals.org/wiki/Luna_Send)
 
 `luna://com.palm.downloadmanager/downloadStatusQuery`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Downloads the status query.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/downloadStatusQuery '{}'
@@ -328,13 +356,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/getAllHistory`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Returns the all history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/getAllHistory '{}'
@@ -349,13 +379,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/is1xMode`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Reports whether the 1 x mode is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/is1xMode '{}'
@@ -370,13 +402,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/listPending`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Lists the pending.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/listPending '{}'
@@ -391,13 +425,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/pauseDownload`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Pauses the download.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/pauseDownload '{}'
@@ -412,13 +448,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/resumeDownload`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Resumes the download.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/resumeDownload '{}'
@@ -433,13 +471,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.downloadmanager/upload`
 
-Method on com.palm.downloadmanager (from on-device permission registry; parameters undocumented).
+Uploads the downloadmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/upload '{}'

@@ -1,32 +1,36 @@
 # `com.webos.service.mysketch`
 
+MySketch artistic-display/gallery service: loads and saves images and sets the artistic display, home background and image path. _(inferred from the service's methods)_
+
 8 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`begin`](#begin) | private |  | misc | Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented). |
-| [`getImageFiles`](#getimagefiles) | private |  | misc | Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented). |
-| [`loadImageInfo`](#loadimageinfo) | private |  | misc | Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented). |
-| [`saveImageInfo`](#saveimageinfo) | private |  | input | Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented). |
-| [`setArtisticDisplay`](#setartisticdisplay) | private |  | misc | Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented). |
-| [`setHomeBackground`](#sethomebackground) | private |  | misc | Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented). |
-| [`setImagePath`](#setimagepath) | private |  | misc | Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented). |
-| [`terminate`](#terminate) | private |  | misc | Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`begin`](#begin) | private |  | misc | inferred | Begins the mysketch. |
+| [`getImageFiles`](#getimagefiles) | private |  | misc | inferred | Returns the image files. |
+| [`loadImageInfo`](#loadimageinfo) | private |  | misc | inferred | Loads the image info. |
+| [`saveImageInfo`](#saveimageinfo) | private |  | input | inferred | Saves the image info. |
+| [`setArtisticDisplay`](#setartisticdisplay) | private |  | misc | inferred | Sets the artistic display. |
+| [`setHomeBackground`](#sethomebackground) | private |  | misc | inferred | Sets the home background. |
+| [`setImagePath`](#setimagepath) | private |  | misc | inferred | Sets the image path. |
+| [`terminate`](#terminate) | private |  | misc | inferred | Handles the terminate. |
 
 <a id="begin"></a>
 ## `begin`
 
 `luna://com.webos.service.mysketch/begin`
 
-Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented).
+Begins the mysketch.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mysketch/begin '{}'
@@ -41,13 +45,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mysketch/getImageFiles`
 
-Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented).
+Returns the image files.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mysketch/getImageFiles '{}'
@@ -62,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mysketch/loadImageInfo`
 
-Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented).
+Loads the image info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mysketch/loadImageInfo '{}'
@@ -83,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mysketch/saveImageInfo`
 
-Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented).
+Saves the image info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mysketch/saveImageInfo '{}'
@@ -104,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mysketch/setArtisticDisplay`
 
-Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented).
+Sets the artistic display.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mysketch/setArtisticDisplay '{}'
@@ -125,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mysketch/setHomeBackground`
 
-Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented).
+Sets the home background.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mysketch/setHomeBackground '{}'
@@ -146,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mysketch/setImagePath`
 
-Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented).
+Sets the image path.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mysketch/setImagePath '{}'
@@ -167,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mysketch/terminate`
 
-Method on com.webos.service.mysketch (from on-device permission registry; parameters undocumented).
+Handles the terminate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mysketch/terminate '{}'

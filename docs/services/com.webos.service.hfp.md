@@ -1,22 +1,24 @@
 # `com.webos.service.hfp`
 
+Bluetooth Hands-Free Profile (HFP) service: answers, holds, merges and terminates calls, controls call volume and voice recognition, and reports audio-gateway status.
+
 11 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`audioGateway`](#audiogateway) | unknown |  | bluetooth | Contains the information about the connected AG device. |
-| [`hf/answerCall`](#hf_answercall) | public |  | bluetooth | Answers the incoming call from the given AG. |
-| [`hf/call`](#hf_call) | public |  | bluetooth | Dials the previous phone number (stored after the previous call) using the memory dialing. Memory dialing : A telephone feature that allows  |
-| [`hf/getStatus`](#hf_getstatus) | public | yes | bluetooth | Returns the current status of the connected AG devices. |
-| [`hf/holdActiveCalls`](#hf_holdactivecalls) | public |  | bluetooth | Places all the active calls (if any exist) on hold and answers another (held or waiting) call. |
-| [`hf/mergeCall`](#hf_mergecall) | public |  | bluetooth | Adds a held call to the conversation ( merging calls into a conference call ). |
-| [`hf/releaseActiveCalls`](#hf_releaseactivecalls) | public |  | bluetooth | Releases all the active and answers the waiting call of the given AG. |
-| [`hf/releaseHeldCalls`](#hf_releaseheldcalls) | public |  | bluetooth | Releases all the held calls of the given AG. |
-| [`hf/setVoiceRecognition`](#hf_setvoicerecognition) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
-| [`hf/setVolume`](#hf_setvolume) | public |  | bluetooth | Sets the SCO volume level. |
-| [`hf/terminateCall`](#hf_terminatecall) | public |  | bluetooth | Terminates the active call with the given AG. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`audioGateway`](#audiogateway) | unknown |  | bluetooth | documented | Contains the information about the connected AG device. |
+| [`hf/answerCall`](#hf_answercall) | public |  | bluetooth | documented | Answers the incoming call from the given AG. |
+| [`hf/call`](#hf_call) | public |  | bluetooth | documented | Dials the previous phone number (stored after the previous call) using the memory dialing. Memory dialing : A telephone feature that allows  |
+| [`hf/getStatus`](#hf_getstatus) | public | yes | bluetooth | documented | Returns the current status of the connected AG devices. |
+| [`hf/holdActiveCalls`](#hf_holdactivecalls) | public |  | bluetooth | documented | Places all the active calls (if any exist) on hold and answers another (held or waiting) call. |
+| [`hf/mergeCall`](#hf_mergecall) | public |  | bluetooth | documented | Adds a held call to the conversation ( merging calls into a conference call ). |
+| [`hf/releaseActiveCalls`](#hf_releaseactivecalls) | public |  | bluetooth | documented | Releases all the active and answers the waiting call of the given AG. |
+| [`hf/releaseHeldCalls`](#hf_releaseheldcalls) | public |  | bluetooth | documented | Releases all the held calls of the given AG. |
+| [`hf/setVoiceRecognition`](#hf_setvoicerecognition) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
+| [`hf/setVolume`](#hf_setvolume) | public |  | bluetooth | documented | Sets the SCO volume level. |
+| [`hf/terminateCall`](#hf_terminatecall) | public |  | bluetooth | documented | Terminates the active call with the given AG. |
 
 <a id="audiogateway"></a>
 ## `audioGateway`
@@ -57,6 +59,13 @@ Answers the incoming call from the given AG.
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the address of the remote device (AG). |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hfp/hf/answerCall '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
@@ -85,6 +94,13 @@ Dials the previous phone number (stored after the previous call) using the memor
 | `number` | String (optional) Indicates the phone number to be dialed. |
 | `memoryDialing` | Number (optional) Indicates the last stored number(used in the previous call) that can be used for memory dialing. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hfp/hf/call '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
@@ -109,6 +125,14 @@ Returns the current status of the connected AG devices.
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Default : false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `audioGateways` | Object array: audioGateway (required) Contains the information about each connected AG device in an array. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hfp/hf/getStatus '{ "subscribe":false }
@@ -137,6 +161,14 @@ Places all the active calls (if any exist) on hold and answers another (held or 
 | `index` | Number (optional) Indicates the index of a specific call to be active. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `index` | Number (required) Indicates the index of a specific call to be active. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hfp/hf/holdActiveCalls '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
@@ -162,6 +194,13 @@ Adds a held call to the conversation ( merging calls into a conference call ).
 |---|---|
 | `address` | String (required) Indicates the address (bdaddr) of the remote device (AG). |
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hfp/hf/mergeCall '{ "address":"AA:BB:CC:DD:EE:FF" }
@@ -189,6 +228,13 @@ Releases all the active and answers the waiting call of the given AG.
 | `address` | String (required) Indicates the address (bdaddr) of the remote device (AG). |
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hfp/hf/releaseHeldCalls '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
@@ -215,6 +261,13 @@ Releases all the held calls of the given AG.
 | `address` | String (required) Indicates the address (bdaddr) of the remote device (AG). |
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hfp/hf/releaseHeldCalls '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
@@ -234,7 +287,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hfp/hf/setVoiceRecognition '{}'
@@ -263,6 +316,13 @@ Sets the SCO volume level.
 | `volume` | Number (required) Indicates the SCO volume (level to be set). Possible range: [0 - 15]. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hfp/hf/setVolume '{ "address":"AA:BB:CC:DD:EE:FF", "volume":7 }
 ```
@@ -289,6 +349,13 @@ Terminates the active call with the given AG.
 | `address` | String (required) Indicates the address (bdaddr) of the remote device (AG). |
 | `adapterAddress` | String (optional) Indicates the address of the adapter to be used in the case of multiple adapters. Note: If the adapterAddress is not specified, then the default adapter will be used. If the service is part of a container session, do not specify adapterAddress . Based on the session, by default, a pre-selected adapterAddress is used. |
 | `index` | Number (required) Indicates the call to terminate. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hfp/hf/terminateCall '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "index":1 }

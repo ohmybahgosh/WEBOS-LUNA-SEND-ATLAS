@@ -1,42 +1,46 @@
 # `com.palm.preferences`
 
+Key-value preferences store: gets and sets per-application properties and system properties, individually or in bulk.
+
 18 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`appProperties/getAllAppProperties`](#appproperties_getallappproperties) | private |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`appProperties/getAllAppPropertiesObj`](#appproperties_getallapppropertiesobj) | private |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`appProperties/getAppKeys`](#appproperties_getappkeys) | private |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`appProperties/getAppKeysObj`](#appproperties_getappkeysobj) | private |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`appProperties/getAppProperty`](#appproperties_getappproperty) | private |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`appProperties/removeAppProperty`](#appproperties_removeappproperty) | private |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`appProperties/setAppProperty`](#appproperties_setappproperty) | private |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`systemProperties/Get`](#systemproperties_get) | public |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`systemProperties/GetAll`](#systemproperties_getall) | public |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`systemProperties/getAllSysProperties`](#systemproperties_getallsysproperties) | public |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`systemProperties/getAllSysPropertiesObj`](#systemproperties_getallsyspropertiesobj) | public |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`systemProperties/GetKeys`](#systemproperties_getkeys) | public |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`systemProperties/GetSome`](#systemproperties_getsome) | public |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`systemProperties/getSomeSysProperties`](#systemproperties_getsomesysproperties) | public |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`systemProperties/getSomeSysPropertiesObj`](#systemproperties_getsomesyspropertiesobj) | public |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`systemProperties/getSysKeys`](#systemproperties_getsyskeys) | public |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`systemProperties/getSysKeysObj`](#systemproperties_getsyskeysobj) | public |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
-| [`systemProperties/getSysProperty`](#systemproperties_getsysproperty) | public |  | settings | Method on com.palm.preferences (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`appProperties/getAllAppProperties`](#appproperties_getallappproperties) | private |  | settings | inferred | Returns the all app properties (app properties) |
+| [`appProperties/getAllAppPropertiesObj`](#appproperties_getallapppropertiesobj) | private |  | settings | inferred | Returns the all app properties obj (app properties) |
+| [`appProperties/getAppKeys`](#appproperties_getappkeys) | private |  | settings | inferred | Returns the app keys (app properties) |
+| [`appProperties/getAppKeysObj`](#appproperties_getappkeysobj) | private |  | settings | inferred | Returns the app keys obj (app properties) |
+| [`appProperties/getAppProperty`](#appproperties_getappproperty) | private |  | settings | inferred | Returns the app property (app properties) |
+| [`appProperties/removeAppProperty`](#appproperties_removeappproperty) | private |  | settings | inferred | Removes the app property (app properties) ⚠️ |
+| [`appProperties/setAppProperty`](#appproperties_setappproperty) | private |  | settings | inferred | Sets the app property (app properties) |
+| [`systemProperties/Get`](#systemproperties_get) | public |  | settings | inferred | Returns the preferences (system properties) |
+| [`systemProperties/GetAll`](#systemproperties_getall) | public |  | settings | inferred | Returns the all (system properties) |
+| [`systemProperties/getAllSysProperties`](#systemproperties_getallsysproperties) | public |  | settings | inferred | Returns the all sys properties (system properties) |
+| [`systemProperties/getAllSysPropertiesObj`](#systemproperties_getallsyspropertiesobj) | public |  | settings | inferred | Returns the all sys properties obj (system properties) |
+| [`systemProperties/GetKeys`](#systemproperties_getkeys) | public |  | settings | inferred | Returns the keys (system properties) |
+| [`systemProperties/GetSome`](#systemproperties_getsome) | public |  | settings | inferred | Returns the some (system properties) |
+| [`systemProperties/getSomeSysProperties`](#systemproperties_getsomesysproperties) | public |  | settings | inferred | Returns the some sys properties (system properties) |
+| [`systemProperties/getSomeSysPropertiesObj`](#systemproperties_getsomesyspropertiesobj) | public |  | settings | inferred | Returns the some sys properties obj (system properties) |
+| [`systemProperties/getSysKeys`](#systemproperties_getsyskeys) | public |  | settings | inferred | Returns the sys keys (system properties) |
+| [`systemProperties/getSysKeysObj`](#systemproperties_getsyskeysobj) | public |  | settings | inferred | Returns the sys keys obj (system properties) |
+| [`systemProperties/getSysProperty`](#systemproperties_getsysproperty) | public |  | settings | inferred | Returns the sys property (system properties) |
 
 <a id="appproperties_getallappproperties"></a>
 ## `appProperties/getAllAppProperties`
 
 `luna://com.palm.preferences/appProperties/getAllAppProperties`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the all app properties (app properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/appProperties/getAllAppProperties '{}'
@@ -51,13 +55,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/appProperties/getAllAppPropertiesObj`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the all app properties obj (app properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/appProperties/getAllAppPropertiesObj '{}'
@@ -72,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/appProperties/getAppKeys`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the app keys (app properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/appProperties/getAppKeys '{}'
@@ -93,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/appProperties/getAppKeysObj`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the app keys obj (app properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/appProperties/getAppKeysObj '{}'
@@ -114,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/appProperties/getAppProperty`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the app property (app properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/appProperties/getAppProperty '{}'
@@ -135,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/appProperties/removeAppProperty`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Removes the app property (app properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/appProperties/removeAppProperty '{}'
@@ -156,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/appProperties/setAppProperty`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Sets the app property (app properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/appProperties/setAppProperty '{}'
@@ -177,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/systemProperties/Get`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the preferences (system properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/systemProperties/Get '{}'
@@ -198,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/systemProperties/GetAll`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the all (system properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/systemProperties/GetAll '{}'
@@ -219,13 +239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/systemProperties/getAllSysProperties`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the all sys properties (system properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/systemProperties/getAllSysProperties '{}'
@@ -240,13 +262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/systemProperties/getAllSysPropertiesObj`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the all sys properties obj (system properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/systemProperties/getAllSysPropertiesObj '{}'
@@ -261,13 +285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/systemProperties/GetKeys`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the keys (system properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/systemProperties/GetKeys '{}'
@@ -282,13 +308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/systemProperties/GetSome`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the some (system properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/systemProperties/GetSome '{}'
@@ -303,13 +331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/systemProperties/getSomeSysProperties`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the some sys properties (system properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/systemProperties/getSomeSysProperties '{}'
@@ -324,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/systemProperties/getSomeSysPropertiesObj`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the some sys properties obj (system properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/systemProperties/getSomeSysPropertiesObj '{}'
@@ -345,13 +377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/systemProperties/getSysKeys`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the sys keys (system properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/systemProperties/getSysKeys '{}'
@@ -366,13 +400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/systemProperties/getSysKeysObj`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the sys keys obj (system properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/systemProperties/getSysKeysObj '{}'
@@ -387,13 +423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.preferences/systemProperties/getSysProperty`
 
-Method on com.palm.preferences (from on-device permission registry; parameters undocumented).
+Returns the sys property (system properties)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/systemProperties/getSysProperty '{}'

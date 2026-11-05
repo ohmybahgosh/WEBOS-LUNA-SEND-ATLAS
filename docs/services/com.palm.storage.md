@@ -1,14 +1,16 @@
 # `com.palm.storage`
 
+Mass-storage service: enters USB mass-storage (MSM) disk mode, queries its status, and erases all storage.
+
 3 methods.  Platforms seen: HP webOS, Palm, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`diskmode/enterMSM`](#diskmode_entermsm) | root |  | storage | Enters (and toggles out of) USB mass storage mode |
-| [`diskmode/queryMSMStatus`](#diskmode_querymsmstatus) | public |  | storage | Method on com.palm.storage (from on-device permission registry; parameters undocumented). |
-| [`erase/EraseAll`](#erase_eraseall) | root |  | storage | Erases all storage (part of ##RTN# sequence) ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`diskmode/enterMSM`](#diskmode_entermsm) | root |  | storage | documented | Enters (and toggles out of) USB mass storage mode |
+| [`diskmode/queryMSMStatus`](#diskmode_querymsmstatus) | public |  | storage | inferred | Queries the MSM status (diskmode) |
+| [`erase/EraseAll`](#erase_eraseall) | root |  | storage | documented | Erases all storage (part of ##RTN# sequence) ⚠️ |
 
 <a id="diskmode_entermsm"></a>
 ## `diskmode/enterMSM`
@@ -21,7 +23,7 @@ Enters (and toggles out of) USB mass storage mode
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -41,13 +43,15 @@ Sources: [1](https://wiki.webos-internals.org/wiki/Luna_Send)
 
 `luna://com.palm.storage/diskmode/queryMSMStatus`
 
-Method on com.palm.storage (from on-device permission registry; parameters undocumented).
+Queries the MSM status (diskmode)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.storage/diskmode/queryMSMStatus '{}'
@@ -68,7 +72,7 @@ Erases all storage (part of ##RTN# sequence)
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.palm.storage/erase/EraseAll {}

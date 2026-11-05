@@ -1,65 +1,69 @@
 # `com.webos.service.avf`
 
+Appears to drive the 'My Zoom'/AVF video feature and picture-in-picture: zoom capture and playback, PIP show/hide, freeze, and object/coordinate tracking. _(inferred from the service's methods)_
+
 41 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`activateMyZoom`](#activatemyzoom) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`cancelMyZoomRecording`](#cancelmyzoomrecording) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`closePIP`](#closepip) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`commandZoomDebug`](#commandzoomdebug) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`debug/setDebugCmd`](#debug_setdebugcmd) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`freeze`](#freeze) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`getMemKilledApp`](#getmemkilledapp) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`getMyZoomFileIndex`](#getmyzoomfileindex) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`getMyZoomNewFile`](#getmyzoomnewfile) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`getMyZoomPlayParam`](#getmyzoomplayparam) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`getMyZoomVideoStatus`](#getmyzoomvideostatus) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`getObjectInfo`](#getobjectinfo) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`getUmaCoord`](#getumacoord) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`getZoomStatus`](#getzoomstatus) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`hidePIP`](#hidepip) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`runDebug`](#rundebug) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setAlgorithmDebug`](#setalgorithmdebug) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setCursorPos`](#setcursorpos) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setDvrModePIP`](#setdvrmodepip) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setInputSrcPIP`](#setinputsrcpip) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMainScreen`](#setmainscreen) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMyZoomFlag`](#setmyzoomflag) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMyZoomRecFlag`](#setmyzoomrecflag) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMyZoomRecordParam`](#setmyzoomrecordparam) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMyZoomRecTrickCmd`](#setmyzoomrectrickcmd) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMyZoomRemovedUri`](#setmyzoomremoveduri) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setMyZoomTrickCmd`](#setmyzoomtrickcmd) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMyZoomUsbFlag`](#setmyzoomusbflag) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMyZoomUsbLoad`](#setmyzoomusbload) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMyZoomUsbRealOffset`](#setmyzoomusbrealoffset) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMyZoomUsbSave`](#setmyzoomusbsave) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMyZoomUsbTrickCmd`](#setmyzoomusbtrickcmd) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setMyZoomUsbUri`](#setmyzoomusburi) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setObjectInfo`](#setobjectinfo) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`setPIP`](#setpip) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`showPIP`](#showpip) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`startMyZoomPlay`](#startmyzoomplay) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`startMyZoomRecording`](#startmyzoomrecording) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`stopMyZoomPlay`](#stopmyzoomplay) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`stopMyZoomRecording`](#stopmyzoomrecording) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
-| [`withdraw`](#withdraw) | private |  | tv-broadcast | Method on com.webos.service.avf (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`activateMyZoom`](#activatemyzoom) | private |  | tv-broadcast | inferred | Activates the my zoom. |
+| [`cancelMyZoomRecording`](#cancelmyzoomrecording) | private |  | tv-broadcast | inferred | Cancels the my zoom recording. |
+| [`closePIP`](#closepip) | private |  | tv-broadcast | inferred | Closes the PIP. |
+| [`commandZoomDebug`](#commandzoomdebug) | private |  | tv-broadcast | inferred | Handles the command zoom debug. |
+| [`debug/setDebugCmd`](#debug_setdebugcmd) | private |  | tv-broadcast | inferred | Sets the debug cmd (debug) |
+| [`freeze`](#freeze) | private |  | tv-broadcast | inferred | Handles the freeze. |
+| [`getMemKilledApp`](#getmemkilledapp) | private |  | tv-broadcast | inferred | Returns the mem killed app. |
+| [`getMyZoomFileIndex`](#getmyzoomfileindex) | private |  | tv-broadcast | inferred | Returns the my zoom file index. |
+| [`getMyZoomNewFile`](#getmyzoomnewfile) | private |  | tv-broadcast | inferred | Returns the my zoom new file. |
+| [`getMyZoomPlayParam`](#getmyzoomplayparam) | private |  | tv-broadcast | inferred | Returns the my zoom play param. |
+| [`getMyZoomVideoStatus`](#getmyzoomvideostatus) | private |  | tv-broadcast | inferred | Returns the my zoom video status. |
+| [`getObjectInfo`](#getobjectinfo) | private |  | tv-broadcast | inferred | Returns the object info. |
+| [`getUmaCoord`](#getumacoord) | private |  | tv-broadcast | inferred | Returns the uma coord. |
+| [`getZoomStatus`](#getzoomstatus) | private |  | tv-broadcast | inferred | Returns the zoom status. |
+| [`hidePIP`](#hidepip) | private |  | tv-broadcast | inferred | Hides the PIP. |
+| [`runDebug`](#rundebug) | private |  | tv-broadcast | inferred | Runs the debug. |
+| [`setAlgorithmDebug`](#setalgorithmdebug) | private |  | tv-broadcast | inferred | Sets the algorithm debug. |
+| [`setCursorPos`](#setcursorpos) | private |  | tv-broadcast | inferred | Sets the cursor pos. |
+| [`setDvrModePIP`](#setdvrmodepip) | private |  | tv-broadcast | inferred | Sets the DVR mode PIP. |
+| [`setInputSrcPIP`](#setinputsrcpip) | private |  | tv-broadcast | inferred | Sets the input src PIP. |
+| [`setMainScreen`](#setmainscreen) | private |  | tv-broadcast | inferred | Sets the main screen. |
+| [`setMyZoomFlag`](#setmyzoomflag) | private |  | tv-broadcast | inferred | Sets the my zoom flag. |
+| [`setMyZoomRecFlag`](#setmyzoomrecflag) | private |  | tv-broadcast | inferred | Sets the my zoom rec flag. |
+| [`setMyZoomRecordParam`](#setmyzoomrecordparam) | private |  | tv-broadcast | inferred | Sets the my zoom record param. |
+| [`setMyZoomRecTrickCmd`](#setmyzoomrectrickcmd) | private |  | tv-broadcast | inferred | Sets the my zoom rec trick cmd. |
+| [`setMyZoomRemovedUri`](#setmyzoomremoveduri) | private |  | tv-broadcast | inferred | Sets the my zoom removed URI. ⚠️ |
+| [`setMyZoomTrickCmd`](#setmyzoomtrickcmd) | private |  | tv-broadcast | inferred | Sets the my zoom trick cmd. |
+| [`setMyZoomUsbFlag`](#setmyzoomusbflag) | private |  | tv-broadcast | inferred | Sets the my zoom USB flag. |
+| [`setMyZoomUsbLoad`](#setmyzoomusbload) | private |  | tv-broadcast | inferred | Sets the my zoom USB load. |
+| [`setMyZoomUsbRealOffset`](#setmyzoomusbrealoffset) | private |  | tv-broadcast | inferred | Sets the my zoom USB real offset. |
+| [`setMyZoomUsbSave`](#setmyzoomusbsave) | private |  | tv-broadcast | inferred | Sets the my zoom USB save. |
+| [`setMyZoomUsbTrickCmd`](#setmyzoomusbtrickcmd) | private |  | tv-broadcast | inferred | Sets the my zoom USB trick cmd. |
+| [`setMyZoomUsbUri`](#setmyzoomusburi) | private |  | tv-broadcast | inferred | Sets the my zoom USB URI. |
+| [`setObjectInfo`](#setobjectinfo) | private |  | tv-broadcast | inferred | Sets the object info. |
+| [`setPIP`](#setpip) | private |  | tv-broadcast | inferred | Sets the PIP. |
+| [`showPIP`](#showpip) | private |  | tv-broadcast | inferred | Shows the PIP. |
+| [`startMyZoomPlay`](#startmyzoomplay) | private |  | tv-broadcast | inferred | Starts the my zoom play. |
+| [`startMyZoomRecording`](#startmyzoomrecording) | private |  | tv-broadcast | inferred | Starts the my zoom recording. |
+| [`stopMyZoomPlay`](#stopmyzoomplay) | private |  | tv-broadcast | inferred | Stops the my zoom play. |
+| [`stopMyZoomRecording`](#stopmyzoomrecording) | private |  | tv-broadcast | inferred | Stops the my zoom recording. |
+| [`withdraw`](#withdraw) | private |  | tv-broadcast | inferred | Handles the withdraw. |
 
 <a id="activatemyzoom"></a>
 ## `activateMyZoom`
 
 `luna://com.webos.service.avf/activateMyZoom`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Activates the my zoom.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/activateMyZoom '{}'
@@ -74,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/cancelMyZoomRecording`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Cancels the my zoom recording.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/cancelMyZoomRecording '{}'
@@ -95,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/closePIP`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Closes the PIP.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/closePIP '{}'
@@ -116,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/commandZoomDebug`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Handles the command zoom debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/commandZoomDebug '{}'
@@ -137,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/debug/setDebugCmd`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the debug cmd (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/debug/setDebugCmd '{}'
@@ -158,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/freeze`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Handles the freeze.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/freeze '{}'
@@ -179,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/getMemKilledApp`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Returns the mem killed app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/getMemKilledApp '{}'
@@ -200,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/getMyZoomFileIndex`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Returns the my zoom file index.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/getMyZoomFileIndex '{}'
@@ -221,13 +239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/getMyZoomNewFile`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Returns the my zoom new file.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/getMyZoomNewFile '{}'
@@ -242,13 +262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/getMyZoomPlayParam`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Returns the my zoom play param.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/getMyZoomPlayParam '{}'
@@ -263,13 +285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/getMyZoomVideoStatus`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Returns the my zoom video status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/getMyZoomVideoStatus '{}'
@@ -284,13 +308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/getObjectInfo`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Returns the object info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/getObjectInfo '{}'
@@ -305,13 +331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/getUmaCoord`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Returns the uma coord.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/getUmaCoord '{}'
@@ -326,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/getZoomStatus`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Returns the zoom status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/getZoomStatus '{}'
@@ -347,13 +377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/hidePIP`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Hides the PIP.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/hidePIP '{}'
@@ -368,13 +400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/runDebug`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Runs the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/runDebug '{}'
@@ -389,13 +423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setAlgorithmDebug`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the algorithm debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setAlgorithmDebug '{}'
@@ -410,13 +446,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setCursorPos`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the cursor pos.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setCursorPos '{}'
@@ -431,13 +469,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setDvrModePIP`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the DVR mode PIP.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setDvrModePIP '{}'
@@ -452,13 +492,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setInputSrcPIP`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the input src PIP.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setInputSrcPIP '{}'
@@ -473,13 +515,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMainScreen`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the main screen.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMainScreen '{}'
@@ -494,13 +538,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomFlag`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom flag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomFlag '{}'
@@ -515,13 +561,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomRecFlag`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom rec flag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomRecFlag '{}'
@@ -536,13 +584,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomRecordParam`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom record param.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomRecordParam '{}'
@@ -557,13 +607,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomRecTrickCmd`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom rec trick cmd.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomRecTrickCmd '{}'
@@ -578,13 +630,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomRemovedUri`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom removed URI.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomRemovedUri '{}'
@@ -599,13 +653,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomTrickCmd`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom trick cmd.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomTrickCmd '{}'
@@ -620,13 +676,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomUsbFlag`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom USB flag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomUsbFlag '{}'
@@ -641,13 +699,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomUsbLoad`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom USB load.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomUsbLoad '{}'
@@ -662,13 +722,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomUsbRealOffset`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom USB real offset.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomUsbRealOffset '{}'
@@ -683,13 +745,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomUsbSave`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom USB save.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomUsbSave '{}'
@@ -704,13 +768,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomUsbTrickCmd`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom USB trick cmd.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomUsbTrickCmd '{}'
@@ -725,13 +791,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setMyZoomUsbUri`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the my zoom USB URI.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setMyZoomUsbUri '{}'
@@ -746,13 +814,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setObjectInfo`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the object info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setObjectInfo '{}'
@@ -767,13 +837,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/setPIP`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Sets the PIP.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/setPIP '{}'
@@ -788,13 +860,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/showPIP`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Shows the PIP.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/showPIP '{}'
@@ -809,13 +883,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/startMyZoomPlay`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Starts the my zoom play.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/startMyZoomPlay '{}'
@@ -830,13 +906,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/startMyZoomRecording`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Starts the my zoom recording.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/startMyZoomRecording '{}'
@@ -851,13 +929,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/stopMyZoomPlay`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Stops the my zoom play.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/stopMyZoomPlay '{}'
@@ -872,13 +952,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/stopMyZoomRecording`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Stops the my zoom recording.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/stopMyZoomRecording '{}'
@@ -893,13 +975,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.avf/withdraw`
 
-Method on com.webos.service.avf (from on-device permission registry; parameters undocumented).
+Handles the withdraw.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avf/withdraw '{}'

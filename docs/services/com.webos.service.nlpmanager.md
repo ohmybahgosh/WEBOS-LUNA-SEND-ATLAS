@@ -1,31 +1,33 @@
 # `com.webos.service.nlpmanager`
 
+Natural-language processing manager: handles voice/search requests and user-intent resolution, runs and refines searches, manages dynamic categories, and returns tips and program info. _(inferred from the service's methods)_
+
 20 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [``](#) | private |  | input | Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`cancel`](#cancel) | private |  | input | Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`getAllTips`](#getalltips) | private |  | input | Getter on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`getTipsInfo`](#gettipsinfo) | private |  | input | Getter on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`getUserIntentInfo`](#getuserintentinfo) | private |  | input | Getter on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`info`](#info) | private |  | input | Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented). |
-| [`launch`](#launch) | private |  | apps | Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented). |
-| [`listDynamicCategory`](#listdynamiccategory) | private |  | input | Lister on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`load`](#load) | private |  | input | Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`programInfo`](#programinfo) | private |  | input | Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`quit`](#quit) | private |  | input | Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented). |
-| [`request`](#request) | private |  | input | Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented). |
-| [`search`](#search) | private |  | input | Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`searchLocal`](#searchlocal) | private |  | input | Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`searchMore`](#searchmore) | private |  | input | Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`searchWithinResult`](#searchwithinresult) | private |  | input | Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented). |
-| [`selectResult`](#selectresult) | private |  | input | Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | private |  | input | Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`tips`](#tips) | private |  | input | Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
-| [`tipsCategory`](#tipscategory) | private |  | input | Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [``](#) | private |  | input | stub | Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented). |
+| [`cancel`](#cancel) | private |  | input | inferred | Cancels the nlpmanager. |
+| [`getAllTips`](#getalltips) | private |  | input | inferred | Returns the all tips. |
+| [`getTipsInfo`](#gettipsinfo) | private |  | input | inferred | Returns the tips info. |
+| [`getUserIntentInfo`](#getuserintentinfo) | private |  | input | inferred | Returns the user intent info. |
+| [`info`](#info) | private |  | input | inferred | Handles the info. |
+| [`launch`](#launch) | private |  | apps | inferred | Launches the nlpmanager. |
+| [`listDynamicCategory`](#listdynamiccategory) | private |  | input | inferred | Lists the dynamic category. |
+| [`load`](#load) | private |  | input | inferred | Loads the nlpmanager. |
+| [`programInfo`](#programinfo) | private |  | input | inferred | Handles the program info. |
+| [`quit`](#quit) | private |  | input | inferred | Quits the nlpmanager. |
+| [`request`](#request) | private |  | input | inferred | Requests the nlpmanager. |
+| [`search`](#search) | private |  | input | inferred | Searches for nlpmanager. |
+| [`searchLocal`](#searchlocal) | private |  | input | inferred | Searches for local. |
+| [`searchMore`](#searchmore) | private |  | input | inferred | Searches for more. |
+| [`searchWithinResult`](#searchwithinresult) | private |  | input | inferred | Searches for within result. |
+| [`selectResult`](#selectresult) | private |  | input | inferred | Selects the result. |
+| [`start`](#start) | private |  | input | inferred | Starts the nlpmanager. |
+| [`tips`](#tips) | private |  | input | inferred | Handles the tips. |
+| [`tipsCategory`](#tipscategory) | private |  | input | inferred | Handles the tips category. |
 
 <a id=""></a>
 ## ``
@@ -38,7 +40,7 @@ Method on com.webos.service.nlpmanager (introspected on-device; parameters undoc
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** stub
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/ '{}'
@@ -53,13 +55,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/cancel`
 
-Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Cancels the nlpmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/cancel '{}'
@@ -74,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/getAllTips`
 
-Getter on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Returns the all tips.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/getAllTips '{}'
@@ -95,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/getTipsInfo`
 
-Getter on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Returns the tips info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/getTipsInfo '{}'
@@ -116,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/getUserIntentInfo`
 
-Getter on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Returns the user intent info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/getUserIntentInfo '{}'
@@ -137,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/info`
 
-Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/info '{}'
@@ -158,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlpmanager/launch`
 
-Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented).
+Launches the nlpmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/launch '{}'
@@ -179,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlpmanager/listDynamicCategory`
 
-Lister on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Lists the dynamic category.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/listDynamicCategory '{}'
@@ -200,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/load`
 
-Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Loads the nlpmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/load '{}'
@@ -221,13 +239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/programInfo`
 
-Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Handles the program info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/programInfo '{}'
@@ -242,13 +262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/quit`
 
-Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented).
+Quits the nlpmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/quit '{}'
@@ -263,13 +285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlpmanager/request`
 
-Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented).
+Requests the nlpmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/request '{}'
@@ -284,13 +308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlpmanager/search`
 
-Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Searches for nlpmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/search '{}'
@@ -305,13 +331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/searchLocal`
 
-Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Searches for local.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/searchLocal '{}'
@@ -326,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/searchMore`
 
-Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Searches for more.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/searchMore '{}'
@@ -347,13 +377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/searchWithinResult`
 
-Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented).
+Searches for within result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/searchWithinResult '{}'
@@ -368,13 +400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlpmanager/selectResult`
 
-Method on com.webos.service.nlpmanager (from on-device permission registry; parameters undocumented).
+Selects the result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/selectResult '{}'
@@ -389,13 +423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlpmanager/start`
 
-Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Starts the nlpmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/start '{}'
@@ -410,13 +446,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/tips`
 
-Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Handles the tips.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/tips '{}'
@@ -431,13 +469,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nlpmanager/tipsCategory`
 
-Method on com.webos.service.nlpmanager (introspected on-device; parameters undocumented).
+Handles the tips category.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlpmanager/tipsCategory '{}'

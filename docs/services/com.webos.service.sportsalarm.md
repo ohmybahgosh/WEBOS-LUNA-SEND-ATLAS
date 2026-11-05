@@ -1,29 +1,33 @@
 # `com.webos.service.sportsalarm`
 
+Sports-alarm service that tracks sporting events and pushes game alerts/timers. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkTranslation`](#checktranslation) | private |  | misc | Method on com.webos.service.sportsalarm (introspected on-device; parameters undocumented). |
-| [`getEvent`](#getevent) | private |  | misc | Getter on com.webos.service.sportsalarm (introspected on-device; parameters undocumented). |
-| [`push`](#push) | private |  | misc | Method on com.webos.service.sportsalarm (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.sportsalarm (introspected on-device; parameters undocumented). |
-| [`startTimer`](#starttimer) | private |  | input | Method on com.webos.service.sportsalarm (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkTranslation`](#checktranslation) | private |  | misc | inferred | Checks the translation. |
+| [`getEvent`](#getevent) | private |  | misc | inferred | Returns the event. |
+| [`push`](#push) | private |  | misc | inferred | Pushes the sportsalarm. |
+| [`start`](#start) | private |  | misc | inferred | Starts the sportsalarm. |
+| [`startTimer`](#starttimer) | private |  | input | inferred | Starts the timer. |
 
 <a id="checktranslation"></a>
 ## `checkTranslation`
 
 `luna://com.webos.service.sportsalarm/checkTranslation`
 
-Method on com.webos.service.sportsalarm (introspected on-device; parameters undocumented).
+Checks the translation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalarm/checkTranslation '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalarm/getEvent`
 
-Getter on com.webos.service.sportsalarm (introspected on-device; parameters undocumented).
+Returns the event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalarm/getEvent '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalarm/push`
 
-Method on com.webos.service.sportsalarm (introspected on-device; parameters undocumented).
+Pushes the sportsalarm.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalarm/push '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalarm/start`
 
-Method on com.webos.service.sportsalarm (introspected on-device; parameters undocumented).
+Starts the sportsalarm.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalarm/start '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.sportsalarm/startTimer`
 
-Method on com.webos.service.sportsalarm (introspected on-device; parameters undocumented).
+Starts the timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sportsalarm/startTimer '{}'

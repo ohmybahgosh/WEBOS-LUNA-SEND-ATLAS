@@ -1,29 +1,33 @@
 # `com.webos.service.soundshare`
 
+Sound-share service: streams PCM audio out to an external device, buffering PCM data and reporting stream-out and executable status. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getExecutableStatus`](#getexecutablestatus) | private |  | misc | Method on com.webos.service.soundshare (from on-device permission registry; parameters undocumented). |
-| [`getStreamOutStatus`](#getstreamoutstatus) | private |  | misc | Method on com.webos.service.soundshare (from on-device permission registry; parameters undocumented). |
-| [`setPcmBuffer`](#setpcmbuffer) | private |  | misc | Method on com.webos.service.soundshare (from on-device permission registry; parameters undocumented). |
-| [`startStreamOut`](#startstreamout) | private |  | misc | Method on com.webos.service.soundshare (from on-device permission registry; parameters undocumented). |
-| [`stopStreamOut`](#stopstreamout) | private |  | misc | Method on com.webos.service.soundshare (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getExecutableStatus`](#getexecutablestatus) | private |  | misc | inferred | Returns the executable status. |
+| [`getStreamOutStatus`](#getstreamoutstatus) | private |  | misc | inferred | Returns the stream out status. |
+| [`setPcmBuffer`](#setpcmbuffer) | private |  | misc | inferred | Sets the PCM buffer. |
+| [`startStreamOut`](#startstreamout) | private |  | misc | inferred | Starts the stream out. |
+| [`stopStreamOut`](#stopstreamout) | private |  | misc | inferred | Stops the stream out. |
 
 <a id="getexecutablestatus"></a>
 ## `getExecutableStatus`
 
 `luna://com.webos.service.soundshare/getExecutableStatus`
 
-Method on com.webos.service.soundshare (from on-device permission registry; parameters undocumented).
+Returns the executable status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.soundshare/getExecutableStatus '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.soundshare/getStreamOutStatus`
 
-Method on com.webos.service.soundshare (from on-device permission registry; parameters undocumented).
+Returns the stream out status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.soundshare/getStreamOutStatus '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.soundshare/setPcmBuffer`
 
-Method on com.webos.service.soundshare (from on-device permission registry; parameters undocumented).
+Sets the PCM buffer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.soundshare/setPcmBuffer '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.soundshare/startStreamOut`
 
-Method on com.webos.service.soundshare (from on-device permission registry; parameters undocumented).
+Starts the stream out.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.soundshare/startStreamOut '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.soundshare/stopStreamOut`
 
-Method on com.webos.service.soundshare (from on-device permission registry; parameters undocumented).
+Stops the stream out.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.soundshare/stopStreamOut '{}'

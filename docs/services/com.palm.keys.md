@@ -1,12 +1,14 @@
 # `com.palm.keys`
 
+Legacy Palm key/event service exposing hardware key status (e.g. audio keys). Opaque; little beyond key-status reporting is inferable. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: HP webOS, Palm.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`audio/status`](#audio_status) | root |  | keys | Subscribes to volume key status changes |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`audio/status`](#audio_status) | root |  | keys | documented | Subscribes to volume key status changes |
 
 <a id="audio_status"></a>
 ## `audio/status`
@@ -19,7 +21,7 @@ Subscribes to volume key status changes
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

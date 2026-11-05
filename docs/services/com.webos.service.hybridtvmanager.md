@@ -1,37 +1,41 @@
 # `com.webos.service.hybridtvmanager`
 
+Hybrid-TV manager: handles hybrid broadcast-broadband state, user agreements, ACR first-run settings, and teletext display and messaging. _(inferred from the service's methods)_
+
 13 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getHybridTvState`](#gethybridtvstate) | private |  | misc | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`launchUserAgreement`](#launchuseragreement) | private |  | apps | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`notifyActivityEvent`](#notifyactivityevent) | private |  | activity | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`setFirstRunAcrSetting`](#setfirstrunacrsetting) | private |  | misc | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`teletext/enableTeletext`](#teletext_enableteletext) | public |  | misc | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`teletext/enableTime`](#teletext_enabletime) | public |  | input | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`teletext/getBroadcastId`](#teletext_getbroadcastid) | public |  | tv-broadcast | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`teletext/getCurrentTeletext`](#teletext_getcurrentteletext) | public |  | misc | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`teletext/getMessage`](#teletext_getmessage) | public |  | misc | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`teletext/getTeletextState`](#teletext_getteletextstate) | public |  | misc | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`teletext/isTimeAvailable`](#teletext_istimeavailable) | public |  | input | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`teletext/setMessage`](#teletext_setmessage) | public |  | misc | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
-| [`teletext/setTeletext`](#teletext_setteletext) | public |  | misc | Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getHybridTvState`](#gethybridtvstate) | private |  | misc | inferred | Returns the hybrid TV state. |
+| [`launchUserAgreement`](#launchuseragreement) | private |  | apps | inferred | Launches the user agreement. |
+| [`notifyActivityEvent`](#notifyactivityevent) | private |  | activity | inferred | Notifies of the activity event. |
+| [`setFirstRunAcrSetting`](#setfirstrunacrsetting) | private |  | misc | inferred | Sets the first run ACR setting. |
+| [`teletext/enableTeletext`](#teletext_enableteletext) | public |  | misc | inferred | Enables the teletext (teletext) |
+| [`teletext/enableTime`](#teletext_enabletime) | public |  | input | inferred | Enables the time (teletext) |
+| [`teletext/getBroadcastId`](#teletext_getbroadcastid) | public |  | tv-broadcast | inferred | Returns the broadcast ID (teletext) |
+| [`teletext/getCurrentTeletext`](#teletext_getcurrentteletext) | public |  | misc | inferred | Returns the current teletext (teletext) |
+| [`teletext/getMessage`](#teletext_getmessage) | public |  | misc | inferred | Returns the message (teletext) |
+| [`teletext/getTeletextState`](#teletext_getteletextstate) | public |  | misc | inferred | Returns the teletext state (teletext) |
+| [`teletext/isTimeAvailable`](#teletext_istimeavailable) | public |  | input | inferred | Reports whether the time available is set (teletext) |
+| [`teletext/setMessage`](#teletext_setmessage) | public |  | misc | inferred | Sets the message (teletext) |
+| [`teletext/setTeletext`](#teletext_setteletext) | public |  | misc | inferred | Sets the teletext (teletext) |
 
 <a id="gethybridtvstate"></a>
 ## `getHybridTvState`
 
 `luna://com.webos.service.hybridtvmanager/getHybridTvState`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Returns the hybrid TV state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/getHybridTvState '{}'
@@ -46,13 +50,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/launchUserAgreement`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Launches the user agreement.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/launchUserAgreement '{}'
@@ -67,13 +73,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/notifyActivityEvent`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Notifies of the activity event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/notifyActivityEvent '{}'
@@ -88,13 +96,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/setFirstRunAcrSetting`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Sets the first run ACR setting.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/setFirstRunAcrSetting '{}'
@@ -109,13 +119,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/teletext/enableTeletext`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Enables the teletext (teletext)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/teletext/enableTeletext '{}'
@@ -130,13 +142,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/teletext/enableTime`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Enables the time (teletext)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/teletext/enableTime '{}'
@@ -151,13 +165,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/teletext/getBroadcastId`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Returns the broadcast ID (teletext)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/teletext/getBroadcastId '{}'
@@ -172,13 +188,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/teletext/getCurrentTeletext`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Returns the current teletext (teletext)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/teletext/getCurrentTeletext '{}'
@@ -193,13 +211,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/teletext/getMessage`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Returns the message (teletext)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/teletext/getMessage '{}'
@@ -214,13 +234,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/teletext/getTeletextState`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Returns the teletext state (teletext)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/teletext/getTeletextState '{}'
@@ -235,13 +257,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/teletext/isTimeAvailable`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Reports whether the time available is set (teletext)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/teletext/isTimeAvailable '{}'
@@ -256,13 +280,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/teletext/setMessage`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Sets the message (teletext)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/teletext/setMessage '{}'
@@ -277,13 +303,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hybridtvmanager/teletext/setTeletext`
 
-Method on com.webos.service.hybridtvmanager (from on-device permission registry; parameters undocumented).
+Sets the teletext (teletext)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hybridtvmanager/teletext/setTeletext '{}'

@@ -1,57 +1,61 @@
 # `com.webos.service.blegatt`
 
+Bluetooth Low Energy GATT service: connects to BLE devices, discovers services, reads/writes characteristics and descriptors, and manages notifications, including an FTMS (fitness machine) profile.
+
 33 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`buttonEvent`](#buttonevent) | public |  | bluetooth | Method on com.webos.service.blegatt (introspected on-device; parameters undocumented). |
-| [`checkPopup`](#checkpopup) | private |  | bluetooth | Method on com.webos.service.blegatt (introspected on-device; parameters undocumented). |
-| [`client/connect`](#client_connect) | public | yes | bluetooth | Connects to GATT profile on remote device. |
-| [`client/disconnect`](#client_disconnect) | public |  | bluetooth | Disconnects GATT. |
-| [`client/discoverServices`](#client_discoverservices) | public |  | bluetooth | Discovers services. |
-| [`client/getServices`](#client_getservices) | public |  | bluetooth | Gets available services. |
-| [`client/readCharacteristic`](#client_readcharacteristic) | public |  | bluetooth | Reads a characteristic. |
-| [`client/readDescriptor`](#client_readdescriptor) | public |  | bluetooth | Reads a descriptor. |
-| [`client/setCharacteristicNotification`](#client_setcharacteristicnotification) | public |  | bluetooth | Enable/disable notifications for a characteristic. |
-| [`client/writeCharacteristic`](#client_writecharacteristic) | public |  | bluetooth | Writes a characteristic value. |
-| [`client/writeDescriptor`](#client_writedescriptor) | public |  | bluetooth | Writes a descriptor value. |
-| [`ftms/readCharacteristic`](#ftms_readcharacteristic) | public |  | bluetooth | Method on com.webos.service.blegatt (introspected on-device; parameters undocumented). |
-| [`ftms/readDescriptor`](#ftms_readdescriptor) | public |  | bluetooth | Method on com.webos.service.blegatt (introspected on-device; parameters undocumented). |
-| [`ftms/setCharacteristicNotification`](#ftms_setcharacteristicnotification) | public |  | notifications | Setter on com.webos.service.blegatt (introspected on-device; parameters undocumented). |
-| [`ftms/startAlwaysScan`](#ftms_startalwaysscan) | private |  | bluetooth | Method on com.webos.service.blegatt (introspected on-device; parameters undocumented). |
-| [`ftms/stopAlwaysScan`](#ftms_stopalwaysscan) | private |  | bluetooth | Method on com.webos.service.blegatt (introspected on-device; parameters undocumented). |
-| [`ftms/writeCharacteristic`](#ftms_writecharacteristic) | public |  | bluetooth | Method on com.webos.service.blegatt (introspected on-device; parameters undocumented). |
-| [`ftms/writeDescriptor`](#ftms_writedescriptor) | public |  | bluetooth | Method on com.webos.service.blegatt (introspected on-device; parameters undocumented). |
-| [`getState`](#getstate) | public | yes | bluetooth | Scanning state, connected and paired devices. |
-| [`isEnabled`](#isenabled) | public | yes | bluetooth | Checks if Bluetooth is enabled. |
-| [`pair`](#pair) | public | yes | bluetooth | Pairs a remote device. |
-| [`server/addService`](#server_addservice) | public |  | bluetooth | Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented). |
-| [`server/close`](#server_close) | public |  | bluetooth | Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented). |
-| [`server/disconnect`](#server_disconnect) | public |  | bluetooth | Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented). |
-| [`server/notifyCharacteristicChanged`](#server_notifycharacteristicchanged) | public |  | bluetooth | Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented). |
-| [`server/open`](#server_open) | public |  | bluetooth | Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented). |
-| [`server/removeService`](#server_removeservice) | public |  | bluetooth | Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`server/sendResponse`](#server_sendresponse) | public |  | bluetooth | Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented). |
-| [`server/startAdvertising`](#server_startadvertising) | public |  | bluetooth | Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented). |
-| [`server/stopAdvertising`](#server_stopadvertising) | public |  | bluetooth | Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented). |
-| [`startScan`](#startscan) | public | yes | bluetooth | Starts scanning for BLE devices. |
-| [`stopScan`](#stopscan) | public |  | bluetooth | Stops BLE scanning. |
-| [`unpair`](#unpair) | public |  | bluetooth | Unpairs a remote device. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`buttonEvent`](#buttonevent) | public |  | bluetooth | inferred | Handles the button event. |
+| [`checkPopup`](#checkpopup) | private |  | bluetooth | inferred | Checks the popup. |
+| [`client/connect`](#client_connect) | public | yes | bluetooth | documented | Connects to GATT profile on remote device. |
+| [`client/disconnect`](#client_disconnect) | public |  | bluetooth | documented | Disconnects GATT. |
+| [`client/discoverServices`](#client_discoverservices) | public |  | bluetooth | documented | Discovers services. |
+| [`client/getServices`](#client_getservices) | public |  | bluetooth | documented | Gets available services. |
+| [`client/readCharacteristic`](#client_readcharacteristic) | public |  | bluetooth | documented | Reads a characteristic. |
+| [`client/readDescriptor`](#client_readdescriptor) | public |  | bluetooth | documented | Reads a descriptor. |
+| [`client/setCharacteristicNotification`](#client_setcharacteristicnotification) | public |  | bluetooth | documented | Enable/disable notifications for a characteristic. |
+| [`client/writeCharacteristic`](#client_writecharacteristic) | public |  | bluetooth | documented | Writes a characteristic value. |
+| [`client/writeDescriptor`](#client_writedescriptor) | public |  | bluetooth | documented | Writes a descriptor value. |
+| [`ftms/readCharacteristic`](#ftms_readcharacteristic) | public |  | bluetooth | inferred | Reads the characteristic (ftms) |
+| [`ftms/readDescriptor`](#ftms_readdescriptor) | public |  | bluetooth | inferred | Reads the descriptor (ftms) |
+| [`ftms/setCharacteristicNotification`](#ftms_setcharacteristicnotification) | public |  | notifications | inferred | Sets the characteristic notification (ftms) |
+| [`ftms/startAlwaysScan`](#ftms_startalwaysscan) | private |  | bluetooth | inferred | Starts the always scan (ftms) |
+| [`ftms/stopAlwaysScan`](#ftms_stopalwaysscan) | private |  | bluetooth | inferred | Stops the always scan (ftms) |
+| [`ftms/writeCharacteristic`](#ftms_writecharacteristic) | public |  | bluetooth | inferred | Writes the characteristic (ftms) |
+| [`ftms/writeDescriptor`](#ftms_writedescriptor) | public |  | bluetooth | inferred | Writes the descriptor (ftms) |
+| [`getState`](#getstate) | public | yes | bluetooth | documented | Scanning state, connected and paired devices. |
+| [`isEnabled`](#isenabled) | public | yes | bluetooth | documented | Checks if Bluetooth is enabled. |
+| [`pair`](#pair) | public | yes | bluetooth | documented | Pairs a remote device. |
+| [`server/addService`](#server_addservice) | public |  | bluetooth | inferred | Adds the service (server) |
+| [`server/close`](#server_close) | public |  | bluetooth | inferred | Closes the blegatt (server) |
+| [`server/disconnect`](#server_disconnect) | public |  | bluetooth | inferred | Disconnects the blegatt (server) |
+| [`server/notifyCharacteristicChanged`](#server_notifycharacteristicchanged) | public |  | bluetooth | inferred | Notifies of the characteristic changed (server) |
+| [`server/open`](#server_open) | public |  | bluetooth | inferred | Opens the blegatt (server) |
+| [`server/removeService`](#server_removeservice) | public |  | bluetooth | inferred | Removes the service (server) ⚠️ |
+| [`server/sendResponse`](#server_sendresponse) | public |  | bluetooth | inferred | Sends the response (server) |
+| [`server/startAdvertising`](#server_startadvertising) | public |  | bluetooth | inferred | Starts the advertising (server) |
+| [`server/stopAdvertising`](#server_stopadvertising) | public |  | bluetooth | inferred | Stops the advertising (server) |
+| [`startScan`](#startscan) | public | yes | bluetooth | documented | Starts scanning for BLE devices. |
+| [`stopScan`](#stopscan) | public |  | bluetooth | documented | Stops BLE scanning. |
+| [`unpair`](#unpair) | public |  | bluetooth | documented | Unpairs a remote device. |
 
 <a id="buttonevent"></a>
 ## `buttonEvent`
 
 `luna://com.webos.service.blegatt/buttonEvent`
 
-Method on com.webos.service.blegatt (introspected on-device; parameters undocumented).
+Handles the button event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/buttonEvent '{}'
@@ -66,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.blegatt/checkPopup`
 
-Method on com.webos.service.blegatt (introspected on-device; parameters undocumented).
+Checks the popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/checkPopup '{}'
@@ -310,13 +316,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/ble-gatt)
 
 `luna://com.webos.service.blegatt/ftms/readCharacteristic`
 
-Method on com.webos.service.blegatt (introspected on-device; parameters undocumented).
+Reads the characteristic (ftms)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/ftms/readCharacteristic '{}'
@@ -331,13 +339,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.blegatt/ftms/readDescriptor`
 
-Method on com.webos.service.blegatt (introspected on-device; parameters undocumented).
+Reads the descriptor (ftms)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/ftms/readDescriptor '{}'
@@ -352,13 +362,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.blegatt/ftms/setCharacteristicNotification`
 
-Setter on com.webos.service.blegatt (introspected on-device; parameters undocumented).
+Sets the characteristic notification (ftms)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/ftms/setCharacteristicNotification '{}'
@@ -373,13 +385,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.blegatt/ftms/startAlwaysScan`
 
-Method on com.webos.service.blegatt (introspected on-device; parameters undocumented).
+Starts the always scan (ftms)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/ftms/startAlwaysScan '{}'
@@ -394,13 +408,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.blegatt/ftms/stopAlwaysScan`
 
-Method on com.webos.service.blegatt (introspected on-device; parameters undocumented).
+Stops the always scan (ftms)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/ftms/stopAlwaysScan '{}'
@@ -415,13 +431,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.blegatt/ftms/writeCharacteristic`
 
-Method on com.webos.service.blegatt (introspected on-device; parameters undocumented).
+Writes the characteristic (ftms)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/ftms/writeCharacteristic '{}'
@@ -436,13 +454,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.blegatt/ftms/writeDescriptor`
 
-Method on com.webos.service.blegatt (introspected on-device; parameters undocumented).
+Writes the descriptor (ftms)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/ftms/writeDescriptor '{}'
@@ -527,13 +547,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/ble-gatt)
 
 `luna://com.webos.service.blegatt/server/addService`
 
-Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented).
+Adds the service (server)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/server/addService '{}'
@@ -548,13 +570,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.blegatt/server/close`
 
-Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented).
+Closes the blegatt (server)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/server/close '{}'
@@ -569,13 +593,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.blegatt/server/disconnect`
 
-Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented).
+Disconnects the blegatt (server)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/server/disconnect '{}'
@@ -590,13 +616,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.blegatt/server/notifyCharacteristicChanged`
 
-Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented).
+Notifies of the characteristic changed (server)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/server/notifyCharacteristicChanged '{}'
@@ -611,13 +639,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.blegatt/server/open`
 
-Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented).
+Opens the blegatt (server)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/server/open '{}'
@@ -632,13 +662,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.blegatt/server/removeService`
 
-Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented).
+Removes the service (server)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/server/removeService '{}'
@@ -653,13 +685,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.blegatt/server/sendResponse`
 
-Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented).
+Sends the response (server)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/server/sendResponse '{}'
@@ -674,13 +708,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.blegatt/server/startAdvertising`
 
-Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented).
+Starts the advertising (server)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/server/startAdvertising '{}'
@@ -695,13 +731,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.blegatt/server/stopAdvertising`
 
-Method on com.webos.service.blegatt (from on-device permission registry; parameters undocumented).
+Stops the advertising (server)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.blegatt/server/stopAdvertising '{}'

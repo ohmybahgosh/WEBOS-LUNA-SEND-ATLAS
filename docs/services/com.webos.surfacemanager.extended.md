@@ -1,26 +1,30 @@
 # `com.webos.surfacemanager.extended`
 
+Surface-manager extension: gets and sets texture-rendering status for the UI compositor. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getTextureRenderingStatus`](#gettexturerenderingstatus) | private |  | ui | Getter on com.webos.surfacemanager.extended (introspected on-device; parameters undocumented). |
-| [`setTextureRenderingStatus`](#settexturerenderingstatus) | private |  | ui | Setter on com.webos.surfacemanager.extended (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getTextureRenderingStatus`](#gettexturerenderingstatus) | private |  | ui | inferred | Returns the texture rendering status. |
+| [`setTextureRenderingStatus`](#settexturerenderingstatus) | private |  | ui | inferred | Sets the texture rendering status. |
 
 <a id="gettexturerenderingstatus"></a>
 ## `getTextureRenderingStatus`
 
 `luna://com.webos.surfacemanager.extended/getTextureRenderingStatus`
 
-Getter on com.webos.surfacemanager.extended (introspected on-device; parameters undocumented).
+Returns the texture rendering status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager.extended/getTextureRenderingStatus '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager.extended/setTextureRenderingStatus`
 
-Setter on com.webos.surfacemanager.extended (introspected on-device; parameters undocumented).
+Sets the texture rendering status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager.extended/setTextureRenderingStatus '{}'

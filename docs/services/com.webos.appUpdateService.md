@@ -1,27 +1,31 @@
 # `com.webos.appUpdateService`
 
+App update service: checks for and reports the update status of installed apps. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`check`](#check) | private |  | update | Method on com.webos.appUpdateService (from on-device permission registry; parameters undocumented). |
-| [`status`](#status) | public |  | update | Method on com.webos.appUpdateService (from on-device permission registry; parameters undocumented). |
-| [`statusAll`](#statusall) | private |  | update | Method on com.webos.appUpdateService (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`check`](#check) | private |  | update | inferred | Checks the app update service. |
+| [`status`](#status) | public |  | update | inferred | Handles the status. |
+| [`statusAll`](#statusall) | private |  | update | inferred | Handles the status all. |
 
 <a id="check"></a>
 ## `check`
 
 `luna://com.webos.appUpdateService/check`
 
-Method on com.webos.appUpdateService (from on-device permission registry; parameters undocumented).
+Checks the app update service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appUpdateService/check '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.appUpdateService/status`
 
-Method on com.webos.appUpdateService (from on-device permission registry; parameters undocumented).
+Handles the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appUpdateService/status '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.appUpdateService/statusAll`
 
-Method on com.webos.appUpdateService (from on-device permission registry; parameters undocumented).
+Handles the status all.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appUpdateService/statusAll '{}'

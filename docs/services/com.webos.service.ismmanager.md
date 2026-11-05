@@ -1,27 +1,31 @@
 # `com.webos.service.ismmanager`
 
+ISM (image-sticking-minimization) manager: launches and closes the ISM routine and refreshes its contents. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`closeISM`](#closeism) | private |  | system-info | Method on com.webos.service.ismmanager (from on-device permission registry; parameters undocumented). |
-| [`launchISM`](#launchism) | private |  | apps | Method on com.webos.service.ismmanager (from on-device permission registry; parameters undocumented). |
-| [`refreshISMContents`](#refreshismcontents) | private |  | system-info | Method on com.webos.service.ismmanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`closeISM`](#closeism) | private |  | system-info | inferred | Closes the ISM. |
+| [`launchISM`](#launchism) | private |  | apps | inferred | Launches the ISM. |
+| [`refreshISMContents`](#refreshismcontents) | private |  | system-info | inferred | Refreshes the ISM contents. |
 
 <a id="closeism"></a>
 ## `closeISM`
 
 `luna://com.webos.service.ismmanager/closeISM`
 
-Method on com.webos.service.ismmanager (from on-device permission registry; parameters undocumented).
+Closes the ISM.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ismmanager/closeISM '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.ismmanager/launchISM`
 
-Method on com.webos.service.ismmanager (from on-device permission registry; parameters undocumented).
+Launches the ISM.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ismmanager/launchISM '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.ismmanager/refreshISMContents`
 
-Method on com.webos.service.ismmanager (from on-device permission registry; parameters undocumented).
+Refreshes the ISM contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ismmanager/refreshISMContents '{}'

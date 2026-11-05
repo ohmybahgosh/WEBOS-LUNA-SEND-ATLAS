@@ -1,29 +1,33 @@
 # `com.webos.service.voiceinput.hidraw`
 
+Raw-HID voice-input service: lists voice-capable input devices and starts/stops microphone streaming from the remote. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getDevices`](#getdevices) | private |  | input | Getter on com.webos.service.voiceinput.hidraw (introspected on-device; parameters undocumented). |
-| [`restartTimer`](#restarttimer) | private |  | input | Method on com.webos.service.voiceinput.hidraw (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | input | Method on com.webos.service.voiceinput.hidraw (introspected on-device; parameters undocumented). |
-| [`startStreaming`](#startstreaming) | private |  | input | Method on com.webos.service.voiceinput.hidraw (introspected on-device; parameters undocumented). |
-| [`stopStreaming`](#stopstreaming) | private |  | input | Method on com.webos.service.voiceinput.hidraw (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getDevices`](#getdevices) | private |  | input | inferred | Returns the devices. |
+| [`restartTimer`](#restarttimer) | private |  | input | inferred | Restarts the timer. |
+| [`start`](#start) | private |  | input | inferred | Starts the voiceinput hidraw. |
+| [`startStreaming`](#startstreaming) | private |  | input | inferred | Starts the streaming. |
+| [`stopStreaming`](#stopstreaming) | private |  | input | inferred | Stops the streaming. |
 
 <a id="getdevices"></a>
 ## `getDevices`
 
 `luna://com.webos.service.voiceinput.hidraw/getDevices`
 
-Getter on com.webos.service.voiceinput.hidraw (introspected on-device; parameters undocumented).
+Returns the devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.hidraw/getDevices '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.hidraw/restartTimer`
 
-Method on com.webos.service.voiceinput.hidraw (introspected on-device; parameters undocumented).
+Restarts the timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.hidraw/restartTimer '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.hidraw/start`
 
-Method on com.webos.service.voiceinput.hidraw (introspected on-device; parameters undocumented).
+Starts the voiceinput hidraw.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.hidraw/start '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.hidraw/startStreaming`
 
-Method on com.webos.service.voiceinput.hidraw (introspected on-device; parameters undocumented).
+Starts the streaming.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.hidraw/startStreaming '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.hidraw/stopStreaming`
 
-Method on com.webos.service.voiceinput.hidraw (introspected on-device; parameters undocumented).
+Stops the streaming.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.hidraw/stopStreaming '{}'

@@ -1,12 +1,14 @@
 # `com.webos.service.tv.time`
 
+TV time service that returns the current time.
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getCurrentTime`](#getcurrenttime) | ssap |  | misc | Get current TV time |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getCurrentTime`](#getcurrenttime) | ssap |  | misc | documented | Get current TV time |
 
 <a id="getcurrenttime"></a>
 ## `getCurrentTime`
@@ -19,7 +21,7 @@ Get current TV time
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.tv.time/getCurrentTime","payload":{}}

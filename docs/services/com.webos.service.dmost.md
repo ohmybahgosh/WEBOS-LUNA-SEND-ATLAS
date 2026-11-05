@@ -1,53 +1,57 @@
 # `com.webos.service.dmost`
 
+Appears to manage LG Channels / Channel Plus free streaming: reports broadcast and channel state, enables/disables Channel Plus, handles the home app and screensaver, and checks country/lock support. _(inferred from the service's methods)_
+
 29 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`call`](#call) | private |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`changeDmostState`](#changedmoststate) | private |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`disableChannelPlus`](#disablechannelplus) | public |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`disableLGchannelsByHome`](#disablelgchannelsbyhome) | private |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`enableChannelPlus`](#enablechannelplus) | public |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`getBroadcastState`](#getbroadcaststate) | private |  | security | Getter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`getCdpBeaconInfo`](#getcdpbeaconinfo) | private |  | media | Getter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`getChannel`](#getchannel) | private |  | media | Getter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | media | Getter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`getChannelState`](#getchannelstate) | private |  | media | Getter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`getClientMacInfo`](#getclientmacinfo) | public |  | media | Getter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`getDmostScreenSaverResponse`](#getdmostscreensaverresponse) | private |  | media | Getter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`getDmostState`](#getdmoststate) | private |  | media | Getter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`getHomeAppId`](#gethomeappid) | private |  | media | Getter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`isChannelPlusEnabled`](#ischannelplusenabled) | public |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`isSupportedCountry`](#issupportedcountry) | private |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`isSystemLocked`](#issystemlocked) | public |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`launchHomeApplication`](#launchhomeapplication) | private |  | apps | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`loadData`](#loaddata) | public |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`reportLiveDmostError`](#reportlivedmosterror) | private |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`saveData`](#savedata) | public |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`setChannel`](#setchannel) | private |  | media | Setter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`setDmostScreenSaverResponse`](#setdmostscreensaverresponse) | private |  | media | Setter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`setPlayerState`](#setplayerstate) | private |  | media | Setter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`setSink`](#setsink) | private |  | media | Setter on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`startService`](#startservice) | public |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`stopChannel`](#stopchannel) | private |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`subscribe`](#subscribe) | private |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
-| [`unsubscribe`](#unsubscribe) | private |  | media | Method on com.webos.service.dmost (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`call`](#call) | private |  | media | inferred | Calls the dmost. |
+| [`changeDmostState`](#changedmoststate) | private |  | media | inferred | Changes the dmost state. |
+| [`disableChannelPlus`](#disablechannelplus) | public |  | media | inferred | Disables the channel plus. |
+| [`disableLGchannelsByHome`](#disablelgchannelsbyhome) | private |  | media | inferred | Disables the l gchannels by home. |
+| [`enableChannelPlus`](#enablechannelplus) | public |  | media | inferred | Enables the channel plus. |
+| [`getBroadcastState`](#getbroadcaststate) | private |  | security | inferred | Returns the broadcast state. |
+| [`getCdpBeaconInfo`](#getcdpbeaconinfo) | private |  | media | inferred | Returns the cdp beacon info. |
+| [`getChannel`](#getchannel) | private |  | media | inferred | Returns the channel. |
+| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | media | inferred | Returns the channel change result. |
+| [`getChannelState`](#getchannelstate) | private |  | media | inferred | Returns the channel state. |
+| [`getClientMacInfo`](#getclientmacinfo) | public |  | media | inferred | Returns the client MAC info. |
+| [`getDmostScreenSaverResponse`](#getdmostscreensaverresponse) | private |  | media | inferred | Returns the dmost screen saver response. |
+| [`getDmostState`](#getdmoststate) | private |  | media | inferred | Returns the dmost state. |
+| [`getHomeAppId`](#gethomeappid) | private |  | media | inferred | Returns the home app ID. |
+| [`isChannelPlusEnabled`](#ischannelplusenabled) | public |  | media | inferred | Reports whether the channel plus enabled is set. |
+| [`isSupportedCountry`](#issupportedcountry) | private |  | media | inferred | Reports whether the supported country is set. |
+| [`isSystemLocked`](#issystemlocked) | public |  | media | inferred | Reports whether the system locked is set. |
+| [`launchHomeApplication`](#launchhomeapplication) | private |  | apps | inferred | Launches the home application. |
+| [`loadData`](#loaddata) | public |  | media | inferred | Loads the data. |
+| [`reportLiveDmostError`](#reportlivedmosterror) | private |  | media | inferred | Reports the live dmost error. |
+| [`saveData`](#savedata) | public |  | media | inferred | Saves the data. |
+| [`setChannel`](#setchannel) | private |  | media | inferred | Sets the channel. |
+| [`setDmostScreenSaverResponse`](#setdmostscreensaverresponse) | private |  | media | inferred | Sets the dmost screen saver response. |
+| [`setPlayerState`](#setplayerstate) | private |  | media | inferred | Sets the player state. |
+| [`setSink`](#setsink) | private |  | media | inferred | Sets the sink. |
+| [`startService`](#startservice) | public |  | media | inferred | Starts the service. |
+| [`stopChannel`](#stopchannel) | private |  | media | inferred | Stops the channel. |
+| [`subscribe`](#subscribe) | private |  | media | inferred | Subscribes to the dmost. |
+| [`unsubscribe`](#unsubscribe) | private |  | media | inferred | Unsubscribes from the dmost. |
 
 <a id="call"></a>
 ## `call`
 
 `luna://com.webos.service.dmost/call`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Calls the dmost.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/call '{}'
@@ -62,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/changeDmostState`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Changes the dmost state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/changeDmostState '{}'
@@ -83,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/disableChannelPlus`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Disables the channel plus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/disableChannelPlus '{}'
@@ -104,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/disableLGchannelsByHome`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Disables the l gchannels by home.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/disableLGchannelsByHome '{}'
@@ -125,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/enableChannelPlus`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Enables the channel plus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/enableChannelPlus '{}'
@@ -146,13 +158,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/getBroadcastState`
 
-Getter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Returns the broadcast state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getBroadcastState '{}'
@@ -167,13 +181,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/getCdpBeaconInfo`
 
-Getter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Returns the cdp beacon info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getCdpBeaconInfo '{}'
@@ -188,13 +204,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/getChannel`
 
-Getter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Returns the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getChannel '{}'
@@ -209,13 +227,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/getChannelChangeResult`
 
-Getter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Returns the channel change result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getChannelChangeResult '{}'
@@ -230,13 +250,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/getChannelState`
 
-Getter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Returns the channel state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getChannelState '{}'
@@ -251,13 +273,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/getClientMacInfo`
 
-Getter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Returns the client MAC info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getClientMacInfo '{}'
@@ -272,13 +296,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/getDmostScreenSaverResponse`
 
-Getter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Returns the dmost screen saver response.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getDmostScreenSaverResponse '{}'
@@ -293,13 +319,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/getDmostState`
 
-Getter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Returns the dmost state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getDmostState '{}'
@@ -314,13 +342,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/getHomeAppId`
 
-Getter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Returns the home app ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/getHomeAppId '{}'
@@ -335,13 +365,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/isChannelPlusEnabled`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Reports whether the channel plus enabled is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/isChannelPlusEnabled '{}'
@@ -356,13 +388,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/isSupportedCountry`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Reports whether the supported country is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/isSupportedCountry '{}'
@@ -377,13 +411,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/isSystemLocked`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Reports whether the system locked is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/isSystemLocked '{}'
@@ -398,13 +434,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/launchHomeApplication`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Launches the home application.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/launchHomeApplication '{}'
@@ -419,13 +457,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/loadData`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Loads the data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/loadData '{}'
@@ -440,13 +480,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/reportLiveDmostError`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Reports the live dmost error.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/reportLiveDmostError '{}'
@@ -461,13 +503,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/saveData`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Saves the data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/saveData '{}'
@@ -482,13 +526,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/setChannel`
 
-Setter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Sets the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/setChannel '{}'
@@ -503,13 +549,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/setDmostScreenSaverResponse`
 
-Setter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Sets the dmost screen saver response.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/setDmostScreenSaverResponse '{}'
@@ -524,13 +572,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/setPlayerState`
 
-Setter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Sets the player state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/setPlayerState '{}'
@@ -545,13 +595,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/setSink`
 
-Setter on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Sets the sink.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/setSink '{}'
@@ -566,13 +618,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/startService`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Starts the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/startService '{}'
@@ -587,13 +641,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/stopChannel`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Stops the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/stopChannel '{}'
@@ -608,13 +664,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/subscribe`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Subscribes to the dmost.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/subscribe '{}'
@@ -629,13 +687,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmost/unsubscribe`
 
-Method on com.webos.service.dmost (introspected on-device; parameters undocumented).
+Unsubscribes from the dmost.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmost/unsubscribe '{}'

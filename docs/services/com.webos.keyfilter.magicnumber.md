@@ -1,25 +1,29 @@
 # `com.webos.keyfilter.magicnumber`
 
+Key-filter service for Magic Remote number input; notifies which channel to register. Opaque beyond that. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`notifyChannelToRegister`](#notifychanneltoregister) | private |  | keys | Method registered by com.webos.keyfilter.magicnumber (root category) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`notifyChannelToRegister`](#notifychanneltoregister) | private |  | keys | inferred | Notifies of the channel to register. |
 
 <a id="notifychanneltoregister"></a>
 ## `notifyChannelToRegister`
 
 `luna://com.webos.keyfilter.magicnumber/notifyChannelToRegister`
 
-Method registered by com.webos.keyfilter.magicnumber (root category)
+Notifies of the channel to register.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.keyfilter.magicnumber/notifyChannelToRegister '{}'

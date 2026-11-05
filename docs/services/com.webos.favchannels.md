@@ -1,26 +1,30 @@
 # `com.webos.favchannels`
 
+Manages the favorite-channels list: edits entries and deletes all favorites. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`deleteAll`](#deleteall) | private |  | tv-broadcast | Method on com.webos.favchannels (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`edit`](#edit) | private |  | tv-broadcast | Method on com.webos.favchannels (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`deleteAll`](#deleteall) | private |  | tv-broadcast | inferred | Deletes the all. ⚠️ |
+| [`edit`](#edit) | private |  | tv-broadcast | inferred | Edits the favchannels. |
 
 <a id="deleteall"></a>
 ## `deleteAll` ⚠️ DANGEROUS
 
 `luna://com.webos.favchannels/deleteAll`
 
-Method on com.webos.favchannels (from on-device permission registry; parameters undocumented).
+Deletes the all.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.favchannels/deleteAll '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.favchannels/edit`
 
-Method on com.webos.favchannels (from on-device permission registry; parameters undocumented).
+Edits the favchannels.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.favchannels/edit '{}'

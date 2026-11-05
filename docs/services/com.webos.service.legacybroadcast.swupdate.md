@@ -1,33 +1,37 @@
 # `com.webos.service.legacybroadcast.swupdate`
 
+Legacy-broadcast OTA software update: starts and cancels updates, reports progress and version, and manages warm-standby (standby-time) OTA. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancel`](#cancel) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented). |
-| [`checkOTASchExistInMinutes`](#checkotaschexistinminutes) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented). |
-| [`getProgress`](#getprogress) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented). |
-| [`getVersion`](#getversion) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented). |
-| [`onOffWarmStandByOTA`](#onoffwarmstandbyota) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented). |
-| [`startWarmStandByOTA`](#startwarmstandbyota) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented). |
-| [`stopWarmStandByOTA`](#stopwarmstandbyota) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancel`](#cancel) | private |  | tv-broadcast | inferred | Cancels the legacybroadcast swupdate. |
+| [`checkOTASchExistInMinutes`](#checkotaschexistinminutes) | private |  | tv-broadcast | inferred | Checks the OTA sch exist in minutes. |
+| [`getProgress`](#getprogress) | private |  | tv-broadcast | inferred | Returns the progress. |
+| [`getStatus`](#getstatus) | private |  | tv-broadcast | inferred | Returns the status. |
+| [`getVersion`](#getversion) | private |  | tv-broadcast | inferred | Returns the version. |
+| [`onOffWarmStandByOTA`](#onoffwarmstandbyota) | private |  | tv-broadcast | inferred | Event handler: fires on the off warm stand by OTA. |
+| [`start`](#start) | private |  | tv-broadcast | inferred | Starts the legacybroadcast swupdate. |
+| [`startWarmStandByOTA`](#startwarmstandbyota) | private |  | tv-broadcast | inferred | Starts the warm stand by OTA. |
+| [`stopWarmStandByOTA`](#stopwarmstandbyota) | private |  | tv-broadcast | inferred | Stops the warm stand by OTA. |
 
 <a id="cancel"></a>
 ## `cancel`
 
 `luna://com.webos.service.legacybroadcast.swupdate/cancel`
 
-Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented).
+Cancels the legacybroadcast swupdate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.swupdate/cancel '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.swupdate/checkOTASchExistInMinutes`
 
-Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented).
+Checks the OTA sch exist in minutes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.swupdate/checkOTASchExistInMinutes '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.swupdate/getProgress`
 
-Getter on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented).
+Returns the progress.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.swupdate/getProgress '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.swupdate/getStatus`
 
-Getter on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.swupdate/getStatus '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.swupdate/getVersion`
 
-Getter on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented).
+Returns the version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.swupdate/getVersion '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.swupdate/onOffWarmStandByOTA`
 
-Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented).
+Event handler: fires on the off warm stand by OTA.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.swupdate/onOffWarmStandByOTA '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.swupdate/start`
 
-Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented).
+Starts the legacybroadcast swupdate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.swupdate/start '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.swupdate/startWarmStandByOTA`
 
-Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented).
+Starts the warm stand by OTA.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.swupdate/startWarmStandByOTA '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.swupdate/stopWarmStandByOTA`
 
-Method on com.webos.service.legacybroadcast.swupdate (introspected on-device; parameters undocumented).
+Stops the warm stand by OTA.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.swupdate/stopWarmStandByOTA '{}'

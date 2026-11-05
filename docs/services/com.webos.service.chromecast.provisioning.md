@@ -1,29 +1,33 @@
 # `com.webos.service.chromecast.provisioning`
 
+Chromecast built-in (DIAL) provisioning: reports status and DIAL UUID, toggles the activation popup and launches Chromecast settings. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`createNotification`](#createnotification) | private |  | notifications | Method on com.webos.service.chromecast.provisioning (introspected on-device; parameters undocumented). |
-| [`disableActivationPopup`](#disableactivationpopup) | private |  | security | Method on com.webos.service.chromecast.provisioning (introspected on-device; parameters undocumented). |
-| [`getDialUuid`](#getdialuuid) | private |  | security | Getter on com.webos.service.chromecast.provisioning (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | security | Getter on com.webos.service.chromecast.provisioning (introspected on-device; parameters undocumented). |
-| [`launchChromecastSettings`](#launchchromecastsettings) | private |  | settings | Method on com.webos.service.chromecast.provisioning (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`createNotification`](#createnotification) | private |  | notifications | inferred | Creates the notification. |
+| [`disableActivationPopup`](#disableactivationpopup) | private |  | security | inferred | Disables the activation popup. |
+| [`getDialUuid`](#getdialuuid) | private |  | security | inferred | Returns the dial uuid. |
+| [`getStatus`](#getstatus) | private |  | security | inferred | Returns the status. |
+| [`launchChromecastSettings`](#launchchromecastsettings) | private |  | settings | inferred | Launches the chromecast settings. |
 
 <a id="createnotification"></a>
 ## `createNotification`
 
 `luna://com.webos.service.chromecast.provisioning/createNotification`
 
-Method on com.webos.service.chromecast.provisioning (introspected on-device; parameters undocumented).
+Creates the notification.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.chromecast.provisioning/createNotification '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.chromecast.provisioning/disableActivationPopup`
 
-Method on com.webos.service.chromecast.provisioning (introspected on-device; parameters undocumented).
+Disables the activation popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.chromecast.provisioning/disableActivationPopup '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.chromecast.provisioning/getDialUuid`
 
-Getter on com.webos.service.chromecast.provisioning (introspected on-device; parameters undocumented).
+Returns the dial uuid.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.chromecast.provisioning/getDialUuid '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.chromecast.provisioning/getStatus`
 
-Getter on com.webos.service.chromecast.provisioning (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.chromecast.provisioning/getStatus '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.chromecast.provisioning/launchChromecastSettings`
 
-Method on com.webos.service.chromecast.provisioning (introspected on-device; parameters undocumented).
+Launches the chromecast settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.chromecast.provisioning/launchChromecastSettings '{}'

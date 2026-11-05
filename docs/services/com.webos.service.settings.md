@@ -1,43 +1,45 @@
 # `com.webos.service.settings`
 
+System settings service: reads, writes, resets, and describes system settings, supporting batch operations and per-dimension (e.g. input, country) values.
+
 32 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`arrayExt`](#arrayext) | unknown |  | settings | This object describes the strings among the selectable value type. |
-| [`batch`](#batch) | public | yes | settings | Runs more than one Settings Service method at once. Remarks Subscription is supported only when all the methods in operations input paramete |
-| [`batchOperation`](#batchoperation) | unknown |  | settings | This object describes the methods to be executed in batch method. |
-| [`deleteSystemSettings`](#deletesystemsettings) | public |  | settings | Deletes settings item(s). Factory default value is also deleted. Remarks In case there is a subscriber for the deleted item, error text will |
-| [`dimension`](#dimension) | unknown |  | settings | Settings Service can set many different values under the same setting according to dimension. |
-| [`ext`](#ext) | unknown |  | settings | It is defined for future expansion. Not in use now. |
-| [`getCurrentSettings`](#getcurrentsettings) | public | yes | settings | Looks up the settings item, and returns the settings for the current foreground app only unlike the setSystemSettings method. Remarks Even t |
-| [`getSystemSettingDesc`](#getsystemsettingdesc) | public | yes | settings | Retrieves detailed information on the settings. Exception: The request for nonexistent keys is processed as an error. |
-| [`getSystemSettingDescPriv`](#getsystemsettingdescpriv) | private |  | settings | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). |
-| [`getSystemSettingFactoryValue`](#getsystemsettingfactoryvalue) | public |  | settings | Retrieves the factory default value of the setting item. Method of use is the same as getSystemSettings . Remarks Dimension is applied in th |
-| [`getSystemSettings`](#getsystemsettings) | public | yes | settings | Retrieves values from system settings with keys or category which are specified in array as parameter. Following keys are available in publi |
-| [`getSystemSettingValues`](#getsystemsettingvalues) | public | yes | settings | Retrives possible items to be set Remarks The return type varies depending on the keys. Use getSystemSettingDesc method for the retrieval of |
-| [`getSystemSettingValuesPriv`](#getsystemsettingvaluespriv) | private |  | settings | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). |
-| [`internal/getCurrentSubscriptions`](#internal_getcurrentsubscriptions) | public |  | settings | Returns the information of the services which currently subscribe to the Settings Service. |
-| [`internal/instrument`](#internal_instrument) | public |  | settings | Generates log for debug and changes current app. Remarks Generates logs for every luna call Changes current app id |
-| [`params`](#params) | unknown |  | settings | This object has the corresponding parameters to the methods described in the batch method's operations as property. No specific format neede |
-| [`range`](#range) | unknown |  | settings | It is used when describing the user-configurable data in the integer range. |
-| [`resetSystemSettingDesc`](#resetsystemsettingdesc) | public |  | settings | Initializes the settings item information to the factory default value. Exception Error occurs when requesting to delete nonexistent keys. |
-| [`resetSystemSettingDescPriv`](#resetsystemsettingdescpriv) | private |  | settings | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`resetSystemSettings`](#resetsystemsettings) | public |  | settings | Initializes the setting items to the factory default values. Remarks For the given category, when changing setting items, other items can be |
-| [`resetSystemSettingsPriv`](#resetsystemsettingspriv) | private |  | settings | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setSystemSettingDesc`](#setsystemsettingdesc) | public |  | settings | Changes detailed information of the settings. Exception Category, key, dimension, dbtype, volatile attributes cannot be changed during runti |
-| [`setSystemSettingFactoryDesc`](#setsystemsettingfactorydesc) | public |  | settings | Sets the default value when reset by resetSystemSettingDesc . It is the same type as setSystemSettingDesc method, and it can change the fact |
-| [`setSystemSettingFactoryDescPriv`](#setsystemsettingfactorydescpriv) | private |  | settings | Method on com.webos.service.settings (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setSystemSettingFactoryValue`](#setsystemsettingfactoryvalue) | public |  | settings | Changes the factory default of the setting item. The using method is same as setSystemSettings method. It can set the default value when res |
-| [`setSystemSettings`](#setsystemsettings) | public |  | settings | Changes settings. It is available only for the keys open to public when called through Public Luna bus. The permission setting is as follow. |
-| [`setSystemSettingValues`](#setsystemsettingvalues) | public |  | settings | Changes the formats of the configurable values. It can change detailed information using setSystemSettingDesc method. Exception When undefin |
-| [`settings`](#settings) | unknown |  | settings | It is the Object that has the setting property. No specific format to follow. |
-| [`subscription`](#subscription) | unknown |  | settings | This object describes an active subscription to the settings service. |
-| [`ui`](#ui) | unknown |  | settings | UI settings when creating user UI like Settings app. |
-| [`update`](#update) | private |  | settings | Method on com.webos.service.settings (introspected on-device; parameters undocumented). |
-| [`values`](#values) | unknown |  | settings | Specify the properties of the values object according to vtype . It is the information that is used for the validation of configurable value |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`arrayExt`](#arrayext) | unknown |  | settings | documented | This object describes the strings among the selectable value type. |
+| [`batch`](#batch) | public | yes | settings | documented | Runs more than one Settings Service method at once. Remarks Subscription is supported only when all the methods in operations input paramete |
+| [`batchOperation`](#batchoperation) | unknown |  | settings | documented | This object describes the methods to be executed in batch method. |
+| [`deleteSystemSettings`](#deletesystemsettings) | public |  | settings | documented | Deletes settings item(s). Factory default value is also deleted. Remarks In case there is a subscriber for the deleted item, error text will |
+| [`dimension`](#dimension) | unknown |  | settings | documented | Settings Service can set many different values under the same setting according to dimension. |
+| [`ext`](#ext) | unknown |  | settings | documented | It is defined for future expansion. Not in use now. |
+| [`getCurrentSettings`](#getcurrentsettings) | public | yes | settings | documented | Looks up the settings item, and returns the settings for the current foreground app only unlike the setSystemSettings method. Remarks Even t |
+| [`getSystemSettingDesc`](#getsystemsettingdesc) | public | yes | settings | documented | Retrieves detailed information on the settings. Exception: The request for nonexistent keys is processed as an error. |
+| [`getSystemSettingDescPriv`](#getsystemsettingdescpriv) | private |  | settings | inferred | Returns the system setting desc priv. |
+| [`getSystemSettingFactoryValue`](#getsystemsettingfactoryvalue) | public |  | settings | documented | Retrieves the factory default value of the setting item. Method of use is the same as getSystemSettings . Remarks Dimension is applied in th |
+| [`getSystemSettings`](#getsystemsettings) | public | yes | settings | documented | Retrieves values from system settings with keys or category which are specified in array as parameter. Following keys are available in publi |
+| [`getSystemSettingValues`](#getsystemsettingvalues) | public | yes | settings | documented | Retrives possible items to be set Remarks The return type varies depending on the keys. Use getSystemSettingDesc method for the retrieval of |
+| [`getSystemSettingValuesPriv`](#getsystemsettingvaluespriv) | private |  | settings | inferred | Returns the system setting values priv. |
+| [`internal/getCurrentSubscriptions`](#internal_getcurrentsubscriptions) | public |  | settings | documented | Returns the information of the services which currently subscribe to the Settings Service. |
+| [`internal/instrument`](#internal_instrument) | public |  | settings | documented | Generates log for debug and changes current app. Remarks Generates logs for every luna call Changes current app id |
+| [`params`](#params) | unknown |  | settings | documented | This object has the corresponding parameters to the methods described in the batch method's operations as property. No specific format neede |
+| [`range`](#range) | unknown |  | settings | documented | It is used when describing the user-configurable data in the integer range. |
+| [`resetSystemSettingDesc`](#resetsystemsettingdesc) | public |  | settings | documented | Initializes the settings item information to the factory default value. Exception Error occurs when requesting to delete nonexistent keys. |
+| [`resetSystemSettingDescPriv`](#resetsystemsettingdescpriv) | private |  | settings | inferred | Resets the system setting desc priv. ⚠️ |
+| [`resetSystemSettings`](#resetsystemsettings) | public |  | settings | documented | Initializes the setting items to the factory default values. Remarks For the given category, when changing setting items, other items can be |
+| [`resetSystemSettingsPriv`](#resetsystemsettingspriv) | private |  | settings | inferred | Resets the system settings priv. ⚠️ |
+| [`setSystemSettingDesc`](#setsystemsettingdesc) | public |  | settings | documented | Changes detailed information of the settings. Exception Category, key, dimension, dbtype, volatile attributes cannot be changed during runti |
+| [`setSystemSettingFactoryDesc`](#setsystemsettingfactorydesc) | public |  | settings | documented | Sets the default value when reset by resetSystemSettingDesc . It is the same type as setSystemSettingDesc method, and it can change the fact |
+| [`setSystemSettingFactoryDescPriv`](#setsystemsettingfactorydescpriv) | private |  | settings | inferred | Sets the system setting factory desc priv. ⚠️ |
+| [`setSystemSettingFactoryValue`](#setsystemsettingfactoryvalue) | public |  | settings | documented | Changes the factory default of the setting item. The using method is same as setSystemSettings method. It can set the default value when res |
+| [`setSystemSettings`](#setsystemsettings) | public |  | settings | documented | Changes settings. It is available only for the keys open to public when called through Public Luna bus. The permission setting is as follow. |
+| [`setSystemSettingValues`](#setsystemsettingvalues) | public |  | settings | documented | Changes the formats of the configurable values. It can change detailed information using setSystemSettingDesc method. Exception When undefin |
+| [`settings`](#settings) | unknown |  | settings | documented | It is the Object that has the setting property. No specific format to follow. |
+| [`subscription`](#subscription) | unknown |  | settings | documented | This object describes an active subscription to the settings service. |
+| [`ui`](#ui) | unknown |  | settings | documented | UI settings when creating user UI like Settings app. |
+| [`update`](#update) | private |  | settings | inferred | Updates the settings. |
+| [`values`](#values) | unknown |  | settings | documented | Specify the properties of the values object according to vtype . It is the information that is used for the validation of configurable value |
 
 <a id="arrayext"></a>
 ## `arrayExt`
@@ -77,6 +79,12 @@ Runs more than one Settings Service method at once. Remarks Subscription is supp
 |---|---|
 | `operations` | Object array: batchOperation (required) A set of objects containing method name and the method's parameters as properties. |
 | `subscribe` | Boolean (optional) Indicates whether to subscribe for related events. Note: Should be set to true if any of the batchOperation`s params have a 'subscribe' option set to true Possible values are: true: Subscribed. false (Default): Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `results` | array (required) It contains method property and the result of each method that matches passed operations. method property contains name of the method. It is used to clarify which method is called from the many responses returned from batch. |
 
 ```sh
 luna-send command: # luna-send -n 1 luna://com.webos.service.settings/batch '{ "operations": [ { "method": "getSystemSettings", "params": { "category": "picture", "keys": [ "brightness" ], "subscribe":true } }, { "method": "getSystemSettingDesc", "params": { "category": "picture", "keys": [ "brightness" ], "subscribe":true } } ], "subscribe": true }
@@ -126,6 +134,12 @@ Deletes settings item(s). Factory default value is also deleted. Remarks In case
 | `dimension` | Object: dimension (optional) Dimension information. It is used when setting by input, video mode, 3D mode. |
 | `keys` | String array (required) Keys to be deleted |
 | `app_id` | String (optional) App ID. In case of app specific setting, app ID should be specified. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `method` | String (required) Method name. It is used to clarify which method is called from the many responses returned from batch. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settings/deleteSystemSettings '{ "category": "option", "keys": [ "zipcode" ] }
@@ -197,6 +211,16 @@ Looks up the settings item, and returns the settings for the current foreground 
 | `keys` | array (required) Keys to be retrieved |
 | `subscribe` | Boolean (optional) Indicates whether to subscribe for related events Possible values are: true: Subscribed. false (Default): Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `settings` | Object: settings (required) Objects that holds setting values. |
+| `category` | String (required) Category of settings. It is same with the value specified in category input parameter. |
+| `dimension` | Object: dimension (required) In case there is a dimension property in settings category, it returns the corresponding value. |
+| `method` | String (required) Method name. It is used to clarify which method is called from the many responses returned from batch. |
+| `app\_id` | String (required) Current foreground app ID |
+
 ```sh
 luna-send command: # luna-send -n 1 luna://com.webos.service.settings/getCurrentSettings '{ "category": "lock", "keys": [ "applockPerApp" ] }
 ```
@@ -216,7 +240,7 @@ Retrieves detailed information on the settings. Exception: The request for nonex
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 6+ (also on com.webos.settingsservice)  
-- **Confidence:** documented, code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -227,6 +251,14 @@ Retrieves detailed information on the settings. Exception: The request for nonex
 | `current_app` | Boolean (optional) If app ID is not specified, use the current foreground app ID. Note: If app ID is provided, this parameter is ignored. Possible values are: true: Use current foreground app ID. false (Default): Do not use current foreground app ID. |
 | `subscribe` | Boolean (optional) Indicates whether to subscribe for related events Possible values are: true: Subscribed. false (Default): Not subscribed. |
 | `dimension` | object (context) |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `method` | String (required) Method name. It is used to clarify which method is called from the many responses returned from batch. |
+| `results` | Object array: result (optional) For each key parameter returns a result object |
+| `app\_id` | String (optional) If the result setting is app specific value, app ID will be returned. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settings/getSystemSettingDesc '{"category":"picture", "keys":["brightness"]}
@@ -241,13 +273,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-s
 
 `luna://com.webos.service.settings/getSystemSettingDescPriv`
 
-Method on com.webos.service.settings (from on-device permission registry; parameters undocumented).
+Returns the system setting desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settings/getSystemSettingDescPriv '{}'
@@ -278,6 +312,15 @@ Retrieves the factory default value of the setting item. Method of use is the sa
 | `key` | String (optional) A key to be retrieved. In case there is one key to be retrieved, directly input the strings. Note: Either one of keys and key must be provided. |
 | `app_id` | String (optional) App ID. In case of app specific setting, app ID should be specified. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `method` | String (required) Method name. It is used to clarify which method is called from the many responses returned from batch. |
+| `dimension` | Object: dimension (required) In case there is a dimension property in settings category, it returns the corresponding value. |
+| `category` | String (required) Settings category name |
+| `settings` | Object: settings (required) Object that holds setting values. |
+
 ```sh
 luna-send command: # luna-send -n 1 luna://com.webos.service.settings/getSystemSettingFactoryValue '{"category":"picture", "key":"brightness"}
 ```
@@ -297,7 +340,7 @@ Retrieves values from system settings with keys or category which are specified 
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; all (key set per model)  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -309,6 +352,17 @@ Retrieves values from system settings with keys or category which are specified 
 | `current_app` | Boolean (optional) Indicates whether to use current foreground app ID instead of specific app ID. true: Use current foreground app ID false: Use specific app ID default value: false |
 | `subscribe` | Boolean (optional) Indicates whether to subscribe for related events. true : Subscribe false : Do not subscribe |
 | `public_ssap_gettable_keys_G6` | <13 entries, see docs/settings-keys.md> |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `settings` | Object: settings (required) Objects that holds result setting values. |
+| `category` | String (required) Category name of the result settings. It is same with category parameter in method call. |
+| `dimension` | Object: dimension (required) Dimension information of the result settings. In case the setting category has a dimension, it returns its value. |
+| `method` | String (required) Method name that is used for clarify which method is called in subscription messages. |
+| `app\_id` | String (optional) If the result setting is app specific value, app ID will be returned. |
+| `errorText` | String (optional) Describes the error. The method will return errorText only if it fails. See the Error Codes Reference for more details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.settings/getSystemSettings '{ "category":"option", "keys":["country", "smartServiceCountryCode2"] }'
@@ -329,7 +383,7 @@ Retrives possible items to be set Remarks The return type varies depending on th
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 6+  
-- **Confidence:** documented, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -337,6 +391,15 @@ Retrives possible items to be set Remarks The return type varies depending on th
 | `key` | String (required) A key to be retrieved |
 | `app_id` | String (optional) In case of setting by app, app ID needs to be specified. |
 | `subscribe` | Boolean (optional) Indicates whether to subscribe for related events. true : Subscribe false : Do not subscribe (default) |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `method` | String (required) Method name. It is used to clarify which method is called from the many responses returned from batch. |
+| `vtype` | String (required) Type of values object. |
+| `values` | Object: values (required) The valid range of the setting value. The properties of the values are determined according to vtype. |
+| `errorText` | String (optional) Describes the error. The method will return errorText only if it fails. See the Error Codes Reference for more details. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.settings/getSystemSettingValues '{"category":"picture", "key":"brightness"}
@@ -351,13 +414,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-s
 
 `luna://com.webos.service.settings/getSystemSettingValuesPriv`
 
-Method on com.webos.service.settings (from on-device permission registry; parameters undocumented).
+Returns the system setting values priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settings/getSystemSettingValuesPriv '{}'
@@ -379,6 +444,13 @@ Returns the information of the services which currently subscribe to the Setting
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `subscriptions` | Object array: subscription (required) The list of the services (e.g., message, sender, method) which are currently subscribing to the Settings Service. |
+| `errorText` | String (optional) Describes the error. The method will return errorText only if it fails. See the Error Codes Reference for more details. |
 
 ```sh
 luna-send command: (Create log) # luna-send -n 1 -f luna://com.webos.service.settings/internal/getCurrentSubscriptions '{}
@@ -405,6 +477,13 @@ Generates log for debug and changes current app. Remarks Generates logs for ever
 |---|---|
 | `control` | String (required) Information on internal method settings |
 | `params` | Object (optional) The current app ID to be changed |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `instrumentStatus` | String (optional) Instrument setting status |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settings/internal/instrument '{"control":"start"}
@@ -475,6 +554,13 @@ Initializes the settings item information to the factory default value. Exceptio
 | `keys` | array (required) Keys to be reset to the factory default value |
 | `app_id` | String (optional) App ID. If target key is app specific setting, app ID should be specified. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `method` | String (required) Method name. It is used to clarify which method is called from the many responses returned from batch. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -a com.webos.setting luna://com.webos.service.settings/resetSystemSettingDesc '{"category":"support"}'
 ```
@@ -488,13 +574,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-s
 
 `luna://com.webos.service.settings/resetSystemSettingDescPriv`
 
-Method on com.webos.service.settings (from on-device permission registry; parameters undocumented).
+Resets the system setting desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settings/resetSystemSettingDescPriv '{}'
@@ -525,6 +613,13 @@ Initializes the setting items to the factory default values. Remarks For the giv
 | `app_id` | String (optional) App ID. If target key is app specific setting, app ID should be specified. |
 | `resetAll` | Boolean (optional) Indicates whether to reset the settings for all dimensions. true: Reset false: Do not reset (default) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `method` | String (required) Method name that is used for clarify which method is called in subscription messages. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -a com.webos.setting luna://com.webos.service.settings/resetSystemSettings '{"category":"support", "keys":["automaticUpdate"]}'
 ```
@@ -538,13 +633,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-s
 
 `luna://com.webos.service.settings/resetSystemSettingsPriv`
 
-Method on com.webos.service.settings (from on-device permission registry; parameters undocumented).
+Resets the system settings priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settings/resetSystemSettingsPriv '{}'
@@ -580,6 +677,13 @@ Changes detailed information of the settings. Exception Category, key, dimension
 | `notifySelf` | Boolean (optional) Indicates whether to receive the subscription message. true: The subscribe message will be sent to self false: The subscribe message will not be sent to self |
 | `ext` | Object: ext (optional) reserved property |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `method` | String (required) Method name that is used for clarify which method is called in subscription messages. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 -a com.webos.service.settings luna://com.webos.service.settings/setSystemSettingDesc '{ "key": "brightness", "ui": { "visible": false, "displayName": "brightness", "active": true, "widget": "None" } }'
 ```
@@ -614,6 +718,13 @@ Sets the default value when reset by resetSystemSettingDesc . It is the same typ
 | `notifySelf` | Boolean (optional) Indicates whether to receive the subscription message. true: The subscribe message will be sent to self false: The subscribe message will not be sent to self |
 | `ext` | Object: ext (optional) reserved property |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `method` | String (required) Method name that is used for clarify which method is called in subscription messages. |
+| `errorText` | String (optional) Describes the error. The method will return errorText only if it fails. See the Error Codes Reference for more details. |
+
 ```sh
 luna-send command: # luna-send -f -n 1 -a com.webos.service.settings luna://com.webos.service.settings/setSystemSettingFactoryDesc '{ "key": "brightness", "ui": { "visible": false, "displayName": "brightness", "active": true, "widget": "None" } }'
 ```
@@ -627,13 +738,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-s
 
 `luna://com.webos.service.settings/setSystemSettingFactoryDescPriv`
 
-Method on com.webos.service.settings (from on-device permission registry; parameters undocumented).
+Sets the system setting factory desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settings/setSystemSettingFactoryDescPriv '{}'
@@ -665,6 +778,13 @@ Changes the factory default of the setting item. The using method is same as set
 | `setAll` | Boolean (optional) Indicates whether to set the settings for all dimensions. Either dimension or setAll can be specified. true: Set the settings for all dimensions false: Set the settings for the given dimension only default value: false |
 | `country` | String (optional) Set to change settings of a specific country only |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `method` | String (required) Method name that is used for clarify which method is called in subscription messages. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.settings/setSystemSettingFactoryValue '{ "category":"picture", "dimension":{"input":"hdmi2", "pictureMode":"vivid", "_3dStatus":"2d"}, "settings":{"brightness":30, "contrast":44} }
 ```
@@ -684,7 +804,7 @@ Changes settings. It is available only for the keys open to public when called t
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 6+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -697,6 +817,12 @@ Changes settings. It is available only for the keys open to public when called t
 | `setAll` | Boolean (optional) Indicates whether to set the settings of all dimensions. Possible values are: true: Set the settings for all dimensions. false (Default): Set the settings for the dimension specified in the parameter dimension. |
 | `notify` | Boolean (optional) Indicates whether to receive the subscription message. Possible values are: true: Subscribe message will be sent. false: Subscribe message will not be sent. |
 | `store` | Boolean (optional) Indicates whether to store the subscription message in DB. Possible values are: true (Default): Store in DB. false: Do not store in DB. Only subscription message will be sent. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `method` | String (required) Method name that is used for clarify which method is called in subscription messages. |
 
 ```sh
 luna-send \-n 1 luna://com.webos.service.settings/setSystemSettings '{ "category":"picture", "dimension":{"input":"hdmi2", "pictureMode":"vivid", "_3dStatus":"2d"}, "settings":{"brightness":30, "contrast":44} }
@@ -726,6 +852,12 @@ Changes the formats of the configurable values. It can change detailed informati
 | `values` | Object: values (required) Specify the properties of the values object according to vtype . |
 | `vtype` | String (required) Type of values object. Possible values are: Array ArrayExt Range Callback File Date |
 | `op` | String (required) Method of settings. Possible values are: set add remove update |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `method` | String (required) Method name that is used for clarify which method is called in subscription messages. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settings/setSystemSettingValues '{ "category":"sampleCategory", "key":"sampleKey", "op":"set", "vtype":"ArrayExt", "values":{ "arrayExt":[ { "value":"expert1", "visible":false, "active":false } ] } }
@@ -803,13 +935,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-s
 
 `luna://com.webos.service.settings/update`
 
-Method on com.webos.service.settings (introspected on-device; parameters undocumented).
+Updates the settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settings/update '{}'

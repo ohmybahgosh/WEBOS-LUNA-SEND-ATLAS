@@ -1,28 +1,32 @@
 # `com.example.service.native3`
 
+Example native-service template for webOS development, with placeholder hello methods for DEV, OEM and PART build variants. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`hello`](#hello) | private |  | misc | Method on com.example.service.native3 (from on-device permission registry; parameters undocumented). |
-| [`hello_DEV`](#hello_dev) | private |  | misc | Method on com.example.service.native3 (from on-device permission registry; parameters undocumented). |
-| [`hello_OEM`](#hello_oem) | private |  | misc | Method on com.example.service.native3 (from on-device permission registry; parameters undocumented). |
-| [`hello_PART`](#hello_part) | private |  | misc | Method on com.example.service.native3 (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`hello`](#hello) | private |  | misc | inferred | Handles the hello. |
+| [`hello_DEV`](#hello_dev) | private |  | misc | inferred | Handles the hello DEV. |
+| [`hello_OEM`](#hello_oem) | private |  | misc | inferred | Handles the hello OEM. |
+| [`hello_PART`](#hello_part) | private |  | misc | inferred | Handles the hello PART. |
 
 <a id="hello"></a>
 ## `hello`
 
 `luna://com.example.service.native3/hello`
 
-Method on com.example.service.native3 (from on-device permission registry; parameters undocumented).
+Handles the hello.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.service.native3/hello '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.service.native3/hello_DEV`
 
-Method on com.example.service.native3 (from on-device permission registry; parameters undocumented).
+Handles the hello DEV.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.service.native3/hello_DEV '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.service.native3/hello_OEM`
 
-Method on com.example.service.native3 (from on-device permission registry; parameters undocumented).
+Handles the hello OEM.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.service.native3/hello_OEM '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.service.native3/hello_PART`
 
-Method on com.example.service.native3 (from on-device permission registry; parameters undocumented).
+Handles the hello PART.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.service.native3/hello_PART '{}'

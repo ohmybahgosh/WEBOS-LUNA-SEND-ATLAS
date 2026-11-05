@@ -1,46 +1,50 @@
 # `com.webos.appInstallService`
 
+Application install service: installs, removes, and cancels app and service packages (including local, dev, and group installs), queries install capacity, and manages Luna config files.
+
 22 methods.  Platforms seen: all, webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancel`](#cancel) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`commercial/installInternal`](#commercial_installinternal) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`createLSConfigFiles`](#createlsconfigfiles) | private |  | settings | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`details`](#details) | unknown |  | misc | Describes the progress on all operations that are managed by com.webos.appInstallService. |
-| [`dev/install`](#dev_install) | public | yes | misc | Installs an ipk file which exists in local repository of a device. Note: This method is available only in developer mode (devmode). To enabl |
-| [`dev/remove`](#dev_remove) | public | yes | misc | Removes apps from a device that are installed using dev/install method. Note: This method is available only in developer mode (devmode). To  |
-| [`group/install`](#group_install) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`group/queryInstallCapacity`](#group_queryinstallcapacity) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`group/status`](#group_status) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`install`](#install) | public | yes | misc | Installs an app on a device. |
-| [`installInternal`](#installinternal) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`installLocal`](#installlocal) | private |  | apps | Installs an app from a local IPK (non-dev variant; name seen only) |
-| [`installLocalNoVerify`](#installlocalnoverify) | public |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`installService`](#installservice) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`pause`](#pause) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`queryInstallCapacity`](#queryinstallcapacity) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`remove`](#remove) | public | yes | misc | Removes an installed app from a device. |
-| [`removeLSConfigFiles`](#removelsconfigfiles) | private |  | settings | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`resume`](#resume) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`status`](#status) | public | yes | misc | Monitors the status of all installed and removed apps that are operating in the com.webos.appInstallService. |
-| [`system/installLocal`](#system_installlocal) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
-| [`uninstallService`](#uninstallservice) | private |  | apps | Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancel`](#cancel) | private |  | apps | inferred | Cancels the app install service. |
+| [`commercial/installInternal`](#commercial_installinternal) | private |  | apps | inferred | Installs the internal (commercial) |
+| [`createLSConfigFiles`](#createlsconfigfiles) | private |  | settings | inferred | Creates the LS config files. |
+| [`details`](#details) | unknown |  | misc | documented | Describes the progress on all operations that are managed by com.webos.appInstallService. |
+| [`dev/install`](#dev_install) | public | yes | misc | documented | Installs an ipk file which exists in local repository of a device. Note: This method is available only in developer mode (devmode). To enabl |
+| [`dev/remove`](#dev_remove) | public | yes | misc | documented | Removes apps from a device that are installed using dev/install method. Note: This method is available only in developer mode (devmode). To  |
+| [`group/install`](#group_install) | private |  | apps | inferred | Installs the app install service (group) |
+| [`group/queryInstallCapacity`](#group_queryinstallcapacity) | private |  | apps | inferred | Queries the install capacity (group) |
+| [`group/status`](#group_status) | private |  | apps | inferred | Handles the status (group) |
+| [`install`](#install) | public | yes | misc | documented | Installs an app on a device. |
+| [`installInternal`](#installinternal) | private |  | apps | inferred | Installs the internal. |
+| [`installLocal`](#installlocal) | private |  | apps | documented | Installs an app from a local IPK (non-dev variant; name seen only) |
+| [`installLocalNoVerify`](#installlocalnoverify) | public |  | apps | inferred | Installs the local no verify. |
+| [`installService`](#installservice) | private |  | apps | inferred | Installs the service. |
+| [`pause`](#pause) | private |  | apps | inferred | Pauses the app install service. |
+| [`queryInstallCapacity`](#queryinstallcapacity) | private |  | apps | inferred | Queries the install capacity. |
+| [`remove`](#remove) | public | yes | misc | documented | Removes an installed app from a device. |
+| [`removeLSConfigFiles`](#removelsconfigfiles) | private |  | settings | inferred | Removes the LS config files. ⚠️ |
+| [`resume`](#resume) | private |  | apps | inferred | Resumes the app install service. |
+| [`status`](#status) | public | yes | misc | documented | Monitors the status of all installed and removed apps that are operating in the com.webos.appInstallService. |
+| [`system/installLocal`](#system_installlocal) | private |  | apps | inferred | Installs the local (system) |
+| [`uninstallService`](#uninstallservice) | private |  | apps | inferred | Uninstalls the service. |
 
 <a id="cancel"></a>
 ## `cancel`
 
 `luna://com.webos.appInstallService/cancel`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Cancels the app install service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/cancel '{}'
@@ -55,13 +59,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.appInstallService/commercial/installInternal`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Installs the internal (commercial)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/commercial/installInternal '{}'
@@ -76,13 +82,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.appInstallService/createLSConfigFiles`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Creates the LS config files.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/createLSConfigFiles '{}'
@@ -124,7 +132,7 @@ Installs an ipk file which exists in local repository of a device. Note: This me
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 3+  
-- **Confidence:** documented, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -151,7 +159,7 @@ Removes apps from a device that are installed using dev/install method. Note: Th
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 3+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -171,13 +179,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-appinstal
 
 `luna://com.webos.appInstallService/group/install`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Installs the app install service (group)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/group/install '{}'
@@ -192,13 +202,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.appInstallService/group/queryInstallCapacity`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Queries the install capacity (group)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/group/queryInstallCapacity '{}'
@@ -213,13 +225,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.appInstallService/group/status`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Handles the status (group)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/group/status '{}'
@@ -261,13 +275,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-appinstal
 
 `luna://com.webos.appInstallService/installInternal`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Installs the internal.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/installInternal '{}'
@@ -288,7 +304,7 @@ Installs an app from a local IPK (non-dev variant; name seen only)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.appInstallService/installLocal '{}'
@@ -303,13 +319,15 @@ Sources: [1](https://github.com/Kyusoo-Kim/memo/blob/HEAD/public/db.json)
 
 `luna://com.webos.appInstallService/installLocalNoVerify`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Installs the local no verify.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/installLocalNoVerify '{}'
@@ -324,13 +342,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.appInstallService/installService`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Installs the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/installService '{}'
@@ -345,13 +365,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.appInstallService/pause`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Pauses the app install service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/pause '{}'
@@ -366,13 +388,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.appInstallService/queryInstallCapacity`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Queries the install capacity.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/queryInstallCapacity '{}'
@@ -393,7 +417,7 @@ Removes an installed app from a device.
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, all  
 - **Versions:** webOS OSE API level 11+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -413,13 +437,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-appinstal
 
 `luna://com.webos.appInstallService/removeLSConfigFiles`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Removes the LS config files.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/removeLSConfigFiles '{}'
@@ -434,13 +460,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.appInstallService/resume`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Resumes the app install service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/resume '{}'
@@ -467,6 +495,14 @@ Monitors the status of all installed and removed apps that are operating in the 
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe and get notified when the status changes. Possible values are: true - Subscribed for changes. false - Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `status` | Object: status (required) Contains the list of apps that are currently being installed and removed. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/status '{}
 ```
@@ -480,13 +516,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-appinstal
 
 `luna://com.webos.appInstallService/system/installLocal`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Installs the local (system)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/system/installLocal '{}'
@@ -501,13 +539,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.appInstallService/uninstallService`
 
-Method on com.webos.appInstallService (from on-device permission registry; parameters undocumented).
+Uninstalls the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.appInstallService/uninstallService '{}'

@@ -1,34 +1,38 @@
 # `yandex.alice.adapter.plugin`
 
+Yandex Alice voice-assistant adapter plugin: recognizes intents by voice and text, registers an interactor/context, and reports voice-UI events. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelRecognition`](#cancelrecognition) | public |  | misc | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`getVoiceUiEvents`](#getvoiceuievents) | public |  | input | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`interactor/register`](#interactor_register) | public |  | misc | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`interactor/setContext`](#interactor_setcontext) | public |  | misc | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`load`](#load) | private |  | misc | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`recognizeIntentByText`](#recognizeintentbytext) | private |  | misc | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`sendYskCommand`](#sendyskcommand) | public |  | misc | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`unload`](#unload) | private |  | misc | Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelRecognition`](#cancelrecognition) | public |  | misc | inferred | Cancels the recognition. |
+| [`getVoiceUiEvents`](#getvoiceuievents) | public |  | input | inferred | Returns the voice ui events. |
+| [`interactor/register`](#interactor_register) | public |  | misc | inferred | Registers the yandex alice adapter plugin (interactor) |
+| [`interactor/setContext`](#interactor_setcontext) | public |  | misc | inferred | Sets the context (interactor) |
+| [`load`](#load) | private |  | misc | inferred | Loads the yandex alice adapter plugin. |
+| [`recognizeIntentByText`](#recognizeintentbytext) | private |  | misc | inferred | Recognizes the intent by text. |
+| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | inferred | Recognizes the intent by voice. |
+| [`sendYskCommand`](#sendyskcommand) | public |  | misc | inferred | Sends the ysk command. |
+| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | inferred | Stops the recording voice. |
+| [`unload`](#unload) | private |  | misc | inferred | Unloads the yandex alice adapter plugin. |
 
 <a id="cancelrecognition"></a>
 ## `cancelRecognition`
 
 `luna://yandex.alice.adapter.plugin/cancelRecognition`
 
-Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).
+Cancels the recognition.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://yandex.alice.adapter.plugin/cancelRecognition '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://yandex.alice.adapter.plugin/getVoiceUiEvents`
 
-Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).
+Returns the voice ui events.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://yandex.alice.adapter.plugin/getVoiceUiEvents '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://yandex.alice.adapter.plugin/interactor/register`
 
-Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).
+Registers the yandex alice adapter plugin (interactor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://yandex.alice.adapter.plugin/interactor/register '{}'
@@ -85,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://yandex.alice.adapter.plugin/interactor/setContext`
 
-Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).
+Sets the context (interactor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://yandex.alice.adapter.plugin/interactor/setContext '{}'
@@ -106,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://yandex.alice.adapter.plugin/load`
 
-Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).
+Loads the yandex alice adapter plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://yandex.alice.adapter.plugin/load '{}'
@@ -127,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://yandex.alice.adapter.plugin/recognizeIntentByText`
 
-Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).
+Recognizes the intent by text.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://yandex.alice.adapter.plugin/recognizeIntentByText '{}'
@@ -148,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://yandex.alice.adapter.plugin/recognizeIntentByVoice`
 
-Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).
+Recognizes the intent by voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://yandex.alice.adapter.plugin/recognizeIntentByVoice '{}'
@@ -169,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://yandex.alice.adapter.plugin/sendYskCommand`
 
-Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).
+Sends the ysk command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://yandex.alice.adapter.plugin/sendYskCommand '{}'
@@ -190,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://yandex.alice.adapter.plugin/stopRecordingVoice`
 
-Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).
+Stops the recording voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://yandex.alice.adapter.plugin/stopRecordingVoice '{}'
@@ -211,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://yandex.alice.adapter.plugin/unload`
 
-Method on yandex.alice.adapter.plugin (from on-device permission registry; parameters undocumented).
+Unloads the yandex alice adapter plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://yandex.alice.adapter.plugin/unload '{}'

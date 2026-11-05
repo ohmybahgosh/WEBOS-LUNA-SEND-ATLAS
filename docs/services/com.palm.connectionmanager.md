@@ -1,12 +1,14 @@
 # `com.palm.connectionmanager`
 
+Legacy connection manager that reports overall network connection status (wired/Wi-Fi) on the device.
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getStatus`](#getstatus) | public | yes | connection | Gets the current status of network connections (Wi-Fi and wired). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getStatus`](#getstatus) | public | yes | connection | documented | Gets the current status of network connections (Wi-Fi and wired). |
 
 <a id="getstatus"></a>
 ## `getStatus`

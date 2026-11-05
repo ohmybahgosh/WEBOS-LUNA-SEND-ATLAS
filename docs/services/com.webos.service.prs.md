@@ -1,42 +1,46 @@
 # `com.webos.service.prs`
 
+Program recommendation service (PRS): manages recommended-channel lists and reports playback, scheduled recordings/watches and selected-program info for recommendations. _(inferred from the service's methods)_
+
 18 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`activityStart`](#activitystart) | private |  | activity | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`debugSqlQuery`](#debugsqlquery) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`deleteRecommendChannelList`](#deleterecommendchannellist) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`getExample`](#getexample) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`getRecommendChannelList`](#getrecommendchannellist) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`listRecommendations`](#listrecommendations) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`notifyPinup`](#notifypinup) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`notifyPlayback`](#notifyplayback) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`notifyRecommendInfoChanged`](#notifyrecommendinfochanged) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`ping`](#ping) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`reportScheduledRecord`](#reportscheduledrecord) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`reportScheduledWatch`](#reportscheduledwatch) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`reportSelectedProgramInfo`](#reportselectedprograminfo) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`setConfig`](#setconfig) | private |  | settings | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`setDebug`](#setdebug) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`testNotifyRecommendInfoChanged`](#testnotifyrecommendinfochanged) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`testNotifyRecommendInfoGetHistory`](#testnotifyrecommendinfogethistory) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
-| [`testNotifyRecommendInfoSetHistory`](#testnotifyrecommendinfosethistory) | private |  | tv-broadcast | Method on com.webos.service.prs (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`activityStart`](#activitystart) | private |  | activity | inferred | Handles the activity start. |
+| [`debugSqlQuery`](#debugsqlquery) | private |  | tv-broadcast | inferred | Handles the debug sql query. |
+| [`deleteRecommendChannelList`](#deleterecommendchannellist) | private |  | tv-broadcast | inferred | Deletes the recommend channel list. ⚠️ |
+| [`getExample`](#getexample) | private |  | tv-broadcast | inferred | Returns the example. |
+| [`getRecommendChannelList`](#getrecommendchannellist) | private |  | tv-broadcast | inferred | Returns the recommend channel list. |
+| [`listRecommendations`](#listrecommendations) | private |  | tv-broadcast | inferred | Lists the recommendations. |
+| [`notifyPinup`](#notifypinup) | private |  | tv-broadcast | inferred | Notifies of the pinup. |
+| [`notifyPlayback`](#notifyplayback) | private |  | tv-broadcast | inferred | Notifies of the playback. |
+| [`notifyRecommendInfoChanged`](#notifyrecommendinfochanged) | private |  | tv-broadcast | inferred | Notifies of the recommend info changed. |
+| [`ping`](#ping) | private |  | tv-broadcast | inferred | Pings the prs. |
+| [`reportScheduledRecord`](#reportscheduledrecord) | private |  | tv-broadcast | inferred | Reports the scheduled record. |
+| [`reportScheduledWatch`](#reportscheduledwatch) | private |  | tv-broadcast | inferred | Reports the scheduled watch. |
+| [`reportSelectedProgramInfo`](#reportselectedprograminfo) | private |  | tv-broadcast | inferred | Reports the selected program info. |
+| [`setConfig`](#setconfig) | private |  | settings | inferred | Sets the config. |
+| [`setDebug`](#setdebug) | private |  | tv-broadcast | inferred | Sets the debug. |
+| [`testNotifyRecommendInfoChanged`](#testnotifyrecommendinfochanged) | private |  | tv-broadcast | inferred | Tests the notify recommend info changed. |
+| [`testNotifyRecommendInfoGetHistory`](#testnotifyrecommendinfogethistory) | private |  | tv-broadcast | inferred | Tests the notify recommend info get history. |
+| [`testNotifyRecommendInfoSetHistory`](#testnotifyrecommendinfosethistory) | private |  | tv-broadcast | inferred | Tests the notify recommend info set history. |
 
 <a id="activitystart"></a>
 ## `activityStart`
 
 `luna://com.webos.service.prs/activityStart`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Handles the activity start.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/activityStart '{}'
@@ -51,13 +55,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/debugSqlQuery`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Handles the debug sql query.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/debugSqlQuery '{}'
@@ -72,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/deleteRecommendChannelList`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Deletes the recommend channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/deleteRecommendChannelList '{}'
@@ -93,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/getExample`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Returns the example.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/getExample '{}'
@@ -114,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/getRecommendChannelList`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Returns the recommend channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/getRecommendChannelList '{}'
@@ -135,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/listRecommendations`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Lists the recommendations.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/listRecommendations '{}'
@@ -156,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/notifyPinup`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Notifies of the pinup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/notifyPinup '{}'
@@ -177,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/notifyPlayback`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Notifies of the playback.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/notifyPlayback '{}'
@@ -198,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/notifyRecommendInfoChanged`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Notifies of the recommend info changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/notifyRecommendInfoChanged '{}'
@@ -219,13 +239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/ping`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Pings the prs.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/ping '{}'
@@ -240,13 +262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/reportScheduledRecord`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Reports the scheduled record.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/reportScheduledRecord '{}'
@@ -261,13 +285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/reportScheduledWatch`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Reports the scheduled watch.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/reportScheduledWatch '{}'
@@ -282,13 +308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/reportSelectedProgramInfo`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Reports the selected program info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/reportSelectedProgramInfo '{}'
@@ -303,13 +331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/setConfig`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Sets the config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/setConfig '{}'
@@ -324,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/setDebug`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Sets the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/setDebug '{}'
@@ -345,13 +377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/testNotifyRecommendInfoChanged`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Tests the notify recommend info changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/testNotifyRecommendInfoChanged '{}'
@@ -366,13 +400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/testNotifyRecommendInfoGetHistory`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Tests the notify recommend info get history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/testNotifyRecommendInfoGetHistory '{}'
@@ -387,13 +423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.prs/testNotifyRecommendInfoSetHistory`
 
-Method on com.webos.service.prs (from on-device permission registry; parameters undocumented).
+Tests the notify recommend info set history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.prs/testNotifyRecommendInfoSetHistory '{}'

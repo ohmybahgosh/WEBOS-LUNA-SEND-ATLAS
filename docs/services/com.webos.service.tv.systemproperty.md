@@ -1,84 +1,86 @@
 # `com.webos.service.tv.systemproperty`
 
+TV system-property service: resets to factory/user defaults, reads/writes EDID and white balance, maps inputs, and controls the motorized 'flex' stand (position, motor calibration). _(inferred from the service's methods)_
+
 73 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`doFactoryDefault`](#dofactorydefault) | private |  | system-info | Factory default operation (listed in Powback capabilities audit under panel calibration/service-menu controls) ⚠️ |
-| [`doUserDefault`](#douserdefault) | private |  | system-info | Factory reset / user-default restore. The db8 no-space handler calls it right after the comment "do factory reset" ⚠️ |
-| [`downloadEdid`](#downloadedid) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`enableNpointWhiteBalance`](#enablenpointwhitebalance) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`findInputMap`](#findinputmap) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexGetAbnormalList`](#flexgetabnormallist) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexGetMotorAutoTest`](#flexgetmotorautotest) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexGetMotorComp`](#flexgetmotorcomp) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexGetMotorRepeatCount`](#flexgetmotorrepeatcount) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexGetMotorSpeed`](#flexgetmotorspeed) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexGetMotorValue`](#flexgetmotorvalue) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexGetPosition`](#flexgetposition) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexMotorStatus`](#flexmotorstatus) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexSaveMotorValue`](#flexsavemotorvalue) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexSetFakeInit`](#flexsetfakeinit) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`flexSetMotorAutoTest`](#flexsetmotorautotest) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexSetMotorComp`](#flexsetmotorcomp) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexSetPosition`](#flexsetposition) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`flexSetStepMotor`](#flexsetstepmotor) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`getAdcCalibrationMode`](#getadccalibrationmode) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getAdcCalibrationModeList`](#getadccalibrationmodelist) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getAdcCalibrationStatus`](#getadccalibrationstatus) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getAdcCalibrationValue`](#getadccalibrationvalue) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getCurrentInputMap`](#getcurrentinputmap) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getEdidData`](#getediddata) | private |  | system-info | Reads EDID data of an HDMI input |
-| [`getEdidStatus`](#getedidstatus) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getFanStatus`](#getfanstatus) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getHDMIErrorHistory`](#gethdmierrorhistory) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getHDMIErrorHistoryCount`](#gethdmierrorhistorycount) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getInputMap`](#getinputmap) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getInputMapInfo`](#getinputmapinfo) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getMemoryReport`](#getmemoryreport) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getMemoryUsage`](#getmemoryusage) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getMotionStatus`](#getmotionstatus) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getMSensorInfo`](#getmsensorinfo) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getNpointWhiteBalance`](#getnpointwhitebalance) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getOLEDAplDiffThreshold`](#getoledapldiffthreshold) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getPgamma`](#getpgamma) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getPgammaCount`](#getpgammacount) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getPgammaMode`](#getpgammamode) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getPowerOffReason`](#getpoweroffreason) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getPowerOffReasonCount`](#getpoweroffreasoncount) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getProperties`](#getproperties) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getSystemInfo`](#getsysteminfo) | public | yes | system-info | Retrieves system information by keys: boardType, firmwareVersion, modelName, sdkVersion, UHD, _3d. |
-| [`getSystemProperties`](#getsystemproperties) | private |  | system-info | Reads system properties such as panelUsageTime (10-minute units) |
-| [`getTempSensorStatus`](#gettempsensorstatus) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getTwinTunerLNAControl`](#gettwintunerlnacontrol) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getVcom`](#getvcom) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`getWhiteBalance`](#getwhitebalance) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`resetAdcCalibration`](#resetadccalibration) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`resetEdid`](#resetedid) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`resetHDMIErrorHistory`](#resethdmierrorhistory) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`resetNpointWhiteBalance`](#resetnpointwhitebalance) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`resetPowerOffReason`](#resetpoweroffreason) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`resetVcom`](#resetvcom) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`resetWhiteBalance`](#resetwhitebalance) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`savePgamma`](#savepgamma) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`saveToolOptionValue`](#savetooloptionvalue) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`setAdcCalibrationValue`](#setadccalibrationvalue) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`setCurrentInputMap`](#setcurrentinputmap) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`setMSensorInfo`](#setmsensorinfo) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`setNpointWhiteBalance`](#setnpointwhitebalance) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`setOLEDAplDiffThreshold`](#setoledapldiffthreshold) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`setPgamma`](#setpgamma) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`setPgammaMode`](#setpgammamode) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`setProperties`](#setproperties) | private |  | settings | Writes system properties (ColorControl SetSystemProperty; Glasshouse toggles OLED TPC/GSR flags OledTPC/OledGSR) ⚠️ |
-| [`setTestPattern`](#settestpattern) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`setTwinTunerLNAControl`](#settwintunerlnacontrol) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`setUserInputMap`](#setuserinputmap) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`setVcom`](#setvcom) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`setWBDefaultMode`](#setwbdefaultmode) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) |
-| [`setWhiteBalance`](#setwhitebalance) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
-| [`startAdcCalibration`](#startadccalibration) | private |  | system-info | Method registered by com.webos.service.tv.systemproperty (root category) ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`doFactoryDefault`](#dofactorydefault) | private |  | system-info | documented | Factory default operation (listed in Powback capabilities audit under panel calibration/service-menu controls) ⚠️ |
+| [`doUserDefault`](#douserdefault) | private |  | system-info | documented | Factory reset / user-default restore. The db8 no-space handler calls it right after the comment "do factory reset" ⚠️ |
+| [`downloadEdid`](#downloadedid) | private |  | system-info | inferred | Downloads the EDID. ⚠️ |
+| [`enableNpointWhiteBalance`](#enablenpointwhitebalance) | private |  | system-info | inferred | Enables the npoint white balance. |
+| [`findInputMap`](#findinputmap) | private |  | system-info | inferred | Handles the find input map. |
+| [`flexGetAbnormalList`](#flexgetabnormallist) | private |  | system-info | inferred | Handles the flex get abnormal list. |
+| [`flexGetMotorAutoTest`](#flexgetmotorautotest) | private |  | system-info | inferred | Handles the flex get motor auto test. |
+| [`flexGetMotorComp`](#flexgetmotorcomp) | private |  | system-info | inferred | Handles the flex get motor comp. |
+| [`flexGetMotorRepeatCount`](#flexgetmotorrepeatcount) | private |  | system-info | inferred | Handles the flex get motor repeat count. |
+| [`flexGetMotorSpeed`](#flexgetmotorspeed) | private |  | system-info | inferred | Handles the flex get motor speed. |
+| [`flexGetMotorValue`](#flexgetmotorvalue) | private |  | system-info | inferred | Handles the flex get motor value. |
+| [`flexGetPosition`](#flexgetposition) | private |  | system-info | inferred | Handles the flex get position. |
+| [`flexMotorStatus`](#flexmotorstatus) | private |  | system-info | inferred | Handles the flex motor status. |
+| [`flexSaveMotorValue`](#flexsavemotorvalue) | private |  | system-info | inferred | Handles the flex save motor value. |
+| [`flexSetFakeInit`](#flexsetfakeinit) | private |  | system-info | inferred | Handles the flex set fake init. ⚠️ |
+| [`flexSetMotorAutoTest`](#flexsetmotorautotest) | private |  | system-info | inferred | Handles the flex set motor auto test. |
+| [`flexSetMotorComp`](#flexsetmotorcomp) | private |  | system-info | inferred | Handles the flex set motor comp. |
+| [`flexSetPosition`](#flexsetposition) | private |  | system-info | inferred | Handles the flex set position. |
+| [`flexSetStepMotor`](#flexsetstepmotor) | private |  | system-info | inferred | Handles the flex set step motor. ⚠️ |
+| [`getAdcCalibrationMode`](#getadccalibrationmode) | private |  | system-info | inferred | Returns the adc calibration mode. |
+| [`getAdcCalibrationModeList`](#getadccalibrationmodelist) | private |  | system-info | inferred | Returns the adc calibration mode list. |
+| [`getAdcCalibrationStatus`](#getadccalibrationstatus) | private |  | system-info | inferred | Returns the adc calibration status. |
+| [`getAdcCalibrationValue`](#getadccalibrationvalue) | private |  | system-info | inferred | Returns the adc calibration value. |
+| [`getCurrentInputMap`](#getcurrentinputmap) | private |  | system-info | inferred | Returns the current input map. |
+| [`getEdidData`](#getediddata) | private |  | system-info | documented | Reads EDID data of an HDMI input |
+| [`getEdidStatus`](#getedidstatus) | private |  | system-info | inferred | Returns the EDID status. |
+| [`getFanStatus`](#getfanstatus) | private |  | system-info | inferred | Returns the fan status. |
+| [`getHDMIErrorHistory`](#gethdmierrorhistory) | private |  | system-info | inferred | Returns the HDMI error history. |
+| [`getHDMIErrorHistoryCount`](#gethdmierrorhistorycount) | private |  | system-info | inferred | Returns the HDMI error history count. |
+| [`getInputMap`](#getinputmap) | private |  | system-info | inferred | Returns the input map. |
+| [`getInputMapInfo`](#getinputmapinfo) | private |  | system-info | inferred | Returns the input map info. |
+| [`getMemoryReport`](#getmemoryreport) | private |  | system-info | inferred | Returns the memory report. |
+| [`getMemoryUsage`](#getmemoryusage) | private |  | system-info | inferred | Returns the memory usage. |
+| [`getMotionStatus`](#getmotionstatus) | private |  | system-info | inferred | Returns the motion status. |
+| [`getMSensorInfo`](#getmsensorinfo) | private |  | system-info | inferred | Returns the m sensor info. |
+| [`getNpointWhiteBalance`](#getnpointwhitebalance) | private |  | system-info | inferred | Returns the npoint white balance. |
+| [`getOLEDAplDiffThreshold`](#getoledapldiffthreshold) | private |  | system-info | inferred | Returns the OLED apl diff threshold. |
+| [`getPgamma`](#getpgamma) | private |  | system-info | inferred | Returns the pgamma. |
+| [`getPgammaCount`](#getpgammacount) | private |  | system-info | inferred | Returns the pgamma count. |
+| [`getPgammaMode`](#getpgammamode) | private |  | system-info | inferred | Returns the pgamma mode. |
+| [`getPowerOffReason`](#getpoweroffreason) | private |  | system-info | inferred | Returns the power off reason. |
+| [`getPowerOffReasonCount`](#getpoweroffreasoncount) | private |  | system-info | inferred | Returns the power off reason count. |
+| [`getProperties`](#getproperties) | private |  | system-info | inferred | Returns the properties. |
+| [`getSystemInfo`](#getsysteminfo) | public | yes | system-info | documented | Retrieves system information by keys: boardType, firmwareVersion, modelName, sdkVersion, UHD, _3d. |
+| [`getSystemProperties`](#getsystemproperties) | private |  | system-info | documented | Reads system properties such as panelUsageTime (10-minute units) |
+| [`getTempSensorStatus`](#gettempsensorstatus) | private |  | system-info | inferred | Returns the temp sensor status. |
+| [`getTwinTunerLNAControl`](#gettwintunerlnacontrol) | private |  | system-info | inferred | Returns the twin tuner LNA control. |
+| [`getVcom`](#getvcom) | private |  | system-info | inferred | Returns the vcom. |
+| [`getWhiteBalance`](#getwhitebalance) | private |  | system-info | inferred | Returns the white balance. |
+| [`resetAdcCalibration`](#resetadccalibration) | private |  | system-info | inferred | Resets the adc calibration. ⚠️ |
+| [`resetEdid`](#resetedid) | private |  | system-info | inferred | Resets the EDID. ⚠️ |
+| [`resetHDMIErrorHistory`](#resethdmierrorhistory) | private |  | system-info | inferred | Resets the HDMI error history. |
+| [`resetNpointWhiteBalance`](#resetnpointwhitebalance) | private |  | system-info | inferred | Resets the npoint white balance. |
+| [`resetPowerOffReason`](#resetpoweroffreason) | private |  | system-info | inferred | Resets the power off reason. |
+| [`resetVcom`](#resetvcom) | private |  | system-info | inferred | Resets the vcom. ⚠️ |
+| [`resetWhiteBalance`](#resetwhitebalance) | private |  | system-info | inferred | Resets the white balance. |
+| [`savePgamma`](#savepgamma) | private |  | system-info | inferred | Saves the pgamma. ⚠️ |
+| [`saveToolOptionValue`](#savetooloptionvalue) | private |  | system-info | inferred | Saves the tool option value. |
+| [`setAdcCalibrationValue`](#setadccalibrationvalue) | private |  | system-info | inferred | Sets the adc calibration value. ⚠️ |
+| [`setCurrentInputMap`](#setcurrentinputmap) | private |  | system-info | inferred | Sets the current input map. |
+| [`setMSensorInfo`](#setmsensorinfo) | private |  | system-info | inferred | Sets the m sensor info. |
+| [`setNpointWhiteBalance`](#setnpointwhitebalance) | private |  | system-info | inferred | Sets the npoint white balance. ⚠️ |
+| [`setOLEDAplDiffThreshold`](#setoledapldiffthreshold) | private |  | system-info | inferred | Sets the OLED apl diff threshold. |
+| [`setPgamma`](#setpgamma) | private |  | system-info | inferred | Sets the pgamma. ⚠️ |
+| [`setPgammaMode`](#setpgammamode) | private |  | system-info | inferred | Sets the pgamma mode. |
+| [`setProperties`](#setproperties) | private |  | settings | documented | Writes system properties (ColorControl SetSystemProperty; Glasshouse toggles OLED TPC/GSR flags OledTPC/OledGSR) ⚠️ |
+| [`setTestPattern`](#settestpattern) | private |  | system-info | inferred | Sets the test pattern. |
+| [`setTwinTunerLNAControl`](#settwintunerlnacontrol) | private |  | system-info | inferred | Sets the twin tuner LNA control. |
+| [`setUserInputMap`](#setuserinputmap) | private |  | system-info | inferred | Sets the user input map. |
+| [`setVcom`](#setvcom) | private |  | system-info | inferred | Sets the vcom. ⚠️ |
+| [`setWBDefaultMode`](#setwbdefaultmode) | private |  | system-info | inferred | Sets the WB default mode. |
+| [`setWhiteBalance`](#setwhitebalance) | private |  | system-info | inferred | Sets the white balance. ⚠️ |
+| [`startAdcCalibration`](#startadccalibration) | private |  | system-info | inferred | Starts the adc calibration. ⚠️ |
 
 <a id="dofactorydefault"></a>
 ## `doFactoryDefault` ⚠️ DANGEROUS
@@ -91,7 +93,7 @@ Factory default operation (listed in Powback capabilities audit under panel cali
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/doFactoryDefault '{}'
@@ -112,7 +114,7 @@ Factory reset / user-default restore. The db8 no-space handler calls it right af
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.tv.systemproperty/doUserDefault '{}'
@@ -127,13 +129,15 @@ Sources: [1](https://github.com/webosose/db8/blob/HEAD/files/scripts/errorNoSpac
 
 `luna://com.webos.service.tv.systemproperty/downloadEdid`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Downloads the EDID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/downloadEdid '{}'
@@ -148,13 +152,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/enableNpointWhiteBalance`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Enables the npoint white balance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/enableNpointWhiteBalance '{}'
@@ -169,13 +175,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/findInputMap`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the find input map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/findInputMap '{}'
@@ -190,13 +198,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexGetAbnormalList`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex get abnormal list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexGetAbnormalList '{}'
@@ -211,13 +221,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexGetMotorAutoTest`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex get motor auto test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexGetMotorAutoTest '{}'
@@ -232,13 +244,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexGetMotorComp`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex get motor comp.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexGetMotorComp '{}'
@@ -253,13 +267,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexGetMotorRepeatCount`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex get motor repeat count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexGetMotorRepeatCount '{}'
@@ -274,13 +290,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexGetMotorSpeed`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex get motor speed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexGetMotorSpeed '{}'
@@ -295,13 +313,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexGetMotorValue`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex get motor value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexGetMotorValue '{}'
@@ -316,13 +336,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexGetPosition`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex get position.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexGetPosition '{}'
@@ -337,13 +359,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexMotorStatus`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex motor status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexMotorStatus '{}'
@@ -358,13 +382,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexSaveMotorValue`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex save motor value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexSaveMotorValue '{}'
@@ -379,13 +405,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexSetFakeInit`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex set fake init.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexSetFakeInit '{}'
@@ -400,13 +428,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexSetMotorAutoTest`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex set motor auto test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexSetMotorAutoTest '{}'
@@ -421,13 +451,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexSetMotorComp`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex set motor comp.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexSetMotorComp '{}'
@@ -442,13 +474,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexSetPosition`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex set position.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexSetPosition '{}'
@@ -463,13 +497,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/flexSetStepMotor`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Handles the flex set step motor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/flexSetStepMotor '{}'
@@ -484,13 +520,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getAdcCalibrationMode`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the adc calibration mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getAdcCalibrationMode '{}'
@@ -505,13 +543,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getAdcCalibrationModeList`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the adc calibration mode list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getAdcCalibrationModeList '{}'
@@ -526,13 +566,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getAdcCalibrationStatus`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the adc calibration status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getAdcCalibrationStatus '{}'
@@ -547,13 +589,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getAdcCalibrationValue`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the adc calibration value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getAdcCalibrationValue '{}'
@@ -568,13 +612,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getCurrentInputMap`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the current input map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getCurrentInputMap '{}'
@@ -595,7 +641,7 @@ Reads EDID data of an HDMI input
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -613,13 +659,15 @@ Sources: [1](https://github.com/rorygallagher2024/glasshouse/blob/HEAD/docs/deve
 
 `luna://com.webos.service.tv.systemproperty/getEdidStatus`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the EDID status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getEdidStatus '{}'
@@ -634,13 +682,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getFanStatus`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the fan status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getFanStatus '{}'
@@ -655,13 +705,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getHDMIErrorHistory`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the HDMI error history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getHDMIErrorHistory '{}'
@@ -676,13 +728,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getHDMIErrorHistoryCount`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the HDMI error history count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getHDMIErrorHistoryCount '{}'
@@ -697,13 +751,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getInputMap`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the input map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getInputMap '{}'
@@ -718,13 +774,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getInputMapInfo`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the input map info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getInputMapInfo '{}'
@@ -739,13 +797,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getMemoryReport`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the memory report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getMemoryReport '{}'
@@ -760,13 +820,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getMemoryUsage`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the memory usage.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getMemoryUsage '{}'
@@ -781,13 +843,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getMotionStatus`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the motion status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getMotionStatus '{}'
@@ -802,13 +866,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getMSensorInfo`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the m sensor info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getMSensorInfo '{}'
@@ -823,13 +889,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getNpointWhiteBalance`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the npoint white balance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getNpointWhiteBalance '{}'
@@ -844,13 +912,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getOLEDAplDiffThreshold`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the OLED apl diff threshold.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getOLEDAplDiffThreshold '{}'
@@ -865,13 +935,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getPgamma`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the pgamma.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getPgamma '{}'
@@ -886,13 +958,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getPgammaCount`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the pgamma count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getPgammaCount '{}'
@@ -907,13 +981,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getPgammaMode`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the pgamma mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getPgammaMode '{}'
@@ -928,13 +1004,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getPowerOffReason`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the power off reason.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getPowerOffReason '{}'
@@ -949,13 +1027,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getPowerOffReasonCount`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the power off reason count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getPowerOffReasonCount '{}'
@@ -970,13 +1050,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getProperties`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getProperties '{}'
@@ -997,7 +1079,7 @@ Retrieves system information by keys: boardType, firmwareVersion, modelName, sdk
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (all versions unless noted); webOS 3+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1023,7 +1105,7 @@ Reads system properties such as panelUsageTime (10-minute units)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1042,13 +1124,15 @@ Sources: [1](https://github.com/rorygallagher2024/glasshouse/blob/HEAD/docs/IMPL
 
 `luna://com.webos.service.tv.systemproperty/getTempSensorStatus`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the temp sensor status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getTempSensorStatus '{}'
@@ -1063,13 +1147,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getTwinTunerLNAControl`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the twin tuner LNA control.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getTwinTunerLNAControl '{}'
@@ -1084,13 +1170,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getVcom`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the vcom.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getVcom '{}'
@@ -1105,13 +1193,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/getWhiteBalance`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Returns the white balance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/getWhiteBalance '{}'
@@ -1126,13 +1216,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/resetAdcCalibration`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Resets the adc calibration.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/resetAdcCalibration '{}'
@@ -1147,13 +1239,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/resetEdid`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Resets the EDID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/resetEdid '{}'
@@ -1168,13 +1262,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/resetHDMIErrorHistory`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Resets the HDMI error history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/resetHDMIErrorHistory '{}'
@@ -1189,13 +1285,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/resetNpointWhiteBalance`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Resets the npoint white balance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/resetNpointWhiteBalance '{}'
@@ -1210,13 +1308,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/resetPowerOffReason`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Resets the power off reason.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/resetPowerOffReason '{}'
@@ -1231,13 +1331,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/resetVcom`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Resets the vcom.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/resetVcom '{}'
@@ -1252,13 +1354,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/resetWhiteBalance`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Resets the white balance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/resetWhiteBalance '{}'
@@ -1273,13 +1377,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/savePgamma`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Saves the pgamma.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/savePgamma '{}'
@@ -1294,13 +1400,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/saveToolOptionValue`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Saves the tool option value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/saveToolOptionValue '{}'
@@ -1315,13 +1423,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setAdcCalibrationValue`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the adc calibration value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setAdcCalibrationValue '{}'
@@ -1336,13 +1446,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setCurrentInputMap`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the current input map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setCurrentInputMap '{}'
@@ -1357,13 +1469,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setMSensorInfo`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the m sensor info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setMSensorInfo '{}'
@@ -1378,13 +1492,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setNpointWhiteBalance`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the npoint white balance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setNpointWhiteBalance '{}'
@@ -1399,13 +1515,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setOLEDAplDiffThreshold`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the OLED apl diff threshold.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setOLEDAplDiffThreshold '{}'
@@ -1420,13 +1538,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setPgamma`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the pgamma.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setPgamma '{}'
@@ -1441,13 +1561,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setPgammaMode`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the pgamma mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setPgammaMode '{}'
@@ -1468,7 +1590,7 @@ Writes system properties (ColorControl SetSystemProperty; Glasshouse toggles OLE
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1487,13 +1609,15 @@ Sources: [1](https://github.com/Maassoft/ColorControl/blob/HEAD/ColorControl/lgt
 
 `luna://com.webos.service.tv.systemproperty/setTestPattern`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the test pattern.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setTestPattern '{}'
@@ -1508,13 +1632,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setTwinTunerLNAControl`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the twin tuner LNA control.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setTwinTunerLNAControl '{}'
@@ -1529,13 +1655,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setUserInputMap`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the user input map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setUserInputMap '{}'
@@ -1550,13 +1678,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setVcom`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the vcom.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setVcom '{}'
@@ -1571,13 +1701,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setWBDefaultMode`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the WB default mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setWBDefaultMode '{}'
@@ -1592,13 +1724,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/setWhiteBalance`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Sets the white balance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/setWhiteBalance '{}'
@@ -1613,13 +1747,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.tv.systemproperty/startAdcCalibration`
 
-Method registered by com.webos.service.tv.systemproperty (root category)
+Starts the adc calibration.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.systemproperty/startAdcCalibration '{}'

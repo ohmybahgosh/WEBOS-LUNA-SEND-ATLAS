@@ -1,27 +1,31 @@
 # `com.webos.service.gibbips.bcConfigAdapter`
 
+GIBBIPS broadcast config-cache adapter: dumps cached configuration and settings values. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`configdcache_showAllValues`](#configdcache_showallvalues) | private |  | settings | Method on com.webos.service.gibbips.bcConfigAdapter (from on-device permission registry; parameters undocumented). |
-| [`settingscache_showAllValues`](#settingscache_showallvalues) | private |  | settings | Method on com.webos.service.gibbips.bcConfigAdapter (from on-device permission registry; parameters undocumented). |
-| [`showAllValues`](#showallvalues) | private |  | settings | Method on com.webos.service.gibbips.bcConfigAdapter (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`configdcache_showAllValues`](#configdcache_showallvalues) | private |  | settings | inferred | Handles the configdcache show all values. |
+| [`settingscache_showAllValues`](#settingscache_showallvalues) | private |  | settings | inferred | Handles the settingscache show all values. |
+| [`showAllValues`](#showallvalues) | private |  | settings | inferred | Shows the all values. |
 
 <a id="configdcache_showallvalues"></a>
 ## `configdcache_showAllValues`
 
 `luna://com.webos.service.gibbips.bcConfigAdapter/configdcache_showAllValues`
 
-Method on com.webos.service.gibbips.bcConfigAdapter (from on-device permission registry; parameters undocumented).
+Handles the configdcache show all values.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.bcConfigAdapter/configdcache_showAllValues '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.bcConfigAdapter/settingscache_showAllValues`
 
-Method on com.webos.service.gibbips.bcConfigAdapter (from on-device permission registry; parameters undocumented).
+Handles the settingscache show all values.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.bcConfigAdapter/settingscache_showAllValues '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.bcConfigAdapter/showAllValues`
 
-Method on com.webos.service.gibbips.bcConfigAdapter (from on-device permission registry; parameters undocumented).
+Shows the all values.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.bcConfigAdapter/showAllValues '{}'

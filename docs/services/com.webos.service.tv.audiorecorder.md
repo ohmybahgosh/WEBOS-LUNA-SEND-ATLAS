@@ -1,15 +1,17 @@
 # `com.webos.service.tv.audiorecorder`
 
+TV audio recorder: starts and stops audio recording, reports whether recording is active, and returns the recording buffer length. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getRecordingBufferedLength`](#getrecordingbufferedlength) | private |  | audio | TV audio recorder method: getRecordingBufferedLength |
-| [`isRecording`](#isrecording) | private |  | audio | TV audio recorder method: isRecording |
-| [`startRecord`](#startrecord) | private |  | audio | TV audio recorder method: startRecord |
-| [`stopRecord`](#stoprecord) | private |  | audio | TV audio recorder method: stopRecord |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getRecordingBufferedLength`](#getrecordingbufferedlength) | private |  | audio | documented | TV audio recorder method: getRecordingBufferedLength |
+| [`isRecording`](#isrecording) | private |  | audio | documented | TV audio recorder method: isRecording |
+| [`startRecord`](#startrecord) | private |  | audio | documented | TV audio recorder method: startRecord |
+| [`stopRecord`](#stoprecord) | private |  | audio | documented | TV audio recorder method: stopRecord |
 
 <a id="getrecordingbufferedlength"></a>
 ## `getRecordingBufferedLength`
@@ -22,7 +24,7 @@ TV audio recorder method: getRecordingBufferedLength
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.audiorecorder/getRecordingBufferedLength '{}'
@@ -43,7 +45,7 @@ TV audio recorder method: isRecording
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.audiorecorder/isRecording '{}'
@@ -64,7 +66,7 @@ TV audio recorder method: startRecord
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.audiorecorder/startRecord '{}'
@@ -85,7 +87,7 @@ TV audio recorder method: stopRecord
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.audiorecorder/stopRecord '{}'

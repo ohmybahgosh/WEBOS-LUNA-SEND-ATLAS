@@ -1,51 +1,55 @@
 # `com.webos.service.nabs.broadcast`
 
+NABS live-broadcast service: changes channels and reports broadcast/channel state, audio/video and signal info, and hybrid-TV events for live TV. _(inferred from the service's methods)_
+
 27 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`changeChannel`](#changechannel) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`close`](#close) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getAudioInfo`](#getaudioinfo) | private |  | audio | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getAudioLanguageList`](#getaudiolanguagelist) | private |  | audio | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getBroadcastState`](#getbroadcaststate) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getChannelState`](#getchannelstate) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getCurrentChannel`](#getcurrentchannel) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getObjectAudioInfo`](#getobjectaudioinfo) | private |  | audio | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getSignalStatus`](#getsignalstatus) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getVideoInfo`](#getvideoinfo) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`hybridtv/getAstData`](#hybridtv_getastdata) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`hybridtv/notifyChannelChange`](#hybridtv_notifychannelchange) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`isPauseOnLive`](#ispauseonlive) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`notifyEndOfProcess`](#notifyendofprocess) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`open`](#open) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`pause1`](#pause1) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`pauseOnLive`](#pauseonlive) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`pin`](#pin) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setAliveMode`](#setalivemode) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setAudioLanguage`](#setaudiolanguage) | private |  | audio | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setAudioMute`](#setaudiomute) | private |  | audio | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setObjectAudioInfo`](#setobjectaudioinfo) | private |  | audio | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`startService`](#startservice) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`unpauseToLive`](#unpausetolive) | private |  | tv-broadcast | Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`changeChannel`](#changechannel) | private |  | tv-broadcast | inferred | Changes the channel. |
+| [`close`](#close) | private |  | tv-broadcast | inferred | Closes the nabs broadcast. |
+| [`getAudioInfo`](#getaudioinfo) | private |  | audio | inferred | Returns the audio info. |
+| [`getAudioLanguageList`](#getaudiolanguagelist) | private |  | audio | inferred | Returns the audio language list. |
+| [`getBroadcastState`](#getbroadcaststate) | private |  | tv-broadcast | inferred | Returns the broadcast state. |
+| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | tv-broadcast | inferred | Returns the channel change result. |
+| [`getChannelState`](#getchannelstate) | private |  | tv-broadcast | inferred | Returns the channel state. |
+| [`getCurrentChannel`](#getcurrentchannel) | private |  | tv-broadcast | inferred | Returns the current channel. |
+| [`getObjectAudioInfo`](#getobjectaudioinfo) | private |  | audio | inferred | Returns the object audio info. |
+| [`getSignalStatus`](#getsignalstatus) | private |  | tv-broadcast | inferred | Returns the signal status. |
+| [`getVideoInfo`](#getvideoinfo) | private |  | tv-broadcast | inferred | Returns the video info. |
+| [`hybridtv/getAstData`](#hybridtv_getastdata) | private |  | tv-broadcast | inferred | Returns the ast data (hybridtv) |
+| [`hybridtv/notifyChannelChange`](#hybridtv_notifychannelchange) | private |  | tv-broadcast | inferred | Notifies of the channel change (hybridtv) |
+| [`isPauseOnLive`](#ispauseonlive) | private |  | tv-broadcast | inferred | Reports whether the pause on live is set. |
+| [`notifyEndOfProcess`](#notifyendofprocess) | private |  | tv-broadcast | inferred | Notifies of the end of process. |
+| [`open`](#open) | private |  | tv-broadcast | inferred | Opens the nabs broadcast. |
+| [`pause1`](#pause1) | private |  | tv-broadcast | inferred | Pauses the 1. |
+| [`pauseOnLive`](#pauseonlive) | private |  | tv-broadcast | inferred | Pauses the on live. |
+| [`pin`](#pin) | private |  | tv-broadcast | inferred | Handles the pin. |
+| [`setAliveMode`](#setalivemode) | private |  | tv-broadcast | inferred | Sets the alive mode. |
+| [`setAudioLanguage`](#setaudiolanguage) | private |  | audio | inferred | Sets the audio language. |
+| [`setAudioMute`](#setaudiomute) | private |  | audio | inferred | Sets the audio mute. |
+| [`setObjectAudioInfo`](#setobjectaudioinfo) | private |  | audio | inferred | Sets the object audio info. |
+| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | tv-broadcast | inferred | Sets the pipeline window ID. |
+| [`startService`](#startservice) | private |  | tv-broadcast | inferred | Starts the service. |
+| [`stop`](#stop) | private |  | tv-broadcast | inferred | Stops the nabs broadcast. |
+| [`unpauseToLive`](#unpausetolive) | private |  | tv-broadcast | inferred | Handles the unpause to live. |
 
 <a id="changechannel"></a>
 ## `changeChannel`
 
 `luna://com.webos.service.nabs.broadcast/changeChannel`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Changes the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/changeChannel '{}'
@@ -60,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/close`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Closes the nabs broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/close '{}'
@@ -81,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/getAudioInfo`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/getAudioInfo '{}'
@@ -102,13 +110,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/getAudioLanguageList`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the audio language list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/getAudioLanguageList '{}'
@@ -123,13 +133,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/getBroadcastState`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the broadcast state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/getBroadcastState '{}'
@@ -144,13 +156,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/getChannelChangeResult`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the channel change result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/getChannelChangeResult '{}'
@@ -165,13 +179,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/getChannelState`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the channel state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/getChannelState '{}'
@@ -186,13 +202,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/getCurrentChannel`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the current channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/getCurrentChannel '{}'
@@ -207,13 +225,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/getObjectAudioInfo`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the object audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/getObjectAudioInfo '{}'
@@ -228,13 +248,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/getSignalStatus`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the signal status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/getSignalStatus '{}'
@@ -249,13 +271,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/getVideoInfo`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the video info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/getVideoInfo '{}'
@@ -270,13 +294,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/hybridtv/getAstData`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the ast data (hybridtv)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/hybridtv/getAstData '{}'
@@ -291,13 +317,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/hybridtv/notifyChannelChange`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Notifies of the channel change (hybridtv)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/hybridtv/notifyChannelChange '{}'
@@ -312,13 +340,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/isPauseOnLive`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Reports whether the pause on live is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/isPauseOnLive '{}'
@@ -333,13 +363,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/notifyEndOfProcess`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Notifies of the end of process.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/notifyEndOfProcess '{}'
@@ -354,13 +386,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/open`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Opens the nabs broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/open '{}'
@@ -375,13 +409,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/pause1`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Pauses the 1.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/pause1 '{}'
@@ -396,13 +432,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/pauseOnLive`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Pauses the on live.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/pauseOnLive '{}'
@@ -417,13 +455,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/pin`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Handles the pin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/pin '{}'
@@ -438,13 +478,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/setAliveMode`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the alive mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/setAliveMode '{}'
@@ -459,13 +501,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/setAudioLanguage`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the audio language.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/setAudioLanguage '{}'
@@ -480,13 +524,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/setAudioMute`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the audio mute.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/setAudioMute '{}'
@@ -501,13 +547,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/setObjectAudioInfo`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the object audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/setObjectAudioInfo '{}'
@@ -522,13 +570,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/setPipelineWindowId`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the pipeline window ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/setPipelineWindowId '{}'
@@ -543,13 +593,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/startService`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Starts the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/startService '{}'
@@ -564,13 +616,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/stop`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Stops the nabs broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/stop '{}'
@@ -585,13 +639,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nabs.broadcast/unpauseToLive`
 
-Method on com.webos.service.nabs.broadcast (from on-device permission registry; parameters undocumented).
+Handles the unpause to live.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nabs.broadcast/unpauseToLive '{}'

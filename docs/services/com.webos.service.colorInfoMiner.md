@@ -1,28 +1,32 @@
 # `com.webos.service.colorInfoMiner`
 
+Appears to drive Philips-Hue-style ambient sync (hueSync): reports status and toggles automatic or manual color extraction from on-screen content. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`hueSync/getStatus`](#huesync_getstatus) | public |  | misc | Method on com.webos.service.colorInfoMiner (from on-device permission registry; parameters undocumented). |
-| [`hueSync/setAutoEnable`](#huesync_setautoenable) | public |  | misc | Method on com.webos.service.colorInfoMiner (from on-device permission registry; parameters undocumented). |
-| [`hueSync/setManualEnable`](#huesync_setmanualenable) | public |  | misc | Method on com.webos.service.colorInfoMiner (from on-device permission registry; parameters undocumented). |
-| [`startUp`](#startup) | public |  | misc | Method on com.webos.service.colorInfoMiner (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`hueSync/getStatus`](#huesync_getstatus) | public |  | misc | inferred | Returns the status (hue sync) |
+| [`hueSync/setAutoEnable`](#huesync_setautoenable) | public |  | misc | inferred | Sets the auto enable (hue sync) |
+| [`hueSync/setManualEnable`](#huesync_setmanualenable) | public |  | misc | inferred | Sets the manual enable (hue sync) |
+| [`startUp`](#startup) | public |  | misc | inferred | Starts the up. |
 
 <a id="huesync_getstatus"></a>
 ## `hueSync/getStatus`
 
 `luna://com.webos.service.colorInfoMiner/hueSync/getStatus`
 
-Method on com.webos.service.colorInfoMiner (from on-device permission registry; parameters undocumented).
+Returns the status (hue sync)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.colorInfoMiner/hueSync/getStatus '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.colorInfoMiner/hueSync/setAutoEnable`
 
-Method on com.webos.service.colorInfoMiner (from on-device permission registry; parameters undocumented).
+Sets the auto enable (hue sync)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.colorInfoMiner/hueSync/setAutoEnable '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.colorInfoMiner/hueSync/setManualEnable`
 
-Method on com.webos.service.colorInfoMiner (from on-device permission registry; parameters undocumented).
+Sets the manual enable (hue sync)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.colorInfoMiner/hueSync/setManualEnable '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.colorInfoMiner/startUp`
 
-Method on com.webos.service.colorInfoMiner (from on-device permission registry; parameters undocumented).
+Starts the up.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.colorInfoMiner/startUp '{}'

@@ -1,32 +1,36 @@
 # `com.webos.service.externaldecodercontroller`
 
+Appears to manage an external decoder dongle: reports dongle device ID and version, downloads keys, and runs firmware updates (including via USB). _(inferred from the service's methods)_
+
 8 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkLocalizedString`](#checklocalizedstring) | private |  | misc | Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented). |
-| [`downloadKeyToDongle`](#downloadkeytodongle) | private |  | misc | Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented). |
-| [`getDongleDeviceId`](#getdongledeviceid) | private |  | misc | Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented). |
-| [`getDongleVersion`](#getdongleversion) | private |  | misc | Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | misc | Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented). |
-| [`setH5dPattern`](#seth5dpattern) | private |  | misc | Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented). |
-| [`startUpdate`](#startupdate) | private |  | update | Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented). |
-| [`startUpdateThroughUsb`](#startupdatethroughusb) | private |  | update | Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkLocalizedString`](#checklocalizedstring) | private |  | misc | inferred | Checks the localized string. |
+| [`downloadKeyToDongle`](#downloadkeytodongle) | private |  | misc | inferred | Downloads the key to dongle. |
+| [`getDongleDeviceId`](#getdongledeviceid) | private |  | misc | inferred | Returns the dongle device ID. |
+| [`getDongleVersion`](#getdongleversion) | private |  | misc | inferred | Returns the dongle version. |
+| [`getStatus`](#getstatus) | private |  | misc | inferred | Returns the status. |
+| [`setH5dPattern`](#seth5dpattern) | private |  | misc | inferred | Sets the h 5 d pattern. |
+| [`startUpdate`](#startupdate) | private |  | update | inferred | Starts the update. |
+| [`startUpdateThroughUsb`](#startupdatethroughusb) | private |  | update | inferred | Starts the update through USB. |
 
 <a id="checklocalizedstring"></a>
 ## `checkLocalizedString`
 
 `luna://com.webos.service.externaldecodercontroller/checkLocalizedString`
 
-Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented).
+Checks the localized string.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldecodercontroller/checkLocalizedString '{}'
@@ -41,13 +45,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldecodercontroller/downloadKeyToDongle`
 
-Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented).
+Downloads the key to dongle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldecodercontroller/downloadKeyToDongle '{}'
@@ -62,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldecodercontroller/getDongleDeviceId`
 
-Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented).
+Returns the dongle device ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldecodercontroller/getDongleDeviceId '{}'
@@ -83,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldecodercontroller/getDongleVersion`
 
-Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented).
+Returns the dongle version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldecodercontroller/getDongleVersion '{}'
@@ -104,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldecodercontroller/getStatus`
 
-Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldecodercontroller/getStatus '{}'
@@ -125,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldecodercontroller/setH5dPattern`
 
-Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented).
+Sets the h 5 d pattern.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldecodercontroller/setH5dPattern '{}'
@@ -146,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldecodercontroller/startUpdate`
 
-Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented).
+Starts the update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldecodercontroller/startUpdate '{}'
@@ -167,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.externaldecodercontroller/startUpdateThroughUsb`
 
-Method on com.webos.service.externaldecodercontroller (from on-device permission registry; parameters undocumented).
+Starts the update through USB.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.externaldecodercontroller/startUpdateThroughUsb '{}'

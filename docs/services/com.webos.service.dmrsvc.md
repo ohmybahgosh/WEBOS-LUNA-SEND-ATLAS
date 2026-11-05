@@ -1,36 +1,40 @@
 # `com.webos.service.dmrsvc`
 
+DLNA Digital Media Renderer service: plays media pushed from DLNA controllers, reporting play status and managing volume, mute, subtitles, popup menus, and 3D format. _(inferred from the service's methods)_
+
 12 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`endCommand`](#endcommand) | private |  | misc | Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). |
-| [`getAction`](#getaction) | private |  | misc | Getter on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). |
-| [`notifyPlayStatus`](#notifyplaystatus) | private |  | misc | Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). |
-| [`prepare3DFormat`](#prepare3dformat) | private |  | misc | Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). ⚠️ |
-| [`set3DFormat`](#set3dformat) | private |  | misc | Setter on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). ⚠️ |
-| [`setAvailable3DFormats`](#setavailable3dformats) | private |  | misc | Setter on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). ⚠️ |
-| [`setMuteStatus`](#setmutestatus) | private |  | misc | Setter on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). |
-| [`setVolume`](#setvolume) | private |  | misc | Setter on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). |
-| [`showPopupMenu`](#showpopupmenu) | private |  | misc | Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). |
-| [`showSubtitle`](#showsubtitle) | private |  | media | Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). |
-| [`startCommand`](#startcommand) | private |  | misc | Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). |
-| [`verifyUse`](#verifyuse) | private |  | misc | Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`endCommand`](#endcommand) | private |  | misc | inferred | Handles the end command. |
+| [`getAction`](#getaction) | private |  | misc | inferred | Returns the action. |
+| [`notifyPlayStatus`](#notifyplaystatus) | private |  | misc | inferred | Notifies of the play status. |
+| [`prepare3DFormat`](#prepare3dformat) | private |  | misc | inferred | Prepares the 3 d format. ⚠️ |
+| [`set3DFormat`](#set3dformat) | private |  | misc | inferred | Sets the 3 d format. ⚠️ |
+| [`setAvailable3DFormats`](#setavailable3dformats) | private |  | misc | inferred | Sets the available 3 d formats. ⚠️ |
+| [`setMuteStatus`](#setmutestatus) | private |  | misc | inferred | Sets the mute status. |
+| [`setVolume`](#setvolume) | private |  | misc | inferred | Sets the volume. |
+| [`showPopupMenu`](#showpopupmenu) | private |  | misc | inferred | Shows the popup menu. |
+| [`showSubtitle`](#showsubtitle) | private |  | media | inferred | Shows the subtitle. |
+| [`startCommand`](#startcommand) | private |  | misc | inferred | Starts the command. |
+| [`verifyUse`](#verifyuse) | private |  | misc | inferred | Verifies the use. |
 
 <a id="endcommand"></a>
 ## `endCommand`
 
 `luna://com.webos.service.dmrsvc/endCommand`
 
-Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Handles the end command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/endCommand '{}'
@@ -45,13 +49,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmrsvc/getAction`
 
-Getter on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Returns the action.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/getAction '{}'
@@ -66,13 +72,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmrsvc/notifyPlayStatus`
 
-Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Notifies of the play status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/notifyPlayStatus '{}'
@@ -87,13 +95,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmrsvc/prepare3DFormat`
 
-Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Prepares the 3 d format.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/prepare3DFormat '{}'
@@ -108,13 +118,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmrsvc/set3DFormat`
 
-Setter on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Sets the 3 d format.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/set3DFormat '{}'
@@ -129,13 +141,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmrsvc/setAvailable3DFormats`
 
-Setter on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Sets the available 3 d formats.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/setAvailable3DFormats '{}'
@@ -150,13 +164,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmrsvc/setMuteStatus`
 
-Setter on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Sets the mute status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/setMuteStatus '{}'
@@ -171,13 +187,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmrsvc/setVolume`
 
-Setter on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Sets the volume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/setVolume '{}'
@@ -192,13 +210,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmrsvc/showPopupMenu`
 
-Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Shows the popup menu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/showPopupMenu '{}'
@@ -213,13 +233,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmrsvc/showSubtitle`
 
-Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Shows the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/showSubtitle '{}'
@@ -234,13 +256,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmrsvc/startCommand`
 
-Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Starts the command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/startCommand '{}'
@@ -255,13 +279,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dmrsvc/verifyUse`
 
-Method on com.webos.service.dmrsvc (introspected on-device; parameters undocumented).
+Verifies the use.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmrsvc/verifyUse '{}'

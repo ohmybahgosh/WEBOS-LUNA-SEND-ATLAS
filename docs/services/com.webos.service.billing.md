@@ -1,34 +1,38 @@
 # `com.webos.service.billing`
 
+In-app billing/payment service: requests, confirms and processes purchase transactions and reports billing status. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`confirm`](#confirm) | public |  | misc | Method on com.webos.service.billing (introspected on-device; parameters undocumented). |
-| [`get`](#get) | public |  | misc | Getter on com.webos.service.billing (introspected on-device; parameters undocumented). |
-| [`info`](#info) | public |  | misc | Method on com.webos.service.billing (introspected on-device; parameters undocumented). |
-| [`proceed`](#proceed) | public |  | misc | Method on com.webos.service.billing (introspected on-device; parameters undocumented). |
-| [`quit`](#quit) | public |  | misc | Method on com.webos.service.billing (introspected on-device; parameters undocumented). |
-| [`relayEvent`](#relayevent) | public |  | misc | Method on com.webos.service.billing (introspected on-device; parameters undocumented). |
-| [`request`](#request) | public |  | misc | Method on com.webos.service.billing (introspected on-device; parameters undocumented). |
-| [`set`](#set) | public |  | misc | Setter on com.webos.service.billing (introspected on-device; parameters undocumented). |
-| [`start`](#start) | public |  | misc | Method on com.webos.service.billing (introspected on-device; parameters undocumented). |
-| [`stop`](#stop) | public |  | misc | Method on com.webos.service.billing (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`confirm`](#confirm) | public |  | misc | inferred | Handles the confirm. |
+| [`get`](#get) | public |  | misc | inferred | Returns the billing. |
+| [`info`](#info) | public |  | misc | inferred | Handles the info. |
+| [`proceed`](#proceed) | public |  | misc | inferred | Handles the proceed. |
+| [`quit`](#quit) | public |  | misc | inferred | Quits the billing. |
+| [`relayEvent`](#relayevent) | public |  | misc | inferred | Handles the relay event. |
+| [`request`](#request) | public |  | misc | inferred | Requests the billing. |
+| [`set`](#set) | public |  | misc | inferred | Sets the billing. |
+| [`start`](#start) | public |  | misc | inferred | Starts the billing. |
+| [`stop`](#stop) | public |  | misc | inferred | Stops the billing. |
 
 <a id="confirm"></a>
 ## `confirm`
 
 `luna://com.webos.service.billing/confirm`
 
-Method on com.webos.service.billing (introspected on-device; parameters undocumented).
+Handles the confirm.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.billing/confirm '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.billing/get`
 
-Getter on com.webos.service.billing (introspected on-device; parameters undocumented).
+Returns the billing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.billing/get '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.billing/info`
 
-Method on com.webos.service.billing (introspected on-device; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.billing/info '{}'
@@ -85,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.billing/proceed`
 
-Method on com.webos.service.billing (introspected on-device; parameters undocumented).
+Handles the proceed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.billing/proceed '{}'
@@ -106,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.billing/quit`
 
-Method on com.webos.service.billing (introspected on-device; parameters undocumented).
+Quits the billing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.billing/quit '{}'
@@ -127,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.billing/relayEvent`
 
-Method on com.webos.service.billing (introspected on-device; parameters undocumented).
+Handles the relay event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.billing/relayEvent '{}'
@@ -148,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.billing/request`
 
-Method on com.webos.service.billing (introspected on-device; parameters undocumented).
+Requests the billing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.billing/request '{}'
@@ -169,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.billing/set`
 
-Setter on com.webos.service.billing (introspected on-device; parameters undocumented).
+Sets the billing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.billing/set '{}'
@@ -190,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.billing/start`
 
-Method on com.webos.service.billing (introspected on-device; parameters undocumented).
+Starts the billing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.billing/start '{}'
@@ -211,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.billing/stop`
 
-Method on com.webos.service.billing (introspected on-device; parameters undocumented).
+Stops the billing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.billing/stop '{}'

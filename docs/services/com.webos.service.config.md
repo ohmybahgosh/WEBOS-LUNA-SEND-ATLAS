@@ -1,23 +1,25 @@
 # `com.webos.service.config`
 
+Runtime configuration service: gets and sets named config values, and dumps, reloads and regenerates configuration.
+
 12 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`configs`](#configs) | unknown |  | settings | It contains full name of config and value pair. For example, "configs": { "com.webos.service.applicationmanager.testKey": "added" } |
-| [`dump`](#dump) | public |  | settings | It is useful for debugging. It returns the list of all configs and current values. |
-| [`freeDb`](#freedb) | public |  | settings | Method on com.webos.service.config (from on-device permission registry; parameters undocumented). |
-| [`fullDump`](#fulldump) | public |  | settings | It is useful for debugging. It returns the list of all configs including overridden values from all layers. |
-| [`genRemoteConfig`](#genremoteconfig) | private |  | settings | Method on com.webos.service.config (introspected on-device; parameters undocumented). |
-| [`getConfig`](#getconfig) | public |  | settings | Method on com.webos.service.config (from on-device permission registry; parameters undocumented). |
-| [`getConfigs`](#getconfigs) | public | yes | settings | It returns the requested configs which is the pairs of key-value as a JSON object and also supports a subscription. configd provides asteris |
-| [`reconfigure`](#reconfigure) | public |  | settings | Configd parses all configuration files again and regenerates the values of configs . |
-| [`reloadConfigs`](#reloadconfigs) | public |  | settings | Configd load configd db files. This load previous config values including user defined configs(by calling setConfigs) |
-| [`setConfig`](#setconfig) | public |  | settings | Method on com.webos.service.config (from on-device permission registry; parameters undocumented). |
-| [`setConfigs`](#setconfigs) | public |  | settings | Overrides current settings of the configs . The overridden values will be kept until rebooting or returning back in any future queries for t ⚠️ |
-| [`setTemporaryConfig`](#settemporaryconfig) | public |  | settings | Method on com.webos.service.config (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`configs`](#configs) | unknown |  | settings | documented | It contains full name of config and value pair. For example, "configs": { "com.webos.service.applicationmanager.testKey": "added" } |
+| [`dump`](#dump) | public |  | settings | documented | It is useful for debugging. It returns the list of all configs and current values. |
+| [`freeDb`](#freedb) | public |  | settings | inferred | Handles the free db. |
+| [`fullDump`](#fulldump) | public |  | settings | documented | It is useful for debugging. It returns the list of all configs including overridden values from all layers. |
+| [`genRemoteConfig`](#genremoteconfig) | private |  | settings | inferred | Handles the gen remote config. |
+| [`getConfig`](#getconfig) | public |  | settings | inferred | Returns the config. |
+| [`getConfigs`](#getconfigs) | public | yes | settings | documented | It returns the requested configs which is the pairs of key-value as a JSON object and also supports a subscription. configd provides asteris |
+| [`reconfigure`](#reconfigure) | public |  | settings | documented | Configd parses all configuration files again and regenerates the values of configs . |
+| [`reloadConfigs`](#reloadconfigs) | public |  | settings | documented | Configd load configd db files. This load previous config values including user defined configs(by calling setConfigs) |
+| [`setConfig`](#setconfig) | public |  | settings | inferred | Sets the config. |
+| [`setConfigs`](#setconfigs) | public |  | settings | documented | Overrides current settings of the configs . The overridden values will be kept until rebooting or returning back in any future queries for t ⚠️ |
+| [`setTemporaryConfig`](#settemporaryconfig) | public |  | settings | inferred | Sets the temporary config. |
 
 <a id="configs"></a>
 ## `configs`
@@ -53,6 +55,14 @@ It is useful for debugging. It returns the list of all configs and current value
 - **Versions:** webOS OSE API level 27+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `configs` | Object (required) Lists all configs and current values as a JSON object |
+| `errorCode` | Number (int32\_t) (optional) Identifies the error. The method will return errorCode only if it fails. See the Error Codes Reference for more details. |
+| `errorText` | String (optional) Describes the error. The method will return errorText only if it fails and errorCode is -1. See the Error Codes Reference for more details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.config/dump '{}
 ```
@@ -66,13 +76,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-c
 
 `luna://com.webos.service.config/freeDb`
 
-Method on com.webos.service.config (from on-device permission registry; parameters undocumented).
+Handles the free db.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.config/freeDb '{}'
@@ -95,6 +107,12 @@ It is useful for debugging. It returns the list of all configs including overrid
 - **Versions:** webOS OSE API level 27+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `configs` | Object array (required) Array of JSON objects with configName and value |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.config/fullDump '{}
 ```
@@ -108,13 +126,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-c
 
 `luna://com.webos.service.config/genRemoteConfig`
 
-Method on com.webos.service.config (introspected on-device; parameters undocumented).
+Handles the gen remote config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.config/genRemoteConfig '{}'
@@ -129,13 +149,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.config/getConfig`
 
-Method on com.webos.service.config (from on-device permission registry; parameters undocumented).
+Returns the config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.config/getConfig '{}'
@@ -156,12 +178,21 @@ It returns the requested configs which is the pairs of key-value as a JSON objec
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 4+  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
 | `configNames` | String array (required) Passes the requested configNames by the client. Can be a single config or multiple names. Syntax: "configNames": ["com.webos.surfacemanager.*"] Ex: 1.com.webos.surfacemanager.compositorGeometry (return the requested value) 2. "com.webos.surfacemanager.*".* (All the pairs of "key:value" in com.webos.surfacemanager component) |
 | `subscribe` | Boolean (optional) Subscribe for notifications . Possible values are: true - Receives notifications when the database changes. false - Notifications are not received. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `configs` | Object (optional) Returns the pairs of current "key:value" for the requested component. Ex: 1\. input for configNames:\["com.webos.surfacemanager.compositorGeometry"\] - returns all the key:value pairs under "compositorGeometry" category 2\. input for configNames:\["com.webos.surfacemanager.\*"\] -  |
+| `missingConfigs` | String array (optional) Returns a string array of configs which is not found in the database when returnValue is true. If a permission is defined at feature.json and requester has no permission to read it, the config key would be shown at missingConfigs |
+| `errorCode` | Number (int32\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation and errorCode is -1. See the " API Error Codes Reference" for more details. |
 
 ```sh
 luna-send -f -i luna://com.webos.service.config/getConfigs '{"configNames ":["com.webos.surfacemanager.compositorGeometry"]}'
@@ -183,6 +214,13 @@ Configd parses all configuration files again and regenerates the values of confi
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int32\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" for more details. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.config/reconfigure '{}
@@ -218,13 +256,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-c
 
 `luna://com.webos.service.config/setConfig`
 
-Method on com.webos.service.config (from on-device permission registry; parameters undocumented).
+Sets the config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.config/setConfig '{}'
@@ -245,11 +285,18 @@ Overrides current settings of the configs . The overridden values will be kept u
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; older webOS via alert trick; works as root; webOS 4+ (bscpylgtv: not usable via alert hack on newer webOS)  
-- **Confidence:** documented, code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
 | `configs` | Object: configs (required) JSON value with configd key full name and value pair. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int32\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.config/setConfigs '{ "configs": {"com.webos.surfacemanager.testSetConfigs": true}}'
@@ -264,13 +311,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-c
 
 `luna://com.webos.service.config/setTemporaryConfig`
 
-Method on com.webos.service.config (from on-device permission registry; parameters undocumented).
+Sets the temporary config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.config/setTemporaryConfig '{}'

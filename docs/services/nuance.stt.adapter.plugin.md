@@ -1,29 +1,33 @@
 # `nuance.stt.adapter.plugin`
 
+Nuance speech-to-text (STT) adapter plugin: loads/unloads the engine, recognizes voice, and stops voice recording. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelRecognition`](#cancelrecognition) | private |  | misc | Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`load`](#load) | private |  | misc | Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`recognizeVoice`](#recognizevoice) | private |  | input | Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`unload`](#unload) | private |  | misc | Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelRecognition`](#cancelrecognition) | private |  | misc | inferred | Cancels the recognition. |
+| [`load`](#load) | private |  | misc | inferred | Loads the nuance stt adapter plugin. |
+| [`recognizeVoice`](#recognizevoice) | private |  | input | inferred | Recognizes the voice. |
+| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | inferred | Stops the recording voice. |
+| [`unload`](#unload) | private |  | misc | inferred | Unloads the nuance stt adapter plugin. |
 
 <a id="cancelrecognition"></a>
 ## `cancelRecognition`
 
 `luna://nuance.stt.adapter.plugin/cancelRecognition`
 
-Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented).
+Cancels the recognition.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://nuance.stt.adapter.plugin/cancelRecognition '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://nuance.stt.adapter.plugin/load`
 
-Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented).
+Loads the nuance stt adapter plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://nuance.stt.adapter.plugin/load '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://nuance.stt.adapter.plugin/recognizeVoice`
 
-Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented).
+Recognizes the voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://nuance.stt.adapter.plugin/recognizeVoice '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://nuance.stt.adapter.plugin/stopRecordingVoice`
 
-Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented).
+Stops the recording voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://nuance.stt.adapter.plugin/stopRecordingVoice '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://nuance.stt.adapter.plugin/unload`
 
-Method on nuance.stt.adapter.plugin (from on-device permission registry; parameters undocumented).
+Unloads the nuance stt adapter plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://nuance.stt.adapter.plugin/unload '{}'

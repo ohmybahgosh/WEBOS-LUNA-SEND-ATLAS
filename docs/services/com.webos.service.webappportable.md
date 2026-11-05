@@ -1,36 +1,40 @@
 # `com.webos.service.webappportable`
 
+Web-app process manager: launches, pauses, closes and kills web apps, reports web-process size and creation, clears browsing data and code cache, and toggles the inspector. _(inferred from the service's methods)_
+
 12 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`clearBrowsingData`](#clearbrowsingdata) | private |  | misc | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
-| [`closeAllApps`](#closeallapps) | private |  | misc | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
-| [`closeByProcessId`](#closebyprocessid) | private |  | misc | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
-| [`discardCodeCache`](#discardcodecache) | private |  | misc | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
-| [`getWebProcessSize`](#getwebprocesssize) | private |  | misc | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
-| [`killApp`](#killapp) | private |  | misc | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
-| [`launchApp`](#launchapp) | private |  | apps | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
-| [`listRunningApps`](#listrunningapps) | private |  | misc | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
-| [`logControl`](#logcontrol) | private |  | misc | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
-| [`pauseApp`](#pauseapp) | private |  | misc | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
-| [`setInspectorEnable`](#setinspectorenable) | private |  | misc | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
-| [`webProcessCreated`](#webprocesscreated) | private |  | misc | Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`clearBrowsingData`](#clearbrowsingdata) | private |  | misc | inferred | Clears the browsing data. |
+| [`closeAllApps`](#closeallapps) | private |  | misc | inferred | Closes the all apps. |
+| [`closeByProcessId`](#closebyprocessid) | private |  | misc | inferred | Closes the by process ID. |
+| [`discardCodeCache`](#discardcodecache) | private |  | misc | inferred | Handles the discard code cache. |
+| [`getWebProcessSize`](#getwebprocesssize) | private |  | misc | inferred | Returns the web process size. |
+| [`killApp`](#killapp) | private |  | misc | inferred | Handles the kill app. |
+| [`launchApp`](#launchapp) | private |  | apps | inferred | Launches the app. |
+| [`listRunningApps`](#listrunningapps) | private |  | misc | inferred | Lists the running apps. |
+| [`logControl`](#logcontrol) | private |  | misc | inferred | Handles the log control. |
+| [`pauseApp`](#pauseapp) | private |  | misc | inferred | Pauses the app. |
+| [`setInspectorEnable`](#setinspectorenable) | private |  | misc | inferred | Sets the inspector enable. |
+| [`webProcessCreated`](#webprocesscreated) | private |  | misc | inferred | Handles the web process created. |
 
 <a id="clearbrowsingdata"></a>
 ## `clearBrowsingData`
 
 `luna://com.webos.service.webappportable/clearBrowsingData`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Clears the browsing data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/clearBrowsingData '{}'
@@ -45,13 +49,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.webappportable/closeAllApps`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Closes the all apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/closeAllApps '{}'
@@ -66,13 +72,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.webappportable/closeByProcessId`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Closes the by process ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/closeByProcessId '{}'
@@ -87,13 +95,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.webappportable/discardCodeCache`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Handles the discard code cache.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/discardCodeCache '{}'
@@ -108,13 +118,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.webappportable/getWebProcessSize`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Returns the web process size.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/getWebProcessSize '{}'
@@ -129,13 +141,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.webappportable/killApp`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Handles the kill app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/killApp '{}'
@@ -150,13 +164,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.webappportable/launchApp`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Launches the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/launchApp '{}'
@@ -171,13 +187,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.webappportable/listRunningApps`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Lists the running apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/listRunningApps '{}'
@@ -192,13 +210,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.webappportable/logControl`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Handles the log control.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/logControl '{}'
@@ -213,13 +233,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.webappportable/pauseApp`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Pauses the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/pauseApp '{}'
@@ -234,13 +256,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.webappportable/setInspectorEnable`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Sets the inspector enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/setInspectorEnable '{}'
@@ -255,13 +279,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.webappportable/webProcessCreated`
 
-Method on com.webos.service.webappportable (from on-device permission registry; parameters undocumented).
+Handles the web process created.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.webappportable/webProcessCreated '{}'

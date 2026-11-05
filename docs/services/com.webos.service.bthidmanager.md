@@ -1,40 +1,44 @@
 # `com.webos.service.bthidmanager`
 
+Bluetooth HID manager: discovers, pairs, connects and removes input devices (remotes, keyboards, gamepads) and reports paired-device and discovery status.
+
 16 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelDiscovery`](#canceldiscovery) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`createAlert`](#createalert) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`createToast`](#createtoast) | private |  | notifications | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`getCurrentDeviceInfo`](#getcurrentdeviceinfo) | private |  | bluetooth | Getter on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`getPairedDeviceLists`](#getpaireddevicelists) | private |  | bluetooth | Getter on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`getSupportedGamePadList`](#getsupportedgamepadlist) | private |  | bluetooth | Method on com.webos.service.bthidmanager (from on-device permission registry; parameters undocumented). |
-| [`requestConnect`](#requestconnect) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`requestDelete`](#requestdelete) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`requestDisconnect`](#requestdisconnect) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`requestDiscovery`](#requestdiscovery) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`startIncommingPair`](#startincommingpair) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`stopPairing`](#stoppairing) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`subscribeDevicesStatus`](#subscribedevicesstatus) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`subscribeDiscovery`](#subscribediscovery) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`tests/runTVDEVTC_23931`](#tests_runtvdevtc_23931) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
-| [`tests/subscribeTVDEVTC_23931`](#tests_subscribetvdevtc_23931) | private |  | bluetooth | Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelDiscovery`](#canceldiscovery) | private |  | bluetooth | inferred | Cancels the discovery. |
+| [`createAlert`](#createalert) | private |  | bluetooth | inferred | Creates the alert. |
+| [`createToast`](#createtoast) | private |  | notifications | inferred | Creates the toast. |
+| [`getCurrentDeviceInfo`](#getcurrentdeviceinfo) | private |  | bluetooth | inferred | Returns the current device info. |
+| [`getPairedDeviceLists`](#getpaireddevicelists) | private |  | bluetooth | inferred | Returns the paired device lists. |
+| [`getSupportedGamePadList`](#getsupportedgamepadlist) | private |  | bluetooth | inferred | Returns the supported game pad list. |
+| [`requestConnect`](#requestconnect) | private |  | bluetooth | inferred | Requests the connect. |
+| [`requestDelete`](#requestdelete) | private |  | bluetooth | inferred | Requests the delete. ⚠️ |
+| [`requestDisconnect`](#requestdisconnect) | private |  | bluetooth | inferred | Requests the disconnect. |
+| [`requestDiscovery`](#requestdiscovery) | private |  | bluetooth | inferred | Requests the discovery. |
+| [`startIncommingPair`](#startincommingpair) | private |  | bluetooth | inferred | Starts the incomming pair. |
+| [`stopPairing`](#stoppairing) | private |  | bluetooth | inferred | Stops the pairing. |
+| [`subscribeDevicesStatus`](#subscribedevicesstatus) | private |  | bluetooth | inferred | Subscribes to the devices status. |
+| [`subscribeDiscovery`](#subscribediscovery) | private |  | bluetooth | inferred | Subscribes to the discovery. |
+| [`tests/runTVDEVTC_23931`](#tests_runtvdevtc_23931) | private |  | bluetooth | inferred | Runs the TVDEVTC 23931 (tests) |
+| [`tests/subscribeTVDEVTC_23931`](#tests_subscribetvdevtc_23931) | private |  | bluetooth | inferred | Subscribes to the TVDEVTC 23931 (tests) |
 
 <a id="canceldiscovery"></a>
 ## `cancelDiscovery`
 
 `luna://com.webos.service.bthidmanager/cancelDiscovery`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Cancels the discovery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/cancelDiscovery '{}'
@@ -49,13 +53,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/createAlert`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Creates the alert.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/createAlert '{}'
@@ -70,13 +76,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/createToast`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Creates the toast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/createToast '{}'
@@ -91,13 +99,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/getCurrentDeviceInfo`
 
-Getter on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Returns the current device info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/getCurrentDeviceInfo '{}'
@@ -112,13 +122,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/getPairedDeviceLists`
 
-Getter on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Returns the paired device lists.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/getPairedDeviceLists '{}'
@@ -133,13 +145,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/getSupportedGamePadList`
 
-Method on com.webos.service.bthidmanager (from on-device permission registry; parameters undocumented).
+Returns the supported game pad list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/getSupportedGamePadList '{}'
@@ -154,13 +168,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.bthidmanager/requestConnect`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Requests the connect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/requestConnect '{}'
@@ -175,13 +191,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/requestDelete`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Requests the delete.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/requestDelete '{}'
@@ -196,13 +214,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/requestDisconnect`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Requests the disconnect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/requestDisconnect '{}'
@@ -217,13 +237,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/requestDiscovery`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Requests the discovery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/requestDiscovery '{}'
@@ -238,13 +260,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/startIncommingPair`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Starts the incomming pair.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/startIncommingPair '{}'
@@ -259,13 +283,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/stopPairing`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Stops the pairing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/stopPairing '{}'
@@ -280,13 +306,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/subscribeDevicesStatus`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Subscribes to the devices status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/subscribeDevicesStatus '{}'
@@ -301,13 +329,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/subscribeDiscovery`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Subscribes to the discovery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/subscribeDiscovery '{}'
@@ -322,13 +352,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/tests/runTVDEVTC_23931`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Runs the TVDEVTC 23931 (tests)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/tests/runTVDEVTC_23931 '{}'
@@ -343,13 +375,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bthidmanager/tests/subscribeTVDEVTC_23931`
 
-Method on com.webos.service.bthidmanager (introspected on-device; parameters undocumented).
+Subscribes to the TVDEVTC 23931 (tests)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bthidmanager/tests/subscribeTVDEVTC_23931 '{}'

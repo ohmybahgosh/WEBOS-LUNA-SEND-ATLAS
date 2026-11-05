@@ -1,65 +1,69 @@
 # `com.webos.service.gibbs.channel`
 
+Broadcast channel management: builds, edits, imports and exports the channel map, queries channels, signal level and audio language, and handles ACAS conditional-access modules. _(inferred from the service's methods)_
+
 41 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`acas/getAutomaticDisplay`](#acas_getautomaticdisplay) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`acas/getModuleId`](#acas_getmoduleid) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`acas/getModuleInfo`](#acas_getmoduleinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`acas/setEmmTimerChannel`](#acas_setemmtimerchannel) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`callSqliteMethod`](#callsqlitemethod) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`changeChannelNumber`](#changechannelnumber) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`clearChannelMap`](#clearchannelmap) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`exportChannelMap`](#exportchannelmap) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`getChannel`](#getchannel) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`getChannelGroupList`](#getchannelgrouplist) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`getChannelModeList`](#getchannelmodelist) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`getChannelTypeList`](#getchanneltypelist) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`getCurrentAudioLanguage`](#getcurrentaudiolanguage) | private |  | audio | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`getSignalLevel`](#getsignallevel) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`getSimilarChannelList`](#getsimilarchannellist) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`getSpecialServiceInfo`](#getspecialserviceinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`importChannelMap`](#importchannelmap) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`notifyChannelListChanged`](#notifychannellistchanged) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`notifyRecommendedChannel`](#notifyrecommendedchannel) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`releaseChannelBlock`](#releasechannelblock) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`releaseChannelFavoriteGroup`](#releasechannelfavoritegroup) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`releaseChannelSkip`](#releasechannelskip) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`saveChannelList`](#savechannellist) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/deleteAtscManualTuning`](#scan_deleteatscmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`scan/getAtscScanInfo`](#scan_getatscscaninfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAtscTuningStatus`](#scan_getatsctuningstatus) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAutoScanChannelType`](#scan_getautoscanchanneltype) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAutoScanChannelTypeOrder`](#scan_getautoscanchanneltypeorder) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAutoScanProgress`](#scan_getautoscanprogress) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAutoScanSourceOrderStatus`](#scan_getautoscansourceorderstatus) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAutoScanSourceSearchResult`](#scan_getautoscansourcesearchresult) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getAutoScanStatus`](#scan_getautoscanstatus) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/saveAtscManualTuning`](#scan_saveatscmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/setAtscManualTuning`](#scan_setatscmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/setAutoScanChannelType`](#scan_setautoscanchanneltype) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/skipAutoScan`](#scan_skipautoscan) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/startAutoScan`](#scan_startautoscan) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/stopAutoScan`](#scan_stopautoscan) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`setChannelBlock`](#setchannelblock) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`setChannelFavoriteGroup`](#setchannelfavoritegroup) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
-| [`setChannelSkip`](#setchannelskip) | private |  | tv-broadcast | Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`acas/getAutomaticDisplay`](#acas_getautomaticdisplay) | private |  | tv-broadcast | inferred | Returns the automatic display (acas) |
+| [`acas/getModuleId`](#acas_getmoduleid) | private |  | tv-broadcast | inferred | Returns the module ID (acas) |
+| [`acas/getModuleInfo`](#acas_getmoduleinfo) | private |  | tv-broadcast | inferred | Returns the module info (acas) |
+| [`acas/setEmmTimerChannel`](#acas_setemmtimerchannel) | private |  | tv-broadcast | inferred | Sets the emm timer channel (acas) |
+| [`callSqliteMethod`](#callsqlitemethod) | private |  | tv-broadcast | inferred | Calls the sqlite method. |
+| [`changeChannelNumber`](#changechannelnumber) | private |  | tv-broadcast | inferred | Changes the channel number. |
+| [`clearChannelMap`](#clearchannelmap) | private |  | tv-broadcast | inferred | Clears the channel map. |
+| [`exportChannelMap`](#exportchannelmap) | private |  | tv-broadcast | inferred | Exports the channel map. |
+| [`getChannel`](#getchannel) | private |  | tv-broadcast | inferred | Returns the channel. |
+| [`getChannelGroupList`](#getchannelgrouplist) | private |  | tv-broadcast | inferred | Returns the channel group list. |
+| [`getChannelModeList`](#getchannelmodelist) | private |  | tv-broadcast | inferred | Returns the channel mode list. |
+| [`getChannelTypeList`](#getchanneltypelist) | private |  | tv-broadcast | inferred | Returns the channel type list. |
+| [`getCurrentAudioLanguage`](#getcurrentaudiolanguage) | private |  | audio | inferred | Returns the current audio language. |
+| [`getSignalLevel`](#getsignallevel) | private |  | tv-broadcast | inferred | Returns the signal level. |
+| [`getSimilarChannelList`](#getsimilarchannellist) | private |  | tv-broadcast | inferred | Returns the similar channel list. |
+| [`getSpecialServiceInfo`](#getspecialserviceinfo) | private |  | tv-broadcast | inferred | Returns the special service info. |
+| [`importChannelMap`](#importchannelmap) | private |  | tv-broadcast | inferred | Imports the channel map. |
+| [`notifyChannelListChanged`](#notifychannellistchanged) | private |  | tv-broadcast | inferred | Notifies of the channel list changed. |
+| [`notifyRecommendedChannel`](#notifyrecommendedchannel) | private |  | tv-broadcast | inferred | Notifies of the recommended channel. |
+| [`releaseChannelBlock`](#releasechannelblock) | private |  | tv-broadcast | inferred | Releases the channel block. |
+| [`releaseChannelFavoriteGroup`](#releasechannelfavoritegroup) | private |  | tv-broadcast | inferred | Releases the channel favorite group. |
+| [`releaseChannelSkip`](#releasechannelskip) | private |  | tv-broadcast | inferred | Releases the channel skip. |
+| [`saveChannelList`](#savechannellist) | private |  | tv-broadcast | inferred | Saves the channel list. |
+| [`scan/deleteAtscManualTuning`](#scan_deleteatscmanualtuning) | private |  | tv-broadcast | inferred | Deletes the ATSC manual tuning (scan) ⚠️ |
+| [`scan/getAtscScanInfo`](#scan_getatscscaninfo) | private |  | tv-broadcast | inferred | Returns the ATSC scan info (scan) |
+| [`scan/getAtscTuningStatus`](#scan_getatsctuningstatus) | private |  | tv-broadcast | inferred | Returns the ATSC tuning status (scan) |
+| [`scan/getAutoScanChannelType`](#scan_getautoscanchanneltype) | private |  | tv-broadcast | inferred | Returns the auto scan channel type (scan) |
+| [`scan/getAutoScanChannelTypeOrder`](#scan_getautoscanchanneltypeorder) | private |  | tv-broadcast | inferred | Returns the auto scan channel type order (scan) |
+| [`scan/getAutoScanProgress`](#scan_getautoscanprogress) | private |  | tv-broadcast | inferred | Returns the auto scan progress (scan) |
+| [`scan/getAutoScanSourceOrderStatus`](#scan_getautoscansourceorderstatus) | private |  | tv-broadcast | inferred | Returns the auto scan source order status (scan) |
+| [`scan/getAutoScanSourceSearchResult`](#scan_getautoscansourcesearchresult) | private |  | tv-broadcast | inferred | Returns the auto scan source search result (scan) |
+| [`scan/getAutoScanStatus`](#scan_getautoscanstatus) | private |  | tv-broadcast | inferred | Returns the auto scan status (scan) |
+| [`scan/saveAtscManualTuning`](#scan_saveatscmanualtuning) | private |  | tv-broadcast | inferred | Saves the ATSC manual tuning (scan) |
+| [`scan/setAtscManualTuning`](#scan_setatscmanualtuning) | private |  | tv-broadcast | inferred | Sets the ATSC manual tuning (scan) |
+| [`scan/setAutoScanChannelType`](#scan_setautoscanchanneltype) | private |  | tv-broadcast | inferred | Sets the auto scan channel type (scan) |
+| [`scan/skipAutoScan`](#scan_skipautoscan) | private |  | tv-broadcast | inferred | Skips the auto scan (scan) |
+| [`scan/startAutoScan`](#scan_startautoscan) | private |  | tv-broadcast | inferred | Starts the auto scan (scan) |
+| [`scan/stopAutoScan`](#scan_stopautoscan) | private |  | tv-broadcast | inferred | Stops the auto scan (scan) |
+| [`setChannelBlock`](#setchannelblock) | private |  | tv-broadcast | inferred | Sets the channel block. |
+| [`setChannelFavoriteGroup`](#setchannelfavoritegroup) | private |  | tv-broadcast | inferred | Sets the channel favorite group. |
+| [`setChannelSkip`](#setchannelskip) | private |  | tv-broadcast | inferred | Sets the channel skip. |
 
 <a id="acas_getautomaticdisplay"></a>
 ## `acas/getAutomaticDisplay`
 
 `luna://com.webos.service.gibbs.channel/acas/getAutomaticDisplay`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the automatic display (acas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/acas/getAutomaticDisplay '{}'
@@ -74,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/acas/getModuleId`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the module ID (acas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/acas/getModuleId '{}'
@@ -95,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/acas/getModuleInfo`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the module info (acas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/acas/getModuleInfo '{}'
@@ -116,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/acas/setEmmTimerChannel`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Sets the emm timer channel (acas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/acas/setEmmTimerChannel '{}'
@@ -137,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/callSqliteMethod`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Calls the sqlite method.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/callSqliteMethod '{}'
@@ -158,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/changeChannelNumber`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Changes the channel number.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/changeChannelNumber '{}'
@@ -179,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/clearChannelMap`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Clears the channel map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/clearChannelMap '{}'
@@ -200,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/exportChannelMap`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Exports the channel map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/exportChannelMap '{}'
@@ -221,13 +239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/getChannel`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/getChannel '{}'
@@ -242,13 +262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/getChannelGroupList`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the channel group list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/getChannelGroupList '{}'
@@ -263,13 +285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/getChannelModeList`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the channel mode list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/getChannelModeList '{}'
@@ -284,13 +308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/getChannelTypeList`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the channel type list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/getChannelTypeList '{}'
@@ -305,13 +331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/getCurrentAudioLanguage`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the current audio language.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/getCurrentAudioLanguage '{}'
@@ -326,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/getSignalLevel`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the signal level.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/getSignalLevel '{}'
@@ -347,13 +377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/getSimilarChannelList`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the similar channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/getSimilarChannelList '{}'
@@ -368,13 +400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/getSpecialServiceInfo`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the special service info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/getSpecialServiceInfo '{}'
@@ -389,13 +423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/importChannelMap`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Imports the channel map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/importChannelMap '{}'
@@ -410,13 +446,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/notifyChannelListChanged`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Notifies of the channel list changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/notifyChannelListChanged '{}'
@@ -431,13 +469,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/notifyRecommendedChannel`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Notifies of the recommended channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/notifyRecommendedChannel '{}'
@@ -452,13 +492,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/releaseChannelBlock`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Releases the channel block.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/releaseChannelBlock '{}'
@@ -473,13 +515,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/releaseChannelFavoriteGroup`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Releases the channel favorite group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/releaseChannelFavoriteGroup '{}'
@@ -494,13 +538,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/releaseChannelSkip`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Releases the channel skip.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/releaseChannelSkip '{}'
@@ -515,13 +561,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/saveChannelList`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Saves the channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/saveChannelList '{}'
@@ -536,13 +584,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/deleteAtscManualTuning`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Deletes the ATSC manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/deleteAtscManualTuning '{}'
@@ -557,13 +607,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/getAtscScanInfo`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the ATSC scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/getAtscScanInfo '{}'
@@ -578,13 +630,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/getAtscTuningStatus`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the ATSC tuning status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/getAtscTuningStatus '{}'
@@ -599,13 +653,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/getAutoScanChannelType`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the auto scan channel type (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/getAutoScanChannelType '{}'
@@ -620,13 +676,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/getAutoScanChannelTypeOrder`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the auto scan channel type order (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/getAutoScanChannelTypeOrder '{}'
@@ -641,13 +699,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/getAutoScanProgress`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the auto scan progress (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/getAutoScanProgress '{}'
@@ -662,13 +722,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/getAutoScanSourceOrderStatus`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the auto scan source order status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/getAutoScanSourceOrderStatus '{}'
@@ -683,13 +745,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/getAutoScanSourceSearchResult`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the auto scan source search result (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/getAutoScanSourceSearchResult '{}'
@@ -704,13 +768,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/getAutoScanStatus`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Returns the auto scan status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/getAutoScanStatus '{}'
@@ -725,13 +791,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/saveAtscManualTuning`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Saves the ATSC manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/saveAtscManualTuning '{}'
@@ -746,13 +814,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/setAtscManualTuning`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Sets the ATSC manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/setAtscManualTuning '{}'
@@ -767,13 +837,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/setAutoScanChannelType`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Sets the auto scan channel type (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/setAutoScanChannelType '{}'
@@ -788,13 +860,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/skipAutoScan`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Skips the auto scan (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/skipAutoScan '{}'
@@ -809,13 +883,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/startAutoScan`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Starts the auto scan (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/startAutoScan '{}'
@@ -830,13 +906,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/scan/stopAutoScan`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Stops the auto scan (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/scan/stopAutoScan '{}'
@@ -851,13 +929,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/setChannelBlock`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Sets the channel block.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/setChannelBlock '{}'
@@ -872,13 +952,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/setChannelFavoriteGroup`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Sets the channel favorite group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/setChannelFavoriteGroup '{}'
@@ -893,13 +975,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.channel/setChannelSkip`
 
-Method on com.webos.service.gibbs.channel (from on-device permission registry; parameters undocumented).
+Sets the channel skip.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.channel/setChannelSkip '{}'

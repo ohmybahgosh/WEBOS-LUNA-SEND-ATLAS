@@ -1,53 +1,55 @@
 # `com.webos.service.pdm`
 
+Physical Device Manager: detects and manages attached USB and storage devices, listing attached devices, ejecting, formatting, and running file-system checks (fsck).
+
 42 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`audioDeviceList`](#audiodevicelist) | unknown |  | storage | List of audio device(s) connected. |
-| [`checkUSBPort`](#checkusbport) | private |  | storage | Method on com.webos.service.pdm (introspected on-device; parameters undocumented). |
-| [`dev/getAttachedDeviceList`](#dev_getattacheddevicelist) | unknown |  | storage | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.query); name only |
-| [`dev/setDeviceForSession`](#dev_setdeviceforsession) | private |  | storage | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.management); name only |
-| [`deviceListInfo`](#devicelistinfo) | unknown |  | storage | An array containing information about the currently connected device(s). |
-| [`deviceStatusList`](#devicestatuslist) | unknown |  | storage | List of the storage and non-storage devices connected and their statuses. |
-| [`driveStatusList`](#drivestatuslist) | unknown |  | storage | List of the drives in the connected storage devices and their statuses. |
-| [`eject`](#eject) | public |  | storage | Unmounts all drives of the storage device for safe removal. Prerequisite: The storage device must be connected. |
-| [`format`](#format) | public |  | storage | Formats the connected drive. |
-| [`fsck`](#fsck) | public |  | storage | Checks the file system by performing fsck (File System Check) of the corresponding connected drive. Note : On connecting a USB device with a |
-| [`fsckAlert`](#fsckalert) | private |  | storage | Method on com.webos.service.pdm (introspected on-device; parameters undocumented). |
-| [`getAttachedAllDeviceList`](#getattachedalldevicelist) | unknown |  | storage | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.query); name only |
-| [`getAttachedDeviceList`](#getattacheddevicelist) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
-| [`getAttachedDeviceStatus`](#getattacheddevicestatus) | public | yes | storage | Gets the status information of connected device(s). |
-| [`getAttachedNonStorageDeviceList`](#getattachednonstoragedevicelist) | public | yes | storage | Gets the status information of connected non-storage device(s). |
-| [`getAttachedStorageDeviceList`](#getattachedstoragedevicelist) | public | yes | storage | Gets status information of connected storage device(s). |
-| [`getBuiltInUnknownCount`](#getbuiltinunknowncount) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
-| [`getExample`](#getexample) | public |  | storage | Provides debug logs with detailed information of all connected storage and non-storage device list. |
-| [`getIoPerformance`](#getioperformance) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
-| [`getSpaceInfo`](#getspaceinfo) | public |  | storage | Gets the space information of the connected drive. Note : The drive must be mounted. |
-| [`getTouchPanelDisconnectCount`](#gettouchpaneldisconnectcount) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
-| [`getTouchRoute`](#gettouchroute) | private |  | storage | Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented). |
-| [`getUsbPowerControl`](#getusbpowercontrol) | private |  | power | Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented). |
-| [`getUSBResumeDone`](#getusbresumedone) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
-| [`getUSBSwitch`](#getusbswitch) | private |  | storage | Getter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
-| [`isWritableDrive`](#iswritabledrive) | public |  | storage | Checks the file system attribute of the drive and returns whether it is writable. |
-| [`mountandFullFsck`](#mountandfullfsck) | public |  | storage | Mounts the device without performing Fsck. Alternatively, it can be configured to perform Fsck and then mount the device. |
-| [`netDeviceList`](#netdevicelist) | unknown |  | storage | List of Communication Device Class (CDC) device(s) connected. |
-| [`nonStorageDeviceList`](#nonstoragedevicelist) | unknown |  | storage | List of information about the non-storage devices that are currently connected. |
-| [`pdmStatistics`](#pdmstatistics) | private |  | storage | Method on com.webos.service.pdm (introspected on-device; parameters undocumented). |
-| [`resetVbus`](#resetvbus) | private |  | storage | Method on com.webos.service.pdm (introspected on-device; parameters undocumented). ⚠️ |
-| [`setTouchRoute`](#settouchroute) | private |  | storage | Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented). |
-| [`setUsbPowerControl`](#setusbpowercontrol) | private |  | power | Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented). |
-| [`setUSBSwitch`](#setusbswitch) | private |  | storage | Setter on com.webos.service.pdm (introspected on-device; parameters undocumented). |
-| [`setVolumeLabel`](#setvolumelabel) | public |  | storage | Sets the volume label of the drive. It is supported only when file system type is FAT. |
-| [`spaceInfo`](#spaceinfo) | unknown |  | storage | Information about the drive space. |
-| [`storageDeviceList`](#storagedevicelist) | unknown |  | storage | List of information about the storage devices that are currently connected. |
-| [`storageDriveList`](#storagedrivelist) | unknown |  | storage | List of the drives in storage devices connected. |
-| [`subDeviceList`](#subdevicelist) | unknown |  | storage | Contains info of sub-devices Note: Sub-devices are multiple camera or sound devices inside single camera or sound device. |
-| [`umountAllDrive`](#umountalldrive) | public |  | storage | Unmounts all drives. |
-| [`videoDeviceList`](#videodevicelist) | unknown |  | storage | List of video device(s) connected. |
-| [`wakeupHdd`](#wakeuphdd) | private |  | storage | Method on com.webos.service.pdm (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`audioDeviceList`](#audiodevicelist) | unknown |  | storage | documented | List of audio device(s) connected. |
+| [`checkUSBPort`](#checkusbport) | private |  | storage | inferred | Checks the USB port. |
+| [`dev/getAttachedDeviceList`](#dev_getattacheddevicelist) | unknown |  | storage | documented | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.query); name only |
+| [`dev/setDeviceForSession`](#dev_setdeviceforsession) | private |  | storage | documented | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.management); name only |
+| [`deviceListInfo`](#devicelistinfo) | unknown |  | storage | documented | An array containing information about the currently connected device(s). |
+| [`deviceStatusList`](#devicestatuslist) | unknown |  | storage | documented | List of the storage and non-storage devices connected and their statuses. |
+| [`driveStatusList`](#drivestatuslist) | unknown |  | storage | documented | List of the drives in the connected storage devices and their statuses. |
+| [`eject`](#eject) | public |  | storage | documented | Unmounts all drives of the storage device for safe removal. Prerequisite: The storage device must be connected. |
+| [`format`](#format) | public |  | storage | documented | Formats the connected drive. |
+| [`fsck`](#fsck) | public |  | storage | documented | Checks the file system by performing fsck (File System Check) of the corresponding connected drive. Note : On connecting a USB device with a |
+| [`fsckAlert`](#fsckalert) | private |  | storage | inferred | Handles the fsck alert. |
+| [`getAttachedAllDeviceList`](#getattachedalldevicelist) | unknown |  | storage | documented | Registered in webOS OSE sysbus api.json (ACG group physicaldevice.query); name only |
+| [`getAttachedDeviceList`](#getattacheddevicelist) | private |  | storage | inferred | Returns the attached device list. |
+| [`getAttachedDeviceStatus`](#getattacheddevicestatus) | public | yes | storage | documented | Gets the status information of connected device(s). |
+| [`getAttachedNonStorageDeviceList`](#getattachednonstoragedevicelist) | public | yes | storage | documented | Gets the status information of connected non-storage device(s). |
+| [`getAttachedStorageDeviceList`](#getattachedstoragedevicelist) | public | yes | storage | documented | Gets status information of connected storage device(s). |
+| [`getBuiltInUnknownCount`](#getbuiltinunknowncount) | private |  | storage | inferred | Returns the built in unknown count. |
+| [`getExample`](#getexample) | public |  | storage | documented | Provides debug logs with detailed information of all connected storage and non-storage device list. |
+| [`getIoPerformance`](#getioperformance) | private |  | storage | inferred | Returns the io performance. |
+| [`getSpaceInfo`](#getspaceinfo) | public |  | storage | documented | Gets the space information of the connected drive. Note : The drive must be mounted. |
+| [`getTouchPanelDisconnectCount`](#gettouchpaneldisconnectcount) | private |  | storage | inferred | Returns the touch panel disconnect count. |
+| [`getTouchRoute`](#gettouchroute) | private |  | storage | inferred | Returns the touch route. |
+| [`getUsbPowerControl`](#getusbpowercontrol) | private |  | power | inferred | Returns the USB power control. |
+| [`getUSBResumeDone`](#getusbresumedone) | private |  | storage | inferred | Returns the USB resume done. |
+| [`getUSBSwitch`](#getusbswitch) | private |  | storage | inferred | Returns the USB switch. |
+| [`isWritableDrive`](#iswritabledrive) | public |  | storage | documented | Checks the file system attribute of the drive and returns whether it is writable. |
+| [`mountandFullFsck`](#mountandfullfsck) | public |  | storage | documented | Mounts the device without performing Fsck. Alternatively, it can be configured to perform Fsck and then mount the device. |
+| [`netDeviceList`](#netdevicelist) | unknown |  | storage | documented | List of Communication Device Class (CDC) device(s) connected. |
+| [`nonStorageDeviceList`](#nonstoragedevicelist) | unknown |  | storage | documented | List of information about the non-storage devices that are currently connected. |
+| [`pdmStatistics`](#pdmstatistics) | private |  | storage | inferred | Handles the pdm statistics. |
+| [`resetVbus`](#resetvbus) | private |  | storage | inferred | Resets the vbus. ⚠️ |
+| [`setTouchRoute`](#settouchroute) | private |  | storage | inferred | Sets the touch route. |
+| [`setUsbPowerControl`](#setusbpowercontrol) | private |  | power | inferred | Sets the USB power control. |
+| [`setUSBSwitch`](#setusbswitch) | private |  | storage | inferred | Sets the USB switch. |
+| [`setVolumeLabel`](#setvolumelabel) | public |  | storage | documented | Sets the volume label of the drive. It is supported only when file system type is FAT. |
+| [`spaceInfo`](#spaceinfo) | unknown |  | storage | documented | Information about the drive space. |
+| [`storageDeviceList`](#storagedevicelist) | unknown |  | storage | documented | List of information about the storage devices that are currently connected. |
+| [`storageDriveList`](#storagedrivelist) | unknown |  | storage | documented | List of the drives in storage devices connected. |
+| [`subDeviceList`](#subdevicelist) | unknown |  | storage | documented | Contains info of sub-devices Note: Sub-devices are multiple camera or sound devices inside single camera or sound device. |
+| [`umountAllDrive`](#umountalldrive) | public |  | storage | documented | Unmounts all drives. |
+| [`videoDeviceList`](#videodevicelist) | unknown |  | storage | documented | List of video device(s) connected. |
+| [`wakeupHdd`](#wakeuphdd) | private |  | storage | inferred | Handles the wakeup hdd. |
 
 <a id="audiodevicelist"></a>
 ## `audioDeviceList`
@@ -75,13 +77,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-p
 
 `luna://com.webos.service.pdm/checkUSBPort`
 
-Method on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Checks the USB port.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/checkUSBPort '{}'
@@ -102,7 +106,7 @@ Registered in webOS OSE sysbus api.json (ACG group physicaldevice.query); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/dev/getAttachedDeviceList '{}'
@@ -123,7 +127,7 @@ Registered in webOS OSE sysbus api.json (ACG group physicaldevice.management); n
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/dev/setDeviceForSession '{}'
@@ -213,6 +217,13 @@ Unmounts all drives of the storage device for safe removal. Prerequisite: The st
 |---|---|
 | `deviceNum` | Number (required) Indicates the unique identifier of the device. It is auto-assigned when the device is connected. Note : Use the getAttachedDeviceStatus() method to get a list of devices and their device numbers. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/eject '{"deviceNum":2}
 ```
@@ -240,6 +251,13 @@ Formats the connected drive.
 | `fsType` | String (optional) Indicates the file system type. Possible values are: fat ntfs Default: fat |
 | `volumeLabel` | String (optional) Indicates the volume label for the drive. Default: volumeLabel not set |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/format '{ "driveName":"sda", "fsType":"fat", "volumeLabel":"test" }
 ```
@@ -265,6 +283,13 @@ Checks the file system by performing fsck (File System Check) of the correspondi
 |---|---|
 | `driveName` | String (required) Indicates the information that can identify the drive. Example: sda1 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/fsck '{"driveName":"sda"}
 ```
@@ -278,13 +303,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-p
 
 `luna://com.webos.service.pdm/fsckAlert`
 
-Method on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Handles the fsck alert.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/fsckAlert '{}'
@@ -305,7 +332,7 @@ Registered in webOS OSE sysbus api.json (ACG group physicaldevice.query); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getAttachedAllDeviceList '{}'
@@ -320,13 +347,15 @@ Sources: [1](https://github.com/webosose/com.webos.service.pdm/blob/master/files
 
 `luna://com.webos.service.pdm/getAttachedDeviceList`
 
-Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Returns the attached device list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getAttachedDeviceList '{}'
@@ -352,6 +381,14 @@ Gets the status information of connected device(s).
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (required) Subscribe to get notified when the device status information changes. Possible values are: true - Subscribe for changes. false - Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+| `deviceStatusList` | Object array: deviceStatusList (optional) An array containing the status information of the device. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getAttachedDeviceStatus '{ "subscribe" : true}
@@ -380,6 +417,18 @@ Gets the status information of connected non-storage device(s).
 | `category` | String (optional) Category of non-storage device. Possible values are: Audio Video Net |
 | `groupSubDevices` | Boolean (optional) Indicates grouping of sub devices. Possible values are: true - Groups sub-devices into subDeviceList which is part of videoDeviceList or audioDeviceList. false (default) - Gives audioDeviceList without subDeviceList and videoDeviceList (backward compatible). |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+| `powerStatus` | String (optional) Power-on status of the device. Note: This value always defaults to " normal". |
+| `nonStorageDeviceList` | Object array: nonStorageDeviceList (optional) An array containing the information about the non-storage device that is currently connected. Note: Returned only when " category" is NOT provided. |
+| `videoDeviceList` | Object array: videoDeviceList (optional) An array of video device lists connected. Note: Returned only when " category" is " Video". |
+| `audioDeviceList` | Object array: audioDeviceList (optional) An array of audio device list connected. Note: Returned only when " category" is " Audio". |
+| `netDeviceList` | Object array: netDeviceList (optional) An array of net device list connected. Note: Returned only when " category" is " Net". |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getAttachedNonStorageDeviceList '{ "subscribe" : true }
 ```
@@ -405,6 +454,15 @@ Gets status information of connected storage device(s).
 |---|---|
 | `subscribe` | Boolean (required) Indicates if subscribed to get the notifications. Possible values are: true : Subscribe for notifications. false : Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+| `powerStatus` | String (optional) Indicates the power-on status of the device. Note: This value always defaults to " normal". |
+| `storageDeviceList` | Object array: storageDeviceList (optional) Indicates an array containing information about the currently connected storage device(s). |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getAttachedStorageDeviceList '{ "subscribe" : true }
 ```
@@ -418,13 +476,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-p
 
 `luna://com.webos.service.pdm/getBuiltInUnknownCount`
 
-Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Returns the built in unknown count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getBuiltInUnknownCount '{}'
@@ -460,13 +520,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-p
 
 `luna://com.webos.service.pdm/getIoPerformance`
 
-Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Returns the io performance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getIoPerformance '{}'
@@ -494,6 +556,14 @@ Gets the space information of the connected drive. Note : The drive must be moun
 | `driveName` | String (required) Information that can identify the drive (e.g. sda1) |
 | `directCheck` | Boolean (optional) Indicates if PDM needs to newly measure the drive space information at the time of API call. Possible values are: true - Newly measures the information false - Returns periodically measured information |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+| `spaceInfo` | Object: spaceInfo (optional) Information about the drive space. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getSpaceInfo '{ "driveName" : "sda" , "directCheck" : true }
 ```
@@ -507,13 +577,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-p
 
 `luna://com.webos.service.pdm/getTouchPanelDisconnectCount`
 
-Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Returns the touch panel disconnect count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getTouchPanelDisconnectCount '{}'
@@ -528,13 +600,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pdm/getTouchRoute`
 
-Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented).
+Returns the touch route.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getTouchRoute '{}'
@@ -549,13 +623,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pdm/getUsbPowerControl`
 
-Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented).
+Returns the USB power control.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getUsbPowerControl '{}'
@@ -570,13 +646,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pdm/getUSBResumeDone`
 
-Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Returns the USB resume done.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getUSBResumeDone '{}'
@@ -591,13 +669,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pdm/getUSBSwitch`
 
-Getter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Returns the USB switch.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/getUSBSwitch '{}'
@@ -624,6 +704,14 @@ Checks the file system attribute of the drive and returns whether it is writable
 |---|---|
 | `driveName` | String (required) Information that can identify the drive (e.g. sda1) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+| `isWritable` | Boolean (optional) Indicates if data can be written on the drive. Possible values are: - true- Writable drive - false- Cannot be written |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/isWritableDrive '{ "driveName" : "sda" }
 ```
@@ -649,6 +737,13 @@ Mounts the device without performing Fsck. Alternatively, it can be configured t
 |---|---|
 | `mountName` | String (required) USB device name (If the device detected by /dev/sda, the device name is sda). |
 | `needFsck` | Boolean (optional) Indicates whether Fsck is needed. Possible values are: true - Perform Fsck and then mount the device false (default) - Mount the device directly without performing Fsck. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/mountandFullFsck'{ "mountName" : "sda"}
@@ -705,13 +800,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-p
 
 `luna://com.webos.service.pdm/pdmStatistics`
 
-Method on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Handles the pdm statistics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/pdmStatistics '{}'
@@ -726,13 +823,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pdm/resetVbus`
 
-Method on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Resets the vbus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/resetVbus '{}'
@@ -747,13 +846,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pdm/setTouchRoute`
 
-Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented).
+Sets the touch route.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/setTouchRoute '{}'
@@ -768,13 +869,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pdm/setUsbPowerControl`
 
-Method on com.webos.service.pdm (from on-device permission registry; parameters undocumented).
+Sets the USB power control.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/setUsbPowerControl '{}'
@@ -789,13 +892,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pdm/setUSBSwitch`
 
-Setter on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Sets the USB switch.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/setUSBSwitch '{}'
@@ -822,6 +927,13 @@ Sets the volume label of the drive. It is supported only when file system type i
 |---|---|
 | `driveName` | String (required) Information that can identify the drive (e.g. sda1) |
 | `volumeLabel` | String (required) Volume label for the drive. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/setVolumeLabel '{ "driveName" : "sda", "volumeLabel" : "webos" }
@@ -928,6 +1040,13 @@ Unmounts all drives.
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/umountAllDrive '{}
 ```
@@ -962,13 +1081,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-p
 
 `luna://com.webos.service.pdm/wakeupHdd`
 
-Method on com.webos.service.pdm (introspected on-device; parameters undocumented).
+Handles the wakeup hdd.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pdm/wakeupHdd '{}'

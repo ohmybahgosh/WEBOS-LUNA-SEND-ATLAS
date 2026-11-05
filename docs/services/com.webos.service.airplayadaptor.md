@@ -1,33 +1,37 @@
 # `com.webos.service.airplayadaptor`
 
+AirPlay adaptor: starts, stops, restarts and reports the status of AirPlay, and handles MFi authentication keys. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`airplayRestart`](#airplayrestart) | private |  | media | Method on com.webos.service.airplayadaptor (from on-device permission registry; parameters undocumented). |
-| [`airplayStart`](#airplaystart) | public |  | media | Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented). |
-| [`airplayStatus`](#airplaystatus) | public |  | media | Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented). |
-| [`airplayStop`](#airplaystop) | public |  | media | Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented). |
-| [`mfiKeyCheck`](#mfikeycheck) | private |  | media | Method on com.webos.service.airplayadaptor (from on-device permission registry; parameters undocumented). |
-| [`mfiKeyLength`](#mfikeylength) | private |  | media | Method on com.webos.service.airplayadaptor (from on-device permission registry; parameters undocumented). |
-| [`mfiKeyWrite`](#mfikeywrite) | private |  | media | Method on com.webos.service.airplayadaptor (from on-device permission registry; parameters undocumented). |
-| [`test`](#test) | public |  | media | Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented). |
-| [`updateApp`](#updateapp) | public |  | update | Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`airplayRestart`](#airplayrestart) | private |  | media | inferred | Handles the airplay restart. |
+| [`airplayStart`](#airplaystart) | public |  | media | inferred | Handles the airplay start. |
+| [`airplayStatus`](#airplaystatus) | public |  | media | inferred | Handles the airplay status. |
+| [`airplayStop`](#airplaystop) | public |  | media | inferred | Handles the airplay stop. |
+| [`mfiKeyCheck`](#mfikeycheck) | private |  | media | inferred | Handles the mfi key check. |
+| [`mfiKeyLength`](#mfikeylength) | private |  | media | inferred | Handles the mfi key length. |
+| [`mfiKeyWrite`](#mfikeywrite) | private |  | media | inferred | Handles the mfi key write. |
+| [`test`](#test) | public |  | media | inferred | Tests the airplayadaptor. |
+| [`updateApp`](#updateapp) | public |  | update | inferred | Updates the app. |
 
 <a id="airplayrestart"></a>
 ## `airplayRestart`
 
 `luna://com.webos.service.airplayadaptor/airplayRestart`
 
-Method on com.webos.service.airplayadaptor (from on-device permission registry; parameters undocumented).
+Handles the airplay restart.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airplayadaptor/airplayRestart '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.airplayadaptor/airplayStart`
 
-Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented).
+Handles the airplay start.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airplayadaptor/airplayStart '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.airplayadaptor/airplayStatus`
 
-Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented).
+Handles the airplay status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airplayadaptor/airplayStatus '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.airplayadaptor/airplayStop`
 
-Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented).
+Handles the airplay stop.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airplayadaptor/airplayStop '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.airplayadaptor/mfiKeyCheck`
 
-Method on com.webos.service.airplayadaptor (from on-device permission registry; parameters undocumented).
+Handles the mfi key check.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airplayadaptor/mfiKeyCheck '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.airplayadaptor/mfiKeyLength`
 
-Method on com.webos.service.airplayadaptor (from on-device permission registry; parameters undocumented).
+Handles the mfi key length.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airplayadaptor/mfiKeyLength '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.airplayadaptor/mfiKeyWrite`
 
-Method on com.webos.service.airplayadaptor (from on-device permission registry; parameters undocumented).
+Handles the mfi key write.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airplayadaptor/mfiKeyWrite '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.airplayadaptor/test`
 
-Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented).
+Tests the airplayadaptor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airplayadaptor/test '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.airplayadaptor/updateApp`
 
-Method on com.webos.service.airplayadaptor (introspected on-device; parameters undocumented).
+Updates the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airplayadaptor/updateApp '{}'

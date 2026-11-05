@@ -1,27 +1,29 @@
 # `com.webos.service.uwb`
 
+Ultra-wideband (UWB) service: opens and closes ranging sessions, starts discovery and ranging, and reports ranging data and UWB service state. _(inferred from the service's methods)_
+
 16 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`closeSession`](#closesession) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`getPairedSessions`](#getpairedsessions) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`getRangingInfo`](#getranginginfo) | public | yes | connection | Retrieves ranging info for a session. Subscribe to this API to get a continuous notification of the ranging data. |
-| [`getStatus`](#getstatus) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`getUwbServiceState`](#getuwbservicestate) | public | yes | connection | Retrieves the state of the UWB service. If subscribe is set to true, the method sends an update if the values change. |
-| [`getUwbSpecificInfo`](#getuwbspecificinfo) | public | yes | connection | Provides the capabilities and features of the device (supported UWB protocols and parameters). |
-| [`openSession`](#opensession) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`rangingDataCommon`](#rangingdatacommon) | unknown |  | connection | Ranging information for common standard protocol. |
-| [`rangingDataLgeAirCond`](#rangingdatalgeaircond) | unknown |  | connection | Ranging information for LGE Air Conditioner product. |
-| [`rangingInfo`](#ranginginfo) | unknown |  | connection | Ranging information received from UWB module. |
-| [`receivedCommonData`](#receivedcommondata) | unknown |  | connection | Provide a ranging information from the UWB module. |
-| [`setState`](#setstate) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`startDiscovery`](#startdiscovery) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`startRanging`](#startranging) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`stopDiscovery`](#stopdiscovery) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
-| [`stopRanging`](#stopranging) | unknown |  | connection | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`closeSession`](#closesession) | unknown |  | connection | documented | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`getPairedSessions`](#getpairedsessions) | unknown |  | connection | documented | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`getRangingInfo`](#getranginginfo) | public | yes | connection | documented | Retrieves ranging info for a session. Subscribe to this API to get a continuous notification of the ranging data. |
+| [`getStatus`](#getstatus) | unknown |  | connection | documented | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`getUwbServiceState`](#getuwbservicestate) | public | yes | connection | documented | Retrieves the state of the UWB service. If subscribe is set to true, the method sends an update if the values change. |
+| [`getUwbSpecificInfo`](#getuwbspecificinfo) | public | yes | connection | documented | Provides the capabilities and features of the device (supported UWB protocols and parameters). |
+| [`openSession`](#opensession) | unknown |  | connection | documented | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`rangingDataCommon`](#rangingdatacommon) | unknown |  | connection | documented | Ranging information for common standard protocol. |
+| [`rangingDataLgeAirCond`](#rangingdatalgeaircond) | unknown |  | connection | documented | Ranging information for LGE Air Conditioner product. |
+| [`rangingInfo`](#ranginginfo) | unknown |  | connection | documented | Ranging information received from UWB module. |
+| [`receivedCommonData`](#receivedcommondata) | unknown |  | connection | documented | Provide a ranging information from the UWB module. |
+| [`setState`](#setstate) | unknown |  | connection | documented | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`startDiscovery`](#startdiscovery) | unknown |  | connection | documented | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`startRanging`](#startranging) | unknown |  | connection | documented | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`stopDiscovery`](#stopdiscovery) | unknown |  | connection | documented | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
+| [`stopRanging`](#stopranging) | unknown |  | connection | documented | Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only |
 
 <a id="closesession"></a>
 ## `closeSession`
@@ -34,7 +36,7 @@ Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.uwb/closeSession '{}'
@@ -55,7 +57,7 @@ Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.uwb/getPairedSessions '{}'
@@ -82,6 +84,15 @@ Retrieves ranging info for a session. Subscribe to this API to get a continuous 
 |---|---|
 | `subscribe` | Boolean (required) Subscribe for notifications on changes. Possible values are: true: Subscribed. false: Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `sessionId` | Number (optional) The session ID to which the ranging data belongs. |
+| `rangingInfo` | Object: rangingInfo (optional) Ranging information received from the UWB module. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'API Error Codes Reference' section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.uwb/getRangingInfo '{}
 ```
@@ -101,7 +112,7 @@ Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.uwb/getStatus '{}'
@@ -128,6 +139,15 @@ Retrieves the state of the UWB service. If subscribe is set to true, the method 
 |---|---|
 | `subscribe` | Boolean (required) Subscribe for notifications on changes in the values. Possible values are: true : Subscribed. false : Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `serviceAvailability` | Boolean (required) Indicates the state of UWB service. Possible values are: - true: Service is available. - false: Service is not available |
+| `stateChangeReason` | String (optional) Indicates the reason why the state has been changed. Possible values are: - Unknown: Changed for an unknown reason. - SessionStarted: Changed because a session started. - AllSessionsClosed: Changed because all sessions were closed. - SystemPolicy: Changed because of a device system |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'API Error Codes Reference' section for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.uwb/getUwbServiceState '{}
 ```
@@ -153,6 +173,16 @@ Provides the capabilities and features of the device (supported UWB protocols an
 |---|---|
 | `subscribe` | Boolean (required) Subscribe for notifications on changes. Possible values are: true: Subscribed. false: Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `modState` | Boolean (optional) Indicates the state of UWB module. Possible values are: - true: Module is normal. - false: Module is not normally initiated. |
+| `fwVersion` | String (optional) The firmware version of UWB module. |
+| `fwCrc` | String (optional) The firmware CRC of UWB module. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'API Error Codes Reference' section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.uwb/getUwbSpecificInfo '{}
 ```
@@ -172,7 +202,7 @@ Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.uwb/openSession '{}'
@@ -277,7 +307,7 @@ Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.uwb/setState '{}'
@@ -298,7 +328,7 @@ Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.uwb/startDiscovery '{}'
@@ -319,7 +349,7 @@ Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.uwb/startRanging '{}'
@@ -340,7 +370,7 @@ Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.uwb/stopDiscovery '{}'
@@ -361,7 +391,7 @@ Registered in webOS OSE sysbus api.json (ACG group uwb.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.uwb/stopRanging '{}'

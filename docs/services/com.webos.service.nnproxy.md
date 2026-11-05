@@ -1,27 +1,31 @@
 # `com.webos.service.nnproxy`
 
+Neural-network proxy for picture processing; exposes get/set and debug for picture-related NN data. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`picture/debug`](#picture_debug) | private |  | misc | Method on com.webos.service.nnproxy (introspected on-device; parameters undocumented). |
-| [`picture/get`](#picture_get) | private |  | misc | Getter on com.webos.service.nnproxy (introspected on-device; parameters undocumented). |
-| [`picture/set`](#picture_set) | private |  | misc | Setter on com.webos.service.nnproxy (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`picture/debug`](#picture_debug) | private |  | misc | inferred | Handles the debug (picture) |
+| [`picture/get`](#picture_get) | private |  | misc | inferred | Returns the nnproxy (picture) |
+| [`picture/set`](#picture_set) | private |  | misc | inferred | Sets the nnproxy (picture) |
 
 <a id="picture_debug"></a>
 ## `picture/debug`
 
 `luna://com.webos.service.nnproxy/picture/debug`
 
-Method on com.webos.service.nnproxy (introspected on-device; parameters undocumented).
+Handles the debug (picture)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nnproxy/picture/debug '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nnproxy/picture/get`
 
-Getter on com.webos.service.nnproxy (introspected on-device; parameters undocumented).
+Returns the nnproxy (picture)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nnproxy/picture/get '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nnproxy/picture/set`
 
-Setter on com.webos.service.nnproxy (introspected on-device; parameters undocumented).
+Sets the nnproxy (picture)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nnproxy/picture/set '{}'

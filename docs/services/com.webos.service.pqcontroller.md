@@ -1,48 +1,52 @@
 # `com.webos.service.pqcontroller`
 
+Picture-quality (PQ) controller: adjusts white balance and N-point white balance, luminance, AI picture and external PQ data, and resets picture settings.
+
 24 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getExternalPqData`](#getexternalpqdata) | public |  | picture | Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`getEyeqSensorData`](#geteyeqsensordata) | public |  | picture | Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`getInfo`](#getinfo) | private |  | picture | Reads PQ info, e.g. ambient lux |
-| [`getNpointWB`](#getnpointwb) | public |  | picture | Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`getProperties`](#getproperties) | public |  | picture | Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`getPwmInitDoneStatus`](#getpwminitdonestatus) | private |  | picture | Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`getWhiteBalance`](#getwhitebalance) | public |  | picture | Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`reduceLuminance`](#reduceluminance) | public |  | picture | Method on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`resetPictureSettings`](#resetpicturesettings) | public |  | picture | Method on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). ⚠️ |
-| [`resetWhiteBalance`](#resetwhitebalance) | public |  | picture | Method on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). ⚠️ |
-| [`set360VrData`](#set360vrdata) | public |  | picture | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`setAI`](#setai) | public |  | picture | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`setDebuggingData`](#setdebuggingdata) | public |  | picture | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`setExternalEyeSensor`](#setexternaleyesensor) | public |  | picture | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`setExternalPqData`](#setexternalpqdata) | public |  | picture | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`setFormatNotificationFlag`](#setformatnotificationflag) | public |  | notifications | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). ⚠️ |
-| [`setNotificationResult`](#setnotificationresult) | public |  | notifications | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`setNpointWB`](#setnpointwb) | public |  | picture | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`setOCPAlertResult`](#setocpalertresult) | private |  | picture | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`setParameter`](#setparameter) | public |  | picture | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`setPQ`](#setpq) | public |  | picture | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`setProperties`](#setproperties) | private |  | picture | Set picture-quality controller properties; used to trigger USB Dolby Vision config Update/Restore |
-| [`setWbPattern`](#setwbpattern) | public |  | picture | Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented). |
-| [`setWhiteBalance`](#setwhitebalance) | private |  | picture | Set white balance in Ez-Adjust service menu ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getExternalPqData`](#getexternalpqdata) | public |  | picture | inferred | Returns the external PQ data. |
+| [`getEyeqSensorData`](#geteyeqsensordata) | public |  | picture | inferred | Returns the eyeq sensor data. |
+| [`getInfo`](#getinfo) | private |  | picture | documented | Reads PQ info, e.g. ambient lux |
+| [`getNpointWB`](#getnpointwb) | public |  | picture | inferred | Returns the npoint WB. |
+| [`getProperties`](#getproperties) | public |  | picture | inferred | Returns the properties. |
+| [`getPwmInitDoneStatus`](#getpwminitdonestatus) | private |  | picture | inferred | Returns the pwm init done status. |
+| [`getWhiteBalance`](#getwhitebalance) | public |  | picture | inferred | Returns the white balance. |
+| [`reduceLuminance`](#reduceluminance) | public |  | picture | inferred | Handles the reduce luminance. |
+| [`resetPictureSettings`](#resetpicturesettings) | public |  | picture | inferred | Resets the picture settings. ⚠️ |
+| [`resetWhiteBalance`](#resetwhitebalance) | public |  | picture | inferred | Resets the white balance. ⚠️ |
+| [`set360VrData`](#set360vrdata) | public |  | picture | inferred | Sets the 360 vr data. |
+| [`setAI`](#setai) | public |  | picture | inferred | Sets the AI. |
+| [`setDebuggingData`](#setdebuggingdata) | public |  | picture | inferred | Sets the debugging data. |
+| [`setExternalEyeSensor`](#setexternaleyesensor) | public |  | picture | inferred | Sets the external eye sensor. |
+| [`setExternalPqData`](#setexternalpqdata) | public |  | picture | inferred | Sets the external PQ data. |
+| [`setFormatNotificationFlag`](#setformatnotificationflag) | public |  | notifications | inferred | Sets the format notification flag. ⚠️ |
+| [`setNotificationResult`](#setnotificationresult) | public |  | notifications | inferred | Sets the notification result. |
+| [`setNpointWB`](#setnpointwb) | public |  | picture | inferred | Sets the npoint WB. |
+| [`setOCPAlertResult`](#setocpalertresult) | private |  | picture | inferred | Sets the OCP alert result. |
+| [`setParameter`](#setparameter) | public |  | picture | inferred | Sets the parameter. |
+| [`setPQ`](#setpq) | public |  | picture | inferred | Sets the PQ. |
+| [`setProperties`](#setproperties) | private |  | picture | documented | Set picture-quality controller properties; used to trigger USB Dolby Vision config Update/Restore |
+| [`setWbPattern`](#setwbpattern) | public |  | picture | inferred | Sets the wb pattern. |
+| [`setWhiteBalance`](#setwhitebalance) | private |  | picture | documented | Set white balance in Ez-Adjust service menu ⚠️ |
 
 <a id="getexternalpqdata"></a>
 ## `getExternalPqData`
 
 `luna://com.webos.service.pqcontroller/getExternalPqData`
 
-Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Returns the external PQ data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/getExternalPqData '{}'
@@ -57,13 +61,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/getEyeqSensorData`
 
-Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Returns the eyeq sensor data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/getEyeqSensorData '{}'
@@ -84,7 +90,7 @@ Reads PQ info, e.g. ambient lux
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -101,13 +107,15 @@ Sources: [1](https://github.com/Osyna/Overglass/blob/HEAD/docs/FINDINGS.md)
 
 `luna://com.webos.service.pqcontroller/getNpointWB`
 
-Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Returns the npoint WB.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/getNpointWB '{}'
@@ -122,13 +130,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/getProperties`
 
-Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Returns the properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/getProperties '{}'
@@ -143,13 +153,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/getPwmInitDoneStatus`
 
-Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Returns the pwm init done status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/getPwmInitDoneStatus '{}'
@@ -164,13 +176,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/getWhiteBalance`
 
-Getter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Returns the white balance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/getWhiteBalance '{}'
@@ -185,13 +199,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/reduceLuminance`
 
-Method on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Handles the reduce luminance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/reduceLuminance '{}'
@@ -206,13 +222,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/resetPictureSettings`
 
-Method on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Resets the picture settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/resetPictureSettings '{}'
@@ -227,13 +245,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/resetWhiteBalance`
 
-Method on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Resets the white balance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/resetWhiteBalance '{}'
@@ -248,13 +268,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/set360VrData`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the 360 vr data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/set360VrData '{}'
@@ -269,13 +291,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/setAI`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the AI.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setAI '{}'
@@ -290,13 +314,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/setDebuggingData`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the debugging data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setDebuggingData '{}'
@@ -311,13 +337,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/setExternalEyeSensor`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the external eye sensor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setExternalEyeSensor '{}'
@@ -332,13 +360,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/setExternalPqData`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the external PQ data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setExternalPqData '{}'
@@ -353,13 +383,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/setFormatNotificationFlag`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the format notification flag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setFormatNotificationFlag '{}'
@@ -374,13 +406,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/setNotificationResult`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the notification result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setNotificationResult '{}'
@@ -395,13 +429,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/setNpointWB`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the npoint WB.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setNpointWB '{}'
@@ -416,13 +452,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/setOCPAlertResult`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the OCP alert result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setOCPAlertResult '{}'
@@ -437,13 +475,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/setParameter`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the parameter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setParameter '{}'
@@ -458,13 +498,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pqcontroller/setPQ`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the PQ.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setPQ '{}'
@@ -485,7 +527,7 @@ Set picture-quality controller properties; used to trigger USB Dolby Vision conf
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -504,13 +546,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 `luna://com.webos.service.pqcontroller/setWbPattern`
 
-Setter on com.webos.service.pqcontroller (introspected on-device; parameters undocumented).
+Sets the wb pattern.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setWbPattern '{}'
@@ -531,7 +575,7 @@ Set white balance in Ez-Adjust service menu
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

@@ -1,28 +1,32 @@
 # `com.webos.service.utp.program`
 
+UTP program-guide service: scans the program guide and reports the current program rating. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkProgramGuide`](#checkprogramguide) | private |  | misc | Method on com.webos.service.utp.program (introspected on-device; parameters undocumented). |
-| [`getCurrentProgramRating`](#getcurrentprogramrating) | private |  | misc | Getter on com.webos.service.utp.program (introspected on-device; parameters undocumented). |
-| [`scanProgramGuide`](#scanprogramguide) | public |  | misc | Method on com.webos.service.utp.program (introspected on-device; parameters undocumented). |
-| [`stopScanProgramGuide`](#stopscanprogramguide) | public |  | misc | Method on com.webos.service.utp.program (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkProgramGuide`](#checkprogramguide) | private |  | misc | inferred | Checks the program guide. |
+| [`getCurrentProgramRating`](#getcurrentprogramrating) | private |  | misc | inferred | Returns the current program rating. |
+| [`scanProgramGuide`](#scanprogramguide) | public |  | misc | inferred | Scans for program guide. |
+| [`stopScanProgramGuide`](#stopscanprogramguide) | public |  | misc | inferred | Stops the scan program guide. |
 
 <a id="checkprogramguide"></a>
 ## `checkProgramGuide`
 
 `luna://com.webos.service.utp.program/checkProgramGuide`
 
-Method on com.webos.service.utp.program (introspected on-device; parameters undocumented).
+Checks the program guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.program/checkProgramGuide '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.program/getCurrentProgramRating`
 
-Getter on com.webos.service.utp.program (introspected on-device; parameters undocumented).
+Returns the current program rating.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.program/getCurrentProgramRating '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.program/scanProgramGuide`
 
-Method on com.webos.service.utp.program (introspected on-device; parameters undocumented).
+Scans for program guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.program/scanProgramGuide '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.program/stopScanProgramGuide`
 
-Method on com.webos.service.utp.program (introspected on-device; parameters undocumented).
+Stops the scan program guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.program/stopScanProgramGuide '{}'

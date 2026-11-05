@@ -1,36 +1,40 @@
 # `com.webos.service.pushclient`
 
+Push/MQTT client: creates and destroys connections, registers services, publishes to and subscribes/unsubscribes from topics, and reports MQTT connection status. _(inferred from the service's methods)_
+
 12 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`createConnection`](#createconnection) | public |  | network | Method on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
-| [`deregisterService`](#deregisterservice) | public |  | network | Method on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
-| [`destroyConnection`](#destroyconnection) | public |  | network | Method on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
-| [`getMqttConnectionStatus`](#getmqttconnectionstatus) | public |  | network | Getter on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
-| [`getServiceInfo`](#getserviceinfo) | private |  | network | Getter on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | public |  | network | Getter on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
-| [`listSubscribedTopics`](#listsubscribedtopics) | public |  | input | Lister on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
-| [`publish`](#publish) | public |  | network | Method on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
-| [`publishTopics`](#publishtopics) | private |  | input | Method on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
-| [`registerService`](#registerservice) | public |  | network | Method on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
-| [`subscribeToTopics`](#subscribetotopics) | public |  | input | Method on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
-| [`unsubscribeFromTopics`](#unsubscribefromtopics) | public |  | input | Method on com.webos.service.pushclient (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`createConnection`](#createconnection) | public |  | network | inferred | Creates the connection. |
+| [`deregisterService`](#deregisterservice) | public |  | network | inferred | Handles the deregister service. |
+| [`destroyConnection`](#destroyconnection) | public |  | network | inferred | Handles the destroy connection. |
+| [`getMqttConnectionStatus`](#getmqttconnectionstatus) | public |  | network | inferred | Returns the mqtt connection status. |
+| [`getServiceInfo`](#getserviceinfo) | private |  | network | inferred | Returns the service info. |
+| [`getStatus`](#getstatus) | public |  | network | inferred | Returns the status. |
+| [`listSubscribedTopics`](#listsubscribedtopics) | public |  | input | inferred | Lists the subscribed topics. |
+| [`publish`](#publish) | public |  | network | inferred | Handles the publish. |
+| [`publishTopics`](#publishtopics) | private |  | input | inferred | Handles the publish topics. |
+| [`registerService`](#registerservice) | public |  | network | inferred | Registers the service. |
+| [`subscribeToTopics`](#subscribetotopics) | public |  | input | inferred | Subscribes to the to topics. |
+| [`unsubscribeFromTopics`](#unsubscribefromtopics) | public |  | input | inferred | Unsubscribes from the from topics. |
 
 <a id="createconnection"></a>
 ## `createConnection`
 
 `luna://com.webos.service.pushclient/createConnection`
 
-Method on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Creates the connection.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/createConnection '{}'
@@ -45,13 +49,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pushclient/deregisterService`
 
-Method on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Handles the deregister service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/deregisterService '{}'
@@ -66,13 +72,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pushclient/destroyConnection`
 
-Method on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Handles the destroy connection.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/destroyConnection '{}'
@@ -87,13 +95,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pushclient/getMqttConnectionStatus`
 
-Getter on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Returns the mqtt connection status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/getMqttConnectionStatus '{}'
@@ -108,13 +118,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pushclient/getServiceInfo`
 
-Getter on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Returns the service info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/getServiceInfo '{}'
@@ -129,13 +141,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pushclient/getStatus`
 
-Getter on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/getStatus '{}'
@@ -150,13 +164,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pushclient/listSubscribedTopics`
 
-Lister on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Lists the subscribed topics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/listSubscribedTopics '{}'
@@ -171,13 +187,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pushclient/publish`
 
-Method on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Handles the publish.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/publish '{}'
@@ -192,13 +210,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pushclient/publishTopics`
 
-Method on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Handles the publish topics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/publishTopics '{}'
@@ -213,13 +233,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pushclient/registerService`
 
-Method on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Registers the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/registerService '{}'
@@ -234,13 +256,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pushclient/subscribeToTopics`
 
-Method on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Subscribes to the to topics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/subscribeToTopics '{}'
@@ -255,13 +279,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pushclient/unsubscribeFromTopics`
 
-Method on com.webos.service.pushclient (introspected on-device; parameters undocumented).
+Unsubscribes from the from topics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pushclient/unsubscribeFromTopics '{}'

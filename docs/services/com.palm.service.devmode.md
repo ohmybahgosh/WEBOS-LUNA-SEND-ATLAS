@@ -1,29 +1,33 @@
 # `com.palm.service.devmode`
 
+Legacy Palm developer-mode service: enables or disables developer mode and retrieves its passphrase and status. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getDevMode`](#getdevmode) | public |  | devmode | Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented). |
-| [`getPassphrase`](#getpassphrase) | public |  | devmode | Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | devmode | Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | devmode | Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented). |
-| [`setDevMode`](#setdevmode) | public |  | devmode | Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getDevMode`](#getdevmode) | public |  | devmode | inferred | Returns the dev mode. |
+| [`getPassphrase`](#getpassphrase) | public |  | devmode | inferred | Returns the passphrase. |
+| [`info`](#info) | public |  | devmode | inferred | Handles the info. |
+| [`quit`](#quit) | public |  | devmode | inferred | Quits the devmode. |
+| [`setDevMode`](#setdevmode) | public |  | devmode | inferred | Sets the dev mode. |
 
 <a id="getdevmode"></a>
 ## `getDevMode`
 
 `luna://com.palm.service.devmode/getDevMode`
 
-Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented).
+Returns the dev mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.devmode/getDevMode '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.devmode/getPassphrase`
 
-Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented).
+Returns the passphrase.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.devmode/getPassphrase '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.devmode/info`
 
-Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.devmode/info '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.devmode/quit`
 
-Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented).
+Quits the devmode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.devmode/quit '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.service.devmode/setDevMode`
 
-Method on com.palm.service.devmode (from on-device permission registry; parameters undocumented).
+Sets the dev mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.devmode/setDevMode '{}'

@@ -1,16 +1,18 @@
 # `com.webos.service.systemprofile`
 
+System-profile service: enables, disables and lists device profiles and reports status. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`debug/rescan`](#debug_rescan) | private |  | apps | Rescans the system profile override folder (/var/webos-profile/override) so a custom home profile is used |
-| [`disableProfile`](#disableprofile) | private |  | misc | Method on com.webos.service.systemprofile (introspected on-device; parameters undocumented). |
-| [`enableProfile`](#enableprofile) | private |  | misc | Method on com.webos.service.systemprofile (introspected on-device; parameters undocumented). |
-| [`getProfiles`](#getprofiles) | private |  | settings | Reads named system profiles (e.g. defaultApps, idleApp) |
-| [`status`](#status) | private |  | misc | Method on com.webos.service.systemprofile (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`debug/rescan`](#debug_rescan) | private |  | apps | documented | Rescans the system profile override folder (/var/webos-profile/override) so a custom home profile is used |
+| [`disableProfile`](#disableprofile) | private |  | misc | inferred | Disables the profile. |
+| [`enableProfile`](#enableprofile) | private |  | misc | inferred | Enables the profile. |
+| [`getProfiles`](#getprofiles) | private |  | settings | documented | Reads named system profiles (e.g. defaultApps, idleApp) |
+| [`status`](#status) | private |  | misc | inferred | Handles the status. |
 
 <a id="debug_rescan"></a>
 ## `debug/rescan`
@@ -23,7 +25,7 @@ Rescans the system profile override folder (/var/webos-profile/override) so a cu
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 11-12 (per home-chooser)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.systemprofile/debug/rescan '{}'
@@ -38,13 +40,15 @@ Sources: [1](https://github.com/Jezzarium/Actually-Good-WebOS/blob/HEAD/README.m
 
 `luna://com.webos.service.systemprofile/disableProfile`
 
-Method on com.webos.service.systemprofile (introspected on-device; parameters undocumented).
+Disables the profile.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.systemprofile/disableProfile '{}'
@@ -59,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.systemprofile/enableProfile`
 
-Method on com.webos.service.systemprofile (introspected on-device; parameters undocumented).
+Enables the profile.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.systemprofile/enableProfile '{}'
@@ -86,7 +92,7 @@ Reads named system profiles (e.g. defaultApps, idleApp)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -104,13 +110,15 @@ Sources: [1](https://github.com/Razdva122/clean-your-tv-lg-webos/blob/main/cytv/
 
 `luna://com.webos.service.systemprofile/status`
 
-Method on com.webos.service.systemprofile (introspected on-device; parameters undocumented).
+Handles the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.systemprofile/status '{}'

@@ -1,52 +1,56 @@
 # `com.webos.service.secondscreen.gateway`
 
+Second-screen gateway: pairs and lists companion devices, sets up app-to-app channels and host messaging, and reports power state and service list. _(inferred from the service's methods)_
+
 28 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`app2app/connectToApp`](#app2app_connecttoapp) | private |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`app2app/createAppChannel`](#app2app_createappchannel) | public |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`app2app/host/registerAppChannel`](#app2app_host_registerappchannel) | public |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`app2app/host/sendJoinResponse`](#app2app_host_sendjoinresponse) | public |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`app2app/host/sendMessage`](#app2app_host_sendmessage) | public |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`getHostMessage`](#gethostmessage) | private |  | network | Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`getPairedDeviceList`](#getpaireddevicelist) | private |  | network | Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`getPowerState`](#getpowerstate) | private |  | power | Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`getServiceList`](#getservicelist) | private |  | network | Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`heartbeat/notifyNamedSocket`](#heartbeat_notifynamedsocket) | private |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`heartbeat/ping`](#heartbeat_ping) | private |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`internal/heapdump`](#internal_heapdump) | private |  | network | Method on com.webos.service.secondscreen.gateway (from on-device permission registry; parameters undocumented). |
-| [`internal/memoryUsage`](#internal_memoryusage) | private |  | network | Method on com.webos.service.secondscreen.gateway (from on-device permission registry; parameters undocumented). |
-| [`internal/setConfig`](#internal_setconfig) | private |  | settings | Method on com.webos.service.secondscreen.gateway (from on-device permission registry; parameters undocumented). |
-| [`pairing/acceptPairing`](#pairing_acceptpairing) | private |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`pairing/getPairingStatus`](#pairing_getpairingstatus) | private |  | network | Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`pairing/register`](#pairing_register) | private |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`pairing/rejectPairing`](#pairing_rejectpairing) | private |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`pairing/requestPairing`](#pairing_requestpairing) | private |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`pairing/setPin`](#pairing_setpin) | private |  | network | Setter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`setMobileAccess`](#setmobileaccess) | private |  | network | Setter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`test/getTime`](#test_gettime) | private |  | input | Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`test/protected`](#test_protected) | private |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`test/secure`](#test_secure) | ssap |  | connection | SSAP self-test: reports whether connection is secure/cleared ({clearedForDuty:true}) |
-| [`unpair`](#unpair) | private |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`unpairAll`](#unpairall) | private |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`weeCustom/getResponse`](#weecustom_getresponse) | private |  | network | Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
-| [`weeCustom/requestAction`](#weecustom_requestaction) | private |  | network | Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`app2app/connectToApp`](#app2app_connecttoapp) | private |  | network | inferred | Connects the to app (app 2 app) |
+| [`app2app/createAppChannel`](#app2app_createappchannel) | public |  | network | inferred | Creates the app channel (app 2 app) |
+| [`app2app/host/registerAppChannel`](#app2app_host_registerappchannel) | public |  | network | inferred | Registers the app channel (app 2 app host) |
+| [`app2app/host/sendJoinResponse`](#app2app_host_sendjoinresponse) | public |  | network | inferred | Sends the join response (app 2 app host) |
+| [`app2app/host/sendMessage`](#app2app_host_sendmessage) | public |  | network | inferred | Sends the message (app 2 app host) |
+| [`getHostMessage`](#gethostmessage) | private |  | network | inferred | Returns the host message. |
+| [`getPairedDeviceList`](#getpaireddevicelist) | private |  | network | inferred | Returns the paired device list. |
+| [`getPowerState`](#getpowerstate) | private |  | power | inferred | Returns the power state. |
+| [`getServiceList`](#getservicelist) | private |  | network | inferred | Returns the service list. |
+| [`heartbeat/notifyNamedSocket`](#heartbeat_notifynamedsocket) | private |  | network | inferred | Notifies of the named socket (heartbeat) |
+| [`heartbeat/ping`](#heartbeat_ping) | private |  | network | inferred | Pings the secondscreen gateway (heartbeat) |
+| [`internal/heapdump`](#internal_heapdump) | private |  | network | inferred | Handles the heapdump (internal) |
+| [`internal/memoryUsage`](#internal_memoryusage) | private |  | network | inferred | Handles the memory usage (internal) |
+| [`internal/setConfig`](#internal_setconfig) | private |  | settings | inferred | Sets the config (internal) |
+| [`pairing/acceptPairing`](#pairing_acceptpairing) | private |  | network | inferred | Handles the accept pairing (pairing) |
+| [`pairing/getPairingStatus`](#pairing_getpairingstatus) | private |  | network | inferred | Returns the pairing status (pairing) |
+| [`pairing/register`](#pairing_register) | private |  | network | inferred | Registers the secondscreen gateway (pairing) |
+| [`pairing/rejectPairing`](#pairing_rejectpairing) | private |  | network | inferred | Handles the reject pairing (pairing) |
+| [`pairing/requestPairing`](#pairing_requestpairing) | private |  | network | inferred | Requests the pairing (pairing) |
+| [`pairing/setPin`](#pairing_setpin) | private |  | network | inferred | Sets the pin (pairing) |
+| [`setMobileAccess`](#setmobileaccess) | private |  | network | inferred | Sets the mobile access. |
+| [`test/getTime`](#test_gettime) | private |  | input | inferred | Returns the time (test) |
+| [`test/protected`](#test_protected) | private |  | network | inferred | Handles the protected (test) |
+| [`test/secure`](#test_secure) | ssap |  | connection | documented | SSAP self-test: reports whether connection is secure/cleared ({clearedForDuty:true}) |
+| [`unpair`](#unpair) | private |  | network | inferred | Unpairs the secondscreen gateway. |
+| [`unpairAll`](#unpairall) | private |  | network | inferred | Unpairs the all. |
+| [`weeCustom/getResponse`](#weecustom_getresponse) | private |  | network | inferred | Returns the response (wee custom) |
+| [`weeCustom/requestAction`](#weecustom_requestaction) | private |  | network | inferred | Requests the action (wee custom) |
 
 <a id="app2app_connecttoapp"></a>
 ## `app2app/connectToApp`
 
 `luna://com.webos.service.secondscreen.gateway/app2app/connectToApp`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Connects the to app (app 2 app)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/app2app/connectToApp '{}'
@@ -61,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/app2app/createAppChannel`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Creates the app channel (app 2 app)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/app2app/createAppChannel '{}'
@@ -82,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/app2app/host/registerAppChannel`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Registers the app channel (app 2 app host)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/app2app/host/registerAppChannel '{}'
@@ -103,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/app2app/host/sendJoinResponse`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Sends the join response (app 2 app host)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/app2app/host/sendJoinResponse '{}'
@@ -124,13 +134,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/app2app/host/sendMessage`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Sends the message (app 2 app host)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/app2app/host/sendMessage '{}'
@@ -145,13 +157,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/getHostMessage`
 
-Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Returns the host message.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/getHostMessage '{}'
@@ -166,13 +180,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/getPairedDeviceList`
 
-Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Returns the paired device list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/getPairedDeviceList '{}'
@@ -187,13 +203,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/getPowerState`
 
-Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Returns the power state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/getPowerState '{}'
@@ -208,13 +226,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/getServiceList`
 
-Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Returns the service list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/getServiceList '{}'
@@ -229,13 +249,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/heartbeat/notifyNamedSocket`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Notifies of the named socket (heartbeat)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/heartbeat/notifyNamedSocket '{}'
@@ -250,13 +272,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/heartbeat/ping`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Pings the secondscreen gateway (heartbeat)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/heartbeat/ping '{}'
@@ -271,13 +295,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/internal/heapdump`
 
-Method on com.webos.service.secondscreen.gateway (from on-device permission registry; parameters undocumented).
+Handles the heapdump (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/internal/heapdump '{}'
@@ -292,13 +318,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.secondscreen.gateway/internal/memoryUsage`
 
-Method on com.webos.service.secondscreen.gateway (from on-device permission registry; parameters undocumented).
+Handles the memory usage (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/internal/memoryUsage '{}'
@@ -313,13 +341,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.secondscreen.gateway/internal/setConfig`
 
-Method on com.webos.service.secondscreen.gateway (from on-device permission registry; parameters undocumented).
+Sets the config (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/internal/setConfig '{}'
@@ -334,13 +364,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.secondscreen.gateway/pairing/acceptPairing`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Handles the accept pairing (pairing)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/acceptPairing '{}'
@@ -355,13 +387,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/pairing/getPairingStatus`
 
-Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Returns the pairing status (pairing)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/getPairingStatus '{}'
@@ -376,13 +410,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/pairing/register`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Registers the secondscreen gateway (pairing)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/register '{}'
@@ -397,13 +433,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/pairing/rejectPairing`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Handles the reject pairing (pairing)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/rejectPairing '{}'
@@ -418,13 +456,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/pairing/requestPairing`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Requests the pairing (pairing)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/requestPairing '{}'
@@ -439,13 +479,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/pairing/setPin`
 
-Setter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Sets the pin (pairing)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/setPin '{}'
@@ -460,13 +502,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/setMobileAccess`
 
-Setter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Sets the mobile access.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/setMobileAccess '{}'
@@ -481,13 +525,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/test/getTime`
 
-Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Returns the time (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/test/getTime '{}'
@@ -502,13 +548,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/test/protected`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Handles the protected (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/test/protected '{}'
@@ -529,7 +577,7 @@ SSAP self-test: reports whether connection is secure/cleared ({clearedForDuty:tr
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.secondscreen.gateway/test/secure","payload":{}}
@@ -544,13 +592,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go), [2](https:/
 
 `luna://com.webos.service.secondscreen.gateway/unpair`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Unpairs the secondscreen gateway.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/unpair '{}'
@@ -565,13 +615,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/unpairAll`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Unpairs the all.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/unpairAll '{}'
@@ -586,13 +638,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/weeCustom/getResponse`
 
-Getter on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Returns the response (wee custom)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/weeCustom/getResponse '{}'
@@ -607,13 +661,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.secondscreen.gateway/weeCustom/requestAction`
 
-Method on com.webos.service.secondscreen.gateway (introspected on-device; parameters undocumented).
+Requests the action (wee custom)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/weeCustom/requestAction '{}'

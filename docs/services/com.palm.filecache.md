@@ -1,40 +1,44 @@
 # `com.palm.filecache`
 
+File-cache manager: defines cache object types and inserts, copies, resizes, expires and queries cached files, reporting cache status, sizes and type definitions.
+
 16 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`ChangeType`](#changetype) | private |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`CopyCacheObject`](#copycacheobject) | private |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`DefineType`](#definetype) | private |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`DeleteType`](#deletetype) | private |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`DescribeType`](#describetype) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`ExpireCacheObject`](#expirecacheobject) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`GetCacheObjectFilename`](#getcacheobjectfilename) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`GetCacheObjectSize`](#getcacheobjectsize) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`GetCacheStatus`](#getcachestatus) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`GetCacheTypes`](#getcachetypes) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`GetCacheTypeStatus`](#getcachetypestatus) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`GetVersion`](#getversion) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`InsertCacheObject`](#insertcacheobject) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`ResizeCacheObject`](#resizecacheobject) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`SubscribeCacheObject`](#subscribecacheobject) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
-| [`TouchCacheObject`](#touchcacheobject) | public |  | storage | Method on com.palm.filecache (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`ChangeType`](#changetype) | private |  | storage | inferred | Changes the type. |
+| [`CopyCacheObject`](#copycacheobject) | private |  | storage | inferred | Copies the cache object. |
+| [`DefineType`](#definetype) | private |  | storage | inferred | Handles the define type. |
+| [`DeleteType`](#deletetype) | private |  | storage | inferred | Deletes the type. ⚠️ |
+| [`DescribeType`](#describetype) | public |  | storage | inferred | Handles the describe type. |
+| [`ExpireCacheObject`](#expirecacheobject) | public |  | storage | inferred | Handles the expire cache object. |
+| [`GetCacheObjectFilename`](#getcacheobjectfilename) | public |  | storage | inferred | Returns the cache object filename. |
+| [`GetCacheObjectSize`](#getcacheobjectsize) | public |  | storage | inferred | Returns the cache object size. |
+| [`GetCacheStatus`](#getcachestatus) | public |  | storage | inferred | Returns the cache status. |
+| [`GetCacheTypes`](#getcachetypes) | public |  | storage | inferred | Returns the cache types. |
+| [`GetCacheTypeStatus`](#getcachetypestatus) | public |  | storage | inferred | Returns the cache type status. |
+| [`GetVersion`](#getversion) | public |  | storage | inferred | Returns the version. |
+| [`InsertCacheObject`](#insertcacheobject) | public |  | storage | inferred | Inserts the cache object. |
+| [`ResizeCacheObject`](#resizecacheobject) | public |  | storage | inferred | Handles the resize cache object. |
+| [`SubscribeCacheObject`](#subscribecacheobject) | public |  | storage | inferred | Subscribes to the cache object. |
+| [`TouchCacheObject`](#touchcacheobject) | public |  | storage | inferred | Handles the touch cache object. |
 
 <a id="changetype"></a>
 ## `ChangeType`
 
 `luna://com.palm.filecache/ChangeType`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Changes the type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/ChangeType '{}'
@@ -49,13 +53,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/CopyCacheObject`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Copies the cache object.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/CopyCacheObject '{}'
@@ -70,13 +76,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/DefineType`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Handles the define type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/DefineType '{}'
@@ -91,13 +99,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/DeleteType`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Deletes the type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/DeleteType '{}'
@@ -112,13 +122,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/DescribeType`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Handles the describe type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/DescribeType '{}'
@@ -133,13 +145,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/ExpireCacheObject`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Handles the expire cache object.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/ExpireCacheObject '{}'
@@ -154,13 +168,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/GetCacheObjectFilename`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Returns the cache object filename.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/GetCacheObjectFilename '{}'
@@ -175,13 +191,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/GetCacheObjectSize`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Returns the cache object size.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/GetCacheObjectSize '{}'
@@ -196,13 +214,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/GetCacheStatus`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Returns the cache status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/GetCacheStatus '{}'
@@ -217,13 +237,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/GetCacheTypes`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Returns the cache types.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/GetCacheTypes '{}'
@@ -238,13 +260,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/GetCacheTypeStatus`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Returns the cache type status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/GetCacheTypeStatus '{}'
@@ -259,13 +283,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/GetVersion`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Returns the version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/GetVersion '{}'
@@ -280,13 +306,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/InsertCacheObject`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Inserts the cache object.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/InsertCacheObject '{}'
@@ -301,13 +329,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/ResizeCacheObject`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Handles the resize cache object.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/ResizeCacheObject '{}'
@@ -322,13 +352,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/SubscribeCacheObject`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Subscribes to the cache object.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/SubscribeCacheObject '{}'
@@ -343,13 +375,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.filecache/TouchCacheObject`
 
-Method on com.palm.filecache (from on-device permission registry; parameters undocumented).
+Handles the touch cache object.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.filecache/TouchCacheObject '{}'

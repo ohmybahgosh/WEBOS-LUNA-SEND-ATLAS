@@ -1,28 +1,32 @@
 # `com.webos.service.objectdetectionutilizer`
 
+Appears to consume camera object-detection results: starts/stops detection and reports status. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getStatus`](#getstatus) | private |  | misc | Method on com.webos.service.objectdetectionutilizer (from on-device permission registry; parameters undocumented). |
-| [`setStatus`](#setstatus) | private |  | misc | Method on com.webos.service.objectdetectionutilizer (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.objectdetectionutilizer (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | private |  | misc | Method on com.webos.service.objectdetectionutilizer (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getStatus`](#getstatus) | private |  | misc | inferred | Returns the status. |
+| [`setStatus`](#setstatus) | private |  | misc | inferred | Sets the status. |
+| [`start`](#start) | private |  | misc | inferred | Starts the objectdetectionutilizer. |
+| [`stop`](#stop) | private |  | misc | inferred | Stops the objectdetectionutilizer. |
 
 <a id="getstatus"></a>
 ## `getStatus`
 
 `luna://com.webos.service.objectdetectionutilizer/getStatus`
 
-Method on com.webos.service.objectdetectionutilizer (from on-device permission registry; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.objectdetectionutilizer/getStatus '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.objectdetectionutilizer/setStatus`
 
-Method on com.webos.service.objectdetectionutilizer (from on-device permission registry; parameters undocumented).
+Sets the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.objectdetectionutilizer/setStatus '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.objectdetectionutilizer/start`
 
-Method on com.webos.service.objectdetectionutilizer (from on-device permission registry; parameters undocumented).
+Starts the objectdetectionutilizer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.objectdetectionutilizer/start '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.objectdetectionutilizer/stop`
 
-Method on com.webos.service.objectdetectionutilizer (from on-device permission registry; parameters undocumented).
+Stops the objectdetectionutilizer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.objectdetectionutilizer/stop '{}'

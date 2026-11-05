@@ -1,34 +1,38 @@
 # `com.webos.ghp.runtime`
 
+Appears to be a smart-home runtime exposing homes, rooms, structures, controllers and devices and sending commands to them, with a web-view URL. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getController`](#getcontroller) | private |  | input | Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented). |
-| [`getDevices`](#getdevices) | private |  | input | Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented). |
-| [`getPLPAL`](#getplpal) | private |  | input | Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented). |
-| [`getRooms`](#getrooms) | private |  | input | Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | input | Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented). |
-| [`getStructures`](#getstructures) | private |  | input | Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented). |
-| [`getWebViewUrl`](#getwebviewurl) | private |  | input | Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented). |
-| [`sendCommand`](#sendcommand) | private |  | input | Method on com.webos.ghp.runtime (introspected on-device; parameters undocumented). |
-| [`setController`](#setcontroller) | private |  | input | Setter on com.webos.ghp.runtime (introspected on-device; parameters undocumented). |
-| [`setPLPAL`](#setplpal) | private |  | input | Setter on com.webos.ghp.runtime (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getController`](#getcontroller) | private |  | input | inferred | Returns the controller. |
+| [`getDevices`](#getdevices) | private |  | input | inferred | Returns the devices. |
+| [`getPLPAL`](#getplpal) | private |  | input | inferred | Returns the PLPAL. |
+| [`getRooms`](#getrooms) | private |  | input | inferred | Returns the rooms. |
+| [`getStatus`](#getstatus) | private |  | input | inferred | Returns the status. |
+| [`getStructures`](#getstructures) | private |  | input | inferred | Returns the structures. |
+| [`getWebViewUrl`](#getwebviewurl) | private |  | input | inferred | Returns the web view URL. |
+| [`sendCommand`](#sendcommand) | private |  | input | inferred | Sends the command. |
+| [`setController`](#setcontroller) | private |  | input | inferred | Sets the controller. |
+| [`setPLPAL`](#setplpal) | private |  | input | inferred | Sets the PLPAL. |
 
 <a id="getcontroller"></a>
 ## `getController`
 
 `luna://com.webos.ghp.runtime/getController`
 
-Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented).
+Returns the controller.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/getController '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.ghp.runtime/getDevices`
 
-Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented).
+Returns the devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/getDevices '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.ghp.runtime/getPLPAL`
 
-Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented).
+Returns the PLPAL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/getPLPAL '{}'
@@ -85,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.ghp.runtime/getRooms`
 
-Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented).
+Returns the rooms.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/getRooms '{}'
@@ -106,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.ghp.runtime/getStatus`
 
-Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/getStatus '{}'
@@ -127,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.ghp.runtime/getStructures`
 
-Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented).
+Returns the structures.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/getStructures '{}'
@@ -148,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.ghp.runtime/getWebViewUrl`
 
-Getter on com.webos.ghp.runtime (introspected on-device; parameters undocumented).
+Returns the web view URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/getWebViewUrl '{}'
@@ -169,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.ghp.runtime/sendCommand`
 
-Method on com.webos.ghp.runtime (introspected on-device; parameters undocumented).
+Sends the command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/sendCommand '{}'
@@ -190,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.ghp.runtime/setController`
 
-Setter on com.webos.ghp.runtime (introspected on-device; parameters undocumented).
+Sets the controller.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/setController '{}'
@@ -211,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.ghp.runtime/setPLPAL`
 
-Setter on com.webos.ghp.runtime (introspected on-device; parameters undocumented).
+Sets the PLPAL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.ghp.runtime/setPLPAL '{}'

@@ -1,50 +1,54 @@
 # `com.webos.service.rollingscreen`
 
+Rollable-screen controller (rollable OLED): drives motor roll position and curve/shade/view states, reports motor/MICOM status, and handles calibration. _(inferred from the service's methods)_
+
 26 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`adjustZeroPositionAdjustment`](#adjustzeropositionadjustment) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`changeCurve`](#changecurve) | private |  | display | Select curve preset on bendable/Flex display (e.g. LG OLED Flex) |
-| [`changeShade`](#changeshade) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`changeView`](#changeview) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`getAutoRollingTestMode`](#getautorollingtestmode) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`getCurveState`](#getcurvestate) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`getDebugPathMode`](#getdebugpathmode) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`getMotorDeviceStatus`](#getmotordevicestatus) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`getMotorMicomVersion`](#getmotormicomversion) | public |  | power | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`getPartialViewPositionOffset`](#getpartialviewpositionoffset) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`getRollingAdjMode`](#getrollingadjmode) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`getRollingCount`](#getrollingcount) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`getShadeState`](#getshadestate) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`getViewState`](#getviewstate) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`pressUpDown`](#pressupdown) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`registerSyncTransition`](#registersynctransition) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`responseSyncTransition`](#responsesynctransition) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`setAutoRollingTest`](#setautorollingtest) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`setDebugPath`](#setdebugpath) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`setPartialViewPositionOffset`](#setpartialviewpositionoffset) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`setRollingAdjMode`](#setrollingadjmode) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`testLocalization`](#testlocalization) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`testMotorDeviceAbnormal`](#testmotordeviceabnormal) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`updateCurvature`](#updatecurvature) | private |  | display | Adjust the curvature percentage of a curve preset |
-| [`updateMotorDeviceStatus`](#updatemotordevicestatus) | public |  | display | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). |
-| [`updateMotorMicomFirmware`](#updatemotormicomfirmware) | public |  | power | Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`adjustZeroPositionAdjustment`](#adjustzeropositionadjustment) | public |  | display | inferred | Adjusts the zero position adjustment. |
+| [`changeCurve`](#changecurve) | private |  | display | documented | Select curve preset on bendable/Flex display (e.g. LG OLED Flex) |
+| [`changeShade`](#changeshade) | public |  | display | inferred | Changes the shade. |
+| [`changeView`](#changeview) | public |  | display | inferred | Changes the view. |
+| [`getAutoRollingTestMode`](#getautorollingtestmode) | public |  | display | inferred | Returns the auto rolling test mode. |
+| [`getCurveState`](#getcurvestate) | public |  | display | inferred | Returns the curve state. |
+| [`getDebugPathMode`](#getdebugpathmode) | public |  | display | inferred | Returns the debug path mode. |
+| [`getMotorDeviceStatus`](#getmotordevicestatus) | public |  | display | inferred | Returns the motor device status. |
+| [`getMotorMicomVersion`](#getmotormicomversion) | public |  | power | inferred | Returns the motor MICOM version. |
+| [`getPartialViewPositionOffset`](#getpartialviewpositionoffset) | public |  | display | inferred | Returns the partial view position offset. |
+| [`getRollingAdjMode`](#getrollingadjmode) | public |  | display | inferred | Returns the rolling adj mode. |
+| [`getRollingCount`](#getrollingcount) | public |  | display | inferred | Returns the rolling count. |
+| [`getShadeState`](#getshadestate) | public |  | display | inferred | Returns the shade state. |
+| [`getViewState`](#getviewstate) | public |  | display | inferred | Returns the view state. |
+| [`pressUpDown`](#pressupdown) | public |  | display | inferred | Handles the press up down. |
+| [`registerSyncTransition`](#registersynctransition) | public |  | display | inferred | Registers the sync transition. |
+| [`responseSyncTransition`](#responsesynctransition) | public |  | display | inferred | Handles the response sync transition. |
+| [`setAutoRollingTest`](#setautorollingtest) | public |  | display | inferred | Sets the auto rolling test. |
+| [`setDebugPath`](#setdebugpath) | public |  | display | inferred | Sets the debug path. |
+| [`setPartialViewPositionOffset`](#setpartialviewpositionoffset) | public |  | display | inferred | Sets the partial view position offset. |
+| [`setRollingAdjMode`](#setrollingadjmode) | public |  | display | inferred | Sets the rolling adj mode. |
+| [`testLocalization`](#testlocalization) | public |  | display | inferred | Tests the localization. |
+| [`testMotorDeviceAbnormal`](#testmotordeviceabnormal) | public |  | display | inferred | Tests the motor device abnormal. |
+| [`updateCurvature`](#updatecurvature) | private |  | display | documented | Adjust the curvature percentage of a curve preset |
+| [`updateMotorDeviceStatus`](#updatemotordevicestatus) | public |  | display | inferred | Updates the motor device status. |
+| [`updateMotorMicomFirmware`](#updatemotormicomfirmware) | public |  | power | inferred | Updates the motor MICOM firmware. ⚠️ |
 
 <a id="adjustzeropositionadjustment"></a>
 ## `adjustZeroPositionAdjustment`
 
 `luna://com.webos.service.rollingscreen/adjustZeroPositionAdjustment`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Adjusts the zero position adjustment.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/adjustZeroPositionAdjustment '{}'
@@ -65,7 +69,7 @@ Select curve preset on bendable/Flex display (e.g. LG OLED Flex)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -85,13 +89,15 @@ Sources: [1](https://github.com/JPersson77/LGTVCompanion/blob/master/Common/lg_a
 
 `luna://com.webos.service.rollingscreen/changeShade`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Changes the shade.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/changeShade '{}'
@@ -106,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/changeView`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Changes the view.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/changeView '{}'
@@ -127,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/getAutoRollingTestMode`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Returns the auto rolling test mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/getAutoRollingTestMode '{}'
@@ -148,13 +158,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/getCurveState`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Returns the curve state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/getCurveState '{}'
@@ -169,13 +181,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/getDebugPathMode`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Returns the debug path mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/getDebugPathMode '{}'
@@ -190,13 +204,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/getMotorDeviceStatus`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Returns the motor device status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/getMotorDeviceStatus '{}'
@@ -211,13 +227,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/getMotorMicomVersion`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Returns the motor MICOM version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/getMotorMicomVersion '{}'
@@ -232,13 +250,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/getPartialViewPositionOffset`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Returns the partial view position offset.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/getPartialViewPositionOffset '{}'
@@ -253,13 +273,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/getRollingAdjMode`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Returns the rolling adj mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/getRollingAdjMode '{}'
@@ -274,13 +296,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/getRollingCount`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Returns the rolling count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/getRollingCount '{}'
@@ -295,13 +319,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/getShadeState`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Returns the shade state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/getShadeState '{}'
@@ -316,13 +342,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/getViewState`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Returns the view state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/getViewState '{}'
@@ -337,13 +365,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/pressUpDown`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Handles the press up down.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/pressUpDown '{}'
@@ -358,13 +388,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/registerSyncTransition`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Registers the sync transition.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/registerSyncTransition '{}'
@@ -379,13 +411,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/responseSyncTransition`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Handles the response sync transition.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/responseSyncTransition '{}'
@@ -400,13 +434,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/setAutoRollingTest`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Sets the auto rolling test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/setAutoRollingTest '{}'
@@ -421,13 +457,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/setDebugPath`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Sets the debug path.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/setDebugPath '{}'
@@ -442,13 +480,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/setPartialViewPositionOffset`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Sets the partial view position offset.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/setPartialViewPositionOffset '{}'
@@ -463,13 +503,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/setRollingAdjMode`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Sets the rolling adj mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/setRollingAdjMode '{}'
@@ -484,13 +526,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/testLocalization`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Tests the localization.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/testLocalization '{}'
@@ -505,13 +549,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/testMotorDeviceAbnormal`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Tests the motor device abnormal.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/testMotorDeviceAbnormal '{}'
@@ -532,7 +578,7 @@ Adjust the curvature percentage of a curve preset
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -552,13 +598,15 @@ Sources: [1](https://github.com/JPersson77/LGTVCompanion/blob/master/Common/lg_a
 
 `luna://com.webos.service.rollingscreen/updateMotorDeviceStatus`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Updates the motor device status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/updateMotorDeviceStatus '{}'
@@ -573,13 +621,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rollingscreen/updateMotorMicomFirmware`
 
-Method on com.webos.service.rollingscreen (from on-device permission registry; parameters undocumented).
+Updates the motor MICOM firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rollingscreen/updateMotorMicomFirmware '{}'

@@ -1,78 +1,82 @@
 # `com.webos.service.multiviewcontroller`
 
+Multiview controller: creates and arranges app views for split/multi-view, changes mode, position and size of sub-apps, and mixes per-view audio. _(inferred from the service's methods)_
+
 54 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`ackProcess`](#ackprocess) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`addPreset`](#addpreset) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). ⚠️ |
-| [`changeAppView`](#changeappview) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`changeControlMode`](#changecontrolmode) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`changeMode`](#changemode) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`changeSubAppPosition`](#changesubappposition) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`changeSubAppSize`](#changesubappsize) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`closeApp`](#closeapp) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`closeMultiview`](#closemultiview) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`createAppView`](#createappview) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`decreaseMixAudioVolume`](#decreasemixaudiovolume) | public |  | audio | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`destroyAppView`](#destroyappview) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getAppList`](#getapplist) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getAppListChanged`](#getapplistchanged) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getAppViewStatus`](#getappviewstatus) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getChangeableAppList`](#getchangeableapplist) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getConfigInfo`](#getconfiginfo) | public |  | settings | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getMainAppList`](#getmainapplist) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getMediaControlStatus`](#getmediacontrolstatus) | public |  | media | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getMultiviewAppList`](#getmultiviewapplist) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getMultiviewStatus`](#getmultiviewstatus) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getMultiviewSupportOption`](#getmultiviewsupportoption) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getPresetList`](#getpresetlist) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getRecentsList`](#getrecentslist) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getRestrictionStatus`](#getrestrictionstatus) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`getSubAppList`](#getsubapplist) | public |  | display | Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`increaseMixAudioVolume`](#increasemixaudiovolume) | public |  | audio | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`launchApps`](#launchapps) | public |  | apps | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`launchMode`](#launchmode) | public |  | apps | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`removeClient`](#removeclient) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). ⚠️ |
-| [`removePreset`](#removepreset) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). ⚠️ |
-| [`selectAudioOut`](#selectaudioout) | public |  | audio | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`setAppCloseInfo`](#setappcloseinfo) | public |  | display | Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`setAppCoordinate`](#setappcoordinate) | public |  | display | Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`setAppPipelineStatus`](#setapppipelinestatus) | public |  | display | Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`setAppViewStatus`](#setappviewstatus) | public |  | display | Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`setInputMode`](#setinputmode) | public |  | display | Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`setInputVolume`](#setinputvolume) | public |  | display | Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`setMediaContentInfo`](#setmediacontentinfo) | public |  | media | Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`setMixAudio`](#setmixaudio) | public |  | audio | Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`setMobileInfo`](#setmobileinfo) | public |  | display | Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`switchAudio`](#switchaudio) | public |  | audio | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`switchSyncType`](#switchsynctype) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`test`](#test) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`testPopup`](#testpopup) | public |  | display | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`voice/tv_multiview_change_view_type`](#voice_tv_multiview_change_view_type) | public |  | input | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`voice/tv_multiview_enter_control_mode`](#voice_tv_multiview_enter_control_mode) | public |  | input | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`voice/tv_multiview_exit`](#voice_tv_multiview_exit) | public |  | input | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`voice/tv_multiview_exit_control_mode`](#voice_tv_multiview_exit_control_mode) | public |  | input | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`voice/tv_multiview_exit_negative`](#voice_tv_multiview_exit_negative) | public |  | input | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`voice/tv_multiview_launch`](#voice_tv_multiview_launch) | public |  | apps | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`voice/tv_multiview_move_sub_app_position`](#voice_tv_multiview_move_sub_app_position) | public |  | input | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
-| [`voice/tv_multiview_switch_sound`](#voice_tv_multiview_switch_sound) | public |  | input | Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`ackProcess`](#ackprocess) | public |  | display | inferred | Handles the ack process. |
+| [`addPreset`](#addpreset) | public |  | display | inferred | Adds the preset. ⚠️ |
+| [`changeAppView`](#changeappview) | public |  | display | inferred | Changes the app view. |
+| [`changeControlMode`](#changecontrolmode) | public |  | display | inferred | Changes the control mode. |
+| [`changeMode`](#changemode) | public |  | display | inferred | Changes the mode. |
+| [`changeSubAppPosition`](#changesubappposition) | public |  | display | inferred | Changes the sub app position. |
+| [`changeSubAppSize`](#changesubappsize) | public |  | display | inferred | Changes the sub app size. |
+| [`closeApp`](#closeapp) | public |  | display | inferred | Closes the app. |
+| [`closeMultiview`](#closemultiview) | public |  | display | inferred | Closes the multiview. |
+| [`createAppView`](#createappview) | public |  | display | inferred | Creates the app view. |
+| [`decreaseMixAudioVolume`](#decreasemixaudiovolume) | public |  | audio | inferred | Decreases the mix audio volume. |
+| [`destroyAppView`](#destroyappview) | public |  | display | inferred | Handles the destroy app view. |
+| [`getAppList`](#getapplist) | public |  | display | inferred | Returns the app list. |
+| [`getAppListChanged`](#getapplistchanged) | public |  | display | inferred | Returns the app list changed. |
+| [`getAppViewStatus`](#getappviewstatus) | public |  | display | inferred | Returns the app view status. |
+| [`getChangeableAppList`](#getchangeableapplist) | public |  | display | inferred | Returns the changeable app list. |
+| [`getConfigInfo`](#getconfiginfo) | public |  | settings | inferred | Returns the config info. |
+| [`getMainAppList`](#getmainapplist) | public |  | display | inferred | Returns the main app list. |
+| [`getMediaControlStatus`](#getmediacontrolstatus) | public |  | media | inferred | Returns the media control status. |
+| [`getMultiviewAppList`](#getmultiviewapplist) | public |  | display | inferred | Returns the multiview app list. |
+| [`getMultiviewStatus`](#getmultiviewstatus) | public |  | display | inferred | Returns the multiview status. |
+| [`getMultiviewSupportOption`](#getmultiviewsupportoption) | public |  | display | inferred | Returns the multiview support option. |
+| [`getPresetList`](#getpresetlist) | public |  | display | inferred | Returns the preset list. |
+| [`getRecentsList`](#getrecentslist) | public |  | display | inferred | Returns the recents list. |
+| [`getRestrictionStatus`](#getrestrictionstatus) | public |  | display | inferred | Returns the restriction status. |
+| [`getStatus`](#getstatus) | public |  | display | inferred | Returns the status. |
+| [`getSubAppList`](#getsubapplist) | public |  | display | inferred | Returns the sub app list. |
+| [`increaseMixAudioVolume`](#increasemixaudiovolume) | public |  | audio | inferred | Increases the mix audio volume. |
+| [`launchApps`](#launchapps) | public |  | apps | inferred | Launches the apps. |
+| [`launchMode`](#launchmode) | public |  | apps | inferred | Launches the mode. |
+| [`removeClient`](#removeclient) | public |  | display | inferred | Removes the client. ⚠️ |
+| [`removePreset`](#removepreset) | public |  | display | inferred | Removes the preset. ⚠️ |
+| [`selectAudioOut`](#selectaudioout) | public |  | audio | inferred | Selects the audio out. |
+| [`setAppCloseInfo`](#setappcloseinfo) | public |  | display | inferred | Sets the app close info. |
+| [`setAppCoordinate`](#setappcoordinate) | public |  | display | inferred | Sets the app coordinate. |
+| [`setAppPipelineStatus`](#setapppipelinestatus) | public |  | display | inferred | Sets the app pipeline status. |
+| [`setAppViewStatus`](#setappviewstatus) | public |  | display | inferred | Sets the app view status. |
+| [`setInputMode`](#setinputmode) | public |  | display | inferred | Sets the input mode. |
+| [`setInputVolume`](#setinputvolume) | public |  | display | inferred | Sets the input volume. |
+| [`setMediaContentInfo`](#setmediacontentinfo) | public |  | media | inferred | Sets the media content info. |
+| [`setMixAudio`](#setmixaudio) | public |  | audio | inferred | Sets the mix audio. |
+| [`setMobileInfo`](#setmobileinfo) | public |  | display | inferred | Sets the mobile info. |
+| [`switchAudio`](#switchaudio) | public |  | audio | inferred | Switches the audio. |
+| [`switchSyncType`](#switchsynctype) | public |  | display | inferred | Switches the sync type. |
+| [`test`](#test) | public |  | display | inferred | Tests the multiviewcontroller. |
+| [`testPopup`](#testpopup) | public |  | display | inferred | Tests the popup. |
+| [`voice/tv_multiview_change_view_type`](#voice_tv_multiview_change_view_type) | public |  | input | inferred | Handles the TV multiview change view type (voice) |
+| [`voice/tv_multiview_enter_control_mode`](#voice_tv_multiview_enter_control_mode) | public |  | input | inferred | Handles the TV multiview enter control mode (voice) |
+| [`voice/tv_multiview_exit`](#voice_tv_multiview_exit) | public |  | input | inferred | Handles the TV multiview exit (voice) |
+| [`voice/tv_multiview_exit_control_mode`](#voice_tv_multiview_exit_control_mode) | public |  | input | inferred | Handles the TV multiview exit control mode (voice) |
+| [`voice/tv_multiview_exit_negative`](#voice_tv_multiview_exit_negative) | public |  | input | inferred | Handles the TV multiview exit negative (voice) |
+| [`voice/tv_multiview_launch`](#voice_tv_multiview_launch) | public |  | apps | inferred | Handles the TV multiview launch (voice) |
+| [`voice/tv_multiview_move_sub_app_position`](#voice_tv_multiview_move_sub_app_position) | public |  | input | inferred | Handles the TV multiview move sub app position (voice) |
+| [`voice/tv_multiview_switch_sound`](#voice_tv_multiview_switch_sound) | public |  | input | inferred | Handles the TV multiview switch sound (voice) |
 
 <a id="ackprocess"></a>
 ## `ackProcess`
 
 `luna://com.webos.service.multiviewcontroller/ackProcess`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Handles the ack process.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/ackProcess '{}'
@@ -87,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/addPreset`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Adds the preset.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/addPreset '{}'
@@ -108,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/changeAppView`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Changes the app view.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/changeAppView '{}'
@@ -129,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/changeControlMode`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Changes the control mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/changeControlMode '{}'
@@ -150,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/changeMode`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Changes the mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/changeMode '{}'
@@ -171,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/changeSubAppPosition`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Changes the sub app position.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/changeSubAppPosition '{}'
@@ -192,13 +206,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/changeSubAppSize`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Changes the sub app size.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/changeSubAppSize '{}'
@@ -213,13 +229,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/closeApp`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Closes the app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/closeApp '{}'
@@ -234,13 +252,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/closeMultiview`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Closes the multiview.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/closeMultiview '{}'
@@ -255,13 +275,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/createAppView`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Creates the app view.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/createAppView '{}'
@@ -276,13 +298,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/decreaseMixAudioVolume`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Decreases the mix audio volume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/decreaseMixAudioVolume '{}'
@@ -297,13 +321,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/destroyAppView`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Handles the destroy app view.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/destroyAppView '{}'
@@ -318,13 +344,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getAppList`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the app list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getAppList '{}'
@@ -339,13 +367,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getAppListChanged`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the app list changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getAppListChanged '{}'
@@ -360,13 +390,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getAppViewStatus`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the app view status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getAppViewStatus '{}'
@@ -381,13 +413,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getChangeableAppList`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the changeable app list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getChangeableAppList '{}'
@@ -402,13 +436,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getConfigInfo`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the config info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getConfigInfo '{}'
@@ -423,13 +459,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getMainAppList`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the main app list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getMainAppList '{}'
@@ -444,13 +482,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getMediaControlStatus`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the media control status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getMediaControlStatus '{}'
@@ -465,13 +505,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getMultiviewAppList`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the multiview app list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getMultiviewAppList '{}'
@@ -486,13 +528,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getMultiviewStatus`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the multiview status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getMultiviewStatus '{}'
@@ -507,13 +551,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getMultiviewSupportOption`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the multiview support option.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getMultiviewSupportOption '{}'
@@ -528,13 +574,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getPresetList`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the preset list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getPresetList '{}'
@@ -549,13 +597,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getRecentsList`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the recents list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getRecentsList '{}'
@@ -570,13 +620,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getRestrictionStatus`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the restriction status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getRestrictionStatus '{}'
@@ -591,13 +643,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getStatus`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getStatus '{}'
@@ -612,13 +666,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/getSubAppList`
 
-Getter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Returns the sub app list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getSubAppList '{}'
@@ -633,13 +689,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/increaseMixAudioVolume`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Increases the mix audio volume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/increaseMixAudioVolume '{}'
@@ -654,13 +712,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/launchApps`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Launches the apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/launchApps '{}'
@@ -675,13 +735,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/launchMode`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Launches the mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/launchMode '{}'
@@ -696,13 +758,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/removeClient`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Removes the client.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/removeClient '{}'
@@ -717,13 +781,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/removePreset`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Removes the preset.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/removePreset '{}'
@@ -738,13 +804,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/selectAudioOut`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Selects the audio out.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/selectAudioOut '{}'
@@ -759,13 +827,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/setAppCloseInfo`
 
-Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Sets the app close info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setAppCloseInfo '{}'
@@ -780,13 +850,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/setAppCoordinate`
 
-Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Sets the app coordinate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setAppCoordinate '{}'
@@ -801,13 +873,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/setAppPipelineStatus`
 
-Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Sets the app pipeline status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setAppPipelineStatus '{}'
@@ -822,13 +896,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/setAppViewStatus`
 
-Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Sets the app view status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setAppViewStatus '{}'
@@ -843,13 +919,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/setInputMode`
 
-Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Sets the input mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setInputMode '{}'
@@ -864,13 +942,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/setInputVolume`
 
-Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Sets the input volume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setInputVolume '{}'
@@ -885,13 +965,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/setMediaContentInfo`
 
-Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Sets the media content info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setMediaContentInfo '{}'
@@ -906,13 +988,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/setMixAudio`
 
-Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Sets the mix audio.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setMixAudio '{}'
@@ -927,13 +1011,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/setMobileInfo`
 
-Setter on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Sets the mobile info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setMobileInfo '{}'
@@ -948,13 +1034,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/switchAudio`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Switches the audio.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/switchAudio '{}'
@@ -969,13 +1057,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/switchSyncType`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Switches the sync type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/switchSyncType '{}'
@@ -990,13 +1080,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/test`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Tests the multiviewcontroller.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/test '{}'
@@ -1011,13 +1103,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/testPopup`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Tests the popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/testPopup '{}'
@@ -1032,13 +1126,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/voice/tv_multiview_change_view_type`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Handles the TV multiview change view type (voice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/voice/tv_multiview_change_view_type '{}'
@@ -1053,13 +1149,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/voice/tv_multiview_enter_control_mode`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Handles the TV multiview enter control mode (voice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/voice/tv_multiview_enter_control_mode '{}'
@@ -1074,13 +1172,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/voice/tv_multiview_exit`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Handles the TV multiview exit (voice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/voice/tv_multiview_exit '{}'
@@ -1095,13 +1195,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/voice/tv_multiview_exit_control_mode`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Handles the TV multiview exit control mode (voice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/voice/tv_multiview_exit_control_mode '{}'
@@ -1116,13 +1218,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/voice/tv_multiview_exit_negative`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Handles the TV multiview exit negative (voice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/voice/tv_multiview_exit_negative '{}'
@@ -1137,13 +1241,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/voice/tv_multiview_launch`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Handles the TV multiview launch (voice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/voice/tv_multiview_launch '{}'
@@ -1158,13 +1264,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/voice/tv_multiview_move_sub_app_position`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Handles the TV multiview move sub app position (voice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/voice/tv_multiview_move_sub_app_position '{}'
@@ -1179,13 +1287,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.multiviewcontroller/voice/tv_multiview_switch_sound`
 
-Method on com.webos.service.multiviewcontroller (introspected on-device; parameters undocumented).
+Handles the TV multiview switch sound (voice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/voice/tv_multiview_switch_sound '{}'

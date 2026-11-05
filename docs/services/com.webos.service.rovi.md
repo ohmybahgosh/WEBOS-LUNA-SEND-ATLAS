@@ -1,26 +1,30 @@
 # `com.webos.service.rovi`
 
+Opaque service tied to Rovi (EPG/metadata) exposing only launchres and test. Role not inferable beyond its name. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`launchres`](#launchres) | public |  | apps | Method on com.webos.service.rovi (from on-device permission registry; parameters undocumented). |
-| [`test`](#test) | public |  | misc | Method on com.webos.service.rovi (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`launchres`](#launchres) | public |  | apps | inferred | Handles the launchres. |
+| [`test`](#test) | public |  | misc | inferred | Tests the rovi. |
 
 <a id="launchres"></a>
 ## `launchres`
 
 `luna://com.webos.service.rovi/launchres`
 
-Method on com.webos.service.rovi (from on-device permission registry; parameters undocumented).
+Handles the launchres.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rovi/launchres '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.rovi/test`
 
-Method on com.webos.service.rovi (from on-device permission registry; parameters undocumented).
+Tests the rovi.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.rovi/test '{}'

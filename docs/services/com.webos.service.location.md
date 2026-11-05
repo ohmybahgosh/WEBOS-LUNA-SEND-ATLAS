@@ -1,29 +1,31 @@
 # `com.webos.service.location`
 
+Location service: provides single or continuous position fixes, geocoding and reverse geocoding, GPS satellite and NMEA data, location handlers, and a mock-location mode.
+
 18 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`bounds`](#bounds) | unknown |  | location | Indicates the bounding box of the viewport within which to bias geocode results more prominently. |
-| [`components`](#components) | unknown |  | location | Indicates the component filter for which a geocode has to be generated. |
-| [`getAllLocationHandlers`](#getalllocationhandlers) | public | yes | location | Gets a list of the available location handlers, along with each handler's attributes including name and state. |
-| [`getGeoCodeLocation`](#getgeocodelocation) | public |  | location | Transforms a given street address or other description of a location into a coordinate (latitude, longitude). Important points: Supports Goo |
-| [`getGpsSatelliteData`](#getgpssatellitedata) | public | yes | location | Gets the satellite information. Prerequisite : The GPS feature of the device has to be powered ON . |
-| [`getGpsStatus`](#getgpsstatus) | public | yes | location | Gets the current status of the GPS engine. Used for notifying device users that the GPS engine has started or stopped. GPS engine is started |
-| [`getLocationHandlerDetails`](#getlocationhandlerdetails) | public |  | location | Gets the details of the given location handler (Location service provider). |
-| [`getLocationUpdates`](#getlocationupdates) | public | yes | location | Requests a single location fix based on the given criteria. If the subscription value is set to true, it requests for continuous location fi |
-| [`getNmeaData`](#getnmeadata) | public | yes | location | Gets a NMEA sentence from a GPS receiver. |
-| [`getReverseLocation`](#getreverselocation) | public |  | location | Transforms a given coordinate (latitude, longitude) into a (partial) address. Note: The amount of detail in a reverse geocoded location desc |
-| [`getState`](#getstate) | public | yes | location | Gets the current state of the given handler. Application settings can use this to update location settings. |
-| [`handler`](#handler) | unknown |  | location | Contains a handler's name and state. |
-| [`location`](#location) | unknown |  | location | Indicates the object of location for mock. |
-| [`mock/disable`](#mock_disable) | public |  | location | Disables the mock location of the given provider. |
-| [`mock/enable`](#mock_enable) | public |  | location | Enables a mock location of the given provider. |
-| [`mock/setLocation`](#mock_setlocation) | public |  | location | Sets a mock location for the given provider. |
-| [`satellite`](#satellite) | unknown |  | location | Contains satellite information. |
-| [`setState`](#setstate) | public |  | location | Enables or disables a location service provider in the setting menu. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`bounds`](#bounds) | unknown |  | location | documented | Indicates the bounding box of the viewport within which to bias geocode results more prominently. |
+| [`components`](#components) | unknown |  | location | documented | Indicates the component filter for which a geocode has to be generated. |
+| [`getAllLocationHandlers`](#getalllocationhandlers) | public | yes | location | documented | Gets a list of the available location handlers, along with each handler's attributes including name and state. |
+| [`getGeoCodeLocation`](#getgeocodelocation) | public |  | location | documented | Transforms a given street address or other description of a location into a coordinate (latitude, longitude). Important points: Supports Goo |
+| [`getGpsSatelliteData`](#getgpssatellitedata) | public | yes | location | documented | Gets the satellite information. Prerequisite : The GPS feature of the device has to be powered ON . |
+| [`getGpsStatus`](#getgpsstatus) | public | yes | location | documented | Gets the current status of the GPS engine. Used for notifying device users that the GPS engine has started or stopped. GPS engine is started |
+| [`getLocationHandlerDetails`](#getlocationhandlerdetails) | public |  | location | documented | Gets the details of the given location handler (Location service provider). |
+| [`getLocationUpdates`](#getlocationupdates) | public | yes | location | documented | Requests a single location fix based on the given criteria. If the subscription value is set to true, it requests for continuous location fi |
+| [`getNmeaData`](#getnmeadata) | public | yes | location | documented | Gets a NMEA sentence from a GPS receiver. |
+| [`getReverseLocation`](#getreverselocation) | public |  | location | documented | Transforms a given coordinate (latitude, longitude) into a (partial) address. Note: The amount of detail in a reverse geocoded location desc |
+| [`getState`](#getstate) | public | yes | location | documented | Gets the current state of the given handler. Application settings can use this to update location settings. |
+| [`handler`](#handler) | unknown |  | location | documented | Contains a handler's name and state. |
+| [`location`](#location) | unknown |  | location | documented | Indicates the object of location for mock. |
+| [`mock/disable`](#mock_disable) | public |  | location | documented | Disables the mock location of the given provider. |
+| [`mock/enable`](#mock_enable) | public |  | location | documented | Enables a mock location of the given provider. |
+| [`mock/setLocation`](#mock_setlocation) | public |  | location | documented | Sets a mock location for the given provider. |
+| [`satellite`](#satellite) | unknown |  | location | documented | Contains satellite information. |
+| [`setState`](#setstate) | public |  | location | documented | Enables or disables a location service provider in the setting menu. |
 
 <a id="bounds"></a>
 ## `bounds`
@@ -84,6 +86,14 @@ Gets a list of the available location handlers, along with each handler's attrib
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe for notifications. Possible values are: true: Get notifications. false: Notifications are not required. Default: true |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `handlers` | Object array: handler (optional) Contains each handler's name and state in an object array. |
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.location/getAllLocationHandlers '{}
 ```
@@ -113,6 +123,14 @@ Transforms a given street address or other description of a location into a coor
 | `language` | String (optional) Indicates the language through which the results are displayed. |
 | `region` | String (optional) Indicates the region code, specified as a ccTLD ("top-level domain") a two-character value. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `response` | object (optional) Indicates the response received from google geocoding service. |
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.location/setState '{"Handler":"network","state":true}
 ```
@@ -137,6 +155,15 @@ Gets the satellite information. Prerequisite : The GPS feature of the device has
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Indicates whether to subscribe to related events. Possible values are: true : Subscribe. false : Do not subscribe. Default: true |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `visibleSatellites` | Number (optional) Indicates the number of visible (detectable) satellites. |
+| `satellites` | Object array: satellite (optional) Contains each satellite's information in an object array. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.location/getGpsSatelliteData '{}
@@ -163,6 +190,14 @@ Gets the current status of the GPS engine. Used for notifying device users that 
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe for notifications. Possible values are: true: Get notifications. false: Notifications are not required. Default: true |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `state` | Boolean (optional) Indicates the status of a GPS engine. Possible values are : - true: GPS engine has been started. - false: GPS engine has been stopped. |
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.location/getGpsStatus '{}
 ```
@@ -187,6 +222,18 @@ Gets the details of the given location handler (Location service provider).
 | Param | Type / notes |
 |---|---|
 | `Handler` | String (required) Indicates the location of the service provider. Possible values are: gps network |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `accuracy` | Number (optional) Accuracy of the requested location. - 1: High - 2: Medium - 3: Low |
+| `powerRequirement` | Number (optional) Power requirement for TTFF (Time To First Fix): - 1: High - 2: Medium - 3: Low |
+| `requiresNetwork` | Boolean (optional) Indicates whether the location handler requires a network. - true: Network is required. - false: Network is not required. |
+| `requiresCell` | Boolean (optional) Indicates whether the location handler requires a cell. - true: Cell is required. - false: Cell is not required. |
+| `monetaryCost` | Boolean (optional) Indicates whether the location handler is allowed to charge the user. - true: Charging allowed. - false: Charging is not allowed. |
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.location/getLocationHandlerDetails '{ "Handler":"gps" }
@@ -217,6 +264,21 @@ Requests a single location fix based on the given criteria. If the subscription 
 | `Handler` | String (optional) Indicates the type of location service provider. Possible values are : "gps" "network" "passive" |
 | `responseTimeout` | Number (optional) Indicates the response timeout (time until the first position fix is returned ). Possible Range: 0 <= responseTimeout <= 720(in seconds). |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+| `timestamp` | Number (int64\_t) (optional) Indicates the time at which the location fix was created(in milliseconds). |
+| `latitude` | Number (double) (optional) Indicates latitude. Possible range : -90.0 ~ 90.0(in degrees). |
+| `longitude` | Number (double) (optional) Indicates longitude. Possible Range: -180.0 ~ 180.0(in degrees). |
+| `altitude` | Number (double) (optional) Indicates the altitude above sea level(in meters), returns -1 if the altitude is unknown. |
+| `direction` | Number (double) (optional) Indicates the horizontal direction traveled by the device (in degrees), returns -1 if unknown. Possible Range: 0.0 ~ 360.0 (in degrees). |
+| `speed` | Number (double) (optional) Indicates the value of Velocity overground(in meters/second),returns -1 if unknown. |
+| `horizAccuracy` | Number (double) (optional) Indicates the estimated horizontal accuracy value of this location(in meters), returns -1 if unknown. |
+| `vertAccuracy` | Number (double) (optional) Indicates the estimated vertical accuracy value of this location (in meters), returns -1 if unknown. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.location/getLocationUpdates '{ "Handler":"gps" }
 ```
@@ -241,6 +303,15 @@ Gets a NMEA sentence from a GPS receiver.
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Indicates whether to subscribe to related events. true : Subscribe. false : Do not subscribe. Default: true |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `timestamp` | Number (int64\_t) (optional) Indicates the time when a raw NMEA sentence is received from the satellite(in milliseconds). |
+| `nmea` | String (optional) Contains the NMEA sentence. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.location/getNmeaData '{}
@@ -271,6 +342,14 @@ Transforms a given coordinate (latitude, longitude) into a (partial) address. No
 | `result_type` | array (optional) Indicates the type of address. |
 | `location_type` | array (optional) Indicates the type of location. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `response` | object (optional) Indicates the response received from Google geocoding. |
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.location/setState '{"Handler":"network","state":true}
 ```
@@ -296,6 +375,14 @@ Gets the current state of the given handler. Application settings can use this t
 |---|---|
 | `Handler` | String (required) Indicates the type of location service provider. Possible values are : gps network |
 | `subscribe` | Boolean (optional) Subscribe for notifications. Possible values are: true: Get notifications. false: Notifications are not required. Default: true |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `state` | Number (optional) Indicates the state of the handler. Possible values are : - 0: Disabled - 1: Enabled |
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.location/getState '{"Handler":"network"}
@@ -364,6 +451,13 @@ Disables the mock location of the given provider.
 |---|---|
 | `name` | String (required) Indicates the name of the location service provider. Possible values are : gps network |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.location/mock/disable'{ "name":"gps" }
 ```
@@ -388,6 +482,13 @@ Enables a mock location of the given provider.
 | Param | Type / notes |
 |---|---|
 | `name` | String (required) Name of the location service provider. Possible values: gps network |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.location/mock/enable '{ "name":"gps" }
@@ -414,6 +515,13 @@ Sets a mock location for the given provider.
 |---|---|
 | `name` | String (required) Indicates the name of the location service provider. Possible values are : gps network NOTE: If ' name' field is set as network so for every mock/setLocation we need to call getLocationUpdates API with subscription false. (Since it different from GPS handler we wont get continuous reponse when subscription is true) |
 | `location` | Object: location (required) Indicates the information about a mock location. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.location/mock/setLocation '{ "name":"gps", "location": { "speed":-1, "longitude":127.034097, "horizAccuracy":30, "verAccuracy":2, "heading":-1, "timestamp":1410827340157, "altitude":-1, "latitude":37.460605 } }
@@ -461,6 +569,13 @@ Enables or disables a location service provider in the setting menu.
 |---|---|
 | `Handler` | String (required) Indicates the type of location service provider. Possible values are : gps network |
 | `state` | Boolean (required) Indicates whether to enable the location of the service provider. Possible values are: true : Enables the given location service provider. false : Disables the given location service provider. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.location/setState '{ "Handler":"gps", "state":true }

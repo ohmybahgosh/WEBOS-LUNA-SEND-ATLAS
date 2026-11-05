@@ -1,27 +1,31 @@
 # `com.webos.service.hidusbemul`
 
+USB HID emulation helper: reports status and pauses/resumes emulation. Narrow role; specifics beyond HID USB emulation not inferable. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getStatus`](#getstatus) | private |  | misc | Method on com.webos.service.hidusbemul (from on-device permission registry; parameters undocumented). |
-| [`pause`](#pause) | private |  | misc | Method on com.webos.service.hidusbemul (from on-device permission registry; parameters undocumented). |
-| [`resume`](#resume) | private |  | misc | Method on com.webos.service.hidusbemul (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getStatus`](#getstatus) | private |  | misc | inferred | Returns the status. |
+| [`pause`](#pause) | private |  | misc | inferred | Pauses the hidusbemul. |
+| [`resume`](#resume) | private |  | misc | inferred | Resumes the hidusbemul. |
 
 <a id="getstatus"></a>
 ## `getStatus`
 
 `luna://com.webos.service.hidusbemul/getStatus`
 
-Method on com.webos.service.hidusbemul (from on-device permission registry; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hidusbemul/getStatus '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hidusbemul/pause`
 
-Method on com.webos.service.hidusbemul (from on-device permission registry; parameters undocumented).
+Pauses the hidusbemul.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hidusbemul/pause '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.hidusbemul/resume`
 
-Method on com.webos.service.hidusbemul (from on-device permission registry; parameters undocumented).
+Resumes the hidusbemul.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.hidusbemul/resume '{}'

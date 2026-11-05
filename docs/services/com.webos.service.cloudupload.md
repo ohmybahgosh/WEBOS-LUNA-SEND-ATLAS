@@ -1,29 +1,33 @@
 # `com.webos.service.cloudupload`
 
+Cloud-upload service that uploads analytics, crash and overview reports to the cloud and manages related log settings. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getLogSettings`](#getlogsettings) | private |  | settings | Method on com.webos.service.cloudupload (from on-device permission registry; parameters undocumented). |
-| [`processAnalyticsReport`](#processanalyticsreport) | private |  | input | Method on com.webos.service.cloudupload (from on-device permission registry; parameters undocumented). |
-| [`processCrashReport`](#processcrashreport) | private |  | misc | Method on com.webos.service.cloudupload (from on-device permission registry; parameters undocumented). |
-| [`processOverviewReport`](#processoverviewreport) | private |  | misc | Method on com.webos.service.cloudupload (from on-device permission registry; parameters undocumented). |
-| [`setLogSettings`](#setlogsettings) | private |  | settings | Method on com.webos.service.cloudupload (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getLogSettings`](#getlogsettings) | private |  | settings | inferred | Returns the log settings. |
+| [`processAnalyticsReport`](#processanalyticsreport) | private |  | input | inferred | Processes the analytics report. |
+| [`processCrashReport`](#processcrashreport) | private |  | misc | inferred | Processes the crash report. |
+| [`processOverviewReport`](#processoverviewreport) | private |  | misc | inferred | Processes the overview report. |
+| [`setLogSettings`](#setlogsettings) | private |  | settings | inferred | Sets the log settings. |
 
 <a id="getlogsettings"></a>
 ## `getLogSettings`
 
 `luna://com.webos.service.cloudupload/getLogSettings`
 
-Method on com.webos.service.cloudupload (from on-device permission registry; parameters undocumented).
+Returns the log settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cloudupload/getLogSettings '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.cloudupload/processAnalyticsReport`
 
-Method on com.webos.service.cloudupload (from on-device permission registry; parameters undocumented).
+Processes the analytics report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cloudupload/processAnalyticsReport '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.cloudupload/processCrashReport`
 
-Method on com.webos.service.cloudupload (from on-device permission registry; parameters undocumented).
+Processes the crash report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cloudupload/processCrashReport '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.cloudupload/processOverviewReport`
 
-Method on com.webos.service.cloudupload (from on-device permission registry; parameters undocumented).
+Processes the overview report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cloudupload/processOverviewReport '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.cloudupload/setLogSettings`
 
-Method on com.webos.service.cloudupload (from on-device permission registry; parameters undocumented).
+Sets the log settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cloudupload/setLogSettings '{}'

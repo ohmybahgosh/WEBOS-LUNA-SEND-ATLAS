@@ -1,32 +1,36 @@
 # `com.webos.service.gibbs.program`
 
+GIBBS program-guide service: scans the EPG and detailed program info, toggles EPG on/off, and runs SQLite queries against the guide database. _(inferred from the service's methods)_
+
 8 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`callSqliteMethod`](#callsqlitemethod) | private |  | tv-broadcast | Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented). |
-| [`checkProgramGuide`](#checkprogramguide) | private |  | tv-broadcast | Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented). |
-| [`notifyProgramGuideChanged`](#notifyprogramguidechanged) | private |  | tv-broadcast | Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented). |
-| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`scanProgramGuide`](#scanprogramguide) | private |  | tv-broadcast | Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented). |
-| [`setEPGOff`](#setepgoff) | private |  | tv-broadcast | Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented). |
-| [`setEPGOn`](#setepgon) | private |  | tv-broadcast | Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented). |
-| [`stopScanProgramGuide`](#stopscanprogramguide) | private |  | tv-broadcast | Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`callSqliteMethod`](#callsqlitemethod) | private |  | tv-broadcast | inferred | Calls the sqlite method. |
+| [`checkProgramGuide`](#checkprogramguide) | private |  | tv-broadcast | inferred | Checks the program guide. |
+| [`notifyProgramGuideChanged`](#notifyprogramguidechanged) | private |  | tv-broadcast | inferred | Notifies of the program guide changed. |
+| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | inferred | Scans for detail information. ⚠️ |
+| [`scanProgramGuide`](#scanprogramguide) | private |  | tv-broadcast | inferred | Scans for program guide. |
+| [`setEPGOff`](#setepgoff) | private |  | tv-broadcast | inferred | Sets the EPG off. |
+| [`setEPGOn`](#setepgon) | private |  | tv-broadcast | inferred | Sets the EPG on. |
+| [`stopScanProgramGuide`](#stopscanprogramguide) | private |  | tv-broadcast | inferred | Stops the scan program guide. |
 
 <a id="callsqlitemethod"></a>
 ## `callSqliteMethod`
 
 `luna://com.webos.service.gibbs.program/callSqliteMethod`
 
-Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented).
+Calls the sqlite method.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.program/callSqliteMethod '{}'
@@ -41,13 +45,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.program/checkProgramGuide`
 
-Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented).
+Checks the program guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.program/checkProgramGuide '{}'
@@ -62,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.program/notifyProgramGuideChanged`
 
-Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented).
+Notifies of the program guide changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.program/notifyProgramGuideChanged '{}'
@@ -83,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.program/scanDetailInformation`
 
-Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented).
+Scans for detail information.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.program/scanDetailInformation '{}'
@@ -104,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.program/scanProgramGuide`
 
-Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented).
+Scans for program guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.program/scanProgramGuide '{}'
@@ -125,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.program/setEPGOff`
 
-Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented).
+Sets the EPG off.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.program/setEPGOff '{}'
@@ -146,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.program/setEPGOn`
 
-Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented).
+Sets the EPG on.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.program/setEPGOn '{}'
@@ -167,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.program/stopScanProgramGuide`
 
-Method on com.webos.service.gibbs.program (from on-device permission registry; parameters undocumented).
+Stops the scan program guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.program/stopScanProgramGuide '{}'

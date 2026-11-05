@@ -1,14 +1,16 @@
 # `com.webos.service.preloadmanager`
 
+App preload manager: gets and sets the app preload policy and preload status for faster app launches. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getPreloadPolicy`](#getpreloadpolicy) | private |  | apps | Reads preload policy |
-| [`setPreloadPolicy`](#setpreloadpolicy) | private |  | apps | Enables/disables preloading of an app so LG does not keep it resident in memory |
-| [`setPreloadStatus`](#setpreloadstatus) | private |  | apps | Preload manager status setter (name listed among ACG-permitted methods in scheduled-task research note) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getPreloadPolicy`](#getpreloadpolicy) | private |  | apps | documented | Reads preload policy |
+| [`setPreloadPolicy`](#setpreloadpolicy) | private |  | apps | documented | Enables/disables preloading of an app so LG does not keep it resident in memory |
+| [`setPreloadStatus`](#setpreloadstatus) | private |  | apps | documented | Preload manager status setter (name listed among ACG-permitted methods in scheduled-task research note) |
 
 <a id="getpreloadpolicy"></a>
 ## `getPreloadPolicy`
@@ -21,7 +23,7 @@ Reads preload policy
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 6+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.preloadmanager/getPreloadPolicy '{}'
@@ -40,7 +42,7 @@ Enables/disables preloading of an app so LG does not keep it resident in memory
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 6+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -65,7 +67,7 @@ Preload manager status setter (name listed among ACG-permitted methods in schedu
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.preloadmanager/setPreloadStatus '{}'

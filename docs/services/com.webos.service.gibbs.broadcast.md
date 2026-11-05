@@ -1,63 +1,67 @@
 # `com.webos.service.gibbs.broadcast`
 
+GIBBS live-broadcast service: changes channels and reports broadcast/channel/play state, audio info, dialog-enhancement and emergency info for live TV. _(inferred from the service's methods)_
+
 39 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`changeChannel`](#changechannel) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`changeChannelService`](#changechannelservice) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`close`](#close) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getAudioDescriptionInfo`](#getaudiodescriptioninfo) | private |  | audio | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getAudioInfo`](#getaudioinfo) | private |  | audio | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getAudioLanguageList`](#getaudiolanguagelist) | private |  | audio | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getBroadcastComponentList`](#getbroadcastcomponentlist) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getBroadcastState`](#getbroadcaststate) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getChannelState`](#getchannelstate) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getCurrentChannel`](#getcurrentchannel) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getDialogEnhancementGainInfo`](#getdialogenhancementgaininfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getDialogEnhancementLimitInfo`](#getdialogenhancementlimitinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getEmergencyInfo`](#getemergencyinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getMediaTime`](#getmediatime) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getObjectAudioInfo`](#getobjectaudioinfo) | private |  | audio | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getPipHotkeyState`](#getpiphotkeystate) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getPlayState`](#getplaystate) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getSignalStatus`](#getsignalstatus) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`getVideoInfo`](#getvideoinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`notifyEndOfProcess`](#notifyendofprocess) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`open`](#open) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`pause`](#pause) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`pause1`](#pause1) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`pin`](#pin) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`play`](#play) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`registerDataMfu`](#registerdatamfu) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setAliveMode`](#setalivemode) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setAudioLanguage`](#setaudiolanguage) | private |  | audio | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setAudioMute`](#setaudiomute) | private |  | audio | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setBroadcastComponent`](#setbroadcastcomponent) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setDialogEnhancementGain`](#setdialogenhancementgain) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setObjectAudioInfo`](#setobjectaudioinfo) | private |  | audio | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`setPipHotkey`](#setpiphotkey) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`startService`](#startservice) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
-| [`subscribeSignalTable`](#subscribesignaltable) | private |  | tv-broadcast | Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`changeChannel`](#changechannel) | private |  | tv-broadcast | inferred | Changes the channel. |
+| [`changeChannelService`](#changechannelservice) | private |  | tv-broadcast | inferred | Changes the channel service. |
+| [`close`](#close) | private |  | tv-broadcast | inferred | Closes the gibbs broadcast. |
+| [`getAudioDescriptionInfo`](#getaudiodescriptioninfo) | private |  | audio | inferred | Returns the audio description info. |
+| [`getAudioInfo`](#getaudioinfo) | private |  | audio | inferred | Returns the audio info. |
+| [`getAudioLanguageList`](#getaudiolanguagelist) | private |  | audio | inferred | Returns the audio language list. |
+| [`getBroadcastComponentList`](#getbroadcastcomponentlist) | private |  | tv-broadcast | inferred | Returns the broadcast component list. |
+| [`getBroadcastState`](#getbroadcaststate) | private |  | tv-broadcast | inferred | Returns the broadcast state. |
+| [`getChannelChangeResult`](#getchannelchangeresult) | private |  | tv-broadcast | inferred | Returns the channel change result. |
+| [`getChannelState`](#getchannelstate) | private |  | tv-broadcast | inferred | Returns the channel state. |
+| [`getCurrentChannel`](#getcurrentchannel) | private |  | tv-broadcast | inferred | Returns the current channel. |
+| [`getDialogEnhancementGainInfo`](#getdialogenhancementgaininfo) | private |  | tv-broadcast | inferred | Returns the dialog enhancement gain info. |
+| [`getDialogEnhancementLimitInfo`](#getdialogenhancementlimitinfo) | private |  | tv-broadcast | inferred | Returns the dialog enhancement limit info. |
+| [`getEmergencyInfo`](#getemergencyinfo) | private |  | tv-broadcast | inferred | Returns the emergency info. |
+| [`getMediaTime`](#getmediatime) | private |  | tv-broadcast | inferred | Returns the media time. |
+| [`getObjectAudioInfo`](#getobjectaudioinfo) | private |  | audio | inferred | Returns the object audio info. |
+| [`getPipHotkeyState`](#getpiphotkeystate) | private |  | tv-broadcast | inferred | Returns the pip hotkey state. |
+| [`getPlayState`](#getplaystate) | private |  | tv-broadcast | inferred | Returns the play state. |
+| [`getSignalStatus`](#getsignalstatus) | private |  | tv-broadcast | inferred | Returns the signal status. |
+| [`getVideoInfo`](#getvideoinfo) | private |  | tv-broadcast | inferred | Returns the video info. |
+| [`notifyEndOfProcess`](#notifyendofprocess) | private |  | tv-broadcast | inferred | Notifies of the end of process. |
+| [`open`](#open) | private |  | tv-broadcast | inferred | Opens the gibbs broadcast. |
+| [`pause`](#pause) | private |  | tv-broadcast | inferred | Pauses the gibbs broadcast. |
+| [`pause1`](#pause1) | private |  | tv-broadcast | inferred | Pauses the 1. |
+| [`pin`](#pin) | private |  | tv-broadcast | inferred | Handles the pin. |
+| [`play`](#play) | private |  | tv-broadcast | inferred | Plays the gibbs broadcast. |
+| [`registerDataMfu`](#registerdatamfu) | private |  | tv-broadcast | inferred | Registers the data mfu. |
+| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | inferred | Scans for detail information. ⚠️ |
+| [`setAliveMode`](#setalivemode) | private |  | tv-broadcast | inferred | Sets the alive mode. |
+| [`setAudioLanguage`](#setaudiolanguage) | private |  | audio | inferred | Sets the audio language. |
+| [`setAudioMute`](#setaudiomute) | private |  | audio | inferred | Sets the audio mute. |
+| [`setBroadcastComponent`](#setbroadcastcomponent) | private |  | tv-broadcast | inferred | Sets the broadcast component. |
+| [`setDialogEnhancementGain`](#setdialogenhancementgain) | private |  | tv-broadcast | inferred | Sets the dialog enhancement gain. |
+| [`setObjectAudioInfo`](#setobjectaudioinfo) | private |  | audio | inferred | Sets the object audio info. |
+| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | tv-broadcast | inferred | Sets the pipeline window ID. |
+| [`setPipHotkey`](#setpiphotkey) | private |  | tv-broadcast | inferred | Sets the pip hotkey. |
+| [`startService`](#startservice) | private |  | tv-broadcast | inferred | Starts the service. |
+| [`stop`](#stop) | private |  | tv-broadcast | inferred | Stops the gibbs broadcast. |
+| [`subscribeSignalTable`](#subscribesignaltable) | private |  | tv-broadcast | inferred | Subscribes to the signal table. |
 
 <a id="changechannel"></a>
 ## `changeChannel`
 
 `luna://com.webos.service.gibbs.broadcast/changeChannel`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Changes the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/changeChannel '{}'
@@ -72,13 +76,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/changeChannelService`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Changes the channel service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/changeChannelService '{}'
@@ -93,13 +99,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/close`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Closes the gibbs broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/close '{}'
@@ -114,13 +122,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getAudioDescriptionInfo`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the audio description info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getAudioDescriptionInfo '{}'
@@ -135,13 +145,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getAudioInfo`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getAudioInfo '{}'
@@ -156,13 +168,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getAudioLanguageList`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the audio language list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getAudioLanguageList '{}'
@@ -177,13 +191,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getBroadcastComponentList`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the broadcast component list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getBroadcastComponentList '{}'
@@ -198,13 +214,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getBroadcastState`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the broadcast state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getBroadcastState '{}'
@@ -219,13 +237,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getChannelChangeResult`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the channel change result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getChannelChangeResult '{}'
@@ -240,13 +260,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getChannelState`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the channel state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getChannelState '{}'
@@ -261,13 +283,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getCurrentChannel`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the current channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getCurrentChannel '{}'
@@ -282,13 +306,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getDialogEnhancementGainInfo`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the dialog enhancement gain info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getDialogEnhancementGainInfo '{}'
@@ -303,13 +329,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getDialogEnhancementLimitInfo`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the dialog enhancement limit info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getDialogEnhancementLimitInfo '{}'
@@ -324,13 +352,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getEmergencyInfo`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the emergency info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getEmergencyInfo '{}'
@@ -345,13 +375,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getMediaTime`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the media time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getMediaTime '{}'
@@ -366,13 +398,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getObjectAudioInfo`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the object audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getObjectAudioInfo '{}'
@@ -387,13 +421,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getPipHotkeyState`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the pip hotkey state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getPipHotkeyState '{}'
@@ -408,13 +444,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getPlayState`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the play state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getPlayState '{}'
@@ -429,13 +467,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getSignalStatus`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the signal status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getSignalStatus '{}'
@@ -450,13 +490,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/getVideoInfo`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Returns the video info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/getVideoInfo '{}'
@@ -471,13 +513,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/notifyEndOfProcess`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Notifies of the end of process.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/notifyEndOfProcess '{}'
@@ -492,13 +536,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/open`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Opens the gibbs broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/open '{}'
@@ -513,13 +559,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/pause`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Pauses the gibbs broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/pause '{}'
@@ -534,13 +582,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/pause1`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Pauses the 1.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/pause1 '{}'
@@ -555,13 +605,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/pin`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Handles the pin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/pin '{}'
@@ -576,13 +628,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/play`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Plays the gibbs broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/play '{}'
@@ -597,13 +651,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/registerDataMfu`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Registers the data mfu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/registerDataMfu '{}'
@@ -618,13 +674,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/scanDetailInformation`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Scans for detail information.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/scanDetailInformation '{}'
@@ -639,13 +697,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/setAliveMode`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the alive mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/setAliveMode '{}'
@@ -660,13 +720,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/setAudioLanguage`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the audio language.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/setAudioLanguage '{}'
@@ -681,13 +743,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/setAudioMute`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the audio mute.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/setAudioMute '{}'
@@ -702,13 +766,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/setBroadcastComponent`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the broadcast component.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/setBroadcastComponent '{}'
@@ -723,13 +789,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/setDialogEnhancementGain`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the dialog enhancement gain.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/setDialogEnhancementGain '{}'
@@ -744,13 +812,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/setObjectAudioInfo`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the object audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/setObjectAudioInfo '{}'
@@ -765,13 +835,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/setPipelineWindowId`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the pipeline window ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/setPipelineWindowId '{}'
@@ -786,13 +858,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/setPipHotkey`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Sets the pip hotkey.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/setPipHotkey '{}'
@@ -807,13 +881,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/startService`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Starts the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/startService '{}'
@@ -828,13 +904,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/stop`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Stops the gibbs broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/stop '{}'
@@ -849,13 +927,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.broadcast/subscribeSignalTable`
 
-Method on com.webos.service.gibbs.broadcast (from on-device permission registry; parameters undocumented).
+Subscribes to the signal table.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.broadcast/subscribeSignalTable '{}'

@@ -1,55 +1,59 @@
 # `com.webos.service.wirelessavcontroller`
 
+Wireless A/V controller (wireless transmitter box/antenna): antenna/beam search and monitoring, modem control, event logs, diagnostics and firmware update. _(inferred from the service's methods)_
+
 31 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`antennaSearch`](#antennasearch) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`diagnostic`](#diagnostic) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`fwUpdate`](#fwupdate) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getAlertPopupIsClose`](#getalertpopupisclose) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getAVCtrl`](#getavctrl) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getBeamMonitorReport`](#getbeammonitorreport) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getChannelAntennaInfo`](#getchannelantennainfo) | private |  | tv-broadcast | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getEventLog`](#geteventlog) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getFileState`](#getfilestate) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getInstartList`](#getinstartlist) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getModemCtrl`](#getmodemctrl) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getNVConf`](#getnvconf) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getParamConf`](#getparamconf) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getVersion`](#getversion) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getWatParameter`](#getwatparameter) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`getZcbMicomVersion`](#getzcbmicomversion) | private |  | power | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`setAlertPopup`](#setalertpopup) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`setAlertPopupGoTosettings`](#setalertpopupgotosettings) | private |  | settings | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`setAVCtrl`](#setavctrl) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`setModemCtrl`](#setmodemctrl) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`setNVConf`](#setnvconf) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`setOSD`](#setosd) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`setParamConf`](#setparamconf) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`setSignalLevel`](#setsignallevel) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`setWirelessConfig`](#setwirelessconfig) | private |  | settings | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`test/getFactoryTestResult`](#test_getfactorytestresult) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`test/lsTest`](#test_lstest) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`test/setDebug`](#test_setdebug) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`test/SPITest`](#test_spitest) | private |  | network | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). |
-| [`updateZcbMicomFirmware`](#updatezcbmicomfirmware) | private |  | power | Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`antennaSearch`](#antennasearch) | private |  | network | inferred | Handles the antenna search. |
+| [`diagnostic`](#diagnostic) | private |  | network | inferred | Handles the diagnostic. |
+| [`fwUpdate`](#fwupdate) | private |  | network | inferred | Handles the firmware update. |
+| [`getAlertPopupIsClose`](#getalertpopupisclose) | private |  | network | inferred | Returns the alert popup is close. |
+| [`getAVCtrl`](#getavctrl) | private |  | network | inferred | Returns the A/V ctrl. |
+| [`getBeamMonitorReport`](#getbeammonitorreport) | private |  | network | inferred | Returns the beam monitor report. |
+| [`getChannelAntennaInfo`](#getchannelantennainfo) | private |  | tv-broadcast | inferred | Returns the channel antenna info. |
+| [`getEventLog`](#geteventlog) | private |  | network | inferred | Returns the event log. |
+| [`getFileState`](#getfilestate) | private |  | network | inferred | Returns the file state. |
+| [`getInstartList`](#getinstartlist) | private |  | network | inferred | Returns the instart list. |
+| [`getModemCtrl`](#getmodemctrl) | private |  | network | inferred | Returns the modem ctrl. |
+| [`getNVConf`](#getnvconf) | private |  | network | inferred | Returns the NV conf. |
+| [`getParamConf`](#getparamconf) | private |  | network | inferred | Returns the param conf. |
+| [`getStatus`](#getstatus) | private |  | network | inferred | Returns the status. |
+| [`getVersion`](#getversion) | private |  | network | inferred | Returns the version. |
+| [`getWatParameter`](#getwatparameter) | private |  | network | inferred | Returns the wat parameter. |
+| [`getZcbMicomVersion`](#getzcbmicomversion) | private |  | power | inferred | Returns the zcb MICOM version. |
+| [`setAlertPopup`](#setalertpopup) | private |  | network | inferred | Sets the alert popup. |
+| [`setAlertPopupGoTosettings`](#setalertpopupgotosettings) | private |  | settings | inferred | Sets the alert popup go tosettings. |
+| [`setAVCtrl`](#setavctrl) | private |  | network | inferred | Sets the A/V ctrl. |
+| [`setModemCtrl`](#setmodemctrl) | private |  | network | inferred | Sets the modem ctrl. |
+| [`setNVConf`](#setnvconf) | private |  | network | inferred | Sets the NV conf. |
+| [`setOSD`](#setosd) | private |  | network | inferred | Sets the OSD. |
+| [`setParamConf`](#setparamconf) | private |  | network | inferred | Sets the param conf. |
+| [`setSignalLevel`](#setsignallevel) | private |  | network | inferred | Sets the signal level. |
+| [`setWirelessConfig`](#setwirelessconfig) | private |  | settings | inferred | Sets the wireless config. |
+| [`test/getFactoryTestResult`](#test_getfactorytestresult) | private |  | network | inferred | Returns the factory test result (test) |
+| [`test/lsTest`](#test_lstest) | private |  | network | inferred | Handles the ls test (test) |
+| [`test/setDebug`](#test_setdebug) | private |  | network | inferred | Sets the debug (test) |
+| [`test/SPITest`](#test_spitest) | private |  | network | inferred | Handles the SPI test (test) |
+| [`updateZcbMicomFirmware`](#updatezcbmicomfirmware) | private |  | power | inferred | Updates the zcb MICOM firmware. ⚠️ |
 
 <a id="antennasearch"></a>
 ## `antennaSearch`
 
 `luna://com.webos.service.wirelessavcontroller/antennaSearch`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Handles the antenna search.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/antennaSearch '{}'
@@ -64,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/diagnostic`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Handles the diagnostic.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/diagnostic '{}'
@@ -85,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/fwUpdate`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Handles the firmware update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/fwUpdate '{}'
@@ -106,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getAlertPopupIsClose`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the alert popup is close.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getAlertPopupIsClose '{}'
@@ -127,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getAVCtrl`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the A/V ctrl.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getAVCtrl '{}'
@@ -148,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getBeamMonitorReport`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the beam monitor report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getBeamMonitorReport '{}'
@@ -169,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getChannelAntennaInfo`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the channel antenna info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getChannelAntennaInfo '{}'
@@ -190,13 +206,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getEventLog`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the event log.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getEventLog '{}'
@@ -211,13 +229,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getFileState`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the file state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getFileState '{}'
@@ -232,13 +252,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getInstartList`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the instart list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getInstartList '{}'
@@ -253,13 +275,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getModemCtrl`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the modem ctrl.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getModemCtrl '{}'
@@ -274,13 +298,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getNVConf`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the NV conf.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getNVConf '{}'
@@ -295,13 +321,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getParamConf`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the param conf.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getParamConf '{}'
@@ -316,13 +344,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getStatus`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getStatus '{}'
@@ -337,13 +367,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getVersion`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getVersion '{}'
@@ -358,13 +390,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getWatParameter`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the wat parameter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getWatParameter '{}'
@@ -379,13 +413,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/getZcbMicomVersion`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the zcb MICOM version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/getZcbMicomVersion '{}'
@@ -400,13 +436,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/setAlertPopup`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Sets the alert popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/setAlertPopup '{}'
@@ -421,13 +459,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/setAlertPopupGoTosettings`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Sets the alert popup go tosettings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/setAlertPopupGoTosettings '{}'
@@ -442,13 +482,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/setAVCtrl`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Sets the A/V ctrl.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/setAVCtrl '{}'
@@ -463,13 +505,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/setModemCtrl`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Sets the modem ctrl.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/setModemCtrl '{}'
@@ -484,13 +528,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/setNVConf`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Sets the NV conf.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/setNVConf '{}'
@@ -505,13 +551,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/setOSD`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Sets the OSD.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/setOSD '{}'
@@ -526,13 +574,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/setParamConf`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Sets the param conf.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/setParamConf '{}'
@@ -547,13 +597,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/setSignalLevel`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Sets the signal level.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/setSignalLevel '{}'
@@ -568,13 +620,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/setWirelessConfig`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Sets the wireless config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/setWirelessConfig '{}'
@@ -589,13 +643,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/test/getFactoryTestResult`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Returns the factory test result (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/test/getFactoryTestResult '{}'
@@ -610,13 +666,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/test/lsTest`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Handles the ls test (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/test/lsTest '{}'
@@ -631,13 +689,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/test/setDebug`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Sets the debug (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/test/setDebug '{}'
@@ -652,13 +712,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/test/SPITest`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Handles the SPI test (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/test/SPITest '{}'
@@ -673,13 +735,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.wirelessavcontroller/updateZcbMicomFirmware`
 
-Method on com.webos.service.wirelessavcontroller (from on-device permission registry; parameters undocumented).
+Updates the zcb MICOM firmware.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wirelessavcontroller/updateZcbMicomFirmware '{}'

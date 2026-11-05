@@ -1,33 +1,37 @@
 # `com.webos.service.ftms`
 
+Fitness-machine (BLE FTMS) service: connects to fitness equipment, reads and saves workout data, and manages a blocked-device scan filter. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`appendBlockedDeviceList`](#appendblockeddevicelist) | private |  | db | Method on com.webos.service.ftms (introspected on-device; parameters undocumented). |
-| [`clearScanFilter`](#clearscanfilter) | private |  | misc | Method on com.webos.service.ftms (from on-device permission registry; parameters undocumented). |
-| [`connect`](#connect) | private |  | misc | Method on com.webos.service.ftms (introspected on-device; parameters undocumented). |
-| [`createPopup`](#createpopup) | private |  | misc | Method on com.webos.service.ftms (introspected on-device; parameters undocumented). |
-| [`debug`](#debug) | private |  | misc | Method on com.webos.service.ftms (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | misc | Getter on com.webos.service.ftms (introspected on-device; parameters undocumented). |
-| [`getWorkoutData`](#getworkoutdata) | private |  | misc | Getter on com.webos.service.ftms (introspected on-device; parameters undocumented). |
-| [`removeBlockedDeviceList`](#removeblockeddevicelist) | private |  | misc | Method on com.webos.service.ftms (introspected on-device; parameters undocumented). ⚠️ |
-| [`saveWorkoutData`](#saveworkoutdata) | private |  | misc | Method on com.webos.service.ftms (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`appendBlockedDeviceList`](#appendblockeddevicelist) | private |  | db | inferred | Handles the append blocked device list. |
+| [`clearScanFilter`](#clearscanfilter) | private |  | misc | inferred | Clears the scan filter. |
+| [`connect`](#connect) | private |  | misc | inferred | Connects the ftms. |
+| [`createPopup`](#createpopup) | private |  | misc | inferred | Creates the popup. |
+| [`debug`](#debug) | private |  | misc | inferred | Handles the debug. |
+| [`getStatus`](#getstatus) | private |  | misc | inferred | Returns the status. |
+| [`getWorkoutData`](#getworkoutdata) | private |  | misc | inferred | Returns the workout data. |
+| [`removeBlockedDeviceList`](#removeblockeddevicelist) | private |  | misc | inferred | Removes the blocked device list. ⚠️ |
+| [`saveWorkoutData`](#saveworkoutdata) | private |  | misc | inferred | Saves the workout data. |
 
 <a id="appendblockeddevicelist"></a>
 ## `appendBlockedDeviceList`
 
 `luna://com.webos.service.ftms/appendBlockedDeviceList`
 
-Method on com.webos.service.ftms (introspected on-device; parameters undocumented).
+Handles the append blocked device list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ftms/appendBlockedDeviceList '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ftms/clearScanFilter`
 
-Method on com.webos.service.ftms (from on-device permission registry; parameters undocumented).
+Clears the scan filter.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ftms/clearScanFilter '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.ftms/connect`
 
-Method on com.webos.service.ftms (introspected on-device; parameters undocumented).
+Connects the ftms.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ftms/connect '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ftms/createPopup`
 
-Method on com.webos.service.ftms (introspected on-device; parameters undocumented).
+Creates the popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ftms/createPopup '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ftms/debug`
 
-Method on com.webos.service.ftms (introspected on-device; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ftms/debug '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ftms/getStatus`
 
-Getter on com.webos.service.ftms (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ftms/getStatus '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ftms/getWorkoutData`
 
-Getter on com.webos.service.ftms (introspected on-device; parameters undocumented).
+Returns the workout data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ftms/getWorkoutData '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ftms/removeBlockedDeviceList`
 
-Method on com.webos.service.ftms (introspected on-device; parameters undocumented).
+Removes the blocked device list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ftms/removeBlockedDeviceList '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ftms/saveWorkoutData`
 
-Method on com.webos.service.ftms (from on-device permission registry; parameters undocumented).
+Saves the workout data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ftms/saveWorkoutData '{}'

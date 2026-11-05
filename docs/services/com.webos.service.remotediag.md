@@ -1,33 +1,37 @@
 # `com.webos.service.remotediag`
 
+Remote diagnostics service: downloads terms, reports status, and subscribes to and reports media info for remote support/diagnostics. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`downloadTerms`](#downloadterms) | private |  | misc | Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | misc | Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented). |
-| [`load`](#load) | private |  | misc | Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented). |
-| [`notifyMediaInfo`](#notifymediainfo) | private |  | media | Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented). |
-| [`requestMediaInfo`](#requestmediainfo) | private |  | media | Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented). |
-| [`subscribe`](#subscribe) | private |  | misc | Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented). |
-| [`subscribeMediaInfo`](#subscribemediainfo) | private |  | media | Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented). |
-| [`testSubscription`](#testsubscription) | private |  | misc | Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented). |
-| [`unload`](#unload) | private |  | misc | Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`downloadTerms`](#downloadterms) | private |  | misc | inferred | Downloads the terms. |
+| [`getStatus`](#getstatus) | private |  | misc | inferred | Returns the status. |
+| [`load`](#load) | private |  | misc | inferred | Loads the remotediag. |
+| [`notifyMediaInfo`](#notifymediainfo) | private |  | media | inferred | Notifies of the media info. |
+| [`requestMediaInfo`](#requestmediainfo) | private |  | media | inferred | Requests the media info. |
+| [`subscribe`](#subscribe) | private |  | misc | inferred | Subscribes to the remotediag. |
+| [`subscribeMediaInfo`](#subscribemediainfo) | private |  | media | inferred | Subscribes to the media info. |
+| [`testSubscription`](#testsubscription) | private |  | misc | inferred | Tests the subscription. |
+| [`unload`](#unload) | private |  | misc | inferred | Unloads the remotediag. |
 
 <a id="downloadterms"></a>
 ## `downloadTerms`
 
 `luna://com.webos.service.remotediag/downloadTerms`
 
-Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented).
+Downloads the terms.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.remotediag/downloadTerms '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.remotediag/getStatus`
 
-Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.remotediag/getStatus '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.remotediag/load`
 
-Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented).
+Loads the remotediag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.remotediag/load '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.remotediag/notifyMediaInfo`
 
-Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented).
+Notifies of the media info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.remotediag/notifyMediaInfo '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.remotediag/requestMediaInfo`
 
-Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented).
+Requests the media info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.remotediag/requestMediaInfo '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.remotediag/subscribe`
 
-Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented).
+Subscribes to the remotediag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.remotediag/subscribe '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.remotediag/subscribeMediaInfo`
 
-Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented).
+Subscribes to the media info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.remotediag/subscribeMediaInfo '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.remotediag/testSubscription`
 
-Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented).
+Tests the subscription.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.remotediag/testSubscription '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.remotediag/unload`
 
-Method on com.webos.service.remotediag (from on-device permission registry; parameters undocumented).
+Unloads the remotediag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.remotediag/unload '{}'

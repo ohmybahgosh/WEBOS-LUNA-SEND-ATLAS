@@ -1,40 +1,42 @@
 # `com.webos.settingsservice`
 
+Settings service: reads, writes, resets, and describes system settings (current, factory, and private values), supporting batch operations and subscriptions.
+
 29 methods.  Platforms seen: all, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`batch`](#batch) | private |  | settings | Executes several settingsservice operations in one call |
-| [`deleteSystemSettingDesc`](#deletesystemsettingdesc) | private |  | settings | Registered in webOS OSE sysbus api.json (ACG group settings.management); name only |
-| [`deleteSystemSettings`](#deletesystemsettings) | private |  | settings | Deletes the specified system settings |
-| [`getCurrentSettings`](#getcurrentsettings) | private |  | settings | Returns settings of foreground App |
-| [`getCurrentSystemSettings`](#getcurrentsystemsettings) | private |  | settings | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). |
-| [`getSystemSettingDesc`](#getsystemsettingdesc) | public |  | settings | Retrieve the description for the specified key |
-| [`getSystemSettingDescPriv`](#getsystemsettingdescpriv) | private |  | settings | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). |
-| [`getSystemSettingFactoryValue`](#getsystemsettingfactoryvalue) | public |  | settings | Retrieve the list of default values for the specified key. |
-| [`getSystemSettings`](#getsystemsettings) | public | yes | settings | Retrieves system setting values by key (localeInfo, country, smartServiceCountryCode2, audioGuidance, caption* keys). |
-| [`getSystemSettingsPriv`](#getsystemsettingspriv) | private |  | settings | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). |
-| [`getSystemSettingValues`](#getsystemsettingvalues) | public |  | settings | Retrieve the list of valid values for the specified key |
-| [`getSystemSettingValuesPriv`](#getsystemsettingvaluespriv) | private |  | settings | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). |
-| [`internal/getCurrentSubscriptions`](#internal_getcurrentsubscriptions) | private |  | settings | Method registered by com.webos.settingsservice (category '/internal') |
-| [`internal/instrument`](#internal_instrument) | private |  | settings | Method registered by com.webos.settingsservice (category '/internal') |
-| [`resetSystemSettingDesc`](#resetsystemsettingdesc) | private |  | settings | Resets setting descriptions to defaults |
-| [`resetSystemSettingDescPriv`](#resetsystemsettingdescpriv) | private |  | settings | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`resetSystemSettings`](#resetsystemsettings) | private |  | settings | Resets system settings to their factory/default values ⚠️ |
-| [`resetSystemSettingsPriv`](#resetsystemsettingspriv) | private |  | settings | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setSystemFactorySettingDesc`](#setsystemfactorysettingdesc) | private |  | settings | Registered in webOS OSE sysbus api.json (ACG group settings.management); name only |
-| [`setSystemFactorySettingDescPriv`](#setsystemfactorysettingdescpriv) | private |  | settings | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setSystemSettingDesc`](#setsystemsettingdesc) | public |  | settings | Update the description for the specified key |
-| [`setSystemSettingDescPriv`](#setsystemsettingdescpriv) | private |  | settings | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). |
-| [`setSystemSettingFactoryDesc`](#setsystemsettingfactorydesc) | public |  | settings | Update the description for the specified key |
-| [`setSystemSettingFactoryDescPriv`](#setsystemsettingfactorydescpriv) | private |  | settings | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setSystemSettingFactoryValue`](#setsystemsettingfactoryvalue) | private |  | settings | Save the specified settings in parameter. |
-| [`setSystemSettings`](#setsystemsettings) | private |  | settings | Write TV system settings (picture, sound, option, other, aspectRatio, network, general, time ...). The main luna call used by LGTV Companion |
-| [`setSystemSettingsPriv`](#setsystemsettingspriv) | private |  | settings | Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented). |
-| [`setSystemSettingValues`](#setsystemsettingvalues) | private |  | settings | Update the list of valid values for the specified key |
-| [`update`](#update) | private |  | settings | Method on com.webos.settingsservice (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`batch`](#batch) | private |  | settings | documented | Executes several settingsservice operations in one call |
+| [`deleteSystemSettingDesc`](#deletesystemsettingdesc) | private |  | settings | documented | Registered in webOS OSE sysbus api.json (ACG group settings.management); name only |
+| [`deleteSystemSettings`](#deletesystemsettings) | private |  | settings | documented | Deletes the specified system settings |
+| [`getCurrentSettings`](#getcurrentsettings) | private |  | settings | documented | Returns settings of foreground App |
+| [`getCurrentSystemSettings`](#getcurrentsystemsettings) | private |  | settings | inferred | Returns the current system settings. |
+| [`getSystemSettingDesc`](#getsystemsettingdesc) | public |  | settings | documented | Retrieve the description for the specified key |
+| [`getSystemSettingDescPriv`](#getsystemsettingdescpriv) | private |  | settings | inferred | Returns the system setting desc priv. |
+| [`getSystemSettingFactoryValue`](#getsystemsettingfactoryvalue) | public |  | settings | documented | Retrieve the list of default values for the specified key. |
+| [`getSystemSettings`](#getsystemsettings) | public | yes | settings | documented | Retrieves system setting values by key (localeInfo, country, smartServiceCountryCode2, audioGuidance, caption* keys). |
+| [`getSystemSettingsPriv`](#getsystemsettingspriv) | private |  | settings | inferred | Returns the system settings priv. |
+| [`getSystemSettingValues`](#getsystemsettingvalues) | public |  | settings | documented | Retrieve the list of valid values for the specified key |
+| [`getSystemSettingValuesPriv`](#getsystemsettingvaluespriv) | private |  | settings | inferred | Returns the system setting values priv. |
+| [`internal/getCurrentSubscriptions`](#internal_getcurrentsubscriptions) | private |  | settings | inferred | Returns the current subscriptions (internal) |
+| [`internal/instrument`](#internal_instrument) | private |  | settings | inferred | Handles the instrument (internal) |
+| [`resetSystemSettingDesc`](#resetsystemsettingdesc) | private |  | settings | documented | Resets setting descriptions to defaults |
+| [`resetSystemSettingDescPriv`](#resetsystemsettingdescpriv) | private |  | settings | inferred | Resets the system setting desc priv. ⚠️ |
+| [`resetSystemSettings`](#resetsystemsettings) | private |  | settings | documented | Resets system settings to their factory/default values ⚠️ |
+| [`resetSystemSettingsPriv`](#resetsystemsettingspriv) | private |  | settings | inferred | Resets the system settings priv. ⚠️ |
+| [`setSystemFactorySettingDesc`](#setsystemfactorysettingdesc) | private |  | settings | documented | Registered in webOS OSE sysbus api.json (ACG group settings.management); name only |
+| [`setSystemFactorySettingDescPriv`](#setsystemfactorysettingdescpriv) | private |  | settings | inferred | Sets the system factory setting desc priv. ⚠️ |
+| [`setSystemSettingDesc`](#setsystemsettingdesc) | public |  | settings | documented | Update the description for the specified key |
+| [`setSystemSettingDescPriv`](#setsystemsettingdescpriv) | private |  | settings | inferred | Sets the system setting desc priv. |
+| [`setSystemSettingFactoryDesc`](#setsystemsettingfactorydesc) | public |  | settings | documented | Update the description for the specified key |
+| [`setSystemSettingFactoryDescPriv`](#setsystemsettingfactorydescpriv) | private |  | settings | inferred | Sets the system setting factory desc priv. ⚠️ |
+| [`setSystemSettingFactoryValue`](#setsystemsettingfactoryvalue) | private |  | settings | documented | Save the specified settings in parameter. |
+| [`setSystemSettings`](#setsystemsettings) | private |  | settings | documented | Write TV system settings (picture, sound, option, other, aspectRatio, network, general, time ...). The main luna call used by LGTV Companion |
+| [`setSystemSettingsPriv`](#setsystemsettingspriv) | private |  | settings | inferred | Sets the system settings priv. |
+| [`setSystemSettingValues`](#setsystemsettingvalues) | private |  | settings | documented | Update the list of valid values for the specified key |
+| [`update`](#update) | private |  | settings | inferred | Updates the settingsservice. |
 
 <a id="batch"></a>
 ## `batch`
@@ -47,7 +49,7 @@ Executes several settingsservice operations in one call
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -74,7 +76,7 @@ Registered in webOS OSE sysbus api.json (ACG group settings.management); name on
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/deleteSystemSettingDesc '{}'
@@ -95,7 +97,7 @@ Deletes the specified system settings
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -123,7 +125,7 @@ Returns settings of foreground App
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -145,13 +147,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.settingsservice/getCurrentSystemSettings`
 
-Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented).
+Returns the current system settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/getCurrentSystemSettings '{}'
@@ -172,7 +176,7 @@ Retrieve the description for the specified key
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -196,13 +200,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.settingsservice/getSystemSettingDescPriv`
 
-Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented).
+Returns the system setting desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/getSystemSettingDescPriv '{}'
@@ -223,7 +229,7 @@ Retrieve the list of default values for the specified key.
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -252,7 +258,7 @@ Retrieves system setting values by key (localeInfo, country, smartServiceCountry
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (all versions unless noted); webOS 3+  
-- **Confidence:** documented, code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -274,13 +280,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/settings-servi
 
 `luna://com.webos.settingsservice/getSystemSettingsPriv`
 
-Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented).
+Returns the system settings priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/getSystemSettingsPriv '{}'
@@ -301,7 +309,7 @@ Retrieve the list of valid values for the specified key
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -323,13 +331,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.settingsservice/getSystemSettingValuesPriv`
 
-Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented).
+Returns the system setting values priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/getSystemSettingValuesPriv '{}'
@@ -344,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.settingsservice/internal/getCurrentSubscriptions`
 
-Method registered by com.webos.settingsservice (category '/internal')
+Returns the current subscriptions (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/internal/getCurrentSubscriptions '{}'
@@ -365,13 +377,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.settingsservice/internal/instrument`
 
-Method registered by com.webos.settingsservice (category '/internal')
+Handles the instrument (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/internal/instrument '{}'
@@ -392,7 +406,7 @@ Resets setting descriptions to defaults
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -413,13 +427,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.settingsservice/resetSystemSettingDescPriv`
 
-Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented).
+Resets the system setting desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/resetSystemSettingDescPriv '{}'
@@ -440,7 +456,7 @@ Resets system settings to their factory/default values
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -463,13 +479,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.settingsservice/resetSystemSettingsPriv`
 
-Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented).
+Resets the system settings priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/resetSystemSettingsPriv '{}'
@@ -490,7 +508,7 @@ Registered in webOS OSE sysbus api.json (ACG group settings.management); name on
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/setSystemFactorySettingDesc '{}'
@@ -505,13 +523,15 @@ Sources: [1](https://github.com/webosose/settingsservice/blob/master/files/sysbu
 
 `luna://com.webos.settingsservice/setSystemFactorySettingDescPriv`
 
-Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented).
+Sets the system factory setting desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/setSystemFactorySettingDescPriv '{}'
@@ -532,7 +552,7 @@ Update the description for the specified key
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -558,13 +578,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.settingsservice/setSystemSettingDescPriv`
 
-Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented).
+Sets the system setting desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/setSystemSettingDescPriv '{}'
@@ -585,7 +607,7 @@ Update the description for the specified key
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -612,13 +634,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.settingsservice/setSystemSettingFactoryDescPriv`
 
-Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented).
+Sets the system setting factory desc priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/setSystemSettingFactoryDescPriv '{}'
@@ -639,7 +663,7 @@ Save the specified settings in parameter.
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -670,7 +694,7 @@ Write TV system settings (picture, sound, option, other, aspectRatio, network, g
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** all webOS TV generations seen (webOS 3.x - 26); settings key availability differs per model; webOS 3+  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -696,13 +720,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 `luna://com.webos.settingsservice/setSystemSettingsPriv`
 
-Method on com.webos.settingsservice (from on-device permission registry; parameters undocumented).
+Sets the system settings priv.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/setSystemSettingsPriv '{}'
@@ -723,7 +749,7 @@ Update the list of valid values for the specified key
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -746,13 +772,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.settingsservice/update`
 
-Method on com.webos.settingsservice (introspected on-device; parameters undocumented).
+Updates the settingsservice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.settingsservice/update '{}'

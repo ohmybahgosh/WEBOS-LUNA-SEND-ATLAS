@@ -1,19 +1,21 @@
 # `com.webos.service.unifiedsearch`
 
+Unified search service: searches items (intents) by keyword across categories and manages which search categories are enabled.
+
 8 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`category`](#category) | unknown |  | misc | Indicates the category information. |
-| [`display`](#display) | unknown |  | misc | Indicates the display information to show on screen. |
-| [`getCategories`](#getcategories) | public |  | misc | Gets an ordered list of enabled and disabled categories. |
-| [`groupedIntents`](#groupedintents) | unknown |  | misc | Indicates the categorized intents |
-| [`intent`](#intent) | unknown |  | misc | Contains intent that has 'display' attribute on 'extra' field internally. |
-| [`item`](#item) | unknown |  | misc |  |
-| [`search`](#search) | public |  | misc | Searches with keyword and return intents of items. Note : Returning intent can be implicit or explicit intent and have display property to s |
-| [`updateCategory`](#updatecategory) | public |  | misc | Allows enabling or disabling of a category and change the order of the category. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`category`](#category) | unknown |  | misc | documented | Indicates the category information. |
+| [`display`](#display) | unknown |  | misc | documented | Indicates the display information to show on screen. |
+| [`getCategories`](#getcategories) | public |  | misc | documented | Gets an ordered list of enabled and disabled categories. |
+| [`groupedIntents`](#groupedintents) | unknown |  | misc | documented | Indicates the categorized intents |
+| [`intent`](#intent) | unknown |  | misc | documented | Contains intent that has 'display' attribute on 'extra' field internally. |
+| [`item`](#item) | unknown |  | misc | inferred | Handles the item. |
+| [`search`](#search) | public |  | misc | documented | Searches with keyword and return intents of items. Note : Returning intent can be implicit or explicit intent and have display property to s |
+| [`updateCategory`](#updatecategory) | public |  | misc | documented | Allows enabling or disabling of a category and change the order of the category. |
 
 <a id="category"></a>
 ## `category`
@@ -70,6 +72,13 @@ Gets an ordered list of enabled and disabled categories.
 - **Versions:** webOS OSE API level 13+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `enabled` | Object array: category (required) Indicates the ordered array of enabled categories. |
+| `disabled` | Object array: category (required) Indicates the array of disabled categories. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.unifiedsearch/getCategories '{ }
 ```
@@ -125,13 +134,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-u
 
 `luna://com.webos.service.unifiedsearch/item`
 
+Handles the item.
 
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** unknown  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 29+  
-- **Confidence:** documented
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.unifiedsearch/item '{}'
@@ -157,6 +168,14 @@ Searches with keyword and return intents of items. Note : Returning intent can b
 | Param | Type / notes |
 |---|---|
 | `key` | String (required) Indicates the keyword to find items. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `results` | Object array: groupedIntents (optional) Indicates the results that are grouped intents by categories. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the Error Codes section for more details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.unifiedsearch/search '{"key":"pro"}
@@ -184,6 +203,13 @@ Allows enabling or disabling of a category and change the order of the category.
 | `id` | String (required) Specifies the category to be updated. |
 | `enabled` | Boolean (optional) Indicates if the category is enabled. Possible values are: true : The category is enabled false : the category is disabled |
 | `rank` | Number (optional) Indicates the position in which the specific category is returned by the getCategories() API. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes" section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.unifiedsearch/updateCategory '{ "id":"com.webos.app.avn.settings", "rank":1 }'

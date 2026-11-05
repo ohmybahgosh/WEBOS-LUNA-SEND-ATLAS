@@ -1,35 +1,39 @@
 # `com.webos.service.commercial.webgateway`
 
+Commercial/signage web gateway: discovers nearby devices, distributes content and clones configuration from a master display to slaves. _(inferred from the service's methods)_
+
 11 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getDistributedContents`](#getdistributedcontents) | private |  | misc | Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented). |
-| [`getGatewayAddress`](#getgatewayaddress) | private |  | misc | Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented). |
-| [`getNearByDevices`](#getnearbydevices) | private |  | misc | Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented). |
-| [`getSlavesInfo`](#getslavesinfo) | private |  | misc | Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented). |
-| [`ping`](#ping) | private |  | misc | Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented). |
-| [`requestCloning`](#requestcloning) | private |  | misc | Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented). |
-| [`requestCloningFromSlave`](#requestcloningfromslave) | private |  | misc | Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented). |
-| [`setGroupInfo`](#setgroupinfo) | private |  | misc | Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented). |
-| [`startDistribution`](#startdistribution) | private |  | misc | Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented). |
-| [`unsubscribeGroup`](#unsubscribegroup) | private |  | misc | Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented). |
-| [`updateMasterInfo`](#updatemasterinfo) | private |  | update | Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getDistributedContents`](#getdistributedcontents) | private |  | misc | inferred | Returns the distributed contents. |
+| [`getGatewayAddress`](#getgatewayaddress) | private |  | misc | inferred | Returns the gateway address. |
+| [`getNearByDevices`](#getnearbydevices) | private |  | misc | inferred | Returns the near by devices. |
+| [`getSlavesInfo`](#getslavesinfo) | private |  | misc | inferred | Returns the slaves info. |
+| [`ping`](#ping) | private |  | misc | inferred | Pings the commercial webgateway. |
+| [`requestCloning`](#requestcloning) | private |  | misc | inferred | Requests the cloning. |
+| [`requestCloningFromSlave`](#requestcloningfromslave) | private |  | misc | inferred | Requests the cloning from slave. |
+| [`setGroupInfo`](#setgroupinfo) | private |  | misc | inferred | Sets the group info. |
+| [`startDistribution`](#startdistribution) | private |  | misc | inferred | Starts the distribution. |
+| [`unsubscribeGroup`](#unsubscribegroup) | private |  | misc | inferred | Unsubscribes from the group. |
+| [`updateMasterInfo`](#updatemasterinfo) | private |  | update | inferred | Updates the master info. |
 
 <a id="getdistributedcontents"></a>
 ## `getDistributedContents`
 
 `luna://com.webos.service.commercial.webgateway/getDistributedContents`
 
-Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented).
+Returns the distributed contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.webgateway/getDistributedContents '{}'
@@ -44,13 +48,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.webgateway/getGatewayAddress`
 
-Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented).
+Returns the gateway address.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.webgateway/getGatewayAddress '{}'
@@ -65,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.webgateway/getNearByDevices`
 
-Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented).
+Returns the near by devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.webgateway/getNearByDevices '{}'
@@ -86,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.webgateway/getSlavesInfo`
 
-Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented).
+Returns the slaves info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.webgateway/getSlavesInfo '{}'
@@ -107,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.webgateway/ping`
 
-Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented).
+Pings the commercial webgateway.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.webgateway/ping '{}'
@@ -128,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.webgateway/requestCloning`
 
-Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented).
+Requests the cloning.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.webgateway/requestCloning '{}'
@@ -149,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.webgateway/requestCloningFromSlave`
 
-Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented).
+Requests the cloning from slave.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.webgateway/requestCloningFromSlave '{}'
@@ -170,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.webgateway/setGroupInfo`
 
-Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented).
+Sets the group info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.webgateway/setGroupInfo '{}'
@@ -191,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.webgateway/startDistribution`
 
-Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented).
+Starts the distribution.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.webgateway/startDistribution '{}'
@@ -212,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.webgateway/unsubscribeGroup`
 
-Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented).
+Unsubscribes from the group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.webgateway/unsubscribeGroup '{}'
@@ -233,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.webgateway/updateMasterInfo`
 
-Method on com.webos.service.commercial.webgateway (from on-device permission registry; parameters undocumented).
+Updates the master info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.webgateway/updateMasterInfo '{}'

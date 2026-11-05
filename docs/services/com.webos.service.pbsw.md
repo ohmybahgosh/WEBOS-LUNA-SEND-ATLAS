@@ -1,81 +1,85 @@
 # `com.webos.service.pbsw`
 
+Broadcast channel-map service: builds and edits the channel list and favorite groups, queries channel info and EPG events, and reports country policy. _(inferred from the service's methods)_
+
 57 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`appendFavoriteGroup`](#appendfavoritegroup) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`changeChannelFavoritePriority`](#changechannelfavoritepriority) | private |  | power | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`changeChannelNumber`](#changechannelnumber) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`checkChannelMapVersion`](#checkchannelmapversion) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`checkEpgExists`](#checkepgexists) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`debug`](#debug) | private |  | power | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`deleteChannel`](#deletechannel) | private |  | power | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). ⚠️ |
-| [`downChannelMapVersion`](#downchannelmapversion) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getAutoScanStatus4Twin`](#getautoscanstatus4twin) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getChannelEditNoti`](#getchanneleditnoti) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getChannelGroupList`](#getchannelgrouplist) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getChannelInfo`](#getchannelinfo) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getChannelList`](#getchannellist) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getChannelListbySignalChId`](#getchannellistbysignalchid) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getChannelNameList`](#getchannelnamelist) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getChannelStatus`](#getchannelstatus) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getCountryPolicy`](#getcountrypolicy) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getCurrentEventList`](#getcurrenteventlist) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getCurrentFavoriteGroup`](#getcurrentfavoritegroup) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getCurrentNextEventList`](#getcurrentnexteventlist) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getCurrentPopularInformation`](#getcurrentpopularinformation) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getDbFilePath`](#getdbfilepath) | private |  | db | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getEpgStatus`](#getepgstatus) | private |  | tv-broadcast | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getEventInfo`](#geteventinfo) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getEventList`](#geteventlist) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getFavoriteGroupList`](#getfavoritegrouplist) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getIbsHeaderData`](#getibsheaderdata) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getMCPList`](#getmcplist) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getNextEvent`](#getnextevent) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getNextEventList`](#getnexteventlist) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getRelatedProgram`](#getrelatedprogram) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getSCDPolicy`](#getscdpolicy) | private |  | power | Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`getServiceStatus`](#getservicestatus) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getUpcomingPopularInformation`](#getupcomingpopularinformation) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`getValueList`](#getvaluelist) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`moveChannel`](#movechannel) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`moveChannelFavoritePriority`](#movechannelfavoritepriority) | private |  | power | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`notifyAutoScanDone`](#notifyautoscandone) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`notifyAutoScanStart`](#notifyautoscanstart) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`notifyChannelListChanged`](#notifychannellistchanged) | private |  | power | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`notifyGenreChanged`](#notifygenrechanged) | private |  | power | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`notifyInternetChannelStatusUpdate`](#notifyinternetchannelstatusupdate) | private |  | update | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`notifyOnlineEPGEmpty`](#notifyonlineepgempty) | private |  | tv-broadcast | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`ping`](#ping) | private |  | power | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`releaseChannelBlock`](#releasechannelblock) | private |  | power | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`releaseChannelFavoriteGroup`](#releasechannelfavoritegroup) | private |  | power | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`releaseChannelSkip`](#releasechannelskip) | private |  | power | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`releaseConfiguredChannel`](#releaseconfiguredchannel) | private |  | settings | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`requestAuthentication`](#requestauthentication) | private |  | power | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`setAutoScanStatus4Twin`](#setautoscanstatus4twin) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`setChannelBlock`](#setchannelblock) | private |  | power | Setter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`setChannelFavoriteGroup`](#setchannelfavoritegroup) | private |  | power | Setter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`setChannelSkip`](#setchannelskip) | private |  | power | Setter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`setConfiguredChannel`](#setconfiguredchannel) | private |  | settings | Setter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`setCurrentFavoriteGroup`](#setcurrentfavoritegroup) | private |  | power | Setter on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
-| [`updateChannelMap`](#updatechannelmap) | private |  | power | Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented). |
-| [`updateEpgInfo`](#updateepginfo) | private |  | tv-broadcast | Method on com.webos.service.pbsw (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`appendFavoriteGroup`](#appendfavoritegroup) | private |  | power | inferred | Handles the append favorite group. |
+| [`changeChannelFavoritePriority`](#changechannelfavoritepriority) | private |  | power | inferred | Changes the channel favorite priority. |
+| [`changeChannelNumber`](#changechannelnumber) | private |  | power | inferred | Changes the channel number. |
+| [`checkChannelMapVersion`](#checkchannelmapversion) | private |  | power | inferred | Checks the channel map version. |
+| [`checkEpgExists`](#checkepgexists) | private |  | power | inferred | Checks the EPG exists. |
+| [`debug`](#debug) | private |  | power | inferred | Handles the debug. |
+| [`deleteChannel`](#deletechannel) | private |  | power | inferred | Deletes the channel. ⚠️ |
+| [`downChannelMapVersion`](#downchannelmapversion) | private |  | power | inferred | Handles the down channel map version. |
+| [`getAutoScanStatus4Twin`](#getautoscanstatus4twin) | private |  | power | inferred | Returns the auto scan status 4 twin. |
+| [`getChannelEditNoti`](#getchanneleditnoti) | private |  | power | inferred | Returns the channel edit noti. |
+| [`getChannelGroupList`](#getchannelgrouplist) | private |  | power | inferred | Returns the channel group list. |
+| [`getChannelInfo`](#getchannelinfo) | private |  | power | inferred | Returns the channel info. |
+| [`getChannelList`](#getchannellist) | private |  | power | inferred | Returns the channel list. |
+| [`getChannelListbySignalChId`](#getchannellistbysignalchid) | private |  | power | inferred | Returns the channel listby signal channel ID. |
+| [`getChannelNameList`](#getchannelnamelist) | private |  | power | inferred | Returns the channel name list. |
+| [`getChannelStatus`](#getchannelstatus) | private |  | power | inferred | Returns the channel status. |
+| [`getCountryPolicy`](#getcountrypolicy) | private |  | power | inferred | Returns the country policy. |
+| [`getCurrentEventList`](#getcurrenteventlist) | private |  | power | inferred | Returns the current event list. |
+| [`getCurrentFavoriteGroup`](#getcurrentfavoritegroup) | private |  | power | inferred | Returns the current favorite group. |
+| [`getCurrentNextEventList`](#getcurrentnexteventlist) | private |  | power | inferred | Returns the current next event list. |
+| [`getCurrentPopularInformation`](#getcurrentpopularinformation) | private |  | power | inferred | Returns the current popular information. |
+| [`getDbFilePath`](#getdbfilepath) | private |  | db | inferred | Returns the db file path. |
+| [`getEpgStatus`](#getepgstatus) | private |  | tv-broadcast | inferred | Returns the EPG status. |
+| [`getEventInfo`](#geteventinfo) | private |  | power | inferred | Returns the event info. |
+| [`getEventList`](#geteventlist) | private |  | power | inferred | Returns the event list. |
+| [`getFavoriteGroupList`](#getfavoritegrouplist) | private |  | power | inferred | Returns the favorite group list. |
+| [`getIbsHeaderData`](#getibsheaderdata) | private |  | power | inferred | Returns the ibs header data. |
+| [`getMCPList`](#getmcplist) | private |  | power | inferred | Returns the MCP list. |
+| [`getNextEvent`](#getnextevent) | private |  | power | inferred | Returns the next event. |
+| [`getNextEventList`](#getnexteventlist) | private |  | power | inferred | Returns the next event list. |
+| [`getRelatedProgram`](#getrelatedprogram) | private |  | power | inferred | Returns the related program. |
+| [`getSCDPolicy`](#getscdpolicy) | private |  | power | inferred | Returns the SCD policy. |
+| [`getServiceStatus`](#getservicestatus) | private |  | power | inferred | Returns the service status. |
+| [`getUpcomingPopularInformation`](#getupcomingpopularinformation) | private |  | power | inferred | Returns the upcoming popular information. |
+| [`getValueList`](#getvaluelist) | private |  | power | inferred | Returns the value list. |
+| [`moveChannel`](#movechannel) | private |  | power | inferred | Moves the channel. |
+| [`moveChannelFavoritePriority`](#movechannelfavoritepriority) | private |  | power | inferred | Moves the channel favorite priority. |
+| [`notifyAutoScanDone`](#notifyautoscandone) | private |  | power | inferred | Notifies of the auto scan done. |
+| [`notifyAutoScanStart`](#notifyautoscanstart) | private |  | power | inferred | Notifies of the auto scan start. |
+| [`notifyChannelListChanged`](#notifychannellistchanged) | private |  | power | inferred | Notifies of the channel list changed. |
+| [`notifyGenreChanged`](#notifygenrechanged) | private |  | power | inferred | Notifies of the genre changed. |
+| [`notifyInternetChannelStatusUpdate`](#notifyinternetchannelstatusupdate) | private |  | update | inferred | Notifies of the internet channel status update. |
+| [`notifyOnlineEPGEmpty`](#notifyonlineepgempty) | private |  | tv-broadcast | inferred | Notifies of the online EPG empty. |
+| [`ping`](#ping) | private |  | power | inferred | Pings the pbsw. |
+| [`releaseChannelBlock`](#releasechannelblock) | private |  | power | inferred | Releases the channel block. |
+| [`releaseChannelFavoriteGroup`](#releasechannelfavoritegroup) | private |  | power | inferred | Releases the channel favorite group. |
+| [`releaseChannelSkip`](#releasechannelskip) | private |  | power | inferred | Releases the channel skip. |
+| [`releaseConfiguredChannel`](#releaseconfiguredchannel) | private |  | settings | inferred | Releases the configured channel. |
+| [`requestAuthentication`](#requestauthentication) | private |  | power | inferred | Requests the authentication. |
+| [`setAutoScanStatus4Twin`](#setautoscanstatus4twin) | private |  | power | inferred | Sets the auto scan status 4 twin. |
+| [`setChannelBlock`](#setchannelblock) | private |  | power | inferred | Sets the channel block. |
+| [`setChannelFavoriteGroup`](#setchannelfavoritegroup) | private |  | power | inferred | Sets the channel favorite group. |
+| [`setChannelSkip`](#setchannelskip) | private |  | power | inferred | Sets the channel skip. |
+| [`setConfiguredChannel`](#setconfiguredchannel) | private |  | settings | inferred | Sets the configured channel. |
+| [`setCurrentFavoriteGroup`](#setcurrentfavoritegroup) | private |  | power | inferred | Sets the current favorite group. |
+| [`updateChannelMap`](#updatechannelmap) | private |  | power | inferred | Updates the channel map. |
+| [`updateEpgInfo`](#updateepginfo) | private |  | tv-broadcast | inferred | Updates the EPG info. |
 
 <a id="appendfavoritegroup"></a>
 ## `appendFavoriteGroup`
 
 `luna://com.webos.service.pbsw/appendFavoriteGroup`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Handles the append favorite group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/appendFavoriteGroup '{}'
@@ -90,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/changeChannelFavoritePriority`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Changes the channel favorite priority.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/changeChannelFavoritePriority '{}'
@@ -111,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/changeChannelNumber`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Changes the channel number.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/changeChannelNumber '{}'
@@ -132,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/checkChannelMapVersion`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Checks the channel map version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/checkChannelMapVersion '{}'
@@ -153,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/checkEpgExists`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Checks the EPG exists.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/checkEpgExists '{}'
@@ -174,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/debug`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/debug '{}'
@@ -195,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/deleteChannel`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Deletes the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/deleteChannel '{}'
@@ -216,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/downChannelMapVersion`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Handles the down channel map version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/downChannelMapVersion '{}'
@@ -237,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getAutoScanStatus4Twin`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the auto scan status 4 twin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getAutoScanStatus4Twin '{}'
@@ -258,13 +278,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getChannelEditNoti`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the channel edit noti.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getChannelEditNoti '{}'
@@ -279,13 +301,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getChannelGroupList`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the channel group list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getChannelGroupList '{}'
@@ -300,13 +324,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getChannelInfo`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the channel info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getChannelInfo '{}'
@@ -321,13 +347,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getChannelList`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getChannelList '{}'
@@ -342,13 +370,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getChannelListbySignalChId`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the channel listby signal channel ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getChannelListbySignalChId '{}'
@@ -363,13 +393,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getChannelNameList`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the channel name list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getChannelNameList '{}'
@@ -384,13 +416,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getChannelStatus`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the channel status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getChannelStatus '{}'
@@ -405,13 +439,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getCountryPolicy`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the country policy.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getCountryPolicy '{}'
@@ -426,13 +462,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getCurrentEventList`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the current event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getCurrentEventList '{}'
@@ -447,13 +485,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getCurrentFavoriteGroup`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the current favorite group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getCurrentFavoriteGroup '{}'
@@ -468,13 +508,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getCurrentNextEventList`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the current next event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getCurrentNextEventList '{}'
@@ -489,13 +531,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getCurrentPopularInformation`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the current popular information.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getCurrentPopularInformation '{}'
@@ -510,13 +554,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getDbFilePath`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the db file path.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getDbFilePath '{}'
@@ -531,13 +577,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getEpgStatus`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the EPG status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getEpgStatus '{}'
@@ -552,13 +600,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getEventInfo`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the event info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getEventInfo '{}'
@@ -573,13 +623,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getEventList`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getEventList '{}'
@@ -594,13 +646,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getFavoriteGroupList`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the favorite group list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getFavoriteGroupList '{}'
@@ -615,13 +669,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getIbsHeaderData`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the ibs header data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getIbsHeaderData '{}'
@@ -636,13 +692,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getMCPList`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the MCP list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getMCPList '{}'
@@ -657,13 +715,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getNextEvent`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the next event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getNextEvent '{}'
@@ -678,13 +738,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getNextEventList`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the next event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getNextEventList '{}'
@@ -699,13 +761,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getRelatedProgram`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the related program.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getRelatedProgram '{}'
@@ -720,13 +784,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getSCDPolicy`
 
-Getter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Returns the SCD policy.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getSCDPolicy '{}'
@@ -741,13 +807,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/getServiceStatus`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the service status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getServiceStatus '{}'
@@ -762,13 +830,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getUpcomingPopularInformation`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the upcoming popular information.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getUpcomingPopularInformation '{}'
@@ -783,13 +853,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/getValueList`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Returns the value list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/getValueList '{}'
@@ -804,13 +876,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/moveChannel`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Moves the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/moveChannel '{}'
@@ -825,13 +899,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/moveChannelFavoritePriority`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Moves the channel favorite priority.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/moveChannelFavoritePriority '{}'
@@ -846,13 +922,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/notifyAutoScanDone`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Notifies of the auto scan done.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/notifyAutoScanDone '{}'
@@ -867,13 +945,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/notifyAutoScanStart`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Notifies of the auto scan start.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/notifyAutoScanStart '{}'
@@ -888,13 +968,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/notifyChannelListChanged`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Notifies of the channel list changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/notifyChannelListChanged '{}'
@@ -909,13 +991,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/notifyGenreChanged`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Notifies of the genre changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/notifyGenreChanged '{}'
@@ -930,13 +1014,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/notifyInternetChannelStatusUpdate`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Notifies of the internet channel status update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/notifyInternetChannelStatusUpdate '{}'
@@ -951,13 +1037,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/notifyOnlineEPGEmpty`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Notifies of the online EPG empty.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/notifyOnlineEPGEmpty '{}'
@@ -972,13 +1060,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/ping`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Pings the pbsw.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/ping '{}'
@@ -993,13 +1083,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/releaseChannelBlock`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Releases the channel block.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/releaseChannelBlock '{}'
@@ -1014,13 +1106,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/releaseChannelFavoriteGroup`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Releases the channel favorite group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/releaseChannelFavoriteGroup '{}'
@@ -1035,13 +1129,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/releaseChannelSkip`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Releases the channel skip.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/releaseChannelSkip '{}'
@@ -1056,13 +1152,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/releaseConfiguredChannel`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Releases the configured channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/releaseConfiguredChannel '{}'
@@ -1077,13 +1175,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/requestAuthentication`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Requests the authentication.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/requestAuthentication '{}'
@@ -1098,13 +1198,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/setAutoScanStatus4Twin`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Sets the auto scan status 4 twin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/setAutoScanStatus4Twin '{}'
@@ -1119,13 +1221,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/setChannelBlock`
 
-Setter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Sets the channel block.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/setChannelBlock '{}'
@@ -1140,13 +1244,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/setChannelFavoriteGroup`
 
-Setter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Sets the channel favorite group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/setChannelFavoriteGroup '{}'
@@ -1161,13 +1267,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/setChannelSkip`
 
-Setter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Sets the channel skip.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/setChannelSkip '{}'
@@ -1182,13 +1290,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/setConfiguredChannel`
 
-Setter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Sets the configured channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/setConfiguredChannel '{}'
@@ -1203,13 +1313,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/setCurrentFavoriteGroup`
 
-Setter on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Sets the current favorite group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/setCurrentFavoriteGroup '{}'
@@ -1224,13 +1336,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.pbsw/updateChannelMap`
 
-Method on com.webos.service.pbsw (from on-device permission registry; parameters undocumented).
+Updates the channel map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/updateChannelMap '{}'
@@ -1245,13 +1359,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.pbsw/updateEpgInfo`
 
-Method on com.webos.service.pbsw (introspected on-device; parameters undocumented).
+Updates the EPG info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/updateEpgInfo '{}'

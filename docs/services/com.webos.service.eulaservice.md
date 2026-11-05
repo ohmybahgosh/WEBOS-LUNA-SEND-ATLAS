@@ -1,30 +1,34 @@
 # `com.webos.service.eulaservice`
 
+EULA service: downloads and manages end-user license agreements, reports download status, resets EULAs, and handles marketing-consent callbacks. _(inferred from the service's methods)_
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelEulaDownload`](#canceleuladownload) | private |  | misc | Method on com.webos.service.eulaservice (introspected on-device; parameters undocumented). |
-| [`getEulaDownloadStatus`](#geteuladownloadstatus) | private |  | misc | Getter on com.webos.service.eulaservice (introspected on-device; parameters undocumented). |
-| [`marketingAllowedCallback`](#marketingallowedcallback) | private |  | misc | Method on com.webos.service.eulaservice (introspected on-device; parameters undocumented). |
-| [`requestEulaDownload`](#requesteuladownload) | private |  | misc | Method on com.webos.service.eulaservice (introspected on-device; parameters undocumented). |
-| [`resetEula`](#reseteula) | private |  | misc | Method on com.webos.service.eulaservice (introspected on-device; parameters undocumented). ⚠️ |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.eulaservice (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelEulaDownload`](#canceleuladownload) | private |  | misc | inferred | Cancels the eula download. |
+| [`getEulaDownloadStatus`](#geteuladownloadstatus) | private |  | misc | inferred | Returns the eula download status. |
+| [`marketingAllowedCallback`](#marketingallowedcallback) | private |  | misc | inferred | Handles the marketing allowed callback. |
+| [`requestEulaDownload`](#requesteuladownload) | private |  | misc | inferred | Requests the eula download. |
+| [`resetEula`](#reseteula) | private |  | misc | inferred | Resets the eula. ⚠️ |
+| [`start`](#start) | private |  | misc | inferred | Starts the eulaservice. |
 
 <a id="canceleuladownload"></a>
 ## `cancelEulaDownload`
 
 `luna://com.webos.service.eulaservice/cancelEulaDownload`
 
-Method on com.webos.service.eulaservice (introspected on-device; parameters undocumented).
+Cancels the eula download.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eulaservice/cancelEulaDownload '{}'
@@ -39,13 +43,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eulaservice/getEulaDownloadStatus`
 
-Getter on com.webos.service.eulaservice (introspected on-device; parameters undocumented).
+Returns the eula download status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eulaservice/getEulaDownloadStatus '{}'
@@ -60,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eulaservice/marketingAllowedCallback`
 
-Method on com.webos.service.eulaservice (introspected on-device; parameters undocumented).
+Handles the marketing allowed callback.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eulaservice/marketingAllowedCallback '{}'
@@ -81,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eulaservice/requestEulaDownload`
 
-Method on com.webos.service.eulaservice (introspected on-device; parameters undocumented).
+Requests the eula download.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eulaservice/requestEulaDownload '{}'
@@ -102,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eulaservice/resetEula`
 
-Method on com.webos.service.eulaservice (introspected on-device; parameters undocumented).
+Resets the eula.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eulaservice/resetEula '{}'
@@ -123,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.eulaservice/start`
 
-Method on com.webos.service.eulaservice (introspected on-device; parameters undocumented).
+Starts the eulaservice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eulaservice/start '{}'

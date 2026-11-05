@@ -1,25 +1,29 @@
 # `com.webos.service.dmpautotest`
 
+Auto-test helper exposing a single ActivityManager callback; appears to support automated DMP testing. Opaque/. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`activityCallback`](#activitycallback) | private |  | activity | Method on com.webos.service.dmpautotest (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`activityCallback`](#activitycallback) | private |  | activity | inferred | Handles the activity callback. |
 
 <a id="activitycallback"></a>
 ## `activityCallback`
 
 `luna://com.webos.service.dmpautotest/activityCallback`
 
-Method on com.webos.service.dmpautotest (from on-device permission registry; parameters undocumented).
+Handles the activity callback.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dmpautotest/activityCallback '{}'

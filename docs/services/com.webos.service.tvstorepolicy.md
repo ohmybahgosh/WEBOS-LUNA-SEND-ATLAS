@@ -1,26 +1,30 @@
 # `com.webos.service.tvstorepolicy`
 
+Store/demo-mode policy service: changes mode and syncs a demo socket, likely toggling retail store demo behavior. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`changeMode`](#changemode) | private |  | misc | Method on com.webos.service.tvstorepolicy (from on-device permission registry; parameters undocumented). |
-| [`syncDemoSocket`](#syncdemosocket) | private |  | misc | Method on com.webos.service.tvstorepolicy (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`changeMode`](#changemode) | private |  | misc | inferred | Changes the mode. |
+| [`syncDemoSocket`](#syncdemosocket) | private |  | misc | inferred | Synchronizes the demo socket. |
 
 <a id="changemode"></a>
 ## `changeMode`
 
 `luna://com.webos.service.tvstorepolicy/changeMode`
 
-Method on com.webos.service.tvstorepolicy (from on-device permission registry; parameters undocumented).
+Changes the mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvstorepolicy/changeMode '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tvstorepolicy/syncDemoSocket`
 
-Method on com.webos.service.tvstorepolicy (from on-device permission registry; parameters undocumented).
+Synchronizes the demo socket.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvstorepolicy/syncDemoSocket '{}'

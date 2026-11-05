@@ -1,35 +1,39 @@
 # `com.webos.service.aiinferencemanager`
 
+AI inference manager: installs machine-learning models, requests and releases inference resources, and reports device inference capability and status. _(inferred from the service's methods)_
+
 11 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | private |  | misc | Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
-| [`createNotification`](#createnotification) | private |  | notifications | Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
-| [`getDeviceCapability`](#getdevicecapability) | private |  | input | Getter on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
-| [`getDeviceStatus`](#getdevicestatus) | private |  | misc | Getter on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
-| [`getEvent`](#getevent) | private |  | misc | Getter on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
-| [`getResourceList`](#getresourcelist) | private |  | misc | Getter on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
-| [`handleModelInstall`](#handlemodelinstall) | private |  | misc | Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
-| [`installModel`](#installmodel) | private |  | misc | Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
-| [`open`](#open) | private |  | misc | Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
-| [`releaseResource`](#releaseresource) | private |  | misc | Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
-| [`requestResource`](#requestresource) | private |  | misc | Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | private |  | misc | inferred | Closes the aiinferencemanager. |
+| [`createNotification`](#createnotification) | private |  | notifications | inferred | Creates the notification. |
+| [`getDeviceCapability`](#getdevicecapability) | private |  | input | inferred | Returns the device capability. |
+| [`getDeviceStatus`](#getdevicestatus) | private |  | misc | inferred | Returns the device status. |
+| [`getEvent`](#getevent) | private |  | misc | inferred | Returns the event. |
+| [`getResourceList`](#getresourcelist) | private |  | misc | inferred | Returns the resource list. |
+| [`handleModelInstall`](#handlemodelinstall) | private |  | misc | inferred | Handles the model install. |
+| [`installModel`](#installmodel) | private |  | misc | inferred | Installs the model. |
+| [`open`](#open) | private |  | misc | inferred | Opens the aiinferencemanager. |
+| [`releaseResource`](#releaseresource) | private |  | misc | inferred | Releases the resource. |
+| [`requestResource`](#requestresource) | private |  | misc | inferred | Requests the resource. |
 
 <a id="close"></a>
 ## `close`
 
 `luna://com.webos.service.aiinferencemanager/close`
 
-Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented).
+Closes the aiinferencemanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/close '{}'
@@ -44,13 +48,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aiinferencemanager/createNotification`
 
-Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented).
+Creates the notification.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/createNotification '{}'
@@ -65,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aiinferencemanager/getDeviceCapability`
 
-Getter on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented).
+Returns the device capability.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/getDeviceCapability '{}'
@@ -86,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aiinferencemanager/getDeviceStatus`
 
-Getter on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented).
+Returns the device status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/getDeviceStatus '{}'
@@ -107,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aiinferencemanager/getEvent`
 
-Getter on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented).
+Returns the event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/getEvent '{}'
@@ -128,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aiinferencemanager/getResourceList`
 
-Getter on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented).
+Returns the resource list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/getResourceList '{}'
@@ -149,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aiinferencemanager/handleModelInstall`
 
-Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented).
+Handles the model install.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/handleModelInstall '{}'
@@ -170,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aiinferencemanager/installModel`
 
-Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented).
+Installs the model.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/installModel '{}'
@@ -191,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aiinferencemanager/open`
 
-Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented).
+Opens the aiinferencemanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/open '{}'
@@ -212,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aiinferencemanager/releaseResource`
 
-Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented).
+Releases the resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/releaseResource '{}'
@@ -233,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.aiinferencemanager/requestResource`
 
-Method on com.webos.service.aiinferencemanager (introspected on-device; parameters undocumented).
+Requests the resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.aiinferencemanager/requestResource '{}'

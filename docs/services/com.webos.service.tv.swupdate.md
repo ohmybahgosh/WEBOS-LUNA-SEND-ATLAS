@@ -1,25 +1,29 @@
 # `com.webos.service.tv.swupdate`
 
+TV software-update helper exposing a single method to query update status. Narrow role. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getUpdateStatus`](#getupdatestatus) | private |  | update | Method on com.webos.service.tv.swupdate (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getUpdateStatus`](#getupdatestatus) | private |  | update | inferred | Returns the update status. |
 
 <a id="getupdatestatus"></a>
 ## `getUpdateStatus`
 
 `luna://com.webos.service.tv.swupdate/getUpdateStatus`
 
-Method on com.webos.service.tv.swupdate (from on-device permission registry; parameters undocumented).
+Returns the update status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.swupdate/getUpdateStatus '{}'

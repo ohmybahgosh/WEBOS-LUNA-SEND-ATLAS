@@ -1,34 +1,38 @@
 # `com.webos.service.nudge`
 
+Nudge/reminder service: requests and responds to on-screen nudges and alarm-based nudges, and reports nudge state, info, result and history. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`deleteHistory`](#deletehistory) | private |  | misc | Method on com.webos.service.nudge (introspected on-device; parameters undocumented). ⚠️ |
-| [`getAlarmNudgeInfo`](#getalarmnudgeinfo) | private |  | misc | Getter on com.webos.service.nudge (introspected on-device; parameters undocumented). |
-| [`getNudgeInfo`](#getnudgeinfo) | private |  | misc | Getter on com.webos.service.nudge (introspected on-device; parameters undocumented). |
-| [`getNudgeResult`](#getnudgeresult) | private |  | misc | Getter on com.webos.service.nudge (introspected on-device; parameters undocumented). |
-| [`getNudgeState`](#getnudgestate) | private |  | misc | Getter on com.webos.service.nudge (introspected on-device; parameters undocumented). |
-| [`globalNudgeEmitter/requestRelayNudge`](#globalnudgeemitter_requestrelaynudge) | private |  | misc | Method on com.webos.service.nudge (introspected on-device; parameters undocumented). |
-| [`requestAlarmNudge`](#requestalarmnudge) | private |  | misc | Method on com.webos.service.nudge (introspected on-device; parameters undocumented). |
-| [`requestNudge`](#requestnudge) | private |  | misc | Method on com.webos.service.nudge (introspected on-device; parameters undocumented). |
-| [`respondAlarmNudge`](#respondalarmnudge) | private |  | misc | Method on com.webos.service.nudge (introspected on-device; parameters undocumented). |
-| [`responseNudge`](#responsenudge) | private |  | misc | Method on com.webos.service.nudge (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`deleteHistory`](#deletehistory) | private |  | misc | inferred | Deletes the history. ⚠️ |
+| [`getAlarmNudgeInfo`](#getalarmnudgeinfo) | private |  | misc | inferred | Returns the alarm nudge info. |
+| [`getNudgeInfo`](#getnudgeinfo) | private |  | misc | inferred | Returns the nudge info. |
+| [`getNudgeResult`](#getnudgeresult) | private |  | misc | inferred | Returns the nudge result. |
+| [`getNudgeState`](#getnudgestate) | private |  | misc | inferred | Returns the nudge state. |
+| [`globalNudgeEmitter/requestRelayNudge`](#globalnudgeemitter_requestrelaynudge) | private |  | misc | inferred | Requests the relay nudge (global nudge emitter) |
+| [`requestAlarmNudge`](#requestalarmnudge) | private |  | misc | inferred | Requests the alarm nudge. |
+| [`requestNudge`](#requestnudge) | private |  | misc | inferred | Requests the nudge. |
+| [`respondAlarmNudge`](#respondalarmnudge) | private |  | misc | inferred | Responds to the alarm nudge. |
+| [`responseNudge`](#responsenudge) | private |  | misc | inferred | Handles the response nudge. |
 
 <a id="deletehistory"></a>
 ## `deleteHistory` ⚠️ DANGEROUS
 
 `luna://com.webos.service.nudge/deleteHistory`
 
-Method on com.webos.service.nudge (introspected on-device; parameters undocumented).
+Deletes the history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nudge/deleteHistory '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nudge/getAlarmNudgeInfo`
 
-Getter on com.webos.service.nudge (introspected on-device; parameters undocumented).
+Returns the alarm nudge info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nudge/getAlarmNudgeInfo '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nudge/getNudgeInfo`
 
-Getter on com.webos.service.nudge (introspected on-device; parameters undocumented).
+Returns the nudge info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nudge/getNudgeInfo '{}'
@@ -85,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nudge/getNudgeResult`
 
-Getter on com.webos.service.nudge (introspected on-device; parameters undocumented).
+Returns the nudge result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nudge/getNudgeResult '{}'
@@ -106,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nudge/getNudgeState`
 
-Getter on com.webos.service.nudge (introspected on-device; parameters undocumented).
+Returns the nudge state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nudge/getNudgeState '{}'
@@ -127,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nudge/globalNudgeEmitter/requestRelayNudge`
 
-Method on com.webos.service.nudge (introspected on-device; parameters undocumented).
+Requests the relay nudge (global nudge emitter)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nudge/globalNudgeEmitter/requestRelayNudge '{}'
@@ -148,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nudge/requestAlarmNudge`
 
-Method on com.webos.service.nudge (introspected on-device; parameters undocumented).
+Requests the alarm nudge.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nudge/requestAlarmNudge '{}'
@@ -169,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nudge/requestNudge`
 
-Method on com.webos.service.nudge (introspected on-device; parameters undocumented).
+Requests the nudge.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nudge/requestNudge '{}'
@@ -190,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nudge/respondAlarmNudge`
 
-Method on com.webos.service.nudge (introspected on-device; parameters undocumented).
+Responds to the alarm nudge.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nudge/respondAlarmNudge '{}'
@@ -211,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.nudge/responseNudge`
 
-Method on com.webos.service.nudge (introspected on-device; parameters undocumented).
+Handles the response nudge.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nudge/responseNudge '{}'

@@ -1,12 +1,14 @@
 # `com.palm.messaging`
 
+Legacy Palm messaging service: sends a message composed by the user. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: HP webOS, Palm.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`sendMessageFromCompose`](#sendmessagefromcompose) | root |  | misc | Sends a text message |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`sendMessageFromCompose`](#sendmessagefromcompose) | root |  | misc | documented | Sends a text message |
 
 <a id="sendmessagefromcompose"></a>
 ## `sendMessageFromCompose`
@@ -19,7 +21,7 @@ Sends a text message
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

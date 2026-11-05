@@ -1,29 +1,33 @@
 # `netflix.service`
 
+Netflix integration helper: saves and clears auth tokens and handles discovery, search and impression reporting. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`clearToken`](#cleartoken) | public |  | misc | Method on netflix.service (from on-device permission registry; parameters undocumented). |
-| [`discovery`](#discovery) | public |  | network | Method on netflix.service (from on-device permission registry; parameters undocumented). |
-| [`impression`](#impression) | public |  | misc | Method on netflix.service (from on-device permission registry; parameters undocumented). |
-| [`saveToken`](#savetoken) | public |  | misc | Method on netflix.service (from on-device permission registry; parameters undocumented). |
-| [`search`](#search) | public |  | misc | Method on netflix.service (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`clearToken`](#cleartoken) | public |  | misc | inferred | Clears the token. |
+| [`discovery`](#discovery) | public |  | network | inferred | Handles the discovery. |
+| [`impression`](#impression) | public |  | misc | inferred | Handles the impression. |
+| [`saveToken`](#savetoken) | public |  | misc | inferred | Saves the token. |
+| [`search`](#search) | public |  | misc | inferred | Searches for netflix. |
 
 <a id="cleartoken"></a>
 ## `clearToken`
 
 `luna://netflix.service/clearToken`
 
-Method on netflix.service (from on-device permission registry; parameters undocumented).
+Clears the token.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://netflix.service/clearToken '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://netflix.service/discovery`
 
-Method on netflix.service (from on-device permission registry; parameters undocumented).
+Handles the discovery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://netflix.service/discovery '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://netflix.service/impression`
 
-Method on netflix.service (from on-device permission registry; parameters undocumented).
+Handles the impression.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://netflix.service/impression '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://netflix.service/saveToken`
 
-Method on netflix.service (from on-device permission registry; parameters undocumented).
+Saves the token.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://netflix.service/saveToken '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://netflix.service/search`
 
-Method on netflix.service (from on-device permission registry; parameters undocumented).
+Searches for netflix.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://netflix.service/search '{}'

@@ -1,33 +1,37 @@
 # `com.webos.service.utp.ssu`
 
+System software update over-the-air helper (utp stack): starts/cancels OTA updates, reports progress, version, and status, and manages warm-standby OTA. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancel`](#cancel) | private |  | misc | Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
-| [`checkOTASchExistInMinutes`](#checkotaschexistinminutes) | private |  | misc | Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
-| [`getProgress`](#getprogress) | private |  | misc | Getter on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | misc | Getter on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
-| [`getVersion`](#getversion) | private |  | misc | Getter on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
-| [`onOffWarmStandByOTA`](#onoffwarmstandbyota) | private |  | db | Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
-| [`startWarmStandByOTA`](#startwarmstandbyota) | private |  | db | Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
-| [`stopWarmStandByOTA`](#stopwarmstandbyota) | private |  | db | Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancel`](#cancel) | private |  | misc | inferred | Cancels the UTP ssu. |
+| [`checkOTASchExistInMinutes`](#checkotaschexistinminutes) | private |  | misc | inferred | Checks the OTA sch exist in minutes. |
+| [`getProgress`](#getprogress) | private |  | misc | inferred | Returns the progress. |
+| [`getStatus`](#getstatus) | private |  | misc | inferred | Returns the status. |
+| [`getVersion`](#getversion) | private |  | misc | inferred | Returns the version. |
+| [`onOffWarmStandByOTA`](#onoffwarmstandbyota) | private |  | db | inferred | Event handler: fires on the off warm stand by OTA. |
+| [`start`](#start) | private |  | misc | inferred | Starts the UTP ssu. |
+| [`startWarmStandByOTA`](#startwarmstandbyota) | private |  | db | inferred | Starts the warm stand by OTA. |
+| [`stopWarmStandByOTA`](#stopwarmstandbyota) | private |  | db | inferred | Stops the warm stand by OTA. |
 
 <a id="cancel"></a>
 ## `cancel`
 
 `luna://com.webos.service.utp.ssu/cancel`
 
-Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented).
+Cancels the UTP ssu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.ssu/cancel '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.ssu/checkOTASchExistInMinutes`
 
-Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented).
+Checks the OTA sch exist in minutes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.ssu/checkOTASchExistInMinutes '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.ssu/getProgress`
 
-Getter on com.webos.service.utp.ssu (introspected on-device; parameters undocumented).
+Returns the progress.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.ssu/getProgress '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.ssu/getStatus`
 
-Getter on com.webos.service.utp.ssu (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.ssu/getStatus '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.ssu/getVersion`
 
-Getter on com.webos.service.utp.ssu (introspected on-device; parameters undocumented).
+Returns the version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.ssu/getVersion '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.ssu/onOffWarmStandByOTA`
 
-Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented).
+Event handler: fires on the off warm stand by OTA.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.ssu/onOffWarmStandByOTA '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.ssu/start`
 
-Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented).
+Starts the UTP ssu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.ssu/start '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.ssu/startWarmStandByOTA`
 
-Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented).
+Starts the warm stand by OTA.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.ssu/startWarmStandByOTA '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.ssu/stopWarmStandByOTA`
 
-Method on com.webos.service.utp.ssu (introspected on-device; parameters undocumented).
+Stops the warm stand by OTA.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.ssu/stopWarmStandByOTA '{}'

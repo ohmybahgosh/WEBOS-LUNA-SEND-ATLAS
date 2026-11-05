@@ -1,26 +1,30 @@
 # `com.webos.service.cacheproxy`
 
+Opaque caching-proxy service exposing only start and send methods. Likely proxies or caches network data, but specifics are not inferable. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`send`](#send) | private |  | misc | Method on com.webos.service.cacheproxy (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.cacheproxy (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`send`](#send) | private |  | misc | inferred | Sends the cacheproxy. |
+| [`start`](#start) | private |  | misc | inferred | Starts the cacheproxy. |
 
 <a id="send"></a>
 ## `send`
 
 `luna://com.webos.service.cacheproxy/send`
 
-Method on com.webos.service.cacheproxy (from on-device permission registry; parameters undocumented).
+Sends the cacheproxy.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cacheproxy/send '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.cacheproxy/start`
 
-Method on com.webos.service.cacheproxy (from on-device permission registry; parameters undocumented).
+Starts the cacheproxy.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cacheproxy/start '{}'

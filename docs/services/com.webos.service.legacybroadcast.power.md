@@ -1,26 +1,30 @@
 # `com.webos.service.legacybroadcast.power`
 
+Legacy broadcast power helper: checks whether background-activity-manager work is required and registers warm-standby completion. Narrow power-coordination role. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkBamActivityRequired`](#checkbamactivityrequired) | private |  | power | Method on com.webos.service.legacybroadcast.power (introspected on-device; parameters undocumented). |
-| [`registerWarmStandByComplete`](#registerwarmstandbycomplete) | private |  | power | Method on com.webos.service.legacybroadcast.power (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkBamActivityRequired`](#checkbamactivityrequired) | private |  | power | inferred | Checks the bam activity required. |
+| [`registerWarmStandByComplete`](#registerwarmstandbycomplete) | private |  | power | inferred | Registers the warm stand by complete. |
 
 <a id="checkbamactivityrequired"></a>
 ## `checkBamActivityRequired`
 
 `luna://com.webos.service.legacybroadcast.power/checkBamActivityRequired`
 
-Method on com.webos.service.legacybroadcast.power (introspected on-device; parameters undocumented).
+Checks the bam activity required.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.power/checkBamActivityRequired '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.power/registerWarmStandByComplete`
 
-Method on com.webos.service.legacybroadcast.power (introspected on-device; parameters undocumented).
+Registers the warm stand by complete.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.power/registerWarmStandByComplete '{}'

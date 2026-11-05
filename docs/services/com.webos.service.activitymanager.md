@@ -1,47 +1,49 @@
 # `com.webos.service.activitymanager`
 
+Activity Manager: monitors system events and runs actions in response, and schedules work periodically or at set times; apps create, adopt, complete, cancel and focus activities.
+
 36 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`Activity`](#activity) | unknown |  | activity | Represent everything about an Activity-name, type, state, requirements, schedule, trigger, callback, id,creator, adopters, processes, flows, |
-| [`addFocus`](#addfocus) | public |  | activity | Add a focus to the target Activity and remove a focus from source Activity. If a focus is added successfully, addFocus will generate "focus" |
-| [`adopt`](#adopt) | public | yes | activity | The Activity Manager considers the creator of the Activity as a parent. Therefore, the creator of the activity does not need to adopt the Ac |
-| [`Callback`](#callback) | unknown |  | activity | The Callback object specifies a method to be called, and optionally arguments that should be passed to that method when the activity moves f |
-| [`callback/scheduledwakeup`](#callback_scheduledwakeup) | public |  | activity | A callback method indicating the scheduled time of the activities. Note: Do not use this method in your application or service. This method  |
-| [`cancel`](#cancel) | public |  | activity | Terminate the specified Activity and send a "cancel" event to all subscribers to this Activity. This method succeeds if the Activity exists. |
-| [`complete`](#complete) | public |  | activity | Terminate the specified Activity and optionally restart it with(or without) new callback, schedule or trigger. Only the Activity's parent ca |
-| [`create`](#create) | public | yes | activity | Note: The 'creator' in Activity object can be set only by configurator. Create a new Activity and return its ID. Each of created Activities  |
-| [`devel/concurrency`](#devel_concurrency) | public |  | activity | Set background Activity concurrency level for the Activity Manager. |
-| [`devel/evict`](#devel_evict) | public |  | activity | Evict one or all Activities from the background queue. |
-| [`devel/priorityControl`](#devel_prioritycontrol) | public |  | activity | Enable or disable priority control. |
-| [`devel/run`](#devel_run) | public |  | activity | Run one or all Activities that are in ready queue. |
-| [`disable`](#disable) | public |  | activity | Disable scheduling new Activities. |
-| [`enable`](#enable) | public |  | activity | Enable scheduling new Activities. |
-| [`focus`](#focus) | public |  | activity | Focus to target Activity. All currently focused Activities will be lost their focus. If requester is not privileged, this call will fail. Ap |
-| [`getActivityInfo`](#getactivityinfo) | public |  | activity | Gets information of Activities. If activityId or activityName is given, getActivityInfo only returns information about that activity. Conver |
-| [`getDetails`](#getdetails) | public |  | activity | Gets details of an activity. Note: Use the 'getActivityInfo' method instead. |
-| [`getManagerInfo`](#getmanagerinfo) | public |  | activity | Gets Activity Manager related information such as: Activity Manager state - queued and leaked activities List of activities for which power  |
-| [`info`](#info) | public |  | activity | Get Activity Manager related information such as Activity Manager state - queued and leaked Activities, list of Activities for which power i |
-| [`InfoActivity`](#infoactivity) | unknown |  | activity | Activity information |
-| [`InfoCreator`](#infocreator) | unknown |  | activity | Creator information |
-| [`InfoQueue`](#infoqueue) | unknown |  | activity | List of Activities for which power is currently locked. |
-| [`InfoRequirement`](#inforequirement) | unknown |  | activity | Supported requirement information |
-| [`join`](#join) | public | yes | activity | Subscribe to receive events from the specified Activity. Note: Use the 'am-monitor' tool instead. |
-| [`list`](#list) | public |  | activity | List Activities that are in running or waiting state. Note: Use the 'getActivityInfo' method instead. |
-| [`monitor`](#monitor) | public | yes | activity | Return a current status of the specified Activity. If the caller chooses to subscribe, the method returns the Activity's state when it is ch |
-| [`Parent`](#parent) | unknown |  | activity |  |
-| [`pause`](#pause) | public |  | activity | Suspend the work on the specified Activity and place the Activity in pause state. NOTE: An activity can be paused only if it is in the unsat |
-| [`release`](#release) | public |  | activity | Allow a parent to free an Activity and notify other subscribers. The Activity is cancelled unless one of its non-parent subscribers adopts i |
-| [`Requirement`](#requirement) | unknown |  | activity | The Requirements are preconditions that the Activity Manager will ensure are met before an Activity will be run. Any number of requirements  |
-| [`Schedule`](#schedule) | unknown |  | activity | The Schedule object will define the time-based requirements for an Activity. If Schedule is specified, the schedule must be met before the A |
-| [`start`](#start) | public |  | activity | Attempt to start the specified Activity, either moving its state from 'created' to 'starting', or from 'paused' to 'resuming'. |
-| [`stop`](#stop) | public |  | activity | Stop the specified Activity and send a "stop" event to subscribers to this Activity. This method succeeds if the Activity exists. This metho |
-| [`Trigger`](#trigger) | unknown |  | activity | Activities with Triggers do not become runnable until an event occurs on a subscribed method. In addition, other requirements or scheduling  |
-| [`Type`](#type) | unknown |  | activity | Indicate how the Activity is handled. Forground or Background Default attributes are associated with background and foreground Activities: F |
-| [`unfocus`](#unfocus) | public |  | activity | Remove a focus from the specified Activity. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`Activity`](#activity) | unknown |  | activity | documented | Represent everything about an Activity-name, type, state, requirements, schedule, trigger, callback, id,creator, adopters, processes, flows, |
+| [`addFocus`](#addfocus) | public |  | activity | documented | Add a focus to the target Activity and remove a focus from source Activity. If a focus is added successfully, addFocus will generate "focus" |
+| [`adopt`](#adopt) | public | yes | activity | documented | The Activity Manager considers the creator of the Activity as a parent. Therefore, the creator of the activity does not need to adopt the Ac |
+| [`Callback`](#callback) | unknown |  | activity | documented | The Callback object specifies a method to be called, and optionally arguments that should be passed to that method when the activity moves f |
+| [`callback/scheduledwakeup`](#callback_scheduledwakeup) | public |  | activity | documented | A callback method indicating the scheduled time of the activities. Note: Do not use this method in your application or service. This method  |
+| [`cancel`](#cancel) | public |  | activity | documented | Terminate the specified Activity and send a "cancel" event to all subscribers to this Activity. This method succeeds if the Activity exists. |
+| [`complete`](#complete) | public |  | activity | documented | Terminate the specified Activity and optionally restart it with(or without) new callback, schedule or trigger. Only the Activity's parent ca |
+| [`create`](#create) | public | yes | activity | documented | Note: The 'creator' in Activity object can be set only by configurator. Create a new Activity and return its ID. Each of created Activities  |
+| [`devel/concurrency`](#devel_concurrency) | public |  | activity | documented | Set background Activity concurrency level for the Activity Manager. |
+| [`devel/evict`](#devel_evict) | public |  | activity | documented | Evict one or all Activities from the background queue. |
+| [`devel/priorityControl`](#devel_prioritycontrol) | public |  | activity | documented | Enable or disable priority control. |
+| [`devel/run`](#devel_run) | public |  | activity | documented | Run one or all Activities that are in ready queue. |
+| [`disable`](#disable) | public |  | activity | documented | Disable scheduling new Activities. |
+| [`enable`](#enable) | public |  | activity | documented | Enable scheduling new Activities. |
+| [`focus`](#focus) | public |  | activity | documented | Focus to target Activity. All currently focused Activities will be lost their focus. If requester is not privileged, this call will fail. Ap |
+| [`getActivityInfo`](#getactivityinfo) | public |  | activity | documented | Gets information of Activities. If activityId or activityName is given, getActivityInfo only returns information about that activity. Conver |
+| [`getDetails`](#getdetails) | public |  | activity | documented | Gets details of an activity. Note: Use the 'getActivityInfo' method instead. |
+| [`getManagerInfo`](#getmanagerinfo) | public |  | activity | documented | Gets Activity Manager related information such as: Activity Manager state - queued and leaked activities List of activities for which power  |
+| [`info`](#info) | public |  | activity | documented | Get Activity Manager related information such as Activity Manager state - queued and leaked Activities, list of Activities for which power i |
+| [`InfoActivity`](#infoactivity) | unknown |  | activity | documented | Activity information |
+| [`InfoCreator`](#infocreator) | unknown |  | activity | documented | Creator information |
+| [`InfoQueue`](#infoqueue) | unknown |  | activity | documented | List of Activities for which power is currently locked. |
+| [`InfoRequirement`](#inforequirement) | unknown |  | activity | documented | Supported requirement information |
+| [`join`](#join) | public | yes | activity | documented | Subscribe to receive events from the specified Activity. Note: Use the 'am-monitor' tool instead. |
+| [`list`](#list) | public |  | activity | documented | List Activities that are in running or waiting state. Note: Use the 'getActivityInfo' method instead. |
+| [`monitor`](#monitor) | public | yes | activity | documented | Return a current status of the specified Activity. If the caller chooses to subscribe, the method returns the Activity's state when it is ch |
+| [`Parent`](#parent) | unknown |  | activity | inferred | Handles the parent. |
+| [`pause`](#pause) | public |  | activity | documented | Suspend the work on the specified Activity and place the Activity in pause state. NOTE: An activity can be paused only if it is in the unsat |
+| [`release`](#release) | public |  | activity | documented | Allow a parent to free an Activity and notify other subscribers. The Activity is cancelled unless one of its non-parent subscribers adopts i |
+| [`Requirement`](#requirement) | unknown |  | activity | documented | The Requirements are preconditions that the Activity Manager will ensure are met before an Activity will be run. Any number of requirements  |
+| [`Schedule`](#schedule) | unknown |  | activity | documented | The Schedule object will define the time-based requirements for an Activity. If Schedule is specified, the schedule must be met before the A |
+| [`start`](#start) | public |  | activity | documented | Attempt to start the specified Activity, either moving its state from 'created' to 'starting', or from 'paused' to 'resuming'. |
+| [`stop`](#stop) | public |  | activity | documented | Stop the specified Activity and send a "stop" event to subscribers to this Activity. This method succeeds if the Activity exists. This metho |
+| [`Trigger`](#trigger) | unknown |  | activity | documented | Activities with Triggers do not become runnable until an event occurs on a subscribed method. In addition, other requirements or scheduling  |
+| [`Type`](#type) | unknown |  | activity | documented | Indicate how the Activity is handled. Forground or Background Default attributes are associated with background and foreground Activities: F |
+| [`unfocus`](#unfocus) | public |  | activity | documented | Remove a focus from the specified Activity. |
 
 <a id="activity"></a>
 ## `Activity`
@@ -83,6 +85,13 @@ Add a focus to the target Activity and remove a focus from source Activity. If a
 | `activityName` | String (required) The Name of source Activity to remove a focus from. Either this, or activityID is required. Only the creator of the Activity can specify activityName . |
 | `targetActivityId` | Number (uint64_t) (required) The ID of target activity to add a focus to. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/addFocus '{ "activityId":36, "targetActivityId":38 }'
 ```
@@ -111,6 +120,14 @@ The Activity Manager considers the creator of the Activity as a parent. Therefor
 | `wait` | Boolean (required) Flag that enables whether to wait until the Activity is available to be adopted or not. If an app or a service wants to wait until the Activity is available to be adopted, set wait to true . If the Activity is not immediately adopted, returnValue will contain true and adopted will contain false . Once the Activity is disconnected with its parent, the caller is informed of an "or |
 | `subscribe` | Boolean (required) Flag that enables whether to get informed when status of the created activity has been changed or not. To enable subscribe , set subscribe to true . To disable subscribe , set subscribe to false . The default value of subscribe is false . |
 | `detailedEvents` | Boolean (optional) Flag that enables to return detailed Activity information in a subscription response. It needs to be used when subscribe is set to true . To enable detailedEvents , set detailedEvents to true . To disable detailedEvents , set detailedEvents to false . The default value of detailedEvents is false . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+| `adopted` | Boolean (optional) adopted indicates a successful or failed adoption. If the app or service adopts the Activity, adopted will contain true. If the app or service does not adopt the Activity, adopted will contain false. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.activitymanager/adopt '{ "activityId": 90, "wait": true, "subscribe": true, "detailedEvents": false }
@@ -154,6 +171,13 @@ A callback method indicating the scheduled time of the activities. Note: Do not 
 - **Versions:** webOS OSE API level 26+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/callback/scheduledwakeup '{}
 ```
@@ -179,6 +203,13 @@ Terminate the specified Activity and send a "cancel" event to all subscribers to
 |---|---|
 | `activityId` | Number (uint64_t) (required) Activity ID. Note: Either activityId or activityName is a REQUIRED field. |
 | `activityName` | String (required) Activity name.Only the creator of the Activity can specify activityName . Note: Either activityId or activityName is a REQUIRED field. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/cancel '{"activityId" : 93}
@@ -211,6 +242,13 @@ Terminate the specified Activity and optionally restart it with(or without) new 
 | `trigger` | Object: Trigger (optional) Trigger to use when the specified Activity is restarted. To use the current callback condition, do not specify trigger parameter. To remove the current callback condition, set trigger to false . |
 | `metadata` | Object (optional) Opaque object the Activity Manager stores and returns in the callback parameters. To use the current metadata, do not specify metadata parameter. To remove the current metadata, set metadata to false . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f -a myapp luna://com.webos.service.activitymanager/create '{ "activity": { "name": "browser closed", "description": "", "type": {"foreground": true}, "callback": { "method": "luna://com.webos.notification/createToast", "params": {"message": "browser closed", "persistent": true} }, "trigger": { "method": "luna://com.webos.service.applicationmanager/getAppLifeStatus", "params": {"subscribe": true}, "where": { "prop": "status", "op": "=", "val": "stop" } } }, "replace": true, "start": true }'
 ```
@@ -240,6 +278,14 @@ Note: The 'creator' in Activity object can be set only by configurator. Create a
 | `start` | Boolean (optional) Start Activity immediately flag. To indicate the Activity is fully-initialized and ready to launch, set start to true . When subscribe is set to false, must set start to true . To disable start , set start to false . If start is set to false, you need to call the start method to make the Activity runnable. The default value of start is false . Note: It is recommended to use star |
 | `replace` | Boolean (optional) To create a new Activity with the same name with the existing Activity, set replace to true . This cancels the existing Activity and replaces it to new one. Otherwise, set replace to false . The default value of replace is false . Note: If an Activity is located in '/etc/palm/activities', replace should be set carefully. That is, if replace is true, the Activity created by confi |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `activityId` | Number (uint64\_t) (optional) Activity ID. |
+| `errorCode` | Number (int64\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -f -i luna://com.webos.service.activitymanager/create '{ "activity": { "name": "basicactivity", "description": "Test create", "type": { "foreground": true } }, "start": true, "subscribe": true }'
 ```
@@ -265,6 +311,13 @@ Set background Activity concurrency level for the Activity Manager.
 |---|---|
 | `level` | Number (uint32_t) (required) Number of concurrent background Activities. |
 | `unlimited` | Boolean (optional) Set to true to allow unlimited amount of concurrent background Activities. To enable unlimited , set unlimited to true . To disable unlimited , set unlimited to false . The default value of unlimited is false . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/devel/concurrency '{"level":1}
@@ -292,6 +345,14 @@ Evict one or all Activities from the background queue.
 | `activityId` | Number (uint64_t) (optional) The ID of the background activity to evict. |
 | `evictAll` | Boolean (optional) To evict all Activities from the background queue, set evictAll to true . To disable evictAll , set evictAll to false . The default value of evictAll is false . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `returnVaule` | String (required) If the evict method succeeds, returnValue will contain true. If the evict method fails, returnValue will contain false. |
+| `errorCode` | String (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/devel/evict '{"activityId":45}
 ```
@@ -316,6 +377,13 @@ Enable or disable priority control.
 | Param | Type / notes |
 |---|---|
 | `enabled` | Boolean (required) To enable priority control , set enabled to true . To disable priority control , set enabled to false . The default value of enabled is false . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/devel/priorityControl '{"enabled":true}
@@ -343,6 +411,13 @@ Run one or all Activities that are in ready queue.
 | `activityId` | Number (uint64_t) (optional) The ID of the ready activity to run. |
 | `runAll` | Boolean (optional) Run all ready Activities To run all activities which are in ready status, set runAll to true . To not run all activites , set runAll to false . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/devel/run '{"activityId":2}
 ```
@@ -364,6 +439,13 @@ Disable scheduling new Activities.
 - **Versions:** webOS OSE API level 23+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/disable '{}'
 ```
@@ -384,6 +466,13 @@ Enable scheduling new Activities.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 23+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/enable '{}'
@@ -410,6 +499,13 @@ Focus to target Activity. All currently focused Activities will be lost their fo
 |---|---|
 | `activityId` | Number (uint64_t) (required) ID of the activity to grant a focus to. |
 | `activityName` | String (required) Activity name, required if activityId is not provided. Only the creator of the Activity can specify activityName . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/focus '{"activityId":36}
@@ -440,6 +536,15 @@ Gets information of Activities. If activityId or activityName is given, getActiv
 | `details` | Boolean (optional) To return detailed information for each Activity, set details to true . To return brief information for each Activity, set details to false . |
 | `current` | Boolean (optional) To return the state of the Activity prerequisites (e.g., whether the Activity is scheduled or not, whether the trigger is invoked or not), set current to true . Otherwise, set current to false . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+| `activity` | Object: Activity (optional) The Activity object. If activityId or activityName is given, getActivityInfo will contain the property. |
+| `activities` | Object array: Activity (optional) Array with Activity objects. If activityId or activityName is not given, getActivityInfo will contain this property. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/getActivityInfo '{ "activityId":36, "current":false }'
 ```
@@ -468,6 +573,14 @@ Gets details of an activity. Note: Use the 'getActivityInfo' method instead.
 | `current` | Boolean (required) To return the state of the Activity prerequisites, set current to true . Otherwise, set current to false . |
 | `internal` | Boolean (required) To include internal state information for debugging, set internal to true . Otherwise, set internal to false . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `activity` | Object: Activity (optional) The Activity object. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/getDetails '{ "activityId":36, "current":false, "internal":false }'
 ```
@@ -489,6 +602,15 @@ Gets Activity Manager related information such as: Activity Manager state - queu
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `queues` | Object: InfoQueue (optional) Queued Activity information. |
+| `requirements` | Object array: InfoRequirement (optional) Supported requirement |
+| `errorCode` | Number (int64\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/getManagerInfo '{}
 ```
@@ -509,6 +631,15 @@ Get Activity Manager related information such as Activity Manager state - queued
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 23+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `queues` | Object array: InfoQueue (optional) Queued Activity information. |
+| `requirements` | Object: InfoResourceManager (optional) Supported requirement |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/info '{}
@@ -622,6 +753,13 @@ Subscribe to receive events from the specified Activity. Note: Use the 'am-monit
 | `subscribe` | Boolean (required) Flag that enables whether to subscribe or not. To enable subscribe , set subscribe to true . To disable subscribe , set subscribe to false . The default value of subscribe is false . Note . This parameter must be true for this call to succeed. |
 | `detailedEvent` | Boolean (optional) Flag that enables to return detailed Activity information in a subscription response. It needs to be used when subscribe is set to true . To enable detailedEvents , set detailedEvents to true . To disable detailedEvents , set detailedEvents to false . The default value of detailedEvents is false . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.activitymanager/join '{ "activityId":36, "subscribe":true }
 ```
@@ -649,6 +787,14 @@ List Activities that are in running or waiting state. Note: Use the 'getActivity
 | `subscribers` | Boolean (required) To return the current parent, queued adopters, and subscribers for each Activity, set subscribers to true . To not return the current parent, queued adopters, and subscribers for each Activity, set subscribers to false . |
 | `current` | Boolean (required) To return the state of the Activity prerequisites (e.g., whether the Activity is scheduled or not, whether the trigger is invoked or not), set current to true . Otherwise, set current to false . |
 | `internal` | Boolean (required) To include internal state information for debugging, set internal to true . Otherwise, set internal to false . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `activities` | Object: Activity (optional) Array with Activity objects. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/list '{ "details":false, "subscribers":false, "current":false, "internal":false }'
@@ -678,6 +824,14 @@ Return a current status of the specified Activity. If the caller chooses to subs
 | `subscribe` | Boolean (optional) Flag that enables whether to subscribe activity changes or not. To enable subscribe , set subscribe to true . To disable subscribe , set subscribe to false . The default value of subscribe is false . |
 | `detailedEvents` | Boolean (optional) Flag that enables to return detailed Activity information in a subscription response. It needs to be used when subscribe is set to true . To enable detailedEvents , set detailedEvents to true . To disable detailedEvents , set detailedEvents to false . The default value of detailedEvents is false . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `state` | String (optional) NOTE: These states are deprecated. These will be replaced with new states in the next version. Activity state. One of the followings returns as an Activity state. - "init" - "waiting" - "blocked" - "queued" - "starting" - "running" - "paused" - "complete" - "stopping" - "stopped" - |
+
 ```sh
 luna-send -i -f luna://com.webos.service.activitymanager/monitor '{ "activityId":36, "subscribe":true, "detailedEvents":true }
 ```
@@ -691,13 +845,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.activitymanager/Parent`
 
+Handles the parent.
 
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** unknown  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 29+  
-- **Confidence:** documented
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/Parent '{}'
@@ -725,6 +881,13 @@ Suspend the work on the specified Activity and place the Activity in pause state
 | `activityId` | Number (uint64_t) (optional) Activity ID. Note: Either activityId or activityName is a REQUIRED field. |
 | `activityName` | String (optional) Activity name. Only the creator of the Activity can specify activityName . Note: Either activityId or activityName is a REQUIRED field. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -f -i luna://com.webos.service.activitymanager/create '{ "activity": { "description": "","name": "test activity", "trigger": { "method": "luna://com.webos.service.config/getConfigs", "params": {"configNames": ["com.webos.service.activitymanager.p2test.trigger"],"subscribe": true}, "where": {"op":"=","prop":["configs","com.webos.service.activitymanager.p2test.trigger"],"val":true} },"type": {"foreground": true} },"replace": true,"start": true, "subscribe":true }'
 ```
@@ -750,6 +913,13 @@ Allow a parent to free an Activity and notify other subscribers. The Activity is
 |---|---|
 | `activityId` | Number (uint64_t) (required) Activity ID. Note: Either activityId or activityName is a REQUIRED field. |
 | `activityName` | String (required) Activity name.Only the creator of the Activity can specify activityName . Note: Either activityId or activityName is a REQUIRED field. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
 
 ```sh
 luna-send -n 1 -a test -f luna://com.webos.service.activitymanager/release '{"activityId" : 98}
@@ -819,6 +989,13 @@ Attempt to start the specified Activity, either moving its state from 'created' 
 | `activityId` | Number (uint64_t) (required) Activity ID. Note: Either activityId or activityName is a REQUIRED field. |
 | `activityName` | String (required) Activity name.Only the creator of the Activity can specify activityName . Note: Either activityId or activityName is a REQUIRED field. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/start '{"activityId" : 93}
 ```
@@ -844,6 +1021,13 @@ Stop the specified Activity and send a "stop" event to subscribers to this Activ
 |---|---|
 | `activityId` | Number (uint64_t) (required) Activity ID. Note: Either activityId or activityName is a REQUIRED field. |
 | `activityName` | String (required) Activity name.Only the creator of the Activity can specify activityName . Note: Either activityId or activityName is a REQUIRED field. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/stop '{"activityId" : 95}
@@ -912,6 +1096,13 @@ Remove a focus from the specified Activity.
 |---|---|
 | `activityId` | Number (uint64_t) (required) ID of the activity to remove focus from |
 | `activityName` | String (required) Activity name, required if activityId is not provided. Only the creator of the Activity can specify activityName . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int64\_t) (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.activitymanager/unfocus '{"activityId":36}

@@ -1,66 +1,70 @@
 # `com.webos.sensord`
 
+Sensor daemon: enumerates sensors (e.g. accelerometer, ambient-light), configures their power, sensitivity and sample rate, and reads values, range, resolution and state.
+
 42 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`acc/get_acc`](#acc_get_acc) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`acc/set_acc_power`](#acc_set_acc_power) | public |  | power | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`acc/set_acc_sensitivity`](#acc_set_acc_sensitivity) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`Accel`](#accel) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`als/get_als`](#als_get_als) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`als/set_als_power`](#als_set_als_power) | public |  | power | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`als/set_als_sensitivity`](#als_set_als_sensitivity) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`batch`](#batch) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`flush`](#flush) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getHandle`](#gethandle) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getMaxRange`](#getmaxrange) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getMinDelay`](#getmindelay) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getName`](#getname) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getPower`](#getpower) | public |  | power | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getResolution`](#getresolution) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getSampleRate`](#getsamplerate) | public |  | apps | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getSensorList`](#getsensorlist) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getState`](#getstate) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getType`](#gettype) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getValue`](#getvalue) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getVendor`](#getvendor) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`getVersion`](#getversion) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`Grav`](#grav) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`Gyro`](#gyro) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`HeartRate`](#heartrate) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`Light`](#light) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`LinAcc`](#linacc) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`Mag`](#mag) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`OEM1`](#oem1) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`OEM2`](#oem2) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`Ori`](#ori) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`orientation/get_orientation`](#orientation_get_orientation) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`orientation/set_ori_power`](#orientation_set_ori_power) | public |  | power | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`orientation/set_ori_sensitivity`](#orientation_set_ori_sensitivity) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`PPG`](#ppg) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`Press`](#press) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`Prox`](#prox) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`prox/get_prox`](#prox_get_prox) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`prox/set_prox_power`](#prox_set_prox_power) | public |  | power | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`RotVec`](#rotvec) | public |  | input | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`setPower`](#setpower) | public |  | power | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
-| [`setSampleRate`](#setsamplerate) | public |  | apps | Method on com.webos.sensord (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`acc/get_acc`](#acc_get_acc) | public |  | input | inferred | Returns the acc (acc) |
+| [`acc/set_acc_power`](#acc_set_acc_power) | public |  | power | inferred | Sets the acc power (acc) |
+| [`acc/set_acc_sensitivity`](#acc_set_acc_sensitivity) | public |  | input | inferred | Sets the acc sensitivity (acc) |
+| [`Accel`](#accel) | public |  | input | inferred | Handles the accel. |
+| [`als/get_als`](#als_get_als) | public |  | input | inferred | Returns the als (als) |
+| [`als/set_als_power`](#als_set_als_power) | public |  | power | inferred | Sets the als power (als) |
+| [`als/set_als_sensitivity`](#als_set_als_sensitivity) | public |  | input | inferred | Sets the als sensitivity (als) |
+| [`batch`](#batch) | public |  | input | inferred | Handles the batch. |
+| [`flush`](#flush) | public |  | input | inferred | Flushes the sensord. |
+| [`getHandle`](#gethandle) | public |  | input | inferred | Returns the handle. |
+| [`getMaxRange`](#getmaxrange) | public |  | input | inferred | Returns the max range. |
+| [`getMinDelay`](#getmindelay) | public |  | input | inferred | Returns the min delay. |
+| [`getName`](#getname) | public |  | input | inferred | Returns the name. |
+| [`getPower`](#getpower) | public |  | power | inferred | Returns the power. |
+| [`getResolution`](#getresolution) | public |  | input | inferred | Returns the resolution. |
+| [`getSampleRate`](#getsamplerate) | public |  | apps | inferred | Returns the sample rate. |
+| [`getSensorList`](#getsensorlist) | public |  | input | inferred | Returns the sensor list. |
+| [`getState`](#getstate) | public |  | input | inferred | Returns the state. |
+| [`getType`](#gettype) | public |  | input | inferred | Returns the type. |
+| [`getValue`](#getvalue) | public |  | input | inferred | Returns the value. |
+| [`getVendor`](#getvendor) | public |  | input | inferred | Returns the vendor. |
+| [`getVersion`](#getversion) | public |  | input | inferred | Returns the version. |
+| [`Grav`](#grav) | public |  | input | inferred | Handles the grav. |
+| [`Gyro`](#gyro) | public |  | input | inferred | Handles the gyro. |
+| [`HeartRate`](#heartrate) | public |  | input | inferred | Handles the heart rate. |
+| [`Light`](#light) | public |  | input | inferred | Handles the light. |
+| [`LinAcc`](#linacc) | public |  | input | inferred | Handles the lin acc. |
+| [`Mag`](#mag) | public |  | input | inferred | Handles the mag. |
+| [`OEM1`](#oem1) | public |  | input | inferred | Handles the OEM 1. |
+| [`OEM2`](#oem2) | public |  | input | inferred | Handles the OEM 2. |
+| [`Ori`](#ori) | public |  | input | inferred | Handles the ori. |
+| [`orientation/get_orientation`](#orientation_get_orientation) | public |  | input | inferred | Returns the orientation (orientation) |
+| [`orientation/set_ori_power`](#orientation_set_ori_power) | public |  | power | inferred | Sets the ori power (orientation) |
+| [`orientation/set_ori_sensitivity`](#orientation_set_ori_sensitivity) | public |  | input | inferred | Sets the ori sensitivity (orientation) |
+| [`PPG`](#ppg) | public |  | input | inferred | Handles the PPG. |
+| [`Press`](#press) | public |  | input | inferred | Handles the press. |
+| [`Prox`](#prox) | public |  | input | inferred | Handles the prox. |
+| [`prox/get_prox`](#prox_get_prox) | public |  | input | inferred | Returns the prox (prox) |
+| [`prox/set_prox_power`](#prox_set_prox_power) | public |  | power | inferred | Sets the prox power (prox) |
+| [`RotVec`](#rotvec) | public |  | input | inferred | Handles the rot vec. |
+| [`setPower`](#setpower) | public |  | power | inferred | Sets the power. |
+| [`setSampleRate`](#setsamplerate) | public |  | apps | inferred | Sets the sample rate. |
 
 <a id="acc_get_acc"></a>
 ## `acc/get_acc`
 
 `luna://com.webos.sensord/acc/get_acc`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the acc (acc)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/acc/get_acc '{}'
@@ -75,13 +79,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/acc/set_acc_power`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Sets the acc power (acc)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/acc/set_acc_power '{}'
@@ -96,13 +102,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/acc/set_acc_sensitivity`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Sets the acc sensitivity (acc)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/acc/set_acc_sensitivity '{}'
@@ -117,13 +125,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/Accel`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the accel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/Accel '{}'
@@ -138,13 +148,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/als/get_als`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the als (als)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/als/get_als '{}'
@@ -159,13 +171,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/als/set_als_power`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Sets the als power (als)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/als/set_als_power '{}'
@@ -180,13 +194,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/als/set_als_sensitivity`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Sets the als sensitivity (als)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/als/set_als_sensitivity '{}'
@@ -201,13 +217,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/batch`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the batch.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/batch '{}'
@@ -222,13 +240,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/flush`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Flushes the sensord.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/flush '{}'
@@ -243,13 +263,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getHandle`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the handle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getHandle '{}'
@@ -264,13 +286,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getMaxRange`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the max range.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getMaxRange '{}'
@@ -285,13 +309,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getMinDelay`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the min delay.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getMinDelay '{}'
@@ -306,13 +332,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getName`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the name.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getName '{}'
@@ -327,13 +355,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getPower`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the power.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getPower '{}'
@@ -348,13 +378,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getResolution`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the resolution.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getResolution '{}'
@@ -369,13 +401,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getSampleRate`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the sample rate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getSampleRate '{}'
@@ -390,13 +424,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getSensorList`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the sensor list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getSensorList '{}'
@@ -411,13 +447,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getState`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getState '{}'
@@ -432,13 +470,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getType`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getType '{}'
@@ -453,13 +493,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getValue`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getValue '{}'
@@ -474,13 +516,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getVendor`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the vendor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getVendor '{}'
@@ -495,13 +539,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/getVersion`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/getVersion '{}'
@@ -516,13 +562,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/Grav`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the grav.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/Grav '{}'
@@ -537,13 +585,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/Gyro`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the gyro.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/Gyro '{}'
@@ -558,13 +608,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/HeartRate`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the heart rate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/HeartRate '{}'
@@ -579,13 +631,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/Light`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the light.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/Light '{}'
@@ -600,13 +654,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/LinAcc`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the lin acc.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/LinAcc '{}'
@@ -621,13 +677,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/Mag`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the mag.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/Mag '{}'
@@ -642,13 +700,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/OEM1`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the OEM 1.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/OEM1 '{}'
@@ -663,13 +723,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/OEM2`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the OEM 2.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/OEM2 '{}'
@@ -684,13 +746,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/Ori`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the ori.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/Ori '{}'
@@ -705,13 +769,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/orientation/get_orientation`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the orientation (orientation)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/orientation/get_orientation '{}'
@@ -726,13 +792,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/orientation/set_ori_power`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Sets the ori power (orientation)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/orientation/set_ori_power '{}'
@@ -747,13 +815,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/orientation/set_ori_sensitivity`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Sets the ori sensitivity (orientation)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/orientation/set_ori_sensitivity '{}'
@@ -768,13 +838,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/PPG`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the PPG.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/PPG '{}'
@@ -789,13 +861,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/Press`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the press.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/Press '{}'
@@ -810,13 +884,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/Prox`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the prox.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/Prox '{}'
@@ -831,13 +907,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/prox/get_prox`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Returns the prox (prox)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/prox/get_prox '{}'
@@ -852,13 +930,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/prox/set_prox_power`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Sets the prox power (prox)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/prox/set_prox_power '{}'
@@ -873,13 +953,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/RotVec`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Handles the rot vec.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/RotVec '{}'
@@ -894,13 +976,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/setPower`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Sets the power.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/setPower '{}'
@@ -915,13 +999,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.sensord/setSampleRate`
 
-Method on com.webos.sensord (from on-device permission registry; parameters undocumented).
+Sets the sample rate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.sensord/setSampleRate '{}'

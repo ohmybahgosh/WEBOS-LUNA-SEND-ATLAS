@@ -1,26 +1,30 @@
 # `com.webos.service.firstuse`
 
+First-use/initial-setup service: reads and writes the settings captured during the TV's out-of-box setup flow. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getSettings`](#getsettings) | private |  | settings | Method on com.webos.service.firstuse (from on-device permission registry; parameters undocumented). |
-| [`setSettings`](#setsettings) | private |  | settings | Method on com.webos.service.firstuse (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getSettings`](#getsettings) | private |  | settings | inferred | Returns the settings. |
+| [`setSettings`](#setsettings) | private |  | settings | inferred | Sets the settings. |
 
 <a id="getsettings"></a>
 ## `getSettings`
 
 `luna://com.webos.service.firstuse/getSettings`
 
-Method on com.webos.service.firstuse (from on-device permission registry; parameters undocumented).
+Returns the settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.firstuse/getSettings '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.firstuse/setSettings`
 
-Method on com.webos.service.firstuse (from on-device permission registry; parameters undocumented).
+Sets the settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.firstuse/setSettings '{}'

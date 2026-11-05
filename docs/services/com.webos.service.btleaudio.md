@@ -1,46 +1,50 @@
 # `com.webos.service.btleaudio`
 
+Bluetooth LE Audio service: scans, pairs, and connects LE Audio devices, manages volume and mute, auto-connect, and broadcast (Auracast) streaming start/stop.
+
 22 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`connect`](#connect) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`disconnect`](#disconnect) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`getBroadcastStatus`](#getbroadcaststatus) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`getDiscoveredDeviceList`](#getdiscovereddevicelist) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`getLeAudioUuid`](#getleaudiouuid) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`getPairedDeviceList`](#getpaireddevicelist) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`mute`](#mute) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`notifyUserSelection`](#notifyuserselection) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`pair`](#pair) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`resetLeAudioSettings`](#resetleaudiosettings) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setAutoConnect`](#setautoconnect) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`setBroadcastStatus`](#setbroadcaststatus) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`setVolume`](#setvolume) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`startBroadcast`](#startbroadcast) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`startLeAudioService`](#startleaudioservice) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`startScan`](#startscan) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`stopBroadcast`](#stopbroadcast) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`stopScan`](#stopscan) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`unmute`](#unmute) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`unpair`](#unpair) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`volumeDown`](#volumedown) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
-| [`volumeUp`](#volumeup) | private |  | audio | Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`connect`](#connect) | private |  | audio | inferred | Connects the btleaudio. |
+| [`disconnect`](#disconnect) | private |  | audio | inferred | Disconnects the btleaudio. |
+| [`getBroadcastStatus`](#getbroadcaststatus) | private |  | audio | inferred | Returns the broadcast status. |
+| [`getDiscoveredDeviceList`](#getdiscovereddevicelist) | private |  | audio | inferred | Returns the discovered device list. |
+| [`getLeAudioUuid`](#getleaudiouuid) | private |  | audio | inferred | Returns the le audio uuid. |
+| [`getPairedDeviceList`](#getpaireddevicelist) | private |  | audio | inferred | Returns the paired device list. |
+| [`mute`](#mute) | private |  | audio | inferred | Mutes the btleaudio. |
+| [`notifyUserSelection`](#notifyuserselection) | private |  | audio | inferred | Notifies of the user selection. |
+| [`pair`](#pair) | private |  | audio | inferred | Pairs the btleaudio. |
+| [`resetLeAudioSettings`](#resetleaudiosettings) | private |  | audio | inferred | Resets the le audio settings. ⚠️ |
+| [`setAutoConnect`](#setautoconnect) | private |  | audio | inferred | Sets the auto connect. |
+| [`setBroadcastStatus`](#setbroadcaststatus) | private |  | audio | inferred | Sets the broadcast status. |
+| [`setVolume`](#setvolume) | private |  | audio | inferred | Sets the volume. |
+| [`startBroadcast`](#startbroadcast) | private |  | audio | inferred | Starts the broadcast. |
+| [`startLeAudioService`](#startleaudioservice) | private |  | audio | inferred | Starts the le audio service. |
+| [`startScan`](#startscan) | private |  | audio | inferred | Starts the scan. |
+| [`stopBroadcast`](#stopbroadcast) | private |  | audio | inferred | Stops the broadcast. |
+| [`stopScan`](#stopscan) | private |  | audio | inferred | Stops the scan. |
+| [`unmute`](#unmute) | private |  | audio | inferred | Unmutes the btleaudio. |
+| [`unpair`](#unpair) | private |  | audio | inferred | Unpairs the btleaudio. |
+| [`volumeDown`](#volumedown) | private |  | audio | inferred | Handles the volume down. |
+| [`volumeUp`](#volumeup) | private |  | audio | inferred | Handles the volume up. |
 
 <a id="connect"></a>
 ## `connect`
 
 `luna://com.webos.service.btleaudio/connect`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Connects the btleaudio.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/connect '{}'
@@ -55,13 +59,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/disconnect`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Disconnects the btleaudio.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/disconnect '{}'
@@ -76,13 +82,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/getBroadcastStatus`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Returns the broadcast status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/getBroadcastStatus '{}'
@@ -97,13 +105,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/getDiscoveredDeviceList`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Returns the discovered device list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/getDiscoveredDeviceList '{}'
@@ -118,13 +128,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/getLeAudioUuid`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Returns the le audio uuid.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/getLeAudioUuid '{}'
@@ -139,13 +151,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/getPairedDeviceList`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Returns the paired device list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/getPairedDeviceList '{}'
@@ -160,13 +174,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/mute`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Mutes the btleaudio.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/mute '{}'
@@ -181,13 +197,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/notifyUserSelection`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Notifies of the user selection.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/notifyUserSelection '{}'
@@ -202,13 +220,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/pair`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Pairs the btleaudio.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/pair '{}'
@@ -223,13 +243,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/resetLeAudioSettings`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Resets the le audio settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/resetLeAudioSettings '{}'
@@ -244,13 +266,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/setAutoConnect`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Sets the auto connect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/setAutoConnect '{}'
@@ -265,13 +289,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/setBroadcastStatus`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Sets the broadcast status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/setBroadcastStatus '{}'
@@ -286,13 +312,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/setVolume`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Sets the volume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/setVolume '{}'
@@ -307,13 +335,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/startBroadcast`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Starts the broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/startBroadcast '{}'
@@ -328,13 +358,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/startLeAudioService`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Starts the le audio service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/startLeAudioService '{}'
@@ -349,13 +381,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/startScan`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Starts the scan.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/startScan '{}'
@@ -370,13 +404,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/stopBroadcast`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Stops the broadcast.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/stopBroadcast '{}'
@@ -391,13 +427,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/stopScan`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Stops the scan.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/stopScan '{}'
@@ -412,13 +450,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/unmute`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Unmutes the btleaudio.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/unmute '{}'
@@ -433,13 +473,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/unpair`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Unpairs the btleaudio.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/unpair '{}'
@@ -454,13 +496,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/volumeDown`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Handles the volume down.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/volumeDown '{}'
@@ -475,13 +519,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btleaudio/volumeUp`
 
-Method on com.webos.service.btleaudio (from on-device permission registry; parameters undocumented).
+Handles the volume up.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btleaudio/volumeUp '{}'

@@ -1,15 +1,17 @@
 # `com.webos.service.ai.voice`
 
+Voice-input recognition service (webOS OSE): starts and stops voice recognition, reports state, and returns results, using configuration from the config service.
+
 4 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getResponse`](#getresponse) | public | yes | input | Returns speech recognition results. This method is asynchronous. |
-| [`getState`](#getstate) | public |  | input | Gets the current state of the service. It can have the following states: idle : Before start. waitActivation : Wait for keyword activation.  |
-| [`start`](#start) | public |  | input | Starts the service based on the mode selected. Note: This method is only for allowed clients. |
-| [`stop`](#stop) | public |  | input | Stops the service. Make sure to call this method before starting another engine. Note: This method is only for allowed clients. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getResponse`](#getresponse) | public | yes | input | documented | Returns speech recognition results. This method is asynchronous. |
+| [`getState`](#getstate) | public |  | input | documented | Gets the current state of the service. It can have the following states: idle : Before start. waitActivation : Wait for keyword activation.  |
+| [`start`](#start) | public |  | input | documented | Starts the service based on the mode selected. Note: This method is only for allowed clients. |
+| [`stop`](#stop) | public |  | input | documented | Stops the service. Make sure to call this method before starting another engine. Note: This method is only for allowed clients. |
 
 <a id="getresponse"></a>
 ## `getResponse`
@@ -49,6 +51,18 @@ Gets the current state of the service. It can have the following states: idle : 
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `subscribe` | Boolean (optional) Subscribe for notifications. Possible values are: - true- Get notifications. - false- Notifications are not required. Default value: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `state` | String (required) Indicates the running state of the service. Possible values are: - idle - waitActivation - recording - thinking - answering |
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ai.voice/getState '{}'
 ```
@@ -75,6 +89,13 @@ Starts the service based on the mode selected. Note: This method is only for all
 | `mode` | String (required) Select the service mode. Possible values are: continuous - The service will restart automatically when a conversation ends. single - The service will be stopped when a conversation ends. |
 | `keywordDetect` | Boolean (required) Indicates if a keyword is to be used for activating speech recognition. Possible values are: true: Activated by a keyword. The default keyword is "Snowboy". To change the keyword model, refer snowboy.kitt.ai . Download custom the keyword model and move it to /etc/googleAssistant/ on your device. Then, modify KEYWORD_DETECT_MODEL in /var/systemd/system/env/ai.env . false: Activat |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ai.voice/start '{"mode": "continuous", "keywordDetect": true}
 ```
@@ -95,6 +116,13 @@ Stops the service. Make sure to call this method before starting another engine.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (int8\_t) (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ai.voice/stop '{}

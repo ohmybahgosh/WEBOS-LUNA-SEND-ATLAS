@@ -1,47 +1,51 @@
 # `com.webos.service.oledepl`
 
+OLED panel-protection service (extended panel life): runs the pixel refresher, reports panel temperature and refresher status, and manages global stress reduction, temporal peak control and screensaver response. _(inferred from the service's methods)_
+
 23 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getEplStatus`](#geteplstatus) | public |  | display | Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`getFixedOSDResult`](#getfixedosdresult) | public |  | display | Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`getGlobalStressReduction`](#getglobalstressreduction) | private |  | display | OLED care read-only query |
-| [`getOledPanelUTT`](#getoledpanelutt) | private |  | display | OLED care read-only query |
-| [`getPanelTemperature`](#getpaneltemperature) | private |  | display | OLED care read-only query |
-| [`getPcScreenSaverResponse`](#getpcscreensaverresponse) | public |  | display | Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`getPixelRefresherInfoList`](#getpixelrefresherinfolist) | private |  | display | OLED care read-only query |
-| [`getPixelRefresherMode`](#getpixelrefreshermode) | public |  | display | Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`getStraStatus`](#getstrastatus) | public |  | display | Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`getTemporalPeakControl`](#gettemporalpeakcontrol) | public |  | display | Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`isPixelRefresherCondition`](#ispixelrefreshercondition) | private |  | display | Queries OLED pixel refresher condition (used by home-chooser e2e to check panel state) |
-| [`notifyPopupClosed`](#notifypopupclosed) | public |  | display | Method on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`playMusicPixelRefresher`](#playmusicpixelrefresher) | public |  | display | Method on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`restoreEplCondition`](#restoreeplcondition) | public |  | display | Method on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`setEplAppInfo`](#seteplappinfo) | public |  | display | Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`setEplCtrl`](#seteplctrl) | public |  | display | Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`setGlobalStressReduction`](#setglobalstressreduction) | private |  | display | Toggles OLED GSR (In-Start service menu option) ⚠️ |
-| [`setPcScreenSaverResponse`](#setpcscreensaverresponse) | public |  | display | Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`setPixelRefresherInfoList`](#setpixelrefresherinfolist) | public |  | display | Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`setPixelRefresherMode`](#setpixelrefreshermode) | public |  | display | Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`setTemporalPeakControl`](#settemporalpeakcontrol) | private |  | display | Toggles OLED TPC (In-Start service menu option) ⚠️ |
-| [`setTurnOnAoD`](#setturnonaod) | public |  | display | Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
-| [`testForQ`](#testforq) | public |  | display | Method on com.webos.service.oledepl (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getEplStatus`](#geteplstatus) | public |  | display | inferred | Returns the epl status. |
+| [`getFixedOSDResult`](#getfixedosdresult) | public |  | display | inferred | Returns the fixed OSD result. |
+| [`getGlobalStressReduction`](#getglobalstressreduction) | private |  | display | documented | OLED care read-only query |
+| [`getOledPanelUTT`](#getoledpanelutt) | private |  | display | documented | OLED care read-only query |
+| [`getPanelTemperature`](#getpaneltemperature) | private |  | display | documented | OLED care read-only query |
+| [`getPcScreenSaverResponse`](#getpcscreensaverresponse) | public |  | display | inferred | Returns the pc screen saver response. |
+| [`getPixelRefresherInfoList`](#getpixelrefresherinfolist) | private |  | display | documented | OLED care read-only query |
+| [`getPixelRefresherMode`](#getpixelrefreshermode) | public |  | display | inferred | Returns the pixel refresher mode. |
+| [`getStraStatus`](#getstrastatus) | public |  | display | inferred | Returns the stra status. |
+| [`getTemporalPeakControl`](#gettemporalpeakcontrol) | public |  | display | inferred | Returns the temporal peak control. |
+| [`isPixelRefresherCondition`](#ispixelrefreshercondition) | private |  | display | documented | Queries OLED pixel refresher condition (used by home-chooser e2e to check panel state) |
+| [`notifyPopupClosed`](#notifypopupclosed) | public |  | display | inferred | Notifies of the popup closed. |
+| [`playMusicPixelRefresher`](#playmusicpixelrefresher) | public |  | display | inferred | Plays the music pixel refresher. |
+| [`restoreEplCondition`](#restoreeplcondition) | public |  | display | inferred | Restores the epl condition. |
+| [`setEplAppInfo`](#seteplappinfo) | public |  | display | inferred | Sets the epl app info. |
+| [`setEplCtrl`](#seteplctrl) | public |  | display | inferred | Sets the epl ctrl. |
+| [`setGlobalStressReduction`](#setglobalstressreduction) | private |  | display | documented | Toggles OLED GSR (In-Start service menu option) ⚠️ |
+| [`setPcScreenSaverResponse`](#setpcscreensaverresponse) | public |  | display | inferred | Sets the pc screen saver response. |
+| [`setPixelRefresherInfoList`](#setpixelrefresherinfolist) | public |  | display | inferred | Sets the pixel refresher info list. |
+| [`setPixelRefresherMode`](#setpixelrefreshermode) | public |  | display | inferred | Sets the pixel refresher mode. |
+| [`setTemporalPeakControl`](#settemporalpeakcontrol) | private |  | display | documented | Toggles OLED TPC (In-Start service menu option) ⚠️ |
+| [`setTurnOnAoD`](#setturnonaod) | public |  | display | inferred | Sets the turn on ao d. |
+| [`testForQ`](#testforq) | public |  | display | inferred | Tests the for q. |
 
 <a id="geteplstatus"></a>
 ## `getEplStatus`
 
 `luna://com.webos.service.oledepl/getEplStatus`
 
-Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Returns the epl status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/getEplStatus '{}'
@@ -56,13 +60,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.oledepl/getFixedOSDResult`
 
-Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Returns the fixed OSD result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/getFixedOSDResult '{}'
@@ -83,7 +89,7 @@ OLED care read-only query
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** OLED  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.oledepl/getGlobalStressReduction '{}'
@@ -102,7 +108,7 @@ OLED care read-only query
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** OLED  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.oledepl/getOledPanelUTT '{}'
@@ -121,7 +127,7 @@ OLED care read-only query
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** OLED  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.oledepl/getPanelTemperature '{}'
@@ -134,13 +140,15 @@ Sources: [1](https://github.com/Osyna/Overglass/blob/HEAD/docs/FINDINGS.md)
 
 `luna://com.webos.service.oledepl/getPcScreenSaverResponse`
 
-Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Returns the pc screen saver response.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/getPcScreenSaverResponse '{}'
@@ -161,7 +169,7 @@ OLED care read-only query
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** OLED  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.oledepl/getPixelRefresherInfoList '{}'
@@ -174,13 +182,15 @@ Sources: [1](https://github.com/Osyna/Overglass/blob/HEAD/docs/FINDINGS.md)
 
 `luna://com.webos.service.oledepl/getPixelRefresherMode`
 
-Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Returns the pixel refresher mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/getPixelRefresherMode '{}'
@@ -195,13 +205,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.oledepl/getStraStatus`
 
-Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Returns the stra status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/getStraStatus '{}'
@@ -216,13 +228,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.oledepl/getTemporalPeakControl`
 
-Getter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Returns the temporal peak control.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/getTemporalPeakControl '{}'
@@ -243,7 +257,7 @@ Queries OLED pixel refresher condition (used by home-chooser e2e to check panel 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.oledepl/isPixelRefresherCondition '{}'
@@ -256,13 +270,15 @@ Sources: [1](https://github.com/webosbrew/home-chooser/blob/main/e2e/hc_e2e/step
 
 `luna://com.webos.service.oledepl/notifyPopupClosed`
 
-Method on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Notifies of the popup closed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/notifyPopupClosed '{}'
@@ -277,13 +293,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.oledepl/playMusicPixelRefresher`
 
-Method on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Plays the music pixel refresher.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/playMusicPixelRefresher '{}'
@@ -298,13 +316,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.oledepl/restoreEplCondition`
 
-Method on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Restores the epl condition.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/restoreEplCondition '{}'
@@ -319,13 +339,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.oledepl/setEplAppInfo`
 
-Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Sets the epl app info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/setEplAppInfo '{}'
@@ -340,13 +362,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.oledepl/setEplCtrl`
 
-Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Sets the epl ctrl.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/setEplCtrl '{}'
@@ -367,7 +391,7 @@ Toggles OLED GSR (In-Start service menu option)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** OLED  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -386,13 +410,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/webos_cl
 
 `luna://com.webos.service.oledepl/setPcScreenSaverResponse`
 
-Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Sets the pc screen saver response.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/setPcScreenSaverResponse '{}'
@@ -407,13 +433,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.oledepl/setPixelRefresherInfoList`
 
-Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Sets the pixel refresher info list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/setPixelRefresherInfoList '{}'
@@ -428,13 +456,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.oledepl/setPixelRefresherMode`
 
-Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Sets the pixel refresher mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/setPixelRefresherMode '{}'
@@ -455,7 +485,7 @@ Toggles OLED TPC (In-Start service menu option)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** OLED  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -474,13 +504,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/webos_cl
 
 `luna://com.webos.service.oledepl/setTurnOnAoD`
 
-Setter on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Sets the turn on ao d.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/setTurnOnAoD '{}'
@@ -495,13 +527,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.oledepl/testForQ`
 
-Method on com.webos.service.oledepl (introspected on-device; parameters undocumented).
+Tests the for q.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.oledepl/testForQ '{}'

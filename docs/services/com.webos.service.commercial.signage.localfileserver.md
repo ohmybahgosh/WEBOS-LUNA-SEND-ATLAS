@@ -1,32 +1,36 @@
 # `com.webos.service.commercial.signage.localfileserver`
 
+Commercial-signage local file server that serves local signage content and manages screen-number assignment for digital-signage displays. _(inferred from the service's methods)_
+
 8 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`display_screen_number`](#display_screen_number) | public |  | apps | Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | apps | Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented). |
-| [`ping`](#ping) | public |  | apps | Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | apps | Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented). |
-| [`register_screen_number_callback`](#register_screen_number_callback) | public |  | apps | Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented). |
-| [`start_service`](#start_service) | public |  | apps | Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented). |
-| [`stop_service`](#stop_service) | public |  | apps | Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented). |
-| [`version`](#version) | public |  | apps | Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`display_screen_number`](#display_screen_number) | public |  | apps | inferred | Handles the display screen number. |
+| [`info`](#info) | public |  | apps | inferred | Handles the info. |
+| [`ping`](#ping) | public |  | apps | inferred | Pings the commercial signage localfileserver. |
+| [`quit`](#quit) | public |  | apps | inferred | Quits the commercial signage localfileserver. |
+| [`register_screen_number_callback`](#register_screen_number_callback) | public |  | apps | inferred | Registers the screen number callback. |
+| [`start_service`](#start_service) | public |  | apps | inferred | Starts the service. |
+| [`stop_service`](#stop_service) | public |  | apps | inferred | Stops the service. |
+| [`version`](#version) | public |  | apps | inferred | Handles the version. |
 
 <a id="display_screen_number"></a>
 ## `display_screen_number`
 
 `luna://com.webos.service.commercial.signage.localfileserver/display_screen_number`
 
-Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented).
+Handles the display screen number.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.signage.localfileserver/display_screen_number '{}'
@@ -41,13 +45,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.signage.localfileserver/info`
 
-Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.signage.localfileserver/info '{}'
@@ -62,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.signage.localfileserver/ping`
 
-Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented).
+Pings the commercial signage localfileserver.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.signage.localfileserver/ping '{}'
@@ -83,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.signage.localfileserver/quit`
 
-Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented).
+Quits the commercial signage localfileserver.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.signage.localfileserver/quit '{}'
@@ -104,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.signage.localfileserver/register_screen_number_callback`
 
-Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented).
+Registers the screen number callback.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.signage.localfileserver/register_screen_number_callback '{}'
@@ -125,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.signage.localfileserver/start_service`
 
-Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented).
+Starts the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.signage.localfileserver/start_service '{}'
@@ -146,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.signage.localfileserver/stop_service`
 
-Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented).
+Stops the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.signage.localfileserver/stop_service '{}'
@@ -167,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.commercial.signage.localfileserver/version`
 
-Method on com.webos.service.commercial.signage.localfileserver (from on-device permission registry; parameters undocumented).
+Handles the version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.commercial.signage.localfileserver/version '{}'

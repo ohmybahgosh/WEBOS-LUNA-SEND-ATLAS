@@ -1,37 +1,41 @@
 # `com.test.interc.service.fake`
 
+Fake/test interceptor service that mocks caption, data-broadcast and settings reads (captions, locale, sound, emergency info) for testing. Marked as a test stub by name. _(inferred from the service's methods)_
+
 13 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`crd/getCRDEvent`](#crd_getcrdevent) | public |  | misc | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`databroadcast/getAlertInfo`](#databroadcast_getalertinfo) | public |  | tv-broadcast | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`databroadcast/getCurrentEPGInfo`](#databroadcast_getcurrentepginfo) | public |  | tv-broadcast | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`databroadcast/getCurrentServiceInfo`](#databroadcast_getcurrentserviceinfo) | public |  | tv-broadcast | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`settingsservice/getSystemSettingsAudioDescriptionAtsc30`](#settingsservice_getsystemsettingsaudiodescriptionatsc30) | public |  | audio | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`settingsservice/getSystemSettingsCaption`](#settingsservice_getsystemsettingscaption) | public |  | settings | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`settingsservice/getSystemSettingsCaptionEnable`](#settingsservice_getsystemsettingscaptionenable) | public |  | settings | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`settingsservice/getSystemSettingsCaptionLang`](#settingsservice_getsystemsettingscaptionlang) | public |  | settings | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`settingsservice/getSystemSettingsDialogEnhancementPref`](#settingsservice_getsystemsettingsdialogenhancementpref) | public |  | settings | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`settingsservice/getSystemSettingsEmergencyInformation`](#settingsservice_getsystemsettingsemergencyinformation) | public |  | settings | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`settingsservice/getSystemSettingsLocaleInfo`](#settingsservice_getsystemsettingslocaleinfo) | public |  | settings | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`settingsservice/getSystemSettingsSound`](#settingsservice_getsystemsettingssound) | public |  | settings | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
-| [`subtitle/getRatingInfo`](#subtitle_getratinginfo) | public |  | media | Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`crd/getCRDEvent`](#crd_getcrdevent) | public |  | misc | inferred | Returns the CRD event (crd) |
+| [`databroadcast/getAlertInfo`](#databroadcast_getalertinfo) | public |  | tv-broadcast | inferred | Returns the alert info (databroadcast) |
+| [`databroadcast/getCurrentEPGInfo`](#databroadcast_getcurrentepginfo) | public |  | tv-broadcast | inferred | Returns the current EPG info (databroadcast) |
+| [`databroadcast/getCurrentServiceInfo`](#databroadcast_getcurrentserviceinfo) | public |  | tv-broadcast | inferred | Returns the current service info (databroadcast) |
+| [`settingsservice/getSystemSettingsAudioDescriptionAtsc30`](#settingsservice_getsystemsettingsaudiodescriptionatsc30) | public |  | audio | inferred | Returns the system settings audio description ATSC 30 (settingsservice) |
+| [`settingsservice/getSystemSettingsCaption`](#settingsservice_getsystemsettingscaption) | public |  | settings | inferred | Returns the system settings caption (settingsservice) |
+| [`settingsservice/getSystemSettingsCaptionEnable`](#settingsservice_getsystemsettingscaptionenable) | public |  | settings | inferred | Returns the system settings caption enable (settingsservice) |
+| [`settingsservice/getSystemSettingsCaptionLang`](#settingsservice_getsystemsettingscaptionlang) | public |  | settings | inferred | Returns the system settings caption lang (settingsservice) |
+| [`settingsservice/getSystemSettingsDialogEnhancementPref`](#settingsservice_getsystemsettingsdialogenhancementpref) | public |  | settings | inferred | Returns the system settings dialog enhancement pref (settingsservice) |
+| [`settingsservice/getSystemSettingsEmergencyInformation`](#settingsservice_getsystemsettingsemergencyinformation) | public |  | settings | inferred | Returns the system settings emergency information (settingsservice) |
+| [`settingsservice/getSystemSettingsLocaleInfo`](#settingsservice_getsystemsettingslocaleinfo) | public |  | settings | inferred | Returns the system settings locale info (settingsservice) |
+| [`settingsservice/getSystemSettingsSound`](#settingsservice_getsystemsettingssound) | public |  | settings | inferred | Returns the system settings sound (settingsservice) |
+| [`subtitle/getRatingInfo`](#subtitle_getratinginfo) | public |  | media | inferred | Returns the rating info (subtitle) |
 
 <a id="crd_getcrdevent"></a>
 ## `crd/getCRDEvent`
 
 `luna://com.test.interc.service.fake/crd/getCRDEvent`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the CRD event (crd)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/crd/getCRDEvent '{}'
@@ -46,13 +50,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/databroadcast/getAlertInfo`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the alert info (databroadcast)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/databroadcast/getAlertInfo '{}'
@@ -67,13 +73,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/databroadcast/getCurrentEPGInfo`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the current EPG info (databroadcast)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/databroadcast/getCurrentEPGInfo '{}'
@@ -88,13 +96,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/databroadcast/getCurrentServiceInfo`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the current service info (databroadcast)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/databroadcast/getCurrentServiceInfo '{}'
@@ -109,13 +119,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/settingsservice/getSystemSettingsAudioDescriptionAtsc30`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the system settings audio description ATSC 30 (settingsservice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsAudioDescriptionAtsc30 '{}'
@@ -130,13 +142,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaption`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the system settings caption (settingsservice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaption '{}'
@@ -151,13 +165,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaptionEnable`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the system settings caption enable (settingsservice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaptionEnable '{}'
@@ -172,13 +188,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaptionLang`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the system settings caption lang (settingsservice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsCaptionLang '{}'
@@ -193,13 +211,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/settingsservice/getSystemSettingsDialogEnhancementPref`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the system settings dialog enhancement pref (settingsservice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsDialogEnhancementPref '{}'
@@ -214,13 +234,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/settingsservice/getSystemSettingsEmergencyInformation`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the system settings emergency information (settingsservice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsEmergencyInformation '{}'
@@ -235,13 +257,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/settingsservice/getSystemSettingsLocaleInfo`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the system settings locale info (settingsservice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsLocaleInfo '{}'
@@ -256,13 +280,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/settingsservice/getSystemSettingsSound`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the system settings sound (settingsservice)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/settingsservice/getSystemSettingsSound '{}'
@@ -277,13 +303,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.test.interc.service.fake/subtitle/getRatingInfo`
 
-Method on com.test.interc.service.fake (from on-device permission registry; parameters undocumented).
+Returns the rating info (subtitle)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.test.interc.service.fake/subtitle/getRatingInfo '{}'

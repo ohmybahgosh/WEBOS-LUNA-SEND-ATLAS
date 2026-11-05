@@ -1,42 +1,46 @@
 # `com.webos.service.devicereset`
 
+Device factory-reset service: triggers reset, reports reset status and progress, requests reboot, and tracks in-store ('instop') demo state. _(inferred from the service's methods)_
+
 18 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`doReset`](#doreset) | private |  | power | Method on com.webos.service.devicereset (introspected on-device; parameters undocumented). ⚠️ |
-| [`getFirstBootAfterInstop`](#getfirstbootafterinstop) | private |  | power | Getter on com.webos.service.devicereset (introspected on-device; parameters undocumented). |
-| [`getInstopCompleted`](#getinstopcompleted) | private |  | power | Getter on com.webos.service.devicereset (introspected on-device; parameters undocumented). |
-| [`getInstopOnGoing`](#getinstopongoing) | private |  | power | Getter on com.webos.service.devicereset (introspected on-device; parameters undocumented). |
-| [`getResetStatus`](#getresetstatus) | private |  | power | Getter on com.webos.service.devicereset (introspected on-device; parameters undocumented). |
-| [`getTvRegion`](#gettvregion) | private |  | power | Getter on com.webos.service.devicereset (introspected on-device; parameters undocumented). |
-| [`registerResetDone`](#registerresetdone) | private |  | power | Method on com.webos.service.devicereset (introspected on-device; parameters undocumented). ⚠️ |
-| [`registerResetReady`](#registerresetready) | private |  | power | Method on com.webos.service.devicereset (introspected on-device; parameters undocumented). ⚠️ |
-| [`registerResetting`](#registerresetting) | private |  | power | Method on com.webos.service.devicereset (introspected on-device; parameters undocumented). ⚠️ |
-| [`requestReboot`](#requestreboot) | ssap |  | power-mgmt | Full TV reboot |
-| [`respondseResetDone`](#respondseresetdone) | private |  | power | Method on com.webos.service.devicereset (introspected on-device; parameters undocumented). ⚠️ |
-| [`respondseResetReady`](#respondseresetready) | private |  | power | Method on com.webos.service.devicereset (introspected on-device; parameters undocumented). ⚠️ |
-| [`respondseResetting`](#respondseresetting) | private |  | power | Method on com.webos.service.devicereset (introspected on-device; parameters undocumented). ⚠️ |
-| [`responseResetDone`](#responseresetdone) | private |  | power | Method on com.webos.service.devicereset (introspected on-device; parameters undocumented). ⚠️ |
-| [`responseResetReady`](#responseresetready) | private |  | power | Method on com.webos.service.devicereset (introspected on-device; parameters undocumented). ⚠️ |
-| [`responseResetting`](#responseresetting) | private |  | power | Method on com.webos.service.devicereset (introspected on-device; parameters undocumented). ⚠️ |
-| [`setInstopCompleted`](#setinstopcompleted) | private |  | power | Setter on com.webos.service.devicereset (introspected on-device; parameters undocumented). |
-| [`setResetStatus`](#setresetstatus) | private |  | power | Setter on com.webos.service.devicereset (introspected on-device; parameters undocumented). ⚠️ |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`doReset`](#doreset) | private |  | power | inferred | Handles the do reset. ⚠️ |
+| [`getFirstBootAfterInstop`](#getfirstbootafterinstop) | private |  | power | inferred | Returns the first boot after instop. |
+| [`getInstopCompleted`](#getinstopcompleted) | private |  | power | inferred | Returns the instop completed. |
+| [`getInstopOnGoing`](#getinstopongoing) | private |  | power | inferred | Returns the instop on going. |
+| [`getResetStatus`](#getresetstatus) | private |  | power | inferred | Returns the reset status. |
+| [`getTvRegion`](#gettvregion) | private |  | power | inferred | Returns the TV region. |
+| [`registerResetDone`](#registerresetdone) | private |  | power | inferred | Registers the reset done. ⚠️ |
+| [`registerResetReady`](#registerresetready) | private |  | power | inferred | Registers the reset ready. ⚠️ |
+| [`registerResetting`](#registerresetting) | private |  | power | inferred | Registers the resetting. ⚠️ |
+| [`requestReboot`](#requestreboot) | ssap |  | power-mgmt | documented | Full TV reboot |
+| [`respondseResetDone`](#respondseresetdone) | private |  | power | inferred | Handles the respondse reset done. ⚠️ |
+| [`respondseResetReady`](#respondseresetready) | private |  | power | inferred | Handles the respondse reset ready. ⚠️ |
+| [`respondseResetting`](#respondseresetting) | private |  | power | inferred | Handles the respondse resetting. ⚠️ |
+| [`responseResetDone`](#responseresetdone) | private |  | power | inferred | Handles the response reset done. ⚠️ |
+| [`responseResetReady`](#responseresetready) | private |  | power | inferred | Handles the response reset ready. ⚠️ |
+| [`responseResetting`](#responseresetting) | private |  | power | inferred | Handles the response resetting. ⚠️ |
+| [`setInstopCompleted`](#setinstopcompleted) | private |  | power | inferred | Sets the instop completed. |
+| [`setResetStatus`](#setresetstatus) | private |  | power | inferred | Sets the reset status. ⚠️ |
 
 <a id="doreset"></a>
 ## `doReset` ⚠️ DANGEROUS
 
 `luna://com.webos.service.devicereset/doReset`
 
-Method on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Handles the do reset.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/doReset '{}'
@@ -51,13 +55,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/getFirstBootAfterInstop`
 
-Getter on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Returns the first boot after instop.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/getFirstBootAfterInstop '{}'
@@ -72,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/getInstopCompleted`
 
-Getter on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Returns the instop completed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/getInstopCompleted '{}'
@@ -93,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/getInstopOnGoing`
 
-Getter on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Returns the instop on going.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/getInstopOnGoing '{}'
@@ -114,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/getResetStatus`
 
-Getter on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Returns the reset status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/getResetStatus '{}'
@@ -135,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/getTvRegion`
 
-Getter on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Returns the TV region.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/getTvRegion '{}'
@@ -156,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/registerResetDone`
 
-Method on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Registers the reset done.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/registerResetDone '{}'
@@ -177,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/registerResetReady`
 
-Method on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Registers the reset ready.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/registerResetReady '{}'
@@ -198,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/registerResetting`
 
-Method on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Registers the resetting.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/registerResetting '{}'
@@ -225,7 +245,7 @@ Full TV reboot
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -244,13 +264,15 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 `luna://com.webos.service.devicereset/respondseResetDone`
 
-Method on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Handles the respondse reset done.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/respondseResetDone '{}'
@@ -265,13 +287,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/respondseResetReady`
 
-Method on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Handles the respondse reset ready.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/respondseResetReady '{}'
@@ -286,13 +310,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/respondseResetting`
 
-Method on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Handles the respondse resetting.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/respondseResetting '{}'
@@ -307,13 +333,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/responseResetDone`
 
-Method on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Handles the response reset done.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/responseResetDone '{}'
@@ -328,13 +356,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/responseResetReady`
 
-Method on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Handles the response reset ready.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/responseResetReady '{}'
@@ -349,13 +379,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/responseResetting`
 
-Method on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Handles the response resetting.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/responseResetting '{}'
@@ -370,13 +402,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/setInstopCompleted`
 
-Setter on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Sets the instop completed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/setInstopCompleted '{}'
@@ -391,13 +425,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.devicereset/setResetStatus`
 
-Setter on com.webos.service.devicereset (introspected on-device; parameters undocumented).
+Sets the reset status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.devicereset/setResetStatus '{}'

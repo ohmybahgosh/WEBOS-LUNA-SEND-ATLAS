@@ -1,16 +1,18 @@
 # `com.webos.service.tv.power`
 
+TV power service: reboots, turns the screen on and off, cancels a scheduled power-off, and enables Wake-on-LAN.
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelPowerOff`](#cancelpoweroff) | private |  | power | Cancels a power-off in progress |
-| [`enableWol`](#enablewol) | private |  | power | TV power method: enableWol |
-| [`reboot`](#reboot) | private |  | power-mgmt | Soft reboot the TV (webOS 4/5 path) |
-| [`turnOffScreen`](#turnoffscreen) | ssap |  | display | Blank the panel (legacy, webOS 4.0 path) |
-| [`turnOnScreen`](#turnonscreen) | ssap |  | display | Unblank the panel (legacy, webOS 4.0 path) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelPowerOff`](#cancelpoweroff) | private |  | power | documented | Cancels a power-off in progress |
+| [`enableWol`](#enablewol) | private |  | power | documented | TV power method: enableWol |
+| [`reboot`](#reboot) | private |  | power-mgmt | documented | Soft reboot the TV (webOS 4/5 path) |
+| [`turnOffScreen`](#turnoffscreen) | ssap |  | display | documented | Blank the panel (legacy, webOS 4.0 path) |
+| [`turnOnScreen`](#turnonscreen) | ssap |  | display | documented | Unblank the panel (legacy, webOS 4.0 path) |
 
 <a id="cancelpoweroff"></a>
 ## `cancelPowerOff`
@@ -23,7 +25,7 @@ Cancels a power-off in progress
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 6+  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.service.tv.power/cancelPowerOff '{}'
@@ -44,7 +46,7 @@ TV power method: enableWol
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.power/enableWol '{}'
@@ -65,7 +67,7 @@ Soft reboot the TV (webOS 4/5 path)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4/5; webOS 5+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -90,7 +92,7 @@ Blank the panel (legacy, webOS 4.0 path)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.0 (removed in later versions)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -115,7 +117,7 @@ Unblank the panel (legacy, webOS 4.0 path)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.0 (removed in later versions)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

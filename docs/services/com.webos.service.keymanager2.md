@@ -1,33 +1,37 @@
 # `com.webos.service.keymanager2`
 
+Second-generation key manager: generates keys, encrypts/decrypts and signs/verifies data, manages key attributes, and removes keys (including per-app keys).
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`decrypt`](#decrypt) | private |  | input | Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented). |
-| [`encrypt`](#encrypt) | private |  | input | Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented). |
-| [`generate`](#generate) | private |  | input | Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented). |
-| [`getAttrs`](#getattrs) | private |  | input | Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented). |
-| [`remove`](#remove) | private |  | input | Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`removeAppKeys`](#removeappkeys) | private |  | input | Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`setAttrs`](#setattrs) | private |  | input | Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented). |
-| [`sign`](#sign) | private |  | input | Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented). |
-| [`verify`](#verify) | private |  | input | Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`decrypt`](#decrypt) | private |  | input | inferred | Decrypts the keymanager 2. |
+| [`encrypt`](#encrypt) | private |  | input | inferred | Encrypts the keymanager 2. |
+| [`generate`](#generate) | private |  | input | inferred | Handles the generate. |
+| [`getAttrs`](#getattrs) | private |  | input | inferred | Returns the attrs. |
+| [`remove`](#remove) | private |  | input | inferred | Removes the keymanager 2. ⚠️ |
+| [`removeAppKeys`](#removeappkeys) | private |  | input | inferred | Removes the app keys. ⚠️ |
+| [`setAttrs`](#setattrs) | private |  | input | inferred | Sets the attrs. |
+| [`sign`](#sign) | private |  | input | inferred | Signs the keymanager 2. |
+| [`verify`](#verify) | private |  | input | inferred | Verifies the keymanager 2. |
 
 <a id="decrypt"></a>
 ## `decrypt`
 
 `luna://com.webos.service.keymanager2/decrypt`
 
-Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented).
+Decrypts the keymanager 2.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.keymanager2/decrypt '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.keymanager2/encrypt`
 
-Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented).
+Encrypts the keymanager 2.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.keymanager2/encrypt '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.keymanager2/generate`
 
-Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented).
+Handles the generate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.keymanager2/generate '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.keymanager2/getAttrs`
 
-Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented).
+Returns the attrs.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.keymanager2/getAttrs '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.keymanager2/remove`
 
-Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented).
+Removes the keymanager 2.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.keymanager2/remove '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.keymanager2/removeAppKeys`
 
-Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented).
+Removes the app keys.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.keymanager2/removeAppKeys '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.keymanager2/setAttrs`
 
-Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented).
+Sets the attrs.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.keymanager2/setAttrs '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.keymanager2/sign`
 
-Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented).
+Signs the keymanager 2.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.keymanager2/sign '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.keymanager2/verify`
 
-Method on com.webos.service.keymanager2 (from on-device permission registry; parameters undocumented).
+Verifies the keymanager 2.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.keymanager2/verify '{}'

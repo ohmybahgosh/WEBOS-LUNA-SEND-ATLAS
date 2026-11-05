@@ -1,18 +1,20 @@
 # `com.webos.service.intent`
 
+Intent manager: handles implicit and explicit intents (abstract operations), queries and registers intent handlers/filters, and returns intent results.
+
 7 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`handler`](#handler) | unknown |  | apps | Indicates the application to handle the intent. |
-| [`intent`](#intent) | unknown |  | apps | Provides details of the intent. |
-| [`intentFilter`](#intentfilter) | unknown |  | apps |  |
-| [`query`](#query) | public |  | apps | Clients can get handlers by calling the API. |
-| [`sendResult`](#sendresult) | public |  | apps | Enables the handlers to reply with the results. Note: Also refer 'subscribeResult' API. |
-| [`start`](#start) | public | yes | apps | Starts the handlers based on the intent information provided in the request payload. Please refer ' subscribeResult ' API for subscription p |
-| [`subscribeResult`](#subscriberesult) | public | yes | apps | All running intents have their own 'intentId'. Of course, handlers can reply results thought 'intentId'. Other component including requester |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`handler`](#handler) | unknown |  | apps | documented | Indicates the application to handle the intent. |
+| [`intent`](#intent) | unknown |  | apps | documented | Provides details of the intent. |
+| [`intentFilter`](#intentfilter) | unknown |  | apps | inferred | Handles the intent filter. |
+| [`query`](#query) | public |  | apps | documented | Clients can get handlers by calling the API. |
+| [`sendResult`](#sendresult) | public |  | apps | documented | Enables the handlers to reply with the results. Note: Also refer 'subscribeResult' API. |
+| [`start`](#start) | public | yes | apps | documented | Starts the handlers based on the intent information provided in the request payload. Please refer ' subscribeResult ' API for subscription p |
+| [`subscribeResult`](#subscriberesult) | public | yes | apps | documented | All running intents have their own 'intentId'. Of course, handlers can reply results thought 'intentId'. Other component including requester |
 
 <a id="handler"></a>
 ## `handler`
@@ -61,13 +63,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-i
 
 `luna://com.webos.service.intent/intentFilter`
 
+Handles the intent filter.
 
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** unknown  
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 29+  
-- **Confidence:** documented
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.intent/intentFilter '{}'
@@ -93,6 +97,13 @@ Clients can get handlers by calling the API.
 | Param | Type / notes |
 |---|---|
 | `intent` | Object: intent (optional) Details of the intent. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+| `handlers` | Object array: handler (required) Please refer the handler object in the object section. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.intent/query '{}
@@ -121,6 +132,12 @@ Enables the handlers to reply with the results. Note: Also refer 'subscribeResul
 | `result` | String (optional) Indicates the result string which is provided by the handler. |
 | `intent` | Object: intent (optional) Details of the intent. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.intent/sendResult '{ "intentId":33, "result":"ok" }
 ```
@@ -147,6 +164,13 @@ Starts the handlers based on the intent information provided in the request payl
 | `intent` | Object: intent (optional) Details of the intent. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true : Subscribed for notifications false : Not subscribed |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+| `intentId` | Number (required) Indicates the Intent ID. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.intent/start '{"subscribe": true}'
 ```
@@ -172,6 +196,13 @@ All running intents have their own 'intentId'. Of course, handlers can reply res
 |---|---|
 | `intentId` | Number (required) Indicates the intent ID. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true : Subscribed for notifications false : Not subscribed |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+| `intentId` | Number (required) Indicates the intent ID. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.intent/subscribeResult '{ "intentId":14, "subscribe":true }

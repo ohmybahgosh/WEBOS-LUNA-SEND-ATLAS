@@ -1,30 +1,34 @@
 # `com.webos.service.sensor`
 
+Sensor service: enumerates available sensors, reads sensor values, controls sensors, and handles sensor device attach/detach events.
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`control`](#control) | private |  | input | Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented). |
-| [`getInfo`](#getinfo) | public |  | input | Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented). |
-| [`getSensorsList`](#getsensorslist) | public |  | input | Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented). |
-| [`getValue`](#getvalue) | public |  | input | Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented). |
-| [`internal/deviceAttached`](#internal_deviceattached) | private |  | input | Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented). |
-| [`internal/deviceDetached`](#internal_devicedetached) | private |  | input | Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`control`](#control) | private |  | input | inferred | Controls the sensor. |
+| [`getInfo`](#getinfo) | public |  | input | inferred | Returns the info. |
+| [`getSensorsList`](#getsensorslist) | public |  | input | inferred | Returns the sensors list. |
+| [`getValue`](#getvalue) | public |  | input | inferred | Returns the value. |
+| [`internal/deviceAttached`](#internal_deviceattached) | private |  | input | inferred | Handles the device attached (internal) |
+| [`internal/deviceDetached`](#internal_devicedetached) | private |  | input | inferred | Handles the device detached (internal) |
 
 <a id="control"></a>
 ## `control`
 
 `luna://com.webos.service.sensor/control`
 
-Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented).
+Controls the sensor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sensor/control '{}'
@@ -39,13 +43,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sensor/getInfo`
 
-Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented).
+Returns the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sensor/getInfo '{}'
@@ -60,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sensor/getSensorsList`
 
-Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented).
+Returns the sensors list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sensor/getSensorsList '{}'
@@ -81,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sensor/getValue`
 
-Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented).
+Returns the value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sensor/getValue '{}'
@@ -102,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sensor/internal/deviceAttached`
 
-Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented).
+Handles the device attached (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sensor/internal/deviceAttached '{}'
@@ -123,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sensor/internal/deviceDetached`
 
-Method on com.webos.service.sensor (from on-device permission registry; parameters undocumented).
+Handles the device detached (internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sensor/internal/deviceDetached '{}'

@@ -1,27 +1,31 @@
 # `com.webos.service.ruleengine`
 
+Rule engine: gets, sets and deletes automation rules. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`deleteRule`](#deleterule) | private |  | misc | Method on com.webos.service.ruleengine (introspected on-device; parameters undocumented). ⚠️ |
-| [`get`](#get) | private |  | misc | Getter on com.webos.service.ruleengine (introspected on-device; parameters undocumented). |
-| [`set`](#set) | private |  | misc | Setter on com.webos.service.ruleengine (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`deleteRule`](#deleterule) | private |  | misc | inferred | Deletes the rule. ⚠️ |
+| [`get`](#get) | private |  | misc | inferred | Returns the ruleengine. |
+| [`set`](#set) | private |  | misc | inferred | Sets the ruleengine. |
 
 <a id="deleterule"></a>
 ## `deleteRule` ⚠️ DANGEROUS
 
 `luna://com.webos.service.ruleengine/deleteRule`
 
-Method on com.webos.service.ruleengine (introspected on-device; parameters undocumented).
+Deletes the rule.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ruleengine/deleteRule '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ruleengine/get`
 
-Getter on com.webos.service.ruleengine (introspected on-device; parameters undocumented).
+Returns the ruleengine.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ruleengine/get '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.ruleengine/set`
 
-Setter on com.webos.service.ruleengine (introspected on-device; parameters undocumented).
+Sets the ruleengine.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ruleengine/set '{}'

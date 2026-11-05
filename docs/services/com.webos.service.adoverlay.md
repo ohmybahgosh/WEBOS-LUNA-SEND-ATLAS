@@ -1,25 +1,29 @@
 # `com.webos.service.adoverlay`
 
+Appears to display an advertising overlay via a single startAdoverlay method; opaque beyond that. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`startAdoverlay`](#startadoverlay) | private |  | misc | Method on com.webos.service.adoverlay (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`startAdoverlay`](#startadoverlay) | private |  | misc | inferred | Starts the adoverlay. |
 
 <a id="startadoverlay"></a>
 ## `startAdoverlay`
 
 `luna://com.webos.service.adoverlay/startAdoverlay`
 
-Method on com.webos.service.adoverlay (from on-device permission registry; parameters undocumented).
+Starts the adoverlay.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.adoverlay/startAdoverlay '{}'

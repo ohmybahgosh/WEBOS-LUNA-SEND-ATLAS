@@ -1,121 +1,125 @@
 # `com.webos.service.legacybroadcast.dvr`
 
+Legacy broadcast DVR service: controls recording playback (seek, frame-step, subtitles), queries recording storage performance, and reports playing program, audio, and content info. _(inferred from the service's methods)_
+
 97 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`device/checkStoragePerformance`](#device_checkstorageperformance) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`device/getRequiredStoragePerformance`](#device_getrequiredstorageperformance) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`device/getStoragesInPerformanceCheck`](#device_getstoragesinperformancecheck) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`device/isRecordableStorage`](#device_isrecordablestorage) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/clipContent`](#play_clipcontent) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/closePlayInstance`](#play_closeplayinstance) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/disableSubtitle`](#play_disablesubtitle) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/enableSubtitle`](#play_enablesubtitle) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/frameForward`](#play_frameforward) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getDelayedNLPProgramInfo`](#play_getdelayednlpprograminfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getLivePauseTime`](#play_getlivepausetime) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getPlayingAudioCodecType`](#play_getplayingaudiocodectype) | private |  | audio | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getPlayingAudioLanguage`](#play_getplayingaudiolanguage) | private |  | audio | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getPlayingAudioLanguageList`](#play_getplayingaudiolanguagelist) | private |  | audio | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getPlayingAudioLauguageList`](#play_getplayingaudiolauguagelist) | private |  | audio | Method on com.webos.service.legacybroadcast.dvr (from on-device permission registry; parameters undocumented). |
-| [`play/getPlayingContentInfo`](#play_getplayingcontentinfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getPlayingMode`](#play_getplayingmode) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getPlayingProgram`](#play_getplayingprogram) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getPlayingScreenSaverType`](#play_getplayingscreensavertype) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getPlayingSpeed`](#play_getplayingspeed) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getPlayingState`](#play_getplayingstate) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getPlayingTime`](#play_getplayingtime) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getRatingInfo`](#play_getratinginfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getSubtitleList`](#play_getsubtitlelist) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/getSubtitleState`](#play_getsubtitlestate) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/isContentPlaying`](#play_iscontentplaying) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/isDelayedPlaying`](#play_isdelayedplaying) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/isPauseOnLive`](#play_ispauseonlive) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/isPlayingAudioDescriptionFailure`](#play_isplayingaudiodescriptionfailure) | private |  | audio | Method on com.webos.service.legacybroadcast.dvr (from on-device permission registry; parameters undocumented). |
-| [`play/isPlayingFailure`](#play_isplayingfailure) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/isPlayingReachedEnd`](#play_isplayingreachedend) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/openContentPlayInstance`](#play_opencontentplayinstance) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/openRecordingPlayInstance`](#play_openrecordingplayinstance) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/openTimeshiftPlayInstance`](#play_opentimeshiftplayinstance) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/pause`](#play_pause) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/pauseOnLive`](#play_pauseonlive) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/releasePlayingBlockedScreenSaver`](#play_releaseplayingblockedscreensaver) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/seek`](#play_seek) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/setPlayingAudioLanguage`](#play_setplayingaudiolanguage) | private |  | audio | Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/setPlayRate`](#play_setplayrate) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/setSubtitle`](#play_setsubtitle) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/startPartialRepeatPlay`](#play_startpartialrepeatplay) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/startPlay`](#play_startplay) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/stopPartialRepeatPlay`](#play_stoppartialrepeatplay) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/stopPlay`](#play_stopplay) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/stopPlayInstance`](#play_stopplayinstance) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/switchToLive`](#play_switchtolive) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`play/unpauseToLive`](#play_unpausetolive) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`private/deleteRecordFile`](#private_deleterecordfile) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). ⚠️ |
-| [`private/getChangedRecordFile`](#private_getchangedrecordfile) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`private/getRecordFile`](#private_getrecordfile) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`private/getRecordFileList`](#private_getrecordfilelist) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`private/getRecordSynopsis`](#private_getrecordsynopsis) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`private/getRootDirectoryName`](#private_getrootdirectoryname) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`private/getThumbnail`](#private_getthumbnail) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`private/getThumbnailData`](#private_getthumbnaildata) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`private/isRecordFileExists`](#private_isrecordfileexists) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`private/testLMT`](#private_testlmt) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/changeRecordType`](#record_changerecordtype) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/changeToSeriesRecord`](#record_changetoseriesrecord) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getRecordableDuration`](#record_getrecordableduration) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getRecordingBufferedLength`](#record_getrecordingbufferedlength) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getRecordingDuration`](#record_getrecordingduration) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getRecordingEventRelayInfo`](#record_getrecordingeventrelayinfo) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/getRecordingId`](#record_getrecordingid) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getRecordingIdList`](#record_getrecordingidlist) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getRecordingQuality`](#record_getrecordingquality) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getRecordingRemainDuration`](#record_getrecordingremainduration) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getRecordingSource`](#record_getrecordingsource) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getRecordingSourceList`](#record_getrecordingsourcelist) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getRecordingStartTime`](#record_getrecordingstarttime) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getRecordingType`](#record_getrecordingtype) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getTimeshiftBufferedLength`](#record_gettimeshiftbufferedlength) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getTimeshiftBufferingSourceType`](#record_gettimeshiftbufferingsourcetype) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/getTimeshiftRecordingId`](#record_gettimeshiftrecordingid) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/isECPProtectedContent`](#record_isecpprotectedcontent) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/isRecordableInput`](#record_isrecordableinput) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/isRecording`](#record_isrecording) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/isTimeshiftBufferable`](#record_istimeshiftbufferable) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/isTimeshiftBuffering`](#record_istimeshiftbuffering) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/pauseTimeshiftBuffering`](#record_pausetimeshiftbuffering) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/releaseContentsDeleteLock`](#record_releasecontentsdeletelock) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). ⚠️ |
-| [`record/resumeRecord`](#record_resumerecord) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (from on-device permission registry; parameters undocumented). |
-| [`record/resumeTimeshiftBuffering`](#record_resumetimeshiftbuffering) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/setContentsDeleteLock`](#record_setcontentsdeletelock) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). ⚠️ |
-| [`record/setContentTitle`](#record_setcontenttitle) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/setNormalContent`](#record_setnormalcontent) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/setRecordingEndTime`](#record_setrecordingendtime) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/setRecordingRemainDuration`](#record_setrecordingremainduration) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/startExternalInputRecord`](#record_startexternalinputrecord) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/startManualRecord`](#record_startmanualrecord) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/startProgramRecord`](#record_startprogramrecord) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/startScheduleRecord`](#record_startschedulerecord) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/startTimeshiftBuffering`](#record_starttimeshiftbuffering) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/stopRecord`](#record_stoprecord) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/stopScheduleRecord`](#record_stopschedulerecord) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
-| [`record/stopTimeshiftBuffering`](#record_stoptimeshiftbuffering) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`device/checkStoragePerformance`](#device_checkstorageperformance) | private |  | tv-broadcast | inferred | Checks the storage performance (device) |
+| [`device/getRequiredStoragePerformance`](#device_getrequiredstorageperformance) | private |  | tv-broadcast | inferred | Returns the required storage performance (device) |
+| [`device/getStoragesInPerformanceCheck`](#device_getstoragesinperformancecheck) | private |  | tv-broadcast | inferred | Returns the storages in performance check (device) |
+| [`device/isRecordableStorage`](#device_isrecordablestorage) | private |  | tv-broadcast | inferred | Reports whether the recordable storage is set (device) |
+| [`play/clipContent`](#play_clipcontent) | private |  | tv-broadcast | inferred | Handles the clip content (play) |
+| [`play/closePlayInstance`](#play_closeplayinstance) | private |  | tv-broadcast | inferred | Closes the play instance (play) |
+| [`play/disableSubtitle`](#play_disablesubtitle) | private |  | tv-broadcast | inferred | Disables the subtitle (play) |
+| [`play/enableSubtitle`](#play_enablesubtitle) | private |  | tv-broadcast | inferred | Enables the subtitle (play) |
+| [`play/frameForward`](#play_frameforward) | private |  | tv-broadcast | inferred | Handles the frame forward (play) |
+| [`play/getDelayedNLPProgramInfo`](#play_getdelayednlpprograminfo) | private |  | tv-broadcast | inferred | Returns the delayed NLP program info (play) |
+| [`play/getLivePauseTime`](#play_getlivepausetime) | private |  | tv-broadcast | inferred | Returns the live pause time (play) |
+| [`play/getPlayingAudioCodecType`](#play_getplayingaudiocodectype) | private |  | audio | inferred | Returns the playing audio codec type (play) |
+| [`play/getPlayingAudioLanguage`](#play_getplayingaudiolanguage) | private |  | audio | inferred | Returns the playing audio language (play) |
+| [`play/getPlayingAudioLanguageList`](#play_getplayingaudiolanguagelist) | private |  | audio | inferred | Returns the playing audio language list (play) |
+| [`play/getPlayingAudioLauguageList`](#play_getplayingaudiolauguagelist) | private |  | audio | inferred | Returns the playing audio lauguage list (play) |
+| [`play/getPlayingContentInfo`](#play_getplayingcontentinfo) | private |  | tv-broadcast | inferred | Returns the playing content info (play) |
+| [`play/getPlayingMode`](#play_getplayingmode) | private |  | tv-broadcast | inferred | Returns the playing mode (play) |
+| [`play/getPlayingProgram`](#play_getplayingprogram) | private |  | tv-broadcast | inferred | Returns the playing program (play) |
+| [`play/getPlayingScreenSaverType`](#play_getplayingscreensavertype) | private |  | tv-broadcast | inferred | Returns the playing screen saver type (play) |
+| [`play/getPlayingSpeed`](#play_getplayingspeed) | private |  | tv-broadcast | inferred | Returns the playing speed (play) |
+| [`play/getPlayingState`](#play_getplayingstate) | private |  | tv-broadcast | inferred | Returns the playing state (play) |
+| [`play/getPlayingTime`](#play_getplayingtime) | private |  | tv-broadcast | inferred | Returns the playing time (play) |
+| [`play/getRatingInfo`](#play_getratinginfo) | private |  | tv-broadcast | inferred | Returns the rating info (play) |
+| [`play/getSubtitleList`](#play_getsubtitlelist) | private |  | tv-broadcast | inferred | Returns the subtitle list (play) |
+| [`play/getSubtitleState`](#play_getsubtitlestate) | private |  | tv-broadcast | inferred | Returns the subtitle state (play) |
+| [`play/isContentPlaying`](#play_iscontentplaying) | private |  | tv-broadcast | inferred | Reports whether the content playing is set (play) |
+| [`play/isDelayedPlaying`](#play_isdelayedplaying) | private |  | tv-broadcast | inferred | Reports whether the delayed playing is set (play) |
+| [`play/isPauseOnLive`](#play_ispauseonlive) | private |  | tv-broadcast | inferred | Reports whether the pause on live is set (play) |
+| [`play/isPlayingAudioDescriptionFailure`](#play_isplayingaudiodescriptionfailure) | private |  | audio | inferred | Reports whether the playing audio description failure is set (play) |
+| [`play/isPlayingFailure`](#play_isplayingfailure) | private |  | tv-broadcast | inferred | Reports whether the playing failure is set (play) |
+| [`play/isPlayingReachedEnd`](#play_isplayingreachedend) | private |  | tv-broadcast | inferred | Reports whether the playing reached end is set (play) |
+| [`play/openContentPlayInstance`](#play_opencontentplayinstance) | private |  | tv-broadcast | inferred | Opens the content play instance (play) |
+| [`play/openRecordingPlayInstance`](#play_openrecordingplayinstance) | private |  | tv-broadcast | inferred | Opens the recording play instance (play) |
+| [`play/openTimeshiftPlayInstance`](#play_opentimeshiftplayinstance) | private |  | tv-broadcast | inferred | Opens the timeshift play instance (play) |
+| [`play/pause`](#play_pause) | private |  | tv-broadcast | inferred | Pauses the legacybroadcast DVR (play) |
+| [`play/pauseOnLive`](#play_pauseonlive) | private |  | tv-broadcast | inferred | Pauses the on live (play) |
+| [`play/releasePlayingBlockedScreenSaver`](#play_releaseplayingblockedscreensaver) | private |  | tv-broadcast | inferred | Releases the playing blocked screen saver (play) |
+| [`play/seek`](#play_seek) | private |  | tv-broadcast | inferred | Seeks the legacybroadcast DVR (play) |
+| [`play/setPlayingAudioLanguage`](#play_setplayingaudiolanguage) | private |  | audio | inferred | Sets the playing audio language (play) |
+| [`play/setPlayRate`](#play_setplayrate) | private |  | tv-broadcast | inferred | Sets the play rate (play) |
+| [`play/setSubtitle`](#play_setsubtitle) | private |  | tv-broadcast | inferred | Sets the subtitle (play) |
+| [`play/startPartialRepeatPlay`](#play_startpartialrepeatplay) | private |  | tv-broadcast | inferred | Starts the partial repeat play (play) |
+| [`play/startPlay`](#play_startplay) | private |  | tv-broadcast | inferred | Starts the play (play) |
+| [`play/stopPartialRepeatPlay`](#play_stoppartialrepeatplay) | private |  | tv-broadcast | inferred | Stops the partial repeat play (play) |
+| [`play/stopPlay`](#play_stopplay) | private |  | tv-broadcast | inferred | Stops the play (play) |
+| [`play/stopPlayInstance`](#play_stopplayinstance) | private |  | tv-broadcast | inferred | Stops the play instance (play) |
+| [`play/switchToLive`](#play_switchtolive) | private |  | tv-broadcast | inferred | Switches the to live (play) |
+| [`play/unpauseToLive`](#play_unpausetolive) | private |  | tv-broadcast | inferred | Handles the unpause to live (play) |
+| [`private/deleteRecordFile`](#private_deleterecordfile) | private |  | tv-broadcast | inferred | Deletes the record file (private) ⚠️ |
+| [`private/getChangedRecordFile`](#private_getchangedrecordfile) | private |  | tv-broadcast | inferred | Returns the changed record file (private) |
+| [`private/getRecordFile`](#private_getrecordfile) | private |  | tv-broadcast | inferred | Returns the record file (private) |
+| [`private/getRecordFileList`](#private_getrecordfilelist) | private |  | tv-broadcast | inferred | Returns the record file list (private) |
+| [`private/getRecordSynopsis`](#private_getrecordsynopsis) | private |  | tv-broadcast | inferred | Returns the record synopsis (private) |
+| [`private/getRootDirectoryName`](#private_getrootdirectoryname) | private |  | tv-broadcast | inferred | Returns the root directory name (private) |
+| [`private/getThumbnail`](#private_getthumbnail) | private |  | tv-broadcast | inferred | Returns the thumbnail (private) |
+| [`private/getThumbnailData`](#private_getthumbnaildata) | private |  | tv-broadcast | inferred | Returns the thumbnail data (private) |
+| [`private/isRecordFileExists`](#private_isrecordfileexists) | private |  | tv-broadcast | inferred | Reports whether the record file exists is set (private) |
+| [`private/testLMT`](#private_testlmt) | private |  | tv-broadcast | inferred | Tests the LMT (private) |
+| [`record/changeRecordType`](#record_changerecordtype) | private |  | tv-broadcast | inferred | Changes the record type (record) |
+| [`record/changeToSeriesRecord`](#record_changetoseriesrecord) | private |  | tv-broadcast | inferred | Changes the to series record (record) |
+| [`record/getRecordableDuration`](#record_getrecordableduration) | private |  | tv-broadcast | inferred | Returns the recordable duration (record) |
+| [`record/getRecordingBufferedLength`](#record_getrecordingbufferedlength) | private |  | tv-broadcast | inferred | Returns the recording buffered length (record) |
+| [`record/getRecordingDuration`](#record_getrecordingduration) | private |  | tv-broadcast | inferred | Returns the recording duration (record) |
+| [`record/getRecordingEventRelayInfo`](#record_getrecordingeventrelayinfo) | private |  | tv-broadcast | inferred | Returns the recording event relay info (record) |
+| [`record/getRecordingId`](#record_getrecordingid) | private |  | tv-broadcast | inferred | Returns the recording ID (record) |
+| [`record/getRecordingIdList`](#record_getrecordingidlist) | private |  | tv-broadcast | inferred | Returns the recording ID list (record) |
+| [`record/getRecordingQuality`](#record_getrecordingquality) | private |  | tv-broadcast | inferred | Returns the recording quality (record) |
+| [`record/getRecordingRemainDuration`](#record_getrecordingremainduration) | private |  | tv-broadcast | inferred | Returns the recording remain duration (record) |
+| [`record/getRecordingSource`](#record_getrecordingsource) | private |  | tv-broadcast | inferred | Returns the recording source (record) |
+| [`record/getRecordingSourceList`](#record_getrecordingsourcelist) | private |  | tv-broadcast | inferred | Returns the recording source list (record) |
+| [`record/getRecordingStartTime`](#record_getrecordingstarttime) | private |  | tv-broadcast | inferred | Returns the recording start time (record) |
+| [`record/getRecordingType`](#record_getrecordingtype) | private |  | tv-broadcast | inferred | Returns the recording type (record) |
+| [`record/getTimeshiftBufferedLength`](#record_gettimeshiftbufferedlength) | private |  | tv-broadcast | inferred | Returns the timeshift buffered length (record) |
+| [`record/getTimeshiftBufferingSourceType`](#record_gettimeshiftbufferingsourcetype) | private |  | tv-broadcast | inferred | Returns the timeshift buffering source type (record) |
+| [`record/getTimeshiftRecordingId`](#record_gettimeshiftrecordingid) | private |  | tv-broadcast | inferred | Returns the timeshift recording ID (record) |
+| [`record/isECPProtectedContent`](#record_isecpprotectedcontent) | private |  | tv-broadcast | inferred | Reports whether the ECP protected content is set (record) |
+| [`record/isRecordableInput`](#record_isrecordableinput) | private |  | tv-broadcast | inferred | Reports whether the recordable input is set (record) |
+| [`record/isRecording`](#record_isrecording) | private |  | tv-broadcast | inferred | Reports whether the recording is set (record) |
+| [`record/isTimeshiftBufferable`](#record_istimeshiftbufferable) | private |  | tv-broadcast | inferred | Reports whether the timeshift bufferable is set (record) |
+| [`record/isTimeshiftBuffering`](#record_istimeshiftbuffering) | private |  | tv-broadcast | inferred | Reports whether the timeshift buffering is set (record) |
+| [`record/pauseTimeshiftBuffering`](#record_pausetimeshiftbuffering) | private |  | tv-broadcast | inferred | Pauses the timeshift buffering (record) |
+| [`record/releaseContentsDeleteLock`](#record_releasecontentsdeletelock) | private |  | tv-broadcast | inferred | Releases the contents delete lock (record) ⚠️ |
+| [`record/resumeRecord`](#record_resumerecord) | private |  | tv-broadcast | inferred | Resumes the record (record) |
+| [`record/resumeTimeshiftBuffering`](#record_resumetimeshiftbuffering) | private |  | tv-broadcast | inferred | Resumes the timeshift buffering (record) |
+| [`record/setContentsDeleteLock`](#record_setcontentsdeletelock) | private |  | tv-broadcast | inferred | Sets the contents delete lock (record) ⚠️ |
+| [`record/setContentTitle`](#record_setcontenttitle) | private |  | tv-broadcast | inferred | Sets the content title (record) |
+| [`record/setNormalContent`](#record_setnormalcontent) | private |  | tv-broadcast | inferred | Sets the normal content (record) |
+| [`record/setRecordingEndTime`](#record_setrecordingendtime) | private |  | tv-broadcast | inferred | Sets the recording end time (record) |
+| [`record/setRecordingRemainDuration`](#record_setrecordingremainduration) | private |  | tv-broadcast | inferred | Sets the recording remain duration (record) |
+| [`record/startExternalInputRecord`](#record_startexternalinputrecord) | private |  | tv-broadcast | inferred | Starts the external input record (record) |
+| [`record/startManualRecord`](#record_startmanualrecord) | private |  | tv-broadcast | inferred | Starts the manual record (record) |
+| [`record/startProgramRecord`](#record_startprogramrecord) | private |  | tv-broadcast | inferred | Starts the program record (record) |
+| [`record/startScheduleRecord`](#record_startschedulerecord) | private |  | tv-broadcast | inferred | Starts the schedule record (record) |
+| [`record/startTimeshiftBuffering`](#record_starttimeshiftbuffering) | private |  | tv-broadcast | inferred | Starts the timeshift buffering (record) |
+| [`record/stopRecord`](#record_stoprecord) | private |  | tv-broadcast | inferred | Stops the record (record) |
+| [`record/stopScheduleRecord`](#record_stopschedulerecord) | private |  | tv-broadcast | inferred | Stops the schedule record (record) |
+| [`record/stopTimeshiftBuffering`](#record_stoptimeshiftbuffering) | private |  | tv-broadcast | inferred | Stops the timeshift buffering (record) |
 
 <a id="device_checkstorageperformance"></a>
 ## `device/checkStoragePerformance`
 
 `luna://com.webos.service.legacybroadcast.dvr/device/checkStoragePerformance`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Checks the storage performance (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/device/checkStoragePerformance '{}'
@@ -130,13 +134,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/device/getRequiredStoragePerformance`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the required storage performance (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/device/getRequiredStoragePerformance '{}'
@@ -151,13 +157,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/device/getStoragesInPerformanceCheck`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the storages in performance check (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/device/getStoragesInPerformanceCheck '{}'
@@ -172,13 +180,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/device/isRecordableStorage`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the recordable storage is set (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/device/isRecordableStorage '{}'
@@ -193,13 +203,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/clipContent`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Handles the clip content (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/clipContent '{}'
@@ -214,13 +226,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/closePlayInstance`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Closes the play instance (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/closePlayInstance '{}'
@@ -235,13 +249,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/disableSubtitle`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Disables the subtitle (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/disableSubtitle '{}'
@@ -256,13 +272,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/enableSubtitle`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Enables the subtitle (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/enableSubtitle '{}'
@@ -277,13 +295,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/frameForward`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Handles the frame forward (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/frameForward '{}'
@@ -298,13 +318,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getDelayedNLPProgramInfo`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the delayed NLP program info (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getDelayedNLPProgramInfo '{}'
@@ -319,13 +341,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getLivePauseTime`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the live pause time (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getLivePauseTime '{}'
@@ -340,13 +364,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getPlayingAudioCodecType`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the playing audio codec type (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getPlayingAudioCodecType '{}'
@@ -361,13 +387,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getPlayingAudioLanguage`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the playing audio language (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getPlayingAudioLanguage '{}'
@@ -382,13 +410,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getPlayingAudioLanguageList`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the playing audio language list (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getPlayingAudioLanguageList '{}'
@@ -403,13 +433,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getPlayingAudioLauguageList`
 
-Method on com.webos.service.legacybroadcast.dvr (from on-device permission registry; parameters undocumented).
+Returns the playing audio lauguage list (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getPlayingAudioLauguageList '{}'
@@ -424,13 +456,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getPlayingContentInfo`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the playing content info (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getPlayingContentInfo '{}'
@@ -445,13 +479,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getPlayingMode`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the playing mode (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getPlayingMode '{}'
@@ -466,13 +502,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getPlayingProgram`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the playing program (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getPlayingProgram '{}'
@@ -487,13 +525,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getPlayingScreenSaverType`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the playing screen saver type (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getPlayingScreenSaverType '{}'
@@ -508,13 +548,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getPlayingSpeed`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the playing speed (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getPlayingSpeed '{}'
@@ -529,13 +571,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getPlayingState`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the playing state (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getPlayingState '{}'
@@ -550,13 +594,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getPlayingTime`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the playing time (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getPlayingTime '{}'
@@ -571,13 +617,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getRatingInfo`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the rating info (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getRatingInfo '{}'
@@ -592,13 +640,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getSubtitleList`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the subtitle list (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getSubtitleList '{}'
@@ -613,13 +663,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/getSubtitleState`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the subtitle state (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/getSubtitleState '{}'
@@ -634,13 +686,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/isContentPlaying`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the content playing is set (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/isContentPlaying '{}'
@@ -655,13 +709,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/isDelayedPlaying`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the delayed playing is set (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/isDelayedPlaying '{}'
@@ -676,13 +732,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/isPauseOnLive`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the pause on live is set (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/isPauseOnLive '{}'
@@ -697,13 +755,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/isPlayingAudioDescriptionFailure`
 
-Method on com.webos.service.legacybroadcast.dvr (from on-device permission registry; parameters undocumented).
+Reports whether the playing audio description failure is set (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/isPlayingAudioDescriptionFailure '{}'
@@ -718,13 +778,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.dvr/play/isPlayingFailure`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the playing failure is set (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/isPlayingFailure '{}'
@@ -739,13 +801,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/isPlayingReachedEnd`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the playing reached end is set (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/isPlayingReachedEnd '{}'
@@ -760,13 +824,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/openContentPlayInstance`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Opens the content play instance (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/openContentPlayInstance '{}'
@@ -781,13 +847,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/openRecordingPlayInstance`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Opens the recording play instance (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/openRecordingPlayInstance '{}'
@@ -802,13 +870,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/openTimeshiftPlayInstance`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Opens the timeshift play instance (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/openTimeshiftPlayInstance '{}'
@@ -823,13 +893,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/pause`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Pauses the legacybroadcast DVR (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/pause '{}'
@@ -844,13 +916,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/pauseOnLive`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Pauses the on live (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/pauseOnLive '{}'
@@ -865,13 +939,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/releasePlayingBlockedScreenSaver`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Releases the playing blocked screen saver (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/releasePlayingBlockedScreenSaver '{}'
@@ -886,13 +962,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/seek`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Seeks the legacybroadcast DVR (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/seek '{}'
@@ -907,13 +985,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/setPlayingAudioLanguage`
 
-Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Sets the playing audio language (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/setPlayingAudioLanguage '{}'
@@ -928,13 +1008,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/setPlayRate`
 
-Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Sets the play rate (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/setPlayRate '{}'
@@ -949,13 +1031,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/setSubtitle`
 
-Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Sets the subtitle (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/setSubtitle '{}'
@@ -970,13 +1054,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/startPartialRepeatPlay`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Starts the partial repeat play (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/startPartialRepeatPlay '{}'
@@ -991,13 +1077,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/startPlay`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Starts the play (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/startPlay '{}'
@@ -1012,13 +1100,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/stopPartialRepeatPlay`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Stops the partial repeat play (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/stopPartialRepeatPlay '{}'
@@ -1033,13 +1123,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/stopPlay`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Stops the play (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/stopPlay '{}'
@@ -1054,13 +1146,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/stopPlayInstance`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Stops the play instance (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/stopPlayInstance '{}'
@@ -1075,13 +1169,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/switchToLive`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Switches the to live (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/switchToLive '{}'
@@ -1096,13 +1192,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/play/unpauseToLive`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Handles the unpause to live (play)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/play/unpauseToLive '{}'
@@ -1117,13 +1215,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/private/deleteRecordFile`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Deletes the record file (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/private/deleteRecordFile '{}'
@@ -1138,13 +1238,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/private/getChangedRecordFile`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the changed record file (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/private/getChangedRecordFile '{}'
@@ -1159,13 +1261,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/private/getRecordFile`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the record file (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/private/getRecordFile '{}'
@@ -1180,13 +1284,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/private/getRecordFileList`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the record file list (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/private/getRecordFileList '{}'
@@ -1201,13 +1307,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/private/getRecordSynopsis`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the record synopsis (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/private/getRecordSynopsis '{}'
@@ -1222,13 +1330,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/private/getRootDirectoryName`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the root directory name (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/private/getRootDirectoryName '{}'
@@ -1243,13 +1353,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/private/getThumbnail`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the thumbnail (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/private/getThumbnail '{}'
@@ -1264,13 +1376,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/private/getThumbnailData`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the thumbnail data (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/private/getThumbnailData '{}'
@@ -1285,13 +1399,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/private/isRecordFileExists`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the record file exists is set (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/private/isRecordFileExists '{}'
@@ -1306,13 +1422,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/private/testLMT`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Tests the LMT (private)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/private/testLMT '{}'
@@ -1327,13 +1445,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/changeRecordType`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Changes the record type (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/changeRecordType '{}'
@@ -1348,13 +1468,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/changeToSeriesRecord`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Changes the to series record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/changeToSeriesRecord '{}'
@@ -1369,13 +1491,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordableDuration`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the recordable duration (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordableDuration '{}'
@@ -1390,13 +1514,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordingBufferedLength`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the recording buffered length (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordingBufferedLength '{}'
@@ -1411,13 +1537,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordingDuration`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the recording duration (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordingDuration '{}'
@@ -1432,13 +1560,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordingEventRelayInfo`
 
-Method on com.webos.service.legacybroadcast.dvr (from on-device permission registry; parameters undocumented).
+Returns the recording event relay info (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordingEventRelayInfo '{}'
@@ -1453,13 +1583,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordingId`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the recording ID (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordingId '{}'
@@ -1474,13 +1606,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordingIdList`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the recording ID list (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordingIdList '{}'
@@ -1495,13 +1629,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordingQuality`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the recording quality (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordingQuality '{}'
@@ -1516,13 +1652,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordingRemainDuration`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the recording remain duration (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordingRemainDuration '{}'
@@ -1537,13 +1675,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordingSource`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the recording source (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordingSource '{}'
@@ -1558,13 +1698,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordingSourceList`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the recording source list (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordingSourceList '{}'
@@ -1579,13 +1721,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordingStartTime`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the recording start time (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordingStartTime '{}'
@@ -1600,13 +1744,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getRecordingType`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the recording type (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getRecordingType '{}'
@@ -1621,13 +1767,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getTimeshiftBufferedLength`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the timeshift buffered length (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getTimeshiftBufferedLength '{}'
@@ -1642,13 +1790,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getTimeshiftBufferingSourceType`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the timeshift buffering source type (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getTimeshiftBufferingSourceType '{}'
@@ -1663,13 +1813,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/getTimeshiftRecordingId`
 
-Getter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Returns the timeshift recording ID (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/getTimeshiftRecordingId '{}'
@@ -1684,13 +1836,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/isECPProtectedContent`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the ECP protected content is set (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/isECPProtectedContent '{}'
@@ -1705,13 +1859,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/isRecordableInput`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the recordable input is set (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/isRecordableInput '{}'
@@ -1726,13 +1882,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/isRecording`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the recording is set (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/isRecording '{}'
@@ -1747,13 +1905,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/isTimeshiftBufferable`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the timeshift bufferable is set (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/isTimeshiftBufferable '{}'
@@ -1768,13 +1928,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/isTimeshiftBuffering`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Reports whether the timeshift buffering is set (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/isTimeshiftBuffering '{}'
@@ -1789,13 +1951,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/pauseTimeshiftBuffering`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Pauses the timeshift buffering (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/pauseTimeshiftBuffering '{}'
@@ -1810,13 +1974,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/releaseContentsDeleteLock`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Releases the contents delete lock (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/releaseContentsDeleteLock '{}'
@@ -1831,13 +1997,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/resumeRecord`
 
-Method on com.webos.service.legacybroadcast.dvr (from on-device permission registry; parameters undocumented).
+Resumes the record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/resumeRecord '{}'
@@ -1852,13 +2020,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.dvr/record/resumeTimeshiftBuffering`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Resumes the timeshift buffering (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/resumeTimeshiftBuffering '{}'
@@ -1873,13 +2043,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/setContentsDeleteLock`
 
-Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Sets the contents delete lock (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/setContentsDeleteLock '{}'
@@ -1894,13 +2066,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/setContentTitle`
 
-Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Sets the content title (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/setContentTitle '{}'
@@ -1915,13 +2089,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/setNormalContent`
 
-Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Sets the normal content (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/setNormalContent '{}'
@@ -1936,13 +2112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/setRecordingEndTime`
 
-Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Sets the recording end time (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/setRecordingEndTime '{}'
@@ -1957,13 +2135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/setRecordingRemainDuration`
 
-Setter on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Sets the recording remain duration (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/setRecordingRemainDuration '{}'
@@ -1978,13 +2158,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/startExternalInputRecord`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Starts the external input record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/startExternalInputRecord '{}'
@@ -1999,13 +2181,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/startManualRecord`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Starts the manual record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/startManualRecord '{}'
@@ -2020,13 +2204,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/startProgramRecord`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Starts the program record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/startProgramRecord '{}'
@@ -2041,13 +2227,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/startScheduleRecord`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Starts the schedule record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/startScheduleRecord '{}'
@@ -2062,13 +2250,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/startTimeshiftBuffering`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Starts the timeshift buffering (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/startTimeshiftBuffering '{}'
@@ -2083,13 +2273,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/stopRecord`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Stops the record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/stopRecord '{}'
@@ -2104,13 +2296,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/stopScheduleRecord`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Stops the schedule record (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/stopScheduleRecord '{}'
@@ -2125,13 +2319,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.dvr/record/stopTimeshiftBuffering`
 
-Method on com.webos.service.legacybroadcast.dvr (introspected on-device; parameters undocumented).
+Stops the timeshift buffering (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.dvr/record/stopTimeshiftBuffering '{}'

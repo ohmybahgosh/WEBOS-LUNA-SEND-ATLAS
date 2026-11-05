@@ -1,27 +1,31 @@
 # `com.webos.service.scd`
 
+SCD channel-number service: reports and force-finds the current channel number and wakes the component. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`forceFindChannelNumber`](#forcefindchannelnumber) | private |  | tv-broadcast | Method on com.webos.service.scd (from on-device permission registry; parameters undocumented). |
-| [`getCurrentChannelNumber`](#getcurrentchannelnumber) | private |  | tv-broadcast | Method on com.webos.service.scd (from on-device permission registry; parameters undocumented). |
-| [`wakeup`](#wakeup) | private |  | misc | Method on com.webos.service.scd (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`forceFindChannelNumber`](#forcefindchannelnumber) | private |  | tv-broadcast | inferred | Forces the find channel number. |
+| [`getCurrentChannelNumber`](#getcurrentchannelnumber) | private |  | tv-broadcast | inferred | Returns the current channel number. |
+| [`wakeup`](#wakeup) | private |  | misc | inferred | Handles the wakeup. |
 
 <a id="forcefindchannelnumber"></a>
 ## `forceFindChannelNumber`
 
 `luna://com.webos.service.scd/forceFindChannelNumber`
 
-Method on com.webos.service.scd (from on-device permission registry; parameters undocumented).
+Forces the find channel number.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.scd/forceFindChannelNumber '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.scd/getCurrentChannelNumber`
 
-Method on com.webos.service.scd (from on-device permission registry; parameters undocumented).
+Returns the current channel number.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.scd/getCurrentChannelNumber '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.scd/wakeup`
 
-Method on com.webos.service.scd (from on-device permission registry; parameters undocumented).
+Handles the wakeup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.scd/wakeup '{}'

@@ -1,31 +1,35 @@
 # `dangbei.adapter.plugin`
 
+Dangbei voice-assistant adapter plugin: loads/unloads, recognizes intents by voice or text, and shows a usage guide. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelRecognition`](#cancelrecognition) | private |  | misc | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`load`](#load) | private |  | misc | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`recognizeIntentByText`](#recognizeintentbytext) | private |  | misc | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`showGuide`](#showguide) | private |  | misc | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
-| [`unload`](#unload) | private |  | misc | Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelRecognition`](#cancelrecognition) | private |  | misc | inferred | Cancels the recognition. |
+| [`load`](#load) | private |  | misc | inferred | Loads the dangbei adapter plugin. |
+| [`recognizeIntentByText`](#recognizeintentbytext) | private |  | misc | inferred | Recognizes the intent by text. |
+| [`recognizeIntentByVoice`](#recognizeintentbyvoice) | private |  | input | inferred | Recognizes the intent by voice. |
+| [`showGuide`](#showguide) | private |  | misc | inferred | Shows the guide. |
+| [`stopRecordingVoice`](#stoprecordingvoice) | private |  | input | inferred | Stops the recording voice. |
+| [`unload`](#unload) | private |  | misc | inferred | Unloads the dangbei adapter plugin. |
 
 <a id="cancelrecognition"></a>
 ## `cancelRecognition`
 
 `luna://dangbei.adapter.plugin/cancelRecognition`
 
-Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).
+Cancels the recognition.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://dangbei.adapter.plugin/cancelRecognition '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://dangbei.adapter.plugin/load`
 
-Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).
+Loads the dangbei adapter plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://dangbei.adapter.plugin/load '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://dangbei.adapter.plugin/recognizeIntentByText`
 
-Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).
+Recognizes the intent by text.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://dangbei.adapter.plugin/recognizeIntentByText '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://dangbei.adapter.plugin/recognizeIntentByVoice`
 
-Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).
+Recognizes the intent by voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://dangbei.adapter.plugin/recognizeIntentByVoice '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://dangbei.adapter.plugin/showGuide`
 
-Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).
+Shows the guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://dangbei.adapter.plugin/showGuide '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://dangbei.adapter.plugin/stopRecordingVoice`
 
-Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).
+Stops the recording voice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://dangbei.adapter.plugin/stopRecordingVoice '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://dangbei.adapter.plugin/unload`
 
-Method on dangbei.adapter.plugin (from on-device permission registry; parameters undocumented).
+Unloads the dangbei adapter plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://dangbei.adapter.plugin/unload '{}'

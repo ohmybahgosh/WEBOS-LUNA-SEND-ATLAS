@@ -1,72 +1,76 @@
 # `com.webos.service.applicationManager`
 
+Application manager (TV): reports installed app and package info, foreground apps, and resolves handler apps for MIME types, file extensions and URLs.
+
 48 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`addContent`](#addcontent) | private |  | apps | Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`addVirtualApp`](#addvirtualapp) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`blockSystemApp`](#blocksystemapp) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`changeRunningAppId`](#changerunningappid) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`closeAllApps`](#closeallapps) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`debug/traceApi`](#debug_traceapi) | private |  | apps | Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`dev/listPackages`](#dev_listpackages) | private |  | apps | Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`getAppLoadStatus`](#getapploadstatus) | public |  | apps | Checks whether an app exists/is loadable |
-| [`getContents`](#getcontents) | public |  | apps | Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`getForegroundApps`](#getforegroundapps) | private |  | apps | Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`getHandlerForExtension`](#gethandlerforextension) | public |  | apps | Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`getHandlerForMimeType`](#gethandlerformimetype) | public |  | apps | Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`getHandlerForMimeTypeByVerb`](#gethandlerformimetypebyverb) | public |  | apps | Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`getHandlerForUrl`](#gethandlerforurl) | public |  | apps | Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`getHandlerForUrlByVerb`](#gethandlerforurlbyverb) | public |  | apps | Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`getHistoricalBackInfo`](#gethistoricalbackinfo) | private |  | apps | Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`getLastOrder`](#getlastorder) | private |  | apps | Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`getPackageInfo`](#getpackageinfo) | private |  | apps | Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`isPromotionalAppOn`](#ispromotionalappon) | public |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`launchDefaultApp`](#launchdefaultapp) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`launchVirtualApp`](#launchvirtualapp) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`listAllHandlersForMime`](#listallhandlersformime) | public |  | apps | Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`listAllHandlersForMimeByVerb`](#listallhandlersformimebyverb) | public |  | apps | Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`listAllHandlersForMultipleMime`](#listallhandlersformultiplemime) | public |  | apps | Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`listAllHandlersForMultipleUrlPattern`](#listallhandlersformultipleurlpattern) | public |  | apps | Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`listAllHandlersForUrl`](#listallhandlersforurl) | public |  | apps | Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`listAllHandlersForUrlByVerb`](#listallhandlersforurlbyverb) | public |  | apps | Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`listAllHandlersForUrlPattern`](#listallhandlersforurlpattern) | public |  | apps | Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`listExtensionMap`](#listextensionmap) | public |  | apps | Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`listLaunchPointsForLocale`](#listlaunchpointsforlocale) | private |  | apps | Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`listPackages`](#listpackages) | private |  | apps | Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`lockAllApps`](#lockallapps) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`mimeTypeForExtension`](#mimetypeforextension) | public |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`notifyAlertClosed`](#notifyalertclosed) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`notifySplashTimeout`](#notifysplashtimeout) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`onLaunch`](#onlaunch) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`registerVerbsForRedirect`](#registerverbsforredirect) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`registerVerbsForResource`](#registerverbsforresource) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`releaseBlockSystemApp`](#releaseblocksystemapp) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`removeAllContents`](#removeallcontents) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). ⚠️ |
-| [`removeContent`](#removecontent) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). ⚠️ |
-| [`removeVirtualApp`](#removevirtualapp) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). ⚠️ |
-| [`run`](#run) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`saveOrder`](#saveorder) | private |  | apps | Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`searchApps`](#searchapps) | private |  | apps | Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`setContents`](#setcontents) | public |  | apps | Setter on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
-| [`setOrder`](#setorder) | private |  | apps | Setter on com.webos.service.applicationManager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`addContent`](#addcontent) | private |  | apps | inferred | Adds the content. |
+| [`addVirtualApp`](#addvirtualapp) | private |  | apps | inferred | Adds the virtual app. |
+| [`blockSystemApp`](#blocksystemapp) | private |  | apps | inferred | Blocks the system app. |
+| [`changeRunningAppId`](#changerunningappid) | private |  | apps | inferred | Changes the running app ID. |
+| [`closeAllApps`](#closeallapps) | private |  | apps | inferred | Closes the all apps. |
+| [`debug/traceApi`](#debug_traceapi) | private |  | apps | inferred | Handles the trace api (debug) |
+| [`dev/listPackages`](#dev_listpackages) | private |  | apps | inferred | Lists the packages (dev) |
+| [`getAppLoadStatus`](#getapploadstatus) | public |  | apps | documented | Checks whether an app exists/is loadable |
+| [`getContents`](#getcontents) | public |  | apps | inferred | Returns the contents. |
+| [`getForegroundApps`](#getforegroundapps) | private |  | apps | inferred | Returns the foreground apps. |
+| [`getHandlerForExtension`](#gethandlerforextension) | public |  | apps | inferred | Returns the handler for extension. |
+| [`getHandlerForMimeType`](#gethandlerformimetype) | public |  | apps | inferred | Returns the handler for mime type. |
+| [`getHandlerForMimeTypeByVerb`](#gethandlerformimetypebyverb) | public |  | apps | inferred | Returns the handler for mime type by verb. |
+| [`getHandlerForUrl`](#gethandlerforurl) | public |  | apps | inferred | Returns the handler for URL. |
+| [`getHandlerForUrlByVerb`](#gethandlerforurlbyverb) | public |  | apps | inferred | Returns the handler for URL by verb. |
+| [`getHistoricalBackInfo`](#gethistoricalbackinfo) | private |  | apps | inferred | Returns the historical back info. |
+| [`getLastOrder`](#getlastorder) | private |  | apps | inferred | Returns the last order. |
+| [`getPackageInfo`](#getpackageinfo) | private |  | apps | inferred | Returns the package info. |
+| [`isPromotionalAppOn`](#ispromotionalappon) | public |  | apps | inferred | Reports whether the promotional app on is set. |
+| [`launchDefaultApp`](#launchdefaultapp) | private |  | apps | inferred | Launches the default app. |
+| [`launchVirtualApp`](#launchvirtualapp) | private |  | apps | inferred | Launches the virtual app. |
+| [`listAllHandlersForMime`](#listallhandlersformime) | public |  | apps | inferred | Lists the all handlers for mime. |
+| [`listAllHandlersForMimeByVerb`](#listallhandlersformimebyverb) | public |  | apps | inferred | Lists the all handlers for mime by verb. |
+| [`listAllHandlersForMultipleMime`](#listallhandlersformultiplemime) | public |  | apps | inferred | Lists the all handlers for multiple mime. |
+| [`listAllHandlersForMultipleUrlPattern`](#listallhandlersformultipleurlpattern) | public |  | apps | inferred | Lists the all handlers for multiple URL pattern. |
+| [`listAllHandlersForUrl`](#listallhandlersforurl) | public |  | apps | inferred | Lists the all handlers for URL. |
+| [`listAllHandlersForUrlByVerb`](#listallhandlersforurlbyverb) | public |  | apps | inferred | Lists the all handlers for URL by verb. |
+| [`listAllHandlersForUrlPattern`](#listallhandlersforurlpattern) | public |  | apps | inferred | Lists the all handlers for URL pattern. |
+| [`listExtensionMap`](#listextensionmap) | public |  | apps | inferred | Lists the extension map. |
+| [`listLaunchPointsForLocale`](#listlaunchpointsforlocale) | private |  | apps | inferred | Lists the launch points for locale. |
+| [`listPackages`](#listpackages) | private |  | apps | inferred | Lists the packages. |
+| [`lockAllApps`](#lockallapps) | private |  | apps | inferred | Locks the all apps. |
+| [`mimeTypeForExtension`](#mimetypeforextension) | public |  | apps | inferred | Handles the mime type for extension. |
+| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | inferred | Moves the launch point. |
+| [`notifyAlertClosed`](#notifyalertclosed) | private |  | apps | inferred | Notifies of the alert closed. |
+| [`notifySplashTimeout`](#notifysplashtimeout) | private |  | apps | inferred | Notifies of the splash timeout. |
+| [`onLaunch`](#onlaunch) | private |  | apps | inferred | Event handler: fires on the launch. |
+| [`registerVerbsForRedirect`](#registerverbsforredirect) | private |  | apps | inferred | Registers the verbs for redirect. |
+| [`registerVerbsForResource`](#registerverbsforresource) | private |  | apps | inferred | Registers the verbs for resource. |
+| [`releaseBlockSystemApp`](#releaseblocksystemapp) | private |  | apps | inferred | Releases the block system app. |
+| [`removeAllContents`](#removeallcontents) | private |  | apps | inferred | Removes the all contents. ⚠️ |
+| [`removeContent`](#removecontent) | private |  | apps | inferred | Removes the content. ⚠️ |
+| [`removeVirtualApp`](#removevirtualapp) | private |  | apps | inferred | Removes the virtual app. ⚠️ |
+| [`run`](#run) | private |  | apps | inferred | Runs the application manager. |
+| [`saveOrder`](#saveorder) | private |  | apps | inferred | Saves the order. |
+| [`searchApps`](#searchapps) | private |  | apps | inferred | Searches for apps. |
+| [`setContents`](#setcontents) | public |  | apps | inferred | Sets the contents. |
+| [`setOrder`](#setorder) | private |  | apps | inferred | Sets the order. |
 
 <a id="addcontent"></a>
 ## `addContent`
 
 `luna://com.webos.service.applicationManager/addContent`
 
-Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented).
+Adds the content.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/addContent '{}'
@@ -81,13 +85,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.applicationManager/addVirtualApp`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Adds the virtual app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/addVirtualApp '{}'
@@ -102,13 +108,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/blockSystemApp`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Blocks the system app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/blockSystemApp '{}'
@@ -123,13 +131,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/changeRunningAppId`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Changes the running app ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/changeRunningAppId '{}'
@@ -144,13 +154,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/closeAllApps`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Closes the all apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/closeAllApps '{}'
@@ -165,13 +177,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/debug/traceApi`
 
-Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented).
+Handles the trace api (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/debug/traceApi '{}'
@@ -186,13 +200,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.applicationManager/dev/listPackages`
 
-Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented).
+Lists the packages (dev)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/dev/listPackages '{}'
@@ -213,7 +229,7 @@ Checks whether an app exists/is loadable
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 5+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -232,13 +248,15 @@ Sources: [1](https://github.com/webosbrew/dev-manager-desktop/blob/HEAD/src/app/
 
 `luna://com.webos.service.applicationManager/getContents`
 
-Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Returns the contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getContents '{}'
@@ -253,13 +271,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/getForegroundApps`
 
-Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Returns the foreground apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getForegroundApps '{}'
@@ -274,13 +294,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/getHandlerForExtension`
 
-Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Returns the handler for extension.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getHandlerForExtension '{}'
@@ -295,13 +317,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/getHandlerForMimeType`
 
-Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Returns the handler for mime type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getHandlerForMimeType '{}'
@@ -316,13 +340,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/getHandlerForMimeTypeByVerb`
 
-Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Returns the handler for mime type by verb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getHandlerForMimeTypeByVerb '{}'
@@ -337,13 +363,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/getHandlerForUrl`
 
-Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Returns the handler for URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getHandlerForUrl '{}'
@@ -358,13 +386,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/getHandlerForUrlByVerb`
 
-Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Returns the handler for URL by verb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getHandlerForUrlByVerb '{}'
@@ -379,13 +409,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/getHistoricalBackInfo`
 
-Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Returns the historical back info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getHistoricalBackInfo '{}'
@@ -400,13 +432,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/getLastOrder`
 
-Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented).
+Returns the last order.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getLastOrder '{}'
@@ -421,13 +455,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.applicationManager/getPackageInfo`
 
-Getter on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Returns the package info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getPackageInfo '{}'
@@ -442,13 +478,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/isPromotionalAppOn`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Reports whether the promotional app on is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/isPromotionalAppOn '{}'
@@ -463,13 +501,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/launchDefaultApp`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Launches the default app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/launchDefaultApp '{}'
@@ -484,13 +524,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/launchVirtualApp`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Launches the virtual app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/launchVirtualApp '{}'
@@ -505,13 +547,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/listAllHandlersForMime`
 
-Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Lists the all handlers for mime.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForMime '{}'
@@ -526,13 +570,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/listAllHandlersForMimeByVerb`
 
-Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Lists the all handlers for mime by verb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForMimeByVerb '{}'
@@ -547,13 +593,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/listAllHandlersForMultipleMime`
 
-Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Lists the all handlers for multiple mime.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForMultipleMime '{}'
@@ -568,13 +616,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/listAllHandlersForMultipleUrlPattern`
 
-Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Lists the all handlers for multiple URL pattern.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForMultipleUrlPattern '{}'
@@ -589,13 +639,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/listAllHandlersForUrl`
 
-Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Lists the all handlers for URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForUrl '{}'
@@ -610,13 +662,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/listAllHandlersForUrlByVerb`
 
-Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Lists the all handlers for URL by verb.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForUrlByVerb '{}'
@@ -631,13 +685,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/listAllHandlersForUrlPattern`
 
-Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Lists the all handlers for URL pattern.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForUrlPattern '{}'
@@ -652,13 +708,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/listExtensionMap`
 
-Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Lists the extension map.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listExtensionMap '{}'
@@ -673,13 +731,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/listLaunchPointsForLocale`
 
-Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented).
+Lists the launch points for locale.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listLaunchPointsForLocale '{}'
@@ -694,13 +754,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.applicationManager/listPackages`
 
-Lister on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Lists the packages.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listPackages '{}'
@@ -715,13 +777,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/lockAllApps`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Locks the all apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/lockAllApps '{}'
@@ -736,13 +800,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/mimeTypeForExtension`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Handles the mime type for extension.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/mimeTypeForExtension '{}'
@@ -757,13 +823,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/moveLaunchPoint`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Moves the launch point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/moveLaunchPoint '{}'
@@ -778,13 +846,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/notifyAlertClosed`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Notifies of the alert closed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/notifyAlertClosed '{}'
@@ -799,13 +869,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/notifySplashTimeout`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Notifies of the splash timeout.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/notifySplashTimeout '{}'
@@ -820,13 +892,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/onLaunch`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Event handler: fires on the launch.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/onLaunch '{}'
@@ -841,13 +915,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/registerVerbsForRedirect`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Registers the verbs for redirect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/registerVerbsForRedirect '{}'
@@ -862,13 +938,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/registerVerbsForResource`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Registers the verbs for resource.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/registerVerbsForResource '{}'
@@ -883,13 +961,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/releaseBlockSystemApp`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Releases the block system app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/releaseBlockSystemApp '{}'
@@ -904,13 +984,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/removeAllContents`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Removes the all contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/removeAllContents '{}'
@@ -925,13 +1007,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/removeContent`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Removes the content.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/removeContent '{}'
@@ -946,13 +1030,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/removeVirtualApp`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Removes the virtual app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/removeVirtualApp '{}'
@@ -967,13 +1053,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/run`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Runs the application manager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/run '{}'
@@ -988,13 +1076,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/saveOrder`
 
-Method on com.webos.service.applicationManager (from on-device permission registry; parameters undocumented).
+Saves the order.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/saveOrder '{}'
@@ -1009,13 +1099,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.applicationManager/searchApps`
 
-Method on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Searches for apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/searchApps '{}'
@@ -1030,13 +1122,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/setContents`
 
-Setter on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Sets the contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/setContents '{}'
@@ -1051,13 +1145,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.applicationManager/setOrder`
 
-Setter on com.webos.service.applicationManager (introspected on-device; parameters undocumented).
+Sets the order.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/setOrder '{}'

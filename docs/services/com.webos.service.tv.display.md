@@ -1,16 +1,18 @@
 # `com.webos.service.tv.display`
 
+TV display service: reports 3D and light-sensor status, toggles 3D mode, and clears panel noise. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`get3DStatus`](#get3dstatus) | ssap |  | display | Get 3D status |
-| [`getLightSensorData`](#getlightsensordata) | private |  | display | Reads the ambient light sensor data |
-| [`requestClearPanelNoise`](#requestclearpanelnoise) | private |  | display | OLED pixel refresh scheduling ⚠️ |
-| [`set3DOff`](#set3doff) | ssap |  | display | Turn 3D mode off |
-| [`set3DOn`](#set3don) | ssap |  | display | Turn 3D mode on |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`get3DStatus`](#get3dstatus) | ssap |  | display | documented | Get 3D status |
+| [`getLightSensorData`](#getlightsensordata) | private |  | display | documented | Reads the ambient light sensor data |
+| [`requestClearPanelNoise`](#requestclearpanelnoise) | private |  | display | documented | OLED pixel refresh scheduling ⚠️ |
+| [`set3DOff`](#set3doff) | ssap |  | display | documented | Turn 3D mode off |
+| [`set3DOn`](#set3don) | ssap |  | display | documented | Turn 3D mode on |
 
 <a id="get3dstatus"></a>
 ## `get3DStatus`
@@ -23,7 +25,7 @@ Get 3D status
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** older webOS (3D removed on newer TVs)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.tv.display/get3DStatus","payload":{}}
@@ -44,7 +46,7 @@ Reads the ambient light sensor data
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 4.4.3 (per audit)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.display/getLightSensorData '{}'
@@ -65,7 +67,7 @@ OLED pixel refresh scheduling
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** OLED models  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -90,7 +92,7 @@ Turn 3D mode off
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** older webOS (3D removed on newer TVs)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.tv.display/set3DOff","payload":{}}
@@ -111,7 +113,7 @@ Turn 3D mode on
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** older webOS (3D removed on newer TVs)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.tv.display/set3DOn","payload":{}}

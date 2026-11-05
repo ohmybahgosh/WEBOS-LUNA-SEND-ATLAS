@@ -1,22 +1,24 @@
 # `com.webos.service.memorymanager`
 
+Memory manager: monitors system memory, reports usage and thresholds, and frees memory by killing background apps under low-memory conditions.
+
 11 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`application`](#application) | unknown |  | system-info | Indicates the application memory description. |
-| [`getManagerEvent`](#getmanagerevent) | public | yes | system-info | Subscribe to be notified when a MemoryManager internal event occurs. |
-| [`getMemoryStatus`](#getmemorystatus) | public | yes | system-info | Provides the current status of the memory. |
-| [`levelChanged`](#levelchanged) | unknown |  | system-info | Indicates the LS signal for memory level change. The signal is always sent whenever memory level is changed. |
-| [`pss_view`](#pss_view) | unknown |  | system-info | PSS information of services and applications per session |
-| [`requireMemory`](#requirememory) | public |  | system-info | Requests for the memory that is required to launch an application. Note: This method is called by the SAM module when it is about to launch  |
-| [`sysInfo`](#sysinfo) | public |  | system-info | Provides a way to account for memory usage. |
-| [`system`](#system) | unknown |  | system-info | Indicates the current memory information. |
-| [`system_view`](#system_view) | unknown |  | system-info | Provides system-level memory information. |
-| [`threshold`](#threshold) | unknown |  | system-info | Indicates the memory level threshold. |
-| [`threshold_item`](#threshold_item) | unknown |  | system-info | Indicates the threshold item. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`application`](#application) | unknown |  | system-info | documented | Indicates the application memory description. |
+| [`getManagerEvent`](#getmanagerevent) | public | yes | system-info | documented | Subscribe to be notified when a MemoryManager internal event occurs. |
+| [`getMemoryStatus`](#getmemorystatus) | public | yes | system-info | documented | Provides the current status of the memory. |
+| [`levelChanged`](#levelchanged) | unknown |  | system-info | documented | Indicates the LS signal for memory level change. The signal is always sent whenever memory level is changed. |
+| [`pss_view`](#pss_view) | unknown |  | system-info | documented | PSS information of services and applications per session |
+| [`requireMemory`](#requirememory) | public |  | system-info | documented | Requests for the memory that is required to launch an application. Note: This method is called by the SAM module when it is about to launch  |
+| [`sysInfo`](#sysinfo) | public |  | system-info | documented | Provides a way to account for memory usage. |
+| [`system`](#system) | unknown |  | system-info | documented | Indicates the current memory information. |
+| [`system_view`](#system_view) | unknown |  | system-info | documented | Provides system-level memory information. |
+| [`threshold`](#threshold) | unknown |  | system-info | documented | Indicates the memory level threshold. |
+| [`threshold_item`](#threshold_item) | unknown |  | system-info | documented | Indicates the threshold item. |
 
 <a id="application"></a>
 ## `application`
@@ -57,6 +59,13 @@ Subscribe to be notified when a MemoryManager internal event occurs.
 | `type` | String (required) Indicates the memory manager event type. Possible values are: killing: application killing event when memory level is under 'low' |
 | `subscribe` | Boolean (required) Indicates if subscribed for notifications. Possible values are: true: Subscribe for notifications false: Notifications are not required |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -f -i luna://com.webos.service.memorymanager/getManagerEvent '{ "type":"killing", "subscribe":true }
 ```
@@ -81,6 +90,16 @@ Provides the current status of the memory.
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Subscribe for notifications. Possible values are: true: Get notifications false: Notifications are not required Default: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `applications` | Object array: application (required) Indicates the list of running applications. |
+| `system` | Object: system (required) Indicates the current system information. |
+| `threshold` | Object: threshold (required) Indicates the threshold values. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
 
 ```sh
 luna-send -f -i luna://com.webos.service.memorymanager/getMemoryStatus '{ "subscribe":true }
@@ -149,6 +168,13 @@ Requests for the memory that is required to launch an application. Note: This me
 |---|---|
 | `requiredMemory` | Number (required) Indicates the amount of memory required to launch the application. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.memorymanager/requireMemory '{ "requiredMemory":120 }
 ```
@@ -169,6 +195,15 @@ Provides a way to account for memory usage.
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 13+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " API Error Codes Reference" section for details. |
+| `System View` | Object array: system\_view (required) Indicates the system level memory information. |
+| `PSS View` | Object array: pss\_view (required) Indicates the PSS information of services and applications per session. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.memorymanager/sysInfo '{ }

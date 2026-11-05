@@ -1,16 +1,18 @@
 # `ssap:media.controls`
 
+SSAP media controls (TV remote-control protocol): play, pause, stop, fast-forward and rewind for media playback.
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`fastForward`](#fastforward) | ssap |  | media | Media control: fastForward |
-| [`pause`](#pause) | ssap |  | media | Media control: pause |
-| [`play`](#play) | ssap |  | media | Media control: play |
-| [`rewind`](#rewind) | ssap |  | media | Media control: rewind |
-| [`stop`](#stop) | ssap |  | media | Media control: stop |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`fastForward`](#fastforward) | ssap |  | media | documented | Media control: fastForward |
+| [`pause`](#pause) | ssap |  | media | documented | Media control: pause |
+| [`play`](#play) | ssap |  | media | documented | Media control: play |
+| [`rewind`](#rewind) | ssap |  | media | documented | Media control: rewind |
+| [`stop`](#stop) | ssap |  | media | documented | Media control: stop |
 
 <a id="fastforward"></a>
 ## `fastForward`
@@ -23,7 +25,7 @@ Media control: fastForward
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://media.controls/fastForward","payload":{}}
@@ -44,7 +46,7 @@ Media control: pause
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://media.controls/pause","payload":{}}
@@ -65,7 +67,7 @@ Media control: play
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://media.controls/play","payload":{}}
@@ -86,7 +88,7 @@ Media control: rewind
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://media.controls/rewind","payload":{}}
@@ -107,7 +109,7 @@ Media control: stop
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://media.controls/stop","payload":{}}

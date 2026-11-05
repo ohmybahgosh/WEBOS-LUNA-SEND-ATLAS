@@ -1,0 +1,2510 @@
+{
+ "generated": "WEBOS-LUNA-SEND-ATLAS",
+ "services": {
+  "airplay.homekit": {
+   "description": "AirPlay/HomeKit integration helper: manages pairing and reports setup-code and pairing events for Apple AirPlay and HomeKit on the TV.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "airplay.service": {
+   "description": "Apple AirPlay and HomeKit integration: manages the AirPlay mirroring window, position and audio state, handles MFi authentication keys, and shows HomeKit settings pages.",
+   "confidence": "inferred",
+   "methods": 19
+  },
+  "alibaba.genie.adapter.plugin": {
+   "description": "Appears to be an adapter plugin bridging the Alibaba Genie voice assistant to webOS: starts and cancels voice recognition, recognizes intents from speech, and shows guidance.",
+   "confidence": "inferred",
+   "methods": 6
+  },
+  "amazon.alexa.adapter.plugin": {
+   "description": "Alexa Voice Service (AVS) adapter plugin: handles far-field voice recognition, AVS music and status, access tokens and CBL login data, dialog state, and reports the foreground app.",
+   "confidence": "inferred",
+   "methods": 18
+  },
+  "com.example.activityexample": {
+   "description": "SDK sample service demonstrating the ActivityManager: creating timers and alarms and handling their fired/cancel callbacks. Example code, not a shipping feature.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.example.helloworld": {
+   "description": "Sample/demonstration service bundled as a webOS development example; exposes trivial methods (hello, ping/pong, counters, heartbeat) for testing the Luna bus.",
+   "confidence": "inferred",
+   "methods": 12
+  },
+  "com.example.helloworld2": {
+   "description": "Sample/template service shipped as a webOS development example, exposing trivial hello, info, and quit methods. Not a functional system service.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.example.service.native": {
+   "description": "Sample/template native service skeleton shipping stub 'hello' methods for the base, developer, OEM and partner variants; a scaffolding example, not a functional service.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.example.service.native2": {
+   "description": "SDK template/sample native service exposing placeholder 'hello' methods (with DEV/OEM/PART variants). Example scaffolding, not a functional service.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.example.service.native3": {
+   "description": "Example native-service template for webOS development, with placeholder hello methods for DEV, OEM and PART build variants.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.flutter.app.similarlist": {
+   "description": "Appears to be a Flutter-based app helper exposing generic request and finish calls, likely serving a 'similar items' content list. Purpose.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.lge.settingsservice": {
+   "description": "LG system settings service: reads, writes, resets and describes system settings along with their current, factory and value-range data, and supports batched settings operations.",
+   "confidence": "documented",
+   "methods": 25
+  },
+  "com.palm.activitymanager": {
+   "description": "Legacy ActivityManager: schedules, tracks and arbitrates background activities (jobs), letting clients create, start, adopt, complete, release and cancel them.",
+   "confidence": "documented",
+   "methods": 7
+  },
+  "com.palm.applicationManager": {
+   "description": "Legacy Palm/HP webOS application manager: launches, closes and lists installed apps and their launch points, and reports running apps.",
+   "confidence": "documented",
+   "methods": 8
+  },
+  "com.palm.audio": {
+   "description": "Legacy Palm/HP webOS audio service: plays DTMF and call tones, manages audio scenarios, routing latency, microphone gain, and output volume. The predecessor of the modern webOS audio service.",
+   "confidence": "documented",
+   "methods": 93
+  },
+  "com.palm.backup": {
+   "description": "Legacy Palm/HP webOS backup service: starts a backup of device data.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.palm.btmonitor": {
+   "description": "Legacy Palm/HP webOS Bluetooth radio monitor that reports the Bluetooth radio powering on and off.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.palm.bus": {
+   "description": "Legacy Luna bus signal service; registers clients for server-status signals from other bus clients.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.palm.certificatemanager": {
+   "description": "Manages X.509 certificates and certificate revocation lists (CRLs): adds, deletes, and lists certificates, retrieves certificate details, and reports status.",
+   "confidence": "documented",
+   "methods": 6
+  },
+  "com.palm.configurator": {
+   "description": "Legacy configurator that scans on-disk configuration (such as database kinds and permissions) and applies it; supports rescan, run and unconfigure.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.palm.connectionmanager": {
+   "description": "Legacy connection manager that reports overall network connection status (wired/Wi-Fi) on the device.",
+   "confidence": "documented",
+   "methods": 1
+  },
+  "com.palm.db": {
+   "description": "Legacy alias for the db8 JSON database (com.webos.service.db): stores and queries objects with find/get/del/batch, manages kinds, and compacts, dumps and backs up/restores the store.",
+   "confidence": "documented",
+   "methods": 39
+  },
+  "com.palm.display": {
+   "description": "Legacy Palm display control service: reads and sets display properties and state, reports status, and toggles dim mode (screen dimming) for power saving.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.palm.download": {
+   "description": "Download manager interface: reports download progress and cancels downloads. Appears limited to progress/cancel based on its methods.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.palm.downloadmanager": {
+   "description": "Legacy download/upload manager: queues and controls file downloads and uploads, tracks history and status, and exposes debug helpers.",
+   "confidence": "documented",
+   "methods": 20
+  },
+  "com.palm.filecache": {
+   "description": "File-cache manager: defines cache object types and inserts, copies, resizes, expires and queries cached files, reporting cache status, sizes and type definitions.",
+   "confidence": "documented",
+   "methods": 16
+  },
+  "com.palm.keymanager": {
+   "description": "Cryptographic key management service: generates, imports, exports, stores, and removes keys, encrypts and decrypts files, changes passwords, and handles key backup and restore.",
+   "confidence": "documented",
+   "methods": 17
+  },
+  "com.palm.keys": {
+   "description": "Legacy Palm key/event service exposing hardware key status (e.g. audio keys). Opaque; little beyond key-status reporting is inferable.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.palm.location": {
+   "description": "Legacy location service: returns the current geographic position and configures GPS and auto-locate settings.",
+   "confidence": "documented",
+   "methods": 3
+  },
+  "com.palm.lunabus": {
+   "description": "Legacy Luna bus signal service; registers clients for server-status signals from other bus clients.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.palm.mediadb": {
+   "description": "Legacy Palm media database service exposing image catalog queries such as listing photo albums and images. Limited to media indexing based on its methods.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.palm.messaging": {
+   "description": "Legacy Palm messaging service: sends a message composed by the user.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.palm.nettools": {
+   "description": "Network diagnostics tool providing detailed ping over IPv4 (detailping) and IPv6 (detailping6).",
+   "confidence": "documented",
+   "methods": 2
+  },
+  "com.palm.notes": {
+   "description": "Legacy Palm/HP webOS notes application service; retrieves stored notes.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.palm.power": {
+   "description": "Legacy Palm power-management service: handles suspend/resume and shutdown, battery and charger status queries, battery-saver and fake-battery test modes, and activity-based wake management.",
+   "confidence": "documented",
+   "methods": 31
+  },
+  "com.palm.preferences": {
+   "description": "Key-value preferences store: gets and sets per-application properties and system properties, individually or in bulk.",
+   "confidence": "documented",
+   "methods": 18
+  },
+  "com.palm.service.backup": {
+   "description": "Legacy backup/restore service that restores apps and schedules app restore operations.",
+   "confidence": "documented",
+   "methods": 2
+  },
+  "com.palm.service.bugreport": {
+   "description": "Bug- and crash-reporting service: files bug and crash reports, enables/disables crash reporting and popups, and configures JIRA submission settings.",
+   "confidence": "documented",
+   "methods": 21
+  },
+  "com.palm.service.devmode": {
+   "description": "Legacy Palm developer-mode service: enables or disables developer mode and retrieves its passphrase and status.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.palm.service.tellurium": {
+   "description": "Tellurium test-automation service for driving web applications: queues and broadcasts commands, subscribes to commands and events, and reports running apps, stages and window/resolution info.",
+   "confidence": "inferred",
+   "methods": 20
+  },
+  "com.palm.sleep": {
+   "description": "Power-management service handling suspend/wake: wake-lock registration, suspend request handshakes, activity start/end, and system shutdown/reboot.",
+   "confidence": "documented",
+   "methods": 31
+  },
+  "com.palm.storage": {
+   "description": "Mass-storage service: enters USB mass-storage (MSM) disk mode, queries its status, and erases all storage.",
+   "confidence": "documented",
+   "methods": 3
+  },
+  "com.palm.systemmanager": {
+   "description": "Legacy Palm system manager service; the sole exposed method runs a progress animation, suggesting a UI/system-shell helper role. Largely opaque beyond that.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.palm.systemservice": {
+   "description": "Core system service: reports device and OS info, stores system preferences, and gets/sets system and broadcast time and wallpaper.",
+   "confidence": "documented",
+   "methods": 10
+  },
+  "com.palm.telephony": {
+   "description": "Legacy Palm telephony/radio service: place and end calls and manage the cellular radio (reset, roaming mode, restore defaults).",
+   "confidence": "documented",
+   "methods": 5
+  },
+  "com.palm.tempdb": {
+   "description": "Temporary (volatile) db8 database instance: same JSON object-store API as the main database (find/get/del/batch, kinds, compaction, backup) but for transient data.",
+   "confidence": "documented",
+   "methods": 39
+  },
+  "com.palm.uploadd": {
+   "description": "Diagnostics upload daemon: uploads crash reports, logs, and analytics to a server, manages log settings, and reports EULA and USB-path status.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.palm.vibrate": {
+   "description": "Legacy Palm vibration service: triggers device vibration.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.palm.webappmanager": {
+   "description": "Web app manager: launches apps and URLs, kills/pauses apps, lists running apps, clears browsing data, and manages web-process memory.",
+   "confidence": "documented",
+   "methods": 21
+  },
+  "com.palm.wifi": {
+   "description": "Legacy Palm/HP webOS Wi-Fi service: finds available networks and sets the Wi-Fi radio state.",
+   "confidence": "documented",
+   "methods": 2
+  },
+  "com.palmdts.devmode.service": {
+   "description": "TV developer-mode session helper: reports remaining developer-session time and resets the session timer. Part of the webOS TV dev-mode app.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.test.interc.service.fake": {
+   "description": "Fake/test interceptor service that mocks caption, data-broadcast and settings reads (captions, locale, sound, emergency info) for testing. Marked as a test stub by name.",
+   "confidence": "inferred",
+   "methods": 13
+  },
+  "com.webos.accountdb": {
+   "description": "DB8 database instance for user-account data: stores typed records (kinds) with find/get/put/del/batch queries, plus compaction, backup/restore and space checks.",
+   "confidence": "documented",
+   "methods": 28
+  },
+  "com.webos.app.browser": {
+   "description": "Control interface for the built-in web browser app: issues commands, manages tabs and PWAs, runs scripts, and reports media and position.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.webos.app.igallery.preview": {
+   "description": "Appears to back the image-gallery preview app: creates gallery database and account folders, lists view themes, and reports status via the activity manager.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.webos.app.music.preview": {
+   "description": "Music-preview helper that queries connected-device status and lists devices via the Activity Manager.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.app.photovideo.preview": {
+   "description": "Helper for the photo/video preview app that lists connected storage devices and reports their status via ActivityManager callbacks.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.app.teletext": {
+   "description": "Teletext viewer app control: enables and disables teletext, queries the current page and state, and forwards remote key events to it.",
+   "confidence": "documented",
+   "methods": 8
+  },
+  "com.webos.appInstallService": {
+   "description": "Application install service: installs, removes, and cancels app and service packages (including local, dev, and group installs), queries install capacity, and manages Luna config files.",
+   "confidence": "documented",
+   "methods": 22
+  },
+  "com.webos.appUpdateService": {
+   "description": "App update service: checks for and reports the update status of installed apps.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.applicationManager": {
+   "description": "Application manager: installs and launches apps, manages launch points and virtual apps, reports app/package info, and handles dev-mode app operations.",
+   "confidence": "documented",
+   "methods": 76
+  },
+  "com.webos.assetmanager": {
+   "description": "Appears to manage downloaded assets: clears and monitors stored assets and reports status.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.audio": {
+   "description": "webOS audio service: controls volume, mute, and status for alarm, alert, and media streams, manages audio scenarios and routing, and plays DTMF/call tones.",
+   "confidence": "documented",
+   "methods": 137
+  },
+  "com.webos.booster": {
+   "description": "Process booster service: launches, closes and reports booster-accelerated (preloaded) processes.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.bootManager": {
+   "description": "Boot manager that monitors and controls boot status and boot mode (e.g. Normal), signals first-use completion, and reports boot-sequence progress.",
+   "confidence": "documented",
+   "methods": 4
+  },
+  "com.webos.chromecast.cell": {
+   "description": "Appears to manage the Chromecast-built-in (Cast) runtime: checks terms of service, reports cell/control/runtime-manager status, and starts and stops the service.",
+   "confidence": "inferred",
+   "methods": 6
+  },
+  "com.webos.chromecast.log": {
+   "description": "Logging helper for the built-in Chromecast/Google Cast component: starts and stops log capture. Narrow diagnostic role.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.coverUI": {
+   "description": "Controls a cover/overlay UI surface: open, close and report its status.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.epgdb": {
+   "description": "DB8 database instance for EPG (electronic program guide) data: stores typed records with find/get/del/batch queries, plus EPG backup, compaction and backup/restore.",
+   "confidence": "documented",
+   "methods": 39
+  },
+  "com.webos.favchannels": {
+   "description": "Manages the favorite-channels list: edits entries and deletes all favorites.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.flutter.embedder": {
+   "description": "Support service for the webOS Flutter embedder: returns runtime configuration and provides a timer callback method.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.ghp.runtime": {
+   "description": "Appears to be a smart-home runtime exposing homes, rooms, structures, controllers and devices and sending commands to them, with a web-view URL.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.iotframework": {
+   "description": "IoT framework managing connected IoT devices: lists and updates devices, sends commands, and gets/sets per-device customization.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.webos.keyfilter.magicnumber": {
+   "description": "Key-filter service for Magic Remote number input; notifies which channel to register. Opaque beyond that.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.media": {
+   "description": "Core media pipeline service: acquires and manages media resources and pipelines, attaches audio/video, reports buffering and playback timing, and changes resolution. Low-level backend for media playback.",
+   "confidence": "documented",
+   "methods": 165
+  },
+  "com.webos.mediadb": {
+   "description": "Media metadata database (a db8-style store, including EPG data): find, get, put, delete and batch records, compact and dump the store, and run scheduled backups, purges and space checks.",
+   "confidence": "documented",
+   "methods": 39
+  },
+  "com.webos.memorymanager": {
+   "description": "Memory manager: reports current memory state, enforces low-memory policy and thresholds, selects apps to close, and notifies clients of memory pressure.",
+   "confidence": "documented",
+   "methods": 12
+  },
+  "com.webos.notification": {
+   "description": "System notification service: creates and closes toasts, alerts, input alerts, PIN-code prompts and app/remote notifications.",
+   "confidence": "documented",
+   "methods": 44
+  },
+  "com.webos.pipeline.camera": {
+   "description": "Camera preview pipeline service (webOS OSE): starts and stops a camera preview, sets its window and input position, and reports pipeline info.",
+   "confidence": "documented",
+   "methods": 5
+  },
+  "com.webos.pipeline.record": {
+   "description": "Audio/video recording pipeline: starts, stops, pauses and resumes capture of audio, video and still images, with status subscription.",
+   "confidence": "documented",
+   "methods": 8
+  },
+  "com.webos.pmlogd": {
+   "description": "PmLog logging daemon: collects and backs up system logs, forces log rotation, manages the log whitelist, and toggles developer logging.",
+   "confidence": "documented",
+   "methods": 12
+  },
+  "com.webos.rdxd": {
+   "description": "Remote Diagnostics daemon (RDX): configures logging levels and generates diagnostic log reports.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.rm.client": {
+   "description": "Resource-manager client interface: completes resource acquisition and relays policy actions and private commands. Appears to be a thin client to the TV resource manager.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.sensord": {
+   "description": "Sensor daemon: enumerates sensors (e.g. accelerometer, ambient-light), configures their power, sensitivity and sample rate, and reads values, range, resolution and state.",
+   "confidence": "documented",
+   "methods": 42
+  },
+  "com.webos.service.accountmanager": {
+   "description": "Account manager: logs user accounts in and out, stores and updates account data, tracks login history, and manages onboarding (OOBE) data and account switching.",
+   "confidence": "documented",
+   "methods": 16
+  },
+  "com.webos.service.acr": {
+   "description": "Automatic Content Recognition (ACR) service: starts/stops ACR, reports its status and recognized content properties, and manages video capture and related settings.",
+   "confidence": "inferred",
+   "methods": 17
+  },
+  "com.webos.service.activityPolicyMgr": {
+   "description": "Activity policy manager: grants and releases scheduling authority between activities. Narrow arbitration role based on its two methods.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.activitymanager": {
+   "description": "Activity Manager: monitors system events and runs actions in response, and schedules work periodically or at set times; apps create, adopt, complete, cancel and focus activities.",
+   "confidence": "documented",
+   "methods": 36
+  },
+  "com.webos.service.admanager": {
+   "description": "Advertising manager: issues banner/asset ad requests, manages the advertising ID, tracking contexts and cookies, EULA/consent (CMP) checks and SDK ad contexts.",
+   "confidence": "inferred",
+   "methods": 33
+  },
+  "com.webos.service.adoverlay": {
+   "description": "Appears to display an advertising overlay via a single startAdoverlay method; opaque beyond that.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.ai.voice": {
+   "description": "Voice-input recognition service (webOS OSE): starts and stops voice recognition, reports state, and returns results, using configuration from the config service.",
+   "confidence": "documented",
+   "methods": 4
+  },
+  "com.webos.service.aiinferencemanager": {
+   "description": "AI inference manager: installs machine-learning models, requests and releases inference resources, and reports device inference capability and status.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.airessrvallocator": {
+   "description": "Opaque resource allocator; appears to allocate and release a shared resource and report allocation events based on its allocate/release/getEvent methods.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.airplayadaptor": {
+   "description": "AirPlay adaptor: starts, stops, restarts and reports the status of AirPlay, and handles MFi authentication keys.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.ajservice": {
+   "description": "Opaque helper service exposing only a start method and tied to activity/configurator callbacks. Specific role not inferable from the available information.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.alarm": {
+   "description": "Alarm service: lets webOS daemons and apps schedule calls to webOS API methods at a set time or interval; set, clear, list alarms and query the next wakeup.",
+   "confidence": "documented",
+   "methods": 7
+  },
+  "com.webos.service.alwaysready": {
+   "description": "Always-ready/standby service: manages the always-on-display (AOD) status, monitors device and GPIO state, and controls standby timers.",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.analytics": {
+   "description": "Appears to provide vision/analytics processing via a single 'vision' method; opaque beyond that.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.aos": {
+   "description": "Appears to manage an 'always-on' display or standby feature: enables and disables always-on and gets/sets its reset time.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.apiadapter": {
+   "description": "API adapter that bridges remote/second-screen clients to on-device functions: audio (sound output, mute), system settings, external picture-quality data and a media viewer.",
+   "confidence": "inferred",
+   "methods": 57
+  },
+  "com.webos.service.apinstaller": {
+   "description": "Opaque installer service; appears to check availability, verify a binary, and mount an 'AP' package based on its method names.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.apluspolicymanager": {
+   "description": "Appears to manage an 'A+' content/partial-view policy: launches partial-view apps, toggles situation monitoring and synchronizes a visual ('wow') effect.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.appcasting": {
+   "description": "Appears to handle app casting/second-screen control: exchanges commands and app messages, relays UIBC (user input back channel) events, and reports media info and state.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.applaunchmanager": {
+   "description": "App launch manager; exposes only a status query, so its role beyond reporting launch status is not inferable.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.applicationManager": {
+   "description": "Application manager (TV): reports installed app and package info, foreground apps, and resolves handler apps for MIME types, file extensions and URLs.",
+   "confidence": "documented",
+   "methods": 48
+  },
+  "com.webos.service.applicationmanager": {
+   "description": "Core application lifecycle manager: launches, closes and lists apps and launch points, and reports foreground/running app status and life-cycle events.",
+   "confidence": "documented",
+   "methods": 32
+  },
+  "com.webos.service.appstatus": {
+   "description": "Reports the status of applications via a single getAppStatus method. Narrow app-state query role.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.arccontroller": {
+   "description": "HDMI ARC/eARC controller: reports and sets ARC state, reads ARC EDID info and eARC delay.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.asc": {
+   "description": "ASC service handling BLE advertising and device registration (including Wake-on-BLE): start/stop advertising, read/register BLE devices, verify localization.",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.attachedstoragemanager": {
+   "description": "Manages attached USB storage: lists devices and folder contents, copies, deletes, decompresses and formats, ejects devices, and extracts media metadata.",
+   "confidence": "documented",
+   "methods": 24
+  },
+  "com.webos.service.audio": {
+   "description": "webOS audio policy service: implements audio routing and volume control across scenarios (alarm, alert, media), manages mute, capture, and DTMF tones. Primary audio control bus on modern firmware.",
+   "confidence": "documented",
+   "methods": 236
+  },
+  "com.webos.service.audiofocusmanager": {
+   "description": "Audio focus manager: lets apps request and release audio focus to use audio resources, and reports active, paused and current focus status.",
+   "confidence": "documented",
+   "methods": 6
+  },
+  "com.webos.service.audiooutput": {
+   "description": "Audio output service: connects audio source to output sink, controls volume and mute, selects sound output, and manages sound-quality settings.",
+   "confidence": "documented",
+   "methods": 18
+  },
+  "com.webos.service.avf": {
+   "description": "Appears to drive the 'My Zoom'/AVF video feature and picture-in-picture: zoom capture and playback, PIP show/hide, freeze, and object/coordinate tracking.",
+   "confidence": "inferred",
+   "methods": 41
+  },
+  "com.webos.service.avmutemanager": {
+   "description": "Audio/video mute manager: coordinates AV mute across clients, tracking mute status, owners, timing, and registered services, and setting the overall AV mute state.",
+   "confidence": "inferred",
+   "methods": 12
+  },
+  "com.webos.service.avoutput": {
+   "description": "Stateless audio/video output service over the media server: connects/disconnects audio and video sinks, controls mute and volume, and sets display window, compositing and output capabilities.",
+   "confidence": "documented",
+   "methods": 17
+  },
+  "com.webos.service.bam": {
+   "description": "Opaque service; appears to register a power-off checker and expose stop/test methods. Little else is inferable from its method names.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.billing": {
+   "description": "In-app billing/payment service: requests, confirms and processes purchase transactions and reports billing status.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.service.blegatt": {
+   "description": "Bluetooth Low Energy GATT service: connects to BLE devices, discovers services, reads/writes characteristics and descriptors, and manages notifications, including an FTMS (fitness machine) profile.",
+   "confidence": "documented",
+   "methods": 33
+  },
+  "com.webos.service.blegattsoundbar": {
+   "description": "Soundbar control over Bluetooth LE GATT: starts/terminates the link and sends/gets commands to a paired soundbar.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.bluetooth": {
+   "description": "Bluetooth service: adapter state and device discovery/pairing (GAP), trusted-device management, adapter firmware update, and Bluetooth audio sound-out redirection.",
+   "confidence": "documented",
+   "methods": 26
+  },
+  "com.webos.service.bluetooth2": {
+   "description": "Bluetooth stack service: manages the adapter, device discovery and pairing, and profiles such as A2DP, HFP and GATT for audio and input devices.",
+   "confidence": "documented",
+   "methods": 258
+  },
+  "com.webos.service.broadcast-conf-downloader": {
+   "description": "Appears to download broadcast configuration data; only a test method is exposed, so its full behavior is not inferable. Marked.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.broadcastchannelmixer": {
+   "description": "Broadcast channel-list editor: changes and moves channel numbers, merges channel lists and reports network IDs.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.broadcastconfigd": {
+   "description": "Broadcast configuration daemon serving TV-tuning reference data (satellites, operators, transponders) and feature-support flags for channel setup.",
+   "confidence": "inferred",
+   "methods": 17
+  },
+  "com.webos.service.browser": {
+   "description": "Appears to provide browser-side device and file access: mounts and lists storage devices, reads content and size properties, and processes documents.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.btaudiosnk": {
+   "description": "Bluetooth A2DP audio-sink service: connects to and controls Bluetooth audio source devices, manages paired devices, reports play status and media info, and controls the player.",
+   "confidence": "documented",
+   "methods": 15
+  },
+  "com.webos.service.btaudiosrc": {
+   "description": "Bluetooth audio-source service: discovers, connects and manages Bluetooth audio sink devices, handling pairing, device selection, volume and output gain.",
+   "confidence": "documented",
+   "methods": 27
+  },
+  "com.webos.service.btgattwowcast": {
+   "description": "Bluetooth LE GATT service (WoWCast): scans for and connects to BLE devices, reads/writes BLE data, and reports remote device info.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.bthidmanager": {
+   "description": "Bluetooth HID manager: discovers, pairs, connects and removes input devices (remotes, keyboards, gamepads) and reports paired-device and discovery status.",
+   "confidence": "documented",
+   "methods": 16
+  },
+  "com.webos.service.btleaudio": {
+   "description": "Bluetooth LE Audio service: scans, pairs, and connects LE Audio devices, manages volume and mute, auto-connect, and broadcast (Auracast) streaming start/stop.",
+   "confidence": "documented",
+   "methods": 22
+  },
+  "com.webos.service.buddyconnector": {
+   "description": "Connects the TV to a paired companion ('buddy') mobile app: exchanges credentials, member and content lists, QR and EULA info, push events, SOS and video-call actions.",
+   "confidence": "inferred",
+   "methods": 31
+  },
+  "com.webos.service.bugreport": {
+   "description": "Bug-reporting service that files bug reports (into a Jira system), optionally attaching account info and screenshots.",
+   "confidence": "documented",
+   "methods": 4
+  },
+  "com.webos.service.bus": {
+   "description": "Luna service-bus management: registers clients for signals, queries service API versions and permissions, checks whether a call is allowed, and manages API-permission manifests.",
+   "confidence": "documented",
+   "methods": 11
+  },
+  "com.webos.service.cacheproxy": {
+   "description": "Opaque caching-proxy service exposing only start and send methods. Likely proxies or caches network data, but specifics are not inferable.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.camera": {
+   "description": "Camera service: acquires, opens and closes the camera, lists devices and properties, reports firmware and cover state, applies photo effects, and exposes audio-recognition diagnostics.",
+   "confidence": "documented",
+   "methods": 33
+  },
+  "com.webos.service.camera.gesture": {
+   "description": "Camera-based gesture service that reports status of and sets the mode for finger-gesture recognition.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.camera2": {
+   "description": "Camera service: enumerates cameras, opens/closes devices, queries and sets formats and properties, captures images and streams, and manages captured media files.",
+   "confidence": "documented",
+   "methods": 39
+  },
+  "com.webos.service.capture": {
+   "description": "Screen/video capture service: creates capture handles, configures output, clip regions, and properties, and executes one-shot or continuous captures with locking.",
+   "confidence": "inferred",
+   "methods": 15
+  },
+  "com.webos.service.capturepermission": {
+   "description": "Screen-capture permission service: checks and sets whether screen capture is permitted.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.capturetv": {
+   "description": "Opaque TV capture pipeline node exposing info/nodeStart/quit; appears to start a capture pipeline node for live TV.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.cbox": {
+   "description": "Appears to be a content box/recording media store: reports device and scan status, recently played items, and audio/VR metadata.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.cec": {
+   "description": "HDMI-CEC (Consumer Electronics Control) service: lists CEC adapters, scans for connected HDMI-CEC devices, sends CEC commands, and reads/writes CEC configuration.",
+   "confidence": "documented",
+   "methods": 8
+  },
+  "com.webos.service.chromecast.provisioning": {
+   "description": "Chromecast built-in (DIAL) provisioning: reports status and DIAL UUID, toggles the activation popup and launches Chromecast settings.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.cloudupload": {
+   "description": "Cloud-upload service that uploads analytics, crash and overview reports to the cloud and manages related log settings.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.colorInfoMiner": {
+   "description": "Appears to drive Philips-Hue-style ambient sync (hueSync): reports status and toggles automatic or manual color extraction from on-screen content.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.commercial.contentmanager": {
+   "description": "Content manager for commercial/signage TVs: creates, copies, moves, renames, deletes, and loads content files and reports file-operation and playable status.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.commercial.scapadapter": {
+   "description": "Commercial/pro-TV SCAP adapter (set-top/conditional-access integration) with a large configuration surface: OSD language and lock, picture mode, proxy and server settings, USB lock, screen capture and logo.",
+   "confidence": "inferred",
+   "methods": 164
+  },
+  "com.webos.service.commercial.signage.localfileserver": {
+   "description": "Commercial-signage local file server that serves local signage content and manages screen-number assignment for digital-signage displays.",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.commercial.webgateway": {
+   "description": "Commercial/signage web gateway: discovers nearby devices, distributes content and clones configuration from a master display to slaves.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.commercialinputdevice": {
+   "description": "Commercial-signage input-device service: manages key tables and white-list keys, injects key items, and reports key, mouse, and touch events.",
+   "confidence": "inferred",
+   "methods": 13
+  },
+  "com.webos.service.config": {
+   "description": "Runtime configuration service: gets and sets named config values, and dumps, reloads and regenerates configuration.",
+   "confidence": "documented",
+   "methods": 12
+  },
+  "com.webos.service.configurator": {
+   "description": "Configurator service that creates the DB8 database schema and registers service configuration, filecache config and app activities (scan/rescan/run/unconfigure).",
+   "confidence": "documented",
+   "methods": 4
+  },
+  "com.webos.service.connectionmanager": {
+   "description": "Manages wired and Wi-Fi network connections: reports status and info, sets the default interface, configures IPv4/IPv6, DNS, proxy and tethering, and reports Wake-on-LAN state.",
+   "confidence": "documented",
+   "methods": 29
+  },
+  "com.webos.service.contentminer": {
+   "description": "Appears to collect or provide content/recommendation data, managing a personal key and returning content data. Purpose.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.contextintentmgr": {
+   "description": "Context Intent Manager (CIM): adds AI logic to a web app without changing its source, injecting data into and reading data from workflows to make the app context-aware.",
+   "confidence": "documented",
+   "methods": 3
+  },
+  "com.webos.service.crashreport": {
+   "description": "Crash-report service that processes a submitted crash report.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.credentialsmanager": {
+   "description": "Credentials manager: creates, checks and removes stored security credentials.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.dass": {
+   "description": "Opaque service exposing only connect and disconnect, associated with media. Its exact role (likely a streaming or device link) is not inferable.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.datamigrator": {
+   "description": "Data migration service: runs a migration between software versions and reports its result and version information.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.db": {
+   "description": "DB8 database service: lets apps store persistent JSON data as typed 'kinds' with indexed queries (find/get/put/del/batch), compaction and backup/restore.",
+   "confidence": "documented",
+   "methods": 89
+  },
+  "com.webos.service.devicereset": {
+   "description": "Device factory-reset service: triggers reset, reports reset status and progress, requests reboot, and tracks in-store ('instop') demo state.",
+   "confidence": "inferred",
+   "methods": 18
+  },
+  "com.webos.service.devmode": {
+   "description": "Developer-mode service (webOS OSE): enables or disables developer mode on the device, returns its passphrase, and queries whether it is enabled.",
+   "confidence": "documented",
+   "methods": 3
+  },
+  "com.webos.service.dial": {
+   "description": "DIAL (Discovery and Launch) service: starts and quits second-screen-launched apps, with heartbeat/ping and a Wake-on-LAN/WoWLAN alert.",
+   "confidence": "inferred",
+   "methods": 6
+  },
+  "com.webos.service.dial.ssdpmanager": {
+   "description": "DIAL/SSDP discovery manager supporting second-screen app launch; exposes an SSDP heartbeat ping.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.dialssdp": {
+   "description": "DIAL/SSDP discovery service for cast-style app launch; reports info and quits. Opaque beyond that.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.discovery": {
+   "description": "Content discovery/recommendation service: performs search and prefix-search, returns categories, recommendations, sponsored data, and content-provider details for the TV's content hub.",
+   "confidence": "inferred",
+   "methods": 23
+  },
+  "com.webos.service.dmost": {
+   "description": "Appears to manage LG Channels / Channel Plus free streaming: reports broadcast and channel state, enables/disables Channel Plus, handles the home app and screensaver, and checks country/lock support.",
+   "confidence": "inferred",
+   "methods": 29
+  },
+  "com.webos.service.dmpautotest": {
+   "description": "Auto-test helper exposing a single ActivityManager callback; appears to support automated DMP testing. Opaque/.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.dmrautotest": {
+   "description": "DLNA/DMR media-renderer auto-test helper; exposes an activity callback. Opaque beyond that.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.dmrsvc": {
+   "description": "DLNA Digital Media Renderer service: plays media pushed from DLNA controllers, reporting play status and managing volume, mute, subtitles, popup menus, and 3D format.",
+   "confidence": "inferred",
+   "methods": 12
+  },
+  "com.webos.service.dnssd": {
+   "description": "DNS-SD / mDNS (Avahi) service: registers and unregisters network service browse and publish entries, and reports status.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.downloadmanager": {
+   "description": "Download manager: manages file download and upload on the device, including queueing, pause/resume/cancel, history and status queries.",
+   "confidence": "documented",
+   "methods": 18
+  },
+  "com.webos.service.drm": {
+   "description": "Digital Rights Management service: authenticates the device, acquires and checks content rights, manages certificates and decryption keys, and reports rental and activation status.",
+   "confidence": "documented",
+   "methods": 31
+  },
+  "com.webos.service.eim": {
+   "description": "External Input Manager: manages HDMI and other external inputs, including device add/remove, input status, EDID backup, ARC volume, and extensive HDMI-CEC control and vendor commands.",
+   "confidence": "inferred",
+   "methods": 41
+  },
+  "com.webos.service.emmcd": {
+   "description": "eMMC storage daemon: reports flash lifetime, memory usage and profile info, and configures the eMMC profile and power-on settings.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.eulaservice": {
+   "description": "EULA service: downloads and manages end-user license agreements, reports download status, resets EULAs, and handles marketing-consent callbacks.",
+   "confidence": "inferred",
+   "methods": 6
+  },
+  "com.webos.service.eventmonitor": {
+   "description": "Event monitor with pluggable handlers: delivers events to plugins and surfaces network/Wi-Fi-Direct notifications.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.externaldecodercontroller": {
+   "description": "Appears to manage an external decoder dongle: reports dongle device ID and version, downloads keys, and runs firmware updates (including via USB).",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.externaldevice": {
+   "description": "External-device I/O service: reads and writes GPIO and ADC pins and reads attached humidity, light, temperature and RFID peripherals.",
+   "confidence": "inferred",
+   "methods": 15
+  },
+  "com.webos.service.extinputs": {
+   "description": "External-inputs service exposing a single method to reset external-input audio/video settings.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.extinputs.av": {
+   "description": "External AV-input service: opens, closes and connects AV inputs, reports signal and video info, and manages subtitles and teletext for the external source.",
+   "confidence": "documented",
+   "methods": 23
+  },
+  "com.webos.service.extinputs.component": {
+   "description": "External component-input service: opens/closes and connects component (and similar) inputs, reports signal state and video info, controls audio mute and output type, and switches external input.",
+   "confidence": "inferred",
+   "methods": 13
+  },
+  "com.webos.service.extinputs.displayport": {
+   "description": "DisplayPort/HDMI external-input service: opens/connects an input and reports signal, video and VRR info, audio codec, Dolby conflict state, and HDMI diagnostics and error history.",
+   "confidence": "inferred",
+   "methods": 25
+  },
+  "com.webos.service.extinputs.hdmi": {
+   "description": "HDMI external-input service: opens/connects HDMI inputs and reports signal state, video/audio codec info, VRR, Dolby conflict status, and HDMI diagnostics/error history.",
+   "confidence": "documented",
+   "methods": 26
+  },
+  "com.webos.service.extinputs.spdif": {
+   "description": "External S/PDIF digital-audio input service: opens, connects and switches the S/PDIF input and reports its current audio codec.",
+   "confidence": "documented",
+   "methods": 7
+  },
+  "com.webos.service.facedetect": {
+   "description": "Face-detection service exposing a single faceDetect method. Narrow role; detects faces (likely from a camera) based on its name.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.factorymanager": {
+   "description": "Factory/production manager: runs factory test commands, performs calibration (ADC, Vcom, white balance), controls LED bar and test patterns, and gets/sets factory options and keys. Flagged dangerous by name.",
+   "confidence": "inferred",
+   "methods": 22
+  },
+  "com.webos.service.familycare": {
+   "description": "Family-care/parental-controls service: checks parental settings, monitors usage, and launches usage-care flows.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.webos.service.fancontroller": {
+   "description": "Cooling-fan and thermal controller: reads fan and temperature-sensor data, reports a thermal report, and sets thermal status.",
+   "confidence": "documented",
+   "methods": 7
+  },
+  "com.webos.service.faultmanager": {
+   "description": "Fault manager: detects and recovers from system faults, enabling/disabling detection and recovery, reporting fault status, and notifying or registering for fault events.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.service.favorites": {
+   "description": "Favorites service: manages favorite TV channels (add, edit, remove, pair) and favorite/recommended shows, including interactive and recommendation handling.",
+   "confidence": "inferred",
+   "methods": 23
+  },
+  "com.webos.service.filecache": {
+   "description": "File-cache service managing a global shared file cache: defines cache types and inserts, copies, resizes, expires and touches typed cache objects.",
+   "confidence": "documented",
+   "methods": 16
+  },
+  "com.webos.service.fingerprint": {
+   "description": "Appears to open and close a fingerprint sensor/reader; opaque beyond that.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.firstuse": {
+   "description": "First-use/initial-setup service: reads and writes the settings captured during the TV's out-of-box setup flow.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.ftms": {
+   "description": "Fitness-machine (BLE FTMS) service: connects to fitness equipment, reads and saves workout data, and manages a blocked-device scan filter.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.gibb.channel": {
+   "description": "GIBB channel-map service: imports, exports, clears and saves the TV channel list/map.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.gibbips": {
+   "description": "Appears to be an IP-broadcast (IPTV) core service; plays channel files and registers broadcast data.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.gibbips.acas": {
+   "description": "ACAS conditional-access service (gibbips broadcast stack): reports CAS module, contract, ECM, and power-on control information and manages auto-display messages. Japanese ACAS variant.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.gibbips.bcConfigAdapter": {
+   "description": "GIBBIPS broadcast config-cache adapter: dumps cached configuration and settings values.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.gibbips.broadcast": {
+   "description": "GIBBIPS live-broadcast service: changes channels and reports broadcast/channel/play state, audio and component info, emergency info and media time for live TV.",
+   "confidence": "inferred",
+   "methods": 40
+  },
+  "com.webos.service.gibbips.channel": {
+   "description": "IP-broadcast channel management: builds and edits the channel map, queries channel and service lists and info, and handles ACAS conditional-access modules.",
+   "confidence": "inferred",
+   "methods": 53
+  },
+  "com.webos.service.gibbips.config": {
+   "description": "Broadcast configuration query service (gibbips stack): reports supported broadcast standards and country standards.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.gibbips.databroadcast": {
+   "description": "GIBBIPS interactive/ATSC data-broadcast service: caches broadcast requests (including DASH), reports EPG and service info, DRM operations, event-stream and signaling data, and Xlink resolution.",
+   "confidence": "inferred",
+   "methods": 27
+  },
+  "com.webos.service.gibbips.debug": {
+   "description": "Debug interface for the GIBBIPS broadcast stack: dumps state, imports/exports channel lists, and controls media/memory/DVB-I debugging.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.gibbips.dvr": {
+   "description": "IP-broadcast DVR recording: starts and stops manual, scheduled and program recordings and reports recording duration, source, type and status.",
+   "confidence": "inferred",
+   "methods": 16
+  },
+  "com.webos.service.gibbips.frontend": {
+   "description": "Broadcast tuner frontend service (gibbips stack): opens/closes and connects the demodulator frontend, requests tuning, checks signal lock, and manages PLP (physical layer pipe) selection.",
+   "confidence": "inferred",
+   "methods": 12
+  },
+  "com.webos.service.gibbips.pcap": {
+   "description": "GIBBIPS packet-capture helper for the broadcast stack: open, close, play and stop a pcap capture.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.gibbips.power": {
+   "description": "GIBBIPS power-coordination helper exposing warm-standby completion registration for the broadcast stack.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.gibbips.program": {
+   "description": "IP-broadcast program-guide (EPG) service: scans and queries event/program listings, ratings, images and recommendations, and toggles the EPG.",
+   "confidence": "inferred",
+   "methods": 18
+  },
+  "com.webos.service.gibbips.recsig": {
+   "description": "Opaque gibbips broadcast helper exposing only a debug method for recorded-signal handling. Role not inferable beyond its name.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.gibbips.subtitle": {
+   "description": "GIBBIPS subtitle/caption service: enables/disables subtitles, lists them, reports rating and state, and serves hybrid-TV caption data.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.service.gibbips.tvpowerd": {
+   "description": "GIBBIPS TV power daemon coordinating power transitions: registers and acknowledges prepare/suspend/resume, active-standby and power-off/on handshakes.",
+   "confidence": "inferred",
+   "methods": 16
+  },
+  "com.webos.service.gibbs": {
+   "description": "Appears to be a broadcast core service; plays channel files and registers broadcast data.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.gibbs.acas": {
+   "description": "ACAS conditional-access service (gibbs broadcast stack): reports CAS module, contract, ECM, and power-on control information and manages auto-display messages.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.gibbs.bcConfigAdapter": {
+   "description": "GIBBS broadcast config-cache adapter: dumps cached configuration and settings values.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.gibbs.broadcast": {
+   "description": "GIBBS live-broadcast service: changes channels and reports broadcast/channel/play state, audio info, dialog-enhancement and emergency info for live TV.",
+   "confidence": "inferred",
+   "methods": 39
+  },
+  "com.webos.service.gibbs.channel": {
+   "description": "Broadcast channel management: builds, edits, imports and exports the channel map, queries channels, signal level and audio language, and handles ACAS conditional-access modules.",
+   "confidence": "inferred",
+   "methods": 41
+  },
+  "com.webos.service.gibbs.databroadcast": {
+   "description": "Data-broadcast service (gibbs stack): caches and fetches interactive/data-broadcast content (including DASH), reports EPG and service info, DRM state, and stream events for broadcast apps.",
+   "confidence": "inferred",
+   "methods": 26
+  },
+  "com.webos.service.gibbs.debug": {
+   "description": "GIBBS broadcast-stack debug interface: dumps channel, media, memory and NRT state, imports/exports the channel list and reports pipeline IDs.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.gibbs.dvr": {
+   "description": "GIBBS DVR service: starts and stops manual, program and scheduled TV recordings and reports recording duration, type, source and remaining time.",
+   "confidence": "inferred",
+   "methods": 16
+  },
+  "com.webos.service.gibbs.frontend": {
+   "description": "Broadcast tuner front-end control: opens/closes the demodulator, tunes, reports lock and signal state, and configures PLP (physical-layer pipes) for multiplex streams.",
+   "confidence": "inferred",
+   "methods": 12
+  },
+  "com.webos.service.gibbs.pcap": {
+   "description": "Broadcast packet-capture helper (gibbs stack): opens, plays, stops, and closes a capture, likely for diagnostics.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.gibbs.program": {
+   "description": "GIBBS program-guide service: scans the EPG and detailed program info, toggles EPG on/off, and runs SQLite queries against the guide database.",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.gibbs.recsig": {
+   "description": "GIBBS recording-signal debug helper (single debug method). Opaque/.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.gibbs.subtitle": {
+   "description": "Broadcast subtitle/caption service: enables and selects subtitles, reports the subtitle list and state, sets caption position, and handles HbbTV hybrid-TV caption data.",
+   "confidence": "inferred",
+   "methods": 12
+  },
+  "com.webos.service.gibbs.tvpowerd": {
+   "description": "TV power daemon (gibbs stack): coordinates power-off, suspend, resume, and active-standby transitions by registering requests and exchanging prepare/response acknowledgements.",
+   "confidence": "inferred",
+   "methods": 16
+  },
+  "com.webos.service.gingaccwebservices": {
+   "description": "Ginga interactive-DTV middleware web services (ISDB-T, e.g. Brazil): media controller and key-session handling, key sets and server URL, with a dev mode.",
+   "confidence": "inferred",
+   "methods": 12
+  },
+  "com.webos.service.gingaccwebservices.test": {
+   "description": "Test interface for Ginga interactive-TV middleware (ISDB) web services: dev mode, consent history, key sets, media controller/key sessions and Ginga subscriptions.",
+   "confidence": "inferred",
+   "methods": 14
+  },
+  "com.webos.service.google.signin": {
+   "description": "Google sign-in helper; starts and stops the Google authentication flow.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.googlehomecontroller": {
+   "description": "Google Home integration controller: enables, disables, starts, and stops the Google Home service, reports its status, and updates its package.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.webos.service.hdcp2": {
+   "description": "HDCP 2.x receiver service: opens/closes the HDCP link and reports status, decryption key and key inspection data.",
+   "confidence": "inferred",
+   "methods": 6
+  },
+  "com.webos.service.hdmitx": {
+   "description": "HDMI transmitter (output) service: reports HDMI connection state, parsed EDID and video-output info, and sets low-latency signaling data.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.hfp": {
+   "description": "Bluetooth Hands-Free Profile (HFP) service: answers, holds, merges and terminates calls, controls call volume and voice recognition, and reports audio-gateway status.",
+   "confidence": "documented",
+   "methods": 11
+  },
+  "com.webos.service.hidusbemul": {
+   "description": "USB HID emulation helper: reports status and pauses/resumes emulation. Narrow role; specifics beyond HID USB emulation not inferable.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.homeconnect": {
+   "description": "Home-connect relay service: gets/sets state, relays events and starts/stops, bridging to an external home/IoT integration.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.webos.service.homelaunchpoints": {
+   "description": "Home-screen launch-point and QCard manager: lists, adds, moves, hides, removes and updates home-screen launch points and QCards.",
+   "confidence": "inferred",
+   "methods": 14
+  },
+  "com.webos.service.hybridtvapiserver": {
+   "description": "Hybrid-TV (HbbTV/broadband) API server: selects and plays channels, selects stream components, positions the video window, and provides a server URL.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.hybridtvmanager": {
+   "description": "Hybrid-TV manager: handles hybrid broadcast-broadband state, user agreements, ACR first-run settings, and teletext display and messaging.",
+   "confidence": "inferred",
+   "methods": 13
+  },
+  "com.webos.service.ics": {
+   "description": "IR-blaster / universal-control service: manages a database of IR and IP-controlled devices, with brand/model/key lists, device add/delete and history, HDMI plugin info and pin codes.",
+   "confidence": "inferred",
+   "methods": 51
+  },
+  "com.webos.service.iepg": {
+   "description": "iEPG channel/program-guide service: manages the channel map and lists, channel numbers, favorites and shortcut keys, and EPG data for live TV.",
+   "confidence": "inferred",
+   "methods": 90
+  },
+  "com.webos.service.image": {
+   "description": "Image-processing utility: converts, resizes, crops and combines images and reports image info.",
+   "confidence": "documented",
+   "methods": 5
+  },
+  "com.webos.service.ime": {
+   "description": "Input Method Editor and virtual-keyboard service: inserts and deletes text, sends the enter key, and registers a remote keyboard for on-screen text entry.",
+   "confidence": "documented",
+   "methods": 4
+  },
+  "com.webos.service.independanotification": {
+   "description": "Integration with the Independa elder-care/video-call platform: launches the service, handles incoming video-call decline, photo icons and power-state notifications.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.intent": {
+   "description": "Intent manager: handles implicit and explicit intents (abstract operations), queries and registers intent handlers/filters, and returns intent results.",
+   "confidence": "documented",
+   "methods": 7
+  },
+  "com.webos.service.interactivecontent.apiserver": {
+   "description": "Interactive-content API server; starts and provides a server URL. Opaque beyond that.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.interactivecontent.apiserver.test": {
+   "description": "Test endpoint for an interactive-content API server, exposing start and server-URL methods. Test/development service, not a production API.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.interactivecontent.webserver": {
+   "description": "Local web server for interactive content: starts and stops the server and reports its URL.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.iotclient": {
+   "description": "IoT client: discovers, lists and controls connected IoT devices, manages linked accounts, macros and registration tokens, and handles IoT push notifications.",
+   "confidence": "inferred",
+   "methods": 27
+  },
+  "com.webos.service.iotproxy": {
+   "description": "IoT proxy; starts and relays (send) data to IoT endpoints. Opaque beyond that.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.irdbmanager": {
+   "description": "IR database manager: manages the infrared code database for controlling external devices, listing brands/manufacturers and key lists, adding devices, retrieving IR data, and creating alerts/toasts.",
+   "confidence": "inferred",
+   "methods": 35
+  },
+  "com.webos.service.ismmanager": {
+   "description": "ISM (image-sticking-minimization) manager: launches and closes the ISM routine and refreshes its contents.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.iwc": {
+   "description": "Inter-window composition (IWC) service: publishes and exports windows, sets crop regions and window properties for compositing.",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.jsserver": {
+   "description": "JavaScript service host: runs JS service code and reports info about hosted/running services.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.keymanager2": {
+   "description": "Second-generation key manager: generates keys, encrypts/decrypts and signs/verifies data, manages key attributes, and removes keys (including per-app keys).",
+   "confidence": "documented",
+   "methods": 9
+  },
+  "com.webos.service.keymanager3": {
+   "description": "Security key manager (keystore): generates, imports, exports and derives cryptographic keys, runs begin/update/finish crypto operations, and removes per-app or uninstalled-app keys.",
+   "confidence": "inferred",
+   "methods": 15
+  },
+  "com.webos.service.ledbarcontroller": {
+   "description": "Controls the LED backlight bar (single method to set the A+ LED-bar control).",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.legacybroadcast": {
+   "description": "Legacy broadcast core service; plays channel files and registers broadcast data.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.legacybroadcast.acas": {
+   "description": "ACAS conditional-access service (legacy broadcast stack): reports CAS module, contract, ECM, and power-on control info and manages auto-display messages.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.legacybroadcast.audiorecorder": {
+   "description": "Legacy-broadcast audio recorder: starts and stops recording and reports recording state and buffered length.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.legacybroadcast.bcConfigAdapter": {
+   "description": "Legacy-broadcast config-cache adapter that dumps all cached broadcast configuration and settings values.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.legacybroadcast.broadcast": {
+   "description": "Legacy broadcast (Live TV) control: changes channels and services, reports current channel and broadcast state, and queries audio/component lists and channel info.",
+   "confidence": "inferred",
+   "methods": 48
+  },
+  "com.webos.service.legacybroadcast.channel": {
+   "description": "Legacy broadcast channel service: large API for channel tuning, scanning, and management, conditional access (ACAS/BCAS), CI/CAM module control, and barker/message channels.",
+   "confidence": "inferred",
+   "methods": 360
+  },
+  "com.webos.service.legacybroadcast.databroadcast": {
+   "description": "Legacy DVB/ATSC data-broadcast service: adds section filters, attaches stream events, builds DSM-CC/carousel filters, and reports broadcast component, channel, caption and broadcaster info.",
+   "confidence": "inferred",
+   "methods": 42
+  },
+  "com.webos.service.legacybroadcast.debug": {
+   "description": "Legacy-broadcast debug interface exposing a debug menu. Opaque/.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.legacybroadcast.display": {
+   "description": "Legacy broadcast display helper: freezes the DTV picture and runs decoder tests.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.legacybroadcast.dvr": {
+   "description": "Legacy broadcast DVR service: controls recording playback (seek, frame-step, subtitles), queries recording storage performance, and reports playing program, audio, and content info.",
+   "confidence": "inferred",
+   "methods": 97
+  },
+  "com.webos.service.legacybroadcast.expcall": {
+   "description": "Legacy-broadcast helper exposing a single 'set' call; its purpose is opaque beyond the legacy broadcast stack.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.legacybroadcast.frontend": {
+   "description": "Legacy-broadcast tuner frontend: reports RF lock and signal status, modulation, MPLP, LNB (satellite) shortage status and firmware/diagnostic info.",
+   "confidence": "inferred",
+   "methods": 28
+  },
+  "com.webos.service.legacybroadcast.lbdsmcc": {
+   "description": "Legacy broadcast DSM-CC service: mounts and attaches DSM-CC object carousels, retrieves carousel files, and registers stream events for data/interactive broadcasting.",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.legacybroadcast.power": {
+   "description": "Legacy broadcast power helper: checks whether background-activity-manager work is required and registers warm-standby completion. Narrow power-coordination role.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.legacybroadcast.program": {
+   "description": "Legacy-broadcast program-guide service: scans the EPG and program details, reports the current program rating and toggles the guide on/off.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.legacybroadcast.recsig": {
+   "description": "Legacy-broadcast recording-signal debug helper (single debug method). Opaque/.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.legacybroadcast.sound": {
+   "description": "Legacy broadcast audio control: reports DTV audio info and running state and gets/sets the speaker output type.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.webos.service.legacybroadcast.subtitle": {
+   "description": "Legacy broadcast subtitle/caption service: enables and disables subtitles and closed captions, manages caption position, size, and resolution, and reports rating and subtitle lists.",
+   "confidence": "inferred",
+   "methods": 29
+  },
+  "com.webos.service.legacybroadcast.swupdate": {
+   "description": "Legacy-broadcast OTA software update: starts and cancels updates, reports progress and version, and manages warm-standby (standby-time) OTA.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.legacybroadcast.teletext": {
+   "description": "Legacy-broadcast teletext service: enables/disables teletext (and teletext PES), and reports teletext data, lists and state.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.service.legacybroadcast.time": {
+   "description": "Legacy broadcast time service: reports UTC, local-time offset and DST rules decoded from the broadcast stream.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.legacybroadcast.tvpowerd": {
+   "description": "TV power daemon (legacy broadcast stack): coordinates power-off, suspend, resume, and active-standby transitions via registered requests and prepare/response acknowledgements.",
+   "confidence": "inferred",
+   "methods": 16
+  },
+  "com.webos.service.lightingcontroller": {
+   "description": "Ambient/gaming LED lighting controller: reads the ambient and gaming LED MICOM microcontroller firmware versions and updates that firmware.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.lim": {
+   "description": "Opaque service; appears to generate content and suggest keyword prompts/domains (possibly a language/input helper) based on generate and prompt/suggestKeywords.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.livepickplus": {
+   "description": "Appears to drive a 'Live Pick+' on-screen overlay (e.g. food/ACR overlays): launches and closes overlays and sets bounds and notice-bar settings.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.service.location": {
+   "description": "Location service: provides single or continuous position fixes, geocoding and reverse geocoding, GPS satellite and NMEA data, location handlers, and a mock-location mode.",
+   "confidence": "documented",
+   "methods": 18
+  },
+  "com.webos.service.logger": {
+   "description": "Logging service: writes a log entry.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.lowlevelstorage": {
+   "description": "Low-level key/value storage service exposing get/set data and shutdown.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.lsa": {
+   "description": "Opaque service exposing only a 'start' method; purpose not inferable from its API.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.magicnum": {
+   "description": "Appears to validate or resolve 'magic number' shortcuts for apps, channels, and launchers and set the country. Purpose.",
+   "confidence": "inferred",
+   "methods": 6
+  },
+  "com.webos.service.matter": {
+   "description": "Matter smart-home service: sends commands to Matter devices and subscribes to their state.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.mediacontroller": {
+   "description": "Media controller: registers and activates media sessions and handles AVRCP remote playback control (metadata, cover art, play/mute status, injected media keys).",
+   "confidence": "documented",
+   "methods": 23
+  },
+  "com.webos.service.mediaindexer": {
+   "description": "Media indexer: scans internal and USB storage for audio, video and image files and extracts metadata, exposing media lists and per-device plugins.",
+   "confidence": "documented",
+   "methods": 23
+  },
+  "com.webos.service.mediarecorder": {
+   "description": "Media recorder service (webOS OSE): opens a recorder, sets audio/video and output formats and file, starts/stops/pauses recording, and takes snapshots.",
+   "confidence": "documented",
+   "methods": 11
+  },
+  "com.webos.service.mediasync": {
+   "description": "Media synchronization service exposing a single setup call; its full role is not inferable from the method name.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.membership": {
+   "description": "Membership service that stores and retrieves membership values and device info and runs a local HTTP server for membership requests.",
+   "confidence": "inferred",
+   "methods": 14
+  },
+  "com.webos.service.memorymanager": {
+   "description": "Memory manager: monitors system memory, reports usage and thresholds, and frees memory by killing background apps under low-memory conditions.",
+   "confidence": "documented",
+   "methods": 11
+  },
+  "com.webos.service.mfi": {
+   "description": "Apple MFi (Made for iPhone/iPod/iPad) authentication service: downloads and stores MFi keys, retrieves certificates and signatures, and verifies keys for Apple device interoperability.",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.micomservice": {
+   "description": "MICOM microcontroller service: reports power on/off history, OLED self-diagnosis, IR custom codes and hardware diagnostics, and controls standby/always-ready and LED functions.",
+   "confidence": "inferred",
+   "methods": 53
+  },
+  "com.webos.service.microphone": {
+   "description": "Microphone service: enumerates microphones, opens/starts/stops capture, reports info, and requests microphone permission.",
+   "confidence": "documented",
+   "methods": 7
+  },
+  "com.webos.service.miracast": {
+   "description": "Miracast (Wi-Fi Display) service: manages device discovery, pairing and connection, reports connection/media/P2P state and statistics, and handles UIBC and WiDi settings.",
+   "confidence": "documented",
+   "methods": 48
+  },
+  "com.webos.service.miracast.upnp": {
+   "description": "UPnP helper for Miracast, exposing only open and close. Narrow role supporting Miracast screen mirroring.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.miracasttx": {
+   "description": "Miracast transmitter service: connects and requests a Miracast session, reports device info and state, and sets the encoding mode.",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.mrcu": {
+   "description": "Magic Remote Control Unit service: pairs the remote, manages the pointer cursor and motion sensor, IR codes and firmware, and shows alerts/toasts.",
+   "confidence": "documented",
+   "methods": 122
+  },
+  "com.webos.service.msc": {
+   "description": "Motion-sensor/accelerometer controller: reads accelerometer and orientation data, reports motion status, and runs calibration and factory (DFT) tests.",
+   "confidence": "inferred",
+   "methods": 12
+  },
+  "com.webos.service.mss": {
+   "description": "Opaque service that plays sounds and exchanges commands with configurable sound properties and a debug mode. Specific 'MSS' domain not inferable; marked.",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.mtsp": {
+   "description": "Exposes only a connection-status query; its broader role is opaque from the name and method.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.multiviewcontroller": {
+   "description": "Multiview controller: creates and arranges app views for split/multi-view, changes mode, position and size of sub-apps, and mixes per-view audio.",
+   "confidence": "inferred",
+   "methods": 54
+  },
+  "com.webos.service.mvpd": {
+   "description": "MVPD (pay-TV operator) service: manages the operator channel list, initial/last channel, parental-control ratings, operator settings and state, and IGMP options.",
+   "confidence": "inferred",
+   "methods": 21
+  },
+  "com.webos.service.mycar": {
+   "description": "Opaque service exposing a single handlePushMessage method, apparently handling a 'MyCar' push-message feature. Role not inferable beyond that.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.mysketch": {
+   "description": "MySketch artistic-display/gallery service: loads and saves images and sets the artistic display, home background and image path.",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.nabs.broadcast": {
+   "description": "NABS live-broadcast service: changes channels and reports broadcast/channel state, audio/video and signal info, and hybrid-TV events for live TV.",
+   "confidence": "inferred",
+   "methods": 27
+  },
+  "com.webos.service.nabs.channel": {
+   "description": "ATSC broadcast channel and scan service: tunes channels, reports signal level and audio language, and runs ATSC automatic and manual channel scanning.",
+   "confidence": "inferred",
+   "methods": 22
+  },
+  "com.webos.service.nabs.dvr": {
+   "description": "DVR service (nabs broadcast stack): manages recording and timeshift buffering, reporting recording duration, quality, type, source, and ID, and converting single recordings to series.",
+   "confidence": "inferred",
+   "methods": 30
+  },
+  "com.webos.service.nabs.program": {
+   "description": "NABS program-guide service: scans the EPG and runs SQLite queries against the guide database.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.nabs.subtitle": {
+   "description": "NABS subtitle/caption service: enables and disables subtitles and gets/sets caption position.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.nais": {
+   "description": "Appears to provide a QR-code-based service plus subtitle controls, reporting service status and supported-platform info.",
+   "confidence": "inferred",
+   "methods": 6
+  },
+  "com.webos.service.nettools": {
+   "description": "Network tools service: provides standard diagnostics such as ping/ping6, arping, HTTP checks, hostname resolution, VLAN creation, and get/set hostname.",
+   "confidence": "documented",
+   "methods": 12
+  },
+  "com.webos.service.networkinput": {
+   "description": "Network/virtual input service: sends key codes and special/long/repeat key events and exposes pointer, gamepad and touch input sockets, plus media transport controls (play, pause, channel).",
+   "confidence": "inferred",
+   "methods": 16
+  },
+  "com.webos.service.nfc": {
+   "description": "NFC service: manages the NFC adapter, card emulation, tag read/write (NDEF), secure-element (eSE) communication, and connection handover.",
+   "confidence": "documented",
+   "methods": 34
+  },
+  "com.webos.service.nlp": {
+   "description": "Natural-language and speech service: runs speech-to-text (STT) and NLP queries for voice search and tips, and reports STT/NLP status.",
+   "confidence": "inferred",
+   "methods": 14
+  },
+  "com.webos.service.nlpmanager": {
+   "description": "Natural-language processing manager: handles voice/search requests and user-intent resolution, runs and refines searches, manages dynamic categories, and returns tips and program info.",
+   "confidence": "inferred",
+   "methods": 20
+  },
+  "com.webos.service.nms": {
+   "description": "Appears to be a network management/connection service handling connect, resume, suspend-prepare and notification events. Opaque;.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.service.nnproxy": {
+   "description": "Neural-network proxy for picture processing; exposes get/set and debug for picture-related NN data.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.nomotion": {
+   "description": "No-motion/no-operation power-saving timers: adds, queries and removes timers that fire when no remote motion or operation is detected.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.webos.service.nop": {
+   "description": "Appears to manage 'NOP' timers: adds and removes timers, reports timer info, and notifies on expiry. Specific purpose not inferable; marked.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.nudge": {
+   "description": "Nudge/reminder service: requests and responds to on-screen nudges and alarm-based nudges, and reports nudge state, info, result and history.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.service.objectdetection": {
+   "description": "Object-detection service that runs detection and reports its state (start/stop/detect/getState), likely camera-based.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.objectdetectionutilizer": {
+   "description": "Appears to consume camera object-detection results: starts/stops detection and reports status.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.ocp": {
+   "description": "Opaque service with accept/refuse/restore/start/status methods, suggesting an agreement or request-handling flow. Specific 'OCP' domain not inferable.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.oledepl": {
+   "description": "OLED panel-protection service (extended panel life): runs the pixel refresher, reports panel temperature and refresher status, and manages global stress reduction, temporal peak control and screensaver response.",
+   "confidence": "inferred",
+   "methods": 23
+  },
+  "com.webos.service.opappmanager": {
+   "description": "Operator-app (OpApp) manager; exposes start and popup notification. Opaque/.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.opappwebserver": {
+   "description": "Operator-app (HbbTV OpApp) web server: starts and stops a local web server and reports its base path and URL.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.outdoorwebcontrol": {
+   "description": "Opaque service exposing only info and quit, apparently related to outdoor/signage web control. Role not inferable beyond its name.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.packagemanager": {
+   "description": "App/package manager: runs and closes packages, locks and unlocks them, mounts squashfs images and reports status.",
+   "confidence": "inferred",
+   "methods": 6
+  },
+  "com.webos.service.panelcontroller": {
+   "description": "Controls and monitors the display panel (OLED/LED): panel/TCON firmware and chip versions, OLED cell info and error logs, usage-time tracking and resolution.",
+   "confidence": "documented",
+   "methods": 60
+  },
+  "com.webos.service.pbsw": {
+   "description": "Broadcast channel-map service: builds and edits the channel list and favorite groups, queries channel info and EPG events, and reports country policy.",
+   "confidence": "inferred",
+   "methods": 57
+  },
+  "com.webos.service.pdm": {
+   "description": "Physical Device Manager: detects and manages attached USB and storage devices, listing attached devices, ejecting, formatting, and running file-system checks (fsck).",
+   "confidence": "documented",
+   "methods": 42
+  },
+  "com.webos.service.peripheralmanager": {
+   "description": "Peripheral manager: monitors sensors and controls actuators on I/O peripherals over industry-standard buses, exposing GPIO and I2C (and similar) open, read, write and configure operations.",
+   "confidence": "documented",
+   "methods": 43
+  },
+  "com.webos.service.personalsoundwizard": {
+   "description": "Personal sound wizard service that gets and sets sound-bar status and personalization settings.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.photorenderer": {
+   "description": "Photo renderer: opens, draws and plays photos with scaling, rotation, translation, color filters, thumbnails and transitions, and captures rendered output.",
+   "confidence": "inferred",
+   "methods": 18
+  },
+  "com.webos.service.pkgInstall": {
+   "description": "Package installer service: installs, removes, and cancels packages, queries install capacity, and reports status.",
+   "confidence": "documented",
+   "methods": 6
+  },
+  "com.webos.service.pkgUpdate": {
+   "description": "Package update service: checks for package updates and reports their status.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.pkgverifier": {
+   "description": "Package signature verifier that verifies IPK app-package signatures.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.power": {
+   "description": "System power service: coordinates shutdown and reboot and manages suspend/resume, letting apps and services register for and acknowledge prepare-suspend and shutdown events.",
+   "confidence": "documented",
+   "methods": 18
+  },
+  "com.webos.service.power2": {
+   "description": "Power-management service (webOS OSE): powers the device on/off and reboots it, manages state transitions and wake locks, and reports/sets the power-on reason.",
+   "confidence": "documented",
+   "methods": 11
+  },
+  "com.webos.service.ppm": {
+   "description": "Permission manager (PPM): requests, checks, sets, updates, removes and queries app permissions.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.webos.service.pqcontroller": {
+   "description": "Picture-quality (PQ) controller: adjusts white balance and N-point white balance, luminance, AI picture and external PQ data, and resets picture settings.",
+   "confidence": "documented",
+   "methods": 24
+  },
+  "com.webos.service.preferences": {
+   "description": "Preferences store: reads and writes per-app and system property key/value settings and supports their backup and restore.",
+   "confidence": "documented",
+   "methods": 17
+  },
+  "com.webos.service.preloadmanager": {
+   "description": "App preload manager: gets and sets the app preload policy and preload status for faster app launches.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.printing": {
+   "description": "Printing service: adds, removes and configures printers, sets the default printer and options, and manages print jobs (list, cancel, complete).",
+   "confidence": "inferred",
+   "methods": 23
+  },
+  "com.webos.service.prosense": {
+   "description": "ProSense monitoring service: starts/stops monitoring, reports monitor status, and notifies faults.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.webos.service.prs": {
+   "description": "Program recommendation service (PRS): manages recommended-channel lists and reports playback, scheduled recordings/watches and selected-program info for recommendations.",
+   "confidence": "inferred",
+   "methods": 18
+  },
+  "com.webos.service.push": {
+   "description": "Push-notification service: registers apps and manages push tokens and receivers, relays messages to APNS/GCM providers, and controls per-app push acceptance.",
+   "confidence": "inferred",
+   "methods": 18
+  },
+  "com.webos.service.pushclient": {
+   "description": "Push/MQTT client: creates and destroys connections, registers services, publishes to and subscribes/unsubscribes from topics, and reports MQTT connection status.",
+   "confidence": "inferred",
+   "methods": 12
+  },
+  "com.webos.service.qbd": {
+   "description": "Opaque input-related service; appears to manage device resume timeout and reset timing based on its get/set methods.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.recent": {
+   "description": "Recent-apps service: lists and removes recently used apps and captures the screen for recents thumbnails.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.remotediag": {
+   "description": "Remote diagnostics service: downloads terms, reports status, and subscribes to and reports media info for remote support/diagnostics.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.remotemonitorprotocol": {
+   "description": "Remote-monitoring protocol bridge exposing a single call that relays a Luna API request; its broader role is not inferable.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.rollingscreen": {
+   "description": "Rollable-screen controller (rollable OLED): drives motor roll position and curve/shade/view states, reports motor/MICOM status, and handles calibration.",
+   "confidence": "inferred",
+   "methods": 26
+  },
+  "com.webos.service.rosbridge": {
+   "description": "ROS (Robot Operating System) bridge: calls, publishes to and subscribes to ROS topics/services and reports status.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.rovi": {
+   "description": "Opaque service tied to Rovi (EPG/metadata) exposing only launchres and test. Role not inferable beyond its name.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.ruleengine": {
+   "description": "Rule engine: gets, sets and deletes automation rules.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.scd": {
+   "description": "SCD channel-number service: reports and force-finds the current channel number and wakes the component.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.screenmanager": {
+   "description": "Appears to manage screen state via the Hall-effect sensor (cover/stand detection) and sets the screensaver mode.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.screenrotation": {
+   "description": "Screen-rotation service: reports and sets rotation status and configures the rotation window/orbiter, likely for portrait/signage displays.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.sdkagent": {
+   "description": "SDK agent that controls the Telegraf metrics collector and communicates with SDK tools: starts, stops, restarts and configures collection and monitors process and web-process size.",
+   "confidence": "documented",
+   "methods": 12
+  },
+  "com.webos.service.sdpservernotice": {
+   "description": "Opaque service that starts and responds to an SDP server notice. Little is inferable from its methods.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.sdx": {
+   "description": "SDX device-provisioning/server service: reports device UUID, encrypted MAC, device-authentication and EULA-download status, country code, and backend server URLs.",
+   "confidence": "inferred",
+   "methods": 36
+  },
+  "com.webos.service.sdxpromo": {
+   "description": "Promotion-management service: checks EULA and available promos, deletes and expires promos, and reacts to app-list and locale changes.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.secondscreen.gateway": {
+   "description": "Second-screen gateway: pairs and lists companion devices, sets up app-to-app channels and host messaging, and reports power state and service list.",
+   "confidence": "inferred",
+   "methods": 28
+  },
+  "com.webos.service.sensor": {
+   "description": "Sensor service: enumerates available sensors, reads sensor values, controls sensors, and handles sensor device attach/detach events.",
+   "confidence": "documented",
+   "methods": 6
+  },
+  "com.webos.service.servicemanager": {
+   "description": "Service manager: launches and closes prerequisite services, sets and reads their priority levels, and reports status.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.settings": {
+   "description": "System settings service: reads, writes, resets, and describes system settings, supporting batch operations and per-dimension (e.g. input, country) values.",
+   "confidence": "documented",
+   "methods": 32
+  },
+  "com.webos.service.settingsui": {
+   "description": "Settings-UI helper: reports target-panel-enable state and starts a debug mode.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.signageplayer": {
+   "description": "Commercial-signage player (SuperSign): plays scheduled and local signage content, manages the scheduler and shared folder, handles failover and content verification.",
+   "confidence": "inferred",
+   "methods": 18
+  },
+  "com.webos.service.sleep": {
+   "description": "Power/sleep management (legacy com.palm.power interface): handles suspend and resume activity tracking and coordinates shutdown and reboot with app and service acknowledgements.",
+   "confidence": "documented",
+   "methods": 27
+  },
+  "com.webos.service.sm": {
+   "description": "Security manager: handles app security permissions, USB-access authentication, device IDs, licensing, and cryptographic operations (file decryption, digital signing, key handling).",
+   "confidence": "inferred",
+   "methods": 34
+  },
+  "com.webos.service.soundshare": {
+   "description": "Sound-share service: streams PCM audio out to an external device, buffering PCM data and reporting stream-out and executable status.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.sportsalarm": {
+   "description": "Sports-alarm service that tracks sporting events and pushes game alerts/timers.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.sportsalert": {
+   "description": "Sports-alert service driven by Activity Manager: fetches account, authentication, event, locale and settings data to deliver sports notifications.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.ssc": {
+   "description": "Opaque service with getStatus, setStatus, request, and subscribeKey methods. Specific domain not inferable; marked.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.ssg.ssdpmanager": {
+   "description": "SSDP (UPnP discovery) manager exposing a heartbeat/ping; its broader role is not inferable from the method.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.storageaccess": {
+   "description": "Storage-access service: lists storage providers and attached devices, reports device properties, and performs file operations (copy, move, rename, remove, eject).",
+   "confidence": "documented",
+   "methods": 13
+  },
+  "com.webos.service.storagestatistics": {
+   "description": "Storage statistics: reports per-app storage usage, lists large apps and files, clears app data and removes files.",
+   "confidence": "documented",
+   "methods": 8
+  },
+  "com.webos.service.sysfaultdetector": {
+   "description": "System fault detector exposing a single method that lists system-inspection information. Narrow diagnostic role.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.systemUIManager": {
+   "description": "System-UI manager: launches and closes apps by ID and reports the foreground app info.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "com.webos.service.systemmanager": {
+   "description": "System manager exposing boot status (single getBootStatus method).",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.systemprofile": {
+   "description": "System-profile service: enables, disables and lists device profiles and reports status.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.systemservice": {
+   "description": "Core system service: reads/sets the clock and time zone, queries device and OS info, manages preferences and ringtones, handles backup/restore, and performs factory-erase/wipe operations.",
+   "confidence": "documented",
+   "methods": 51
+  },
+  "com.webos.service.sysuicompmgr": {
+   "description": "System-UI composition manager: launches and closes system UI views and changes the view and its state transitions.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.terminalmanager": {
+   "description": "Terminal manager: controls RS-232 serial ports (baud rate, attributes, RS232 control), attaches a debug console, and registers/routes terminal commands.",
+   "confidence": "inferred",
+   "methods": 19
+  },
+  "com.webos.service.tnm": {
+   "description": "Thumbnail manager: generates, retrieves and cleans up thumbnails.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.trigger.alexa": {
+   "description": "Alexa trigger service: gets and sets Alexa activation and reports data version, likely gating the far-field/voice Alexa feature.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.trigger.thinq": {
+   "description": "ThinQ voice wake-word trigger service: gets and sets trigger activation and sensitivity and runs trigger acoustic tests.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.tsrecord": {
+   "description": "Transport-stream recording service: initializes, loads, starts and stops TS recording and reports recording status/time and an MPD manifest.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.tts": {
+   "description": "Text-to-speech and audio-guidance service: speaks text, manages voice/language packs, toggles audio guidance, and controls playback (pause/resume/stop).",
+   "confidence": "documented",
+   "methods": 16
+  },
+  "com.webos.service.tv.audiorecorder": {
+   "description": "TV audio recorder: starts and stops audio recording, reports whether recording is active, and returns the recording buffer length.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.tv.broadcast": {
+   "description": "TV broadcast/tuner control: changes channel, play speed and volatile channel, reports broadcast and channel state and the current channel, and manages PIP and tuner pipelines.",
+   "confidence": "documented",
+   "methods": 24
+  },
+  "com.webos.service.tv.capture": {
+   "description": "TV screen-capture service: creates capture handles, executes captures (including one-shot), and configures clip regions, options, output and locking.",
+   "confidence": "inferred",
+   "methods": 14
+  },
+  "com.webos.service.tv.display": {
+   "description": "TV display service: reports 3D and light-sensor status, toggles 3D mode, and clears panel noise.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.tv.dvr": {
+   "description": "TV DVR service: schedules and runs program, manual, scheduled, and external-input recordings, manages timeshift buffering, and plays back recordings (seek, play rate, thumbnails).",
+   "confidence": "inferred",
+   "methods": 18
+  },
+  "com.webos.service.tv.keymanager": {
+   "description": "TV input-event service: injects key, keyboard and mouse events and lists events of interest.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.tv.legacyinput": {
+   "description": "Legacy input service that injects a key event (createKeyEvent).",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.tv.power": {
+   "description": "TV power service: reboots, turns the screen on and off, cancels a scheduled power-off, and enables Wake-on-LAN.",
+   "confidence": "documented",
+   "methods": 5
+  },
+  "com.webos.service.tv.swupdate": {
+   "description": "TV software-update helper exposing a single method to query update status. Narrow role.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.tv.systemproperty": {
+   "description": "TV system-property service: resets to factory/user defaults, reads/writes EDID and white balance, maps inputs, and controls the motorized 'flex' stand (position, motor calibration).",
+   "confidence": "inferred",
+   "methods": 73
+  },
+  "com.webos.service.tv.time": {
+   "description": "TV time service that returns the current time.",
+   "confidence": "documented",
+   "methods": 1
+  },
+  "com.webos.service.tvReservationAgent": {
+   "description": "TV reservation/scheduling agent: adds, edits, cancels and lists scheduled recordings and power on/off timers, and reports power state and power-on reason.",
+   "confidence": "inferred",
+   "methods": 42
+  },
+  "com.webos.service.tvdataexchanger": {
+   "description": "Opaque service exposing a single startPowerOnDefault method, apparently exchanging TV data at power-on. Role not inferable beyond that.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.tvlinkcmdprocessor": {
+   "description": "TV-Link command processor: receives commands and reports OSD lock status.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.tvpower": {
+   "description": "TV power daemon: powers the TV on/off, reboots (including MICOM), reports power state and power-on reason/time, and registers suspend/resume/standby/screensaver handshakes.",
+   "confidence": "documented",
+   "methods": 83
+  },
+  "com.webos.service.tvrm": {
+   "description": "TV resource manager: requests, releases and arbitrates tuner/pipeline resources through transactions, policy actions and foreground/background state, with a simulation mode.",
+   "confidence": "inferred",
+   "methods": 16
+  },
+  "com.webos.service.tvrm.policy.receiver": {
+   "description": "TV resource-manager policy receiver exposing a single method to acknowledge completed policy actions. Narrow arbitration role.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.tvrm.policy.sender": {
+   "description": "TV resource-manager policy sender: subscribes to resource-policy actions.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.tvrmclient.gibbs_3189": {
+   "description": "TV resource-manager client for the GIBBS stack exposing a single getData method. Opaque/.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.tvrmclient.tv_2140": {
+   "description": "TV resource-manager client instance; exposes a single getData method. Opaque beyond that.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.tvstorepolicy": {
+   "description": "Store/demo-mode policy service: changes mode and syncs a demo socket, likely toggling retail store demo behavior.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.unifiedsearch": {
+   "description": "Unified search service: searches items (intents) by keyword across categories and manages which search categories are enabled.",
+   "confidence": "documented",
+   "methods": 8
+  },
+  "com.webos.service.universalqcard": {
+   "description": "Universal QCard helper: reports status, invokes and handles alert clicks for QCards. Opaque/.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.update": {
+   "description": "Software/firmware update service: checks for, downloads and applies system updates, reports progress and current software/hardware versions, and manages update modes.",
+   "confidence": "documented",
+   "methods": 48
+  },
+  "com.webos.service.updatefw.utilmgr": {
+   "description": "Firmware-update utility manager: triggers auto-install and master download, manages recurring update times and ticket/build info.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.upnp": {
+   "description": "UPnP service providing control-point and device roles: discovers and lists devices, services, actions and state variables, registers devices, invokes actions and manages event subscriptions.",
+   "confidence": "documented",
+   "methods": 18
+  },
+  "com.webos.service.usercontextmanager": {
+   "description": "User-context manager: tracks usage history and computes content/usage rankings (overall, categorized, modeled) for personalization, with a monthly report.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.service.userintentmanager": {
+   "description": "User-intent manager: tracks user context and history, records and ranks intents, and reports intent status.",
+   "confidence": "inferred",
+   "methods": 8
+  },
+  "com.webos.service.utp.acas": {
+   "description": "ACAS conditional-access service (utp broadcast stack): reports CAS module, contract, ECM, and power-on control info and manages auto-display messages.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.utp.audiorecorder": {
+   "description": "UTP (unit-test/platform) audio recorder: starts and stops recording and reports recording state and buffered length.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.utp.boot": {
+   "description": "UTP boot helper that performs boot and returns the last channel ID. Opaque/.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.utp.broadcast": {
+   "description": "Unified broadcast (Live TV) control: changes channels and volatile channels, reports broadcast state and channel-change status, and queries audio/component lists and info.",
+   "confidence": "inferred",
+   "methods": 70
+  },
+  "com.webos.service.utp.channel": {
+   "description": "Broadcast channel service (utp stack): large API for channel tuning, scanning, and management, conditional access (ACAS/BCAS), CI/CAM control, and favorites/message channels.",
+   "confidence": "inferred",
+   "methods": 326
+  },
+  "com.webos.service.utp.config": {
+   "description": "UTP config helper exposing a query for supported broadcast standards.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.utp.databroadcast": {
+   "description": "UTP data-broadcast service: section filtering, EPG/service/event info, DVB descriptors and DRM handling for interactive/data broadcast content.",
+   "confidence": "inferred",
+   "methods": 47
+  },
+  "com.webos.service.utp.display": {
+   "description": "Broadcast display helper; freezes the DTV picture. Opaque beyond that.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.utp.dvr": {
+   "description": "DVR service (utp broadcast stack): plays back recordings with seek and frame-step, manages subtitles, and reports playing content, mode, time, and rating info.",
+   "confidence": "inferred",
+   "methods": 68
+  },
+  "com.webos.service.utp.externaldevice": {
+   "description": "UTP external-input/device service: reports current and last input, external-input and signal state, switches inputs, and handles CEC IDs and HDMI info.",
+   "confidence": "inferred",
+   "methods": 19
+  },
+  "com.webos.service.utp.extinputs": {
+   "description": "UTP external-inputs service: binds external inputs, reports HDMI info, signal and diagnostics, and controls subtitle/teletext for external sources.",
+   "confidence": "inferred",
+   "methods": 38
+  },
+  "com.webos.service.utp.frontend": {
+   "description": "Broadcast tuner front-end helper; reports signal status for self-check.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.utp.lbdsmcc": {
+   "description": "DSM-CC data-carousel service (utp stack): mounts and attaches DSM-CC carousels, fetches carousel files, and registers for stream events in digital broadcast.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "com.webos.service.utp.power": {
+   "description": "UTP power helper: registers warm-standby completion and checks whether BAM activity is required.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.service.utp.program": {
+   "description": "UTP program-guide service: scans the program guide and reports the current program rating.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.utp.sound": {
+   "description": "Broadcast audio helper: reports DTV audio info and running state and gets/sets the speaker output type.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.utp.ssu": {
+   "description": "System software update over-the-air helper (utp stack): starts/cancels OTA updates, reports progress, version, and status, and manages warm-standby OTA.",
+   "confidence": "inferred",
+   "methods": 9
+  },
+  "com.webos.service.utp.subtitle": {
+   "description": "UTP subtitle/caption service: enables and disables subtitles and DVB subtitle PES, reports current subtitle and rating info, and controls caption position and preview.",
+   "confidence": "inferred",
+   "methods": 20
+  },
+  "com.webos.service.utp.teletext": {
+   "description": "UTP teletext service: enables/disables teletext (and teletext PES) and reports teletext data, lists and state.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.service.uwb": {
+   "description": "Ultra-wideband (UWB) service: opens and closes ranging sessions, starts discovery and ranging, and reports ranging data and UWB service state.",
+   "confidence": "inferred",
+   "methods": 16
+  },
+  "com.webos.service.videooutput": {
+   "description": "Video output service: connects video sources to the display, sets display window, resolution, scaling, and compositing, and reports output capabilities and supported resolutions.",
+   "confidence": "documented",
+   "methods": 33
+  },
+  "com.webos.service.videosinkmanager": {
+   "description": "Video sink manager: connects and disconnects video sinks, reports connection state, and registers and resolves sink conflicts.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.service.videothumbnailer": {
+   "description": "Video thumbnailer that generates video thumbnails (including from elementary streams) and reports video info.",
+   "confidence": "documented",
+   "methods": 3
+  },
+  "com.webos.service.voice.performer.plugin": {
+   "description": "Voice-command performer plugin: loads/unloads, reads context, and performs voice-triggered actions including short-press handling.",
+   "confidence": "inferred",
+   "methods": 6
+  },
+  "com.webos.service.voiceclick": {
+   "description": "Voice-click/point-and-click voice service: detects clickable screen areas and apps, creates click events, captures the screen, and manages activation for voice-driven cursor interaction.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.voiceconductor": {
+   "description": "Voice-assistant orchestration service: recognizes intents by voice or text, reports recognition status and supported languages, and registers voice interactors and their action results.",
+   "confidence": "inferred",
+   "methods": 32
+  },
+  "com.webos.service.voiceinput": {
+   "description": "Voice-input service: enrolls voice triggers, streams audio for recognition (with trigger), and manages activation and sensitivity settings and mic devices.",
+   "confidence": "inferred",
+   "methods": 28
+  },
+  "com.webos.service.voiceinput.hidraw": {
+   "description": "Raw-HID voice-input service: lists voice-capable input devices and starts/stops microphone streaming from the remote.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.service.voiceinput.network": {
+   "description": "Networked voice-input service: lists devices, starts and streams voice input over the network, and manages a session timer.",
+   "confidence": "inferred",
+   "methods": 6
+  },
+  "com.webos.service.voiceinput.preprocessor": {
+   "description": "Voice-input preprocessor: starts and stops microphone streaming, sets the trigger point, and runs beamforming/web-BSI utilities over the mic devices.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.voiceinput.sound": {
+   "description": "Voice-input sound/mic subservice: enumerates mic devices, streams mic audio, reports mic-switch status, and runs mic test/localization.",
+   "confidence": "inferred",
+   "methods": 10
+  },
+  "com.webos.service.voiceinputadapter": {
+   "description": "Voice-input adapter: relays voice commands and input events and runs tests.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.wampluggable": {
+   "description": "Web app/WAM helper: reads and sets cookies per domain, returns the user-agent string, and reloads the page. Supports the web-app runtime.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.wampluggable.hbbtv": {
+   "description": "HbbTV (Hybrid Broadcast Broadband TV) service: manages HbbTV app lifecycle, reserves and releases broadcast resources, makes HTTP requests, and handles key sets, user agent and device ID.",
+   "confidence": "inferred",
+   "methods": 26
+  },
+  "com.webos.service.wampluggable.opapp": {
+   "description": "WAM pluggable operator-app (OpApp) service: reports OpApp context, ID, info and state, handles live-TV state changes, and manages OpApp UI elements.",
+   "confidence": "inferred",
+   "methods": 11
+  },
+  "com.webos.service.wan": {
+   "description": "WAN/cellular data service: connects and disconnects data contexts, sets host routes, and reports connection status.",
+   "confidence": "inferred",
+   "methods": 6
+  },
+  "com.webos.service.wasupolicymanager": {
+   "description": "Opaque policy-manager service exposing only a start method. Role not inferable beyond its name.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.service.weavewebostv": {
+   "description": "Device-registration service (Weave): returns an auth URL and the registered ID, and requests or releases device registration.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "com.webos.service.webappmanager": {
+   "description": "Web app manager (WAM): launches and closes web apps, kills/pauses apps, lists running apps, clears browsing data, and manages web-process size.",
+   "confidence": "documented",
+   "methods": 10
+  },
+  "com.webos.service.webappportable": {
+   "description": "Web-app process manager: launches, pauses, closes and kills web apps, reports web-process size and creation, clears browsing data and code cache, and toggles the inspector.",
+   "confidence": "inferred",
+   "methods": 12
+  },
+  "com.webos.service.widevine": {
+   "description": "Widevine DRM service: manages the content decryption module (CDM) and sessions, generates license and provisioning requests, reports HDCP status and metrics, and handles key-status changes.",
+   "confidence": "documented",
+   "methods": 33
+  },
+  "com.webos.service.wifi": {
+   "description": "Wi-Fi service: finds available networks, connects and disconnects, manages saved profiles, WPS and enterprise security, and reports country code, status and diagnostics.",
+   "confidence": "documented",
+   "methods": 88
+  },
+  "com.webos.service.wirelessavcontroller": {
+   "description": "Wireless A/V controller (wireless transmitter box/antenna): antenna/beam search and monitoring, modem control, event logs, diagnostics and firmware update.",
+   "confidence": "inferred",
+   "methods": 31
+  },
+  "com.webos.service.wowplay": {
+   "description": "WOWCAST wireless-audio/soundbar service: pairs and connects soundbars over BLE and Wi-Fi P2P, reports soundbar status, calibration and EDID, and controls playback.",
+   "confidence": "inferred",
+   "methods": 22
+  },
+  "com.webos.settingsservice": {
+   "description": "Settings service: reads, writes, resets, and describes system settings (current, factory, and private values), supporting batch operations and subscriptions.",
+   "confidence": "documented",
+   "methods": 29
+  },
+  "com.webos.statisticsManager": {
+   "description": "Statistics manager exposing a single call to save statistics; its broader role is not inferable.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.surfacemanager": {
+   "description": "Surface manager (window compositor): reports foreground app and window/surface info, manages surface lifecycle and multiview layout, captures compositor output and assistive menu.",
+   "confidence": "documented",
+   "methods": 38
+  },
+  "com.webos.surfacemanager.extended": {
+   "description": "Surface-manager extension: gets and sets texture-rendering status for the UI compositor.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.surfacemanager.hcap": {
+   "description": "Surface-manager HCAP helper: gets and sets the opacity of the HCAP (broadcast app) surface layer. Narrow UI-compositing role.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.surfacemanager.home": {
+   "description": "Surface-manager helper that reports the current Home UI state.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.surfacemanager.input": {
+   "description": "Surface-manager input service: blocks and unblocks key input, reports key-input block state, and registers allowed keys and per-app keymasks.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "com.webos.surfacemanager.screenSaver": {
+   "description": "Screensaver helper in the surface manager; restarts the user-activity timer to defer the screensaver.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.surfacemanager.systemui": {
+   "description": "Surface-manager system-UI helper exposing a single method to close all system UI surfaces. Narrow UI role.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "com.webos.tas.aiplatform": {
+   "description": "TAS AI-platform service exposing request/finish calls to submit and complete AI requests.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.tas.home": {
+   "description": "Opaque TAS home helper exposing finish and request. Little is inferable from its methods.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.tas.screensaver": {
+   "description": "Screensaver service; requests and finishes a screensaver session.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "com.webos.tnp": {
+   "description": "Opaque service with generateKey, relay, and stop methods. Specific 'TNP' domain not inferable; marked.",
+   "confidence": "inferred",
+   "methods": 3
+  },
+  "dangbei.adapter.plugin": {
+   "description": "Dangbei voice-assistant adapter plugin: loads/unloads, recognizes intents by voice or text, and shows a usage guide.",
+   "confidence": "inferred",
+   "methods": 7
+  },
+  "google.assistant.adapter.plugin": {
+   "description": "Google Assistant adapter plugin: recognizes intents by voice and text, manages sign-in and conversations, and controls voice recording/audio input.",
+   "confidence": "inferred",
+   "methods": 17
+  },
+  "lg.thinqai.adapter": {
+   "description": "LG ThinQ AI adapter: runs voice/intent recognition by voice or text, returns TTS and keyword results, and manages Voice ID enrollment and privacy data.",
+   "confidence": "inferred",
+   "methods": 18
+  },
+  "listenserver.service": {
+   "description": "Opaque listener-server service exposing only start and stop. Role not inferable beyond its name.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "netflix.service": {
+   "description": "Netflix integration helper: saves and clears auth tokens and handles discovery, search and impression reporting.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "nuance.stt.adapter.plugin": {
+   "description": "Nuance speech-to-text (STT) adapter plugin: loads/unloads the engine, recognizes voice, and stops voice recording.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "ssap:api": {
+   "description": "SSAP (external control websocket) endpoint; returns the list of available SSAP services.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "ssap:audio": {
+   "description": "SSAP (remote control protocol) audio endpoint: gets and sets volume and mute, steps volume up/down, reports status, and changes/queries the sound output. Used over the TV's external control socket.",
+   "confidence": "documented",
+   "methods": 9
+  },
+  "ssap:externalpq": {
+   "description": "SSAP (second-screen protocol) endpoint for external picture-quality data: gets and sets external PQ data.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "ssap:media.controls": {
+   "description": "SSAP media controls (TV remote-control protocol): play, pause, stop, fast-forward and rewind for media playback.",
+   "confidence": "documented",
+   "methods": 5
+  },
+  "ssap:media.viewer": {
+   "description": "SSAP external-control endpoint for the media viewer: opens and closes it.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "ssap:pairing": {
+   "description": "SSAP (remote control protocol) pairing endpoint exposing setPin, used to complete client pairing with the TV over the external control socket.",
+   "confidence": "documented",
+   "methods": 1
+  },
+  "ssap:settings": {
+   "description": "SSAP (second-screen protocol) endpoint that sets system settings.",
+   "confidence": "inferred",
+   "methods": 1
+  },
+  "ssap:system": {
+   "description": "SSAP system service (TV remote-control protocol): returns system info and host messages and powers the TV on and off.",
+   "confidence": "documented",
+   "methods": 4
+  },
+  "ssap:system.launcher": {
+   "description": "SSAP external-control endpoint for the system launcher: launches, opens and closes apps and reports app state.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "ssap:system.notifications": {
+   "description": "SSAP (remote control protocol) notifications endpoint: closes on-screen alerts and toasts over the TV's external control socket.",
+   "confidence": "documented",
+   "methods": 2
+  },
+  "ssap:timer": {
+   "description": "SSAP (second-screen protocol) timer endpoint: gets and sets timer settings.",
+   "confidence": "inferred",
+   "methods": 2
+  },
+  "ssap:tv": {
+   "description": "SSAP TV service (TV remote-control protocol): changes channels, lists channels and programs, reports the current channel, and switches external inputs.",
+   "confidence": "documented",
+   "methods": 10
+  },
+  "ssap:user": {
+   "description": "SSAP external-control endpoint for user data: sets and resets user info, data and schedule.",
+   "confidence": "inferred",
+   "methods": 4
+  },
+  "ssap:webapp": {
+   "description": "SSAP (remote control protocol) web-app endpoint: launches, connects to, and closes web apps and pins or unpins them, over the TV's external control socket.",
+   "confidence": "documented",
+   "methods": 6
+  },
+  "tsuploader.service": {
+   "description": "Transport-stream (TS) uploader: dumps the broadcast transport stream and uploads it, reporting status.",
+   "confidence": "inferred",
+   "methods": 5
+  },
+  "yandex.alice.adapter.plugin": {
+   "description": "Yandex Alice voice-assistant adapter plugin: recognizes intents by voice and text, registers an interactor/context, and reports voice-UI events.",
+   "confidence": "inferred",
+   "methods": 10
+  }
+ }
+}

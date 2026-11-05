@@ -1,33 +1,37 @@
 # `com.webos.service.sdxpromo`
 
+Promotion-management service: checks EULA and available promos, deletes and expires promos, and reacts to app-list and locale changes. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`appListChange`](#applistchange) | public |  | security | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
-| [`checkEula`](#checkeula) | public |  | security | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
-| [`checkPromos`](#checkpromos) | public |  | security | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
-| [`deletePromo`](#deletepromo) | public |  | security | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`dumpPacket`](#dumppacket) | public |  | security | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
-| [`expirePromo`](#expirepromo) | public |  | security | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | security | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
-| [`localeChange`](#localechange) | public |  | security | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | security | Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`appListChange`](#applistchange) | public |  | security | inferred | Handles the app list change. |
+| [`checkEula`](#checkeula) | public |  | security | inferred | Checks the eula. |
+| [`checkPromos`](#checkpromos) | public |  | security | inferred | Checks the promos. |
+| [`deletePromo`](#deletepromo) | public |  | security | inferred | Deletes the promo. ⚠️ |
+| [`dumpPacket`](#dumppacket) | public |  | security | inferred | Dumps the packet. |
+| [`expirePromo`](#expirepromo) | public |  | security | inferred | Handles the expire promo. |
+| [`info`](#info) | public |  | security | inferred | Handles the info. |
+| [`localeChange`](#localechange) | public |  | security | inferred | Handles the locale change. |
+| [`quit`](#quit) | public |  | security | inferred | Quits the sdxpromo. |
 
 <a id="applistchange"></a>
 ## `appListChange`
 
 `luna://com.webos.service.sdxpromo/appListChange`
 
-Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented).
+Handles the app list change.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdxpromo/appListChange '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sdxpromo/checkEula`
 
-Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented).
+Checks the eula.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdxpromo/checkEula '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sdxpromo/checkPromos`
 
-Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented).
+Checks the promos.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdxpromo/checkPromos '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sdxpromo/deletePromo`
 
-Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented).
+Deletes the promo.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdxpromo/deletePromo '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sdxpromo/dumpPacket`
 
-Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented).
+Dumps the packet.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdxpromo/dumpPacket '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sdxpromo/expirePromo`
 
-Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented).
+Handles the expire promo.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdxpromo/expirePromo '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sdxpromo/info`
 
-Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdxpromo/info '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sdxpromo/localeChange`
 
-Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented).
+Handles the locale change.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdxpromo/localeChange '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.sdxpromo/quit`
 
-Method on com.webos.service.sdxpromo (from on-device permission registry; parameters undocumented).
+Quits the sdxpromo.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sdxpromo/quit '{}'

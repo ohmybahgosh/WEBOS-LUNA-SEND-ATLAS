@@ -1,31 +1,35 @@
 # `com.webos.service.fancontroller`
 
+Cooling-fan and thermal controller: reads fan and temperature-sensor data, reports a thermal report, and sets thermal status.
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkFan`](#checkfan) | private |  | misc | Method on com.webos.service.fancontroller (introspected on-device; parameters undocumented). |
-| [`checkTemperatureSensor`](#checktemperaturesensor) | private |  | misc | Method on com.webos.service.fancontroller (introspected on-device; parameters undocumented). |
-| [`getFanData`](#getfandata) | private |  | misc | Getter on com.webos.service.fancontroller (introspected on-device; parameters undocumented). |
-| [`getTemperatureSensorData`](#gettemperaturesensordata) | private |  | misc | Getter on com.webos.service.fancontroller (introspected on-device; parameters undocumented). |
-| [`getThermalReport`](#getthermalreport) | private |  | misc | Getter on com.webos.service.fancontroller (introspected on-device; parameters undocumented). |
-| [`setDebug`](#setdebug) | private |  | misc | Setter on com.webos.service.fancontroller (introspected on-device; parameters undocumented). |
-| [`setThermalStatus`](#setthermalstatus) | private |  | misc | Setter on com.webos.service.fancontroller (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkFan`](#checkfan) | private |  | misc | inferred | Checks the fan. |
+| [`checkTemperatureSensor`](#checktemperaturesensor) | private |  | misc | inferred | Checks the temperature sensor. |
+| [`getFanData`](#getfandata) | private |  | misc | inferred | Returns the fan data. |
+| [`getTemperatureSensorData`](#gettemperaturesensordata) | private |  | misc | inferred | Returns the temperature sensor data. |
+| [`getThermalReport`](#getthermalreport) | private |  | misc | inferred | Returns the thermal report. |
+| [`setDebug`](#setdebug) | private |  | misc | inferred | Sets the debug. |
+| [`setThermalStatus`](#setthermalstatus) | private |  | misc | inferred | Sets the thermal status. |
 
 <a id="checkfan"></a>
 ## `checkFan`
 
 `luna://com.webos.service.fancontroller/checkFan`
 
-Method on com.webos.service.fancontroller (introspected on-device; parameters undocumented).
+Checks the fan.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/checkFan '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.fancontroller/checkTemperatureSensor`
 
-Method on com.webos.service.fancontroller (introspected on-device; parameters undocumented).
+Checks the temperature sensor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/checkTemperatureSensor '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.fancontroller/getFanData`
 
-Getter on com.webos.service.fancontroller (introspected on-device; parameters undocumented).
+Returns the fan data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/getFanData '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.fancontroller/getTemperatureSensorData`
 
-Getter on com.webos.service.fancontroller (introspected on-device; parameters undocumented).
+Returns the temperature sensor data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/getTemperatureSensorData '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.fancontroller/getThermalReport`
 
-Getter on com.webos.service.fancontroller (introspected on-device; parameters undocumented).
+Returns the thermal report.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/getThermalReport '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.fancontroller/setDebug`
 
-Setter on com.webos.service.fancontroller (introspected on-device; parameters undocumented).
+Sets the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/setDebug '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.fancontroller/setThermalStatus`
 
-Setter on com.webos.service.fancontroller (introspected on-device; parameters undocumented).
+Sets the thermal status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.fancontroller/setThermalStatus '{}'

@@ -1,26 +1,30 @@
 # `com.webos.service.settingsui`
 
+Settings-UI helper: reports target-panel-enable state and starts a debug mode. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getTargetPanelEnable`](#gettargetpanelenable) | private |  | settings | Method on com.webos.service.settingsui (from on-device permission registry; parameters undocumented). |
-| [`startDebugMode`](#startdebugmode) | private |  | settings | Method on com.webos.service.settingsui (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getTargetPanelEnable`](#gettargetpanelenable) | private |  | settings | inferred | Returns the target panel enable. |
+| [`startDebugMode`](#startdebugmode) | private |  | settings | inferred | Starts the debug mode. |
 
 <a id="gettargetpanelenable"></a>
 ## `getTargetPanelEnable`
 
 `luna://com.webos.service.settingsui/getTargetPanelEnable`
 
-Method on com.webos.service.settingsui (from on-device permission registry; parameters undocumented).
+Returns the target panel enable.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settingsui/getTargetPanelEnable '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.settingsui/startDebugMode`
 
-Method on com.webos.service.settingsui (from on-device permission registry; parameters undocumented).
+Starts the debug mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.settingsui/startDebugMode '{}'

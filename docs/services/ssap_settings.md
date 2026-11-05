@@ -1,12 +1,14 @@
 # `ssap:settings`
 
+SSAP (second-screen protocol) endpoint that sets system settings. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`setSystemSettings`](#setsystemsettings) | ssap |  | settings | Public SSAP setter for system settings (same payload as the luna settingsservice call) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`setSystemSettings`](#setsystemsettings) | ssap |  | settings | documented | Public SSAP setter for system settings (same payload as the luna settingsservice call) |
 
 <a id="setsystemsettings"></a>
 ## `setSystemSettings`
@@ -19,7 +21,7 @@ Public SSAP setter for system settings (same payload as the luna settingsservice
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 9 (2024)+ per bscpylgtv; rejected on webOS 26 firmware 43.21.60 per LG_Buddy docs  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

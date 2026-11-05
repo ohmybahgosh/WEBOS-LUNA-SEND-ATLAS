@@ -1,33 +1,37 @@
 # `com.webos.service.cbox`
 
+Appears to be a content box/recording media store: reports device and scan status, recently played items, and audio/VR metadata. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`debug`](#debug) | private |  | misc | Method on com.webos.service.cbox (introspected on-device; parameters undocumented). |
-| [`getAudioMetadata`](#getaudiometadata) | private |  | audio | Getter on com.webos.service.cbox (introspected on-device; parameters undocumented). |
-| [`getChangedContent`](#getchangedcontent) | private |  | misc | Getter on com.webos.service.cbox (introspected on-device; parameters undocumented). |
-| [`getDeviceStatus`](#getdevicestatus) | private |  | misc | Getter on com.webos.service.cbox (introspected on-device; parameters undocumented). |
-| [`getScanStatus`](#getscanstatus) | private |  | misc | Getter on com.webos.service.cbox (introspected on-device; parameters undocumented). |
-| [`getVRMetadata`](#getvrmetadata) | private |  | tv-broadcast | Getter on com.webos.service.cbox (introspected on-device; parameters undocumented). |
-| [`isQuotaError`](#isquotaerror) | private |  | misc | Method on com.webos.service.cbox (introspected on-device; parameters undocumented). |
-| [`setRecentlyPlayed`](#setrecentlyplayed) | public |  | misc | Method on com.webos.service.cbox (from on-device permission registry; parameters undocumented). |
-| [`unitTest`](#unittest) | private |  | misc | Method on com.webos.service.cbox (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`debug`](#debug) | private |  | misc | inferred | Handles the debug. |
+| [`getAudioMetadata`](#getaudiometadata) | private |  | audio | inferred | Returns the audio metadata. |
+| [`getChangedContent`](#getchangedcontent) | private |  | misc | inferred | Returns the changed content. |
+| [`getDeviceStatus`](#getdevicestatus) | private |  | misc | inferred | Returns the device status. |
+| [`getScanStatus`](#getscanstatus) | private |  | misc | inferred | Returns the scan status. |
+| [`getVRMetadata`](#getvrmetadata) | private |  | tv-broadcast | inferred | Returns the VR metadata. |
+| [`isQuotaError`](#isquotaerror) | private |  | misc | inferred | Reports whether the quota error is set. |
+| [`setRecentlyPlayed`](#setrecentlyplayed) | public |  | misc | inferred | Sets the recently played. |
+| [`unitTest`](#unittest) | private |  | misc | inferred | Handles the unit test. |
 
 <a id="debug"></a>
 ## `debug`
 
 `luna://com.webos.service.cbox/debug`
 
-Method on com.webos.service.cbox (introspected on-device; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cbox/debug '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.cbox/getAudioMetadata`
 
-Getter on com.webos.service.cbox (introspected on-device; parameters undocumented).
+Returns the audio metadata.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cbox/getAudioMetadata '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.cbox/getChangedContent`
 
-Getter on com.webos.service.cbox (introspected on-device; parameters undocumented).
+Returns the changed content.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cbox/getChangedContent '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.cbox/getDeviceStatus`
 
-Getter on com.webos.service.cbox (introspected on-device; parameters undocumented).
+Returns the device status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cbox/getDeviceStatus '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.cbox/getScanStatus`
 
-Getter on com.webos.service.cbox (introspected on-device; parameters undocumented).
+Returns the scan status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cbox/getScanStatus '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.cbox/getVRMetadata`
 
-Getter on com.webos.service.cbox (introspected on-device; parameters undocumented).
+Returns the VR metadata.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cbox/getVRMetadata '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.cbox/isQuotaError`
 
-Method on com.webos.service.cbox (introspected on-device; parameters undocumented).
+Reports whether the quota error is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cbox/isQuotaError '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.cbox/setRecentlyPlayed`
 
-Method on com.webos.service.cbox (from on-device permission registry; parameters undocumented).
+Sets the recently played.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cbox/setRecentlyPlayed '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.cbox/unitTest`
 
-Method on com.webos.service.cbox (introspected on-device; parameters undocumented).
+Handles the unit test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.cbox/unitTest '{}'

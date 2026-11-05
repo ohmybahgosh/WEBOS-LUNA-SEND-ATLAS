@@ -1,17 +1,19 @@
 # `com.webos.service.voice.performer.plugin`
 
+Voice-command performer plugin: loads/unloads, reads context, and performs voice-triggered actions including short-press handling. _(inferred from the service's methods)_
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [``](#) | private |  | input | Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented). |
-| [`getContext`](#getcontext) | private |  | input | Getter on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented). |
-| [`load`](#load) | private |  | input | Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented). |
-| [`performAction`](#performaction) | private |  | input | Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented). |
-| [`performShortPress`](#performshortpress) | private |  | input | Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented). |
-| [`unload`](#unload) | private |  | input | Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [``](#) | private |  | input | stub | Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented). |
+| [`getContext`](#getcontext) | private |  | input | inferred | Returns the context. |
+| [`load`](#load) | private |  | input | inferred | Loads the voice performer plugin. |
+| [`performAction`](#performaction) | private |  | input | inferred | Handles the perform action. |
+| [`performShortPress`](#performshortpress) | private |  | input | inferred | Handles the perform short press. |
+| [`unload`](#unload) | private |  | input | inferred | Unloads the voice performer plugin. |
 
 <a id=""></a>
 ## ``
@@ -24,7 +26,7 @@ Method on com.webos.service.voice.performer.plugin (introspected on-device; para
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** stub
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voice.performer.plugin/ '{}'
@@ -39,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voice.performer.plugin/getContext`
 
-Getter on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented).
+Returns the context.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voice.performer.plugin/getContext '{}'
@@ -60,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voice.performer.plugin/load`
 
-Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented).
+Loads the voice performer plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voice.performer.plugin/load '{}'
@@ -81,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voice.performer.plugin/performAction`
 
-Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented).
+Handles the perform action.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voice.performer.plugin/performAction '{}'
@@ -102,13 +110,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voice.performer.plugin/performShortPress`
 
-Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented).
+Handles the perform short press.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voice.performer.plugin/performShortPress '{}'
@@ -123,13 +133,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voice.performer.plugin/unload`
 
-Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented).
+Unloads the voice performer plugin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voice.performer.plugin/unload '{}'

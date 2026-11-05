@@ -1,51 +1,55 @@
 # `com.webos.service.iotclient`
 
+IoT client: discovers, lists and controls connected IoT devices, manages linked accounts, macros and registration tokens, and handles IoT push notifications. _(inferred from the service's methods)_
+
 27 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkSupport`](#checksupport) | private |  | network | Method on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`deleteAccountInfo`](#deleteaccountinfo) | private |  | network | Method on com.webos.service.iotclient (introspected on-device; parameters undocumented). ⚠️ |
-| [`delMacro`](#delmacro) | private |  | network | Method on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`discover`](#discover) | private |  | network | Method on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`getAccountInfoList`](#getaccountinfolist) | private |  | network | Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`getConfig`](#getconfig) | private |  | settings | Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`getConnectedDevices`](#getconnecteddevices) | private |  | network | Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`getDeviceUuid`](#getdeviceuuid) | private |  | network | Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`getIoTConfig`](#getiotconfig) | private |  | settings | Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`getMacro`](#getmacro) | private |  | network | Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`getTestMode`](#gettestmode) | private |  | network | Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`listDetailedDevicesInfo`](#listdetaileddevicesinfo) | private |  | network | Lister on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`listDevicesInfo`](#listdevicesinfo) | private |  | network | Lister on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`notifyIotPush`](#notifyiotpush) | private |  | network | Method on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`push`](#push) | private |  | network | Method on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`registerToken`](#registertoken) | private |  | network | Method on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`requestRegistration`](#requestregistration) | private |  | network | Method on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`sendResponse`](#sendresponse) | private |  | network | Method on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`setDROff`](#setdroff) | private |  | network | Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`setDROn`](#setdron) | private |  | network | Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`setDRReservation`](#setdrreservation) | private |  | tv-broadcast | Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`setIoTConfig`](#setiotconfig) | private |  | settings | Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`setMacro`](#setmacro) | private |  | network | Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`setTestMode`](#settestmode) | private |  | network | Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`setToastPopUp`](#settoastpopup) | private |  | notifications | Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`updateAccountInfo`](#updateaccountinfo) | private |  | network | Method on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
-| [`updateDeviceName`](#updatedevicename) | private |  | network | Method on com.webos.service.iotclient (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkSupport`](#checksupport) | private |  | network | inferred | Checks the support. |
+| [`deleteAccountInfo`](#deleteaccountinfo) | private |  | network | inferred | Deletes the account info. ⚠️ |
+| [`delMacro`](#delmacro) | private |  | network | inferred | Handles the del macro. |
+| [`discover`](#discover) | private |  | network | inferred | Handles the discover. |
+| [`getAccountInfoList`](#getaccountinfolist) | private |  | network | inferred | Returns the account info list. |
+| [`getConfig`](#getconfig) | private |  | settings | inferred | Returns the config. |
+| [`getConnectedDevices`](#getconnecteddevices) | private |  | network | inferred | Returns the connected devices. |
+| [`getDeviceUuid`](#getdeviceuuid) | private |  | network | inferred | Returns the device uuid. |
+| [`getIoTConfig`](#getiotconfig) | private |  | settings | inferred | Returns the io t config. |
+| [`getMacro`](#getmacro) | private |  | network | inferred | Returns the macro. |
+| [`getTestMode`](#gettestmode) | private |  | network | inferred | Returns the test mode. |
+| [`listDetailedDevicesInfo`](#listdetaileddevicesinfo) | private |  | network | inferred | Lists the detailed devices info. |
+| [`listDevicesInfo`](#listdevicesinfo) | private |  | network | inferred | Lists the devices info. |
+| [`notifyIotPush`](#notifyiotpush) | private |  | network | inferred | Notifies of the iot push. |
+| [`push`](#push) | private |  | network | inferred | Pushes the iotclient. |
+| [`registerToken`](#registertoken) | private |  | network | inferred | Registers the token. |
+| [`requestRegistration`](#requestregistration) | private |  | network | inferred | Requests the registration. |
+| [`sendResponse`](#sendresponse) | private |  | network | inferred | Sends the response. |
+| [`setDROff`](#setdroff) | private |  | network | inferred | Sets the DR off. |
+| [`setDROn`](#setdron) | private |  | network | inferred | Sets the DR on. |
+| [`setDRReservation`](#setdrreservation) | private |  | tv-broadcast | inferred | Sets the DR reservation. |
+| [`setIoTConfig`](#setiotconfig) | private |  | settings | inferred | Sets the io t config. |
+| [`setMacro`](#setmacro) | private |  | network | inferred | Sets the macro. |
+| [`setTestMode`](#settestmode) | private |  | network | inferred | Sets the test mode. |
+| [`setToastPopUp`](#settoastpopup) | private |  | notifications | inferred | Sets the toast pop up. |
+| [`updateAccountInfo`](#updateaccountinfo) | private |  | network | inferred | Updates the account info. |
+| [`updateDeviceName`](#updatedevicename) | private |  | network | inferred | Updates the device name. |
 
 <a id="checksupport"></a>
 ## `checkSupport`
 
 `luna://com.webos.service.iotclient/checkSupport`
 
-Method on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Checks the support.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/checkSupport '{}'
@@ -60,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/deleteAccountInfo`
 
-Method on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Deletes the account info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/deleteAccountInfo '{}'
@@ -81,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/delMacro`
 
-Method on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Handles the del macro.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/delMacro '{}'
@@ -102,13 +110,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/discover`
 
-Method on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Handles the discover.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/discover '{}'
@@ -123,13 +133,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/getAccountInfoList`
 
-Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Returns the account info list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/getAccountInfoList '{}'
@@ -144,13 +156,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/getConfig`
 
-Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Returns the config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/getConfig '{}'
@@ -165,13 +179,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/getConnectedDevices`
 
-Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Returns the connected devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/getConnectedDevices '{}'
@@ -186,13 +202,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/getDeviceUuid`
 
-Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Returns the device uuid.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/getDeviceUuid '{}'
@@ -207,13 +225,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/getIoTConfig`
 
-Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Returns the io t config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/getIoTConfig '{}'
@@ -228,13 +248,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/getMacro`
 
-Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Returns the macro.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/getMacro '{}'
@@ -249,13 +271,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/getTestMode`
 
-Getter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Returns the test mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/getTestMode '{}'
@@ -270,13 +294,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/listDetailedDevicesInfo`
 
-Lister on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Lists the detailed devices info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/listDetailedDevicesInfo '{}'
@@ -291,13 +317,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/listDevicesInfo`
 
-Lister on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Lists the devices info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/listDevicesInfo '{}'
@@ -312,13 +340,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/notifyIotPush`
 
-Method on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Notifies of the iot push.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/notifyIotPush '{}'
@@ -333,13 +363,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/push`
 
-Method on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Pushes the iotclient.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/push '{}'
@@ -354,13 +386,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/registerToken`
 
-Method on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Registers the token.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/registerToken '{}'
@@ -375,13 +409,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/requestRegistration`
 
-Method on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Requests the registration.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/requestRegistration '{}'
@@ -396,13 +432,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/sendResponse`
 
-Method on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Sends the response.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/sendResponse '{}'
@@ -417,13 +455,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/setDROff`
 
-Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Sets the DR off.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/setDROff '{}'
@@ -438,13 +478,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/setDROn`
 
-Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Sets the DR on.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/setDROn '{}'
@@ -459,13 +501,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/setDRReservation`
 
-Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Sets the DR reservation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/setDRReservation '{}'
@@ -480,13 +524,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/setIoTConfig`
 
-Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Sets the io t config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/setIoTConfig '{}'
@@ -501,13 +547,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/setMacro`
 
-Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Sets the macro.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/setMacro '{}'
@@ -522,13 +570,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/setTestMode`
 
-Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Sets the test mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/setTestMode '{}'
@@ -543,13 +593,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/setToastPopUp`
 
-Setter on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Sets the toast pop up.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/setToastPopUp '{}'
@@ -564,13 +616,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/updateAccountInfo`
 
-Method on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Updates the account info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/updateAccountInfo '{}'
@@ -585,13 +639,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iotclient/updateDeviceName`
 
-Method on com.webos.service.iotclient (introspected on-device; parameters undocumented).
+Updates the device name.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iotclient/updateDeviceName '{}'

@@ -1,19 +1,21 @@
 # `com.webos.pipeline.record`
 
+Audio/video recording pipeline: starts, stops, pauses and resumes capture of audio, video and still images, with status subscription.
+
 8 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`audio`](#audio) | unknown |  | media | Details of audio. |
-| [`image`](#image) | unknown |  | media | Details of image. |
-| [`pause`](#pause) | public |  | media | Pauses the recording. |
-| [`resume`](#resume) | public |  | media | Resumes the recording. |
-| [`start`](#start) | public |  | media | Starts recording. |
-| [`stop`](#stop) | public |  | media | Stops recording and saves the output to file. |
-| [`subscribe`](#subscribe) | public | yes | media | Gets a notification when there is an event on pipeline. |
-| [`video`](#video) | unknown |  | media | Details of video. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`audio`](#audio) | unknown |  | media | documented | Details of audio. |
+| [`image`](#image) | unknown |  | media | documented | Details of image. |
+| [`pause`](#pause) | public |  | media | documented | Pauses the recording. |
+| [`resume`](#resume) | public |  | media | documented | Resumes the recording. |
+| [`start`](#start) | public |  | media | documented | Starts recording. |
+| [`stop`](#stop) | public |  | media | documented | Stops recording and saves the output to file. |
+| [`subscribe`](#subscribe) | public | yes | media | documented | Gets a notification when there is an event on pipeline. |
+| [`video`](#video) | unknown |  | media | documented | Details of video. |
 
 <a id="audio"></a>
 ## `audio`

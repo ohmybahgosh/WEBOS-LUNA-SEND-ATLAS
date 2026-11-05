@@ -1,29 +1,33 @@
 # `com.webos.service.dnssd`
 
+DNS-SD / mDNS (Avahi) service: registers and unregisters network service browse and publish entries, and reports status. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getStatus`](#getstatus) | private |  | misc | Getter on com.webos.service.dnssd (introspected on-device; parameters undocumented). |
-| [`registerAvahiBrowse`](#registeravahibrowse) | private |  | misc | Method on com.webos.service.dnssd (introspected on-device; parameters undocumented). |
-| [`registerAvahiPublish`](#registeravahipublish) | private |  | misc | Method on com.webos.service.dnssd (introspected on-device; parameters undocumented). |
-| [`unregisterAvahiBrowse`](#unregisteravahibrowse) | private |  | misc | Method on com.webos.service.dnssd (introspected on-device; parameters undocumented). |
-| [`unregisterAvahiPublish`](#unregisteravahipublish) | private |  | misc | Method on com.webos.service.dnssd (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getStatus`](#getstatus) | private |  | misc | inferred | Returns the status. |
+| [`registerAvahiBrowse`](#registeravahibrowse) | private |  | misc | inferred | Registers the avahi browse. |
+| [`registerAvahiPublish`](#registeravahipublish) | private |  | misc | inferred | Registers the avahi publish. |
+| [`unregisterAvahiBrowse`](#unregisteravahibrowse) | private |  | misc | inferred | Unregisters the avahi browse. |
+| [`unregisterAvahiPublish`](#unregisteravahipublish) | private |  | misc | inferred | Unregisters the avahi publish. |
 
 <a id="getstatus"></a>
 ## `getStatus`
 
 `luna://com.webos.service.dnssd/getStatus`
 
-Getter on com.webos.service.dnssd (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dnssd/getStatus '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dnssd/registerAvahiBrowse`
 
-Method on com.webos.service.dnssd (introspected on-device; parameters undocumented).
+Registers the avahi browse.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dnssd/registerAvahiBrowse '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dnssd/registerAvahiPublish`
 
-Method on com.webos.service.dnssd (introspected on-device; parameters undocumented).
+Registers the avahi publish.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dnssd/registerAvahiPublish '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dnssd/unregisterAvahiBrowse`
 
-Method on com.webos.service.dnssd (introspected on-device; parameters undocumented).
+Unregisters the avahi browse.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dnssd/unregisterAvahiBrowse '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.dnssd/unregisterAvahiPublish`
 
-Method on com.webos.service.dnssd (introspected on-device; parameters undocumented).
+Unregisters the avahi publish.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dnssd/unregisterAvahiPublish '{}'

@@ -1,13 +1,15 @@
 # `ssap:system.notifications`
 
+SSAP (remote control protocol) notifications endpoint: closes on-screen alerts and toasts over the TV's external control socket.
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`closeAlert`](#closealert) | ssap |  | notifications | Close an alert (required after the createAlert luna trick so the alert does not stay on screen) |
-| [`closeToast`](#closetoast) | ssap |  | notifications | Close a toast |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`closeAlert`](#closealert) | ssap |  | notifications | documented | Close an alert (required after the createAlert luna trick so the alert does not stay on screen) |
+| [`closeToast`](#closetoast) | ssap |  | notifications | documented | Close a toast |
 
 <a id="closealert"></a>
 ## `closeAlert`
@@ -20,7 +22,7 @@ Close an alert (required after the createAlert luna trick so the alert does not 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -45,7 +47,7 @@ Close a toast
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

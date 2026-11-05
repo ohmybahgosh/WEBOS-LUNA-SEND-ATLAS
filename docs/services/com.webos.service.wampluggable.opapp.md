@@ -1,35 +1,39 @@
 # `com.webos.service.wampluggable.opapp`
 
+WAM pluggable operator-app (OpApp) service: reports OpApp context, ID, info and state, handles live-TV state changes, and manages OpApp UI elements. _(inferred from the service's methods)_
+
 11 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`debug`](#debug) | private |  | misc | Method on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented). |
-| [`getOpAppContext`](#getopappcontext) | private |  | misc | Getter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented). |
-| [`getOpAppId`](#getopappid) | private |  | misc | Getter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented). |
-| [`getOpAppInfo`](#getopappinfo) | private |  | misc | Getter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented). |
-| [`getOpAppState`](#getopappstate) | private |  | misc | Getter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented). |
-| [`notifyLiveTvStateChanged`](#notifylivetvstatechanged) | private |  | misc | Method on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented). |
-| [`onRecordingUserConfirm`](#onrecordinguserconfirm) | private |  | misc | Method on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented). |
-| [`replaceUIElements`](#replaceuielements) | private |  | misc | Method on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented). |
-| [`setOpAppState`](#setopappstate) | private |  | misc | Setter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented). |
-| [`setQueryOrganisations`](#setqueryorganisations) | private |  | misc | Setter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented). |
-| [`subscribeOipfAppLoadChange`](#subscribeoipfapploadchange) | private |  | misc | Method on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`debug`](#debug) | private |  | misc | inferred | Handles the debug. |
+| [`getOpAppContext`](#getopappcontext) | private |  | misc | inferred | Returns the op app context. |
+| [`getOpAppId`](#getopappid) | private |  | misc | inferred | Returns the op app ID. |
+| [`getOpAppInfo`](#getopappinfo) | private |  | misc | inferred | Returns the op app info. |
+| [`getOpAppState`](#getopappstate) | private |  | misc | inferred | Returns the op app state. |
+| [`notifyLiveTvStateChanged`](#notifylivetvstatechanged) | private |  | misc | inferred | Notifies of the live TV state changed. |
+| [`onRecordingUserConfirm`](#onrecordinguserconfirm) | private |  | misc | inferred | Event handler: fires on the recording user confirm. |
+| [`replaceUIElements`](#replaceuielements) | private |  | misc | inferred | Replaces the UI elements. |
+| [`setOpAppState`](#setopappstate) | private |  | misc | inferred | Sets the op app state. |
+| [`setQueryOrganisations`](#setqueryorganisations) | private |  | misc | inferred | Sets the query organisations. |
+| [`subscribeOipfAppLoadChange`](#subscribeoipfapploadchange) | private |  | misc | inferred | Subscribes to the oipf app load change. |
 
 <a id="debug"></a>
 ## `debug`
 
 `luna://com.webos.service.wampluggable.opapp/debug`
 
-Method on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented).
+Handles the debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.opapp/debug '{}'
@@ -44,13 +48,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.opapp/getOpAppContext`
 
-Getter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented).
+Returns the op app context.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.opapp/getOpAppContext '{}'
@@ -65,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.opapp/getOpAppId`
 
-Getter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented).
+Returns the op app ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.opapp/getOpAppId '{}'
@@ -86,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.opapp/getOpAppInfo`
 
-Getter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented).
+Returns the op app info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.opapp/getOpAppInfo '{}'
@@ -107,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.opapp/getOpAppState`
 
-Getter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented).
+Returns the op app state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.opapp/getOpAppState '{}'
@@ -128,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.opapp/notifyLiveTvStateChanged`
 
-Method on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented).
+Notifies of the live TV state changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.opapp/notifyLiveTvStateChanged '{}'
@@ -149,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.opapp/onRecordingUserConfirm`
 
-Method on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented).
+Event handler: fires on the recording user confirm.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.opapp/onRecordingUserConfirm '{}'
@@ -170,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.opapp/replaceUIElements`
 
-Method on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented).
+Replaces the UI elements.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.opapp/replaceUIElements '{}'
@@ -191,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.opapp/setOpAppState`
 
-Setter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented).
+Sets the op app state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.opapp/setOpAppState '{}'
@@ -212,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.opapp/setQueryOrganisations`
 
-Setter on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented).
+Sets the query organisations.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.opapp/setQueryOrganisations '{}'
@@ -233,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.wampluggable.opapp/subscribeOipfAppLoadChange`
 
-Method on com.webos.service.wampluggable.opapp (introspected on-device; parameters undocumented).
+Subscribes to the oipf app load change.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.wampluggable.opapp/subscribeOipfAppLoadChange '{}'

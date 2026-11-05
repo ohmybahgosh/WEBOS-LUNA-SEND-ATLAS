@@ -1,42 +1,46 @@
 # `com.webos.service.upnp`
 
+UPnP service providing control-point and device roles: discovers and lists devices, services, actions and state variables, registers devices, invokes actions and manages event subscriptions.
+
 18 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`controlpoint/generateId`](#controlpoint_generateid) | public |  | network | Method on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`controlpoint/listDevices`](#controlpoint_listdevices) | public |  | network | Lister on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`controlpoint/listServiceActions`](#controlpoint_listserviceactions) | public |  | network | Lister on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`controlpoint/listServices`](#controlpoint_listservices) | public |  | network | Lister on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`controlpoint/listStateVariables`](#controlpoint_liststatevariables) | public |  | network | Lister on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`controlpoint/register`](#controlpoint_register) | public |  | network | Method on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`controlpoint/requestAction`](#controlpoint_requestaction) | public |  | network | Method on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`controlpoint/requestSubscription`](#controlpoint_requestsubscription) | public |  | network | Method on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`controlpoint/requestUnsubscription`](#controlpoint_requestunsubscription) | public |  | network | Method on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`controlpoint/setLog`](#controlpoint_setlog) | public |  | network | Setter on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`controlpoint/unregister`](#controlpoint_unregister) | public |  | network | Method on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`device/getStateVariable`](#device_getstatevariable) | public |  | network | Getter on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`device/register`](#device_register) | public |  | network | Method on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`device/requestActionResponse`](#device_requestactionresponse) | public |  | network | Method on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`device/setStateVariable`](#device_setstatevariable) | public |  | network | Setter on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`device/start`](#device_start) | public |  | network | Method on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`device/stop`](#device_stop) | public |  | network | Method on com.webos.service.upnp (introspected on-device; parameters undocumented). |
-| [`device/unregister`](#device_unregister) | public |  | network | Method on com.webos.service.upnp (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`controlpoint/generateId`](#controlpoint_generateid) | public |  | network | inferred | Handles the generate ID (controlpoint) |
+| [`controlpoint/listDevices`](#controlpoint_listdevices) | public |  | network | inferred | Lists the devices (controlpoint) |
+| [`controlpoint/listServiceActions`](#controlpoint_listserviceactions) | public |  | network | inferred | Lists the service actions (controlpoint) |
+| [`controlpoint/listServices`](#controlpoint_listservices) | public |  | network | inferred | Lists the services (controlpoint) |
+| [`controlpoint/listStateVariables`](#controlpoint_liststatevariables) | public |  | network | inferred | Lists the state variables (controlpoint) |
+| [`controlpoint/register`](#controlpoint_register) | public |  | network | inferred | Registers the upnp (controlpoint) |
+| [`controlpoint/requestAction`](#controlpoint_requestaction) | public |  | network | inferred | Requests the action (controlpoint) |
+| [`controlpoint/requestSubscription`](#controlpoint_requestsubscription) | public |  | network | inferred | Requests the subscription (controlpoint) |
+| [`controlpoint/requestUnsubscription`](#controlpoint_requestunsubscription) | public |  | network | inferred | Requests the unsubscription (controlpoint) |
+| [`controlpoint/setLog`](#controlpoint_setlog) | public |  | network | inferred | Sets the log (controlpoint) |
+| [`controlpoint/unregister`](#controlpoint_unregister) | public |  | network | inferred | Unregisters the upnp (controlpoint) |
+| [`device/getStateVariable`](#device_getstatevariable) | public |  | network | inferred | Returns the state variable (device) |
+| [`device/register`](#device_register) | public |  | network | inferred | Registers the upnp (device) |
+| [`device/requestActionResponse`](#device_requestactionresponse) | public |  | network | inferred | Requests the action response (device) |
+| [`device/setStateVariable`](#device_setstatevariable) | public |  | network | inferred | Sets the state variable (device) |
+| [`device/start`](#device_start) | public |  | network | inferred | Starts the upnp (device) |
+| [`device/stop`](#device_stop) | public |  | network | inferred | Stops the upnp (device) |
+| [`device/unregister`](#device_unregister) | public |  | network | inferred | Unregisters the upnp (device) |
 
 <a id="controlpoint_generateid"></a>
 ## `controlpoint/generateId`
 
 `luna://com.webos.service.upnp/controlpoint/generateId`
 
-Method on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Handles the generate ID (controlpoint)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/controlpoint/generateId '{}'
@@ -51,13 +55,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/controlpoint/listDevices`
 
-Lister on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Lists the devices (controlpoint)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/controlpoint/listDevices '{}'
@@ -72,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/controlpoint/listServiceActions`
 
-Lister on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Lists the service actions (controlpoint)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/controlpoint/listServiceActions '{}'
@@ -93,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/controlpoint/listServices`
 
-Lister on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Lists the services (controlpoint)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/controlpoint/listServices '{}'
@@ -114,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/controlpoint/listStateVariables`
 
-Lister on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Lists the state variables (controlpoint)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/controlpoint/listStateVariables '{}'
@@ -135,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/controlpoint/register`
 
-Method on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Registers the upnp (controlpoint)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/controlpoint/register '{}'
@@ -156,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/controlpoint/requestAction`
 
-Method on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Requests the action (controlpoint)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/controlpoint/requestAction '{}'
@@ -177,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/controlpoint/requestSubscription`
 
-Method on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Requests the subscription (controlpoint)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/controlpoint/requestSubscription '{}'
@@ -198,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/controlpoint/requestUnsubscription`
 
-Method on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Requests the unsubscription (controlpoint)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/controlpoint/requestUnsubscription '{}'
@@ -219,13 +239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/controlpoint/setLog`
 
-Setter on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Sets the log (controlpoint)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/controlpoint/setLog '{}'
@@ -240,13 +262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/controlpoint/unregister`
 
-Method on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Unregisters the upnp (controlpoint)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/controlpoint/unregister '{}'
@@ -261,13 +285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/device/getStateVariable`
 
-Getter on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Returns the state variable (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/device/getStateVariable '{}'
@@ -282,13 +308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/device/register`
 
-Method on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Registers the upnp (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/device/register '{}'
@@ -303,13 +331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/device/requestActionResponse`
 
-Method on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Requests the action response (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/device/requestActionResponse '{}'
@@ -324,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/device/setStateVariable`
 
-Setter on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Sets the state variable (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/device/setStateVariable '{}'
@@ -345,13 +377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/device/start`
 
-Method on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Starts the upnp (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/device/start '{}'
@@ -366,13 +400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/device/stop`
 
-Method on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Stops the upnp (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/device/stop '{}'
@@ -387,13 +423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.upnp/device/unregister`
 
-Method on com.webos.service.upnp (introspected on-device; parameters undocumented).
+Unregisters the upnp (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.upnp/device/unregister '{}'

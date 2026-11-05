@@ -1,28 +1,32 @@
 # `com.webos.service.jsserver`
 
+JavaScript service host: runs JS service code and reports info about hosted/running services. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`info`](#info) | private |  | misc | Method on com.webos.service.jsserver (introspected on-device; parameters undocumented). |
-| [`infoServices`](#infoservices) | private |  | misc | Method on com.webos.service.jsserver (introspected on-device; parameters undocumented). |
-| [`quit`](#quit) | private |  | misc | Method on com.webos.service.jsserver (introspected on-device; parameters undocumented). |
-| [`run`](#run) | private |  | misc | Method on com.webos.service.jsserver (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`info`](#info) | private |  | misc | inferred | Handles the info. |
+| [`infoServices`](#infoservices) | private |  | misc | inferred | Handles the info services. |
+| [`quit`](#quit) | private |  | misc | inferred | Quits the jsserver. |
+| [`run`](#run) | private |  | misc | inferred | Runs the jsserver. |
 
 <a id="info"></a>
 ## `info`
 
 `luna://com.webos.service.jsserver/info`
 
-Method on com.webos.service.jsserver (introspected on-device; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.jsserver/info '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.jsserver/infoServices`
 
-Method on com.webos.service.jsserver (introspected on-device; parameters undocumented).
+Handles the info services.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.jsserver/infoServices '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.jsserver/quit`
 
-Method on com.webos.service.jsserver (introspected on-device; parameters undocumented).
+Quits the jsserver.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.jsserver/quit '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.jsserver/run`
 
-Method on com.webos.service.jsserver (introspected on-device; parameters undocumented).
+Runs the jsserver.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.jsserver/run '{}'

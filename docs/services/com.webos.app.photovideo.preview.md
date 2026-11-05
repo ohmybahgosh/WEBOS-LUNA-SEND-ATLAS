@@ -1,26 +1,30 @@
 # `com.webos.app.photovideo.preview`
 
+Helper for the photo/video preview app that lists connected storage devices and reports their status via ActivityManager callbacks. _(inferred from the service's methods)_
+
 2 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`deviceStatusByActivitymanager`](#devicestatusbyactivitymanager) | private |  | activity | Method on com.webos.app.photovideo.preview (from on-device permission registry; parameters undocumented). |
-| [`listDevicesByActivitymanager`](#listdevicesbyactivitymanager) | private |  | activity | Method on com.webos.app.photovideo.preview (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`deviceStatusByActivitymanager`](#devicestatusbyactivitymanager) | private |  | activity | inferred | Handles the device status by activitymanager. |
+| [`listDevicesByActivitymanager`](#listdevicesbyactivitymanager) | private |  | activity | inferred | Lists the devices by activitymanager. |
 
 <a id="devicestatusbyactivitymanager"></a>
 ## `deviceStatusByActivitymanager`
 
 `luna://com.webos.app.photovideo.preview/deviceStatusByActivitymanager`
 
-Method on com.webos.app.photovideo.preview (from on-device permission registry; parameters undocumented).
+Handles the device status by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.app.photovideo.preview/deviceStatusByActivitymanager '{}'
@@ -35,13 +39,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.app.photovideo.preview/listDevicesByActivitymanager`
 
-Method on com.webos.app.photovideo.preview (from on-device permission registry; parameters undocumented).
+Lists the devices by activitymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.app.photovideo.preview/listDevicesByActivitymanager '{}'

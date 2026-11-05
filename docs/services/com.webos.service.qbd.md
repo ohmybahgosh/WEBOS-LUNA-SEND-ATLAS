@@ -1,29 +1,33 @@
 # `com.webos.service.qbd`
 
+Opaque input-related service; appears to manage device resume timeout and reset timing based on its get/set methods. _(inferred from the service's methods)_
+
 5 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getDevicesResumeTimeout`](#getdevicesresumetimeout) | private |  | input | Getter on com.webos.service.qbd (introspected on-device; parameters undocumented). |
-| [`getResetTime`](#getresettime) | private |  | input | Getter on com.webos.service.qbd (introspected on-device; parameters undocumented). |
-| [`setDevicesResumeTimeout`](#setdevicesresumetimeout) | private |  | input | Setter on com.webos.service.qbd (introspected on-device; parameters undocumented). |
-| [`setResetTime`](#setresettime) | private |  | input | Setter on com.webos.service.qbd (introspected on-device; parameters undocumented). ⚠️ |
-| [`test`](#test) | private |  | misc | Method on com.webos.service.qbd (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getDevicesResumeTimeout`](#getdevicesresumetimeout) | private |  | input | inferred | Returns the devices resume timeout. |
+| [`getResetTime`](#getresettime) | private |  | input | inferred | Returns the reset time. |
+| [`setDevicesResumeTimeout`](#setdevicesresumetimeout) | private |  | input | inferred | Sets the devices resume timeout. |
+| [`setResetTime`](#setresettime) | private |  | input | inferred | Sets the reset time. ⚠️ |
+| [`test`](#test) | private |  | misc | inferred | Tests the qbd. |
 
 <a id="getdevicesresumetimeout"></a>
 ## `getDevicesResumeTimeout`
 
 `luna://com.webos.service.qbd/getDevicesResumeTimeout`
 
-Getter on com.webos.service.qbd (introspected on-device; parameters undocumented).
+Returns the devices resume timeout.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.qbd/getDevicesResumeTimeout '{}'
@@ -38,13 +42,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.qbd/getResetTime`
 
-Getter on com.webos.service.qbd (introspected on-device; parameters undocumented).
+Returns the reset time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.qbd/getResetTime '{}'
@@ -59,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.qbd/setDevicesResumeTimeout`
 
-Setter on com.webos.service.qbd (introspected on-device; parameters undocumented).
+Sets the devices resume timeout.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.qbd/setDevicesResumeTimeout '{}'
@@ -80,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.qbd/setResetTime`
 
-Setter on com.webos.service.qbd (introspected on-device; parameters undocumented).
+Sets the reset time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.qbd/setResetTime '{}'
@@ -101,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.qbd/test`
 
-Method on com.webos.service.qbd (introspected on-device; parameters undocumented).
+Tests the qbd.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.qbd/test '{}'

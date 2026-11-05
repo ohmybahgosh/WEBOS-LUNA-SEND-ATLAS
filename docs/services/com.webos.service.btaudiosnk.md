@@ -1,39 +1,43 @@
 # `com.webos.service.btaudiosnk`
 
+Bluetooth A2DP audio-sink service: connects to and controls Bluetooth audio source devices, manages paired devices, reports play status and media info, and controls the player.
+
 15 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`blockDevice`](#blockdevice) | private |  | audio | Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`close`](#close) | private |  | audio | Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`connect`](#connect) | private |  | audio | Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`connectLastDevice`](#connectlastdevice) | private |  | audio | Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`controlPlayer`](#controlplayer) | private |  | audio | Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`customCommand`](#customcommand) | private |  | audio | Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`disconnect`](#disconnect) | private |  | audio | Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`getMediaInfo`](#getmediainfo) | private |  | audio | Getter on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`getPairedDevices`](#getpaireddevices) | private |  | audio | Getter on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`getPlayStatus`](#getplaystatus) | private |  | audio | Getter on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`getState`](#getstate) | private |  | audio | Getter on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`launch`](#launch) | private |  | audio | Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`open`](#open) | private |  | audio | Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). |
-| [`removePairedDevices`](#removepaireddevices) | private |  | audio | Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented). ⚠️ |
-| [`setPlayMode`](#setplaymode) | private |  | audio | Method on com.webos.service.btaudiosnk (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`blockDevice`](#blockdevice) | private |  | audio | inferred | Blocks the device. |
+| [`close`](#close) | private |  | audio | inferred | Closes the btaudiosnk. |
+| [`connect`](#connect) | private |  | audio | inferred | Connects the btaudiosnk. |
+| [`connectLastDevice`](#connectlastdevice) | private |  | audio | inferred | Connects the last device. |
+| [`controlPlayer`](#controlplayer) | private |  | audio | inferred | Controls the player. |
+| [`customCommand`](#customcommand) | private |  | audio | inferred | Handles the custom command. |
+| [`disconnect`](#disconnect) | private |  | audio | inferred | Disconnects the btaudiosnk. |
+| [`getMediaInfo`](#getmediainfo) | private |  | audio | inferred | Returns the media info. |
+| [`getPairedDevices`](#getpaireddevices) | private |  | audio | inferred | Returns the paired devices. |
+| [`getPlayStatus`](#getplaystatus) | private |  | audio | inferred | Returns the play status. |
+| [`getState`](#getstate) | private |  | audio | inferred | Returns the state. |
+| [`launch`](#launch) | private |  | audio | inferred | Launches the btaudiosnk. |
+| [`open`](#open) | private |  | audio | inferred | Opens the btaudiosnk. |
+| [`removePairedDevices`](#removepaireddevices) | private |  | audio | inferred | Removes the paired devices. ⚠️ |
+| [`setPlayMode`](#setplaymode) | private |  | audio | inferred | Sets the play mode. |
 
 <a id="blockdevice"></a>
 ## `blockDevice`
 
 `luna://com.webos.service.btaudiosnk/blockDevice`
 
-Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Blocks the device.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/blockDevice '{}'
@@ -48,13 +52,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/close`
 
-Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Closes the btaudiosnk.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/close '{}'
@@ -69,13 +75,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/connect`
 
-Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Connects the btaudiosnk.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/connect '{}'
@@ -90,13 +98,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/connectLastDevice`
 
-Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Connects the last device.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/connectLastDevice '{}'
@@ -111,13 +121,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/controlPlayer`
 
-Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Controls the player.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/controlPlayer '{}'
@@ -132,13 +144,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/customCommand`
 
-Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Handles the custom command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/customCommand '{}'
@@ -153,13 +167,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/disconnect`
 
-Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Disconnects the btaudiosnk.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/disconnect '{}'
@@ -174,13 +190,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/getMediaInfo`
 
-Getter on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Returns the media info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/getMediaInfo '{}'
@@ -195,13 +213,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/getPairedDevices`
 
-Getter on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Returns the paired devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/getPairedDevices '{}'
@@ -216,13 +236,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/getPlayStatus`
 
-Getter on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Returns the play status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/getPlayStatus '{}'
@@ -237,13 +259,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/getState`
 
-Getter on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Returns the state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/getState '{}'
@@ -258,13 +282,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/launch`
 
-Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Launches the btaudiosnk.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/launch '{}'
@@ -279,13 +305,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/open`
 
-Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Opens the btaudiosnk.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/open '{}'
@@ -300,13 +328,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/removePairedDevices`
 
-Method on com.webos.service.btaudiosnk (introspected on-device; parameters undocumented).
+Removes the paired devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/removePairedDevices '{}'
@@ -321,13 +351,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosnk/setPlayMode`
 
-Method on com.webos.service.btaudiosnk (from on-device permission registry; parameters undocumented).
+Sets the play mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosnk/setPlayMode '{}'

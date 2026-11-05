@@ -1,21 +1,23 @@
 # `com.palm.systemservice`
 
+Core system service: reports device and OS info, stores system preferences, and gets/sets system and broadcast time and wallpaper.
+
 10 methods.  Platforms seen: HP webOS, Palm, all, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`deviceInfo/query`](#deviceinfo_query) | unknown |  | system-info | Returns device info keys |
-| [`getPreferences`](#getpreferences) | private |  | system-info | Method on com.palm.systemservice (from on-device permission registry; parameters undocumented). |
-| [`getPreferenceValues`](#getpreferencevalues) | private |  | system-info | Method on com.palm.systemservice (from on-device permission registry; parameters undocumented). |
-| [`osInfo/query`](#osinfo_query) | public |  | system-info | Returns OS info keys such as webos_release, webos_manufacturing_version, device_name |
-| [`setPreferences`](#setpreferences) | root |  | settings | Sets system preferences (wallpaper, airplaneMode) |
-| [`time/getEffectiveBroadcastTime`](#time_geteffectivebroadcasttime) | private |  | tv-broadcast | Method on com.palm.systemservice (from on-device permission registry; parameters undocumented). |
-| [`time/getSpecificLocalTime`](#time_getspecificlocaltime) | private |  | input | Method on com.palm.systemservice (from on-device permission registry; parameters undocumented). |
-| [`time/getSystemTime`](#time_getsystemtime) | public | yes | system-info | Returns the system time; subscribable for timezone or >5 min time changes. |
-| [`time/setSystemTime`](#time_setsystemtime) | private |  | input | Method on com.palm.systemservice (from on-device permission registry; parameters undocumented). |
-| [`wallpaper/importWallpaper`](#wallpaper_importwallpaper) | root |  | ui | Imports an image as wallpaper |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`deviceInfo/query`](#deviceinfo_query) | unknown |  | system-info | documented | Returns device info keys |
+| [`getPreferences`](#getpreferences) | private |  | system-info | inferred | Returns the preferences. |
+| [`getPreferenceValues`](#getpreferencevalues) | private |  | system-info | inferred | Returns the preference values. |
+| [`osInfo/query`](#osinfo_query) | public |  | system-info | documented | Returns OS info keys such as webos_release, webos_manufacturing_version, device_name |
+| [`setPreferences`](#setpreferences) | root |  | settings | documented | Sets system preferences (wallpaper, airplaneMode) |
+| [`time/getEffectiveBroadcastTime`](#time_geteffectivebroadcasttime) | private |  | tv-broadcast | inferred | Returns the effective broadcast time (time) |
+| [`time/getSpecificLocalTime`](#time_getspecificlocaltime) | private |  | input | inferred | Returns the specific local time (time) |
+| [`time/getSystemTime`](#time_getsystemtime) | public | yes | system-info | documented | Returns the system time; subscribable for timezone or >5 min time changes. |
+| [`time/setSystemTime`](#time_setsystemtime) | private |  | input | inferred | Sets the system time (time) |
+| [`wallpaper/importWallpaper`](#wallpaper_importwallpaper) | root |  | ui | documented | Imports an image as wallpaper |
 
 <a id="deviceinfo_query"></a>
 ## `deviceInfo/query`
@@ -28,7 +30,7 @@ Returns device info keys
 - **Subscribe:** no  
 - **Platform:** all  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -47,13 +49,15 @@ Sources: [1](https://github.com/thebestbradley/webos-phoenix/blob/HEAD/apps/shar
 
 `luna://com.palm.systemservice/getPreferences`
 
-Method on com.palm.systemservice (from on-device permission registry; parameters undocumented).
+Returns the preferences.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.systemservice/getPreferences '{}'
@@ -68,13 +72,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.systemservice/getPreferenceValues`
 
-Method on com.palm.systemservice (from on-device permission registry; parameters undocumented).
+Returns the preference values.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.systemservice/getPreferenceValues '{}'
@@ -95,7 +101,7 @@ Returns OS info keys such as webos_release, webos_manufacturing_version, device_
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -121,7 +127,7 @@ Sets system preferences (wallpaper, airplaneMode)
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -139,13 +145,15 @@ Sources: [1](https://wiki.webos-internals.org/wiki/Luna_Send)
 
 `luna://com.palm.systemservice/time/getEffectiveBroadcastTime`
 
-Method on com.palm.systemservice (from on-device permission registry; parameters undocumented).
+Returns the effective broadcast time (time)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.systemservice/time/getEffectiveBroadcastTime '{}'
@@ -160,13 +168,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.systemservice/time/getSpecificLocalTime`
 
-Method on com.palm.systemservice (from on-device permission registry; parameters undocumented).
+Returns the specific local time (time)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.systemservice/time/getSpecificLocalTime '{}'
@@ -206,13 +216,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/system-service
 
 `luna://com.palm.systemservice/time/setSystemTime`
 
-Method on com.palm.systemservice (from on-device permission registry; parameters undocumented).
+Sets the system time (time)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.systemservice/time/setSystemTime '{}'
@@ -233,7 +245,7 @@ Imports an image as wallpaper
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

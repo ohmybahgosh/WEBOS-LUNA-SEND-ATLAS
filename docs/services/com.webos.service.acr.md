@@ -1,28 +1,30 @@
 # `com.webos.service.acr`
 
+Automatic Content Recognition (ACR) service: starts/stops ACR, reports its status and recognized content properties, and manages video capture and related settings. _(inferred from the service's methods)_
+
 17 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`closedApplication`](#closedapplication) | private |  | apps | Notifies ACR that an app closed. Name only. |
-| [`getACRAppStatus`](#getacrappstatus) | private |  | system-info | Reports the ACR app status. |
-| [`getACRLaunchFlag`](#getacrlaunchflag) | private |  | system-info | Reports the ACR launch flag. |
-| [`getACRSolutionStatus`](#getacrsolutionstatus) | private |  | system-info | Read-only: reports whether the ACR fingerprinting solution is active (Glasshouse saw 'false' with consents off). |
-| [`getACRstatus`](#getacrstatus) | private |  | system-info | Read-only: reports ACR on/off status. Starts acr2 if dynamic. |
-| [`getContentProperty`](#getcontentproperty) | private |  | system-info | Returns recognised-content properties. |
-| [`getProductVersion`](#getproductversion) | private |  | system-info | Returns the ACR product/solution version. |
-| [`getVideoCaptureStatus`](#getvideocapturestatus) | private |  | system-info | Reports the ACR video-capture state (Glasshouse: 'stopped', captureSpeed 0 with consents off). |
-| [`launchApplication`](#launchapplication) | private |  | apps | Launches an app from an ACR trigger. Name only. |
-| [`setACRsetting`](#setacrsetting) | private |  | settings | Changes an ACR setting. |
-| [`setCloseCaption`](#setclosecaption) | private |  | settings | ACR closed-caption control. Name only. |
-| [`setDebug`](#setdebug) | private |  | devmode | ACR debug control. |
-| [`setForceAliveTime`](#setforcealivetime) | private |  | settings | Forces how long acr2 stays alive. |
-| [`setSessionControl`](#setsessioncontrol) | private |  | settings | Controls an ACR session. |
-| [`setVideoPig`](#setvideopig) | private |  | settings | ACR PIG (picture-in-graphic) control. Name only. |
-| [`startAcr`](#startacr) | private |  | system-info | Starts the ACR service. An activity-manager rule also starts it at boot when consents are on. |
-| [`subscribeEvent`](#subscribeevent) | private | yes | system-info | Subscribes to ACR events. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`closedApplication`](#closedapplication) | private |  | apps | documented | Notifies ACR that an app closed. Name only. |
+| [`getACRAppStatus`](#getacrappstatus) | private |  | system-info | documented | Reports the ACR app status. |
+| [`getACRLaunchFlag`](#getacrlaunchflag) | private |  | system-info | documented | Reports the ACR launch flag. |
+| [`getACRSolutionStatus`](#getacrsolutionstatus) | private |  | system-info | documented | Read-only: reports whether the ACR fingerprinting solution is active (Glasshouse saw 'false' with consents off). |
+| [`getACRstatus`](#getacrstatus) | private |  | system-info | documented | Read-only: reports ACR on/off status. Starts acr2 if dynamic. |
+| [`getContentProperty`](#getcontentproperty) | private |  | system-info | documented | Returns recognised-content properties. |
+| [`getProductVersion`](#getproductversion) | private |  | system-info | documented | Returns the ACR product/solution version. |
+| [`getVideoCaptureStatus`](#getvideocapturestatus) | private |  | system-info | documented | Reports the ACR video-capture state (Glasshouse: 'stopped', captureSpeed 0 with consents off). |
+| [`launchApplication`](#launchapplication) | private |  | apps | documented | Launches an app from an ACR trigger. Name only. |
+| [`setACRsetting`](#setacrsetting) | private |  | settings | documented | Changes an ACR setting. |
+| [`setCloseCaption`](#setclosecaption) | private |  | settings | documented | ACR closed-caption control. Name only. |
+| [`setDebug`](#setdebug) | private |  | devmode | documented | ACR debug control. |
+| [`setForceAliveTime`](#setforcealivetime) | private |  | settings | documented | Forces how long acr2 stays alive. |
+| [`setSessionControl`](#setsessioncontrol) | private |  | settings | documented | Controls an ACR session. |
+| [`setVideoPig`](#setvideopig) | private |  | settings | documented | ACR PIG (picture-in-graphic) control. Name only. |
+| [`startAcr`](#startacr) | private |  | system-info | documented | Starts the ACR service. An activity-manager rule also starts it at boot when consents are on. |
+| [`subscribeEvent`](#subscribeevent) | private | yes | system-info | documented | Subscribes to ACR events. |
 
 <a id="closedapplication"></a>
 ## `closedApplication`
@@ -35,7 +37,7 @@ Notifies ACR that an app closed. Name only.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/closedApplication '{}'
@@ -56,7 +58,7 @@ Reports the ACR app status.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/getACRAppStatus '{}'
@@ -77,7 +79,7 @@ Reports the ACR launch flag.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/getACRLaunchFlag '{}'
@@ -98,7 +100,7 @@ Read-only: reports whether the ACR fingerprinting solution is active (Glasshouse
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/getACRSolutionStatus '{}'
@@ -119,7 +121,7 @@ Read-only: reports ACR on/off status. Starts acr2 if dynamic.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/getACRstatus '{}'
@@ -140,7 +142,7 @@ Returns recognised-content properties.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/getContentProperty '{}'
@@ -161,7 +163,7 @@ Returns the ACR product/solution version.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/getProductVersion '{}'
@@ -182,7 +184,7 @@ Reports the ACR video-capture state (Glasshouse: 'stopped', captureSpeed 0 with 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11)  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/getVideoCaptureStatus '{}'
@@ -203,7 +205,7 @@ Launches an app from an ACR trigger. Name only.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/launchApplication '{}'
@@ -224,7 +226,7 @@ Changes an ACR setting.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/setACRsetting '{}'
@@ -245,7 +247,7 @@ ACR closed-caption control. Name only.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/setCloseCaption '{}'
@@ -266,7 +268,7 @@ ACR debug control.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/setDebug '{}'
@@ -287,7 +289,7 @@ Forces how long acr2 stays alive.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/setForceAliveTime '{}'
@@ -308,7 +310,7 @@ Controls an ACR session.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/setSessionControl '{}'
@@ -329,7 +331,7 @@ ACR PIG (picture-in-graphic) control. Name only.
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/setVideoPig '{}'
@@ -350,7 +352,7 @@ Starts the ACR service. An activity-manager rule also starts it at boot when con
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/startAcr '{}'
@@ -371,7 +373,7 @@ Subscribes to ACR events.
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV (seen on W22O 7.0; behaviour from Glasshouse research across webOS 4-11); listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code, community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.acr/subscribeEvent '{}'

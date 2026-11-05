@@ -1,22 +1,24 @@
 # `com.webos.service.mediarecorder`
 
+Media recorder service (webOS OSE): opens a recorder, sets audio/video and output formats and file, starts/stops/pauses recording, and takes snapshots.
+
 11 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | public |  | media | Closes the recorder and releases all resources. |
-| [`open`](#open) | public |  | media | Opens a new recorder. Returns a unique ID to the client that is used for subsequent operations to control the recorder. |
-| [`pause`](#pause) | public |  | media | Pauses recording. Note: Call this API after start() but before stop() or resume() . |
-| [`resume`](#resume) | public |  | media | Resumes recording. Note: Call this API after pause() but before stop(). |
-| [`setAudioFormat`](#setaudioformat) | public |  | media | Sets the audio format. Note: Call this API after open() but before start() . |
-| [`setOutputFile`](#setoutputfile) | public |  | media | Sets the path to store the streaming data. The default file name is of the format "RecordDDMMYYYY-HHMMSS", where DDMMYYYY-HHMMSS is current  |
-| [`setOutputFormat`](#setoutputformat) | public |  | media | Sets the specified format to store the streaming data. Note: Call this API after open() but before start() . |
-| [`setVideoFormat`](#setvideoformat) | public |  | media | Sets the video format. Note: Call this API after open() but before start() . |
-| [`start`](#start) | public |  | media | Starts recording. |
-| [`stop`](#stop) | public |  | media | Stops recording and saves the output to file. |
-| [`takeSnapshot`](#takesnapshot) | public |  | media | Takes one video snapshot during recording and save the image to a file. The default file name is of the format "CaptureDDMMYYYY-HHMMSS", whe |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | public |  | media | documented | Closes the recorder and releases all resources. |
+| [`open`](#open) | public |  | media | documented | Opens a new recorder. Returns a unique ID to the client that is used for subsequent operations to control the recorder. |
+| [`pause`](#pause) | public |  | media | documented | Pauses recording. Note: Call this API after start() but before stop() or resume() . |
+| [`resume`](#resume) | public |  | media | documented | Resumes recording. Note: Call this API after pause() but before stop(). |
+| [`setAudioFormat`](#setaudioformat) | public |  | media | documented | Sets the audio format. Note: Call this API after open() but before start() . |
+| [`setOutputFile`](#setoutputfile) | public |  | media | documented | Sets the path to store the streaming data. The default file name is of the format "RecordDDMMYYYY-HHMMSS", where DDMMYYYY-HHMMSS is current  |
+| [`setOutputFormat`](#setoutputformat) | public |  | media | documented | Sets the specified format to store the streaming data. Note: Call this API after open() but before start() . |
+| [`setVideoFormat`](#setvideoformat) | public |  | media | documented | Sets the video format. Note: Call this API after open() but before start() . |
+| [`start`](#start) | public |  | media | documented | Starts recording. |
+| [`stop`](#stop) | public |  | media | documented | Stops recording and saves the output to file. |
+| [`takeSnapshot`](#takesnapshot) | public |  | media | documented | Takes one video snapshot during recording and save the image to a file. The default file name is of the format "CaptureDDMMYYYY-HHMMSS", whe |
 
 <a id="close"></a>
 ## `close`
@@ -34,6 +36,13 @@ Closes the recorder and releases all resources.
 | Param | Type / notes |
 |---|---|
 | `recorderId` | Number (required) Unique ID of the recorder. Note: ID is obtained by using the open() API. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediarecorder/close '{"recorderId": 1234}
@@ -61,6 +70,14 @@ Opens a new recorder. Returns a unique ID to the client that is used for subsequ
 | `video` | String (optional) Indicates the unique ID of the camera. Note: You must provide both "video" and "audio", or either "video" or "audio". ID can be obtained using the com.webos.service.camera2/getCameraList() API. |
 | `audio` | Boolean (optional) Enables audio recording. Note: Audio only recording is supported. Management of audio devices can be used through the audio service (com.webos.service.audio) below. Use com.webos.service.audio/listSupportedDevices() to get the list of supported audio devices Use com.webos.service.audio/setSoundOutput() to set the sound input device for recording. Use com.webos.service.audio/getS |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `recorderId` | Number (optional) Unique identifier to control the recorder. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediarecorder/open '{"video": "camera1","audio": true}
 ```
@@ -86,6 +103,13 @@ Pauses recording. Note: Call this API after start() but before stop() or resume(
 |---|---|
 | `recorderId` | Number (required) Unique ID of the recorder. Note: ID is obtained by using the open() API. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the methods 'Error Codes' section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediarecorder/pause '{"recorderId": 1234}
 ```
@@ -110,6 +134,13 @@ Resumes recording. Note: Call this API after pause() but before stop().
 | Param | Type / notes |
 |---|---|
 | `recorderId` | Number (required) Unique ID of the recorder. Note: ID is obtained by using the open() API. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the methods 'Error Codes' section for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediarecorder/resume '{"recorderId": 1234}
@@ -140,6 +171,13 @@ Sets the audio format. Note: Call this API after open() but before start() .
 | `sampleRate` | Number (optional) Set the audio sample rate. Possible values are: When using AAC encoder. 7350 8000 11025 12000 16000 22050 24000 32000 44100 (default) 48000 64000 88200 96000 |
 | `channelCount` | Number (optional) Set the number of audio channels Possible values are: When using AAC encoder. 1 2 (default - stereo) 3 4 5 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the methods 'Error Codes' section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediarecorder/setAudioFormat '{ "recorderId": 1234, "codec":"AAC", "bitRate":192000, "sampleRate":48000, "channelCount":2 }
 ```
@@ -166,6 +204,13 @@ Sets the path to store the streaming data. The default file name is of the forma
 | `recorderId` | Number (required) Unique ID of the recorder. Note: ID is obtained by using the open() API. |
 | `path` | String (required) Absolute path to the directory where the recorded file must be saved. Possible values are: /media/internal/ /tmp/ |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediarecorder/setOutputFile '{"recorderId": 1234,"path":"/media/internal/"}
 ```
@@ -191,6 +236,13 @@ Sets the specified format to store the streaming data. Note: Call this API after
 |---|---|
 | `recorderId` | Number (required) Unique ID of the recorder. Note: ID is obtained by using the open() API. |
 | `format` | String (required) Format in which data is stored. Possible values are: MP4 ( Note : When recording video only or video with audio). M4A ( Note : When recording audio only). |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediarecorder/setOutputFormat '{"recorderId": 1234,"format":"MP4"}
@@ -219,6 +271,13 @@ Sets the video format. Note: Call this API after open() but before start() .
 | `codec` | String (optional) Set the audio encoder to use for recording. Possible values are: H264 Note : Currently supports only H264 |
 | `bitRate` | Number (optional) Set the video encoding bitrate(in bits/s). Default value: 10000000 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the methods 'Error Codes' section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediarecorder/setVideoFormat '{ "recorderId": 1234, "codec":"H264", "bitRate":10000000 }
 ```
@@ -244,6 +303,13 @@ Starts recording.
 |---|---|
 | `recorderId` | Number (required) Unique ID of the recorder. Note: ID is obtained by using the open() API. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediarecorder/start '{"recorderId": 1234}
 ```
@@ -268,6 +334,14 @@ Stops recording and saves the output to file.
 | Param | Type / notes |
 |---|---|
 | `recorderId` | Number (required) Unique ID of the recorder. Note: ID is obtained by using the open() API. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `path` | String (optional) Indicates the path and file names of the saved file. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediarecorder/stop '{"recorderId": 1234}
@@ -295,6 +369,14 @@ Takes one video snapshot during recording and save the image to a file. The defa
 | `recorderId` | Number (required) Unique ID of the recorder. Note: ID is obtained by using the open() API. |
 | `path` | String (required) Absolute path to the directory where the snapshot image must be saved. Possible values are: /media/internal/ /tmp/ |
 | `format` | String (required) Indicates the format of the snapshot image. Possible values are: JPEG |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `path` | String (optional) Indicates the path and file names of the saved file. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mediarecorder/takeSnapshot '{"recorderId": 1234,"path":"/media/internal/","format":"JPEG"}

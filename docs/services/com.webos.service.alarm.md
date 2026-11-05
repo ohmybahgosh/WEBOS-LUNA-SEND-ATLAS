@@ -1,18 +1,20 @@
 # `com.webos.service.alarm`
 
+Alarm service: lets webOS daemons and apps schedule calls to webOS API methods at a set time or interval; set, clear, list alarms and query the next wakeup.
+
 7 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`alarmObject`](#alarmobject) | unknown |  | misc | Object contains information about the alarms. |
-| [`clear`](#clear) | public |  | misc | Deletes an existing alarm. Apps or daemons can identify their alarm to be deleted by specifying its key. |
-| [`getAllAlarms`](#getallalarms) | private |  | misc | Getter on com.webos.service.alarm (introspected on-device; parameters undocumented). |
-| [`getNextWakeupAlarm`](#getnextwakeupalarm) | private |  | misc | Getter on com.webos.service.alarm (introspected on-device; parameters undocumented). |
-| [`privileged/clear`](#privileged_clear) | private |  | misc | Method on com.webos.service.alarm (introspected on-device; parameters undocumented). |
-| [`privileged/getAllAlarms`](#privileged_getallalarms) | private |  | misc | Getter on com.webos.service.alarm (introspected on-device; parameters undocumented). |
-| [`set`](#set) | public |  | misc | Creates a new alarm for an absolute time or a relative time. By using the " wakeup " parameter you can define it as a wake-up or a non-wakeu |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`alarmObject`](#alarmobject) | unknown |  | misc | documented | Object contains information about the alarms. |
+| [`clear`](#clear) | public |  | misc | documented | Deletes an existing alarm. Apps or daemons can identify their alarm to be deleted by specifying its key. |
+| [`getAllAlarms`](#getallalarms) | private |  | misc | inferred | Returns the all alarms. |
+| [`getNextWakeupAlarm`](#getnextwakeupalarm) | private |  | misc | inferred | Returns the next wakeup alarm. |
+| [`privileged/clear`](#privileged_clear) | private |  | misc | inferred | Clears the alarm (privileged) |
+| [`privileged/getAllAlarms`](#privileged_getallalarms) | private |  | misc | inferred | Returns the all alarms (privileged) |
+| [`set`](#set) | public |  | misc | documented | Creates a new alarm for an absolute time or a relative time. By using the " wakeup " parameter you can define it as a wake-up or a non-wakeu |
 
 <a id="alarmobject"></a>
 ## `alarmObject`
@@ -52,6 +54,13 @@ Deletes an existing alarm. Apps or daemons can identify their alarm to be delete
 |---|---|
 | `key` | String (required) key of the alarm that you wish to delete. This is the same key that was specified when the alarm was created the set method. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `key` | String (optional) The same unique identifier is returned if the alarm was deleted successfully. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the Error Codes Reference and API Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -a com.webos.app.test luna://com.webos.service.alarm/clear '{"key":"test"}
 ```
@@ -65,13 +74,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 `luna://com.webos.service.alarm/getAllAlarms`
 
-Getter on com.webos.service.alarm (introspected on-device; parameters undocumented).
+Returns the all alarms.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alarm/getAllAlarms '{}'
@@ -86,13 +97,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.alarm/getNextWakeupAlarm`
 
-Getter on com.webos.service.alarm (introspected on-device; parameters undocumented).
+Returns the next wakeup alarm.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alarm/getNextWakeupAlarm '{}'
@@ -107,13 +120,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.alarm/privileged/clear`
 
-Method on com.webos.service.alarm (introspected on-device; parameters undocumented).
+Clears the alarm (privileged)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alarm/privileged/clear '{}'
@@ -128,13 +143,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.alarm/privileged/getAllAlarms`
 
-Getter on com.webos.service.alarm (introspected on-device; parameters undocumented).
+Returns the all alarms (privileged)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alarm/privileged/getAllAlarms '{}'
@@ -166,6 +183,13 @@ Creates a new alarm for an absolute time or a relative time. By using the " wake
 | `params` | Object (required) Parameters that need to be passed with the uri when the alarm fires. Example: {"param1":"abc","param2":"xyz"} |
 | `wakeup` | Boolean (optional) Specifies if the alarm is a wake-up alarm. Possible values are: true - Create a wake-up alarm, false - Create a non-wake up alarm Default value: false. |
 | `keep_existing` | Boolean (optional) If there is an existing alarm with the same key, and you don't want to delete it, set keep_existing to true. To clear existing alarms with the same key, set keep_existing to false . The default value of keep_existing is false . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `key` | String (optional) If the alarm was created successfully, the set method will return the key of the alarm that it created. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the Error Codes Reference and API Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -a com.webos.app.test luna://com.webos.service.alarm/set '{ "key":"test", "uri":"luna://com.webos.service.testsleepd/firealarm", "params":{}, "at":"09/24/2014 04:40:00", "wakeup":true }

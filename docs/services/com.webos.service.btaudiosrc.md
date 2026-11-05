@@ -1,51 +1,55 @@
 # `com.webos.service.btaudiosrc`
 
+Bluetooth audio-source service: discovers, connects and manages Bluetooth audio sink devices, handling pairing, device selection, volume and output gain.
+
 27 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancelDiscovery`](#canceldiscovery) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`connect`](#connect) | unknown |  | bluetooth | Connects a paired Bluetooth audio device and switches output to it, without the confirmation alert that bluetooth2 a2dp/connect raises |
-| [`customCommand`](#customcommand) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`disconnect`](#disconnect) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`getConnectedDevice`](#getconnecteddevice) | private |  | audio | Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`getDeviceStatus`](#getdevicestatus) | private |  | audio | Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`getDeviceVolume`](#getdevicevolume) | private |  | audio | Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`getGuaranteedDevices`](#getguaranteeddevices) | private |  | audio | Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`getOutputGain`](#getoutputgain) | private |  | audio | Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`getPairedDevices`](#getpaireddevices) | private |  | audio | Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`getVolumeIconType`](#getvolumeicontype) | private |  | audio | Method on com.webos.service.btaudiosrc (from on-device permission registry; parameters undocumented). |
-| [`notifyDeviceSelectionMenuEntered`](#notifydeviceselectionmenuentered) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`notifyUserSelection`](#notifyuserselection) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`onDeviceSelectionMenu`](#ondeviceselectionmenu) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`removePairedDevice`](#removepaireddevice) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). ⚠️ |
-| [`requestPopup`](#requestpopup) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`setChannel`](#setchannel) | private |  | audio | Setter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`setDeviceVolume`](#setdevicevolume) | private |  | audio | Setter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`setOutputGain`](#setoutputgain) | private |  | audio | Setter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`setVolumeIconType`](#setvolumeicontype) | private |  | audio | Method on com.webos.service.btaudiosrc (from on-device permission registry; parameters undocumented). |
-| [`startDiscovery`](#startdiscovery) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`surround/getDualAudioStatus`](#surround_getdualaudiostatus) | private |  | audio | Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`surround/getVolumeBalancing`](#surround_getvolumebalancing) | private |  | audio | Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`surround/notifyEvent`](#surround_notifyevent) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`surround/setVolumeBalancing`](#surround_setvolumebalancing) | private |  | audio | Setter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`surround/startAutoTuning`](#surround_startautotuning) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
-| [`toggleLeftRight`](#toggleleftright) | private |  | audio | Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancelDiscovery`](#canceldiscovery) | private |  | audio | inferred | Cancels the discovery. |
+| [`connect`](#connect) | unknown |  | bluetooth | documented | Connects a paired Bluetooth audio device and switches output to it, without the confirmation alert that bluetooth2 a2dp/connect raises |
+| [`customCommand`](#customcommand) | private |  | audio | inferred | Handles the custom command. |
+| [`disconnect`](#disconnect) | private |  | audio | inferred | Disconnects the btaudiosrc. |
+| [`getConnectedDevice`](#getconnecteddevice) | private |  | audio | inferred | Returns the connected device. |
+| [`getDeviceStatus`](#getdevicestatus) | private |  | audio | inferred | Returns the device status. |
+| [`getDeviceVolume`](#getdevicevolume) | private |  | audio | inferred | Returns the device volume. |
+| [`getGuaranteedDevices`](#getguaranteeddevices) | private |  | audio | inferred | Returns the guaranteed devices. |
+| [`getOutputGain`](#getoutputgain) | private |  | audio | inferred | Returns the output gain. |
+| [`getPairedDevices`](#getpaireddevices) | private |  | audio | inferred | Returns the paired devices. |
+| [`getVolumeIconType`](#getvolumeicontype) | private |  | audio | inferred | Returns the volume icon type. |
+| [`notifyDeviceSelectionMenuEntered`](#notifydeviceselectionmenuentered) | private |  | audio | inferred | Notifies of the device selection menu entered. |
+| [`notifyUserSelection`](#notifyuserselection) | private |  | audio | inferred | Notifies of the user selection. |
+| [`onDeviceSelectionMenu`](#ondeviceselectionmenu) | private |  | audio | inferred | Event handler: fires on the device selection menu. |
+| [`removePairedDevice`](#removepaireddevice) | private |  | audio | inferred | Removes the paired device. ⚠️ |
+| [`requestPopup`](#requestpopup) | private |  | audio | inferred | Requests the popup. |
+| [`setChannel`](#setchannel) | private |  | audio | inferred | Sets the channel. |
+| [`setDeviceVolume`](#setdevicevolume) | private |  | audio | inferred | Sets the device volume. |
+| [`setOutputGain`](#setoutputgain) | private |  | audio | inferred | Sets the output gain. |
+| [`setVolumeIconType`](#setvolumeicontype) | private |  | audio | inferred | Sets the volume icon type. |
+| [`startDiscovery`](#startdiscovery) | private |  | audio | inferred | Starts the discovery. |
+| [`surround/getDualAudioStatus`](#surround_getdualaudiostatus) | private |  | audio | inferred | Returns the dual audio status (surround) |
+| [`surround/getVolumeBalancing`](#surround_getvolumebalancing) | private |  | audio | inferred | Returns the volume balancing (surround) |
+| [`surround/notifyEvent`](#surround_notifyevent) | private |  | audio | inferred | Notifies of the event (surround) |
+| [`surround/setVolumeBalancing`](#surround_setvolumebalancing) | private |  | audio | inferred | Sets the volume balancing (surround) |
+| [`surround/startAutoTuning`](#surround_startautotuning) | private |  | audio | inferred | Starts the auto tuning (surround) |
+| [`toggleLeftRight`](#toggleleftright) | private |  | audio | inferred | Toggles the left right. |
 
 <a id="canceldiscovery"></a>
 ## `cancelDiscovery`
 
 `luna://com.webos.service.btaudiosrc/cancelDiscovery`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Cancels the discovery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/cancelDiscovery '{}'
@@ -66,7 +70,7 @@ Connects a paired Bluetooth audio device and switches output to it, without the 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** C1-era webOS (user rooted OLED C1)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -85,13 +89,15 @@ Sources: [1](https://gist.github.com/aabytt/bddbb1bcf031a050d89a89aeee3a6737#gis
 
 `luna://com.webos.service.btaudiosrc/customCommand`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Handles the custom command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/customCommand '{}'
@@ -106,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/disconnect`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Disconnects the btaudiosrc.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/disconnect '{}'
@@ -127,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/getConnectedDevice`
 
-Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Returns the connected device.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/getConnectedDevice '{}'
@@ -148,13 +158,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/getDeviceStatus`
 
-Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Returns the device status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/getDeviceStatus '{}'
@@ -169,13 +181,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/getDeviceVolume`
 
-Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Returns the device volume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/getDeviceVolume '{}'
@@ -190,13 +204,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/getGuaranteedDevices`
 
-Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Returns the guaranteed devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/getGuaranteedDevices '{}'
@@ -211,13 +227,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/getOutputGain`
 
-Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Returns the output gain.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/getOutputGain '{}'
@@ -232,13 +250,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/getPairedDevices`
 
-Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Returns the paired devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/getPairedDevices '{}'
@@ -253,13 +273,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/getVolumeIconType`
 
-Method on com.webos.service.btaudiosrc (from on-device permission registry; parameters undocumented).
+Returns the volume icon type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/getVolumeIconType '{}'
@@ -274,13 +296,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btaudiosrc/notifyDeviceSelectionMenuEntered`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Notifies of the device selection menu entered.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/notifyDeviceSelectionMenuEntered '{}'
@@ -295,13 +319,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/notifyUserSelection`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Notifies of the user selection.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/notifyUserSelection '{}'
@@ -316,13 +342,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/onDeviceSelectionMenu`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Event handler: fires on the device selection menu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/onDeviceSelectionMenu '{}'
@@ -337,13 +365,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/removePairedDevice`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Removes the paired device.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/removePairedDevice '{}'
@@ -358,13 +388,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/requestPopup`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Requests the popup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/requestPopup '{}'
@@ -379,13 +411,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/setChannel`
 
-Setter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Sets the channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/setChannel '{}'
@@ -400,13 +434,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/setDeviceVolume`
 
-Setter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Sets the device volume.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/setDeviceVolume '{}'
@@ -421,13 +457,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/setOutputGain`
 
-Setter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Sets the output gain.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/setOutputGain '{}'
@@ -442,13 +480,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/setVolumeIconType`
 
-Method on com.webos.service.btaudiosrc (from on-device permission registry; parameters undocumented).
+Sets the volume icon type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/setVolumeIconType '{}'
@@ -463,13 +503,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.btaudiosrc/startDiscovery`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Starts the discovery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/startDiscovery '{}'
@@ -484,13 +526,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/surround/getDualAudioStatus`
 
-Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Returns the dual audio status (surround)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/surround/getDualAudioStatus '{}'
@@ -505,13 +549,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/surround/getVolumeBalancing`
 
-Getter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Returns the volume balancing (surround)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/surround/getVolumeBalancing '{}'
@@ -526,13 +572,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/surround/notifyEvent`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Notifies of the event (surround)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/surround/notifyEvent '{}'
@@ -547,13 +595,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/surround/setVolumeBalancing`
 
-Setter on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Sets the volume balancing (surround)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/surround/setVolumeBalancing '{}'
@@ -568,13 +618,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/surround/startAutoTuning`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Starts the auto tuning (surround)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/surround/startAutoTuning '{}'
@@ -589,13 +641,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.btaudiosrc/toggleLeftRight`
 
-Method on com.webos.service.btaudiosrc (introspected on-device; parameters undocumented).
+Toggles the left right.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.btaudiosrc/toggleLeftRight '{}'

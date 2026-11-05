@@ -1,31 +1,35 @@
 # `com.webos.iotframework`
 
+IoT framework managing connected IoT devices: lists and updates devices, sends commands, and gets/sets per-device customization. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getDeviceCustomization`](#getdevicecustomization) | private |  | input | Method on com.webos.iotframework (from on-device permission registry; parameters undocumented). |
-| [`getDevices`](#getdevices) | private |  | misc | Method on com.webos.iotframework (from on-device permission registry; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | misc | Method on com.webos.iotframework (from on-device permission registry; parameters undocumented). |
-| [`sendCommand`](#sendcommand) | private |  | misc | Method on com.webos.iotframework (from on-device permission registry; parameters undocumented). |
-| [`setDeviceCustomization`](#setdevicecustomization) | private |  | input | Method on com.webos.iotframework (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.iotframework (from on-device permission registry; parameters undocumented). |
-| [`updateDevices`](#updatedevices) | private |  | update | Method on com.webos.iotframework (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getDeviceCustomization`](#getdevicecustomization) | private |  | input | inferred | Returns the device customization. |
+| [`getDevices`](#getdevices) | private |  | misc | inferred | Returns the devices. |
+| [`getStatus`](#getstatus) | private |  | misc | inferred | Returns the status. |
+| [`sendCommand`](#sendcommand) | private |  | misc | inferred | Sends the command. |
+| [`setDeviceCustomization`](#setdevicecustomization) | private |  | input | inferred | Sets the device customization. |
+| [`start`](#start) | private |  | misc | inferred | Starts the iotframework. |
+| [`updateDevices`](#updatedevices) | private |  | update | inferred | Updates the devices. |
 
 <a id="getdevicecustomization"></a>
 ## `getDeviceCustomization`
 
 `luna://com.webos.iotframework/getDeviceCustomization`
 
-Method on com.webos.iotframework (from on-device permission registry; parameters undocumented).
+Returns the device customization.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.iotframework/getDeviceCustomization '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.iotframework/getDevices`
 
-Method on com.webos.iotframework (from on-device permission registry; parameters undocumented).
+Returns the devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.iotframework/getDevices '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.iotframework/getStatus`
 
-Method on com.webos.iotframework (from on-device permission registry; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.iotframework/getStatus '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.iotframework/sendCommand`
 
-Method on com.webos.iotframework (from on-device permission registry; parameters undocumented).
+Sends the command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.iotframework/sendCommand '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.iotframework/setDeviceCustomization`
 
-Method on com.webos.iotframework (from on-device permission registry; parameters undocumented).
+Sets the device customization.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.iotframework/setDeviceCustomization '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.iotframework/start`
 
-Method on com.webos.iotframework (from on-device permission registry; parameters undocumented).
+Starts the iotframework.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.iotframework/start '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.iotframework/updateDevices`
 
-Method on com.webos.iotframework (from on-device permission registry; parameters undocumented).
+Updates the devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.iotframework/updateDevices '{}'

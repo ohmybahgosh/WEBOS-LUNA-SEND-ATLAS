@@ -1,17 +1,19 @@
 # `com.webos.service.audiofocusmanager`
 
+Audio focus manager: lets apps request and release audio focus to use audio resources, and reports active, paused and current focus status.
+
 6 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`activeRequests`](#activerequests) | unknown |  | audio | Provides information of all active requests. |
-| [`audioFocusStatus`](#audiofocusstatus) | unknown |  | audio | Provides information of all granted request types per session in their request types (paused and active). |
-| [`getStatus`](#getstatus) | public | yes | audio | Queries the current status of the audiofocusmanager. |
-| [`pausedRequests`](#pausedrequests) | unknown |  | audio | Provides information of all paused requests. |
-| [`releaseFocus`](#releasefocus) | public |  | audio | Releases the audio resource. |
-| [`requestFocus`](#requestfocus) | public | yes | audio | Requests audio focus to access the audio resource On subscription, applications get the following suggestions: gain the resources (start aud |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`activeRequests`](#activerequests) | unknown |  | audio | documented | Provides information of all active requests. |
+| [`audioFocusStatus`](#audiofocusstatus) | unknown |  | audio | documented | Provides information of all granted request types per session in their request types (paused and active). |
+| [`getStatus`](#getstatus) | public | yes | audio | documented | Queries the current status of the audiofocusmanager. |
+| [`pausedRequests`](#pausedrequests) | unknown |  | audio | documented | Provides information of all paused requests. |
+| [`releaseFocus`](#releasefocus) | public |  | audio | documented | Releases the audio resource. |
+| [`requestFocus`](#requestfocus) | public | yes | audio | documented | Requests audio focus to access the audio resource On subscription, applications get the following suggestions: gain the resources (start aud |
 
 <a id="activerequests"></a>
 ## `activeRequests`
@@ -73,6 +75,14 @@ Queries the current status of the audiofocusmanager.
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true : Subscribe for notifications. false : Not subscribed. |
 | `displayId` | Number (required) Indicates the audio focus information of mentioned display ID. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) Indicates the error code for the failed operation. |
+| `errorText` | String (optional) Describes the error. Returned only in case of execution failure. |
+| `audioFocusStatus` | Object array: audioFocusStatus (optional) Contains the information of all granted request types per session in their request types (paused and active). |
+
 ```sh
 luna-send -i luna://com.webos.service.audiofocusmanager/getStatus '{"displayId":0, "subscribe":true}
 ```
@@ -120,6 +130,14 @@ Releases the audio resource.
 | `displayId` | Number (required) Indicates the display ID from which the application is releasing the focus. |
 | `streamType` | String (required) Indicates what is the stream played by application once it gets the focus. Possible values are: palerts pfeedback pringtones pmedia pdefaultapp peffects pvoicerecognition ptts default1 default2 tts1 tts2 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `result` | String (optional) Indicates the result. Possible values are: - AF\_SUCCESSFULLY\_RELEASED - This means the application has released the audio resource, unsubscribed with the audiofocusmanager service and will not receive any further events from audiofocusmanager. |
+| `errorCode` | Number (optional) Indicates the error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the API Error Codes Reference section for details. |
+
 ```sh
 luna-send -a "com.webos.app.notification" -n 1 -f luna://com.webos.service.audiofocusmanager/releaseFocus '{ "displayId":0, "streamType":"pmedia" }
 ```
@@ -147,6 +165,14 @@ Requests audio focus to access the audio resource On subscription, applications 
 | `subscribe` | Boolean (required) Indicates if subscribed to get the notifications. Possible values are: true : Subscribed for notifications false : Not subscribed Note : It will get the suggestion from the audiofocusmanager service to pause/stop/resume the audio playback. |
 | `displayId` | Number (required) Indicates the display ID from which the application is requesting for focus. |
 | `streamType` | String (required) Indicates what is the stream played by application once it gets the focus |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) Indicates the error code for the failed operation. |
+| `result` | String (optional) Indicates the result. Possible values are: - AF\_GRANTED - AudioFocusManager has granted the audio resource for the application and it can use the resource. - AF\_GRANTEDALREADY - This is sent when an application which has already acquired the audio resource calls the requestFocus  |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the API Error Codes Reference section for details. |
 
 ```sh
 luna-send -a "com.webos.app.ml4" -i luna://com.webos.service.audiofocusmanager/requestFocus '{ "requestType":"AFREQUEST_GAIN", "subscribe":true, "streamType":"pmedia", "displayId":0 }

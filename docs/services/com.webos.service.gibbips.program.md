@@ -1,42 +1,46 @@
 # `com.webos.service.gibbips.program`
 
+IP-broadcast program-guide (EPG) service: scans and queries event/program listings, ratings, images and recommendations, and toggles the EPG. _(inferred from the service's methods)_
+
 18 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`callSqliteMethod`](#callsqlitemethod) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`checkProgramGuide`](#checkprogramguide) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`getCurrentEventList`](#getcurrenteventlist) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`getCurrentProgramRating`](#getcurrentprogramrating) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`getEventList`](#geteventlist) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`getMoreEpisodes`](#getmoreepisodes) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`getMultiImg`](#getmultiimg) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`getProgramImg`](#getprogramimg) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`getRecommendedList`](#getrecommendedlist) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`isAvailableTemplateAit`](#isavailabletemplateait) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`notifyProgramGuideChanged`](#notifyprogramguidechanged) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`passAitUrl`](#passaiturl) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`scanProgramGuide`](#scanprogramguide) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`setEPGOff`](#setepgoff) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`setEPGOn`](#setepgon) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`setHbbtvPfInfo`](#sethbbtvpfinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
-| [`stopScanProgramGuide`](#stopscanprogramguide) | private |  | tv-broadcast | Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`callSqliteMethod`](#callsqlitemethod) | private |  | tv-broadcast | inferred | Calls the sqlite method. |
+| [`checkProgramGuide`](#checkprogramguide) | private |  | tv-broadcast | inferred | Checks the program guide. |
+| [`getCurrentEventList`](#getcurrenteventlist) | private |  | tv-broadcast | inferred | Returns the current event list. |
+| [`getCurrentProgramRating`](#getcurrentprogramrating) | private |  | tv-broadcast | inferred | Returns the current program rating. |
+| [`getEventList`](#geteventlist) | private |  | tv-broadcast | inferred | Returns the event list. |
+| [`getMoreEpisodes`](#getmoreepisodes) | private |  | tv-broadcast | inferred | Returns the more episodes. |
+| [`getMultiImg`](#getmultiimg) | private |  | tv-broadcast | inferred | Returns the multi img. |
+| [`getProgramImg`](#getprogramimg) | private |  | tv-broadcast | inferred | Returns the program img. |
+| [`getRecommendedList`](#getrecommendedlist) | private |  | tv-broadcast | inferred | Returns the recommended list. |
+| [`isAvailableTemplateAit`](#isavailabletemplateait) | private |  | tv-broadcast | inferred | Reports whether the available template ait is set. |
+| [`notifyProgramGuideChanged`](#notifyprogramguidechanged) | private |  | tv-broadcast | inferred | Notifies of the program guide changed. |
+| [`passAitUrl`](#passaiturl) | private |  | tv-broadcast | inferred | Handles the pass ait URL. |
+| [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | inferred | Scans for detail information. ⚠️ |
+| [`scanProgramGuide`](#scanprogramguide) | private |  | tv-broadcast | inferred | Scans for program guide. |
+| [`setEPGOff`](#setepgoff) | private |  | tv-broadcast | inferred | Sets the EPG off. |
+| [`setEPGOn`](#setepgon) | private |  | tv-broadcast | inferred | Sets the EPG on. |
+| [`setHbbtvPfInfo`](#sethbbtvpfinfo) | private |  | tv-broadcast | inferred | Sets the hbbtv pf info. |
+| [`stopScanProgramGuide`](#stopscanprogramguide) | private |  | tv-broadcast | inferred | Stops the scan program guide. |
 
 <a id="callsqlitemethod"></a>
 ## `callSqliteMethod`
 
 `luna://com.webos.service.gibbips.program/callSqliteMethod`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Calls the sqlite method.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/callSqliteMethod '{}'
@@ -51,13 +55,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/checkProgramGuide`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Checks the program guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/checkProgramGuide '{}'
@@ -72,13 +78,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/getCurrentEventList`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Returns the current event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/getCurrentEventList '{}'
@@ -93,13 +101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/getCurrentProgramRating`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Returns the current program rating.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/getCurrentProgramRating '{}'
@@ -114,13 +124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/getEventList`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Returns the event list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/getEventList '{}'
@@ -135,13 +147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/getMoreEpisodes`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Returns the more episodes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/getMoreEpisodes '{}'
@@ -156,13 +170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/getMultiImg`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Returns the multi img.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/getMultiImg '{}'
@@ -177,13 +193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/getProgramImg`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Returns the program img.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/getProgramImg '{}'
@@ -198,13 +216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/getRecommendedList`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Returns the recommended list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/getRecommendedList '{}'
@@ -219,13 +239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/isAvailableTemplateAit`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Reports whether the available template ait is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/isAvailableTemplateAit '{}'
@@ -240,13 +262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/notifyProgramGuideChanged`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Notifies of the program guide changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/notifyProgramGuideChanged '{}'
@@ -261,13 +285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/passAitUrl`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Handles the pass ait URL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/passAitUrl '{}'
@@ -282,13 +308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/scanDetailInformation`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Scans for detail information.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/scanDetailInformation '{}'
@@ -303,13 +331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/scanProgramGuide`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Scans for program guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/scanProgramGuide '{}'
@@ -324,13 +354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/setEPGOff`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Sets the EPG off.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/setEPGOff '{}'
@@ -345,13 +377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/setEPGOn`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Sets the EPG on.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/setEPGOn '{}'
@@ -366,13 +400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/setHbbtvPfInfo`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Sets the hbbtv pf info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/setHbbtvPfInfo '{}'
@@ -387,13 +423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.program/stopScanProgramGuide`
 
-Method on com.webos.service.gibbips.program (from on-device permission registry; parameters undocumented).
+Stops the scan program guide.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.program/stopScanProgramGuide '{}'

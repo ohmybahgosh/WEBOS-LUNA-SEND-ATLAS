@@ -1,36 +1,40 @@
 # `com.webos.memorymanager`
 
+Memory manager: reports current memory state, enforces low-memory policy and thresholds, selects apps to close, and notifies clients of memory pressure.
+
 12 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getCloseAppId`](#getcloseappid) | private |  | misc | Getter on com.webos.memorymanager (introspected on-device; parameters undocumented). |
-| [`getConfigs`](#getconfigs) | private |  | settings | Getter on com.webos.memorymanager (introspected on-device; parameters undocumented). |
-| [`getCurrentMemState`](#getcurrentmemstate) | private |  | misc | Getter on com.webos.memorymanager (introspected on-device; parameters undocumented). |
-| [`getCustomThreshold`](#getcustomthreshold) | private |  | misc | Getter on com.webos.memorymanager (introspected on-device; parameters undocumented). |
-| [`getEFS`](#getefs) | private |  | misc | Getter on com.webos.memorymanager (introspected on-device; parameters undocumented). |
-| [`getGroupInfo`](#getgroupinfo) | private |  | misc | Getter on com.webos.memorymanager (introspected on-device; parameters undocumented). |
-| [`getPolicy`](#getpolicy) | private |  | misc | Getter on com.webos.memorymanager (introspected on-device; parameters undocumented). |
-| [`getUnitList`](#getunitlist) | private |  | misc | Getter on com.webos.memorymanager (introspected on-device; parameters undocumented). |
-| [`sendLowMemPopupTest`](#sendlowmempopuptest) | private |  | misc | Method on com.webos.memorymanager (introspected on-device; parameters undocumented). |
-| [`setMriHelper`](#setmrihelper) | private |  | misc | Setter on com.webos.memorymanager (introspected on-device; parameters undocumented). |
-| [`setRequiredMemory`](#setrequiredmemory) | private |  | misc | Setter on com.webos.memorymanager (introspected on-device; parameters undocumented). |
-| [`startMemNotifier`](#startmemnotifier) | private |  | misc | Method on com.webos.memorymanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getCloseAppId`](#getcloseappid) | private |  | misc | inferred | Returns the close app ID. |
+| [`getConfigs`](#getconfigs) | private |  | settings | inferred | Returns the configs. |
+| [`getCurrentMemState`](#getcurrentmemstate) | private |  | misc | inferred | Returns the current mem state. |
+| [`getCustomThreshold`](#getcustomthreshold) | private |  | misc | inferred | Returns the custom threshold. |
+| [`getEFS`](#getefs) | private |  | misc | inferred | Returns the EFS. |
+| [`getGroupInfo`](#getgroupinfo) | private |  | misc | inferred | Returns the group info. |
+| [`getPolicy`](#getpolicy) | private |  | misc | inferred | Returns the policy. |
+| [`getUnitList`](#getunitlist) | private |  | misc | inferred | Returns the unit list. |
+| [`sendLowMemPopupTest`](#sendlowmempopuptest) | private |  | misc | inferred | Sends the low mem popup test. |
+| [`setMriHelper`](#setmrihelper) | private |  | misc | inferred | Sets the mri helper. |
+| [`setRequiredMemory`](#setrequiredmemory) | private |  | misc | inferred | Sets the required memory. |
+| [`startMemNotifier`](#startmemnotifier) | private |  | misc | inferred | Starts the mem notifier. |
 
 <a id="getcloseappid"></a>
 ## `getCloseAppId`
 
 `luna://com.webos.memorymanager/getCloseAppId`
 
-Getter on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Returns the close app ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getCloseAppId '{}'
@@ -45,13 +49,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.memorymanager/getConfigs`
 
-Getter on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Returns the configs.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getConfigs '{}'
@@ -66,13 +72,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.memorymanager/getCurrentMemState`
 
-Getter on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Returns the current mem state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getCurrentMemState '{}'
@@ -87,13 +95,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.memorymanager/getCustomThreshold`
 
-Getter on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Returns the custom threshold.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getCustomThreshold '{}'
@@ -108,13 +118,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.memorymanager/getEFS`
 
-Getter on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Returns the EFS.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getEFS '{}'
@@ -129,13 +141,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.memorymanager/getGroupInfo`
 
-Getter on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Returns the group info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getGroupInfo '{}'
@@ -150,13 +164,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.memorymanager/getPolicy`
 
-Getter on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Returns the policy.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getPolicy '{}'
@@ -171,13 +187,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.memorymanager/getUnitList`
 
-Getter on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Returns the unit list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getUnitList '{}'
@@ -192,13 +210,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.memorymanager/sendLowMemPopupTest`
 
-Method on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Sends the low mem popup test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/sendLowMemPopupTest '{}'
@@ -213,13 +233,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.memorymanager/setMriHelper`
 
-Setter on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Sets the mri helper.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/setMriHelper '{}'
@@ -234,13 +256,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.memorymanager/setRequiredMemory`
 
-Setter on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Sets the required memory.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/setRequiredMemory '{}'
@@ -255,13 +279,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.memorymanager/startMemNotifier`
 
-Method on com.webos.memorymanager (introspected on-device; parameters undocumented).
+Starts the mem notifier.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/startMemNotifier '{}'

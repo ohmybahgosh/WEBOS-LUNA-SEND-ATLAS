@@ -1,27 +1,31 @@
 # `com.webos.service.airessrvallocator`
 
+Opaque resource allocator; appears to allocate and release a shared resource and report allocation events based on its allocate/release/getEvent methods. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`allocate`](#allocate) | private |  | misc | Method on com.webos.service.airessrvallocator (from on-device permission registry; parameters undocumented). |
-| [`getEvent`](#getevent) | private |  | misc | Method on com.webos.service.airessrvallocator (from on-device permission registry; parameters undocumented). |
-| [`release`](#release) | private |  | misc | Method on com.webos.service.airessrvallocator (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`allocate`](#allocate) | private |  | misc | inferred | Handles the allocate. |
+| [`getEvent`](#getevent) | private |  | misc | inferred | Returns the event. |
+| [`release`](#release) | private |  | misc | inferred | Releases the airessrvallocator. |
 
 <a id="allocate"></a>
 ## `allocate`
 
 `luna://com.webos.service.airessrvallocator/allocate`
 
-Method on com.webos.service.airessrvallocator (from on-device permission registry; parameters undocumented).
+Handles the allocate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airessrvallocator/allocate '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.airessrvallocator/getEvent`
 
-Method on com.webos.service.airessrvallocator (from on-device permission registry; parameters undocumented).
+Returns the event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airessrvallocator/getEvent '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.airessrvallocator/release`
 
-Method on com.webos.service.airessrvallocator (from on-device permission registry; parameters undocumented).
+Releases the airessrvallocator.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.airessrvallocator/release '{}'

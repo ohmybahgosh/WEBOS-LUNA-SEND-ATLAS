@@ -1,46 +1,50 @@
 # `com.webos.service.factorymanager`
 
+Factory/production manager: runs factory test commands, performs calibration (ADC, Vcom, white balance), controls LED bar and test patterns, and gets/sets factory options and keys. Flagged dangerous by name. _(inferred from the service's methods)_
+
 22 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkNFCTagAdj`](#checknfctagadj) | private |  | system-info | Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`doFirstUseCompleted`](#dofirstusecompleted) | private |  | system-info | Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`getAdcCalibrationMode`](#getadccalibrationmode) | private |  | system-info | Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`getAdcCalibrationStatus`](#getadccalibrationstatus) | private |  | system-info | Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`getEdidStatus`](#getedidstatus) | private |  | system-info | Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`getFactoryChannelChangeParam`](#getfactorychannelchangeparam) | private |  | system-info | Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`getFactoryOpt`](#getfactoryopt) | private |  | system-info | Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`getFactoryParam`](#getfactoryparam) | private |  | system-info | Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`getPOnlyKeyState`](#getponlykeystate) | private |  | system-info | Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`getTestPatternColor`](#gettestpatterncolor) | private |  | system-info | Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`ledBarCtrl`](#ledbarctrl) | private |  | db | Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`requestFactoryCommand`](#requestfactorycommand) | private |  | system-info | Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`resetVcom`](#resetvcom) | private |  | system-info | Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`resetWhiteBalance`](#resetwhitebalance) | private |  | system-info | Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`saveToolOptionValue`](#savetooloptionvalue) | private |  | system-info | Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`saveVcomResult`](#savevcomresult) | private |  | system-info | Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`setFactoryKey`](#setfactorykey) | private |  | system-info | Setter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`setFactoryOpt`](#setfactoryopt) | private |  | system-info | Setter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). ⚠️ |
-| [`setMicomKey`](#setmicomkey) | private |  | system-info | Setter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`setStateResult`](#setstateresult) | private |  | system-info | Setter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`setTestPatternColor`](#settestpatterncolor) | private |  | system-info | Setter on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
-| [`test`](#test) | private |  | system-info | Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkNFCTagAdj`](#checknfctagadj) | private |  | system-info | inferred | Checks the NFC tag adj. |
+| [`doFirstUseCompleted`](#dofirstusecompleted) | private |  | system-info | inferred | Handles the do first use completed. |
+| [`getAdcCalibrationMode`](#getadccalibrationmode) | private |  | system-info | inferred | Returns the adc calibration mode. |
+| [`getAdcCalibrationStatus`](#getadccalibrationstatus) | private |  | system-info | inferred | Returns the adc calibration status. |
+| [`getEdidStatus`](#getedidstatus) | private |  | system-info | inferred | Returns the EDID status. |
+| [`getFactoryChannelChangeParam`](#getfactorychannelchangeparam) | private |  | system-info | inferred | Returns the factory channel change param. |
+| [`getFactoryOpt`](#getfactoryopt) | private |  | system-info | inferred | Returns the factory opt. |
+| [`getFactoryParam`](#getfactoryparam) | private |  | system-info | inferred | Returns the factory param. |
+| [`getPOnlyKeyState`](#getponlykeystate) | private |  | system-info | inferred | Returns the p only key state. |
+| [`getTestPatternColor`](#gettestpatterncolor) | private |  | system-info | inferred | Returns the test pattern color. |
+| [`ledBarCtrl`](#ledbarctrl) | private |  | db | inferred | Handles the LED bar ctrl. |
+| [`requestFactoryCommand`](#requestfactorycommand) | private |  | system-info | inferred | Requests the factory command. ⚠️ |
+| [`resetVcom`](#resetvcom) | private |  | system-info | inferred | Resets the vcom. ⚠️ |
+| [`resetWhiteBalance`](#resetwhitebalance) | private |  | system-info | inferred | Resets the white balance. ⚠️ |
+| [`saveToolOptionValue`](#savetooloptionvalue) | private |  | system-info | inferred | Saves the tool option value. |
+| [`saveVcomResult`](#savevcomresult) | private |  | system-info | inferred | Saves the vcom result. |
+| [`setFactoryKey`](#setfactorykey) | private |  | system-info | inferred | Sets the factory key. ⚠️ |
+| [`setFactoryOpt`](#setfactoryopt) | private |  | system-info | inferred | Sets the factory opt. ⚠️ |
+| [`setMicomKey`](#setmicomkey) | private |  | system-info | inferred | Sets the MICOM key. |
+| [`setStateResult`](#setstateresult) | private |  | system-info | inferred | Sets the state result. |
+| [`setTestPatternColor`](#settestpatterncolor) | private |  | system-info | inferred | Sets the test pattern color. |
+| [`test`](#test) | private |  | system-info | inferred | Tests the factorymanager. |
 
 <a id="checknfctagadj"></a>
 ## `checkNFCTagAdj`
 
 `luna://com.webos.service.factorymanager/checkNFCTagAdj`
 
-Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Checks the NFC tag adj.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/checkNFCTagAdj '{}'
@@ -55,13 +59,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/doFirstUseCompleted`
 
-Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Handles the do first use completed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/doFirstUseCompleted '{}'
@@ -76,13 +82,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/getAdcCalibrationMode`
 
-Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Returns the adc calibration mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getAdcCalibrationMode '{}'
@@ -97,13 +105,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/getAdcCalibrationStatus`
 
-Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Returns the adc calibration status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getAdcCalibrationStatus '{}'
@@ -118,13 +128,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/getEdidStatus`
 
-Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Returns the EDID status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getEdidStatus '{}'
@@ -139,13 +151,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/getFactoryChannelChangeParam`
 
-Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Returns the factory channel change param.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getFactoryChannelChangeParam '{}'
@@ -160,13 +174,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/getFactoryOpt`
 
-Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Returns the factory opt.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getFactoryOpt '{}'
@@ -181,13 +197,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/getFactoryParam`
 
-Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Returns the factory param.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getFactoryParam '{}'
@@ -202,13 +220,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/getPOnlyKeyState`
 
-Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Returns the p only key state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getPOnlyKeyState '{}'
@@ -223,13 +243,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/getTestPatternColor`
 
-Getter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Returns the test pattern color.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getTestPatternColor '{}'
@@ -244,13 +266,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/ledBarCtrl`
 
-Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Handles the LED bar ctrl.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/ledBarCtrl '{}'
@@ -265,13 +289,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/requestFactoryCommand`
 
-Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Requests the factory command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/requestFactoryCommand '{}'
@@ -286,13 +312,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/resetVcom`
 
-Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Resets the vcom.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/resetVcom '{}'
@@ -307,13 +335,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/resetWhiteBalance`
 
-Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Resets the white balance.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/resetWhiteBalance '{}'
@@ -328,13 +358,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/saveToolOptionValue`
 
-Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Saves the tool option value.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/saveToolOptionValue '{}'
@@ -349,13 +381,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/saveVcomResult`
 
-Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Saves the vcom result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/saveVcomResult '{}'
@@ -370,13 +404,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/setFactoryKey`
 
-Setter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Sets the factory key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/setFactoryKey '{}'
@@ -391,13 +427,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/setFactoryOpt`
 
-Setter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Sets the factory opt.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/setFactoryOpt '{}'
@@ -412,13 +450,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/setMicomKey`
 
-Setter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Sets the MICOM key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/setMicomKey '{}'
@@ -433,13 +473,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/setStateResult`
 
-Setter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Sets the state result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/setStateResult '{}'
@@ -454,13 +496,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/setTestPatternColor`
 
-Setter on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Sets the test pattern color.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/setTestPatternColor '{}'
@@ -475,13 +519,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.factorymanager/test`
 
-Method on com.webos.service.factorymanager (introspected on-device; parameters undocumented).
+Tests the factorymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/test '{}'

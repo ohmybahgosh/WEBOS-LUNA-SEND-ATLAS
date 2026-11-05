@@ -1,42 +1,44 @@
 # `com.palm.sleep`
 
+Power-management service handling suspend/wake: wake-lock registration, suspend request handshakes, activity start/end, and system shutdown/reboot.
+
 31 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`com/palm/power/activityEnd`](#com_palm_power_activityend) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`com/palm/power/activityStart`](#com_palm_power_activitystart) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`com/palm/power/clientCancelByName`](#com_palm_power_clientcancelbyname) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`com/palm/power/forceSuspend`](#com_palm_power_forcesuspend) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only ⚠️ |
-| [`com/palm/power/identify`](#com_palm_power_identify) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`com/palm/power/prepareSuspendAck`](#com_palm_power_preparesuspendack) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`com/palm/power/prepareSuspendRegister`](#com_palm_power_preparesuspendregister) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`com/palm/power/setWakeLock`](#com_palm_power_setwakelock) | private |  | power | Method on com.palm.sleep (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/somebodyWantsWakeup`](#com_palm_power_somebodywantswakeup) | private |  | power | Method on com.palm.sleep (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/suspendRequestAck`](#com_palm_power_suspendrequestack) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`com/palm/power/suspendRequestRegister`](#com_palm_power_suspendrequestregister) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`com/palm/power/systemTimeChanged`](#com_palm_power_systemtimechanged) | private |  | power | Method on com.palm.sleep (from on-device permission registry; parameters undocumented). |
-| [`com/palm/power/TESTSuspend`](#com_palm_power_testsuspend) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`com/palm/power/wakeLockRegister`](#com_palm_power_wakelockregister) | private |  | power | Method on com.palm.sleep (from on-device permission registry; parameters undocumented). |
-| [`shutdown/initiate`](#shutdown_initiate) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`shutdown/machineOff`](#shutdown_machineoff) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only ⚠️ |
-| [`shutdown/machineReboot`](#shutdown_machinereboot) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only ⚠️ |
-| [`shutdown/shutdownApplicationsAck`](#shutdown_shutdownapplicationsack) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`shutdown/shutdownApplicationsRegister`](#shutdown_shutdownapplicationsregister) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`shutdown/shutdownServicesAck`](#shutdown_shutdownservicesack) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`shutdown/shutdownServicesRegister`](#shutdown_shutdownservicesregister) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`shutdown/TESTresetShutdownState`](#shutdown_testresetshutdownstate) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
-| [`time/alarmAdd`](#time_alarmadd) | unknown |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`time/alarmAddCalendar`](#time_alarmaddcalendar) | unknown |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`time/alarmQuery`](#time_alarmquery) | unknown |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`time/alarmRemove`](#time_alarmremove) | unknown |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`time/internalAlarmFired`](#time_internalalarmfired) | private |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`timeout/clear`](#timeout_clear) | unknown |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
-| [`timeout/getAllAlarms`](#timeout_getallalarms) | private |  | power-mgmt | Getter on com.palm.sleep (introspected on-device; parameters undocumented). |
-| [`timeout/getNextWakeupAlarm`](#timeout_getnextwakeupalarm) | private |  | power-mgmt | Getter on com.palm.sleep (introspected on-device; parameters undocumented). |
-| [`timeout/set`](#timeout_set) | unknown |  | power | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`com/palm/power/activityEnd`](#com_palm_power_activityend) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/activityStart`](#com_palm_power_activitystart) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/clientCancelByName`](#com_palm_power_clientcancelbyname) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/forceSuspend`](#com_palm_power_forcesuspend) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only ⚠️ |
+| [`com/palm/power/identify`](#com_palm_power_identify) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/prepareSuspendAck`](#com_palm_power_preparesuspendack) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/prepareSuspendRegister`](#com_palm_power_preparesuspendregister) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/setWakeLock`](#com_palm_power_setwakelock) | private |  | power | inferred | Sets the wake lock (com palm power) |
+| [`com/palm/power/somebodyWantsWakeup`](#com_palm_power_somebodywantswakeup) | private |  | power | inferred | Handles the somebody wants wakeup (com palm power) |
+| [`com/palm/power/suspendRequestAck`](#com_palm_power_suspendrequestack) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/suspendRequestRegister`](#com_palm_power_suspendrequestregister) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/systemTimeChanged`](#com_palm_power_systemtimechanged) | private |  | power | inferred | Handles the system time changed (com palm power) |
+| [`com/palm/power/TESTSuspend`](#com_palm_power_testsuspend) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`com/palm/power/wakeLockRegister`](#com_palm_power_wakelockregister) | private |  | power | inferred | Wakes the lock register (com palm power) |
+| [`shutdown/initiate`](#shutdown_initiate) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`shutdown/machineOff`](#shutdown_machineoff) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only ⚠️ |
+| [`shutdown/machineReboot`](#shutdown_machinereboot) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only ⚠️ |
+| [`shutdown/shutdownApplicationsAck`](#shutdown_shutdownapplicationsack) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`shutdown/shutdownApplicationsRegister`](#shutdown_shutdownapplicationsregister) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`shutdown/shutdownServicesAck`](#shutdown_shutdownservicesack) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`shutdown/shutdownServicesRegister`](#shutdown_shutdownservicesregister) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`shutdown/TESTresetShutdownState`](#shutdown_testresetshutdownstate) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only |
+| [`time/alarmAdd`](#time_alarmadd) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`time/alarmAddCalendar`](#time_alarmaddcalendar) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`time/alarmQuery`](#time_alarmquery) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`time/alarmRemove`](#time_alarmremove) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`time/internalAlarmFired`](#time_internalalarmfired) | private |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`timeout/clear`](#timeout_clear) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
+| [`timeout/getAllAlarms`](#timeout_getallalarms) | private |  | power-mgmt | inferred | Returns the all alarms (timeout) |
+| [`timeout/getNextWakeupAlarm`](#timeout_getnextwakeupalarm) | private |  | power-mgmt | inferred | Returns the next wakeup alarm (timeout) |
+| [`timeout/set`](#timeout_set) | unknown |  | power | documented | Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only |
 
 <a id="com_palm_power_activityend"></a>
 ## `com/palm/power/activityEnd`
@@ -49,7 +51,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/activityEnd '{}'
@@ -70,7 +72,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/activityStart '{}'
@@ -91,7 +93,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/clientCancelByName '{}'
@@ -112,7 +114,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/forceSuspend '{}'
@@ -133,7 +135,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/identify '{}'
@@ -154,7 +156,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/prepareSuspendAck '{}'
@@ -175,7 +177,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/prepareSuspendRegister '{}'
@@ -190,13 +192,15 @@ Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.web
 
 `luna://com.palm.sleep/com/palm/power/setWakeLock`
 
-Method on com.palm.sleep (from on-device permission registry; parameters undocumented).
+Sets the wake lock (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/setWakeLock '{}'
@@ -211,13 +215,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.sleep/com/palm/power/somebodyWantsWakeup`
 
-Method on com.palm.sleep (from on-device permission registry; parameters undocumented).
+Handles the somebody wants wakeup (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/somebodyWantsWakeup '{}'
@@ -238,7 +244,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/suspendRequestAck '{}'
@@ -259,7 +265,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/suspendRequestRegister '{}'
@@ -274,13 +280,15 @@ Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.web
 
 `luna://com.palm.sleep/com/palm/power/systemTimeChanged`
 
-Method on com.palm.sleep (from on-device permission registry; parameters undocumented).
+Handles the system time changed (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/systemTimeChanged '{}'
@@ -301,7 +309,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/TESTSuspend '{}'
@@ -316,13 +324,15 @@ Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.web
 
 `luna://com.palm.sleep/com/palm/power/wakeLockRegister`
 
-Method on com.palm.sleep (from on-device permission registry; parameters undocumented).
+Wakes the lock register (com palm power)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/com/palm/power/wakeLockRegister '{}'
@@ -343,7 +353,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/shutdown/initiate '{}'
@@ -364,7 +374,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/shutdown/machineOff '{}'
@@ -385,7 +395,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/shutdown/machineReboot '{}'
@@ -406,7 +416,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/shutdown/shutdownApplicationsAck '{}'
@@ -427,7 +437,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/shutdown/shutdownApplicationsRegister '{}'
@@ -448,7 +458,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/shutdown/shutdownServicesAck '{}'
@@ -469,7 +479,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/shutdown/shutdownServicesRegister '{}'
@@ -490,7 +500,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.management); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/shutdown/TESTresetShutdownState '{}'
@@ -511,7 +521,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/time/alarmAdd '{}'
@@ -532,7 +542,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/time/alarmAddCalendar '{}'
@@ -553,7 +563,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/time/alarmQuery '{}'
@@ -574,7 +584,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/time/alarmRemove '{}'
@@ -595,7 +605,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/time/internalAlarmFired '{}'
@@ -616,7 +626,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/timeout/clear '{}'
@@ -631,13 +641,15 @@ Sources: [1](https://github.com/webosose/sleepd/blob/master/files/sysbus/com.web
 
 `luna://com.palm.sleep/timeout/getAllAlarms`
 
-Getter on com.palm.sleep (introspected on-device; parameters undocumented).
+Returns the all alarms (timeout)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/timeout/getAllAlarms '{}'
@@ -652,13 +664,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.palm.sleep/timeout/getNextWakeupAlarm`
 
-Getter on com.palm.sleep (introspected on-device; parameters undocumented).
+Returns the next wakeup alarm (timeout)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/timeout/getNextWakeupAlarm '{}'
@@ -679,7 +693,7 @@ Registered in webOS OSE sysbus api.json (ACG group sleep.operation); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.sleep/timeout/set '{}'

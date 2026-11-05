@@ -1,31 +1,35 @@
 # `com.example.activityexample`
 
+SDK sample service demonstrating the ActivityManager: creating timers and alarms and handling their fired/cancel callbacks. Example code, not a shipping feature. _(inferred from the service's methods)_
+
 7 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`alarmFired`](#alarmfired) | public |  | activity | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
-| [`cancelActivity`](#cancelactivity) | public |  | activity | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
-| [`createAlarm`](#createalarm) | public |  | activity | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
-| [`createTimer`](#createtimer) | public |  | input | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | activity | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | activity | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
-| [`timerFired`](#timerfired) | public |  | input | Method on com.example.activityexample (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`alarmFired`](#alarmfired) | public |  | activity | inferred | Handles the alarm fired. |
+| [`cancelActivity`](#cancelactivity) | public |  | activity | inferred | Cancels the activity. |
+| [`createAlarm`](#createalarm) | public |  | activity | inferred | Creates the alarm. |
+| [`createTimer`](#createtimer) | public |  | input | inferred | Creates the timer. |
+| [`info`](#info) | public |  | activity | inferred | Handles the info. |
+| [`quit`](#quit) | public |  | activity | inferred | Quits the example activityexample. |
+| [`timerFired`](#timerfired) | public |  | input | inferred | Handles the timer fired. |
 
 <a id="alarmfired"></a>
 ## `alarmFired`
 
 `luna://com.example.activityexample/alarmFired`
 
-Method on com.example.activityexample (from on-device permission registry; parameters undocumented).
+Handles the alarm fired.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.activityexample/alarmFired '{}'
@@ -40,13 +44,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.activityexample/cancelActivity`
 
-Method on com.example.activityexample (from on-device permission registry; parameters undocumented).
+Cancels the activity.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.activityexample/cancelActivity '{}'
@@ -61,13 +67,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.activityexample/createAlarm`
 
-Method on com.example.activityexample (from on-device permission registry; parameters undocumented).
+Creates the alarm.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.activityexample/createAlarm '{}'
@@ -82,13 +90,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.activityexample/createTimer`
 
-Method on com.example.activityexample (from on-device permission registry; parameters undocumented).
+Creates the timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.activityexample/createTimer '{}'
@@ -103,13 +113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.activityexample/info`
 
-Method on com.example.activityexample (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.activityexample/info '{}'
@@ -124,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.activityexample/quit`
 
-Method on com.example.activityexample (from on-device permission registry; parameters undocumented).
+Quits the example activityexample.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.activityexample/quit '{}'
@@ -145,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.example.activityexample/timerFired`
 
-Method on com.example.activityexample (from on-device permission registry; parameters undocumented).
+Handles the timer fired.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.example.activityexample/timerFired '{}'

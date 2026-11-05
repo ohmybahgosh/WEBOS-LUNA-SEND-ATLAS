@@ -1,32 +1,36 @@
 # `com.webos.service.iwc`
 
+Inter-window composition (IWC) service: publishes and exports windows, sets crop regions and window properties for compositing. _(inferred from the service's methods)_
+
 8 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`debug/debugEngineOnoff`](#debug_debugengineonoff) | private |  | misc | Method on com.webos.service.iwc (introspected on-device; parameters undocumented). |
-| [`debug/debugGetAllStatus`](#debug_debuggetallstatus) | private |  | misc | Method on com.webos.service.iwc (introspected on-device; parameters undocumented). |
-| [`listPublishedWindows`](#listpublishedwindows) | private |  | misc | Lister on com.webos.service.iwc (introspected on-device; parameters undocumented). |
-| [`publishWindow`](#publishwindow) | private |  | misc | Method on com.webos.service.iwc (introspected on-device; parameters undocumented). |
-| [`setCropRegion`](#setcropregion) | private |  | misc | Setter on com.webos.service.iwc (introspected on-device; parameters undocumented). |
-| [`setExportedWindow`](#setexportedwindow) | private |  | misc | Setter on com.webos.service.iwc (introspected on-device; parameters undocumented). |
-| [`setProperty`](#setproperty) | private |  | misc | Setter on com.webos.service.iwc (introspected on-device; parameters undocumented). |
-| [`stopPublishWindow`](#stoppublishwindow) | private |  | misc | Method on com.webos.service.iwc (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`debug/debugEngineOnoff`](#debug_debugengineonoff) | private |  | misc | inferred | Handles the debug engine onoff (debug) |
+| [`debug/debugGetAllStatus`](#debug_debuggetallstatus) | private |  | misc | inferred | Handles the debug get all status (debug) |
+| [`listPublishedWindows`](#listpublishedwindows) | private |  | misc | inferred | Lists the published windows. |
+| [`publishWindow`](#publishwindow) | private |  | misc | inferred | Handles the publish window. |
+| [`setCropRegion`](#setcropregion) | private |  | misc | inferred | Sets the crop region. |
+| [`setExportedWindow`](#setexportedwindow) | private |  | misc | inferred | Sets the exported window. |
+| [`setProperty`](#setproperty) | private |  | misc | inferred | Sets the property. |
+| [`stopPublishWindow`](#stoppublishwindow) | private |  | misc | inferred | Stops the publish window. |
 
 <a id="debug_debugengineonoff"></a>
 ## `debug/debugEngineOnoff`
 
 `luna://com.webos.service.iwc/debug/debugEngineOnoff`
 
-Method on com.webos.service.iwc (introspected on-device; parameters undocumented).
+Handles the debug engine onoff (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iwc/debug/debugEngineOnoff '{}'
@@ -41,13 +45,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iwc/debug/debugGetAllStatus`
 
-Method on com.webos.service.iwc (introspected on-device; parameters undocumented).
+Handles the debug get all status (debug)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iwc/debug/debugGetAllStatus '{}'
@@ -62,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iwc/listPublishedWindows`
 
-Lister on com.webos.service.iwc (introspected on-device; parameters undocumented).
+Lists the published windows.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iwc/listPublishedWindows '{}'
@@ -83,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iwc/publishWindow`
 
-Method on com.webos.service.iwc (introspected on-device; parameters undocumented).
+Handles the publish window.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iwc/publishWindow '{}'
@@ -104,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iwc/setCropRegion`
 
-Setter on com.webos.service.iwc (introspected on-device; parameters undocumented).
+Sets the crop region.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iwc/setCropRegion '{}'
@@ -125,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iwc/setExportedWindow`
 
-Setter on com.webos.service.iwc (introspected on-device; parameters undocumented).
+Sets the exported window.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iwc/setExportedWindow '{}'
@@ -146,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iwc/setProperty`
 
-Setter on com.webos.service.iwc (introspected on-device; parameters undocumented).
+Sets the property.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iwc/setProperty '{}'
@@ -167,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.iwc/stopPublishWindow`
 
-Method on com.webos.service.iwc (introspected on-device; parameters undocumented).
+Stops the publish window.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.iwc/stopPublishWindow '{}'

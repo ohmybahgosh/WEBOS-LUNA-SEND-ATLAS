@@ -1,33 +1,37 @@
 # `com.webos.service.independanotification`
 
+Integration with the Independa elder-care/video-call platform: launches the service, handles incoming video-call decline, photo icons and power-state notifications. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`checkResponse`](#checkresponse) | public |  | notifications | Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented). |
-| [`closeService`](#closeservice) | public |  | notifications | Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented). |
-| [`declineVideoCall`](#declinevideocall) | public |  | notifications | Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented). |
-| [`deletePhotoIcon`](#deletephotoicon) | public |  | notifications | Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`launchIndependa`](#launchindependa) | public |  | notifications | Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented). |
-| [`notifyPowerState`](#notifypowerstate) | public |  | notifications | Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented). |
-| [`pauseService`](#pauseservice) | public |  | notifications | Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented). |
-| [`setServiceLangauge`](#setservicelangauge) | public |  | notifications | Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented). |
-| [`startService`](#startservice) | public |  | notifications | Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`checkResponse`](#checkresponse) | public |  | notifications | inferred | Checks the response. |
+| [`closeService`](#closeservice) | public |  | notifications | inferred | Closes the service. |
+| [`declineVideoCall`](#declinevideocall) | public |  | notifications | inferred | Handles the decline video call. |
+| [`deletePhotoIcon`](#deletephotoicon) | public |  | notifications | inferred | Deletes the photo icon. ⚠️ |
+| [`launchIndependa`](#launchindependa) | public |  | notifications | inferred | Launches the independa. |
+| [`notifyPowerState`](#notifypowerstate) | public |  | notifications | inferred | Notifies of the power state. |
+| [`pauseService`](#pauseservice) | public |  | notifications | inferred | Pauses the service. |
+| [`setServiceLangauge`](#setservicelangauge) | public |  | notifications | inferred | Sets the service langauge. |
+| [`startService`](#startservice) | public |  | notifications | inferred | Starts the service. |
 
 <a id="checkresponse"></a>
 ## `checkResponse`
 
 `luna://com.webos.service.independanotification/checkResponse`
 
-Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented).
+Checks the response.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.independanotification/checkResponse '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.independanotification/closeService`
 
-Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented).
+Closes the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.independanotification/closeService '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.independanotification/declineVideoCall`
 
-Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented).
+Handles the decline video call.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.independanotification/declineVideoCall '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.independanotification/deletePhotoIcon`
 
-Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented).
+Deletes the photo icon.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.independanotification/deletePhotoIcon '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.independanotification/launchIndependa`
 
-Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented).
+Launches the independa.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.independanotification/launchIndependa '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.independanotification/notifyPowerState`
 
-Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented).
+Notifies of the power state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.independanotification/notifyPowerState '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.independanotification/pauseService`
 
-Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented).
+Pauses the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.independanotification/pauseService '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.independanotification/setServiceLangauge`
 
-Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented).
+Sets the service langauge.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.independanotification/setServiceLangauge '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.independanotification/startService`
 
-Method on com.webos.service.independanotification (from on-device permission registry; parameters undocumented).
+Starts the service.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.independanotification/startService '{}'

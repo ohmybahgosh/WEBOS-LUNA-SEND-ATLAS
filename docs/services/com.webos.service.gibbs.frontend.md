@@ -1,36 +1,40 @@
 # `com.webos.service.gibbs.frontend`
 
+Broadcast tuner front-end control: opens/closes the demodulator, tunes, reports lock and signal state, and configures PLP (physical-layer pipes) for multiplex streams. _(inferred from the service's methods)_
+
 12 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`frontendChangeTransMedia`](#frontendchangetransmedia) | private |  | tv-broadcast | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
-| [`frontendCheckSignalState`](#frontendchecksignalstate) | private |  | tv-broadcast | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
-| [`frontendClose`](#frontendclose) | private |  | tv-broadcast | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
-| [`frontendConnect`](#frontendconnect) | private |  | tv-broadcast | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
-| [`frontendGetDemodConfig`](#frontendgetdemodconfig) | private |  | settings | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
-| [`frontendGetLockInfo`](#frontendgetlockinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
-| [`frontendLockMessage`](#frontendlockmessage) | private |  | tv-broadcast | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
-| [`frontendMultiPLPInfo`](#frontendmultiplpinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
-| [`frontendOpen`](#frontendopen) | private |  | tv-broadcast | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
-| [`frontendRequestTune`](#frontendrequesttune) | private |  | tv-broadcast | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
-| [`frontendSelfCheck`](#frontendselfcheck) | private |  | tv-broadcast | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
-| [`frontendSetPLP`](#frontendsetplp) | private |  | tv-broadcast | Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`frontendChangeTransMedia`](#frontendchangetransmedia) | private |  | tv-broadcast | inferred | Handles the frontend change trans media. |
+| [`frontendCheckSignalState`](#frontendchecksignalstate) | private |  | tv-broadcast | inferred | Handles the frontend check signal state. |
+| [`frontendClose`](#frontendclose) | private |  | tv-broadcast | inferred | Handles the frontend close. |
+| [`frontendConnect`](#frontendconnect) | private |  | tv-broadcast | inferred | Handles the frontend connect. |
+| [`frontendGetDemodConfig`](#frontendgetdemodconfig) | private |  | settings | inferred | Handles the frontend get demod config. |
+| [`frontendGetLockInfo`](#frontendgetlockinfo) | private |  | tv-broadcast | inferred | Handles the frontend get lock info. |
+| [`frontendLockMessage`](#frontendlockmessage) | private |  | tv-broadcast | inferred | Handles the frontend lock message. |
+| [`frontendMultiPLPInfo`](#frontendmultiplpinfo) | private |  | tv-broadcast | inferred | Handles the frontend multi PLP info. |
+| [`frontendOpen`](#frontendopen) | private |  | tv-broadcast | inferred | Handles the frontend open. |
+| [`frontendRequestTune`](#frontendrequesttune) | private |  | tv-broadcast | inferred | Handles the frontend request tune. |
+| [`frontendSelfCheck`](#frontendselfcheck) | private |  | tv-broadcast | inferred | Handles the frontend self check. |
+| [`frontendSetPLP`](#frontendsetplp) | private |  | tv-broadcast | inferred | Handles the frontend set PLP. |
 
 <a id="frontendchangetransmedia"></a>
 ## `frontendChangeTransMedia`
 
 `luna://com.webos.service.gibbs.frontend/frontendChangeTransMedia`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend change trans media.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendChangeTransMedia '{}'
@@ -45,13 +49,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.frontend/frontendCheckSignalState`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend check signal state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendCheckSignalState '{}'
@@ -66,13 +72,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.frontend/frontendClose`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend close.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendClose '{}'
@@ -87,13 +95,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.frontend/frontendConnect`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend connect.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendConnect '{}'
@@ -108,13 +118,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.frontend/frontendGetDemodConfig`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend get demod config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendGetDemodConfig '{}'
@@ -129,13 +141,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.frontend/frontendGetLockInfo`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend get lock info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendGetLockInfo '{}'
@@ -150,13 +164,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.frontend/frontendLockMessage`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend lock message.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendLockMessage '{}'
@@ -171,13 +187,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.frontend/frontendMultiPLPInfo`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend multi PLP info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendMultiPLPInfo '{}'
@@ -192,13 +210,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.frontend/frontendOpen`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend open.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendOpen '{}'
@@ -213,13 +233,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.frontend/frontendRequestTune`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend request tune.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendRequestTune '{}'
@@ -234,13 +256,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.frontend/frontendSelfCheck`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend self check.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendSelfCheck '{}'
@@ -255,13 +279,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.frontend/frontendSetPLP`
 
-Method on com.webos.service.gibbs.frontend (from on-device permission registry; parameters undocumented).
+Handles the frontend set PLP.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.frontend/frontendSetPLP '{}'

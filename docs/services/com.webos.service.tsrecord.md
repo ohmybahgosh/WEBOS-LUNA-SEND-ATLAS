@@ -1,35 +1,39 @@
 # `com.webos.service.tsrecord`
 
+Transport-stream recording service: initializes, loads, starts and stops TS recording and reports recording status/time and an MPD manifest. _(inferred from the service's methods)_
+
 11 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`record/destroy`](#record_destroy) | private |  | misc | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
-| [`record/getMPD`](#record_getmpd) | private |  | misc | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
-| [`record/getRecInfo`](#record_getrecinfo) | private |  | misc | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
-| [`record/getRecStatus`](#record_getrecstatus) | private |  | misc | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
-| [`record/getRecTime`](#record_getrectime) | private |  | input | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
-| [`record/initialize`](#record_initialize) | private |  | misc | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
-| [`record/load`](#record_load) | private |  | misc | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
-| [`record/start`](#record_start) | private |  | misc | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
-| [`record/stop`](#record_stop) | private |  | misc | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
-| [`record/unload`](#record_unload) | private |  | misc | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
-| [`record/updateMetaData`](#record_updatemetadata) | private |  | update | Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`record/destroy`](#record_destroy) | private |  | misc | inferred | Handles the destroy (record) |
+| [`record/getMPD`](#record_getmpd) | private |  | misc | inferred | Returns the MPD (record) |
+| [`record/getRecInfo`](#record_getrecinfo) | private |  | misc | inferred | Returns the rec info (record) |
+| [`record/getRecStatus`](#record_getrecstatus) | private |  | misc | inferred | Returns the rec status (record) |
+| [`record/getRecTime`](#record_getrectime) | private |  | input | inferred | Returns the rec time (record) |
+| [`record/initialize`](#record_initialize) | private |  | misc | inferred | Initializes the tsrecord (record) |
+| [`record/load`](#record_load) | private |  | misc | inferred | Loads the tsrecord (record) |
+| [`record/start`](#record_start) | private |  | misc | inferred | Starts the tsrecord (record) |
+| [`record/stop`](#record_stop) | private |  | misc | inferred | Stops the tsrecord (record) |
+| [`record/unload`](#record_unload) | private |  | misc | inferred | Unloads the tsrecord (record) |
+| [`record/updateMetaData`](#record_updatemetadata) | private |  | update | inferred | Updates the meta data (record) |
 
 <a id="record_destroy"></a>
 ## `record/destroy`
 
 `luna://com.webos.service.tsrecord/record/destroy`
 
-Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented).
+Handles the destroy (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tsrecord/record/destroy '{}'
@@ -44,13 +48,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tsrecord/record/getMPD`
 
-Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented).
+Returns the MPD (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tsrecord/record/getMPD '{}'
@@ -65,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tsrecord/record/getRecInfo`
 
-Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented).
+Returns the rec info (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tsrecord/record/getRecInfo '{}'
@@ -86,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tsrecord/record/getRecStatus`
 
-Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented).
+Returns the rec status (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tsrecord/record/getRecStatus '{}'
@@ -107,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tsrecord/record/getRecTime`
 
-Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented).
+Returns the rec time (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tsrecord/record/getRecTime '{}'
@@ -128,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tsrecord/record/initialize`
 
-Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented).
+Initializes the tsrecord (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tsrecord/record/initialize '{}'
@@ -149,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tsrecord/record/load`
 
-Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented).
+Loads the tsrecord (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tsrecord/record/load '{}'
@@ -170,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tsrecord/record/start`
 
-Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented).
+Starts the tsrecord (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tsrecord/record/start '{}'
@@ -191,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tsrecord/record/stop`
 
-Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented).
+Stops the tsrecord (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tsrecord/record/stop '{}'
@@ -212,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tsrecord/record/unload`
 
-Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented).
+Unloads the tsrecord (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tsrecord/record/unload '{}'
@@ -233,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tsrecord/record/updateMetaData`
 
-Method on com.webos.service.tsrecord (from on-device permission registry; parameters undocumented).
+Updates the meta data (record)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tsrecord/record/updateMetaData '{}'

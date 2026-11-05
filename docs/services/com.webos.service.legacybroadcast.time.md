@@ -1,28 +1,32 @@
 # `com.webos.service.legacybroadcast.time`
 
+Legacy broadcast time service: reports UTC, local-time offset and DST rules decoded from the broadcast stream. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getDstRule`](#getdstrule) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.time (from on-device permission registry; parameters undocumented). |
-| [`getLocalTimeOffset`](#getlocaltimeoffset) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.time (from on-device permission registry; parameters undocumented). |
-| [`getSpecificLocalTime`](#getspecificlocaltime) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.time (from on-device permission registry; parameters undocumented). |
-| [`getUTC`](#getutc) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.time (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getDstRule`](#getdstrule) | private |  | tv-broadcast | inferred | Returns the dst rule. |
+| [`getLocalTimeOffset`](#getlocaltimeoffset) | private |  | tv-broadcast | inferred | Returns the local time offset. |
+| [`getSpecificLocalTime`](#getspecificlocaltime) | private |  | tv-broadcast | inferred | Returns the specific local time. |
+| [`getUTC`](#getutc) | private |  | tv-broadcast | inferred | Returns the UTC. |
 
 <a id="getdstrule"></a>
 ## `getDstRule`
 
 `luna://com.webos.service.legacybroadcast.time/getDstRule`
 
-Method on com.webos.service.legacybroadcast.time (from on-device permission registry; parameters undocumented).
+Returns the dst rule.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.time/getDstRule '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.time/getLocalTimeOffset`
 
-Method on com.webos.service.legacybroadcast.time (from on-device permission registry; parameters undocumented).
+Returns the local time offset.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.time/getLocalTimeOffset '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.time/getSpecificLocalTime`
 
-Method on com.webos.service.legacybroadcast.time (from on-device permission registry; parameters undocumented).
+Returns the specific local time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.time/getSpecificLocalTime '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.legacybroadcast.time/getUTC`
 
-Method on com.webos.service.legacybroadcast.time (from on-device permission registry; parameters undocumented).
+Returns the UTC.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.time/getUTC '{}'

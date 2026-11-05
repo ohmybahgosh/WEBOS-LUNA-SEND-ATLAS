@@ -1,35 +1,39 @@
 # `com.webos.service.voiceinput.preprocessor`
 
+Voice-input preprocessor: starts and stops microphone streaming, sets the trigger point, and runs beamforming/web-BSI utilities over the mic devices. _(inferred from the service's methods)_
+
 11 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getDataVersion`](#getdataversion) | private |  | input | Getter on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented). |
-| [`getDevices`](#getdevices) | private |  | input | Getter on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented). |
-| [`restartTimer`](#restarttimer) | private |  | input | Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented). |
-| [`setTriggerPoint`](#settriggerpoint) | private |  | input | Setter on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented). |
-| [`start`](#start) | private |  | input | Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented). |
-| [`startStreaming`](#startstreaming) | private |  | input | Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented). |
-| [`stopStreaming`](#stopstreaming) | private |  | input | Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented). |
-| [`util/runByFile`](#util_runbyfile) | private |  | input | Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented). |
-| [`util/startWebBSI`](#util_startwebbsi) | private |  | input | Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented). |
-| [`util/stopWebBSI`](#util_stopwebbsi) | private |  | input | Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented). |
-| [`util/subscribeFileOutput`](#util_subscribefileoutput) | private |  | input | Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getDataVersion`](#getdataversion) | private |  | input | inferred | Returns the data version. |
+| [`getDevices`](#getdevices) | private |  | input | inferred | Returns the devices. |
+| [`restartTimer`](#restarttimer) | private |  | input | inferred | Restarts the timer. |
+| [`setTriggerPoint`](#settriggerpoint) | private |  | input | inferred | Sets the trigger point. |
+| [`start`](#start) | private |  | input | inferred | Starts the voiceinput preprocessor. |
+| [`startStreaming`](#startstreaming) | private |  | input | inferred | Starts the streaming. |
+| [`stopStreaming`](#stopstreaming) | private |  | input | inferred | Stops the streaming. |
+| [`util/runByFile`](#util_runbyfile) | private |  | input | inferred | Runs the by file (util) |
+| [`util/startWebBSI`](#util_startwebbsi) | private |  | input | inferred | Starts the web BSI (util) |
+| [`util/stopWebBSI`](#util_stopwebbsi) | private |  | input | inferred | Stops the web BSI (util) |
+| [`util/subscribeFileOutput`](#util_subscribefileoutput) | private |  | input | inferred | Subscribes to the file output (util) |
 
 <a id="getdataversion"></a>
 ## `getDataVersion`
 
 `luna://com.webos.service.voiceinput.preprocessor/getDataVersion`
 
-Getter on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented).
+Returns the data version.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/getDataVersion '{}'
@@ -44,13 +48,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.preprocessor/getDevices`
 
-Getter on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented).
+Returns the devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/getDevices '{}'
@@ -65,13 +71,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.preprocessor/restartTimer`
 
-Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented).
+Restarts the timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/restartTimer '{}'
@@ -86,13 +94,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.preprocessor/setTriggerPoint`
 
-Setter on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented).
+Sets the trigger point.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/setTriggerPoint '{}'
@@ -107,13 +117,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.preprocessor/start`
 
-Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented).
+Starts the voiceinput preprocessor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/start '{}'
@@ -128,13 +140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.preprocessor/startStreaming`
 
-Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented).
+Starts the streaming.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/startStreaming '{}'
@@ -149,13 +163,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.preprocessor/stopStreaming`
 
-Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented).
+Stops the streaming.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/stopStreaming '{}'
@@ -170,13 +186,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.preprocessor/util/runByFile`
 
-Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented).
+Runs the by file (util)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/util/runByFile '{}'
@@ -191,13 +209,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.preprocessor/util/startWebBSI`
 
-Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented).
+Starts the web BSI (util)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/util/startWebBSI '{}'
@@ -212,13 +232,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.preprocessor/util/stopWebBSI`
 
-Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented).
+Stops the web BSI (util)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/util/stopWebBSI '{}'
@@ -233,13 +255,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput.preprocessor/util/subscribeFileOutput`
 
-Method on com.webos.service.voiceinput.preprocessor (introspected on-device; parameters undocumented).
+Subscribes to the file output (util)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput.preprocessor/util/subscribeFileOutput '{}'

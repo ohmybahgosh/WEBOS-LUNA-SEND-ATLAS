@@ -1,28 +1,32 @@
 # `com.webos.assetmanager`
 
+Appears to manage downloaded assets: clears and monitors stored assets and reports status. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`clear`](#clear) | public |  | misc | Method on com.webos.assetmanager (from on-device permission registry; parameters undocumented). |
-| [`info`](#info) | public |  | misc | Method on com.webos.assetmanager (from on-device permission registry; parameters undocumented). |
-| [`monitor`](#monitor) | public |  | misc | Method on com.webos.assetmanager (from on-device permission registry; parameters undocumented). |
-| [`quit`](#quit) | public |  | misc | Method on com.webos.assetmanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`clear`](#clear) | public |  | misc | inferred | Clears the assetmanager. |
+| [`info`](#info) | public |  | misc | inferred | Handles the info. |
+| [`monitor`](#monitor) | public |  | misc | inferred | Monitors the assetmanager. |
+| [`quit`](#quit) | public |  | misc | inferred | Quits the assetmanager. |
 
 <a id="clear"></a>
 ## `clear`
 
 `luna://com.webos.assetmanager/clear`
 
-Method on com.webos.assetmanager (from on-device permission registry; parameters undocumented).
+Clears the assetmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.assetmanager/clear '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.assetmanager/info`
 
-Method on com.webos.assetmanager (from on-device permission registry; parameters undocumented).
+Handles the info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.assetmanager/info '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.assetmanager/monitor`
 
-Method on com.webos.assetmanager (from on-device permission registry; parameters undocumented).
+Monitors the assetmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.assetmanager/monitor '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.assetmanager/quit`
 
-Method on com.webos.assetmanager (from on-device permission registry; parameters undocumented).
+Quits the assetmanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.assetmanager/quit '{}'

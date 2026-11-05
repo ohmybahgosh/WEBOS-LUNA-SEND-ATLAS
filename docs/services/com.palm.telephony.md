@@ -1,16 +1,18 @@
 # `com.palm.telephony`
 
+Legacy Palm telephony/radio service: place and end calls and manage the cellular radio (reset, roaming mode, restore defaults).
+
 5 methods.  Platforms seen: HP webOS, Palm.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`dial`](#dial) | root |  | misc | Dials a number (really places the call) |
-| [`hangupAll`](#hangupall) | root |  | misc | Hangs up all calls |
-| [`radioDefaultsRestore`](#radiodefaultsrestore) | root |  | misc | Restores radio defaults (##RTN# style nuke command) ⚠️ |
-| [`resetRadio`](#resetradio) | root |  | misc | Resets the radio (part of ##RTN# sequence) ⚠️ |
-| [`roamModeSet`](#roammodeset) | root |  | misc | Sets roaming mode |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`dial`](#dial) | root |  | misc | documented | Dials a number (really places the call) |
+| [`hangupAll`](#hangupall) | root |  | misc | documented | Hangs up all calls |
+| [`radioDefaultsRestore`](#radiodefaultsrestore) | root |  | misc | documented | Restores radio defaults (##RTN# style nuke command) ⚠️ |
+| [`resetRadio`](#resetradio) | root |  | misc | documented | Resets the radio (part of ##RTN# sequence) ⚠️ |
+| [`roamModeSet`](#roammodeset) | root |  | misc | documented | Sets roaming mode |
 
 <a id="dial"></a>
 ## `dial`
@@ -23,7 +25,7 @@ Dials a number (really places the call)
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -46,7 +48,7 @@ Hangs up all calls
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 palm://com.palm.telephony/hangupAll {}
@@ -65,7 +67,7 @@ Restores radio defaults (##RTN# style nuke command)
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.palm.telephony/radioDefaultsRestore {}
@@ -86,7 +88,7 @@ Resets the radio (part of ##RTN# sequence)
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.palm.telephony/resetRadio {}
@@ -105,7 +107,7 @@ Sets roaming mode
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|

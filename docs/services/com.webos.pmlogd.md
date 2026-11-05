@@ -1,36 +1,40 @@
 # `com.webos.pmlogd`
 
+PmLog logging daemon: collects and backs up system logs, forces log rotation, manages the log whitelist, and toggles developer logging.
+
 12 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`backuplogs`](#backuplogs) | private |  | misc | Method on com.webos.pmlogd (introspected on-device; parameters undocumented). |
-| [`collectAllLog`](#collectalllog) | private |  | misc | Method on com.webos.pmlogd (introspected on-device; parameters undocumented). |
-| [`enableNewWhitelist`](#enablenewwhitelist) | private |  | misc | Reloads the pmlogd dev-log whitelist (also reloaded on reboot) |
-| [`forcerotate`](#forcerotate) | private |  | misc | Method on com.webos.pmlogd (introspected on-device; parameters undocumented). |
-| [`getAllowDevLog`](#getallowdevlog) | private |  | misc | Getter on com.webos.pmlogd (introspected on-device; parameters undocumented). |
-| [`getBackupLogs`](#getbackuplogs) | private |  | misc | Getter on com.webos.pmlogd (introspected on-device; parameters undocumented). |
-| [`getdevlogstatus`](#getdevlogstatus) | private |  | misc | Reads whether dev logs are being recorded |
-| [`removeNormalLog`](#removenormallog) | private |  | misc | Method on com.webos.pmlogd (introspected on-device; parameters undocumented). ⚠️ |
-| [`setAllowDevLog`](#setallowdevlog) | private |  | misc | Setter on com.webos.pmlogd (introspected on-device; parameters undocumented). |
-| [`setBackupLogs`](#setbackuplogs) | private |  | misc | Setter on com.webos.pmlogd (introspected on-device; parameters undocumented). |
-| [`setdevlogstatus`](#setdevlogstatus) | private |  | activity | Enables dev logging on webOS 3.x (no whitelist) |
-| [`subscribeOnRotations`](#subscribeonrotations) | private |  | misc | Method on com.webos.pmlogd (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`backuplogs`](#backuplogs) | private |  | misc | inferred | Handles the backuplogs. |
+| [`collectAllLog`](#collectalllog) | private |  | misc | inferred | Handles the collect all log. |
+| [`enableNewWhitelist`](#enablenewwhitelist) | private |  | misc | documented | Reloads the pmlogd dev-log whitelist (also reloaded on reboot) |
+| [`forcerotate`](#forcerotate) | private |  | misc | inferred | Handles the forcerotate. |
+| [`getAllowDevLog`](#getallowdevlog) | private |  | misc | inferred | Returns the allow dev log. |
+| [`getBackupLogs`](#getbackuplogs) | private |  | misc | inferred | Returns the backup logs. |
+| [`getdevlogstatus`](#getdevlogstatus) | private |  | misc | documented | Reads whether dev logs are being recorded |
+| [`removeNormalLog`](#removenormallog) | private |  | misc | inferred | Removes the normal log. ⚠️ |
+| [`setAllowDevLog`](#setallowdevlog) | private |  | misc | inferred | Sets the allow dev log. |
+| [`setBackupLogs`](#setbackuplogs) | private |  | misc | inferred | Sets the backup logs. |
+| [`setdevlogstatus`](#setdevlogstatus) | private |  | activity | documented | Enables dev logging on webOS 3.x (no whitelist) |
+| [`subscribeOnRotations`](#subscribeonrotations) | private |  | misc | inferred | Subscribes to the on rotations. |
 
 <a id="backuplogs"></a>
 ## `backuplogs`
 
 `luna://com.webos.pmlogd/backuplogs`
 
-Method on com.webos.pmlogd (introspected on-device; parameters undocumented).
+Handles the backuplogs.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.pmlogd/backuplogs '{}'
@@ -45,13 +49,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.pmlogd/collectAllLog`
 
-Method on com.webos.pmlogd (introspected on-device; parameters undocumented).
+Handles the collect all log.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.pmlogd/collectAllLog '{}'
@@ -72,7 +78,7 @@ Reloads the pmlogd dev-log whitelist (also reloaded on reboot)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.pmlogd/enableNewWhitelist '{}'
@@ -87,13 +93,15 @@ Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/ops/pmlogd
 
 `luna://com.webos.pmlogd/forcerotate`
 
-Method on com.webos.pmlogd (introspected on-device; parameters undocumented).
+Handles the forcerotate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.pmlogd/forcerotate '{}'
@@ -108,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.pmlogd/getAllowDevLog`
 
-Getter on com.webos.pmlogd (introspected on-device; parameters undocumented).
+Returns the allow dev log.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.pmlogd/getAllowDevLog '{}'
@@ -129,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.pmlogd/getBackupLogs`
 
-Getter on com.webos.pmlogd (introspected on-device; parameters undocumented).
+Returns the backup logs.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.pmlogd/getBackupLogs '{}'
@@ -156,7 +168,7 @@ Reads whether dev logs are being recorded
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f 'luna://com.webos.pmlogd/getdevlogstatus' '{}'
@@ -171,13 +183,15 @@ Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/ops/pmlogd
 
 `luna://com.webos.pmlogd/removeNormalLog`
 
-Method on com.webos.pmlogd (introspected on-device; parameters undocumented).
+Removes the normal log.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.pmlogd/removeNormalLog '{}'
@@ -192,13 +206,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.pmlogd/setAllowDevLog`
 
-Setter on com.webos.pmlogd (introspected on-device; parameters undocumented).
+Sets the allow dev log.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.pmlogd/setAllowDevLog '{}'
@@ -213,13 +229,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.pmlogd/setBackupLogs`
 
-Setter on com.webos.pmlogd (introspected on-device; parameters undocumented).
+Sets the backup logs.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.pmlogd/setBackupLogs '{}'
@@ -240,7 +258,7 @@ Enables dev logging on webOS 3.x (no whitelist)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS 3.x and older (4.x+ uses config system.collectDevLogs)  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -257,13 +275,15 @@ Sources: [1](https://github.com/webosbrew/pages/blob/HEAD/content/pages/logging.
 
 `luna://com.webos.pmlogd/subscribeOnRotations`
 
-Method on com.webos.pmlogd (introspected on-device; parameters undocumented).
+Subscribes to the on rotations.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.pmlogd/subscribeOnRotations '{}'

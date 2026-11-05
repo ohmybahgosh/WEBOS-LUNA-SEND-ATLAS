@@ -1,25 +1,29 @@
 # `com.webos.statisticsManager`
 
+Statistics manager exposing a single call to save statistics; its broader role is not inferable. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`saveStatistics`](#savestatistics) | private |  | input | Method on com.webos.statisticsManager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`saveStatistics`](#savestatistics) | private |  | input | inferred | Saves the statistics. |
 
 <a id="savestatistics"></a>
 ## `saveStatistics`
 
 `luna://com.webos.statisticsManager/saveStatistics`
 
-Method on com.webos.statisticsManager (from on-device permission registry; parameters undocumented).
+Saves the statistics.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.statisticsManager/saveStatistics '{}'

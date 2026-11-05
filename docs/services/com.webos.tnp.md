@@ -1,27 +1,31 @@
 # `com.webos.tnp`
 
+Opaque service with generateKey, relay, and stop methods. Specific 'TNP' domain not inferable; marked. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`generateKey`](#generatekey) | private |  | system-info | Method on com.webos.tnp (introspected on-device; parameters undocumented). |
-| [`relay`](#relay) | private |  | system-info | Method on com.webos.tnp (introspected on-device; parameters undocumented). |
-| [`stop`](#stop) | private |  | system-info | Method on com.webos.tnp (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`generateKey`](#generatekey) | private |  | system-info | inferred | Handles the generate key. |
+| [`relay`](#relay) | private |  | system-info | inferred | Handles the relay. |
+| [`stop`](#stop) | private |  | system-info | inferred | Stops the tnp. |
 
 <a id="generatekey"></a>
 ## `generateKey`
 
 `luna://com.webos.tnp/generateKey`
 
-Method on com.webos.tnp (introspected on-device; parameters undocumented).
+Handles the generate key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.tnp/generateKey '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.tnp/relay`
 
-Method on com.webos.tnp (introspected on-device; parameters undocumented).
+Handles the relay.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.tnp/relay '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.tnp/stop`
 
-Method on com.webos.tnp (introspected on-device; parameters undocumented).
+Stops the tnp.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.tnp/stop '{}'

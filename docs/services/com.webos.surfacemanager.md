@@ -1,62 +1,66 @@
 # `com.webos.surfacemanager`
 
+Surface manager (window compositor): reports foreground app and window/surface info, manages surface lifecycle and multiview layout, captures compositor output and assistive menu.
+
 38 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`alertChoice`](#alertchoice) | private |  | ui | Method on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`captureCompositorOutput`](#capturecompositoroutput) | public |  | display | Takes a screenshot of the content that the compositor generates. The content can be either a frame that contains the graphics composition re |
-| [`changeMultiViewLayout`](#changemultiviewlayout) | private |  | ui | Method on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`clearRecentsList`](#clearrecentslist) | private |  | ui | Method on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`closeAssistiveMenu`](#closeassistivemenu) | private |  | ui | Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented). |
-| [`closeByAppId`](#closebyappid) | public |  | display | Close an application's surface with given appId. In most cases, closing the surface leads the application to quit. But with this method, the |
-| [`closeLRUSurface`](#closelrusurface) | private |  | ui | Method on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`createAssistiveMenu`](#createassistivemenu) | private |  | ui | Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented). |
-| [`foregroundAppInfo`](#foregroundappinfo) | unknown |  | display | Provides information about a surface that is shown in the foreground. |
-| [`getAlertViewState`](#getalertviewstate) | private |  | ui | Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented). |
-| [`getAppMirroring`](#getappmirroring) | public | yes | display | Gets the status of the app mirroring. |
-| [`getCurrentState`](#getcurrentstate) | private |  | ui | Returns surface manager currentState (home-chooser polls it for readiness) |
-| [`getFocusedWindowInfo`](#getfocusedwindowinfo) | private |  | ui | Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`getForegroundAppInfo`](#getforegroundappinfo) | public | yes | display | Provides the list of applications that are currently visible in the foreground. Note: This is a private method that can be used by SAM only. |
-| [`getForegroundAppState`](#getforegroundappstate) | private |  | ui | Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`getForegroundVideoWindow`](#getforegroundvideowindow) | private |  | ui | Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`getForegroundWindowInfo`](#getforegroundwindowinfo) | private |  | ui | Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`getLastInputType`](#getlastinputtype) | private |  | ui | Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`getMultiViewLayoutAnimationState`](#getmultiviewlayoutanimationstate) | private |  | ui | Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`getOverlayPlayVideoState`](#getoverlayplayvideostate) | private |  | ui | Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`getRecentsAppList`](#getrecentsapplist) | private |  | ui | Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`getScreenMode`](#getscreenmode) | private |  | ui | Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented). |
-| [`getScreenVisible`](#getscreenvisible) | private |  | ui | Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`getToastViewState`](#gettoastviewstate) | private |  | notifications | Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented). |
-| [`getWindowGroupInfo`](#getwindowgroupinfo) | private |  | ui | Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`getZoomStatus`](#getzoomstatus) | private |  | ui | Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`mirroringInfo`](#mirroringinfo) | unknown |  | display | Indicates mirroring status of each display. |
-| [`setAppMirroring`](#setappmirroring) | public |  | display | Starts or stops app mirroring for a given display pair. |
-| [`setMultiViewLayout`](#setmultiviewlayout) | private |  | ui | Setter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`setPinOverlayView`](#setpinoverlayview) | private |  | ui | Setter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`setScreenMode`](#setscreenmode) | private |  | ui | Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented). |
-| [`setScreenVisible`](#setscreenvisible) | private |  | ui | Setter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`setZoom`](#setzoom) | private |  | ui | Setter on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`showIndicator`](#showindicator) | private |  | ui | Method on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`showInputPicker`](#showinputpicker) | private |  | ui | Shows the input picker |
-| [`showQuickSettings`](#showquicksettings) | private |  | ui | Method on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`showSpinner`](#showspinner) | private |  | ui | Method on com.webos.surfacemanager (introspected on-device; parameters undocumented). |
-| [`showUserAgreement`](#showuseragreement) | private |  | ui | Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`alertChoice`](#alertchoice) | private |  | ui | inferred | Handles the alert choice. |
+| [`captureCompositorOutput`](#capturecompositoroutput) | public |  | display | documented | Takes a screenshot of the content that the compositor generates. The content can be either a frame that contains the graphics composition re |
+| [`changeMultiViewLayout`](#changemultiviewlayout) | private |  | ui | inferred | Changes the multi view layout. |
+| [`clearRecentsList`](#clearrecentslist) | private |  | ui | inferred | Clears the recents list. |
+| [`closeAssistiveMenu`](#closeassistivemenu) | private |  | ui | inferred | Closes the assistive menu. |
+| [`closeByAppId`](#closebyappid) | public |  | display | documented | Close an application's surface with given appId. In most cases, closing the surface leads the application to quit. But with this method, the |
+| [`closeLRUSurface`](#closelrusurface) | private |  | ui | inferred | Closes the LRU surface. |
+| [`createAssistiveMenu`](#createassistivemenu) | private |  | ui | inferred | Creates the assistive menu. |
+| [`foregroundAppInfo`](#foregroundappinfo) | unknown |  | display | documented | Provides information about a surface that is shown in the foreground. |
+| [`getAlertViewState`](#getalertviewstate) | private |  | ui | inferred | Returns the alert view state. |
+| [`getAppMirroring`](#getappmirroring) | public | yes | display | documented | Gets the status of the app mirroring. |
+| [`getCurrentState`](#getcurrentstate) | private |  | ui | documented | Returns surface manager currentState (home-chooser polls it for readiness) |
+| [`getFocusedWindowInfo`](#getfocusedwindowinfo) | private |  | ui | inferred | Returns the focused window info. |
+| [`getForegroundAppInfo`](#getforegroundappinfo) | public | yes | display | documented | Provides the list of applications that are currently visible in the foreground. Note: This is a private method that can be used by SAM only. |
+| [`getForegroundAppState`](#getforegroundappstate) | private |  | ui | inferred | Returns the foreground app state. |
+| [`getForegroundVideoWindow`](#getforegroundvideowindow) | private |  | ui | inferred | Returns the foreground video window. |
+| [`getForegroundWindowInfo`](#getforegroundwindowinfo) | private |  | ui | inferred | Returns the foreground window info. |
+| [`getLastInputType`](#getlastinputtype) | private |  | ui | inferred | Returns the last input type. |
+| [`getMultiViewLayoutAnimationState`](#getmultiviewlayoutanimationstate) | private |  | ui | inferred | Returns the multi view layout animation state. |
+| [`getOverlayPlayVideoState`](#getoverlayplayvideostate) | private |  | ui | inferred | Returns the overlay play video state. |
+| [`getRecentsAppList`](#getrecentsapplist) | private |  | ui | inferred | Returns the recents app list. |
+| [`getScreenMode`](#getscreenmode) | private |  | ui | inferred | Returns the screen mode. |
+| [`getScreenVisible`](#getscreenvisible) | private |  | ui | inferred | Returns the screen visible. |
+| [`getToastViewState`](#gettoastviewstate) | private |  | notifications | inferred | Returns the toast view state. |
+| [`getWindowGroupInfo`](#getwindowgroupinfo) | private |  | ui | inferred | Returns the window group info. |
+| [`getZoomStatus`](#getzoomstatus) | private |  | ui | inferred | Returns the zoom status. |
+| [`mirroringInfo`](#mirroringinfo) | unknown |  | display | documented | Indicates mirroring status of each display. |
+| [`setAppMirroring`](#setappmirroring) | public |  | display | documented | Starts or stops app mirroring for a given display pair. |
+| [`setMultiViewLayout`](#setmultiviewlayout) | private |  | ui | inferred | Sets the multi view layout. |
+| [`setPinOverlayView`](#setpinoverlayview) | private |  | ui | inferred | Sets the pin overlay view. |
+| [`setScreenMode`](#setscreenmode) | private |  | ui | inferred | Sets the screen mode. |
+| [`setScreenVisible`](#setscreenvisible) | private |  | ui | inferred | Sets the screen visible. |
+| [`setZoom`](#setzoom) | private |  | ui | inferred | Sets the zoom. |
+| [`showIndicator`](#showindicator) | private |  | ui | inferred | Shows the indicator. |
+| [`showInputPicker`](#showinputpicker) | private |  | ui | documented | Shows the input picker |
+| [`showQuickSettings`](#showquicksettings) | private |  | ui | inferred | Shows the quick settings. |
+| [`showSpinner`](#showspinner) | private |  | ui | inferred | Shows the spinner. |
+| [`showUserAgreement`](#showuseragreement) | private |  | ui | inferred | Shows the user agreement. |
 
 <a id="alertchoice"></a>
 ## `alertChoice`
 
 `luna://com.webos.surfacemanager/alertChoice`
 
-Method on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Handles the alert choice.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/alertChoice '{}'
@@ -77,7 +81,7 @@ Takes a screenshot of the content that the compositor generates. The content can
 - **Subscribe:** no  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 4+  
-- **Confidence:** documented, community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -85,6 +89,16 @@ Takes a screenshot of the content that the compositor generates. The content can
 | `appId` | String (optional) Indicates the id of the application. Note: If not specified, then the entire composited frame will be captured. |
 | `format` | String (optional) Indicates the output image format. Possible values are: BMP: bitmap (default) JPG: JPEG compressed PNG: PNG compressed |
 | `displayId` | Number (optional) Indicates the id of display to be captured. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `output` | String (optional) Indicates the absolute path of output image file. |
+| `resolution` | String (optional) Indicates the resolution of the output image in the form of <width>x<height>. Example: 1920x1080 |
+| `format` | String (optional) Indicates the output image format. Possible values are: - BMP: bitmap (default) - JPG: JPEG compressed - PNG: PNG compressed |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 luna://com.webos.surfacemanager/captureCompositorOutput '{ "output":"/tmp/test.bmp", "appId":"com.webos.app.test", "format":"BMP" }'
@@ -99,13 +113,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-surfacema
 
 `luna://com.webos.surfacemanager/changeMultiViewLayout`
 
-Method on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Changes the multi view layout.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/changeMultiViewLayout '{}'
@@ -120,13 +136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/clearRecentsList`
 
-Method on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Clears the recents list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/clearRecentsList '{}'
@@ -141,13 +159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/closeAssistiveMenu`
 
-Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented).
+Closes the assistive menu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/closeAssistiveMenu '{}'
@@ -174,6 +194,13 @@ Close an application's surface with given appId. In most cases, closing the surf
 |---|---|
 | `id` | String (required) Application ID |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 luna://com.webos.surfacemanager/closeByAppId '{"id":"com.webos.app.test"}
 ```
@@ -187,13 +214,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-surfacema
 
 `luna://com.webos.surfacemanager/closeLRUSurface`
 
-Method on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Closes the LRU surface.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/closeLRUSurface '{}'
@@ -208,13 +237,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/createAssistiveMenu`
 
-Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented).
+Creates the assistive menu.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/createAssistiveMenu '{}'
@@ -250,13 +281,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-surfacema
 
 `luna://com.webos.surfacemanager/getAlertViewState`
 
-Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented).
+Returns the alert view state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getAlertViewState '{}'
@@ -283,6 +316,12 @@ Gets the status of the app mirroring.
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default: false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `mirroringInfo` | Object array: mirroringInfo (required) Indicates the mirroring status of each display. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getAppMirroring '{}
 ```
@@ -302,7 +341,7 @@ Returns surface manager currentState (home-chooser polls it for readiness)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.surfacemanager/getCurrentState '{}'
@@ -317,13 +356,15 @@ Sources: [1](https://github.com/webosbrew/home-chooser/blob/main/service/src/hom
 
 `luna://com.webos.surfacemanager/getFocusedWindowInfo`
 
-Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Returns the focused window info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getFocusedWindowInfo '{}'
@@ -350,6 +391,16 @@ Provides the list of applications that are currently visible in the foreground. 
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default: false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `foregroundAppInfo` | Object array: foregroundAppInfo (optional) Information about a surface that is shown in the foreground. |
+| `reason` | String (optional) Indicates if it allows full-screen to become empty. Possible values are: - forceMinimize: Allows full-screen become empty - empty: (default) |
+| `mode` | String (optional) Indicates if full-screen view mode is multiview. Possible values are: - multiview: Multiview mode - normal: (default) Normal mode |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 luna://com.webos.surfacemanager/getForegroundAppInfo '{}
 ```
@@ -363,13 +414,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-surfacema
 
 `luna://com.webos.surfacemanager/getForegroundAppState`
 
-Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Returns the foreground app state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getForegroundAppState '{}'
@@ -384,13 +437,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/getForegroundVideoWindow`
 
-Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Returns the foreground video window.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getForegroundVideoWindow '{}'
@@ -405,13 +460,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/getForegroundWindowInfo`
 
-Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Returns the foreground window info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getForegroundWindowInfo '{}'
@@ -426,13 +483,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/getLastInputType`
 
-Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Returns the last input type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getLastInputType '{}'
@@ -447,13 +506,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/getMultiViewLayoutAnimationState`
 
-Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Returns the multi view layout animation state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getMultiViewLayoutAnimationState '{}'
@@ -468,13 +529,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/getOverlayPlayVideoState`
 
-Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Returns the overlay play video state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getOverlayPlayVideoState '{}'
@@ -489,13 +552,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/getRecentsAppList`
 
-Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Returns the recents app list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getRecentsAppList '{}'
@@ -510,13 +575,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/getScreenMode`
 
-Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented).
+Returns the screen mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getScreenMode '{}'
@@ -531,13 +598,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.surfacemanager/getScreenVisible`
 
-Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Returns the screen visible.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getScreenVisible '{}'
@@ -552,13 +621,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/getToastViewState`
 
-Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented).
+Returns the toast view state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getToastViewState '{}'
@@ -573,13 +644,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.surfacemanager/getWindowGroupInfo`
 
-Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Returns the window group info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getWindowGroupInfo '{}'
@@ -594,13 +667,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/getZoomStatus`
 
-Getter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Returns the zoom status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/getZoomStatus '{}'
@@ -650,6 +725,13 @@ Starts or stops app mirroring for a given display pair.
 | `from` | Number (required) Indicates id of the display from which the app is mirrored. |
 | `to` | Number (required) Indicates id of the display mirrored by the app. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/setAppMirroring '{ "mirror":true, "from":0, "to":1 }
 ```
@@ -663,13 +745,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-surfacema
 
 `luna://com.webos.surfacemanager/setMultiViewLayout`
 
-Setter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Sets the multi view layout.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/setMultiViewLayout '{}'
@@ -684,13 +768,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/setPinOverlayView`
 
-Setter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Sets the pin overlay view.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/setPinOverlayView '{}'
@@ -705,13 +791,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/setScreenMode`
 
-Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented).
+Sets the screen mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/setScreenMode '{}'
@@ -726,13 +814,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.surfacemanager/setScreenVisible`
 
-Setter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Sets the screen visible.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/setScreenVisible '{}'
@@ -747,13 +837,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/setZoom`
 
-Setter on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Sets the zoom.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/setZoom '{}'
@@ -768,13 +860,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/showIndicator`
 
-Method on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Shows the indicator.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/showIndicator '{}'
@@ -795,7 +889,7 @@ Shows the input picker
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 luna://com.webos.surfacemanager/showInputPicker '{}'
@@ -810,13 +904,15 @@ Sources: [1](https://github.com/grzegorz914/homebridge-lgwebos-tv/blob/HEAD/src/
 
 `luna://com.webos.surfacemanager/showQuickSettings`
 
-Method on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Shows the quick settings.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/showQuickSettings '{}'
@@ -831,13 +927,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/showSpinner`
 
-Method on com.webos.surfacemanager (introspected on-device; parameters undocumented).
+Shows the spinner.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/showSpinner '{}'
@@ -852,13 +950,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.surfacemanager/showUserAgreement`
 
-Method on com.webos.surfacemanager (from on-device permission registry; parameters undocumented).
+Shows the user agreement.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.surfacemanager/showUserAgreement '{}'

@@ -1,41 +1,45 @@
 # `com.palm.keymanager`
 
+Cryptographic key management service: generates, imports, exports, stores, and removes keys, encrypts and decrypts files, changes passwords, and handles key backup and restore.
+
 17 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`changePassword`](#changepassword) | private |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`crypt`](#crypt) | public |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`export`](#export) | public |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`fetchKey`](#fetchkey) | public |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`fileDecrypt`](#filedecrypt) | private |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`fileEncrypt`](#fileencrypt) | private |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`finish`](#finish) | private |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`generate`](#generate) | public |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`import`](#import) | public |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`initialize`](#initialize) | private |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`keyInfo`](#keyinfo) | public |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`postBackup`](#postbackup) | private |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`postRestore`](#postrestore) | private |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`preBackup`](#prebackup) | private |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`preRestore`](#prerestore) | private |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
-| [`remove`](#remove) | public |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`store`](#store) | public |  | input | Method on com.palm.keymanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`changePassword`](#changepassword) | private |  | input | inferred | Changes the password. |
+| [`crypt`](#crypt) | public |  | input | inferred | Handles the crypt. |
+| [`export`](#export) | public |  | input | inferred | Exports the keymanager. |
+| [`fetchKey`](#fetchkey) | public |  | input | inferred | Returns the key. |
+| [`fileDecrypt`](#filedecrypt) | private |  | input | inferred | Handles the file decrypt. |
+| [`fileEncrypt`](#fileencrypt) | private |  | input | inferred | Handles the file encrypt. |
+| [`finish`](#finish) | private |  | input | inferred | Finishes the keymanager. |
+| [`generate`](#generate) | public |  | input | inferred | Handles the generate. |
+| [`import`](#import) | public |  | input | inferred | Imports the keymanager. |
+| [`initialize`](#initialize) | private |  | input | inferred | Initializes the keymanager. |
+| [`keyInfo`](#keyinfo) | public |  | input | inferred | Handles the key info. |
+| [`postBackup`](#postbackup) | private |  | input | inferred | Posts the backup. |
+| [`postRestore`](#postrestore) | private |  | input | inferred | Posts the restore. |
+| [`preBackup`](#prebackup) | private |  | input | inferred | Handles the pre backup. |
+| [`preRestore`](#prerestore) | private |  | input | inferred | Handles the pre restore. |
+| [`remove`](#remove) | public |  | input | inferred | Removes the keymanager. ⚠️ |
+| [`store`](#store) | public |  | input | inferred | Stores the keymanager. |
 
 <a id="changepassword"></a>
 ## `changePassword`
 
 `luna://com.palm.keymanager/changePassword`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Changes the password.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/changePassword '{}'
@@ -50,13 +54,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/crypt`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Handles the crypt.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/crypt '{}'
@@ -71,13 +77,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/export`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Exports the keymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/export '{}'
@@ -92,13 +100,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/fetchKey`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Returns the key.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/fetchKey '{}'
@@ -113,13 +123,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/fileDecrypt`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Handles the file decrypt.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/fileDecrypt '{}'
@@ -134,13 +146,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/fileEncrypt`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Handles the file encrypt.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/fileEncrypt '{}'
@@ -155,13 +169,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/finish`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Finishes the keymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/finish '{}'
@@ -176,13 +192,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/generate`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Handles the generate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/generate '{}'
@@ -197,13 +215,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/import`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Imports the keymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/import '{}'
@@ -218,13 +238,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/initialize`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Initializes the keymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/initialize '{}'
@@ -239,13 +261,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/keyInfo`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Handles the key info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/keyInfo '{}'
@@ -260,13 +284,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/postBackup`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Posts the backup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/postBackup '{}'
@@ -281,13 +307,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/postRestore`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Posts the restore.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/postRestore '{}'
@@ -302,13 +330,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/preBackup`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Handles the pre backup.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/preBackup '{}'
@@ -323,13 +353,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/preRestore`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Handles the pre restore.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/preRestore '{}'
@@ -344,13 +376,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/remove`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Removes the keymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/remove '{}'
@@ -365,13 +399,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.keymanager/store`
 
-Method on com.palm.keymanager (from on-device permission registry; parameters undocumented).
+Stores the keymanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.keymanager/store '{}'

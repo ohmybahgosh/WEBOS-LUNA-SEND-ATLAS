@@ -1,32 +1,36 @@
 # `com.webos.service.mss`
 
+Opaque service that plays sounds and exchanges commands with configurable sound properties and a debug mode. Specific 'MSS' domain not inferable; marked. _(inferred from the service's methods)_
+
 8 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`exitMSS`](#exitmss) | private |  | misc | Method on com.webos.service.mss (from on-device permission registry; parameters undocumented). |
-| [`getMSSResult`](#getmssresult) | private |  | misc | Method on com.webos.service.mss (from on-device permission registry; parameters undocumented). |
-| [`playSound`](#playsound) | private |  | misc | Method on com.webos.service.mss (from on-device permission registry; parameters undocumented). |
-| [`sendCmd`](#sendcmd) | private |  | misc | Method on com.webos.service.mss (from on-device permission registry; parameters undocumented). |
-| [`setMSStoDebug`](#setmsstodebug) | private |  | misc | Method on com.webos.service.mss (from on-device permission registry; parameters undocumented). |
-| [`setSoundProperties`](#setsoundproperties) | private |  | misc | Method on com.webos.service.mss (from on-device permission registry; parameters undocumented). |
-| [`settingparamTXT`](#settingparamtxt) | private |  | misc | Method on com.webos.service.mss (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.mss (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`exitMSS`](#exitmss) | private |  | misc | inferred | Exits the MSS. |
+| [`getMSSResult`](#getmssresult) | private |  | misc | inferred | Returns the MSS result. |
+| [`playSound`](#playsound) | private |  | misc | inferred | Plays the sound. |
+| [`sendCmd`](#sendcmd) | private |  | misc | inferred | Sends the cmd. |
+| [`setMSStoDebug`](#setmsstodebug) | private |  | misc | inferred | Sets the MS sto debug. |
+| [`setSoundProperties`](#setsoundproperties) | private |  | misc | inferred | Sets the sound properties. |
+| [`settingparamTXT`](#settingparamtxt) | private |  | misc | inferred | Handles the settingparam TXT. |
+| [`start`](#start) | private |  | misc | inferred | Starts the mss. |
 
 <a id="exitmss"></a>
 ## `exitMSS`
 
 `luna://com.webos.service.mss/exitMSS`
 
-Method on com.webos.service.mss (from on-device permission registry; parameters undocumented).
+Exits the MSS.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mss/exitMSS '{}'
@@ -41,13 +45,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mss/getMSSResult`
 
-Method on com.webos.service.mss (from on-device permission registry; parameters undocumented).
+Returns the MSS result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mss/getMSSResult '{}'
@@ -62,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mss/playSound`
 
-Method on com.webos.service.mss (from on-device permission registry; parameters undocumented).
+Plays the sound.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mss/playSound '{}'
@@ -83,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mss/sendCmd`
 
-Method on com.webos.service.mss (from on-device permission registry; parameters undocumented).
+Sends the cmd.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mss/sendCmd '{}'
@@ -104,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mss/setMSStoDebug`
 
-Method on com.webos.service.mss (from on-device permission registry; parameters undocumented).
+Sets the MS sto debug.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mss/setMSStoDebug '{}'
@@ -125,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mss/setSoundProperties`
 
-Method on com.webos.service.mss (from on-device permission registry; parameters undocumented).
+Sets the sound properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mss/setSoundProperties '{}'
@@ -146,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mss/settingparamTXT`
 
-Method on com.webos.service.mss (from on-device permission registry; parameters undocumented).
+Handles the settingparam TXT.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mss/settingparamTXT '{}'
@@ -167,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mss/start`
 
-Method on com.webos.service.mss (from on-device permission registry; parameters undocumented).
+Starts the mss.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mss/start '{}'

@@ -1,40 +1,44 @@
 # `com.webos.service.tts`
 
+Text-to-speech and audio-guidance service: speaks text, manages voice/language packs, toggles audio guidance, and controls playback (pause/resume/stop).
+
 16 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getAdvancedLanguagePackInstallStatus`](#getadvancedlanguagepackinstallstatus) | private |  | misc | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). |
-| [`getAvailableLanguages`](#getavailablelanguages) | public |  | audio | Gets the list of languages that are supported by the TTS provider. |
-| [`getStatus`](#getstatus) | public |  | audio | Gets the current state of the service. |
-| [`installAdvancedLanguagePack`](#installadvancedlanguagepack) | private |  | misc | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). |
-| [`load`](#load) | private |  | misc | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). |
-| [`msgFeedback`](#msgfeedback) | private |  | db | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). |
-| [`pause`](#pause) | private |  | misc | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). |
-| [`removeAdvancedLanguagePack`](#removeadvancedlanguagepack) | private |  | misc | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`resume`](#resume) | private |  | misc | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). |
-| [`setAudioGuidanceOnOff`](#setaudioguidanceonoff) | private |  | audio | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). |
-| [`speak`](#speak) | public | yes | audio | Reads out an input text in the language chosen by the user. Note : It generates a series of audio as output sounds until the complete speech |
-| [`speakVKB`](#speakvkb) | private |  | misc | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). |
-| [`start`](#start) | private |  | misc | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). |
-| [`status`](#status) | unknown |  | audio | Indicates the current state of the service. |
-| [`stop`](#stop) | public |  | audio | Stops the text-to-speech processing immediately and ignores the pending text on the buffer. Note : There could be some noise in the output w |
-| [`unload`](#unload) | private |  | misc | Method on com.webos.service.tts (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getAdvancedLanguagePackInstallStatus`](#getadvancedlanguagepackinstallstatus) | private |  | misc | inferred | Returns the advanced language pack install status. |
+| [`getAvailableLanguages`](#getavailablelanguages) | public |  | audio | documented | Gets the list of languages that are supported by the TTS provider. |
+| [`getStatus`](#getstatus) | public |  | audio | documented | Gets the current state of the service. |
+| [`installAdvancedLanguagePack`](#installadvancedlanguagepack) | private |  | misc | inferred | Installs the advanced language pack. |
+| [`load`](#load) | private |  | misc | inferred | Loads the tts. |
+| [`msgFeedback`](#msgfeedback) | private |  | db | inferred | Handles the msg feedback. |
+| [`pause`](#pause) | private |  | misc | inferred | Pauses the tts. |
+| [`removeAdvancedLanguagePack`](#removeadvancedlanguagepack) | private |  | misc | inferred | Removes the advanced language pack. ⚠️ |
+| [`resume`](#resume) | private |  | misc | inferred | Resumes the tts. |
+| [`setAudioGuidanceOnOff`](#setaudioguidanceonoff) | private |  | audio | inferred | Sets the audio guidance on off. |
+| [`speak`](#speak) | public | yes | audio | documented | Reads out an input text in the language chosen by the user. Note : It generates a series of audio as output sounds until the complete speech |
+| [`speakVKB`](#speakvkb) | private |  | misc | inferred | Handles the speak VKB. |
+| [`start`](#start) | private |  | misc | inferred | Starts the tts. |
+| [`status`](#status) | unknown |  | audio | documented | Indicates the current state of the service. |
+| [`stop`](#stop) | public |  | audio | documented | Stops the text-to-speech processing immediately and ignores the pending text on the buffer. Note : There could be some noise in the output w |
+| [`unload`](#unload) | private |  | misc | inferred | Unloads the tts. |
 
 <a id="getadvancedlanguagepackinstallstatus"></a>
 ## `getAdvancedLanguagePackInstallStatus`
 
 `luna://com.webos.service.tts/getAdvancedLanguagePackInstallStatus`
 
-Method on com.webos.service.tts (from on-device permission registry; parameters undocumented).
+Returns the advanced language pack install status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/getAdvancedLanguagePackInstallStatus '{}'
@@ -61,6 +65,14 @@ Gets the list of languages that are supported by the TTS provider.
 |---|---|
 | `displayId` | Number (optional) Indicates the unique identifier for the displays. Possible values are: 0: display 1 1: display 2 Default: 0 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `languages` | String array (required) Indicates the list of supported languages. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/getAvailableLanguages '{}
 ```
@@ -86,6 +98,14 @@ Gets the current state of the service.
 |---|---|
 | `displayId` | Number (optional) Indicates the unique identifier for the displays. Possible values are: 0: display 1 1: display 2 Default: 0 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `status` | Object: status (required) Indicates the current state of the service. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/getStatus '{}
 ```
@@ -99,13 +119,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-t
 
 `luna://com.webos.service.tts/installAdvancedLanguagePack`
 
-Method on com.webos.service.tts (from on-device permission registry; parameters undocumented).
+Installs the advanced language pack.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/installAdvancedLanguagePack '{}'
@@ -120,13 +142,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tts/load`
 
-Method on com.webos.service.tts (from on-device permission registry; parameters undocumented).
+Loads the tts.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/load '{}'
@@ -141,13 +165,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tts/msgFeedback`
 
-Method on com.webos.service.tts (from on-device permission registry; parameters undocumented).
+Handles the msg feedback.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/msgFeedback '{}'
@@ -162,13 +188,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tts/pause`
 
-Method on com.webos.service.tts (from on-device permission registry; parameters undocumented).
+Pauses the tts.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/pause '{}'
@@ -183,13 +211,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tts/removeAdvancedLanguagePack`
 
-Method on com.webos.service.tts (from on-device permission registry; parameters undocumented).
+Removes the advanced language pack.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/removeAdvancedLanguagePack '{}'
@@ -204,13 +234,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tts/resume`
 
-Method on com.webos.service.tts (from on-device permission registry; parameters undocumented).
+Resumes the tts.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/resume '{}'
@@ -225,13 +257,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tts/setAudioGuidanceOnOff`
 
-Method on com.webos.service.tts (from on-device permission registry; parameters undocumented).
+Sets the audio guidance on off.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/setAudioGuidanceOnOff '{}'
@@ -252,7 +286,7 @@ Reads out an input text in the language chosen by the user. Note : It generates 
 - **Subscribe:** yes  
 - **Platform:** webOS OSE, webOS TV  
 - **Versions:** webOS OSE API level 11+; webOS 10  
-- **Confidence:** documented, code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -263,6 +297,15 @@ Reads out an input text in the language chosen by the user. Note : It generates 
 | `appID` | String (optional) Indicates the Application ID. Example: com.webos.app.voice |
 | `feedback` | Boolean (optional) Indicates if a unique identifier is to be returned for the input text. Possible values are: true : Provides msgIDs for texts. false : Does not provide identifiers for texts. Default: false |
 | `displayId` | Number (optional) Indicates the unique identifier for the displays. Possible values are: 0: display 1 1: display 2 Default: 0 |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+| `msgID` | String (optional) Indicates the unique identifier containing 12 characters that represent the input text. Note: The value is returned only if the feedback is set to true. |
+| `language` | String (optional) Indicates the language used to process the input text. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.tts/speak '{"text":"hi","clear":true}'
@@ -277,13 +320,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-t
 
 `luna://com.webos.service.tts/speakVKB`
 
-Method on com.webos.service.tts (from on-device permission registry; parameters undocumented).
+Handles the speak VKB.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/speakVKB '{}'
@@ -298,13 +343,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.tts/start`
 
-Method on com.webos.service.tts (from on-device permission registry; parameters undocumented).
+Starts the tts.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/start '{}'
@@ -355,6 +402,13 @@ Stops the text-to-speech processing immediately and ignores the pending text on 
 | `fadeOut` | Boolean (optional) Reduces the output sound without any noise. Possible values are: true : Gradually reduces the output sound to zero. false : Immediately stops the speech processing. This can result in unwanted noise. Default: true |
 | `displayId` | Number (optional) Indicates the unique identifier for the displays. Possible values are: 0: display 1 1: display 2 Default: 0 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "API Error Codes Reference" section for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/stop '{}
 ```
@@ -368,13 +422,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-t
 
 `luna://com.webos.service.tts/unload`
 
-Method on com.webos.service.tts (from on-device permission registry; parameters undocumented).
+Unloads the tts.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tts/unload '{}'

@@ -1,32 +1,36 @@
 # `com.webos.service.alwaysready`
 
+Always-ready/standby service: manages the always-on-display (AOD) status, monitors device and GPIO state, and controls standby timers. _(inferred from the service's methods)_
+
 8 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`aod/getStatus`](#aod_getstatus) | private |  | misc | Getter on com.webos.service.alwaysready (introspected on-device; parameters undocumented). |
-| [`aod/setStatus`](#aod_setstatus) | private |  | misc | Setter on com.webos.service.alwaysready (introspected on-device; parameters undocumented). |
-| [`monitor/getDeviceState`](#monitor_getdevicestate) | private |  | misc | Getter on com.webos.service.alwaysready (introspected on-device; parameters undocumented). |
-| [`monitor/getGPIOState`](#monitor_getgpiostate) | private |  | misc | Getter on com.webos.service.alwaysready (introspected on-device; parameters undocumented). |
-| [`test`](#test) | private |  | misc | Method on com.webos.service.alwaysready (introspected on-device; parameters undocumented). |
-| [`timer/pause`](#timer_pause) | private |  | input | Method on com.webos.service.alwaysready (introspected on-device; parameters undocumented). |
-| [`timer/reset`](#timer_reset) | private |  | input | Method on com.webos.service.alwaysready (introspected on-device; parameters undocumented). ⚠️ |
-| [`timer/skipOnTimer`](#timer_skipontimer) | private |  | input | Method on com.webos.service.alwaysready (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`aod/getStatus`](#aod_getstatus) | private |  | misc | inferred | Returns the status (aod) |
+| [`aod/setStatus`](#aod_setstatus) | private |  | misc | inferred | Sets the status (aod) |
+| [`monitor/getDeviceState`](#monitor_getdevicestate) | private |  | misc | inferred | Returns the device state (monitor) |
+| [`monitor/getGPIOState`](#monitor_getgpiostate) | private |  | misc | inferred | Returns the GPIO state (monitor) |
+| [`test`](#test) | private |  | misc | inferred | Tests the alwaysready. |
+| [`timer/pause`](#timer_pause) | private |  | input | inferred | Pauses the alwaysready (timer) |
+| [`timer/reset`](#timer_reset) | private |  | input | inferred | Resets the alwaysready (timer) ⚠️ |
+| [`timer/skipOnTimer`](#timer_skipontimer) | private |  | input | inferred | Skips the on timer (timer) |
 
 <a id="aod_getstatus"></a>
 ## `aod/getStatus`
 
 `luna://com.webos.service.alwaysready/aod/getStatus`
 
-Getter on com.webos.service.alwaysready (introspected on-device; parameters undocumented).
+Returns the status (aod)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alwaysready/aod/getStatus '{}'
@@ -41,13 +45,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.alwaysready/aod/setStatus`
 
-Setter on com.webos.service.alwaysready (introspected on-device; parameters undocumented).
+Sets the status (aod)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alwaysready/aod/setStatus '{}'
@@ -62,13 +68,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.alwaysready/monitor/getDeviceState`
 
-Getter on com.webos.service.alwaysready (introspected on-device; parameters undocumented).
+Returns the device state (monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alwaysready/monitor/getDeviceState '{}'
@@ -83,13 +91,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.alwaysready/monitor/getGPIOState`
 
-Getter on com.webos.service.alwaysready (introspected on-device; parameters undocumented).
+Returns the GPIO state (monitor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alwaysready/monitor/getGPIOState '{}'
@@ -104,13 +114,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.alwaysready/test`
 
-Method on com.webos.service.alwaysready (introspected on-device; parameters undocumented).
+Tests the alwaysready.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alwaysready/test '{}'
@@ -125,13 +137,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.alwaysready/timer/pause`
 
-Method on com.webos.service.alwaysready (introspected on-device; parameters undocumented).
+Pauses the alwaysready (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alwaysready/timer/pause '{}'
@@ -146,13 +160,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.alwaysready/timer/reset`
 
-Method on com.webos.service.alwaysready (introspected on-device; parameters undocumented).
+Resets the alwaysready (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alwaysready/timer/reset '{}'
@@ -167,13 +183,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.alwaysready/timer/skipOnTimer`
 
-Method on com.webos.service.alwaysready (introspected on-device; parameters undocumented).
+Skips the on timer (timer)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.alwaysready/timer/skipOnTimer '{}'

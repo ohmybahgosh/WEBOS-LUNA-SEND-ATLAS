@@ -1,50 +1,54 @@
 # `com.webos.service.bluetooth`
 
+Bluetooth service: adapter state and device discovery/pairing (GAP), trusted-device management, adapter firmware update, and Bluetooth audio sound-out redirection.
+
 26 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`audio/changeToTVSpeaker`](#audio_changetotvspeaker) | public |  | audio | Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented). |
-| [`audio/enableSoundOutRedirect`](#audio_enablesoundoutredirect) | public |  | audio | Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented). |
-| [`audio/getSoundOutRedirectState`](#audio_getsoundoutredirectstate) | public |  | audio | Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented). |
-| [`audio/noReconn`](#audio_noreconn) | public |  | audio | Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented). |
-| [`audio/setVolume`](#audio_setvolume) | public |  | audio | Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented). |
-| [`audio/yesReconn`](#audio_yesreconn) | public |  | audio | Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented). |
-| [`gap/btResumeDone`](#gap_btresumedone) | public |  | bluetooth | Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented). |
-| [`gap/findDevices`](#gap_finddevices) | ssap |  | bluetooth | Bluetooth gap/findDevices exposed through SSAP |
-| [`gap/getFeatureSupport`](#gap_getfeaturesupport) | private |  | bluetooth | Getter on com.webos.service.bluetooth (introspected on-device; parameters undocumented). |
-| [`gap/getLocalDeviceVersion`](#gap_getlocaldeviceversion) | public |  | bluetooth | Getter on com.webos.service.bluetooth (introspected on-device; parameters undocumented). |
-| [`gap/getMagicSearchResult`](#gap_getmagicsearchresult) | public |  | bluetooth | Getter on com.webos.service.bluetooth (introspected on-device; parameters undocumented). |
-| [`gap/getState`](#gap_getstate) | public |  | bluetooth | Getter on com.webos.service.bluetooth (introspected on-device; parameters undocumented). |
-| [`gap/getTrustedDevices`](#gap_gettrusteddevices) | ssap |  | bluetooth | Bluetooth gap/getTrustedDevices exposed through SSAP |
-| [`gap/isRadioOn`](#gap_isradioon) | public |  | bluetooth | Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented). |
-| [`gap/isWiFiOnly`](#gap_iswifionly) | ssap |  | bluetooth | Bluetooth gap/isWiFiOnly exposed through SSAP |
-| [`gap/launchAdapterFwUpdate`](#gap_launchadapterfwupdate) | public |  | bluetooth | Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented). |
-| [`gap/registerBtAppServiceList`](#gap_registerbtappservicelist) | private |  | bluetooth | Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented). |
-| [`gap/removeTrustedDevice`](#gap_removetrusteddevice) | ssap |  | bluetooth | Bluetooth gap/removeTrustedDevice exposed through SSAP |
-| [`gap/resetMagicSearchResult`](#gap_resetmagicsearchresult) | public |  | bluetooth | Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented). ⚠️ |
-| [`gap/responseBtPrepareSuspendDone`](#gap_responsebtpreparesuspenddone) | public |  | bluetooth | Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented). |
-| [`service/connect`](#service_connect) | ssap |  | bluetooth | Bluetooth service/connect exposed through SSAP |
-| [`service/disconnect`](#service_disconnect) | ssap |  | bluetooth | Bluetooth service/disconnect exposed through SSAP |
-| [`service/getStates`](#service_getstates) | ssap |  | bluetooth | Bluetooth service/getStates exposed through SSAP |
-| [`service/init`](#service_init) | public |  | bluetooth | Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented). |
-| [`service/release`](#service_release) | public |  | bluetooth | Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented). |
-| [`service/subscribeNotifications`](#service_subscribenotifications) | ssap | yes | bluetooth | Bluetooth service/subscribeNotifications exposed through SSAP |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`audio/changeToTVSpeaker`](#audio_changetotvspeaker) | public |  | audio | inferred | Changes the to TV speaker (audio) |
+| [`audio/enableSoundOutRedirect`](#audio_enablesoundoutredirect) | public |  | audio | inferred | Enables the sound out redirect (audio) |
+| [`audio/getSoundOutRedirectState`](#audio_getsoundoutredirectstate) | public |  | audio | inferred | Returns the sound out redirect state (audio) |
+| [`audio/noReconn`](#audio_noreconn) | public |  | audio | inferred | Handles the no reconn (audio) |
+| [`audio/setVolume`](#audio_setvolume) | public |  | audio | inferred | Sets the volume (audio) |
+| [`audio/yesReconn`](#audio_yesreconn) | public |  | audio | inferred | Handles the yes reconn (audio) |
+| [`gap/btResumeDone`](#gap_btresumedone) | public |  | bluetooth | inferred | Handles the Bluetooth resume done (gap) |
+| [`gap/findDevices`](#gap_finddevices) | ssap |  | bluetooth | documented | Bluetooth gap/findDevices exposed through SSAP |
+| [`gap/getFeatureSupport`](#gap_getfeaturesupport) | private |  | bluetooth | inferred | Returns the feature support (gap) |
+| [`gap/getLocalDeviceVersion`](#gap_getlocaldeviceversion) | public |  | bluetooth | inferred | Returns the local device version (gap) |
+| [`gap/getMagicSearchResult`](#gap_getmagicsearchresult) | public |  | bluetooth | inferred | Returns the magic search result (gap) |
+| [`gap/getState`](#gap_getstate) | public |  | bluetooth | inferred | Returns the state (gap) |
+| [`gap/getTrustedDevices`](#gap_gettrusteddevices) | ssap |  | bluetooth | documented | Bluetooth gap/getTrustedDevices exposed through SSAP |
+| [`gap/isRadioOn`](#gap_isradioon) | public |  | bluetooth | inferred | Reports whether the radio on is set (gap) |
+| [`gap/isWiFiOnly`](#gap_iswifionly) | ssap |  | bluetooth | documented | Bluetooth gap/isWiFiOnly exposed through SSAP |
+| [`gap/launchAdapterFwUpdate`](#gap_launchadapterfwupdate) | public |  | bluetooth | inferred | Launches the adapter firmware update (gap) |
+| [`gap/registerBtAppServiceList`](#gap_registerbtappservicelist) | private |  | bluetooth | inferred | Registers the Bluetooth app service list (gap) |
+| [`gap/removeTrustedDevice`](#gap_removetrusteddevice) | ssap |  | bluetooth | documented | Bluetooth gap/removeTrustedDevice exposed through SSAP |
+| [`gap/resetMagicSearchResult`](#gap_resetmagicsearchresult) | public |  | bluetooth | inferred | Resets the magic search result (gap) ⚠️ |
+| [`gap/responseBtPrepareSuspendDone`](#gap_responsebtpreparesuspenddone) | public |  | bluetooth | inferred | Handles the response Bluetooth prepare suspend done (gap) |
+| [`service/connect`](#service_connect) | ssap |  | bluetooth | documented | Bluetooth service/connect exposed through SSAP |
+| [`service/disconnect`](#service_disconnect) | ssap |  | bluetooth | documented | Bluetooth service/disconnect exposed through SSAP |
+| [`service/getStates`](#service_getstates) | ssap |  | bluetooth | documented | Bluetooth service/getStates exposed through SSAP |
+| [`service/init`](#service_init) | public |  | bluetooth | inferred | Initializes the bluetooth (service) |
+| [`service/release`](#service_release) | public |  | bluetooth | inferred | Releases the bluetooth (service) |
+| [`service/subscribeNotifications`](#service_subscribenotifications) | ssap | yes | bluetooth | documented | Bluetooth service/subscribeNotifications exposed through SSAP |
 
 <a id="audio_changetotvspeaker"></a>
 ## `audio/changeToTVSpeaker`
 
 `luna://com.webos.service.bluetooth/audio/changeToTVSpeaker`
 
-Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented).
+Changes the to TV speaker (audio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/audio/changeToTVSpeaker '{}'
@@ -59,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.bluetooth/audio/enableSoundOutRedirect`
 
-Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented).
+Enables the sound out redirect (audio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/audio/enableSoundOutRedirect '{}'
@@ -80,13 +86,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.bluetooth/audio/getSoundOutRedirectState`
 
-Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented).
+Returns the sound out redirect state (audio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/audio/getSoundOutRedirectState '{}'
@@ -101,13 +109,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.bluetooth/audio/noReconn`
 
-Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented).
+Handles the no reconn (audio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/audio/noReconn '{}'
@@ -122,13 +132,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.bluetooth/audio/setVolume`
 
-Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented).
+Sets the volume (audio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/audio/setVolume '{}'
@@ -143,13 +155,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.bluetooth/audio/yesReconn`
 
-Method on com.webos.service.bluetooth (from on-device permission registry; parameters undocumented).
+Handles the yes reconn (audio)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/audio/yesReconn '{}'
@@ -164,13 +178,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.bluetooth/gap/btResumeDone`
 
-Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Handles the Bluetooth resume done (gap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/gap/btResumeDone '{}'
@@ -191,7 +207,7 @@ Bluetooth gap/findDevices exposed through SSAP
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.bluetooth/gap/findDevices","payload":{}}
@@ -206,13 +222,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.bluetooth/gap/getFeatureSupport`
 
-Getter on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Returns the feature support (gap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/gap/getFeatureSupport '{}'
@@ -227,13 +245,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth/gap/getLocalDeviceVersion`
 
-Getter on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Returns the local device version (gap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/gap/getLocalDeviceVersion '{}'
@@ -248,13 +268,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth/gap/getMagicSearchResult`
 
-Getter on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Returns the magic search result (gap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/gap/getMagicSearchResult '{}'
@@ -269,13 +291,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth/gap/getState`
 
-Getter on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Returns the state (gap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/gap/getState '{}'
@@ -296,7 +320,7 @@ Bluetooth gap/getTrustedDevices exposed through SSAP
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.bluetooth/gap/getTrustedDevices","payload":{}}
@@ -311,13 +335,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.bluetooth/gap/isRadioOn`
 
-Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Reports whether the radio on is set (gap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/gap/isRadioOn '{}'
@@ -338,7 +364,7 @@ Bluetooth gap/isWiFiOnly exposed through SSAP
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.bluetooth/gap/isWiFiOnly","payload":{}}
@@ -353,13 +379,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.bluetooth/gap/launchAdapterFwUpdate`
 
-Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Launches the adapter firmware update (gap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/gap/launchAdapterFwUpdate '{}'
@@ -374,13 +402,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth/gap/registerBtAppServiceList`
 
-Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Registers the Bluetooth app service list (gap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/gap/registerBtAppServiceList '{}'
@@ -401,7 +431,7 @@ Bluetooth gap/removeTrustedDevice exposed through SSAP
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.bluetooth/gap/removeTrustedDevice","payload":{}}
@@ -416,13 +446,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.bluetooth/gap/resetMagicSearchResult`
 
-Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Resets the magic search result (gap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/gap/resetMagicSearchResult '{}'
@@ -437,13 +469,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth/gap/responseBtPrepareSuspendDone`
 
-Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Handles the response Bluetooth prepare suspend done (gap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/gap/responseBtPrepareSuspendDone '{}'
@@ -464,7 +498,7 @@ Bluetooth service/connect exposed through SSAP
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.bluetooth/service/connect","payload":{}}
@@ -485,7 +519,7 @@ Bluetooth service/disconnect exposed through SSAP
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.bluetooth/service/disconnect","payload":{}}
@@ -506,7 +540,7 @@ Bluetooth service/getStates exposed through SSAP
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.bluetooth/service/getStates","payload":{}}
@@ -521,13 +555,15 @@ Sources: [1](https://github.com/snabb/webostv/blob/master/mmisc.go)
 
 `luna://com.webos.service.bluetooth/service/init`
 
-Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Initializes the bluetooth (service)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/service/init '{}'
@@ -542,13 +578,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth/service/release`
 
-Method on com.webos.service.bluetooth (introspected on-device; parameters undocumented).
+Releases the bluetooth (service)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth/service/release '{}'
@@ -569,7 +607,7 @@ Bluetooth service/subscribeNotifications exposed through SSAP
 - **Subscribe:** yes  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 {"type":"request","id":"1","uri":"ssap://com.webos.service.bluetooth/service/subscribeNotifications","payload":{}}

@@ -1,28 +1,32 @@
 # `com.webos.service.gibbips.pcap`
 
+GIBBIPS packet-capture helper for the broadcast stack: open, close, play and stop a pcap capture. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | private |  | tv-broadcast | Method on com.webos.service.gibbips.pcap (from on-device permission registry; parameters undocumented). |
-| [`open`](#open) | private |  | tv-broadcast | Method on com.webos.service.gibbips.pcap (from on-device permission registry; parameters undocumented). |
-| [`play`](#play) | private |  | tv-broadcast | Method on com.webos.service.gibbips.pcap (from on-device permission registry; parameters undocumented). |
-| [`stop`](#stop) | private |  | tv-broadcast | Method on com.webos.service.gibbips.pcap (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | private |  | tv-broadcast | inferred | Closes the gibbips pcap. |
+| [`open`](#open) | private |  | tv-broadcast | inferred | Opens the gibbips pcap. |
+| [`play`](#play) | private |  | tv-broadcast | inferred | Plays the gibbips pcap. |
+| [`stop`](#stop) | private |  | tv-broadcast | inferred | Stops the gibbips pcap. |
 
 <a id="close"></a>
 ## `close`
 
 `luna://com.webos.service.gibbips.pcap/close`
 
-Method on com.webos.service.gibbips.pcap (from on-device permission registry; parameters undocumented).
+Closes the gibbips pcap.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.pcap/close '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.pcap/open`
 
-Method on com.webos.service.gibbips.pcap (from on-device permission registry; parameters undocumented).
+Opens the gibbips pcap.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.pcap/open '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.pcap/play`
 
-Method on com.webos.service.gibbips.pcap (from on-device permission registry; parameters undocumented).
+Plays the gibbips pcap.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.pcap/play '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbips.pcap/stop`
 
-Method on com.webos.service.gibbips.pcap (from on-device permission registry; parameters undocumented).
+Stops the gibbips pcap.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbips.pcap/stop '{}'

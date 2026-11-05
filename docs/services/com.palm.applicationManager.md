@@ -1,19 +1,21 @@
 # `com.palm.applicationManager`
 
+Legacy Palm/HP webOS application manager: launches, closes and lists installed apps and their launch points, and reports running apps.
+
 8 methods.  Platforms seen: HP webOS, Palm, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | root |  | apps | Closes a running process |
-| [`closeByAppId`](#closebyappid) | private |  | apps | Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`launch`](#launch) | root |  | apps | Launches an app |
-| [`launchDefaultApp`](#launchdefaultapp) | private |  | apps | Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`listApps`](#listapps) | private |  | apps | Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented). |
-| [`listLaunchPoints`](#listlaunchpoints) | root |  | apps | Lists all installed apps/launch points |
-| [`rescan`](#rescan) | root |  | apps | Refreshes the Launcher |
-| [`running`](#running) | root |  | apps | Lists running apps with process ids |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | root |  | apps | documented | Closes a running process |
+| [`closeByAppId`](#closebyappid) | private |  | apps | inferred | Closes the by app ID. |
+| [`launch`](#launch) | root |  | apps | documented | Launches an app |
+| [`launchDefaultApp`](#launchdefaultapp) | private |  | apps | inferred | Launches the default app. |
+| [`listApps`](#listapps) | private |  | apps | inferred | Lists the apps. |
+| [`listLaunchPoints`](#listlaunchpoints) | root |  | apps | documented | Lists all installed apps/launch points |
+| [`rescan`](#rescan) | root |  | apps | documented | Refreshes the Launcher |
+| [`running`](#running) | root |  | apps | documented | Lists running apps with process ids |
 
 <a id="close"></a>
 ## `close`
@@ -26,7 +28,7 @@ Closes a running process
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -43,13 +45,15 @@ Sources: [1](https://wiki.webos-internals.org/wiki/Luna_Send)
 
 `luna://com.palm.applicationManager/closeByAppId`
 
-Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented).
+Closes the by app ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.applicationManager/closeByAppId '{}'
@@ -70,7 +74,7 @@ Launches an app
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -88,13 +92,15 @@ Sources: [1](https://wiki.webos-internals.org/wiki/Luna_Send)
 
 `luna://com.palm.applicationManager/launchDefaultApp`
 
-Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented).
+Launches the default app.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.applicationManager/launchDefaultApp '{}'
@@ -109,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.applicationManager/listApps`
 
-Method on com.palm.applicationManager (from on-device permission registry; parameters undocumented).
+Lists the apps.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.applicationManager/listApps '{}'
@@ -136,7 +144,7 @@ Lists all installed apps/launch points
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 "palm://com.palm.applicationManager/listLaunchPoints" "{}"
@@ -155,7 +163,7 @@ Refreshes the Launcher
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 palm://com.palm.applicationManager/rescan {}
@@ -174,7 +182,7 @@ Lists running apps with process ids
 - **Subscribe:** no  
 - **Platform:** Palm, HP webOS  
 - **Versions:** webOS 1.x/2.x  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 palm://com.palm.applicationManager/running '{}'

@@ -1,33 +1,37 @@
 # `com.webos.service.browser`
 
+Appears to provide browser-side device and file access: mounts and lists storage devices, reads content and size properties, and processes documents. _(inferred from the service's methods)_
+
 9 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`config`](#config) | private |  | settings | Method on com.webos.service.browser (introspected on-device; parameters undocumented). |
-| [`getDeviceProperties`](#getdeviceproperties) | public |  | misc | Getter on com.webos.service.browser (introspected on-device; parameters undocumented). |
-| [`getListContent`](#getlistcontent) | public |  | misc | Getter on com.webos.service.browser (introspected on-device; parameters undocumented). |
-| [`getSizeProperties`](#getsizeproperties) | public |  | misc | Getter on com.webos.service.browser (introspected on-device; parameters undocumented). |
-| [`invoke`](#invoke) | public |  | misc | Method on com.webos.service.browser (introspected on-device; parameters undocumented). |
-| [`listDeviceContents`](#listdevicecontents) | public |  | input | Lister on com.webos.service.browser (introspected on-device; parameters undocumented). |
-| [`listMountDevices`](#listmountdevices) | private |  | misc | Lister on com.webos.service.browser (introspected on-device; parameters undocumented). |
-| [`mount`](#mount) | private |  | misc | Method on com.webos.service.browser (introspected on-device; parameters undocumented). |
-| [`processDocument`](#processdocument) | public |  | misc | Method on com.webos.service.browser (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`config`](#config) | private |  | settings | inferred | Handles the config. |
+| [`getDeviceProperties`](#getdeviceproperties) | public |  | misc | inferred | Returns the device properties. |
+| [`getListContent`](#getlistcontent) | public |  | misc | inferred | Returns the list content. |
+| [`getSizeProperties`](#getsizeproperties) | public |  | misc | inferred | Returns the size properties. |
+| [`invoke`](#invoke) | public |  | misc | inferred | Handles the invoke. |
+| [`listDeviceContents`](#listdevicecontents) | public |  | input | inferred | Lists the device contents. |
+| [`listMountDevices`](#listmountdevices) | private |  | misc | inferred | Lists the mount devices. |
+| [`mount`](#mount) | private |  | misc | inferred | Mounts the browser. |
+| [`processDocument`](#processdocument) | public |  | misc | inferred | Processes the document. |
 
 <a id="config"></a>
 ## `config`
 
 `luna://com.webos.service.browser/config`
 
-Method on com.webos.service.browser (introspected on-device; parameters undocumented).
+Handles the config.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.browser/config '{}'
@@ -42,13 +46,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.browser/getDeviceProperties`
 
-Getter on com.webos.service.browser (introspected on-device; parameters undocumented).
+Returns the device properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.browser/getDeviceProperties '{}'
@@ -63,13 +69,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.browser/getListContent`
 
-Getter on com.webos.service.browser (introspected on-device; parameters undocumented).
+Returns the list content.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.browser/getListContent '{}'
@@ -84,13 +92,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.browser/getSizeProperties`
 
-Getter on com.webos.service.browser (introspected on-device; parameters undocumented).
+Returns the size properties.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.browser/getSizeProperties '{}'
@@ -105,13 +115,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.browser/invoke`
 
-Method on com.webos.service.browser (introspected on-device; parameters undocumented).
+Handles the invoke.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.browser/invoke '{}'
@@ -126,13 +138,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.browser/listDeviceContents`
 
-Lister on com.webos.service.browser (introspected on-device; parameters undocumented).
+Lists the device contents.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.browser/listDeviceContents '{}'
@@ -147,13 +161,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.browser/listMountDevices`
 
-Lister on com.webos.service.browser (introspected on-device; parameters undocumented).
+Lists the mount devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.browser/listMountDevices '{}'
@@ -168,13 +184,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.browser/mount`
 
-Method on com.webos.service.browser (introspected on-device; parameters undocumented).
+Mounts the browser.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.browser/mount '{}'
@@ -189,13 +207,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.browser/processDocument`
 
-Method on com.webos.service.browser (introspected on-device; parameters undocumented).
+Processes the document.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.browser/processDocument '{}'

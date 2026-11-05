@@ -1,27 +1,31 @@
 # `com.webos.rm.client`
 
+Resource-manager client interface: completes resource acquisition and relays policy actions and private commands. Appears to be a thin client to the TV resource manager. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`acquireComplete`](#acquirecomplete) | private |  | misc | Method on com.webos.rm.client (introspected on-device; parameters undocumented). |
-| [`policyAction`](#policyaction) | private |  | misc | Method on com.webos.rm.client (introspected on-device; parameters undocumented). |
-| [`privateCommand`](#privatecommand) | private |  | misc | Method on com.webos.rm.client (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`acquireComplete`](#acquirecomplete) | private |  | misc | inferred | Acquires the complete. |
+| [`policyAction`](#policyaction) | private |  | misc | inferred | Handles the policy action. |
+| [`privateCommand`](#privatecommand) | private |  | misc | inferred | Handles the private command. |
 
 <a id="acquirecomplete"></a>
 ## `acquireComplete`
 
 `luna://com.webos.rm.client/acquireComplete`
 
-Method on com.webos.rm.client (introspected on-device; parameters undocumented).
+Acquires the complete.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.rm.client/acquireComplete '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.rm.client/policyAction`
 
-Method on com.webos.rm.client (introspected on-device; parameters undocumented).
+Handles the policy action.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.rm.client/policyAction '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.rm.client/privateCommand`
 
-Method on com.webos.rm.client (introspected on-device; parameters undocumented).
+Handles the private command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.rm.client/privateCommand '{}'

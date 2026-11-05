@@ -1,52 +1,56 @@
 # `com.webos.service.voiceinput`
 
+Voice-input service: enrolls voice triggers, streams audio for recognition (with trigger), and manages activation and sensitivity settings and mic devices. _(inferred from the service's methods)_
+
 28 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`enroll/getEnrolledCount`](#enroll_getenrolledcount) | private |  | input | Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented). |
-| [`enroll/nextStep`](#enroll_nextstep) | private |  | input | Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented). |
-| [`enroll/removeEnroll`](#enroll_removeenroll) | private |  | input | Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`enroll/startEnroll`](#enroll_startenroll) | private |  | input | Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented). |
-| [`enroll/stopEnroll`](#enroll_stopenroll) | private |  | input | Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented). |
-| [`factory/getDataVersion`](#factory_getdataversion) | private |  | input | Getter on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`factory/getMicSwitchStatus`](#factory_getmicswitchstatus) | private |  | input | Getter on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`factory/testMicSignal`](#factory_testmicsignal) | private |  | input | Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented). ⚠️ |
-| [`getDevices`](#getdevices) | private |  | input | Method registered by com.webos.service.voiceinput (root category) |
-| [`respondEvent`](#respondevent) | private |  | input | Method registered by com.webos.service.voiceinput (root category) |
-| [`restartTimer`](#restarttimer) | private |  | input | Method registered by com.webos.service.voiceinput (root category) |
-| [`setting/getActivation`](#setting_getactivation) | private |  | input | Getter on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`setting/getSensitivity`](#setting_getsensitivity) | private |  | input | Getter on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`setting/setActivation`](#setting_setactivation) | private |  | input | Setter on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`setting/setSensitivity`](#setting_setsensitivity) | private |  | input | Setter on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`startStreaming`](#startstreaming) | private |  | input | Method registered by com.webos.service.voiceinput (root category) |
-| [`startStreamingWithTrigger`](#startstreamingwithtrigger) | private |  | input | Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`stopStreaming`](#stopstreaming) | private |  | input | Method registered by com.webos.service.voiceinput (root category) |
-| [`tas/control`](#tas_control) | private |  | input | Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented). |
-| [`tas/endTest`](#tas_endtest) | private |  | input | Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`tas/readyTest`](#tas_readytest) | private |  | input | Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`tas/runTest`](#tas_runtest) | private |  | input | Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`tas/setAssembleMode`](#tas_setassemblemode) | private |  | input | Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented). |
-| [`tas/setStream`](#tas_setstream) | private |  | input | Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented). |
-| [`util/runByFile`](#util_runbyfile) | private |  | input | Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`util/startWebBSI`](#util_startwebbsi) | private |  | input | Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`util/stopWebBSI`](#util_stopwebbsi) | private |  | input | Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
-| [`util/subscribeFileOutput`](#util_subscribefileoutput) | private |  | input | Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`enroll/getEnrolledCount`](#enroll_getenrolledcount) | private |  | input | inferred | Returns the enrolled count (enroll) |
+| [`enroll/nextStep`](#enroll_nextstep) | private |  | input | inferred | Handles the next step (enroll) |
+| [`enroll/removeEnroll`](#enroll_removeenroll) | private |  | input | inferred | Removes the enroll (enroll) ⚠️ |
+| [`enroll/startEnroll`](#enroll_startenroll) | private |  | input | inferred | Starts the enroll (enroll) |
+| [`enroll/stopEnroll`](#enroll_stopenroll) | private |  | input | inferred | Stops the enroll (enroll) |
+| [`factory/getDataVersion`](#factory_getdataversion) | private |  | input | inferred | Returns the data version (factory) |
+| [`factory/getMicSwitchStatus`](#factory_getmicswitchstatus) | private |  | input | inferred | Returns the mic switch status (factory) |
+| [`factory/testMicSignal`](#factory_testmicsignal) | private |  | input | inferred | Tests the mic signal (factory) ⚠️ |
+| [`getDevices`](#getdevices) | private |  | input | inferred | Returns the devices. |
+| [`respondEvent`](#respondevent) | private |  | input | inferred | Responds to the event. |
+| [`restartTimer`](#restarttimer) | private |  | input | inferred | Restarts the timer. |
+| [`setting/getActivation`](#setting_getactivation) | private |  | input | inferred | Returns the activation (setting) |
+| [`setting/getSensitivity`](#setting_getsensitivity) | private |  | input | inferred | Returns the sensitivity (setting) |
+| [`setting/setActivation`](#setting_setactivation) | private |  | input | inferred | Sets the activation (setting) |
+| [`setting/setSensitivity`](#setting_setsensitivity) | private |  | input | inferred | Sets the sensitivity (setting) |
+| [`startStreaming`](#startstreaming) | private |  | input | inferred | Starts the streaming. |
+| [`startStreamingWithTrigger`](#startstreamingwithtrigger) | private |  | input | inferred | Starts the streaming with trigger. |
+| [`stopStreaming`](#stopstreaming) | private |  | input | inferred | Stops the streaming. |
+| [`tas/control`](#tas_control) | private |  | input | inferred | Controls the voiceinput (tas) |
+| [`tas/endTest`](#tas_endtest) | private |  | input | inferred | Handles the end test (tas) |
+| [`tas/readyTest`](#tas_readytest) | private |  | input | inferred | Handles the ready test (tas) |
+| [`tas/runTest`](#tas_runtest) | private |  | input | inferred | Runs the test (tas) |
+| [`tas/setAssembleMode`](#tas_setassemblemode) | private |  | input | inferred | Sets the assemble mode (tas) |
+| [`tas/setStream`](#tas_setstream) | private |  | input | inferred | Sets the stream (tas) |
+| [`util/runByFile`](#util_runbyfile) | private |  | input | inferred | Runs the by file (util) |
+| [`util/startWebBSI`](#util_startwebbsi) | private |  | input | inferred | Starts the web BSI (util) |
+| [`util/stopWebBSI`](#util_stopwebbsi) | private |  | input | inferred | Stops the web BSI (util) |
+| [`util/subscribeFileOutput`](#util_subscribefileoutput) | private |  | input | inferred | Subscribes to the file output (util) |
 
 <a id="enroll_getenrolledcount"></a>
 ## `enroll/getEnrolledCount`
 
 `luna://com.webos.service.voiceinput/enroll/getEnrolledCount`
 
-Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented).
+Returns the enrolled count (enroll)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/enroll/getEnrolledCount '{}'
@@ -61,13 +65,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.voiceinput/enroll/nextStep`
 
-Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented).
+Handles the next step (enroll)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/enroll/nextStep '{}'
@@ -82,13 +88,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.voiceinput/enroll/removeEnroll`
 
-Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented).
+Removes the enroll (enroll)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/enroll/removeEnroll '{}'
@@ -103,13 +111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.voiceinput/enroll/startEnroll`
 
-Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented).
+Starts the enroll (enroll)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/enroll/startEnroll '{}'
@@ -124,13 +134,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.voiceinput/enroll/stopEnroll`
 
-Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented).
+Stops the enroll (enroll)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/enroll/stopEnroll '{}'
@@ -145,13 +157,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.voiceinput/factory/getDataVersion`
 
-Getter on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Returns the data version (factory)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/factory/getDataVersion '{}'
@@ -166,13 +180,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/factory/getMicSwitchStatus`
 
-Getter on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Returns the mic switch status (factory)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/factory/getMicSwitchStatus '{}'
@@ -187,13 +203,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/factory/testMicSignal`
 
-Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Tests the mic signal (factory)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/factory/testMicSignal '{}'
@@ -208,13 +226,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/getDevices`
 
-Method registered by com.webos.service.voiceinput (root category)
+Returns the devices.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/getDevices '{}'
@@ -229,13 +249,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.voiceinput/respondEvent`
 
-Method registered by com.webos.service.voiceinput (root category)
+Responds to the event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/respondEvent '{}'
@@ -250,13 +272,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.voiceinput/restartTimer`
 
-Method registered by com.webos.service.voiceinput (root category)
+Restarts the timer.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/restartTimer '{}'
@@ -271,13 +295,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.voiceinput/setting/getActivation`
 
-Getter on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Returns the activation (setting)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/setting/getActivation '{}'
@@ -292,13 +318,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/setting/getSensitivity`
 
-Getter on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Returns the sensitivity (setting)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/setting/getSensitivity '{}'
@@ -313,13 +341,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/setting/setActivation`
 
-Setter on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Sets the activation (setting)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/setting/setActivation '{}'
@@ -334,13 +364,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/setting/setSensitivity`
 
-Setter on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Sets the sensitivity (setting)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/setting/setSensitivity '{}'
@@ -355,13 +387,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/startStreaming`
 
-Method registered by com.webos.service.voiceinput (root category)
+Starts the streaming.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/startStreaming '{}'
@@ -376,13 +410,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.voiceinput/startStreamingWithTrigger`
 
-Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Starts the streaming with trigger.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/startStreamingWithTrigger '{}'
@@ -397,13 +433,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/stopStreaming`
 
-Method registered by com.webos.service.voiceinput (root category)
+Stops the streaming.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/stopStreaming '{}'
@@ -418,13 +456,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.voiceinput/tas/control`
 
-Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented).
+Controls the voiceinput (tas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/tas/control '{}'
@@ -439,13 +479,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.voiceinput/tas/endTest`
 
-Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Handles the end test (tas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/tas/endTest '{}'
@@ -460,13 +502,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/tas/readyTest`
 
-Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Handles the ready test (tas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/tas/readyTest '{}'
@@ -481,13 +525,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/tas/runTest`
 
-Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Runs the test (tas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/tas/runTest '{}'
@@ -502,13 +548,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/tas/setAssembleMode`
 
-Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented).
+Sets the assemble mode (tas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/tas/setAssembleMode '{}'
@@ -523,13 +571,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.voiceinput/tas/setStream`
 
-Method on com.webos.service.voiceinput (from on-device permission registry; parameters undocumented).
+Sets the stream (tas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/tas/setStream '{}'
@@ -544,13 +594,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.voiceinput/util/runByFile`
 
-Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Runs the by file (util)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/util/runByFile '{}'
@@ -565,13 +617,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/util/startWebBSI`
 
-Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Starts the web BSI (util)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/util/startWebBSI '{}'
@@ -586,13 +640,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/util/stopWebBSI`
 
-Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Stops the web BSI (util)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/util/stopWebBSI '{}'
@@ -607,13 +663,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.voiceinput/util/subscribeFileOutput`
 
-Method on com.webos.service.voiceinput (introspected on-device; parameters undocumented).
+Subscribes to the file output (util)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceinput/util/subscribeFileOutput '{}'

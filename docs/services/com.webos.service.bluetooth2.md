@@ -1,269 +1,271 @@
 # `com.webos.service.bluetooth2`
 
+Bluetooth stack service: manages the adapter, device discovery and pairing, and profiles such as A2DP, HFP and GATT for audio and input devices.
+
 258 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`a2dp/connect`](#a2dp_connect) | public | yes | bluetooth | Connects to the A2DP profile on the specified remote device. |
-| [`a2dp/disableDelayReporting`](#a2dp_disabledelayreporting) | public |  | bluetooth | Disables the AVDTP delay reporting. |
-| [`a2dp/disconnect`](#a2dp_disconnect) | public |  | bluetooth | Drops the connection to the given remote device on the A2DP profile. |
-| [`a2dp/enableDelayReporting`](#a2dp_enabledelayreporting) | public |  | bluetooth | Enables the AVDTP delay reporting. |
-| [`a2dp/getDelayReportingTime`](#a2dp_getdelayreportingtime) | public | yes | bluetooth | Gets the AVDTP delay from a remote A2DP device, whenever the AVDTP delay is changed. |
-| [`a2dp/getStatus`](#a2dp_getstatus) | public | yes | bluetooth | Returns the status of the A2DP connection to a remote device. Note: If the address input parameter is not specified, the method will return  |
-| [`a2dp/internal/disable`](#a2dp_internal_disable) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`a2dp/internal/enable`](#a2dp_internal_enable) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`a2dp/internal/getAudioPath`](#a2dp_internal_getaudiopath) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`a2dp/internal/getCodecConfiguration`](#a2dp_internal_getcodecconfiguration) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`a2dp/internal/setCodecConfiguration`](#a2dp_internal_setcodecconfiguration) | private |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`a2dp/internal/setDualAudioMode`](#a2dp_internal_setdualaudiomode) | private |  | audio | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`a2dp/internal/setLatency`](#a2dp_internal_setlatency) | public |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`a2dp/internal/setSbcEncoderBitpool`](#a2dp_internal_setsbcencoderbitpool) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`a2dp/internal/startStreaming`](#a2dp_internal_startstreaming) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`a2dp/internal/stopStreaming`](#a2dp_internal_stopstreaming) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`a2dp/internal/toggle_left_right`](#a2dp_internal_toggle_left_right) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`adapter/awaitPairingRequests`](#adapter_awaitpairingrequests) | public | yes | bluetooth | Awaits incoming pairing requests on the default Bluetooth adapter (only) by setting its state to be pairable. The caller must subscribe to t |
-| [`adapter/cancelDiscovery`](#adapter_canceldiscovery) | public |  | bluetooth | Cancels discovering the remote Bluetooth devices. Note: Discovery of a specific adapter can be canceled based on the adapter address passed. |
-| [`adapter/cancelPairing`](#adapter_cancelpairing) | public |  | bluetooth | Cancels the pairing request with a remote device, either incoming or outgoing. Sends a success response immediately. Once the SIL (Stack Int |
-| [`adapter/getStatus`](#adapter_getstatus) | public | yes | bluetooth | Returns the status information about the Bluetooth adapters available in the system. |
-| [`adapter/internal/getKeepAliveStatus`](#adapter_internal_getkeepalivestatus) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`adapter/internal/getTraceStatus`](#adapter_internal_gettracestatus) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`adapter/internal/getWoBleStatus`](#adapter_internal_getwoblestatus) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`adapter/internal/sendHciCommand`](#adapter_internal_sendhcicommand) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only ⚠️ |
-| [`adapter/internal/setDutMode`](#adapter_internal_setdutmode) | private |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`adapter/internal/setKeepAlive`](#adapter_internal_setkeepalive) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`adapter/internal/setTrace`](#adapter_internal_settrace) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`adapter/internal/setULLMode`](#adapter_internal_setullmode) | private |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`adapter/internal/setWoBle`](#adapter_internal_setwoble) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`adapter/internal/setWoBleTriggerDevices`](#adapter_internal_setwobletriggerdevices) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`adapter/internal/startDiscovery`](#adapter_internal_startdiscovery) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`adapter/pair`](#adapter_pair) | public | yes | bluetooth | Pairs a specific remote Bluetooth device with a specific Bluetooth adapter. The caller must subscribe to this method. Only one pairing reque |
-| [`adapter/queryAvailable`](#adapter_queryavailable) | public | yes | bluetooth | Returns the information on the Bluetooth adapters currently available in the system. The caller subscribes to this method to get informed of |
-| [`adapter/setState`](#adapter_setstate) | public |  | bluetooth | Sets the state of the specified Bluetooth adapter. |
-| [`adapter/startDiscovery`](#adapter_startdiscovery) | public |  | bluetooth | Starts discovering the remote Bluetooth devices. Note: Discovery continues until adapter/cancelDiscovery is called or for bluetooth2AdapterS |
-| [`adapter/supplyPasskey`](#adapter_supplypasskey) | public |  | bluetooth | Supplies the user-entered passkey. Note: The passkey is entered when adapter/pair sends a subscription response containing request:enterPass |
-| [`adapter/supplyPasskeyConfirmation`](#adapter_supplypasskeyconfirmation) | public |  | bluetooth | Supplies the user's confirmation for the passkey. Note: The user confirms the passkey when adapter/pair sends a subscription response contai |
-| [`adapter/supplyPinCode`](#adapter_supplypincode) | public |  | bluetooth | Supplies the user-entered PIN code. Note: The PIN code is entered when adapter/pair sends a subscription response containing request:enterPi |
-| [`adapter/unpair`](#adapter_unpair) | public |  | bluetooth | Disconnects from the paired remote device. Note: All pairing information about the remote device will be removed and any open connections wi |
-| [`avrcp/awaitMediaMetaDataRequest`](#avrcp_awaitmediametadatarequest) | public | yes | bluetooth | Awaits incoming media metadata requests from remote devices. This method is available only for TG (Target). The method just listens the requ |
-| [`avrcp/awaitMediaPlayStatusRequest`](#avrcp_awaitmediaplaystatusrequest) | public | yes | bluetooth | Awaits the incoming media play status requests from remote devices. This method is available only for the TG (Target). The avrcp/awaitMediaP |
-| [`avrcp/browse/addToNowPlaying`](#avrcp_browse_addtonowplaying) | public |  | bluetooth | Adds the browsed item to the current playing list. Note : When user selects a playable item (playable is set to true for the item in the get |
-| [`avrcp/browse/changePath`](#avrcp_browse_changepath) | public |  | bluetooth | Navigates the virtual filesystem presented by the remote media player. This API can be called to change to a specific folder for browsing. " |
-| [`avrcp/browse/getCurrentFolder`](#avrcp_browse_getcurrentfolder) | public | yes | bluetooth | Gets the current folder in the media player's virtual filesystem presented by AVRCP TG which can be browsed for the media content. Example:  |
-| [`avrcp/browse/getFolderItems`](#avrcp_browse_getfolderitems) | public |  | bluetooth | Gets the items in the current folder of the media player's virtual filesystem presented by AVRCP TG. It takes startIndex and endIndex as arg |
-| [`avrcp/browse/getNumberOfItems`](#avrcp_browse_getnumberofitems) | public |  | bluetooth | Retrieves the total number of items in the current folder of the media player's virtual file system presented by the AVRCP TG. |
-| [`avrcp/browse/playItem`](#avrcp_browse_playitem) | public |  | bluetooth | Plays the browsed item. Note : When user selects a playable item (playable is set to true for the item in the getFolderItems response) among |
-| [`avrcp/browse/search`](#avrcp_browse_search) | public |  | bluetooth | Searches an item in the current browsing folder (and its sub folders) using a search string. Note : The API succeeds only if the player is s |
-| [`avrcp/connect`](#avrcp_connect) | public | yes | bluetooth | Opens an AVRCP connection to a remote Bluetooth device. |
-| [`avrcp/disconnect`](#avrcp_disconnect) | public |  | bluetooth | Drops the connection to the given remote device on the AVRCP profile. |
-| [`avrcp/getMediaMetaData`](#avrcp_getmediametadata) | public | yes | bluetooth | Gets media metadata of the target from remote devices connected via AVRCP 1.3 profile. |
-| [`avrcp/getMediaPlayStatus`](#avrcp_getmediaplaystatus) | public | yes | bluetooth | Gets the media metadata of the target from remote devices connected via AVRCP 1.3 profile. |
-| [`avrcp/getPlayerApplicationSettings`](#avrcp_getplayerapplicationsettings) | public | yes | bluetooth | Gets the player application settings value. |
-| [`avrcp/getPlayerInfo`](#avrcp_getplayerinfo) | public | yes | bluetooth | Returns the information of the media players available that is received from AVRCP TG (AVRCP Target). Subscription response will be received |
-| [`avrcp/getRemoteVolume`](#avrcp_getremotevolume) | public | yes | bluetooth | Gets the volume of the remote device. Note: The method supports 'Volume Changed Notification' only. |
-| [`avrcp/getStatus`](#avrcp_getstatus) | public | yes | bluetooth | Returns the status of an AVRCP connection to a remote Bluetooth device. |
-| [`avrcp/internal/disable`](#avrcp_internal_disable) | public |  | bluetooth | Disables the profile and role of AVRCP. |
-| [`avrcp/internal/enable`](#avrcp_internal_enable) | public |  | bluetooth | Enables the profile and the role of AVRCP. |
-| [`avrcp/internal/getRemoteBattery`](#avrcp_internal_getremotebattery) | public |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`avrcp/internal/getRemoteFeatures`](#avrcp_internal_getremotefeatures) | public |  | bluetooth | Gets the remote AVRCP's features. |
-| [`avrcp/internal/getSupportedNotificationEvents`](#avrcp_internal_getsupportednotificationevents) | public | yes | bluetooth | Gets the remote AVRCP's supported notification events. |
-| [`avrcp/notifyMediaPlayStatus`](#avrcp_notifymediaplaystatus) | public |  | bluetooth | Enables the AVRCP target to inform the AVRCP controller about the change in media play status or position without controller requesting for  |
-| [`avrcp/receivePassThroughCommand`](#avrcp_receivepassthroughcommand) | public | yes | bluetooth | Receives PATH THROUGH command from CT to TG. Note: The PASS THROUGH command is used to transfer user operation information from a CT (Contro |
-| [`avrcp/receiveRegisterNotificationAbsoluteVolume`](#avrcp_receiveregisternotificationabsolutevolume) | public |  | notifications | Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented). |
-| [`avrcp/registerNotificationAbsoluteVolumeResponse`](#avrcp_registernotificationabsolutevolumeresponse) | public |  | notifications | Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented). |
-| [`avrcp/sendPassThroughCommand`](#avrcp_sendpassthroughcommand) | public |  | bluetooth | Sends PASS THROUGH command from CT (Controller) to TG (Target). Note: The PASS THROUGH command is used to transfer user operation informatio |
-| [`avrcp/sendVendorPassThroughCommand`](#avrcp_sendvendorpassthroughcommand) | private |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`avrcp/setAbsoluteVolume`](#avrcp_setabsolutevolume) | public |  | bluetooth | Sets the absolute volume on the target device. |
-| [`avrcp/setPlayerApplicationSettings`](#avrcp_setplayerapplicationsettings) | public |  | bluetooth | Sets the player application settings value. |
-| [`avrcp/supplyMediaMetaData`](#avrcp_supplymediametadata) | public |  | bluetooth | Supplies media metadata of the target to remote devices connected via AVRCP 1.3 profile. |
-| [`avrcp/supplyMediaPlayStatus`](#avrcp_supplymediaplaystatus) | public |  | bluetooth | Supplies media play status of the target to remote devices connected via AVRCP 1.3 profile. |
-| [`BleMeshAppKeys`](#blemeshappkeys) | unknown |  | bluetooth | Object gives the info related to app-key used/created by the application |
-| [`BleMeshCompositionData`](#blemeshcompositiondata) | unknown |  | bluetooth | Provides composition data information about a requested node. |
-| [`BleMeshConfigRelayStatus`](#blemeshconfigrelaystatus) | unknown |  | bluetooth | provide node relay information |
-| [`BleMeshElement`](#blemeshelement) | unknown |  | bluetooth | Object provides sequence of element descriptions |
-| [`BleMeshFeature`](#blemeshfeature) | unknown |  | bluetooth | Object information indicating the device features. |
-| [`BleMeshInfo`](#blemeshinfo) | unknown |  | bluetooth | Object provides mesh network information |
-| [`BleMeshKeyUpdateResponse`](#blemeshkeyupdateresponse) | unknown |  | bluetooth | Object representing the intermediate response during key update to nodes in the network. |
-| [`BleMeshNetKeys`](#blemeshnetkeys) | unknown |  | bluetooth | Object provides the info related to network key |
-| [`BleMeshNode`](#blemeshnode) | unknown |  | bluetooth | Object containing a list of provisioned nodes in the network |
-| [`BleMeshPayload - for "onOff" command`](#blemeshpayload_-_for_onoff_command) | unknown |  | bluetooth | Payload object structure when the command is "onOff" in mesh/model/send API. |
-| [`BleMeshPayload - for "passthrough" command`](#blemeshpayload_-_for_passthrough_command) | unknown |  | bluetooth | Payload object structure when the command is "passThrough" in mesh/model/send API. |
-| [`BleMeshProvisioner`](#blemeshprovisioner) | unknown |  | bluetooth | Object provides provisioner related information |
-| [`BleMeshUnprovisionedDevice`](#blemeshunprovisioneddevice) | unknown |  | bluetooth | Array of BLE Mesh devices that are known to the system and that are not yet provisioned by the system |
-| [`bluetooth2Adapter`](#bluetooth2adapter) | unknown |  | bluetooth | An object containing constant information about the adapter. |
-| [`bluetooth2AdapterStatus`](#bluetooth2adapterstatus) | unknown |  | bluetooth | Contains the information about the status of the adapter identified by the adapterAddress parameter. The following values are read-only: Dis |
-| [`bluetooth2AdvertiseData`](#bluetooth2advertisedata) | unknown |  | bluetooth | Defines the format for data parameters. |
-| [`bluetooth2AdvertiseSettings`](#bluetooth2advertisesettings) | unknown |  | bluetooth | Object containing information about the advertisement setting. |
-| [`bluetooth2aptxConfiguration`](#bluetooth2aptxconfiguration) | unknown |  | bluetooth | Object containing information about aptX configuration for A2DP. |
-| [`bluetooth2AvrcpFolderItem`](#bluetooth2avrcpfolderitem) | unknown |  | bluetooth | Describes an item in the folder. |
-| [`bluetooth2AvrcpPlayerInfo`](#bluetooth2avrcpplayerinfo) | unknown |  | bluetooth | Represents the media player information as received from AVRCP target. |
-| [`bluetooth2AvrcpRemoteFeatureInfo`](#bluetooth2avrcpremotefeatureinfo) | unknown |  | bluetooth | Object containing information about avrcp remote features |
-| [`bluetooth2DeviceStatus`](#bluetooth2devicestatus) | unknown |  | bluetooth | Contains the information about the status of the device identified by the address. Note: All object properties apart from name are read-only |
-| [`bluetooth2GattCharacteristicInfo`](#bluetooth2gattcharacteristicinfo) | unknown |  | bluetooth | Object containing information about a GATT characteristic. |
-| [`bluetooth2GattCharacteristicValueInfo`](#bluetooth2gattcharacteristicvalueinfo) | unknown |  | bluetooth | Object containing information about the characteristic uuid and values. |
-| [`bluetooth2GattDescriptorInfo`](#bluetooth2gattdescriptorinfo) | unknown |  | bluetooth | Object containing information about a GATT descriptor. |
-| [`bluetooth2GattManufacturerData`](#bluetooth2gattmanufacturerdata) | unknown |  | bluetooth | Indicates manufacturer-specific company ID and data (if advertised from the remote device, else it will be blank) and scanResponse data Note |
-| [`bluetooth2GattPermissionsInfo`](#bluetooth2gattpermissionsinfo) | unknown |  | bluetooth | Object containing information about the permissions allowed for a client to use a particular characteristic value. All properties are define |
-| [`bluetooth2GattPropertiesInfo`](#bluetooth2gattpropertiesinfo) | unknown |  | bluetooth | Object containing information about the set properties of a characteristic. All properties are defined in Bluetooth Core Specification 4.1 v |
-| [`bluetooth2GattServiceInfo`](#bluetooth2gattserviceinfo) | unknown |  | bluetooth | Object containing the GATT service configuration. |
-| [`bluetooth2GattValueInfo`](#bluetooth2gattvalueinfo) | unknown |  | bluetooth | Object contains information about a GATT value. As a GATT characteristic can be extended with a descriptor which describes the type of the s |
-| [`bluetooth2LeManufacturerData`](#bluetooth2lemanufacturerdata) | unknown |  | bluetooth | Object containing information about manufacturer data. |
-| [`bluetooth2LeProprietaryDataObject`](#bluetooth2leproprietarydataobject) | unknown |  | bluetooth | Defines the format for proprietary data with vendor proprietary advertising type or undefined type in sil-api. Note: SIL stands for Stack In |
-| [`bluetooth2LeServiceDataObject`](#bluetooth2leservicedataobject) | unknown |  | bluetooth | Object containing information about a service data to be advertised. |
-| [`bluetooth2LeServiceObject`](#bluetooth2leserviceobject) | unknown |  | bluetooth | Object containing information about a service to be advertised. |
-| [`bluetooth2LeServiceUuidObject`](#bluetooth2leserviceuuidobject) | unknown |  | bluetooth | Object containing information about a service uuid to be advertised. |
-| [`bluetooth2MasInstances`](#bluetooth2masinstances) | unknown |  | bluetooth | Contains the list of supported MAS instances. |
-| [`bluetooth2MasInstancesStatus`](#bluetooth2masinstancesstatus) | unknown |  | bluetooth | Contains an array of the MAS instances with the connection details. |
-| [`bluetooth2MediaMetaData`](#bluetooth2mediametadata) | unknown |  | bluetooth | Contains information about a media metadata value. Note : string parameters accepts empty string as some meta data doesn't have particular i |
-| [`bluetooth2Message`](#bluetooth2message) | unknown |  | bluetooth | Indicates the description of the message . |
-| [`bluetooth2MessageFilters`](#bluetooth2messagefilters) | unknown |  | bluetooth | Indicates the list of filters. |
-| [`bluetooth2MessageList`](#bluetooth2messagelist) | unknown |  | bluetooth | Indicates the message list. |
-| [`bluetooth2MessageNotificationProperties`](#bluetooth2messagenotificationproperties) | unknown |  | bluetooth | Indicates the message notification properties. |
-| [`bluetooth2MessageProperties`](#bluetooth2messageproperties) | unknown |  | bluetooth | Contains the list of supported Message properties. |
-| [`bluetooth2NewMessageProperties`](#bluetooth2newmessageproperties) | unknown |  | bluetooth | Indicates the properties of the new message . |
-| [`bluetooth2PbapProperties`](#bluetooth2pbapproperties) | unknown |  | bluetooth | Contains supported properties from PSE device. |
-| [`bluetooth2PbapSearchFilter`](#bluetooth2pbapsearchfilter) | unknown |  | bluetooth | Filter with key & value pair to search the phonebook |
-| [`bluetooth2PbapVcfHandles`](#bluetooth2pbapvcfhandles) | unknown |  | bluetooth | Contains information about vcf files entries with name and vcf handle from selected phonebook path. |
-| [`bluetooth2PlayStatus`](#bluetooth2playstatus) | unknown |  | bluetooth | Contains the information about the media playstatus value. |
-| [`bluetooth2PushRequest`](#bluetooth2pushrequest) | unknown |  | bluetooth | Object containing information about an OPP push request |
-| [`bluetooth2SbcConfiguration`](#bluetooth2sbcconfiguration) | unknown |  | bluetooth | Object containing information about SBC configuration for A2DP. |
-| [`bluetooth2ServiceClass`](#bluetooth2serviceclass) | unknown |  | bluetooth | Contains the Bluetooth service class information. |
-| [`bluetooth2TxPower`](#bluetooth2txpower) | unknown |  | bluetooth | Object containing txpower information. |
-| [`device/getConnectedDevices`](#device_getconnecteddevices) | unknown |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
-| [`device/getDiagnosis`](#device_getdiagnosis) | private |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`device/getDiscoveredDevice`](#device_getdiscovereddevice) | public | yes | bluetooth | Gets the newly discovered Bluetooth device information known to the system. |
-| [`device/getHistory`](#device_gethistory) | private |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`device/getPairedDevices`](#device_getpaireddevices) | public | yes | bluetooth | Gets a list of paired Bluetooth devices info, known to the system. |
-| [`device/getStatus`](#device_getstatus) | public | yes | bluetooth | Gets the current status of remote Bluetooth devices known to the system. |
-| [`device/internal/getLinkKey`](#device_internal_getlinkkey) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`device/internal/getStatus`](#device_internal_getstatus) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`device/internal/setDebugValue`](#device_internal_setdebugvalue) | private |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`device/internal/startSniff`](#device_internal_startsniff) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`device/internal/stopSniff`](#device_internal_stopsniff) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`device/setState`](#device_setstate) | public |  | bluetooth | Sets the local values for the state of a remote device. |
-| [`ftp/connect`](#ftp_connect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`ftp/disconnect`](#ftp_disconnect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`ftp/getStatus`](#ftp_getstatus) | public |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`ftp/listDirectory`](#ftp_listdirectory) | public |  | bluetooth | Lister on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`ftp/pullFile`](#ftp_pullfile) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`ftp/pushFile`](#ftp_pushfile) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`gatt/addService`](#gatt_addservice) | public |  | bluetooth | Adds a new service definition to the local database. Note: The new service will be directly exposed to clients which are discovering availab |
-| [`gatt/ancs/advertise`](#gatt_ancs_advertise) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`gatt/ancs/awaitConnectionRequest`](#gatt_ancs_awaitconnectionrequest) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`gatt/ancs/awaitNotifications`](#gatt_ancs_awaitnotifications) | public |  | notifications | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`gatt/ancs/connect`](#gatt_ancs_connect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`gatt/ancs/disconnect`](#gatt_ancs_disconnect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`gatt/ancs/getStatus`](#gatt_ancs_getstatus) | public |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`gatt/ancs/performNotificationAction`](#gatt_ancs_performnotificationaction) | public |  | notifications | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`gatt/ancs/queryAppAttributes`](#gatt_ancs_queryappattributes) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`gatt/ancs/queryNotificationAttributes`](#gatt_ancs_querynotificationattributes) | public |  | notifications | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`gatt/closeServer`](#gatt_closeserver) | public |  | bluetooth | Closes the BluetoothGattServer. |
-| [`gatt/connect`](#gatt_connect) | public | yes | bluetooth | Connects to the GATT profile on the specified remote device. |
-| [`gatt/disconnect`](#gatt_disconnect) | public |  | bluetooth | Drops the connection to the given remote device on GATT profile. |
-| [`gatt/discoverServices`](#gatt_discoverservices) | public |  | bluetooth | Discovers available services for the given remote device. Pre-requisite: The given remote device should be connected through gatt/connect me |
-| [`gatt/getServices`](#gatt_getservices) | public | yes | bluetooth | Gets available services for either the given local Bluetooth adapter or remote device. Note: Depending on the passed parameter, a list of se |
-| [`gatt/getStatus`](#gatt_getstatus) | public | yes | bluetooth | Returns the status of GATT connection to the given remote device. |
-| [`gatt/monitorCharacteristic`](#gatt_monitorcharacteristic) | public | yes | bluetooth | Monitors specific characteristic value changes. Note: If the characteristic is not marked as being notifiable, the method will fail. If the  |
-| [`gatt/monitorCharacteristics`](#gatt_monitorcharacteristics) | public | yes | bluetooth | Monitors specific characteristic value changes. If the characteristic is not marked as being notifiable, the method will fail. |
-| [`gatt/openServer`](#gatt_openserver) | public |  | bluetooth | Opens the BluetoothGattServer managing services. |
-| [`gatt/readCharacteristicValue`](#gatt_readcharacteristicvalue) | public |  | bluetooth | Reads the value of a specific characteristic. Note: When called from client side, the method actively reads and retrieves the latest value f |
-| [`gatt/readCharacteristicValues`](#gatt_readcharacteristicvalues) | public |  | bluetooth | Reads the value of a specific characteristic. When called from client side, the method actively reads and retrieves the latest value from th |
-| [`gatt/readDescriptorValue`](#gatt_readdescriptorvalue) | public |  | bluetooth | Reads the value of descriptor of a service characteristic either in the local adapter or the remote device. When called from client side, th |
-| [`gatt/readDescriptorValues`](#gatt_readdescriptorvalues) | public |  | bluetooth | Read the value of descriptor(s) of a service characteristic either in the local adapter or the remote device. When called from client side,  |
-| [`gatt/removeService`](#gatt_removeservice) | public |  | bluetooth | Remove a service definition from the local database. All characteristics which belong to the service will be also removed. If the given serv |
-| [`gatt/writeCharacteristicValue`](#gatt_writecharacteristicvalue) | public |  | bluetooth | Writes the value for a local or remote characteristic. |
-| [`gatt/writeDescriptorValue`](#gatt_writedescriptorvalue) | public |  | bluetooth | Writes the value of a specific descriptor of a service characteristic either in the local adapter or the remote device. |
-| [`hfp/closeSCO`](#hfp_closesco) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`hfp/connect`](#hfp_connect) | public | yes | bluetooth | Opens a HFP connection to a remote device. |
-| [`hfp/disconnect`](#hfp_disconnect) | public |  | bluetooth | Drops the connection to the given remote device on the HFP profile. |
-| [`hfp/getStatus`](#hfp_getstatus) | public | yes | bluetooth | Returns the status of a HFP connection to a remote device. If address input parameter is not specified, the method will return the informati |
-| [`hfp/indicateCall`](#hfp_indicatecall) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`hfp/openSCO`](#hfp_opensco) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`hfp/receiveAT`](#hfp_receiveat) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`hfp/receiveResult`](#hfp_receiveresult) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`hfp/sendAT`](#hfp_sendat) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`hfp/sendResult`](#hfp_sendresult) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`hid/connect`](#hid_connect) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
-| [`hid/disconnect`](#hid_disconnect) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
-| [`hid/getStatus`](#hid_getstatus) | unknown |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
-| [`hid/internal/getReport`](#hid_internal_getreport) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`hid/internal/sendData`](#hid_internal_senddata) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`hid/internal/setReport`](#hid_internal_setreport) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
-| [`le/configureAdvertisement`](#le_configureadvertisement) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`le/disableAdvertising`](#le_disableadvertising) | public |  | bluetooth | Stops and disables advertising Note: Call this method after le/startAdvertising. |
-| [`le/getStatus`](#le_getstatus) | unknown |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
-| [`le/internal/startScan`](#le_internal_startscan) | private |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`le/setScanParameters`](#le_setscanparameters) | private |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`le/startAdvertising`](#le_startadvertising) | public | yes | bluetooth | Starts broadcasting the Bluetooth Low Energy advertisement. |
-| [`le/startMultiScan`](#le_startmultiscan) | private |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`le/startScan`](#le_startscan) | public | yes | bluetooth | Starts scanning only ble devices. |
-| [`le/stopAdvertising`](#le_stopadvertising) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`le/updateAdvertising`](#le_updateadvertising) | unknown |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.operation); name only |
-| [`leaudio/internal/updateBroadcastMetadata`](#leaudio_internal_updatebroadcastmetadata) | private |  | audio | Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented). |
-| [`map/connect`](#map_connect) | public | yes | bluetooth | Connects to the MAS Instance of the specified remote device. Note: The method is available only for MCE . |
-| [`map/disconnect`](#map_disconnect) | public |  | bluetooth | Disconnects from the MAS Instance on the specified remote device. Note: The method is available only for MCE . |
-| [`map/getFolderList`](#map_getfolderlist) | public |  | bluetooth | Lists the available folders of the connected MAS instance of the MSE device. Note: This method is available only for MCE. |
-| [`map/getMASInstances`](#map_getmasinstances) | public |  | bluetooth | Retrieves the MAS instance details of a MSE device. MAP MSE devices may present one or several MAS Instances to the MCE, each providing the  |
-| [`map/getMessage`](#map_getmessage) | public |  | bluetooth | Downloads the specific message based on the message handle. Note: This method is available only for MCE. |
-| [`map/getMessageFilters`](#map_getmessagefilters) | public |  | bluetooth | Returns all the available fields that can be used in the fields filter of the getMessageList . |
-| [`map/getMessageList`](#map_getmessagelist) | public |  | bluetooth | Gets the message list of the specific folder of the connected MAS instance of the MSE device. |
-| [`map/getMessageNotification`](#map_getmessagenotification) | public | yes | bluetooth | Receives the message notification from the MSE device. Note : This method is available only for MCE. |
-| [`map/getStatus`](#map_getstatus) | public | yes | bluetooth | Returns the status of the MAS connection with a remote device. Note: The method is available only for MCE . |
-| [`map/pushMessage`](#map_pushmessage) | public |  | bluetooth | Sends the message. Example: Sending an SMS. Note : The API is designed based on MAP 1.0 specification. |
-| [`map/setFolder`](#map_setfolder) | public |  | bluetooth | Returns to the child folder of the current directory of the connected MAS instance of the MSE device. |
-| [`map/setMessageStatus`](#map_setmessagestatus) | public |  | bluetooth | Modifies the status of a message on the MSE. Note : This method is available only for MCE |
-| [`mesh/createAppKey`](#mesh_createappkey) | public |  | bluetooth | Requests to generate a new application key. This call affects the local key database only. To update the remote config server, use mesh/mode |
-| [`mesh/createNetwork`](#mesh_createnetwork) | public |  | bluetooth | This is the first API that must be called by the application to create a network and to become a provisioner. This is called once for every  |
-| [`mesh/getMeshInfo`](#mesh_getmeshinfo) | public |  | bluetooth | Gets mesh network-related information. |
-| [`mesh/keyRefresh`](#mesh_keyrefresh) | public | yes | bluetooth | Refreshes the mesh network key and associated app keys. |
-| [`mesh/listProvisionedNodes`](#mesh_listprovisionednodes) | public |  | bluetooth | Gets a list of provisioned nodes. |
-| [`mesh/model/config/get`](#mesh_model_config_get) | public | yes | bluetooth | Gets various configuration parameters provided by configuration model. |
-| [`mesh/model/config/getCompositionData`](#mesh_model_config_getcompositiondata) | public | yes | bluetooth | Gets composition data of a mesh node. The composition data contains information about a node, the elements it includes, and the supported mo |
-| [`mesh/model/config/set`](#mesh_model_config_set) | public | yes | bluetooth | Sets various configuration parameters provided by the configuration model. |
-| [`mesh/model/onOff/set`](#mesh_model_onoff_set) | public | yes | bluetooth | Sets the on/off state of the remote node using a generic on-off model. |
-| [`mesh/model/receive`](#mesh_model_receive) | public | yes | bluetooth | Receives messages addressed to the application. |
-| [`mesh/model/send`](#mesh_model_send) | public |  | bluetooth | Sends a message originated by a local model. |
-| [`mesh/provision`](#mesh_provision) | public | yes | bluetooth | Initiates provisioning of a device. Once a mesh device is discovered using mesh/scanUnprovisionedDevices API, the discovered device can be p |
-| [`mesh/removeNode`](#mesh_removenode) | public |  | bluetooth | Removes the node from the network. Multiple nodes can be removed by calling this API multiple times. After the required nodes are removed fr |
-| [`mesh/scanUnprovisionedDevices`](#mesh_scanunprovisioneddevices) | public | yes | bluetooth | Scans for mesh devices to provision when the local node is provisioner. |
-| [`mesh/supplyProvisioningNumeric`](#mesh_supplyprovisioningnumeric) | public |  | bluetooth | Provides decimal number for authentication during provisioning; when "request" = "promptNumeric" in the subscription response of mesh/provis |
-| [`mesh/supplyProvisioningOob`](#mesh_supplyprovisioningoob) | public |  | bluetooth | Supplies the static OOB data required during provision; when "request" = "promptStatic" in the subscription response of mesh/provision API. |
-| [`mesh/unprovisionedScanCancel`](#mesh_unprovisionedscancancel) | public |  | bluetooth | Cancels scanning for unprovisioned BLE mesh devices. |
-| [`opp/acceptTransferRequest`](#opp_accepttransferrequest) | public |  | bluetooth | Accept a Bluetooth object push request. This method is available only for a push server. |
-| [`opp/awaitTransferRequest`](#opp_awaittransferrequest) | public | yes | bluetooth | Await incoming transfer requests from push clients. This method is available only for a push server. |
-| [`opp/cancelTransfer`](#opp_canceltransfer) | public |  | bluetooth | Cancel an ongoing file transfer. This method is available only for a push server. In a client side, LSCallCancel() is used to cancel the tra |
-| [`opp/connect`](#opp_connect) | public | yes | bluetooth | Open (or initialize) an OPP connection to a remote Bluetooth device. In some cases of such as using BSA stack, only initialization of OPP ca |
-| [`opp/disconnect`](#opp_disconnect) | public |  | bluetooth | Close (or deinitialize) the connection to the given remote device on OPP profile. In some cases of such as using BSA stack, this method perf |
-| [`opp/getStatus`](#opp_getstatus) | public | yes | bluetooth | Return the status of an OPP connection to a remote Bluetooth device. This method is available for both of client and server. |
-| [`opp/monitorTransfer`](#opp_monitortransfer) | public | yes | bluetooth | Return the status of ongoing file transfer requests. This method is only available for server. |
-| [`opp/pushFile`](#opp_pushfile) | public | yes | bluetooth | Push a file to a remote Bluetooth device. This method is available only for push client. If the client calls LSCallCancel() , the file trans |
-| [`opp/rejectTransferRequest`](#opp_rejecttransferrequest) | public |  | bluetooth | Reject a Bluetooth object push request. This method is available only for a push server. |
-| [`pan/connect`](#pan_connect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`pan/disconnect`](#pan_disconnect) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`pan/getStatus`](#pan_getstatus) | public |  | bluetooth | Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`pan/setTethering`](#pan_settethering) | public |  | bluetooth | Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`pbap/acceptAccessRequest`](#pbap_acceptaccessrequest) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`pbap/awaitAccessRequest`](#pbap_awaitaccessrequest) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`pbap/connect`](#pbap_connect) | public | yes | bluetooth | Connects to the PBAP profile on the specified remote device. Note: This method is available only for PCE . |
-| [`pbap/disconnect`](#pbap_disconnect) | public |  | bluetooth | Disconnects from the PBAP profile on the specified remote device. Note: This method is available only for PCE . |
-| [`pbap/getPhoneBookProperties`](#pbap_getphonebookproperties) | public | yes | bluetooth | Gets the supported PBAP profile properties from PSE device. Note: This method is available only for PCE . |
-| [`pbap/getSize`](#pbap_getsize) | public |  | bluetooth | Gets the total number of vcf entries from the selected phonebook path. Note: This method is available only for PCE . |
-| [`pbap/getStatus`](#pbap_getstatus) | public | yes | bluetooth | Returns the status of a PBAP connection to a remote Bluetooth device. Note: The method is available for both client and server. |
-| [`pbap/getvCardFilters`](#pbap_getvcardfilters) | public |  | bluetooth | Displays all the available vcard filters supported by Bluetooth stack. Note: The method is available only for PCE . |
-| [`pbap/pullPhoneBook`](#pbap_pullphonebook) | public | yes | bluetooth | Retrieves all (given maxcount) the phonebook entries from a given startoffset and stores it in a local file. |
-| [`pbap/pullvCard`](#pbap_pullvcard) | public |  | bluetooth | Given a vcard handle, retrieves the vcard in the current phonebook object and store it in a local file. Note: This method is available only  |
-| [`pbap/rejectAccessRequest`](#pbap_rejectaccessrequest) | public |  | bluetooth | Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented). |
-| [`pbap/searchPhoneBook`](#pbap_searchphonebook) | public |  | bluetooth | Searches for entries matching the given condition and returns an object of vcard-listing data where every entry consists of a pair of string |
-| [`pbap/setPhoneBook`](#pbap_setphonebook) | public |  | bluetooth | Sets the phonebook object for other operations. Note: This method is available only for PCE . |
-| [`pbap/vCardListing`](#pbap_vcardlisting) | public |  | bluetooth | Displays the total number of vcf file entries from the selected phonebook path. Note: This method is available only for PCE . |
-| [`popo/pushFile`](#popo_pushfile) | private |  | bluetooth | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
-| [`spp/connect`](#spp_connect) | public | yes | bluetooth | Open a SPP connection to a remote Bluetooth device. |
-| [`spp/createChannel`](#spp_createchannel) | public | yes | bluetooth | Register a service record in the device service record database with the specified UUID and name. The channel can be removed through LSCallC |
-| [`spp/disconnect`](#spp_disconnect) | public |  | bluetooth | Drop the connection to the given remote device on SPP profile. |
-| [`spp/getStatus`](#spp_getstatus) | public | yes | bluetooth | Return the status of a SPP connection to a remote device. |
-| [`spp/readData`](#spp_readdata) | public | yes | bluetooth | Receive data from the connected remote device. |
-| [`spp/writeData`](#spp_writedata) | public |  | bluetooth | Transfer data to the connected remote device. |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`a2dp/connect`](#a2dp_connect) | public | yes | bluetooth | documented | Connects to the A2DP profile on the specified remote device. |
+| [`a2dp/disableDelayReporting`](#a2dp_disabledelayreporting) | public |  | bluetooth | documented | Disables the AVDTP delay reporting. |
+| [`a2dp/disconnect`](#a2dp_disconnect) | public |  | bluetooth | documented | Drops the connection to the given remote device on the A2DP profile. |
+| [`a2dp/enableDelayReporting`](#a2dp_enabledelayreporting) | public |  | bluetooth | documented | Enables the AVDTP delay reporting. |
+| [`a2dp/getDelayReportingTime`](#a2dp_getdelayreportingtime) | public | yes | bluetooth | documented | Gets the AVDTP delay from a remote A2DP device, whenever the AVDTP delay is changed. |
+| [`a2dp/getStatus`](#a2dp_getstatus) | public | yes | bluetooth | documented | Returns the status of the A2DP connection to a remote device. Note: If the address input parameter is not specified, the method will return  |
+| [`a2dp/internal/disable`](#a2dp_internal_disable) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`a2dp/internal/enable`](#a2dp_internal_enable) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`a2dp/internal/getAudioPath`](#a2dp_internal_getaudiopath) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`a2dp/internal/getCodecConfiguration`](#a2dp_internal_getcodecconfiguration) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`a2dp/internal/setCodecConfiguration`](#a2dp_internal_setcodecconfiguration) | private |  | bluetooth | inferred | Sets the codec configuration (a 2 dp internal) |
+| [`a2dp/internal/setDualAudioMode`](#a2dp_internal_setdualaudiomode) | private |  | audio | inferred | Sets the dual audio mode (a 2 dp internal) |
+| [`a2dp/internal/setLatency`](#a2dp_internal_setlatency) | public |  | bluetooth | inferred | Sets the latency (a 2 dp internal) |
+| [`a2dp/internal/setSbcEncoderBitpool`](#a2dp_internal_setsbcencoderbitpool) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`a2dp/internal/startStreaming`](#a2dp_internal_startstreaming) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`a2dp/internal/stopStreaming`](#a2dp_internal_stopstreaming) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`a2dp/internal/toggle_left_right`](#a2dp_internal_toggle_left_right) | public |  | bluetooth | inferred | Toggles the left right (a 2 dp internal) |
+| [`adapter/awaitPairingRequests`](#adapter_awaitpairingrequests) | public | yes | bluetooth | documented | Awaits incoming pairing requests on the default Bluetooth adapter (only) by setting its state to be pairable. The caller must subscribe to t |
+| [`adapter/cancelDiscovery`](#adapter_canceldiscovery) | public |  | bluetooth | documented | Cancels discovering the remote Bluetooth devices. Note: Discovery of a specific adapter can be canceled based on the adapter address passed. |
+| [`adapter/cancelPairing`](#adapter_cancelpairing) | public |  | bluetooth | documented | Cancels the pairing request with a remote device, either incoming or outgoing. Sends a success response immediately. Once the SIL (Stack Int |
+| [`adapter/getStatus`](#adapter_getstatus) | public | yes | bluetooth | documented | Returns the status information about the Bluetooth adapters available in the system. |
+| [`adapter/internal/getKeepAliveStatus`](#adapter_internal_getkeepalivestatus) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`adapter/internal/getTraceStatus`](#adapter_internal_gettracestatus) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`adapter/internal/getWoBleStatus`](#adapter_internal_getwoblestatus) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`adapter/internal/sendHciCommand`](#adapter_internal_sendhcicommand) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only ⚠️ |
+| [`adapter/internal/setDutMode`](#adapter_internal_setdutmode) | private |  | bluetooth | inferred | Sets the dut mode (adapter internal) |
+| [`adapter/internal/setKeepAlive`](#adapter_internal_setkeepalive) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`adapter/internal/setTrace`](#adapter_internal_settrace) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`adapter/internal/setULLMode`](#adapter_internal_setullmode) | private |  | bluetooth | inferred | Sets the ULL mode (adapter internal) |
+| [`adapter/internal/setWoBle`](#adapter_internal_setwoble) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`adapter/internal/setWoBleTriggerDevices`](#adapter_internal_setwobletriggerdevices) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`adapter/internal/startDiscovery`](#adapter_internal_startdiscovery) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`adapter/pair`](#adapter_pair) | public | yes | bluetooth | documented | Pairs a specific remote Bluetooth device with a specific Bluetooth adapter. The caller must subscribe to this method. Only one pairing reque |
+| [`adapter/queryAvailable`](#adapter_queryavailable) | public | yes | bluetooth | documented | Returns the information on the Bluetooth adapters currently available in the system. The caller subscribes to this method to get informed of |
+| [`adapter/setState`](#adapter_setstate) | public |  | bluetooth | documented | Sets the state of the specified Bluetooth adapter. |
+| [`adapter/startDiscovery`](#adapter_startdiscovery) | public |  | bluetooth | documented | Starts discovering the remote Bluetooth devices. Note: Discovery continues until adapter/cancelDiscovery is called or for bluetooth2AdapterS |
+| [`adapter/supplyPasskey`](#adapter_supplypasskey) | public |  | bluetooth | documented | Supplies the user-entered passkey. Note: The passkey is entered when adapter/pair sends a subscription response containing request:enterPass |
+| [`adapter/supplyPasskeyConfirmation`](#adapter_supplypasskeyconfirmation) | public |  | bluetooth | documented | Supplies the user's confirmation for the passkey. Note: The user confirms the passkey when adapter/pair sends a subscription response contai |
+| [`adapter/supplyPinCode`](#adapter_supplypincode) | public |  | bluetooth | documented | Supplies the user-entered PIN code. Note: The PIN code is entered when adapter/pair sends a subscription response containing request:enterPi |
+| [`adapter/unpair`](#adapter_unpair) | public |  | bluetooth | documented | Disconnects from the paired remote device. Note: All pairing information about the remote device will be removed and any open connections wi |
+| [`avrcp/awaitMediaMetaDataRequest`](#avrcp_awaitmediametadatarequest) | public | yes | bluetooth | documented | Awaits incoming media metadata requests from remote devices. This method is available only for TG (Target). The method just listens the requ |
+| [`avrcp/awaitMediaPlayStatusRequest`](#avrcp_awaitmediaplaystatusrequest) | public | yes | bluetooth | documented | Awaits the incoming media play status requests from remote devices. This method is available only for the TG (Target). The avrcp/awaitMediaP |
+| [`avrcp/browse/addToNowPlaying`](#avrcp_browse_addtonowplaying) | public |  | bluetooth | documented | Adds the browsed item to the current playing list. Note : When user selects a playable item (playable is set to true for the item in the get |
+| [`avrcp/browse/changePath`](#avrcp_browse_changepath) | public |  | bluetooth | documented | Navigates the virtual filesystem presented by the remote media player. This API can be called to change to a specific folder for browsing. " |
+| [`avrcp/browse/getCurrentFolder`](#avrcp_browse_getcurrentfolder) | public | yes | bluetooth | documented | Gets the current folder in the media player's virtual filesystem presented by AVRCP TG which can be browsed for the media content. Example:  |
+| [`avrcp/browse/getFolderItems`](#avrcp_browse_getfolderitems) | public |  | bluetooth | documented | Gets the items in the current folder of the media player's virtual filesystem presented by AVRCP TG. It takes startIndex and endIndex as arg |
+| [`avrcp/browse/getNumberOfItems`](#avrcp_browse_getnumberofitems) | public |  | bluetooth | documented | Retrieves the total number of items in the current folder of the media player's virtual file system presented by the AVRCP TG. |
+| [`avrcp/browse/playItem`](#avrcp_browse_playitem) | public |  | bluetooth | documented | Plays the browsed item. Note : When user selects a playable item (playable is set to true for the item in the getFolderItems response) among |
+| [`avrcp/browse/search`](#avrcp_browse_search) | public |  | bluetooth | documented | Searches an item in the current browsing folder (and its sub folders) using a search string. Note : The API succeeds only if the player is s |
+| [`avrcp/connect`](#avrcp_connect) | public | yes | bluetooth | documented | Opens an AVRCP connection to a remote Bluetooth device. |
+| [`avrcp/disconnect`](#avrcp_disconnect) | public |  | bluetooth | documented | Drops the connection to the given remote device on the AVRCP profile. |
+| [`avrcp/getMediaMetaData`](#avrcp_getmediametadata) | public | yes | bluetooth | documented | Gets media metadata of the target from remote devices connected via AVRCP 1.3 profile. |
+| [`avrcp/getMediaPlayStatus`](#avrcp_getmediaplaystatus) | public | yes | bluetooth | documented | Gets the media metadata of the target from remote devices connected via AVRCP 1.3 profile. |
+| [`avrcp/getPlayerApplicationSettings`](#avrcp_getplayerapplicationsettings) | public | yes | bluetooth | documented | Gets the player application settings value. |
+| [`avrcp/getPlayerInfo`](#avrcp_getplayerinfo) | public | yes | bluetooth | documented | Returns the information of the media players available that is received from AVRCP TG (AVRCP Target). Subscription response will be received |
+| [`avrcp/getRemoteVolume`](#avrcp_getremotevolume) | public | yes | bluetooth | documented | Gets the volume of the remote device. Note: The method supports 'Volume Changed Notification' only. |
+| [`avrcp/getStatus`](#avrcp_getstatus) | public | yes | bluetooth | documented | Returns the status of an AVRCP connection to a remote Bluetooth device. |
+| [`avrcp/internal/disable`](#avrcp_internal_disable) | public |  | bluetooth | documented | Disables the profile and role of AVRCP. |
+| [`avrcp/internal/enable`](#avrcp_internal_enable) | public |  | bluetooth | documented | Enables the profile and the role of AVRCP. |
+| [`avrcp/internal/getRemoteBattery`](#avrcp_internal_getremotebattery) | public |  | bluetooth | inferred | Returns the remote battery (avrcp internal) |
+| [`avrcp/internal/getRemoteFeatures`](#avrcp_internal_getremotefeatures) | public |  | bluetooth | documented | Gets the remote AVRCP's features. |
+| [`avrcp/internal/getSupportedNotificationEvents`](#avrcp_internal_getsupportednotificationevents) | public | yes | bluetooth | documented | Gets the remote AVRCP's supported notification events. |
+| [`avrcp/notifyMediaPlayStatus`](#avrcp_notifymediaplaystatus) | public |  | bluetooth | documented | Enables the AVRCP target to inform the AVRCP controller about the change in media play status or position without controller requesting for  |
+| [`avrcp/receivePassThroughCommand`](#avrcp_receivepassthroughcommand) | public | yes | bluetooth | documented | Receives PATH THROUGH command from CT to TG. Note: The PASS THROUGH command is used to transfer user operation information from a CT (Contro |
+| [`avrcp/receiveRegisterNotificationAbsoluteVolume`](#avrcp_receiveregisternotificationabsolutevolume) | public |  | notifications | inferred | Handles the receive register notification absolute volume (avrcp) |
+| [`avrcp/registerNotificationAbsoluteVolumeResponse`](#avrcp_registernotificationabsolutevolumeresponse) | public |  | notifications | inferred | Registers the notification absolute volume response (avrcp) |
+| [`avrcp/sendPassThroughCommand`](#avrcp_sendpassthroughcommand) | public |  | bluetooth | documented | Sends PASS THROUGH command from CT (Controller) to TG (Target). Note: The PASS THROUGH command is used to transfer user operation informatio |
+| [`avrcp/sendVendorPassThroughCommand`](#avrcp_sendvendorpassthroughcommand) | private |  | bluetooth | inferred | Sends the vendor pass through command (avrcp) |
+| [`avrcp/setAbsoluteVolume`](#avrcp_setabsolutevolume) | public |  | bluetooth | documented | Sets the absolute volume on the target device. |
+| [`avrcp/setPlayerApplicationSettings`](#avrcp_setplayerapplicationsettings) | public |  | bluetooth | documented | Sets the player application settings value. |
+| [`avrcp/supplyMediaMetaData`](#avrcp_supplymediametadata) | public |  | bluetooth | documented | Supplies media metadata of the target to remote devices connected via AVRCP 1.3 profile. |
+| [`avrcp/supplyMediaPlayStatus`](#avrcp_supplymediaplaystatus) | public |  | bluetooth | documented | Supplies media play status of the target to remote devices connected via AVRCP 1.3 profile. |
+| [`BleMeshAppKeys`](#blemeshappkeys) | unknown |  | bluetooth | documented | Object gives the info related to app-key used/created by the application |
+| [`BleMeshCompositionData`](#blemeshcompositiondata) | unknown |  | bluetooth | documented | Provides composition data information about a requested node. |
+| [`BleMeshConfigRelayStatus`](#blemeshconfigrelaystatus) | unknown |  | bluetooth | documented | provide node relay information |
+| [`BleMeshElement`](#blemeshelement) | unknown |  | bluetooth | documented | Object provides sequence of element descriptions |
+| [`BleMeshFeature`](#blemeshfeature) | unknown |  | bluetooth | documented | Object information indicating the device features. |
+| [`BleMeshInfo`](#blemeshinfo) | unknown |  | bluetooth | documented | Object provides mesh network information |
+| [`BleMeshKeyUpdateResponse`](#blemeshkeyupdateresponse) | unknown |  | bluetooth | documented | Object representing the intermediate response during key update to nodes in the network. |
+| [`BleMeshNetKeys`](#blemeshnetkeys) | unknown |  | bluetooth | documented | Object provides the info related to network key |
+| [`BleMeshNode`](#blemeshnode) | unknown |  | bluetooth | documented | Object containing a list of provisioned nodes in the network |
+| [`BleMeshPayload - for "onOff" command`](#blemeshpayload_-_for_onoff_command) | unknown |  | bluetooth | documented | Payload object structure when the command is "onOff" in mesh/model/send API. |
+| [`BleMeshPayload - for "passthrough" command`](#blemeshpayload_-_for_passthrough_command) | unknown |  | bluetooth | documented | Payload object structure when the command is "passThrough" in mesh/model/send API. |
+| [`BleMeshProvisioner`](#blemeshprovisioner) | unknown |  | bluetooth | documented | Object provides provisioner related information |
+| [`BleMeshUnprovisionedDevice`](#blemeshunprovisioneddevice) | unknown |  | bluetooth | documented | Array of BLE Mesh devices that are known to the system and that are not yet provisioned by the system |
+| [`bluetooth2Adapter`](#bluetooth2adapter) | unknown |  | bluetooth | documented | An object containing constant information about the adapter. |
+| [`bluetooth2AdapterStatus`](#bluetooth2adapterstatus) | unknown |  | bluetooth | documented | Contains the information about the status of the adapter identified by the adapterAddress parameter. The following values are read-only: Dis |
+| [`bluetooth2AdvertiseData`](#bluetooth2advertisedata) | unknown |  | bluetooth | documented | Defines the format for data parameters. |
+| [`bluetooth2AdvertiseSettings`](#bluetooth2advertisesettings) | unknown |  | bluetooth | documented | Object containing information about the advertisement setting. |
+| [`bluetooth2aptxConfiguration`](#bluetooth2aptxconfiguration) | unknown |  | bluetooth | documented | Object containing information about aptX configuration for A2DP. |
+| [`bluetooth2AvrcpFolderItem`](#bluetooth2avrcpfolderitem) | unknown |  | bluetooth | documented | Describes an item in the folder. |
+| [`bluetooth2AvrcpPlayerInfo`](#bluetooth2avrcpplayerinfo) | unknown |  | bluetooth | documented | Represents the media player information as received from AVRCP target. |
+| [`bluetooth2AvrcpRemoteFeatureInfo`](#bluetooth2avrcpremotefeatureinfo) | unknown |  | bluetooth | documented | Object containing information about avrcp remote features |
+| [`bluetooth2DeviceStatus`](#bluetooth2devicestatus) | unknown |  | bluetooth | documented | Contains the information about the status of the device identified by the address. Note: All object properties apart from name are read-only |
+| [`bluetooth2GattCharacteristicInfo`](#bluetooth2gattcharacteristicinfo) | unknown |  | bluetooth | documented | Object containing information about a GATT characteristic. |
+| [`bluetooth2GattCharacteristicValueInfo`](#bluetooth2gattcharacteristicvalueinfo) | unknown |  | bluetooth | documented | Object containing information about the characteristic uuid and values. |
+| [`bluetooth2GattDescriptorInfo`](#bluetooth2gattdescriptorinfo) | unknown |  | bluetooth | documented | Object containing information about a GATT descriptor. |
+| [`bluetooth2GattManufacturerData`](#bluetooth2gattmanufacturerdata) | unknown |  | bluetooth | documented | Indicates manufacturer-specific company ID and data (if advertised from the remote device, else it will be blank) and scanResponse data Note |
+| [`bluetooth2GattPermissionsInfo`](#bluetooth2gattpermissionsinfo) | unknown |  | bluetooth | documented | Object containing information about the permissions allowed for a client to use a particular characteristic value. All properties are define |
+| [`bluetooth2GattPropertiesInfo`](#bluetooth2gattpropertiesinfo) | unknown |  | bluetooth | documented | Object containing information about the set properties of a characteristic. All properties are defined in Bluetooth Core Specification 4.1 v |
+| [`bluetooth2GattServiceInfo`](#bluetooth2gattserviceinfo) | unknown |  | bluetooth | documented | Object containing the GATT service configuration. |
+| [`bluetooth2GattValueInfo`](#bluetooth2gattvalueinfo) | unknown |  | bluetooth | documented | Object contains information about a GATT value. As a GATT characteristic can be extended with a descriptor which describes the type of the s |
+| [`bluetooth2LeManufacturerData`](#bluetooth2lemanufacturerdata) | unknown |  | bluetooth | documented | Object containing information about manufacturer data. |
+| [`bluetooth2LeProprietaryDataObject`](#bluetooth2leproprietarydataobject) | unknown |  | bluetooth | documented | Defines the format for proprietary data with vendor proprietary advertising type or undefined type in sil-api. Note: SIL stands for Stack In |
+| [`bluetooth2LeServiceDataObject`](#bluetooth2leservicedataobject) | unknown |  | bluetooth | documented | Object containing information about a service data to be advertised. |
+| [`bluetooth2LeServiceObject`](#bluetooth2leserviceobject) | unknown |  | bluetooth | documented | Object containing information about a service to be advertised. |
+| [`bluetooth2LeServiceUuidObject`](#bluetooth2leserviceuuidobject) | unknown |  | bluetooth | documented | Object containing information about a service uuid to be advertised. |
+| [`bluetooth2MasInstances`](#bluetooth2masinstances) | unknown |  | bluetooth | documented | Contains the list of supported MAS instances. |
+| [`bluetooth2MasInstancesStatus`](#bluetooth2masinstancesstatus) | unknown |  | bluetooth | documented | Contains an array of the MAS instances with the connection details. |
+| [`bluetooth2MediaMetaData`](#bluetooth2mediametadata) | unknown |  | bluetooth | documented | Contains information about a media metadata value. Note : string parameters accepts empty string as some meta data doesn't have particular i |
+| [`bluetooth2Message`](#bluetooth2message) | unknown |  | bluetooth | documented | Indicates the description of the message . |
+| [`bluetooth2MessageFilters`](#bluetooth2messagefilters) | unknown |  | bluetooth | documented | Indicates the list of filters. |
+| [`bluetooth2MessageList`](#bluetooth2messagelist) | unknown |  | bluetooth | documented | Indicates the message list. |
+| [`bluetooth2MessageNotificationProperties`](#bluetooth2messagenotificationproperties) | unknown |  | bluetooth | documented | Indicates the message notification properties. |
+| [`bluetooth2MessageProperties`](#bluetooth2messageproperties) | unknown |  | bluetooth | documented | Contains the list of supported Message properties. |
+| [`bluetooth2NewMessageProperties`](#bluetooth2newmessageproperties) | unknown |  | bluetooth | documented | Indicates the properties of the new message . |
+| [`bluetooth2PbapProperties`](#bluetooth2pbapproperties) | unknown |  | bluetooth | documented | Contains supported properties from PSE device. |
+| [`bluetooth2PbapSearchFilter`](#bluetooth2pbapsearchfilter) | unknown |  | bluetooth | documented | Filter with key & value pair to search the phonebook |
+| [`bluetooth2PbapVcfHandles`](#bluetooth2pbapvcfhandles) | unknown |  | bluetooth | documented | Contains information about vcf files entries with name and vcf handle from selected phonebook path. |
+| [`bluetooth2PlayStatus`](#bluetooth2playstatus) | unknown |  | bluetooth | documented | Contains the information about the media playstatus value. |
+| [`bluetooth2PushRequest`](#bluetooth2pushrequest) | unknown |  | bluetooth | documented | Object containing information about an OPP push request |
+| [`bluetooth2SbcConfiguration`](#bluetooth2sbcconfiguration) | unknown |  | bluetooth | documented | Object containing information about SBC configuration for A2DP. |
+| [`bluetooth2ServiceClass`](#bluetooth2serviceclass) | unknown |  | bluetooth | documented | Contains the Bluetooth service class information. |
+| [`bluetooth2TxPower`](#bluetooth2txpower) | unknown |  | bluetooth | documented | Object containing txpower information. |
+| [`device/getConnectedDevices`](#device_getconnecteddevices) | unknown |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
+| [`device/getDiagnosis`](#device_getdiagnosis) | private |  | bluetooth | inferred | Returns the diagnosis (device) |
+| [`device/getDiscoveredDevice`](#device_getdiscovereddevice) | public | yes | bluetooth | documented | Gets the newly discovered Bluetooth device information known to the system. |
+| [`device/getHistory`](#device_gethistory) | private |  | bluetooth | inferred | Returns the history (device) |
+| [`device/getPairedDevices`](#device_getpaireddevices) | public | yes | bluetooth | documented | Gets a list of paired Bluetooth devices info, known to the system. |
+| [`device/getStatus`](#device_getstatus) | public | yes | bluetooth | documented | Gets the current status of remote Bluetooth devices known to the system. |
+| [`device/internal/getLinkKey`](#device_internal_getlinkkey) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`device/internal/getStatus`](#device_internal_getstatus) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`device/internal/setDebugValue`](#device_internal_setdebugvalue) | private |  | bluetooth | inferred | Sets the debug value (device internal) |
+| [`device/internal/startSniff`](#device_internal_startsniff) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`device/internal/stopSniff`](#device_internal_stopsniff) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`device/setState`](#device_setstate) | public |  | bluetooth | documented | Sets the local values for the state of a remote device. |
+| [`ftp/connect`](#ftp_connect) | public |  | bluetooth | inferred | Connects the bluetooth 2 (ftp) |
+| [`ftp/disconnect`](#ftp_disconnect) | public |  | bluetooth | inferred | Disconnects the bluetooth 2 (ftp) |
+| [`ftp/getStatus`](#ftp_getstatus) | public |  | bluetooth | inferred | Returns the status (ftp) |
+| [`ftp/listDirectory`](#ftp_listdirectory) | public |  | bluetooth | inferred | Lists the directory (ftp) |
+| [`ftp/pullFile`](#ftp_pullfile) | public |  | bluetooth | inferred | Handles the pull file (ftp) |
+| [`ftp/pushFile`](#ftp_pushfile) | public |  | bluetooth | inferred | Pushes the file (ftp) |
+| [`gatt/addService`](#gatt_addservice) | public |  | bluetooth | documented | Adds a new service definition to the local database. Note: The new service will be directly exposed to clients which are discovering availab |
+| [`gatt/ancs/advertise`](#gatt_ancs_advertise) | public |  | bluetooth | inferred | Handles the advertise (GATT ancs) |
+| [`gatt/ancs/awaitConnectionRequest`](#gatt_ancs_awaitconnectionrequest) | public |  | bluetooth | inferred | Handles the await connection request (GATT ancs) |
+| [`gatt/ancs/awaitNotifications`](#gatt_ancs_awaitnotifications) | public |  | notifications | inferred | Handles the await notifications (GATT ancs) |
+| [`gatt/ancs/connect`](#gatt_ancs_connect) | public |  | bluetooth | inferred | Connects the bluetooth 2 (GATT ancs) |
+| [`gatt/ancs/disconnect`](#gatt_ancs_disconnect) | public |  | bluetooth | inferred | Disconnects the bluetooth 2 (GATT ancs) |
+| [`gatt/ancs/getStatus`](#gatt_ancs_getstatus) | public |  | bluetooth | inferred | Returns the status (GATT ancs) |
+| [`gatt/ancs/performNotificationAction`](#gatt_ancs_performnotificationaction) | public |  | notifications | inferred | Handles the perform notification action (GATT ancs) |
+| [`gatt/ancs/queryAppAttributes`](#gatt_ancs_queryappattributes) | public |  | bluetooth | inferred | Queries the app attributes (GATT ancs) |
+| [`gatt/ancs/queryNotificationAttributes`](#gatt_ancs_querynotificationattributes) | public |  | notifications | inferred | Queries the notification attributes (GATT ancs) |
+| [`gatt/closeServer`](#gatt_closeserver) | public |  | bluetooth | documented | Closes the BluetoothGattServer. |
+| [`gatt/connect`](#gatt_connect) | public | yes | bluetooth | documented | Connects to the GATT profile on the specified remote device. |
+| [`gatt/disconnect`](#gatt_disconnect) | public |  | bluetooth | documented | Drops the connection to the given remote device on GATT profile. |
+| [`gatt/discoverServices`](#gatt_discoverservices) | public |  | bluetooth | documented | Discovers available services for the given remote device. Pre-requisite: The given remote device should be connected through gatt/connect me |
+| [`gatt/getServices`](#gatt_getservices) | public | yes | bluetooth | documented | Gets available services for either the given local Bluetooth adapter or remote device. Note: Depending on the passed parameter, a list of se |
+| [`gatt/getStatus`](#gatt_getstatus) | public | yes | bluetooth | documented | Returns the status of GATT connection to the given remote device. |
+| [`gatt/monitorCharacteristic`](#gatt_monitorcharacteristic) | public | yes | bluetooth | documented | Monitors specific characteristic value changes. Note: If the characteristic is not marked as being notifiable, the method will fail. If the  |
+| [`gatt/monitorCharacteristics`](#gatt_monitorcharacteristics) | public | yes | bluetooth | documented | Monitors specific characteristic value changes. If the characteristic is not marked as being notifiable, the method will fail. |
+| [`gatt/openServer`](#gatt_openserver) | public |  | bluetooth | documented | Opens the BluetoothGattServer managing services. |
+| [`gatt/readCharacteristicValue`](#gatt_readcharacteristicvalue) | public |  | bluetooth | documented | Reads the value of a specific characteristic. Note: When called from client side, the method actively reads and retrieves the latest value f |
+| [`gatt/readCharacteristicValues`](#gatt_readcharacteristicvalues) | public |  | bluetooth | documented | Reads the value of a specific characteristic. When called from client side, the method actively reads and retrieves the latest value from th |
+| [`gatt/readDescriptorValue`](#gatt_readdescriptorvalue) | public |  | bluetooth | documented | Reads the value of descriptor of a service characteristic either in the local adapter or the remote device. When called from client side, th |
+| [`gatt/readDescriptorValues`](#gatt_readdescriptorvalues) | public |  | bluetooth | documented | Read the value of descriptor(s) of a service characteristic either in the local adapter or the remote device. When called from client side,  |
+| [`gatt/removeService`](#gatt_removeservice) | public |  | bluetooth | documented | Remove a service definition from the local database. All characteristics which belong to the service will be also removed. If the given serv |
+| [`gatt/writeCharacteristicValue`](#gatt_writecharacteristicvalue) | public |  | bluetooth | documented | Writes the value for a local or remote characteristic. |
+| [`gatt/writeDescriptorValue`](#gatt_writedescriptorvalue) | public |  | bluetooth | documented | Writes the value of a specific descriptor of a service characteristic either in the local adapter or the remote device. |
+| [`hfp/closeSCO`](#hfp_closesco) | public |  | bluetooth | inferred | Closes the SCO (hfp) |
+| [`hfp/connect`](#hfp_connect) | public | yes | bluetooth | documented | Opens a HFP connection to a remote device. |
+| [`hfp/disconnect`](#hfp_disconnect) | public |  | bluetooth | documented | Drops the connection to the given remote device on the HFP profile. |
+| [`hfp/getStatus`](#hfp_getstatus) | public | yes | bluetooth | documented | Returns the status of a HFP connection to a remote device. If address input parameter is not specified, the method will return the informati |
+| [`hfp/indicateCall`](#hfp_indicatecall) | public |  | bluetooth | inferred | Handles the indicate call (hfp) |
+| [`hfp/openSCO`](#hfp_opensco) | public |  | bluetooth | inferred | Opens the SCO (hfp) |
+| [`hfp/receiveAT`](#hfp_receiveat) | public |  | bluetooth | inferred | Handles the receive AT (hfp) |
+| [`hfp/receiveResult`](#hfp_receiveresult) | public |  | bluetooth | inferred | Handles the receive result (hfp) |
+| [`hfp/sendAT`](#hfp_sendat) | public |  | bluetooth | inferred | Sends the AT (hfp) |
+| [`hfp/sendResult`](#hfp_sendresult) | public |  | bluetooth | inferred | Sends the result (hfp) |
+| [`hid/connect`](#hid_connect) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
+| [`hid/disconnect`](#hid_disconnect) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
+| [`hid/getStatus`](#hid_getstatus) | unknown |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
+| [`hid/internal/getReport`](#hid_internal_getreport) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`hid/internal/sendData`](#hid_internal_senddata) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`hid/internal/setReport`](#hid_internal_setreport) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name only |
+| [`le/configureAdvertisement`](#le_configureadvertisement) | public |  | bluetooth | inferred | Configures the advertisement (le) |
+| [`le/disableAdvertising`](#le_disableadvertising) | public |  | bluetooth | documented | Stops and disables advertising Note: Call this method after le/startAdvertising. |
+| [`le/getStatus`](#le_getstatus) | unknown |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only |
+| [`le/internal/startScan`](#le_internal_startscan) | private |  | bluetooth | inferred | Starts the scan (le internal) |
+| [`le/setScanParameters`](#le_setscanparameters) | private |  | bluetooth | inferred | Sets the scan parameters (le) |
+| [`le/startAdvertising`](#le_startadvertising) | public | yes | bluetooth | documented | Starts broadcasting the Bluetooth Low Energy advertisement. |
+| [`le/startMultiScan`](#le_startmultiscan) | private |  | bluetooth | inferred | Starts the multi scan (le) |
+| [`le/startScan`](#le_startscan) | public | yes | bluetooth | documented | Starts scanning only ble devices. |
+| [`le/stopAdvertising`](#le_stopadvertising) | public |  | bluetooth | inferred | Stops the advertising (le) |
+| [`le/updateAdvertising`](#le_updateadvertising) | unknown |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.operation); name only |
+| [`leaudio/internal/updateBroadcastMetadata`](#leaudio_internal_updatebroadcastmetadata) | private |  | audio | inferred | Updates the broadcast metadata (leaudio internal) |
+| [`map/connect`](#map_connect) | public | yes | bluetooth | documented | Connects to the MAS Instance of the specified remote device. Note: The method is available only for MCE . |
+| [`map/disconnect`](#map_disconnect) | public |  | bluetooth | documented | Disconnects from the MAS Instance on the specified remote device. Note: The method is available only for MCE . |
+| [`map/getFolderList`](#map_getfolderlist) | public |  | bluetooth | documented | Lists the available folders of the connected MAS instance of the MSE device. Note: This method is available only for MCE. |
+| [`map/getMASInstances`](#map_getmasinstances) | public |  | bluetooth | documented | Retrieves the MAS instance details of a MSE device. MAP MSE devices may present one or several MAS Instances to the MCE, each providing the  |
+| [`map/getMessage`](#map_getmessage) | public |  | bluetooth | documented | Downloads the specific message based on the message handle. Note: This method is available only for MCE. |
+| [`map/getMessageFilters`](#map_getmessagefilters) | public |  | bluetooth | documented | Returns all the available fields that can be used in the fields filter of the getMessageList . |
+| [`map/getMessageList`](#map_getmessagelist) | public |  | bluetooth | documented | Gets the message list of the specific folder of the connected MAS instance of the MSE device. |
+| [`map/getMessageNotification`](#map_getmessagenotification) | public | yes | bluetooth | documented | Receives the message notification from the MSE device. Note : This method is available only for MCE. |
+| [`map/getStatus`](#map_getstatus) | public | yes | bluetooth | documented | Returns the status of the MAS connection with a remote device. Note: The method is available only for MCE . |
+| [`map/pushMessage`](#map_pushmessage) | public |  | bluetooth | documented | Sends the message. Example: Sending an SMS. Note : The API is designed based on MAP 1.0 specification. |
+| [`map/setFolder`](#map_setfolder) | public |  | bluetooth | documented | Returns to the child folder of the current directory of the connected MAS instance of the MSE device. |
+| [`map/setMessageStatus`](#map_setmessagestatus) | public |  | bluetooth | documented | Modifies the status of a message on the MSE. Note : This method is available only for MCE |
+| [`mesh/createAppKey`](#mesh_createappkey) | public |  | bluetooth | documented | Requests to generate a new application key. This call affects the local key database only. To update the remote config server, use mesh/mode |
+| [`mesh/createNetwork`](#mesh_createnetwork) | public |  | bluetooth | documented | This is the first API that must be called by the application to create a network and to become a provisioner. This is called once for every  |
+| [`mesh/getMeshInfo`](#mesh_getmeshinfo) | public |  | bluetooth | documented | Gets mesh network-related information. |
+| [`mesh/keyRefresh`](#mesh_keyrefresh) | public | yes | bluetooth | documented | Refreshes the mesh network key and associated app keys. |
+| [`mesh/listProvisionedNodes`](#mesh_listprovisionednodes) | public |  | bluetooth | documented | Gets a list of provisioned nodes. |
+| [`mesh/model/config/get`](#mesh_model_config_get) | public | yes | bluetooth | documented | Gets various configuration parameters provided by configuration model. |
+| [`mesh/model/config/getCompositionData`](#mesh_model_config_getcompositiondata) | public | yes | bluetooth | documented | Gets composition data of a mesh node. The composition data contains information about a node, the elements it includes, and the supported mo |
+| [`mesh/model/config/set`](#mesh_model_config_set) | public | yes | bluetooth | documented | Sets various configuration parameters provided by the configuration model. |
+| [`mesh/model/onOff/set`](#mesh_model_onoff_set) | public | yes | bluetooth | documented | Sets the on/off state of the remote node using a generic on-off model. |
+| [`mesh/model/receive`](#mesh_model_receive) | public | yes | bluetooth | documented | Receives messages addressed to the application. |
+| [`mesh/model/send`](#mesh_model_send) | public |  | bluetooth | documented | Sends a message originated by a local model. |
+| [`mesh/provision`](#mesh_provision) | public | yes | bluetooth | documented | Initiates provisioning of a device. Once a mesh device is discovered using mesh/scanUnprovisionedDevices API, the discovered device can be p |
+| [`mesh/removeNode`](#mesh_removenode) | public |  | bluetooth | documented | Removes the node from the network. Multiple nodes can be removed by calling this API multiple times. After the required nodes are removed fr |
+| [`mesh/scanUnprovisionedDevices`](#mesh_scanunprovisioneddevices) | public | yes | bluetooth | documented | Scans for mesh devices to provision when the local node is provisioner. |
+| [`mesh/supplyProvisioningNumeric`](#mesh_supplyprovisioningnumeric) | public |  | bluetooth | documented | Provides decimal number for authentication during provisioning; when "request" = "promptNumeric" in the subscription response of mesh/provis |
+| [`mesh/supplyProvisioningOob`](#mesh_supplyprovisioningoob) | public |  | bluetooth | documented | Supplies the static OOB data required during provision; when "request" = "promptStatic" in the subscription response of mesh/provision API. |
+| [`mesh/unprovisionedScanCancel`](#mesh_unprovisionedscancancel) | public |  | bluetooth | documented | Cancels scanning for unprovisioned BLE mesh devices. |
+| [`opp/acceptTransferRequest`](#opp_accepttransferrequest) | public |  | bluetooth | documented | Accept a Bluetooth object push request. This method is available only for a push server. |
+| [`opp/awaitTransferRequest`](#opp_awaittransferrequest) | public | yes | bluetooth | documented | Await incoming transfer requests from push clients. This method is available only for a push server. |
+| [`opp/cancelTransfer`](#opp_canceltransfer) | public |  | bluetooth | documented | Cancel an ongoing file transfer. This method is available only for a push server. In a client side, LSCallCancel() is used to cancel the tra |
+| [`opp/connect`](#opp_connect) | public | yes | bluetooth | documented | Open (or initialize) an OPP connection to a remote Bluetooth device. In some cases of such as using BSA stack, only initialization of OPP ca |
+| [`opp/disconnect`](#opp_disconnect) | public |  | bluetooth | documented | Close (or deinitialize) the connection to the given remote device on OPP profile. In some cases of such as using BSA stack, this method perf |
+| [`opp/getStatus`](#opp_getstatus) | public | yes | bluetooth | documented | Return the status of an OPP connection to a remote Bluetooth device. This method is available for both of client and server. |
+| [`opp/monitorTransfer`](#opp_monitortransfer) | public | yes | bluetooth | documented | Return the status of ongoing file transfer requests. This method is only available for server. |
+| [`opp/pushFile`](#opp_pushfile) | public | yes | bluetooth | documented | Push a file to a remote Bluetooth device. This method is available only for push client. If the client calls LSCallCancel() , the file trans |
+| [`opp/rejectTransferRequest`](#opp_rejecttransferrequest) | public |  | bluetooth | documented | Reject a Bluetooth object push request. This method is available only for a push server. |
+| [`pan/connect`](#pan_connect) | public |  | bluetooth | inferred | Connects the bluetooth 2 (pan) |
+| [`pan/disconnect`](#pan_disconnect) | public |  | bluetooth | inferred | Disconnects the bluetooth 2 (pan) |
+| [`pan/getStatus`](#pan_getstatus) | public |  | bluetooth | inferred | Returns the status (pan) |
+| [`pan/setTethering`](#pan_settethering) | public |  | bluetooth | inferred | Sets the tethering (pan) |
+| [`pbap/acceptAccessRequest`](#pbap_acceptaccessrequest) | public |  | bluetooth | inferred | Handles the accept access request (pbap) |
+| [`pbap/awaitAccessRequest`](#pbap_awaitaccessrequest) | public |  | bluetooth | inferred | Handles the await access request (pbap) |
+| [`pbap/connect`](#pbap_connect) | public | yes | bluetooth | documented | Connects to the PBAP profile on the specified remote device. Note: This method is available only for PCE . |
+| [`pbap/disconnect`](#pbap_disconnect) | public |  | bluetooth | documented | Disconnects from the PBAP profile on the specified remote device. Note: This method is available only for PCE . |
+| [`pbap/getPhoneBookProperties`](#pbap_getphonebookproperties) | public | yes | bluetooth | documented | Gets the supported PBAP profile properties from PSE device. Note: This method is available only for PCE . |
+| [`pbap/getSize`](#pbap_getsize) | public |  | bluetooth | documented | Gets the total number of vcf entries from the selected phonebook path. Note: This method is available only for PCE . |
+| [`pbap/getStatus`](#pbap_getstatus) | public | yes | bluetooth | documented | Returns the status of a PBAP connection to a remote Bluetooth device. Note: The method is available for both client and server. |
+| [`pbap/getvCardFilters`](#pbap_getvcardfilters) | public |  | bluetooth | documented | Displays all the available vcard filters supported by Bluetooth stack. Note: The method is available only for PCE . |
+| [`pbap/pullPhoneBook`](#pbap_pullphonebook) | public | yes | bluetooth | documented | Retrieves all (given maxcount) the phonebook entries from a given startoffset and stores it in a local file. |
+| [`pbap/pullvCard`](#pbap_pullvcard) | public |  | bluetooth | documented | Given a vcard handle, retrieves the vcard in the current phonebook object and store it in a local file. Note: This method is available only  |
+| [`pbap/rejectAccessRequest`](#pbap_rejectaccessrequest) | public |  | bluetooth | inferred | Handles the reject access request (pbap) |
+| [`pbap/searchPhoneBook`](#pbap_searchphonebook) | public |  | bluetooth | documented | Searches for entries matching the given condition and returns an object of vcard-listing data where every entry consists of a pair of string |
+| [`pbap/setPhoneBook`](#pbap_setphonebook) | public |  | bluetooth | documented | Sets the phonebook object for other operations. Note: This method is available only for PCE . |
+| [`pbap/vCardListing`](#pbap_vcardlisting) | public |  | bluetooth | documented | Displays the total number of vcf file entries from the selected phonebook path. Note: This method is available only for PCE . |
+| [`popo/pushFile`](#popo_pushfile) | private |  | bluetooth | documented | Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name only |
+| [`spp/connect`](#spp_connect) | public | yes | bluetooth | documented | Open a SPP connection to a remote Bluetooth device. |
+| [`spp/createChannel`](#spp_createchannel) | public | yes | bluetooth | documented | Register a service record in the device service record database with the specified UUID and name. The channel can be removed through LSCallC |
+| [`spp/disconnect`](#spp_disconnect) | public |  | bluetooth | documented | Drop the connection to the given remote device on SPP profile. |
+| [`spp/getStatus`](#spp_getstatus) | public | yes | bluetooth | documented | Return the status of a SPP connection to a remote device. |
+| [`spp/readData`](#spp_readdata) | public | yes | bluetooth | documented | Receive data from the connected remote device. |
+| [`spp/writeData`](#spp_writedata) | public |  | bluetooth | documented | Transfer data to the connected remote device. |
 
 <a id="a2dp_connect"></a>
 ## `a2dp/connect`
@@ -283,6 +285,14 @@ Connects to the A2DP profile on the specified remote device.
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifcations. false: Not subscribed. Default : false |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes" section of this method for details. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/connect '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
@@ -308,6 +318,14 @@ Disables the AVDTP delay reporting.
 | Param | Type / notes |
 |---|---|
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorCode` | Number (required) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/disableDelayReporting '{ "adapterAddress":"AA:BB:CC:DD:EE:FF" }
@@ -335,6 +353,14 @@ Drops the connection to the given remote device on the A2DP profile.
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/disconnect '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
@@ -359,6 +385,14 @@ Enables the AVDTP delay reporting.
 | Param | Type / notes |
 |---|---|
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n -1 luna://com.webos.service.bluetooth2/a2dp/enableDelayReporting '{ "adapterAddress":"AA:BB:CC:DD:EE:FF" }
@@ -387,6 +421,16 @@ Gets the AVDTP delay from a remote A2DP device, whenever the AVDTP delay is chan
 | `address` | String (optional) Indicates the address (bdaddr) of the remote device. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default: false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `delay` | Number (required) Indicates the delay in 1/10 of milliseconds. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (required) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/getDelayReportingTime '{
 ```
@@ -414,6 +458,18 @@ Returns the status of the A2DP connection to a remote device. Note: If the addre
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default: false |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `connecting` | Boolean (required) Indicates if the connection request is currently being processed. Possible values are: - true: Request is being processed. - false: Not being processed. Example: If the Bluetooth stack is no longer processing the connection request. |
+| `connected` | Boolean (required) Indicates if the connection is open. Possible values are: - true: Connection is open. - false: Connection is not open. |
+| `playing` | Boolean (required) Indicates if the device is streaming music. Possible values are: - true: If either adapter or remote device is streaming music. - false: Not streaming music. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address (bdaddr) of the remote device. Note: The address is returned only when the address input parameter is not specified. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/a2dp/getStatus '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
@@ -433,7 +489,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/disable '{}'
@@ -454,7 +510,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/enable '{}'
@@ -475,7 +531,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/getAudioPath '{}'
@@ -496,7 +552,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/getCodecConfiguration '{}'
@@ -511,13 +567,15 @@ Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/maste
 
 `luna://com.webos.service.bluetooth2/a2dp/internal/setCodecConfiguration`
 
-Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Sets the codec configuration (a 2 dp internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/setCodecConfiguration '{}'
@@ -532,13 +590,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/a2dp/internal/setDualAudioMode`
 
-Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Sets the dual audio mode (a 2 dp internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/setDualAudioMode '{}'
@@ -553,13 +613,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/a2dp/internal/setLatency`
 
-Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Sets the latency (a 2 dp internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/setLatency '{}'
@@ -580,7 +642,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/setSbcEncoderBitpool '{}'
@@ -601,7 +663,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/startStreaming '{}'
@@ -622,7 +684,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/stopStreaming '{}'
@@ -637,13 +699,15 @@ Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/maste
 
 `luna://com.webos.service.bluetooth2/a2dp/internal/toggle_left_right`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Toggles the left right (a 2 dp internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/a2dp/internal/toggle_left_right '{}'
@@ -695,6 +759,14 @@ Cancels discovering the remote Bluetooth devices. Note: Discovery of a specific 
 |---|---|
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/cancelDiscovery '{ }
 ```
@@ -721,6 +793,14 @@ Cancels the pairing request with a remote device, either incoming or outgoing. S
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: - If not specified, the address of the default adapter will be used. - If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/cancelPairing '{ "address": "AA:BB:CC:DD:EE:FF" }
 ```
@@ -746,6 +826,12 @@ Returns the status information about the Bluetooth adapters available in the sys
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapters` | Object array: bluetooth2AdapterStatus (required) Contains the information for all the Bluetooth adapters available in the system. Note: If there are no available adapters, the array will be empty. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/adapter/getStatus '{"subscribe":true}
 ```
@@ -765,7 +851,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/internal/getKeepAliveStatus '{}'
@@ -786,7 +872,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/internal/getTraceStatus '{}'
@@ -807,7 +893,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -832,7 +918,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -853,13 +939,15 @@ Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/maste
 
 `luna://com.webos.service.bluetooth2/adapter/internal/setDutMode`
 
-Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Sets the dut mode (adapter internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/internal/setDutMode '{}'
@@ -880,7 +968,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -907,7 +995,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/internal/setTrace '{}'
@@ -922,13 +1010,15 @@ Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/maste
 
 `luna://com.webos.service.bluetooth2/adapter/internal/setULLMode`
 
-Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Sets the ULL mode (adapter internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/internal/setULLMode '{}'
@@ -949,7 +1039,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -976,7 +1066,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -1002,7 +1092,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/internal/startDiscovery '{}'
@@ -1031,6 +1121,13 @@ Pairs a specific remote Bluetooth device with a specific Bluetooth adapter. The 
 | `subscribe` | Boolean (required) Indicates if subscribed to get a notification when there is a change in the pairing status. Possible values are: true: Subscribed for notifications false: Not subscribed. Note: Set subscribe to true . The caller must subscribe to this method. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/adapter/pair '{ "address": "AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
@@ -1055,6 +1152,14 @@ Returns the information on the Bluetooth adapters currently available in the sys
 | Param | Type / notes |
 |---|---|
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapters` | Object array: bluetooth2Adapter (required) Contains information of all the adapters currently available in the system. Note: - The information of the adapter does not change by the user or by any operations. - The information returned for an adapter does not change while it is available. - If there  |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/adapter/queryAvailable '{"subscribe":true}
@@ -1088,6 +1193,12 @@ Sets the state of the specified Bluetooth adapter.
 | `pairable` | Boolean (optional) Indicates whether to enable the adapter to be paired to a remote device. Possible values are: true (Default): Adapter can be paired false: Adapter cannot be paired |
 | `pairableTimeout` | Number (optional) Indicates the pairable timeout in seconds. Note: After pairableTimeout seconds, the adapter is no longer pairable, and false is returned for pairable . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: - If not specified, the address of the default adapter will be used. - If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/adapter/setState '{"powered":true}
 ```
@@ -1112,6 +1223,14 @@ Starts discovering the remote Bluetooth devices. Note: Discovery continues until
 | Param | Type / notes |
 |---|---|
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: - If not specified, the address of the default adapter will be used. - If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/startDiscovery '{ }
@@ -1139,6 +1258,14 @@ Supplies the user-entered passkey. Note: The passkey is entered when adapter/pai
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `passkey` | Number (required) Indicates the passkey entered by the user. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: - If not specified, the address of the default adapter will be used. - If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/supplyPasskey '{ "address": "AA:BB:CC:DD:EE:FF", "passkey":842280 }
 ```
@@ -1164,6 +1291,14 @@ Supplies the user's confirmation for the passkey. Note: The user confirms the pa
 |---|---|
 | `address` | String (required) Indicates the address (bdaddr) of the remote device with which pairing is being attempted. |
 | `accept` | Boolean (required) Indicates if the user has confirmed the passkey. Possible values are: true: User confirmed the passkey. false: User did not confirm the passkey. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: - If not specified, the address of the default adapter will be used. - If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/supplyPasskeyConfirmation '{ "address": "AA:BB:CC:DD:EE:FF", "accept":true }
@@ -1191,6 +1326,14 @@ Supplies the user-entered PIN code. Note: The PIN code is entered when adapter/p
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `pin` | String (required) Indicates the PIN code entered by the user. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: - If not specified, the address of the default adapter will be used. - If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/supplyPinCode '{ "address": "AA:BB:CC:DD:EE:FF", "pin":"2345" }
 ```
@@ -1215,6 +1358,14 @@ Disconnects from the paired remote device. Note: All pairing information about t
 | Param | Type / notes |
 |---|---|
 | `address` | String (required) Indicates the address (bdaddr) of the remote device to unpair. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: - If not specified, the address of the default adapter will be used. - If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/adapter/unpair '{ "address": "AA:BB:CC:DD:EE:FF" }
@@ -1242,6 +1393,14 @@ Awaits incoming media metadata requests from remote devices. This method is avai
 | `subscribe` | Boolean (required) Indicates if subscribed for notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Note: The caller must subscribe to this method. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (optional) Indicates the address of the adapter. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -f -i luna://com.webos.service.bluetooth2/avrcp/awaitMediaMetaDataRequest '{"subscribe":true}
 ```
@@ -1267,6 +1426,14 @@ Awaits the incoming media play status requests from remote devices. This method 
 |---|---|
 | `subscribe` | Boolean (required) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Note: The caller must subscribe to this method. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (optional) Indicates the address of the adapter. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -f -i luna://com.webos.service.bluetooth2/avrcp/awaitMediaPlayStatusRequest '{"subscribe":true}
@@ -1295,6 +1462,15 @@ Adds the browsed item to the current playing list. Note : When user selects a pl
 | `address` | String (required) Indicates the address of the remote device. |
 | `itemPath` | String (required) Indicates the path to the item in the current folder to be added to the current playing list. Note: Item path is received in the bluetooth2FolderItem object of the getFolderItems API response. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/addToNowPlaying '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "itemPath":"player0/Filesystem/item4/item97" }
 ```
@@ -1322,6 +1498,15 @@ Navigates the virtual filesystem presented by the remote media player. This API 
 | `address` | String (required) Indicates the address of the remote device. |
 | `itemPath` | String (required) Indicates the path to the folder item to change to. Note: Item path is received in the bluetooth2FolderItem object of the getFolderItems API response. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/changePath '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "itemPath":"player0/Filesystem/item4" }
 ```
@@ -1348,6 +1533,16 @@ Gets the current folder in the media player's virtual filesystem presented by AV
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the address of the remote device. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default : false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (optional) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address of the remote device. |
+| `folderName` | String (optional) Indicates the current folder name browsed by the user. Note: Folder name can be empty if current folder information is not received yet from the device for current addressed player or if the current addressed player does not support browsing. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/browse/getCurrentFolder '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "subscribe":true }
@@ -1377,6 +1572,16 @@ Gets the items in the current folder of the media player's virtual filesystem pr
 | `startIndex` | Number (required) Indicates the offset within the listing of the item, which should be the first returned item. The first element in the listing is at offset 0. |
 | `endIndex` | Number (required) Indicates the offset within the listing of the item, which should be the final returned item. Note : endIndex should be greater than or equal to startIndex ( endIndex = startIndex means you are requesting one item that is at index endIndex/startIndex) and less than total number of items in the current folder. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `folderItems` | Object array: bluetooth2AvrcpFolderItem (optional) Indicates an array of items in the folder. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/browse/getFolderItems '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "startIndex":0, "endIndex":3 }
 ```
@@ -1402,6 +1607,16 @@ Retrieves the total number of items in the current folder of the media player's 
 |---|---|
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note : If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the address of the remote device. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `numberOfItems` | Number (optional) Indicates the total number of items in the current folder. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/browse/getNumberOfItems '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF" }
@@ -1430,6 +1645,15 @@ Plays the browsed item. Note : When user selects a playable item (playable is se
 | `address` | String (required) Indicates the address of the remote device. |
 | `itemPath` | String (required) Indicates the path to the playable item in the current folder to be played. Note: Item path is received in the bluetooth2AvrcpFolderItem object of the getFolderItems API response. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (optional) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/playItem '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "itemPath":"player7/Filesystem/item4/item95" }
 ```
@@ -1456,6 +1680,16 @@ Searches an item in the current browsing folder (and its sub folders) using a se
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note : If not specified, the default adapter is used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the address of the remote device. |
 | `searchString` | String (required) Indicates the string to search. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `searchResult` | String (optional) Indicates the path to the search list. Note: The application can changeFolder to this path and browse the search list |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/ avrcp/browse/search '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "searchString":"abcd" }
@@ -1484,6 +1718,14 @@ Opens an AVRCP connection to a remote Bluetooth device.
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (optional) Indicates the address of the adapter. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/avrcp/connect '{"address":"AA:BB:CC:DD:EE:FF","subscribe":true}
 ```
@@ -1509,6 +1751,14 @@ Drops the connection to the given remote device on the AVRCP profile.
 |---|---|
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (optional) Indicates the address of the adapter. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/disconnect '{"address":"AA:BB:CC:DD:EE:FF"}
@@ -1537,6 +1787,15 @@ Gets media metadata of the target from remote devices connected via AVRCP 1.3 pr
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/getMediaMetaData '{ "subscribe":true, "address":"AA:BB:CC:DD:EE:FF" }
 ```
@@ -1563,6 +1822,15 @@ Gets the media metadata of the target from remote devices connected via AVRCP 1.
 | `subscribe` | Boolean (required) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Note: The caller must subscribe to this method. |
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/avrcp/getMediaPlayStatus '{ "subscribe":true }
@@ -1591,6 +1859,15 @@ Gets the player application settings value.
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorCode` | String (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/avrcp/getPlayerApplicationSettings '{ "subscribe":true }
 ```
@@ -1617,6 +1894,16 @@ Returns the information of the media players available that is received from AVR
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the address of the remote device. |
 | `subscribe` | Boolean (required) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default: false |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
+| `playerInfo` | Object array: bluetooth2AvrcpPlayerInfo (optional) Indicates the player information. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/avrcp/getPlayerInfo '{ "address":"AA:BB:CC:DD:EE:FF", "adapterAddress":"AA:BB:CC:DD:EE:FF", "subscribe":true }
@@ -1645,6 +1932,15 @@ Gets the volume of the remote device. Note: The method supports 'Volume Changed 
 | `address` | String (optional) Indicates the address (bdaddr) of the remote device. Note : If not specified, returns all requested volume info from the all connected devices. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address (bdaddr) of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/getRemoteVolume '{ "subscribe":true }
 ```
@@ -1672,6 +1968,16 @@ Returns the status of an AVRCP connection to a remote Bluetooth device.
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `connecting` | Boolean (optional) Indicates whether the connection request is currently being processed. Possible values are: - true: Request is being processed. - false: Not being processed. For example, if the Bluetooth stack is no longer processing the connection request. |
+| `connected` | Boolean (optional) Indicates if the connection is open. Possible values are: - true: Connection is open. - false: Connection is not open. |
+| `adapterAddress` | String (optional) Indicates the address of the adapter. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/avrcp/getStatus '{"address":"AA:BB:CC:DD:EE:FF", "subscribe":true}
 ```
@@ -1697,6 +2003,14 @@ Disables the profile and role of AVRCP.
 |---|---|
 | `role` | String (optional) Indicates the type of AVRCP role to be disabled. Possible values are: AVRCP-TG AVRCP-CT Note: If not specified, the role which is possible is disabled. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the default adapter will be used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: If not specified, the default adapter will be used. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/internal/disable '{ "role":"AVRCP-TG" }
@@ -1724,6 +2038,14 @@ Enables the profile and the role of AVRCP.
 | `role` | String (optional) Indicates the AVRCP role to be enabled. Possible values are: AVRCP-TG AVRCP-CT Note: If not specified, the role which is possible is enabled. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the default adapter will be used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: If not specified, the default adapter will be used. |
+| `errorCode` | Boolean (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/internal/enable '{ "role":"AVRCP-TG" }
 ```
@@ -1737,13 +2059,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/avrcp/internal/getRemoteBattery`
 
-Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Returns the remote battery (avrcp internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/internal/getRemoteBattery '{}'
@@ -1770,6 +2094,16 @@ Gets the remote AVRCP's features.
 |---|---|
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the default adapter will be used. If the application/service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: If not specified, the default adapter will be used. |
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+| `remoteFeatures` | Object array: bluetooth2AvrcpRemoteFeatureInfo (required) Indicates an array of the remote features. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/internal/getRemoteFeatures '{ "address":"AA:BB:CC:DD:EE:FF" }
@@ -1798,6 +2132,15 @@ Gets the remote AVRCP's supported notification events.
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `subscribe` | Boolean (required) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Note: The caller must subscribe to this method. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/internal/getSupportedNotificationEvents '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
@@ -1824,6 +2167,15 @@ Enables the AVRCP target to inform the AVRCP controller about the change in medi
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the default adapter is used |
 | `address` | String (required) Indicates the address of the remote device. |
 | `playbackStatus` | Object: bluetooth2PlayStatus (required) Indicates the information about the play status of the media. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/ notifyMediaPlayStatus '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "playbackStatus":{ "duration":60000, "position":8000, "status":"playing" } }
@@ -1852,6 +2204,15 @@ Receives PATH THROUGH command from CT to TG. Note: The PASS THROUGH command is u
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `subscribe` | Boolean (required) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Note: The caller must subscribe to this method. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+| `errorCode` | Boolean (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/receivePassThroughCommand '{ "address": "AA:BB:CC:DD:EE:FF", "subscribe" : true }
 ```
@@ -1865,13 +2226,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/avrcp/receiveRegisterNotificationAbsoluteVolume`
 
-Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented).
+Handles the receive register notification absolute volume (avrcp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/receiveRegisterNotificationAbsoluteVolume '{}'
@@ -1886,13 +2249,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.bluetooth2/avrcp/registerNotificationAbsoluteVolumeResponse`
 
-Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented).
+Registers the notification absolute volume response (avrcp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/registerNotificationAbsoluteVolumeResponse '{}'
@@ -1922,6 +2287,15 @@ Sends PASS THROUGH command from CT (Controller) to TG (Target). Note: The PASS T
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/sendPassThroughCommand '{ "keyCode":"play", "keyStatus":"pressed", "address":"AA:BB:CC:DD:EE:FF" }
 ```
@@ -1935,13 +2309,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/avrcp/sendVendorPassThroughCommand`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Sends the vendor pass through command (avrcp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/sendVendorPassThroughCommand '{}'
@@ -1969,6 +2345,15 @@ Sets the absolute volume on the target device.
 | `volume` | Number (required) Indicates the requested volume level in percentage. Possible range: 0 ~ 100 . |
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+| `errorCode` | String (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/setAbsoluteVolume '{ "address":"AA:BB:CC:DD:EE:FF", "volume":100 }
@@ -2000,6 +2385,15 @@ Sets the player application settings value.
 | `shuffle` | String (optional) Indicates the status of shuffle. Possible values are: off alltracks group |
 | `scan` | String (optional) Indicates the status of scan. Possible values are: off alltracks group |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/avrcp/setPlayerApplicationSettings '{ "address":"AA:BB:CC:DD:EE:FF", "equalizer":"on", "repeat":"on" }
 ```
@@ -2027,6 +2421,15 @@ Supplies media metadata of the target to remote devices connected via AVRCP 1.3 
 | `metaData` | Object: bluetooth2MediaMetaData (required) Indicates the metaData of the media. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (optional) Indicates the address of the adapter. |
+| `requestId` | String (optional) Indicates the unique ID of a request. Note: The format of requestId is "nnn", a three-digit number. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -f -i luna://com.webos.service.bluetooth2/avrcp/supplyMediaMetaData '{ "requestId":"001", "metaData":{ "title":"let it go", "artist":"demi lovato", "album":"disney frozen", "genre":"pop", "trackNumber":1, "trackCount":3, "duration":225 } }
 ```
@@ -2053,6 +2456,15 @@ Supplies media play status of the target to remote devices connected via AVRCP 1
 | `requestId` | String (required) The unique ID of a request. The format of requestId is "nnn", a three-digit number. |
 | `playbackStatus` | Object: bluetooth2PlayStatus (required) The information about play status of the media. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (optional) Indicates the address of the adapter. |
+| `requestId` | String (optional) The unique ID of a request. The format of requestId is "nnn", a three-digit number. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/avrcp/supplyMediaPlayStatus '{ "requestId":"001", "playbackStatus":{ "duration":225, "position":100, "status":"playing" } }
@@ -3165,7 +3577,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -3186,13 +3598,15 @@ Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/maste
 
 `luna://com.webos.service.bluetooth2/device/getDiagnosis`
 
-Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Returns the diagnosis (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/getDiagnosis '{}'
@@ -3220,6 +3634,15 @@ Gets the newly discovered Bluetooth device information known to the system.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note : If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used |
 | `subscribe` | Boolean (required) Indicates if subscribed to get notifications. Possible values are: true : Subscribe for notifications. false : Not subscribed |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `device` | Object: bluetooth2DeviceStatus (required) Contains the status information of a newly discovered device known to the system. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/device/getDiscoveredDevice '{ "subscribe":true }
 ```
@@ -3233,13 +3656,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/device/getHistory`
 
-Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Returns the history (device)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/getHistory '{}'
@@ -3267,6 +3692,15 @@ Gets a list of paired Bluetooth devices info, known to the system.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note : If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used |
 | `subscribe` | String (required) Indicates if subscribed to get notifications. Possible values are: true : Subscribe for notifications. false : Not subscribed |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `devices` | Object array: bluetooth2DeviceStatus (required) Contains the status information of paired devices known to the system. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/device/getPairedDevices '{ "subscribe":true }
 ```
@@ -3293,6 +3727,13 @@ Gets the current status of remote Bluetooth devices known to the system.
 | `subscribe` | Boolean (optional) Subscribe to this method if you require notifications about any changes in its response Possible values are: true: Subscribed. false (Default): Not subscribed. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `devices` | Object array: bluetooth2DeviceStatus (required) Contains status information of all the devices known to the system, not just the ones whose status has been changed. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/device/getStatus '{}
 ```
@@ -3312,7 +3753,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/internal/getLinkKey '{}'
@@ -3333,7 +3774,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/internal/getStatus '{}'
@@ -3348,13 +3789,15 @@ Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/maste
 
 `luna://com.webos.service.bluetooth2/device/internal/setDebugValue`
 
-Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Sets the debug value (device internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/internal/setDebugValue '{}'
@@ -3375,7 +3818,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/internal/startSniff '{}'
@@ -3396,7 +3839,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/device/internal/stopSniff '{}'
@@ -3426,6 +3869,12 @@ Sets the local values for the state of a remote device.
 | `trusted` | Boolean (optional) Indicates whether to set a remote device as a trusted device. Possible values are: true: Sets it as a trusted device false (Default): Sets it as a untrusted device. |
 | `blocked` | Boolean (optional) Indicates whether to block (if set) or unblock (if reset) a remote device for pairing and profile connections. Possible values are: true: Blocks incoming connections. Any incoming connection from the device will be immediately rejected. Also, device drivers will be removed and no new ones will be probed as long as the device is blocked. false (Default): Unblocks connections. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/device/setState '{"address":"AA:BB:CC:DD:EE:FF", "trusted":true}
 ```
@@ -3439,13 +3888,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/ftp/connect`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Connects the bluetooth 2 (ftp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/connect '{}'
@@ -3460,13 +3911,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/ftp/disconnect`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Disconnects the bluetooth 2 (ftp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/disconnect '{}'
@@ -3481,13 +3934,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/ftp/getStatus`
 
-Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Returns the status (ftp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/getStatus '{}'
@@ -3502,13 +3957,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/ftp/listDirectory`
 
-Lister on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Lists the directory (ftp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/listDirectory '{}'
@@ -3523,13 +3980,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/ftp/pullFile`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Handles the pull file (ftp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/pullFile '{}'
@@ -3544,13 +4003,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/ftp/pushFile`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Pushes the file (ftp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/ftp/pushFile '{}'
@@ -3582,6 +4043,13 @@ Adds a new service definition to the local database. Note: The new service will 
 | `characteristics` | Object array: bluetooth2GattCharacteristicInfo (required) Indicates the information about GATT characteristics of the service. |
 | `serverId` | String (optional) Indicates the server identifier to add the service to. Note : If not specified, the default value of serverId is used automatically. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `serverId` | String (required) Indicates the server identifier to add the service. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/addService '{ "service":"6161", "type":"primary", "includes":[ ], "characteristics":[ { "characteristic":"1a4ef224-f27a-11e4-b9b2-1697f925ec7b", "properties":{ "broadcast":true, "read":true, "indicate":true, "write":true, "notify":true }, "permissions":{ "read":true, "write":true }, "value":{ "bytes":[ 34, 0, 12, 99 ] }, "descriptors":[ { "descriptor":"f000ffc1-0451-4000-b000-000000000000", "value":{ "bytes":[ 0 ] } } ] } ] }
 ```
@@ -3595,13 +4063,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/gatt/ancs/advertise`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Handles the advertise (GATT ancs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/advertise '{}'
@@ -3616,13 +4086,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/gatt/ancs/awaitConnectionRequest`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Handles the await connection request (GATT ancs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/awaitConnectionRequest '{}'
@@ -3637,13 +4109,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/gatt/ancs/awaitNotifications`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Handles the await notifications (GATT ancs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/awaitNotifications '{}'
@@ -3658,13 +4132,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/gatt/ancs/connect`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Connects the bluetooth 2 (GATT ancs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/connect '{}'
@@ -3679,13 +4155,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/gatt/ancs/disconnect`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Disconnects the bluetooth 2 (GATT ancs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/disconnect '{}'
@@ -3700,13 +4178,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/gatt/ancs/getStatus`
 
-Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Returns the status (GATT ancs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/getStatus '{}'
@@ -3721,13 +4201,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/gatt/ancs/performNotificationAction`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Handles the perform notification action (GATT ancs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/performNotificationAction '{}'
@@ -3742,13 +4224,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/gatt/ancs/queryAppAttributes`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Queries the app attributes (GATT ancs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/queryAppAttributes '{}'
@@ -3763,13 +4247,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/gatt/ancs/queryNotificationAttributes`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Queries the notification attributes (GATT ancs)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/gatt/ancs/queryNotificationAttributes '{}'
@@ -3796,6 +4282,12 @@ Closes the BluetoothGattServer.
 |---|---|
 | `serverId` | String (required) Indicates the unique identifier of a server to remove on the stack. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/closeServer '{"serverId":"001"}
@@ -3825,6 +4317,16 @@ Connects to the GATT profile on the specified remote device.
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true: Subscribed for notifications. false: Not subscribed. Default : false Note: Disconnection can also happen when local adapter calls the gatt/disconnect method (initiated by the local user) |
 | `autoConnect` | Boolean (optional) Indicates if the remote device is automatically connected. Possible values are: true : Automatically connects as soon as the remote device becomes available. false : Manually connect to the remote device. Default: false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapaterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `clientId` | String (required) Indicates the unique ID of a remote device, which has the following format: "nnn", 3 digit number increasing sequentially. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/connect '{ "address":"AA:BB:CC:DD:EE:FF" }
 ```
@@ -3851,6 +4353,15 @@ Drops the connection to the given remote device on GATT profile.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `clientId` | String (required) Indicates the unique identifier of the remote device. Format: "nnn", 3 digit number increasing sequentially. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/disconnect '{ "clientId":"002" }
 ```
@@ -3876,6 +4387,15 @@ Discovers available services for the given remote device. Pre-requisite: The giv
 |---|---|
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (optional) Indicates the address of the remote device. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/discoverServices '{ "address":"AA:BB:CC:DD:EE:FF" }
@@ -3904,6 +4424,14 @@ Gets available services for either the given local Bluetooth adapter or remote d
 | `address` | String (required) Indicates the address of the remote device. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed. false (Default): Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `services` | Object array: bluetooth2GattServiceInfo (required) Indicates the list of the available services. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/getServices '{"adapterAddress":"AA:BB:CC:DD:EE:FF"}
 ```
@@ -3930,6 +4458,16 @@ Returns the status of GATT connection to the given remote device.
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the address of the remote device. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true: Subscribed. false (Default): Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `connecting` | Boolean (required) Indicates if the connection request is currently being processed. Possible values are: - true: Request is being processed. - false: Not being processed. For example, if the Bluetooth stack is no longer processing the connection request. |
+| `connected` | Boolean (required) Indicates if the connection is open. Possible values are: - true: Connection is open. - false: Connection is not open. |
+| `discoveringServices` | Boolean (required) Indicates if the discovery service request is currently being processed for the given remote device. Possible values are: - true: Currently being processed. - false: Not processed. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/getStatus '{"address":"AA:BB:CC:DD:EE:FF"}
@@ -3962,6 +4500,15 @@ Monitors specific characteristic value changes. Note: If the characteristic is n
 | `clientId` | String (optional) Indicates the identifier of the remote device (client) to get the characteristic from. To read the value of characteristics, set serverId to specific server identifier. Or to read in remote device, set clientId to specific remote device identifier. If both serverId and clientId not specified, find characteristics in the webOS device. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Note: Must set subscribe to true . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address of the remote. |
+| `errorCode` | String (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -f -i luna://com.webos.service.bluetooth2/gatt/monitorCharacteristic '{ "clientId":"007", "service":"7905f431-b5ce-4e99-a40f-4b1e122d00d0", "characteristic":"9fbf120d-6301-42d9-8c58-25e699a21dbd", "subscribe":true }
 ```
@@ -3992,6 +4539,13 @@ Monitors specific characteristic value changes. If the characteristic is not mar
 | `serverId` | String (optional) Indicates the identifier of the server to get the characteristic from. Note : To be informed of changes to the value of characteristics, set serverId to specific server identifier. Or to be informed in remote device, set clientId to specific remote device identifier. If both serverId and clientId not specified, find characteristics in the webOS device. |
 | `clientId` | String (optional) Indicates the identifier of the remote device (client) to get the characteristics from. Note : To be informed of changes to the value of characteristics, set serverId to specific server identifier. Or to be informed in remote device, set clientId to specific remote device identifier. If both serverId and clientId not specified, find characteristics in the webOS device. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address of the remote device. Returns empty string when there is no change in characteristic value. |
+
 ```sh
 luna-send -f -i luna://com.webos.service.bluetooth2/gatt/monitorCharacteristics '{ "service":"7905f431-b5ce-4e99-a40f-4b1e122d00d0", "characteristics":["9fbf120d-6301-42d9-8c58-25e699a21dbd"], "subscribe":true }
 ```
@@ -4016,6 +4570,13 @@ Opens the BluetoothGattServer managing services.
 | Param | Type / notes |
 |---|---|
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `serverId` | String (required) Indicates the unique identifier of a server, which has the following format: "nnn", 3 digit number increasing sequentially. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/openServer '{}
@@ -4047,6 +4608,15 @@ Reads the value of a specific characteristic. Note: When called from client side
 | `serverId` | String (optional) Indicates the identifier of server to get the characteristic from. To read the value of characteristics, set serverId to specific server identifier. Or to read in remote device, set clientId to specific remote device identifier. If both serverId and clientId not specified, find characteristics in the webOS device. |
 | `clientId` | String (optional) Indicates the identifier of the remote device (client) to get the characteristic from. To read the value of characteristics, set serverId to specific server identifier. Or to read in remote device, set clientId to specific remote device identifier. If both serverId and clientId not specified, find characteristics in the webOS device. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address of the remote device. |
+| `service` | String (optional) Indicates the unique identifier of the service the characteristic belongs to. |
+| `value` | Object: bluetooth2GattCharacteristicInfo (required) Indicates the value for requested characteristic. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/readCharacteristicValue '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "service":"f000aa00-0451-4000-b000-000000000000", "characteristic":"f000aa01-0451-4000-b000-000000000000" }
 ```
@@ -4075,6 +4645,15 @@ Reads the value of a specific characteristic. When called from client side, the 
 | `characteristics` | String array (required) Indicates the unique identifiers of the characteristics to read. |
 | `serverId` | String (optional) Indicates the identifier of server to get the characteristic from. Note : To read the value of characteristics, set serverId to specific server identifier. Or to read in remote device, set clientId to specific remote device identifier. If both serverId and clientId not specified, find characteristics in the webOS device. |
 | `clientId` | String (optional) Indicates the identifier of the remote device (client) to get the characteristic from. Note : To read the value of characteristics, set serverId to specific server identifier. Or to read in remote device, set clientId to specific remote device identifier. If both serverId and clientId not specified, find characteristics in the webOS device. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address of the remote device. |
+| `service` | String (optional) Indicates the unique identifier of the service the characteristic belongs to. |
+| `values` | Object array: bluetooth2GattCharacteristicInfo (optional) Indicates the values of the characteristic. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/readCharacteristicValues '{ "service":"f000aa00-0451-4000-b000-000000000000", "characteristics":["f000aa01-0451-4000-b000-000000000000"] }
@@ -4107,6 +4686,16 @@ Reads the value of descriptor of a service characteristic either in the local ad
 | `serverId` | String (optional) Indicates the identifier of server to get the descriptors from. Note : To read the value of descriptors, set serverId to specific server identifier. Or to read in remote device, set clientId to specific remote device identifier. If both serverId and clientId not specified, find descriptors in the webOS device. |
 | `clientId` | String (optional) Indicates the identifier of remote device (client) to get the descriptors from. Note : To read the value of descriptors, set serverId to specific server identifier. Otherwise, set clientId to specific remote device identifier. if both serverId and clientId not specified, find descriptors in the webOS device. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address of the remote device. |
+| `service` | String (required) Indicates the unique identifier of the service the descriptor belongs to. |
+| `characteristic` | String (required) Indicates the unique identifier of the characteristic the descriptor belongs to. |
+| `value` | Object: bluetooth2GattDescriptorInfo (required) Indicates the value for the requested descriptor. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/readDescriptorValue '{ "service":"f000aa40-0451-4000-b000-000000000000", "characteristic":"f000aa41-0451-4000-b000-000000000000" "descriptor":"00002902-0000-1000-8000-00805f9b34fc" }
 ```
@@ -4137,6 +4726,16 @@ Read the value of descriptor(s) of a service characteristic either in the local 
 | `serverId` | String (optional) Indicates the identifier of server to get the descriptors from. Note : To read the value of descriptors, set serverId to specific server identifier. Or to read in remote device, set clientId to specific remote device identifier. If both serverId and clientId not specified, find descriptors in the webOS device. |
 | `clientId` | String (optional) Indicates the identifier of the remote device (client) to get the descriptors from. Note : To read the value of descriptors, set serverId to specific server identifier. Otherwise, set clientId to specific remote device identifier. if both serverId and clientId not specified, find descriptors in the webOS device. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address of the remote device. |
+| `service` | String (required) Indicates the unique identifier of the service the descriptor belongs to. |
+| `characteristic` | String (required) Indicates the unique identifier of the characteristic the descriptor belongs to. |
+| `values` | Object array: bluetooth2GattDescriptorInfo (required) Indicates the values for requested descriptors. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/readDescriptorValues '{ "serverId":"001", "service":"f000aa40-0451-4000-b000-000000000000", "characteristic":"f000aa41-0451-4000-b000-000000000000", "descriptors":["00002902-0000-1000-8000-00805f9b34fc"] }
 ```
@@ -4163,6 +4762,12 @@ Remove a service definition from the local database. All characteristics which b
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used |
 | `service` | String (required) Indicates the unique identifier of the service. |
 | `serverId` | String (optional) Indicates the identifier of server to remove the service from. Note : To remove the service, set serverId to specific server identifier. If not specified, find service with uuid in the webOS device. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
 
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/removeService '{"service":"6161"}
@@ -4196,6 +4801,15 @@ Writes the value for a local or remote characteristic.
 | `clientId` | String (optional) Indicates the identifier of the remote device (client) to get the characteristic from. Note : To write the value of characteristic, set serverId to specific server identifier. Or to write in remote device, set clientId to specific remote device identifier. If both serverId and clientId not specified, find characteristic in the webOS device. |
 | `writeType` | String (optional) Indicates the writeType of the characteristic. Possible values are: default noresponse signed |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/writeCharacteristicValue '{ "clientId":"001", "service":"f000aa00-0451-4000-b000-000000000000", "characteristic":"f000aa02-0451-4000-b000-000000000000", "value":{"bytes":[1]} }
 ```
@@ -4228,6 +4842,15 @@ Writes the value of a specific descriptor of a service characteristic either in 
 | `serverId` | String (optional) Indicates the identifier of server to get the descriptor from. Note : To write the value of descriptor, set serverId to specific server identifier. Or to write in remote device, set clientId to specific remote device identifier. if both serverId and clientId not specified, find descriptor in the webOS device. |
 | `clientId` | String (optional) Indicates the identifier of the remote device (client) to get the descriptor from. Note : To write the value of descriptor, set serverId to specific server identifier. Or to write in remote device, set clientId to specific remote device identifier. if both serverId and clientId not specified, find descriptor in the webOS device. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (optional) Indicates the address of the remote device. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -f -n 1 luna://com.webos.service.bluetooth2/gatt/writeDescriptorValue '{ "clientId":"001", "service":"f000aa40-0451-4000-b000-000000000000", "characteristic":"f000aa41-0451-4000-b000-000000000000", "descriptor":"00002902-0000-1000-8000-00805f9b34fb", "value":{"bytes":[1, 0]} }
 ```
@@ -4241,13 +4864,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/hfp/closeSCO`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Closes the SCO (hfp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/closeSCO '{}'
@@ -4276,6 +4901,14 @@ Opens a HFP connection to a remote device.
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true : Subscribe to get notifications false : Not subscribed Default: false |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/hfp/connect
 ```
@@ -4301,6 +4934,15 @@ Drops the connection to the given remote device on the HFP profile.
 |---|---|
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `returnValues` | Boolean (required) Indicates the status of the operation. Possible values are: - true: Indicates that the operation was successful. - false: Indicates that the operation failed. Check the "errorCode" and "errorText" fields for details. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/disconnect'{ "address":"AA:BB:CC:DD:EE:FF" }
@@ -4329,6 +4971,17 @@ Returns the status of a HFP connection to a remote device. If address input para
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true : Subscribe to get notifications false : Not subscribed |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `connecting` | Boolean (required) Indicates if the connection request is currently being processed. Possible values are: - true: The connection request is currently being processed - false: Otherwise. Example: The Bluetooth stack is no longer processing the connection request. |
+| `connected` | Boolean (required) Indicates if the connection is open. Possible values are: - true: The connection is open. - false: Otherwise. |
+| `sco` | Boolean (required) Indicates the status of the SCO connection. Possible values are: - true: There is a SCO connection between the local and the remote device - false: Otherwise |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/getStatus'{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":false }
 ```
@@ -4342,13 +4995,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/hfp/indicateCall`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Handles the indicate call (hfp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/indicateCall '{}'
@@ -4363,13 +5018,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/hfp/openSCO`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Opens the SCO (hfp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/openSCO '{}'
@@ -4384,13 +5041,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/hfp/receiveAT`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Handles the receive AT (hfp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/receiveAT '{}'
@@ -4405,13 +5064,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/hfp/receiveResult`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Handles the receive result (hfp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/receiveResult '{}'
@@ -4426,13 +5087,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/hfp/sendAT`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Sends the AT (hfp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/sendAT '{}'
@@ -4447,13 +5110,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/hfp/sendResult`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Sends the result (hfp)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hfp/sendResult '{}'
@@ -4474,7 +5139,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hid/connect '{}'
@@ -4495,7 +5160,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hid/disconnect '{}'
@@ -4516,7 +5181,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hid/getStatus '{}'
@@ -4537,7 +5202,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hid/internal/getReport '{}'
@@ -4558,7 +5223,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hid/internal/sendData '{}'
@@ -4579,7 +5244,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.devutility); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/hid/internal/setReport '{}'
@@ -4594,13 +5259,15 @@ Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/maste
 
 `luna://com.webos.service.bluetooth2/le/configureAdvertisement`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Configures the advertisement (le)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/configureAdvertisement '{}'
@@ -4628,6 +5295,13 @@ Stops and disables advertising Note: Call this method after le/startAdvertising.
 | `adapterAddress` | String (optional) Address of the adapter. Note: If not specified, the address of the default adapter is used. |
 | `advertiserId` | Number (required) ID of the started advertisement. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `advertiserId` | Number (optional) Advertiser ID passed by user. |
+| `adapterAddress` | String (required) The address of the adapter the operation was performed on. If adapterAddress input parameter was not specified, the address of the default adapter will be returned. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/disableAdvertising '{"advertiserId":1}
 ```
@@ -4647,7 +5321,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.query); name only
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/getStatus '{}'
@@ -4662,13 +5336,15 @@ Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/maste
 
 `luna://com.webos.service.bluetooth2/le/internal/startScan`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Starts the scan (le internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/internal/startScan '{}'
@@ -4683,13 +5359,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/le/setScanParameters`
 
-Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Sets the scan parameters (le)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/setScanParameters '{}'
@@ -4720,6 +5398,13 @@ Starts broadcasting the Bluetooth Low Energy advertisement.
 | `advertiseData` | Object: bluetooth2AdvertiseData (optional) Defines the format for scan request data parameters. |
 | `scanResponse` | Object: bluetooth2AdvertiseData (optional) Defines the format for scan response data parameters. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) The address of the adapter the operation was performed on. If adapterAddress input parameter was not specified, the address of the default adapter will be returned. |
+| `advertiserId` | Number (required) The handle ID of a specific advertiser. Multiple advertisement can update with this value. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/startAdvertising '{ "subscribe":true, "advertiseData":{ "manufacturerData":[ 1, 2, 3, 4 ], "proprietaryData":[ { "type":27, "data":[ 5, 6, 7, 8 ] } ], "includeTxPower":true, "services":[ { "uuid":"aada", "data":[ 7, 8, 9, 0 ] } ], "includeName":false } }
 ```
@@ -4733,13 +5418,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/le/startMultiScan`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Starts the multi scan (le)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/startMultiScan '{}'
@@ -4772,6 +5459,14 @@ Starts scanning only ble devices.
 | `manufacturerData` | Object: bluetooth2LeManufacturerData (optional) Object containing information about a manufacturerData. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be returned. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+
 ```sh
 luna-send -f -i luna://com.webos.service.bluetooth2/le/startScan '{ "subscribe":true, "serviceUuid":{"uuid":"aaaaffe3-aaaa-1000-8000-00805f9b34fc"} }
 ```
@@ -4785,13 +5480,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/le/stopAdvertising`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Stops the advertising (le)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/le/stopAdvertising '{}'
@@ -4812,7 +5509,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.operation); name on
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 | Param | Type / notes |
 |---|---|
@@ -4835,13 +5532,15 @@ Sources: [1](https://github.com/webosose/com.webos.service.bluetooth2/blob/maste
 
 `luna://com.webos.service.bluetooth2/leaudio/internal/updateBroadcastMetadata`
 
-Method on com.webos.service.bluetooth2 (from on-device permission registry; parameters undocumented).
+Updates the broadcast metadata (leaudio internal)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/leaudio/internal/updateBroadcastMetadata '{}'
@@ -4871,6 +5570,17 @@ Connects to the MAS Instance of the specified remote device. Note: The method is
 | `instanceName` | String (optional) Indicates the specific MAS instance of the MSE required for the connection to be initiated. Note : If the instanceName is not passed and server supports multiple instances, then the first available MAS instance of MSE is connected. The client can get available instance name by calling map/getMASInstances |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true : Subscribe to get notifications. false : Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
+| `address` | String (required) Indicates the address of the remote device (MSE). |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `instanceName` | String (required) Indicates the specific MAS instance name of the MSE to which it is connected. |
+| `sessionId` | String (optional) Indicates the allocated Obex sessionId, which shall be used for further API call. Note: - sessionId will be unique for each connected MAS instance session - sessionId will not be returned if the connection has failed |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/map/connect '{ "adapterAddress":"b8:27:eb:13:68 :c0", "address":"AA:BB:CC:DD:EE:FF", "instanceName":"SMS/MMS", "subscribe":true }
 ```
@@ -4897,6 +5607,17 @@ Disconnects from the MAS Instance on the specified remote device. Note: The meth
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note : If not specified, the default adapter is used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the address of the remote device. |
 | `sessionId` | String (required) Indicates the unique identifier of the session which was received as a connection response from the map/connect . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `instanceName` | String (required) Indicates the specific MAS instance name of the MSE. |
+| `sessionId` | String (required) Indicates the unique identifier of the session which was received as a connection response from the map/connect. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/disconnect '{ "adapterAddress":"b8:27:eb: 13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session1" }
@@ -4927,6 +5648,17 @@ Lists the available folders of the connected MAS instance of the MSE device. Not
 | `startOffset` | Number (optional) Indicates the Offset of the first item. Default: 0 |
 | `maxListCount` | Number (optional) Indicates the maximum number of items. Default: 1024 |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `address` | String (required) Indicates the remote Bluetooth device address(MSE). |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `folders` | String array (optional) Indicates the list of the available folder names for the current directory. |
+| `instanceName` | String (optional) Indicates the name of the MAS instance for the requested getFolderList. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getFolderList '{ "adapterAddress":"b8:27:eb :13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2" }
 ```
@@ -4952,6 +5684,16 @@ Retrieves the MAS instance details of a MSE device. MAP MSE devices may present 
 |---|---|
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note : If not specified, the default adapter is used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the address of the remote Bluetooth device address(MSE). |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
+| `address` | String (required) Indicates the address of the remote Bluetooth device (MSE). |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `masInstances` | Object array: bluetooth2MasInstances (required) Indicates the list of the supported MAS instances. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMASInstances '{ "adapterAddress":"b8:2 7:eb:13:68:c0", "address":"AA:BB:CC:DD:EE:FF" }
@@ -4983,6 +5725,16 @@ Downloads the specific message based on the message handle. Note: This method is
 | `attachment` | Boolean (optional) Indicates if attachments are included in the bMessage object returned by the MSE. Possible values are: false : Indicates that the no attachments included in the bMessage object true : Indicates that the attachments included in the bMessage object Default: false |
 | `sessionId` | String (required) Indicates the unique identifier of the session which was received as a connection response from the map/connect . |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `address` | String (required) Indicates the remote Bluetooth device address(MSE). |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `destinationFile` | String (optional) Returns the absolute path of the destination file rooted at /media/internal/map. Note: This must be a path to a file and not a directory. Example: /media/internal/map/<device-address>/<messageHandle> |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMessage '{ "adapterAddress":"b8:27:eb: 13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2", "handle":"message288230376151723506" }
 ```
@@ -5009,6 +5761,17 @@ Returns all the available fields that can be used in the fields filter of the ge
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note : If not specified, the default adapter is used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the remote Bluetooth device address(MSE). |
 | `sessionId` | String (required) Indicates the unique identifier of the session which was received as a connection response from the map/connect . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `address` | String (required) Indicates the remote bluetooth device address(MSE). |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `filters` | String array (optional) Indicates the list of all the available filter fields supported by the Bluetooth stack. |
+| `instanceName` | String (optional) Indicates the name of the MAS instance for the requested getFolderList. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMessageFilters '{ "adapterAddress":"b8:2 7:eb:13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2" }
@@ -5039,6 +5802,17 @@ Gets the message list of the specific folder of the connected MAS instance of th
 | `folder` | String (optional) Indicates the name of the sub folder for the API service to be executed. Note : If empty the API service will be executed for current folder. |
 | `filters` | Object: bluetooth2MessageFilters (optional) Indicates the list of the filters which can be used for the API. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `address` | String (required) Indicates the remote Bluetooth device address(MSE). |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `instanceName` | String (optional) Indicates the name of the MAS instance for the requested getFolderList. |
+| `messages` | Object array: bluetooth2MessageList (optional) Returns the messages with the handle and the properties from the selected folder. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/getMessageList '{ "adapterAddress":"b8:27 :eb:13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2", "folder":"sent", "filter":{ "maxCount":1 } }
 ```
@@ -5067,6 +5841,16 @@ Receives the message notification from the MSE device. Note : This method is ava
 | `sessionId` | String (required) Indicates the unique identifier of the session which was received as a connection response from the map/connect . |
 | `subscribe` | Boolean (required) Indicates if subscribed to get the notifications on the message event from the MSE. Possible values are: true : Subscribe to get the notifications false : Not subscribed |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `address` | String (required) Indicates the remote Bluetooth device address(MSE). |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `sessionId` | String (required) Indicates the unique identifier of the session which was received as a connection response from the map/connect. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/map/getMessageNotification '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session3", "subscribe":true }
 ```
@@ -5094,6 +5878,16 @@ Returns the status of the MAS connection with a remote device. Note: The method 
 | `address` | String (required) Indicates the address of the remote device. |
 | `instanceName` | String (optional) Indicates a specific MAS instance name. Note : If not provided, all MAS instances details will be provided |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true : Subscribed for notifications. false : Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes Reference" section of this method for details. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address (bdaddr) of the remote device |
+| `status` | Object array: bluetooth2MasInstancesStatus (required) Indicates an array of MAS instances with connection details. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/map/getStatus '{ "adapterAddress":"b8:27:eb:13: 68:c0", "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
@@ -5127,6 +5921,16 @@ Sends the message. Example: Sending an SMS. Note : The API is designed based on 
 | `retry` | Boolean (optional) Indicates if successive attempts at sending the message shall be carried out in case of the cellular network. Default: true |
 | `charset` | String (optional) Indicates the type of content delivered in the iMessage Possible values are: native : Only applicable for SMS messages, when the bMessage content is a SMS_Deliver PDU which can be sent by the MSE without trans-coding utf8 : If the message text shall is coded in UTF-8 which may (Email/MMS) or shall be trans-coded into SMS by the MSE before sending. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `address` | String (required) Indicates the remote Bluetooth device address(MSE). |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `handle` | String (optional) Indicates the message handle. Note: map/getMessageNotificationEvent API will use this return parameter to know the status change for a specific message handle. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/pushMessage '{ "adapterAddress":"b8:27:eb :13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session5", "sourceFile":"/media/internal/map/64_a2_f9_7e_e7_a7/message2882303761 51723506", "folder":"outbox" }
 ```
@@ -5154,6 +5958,16 @@ Returns to the child folder of the current directory of the connected MAS instan
 | `address` | String (required) Indicates the remote Bluetooth device address(MSE). |
 | `sessionId` | String (required) Indicates the unique identifier of the session which was received as a connection response from the map/connect . |
 | `folder` | String (required) Indicates the name or the absolute path of the child folder. Possible inputs: Get the supported folder list using map/getFolderlist |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `address` | String (required) Indicates the remote Bluetooth device address(MSE). |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `instanceName` | String (optional) Indicates the name of the MAS instance for the requested setFolder. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/setFolder '{ "adapterAddress":"b8:27:eb:1 3:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2", "folder":"/telecom/msg/inbox" }
@@ -5185,6 +5999,15 @@ Modifies the status of a message on the MSE. Note : This method is available onl
 | `statusIndicator` | String (required) Indicates the status of the information to be modified. Possible values are: read : Read status deleted : Deleted status |
 | `statusValue` | Boolean (required) Indicates the status value. For the "readStatus" indicator. Possible values are: true: read false: unread For the "deletedStatus" indicator. Possible values are: true: deleted false: undeleted |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `address` | String (required) Indicates the remote Bluetooth device address(MSE). |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/map/setMessageStatus '{ "adapterAddress":"b8: 27:eb:13:68:c0", "address":"AA:BB:CC:DD:EE:FF", "sessionId":"session2", "handle":"message288230376151723506", "statusIndicator":"delete", "statusValue":true }
 ```
@@ -5213,6 +6036,16 @@ Requests to generate a new application key. This call affects the local key data
 | `netKeyIndex` | Number (optional) The net key to be bound to the application key. Note : If netKeyIndex value is not passed the primary netKeyIndex (i.e. 000) is used. Call mesh/getMeshInfo to get the available netKeyIndexes. |
 | `appKeyIndex` | Number (optional) The app key index to add. Note : If appKeyIndex value is not passed, Bluetooth service creates appKeyIndex. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
+| `netKeyIndex` | Number (optional) The net key index bound to application key. |
+| `appKeyIndex` | Number (optional) The created app key index. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/mesh/createAppKey '{"bearer":"PB-ADV", "netKeyIndex":0, "appKeyIndex":0}
 ```
@@ -5239,6 +6072,15 @@ This is the first API that must be called by the application to create a network
 | `adapterAddress` | String (optional) The address of the adapter to be used. |
 | `bearer` | String (optional) The underlying bearer to use. Possible values are: PB-ADV (default) PB-GATT (Currently not supported) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
+| `networkId` | String (required) The unique identifier for the local network. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/mesh/createNetwork '{}
 ```
@@ -5264,6 +6106,15 @@ Gets mesh network-related information.
 |---|---|
 | `adapterAddress` | String (optional) The address of the adapter to be used. |
 | `bearer` | String (optional) The underlying bearer to use. Possible values are: PB-ADV (default) PB-GATT (Currently not supported) |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
+| `meshInfo` | Object: BleMeshInfo (required) Details of the mesh network. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/mesh/getMeshInfo '{}
@@ -5296,6 +6147,14 @@ Refreshes the mesh network key and associated app keys.
 | `refreshAppKeys` | Boolean (optional) Indicates whether to refresh appkeys associated with net key indicated by netKeyIndex true: Refresh app keys (List the app keys to refresh in "appKeyIndexes" field) false: Do not Refresh app keys Note: If not specified, the default value false is used. Use case 1: When an application had called removeNode API to remove a node from the network, it can refresh only those app keys  |
 | `appKeyIndexes` | Number array (optional) Provide app key indexes to refresh. This parameter is ignored if refreshAppKeys is false. Note: If refreshAppKeys is true, and an empty array is passed, or if this field is not provided, all app keys will be refreshed by default. List of appkeys known to a node can be fetched by calling mesh/listProvisionedNodes API before removing a particular node. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of this method for details. |
+| `adapterAddress` | String (required) The address of the adapter. |
+
 ```sh
 luna-send -n i -f luna://com.webos.service.bluetooth2/mesh/keyRefresh '{ "subscribe" : true, "waitTimeout" : 2, "netKeyIndex" : 0, "refreshAppKeys" : true, "blacklistedNodes":[170] }
 ```
@@ -5321,6 +6180,15 @@ Gets a list of provisioned nodes.
 |---|---|
 | `adapterAddress` | String (optional) The address of the adapter. Note: If not specified, the default adapter is used. |
 | `bearer` | String (optional) The underlying bearer to use. Possible values are: PB-ADV (default) PB-GATT (Currently not supported) |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of this method for details. |
+| `adapterAddress` | String (required) The address of the adapter. |
+| `nodes` | Object array: BleMeshNode (required) Array of provisioned nodes in the network. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/mesh/listProvisionedNodes '{}
@@ -5352,6 +6220,14 @@ Gets various configuration parameters provided by configuration model.
 | `config` | String (required) The configurations to be retrieved. Possible values are: APPKEYINDEX DEFAULT_TTL GATT_PROXY RELAY |
 | `netKeyIndex` | Number (optional) The index of the net key. This parameter is mandatory if config field is APPKEYINDEX and ignored for others. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/mesh/model/config/get '{ "destAddress":173, "config":"GATT_PROXY", "netKeyIndex": 0, "subscribe":true }
 ```
@@ -5379,6 +6255,14 @@ Gets composition data of a mesh node. The composition data contains information 
 | `bearer` | String (optional) The underlying bearer to use. Possible values are: PB-ADV (default) PB-GATT (Currently not supported) |
 | `destAddress` | Number (required) The destination address. |
 | `subscribe` | Boolean (required) Subscribe for notifications on changes. Possible values are: true : Subscribed (Must be set to true. The caller must subscribe to this method.) false : Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/mesh/model/config/getCompositionData '{ "bearer":"PB-ADV", "destAddress" : 170, "subscribe" : true }
@@ -5415,6 +6299,14 @@ Sets various configuration parameters provided by the configuration model.
 | `gattProxyState` | Number (optional) The GATT proxy state to set. Possible values are: 0x00: The Proxy feature is supported and disabled 0x01: The Proxy feature is supported and enabled 0x02: The Proxy feature is not supported Note: Mandatory parameter if config is GATT_PROXY. |
 | `relayStatus` | Object: BleMeshConfigRelayStatus (optional) The Current Relay and Relay Retransmit states of a node. Note: Mandatory parameter if config is RELAY. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/mesh/model/config/set '{ "destAddress":170, "config":"APPKEY_ADD", "netKeyIndex": 0, "appKeyIndex": 0, "subscribe":true }
 ```
@@ -5445,6 +6337,14 @@ Sets the on/off state of the remote node using a generic on-off model.
 | `state` | Boolean (required) The state of the remote node. Possible values are: true : On false : Off |
 | `subscribe` | Boolean (optional) Subscribe for notifications on changes. Possible values are: true : Subscribed. false : Not subscribed (default). Note: If not subscribed, unacknowledged on/off message is sent to the remote node, acknowledged message is sent otherwise. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
+
 ```sh
 luna-send -i -f -a com.webos.service.test luna://com.webos.service.bluetooth2/mesh/model/onOff/set '{ "destAddress":170, "appKeyIndex": 0, "state": true, "subscribe":false }
 ```
@@ -5472,6 +6372,14 @@ Receives messages addressed to the application.
 | `bearer` | String (optional) The underlying bearer to use. Possible values are: PB-ADV (default) PB-GATT (Currently not supported) |
 | `appKeyIndex` | Number (required) The application key to be used for decrypting the message. The appKeyIndex must be valid for that element. |
 | `subscribe` | Boolean (required) Subscribe for notifications on changes. Possible values are: true : Subscribed (Must be set to true. The caller must subscribe to this method.) false : Not subscribed. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
 
 ```sh
 luna-send -i -f -a com.webos.service.test luna://com.webos.service.bluetooth2/mesh/model/receive '{"appKeyIndex": 0, "subscribe":true}
@@ -5504,6 +6412,14 @@ Sends a message originated by a local model.
 | `command` | String (required) The command that corresponds to the message being sent in the payload. Possible values are: passThrough onOff Note : webos-bluetooth-service with the help of the underlying stack just encrypts and sends the payload when the command is passThrough. The application sends the payload that is in the packet format as mentioned in the specification. The bluetooth service and the underl |
 | `payload` | Object: BleMeshPayload - for "onOff" command (required) Payload object when "command" = "onOff". |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/mesh/model/send '{ "srcAddress":1, "destAddress":170, "appKeyIndex": 0, "command":"onOff", "payload":{"value":true} }
 ```
@@ -5533,6 +6449,14 @@ Initiates provisioning of a device. Once a mesh device is discovered using mesh/
 | `subscribe` | String (required) Subscribe for notifications on changes. Possible values are: true : Subscribed (Must be set to true. The caller must subscribe to this method). false : Not subscribed. |
 | `uuid` | String (required) Device UUID for provisioning device. UUID is received as part of the subscription response of mesh/scanUnprovisionedDevices API. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/mesh/provision '{"uuid":"1ef4354ffbbe43b5a8a7fbe94ec7746d", "subscribe":true}
 ```
@@ -5559,6 +6483,15 @@ Removes the node from the network. Multiple nodes can be removed by calling this
 | `adapterAddress` | String (optional) The address of the adapter. Note: If not specified, the default adapter is used. |
 | `bearer` | String (optional) The underlying bearer to use. Possible values are: PB-ADV (default) PB-GATT (Currently not supported) |
 | `primaryElementAddress` | Number (required) Unicast address of the primary element of the node to be removed from the network. Valid Range: 1 to 32767. Note: Removing local node not allowed |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. See the 'Error Codes' section of this method for details. |
+| `adapterAddress` | String (required) The address of the adapter. |
+| `primaryElementAddress` | Number (required) Unicast address of the node which is removed from the network. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/mesh/removeNode '{"primaryElementAddress":170}
@@ -5588,6 +6521,16 @@ Scans for mesh devices to provision when the local node is provisioner.
 | `scanTimeout` | Number (uint16_t) (optional) Scan timeout in seconds. The scan continues until mesh/unprovisionedScanCancel is called or for scanTimeout seconds (if non-zero). Default value: 20 sec |
 | `subscribe` | Boolean (required) Subscribe for notifications on changes. Possible values are: true : Subscribed. false : Not subscribed. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
+| `devices` | Object array: BleMeshUnprovisionedDevice (required) Array of BLE Mesh devices that are known to the system and that are not yet provisioned by the system. Note: Contains information for all the devices known to the system. |
+| `device` | Object: BleMeshUnprovisionedDevice (required) BLE Mesh device that is known to the system and that is not yet provisioned by the system. Note: Contains information of only a single device detected in the scan environment during the mesh/scanUnprovisionedDevices API call. The device is listed for the |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/mesh/scanUnprovisionedDevices '{"scanTimeout":10, "subscribe":true}
 ```
@@ -5614,6 +6557,14 @@ Provides decimal number for authentication during provisioning; when "request" =
 | `adapterAddress` | String (optional) The address of the adapter to be used. |
 | `bearer` | String (optional) The underlying bearer to use. Possible values are: PB-ADV (default) PB-GATT (Currently not supported) |
 | `number` | Number (required) The numeric data. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/mesh/supplyProvisioningNumeric '{"number":1234}
@@ -5642,6 +6593,14 @@ Supplies the static OOB data required during provision; when "request" = "prompt
 | `bearer` | String (optional) The underlying bearer to use. Possible values are: PB-ADV (default) PB-GATT (Currently not supported) |
 | `oobData` | String (required) The static OOB data which is 16 octet byte array. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/mesh/supplyProvisioningOob '{"oobData":"6E6F726469635F6578616D706C655F31"}
 ```
@@ -5668,6 +6627,14 @@ Cancels scanning for unprovisioned BLE mesh devices.
 | `adapterAddress` | String (optional) The address of the adapter to be used. |
 | `bearer` | String (optional) The underlying bearer to use. Possible values are: PB-ADV (default) PB-GATT (Currently not supported) |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) The reason for the failure of the operation. |
+| `adapterAddress` | String (required) The address of the adapter. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/mesh/unprovisionedScanCancel '{}
 ```
@@ -5693,6 +6660,14 @@ Accept a Bluetooth object push request. This method is available only for a push
 |---|---|
 | `requestId` | String (required) The unique ID of a request. |
 | `adapaterAddress` | String (optional) The address of the adapter executing this method. If not specified, the default adapter will be used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) The address of the adapter the operation was performed on. If adapterAddress input parameter was not specified, the address of the default adapter will be returned. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/opp/acceptTransferRequest '{"requestId":"001"}
@@ -5745,6 +6720,13 @@ Cancel an ongoing file transfer. This method is available only for a push server
 |---|---|
 | `requestId` | String (required) The unique ID of a request. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/opp/cancelTransfer '{ "requestId":"001" }
 ```
@@ -5771,6 +6753,13 @@ Open (or initialize) an OPP connection to a remote Bluetooth device. In some cas
 | `address` | String (required) The address (bdaddr) of the remote device. |
 | `subscribe` | Boolean (optional) Subscribe and get notified when connection is closed. Possible values are: true - Subscribed for changes. false - Not subscribed. Default value: false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/opp/connect '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
@@ -5795,6 +6784,13 @@ Close (or deinitialize) the connection to the given remote device on OPP profile
 | Param | Type / notes |
 |---|---|
 | `address` | String (required) The address (bdaddr) of the remote device. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 luna://com.webos.service.bluetooth2/opp/disconnect '{ "address":"AA:BB:CC:DD:EE:FF" }
@@ -5821,6 +6817,15 @@ Return the status of an OPP connection to a remote Bluetooth device. This method
 |---|---|
 | `address` | String (required) The address (bdaddr) of the remote device. |
 | `subscribe` | Boolean (optional) To be notified of changes to the connection, set subscribe to true . Otherwise, set subscribe to false . |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `connecting` | Boolean (required) - If the connection (or push) request is currently being processed, connecting will contain true. - Otherwise, connecting will contain false. For example, the Bluetooth stack is no longer processing the connection request. |
+| `connected` | Boolean (required) - If the connection is open, connected will contain true. - Otherwise, connected will contain false. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/opp/getStatus '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
@@ -5876,6 +6881,14 @@ Push a file to a remote Bluetooth device. This method is available only for push
 | `subscribe` | Boolean (optional) To monitor the progress of the transfer, set subscribe to true . Otherwise, set subscribe to false . The default value of subscribed is false . |
 | `adapterAddress` | String (optional) The address of the adapter executing this method. If not specified, the default adapter will be used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) The address of the adapter the operation was performed on. If adapterAddress input parameter was not specified, the address of the default adapter will be returned. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/opp/pushFile '{ "address":"AA:BB:CC:DD:EE:FF", "sourceFile":"music.mp3", "subscribe":true }
 ```
@@ -5902,6 +6915,14 @@ Reject a Bluetooth object push request. This method is available only for a push
 | `requestId` | String (required) The unique ID of a request. |
 | `adapterAddress` | String (optional) The address of the adapter executing this method. If not specified, the default adapter will be used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) The address of the adapter the operation was performed on. If adapterAddress input parameter was not specified, the address of the default adapter will be returned. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/opp/rejectTransferRequest '{"requestId":"001"}'
 ```
@@ -5915,13 +6936,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/pan/connect`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Connects the bluetooth 2 (pan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pan/connect '{}'
@@ -5936,13 +6959,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/pan/disconnect`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Disconnects the bluetooth 2 (pan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pan/disconnect '{}'
@@ -5957,13 +6982,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/pan/getStatus`
 
-Getter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Returns the status (pan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pan/getStatus '{}'
@@ -5978,13 +7005,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/pan/setTethering`
 
-Setter on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Sets the tethering (pan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pan/setTethering '{}'
@@ -5999,13 +7028,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/pbap/acceptAccessRequest`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Handles the accept access request (pbap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/acceptAccessRequest '{}'
@@ -6020,13 +7051,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bluetooth2/pbap/awaitAccessRequest`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Handles the await access request (pbap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/awaitAccessRequest '{}'
@@ -6055,6 +7088,15 @@ Connects to the PBAP profile on the specified remote device. Note: This method i
 | `address` | String (required) Indicates the address of the remote device. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed. Default: false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `address` | String (required) Indicates the address of the remote device. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/pbap/connect '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
@@ -6080,6 +7122,15 @@ Disconnects from the PBAP profile on the specified remote device. Note: This met
 |---|---|
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the " Error Codes Reference" section of this method for details. |
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
 
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/pbap/disconnect '{ "address":"AA:BB:CC:DD:EE:FF" }
@@ -6108,6 +7159,16 @@ Gets the supported PBAP profile properties from PSE device. Note: This method is
 | `address` | String (required) Indicates the address of the remote device. |
 | `subscribe` | Boolean (optional) Indicates if subscribed to get notifications. Possible values are: true: Subscribed for notifications false: Not subscribed Default: false |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `properties` | Object: bluetooth2PbapProperties (required) Returns the supported properties from the PSE device. Note: Properties will return only when the repository is selected else properties will be updated in subscription return. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/pbap/getPhoneBookProperties '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
@@ -6132,6 +7193,16 @@ Gets the total number of vcf entries from the selected phonebook path. Note: Thi
 | Param | Type / notes |
 |---|---|
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
+| `address` | String (required) Indicates the address of the remote device. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) Indicates the error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `size` | Number (required) Indicates the total number of vcf entries in the selected phonebook path. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
 | `address` | String (required) Indicates the address of the remote device. |
 
 ```sh
@@ -6161,6 +7232,17 @@ Returns the status of a PBAP connection to a remote Bluetooth device. Note: The 
 | `subscribe` | Boolean (optional) Indicates if subscribed to get the notifications. Possible values are: true : Subscribed for notifications false : Not subscribed Default: false . |
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `connecting` | Boolean (required) Indicates the status of connection. Possible values are: - true: The connection request is currently being processed. - false: Otherwise. Example: The Bluetooth stack is no longer processing the connection request. |
+| `connected` | Boolean (required) Indicates if the connection is open. Possible values are: - true: The connection is open - false: Otherwise |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `errorCode` | Number (optional) Indicates the error code for the failed operation. |
+| `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/pbap/getStatus '{ "address":"AA:BB:CC:DD:EE:FF", "subscribe":true }
 ```
@@ -6186,6 +7268,16 @@ Displays all the available vcard filters supported by Bluetooth stack. Note: The
 |---|---|
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the address (bdaddr) of the remote device. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `filters` | String array (required) Returns a list of supported vCard filters. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/getvCardFilters '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF" }
@@ -6219,6 +7311,16 @@ Retrieves all (given maxcount) the phonebook entries from a given startoffset an
 | `vCardVersion` | String (optional) Indicates the vCard format versions. Possible values are: 2.1 3.0 Default: 2.1 |
 | `filterFields` | String array (optional) Provide vCard with fields as specified in the filter. Mandatory properties for vCard 2.1 are VERSION, N, and TEL. Mandatory properties for vCard 3.0 are VERSION, N, FN, and TEL. Note: We can get the list of supported filters using pbap/getvCardFilters API. If not specified, all supported filters are used by default. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `destinationFile` | String (required) Indicates the absolute path of the destination file rooted at /media/internal/pbap. Note: This must be a path to a file, not a directory. Example: /media/internal/pbap/<device-address>/<foldername>/<vcf file name> |
+
 ```sh
 luna-send -i -f luna://com.webos.service.bluetooth2/pbap/pullPhoneBook '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "destinationFile":"mycontacts.vcf", "subscribe":true }
 ```
@@ -6249,6 +7351,16 @@ Given a vcard handle, retrieves the vcard in the current phonebook object and st
 | `vCardVersion` | String (optional) Indicates vCard format version. Possible values are : 2.1 3.0 Default: 2.1 |
 | `filterFields` | String array (optional) Provides vCard with fields as specified in the filter. Mandatory properties for vCard 2.1 are VERSION, N, and TEL. Mandatory properties for vCard 3.0 are VERSION, N, FN, and TEL. Note : We can get the list of supported filters using pbap/getvCardFilters API. If not specified, all supported filters are used by default. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `destinationFile` | String (required) Indicates the absolute path of the destination file rooted at /media/internal/pbap. Note: This must be a path to a file and not a directory. Example: /media/internal/pbap/<device-address>/<repository>/<vcf file name>. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/pullvCard '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "vCardHandle":"123.vcf", "vCardVersion":"2.1", "filterFields":[ "BDAY", "FN" ] }
 ```
@@ -6262,13 +7374,15 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-b
 
 `luna://com.webos.service.bluetooth2/pbap/rejectAccessRequest`
 
-Method on com.webos.service.bluetooth2 (introspected on-device; parameters undocumented).
+Handles the reject access request (pbap)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/rejectAccessRequest '{}'
@@ -6298,6 +7412,16 @@ Searches for entries matching the given condition and returns an object of vcard
 | `order` | String (optional) Displays the search results based on the given order. Possible values are: Indexed (default) Alphanumeric Phonetic |
 | `filter` | Object: bluetooth2PbapSearchFilter (required) Filter with key & value pair to search the phonebook. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `vcfHandles` | Object: bluetooth2PbapVcfHandles (required) Returns vcf files entries with name and vcf handle from selected phone-book path. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/searchPhoneBook '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "order":"indexed", "filter":{ "key":"name", "value":"LG" } }
 ```
@@ -6326,6 +7450,15 @@ Sets the phonebook object for other operations. Note: This method is available o
 | `repository` | String (required) Indicates the type of repository that stores the phonebook. Possible inputs : internal sim1 Default: internal. |
 | `object` | String (required) Indicates the path of the phonebook object. Possible inputs : pb : phonebook for the saved contacts. ich : incoming call history. och : outgoing call history. mch : missing call history. cch : a combination of ich, och, mch. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `address` | String (required) Indicates the address of the remote device. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/setPhoneBook '{ "adapterAddress":"AA:BB:CC:DD:EE:FF", "address":"AA:BB:CC:DD:EE:FF", "repository":"internal", "object":"pb" }
 ```
@@ -6352,6 +7485,16 @@ Displays the total number of vcf file entries from the selected phonebook path. 
 | `adapterAddress` | String (optional) Indicates the address of the adapter. Note: If not specified, the address of the default adapter will be used. If the service is part of a container session, do not specify adapterAddress. Based on the session, by default, a pre-selected adapterAddress is used. |
 | `address` | String (required) Indicates the address of the remote device for the requested operation. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) Returns the error code for the failed operation. |
+| `errorText` | String (optional) Indicates the reason for the failure of the operation. See the "Error Codes" section of this method for details. |
+| `vcfHandles` | Object array: bluetooth2PbapVcfHandles (required) Returns vcf files entries with name and vcf handle from selected phonebook path. |
+| `adapterAddress` | String (required) Indicates the address of the adapter. |
+| `address` | String (required) Indicates the address of the remote device. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/pbap/vCardListing '{ "adapterAddress":"b8:27 :eb:13:68:c0", "address":"AA:BB:CC:DD:EE:FF" }
 ```
@@ -6371,7 +7514,7 @@ Registered in webOS OSE sysbus api.json (ACG group bluetooth.management); name o
 - **Subscribe:** no  
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE (master branch)  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/popo/pushFile '{}'
@@ -6401,6 +7544,16 @@ Open a SPP connection to a remote Bluetooth device.
 | `subscribe` | Boolean (optional) To be notified when the connection is closed, set subscribe to true . Otherwise, set subscribe to false . The default value of subscribe is false . |
 | `adapterAddress` | String (optional) The address of the adapter executing this method call. If not specified, the default adapter will be used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) The address of the adapter the operation was performed on. If adapterAddress input parameter was not specified, the address of the default adapter will be returned. |
+| `address` | String (required) The address (bdaddr) of the remote device. |
+| `channelId` | String (optional) Unique ID of a SPP channel, which has the following format: "nnn", 3 digit number increasing sequentially. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -i -f -a "com.domain.app.testapp" luna://com.webos.service.bluetooth2/spp/connect '{ "address":"AA:BB:CC:DD:EE:FF", "uuid":"00001101-0000-1000-8000-00805f9b34fb", "subscribe":true }
 ```
@@ -6429,6 +7582,14 @@ Register a service record in the device service record database with the specifi
 | `subscribe` | Boolean (required) Must set subscribe to true to be notified of changes to the channel (e.g., connection of client, removal of the channel). |
 | `adapterAddress` | String (optional) The address of the adapter executing this method. If not specified, the default adapter will be used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) The address of the adapter the operation was performed on. If adapterAddress input parameter was not specified, the address of the default adapter will be returned. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -i -f -a "com.domain.app.testapp" luna://com.webos.service.bluetooth2/spp/createChannel '{ "name":"service1", "uuid":"00001101-0000-1000-8000-00805f9b34fb", "subscribe":true }
 ```
@@ -6454,6 +7615,14 @@ Drop the connection to the given remote device on SPP profile.
 |---|---|
 | `channelId` | String (required) Unique ID of a SPP channel, which has the following format: "nnn", 3 digit number increasing sequentially. |
 | `adapterAddress` | String (optional) The address of the adapter executing this method. If not specified, the default adapter will be used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) The address of the adapter the operation was performed on. If adapterAddress input parameter was not specified, the address of the default adapter will be returned. |
+| `errorText` | String (optional) errorText contains the error text if the method fails.The method will return errorText only if it fails.See the Error Codes Reference of this method for more details. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/spp/disconnect '{ "channelId": "001" }
@@ -6481,6 +7650,17 @@ Return the status of a SPP connection to a remote device.
 | `address` | String (required) The address (bdaddr) of the remote device. |
 | `subscribe` | Boolean (optional) To be notified of changes to the connection, set subscribe to true . Otherwise, set subscribe to false . The default value of subscribe is false . |
 | `adapterAddress` | String (optional) The address of the adapter executing this method call. When the field is not set, the default adapter is used for it. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `connecting` | Boolean (required) - If the connection request is currently being processed, connecting will contain true. - Otherwise, connecting will contain false. For example, the Bluetooth stack is no longer processing the connection request. |
+| `connected` | Boolean (required) - If the connection is open, connected will contain true. - Otherwise, connected will contain false. |
+| `adapterAddress` | String (required) The address of the adapter the operation was performed on. If adapterAddress input parameter was not specified, the address of the default adapter will be returned. |
+| `connectedChannels` | String array (required) Array of channel IDs which are connected currently. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/spp/getStatus '{ "address": "AA:BB:CC:DD:EE:FF", "subscribe": false }
@@ -6510,6 +7690,16 @@ Receive data from the connected remote device.
 | `timeout` | Number (optional) The receive timeout in seconds. It is available only when subscribe is set to true . After timeout seconds, the subscription is canceled. A value of 0 means that the timeout is disabled. |
 | `adapterAddress` | String (optional) The address of the adapter executing this method. If not specified, the default adapter will be used. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) The address of the adapter the operation was performed on. If adapterAddress input parameter was not specified, the address of the default adapter will be returned. |
+| `channelId` | String (required) Unique ID of a SPP channel. |
+| `data` | String (optional) BASE64-encoded string data received from the remote device. Before using the data, BASE64 decoding is needed. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
+
 ```sh
 luna-send -i -f -a "com.domain.app.testapp" luna://com.webos.service.bluetooth2/spp/readData '{"channelId": "001”,"subscribe":true}
 ```
@@ -6536,6 +7726,14 @@ Transfer data to the connected remote device.
 | `channelId` | String (required) Unique ID of a SPP channel. |
 | `data` | String (required) Data to send. This string data should be encoded to BASE64. |
 | `adapterAddress` | String (optional) The address of the adapter executing this method. If not specified, the default adapter will be used. |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `adapterAddress` | String (required) The address of the adapter the operation was performed on. If adapterAddress input parameter was not specified, the address of the default adapter will be returned. |
+| `errorText` | String (optional) errorText contains the error text if the method fails. The method will return errorText only if it fails. See the Error Codes Reference of this method for more details. |
+| `errorCode` | Number (optional) errorCode contains the error code if the method fails. The method will return errorCode only if it fails. See the Error Codes Reference of this method for more details. |
 
 ```sh
 luna-send -i -f -a "com.domain.app.testapp" luna://com.webos.service.bluetooth2/spp/writeData '{"channelId": "001”,"data": "R29vZCBEYXkNCg=="}

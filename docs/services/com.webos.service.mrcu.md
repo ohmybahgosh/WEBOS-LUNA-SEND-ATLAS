@@ -1,146 +1,150 @@
 # `com.webos.service.mrcu`
 
+Magic Remote Control Unit service: pairs the remote, manages the pointer cursor and motion sensor, IR codes and firmware, and shows alerts/toasts.
+
 122 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`activateMotionSensor`](#activatemotionsensor) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`activateMrcu`](#activatemrcu) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`createAlert`](#createalert) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`createToast`](#createtoast) | private |  | input | Shows a toast via the Magic Remote control service |
-| [`cursor/setAutoAlign`](#cursor_setautoalign) | public |  | input | Method registered by com.webos.service.mrcu (category '/cursor') |
-| [`cursor/setPosition`](#cursor_setposition) | public |  | input | Method registered by com.webos.service.mrcu (category '/cursor') |
-| [`cursor/setSensitivity`](#cursor_setsensitivity) | private |  | input | Method registered by com.webos.service.mrcu (category '/cursor') |
-| [`cursor/setSlideMode`](#cursor_setslidemode) | public |  | input | Method registered by com.webos.service.mrcu (category '/cursor') |
-| [`cursor/setWakeUpCondition`](#cursor_setwakeupcondition) | public |  | input | Method registered by com.webos.service.mrcu (category '/cursor') |
-| [`decreasePairingHistoryCount`](#decreasepairinghistorycount) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`enableAudioSinkMode`](#enableaudiosinkmode) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`enableDualPairing`](#enabledualpairing) | public |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`enableLoggingMotion`](#enableloggingmotion) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`enableMotionHistory`](#enablemotionhistory) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`enablePrintRfStatus`](#enableprintrfstatus) | public |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`eraseIrCodes`](#eraseircodes) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`getAPIVersion`](#getapiversion) | public |  | input | Gets the MRCU API version. |
-| [`getBtServiceAvailable`](#getbtserviceavailable) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getButtonHistory`](#getbuttonhistory) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getConnectionStatus`](#getconnectionstatus) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getCursorHistory`](#getcursorhistory) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getDataDelivery`](#getdatadelivery) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getDeviceInfo`](#getdeviceinfo) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getDiagnosisItem`](#getdiagnosisitem) | private |  | input | Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`getDoingOtaStatus`](#getdoingotastatus) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getLongpressKeyInfo`](#getlongpresskeyinfo) | private |  | input | Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`getMotionEngineStatus`](#getmotionenginestatus) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getMrcuCmdHistory`](#getmrcucmdhistory) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getPairingHistory`](#getpairinghistory) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getPairingHistoryCount`](#getpairinghistorycount) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getPairingStatus`](#getpairingstatus) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`getSensorData`](#getsensordata) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`getStatus`](#getstatus) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`getTraceLogStatus`](#gettracelogstatus) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`hid/connect`](#hid_connect) | private |  | input | Method registered by com.webos.service.mrcu (category '/hid') |
-| [`hid/delete`](#hid_delete) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). ⚠️ |
-| [`hid/disconnect`](#hid_disconnect) | private |  | input | Method registered by com.webos.service.mrcu (category '/hid') |
-| [`hid/getToneBLEDeviceInfo`](#hid_gettonebledeviceinfo) | private |  | input | Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`hid/subscribeDevicesStatus`](#hid_subscribedevicesstatus) | private |  | input | Method registered by com.webos.service.mrcu (category '/hid') |
-| [`increasePairingHistoryCount`](#increasepairinghistorycount) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`ir/eraseIrCodes`](#ir_eraseircodes) | private |  | input | Magic Remote service method ir/eraseIrCodes (listed in community research table) |
-| [`ir/getCurrentSavedCodeSetId`](#ir_getcurrentsavedcodesetid) | private |  | input | Method registered by com.webos.service.mrcu (category '/ir') |
-| [`ir/getIrCableConnection`](#ir_getircableconnection) | private |  | input | Method registered by com.webos.service.mrcu (category '/ir') |
-| [`ir/getStbPwrControl`](#ir_getstbpwrcontrol) | private |  | input | Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`ir/getUeiCmdResponse`](#ir_getueicmdresponse) | private |  | input | Method registered by com.webos.service.mrcu (category '/ir') |
-| [`ir/pushIrCodes`](#ir_pushircodes) | private |  | input | Magic Remote service method ir/pushIrCodes (listed in community research table) |
-| [`ir/requestUeiCodeSetId`](#ir_requestueicodesetid) | private |  | input | Method registered by com.webos.service.mrcu (category '/ir') |
-| [`ir/requestUeiPrimaryCodeSetId`](#ir_requestueiprimarycodesetid) | private |  | input | Method registered by com.webos.service.mrcu (category '/ir') |
-| [`ir/saveIrCodes`](#ir_saveircodes) | private |  | input | Magic Remote service method ir/saveIrCodes (listed in community research table) |
-| [`ir/sendUeiIrCmd`](#ir_sendueiircmd) | private |  | input | Method registered by com.webos.service.mrcu (category '/ir') |
-| [`ir/setRepeatIrCtrl`](#ir_setrepeatirctrl) | private |  | input | Setter on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`ir/setSendIrInterval`](#ir_setsendirinterval) | private |  | input | Setter on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`ir/setStbPwrControl`](#ir_setstbpwrcontrol) | private |  | input | Setter on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`ir/testIrGeneration`](#ir_testirgeneration) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`isCheckingDB`](#ischeckingdb) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`isExistDbFile`](#isexistdbfile) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`isPaired`](#ispaired) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`magicblaster/getStatus`](#magicblaster_getstatus) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`printBtLog`](#printbtlog) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`pushIrCodes`](#pushircodes) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`reset`](#reset) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`resetQuaternion`](#resetquaternion) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`saveIrCodes`](#saveircodes) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`sendCommand`](#sendcommand) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`sensor/captureLog`](#sensor_capturelog) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`sensor/getSensorData`](#sensor_getsensordata) | public | yes | input | Subscribes to sensor data (older API). |
-| [`sensor/resetQuaternion`](#sensor_resetquaternion) | public |  | input | Resets quaternion data. |
-| [`sensor/setCursorBounds`](#sensor_setcursorbounds) | private |  | input | Method registered by com.webos.service.mrcu (category '/sensor') |
-| [`sensor2/cancelSensorDataSubscribe`](#sensor2_cancelsensordatasubscribe) | public |  | input | Cancels the current sensor subscription. |
-| [`sensor2/getSensorEventData`](#sensor2_getsensoreventdata) | public | yes | input | Subscribes to magic remote sensor data. |
-| [`sensor2/getSensorInterval`](#sensor2_getsensorinterval) | public |  | input | Min/max sensor callback interval. |
-| [`sensor2/getSensorState`](#sensor2_getsensorstate) | public |  | input | Status of the remote motion sensor. |
-| [`sensor2/getSensorType`](#sensor2_getsensortype) | public |  | input | Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`sensor2/resetQuaternion`](#sensor2_resetquaternion) | public |  | input | Resets the quaternion sensor. |
-| [`sensor2/setSensorInterval`](#sensor2_setsensorinterval) | public |  | input | Changes the sensor callback interval (msec). |
-| [`setAutoAlign`](#setautoalign) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`setCursorBounds`](#setcursorbounds) | private |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`setHotkeyCursorPolicy`](#sethotkeycursorpolicy) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`setPairingHistoryKeyCode`](#setpairinghistorykeycode) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`setPosition`](#setposition) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`setSensitivity`](#setsensitivity) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`setSharedMemory`](#setsharedmemory) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`setSleepMode`](#setsleepmode) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`setSlideMode`](#setslidemode) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`setWakeUpCondition`](#setwakeupcondition) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`startFirmwareUpdate`](#startfirmwareupdate) | private |  | input | Method registered by com.webos.service.mrcu (root category) ⚠️ |
-| [`startPairing`](#startpairing) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`stopPairing`](#stoppairing) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`subscribeAudioStatus`](#subscribeaudiostatus) | public |  | audio | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`subscribeDeviceStatus`](#subscribedevicestatus) | public |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`subscribeRfStatus`](#subscriberfstatus) | private |  | input | Method registered by com.webos.service.mrcu (root category) |
-| [`test/checkButton`](#test_checkbutton) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/checkCursor`](#test_checkcursor) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/checkTonePlusVoiceButton`](#test_checktoneplusvoicebutton) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/checkWheel`](#test_checkwheel) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/confirmKeys`](#test_confirmkeys) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/connect`](#test_connect) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/createVirtualMrcu`](#test_createvirtualmrcu) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/destroyVirtualMrcu`](#test_destroyvirtualmrcu) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/gattConnect`](#test_gattconnect) | private |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`test/gattDiscoverServices`](#test_gattdiscoverservices) | private |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`test/gattMonitorCharacteristics`](#test_gattmonitorcharacteristics) | private |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`test/gattWriteCharacteristicValue`](#test_gattwritecharacteristicvalue) | private |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`test/gattWriteDescriptorValue`](#test_gattwritedescriptorvalue) | private |  | input | Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented). |
-| [`test/getAdapterStatus`](#test_getadapterstatus) | private |  | input | Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/getDeviceStatus`](#test_getdevicestatus) | private |  | input | Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/getHidStatus`](#test_gethidstatus) | private |  | input | Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/pair`](#test_pair) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/printDumpPacket`](#test_printdumppacket) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/sendIrCommand`](#test_sendircommand) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/startDiscovery`](#test_startdiscovery) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/startPairing`](#test_startpairing) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/subscribeOTAStatus`](#test_subscribeotastatus) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/subscribePairingStatus`](#test_subscribepairingstatus) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/subscribeSendIrCommand`](#test_subscribesendircommand) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`test/unpair`](#test_unpair) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`tests/runTVDEVTC_25703`](#tests_runtvdevtc_25703) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`tests/subscribeTVDEVTC_25703`](#tests_subscribetvdevtc_25703) | private |  | input | Method on com.webos.service.mrcu (introspected on-device; parameters undocumented). |
-| [`voice/sendCommand`](#voice_sendcommand) | private |  | input | Magic Remote service method voice/sendCommand (listed in community research table) |
-| [`voice/setSharedMemory`](#voice_setsharedmemory) | private |  | input | Magic Remote service method voice/setSharedMemory (listed in community research table) |
-| [`voice/subscribeAudioStatus`](#voice_subscribeaudiostatus) | private |  | input | Magic Remote service method voice/subscribeAudioStatus (listed in community research table) |
-| [`voice/subscribeDeviceStatus`](#voice_subscribedevicestatus) | private |  | input | Magic Remote service method voice/subscribeDeviceStatus (listed in community research table) |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`activateMotionSensor`](#activatemotionsensor) | private |  | input | inferred | Activates the motion sensor. |
+| [`activateMrcu`](#activatemrcu) | private |  | input | inferred | Activates the MRCU. |
+| [`createAlert`](#createalert) | private |  | input | inferred | Creates the alert. |
+| [`createToast`](#createtoast) | private |  | input | documented | Shows a toast via the Magic Remote control service |
+| [`cursor/setAutoAlign`](#cursor_setautoalign) | public |  | input | inferred | Sets the auto align (cursor) |
+| [`cursor/setPosition`](#cursor_setposition) | public |  | input | inferred | Sets the position (cursor) |
+| [`cursor/setSensitivity`](#cursor_setsensitivity) | private |  | input | inferred | Sets the sensitivity (cursor) |
+| [`cursor/setSlideMode`](#cursor_setslidemode) | public |  | input | inferred | Sets the slide mode (cursor) |
+| [`cursor/setWakeUpCondition`](#cursor_setwakeupcondition) | public |  | input | inferred | Sets the wake up condition (cursor) |
+| [`decreasePairingHistoryCount`](#decreasepairinghistorycount) | private |  | input | inferred | Decreases the pairing history count. |
+| [`enableAudioSinkMode`](#enableaudiosinkmode) | private |  | input | inferred | Enables the audio sink mode. |
+| [`enableDualPairing`](#enabledualpairing) | public |  | input | inferred | Enables the dual pairing. |
+| [`enableLoggingMotion`](#enableloggingmotion) | private |  | input | inferred | Enables the logging motion. |
+| [`enableMotionHistory`](#enablemotionhistory) | private |  | input | inferred | Enables the motion history. |
+| [`enablePrintRfStatus`](#enableprintrfstatus) | public |  | input | inferred | Enables the print RF status. |
+| [`eraseIrCodes`](#eraseircodes) | public |  | input | inferred | Erases the IR codes. ⚠️ |
+| [`getAPIVersion`](#getapiversion) | public |  | input | documented | Gets the MRCU API version. |
+| [`getBtServiceAvailable`](#getbtserviceavailable) | private |  | input | inferred | Returns the Bluetooth service available. |
+| [`getButtonHistory`](#getbuttonhistory) | private |  | input | inferred | Returns the button history. |
+| [`getConnectionStatus`](#getconnectionstatus) | private |  | input | inferred | Returns the connection status. |
+| [`getCursorHistory`](#getcursorhistory) | private |  | input | inferred | Returns the cursor history. |
+| [`getDataDelivery`](#getdatadelivery) | private |  | input | inferred | Returns the data delivery. |
+| [`getDeviceInfo`](#getdeviceinfo) | private |  | input | inferred | Returns the device info. |
+| [`getDiagnosisItem`](#getdiagnosisitem) | private |  | input | inferred | Returns the diagnosis item. |
+| [`getDoingOtaStatus`](#getdoingotastatus) | private |  | input | inferred | Returns the doing ota status. |
+| [`getLongpressKeyInfo`](#getlongpresskeyinfo) | private |  | input | inferred | Returns the longpress key info. |
+| [`getMotionEngineStatus`](#getmotionenginestatus) | private |  | input | inferred | Returns the motion engine status. |
+| [`getMrcuCmdHistory`](#getmrcucmdhistory) | private |  | input | inferred | Returns the MRCU cmd history. |
+| [`getPairingHistory`](#getpairinghistory) | private |  | input | inferred | Returns the pairing history. |
+| [`getPairingHistoryCount`](#getpairinghistorycount) | private |  | input | inferred | Returns the pairing history count. |
+| [`getPairingStatus`](#getpairingstatus) | private |  | input | inferred | Returns the pairing status. |
+| [`getSensorData`](#getsensordata) | public |  | input | inferred | Returns the sensor data. |
+| [`getStatus`](#getstatus) | public |  | input | inferred | Returns the status. |
+| [`getTraceLogStatus`](#gettracelogstatus) | private |  | input | inferred | Returns the trace log status. |
+| [`hid/connect`](#hid_connect) | private |  | input | inferred | Connects the MRCU (hid) |
+| [`hid/delete`](#hid_delete) | private |  | input | inferred | Deletes the MRCU (hid) ⚠️ |
+| [`hid/disconnect`](#hid_disconnect) | private |  | input | inferred | Disconnects the MRCU (hid) |
+| [`hid/getToneBLEDeviceInfo`](#hid_gettonebledeviceinfo) | private |  | input | inferred | Returns the tone BLE device info (hid) |
+| [`hid/subscribeDevicesStatus`](#hid_subscribedevicesstatus) | private |  | input | inferred | Subscribes to the devices status (hid) |
+| [`increasePairingHistoryCount`](#increasepairinghistorycount) | private |  | input | inferred | Increases the pairing history count. |
+| [`ir/eraseIrCodes`](#ir_eraseircodes) | private |  | input | documented | Magic Remote service method ir/eraseIrCodes (listed in community research table) |
+| [`ir/getCurrentSavedCodeSetId`](#ir_getcurrentsavedcodesetid) | private |  | input | inferred | Returns the current saved code set ID (IR) |
+| [`ir/getIrCableConnection`](#ir_getircableconnection) | private |  | input | inferred | Returns the IR cable connection (IR) |
+| [`ir/getStbPwrControl`](#ir_getstbpwrcontrol) | private |  | input | inferred | Returns the stb pwr control (IR) |
+| [`ir/getUeiCmdResponse`](#ir_getueicmdresponse) | private |  | input | inferred | Returns the uei cmd response (IR) |
+| [`ir/pushIrCodes`](#ir_pushircodes) | private |  | input | documented | Magic Remote service method ir/pushIrCodes (listed in community research table) |
+| [`ir/requestUeiCodeSetId`](#ir_requestueicodesetid) | private |  | input | inferred | Requests the uei code set ID (IR) |
+| [`ir/requestUeiPrimaryCodeSetId`](#ir_requestueiprimarycodesetid) | private |  | input | inferred | Requests the uei primary code set ID (IR) |
+| [`ir/saveIrCodes`](#ir_saveircodes) | private |  | input | documented | Magic Remote service method ir/saveIrCodes (listed in community research table) |
+| [`ir/sendUeiIrCmd`](#ir_sendueiircmd) | private |  | input | inferred | Sends the uei IR cmd (IR) |
+| [`ir/setRepeatIrCtrl`](#ir_setrepeatirctrl) | private |  | input | inferred | Sets the repeat IR ctrl (IR) |
+| [`ir/setSendIrInterval`](#ir_setsendirinterval) | private |  | input | inferred | Sets the send IR interval (IR) |
+| [`ir/setStbPwrControl`](#ir_setstbpwrcontrol) | private |  | input | inferred | Sets the stb pwr control (IR) |
+| [`ir/testIrGeneration`](#ir_testirgeneration) | private |  | input | inferred | Tests the IR generation (IR) |
+| [`isCheckingDB`](#ischeckingdb) | private |  | input | inferred | Reports whether the checking DB is set. |
+| [`isExistDbFile`](#isexistdbfile) | private |  | input | inferred | Reports whether the exist db file is set. |
+| [`isPaired`](#ispaired) | private |  | input | inferred | Reports whether the paired is set. |
+| [`magicblaster/getStatus`](#magicblaster_getstatus) | public |  | input | inferred | Returns the status (magicblaster) |
+| [`printBtLog`](#printbtlog) | private |  | input | inferred | Prints the Bluetooth log. |
+| [`pushIrCodes`](#pushircodes) | public |  | input | inferred | Pushes the IR codes. |
+| [`reset`](#reset) | private |  | input | inferred | Resets the MRCU. |
+| [`resetQuaternion`](#resetquaternion) | public |  | input | inferred | Resets the quaternion. ⚠️ |
+| [`saveIrCodes`](#saveircodes) | public |  | input | inferred | Saves the IR codes. |
+| [`sendCommand`](#sendcommand) | public |  | input | inferred | Sends the command. |
+| [`sensor/captureLog`](#sensor_capturelog) | private |  | input | inferred | Captures the log (sensor) |
+| [`sensor/getSensorData`](#sensor_getsensordata) | public | yes | input | documented | Subscribes to sensor data (older API). |
+| [`sensor/resetQuaternion`](#sensor_resetquaternion) | public |  | input | documented | Resets quaternion data. |
+| [`sensor/setCursorBounds`](#sensor_setcursorbounds) | private |  | input | inferred | Sets the cursor bounds (sensor) |
+| [`sensor2/cancelSensorDataSubscribe`](#sensor2_cancelsensordatasubscribe) | public |  | input | documented | Cancels the current sensor subscription. |
+| [`sensor2/getSensorEventData`](#sensor2_getsensoreventdata) | public | yes | input | documented | Subscribes to magic remote sensor data. |
+| [`sensor2/getSensorInterval`](#sensor2_getsensorinterval) | public |  | input | documented | Min/max sensor callback interval. |
+| [`sensor2/getSensorState`](#sensor2_getsensorstate) | public |  | input | documented | Status of the remote motion sensor. |
+| [`sensor2/getSensorType`](#sensor2_getsensortype) | public |  | input | inferred | Returns the sensor type (sensor 2) |
+| [`sensor2/resetQuaternion`](#sensor2_resetquaternion) | public |  | input | documented | Resets the quaternion sensor. |
+| [`sensor2/setSensorInterval`](#sensor2_setsensorinterval) | public |  | input | documented | Changes the sensor callback interval (msec). |
+| [`setAutoAlign`](#setautoalign) | public |  | input | inferred | Sets the auto align. |
+| [`setCursorBounds`](#setcursorbounds) | private |  | input | inferred | Sets the cursor bounds. |
+| [`setHotkeyCursorPolicy`](#sethotkeycursorpolicy) | private |  | input | inferred | Sets the hotkey cursor policy. |
+| [`setPairingHistoryKeyCode`](#setpairinghistorykeycode) | private |  | input | inferred | Sets the pairing history key code. |
+| [`setPosition`](#setposition) | public |  | input | inferred | Sets the position. |
+| [`setSensitivity`](#setsensitivity) | public |  | input | inferred | Sets the sensitivity. |
+| [`setSharedMemory`](#setsharedmemory) | public |  | input | inferred | Sets the shared memory. |
+| [`setSleepMode`](#setsleepmode) | private |  | input | inferred | Sets the sleep mode. |
+| [`setSlideMode`](#setslidemode) | public |  | input | inferred | Sets the slide mode. |
+| [`setWakeUpCondition`](#setwakeupcondition) | public |  | input | inferred | Sets the wake up condition. |
+| [`startFirmwareUpdate`](#startfirmwareupdate) | private |  | input | inferred | Starts the firmware update. ⚠️ |
+| [`startPairing`](#startpairing) | private |  | input | inferred | Starts the pairing. |
+| [`stopPairing`](#stoppairing) | private |  | input | inferred | Stops the pairing. |
+| [`subscribeAudioStatus`](#subscribeaudiostatus) | public |  | audio | inferred | Subscribes to the audio status. |
+| [`subscribeDeviceStatus`](#subscribedevicestatus) | public |  | input | inferred | Subscribes to the device status. |
+| [`subscribeRfStatus`](#subscriberfstatus) | private |  | input | inferred | Subscribes to the RF status. |
+| [`test/checkButton`](#test_checkbutton) | private |  | input | inferred | Checks the button (test) |
+| [`test/checkCursor`](#test_checkcursor) | private |  | input | inferred | Checks the cursor (test) |
+| [`test/checkTonePlusVoiceButton`](#test_checktoneplusvoicebutton) | private |  | input | inferred | Checks the tone plus voice button (test) |
+| [`test/checkWheel`](#test_checkwheel) | private |  | input | inferred | Checks the wheel (test) |
+| [`test/confirmKeys`](#test_confirmkeys) | private |  | input | inferred | Handles the confirm keys (test) |
+| [`test/connect`](#test_connect) | private |  | input | inferred | Connects the MRCU (test) |
+| [`test/createVirtualMrcu`](#test_createvirtualmrcu) | private |  | input | inferred | Creates the virtual MRCU (test) |
+| [`test/destroyVirtualMrcu`](#test_destroyvirtualmrcu) | private |  | input | inferred | Handles the destroy virtual MRCU (test) |
+| [`test/gattConnect`](#test_gattconnect) | private |  | input | inferred | Handles the GATT connect (test) |
+| [`test/gattDiscoverServices`](#test_gattdiscoverservices) | private |  | input | inferred | Handles the GATT discover services (test) |
+| [`test/gattMonitorCharacteristics`](#test_gattmonitorcharacteristics) | private |  | input | inferred | Handles the GATT monitor characteristics (test) |
+| [`test/gattWriteCharacteristicValue`](#test_gattwritecharacteristicvalue) | private |  | input | inferred | Handles the GATT write characteristic value (test) |
+| [`test/gattWriteDescriptorValue`](#test_gattwritedescriptorvalue) | private |  | input | inferred | Handles the GATT write descriptor value (test) |
+| [`test/getAdapterStatus`](#test_getadapterstatus) | private |  | input | inferred | Returns the adapter status (test) |
+| [`test/getDeviceStatus`](#test_getdevicestatus) | private |  | input | inferred | Returns the device status (test) |
+| [`test/getHidStatus`](#test_gethidstatus) | private |  | input | inferred | Returns the hid status (test) |
+| [`test/pair`](#test_pair) | private |  | input | inferred | Pairs the MRCU (test) |
+| [`test/printDumpPacket`](#test_printdumppacket) | private |  | input | inferred | Prints the dump packet (test) |
+| [`test/sendIrCommand`](#test_sendircommand) | private |  | input | inferred | Sends the IR command (test) |
+| [`test/startDiscovery`](#test_startdiscovery) | private |  | input | inferred | Starts the discovery (test) |
+| [`test/startPairing`](#test_startpairing) | private |  | input | inferred | Starts the pairing (test) |
+| [`test/subscribeOTAStatus`](#test_subscribeotastatus) | private |  | input | inferred | Subscribes to the OTA status (test) |
+| [`test/subscribePairingStatus`](#test_subscribepairingstatus) | private |  | input | inferred | Subscribes to the pairing status (test) |
+| [`test/subscribeSendIrCommand`](#test_subscribesendircommand) | private |  | input | inferred | Subscribes to the send IR command (test) |
+| [`test/unpair`](#test_unpair) | private |  | input | inferred | Unpairs the MRCU (test) |
+| [`tests/runTVDEVTC_25703`](#tests_runtvdevtc_25703) | private |  | input | inferred | Runs the TVDEVTC 25703 (tests) |
+| [`tests/subscribeTVDEVTC_25703`](#tests_subscribetvdevtc_25703) | private |  | input | inferred | Subscribes to the TVDEVTC 25703 (tests) |
+| [`voice/sendCommand`](#voice_sendcommand) | private |  | input | documented | Magic Remote service method voice/sendCommand (listed in community research table) |
+| [`voice/setSharedMemory`](#voice_setsharedmemory) | private |  | input | documented | Magic Remote service method voice/setSharedMemory (listed in community research table) |
+| [`voice/subscribeAudioStatus`](#voice_subscribeaudiostatus) | private |  | input | documented | Magic Remote service method voice/subscribeAudioStatus (listed in community research table) |
+| [`voice/subscribeDeviceStatus`](#voice_subscribedevicestatus) | private |  | input | documented | Magic Remote service method voice/subscribeDeviceStatus (listed in community research table) |
 
 <a id="activatemotionsensor"></a>
 ## `activateMotionSensor`
 
 `luna://com.webos.service.mrcu/activateMotionSensor`
 
-Method registered by com.webos.service.mrcu (root category)
+Activates the motion sensor.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/activateMotionSensor '{}'
@@ -155,13 +159,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/activateMrcu`
 
-Method registered by com.webos.service.mrcu (root category)
+Activates the MRCU.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/activateMrcu '{}'
@@ -176,13 +182,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/createAlert`
 
-Method registered by com.webos.service.mrcu (root category)
+Creates the alert.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/createAlert '{}'
@@ -203,7 +211,7 @@ Shows a toast via the Magic Remote control service
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/createToast '{"message":"Hello"}'
@@ -218,13 +226,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/cursor/setAutoAlign`
 
-Method registered by com.webos.service.mrcu (category '/cursor')
+Sets the auto align (cursor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/cursor/setAutoAlign '{}'
@@ -239,13 +249,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/cursor/setPosition`
 
-Method registered by com.webos.service.mrcu (category '/cursor')
+Sets the position (cursor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/cursor/setPosition '{}'
@@ -260,13 +272,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/cursor/setSensitivity`
 
-Method registered by com.webos.service.mrcu (category '/cursor')
+Sets the sensitivity (cursor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/cursor/setSensitivity '{}'
@@ -281,13 +295,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/cursor/setSlideMode`
 
-Method registered by com.webos.service.mrcu (category '/cursor')
+Sets the slide mode (cursor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/cursor/setSlideMode '{}'
@@ -302,13 +318,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/cursor/setWakeUpCondition`
 
-Method registered by com.webos.service.mrcu (category '/cursor')
+Sets the wake up condition (cursor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/cursor/setWakeUpCondition '{}'
@@ -323,13 +341,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/decreasePairingHistoryCount`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Decreases the pairing history count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/decreasePairingHistoryCount '{}'
@@ -344,13 +364,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/enableAudioSinkMode`
 
-Method registered by com.webos.service.mrcu (root category)
+Enables the audio sink mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/enableAudioSinkMode '{}'
@@ -365,13 +387,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/enableDualPairing`
 
-Method registered by com.webos.service.mrcu (root category)
+Enables the dual pairing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/enableDualPairing '{}'
@@ -386,13 +410,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/enableLoggingMotion`
 
-Method registered by com.webos.service.mrcu (root category)
+Enables the logging motion.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/enableLoggingMotion '{}'
@@ -407,13 +433,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/enableMotionHistory`
 
-Method registered by com.webos.service.mrcu (root category)
+Enables the motion history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/enableMotionHistory '{}'
@@ -428,13 +456,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/enablePrintRfStatus`
 
-Method registered by com.webos.service.mrcu (root category)
+Enables the print RF status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/enablePrintRfStatus '{}'
@@ -449,13 +479,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/eraseIrCodes`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Erases the IR codes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/eraseIrCodes '{}'
@@ -489,13 +521,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/magic-remote)
 
 `luna://com.webos.service.mrcu/getBtServiceAvailable`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the Bluetooth service available.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getBtServiceAvailable '{}'
@@ -510,13 +544,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getButtonHistory`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the button history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getButtonHistory '{}'
@@ -531,13 +567,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getConnectionStatus`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the connection status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getConnectionStatus '{}'
@@ -552,13 +590,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getCursorHistory`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the cursor history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getCursorHistory '{}'
@@ -573,13 +613,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getDataDelivery`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the data delivery.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getDataDelivery '{}'
@@ -594,13 +636,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getDeviceInfo`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the device info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getDeviceInfo '{}'
@@ -615,13 +659,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getDiagnosisItem`
 
-Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Returns the diagnosis item.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getDiagnosisItem '{}'
@@ -636,13 +682,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/getDoingOtaStatus`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the doing ota status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getDoingOtaStatus '{}'
@@ -657,13 +705,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getLongpressKeyInfo`
 
-Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Returns the longpress key info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getLongpressKeyInfo '{}'
@@ -678,13 +728,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/getMotionEngineStatus`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the motion engine status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getMotionEngineStatus '{}'
@@ -699,13 +751,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getMrcuCmdHistory`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the MRCU cmd history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getMrcuCmdHistory '{}'
@@ -720,13 +774,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getPairingHistory`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the pairing history.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getPairingHistory '{}'
@@ -741,13 +797,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getPairingHistoryCount`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the pairing history count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getPairingHistoryCount '{}'
@@ -762,13 +820,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getPairingStatus`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the pairing status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getPairingStatus '{}'
@@ -783,13 +843,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/getSensorData`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Returns the sensor data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getSensorData '{}'
@@ -804,13 +866,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/getStatus`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getStatus '{}'
@@ -825,13 +889,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/getTraceLogStatus`
 
-Method registered by com.webos.service.mrcu (root category)
+Returns the trace log status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getTraceLogStatus '{}'
@@ -846,13 +912,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/hid/connect`
 
-Method registered by com.webos.service.mrcu (category '/hid')
+Connects the MRCU (hid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/hid/connect '{}'
@@ -867,13 +935,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/hid/delete`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Deletes the MRCU (hid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/hid/delete '{}'
@@ -888,13 +958,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/hid/disconnect`
 
-Method registered by com.webos.service.mrcu (category '/hid')
+Disconnects the MRCU (hid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/hid/disconnect '{}'
@@ -909,13 +981,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/hid/getToneBLEDeviceInfo`
 
-Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Returns the tone BLE device info (hid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/hid/getToneBLEDeviceInfo '{}'
@@ -930,13 +1004,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/hid/subscribeDevicesStatus`
 
-Method registered by com.webos.service.mrcu (category '/hid')
+Subscribes to the devices status (hid)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/hid/subscribeDevicesStatus '{}'
@@ -951,13 +1027,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/increasePairingHistoryCount`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Increases the pairing history count.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/increasePairingHistoryCount '{}'
@@ -978,7 +1056,7 @@ Magic Remote service method ir/eraseIrCodes (listed in community research table)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/eraseIrCodes '{}'
@@ -993,13 +1071,15 @@ Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/apis/com.w
 
 `luna://com.webos.service.mrcu/ir/getCurrentSavedCodeSetId`
 
-Method registered by com.webos.service.mrcu (category '/ir')
+Returns the current saved code set ID (IR)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/getCurrentSavedCodeSetId '{}'
@@ -1014,13 +1094,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/ir/getIrCableConnection`
 
-Method registered by com.webos.service.mrcu (category '/ir')
+Returns the IR cable connection (IR)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/getIrCableConnection '{}'
@@ -1035,13 +1117,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/ir/getStbPwrControl`
 
-Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Returns the stb pwr control (IR)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/getStbPwrControl '{}'
@@ -1056,13 +1140,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/ir/getUeiCmdResponse`
 
-Method registered by com.webos.service.mrcu (category '/ir')
+Returns the uei cmd response (IR)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/getUeiCmdResponse '{}'
@@ -1083,7 +1169,7 @@ Magic Remote service method ir/pushIrCodes (listed in community research table)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/pushIrCodes '{}'
@@ -1098,13 +1184,15 @@ Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/apis/com.w
 
 `luna://com.webos.service.mrcu/ir/requestUeiCodeSetId`
 
-Method registered by com.webos.service.mrcu (category '/ir')
+Requests the uei code set ID (IR)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/requestUeiCodeSetId '{}'
@@ -1119,13 +1207,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/ir/requestUeiPrimaryCodeSetId`
 
-Method registered by com.webos.service.mrcu (category '/ir')
+Requests the uei primary code set ID (IR)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/requestUeiPrimaryCodeSetId '{}'
@@ -1146,7 +1236,7 @@ Magic Remote service method ir/saveIrCodes (listed in community research table)
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/saveIrCodes '{}'
@@ -1161,13 +1251,15 @@ Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/apis/com.w
 
 `luna://com.webos.service.mrcu/ir/sendUeiIrCmd`
 
-Method registered by com.webos.service.mrcu (category '/ir')
+Sends the uei IR cmd (IR)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/sendUeiIrCmd '{}'
@@ -1182,13 +1274,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/ir/setRepeatIrCtrl`
 
-Setter on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Sets the repeat IR ctrl (IR)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/setRepeatIrCtrl '{}'
@@ -1203,13 +1297,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/ir/setSendIrInterval`
 
-Setter on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Sets the send IR interval (IR)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/setSendIrInterval '{}'
@@ -1224,13 +1320,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/ir/setStbPwrControl`
 
-Setter on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Sets the stb pwr control (IR)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/setStbPwrControl '{}'
@@ -1245,13 +1343,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/ir/testIrGeneration`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Tests the IR generation (IR)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/ir/testIrGeneration '{}'
@@ -1266,13 +1366,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/isCheckingDB`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Reports whether the checking DB is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/isCheckingDB '{}'
@@ -1287,13 +1389,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/isExistDbFile`
 
-Method registered by com.webos.service.mrcu (root category)
+Reports whether the exist db file is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/isExistDbFile '{}'
@@ -1308,13 +1412,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/isPaired`
 
-Method registered by com.webos.service.mrcu (root category)
+Reports whether the paired is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/isPaired '{}'
@@ -1329,13 +1435,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/magicblaster/getStatus`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Returns the status (magicblaster)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/magicblaster/getStatus '{}'
@@ -1350,13 +1458,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/printBtLog`
 
-Method registered by com.webos.service.mrcu (root category)
+Prints the Bluetooth log.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/printBtLog '{}'
@@ -1371,13 +1481,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/pushIrCodes`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Pushes the IR codes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/pushIrCodes '{}'
@@ -1392,13 +1504,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/reset`
 
-Method registered by com.webos.service.mrcu (root category)
+Resets the MRCU.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/reset '{}'
@@ -1413,13 +1527,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/resetQuaternion`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Resets the quaternion.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/resetQuaternion '{}'
@@ -1434,13 +1550,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/saveIrCodes`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Saves the IR codes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/saveIrCodes '{}'
@@ -1455,13 +1573,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/sendCommand`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Sends the command.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/sendCommand '{}'
@@ -1476,13 +1596,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/sensor/captureLog`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Captures the log (sensor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/sensor/captureLog '{}'
@@ -1540,13 +1662,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/magic-remote)
 
 `luna://com.webos.service.mrcu/sensor/setCursorBounds`
 
-Method registered by com.webos.service.mrcu (category '/sensor')
+Sets the cursor bounds (sensor)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/sensor/setCursorBounds '{}'
@@ -1642,13 +1766,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/magic-remote)
 
 `luna://com.webos.service.mrcu/sensor2/getSensorType`
 
-Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Returns the sensor type (sensor 2)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/sensor2/getSensorType '{}'
@@ -1705,13 +1831,15 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/magic-remote)
 
 `luna://com.webos.service.mrcu/setAutoAlign`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Sets the auto align.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/setAutoAlign '{}'
@@ -1726,13 +1854,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/setCursorBounds`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Sets the cursor bounds.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/setCursorBounds '{}'
@@ -1747,13 +1877,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/setHotkeyCursorPolicy`
 
-Method registered by com.webos.service.mrcu (root category)
+Sets the hotkey cursor policy.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/setHotkeyCursorPolicy '{}'
@@ -1768,13 +1900,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/setPairingHistoryKeyCode`
 
-Method registered by com.webos.service.mrcu (root category)
+Sets the pairing history key code.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/setPairingHistoryKeyCode '{}'
@@ -1789,13 +1923,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/setPosition`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Sets the position.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/setPosition '{}'
@@ -1810,13 +1946,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/setSensitivity`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Sets the sensitivity.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/setSensitivity '{}'
@@ -1831,13 +1969,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/setSharedMemory`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Sets the shared memory.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/setSharedMemory '{}'
@@ -1852,13 +1992,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/setSleepMode`
 
-Method registered by com.webos.service.mrcu (root category)
+Sets the sleep mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/setSleepMode '{}'
@@ -1873,13 +2015,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/setSlideMode`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Sets the slide mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/setSlideMode '{}'
@@ -1894,13 +2038,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/setWakeUpCondition`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Sets the wake up condition.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/setWakeUpCondition '{}'
@@ -1915,13 +2061,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/startFirmwareUpdate`
 
-Method registered by com.webos.service.mrcu (root category)
+Starts the firmware update.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/startFirmwareUpdate '{}'
@@ -1936,13 +2084,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/startPairing`
 
-Method registered by com.webos.service.mrcu (root category)
+Starts the pairing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/startPairing '{}'
@@ -1957,13 +2107,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/stopPairing`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Stops the pairing.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/stopPairing '{}'
@@ -1978,13 +2130,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/subscribeAudioStatus`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Subscribes to the audio status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/subscribeAudioStatus '{}'
@@ -1999,13 +2153,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/subscribeDeviceStatus`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Subscribes to the device status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/subscribeDeviceStatus '{}'
@@ -2020,13 +2176,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/subscribeRfStatus`
 
-Method registered by com.webos.service.mrcu (root category)
+Subscribes to the RF status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/subscribeRfStatus '{}'
@@ -2041,13 +2199,15 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 `luna://com.webos.service.mrcu/test/checkButton`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Checks the button (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/checkButton '{}'
@@ -2062,13 +2222,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/checkCursor`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Checks the cursor (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/checkCursor '{}'
@@ -2083,13 +2245,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/checkTonePlusVoiceButton`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Checks the tone plus voice button (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/checkTonePlusVoiceButton '{}'
@@ -2104,13 +2268,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/checkWheel`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Checks the wheel (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/checkWheel '{}'
@@ -2125,13 +2291,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/confirmKeys`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Handles the confirm keys (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/confirmKeys '{}'
@@ -2146,13 +2314,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/connect`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Connects the MRCU (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/connect '{}'
@@ -2167,13 +2337,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/createVirtualMrcu`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Creates the virtual MRCU (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/createVirtualMrcu '{}'
@@ -2188,13 +2360,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/destroyVirtualMrcu`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Handles the destroy virtual MRCU (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/destroyVirtualMrcu '{}'
@@ -2209,13 +2383,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/gattConnect`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Handles the GATT connect (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/gattConnect '{}'
@@ -2230,13 +2406,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/test/gattDiscoverServices`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Handles the GATT discover services (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/gattDiscoverServices '{}'
@@ -2251,13 +2429,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/test/gattMonitorCharacteristics`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Handles the GATT monitor characteristics (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/gattMonitorCharacteristics '{}'
@@ -2272,13 +2452,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/test/gattWriteCharacteristicValue`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Handles the GATT write characteristic value (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/gattWriteCharacteristicValue '{}'
@@ -2293,13 +2475,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/test/gattWriteDescriptorValue`
 
-Method on com.webos.service.mrcu (from on-device permission registry; parameters undocumented).
+Handles the GATT write descriptor value (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/gattWriteDescriptorValue '{}'
@@ -2314,13 +2498,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.mrcu/test/getAdapterStatus`
 
-Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Returns the adapter status (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/getAdapterStatus '{}'
@@ -2335,13 +2521,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/getDeviceStatus`
 
-Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Returns the device status (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/getDeviceStatus '{}'
@@ -2356,13 +2544,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/getHidStatus`
 
-Getter on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Returns the hid status (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/getHidStatus '{}'
@@ -2377,13 +2567,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/pair`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Pairs the MRCU (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/pair '{}'
@@ -2398,13 +2590,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/printDumpPacket`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Prints the dump packet (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/printDumpPacket '{}'
@@ -2419,13 +2613,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/sendIrCommand`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Sends the IR command (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/sendIrCommand '{}'
@@ -2440,13 +2636,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/startDiscovery`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Starts the discovery (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/startDiscovery '{}'
@@ -2461,13 +2659,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/startPairing`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Starts the pairing (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/startPairing '{}'
@@ -2482,13 +2682,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/subscribeOTAStatus`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Subscribes to the OTA status (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/subscribeOTAStatus '{}'
@@ -2503,13 +2705,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/subscribePairingStatus`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Subscribes to the pairing status (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/subscribePairingStatus '{}'
@@ -2524,13 +2728,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/subscribeSendIrCommand`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Subscribes to the send IR command (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/subscribeSendIrCommand '{}'
@@ -2545,13 +2751,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/test/unpair`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Unpairs the MRCU (test)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/test/unpair '{}'
@@ -2566,13 +2774,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/tests/runTVDEVTC_25703`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Runs the TVDEVTC 25703 (tests)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/tests/runTVDEVTC_25703 '{}'
@@ -2587,13 +2797,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.mrcu/tests/subscribeTVDEVTC_25703`
 
-Method on com.webos.service.mrcu (introspected on-device; parameters undocumented).
+Subscribes to the TVDEVTC 25703 (tests)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/tests/subscribeTVDEVTC_25703 '{}'
@@ -2614,7 +2826,7 @@ Magic Remote service method voice/sendCommand (listed in community research tabl
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/voice/sendCommand '{}'
@@ -2635,7 +2847,7 @@ Magic Remote service method voice/setSharedMemory (listed in community research 
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/voice/setSharedMemory '{}'
@@ -2656,7 +2868,7 @@ Magic Remote service method voice/subscribeAudioStatus (listed in community rese
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/voice/subscribeAudioStatus '{}'
@@ -2677,7 +2889,7 @@ Magic Remote service method voice/subscribeDeviceStatus (listed in community res
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** unknown  
-- **Confidence:** community
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/voice/subscribeDeviceStatus '{}'

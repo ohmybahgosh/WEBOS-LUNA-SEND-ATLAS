@@ -1,53 +1,57 @@
 # `com.webos.service.legacybroadcast.subtitle`
 
+Legacy broadcast subtitle/caption service: enables and disables subtitles and closed captions, manages caption position, size, and resolution, and reports rating and subtitle lists. _(inferred from the service's methods)_
+
 29 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`closeSharedMemory`](#closesharedmemory) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`disableAdccPes`](#disableadccpes) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`disablePreview`](#disablepreview) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`disableSubtitle`](#disablesubtitle) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`disableSubtPes`](#disablesubtpes) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`disableTextDetection`](#disabletextdetection) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`enableAdccPes`](#enableadccpes) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`enablePreview`](#enablepreview) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`enableSubtitle`](#enablesubtitle) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`enableSubtPes`](#enablesubtpes) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`enableTextDetection`](#enabletextdetection) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`getCaptionPosition`](#getcaptionposition) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`getCaptionResolution`](#getcaptionresolution) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`getCaptionSize`](#getcaptionsize) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`getCurrentSubtitle`](#getcurrentsubtitle) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`getRatingInfo`](#getratinginfo) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`getSubtitleList`](#getsubtitlelist) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`getSubtitleState`](#getsubtitlestate) | private |  | tv-broadcast | Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`offSubtitleDisplay`](#offsubtitledisplay) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`onSubtitleDisplay`](#onsubtitledisplay) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`openSharedMemory`](#opensharedmemory) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`pipelineShared`](#pipelineshared) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`sendPesDvbSubtitle`](#sendpesdvbsubtitle) | private |  | tv-broadcast | Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`setCaptionGenerator`](#setcaptiongenerator) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`setCaptionPosition`](#setcaptionposition) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`setCaptionResolution`](#setcaptionresolution) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`setMediaSubtitle`](#setmediasubtitle) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`setSubtitle`](#setsubtitle) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
-| [`setTextDetectionTest`](#settextdetectiontest) | private |  | tv-broadcast | Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`closeSharedMemory`](#closesharedmemory) | private |  | tv-broadcast | inferred | Closes the shared memory. |
+| [`disableAdccPes`](#disableadccpes) | private |  | tv-broadcast | inferred | Disables the adcc pes. |
+| [`disablePreview`](#disablepreview) | private |  | tv-broadcast | inferred | Disables the preview. |
+| [`disableSubtitle`](#disablesubtitle) | private |  | tv-broadcast | inferred | Disables the subtitle. |
+| [`disableSubtPes`](#disablesubtpes) | private |  | tv-broadcast | inferred | Disables the subt pes. |
+| [`disableTextDetection`](#disabletextdetection) | private |  | tv-broadcast | inferred | Disables the text detection. |
+| [`enableAdccPes`](#enableadccpes) | private |  | tv-broadcast | inferred | Enables the adcc pes. |
+| [`enablePreview`](#enablepreview) | private |  | tv-broadcast | inferred | Enables the preview. |
+| [`enableSubtitle`](#enablesubtitle) | private |  | tv-broadcast | inferred | Enables the subtitle. |
+| [`enableSubtPes`](#enablesubtpes) | private |  | tv-broadcast | inferred | Enables the subt pes. |
+| [`enableTextDetection`](#enabletextdetection) | private |  | tv-broadcast | inferred | Enables the text detection. |
+| [`getCaptionPosition`](#getcaptionposition) | private |  | tv-broadcast | inferred | Returns the caption position. |
+| [`getCaptionResolution`](#getcaptionresolution) | private |  | tv-broadcast | inferred | Returns the caption resolution. |
+| [`getCaptionSize`](#getcaptionsize) | private |  | tv-broadcast | inferred | Returns the caption size. |
+| [`getCurrentSubtitle`](#getcurrentsubtitle) | private |  | tv-broadcast | inferred | Returns the current subtitle. |
+| [`getRatingInfo`](#getratinginfo) | private |  | tv-broadcast | inferred | Returns the rating info. |
+| [`getSubtitleList`](#getsubtitlelist) | private |  | tv-broadcast | inferred | Returns the subtitle list. |
+| [`getSubtitleState`](#getsubtitlestate) | private |  | tv-broadcast | inferred | Returns the subtitle state. |
+| [`offSubtitleDisplay`](#offsubtitledisplay) | private |  | tv-broadcast | inferred | Handles the off subtitle display. |
+| [`onSubtitleDisplay`](#onsubtitledisplay) | private |  | tv-broadcast | inferred | Event handler: fires on the subtitle display. |
+| [`openSharedMemory`](#opensharedmemory) | private |  | tv-broadcast | inferred | Opens the shared memory. |
+| [`pipelineShared`](#pipelineshared) | private |  | tv-broadcast | inferred | Handles the pipeline shared. |
+| [`sendPesDvbSubtitle`](#sendpesdvbsubtitle) | private |  | tv-broadcast | inferred | Sends the pes DVB subtitle. |
+| [`setCaptionGenerator`](#setcaptiongenerator) | private |  | tv-broadcast | inferred | Sets the caption generator. |
+| [`setCaptionPosition`](#setcaptionposition) | private |  | tv-broadcast | inferred | Sets the caption position. |
+| [`setCaptionResolution`](#setcaptionresolution) | private |  | tv-broadcast | inferred | Sets the caption resolution. |
+| [`setMediaSubtitle`](#setmediasubtitle) | private |  | tv-broadcast | inferred | Sets the media subtitle. |
+| [`setSubtitle`](#setsubtitle) | private |  | tv-broadcast | inferred | Sets the subtitle. |
+| [`setTextDetectionTest`](#settextdetectiontest) | private |  | tv-broadcast | inferred | Sets the text detection test. |
 
 <a id="closesharedmemory"></a>
 ## `closeSharedMemory`
 
 `luna://com.webos.service.legacybroadcast.subtitle/closeSharedMemory`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Closes the shared memory.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/closeSharedMemory '{}'
@@ -62,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/disableAdccPes`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Disables the adcc pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/disableAdccPes '{}'
@@ -83,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/disablePreview`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Disables the preview.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/disablePreview '{}'
@@ -104,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/disableSubtitle`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Disables the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/disableSubtitle '{}'
@@ -125,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/disableSubtPes`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Disables the subt pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/disableSubtPes '{}'
@@ -146,13 +158,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/disableTextDetection`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Disables the text detection.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/disableTextDetection '{}'
@@ -167,13 +181,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/enableAdccPes`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Enables the adcc pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/enableAdccPes '{}'
@@ -188,13 +204,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/enablePreview`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Enables the preview.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/enablePreview '{}'
@@ -209,13 +227,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/enableSubtitle`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Enables the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/enableSubtitle '{}'
@@ -230,13 +250,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/enableSubtPes`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Enables the subt pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/enableSubtPes '{}'
@@ -251,13 +273,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/enableTextDetection`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Enables the text detection.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/enableTextDetection '{}'
@@ -272,13 +296,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/getCaptionPosition`
 
-Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Returns the caption position.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/getCaptionPosition '{}'
@@ -293,13 +319,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/getCaptionResolution`
 
-Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Returns the caption resolution.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/getCaptionResolution '{}'
@@ -314,13 +342,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/getCaptionSize`
 
-Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Returns the caption size.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/getCaptionSize '{}'
@@ -335,13 +365,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/getCurrentSubtitle`
 
-Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Returns the current subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/getCurrentSubtitle '{}'
@@ -356,13 +388,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/getRatingInfo`
 
-Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Returns the rating info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/getRatingInfo '{}'
@@ -377,13 +411,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/getSubtitleList`
 
-Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Returns the subtitle list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/getSubtitleList '{}'
@@ -398,13 +434,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/getSubtitleState`
 
-Getter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Returns the subtitle state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/getSubtitleState '{}'
@@ -419,13 +457,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/offSubtitleDisplay`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Handles the off subtitle display.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/offSubtitleDisplay '{}'
@@ -440,13 +480,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/onSubtitleDisplay`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Event handler: fires on the subtitle display.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/onSubtitleDisplay '{}'
@@ -461,13 +503,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/openSharedMemory`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Opens the shared memory.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/openSharedMemory '{}'
@@ -482,13 +526,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/pipelineShared`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Handles the pipeline shared.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/pipelineShared '{}'
@@ -503,13 +549,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/sendPesDvbSubtitle`
 
-Method on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Sends the pes DVB subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/sendPesDvbSubtitle '{}'
@@ -524,13 +572,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/setCaptionGenerator`
 
-Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Sets the caption generator.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/setCaptionGenerator '{}'
@@ -545,13 +595,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/setCaptionPosition`
 
-Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Sets the caption position.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/setCaptionPosition '{}'
@@ -566,13 +618,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/setCaptionResolution`
 
-Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Sets the caption resolution.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/setCaptionResolution '{}'
@@ -587,13 +641,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/setMediaSubtitle`
 
-Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Sets the media subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/setMediaSubtitle '{}'
@@ -608,13 +664,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/setSubtitle`
 
-Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Sets the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/setSubtitle '{}'
@@ -629,13 +687,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.legacybroadcast.subtitle/setTextDetectionTest`
 
-Setter on com.webos.service.legacybroadcast.subtitle (introspected on-device; parameters undocumented).
+Sets the text detection test.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.legacybroadcast.subtitle/setTextDetectionTest '{}'

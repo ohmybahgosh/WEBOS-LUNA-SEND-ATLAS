@@ -1,47 +1,51 @@
 # `com.webos.service.extinputs.av`
 
+External AV-input service: opens, closes and connects AV inputs, reports signal and video info, and manages subtitles and teletext for the external source.
+
 23 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`close`](#close) | private |  | input | Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`connect`](#connect) | private |  | input | Method on com.webos.service.extinputs.av (from on-device permission registry; parameters undocumented). |
-| [`disableSubtitle`](#disablesubtitle) | private |  | input | Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`disableTeletextPes`](#disableteletextpes) | private |  | input | Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`enableSubtitle`](#enablesubtitle) | private |  | input | Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`enableTeletextPes`](#enableteletextpes) | private |  | input | Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`getMultiAudioOutType`](#getmultiaudioouttype) | private |  | audio | Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`getRatingInfo`](#getratinginfo) | private |  | input | Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`getSignalState`](#getsignalstate) | private |  | input | Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`getSubtitleState`](#getsubtitlestate) | private |  | input | Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`getTeletextData`](#getteletextdata) | private |  | input | Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`getTeletextInfo`](#getteletextinfo) | private |  | input | Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`getTeletextList`](#getteletextlist) | private |  | input | Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`getTeletextState`](#getteletextstate) | private |  | input | Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`getVideoInfo`](#getvideoinfo) | private |  | input | Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`open`](#open) | private |  | input | Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`pause`](#pause) | private |  | input | Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`pin`](#pin) | private |  | input | Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`setAudioMute`](#setaudiomute) | private |  | audio | Setter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`setMultiAudioOutType`](#setmultiaudioouttype) | private |  | audio | Setter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | input | Setter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`status`](#status) | private |  | input | Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
-| [`switchExternalInput`](#switchexternalinput) | private |  | input | Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`close`](#close) | private |  | input | inferred | Closes the extinputs A/V. |
+| [`connect`](#connect) | private |  | input | inferred | Connects the extinputs A/V. |
+| [`disableSubtitle`](#disablesubtitle) | private |  | input | inferred | Disables the subtitle. |
+| [`disableTeletextPes`](#disableteletextpes) | private |  | input | inferred | Disables the teletext pes. |
+| [`enableSubtitle`](#enablesubtitle) | private |  | input | inferred | Enables the subtitle. |
+| [`enableTeletextPes`](#enableteletextpes) | private |  | input | inferred | Enables the teletext pes. |
+| [`getMultiAudioOutType`](#getmultiaudioouttype) | private |  | audio | inferred | Returns the multi audio out type. |
+| [`getRatingInfo`](#getratinginfo) | private |  | input | inferred | Returns the rating info. |
+| [`getSignalState`](#getsignalstate) | private |  | input | inferred | Returns the signal state. |
+| [`getSubtitleState`](#getsubtitlestate) | private |  | input | inferred | Returns the subtitle state. |
+| [`getTeletextData`](#getteletextdata) | private |  | input | inferred | Returns the teletext data. |
+| [`getTeletextInfo`](#getteletextinfo) | private |  | input | inferred | Returns the teletext info. |
+| [`getTeletextList`](#getteletextlist) | private |  | input | inferred | Returns the teletext list. |
+| [`getTeletextState`](#getteletextstate) | private |  | input | inferred | Returns the teletext state. |
+| [`getVideoInfo`](#getvideoinfo) | private |  | input | inferred | Returns the video info. |
+| [`open`](#open) | private |  | input | inferred | Opens the extinputs A/V. |
+| [`pause`](#pause) | private |  | input | inferred | Pauses the extinputs A/V. |
+| [`pin`](#pin) | private |  | input | inferred | Handles the pin. |
+| [`setAudioMute`](#setaudiomute) | private |  | audio | inferred | Sets the audio mute. |
+| [`setMultiAudioOutType`](#setmultiaudioouttype) | private |  | audio | inferred | Sets the multi audio out type. |
+| [`setPipelineWindowId`](#setpipelinewindowid) | private |  | input | inferred | Sets the pipeline window ID. |
+| [`status`](#status) | private |  | input | inferred | Handles the status. |
+| [`switchExternalInput`](#switchexternalinput) | private |  | input | inferred | Switches the external input. |
 
 <a id="close"></a>
 ## `close`
 
 `luna://com.webos.service.extinputs.av/close`
 
-Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Closes the extinputs A/V.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/close '{}'
@@ -56,13 +60,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/connect`
 
-Method on com.webos.service.extinputs.av (from on-device permission registry; parameters undocumented).
+Connects the extinputs A/V.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/connect '{}'
@@ -77,13 +83,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.extinputs.av/disableSubtitle`
 
-Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Disables the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/disableSubtitle '{}'
@@ -98,13 +106,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/disableTeletextPes`
 
-Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Disables the teletext pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/disableTeletextPes '{}'
@@ -119,13 +129,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/enableSubtitle`
 
-Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Enables the subtitle.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/enableSubtitle '{}'
@@ -140,13 +152,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/enableTeletextPes`
 
-Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Enables the teletext pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/enableTeletextPes '{}'
@@ -161,13 +175,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/getMultiAudioOutType`
 
-Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Returns the multi audio out type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/getMultiAudioOutType '{}'
@@ -182,13 +198,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/getRatingInfo`
 
-Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Returns the rating info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/getRatingInfo '{}'
@@ -203,13 +221,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/getSignalState`
 
-Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Returns the signal state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/getSignalState '{}'
@@ -224,13 +244,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/getSubtitleState`
 
-Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Returns the subtitle state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/getSubtitleState '{}'
@@ -245,13 +267,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/getTeletextData`
 
-Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Returns the teletext data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/getTeletextData '{}'
@@ -266,13 +290,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/getTeletextInfo`
 
-Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Returns the teletext info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/getTeletextInfo '{}'
@@ -287,13 +313,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/getTeletextList`
 
-Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Returns the teletext list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/getTeletextList '{}'
@@ -308,13 +336,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/getTeletextState`
 
-Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Returns the teletext state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/getTeletextState '{}'
@@ -329,13 +359,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/getVideoInfo`
 
-Getter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Returns the video info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/getVideoInfo '{}'
@@ -350,13 +382,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/open`
 
-Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Opens the extinputs A/V.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/open '{}'
@@ -371,13 +405,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/pause`
 
-Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Pauses the extinputs A/V.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/pause '{}'
@@ -392,13 +428,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/pin`
 
-Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Handles the pin.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/pin '{}'
@@ -413,13 +451,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/setAudioMute`
 
-Setter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Sets the audio mute.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/setAudioMute '{}'
@@ -434,13 +474,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/setMultiAudioOutType`
 
-Setter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Sets the multi audio out type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/setMultiAudioOutType '{}'
@@ -455,13 +497,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/setPipelineWindowId`
 
-Setter on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Sets the pipeline window ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/setPipelineWindowId '{}'
@@ -476,13 +520,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/status`
 
-Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Handles the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/status '{}'
@@ -497,13 +543,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.extinputs.av/switchExternalInput`
 
-Method on com.webos.service.extinputs.av (introspected on-device; parameters undocumented).
+Switches the external input.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.extinputs.av/switchExternalInput '{}'

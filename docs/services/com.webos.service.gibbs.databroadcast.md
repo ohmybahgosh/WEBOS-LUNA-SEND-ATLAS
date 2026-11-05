@@ -1,50 +1,54 @@
 # `com.webos.service.gibbs.databroadcast`
 
+Data-broadcast service (gibbs stack): caches and fetches interactive/data-broadcast content (including DASH), reports EPG and service info, DRM state, and stream events for broadcast apps. _(inferred from the service's methods)_
+
 26 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cacheRequest`](#cacherequest) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`cacheRequestDASH`](#cacherequestdash) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`cacheUsage`](#cacheusage) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`clearFilterCode`](#clearfiltercode) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`convertId`](#convertid) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getAlertInfo`](#getalertinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getCurrentEPGInfo`](#getcurrentepginfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getCurrentServiceInfo`](#getcurrentserviceinfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getDrmEncrypted`](#getdrmencrypted) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getDrmOperationResult`](#getdrmoperationresult) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getEventStreamInfo`](#geteventstreaminfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getInteractiveData`](#getinteractivedata) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getRmpPlaybackState`](#getrmpplaybackstate) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getRMPWallClockTime`](#getrmpwallclocktime) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getSignalingInfo`](#getsignalinginfo) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getXlinkResolution`](#getxlinkresolution) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`getXlinkResolutionResult`](#getxlinkresolutionresult) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`markUnused`](#markunused) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`notifySignalingDataChanged`](#notifysignalingdatachanged) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`requestNRT`](#requestnrt) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`setCurrentAppContextId`](#setcurrentappcontextid) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`setDrmOperation`](#setdrmoperation) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`setFilterCode`](#setfiltercode) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`setRMPURL`](#setrmpurl) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`setXlinkResolution`](#setxlinkresolution) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
-| [`subtitleDisplayPreference`](#subtitledisplaypreference) | private |  | tv-broadcast | Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cacheRequest`](#cacherequest) | private |  | tv-broadcast | inferred | Handles the cache request. |
+| [`cacheRequestDASH`](#cacherequestdash) | private |  | tv-broadcast | inferred | Handles the cache request DASH. |
+| [`cacheUsage`](#cacheusage) | private |  | tv-broadcast | inferred | Handles the cache usage. |
+| [`clearFilterCode`](#clearfiltercode) | private |  | tv-broadcast | inferred | Clears the filter code. |
+| [`convertId`](#convertid) | private |  | tv-broadcast | inferred | Handles the convert ID. |
+| [`getAlertInfo`](#getalertinfo) | private |  | tv-broadcast | inferred | Returns the alert info. |
+| [`getCurrentEPGInfo`](#getcurrentepginfo) | private |  | tv-broadcast | inferred | Returns the current EPG info. |
+| [`getCurrentServiceInfo`](#getcurrentserviceinfo) | private |  | tv-broadcast | inferred | Returns the current service info. |
+| [`getDrmEncrypted`](#getdrmencrypted) | private |  | tv-broadcast | inferred | Returns the DRM encrypted. |
+| [`getDrmOperationResult`](#getdrmoperationresult) | private |  | tv-broadcast | inferred | Returns the DRM operation result. |
+| [`getEventStreamInfo`](#geteventstreaminfo) | private |  | tv-broadcast | inferred | Returns the event stream info. |
+| [`getInteractiveData`](#getinteractivedata) | private |  | tv-broadcast | inferred | Returns the interactive data. |
+| [`getRmpPlaybackState`](#getrmpplaybackstate) | private |  | tv-broadcast | inferred | Returns the rmp playback state. |
+| [`getRMPWallClockTime`](#getrmpwallclocktime) | private |  | tv-broadcast | inferred | Returns the RMP wall clock time. |
+| [`getSignalingInfo`](#getsignalinginfo) | private |  | tv-broadcast | inferred | Returns the signaling info. |
+| [`getXlinkResolution`](#getxlinkresolution) | private |  | tv-broadcast | inferred | Returns the xlink resolution. |
+| [`getXlinkResolutionResult`](#getxlinkresolutionresult) | private |  | tv-broadcast | inferred | Returns the xlink resolution result. |
+| [`markUnused`](#markunused) | private |  | tv-broadcast | inferred | Handles the mark unused. |
+| [`notifySignalingDataChanged`](#notifysignalingdatachanged) | private |  | tv-broadcast | inferred | Notifies of the signaling data changed. |
+| [`requestNRT`](#requestnrt) | private |  | tv-broadcast | inferred | Requests the NRT. |
+| [`setCurrentAppContextId`](#setcurrentappcontextid) | private |  | tv-broadcast | inferred | Sets the current app context ID. |
+| [`setDrmOperation`](#setdrmoperation) | private |  | tv-broadcast | inferred | Sets the DRM operation. |
+| [`setFilterCode`](#setfiltercode) | private |  | tv-broadcast | inferred | Sets the filter code. |
+| [`setRMPURL`](#setrmpurl) | private |  | tv-broadcast | inferred | Sets the RMPURL. |
+| [`setXlinkResolution`](#setxlinkresolution) | private |  | tv-broadcast | inferred | Sets the xlink resolution. |
+| [`subtitleDisplayPreference`](#subtitledisplaypreference) | private |  | tv-broadcast | inferred | Handles the subtitle display preference. |
 
 <a id="cacherequest"></a>
 ## `cacheRequest`
 
 `luna://com.webos.service.gibbs.databroadcast/cacheRequest`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Handles the cache request.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/cacheRequest '{}'
@@ -59,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/cacheRequestDASH`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Handles the cache request DASH.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/cacheRequestDASH '{}'
@@ -80,13 +86,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/cacheUsage`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Handles the cache usage.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/cacheUsage '{}'
@@ -101,13 +109,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/clearFilterCode`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Clears the filter code.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/clearFilterCode '{}'
@@ -122,13 +132,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/convertId`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Handles the convert ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/convertId '{}'
@@ -143,13 +155,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getAlertInfo`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the alert info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getAlertInfo '{}'
@@ -164,13 +178,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getCurrentEPGInfo`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the current EPG info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getCurrentEPGInfo '{}'
@@ -185,13 +201,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getCurrentServiceInfo`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the current service info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getCurrentServiceInfo '{}'
@@ -206,13 +224,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getDrmEncrypted`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the DRM encrypted.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getDrmEncrypted '{}'
@@ -227,13 +247,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getDrmOperationResult`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the DRM operation result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getDrmOperationResult '{}'
@@ -248,13 +270,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getEventStreamInfo`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the event stream info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getEventStreamInfo '{}'
@@ -269,13 +293,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getInteractiveData`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the interactive data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getInteractiveData '{}'
@@ -290,13 +316,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getRmpPlaybackState`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the rmp playback state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getRmpPlaybackState '{}'
@@ -311,13 +339,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getRMPWallClockTime`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the RMP wall clock time.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getRMPWallClockTime '{}'
@@ -332,13 +362,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getSignalingInfo`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the signaling info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getSignalingInfo '{}'
@@ -353,13 +385,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getXlinkResolution`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the xlink resolution.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getXlinkResolution '{}'
@@ -374,13 +408,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/getXlinkResolutionResult`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Returns the xlink resolution result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/getXlinkResolutionResult '{}'
@@ -395,13 +431,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/markUnused`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Handles the mark unused.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/markUnused '{}'
@@ -416,13 +454,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/notifySignalingDataChanged`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Notifies of the signaling data changed.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/notifySignalingDataChanged '{}'
@@ -437,13 +477,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/requestNRT`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Requests the NRT.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/requestNRT '{}'
@@ -458,13 +500,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/setCurrentAppContextId`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Sets the current app context ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/setCurrentAppContextId '{}'
@@ -479,13 +523,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/setDrmOperation`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Sets the DRM operation.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/setDrmOperation '{}'
@@ -500,13 +546,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/setFilterCode`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Sets the filter code.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/setFilterCode '{}'
@@ -521,13 +569,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/setRMPURL`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Sets the RMPURL.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/setRMPURL '{}'
@@ -542,13 +592,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/setXlinkResolution`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Sets the xlink resolution.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/setXlinkResolution '{}'
@@ -563,13 +615,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.gibbs.databroadcast/subtitleDisplayPreference`
 
-Method on com.webos.service.gibbs.databroadcast (from on-device permission registry; parameters undocumented).
+Handles the subtitle display preference.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.gibbs.databroadcast/subtitleDisplayPreference '{}'

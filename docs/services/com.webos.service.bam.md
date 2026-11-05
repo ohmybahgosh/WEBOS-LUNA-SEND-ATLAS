@@ -1,27 +1,31 @@
 # `com.webos.service.bam`
 
+Opaque service; appears to register a power-off checker and expose stop/test methods. Little else is inferable from its method names. _(inferred from the service's methods)_
+
 3 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`setPowerOffChecker`](#setpoweroffchecker) | public |  | power | Setter on com.webos.service.bam (introspected on-device; parameters undocumented). |
-| [`stop`](#stop) | public |  | misc | Method on com.webos.service.bam (introspected on-device; parameters undocumented). |
-| [`test`](#test) | private |  | misc | Method on com.webos.service.bam (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`setPowerOffChecker`](#setpoweroffchecker) | public |  | power | inferred | Sets the power off checker. |
+| [`stop`](#stop) | public |  | misc | inferred | Stops the bam. |
+| [`test`](#test) | private |  | misc | inferred | Tests the bam. |
 
 <a id="setpoweroffchecker"></a>
 ## `setPowerOffChecker`
 
 `luna://com.webos.service.bam/setPowerOffChecker`
 
-Setter on com.webos.service.bam (introspected on-device; parameters undocumented).
+Sets the power off checker.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bam/setPowerOffChecker '{}'
@@ -36,13 +40,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bam/stop`
 
-Method on com.webos.service.bam (introspected on-device; parameters undocumented).
+Stops the bam.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bam/stop '{}'
@@ -57,13 +63,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.bam/test`
 
-Method on com.webos.service.bam (from on-device permission registry; parameters undocumented).
+Tests the bam.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bam/test '{}'

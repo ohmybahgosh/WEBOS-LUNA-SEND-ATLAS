@@ -1,28 +1,32 @@
 # `com.webos.service.utp.sound`
 
+Broadcast audio helper: reports DTV audio info and running state and gets/sets the speaker output type. _(inferred from the service's methods)_
+
 4 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`getAudioInfo`](#getaudioinfo) | private |  | audio | Getter on com.webos.service.utp.sound (introspected on-device; parameters undocumented). |
-| [`getDTVAudioRunningState`](#getdtvaudiorunningstate) | private |  | audio | Getter on com.webos.service.utp.sound (introspected on-device; parameters undocumented). |
-| [`getSpeakerOutType`](#getspeakerouttype) | private |  | misc | Getter on com.webos.service.utp.sound (introspected on-device; parameters undocumented). |
-| [`setSpeakerOutType`](#setspeakerouttype) | private |  | misc | Setter on com.webos.service.utp.sound (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`getAudioInfo`](#getaudioinfo) | private |  | audio | inferred | Returns the audio info. |
+| [`getDTVAudioRunningState`](#getdtvaudiorunningstate) | private |  | audio | inferred | Returns the DTV audio running state. |
+| [`getSpeakerOutType`](#getspeakerouttype) | private |  | misc | inferred | Returns the speaker out type. |
+| [`setSpeakerOutType`](#setspeakerouttype) | private |  | misc | inferred | Sets the speaker out type. |
 
 <a id="getaudioinfo"></a>
 ## `getAudioInfo`
 
 `luna://com.webos.service.utp.sound/getAudioInfo`
 
-Getter on com.webos.service.utp.sound (introspected on-device; parameters undocumented).
+Returns the audio info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.sound/getAudioInfo '{}'
@@ -37,13 +41,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.sound/getDTVAudioRunningState`
 
-Getter on com.webos.service.utp.sound (introspected on-device; parameters undocumented).
+Returns the DTV audio running state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.sound/getDTVAudioRunningState '{}'
@@ -58,13 +64,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.sound/getSpeakerOutType`
 
-Getter on com.webos.service.utp.sound (introspected on-device; parameters undocumented).
+Returns the speaker out type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.sound/getSpeakerOutType '{}'
@@ -79,13 +87,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.sound/setSpeakerOutType`
 
-Setter on com.webos.service.utp.sound (introspected on-device; parameters undocumented).
+Sets the speaker out type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.sound/setSpeakerOutType '{}'

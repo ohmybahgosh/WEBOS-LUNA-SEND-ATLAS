@@ -1,25 +1,29 @@
 # `com.webos.service.utp.display`
 
+Broadcast display helper; freezes the DTV picture. Opaque beyond that. _(inferred from the service's methods)_
+
 1 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`freezeDTV`](#freezedtv) | private |  | misc | Method on com.webos.service.utp.display (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`freezeDTV`](#freezedtv) | private |  | misc | inferred | Handles the freeze DTV. |
 
 <a id="freezedtv"></a>
 ## `freezeDTV`
 
 `luna://com.webos.service.utp.display/freezeDTV`
 
-Method on com.webos.service.utp.display (introspected on-device; parameters undocumented).
+Handles the freeze DTV.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.display/freezeDTV '{}'

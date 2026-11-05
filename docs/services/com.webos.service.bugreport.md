@@ -1,15 +1,17 @@
 # `com.webos.service.bugreport`
 
+Bug-reporting service that files bug reports (into a Jira system), optionally attaching account info and screenshots.
+
 4 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`account`](#account) | unknown |  | system-info | Account info to log in to Jira. |
-| [`createBug`](#createbug) | public |  | system-info | Creates a bug ticket on Jira with the given data. Note: This method is intended to be called by the bugreport app. If you want to use this i |
-| [`getConfig`](#getconfig) | public |  | system-info | Gets Jira configuration and files to be attached to the Jira ticket. Note: This method is intended to be called by the bugreport app. If you |
-| [`setConfig`](#setconfig) | public |  | system-info | Sets the Jira configurations. Currently, the only configurations supported are: username password Note: These values are persisted across re |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`account`](#account) | unknown |  | system-info | documented | Account info to log in to Jira. |
+| [`createBug`](#createbug) | public |  | system-info | documented | Creates a bug ticket on Jira with the given data. Note: This method is intended to be called by the bugreport app. If you want to use this i |
+| [`getConfig`](#getconfig) | public |  | system-info | documented | Gets Jira configuration and files to be attached to the Jira ticket. Note: This method is intended to be called by the bugreport app. If you |
+| [`setConfig`](#setconfig) | public |  | system-info | documented | Sets the Jira configurations. Currently, the only configurations supported are: username password Note: These values are persisted across re |
 
 <a id="account"></a>
 ## `account`
@@ -53,6 +55,14 @@ Creates a bug ticket on Jira with the given data. Note: This method is intended 
 | `reproducibility` | String (optional) Reproducibility of Jira ticket. It depends on the Jira system. For example, the following values are used in the WRN project of clm.lge.com. Always (100%) Often (50-99%) Seldom (10-49%) Rarely (<10%) I didn't try |
 | `screenshots` | String array (optional) Screenshot files to attach to the Jira ticket. These files are deleted upon successful ticket creation. |
 
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code when returnValue is false. |
+| `errorText` | String (optional) The error text when returnValue is false |
+| `key` | String (optional) The key of the created issue. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bugreport/createBug '{"summary": "test", "priority": "P5", "reproducibility": "Always (100%)"}
 ```
@@ -73,6 +83,15 @@ Gets Jira configuration and files to be attached to the Jira ticket. Note: This 
 - **Platform:** webOS OSE  
 - **Versions:** webOS OSE API level 15+  
 - **Confidence:** documented
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code when returnValue is false. |
+| `errorText` | String (optional) The error text when returnValue is false |
+| `account` | Object: account (optional) Account info to login to Jira |
+| `screenshots` | String (optional) List of screenshot files to be attached when creating a Jira ticket. The following files are included. - Screenshots created by Ctrl+Alt+F9. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bugreport/getConfig '{}
@@ -98,6 +117,13 @@ Sets the Jira configurations. Currently, the only configurations supported are: 
 | Param | Type / notes |
 |---|---|
 | `account` | Object: account (optional) Account info to login to Jira |
+
+**Returns:**
+
+| Field | Type / notes |
+|---|---|
+| `errorCode` | Number (optional) The error code when returnValue is false. |
+| `errorText` | String (optional) The error text when returnValue is false |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bugreport/setConfig '{"account": {"username": "webosreporter", "password": "<redacted>"}}

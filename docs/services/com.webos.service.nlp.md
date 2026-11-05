@@ -1,38 +1,42 @@
 # `com.webos.service.nlp`
 
+Natural-language and speech service: runs speech-to-text (STT) and NLP queries for voice search and tips, and reports STT/NLP status. _(inferred from the service's methods)_
+
 14 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`cancel`](#cancel) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`getNlpStatus`](#getnlpstatus) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`getSttStatus`](#getsttstatus) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`getTipsCategory`](#gettipscategory) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`requestCancel`](#requestcancel) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`requestStt`](#requeststt) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`selectSttResult`](#selectsttresult) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`startNlp`](#startnlp) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`startNlpText`](#startnlptext) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`startSearch`](#startsearch) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`startSearchMore`](#startsearchmore) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`startStt`](#startstt) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`startTips`](#starttips) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
-| [`withdraw`](#withdraw) | private |  | input | Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`cancel`](#cancel) | private |  | input | inferred | Cancels the nlp. |
+| [`getNlpStatus`](#getnlpstatus) | private |  | input | inferred | Returns the nlp status. |
+| [`getSttStatus`](#getsttstatus) | private |  | input | inferred | Returns the stt status. |
+| [`getTipsCategory`](#gettipscategory) | private |  | input | inferred | Returns the tips category. |
+| [`requestCancel`](#requestcancel) | private |  | input | inferred | Requests the cancel. |
+| [`requestStt`](#requeststt) | private |  | input | inferred | Requests the stt. |
+| [`selectSttResult`](#selectsttresult) | private |  | input | inferred | Selects the stt result. |
+| [`startNlp`](#startnlp) | private |  | input | inferred | Starts the nlp. |
+| [`startNlpText`](#startnlptext) | private |  | input | inferred | Starts the nlp text. |
+| [`startSearch`](#startsearch) | private |  | input | inferred | Starts the search. |
+| [`startSearchMore`](#startsearchmore) | private |  | input | inferred | Starts the search more. |
+| [`startStt`](#startstt) | private |  | input | inferred | Starts the stt. |
+| [`startTips`](#starttips) | private |  | input | inferred | Starts the tips. |
+| [`withdraw`](#withdraw) | private |  | input | inferred | Handles the withdraw. |
 
 <a id="cancel"></a>
 ## `cancel`
 
 `luna://com.webos.service.nlp/cancel`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Cancels the nlp.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/cancel '{}'
@@ -47,13 +51,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/getNlpStatus`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Returns the nlp status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/getNlpStatus '{}'
@@ -68,13 +74,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/getSttStatus`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Returns the stt status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/getSttStatus '{}'
@@ -89,13 +97,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/getTipsCategory`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Returns the tips category.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/getTipsCategory '{}'
@@ -110,13 +120,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/requestCancel`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Requests the cancel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/requestCancel '{}'
@@ -131,13 +143,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/requestStt`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Requests the stt.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/requestStt '{}'
@@ -152,13 +166,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/selectSttResult`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Selects the stt result.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/selectSttResult '{}'
@@ -173,13 +189,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/startNlp`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Starts the nlp.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/startNlp '{}'
@@ -194,13 +212,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/startNlpText`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Starts the nlp text.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/startNlpText '{}'
@@ -215,13 +235,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/startSearch`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Starts the search.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/startSearch '{}'
@@ -236,13 +258,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/startSearchMore`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Starts the search more.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/startSearchMore '{}'
@@ -257,13 +281,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/startStt`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Starts the stt.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/startStt '{}'
@@ -278,13 +304,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/startTips`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Starts the tips.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/startTips '{}'
@@ -299,13 +327,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.nlp/withdraw`
 
-Method on com.webos.service.nlp (from on-device permission registry; parameters undocumented).
+Handles the withdraw.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.nlp/withdraw '{}'

@@ -1,30 +1,34 @@
 # `com.webos.service.packagemanager`
 
+App/package manager: runs and closes packages, locks and unlocks them, mounts squashfs images and reports status. _(inferred from the service's methods)_
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`closePackage`](#closepackage) | private |  | misc | Method on com.webos.service.packagemanager (introspected on-device; parameters undocumented). |
-| [`getStatus`](#getstatus) | private |  | misc | Getter on com.webos.service.packagemanager (introspected on-device; parameters undocumented). |
-| [`lockPackage`](#lockpackage) | private |  | misc | Method on com.webos.service.packagemanager (introspected on-device; parameters undocumented). |
-| [`run`](#run) | private |  | misc | Method on com.webos.service.packagemanager (from on-device permission registry; parameters undocumented). |
-| [`squashfsMount`](#squashfsmount) | private |  | misc | Method on com.webos.service.packagemanager (introspected on-device; parameters undocumented). |
-| [`unlockPackage`](#unlockpackage) | private |  | misc | Method on com.webos.service.packagemanager (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`closePackage`](#closepackage) | private |  | misc | inferred | Closes the package. |
+| [`getStatus`](#getstatus) | private |  | misc | inferred | Returns the status. |
+| [`lockPackage`](#lockpackage) | private |  | misc | inferred | Locks the package. |
+| [`run`](#run) | private |  | misc | inferred | Runs the packagemanager. |
+| [`squashfsMount`](#squashfsmount) | private |  | misc | inferred | Handles the squashfs mount. |
+| [`unlockPackage`](#unlockpackage) | private |  | misc | inferred | Unlocks the package. |
 
 <a id="closepackage"></a>
 ## `closePackage`
 
 `luna://com.webos.service.packagemanager/closePackage`
 
-Method on com.webos.service.packagemanager (introspected on-device; parameters undocumented).
+Closes the package.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.packagemanager/closePackage '{}'
@@ -39,13 +43,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.packagemanager/getStatus`
 
-Getter on com.webos.service.packagemanager (introspected on-device; parameters undocumented).
+Returns the status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.packagemanager/getStatus '{}'
@@ -60,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.packagemanager/lockPackage`
 
-Method on com.webos.service.packagemanager (introspected on-device; parameters undocumented).
+Locks the package.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.packagemanager/lockPackage '{}'
@@ -81,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.packagemanager/run`
 
-Method on com.webos.service.packagemanager (from on-device permission registry; parameters undocumented).
+Runs the packagemanager.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.packagemanager/run '{}'
@@ -102,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.packagemanager/squashfsMount`
 
-Method on com.webos.service.packagemanager (introspected on-device; parameters undocumented).
+Handles the squashfs mount.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.packagemanager/squashfsMount '{}'
@@ -123,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.packagemanager/unlockPackage`
 
-Method on com.webos.service.packagemanager (introspected on-device; parameters undocumented).
+Unlocks the package.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.packagemanager/unlockPackage '{}'

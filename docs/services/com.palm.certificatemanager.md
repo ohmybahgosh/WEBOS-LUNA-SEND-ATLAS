@@ -1,30 +1,34 @@
 # `com.palm.certificatemanager`
 
+Manages X.509 certificates and certificate revocation lists (CRLs): adds, deletes, and lists certificates, retrieves certificate details, and reports status.
+
 6 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`addcertificate`](#addcertificate) | private |  | misc | Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented). |
-| [`addcrl`](#addcrl) | private |  | misc | Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented). |
-| [`deletecertificate`](#deletecertificate) | private |  | misc | Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented). ⚠️ |
-| [`getcertificatedetails`](#getcertificatedetails) | private |  | misc | Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented). |
-| [`getstatus`](#getstatus) | private |  | misc | Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented). |
-| [`listcertificates`](#listcertificates) | private |  | misc | Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`addcertificate`](#addcertificate) | private |  | misc | inferred | Handles the addcertificate. |
+| [`addcrl`](#addcrl) | private |  | misc | inferred | Handles the addcrl. |
+| [`deletecertificate`](#deletecertificate) | private |  | misc | inferred | Handles the deletecertificate. ⚠️ |
+| [`getcertificatedetails`](#getcertificatedetails) | private |  | misc | inferred | Handles the getcertificatedetails. |
+| [`getstatus`](#getstatus) | private |  | misc | inferred | Handles the getstatus. |
+| [`listcertificates`](#listcertificates) | private |  | misc | inferred | Handles the listcertificates. |
 
 <a id="addcertificate"></a>
 ## `addcertificate`
 
 `luna://com.palm.certificatemanager/addcertificate`
 
-Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented).
+Handles the addcertificate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.certificatemanager/addcertificate '{}'
@@ -39,13 +43,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.certificatemanager/addcrl`
 
-Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented).
+Handles the addcrl.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.certificatemanager/addcrl '{}'
@@ -60,13 +66,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.certificatemanager/deletecertificate`
 
-Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented).
+Handles the deletecertificate.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.certificatemanager/deletecertificate '{}'
@@ -81,13 +89,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.certificatemanager/getcertificatedetails`
 
-Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented).
+Handles the getcertificatedetails.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.certificatemanager/getcertificatedetails '{}'
@@ -102,13 +112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.certificatemanager/getstatus`
 
-Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented).
+Handles the getstatus.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.certificatemanager/getstatus '{}'
@@ -123,13 +135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.palm.certificatemanager/listcertificates`
 
-Method on com.palm.certificatemanager (from on-device permission registry; parameters undocumented).
+Handles the listcertificates.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.palm.certificatemanager/listcertificates '{}'

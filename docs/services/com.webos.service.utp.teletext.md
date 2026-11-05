@@ -1,34 +1,38 @@
 # `com.webos.service.utp.teletext`
 
+UTP teletext service: enables/disables teletext (and teletext PES) and reports teletext data, lists and state. _(inferred from the service's methods)_
+
 10 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`disableTeletextPes`](#disableteletextpes) | private |  | misc | Method on com.webos.service.utp.teletext (introspected on-device; parameters undocumented). |
-| [`enableTeletext`](#enableteletext) | public |  | misc | Method on com.webos.service.utp.teletext (from on-device permission registry; parameters undocumented). |
-| [`enableTeletextPes`](#enableteletextpes) | private |  | misc | Method on com.webos.service.utp.teletext (introspected on-device; parameters undocumented). |
-| [`getCurrentTeletext`](#getcurrentteletext) | public |  | misc | Method on com.webos.service.utp.teletext (from on-device permission registry; parameters undocumented). |
-| [`getTeletextData`](#getteletextdata) | private |  | misc | Getter on com.webos.service.utp.teletext (introspected on-device; parameters undocumented). |
-| [`getTeletextInfo`](#getteletextinfo) | private |  | misc | Getter on com.webos.service.utp.teletext (introspected on-device; parameters undocumented). |
-| [`getTeletextList`](#getteletextlist) | public |  | misc | Getter on com.webos.service.utp.teletext (introspected on-device; parameters undocumented). |
-| [`getTeletextState`](#getteletextstate) | public |  | misc | Getter on com.webos.service.utp.teletext (introspected on-device; parameters undocumented). |
-| [`isTimeAvailable`](#istimeavailable) | public |  | input | Method on com.webos.service.utp.teletext (from on-device permission registry; parameters undocumented). |
-| [`setTeletext`](#setteletext) | public |  | misc | Method on com.webos.service.utp.teletext (from on-device permission registry; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`disableTeletextPes`](#disableteletextpes) | private |  | misc | inferred | Disables the teletext pes. |
+| [`enableTeletext`](#enableteletext) | public |  | misc | inferred | Enables the teletext. |
+| [`enableTeletextPes`](#enableteletextpes) | private |  | misc | inferred | Enables the teletext pes. |
+| [`getCurrentTeletext`](#getcurrentteletext) | public |  | misc | inferred | Returns the current teletext. |
+| [`getTeletextData`](#getteletextdata) | private |  | misc | inferred | Returns the teletext data. |
+| [`getTeletextInfo`](#getteletextinfo) | private |  | misc | inferred | Returns the teletext info. |
+| [`getTeletextList`](#getteletextlist) | public |  | misc | inferred | Returns the teletext list. |
+| [`getTeletextState`](#getteletextstate) | public |  | misc | inferred | Returns the teletext state. |
+| [`isTimeAvailable`](#istimeavailable) | public |  | input | inferred | Reports whether the time available is set. |
+| [`setTeletext`](#setteletext) | public |  | misc | inferred | Sets the teletext. |
 
 <a id="disableteletextpes"></a>
 ## `disableTeletextPes`
 
 `luna://com.webos.service.utp.teletext/disableTeletextPes`
 
-Method on com.webos.service.utp.teletext (introspected on-device; parameters undocumented).
+Disables the teletext pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.teletext/disableTeletextPes '{}'
@@ -43,13 +47,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.teletext/enableTeletext`
 
-Method on com.webos.service.utp.teletext (from on-device permission registry; parameters undocumented).
+Enables the teletext.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.teletext/enableTeletext '{}'
@@ -64,13 +70,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.teletext/enableTeletextPes`
 
-Method on com.webos.service.utp.teletext (introspected on-device; parameters undocumented).
+Enables the teletext pes.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.teletext/enableTeletextPes '{}'
@@ -85,13 +93,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.teletext/getCurrentTeletext`
 
-Method on com.webos.service.utp.teletext (from on-device permission registry; parameters undocumented).
+Returns the current teletext.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.teletext/getCurrentTeletext '{}'
@@ -106,13 +116,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.teletext/getTeletextData`
 
-Getter on com.webos.service.utp.teletext (introspected on-device; parameters undocumented).
+Returns the teletext data.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.teletext/getTeletextData '{}'
@@ -127,13 +139,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.teletext/getTeletextInfo`
 
-Getter on com.webos.service.utp.teletext (introspected on-device; parameters undocumented).
+Returns the teletext info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.teletext/getTeletextInfo '{}'
@@ -148,13 +162,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.teletext/getTeletextList`
 
-Getter on com.webos.service.utp.teletext (introspected on-device; parameters undocumented).
+Returns the teletext list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.teletext/getTeletextList '{}'
@@ -169,13 +185,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.teletext/getTeletextState`
 
-Getter on com.webos.service.utp.teletext (introspected on-device; parameters undocumented).
+Returns the teletext state.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.teletext/getTeletextState '{}'
@@ -190,13 +208,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.teletext/isTimeAvailable`
 
-Method on com.webos.service.utp.teletext (from on-device permission registry; parameters undocumented).
+Reports whether the time available is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.teletext/isTimeAvailable '{}'
@@ -211,13 +231,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.teletext/setTeletext`
 
-Method on com.webos.service.utp.teletext (from on-device permission registry; parameters undocumented).
+Sets the teletext.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.teletext/setTeletext '{}'

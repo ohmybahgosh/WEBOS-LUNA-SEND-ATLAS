@@ -1,350 +1,354 @@
 # `com.webos.service.utp.channel`
 
+Broadcast channel service (utp stack): large API for channel tuning, scanning, and management, conditional access (ACAS/BCAS), CI/CAM control, and favorites/message channels. _(inferred from the service's methods)_
+
 326 methods.  Platforms seen: webOS TV.
 
 [Back to index](../../README.md#services)
 
-| Method | Access | Sub | Category | Description |
-|---|---|---|---|---|
-| [`acas/getModuleId`](#acas_getmoduleid) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`acas/getModuleInfo`](#acas_getmoduleinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`bcas/getAutomaticDisplay`](#bcas_getautomaticdisplay) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`bcas/getCardId`](#bcas_getcardid) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`bcas/getEmmTimer`](#bcas_getemmtimer) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`bcas/getPayChannelGuide`](#bcas_getpaychannelguide) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`bcas/removeEmmTimer`](#bcas_removeemmtimer) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`bcas/setEmmTimer`](#bcas_setemmtimer) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`bcas/setEmmTimerChannel`](#bcas_setemmtimerchannel) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`bcas/stopEmmTimerChannel`](#bcas_stopemmtimerchannel) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`blockKeyInput`](#blockkeyinput) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`changeChannelFavorite`](#changechannelfavorite) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`changeChannelType`](#changechanneltype) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`changeMessageChannel`](#changemessagechannel) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`checkBarkerChannel`](#checkbarkerchannel) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/camPlayerPauseRequest`](#ci_camplayerpauserequest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/camPlayerResumeRequest`](#ci_camplayerresumerequest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/camPlayerSeekRequest`](#ci_camplayerseekrequest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/camPlayerStopRequest`](#ci_camplayerstoprequest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/camPlayerVerifyRequest`](#ci_camplayerverifyrequest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/checkCamUpgradeState`](#ci_checkcamupgradestate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/checkCiPlusState`](#ci_checkciplusstate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/confirmPinCode`](#ci_confirmpincode) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/connectSas`](#ci_connectsas) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/fileRequest4Aux`](#ci_filerequest4aux) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getCaIdList`](#ci_getcaidlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getCamMessage`](#ci_getcammessage) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getChannelBannerControlStatus`](#ci_getchannelbannercontrolstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getCIPlusConnected`](#ci_getciplusconnected) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getCIVersion`](#ci_getciversion) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getConnectionState`](#ci_getconnectionstate) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getEcpControlInfo`](#ci_getecpcontrolinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getHostCtlInfo`](#ci_gethostctlinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getLowSpeedConnectionStatus`](#ci_getlowspeedconnectionstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getOperatorProfileEnabled`](#ci_getoperatorprofileenabled) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getOsdtPosition`](#ci_getosdtposition) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getSasConnectionState`](#ci_getsasconnectionstate) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/getSasMessage`](#ci_getsasmessage) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/hostInitiatedCAMPlayRequest`](#ci_hostinitiatedcamplayrequest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/hostPlayerRequest`](#ci_hostplayerrequest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/IsAppMmiLaunched`](#ci_isappmmilaunched) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/ischannelchangeByCamHostControl`](#ci_ischannelchangebycamhostcontrol) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/isCiInformationMenuEnabled`](#ci_isciinformationmenuenabled) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/isEcpContentProtected`](#ci_isecpcontentprotected) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/isOperatorProfileEnabled`](#ci_isoperatorprofileenabled) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/isSavePinCodeMenuEnabled`](#ci_issavepincodemenuenabled) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/isTrickModeRestrictedContent`](#ci_istrickmoderestrictedcontent) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/notifyMmiOsdDisappeared`](#ci_notifymmiosddisappeared) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/registerCplayerStatus`](#ci_registercplayerstatus) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/registerDomainIDCB`](#ci_registerdomainidcb) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/registerFileRequestAckCB`](#ci_registerfilerequestackcb) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/replyPinCode`](#ci_replypincode) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/ReqAppAbort`](#ci_reqappabort) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/requestFileData`](#ci_requestfiledata) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/requestPreviousMmiMessage`](#ci_requestpreviousmmimessage) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/requestStartAck`](#ci_requeststartack) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/resetCam`](#ci_resetcam) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`ci/saveLaunchInfo4Aux`](#ci_savelaunchinfo4aux) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/searchOperator`](#ci_searchoperator) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/selectMmiMenuIndex`](#ci_selectmmimenuindex) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/sendHostControlAskRelease`](#ci_sendhostcontrolaskrelease) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/sendSasMessage`](#ci_sendsasmessage) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/setMmiEnquiry`](#ci_setmmienquiry) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/startCiInformationMenu`](#ci_startciinformationmenu) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`ci/startOpUpdateInWarmState`](#ci_startopupdateinwarmstate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/startOtaUpdateInWarmState`](#ci_startotaupdateinwarmstate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/startPowerDownNotice`](#ci_startpowerdownnotice) | private |  | power | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/stopOpUpdateInWarmState`](#ci_stopopupdateinwarmstate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/stopOtaUpdateInWarmState`](#ci_stopotaupdateinwarmstate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/stopPowerDownNotice`](#ci_stoppowerdownnotice) | private |  | power | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`ci/subscribeRequestStart`](#ci_subscriberequeststart) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`copyDvbSatelliteChannelForAstra`](#copydvbsatellitechannelforastra) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`deleteDvbSatelliteChannelForAstra`](#deletedvbsatellitechannelforastra) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`getAudioChannelList`](#getaudiochannellist) | public |  | audio | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`getAudioLanguageList`](#getaudiolanguagelist) | public |  | audio | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`getBarkerStatus`](#getbarkerstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getCaIdListFromDvbSi`](#getcaidlistfromdvbsi) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getChannelGroup`](#getchannelgroup) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getChannelGroupList`](#getchannelgrouplist) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getChannelListUpdateInfo`](#getchannellistupdateinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getChannelListUpdateStatus`](#getchannellistupdatestatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getChannelMode`](#getchannelmode) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getChannelModeList`](#getchannelmodelist) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getChannelSortMode`](#getchannelsortmode) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getChannelTypeList`](#getchanneltypelist) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getCurrentAudioChannel`](#getcurrentaudiochannel) | public |  | audio | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`getCurrentAudioCodecType`](#getcurrentaudiocodectype) | public |  | audio | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`getCurrentAudioLanguage`](#getcurrentaudiolanguage) | public |  | audio | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`getCurrentVideoView`](#getcurrentvideoview) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`getDirectTuneChannel`](#getdirecttunechannel) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`getEwsEvent`](#getewsevent) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getLastChannelId`](#getlastchannelid) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getPreferredRegionNId`](#getpreferredregionnid) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getSatelliteBouquetList`](#getsatellitebouquetlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getScannedSatelliteList`](#getscannedsatellitelist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`getSignalLevel`](#getsignallevel) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`getVideoViewList`](#getvideoviewlist) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`isAnalogChannelListAutoSorted`](#isanalogchannellistautosorted) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`isAudioDescriptionConflict`](#isaudiodescriptionconflict) | private |  | audio | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`isCurrentChannelVirtualService`](#iscurrentchannelvirtualservice) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`notifyRecommendedChannel`](#notifyrecommendedchannel) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`oipfdrmagent/connectDrm`](#oipfdrmagent_connectdrm) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`oipfdrmagent/disConnectDrm`](#oipfdrmagent_disconnectdrm) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`oipfdrmagent/getDrmIdList`](#oipfdrmagent_getdrmidlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`oipfdrmagent/getDrmMessageResult`](#oipfdrmagent_getdrmmessageresult) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`oipfdrmagent/getDRMSystemMessage`](#oipfdrmagent_getdrmsystemmessage) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`oipfdrmagent/sendDrmMessage`](#oipfdrmagent_senddrmmessage) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`releaseMessageChannel`](#releasemessagechannel) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/addDvbSatelliteTransponder`](#scan_adddvbsatellitetransponder) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/bindToBroadcast`](#scan_bindtobroadcast) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/cancelAnalogManualTuning`](#scan_cancelanalogmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/cancelAribSatelliteSignalTest`](#scan_cancelaribsatellitesignaltest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/cancelAribTerrestrialSignalTest`](#scan_cancelaribterrestrialsignaltest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/cancelAtscManualTuning`](#scan_cancelatscmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/cancelDvbCableManualTuning`](#scan_canceldvbcablemanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/cancelDvbSatelliteGatheringAstraChannelLists`](#scan_canceldvbsatellitegatheringastrachannellists) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/cancelDvbSatelliteGatheringTricolorRegionalLists`](#scan_canceldvbsatellitegatheringtricolorregionallists) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/cancelDvbSatelliteM7AutoDiSEqCConfiguration`](#scan_canceldvbsatellitem7autodiseqcconfiguration) | private |  | settings | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/cancelDvbSatelliteM7HomeTPSearch`](#scan_canceldvbsatellitem7hometpsearch) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/cancelDvbSatelliteManualTuning`](#scan_canceldvbsatellitemanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/cancelDvbTerrestrialManualTuning`](#scan_canceldvbterrestrialmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/checkServerStatus`](#scan_checkserverstatus) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/clearConflictList`](#scan_clearconflictlist) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/clearDvbSatelliteTkgsVisibleTransponderList`](#scan_cleardvbsatellitetkgsvisibletransponderlist) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/clearOpCamChannels`](#scan_clearopcamchannels) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/clearUKconflict`](#scan_clearukconflict) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/createDvbSatelliteConfiguration`](#scan_createdvbsatelliteconfiguration) | private |  | settings | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/deleteAnalogManualTuning`](#scan_deleteanalogmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/deleteAtscManualTuning`](#scan_deleteatscmanualtuning) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/deleteDvbCableManualTuning`](#scan_deletedvbcablemanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/deleteDvbSatelliteConfiguration`](#scan_deletedvbsatelliteconfiguration) | private |  | settings | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/deleteDvbSatelliteTransponder`](#scan_deletedvbsatellitetransponder) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/deleteDvbTerrestrialManualTuning`](#scan_deletedvbterrestrialmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/editDvbSatelliteTkgsVisibleTransponder`](#scan_editdvbsatellitetkgsvisibletransponder) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/editDvbSatelliteTransponder`](#scan_editdvbsatellitetransponder) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAnalogDefaultTuneInfo`](#scan_getanalogdefaulttuneinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAnalogFrequencyList`](#scan_getanalogfrequencylist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAnalogProgramNumber`](#scan_getanalogprogramnumber) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAnalogScanInfo`](#scan_getanalogscaninfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAnalogTuningStatus`](#scan_getanalogtuningstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAribSatelliteScanInfo`](#scan_getaribsatellitescaninfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAribSatelliteTuningStatus`](#scan_getaribsatellitetuningstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAribTerrestrialScanInfo`](#scan_getaribterrestrialscaninfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAribTerrestrialTuningStatus`](#scan_getaribterrestrialtuningstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAtscScanInfo`](#scan_getatscscaninfo) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAtscTuningStatus`](#scan_getatsctuningstatus) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAutoScanChannelType`](#scan_getautoscanchanneltype) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAutoScanChannelTypeOrder`](#scan_getautoscanchanneltypeorder) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAutoScanConflictInfo`](#scan_getautoscanconflictinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAutoScanModeForStore`](#scan_getautoscanmodeforstore) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAutoScanProgress`](#scan_getautoscanprogress) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAutoScanSourceOrderStatus`](#scan_getautoscansourceorderstatus) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAutoScanSourceSearchResult`](#scan_getautoscansourcesearchresult) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getAutoScanStatus`](#scan_getautoscanstatus) | public |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getChannelListCountToSolveConflictLcn`](#scan_getchannellistcounttosolveconflictlcn) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getChannelListCountToSolveSatCustomisedLcn`](#scan_getchannellistcounttosolvesatcustomisedlcn) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getChannelListToSolveConflictLcn`](#scan_getchannellisttosolveconflictlcn) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getChannelListToSolveSatCustomisedLcn`](#scan_getchannellisttosolvesatcustomisedlcn) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getConflictLcnList`](#scan_getconflictlcnlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDefaultTuneInfo`](#scan_getdefaulttuneinfo) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getDvbCableDefaultTuneInfo`](#scan_getdvbcabledefaulttuneinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbCableProgramAutoUpdate`](#scan_getdvbcableprogramautoupdate) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbCableScanInfo`](#scan_getdvbcablescaninfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbCableScanOption`](#scan_getdvbcablescanoption) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbCableServiceOperatorList`](#scan_getdvbcableserviceoperatorlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbCableSignalTestInfoStatus`](#scan_getdvbcablesignaltestinfostatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbCableSignalTestStatus`](#scan_getdvbcablesignalteststatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbCableTuningStatus`](#scan_getdvbcabletuningstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatellite2TunerConn`](#scan_getdvbsatellite2tunerconn) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteAstraChannelLists`](#scan_getdvbsatelliteastrachannellists) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteAstraChannelListsCount`](#scan_getdvbsatelliteastrachannellistscount) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteConfigurationList`](#scan_getdvbsatelliteconfigurationlist) | private |  | settings | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteDiSEqCMotorSetting`](#scan_getdvbsatellitediseqcmotorsetting) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteGatheringAstraChannelListsStatus`](#scan_getdvbsatellitegatheringastrachannellistsstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteGatheringTricolorRegionalListsStatus`](#scan_getdvbsatellitegatheringtricolorregionallistsstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteList`](#scan_getdvbsatellitelist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteLocationLongitude`](#scan_getdvbsatellitelocationlongitude) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteM7AutoDiSEqCConfigurationStatus`](#scan_getdvbsatellitem7autodiseqcconfigurationstatus) | private |  | settings | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteM7HomeTpSearchStatus`](#scan_getdvbsatellitem7hometpsearchstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteM7ORFRegionalProgram`](#scan_getdvbsatellitem7orfregionalprogram) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteM7ORFRegionalProgramList`](#scan_getdvbsatellitem7orfregionalprogramlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteM7ORFRegionalProgramListCount`](#scan_getdvbsatellitem7orfregionalprogramlistcount) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteM7RegionalProgramList`](#scan_getdvbsatellitem7regionalprogramlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteM7RegionList`](#scan_getdvbsatellitem7regionlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteM7SelectedRegionalProgramList`](#scan_getdvbsatellitem7selectedregionalprogramlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteM7ServiceOperatorSubLists`](#scan_getdvbsatellitem7serviceoperatorsublists) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteMotorStatus`](#scan_getdvbsatellitemotorstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteMyLatitude`](#scan_getdvbsatellitemylatitude) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteMyLongitude`](#scan_getdvbsatellitemylongitude) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteORSRegionalProgram`](#scan_getdvbsatelliteorsregionalprogram) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteORSRegionalProgramList`](#scan_getdvbsatelliteorsregionalprogramlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteORSRegionalProgramListCount`](#scan_getdvbsatelliteorsregionalprogramlistcount) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteRegion`](#scan_getdvbsatelliteregion) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteRegionList`](#scan_getdvbsatelliteregionlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteRegionListCount`](#scan_getdvbsatelliteregionlistcount) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteScanOption`](#scan_getdvbsatellitescanoption) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteSelectedAstraChannelList`](#scan_getdvbsatelliteselectedastrachannellist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteServiceOperator`](#scan_getdvbsatelliteserviceoperator) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteServiceOperatorList`](#scan_getdvbsatelliteserviceoperatorlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTkgsHiddenTransponderList`](#scan_getdvbsatellitetkgshiddentransponderlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTkgsHiddenTransponderListCount`](#scan_getdvbsatellitetkgshiddentransponderlistcount) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTkgsPreferredListCount`](#scan_getdvbsatellitetkgspreferredlistcount) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTkgsPreferredLists`](#scan_getdvbsatellitetkgspreferredlists) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTkgsSelectedPreferredList`](#scan_getdvbsatellitetkgsselectedpreferredlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTkgsTestMode`](#scan_getdvbsatellitetkgstestmode) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTkgsUpdateListsStatus`](#scan_getdvbsatellitetkgsupdatelistsstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTkgsVersion`](#scan_getdvbsatellitetkgsversion) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTkgsVisibleTransponderList`](#scan_getdvbsatellitetkgsvisibletransponderlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTkgsVisibleTransponderListCount`](#scan_getdvbsatellitetkgsvisibletransponderlistcount) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTransponderList`](#scan_getdvbsatellitetransponderlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTricolorRegionalList`](#scan_getdvbsatellitetricolorregionallist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTricolorRegionalLists`](#scan_getdvbsatellitetricolorregionallists) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTricolorRegionalListsCount`](#scan_getdvbsatellitetricolorregionallistscount) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbSatelliteTuningStatus`](#scan_getdvbsatellitetuningstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbTerrestrialDefaultTuneInfo`](#scan_getdvbterrestrialdefaulttuneinfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbTerrestrialScanInfo`](#scan_getdvbterrestrialscaninfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbTerrestrialScanOption`](#scan_getdvbterrestrialscanoption) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbTerrestrialServiceOperatorList`](#scan_getdvbterrestrialserviceoperatorlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbTerrestrialSignalTestInfoStatus`](#scan_getdvbterrestrialsignaltestinfostatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbTerrestrialSignalTestStatus`](#scan_getdvbterrestrialsignalteststatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbTerrestrialTuningStatus`](#scan_getdvbterrestrialtuningstatus) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbTKGSCurrentOperatingMode`](#scan_getdvbtkgscurrentoperatingmode) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getDvbTKGSOperatingModeList`](#scan_getdvbtkgsoperatingmodelist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getNetworkListToSolveConflictLcn`](#scan_getnetworklisttosolveconflictlcn) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getRegionListCountToSolveConflictLcn`](#scan_getregionlistcounttosolveconflictlcn) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getRegionListToSolveConflictLcn`](#scan_getregionlisttosolveconflictlcn) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getSatAdultChannelList`](#scan_getsatadultchannellist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getSatCustomisedLcnList`](#scan_getsatcustomisedlcnlist) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getSatCustomisedLCNListCount`](#scan_getsatcustomisedlcnlistcount) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getScanSelectionInfo`](#scan_getscanselectioninfo) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/getSignalStatus`](#scan_getsignalstatus) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getSignalTestInfoStatus`](#scan_getsignaltestinfostatus) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getSignalTestStatus`](#scan_getsignalteststatus) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/getSupportZiggoSpecification`](#scan_getsupportziggospecification) | private |  | tv-broadcast | Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/isDvbSatelliteHomeTpModificationAllowed`](#scan_isdvbsatellitehometpmodificationallowed) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/isDvbSatelliteM7RegionalProgramAvailable`](#scan_isdvbsatellitem7regionalprogramavailable) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/isDvbSatelliteM7ServiceOperator`](#scan_isdvbsatellitem7serviceoperator) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/isDvbSatelliteTkgsUpdateRequired`](#scan_isdvbsatellitetkgsupdaterequired) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/moveDvbSatelliteDiSEqCMotor`](#scan_movedvbsatellitediseqcmotor) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/moveDvbSatelliteUSALSMotor`](#scan_movedvbsatelliteusalsmotor) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/releaseBroadcast`](#scan_releasebroadcast) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`scan/resetDvbCableNetworkScanInfo`](#scan_resetdvbcablenetworkscaninfo) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/resetDvbCableQuickScanInfo`](#scan_resetdvbcablequickscaninfo) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/resetDvbCableScanInfo`](#scan_resetdvbcablescaninfo) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/resetDvbSatelliteDiSEqCMotor`](#scan_resetdvbsatellitediseqcmotor) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/resetDvbSatelliteDiSEqCMotorLimit`](#scan_resetdvbsatellitediseqcmotorlimit) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/resetDvbSatelliteTkgsHiddenTransponderList`](#scan_resetdvbsatellitetkgshiddentransponderlist) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/resetDvbSatelliteTkgsVersion`](#scan_resetdvbsatellitetkgsversion) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). ⚠️ |
-| [`scan/saveAnalogManualTuning`](#scan_saveanalogmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/saveAtscManualTuning`](#scan_saveatscmanualtuning) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/saveDvbCableManualTuning`](#scan_savedvbcablemanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/saveDvbSatelliteManualTuning`](#scan_savedvbsatellitemanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/saveDvbTerrestrialManualTuning`](#scan_savedvbterrestrialmanualtuning) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/scanSelectionInfoDone`](#scan_scanselectioninfodone) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setAnalogManualTuning`](#scan_setanalogmanualtuning) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setAribSatelliteSignalTest`](#scan_setaribsatellitesignaltest) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setAribTerrestrialSignalTest`](#scan_setaribterrestrialsignaltest) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setAtscManualTuning`](#scan_setatscmanualtuning) | public |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setAutoScanChannelType`](#scan_setautoscanchanneltype) | public |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setAutoScanModeForStore`](#scan_setautoscanmodeforstore) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbCableManualTuning`](#scan_setdvbcablemanualtuning) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbCableProgramAutoUpdate`](#scan_setdvbcableprogramautoupdate) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbCableScanInfo`](#scan_setdvbcablescaninfo) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbCableScanOption`](#scan_setdvbcablescanoption) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbCableServiceOperator`](#scan_setdvbcableserviceoperator) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatellite2TunerConn`](#scan_setdvbsatellite2tunerconn) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteAstraChannelList`](#scan_setdvbsatelliteastrachannellist) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteDiSEqCMotorLimit`](#scan_setdvbsatellitediseqcmotorlimit) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteDiSEqCMotorPosition`](#scan_setdvbsatellitediseqcmotorposition) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteHomeTPs`](#scan_setdvbsatellitehometps) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteLocationLongitude`](#scan_setdvbsatellitelocationlongitude) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteM7ORFRegionalProgram`](#scan_setdvbsatellitem7orfregionalprogram) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteM7RegionalProgram`](#scan_setdvbsatellitem7regionalprogram) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteM7ServiceOperatorSubList`](#scan_setdvbsatellitem7serviceoperatorsublist) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteManualTuning`](#scan_setdvbsatellitemanualtuning) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteMyLatitude`](#scan_setdvbsatellitemylatitude) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteMyLongitude`](#scan_setdvbsatellitemylongitude) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteORSRegionalProgram`](#scan_setdvbsatelliteorsregionalprogram) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteRegion`](#scan_setdvbsatelliteregion) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteScanInfo`](#scan_setdvbsatellitescaninfo) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteScanOption`](#scan_setdvbsatellitescanoption) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteSelectedSatellite`](#scan_setdvbsatelliteselectedsatellite) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteServiceOperator`](#scan_setdvbsatelliteserviceoperator) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteTkgsPreferredList`](#scan_setdvbsatellitetkgspreferredlist) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteTkgsTestMode`](#scan_setdvbsatellitetkgstestmode) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteTkgsUpdate`](#scan_setdvbsatellitetkgsupdate) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbSatelliteTricolorRegionalList`](#scan_setdvbsatellitetricolorregionallist) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbTerrestrialManualTuning`](#scan_setdvbterrestrialmanualtuning) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbTerrestrialScanOption`](#scan_setdvbterrestrialscanoption) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbTerrestrialServiceOperator`](#scan_setdvbterrestrialserviceoperator) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setDvbTKGSCurrentOperatingMode`](#scan_setdvbtkgscurrentoperatingmode) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setPreferredChannelToSolveConflictLcn`](#scan_setpreferredchanneltosolveconflictlcn) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setPreferredChannelToSolveSatCustomisedLcn`](#scan_setpreferredchanneltosolvesatcustomisedlcn) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setPreferredNetworkToSolveConflictLcn`](#scan_setpreferrednetworktosolveconflictlcn) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/setPreferredRegionToSolveConflictLcn`](#scan_setpreferredregiontosolveconflictlcn) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/skipAutoScan`](#scan_skipautoscan) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/startAutoScan`](#scan_startautoscan) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/startDvbCableChannelListUpdate`](#scan_startdvbcablechannellistupdate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/startDvbCableSignalTest`](#scan_startdvbcablesignaltest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/startDvbSatelliteChannelListUpdate`](#scan_startdvbsatellitechannellistupdate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/startDvbSatelliteGatheringAstraChannelLists`](#scan_startdvbsatellitegatheringastrachannellists) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/startDvbSatelliteGatheringTricolorRegionalLists`](#scan_startdvbsatellitegatheringtricolorregionallists) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/startDvbSatelliteM7AutoDiSEqCConfiguration`](#scan_startdvbsatellitem7autodiseqcconfiguration) | private |  | settings | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/startDvbSatelliteM7HomeTPSearch`](#scan_startdvbsatellitem7hometpsearch) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/startDvbSatelliteTkgsUpdate`](#scan_startdvbsatellitetkgsupdate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/startDvbTerrestrialChannelListUpdate`](#scan_startdvbterrestrialchannellistupdate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/startDvbTerrestrialSignalTest`](#scan_startdvbterrestrialsignaltest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/stopAutoScan`](#scan_stopautoscan) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/stopDvbCableChannelListUpdate`](#scan_stopdvbcablechannellistupdate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/stopDvbCableSignalTest`](#scan_stopdvbcablesignaltest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/stopDvbSatelliteChannelListUpdate`](#scan_stopdvbsatellitechannellistupdate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/stopDvbSatelliteDiSEqCMotorMoving`](#scan_stopdvbsatellitediseqcmotormoving) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/stopDvbSatelliteTkgsUpdate`](#scan_stopdvbsatellitetkgsupdate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/stopDvbTerrestrialChannelListUpdate`](#scan_stopdvbterrestrialchannellistupdate) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scan/stopDvbTerrestrialSignalTest`](#scan_stopdvbterrestrialsignaltest) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`scanBarkerChannel`](#scanbarkerchannel) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`setAudioChannel`](#setaudiochannel) | public |  | audio | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`setAudioLanguage`](#setaudiolanguage) | public |  | audio | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`setChannelGroup`](#setchannelgroup) | public |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`setChannelMode`](#setchannelmode) | public |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`setChannelSortMode`](#setchannelsortmode) | private |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`setLastChannelId`](#setlastchannelid) | public |  | tv-broadcast | Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`setVideoView`](#setvideoview) | public |  | tv-broadcast | Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented). |
-| [`sortAnalogChannelList`](#sortanalogchannellist) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`startEwbsCheckInWarm`](#startewbscheckinwarm) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
-| [`stopEwbsCheckInWarm`](#stopewbscheckinwarm) | private |  | tv-broadcast | Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented). |
+| Method | Access | Sub | Category | Conf | Description |
+|---|---|---|---|---|---|
+| [`acas/getModuleId`](#acas_getmoduleid) | private |  | tv-broadcast | inferred | Returns the module ID (acas) |
+| [`acas/getModuleInfo`](#acas_getmoduleinfo) | private |  | tv-broadcast | inferred | Returns the module info (acas) |
+| [`bcas/getAutomaticDisplay`](#bcas_getautomaticdisplay) | public |  | tv-broadcast | inferred | Returns the automatic display (bcas) |
+| [`bcas/getCardId`](#bcas_getcardid) | private |  | tv-broadcast | inferred | Returns the card ID (bcas) |
+| [`bcas/getEmmTimer`](#bcas_getemmtimer) | private |  | tv-broadcast | inferred | Returns the emm timer (bcas) |
+| [`bcas/getPayChannelGuide`](#bcas_getpaychannelguide) | public |  | tv-broadcast | inferred | Returns the pay channel guide (bcas) |
+| [`bcas/removeEmmTimer`](#bcas_removeemmtimer) | private |  | tv-broadcast | inferred | Removes the emm timer (bcas) ⚠️ |
+| [`bcas/setEmmTimer`](#bcas_setemmtimer) | private |  | tv-broadcast | inferred | Sets the emm timer (bcas) |
+| [`bcas/setEmmTimerChannel`](#bcas_setemmtimerchannel) | private |  | tv-broadcast | inferred | Sets the emm timer channel (bcas) |
+| [`bcas/stopEmmTimerChannel`](#bcas_stopemmtimerchannel) | private |  | tv-broadcast | inferred | Stops the emm timer channel (bcas) |
+| [`blockKeyInput`](#blockkeyinput) | private |  | tv-broadcast | inferred | Blocks the key input. |
+| [`changeChannelFavorite`](#changechannelfavorite) | public |  | tv-broadcast | inferred | Changes the channel favorite. |
+| [`changeChannelType`](#changechanneltype) | public |  | tv-broadcast | inferred | Changes the channel type. |
+| [`changeMessageChannel`](#changemessagechannel) | public |  | tv-broadcast | inferred | Changes the message channel. |
+| [`checkBarkerChannel`](#checkbarkerchannel) | private |  | tv-broadcast | inferred | Checks the barker channel. |
+| [`ci/camPlayerPauseRequest`](#ci_camplayerpauserequest) | private |  | tv-broadcast | inferred | Handles the CAM player pause request (CI) |
+| [`ci/camPlayerResumeRequest`](#ci_camplayerresumerequest) | private |  | tv-broadcast | inferred | Handles the CAM player resume request (CI) |
+| [`ci/camPlayerSeekRequest`](#ci_camplayerseekrequest) | private |  | tv-broadcast | inferred | Handles the CAM player seek request (CI) |
+| [`ci/camPlayerStopRequest`](#ci_camplayerstoprequest) | private |  | tv-broadcast | inferred | Handles the CAM player stop request (CI) |
+| [`ci/camPlayerVerifyRequest`](#ci_camplayerverifyrequest) | private |  | tv-broadcast | inferred | Handles the CAM player verify request (CI) |
+| [`ci/checkCamUpgradeState`](#ci_checkcamupgradestate) | private |  | tv-broadcast | inferred | Checks the CAM upgrade state (CI) |
+| [`ci/checkCiPlusState`](#ci_checkciplusstate) | private |  | tv-broadcast | inferred | Checks the CI plus state (CI) |
+| [`ci/confirmPinCode`](#ci_confirmpincode) | private |  | tv-broadcast | inferred | Handles the confirm pin code (CI) |
+| [`ci/connectSas`](#ci_connectsas) | private |  | tv-broadcast | inferred | Connects the sas (CI) |
+| [`ci/fileRequest4Aux`](#ci_filerequest4aux) | private |  | tv-broadcast | inferred | Handles the file request 4 aux (CI) |
+| [`ci/getCaIdList`](#ci_getcaidlist) | private |  | tv-broadcast | inferred | Returns the ca ID list (CI) |
+| [`ci/getCamMessage`](#ci_getcammessage) | private |  | tv-broadcast | inferred | Returns the CAM message (CI) |
+| [`ci/getChannelBannerControlStatus`](#ci_getchannelbannercontrolstatus) | private |  | tv-broadcast | inferred | Returns the channel banner control status (CI) |
+| [`ci/getCIPlusConnected`](#ci_getciplusconnected) | private |  | tv-broadcast | inferred | Returns the CI plus connected (CI) |
+| [`ci/getCIVersion`](#ci_getciversion) | private |  | tv-broadcast | inferred | Returns the CI version (CI) |
+| [`ci/getConnectionState`](#ci_getconnectionstate) | private |  | tv-broadcast | inferred | Returns the connection state (CI) |
+| [`ci/getEcpControlInfo`](#ci_getecpcontrolinfo) | private |  | tv-broadcast | inferred | Returns the ecp control info (CI) |
+| [`ci/getHostCtlInfo`](#ci_gethostctlinfo) | private |  | tv-broadcast | inferred | Returns the host ctl info (CI) |
+| [`ci/getLowSpeedConnectionStatus`](#ci_getlowspeedconnectionstatus) | private |  | tv-broadcast | inferred | Returns the low speed connection status (CI) |
+| [`ci/getOperatorProfileEnabled`](#ci_getoperatorprofileenabled) | private |  | tv-broadcast | inferred | Returns the operator profile enabled (CI) |
+| [`ci/getOsdtPosition`](#ci_getosdtposition) | private |  | tv-broadcast | inferred | Returns the osdt position (CI) |
+| [`ci/getSasConnectionState`](#ci_getsasconnectionstate) | private |  | tv-broadcast | inferred | Returns the sas connection state (CI) |
+| [`ci/getSasMessage`](#ci_getsasmessage) | private |  | tv-broadcast | inferred | Returns the sas message (CI) |
+| [`ci/hostInitiatedCAMPlayRequest`](#ci_hostinitiatedcamplayrequest) | private |  | tv-broadcast | inferred | Handles the host initiated CAM play request (CI) |
+| [`ci/hostPlayerRequest`](#ci_hostplayerrequest) | private |  | tv-broadcast | inferred | Handles the host player request (CI) |
+| [`ci/IsAppMmiLaunched`](#ci_isappmmilaunched) | private |  | tv-broadcast | inferred | Reports whether the app mmi launched is set (CI) |
+| [`ci/ischannelchangeByCamHostControl`](#ci_ischannelchangebycamhostcontrol) | private |  | tv-broadcast | inferred | Handles the ischannelchange by CAM host control (CI) |
+| [`ci/isCiInformationMenuEnabled`](#ci_isciinformationmenuenabled) | private |  | tv-broadcast | inferred | Reports whether the CI information menu enabled is set (CI) |
+| [`ci/isEcpContentProtected`](#ci_isecpcontentprotected) | private |  | tv-broadcast | inferred | Reports whether the ecp content protected is set (CI) |
+| [`ci/isOperatorProfileEnabled`](#ci_isoperatorprofileenabled) | private |  | tv-broadcast | inferred | Reports whether the operator profile enabled is set (CI) |
+| [`ci/isSavePinCodeMenuEnabled`](#ci_issavepincodemenuenabled) | private |  | tv-broadcast | inferred | Reports whether the save pin code menu enabled is set (CI) |
+| [`ci/isTrickModeRestrictedContent`](#ci_istrickmoderestrictedcontent) | private |  | tv-broadcast | inferred | Reports whether the trick mode restricted content is set (CI) |
+| [`ci/notifyMmiOsdDisappeared`](#ci_notifymmiosddisappeared) | private |  | tv-broadcast | inferred | Notifies of the mmi OSD disappeared (CI) |
+| [`ci/registerCplayerStatus`](#ci_registercplayerstatus) | private |  | tv-broadcast | inferred | Registers the cplayer status (CI) |
+| [`ci/registerDomainIDCB`](#ci_registerdomainidcb) | private |  | tv-broadcast | inferred | Registers the domain IDCB (CI) |
+| [`ci/registerFileRequestAckCB`](#ci_registerfilerequestackcb) | private |  | tv-broadcast | inferred | Registers the file request ack CB (CI) |
+| [`ci/replyPinCode`](#ci_replypincode) | private |  | tv-broadcast | inferred | Handles the reply pin code (CI) |
+| [`ci/ReqAppAbort`](#ci_reqappabort) | private |  | tv-broadcast | inferred | Handles the req app abort (CI) |
+| [`ci/requestFileData`](#ci_requestfiledata) | private |  | tv-broadcast | inferred | Requests the file data (CI) |
+| [`ci/requestPreviousMmiMessage`](#ci_requestpreviousmmimessage) | private |  | tv-broadcast | inferred | Requests the previous mmi message (CI) |
+| [`ci/requestStartAck`](#ci_requeststartack) | private |  | tv-broadcast | inferred | Requests the start ack (CI) |
+| [`ci/resetCam`](#ci_resetcam) | private |  | tv-broadcast | inferred | Resets the CAM (CI) ⚠️ |
+| [`ci/saveLaunchInfo4Aux`](#ci_savelaunchinfo4aux) | private |  | tv-broadcast | inferred | Saves the launch info 4 aux (CI) |
+| [`ci/searchOperator`](#ci_searchoperator) | private |  | tv-broadcast | inferred | Searches for operator (CI) |
+| [`ci/selectMmiMenuIndex`](#ci_selectmmimenuindex) | private |  | tv-broadcast | inferred | Selects the mmi menu index (CI) |
+| [`ci/sendHostControlAskRelease`](#ci_sendhostcontrolaskrelease) | private |  | tv-broadcast | inferred | Sends the host control ask release (CI) |
+| [`ci/sendSasMessage`](#ci_sendsasmessage) | private |  | tv-broadcast | inferred | Sends the sas message (CI) |
+| [`ci/setMmiEnquiry`](#ci_setmmienquiry) | private |  | tv-broadcast | inferred | Sets the mmi enquiry (CI) |
+| [`ci/startCiInformationMenu`](#ci_startciinformationmenu) | private |  | tv-broadcast | inferred | Starts the CI information menu (CI) ⚠️ |
+| [`ci/startOpUpdateInWarmState`](#ci_startopupdateinwarmstate) | private |  | tv-broadcast | inferred | Starts the op update in warm state (CI) |
+| [`ci/startOtaUpdateInWarmState`](#ci_startotaupdateinwarmstate) | private |  | tv-broadcast | inferred | Starts the ota update in warm state (CI) |
+| [`ci/startPowerDownNotice`](#ci_startpowerdownnotice) | private |  | power | inferred | Starts the power down notice (CI) |
+| [`ci/stopOpUpdateInWarmState`](#ci_stopopupdateinwarmstate) | private |  | tv-broadcast | inferred | Stops the op update in warm state (CI) |
+| [`ci/stopOtaUpdateInWarmState`](#ci_stopotaupdateinwarmstate) | private |  | tv-broadcast | inferred | Stops the ota update in warm state (CI) |
+| [`ci/stopPowerDownNotice`](#ci_stoppowerdownnotice) | private |  | power | inferred | Stops the power down notice (CI) |
+| [`ci/subscribeRequestStart`](#ci_subscriberequeststart) | private |  | tv-broadcast | inferred | Subscribes to the request start (CI) |
+| [`copyDvbSatelliteChannelForAstra`](#copydvbsatellitechannelforastra) | private |  | tv-broadcast | inferred | Copies the DVB satellite channel for astra. |
+| [`deleteDvbSatelliteChannelForAstra`](#deletedvbsatellitechannelforastra) | private |  | tv-broadcast | inferred | Deletes the DVB satellite channel for astra. ⚠️ |
+| [`getAudioChannelList`](#getaudiochannellist) | public |  | audio | inferred | Returns the audio channel list. |
+| [`getAudioLanguageList`](#getaudiolanguagelist) | public |  | audio | inferred | Returns the audio language list. |
+| [`getBarkerStatus`](#getbarkerstatus) | private |  | tv-broadcast | inferred | Returns the barker status. |
+| [`getCaIdListFromDvbSi`](#getcaidlistfromdvbsi) | private |  | tv-broadcast | inferred | Returns the ca ID list from DVB SI. |
+| [`getChannelGroup`](#getchannelgroup) | public |  | tv-broadcast | inferred | Returns the channel group. |
+| [`getChannelGroupList`](#getchannelgrouplist) | public |  | tv-broadcast | inferred | Returns the channel group list. |
+| [`getChannelListUpdateInfo`](#getchannellistupdateinfo) | private |  | tv-broadcast | inferred | Returns the channel list update info. |
+| [`getChannelListUpdateStatus`](#getchannellistupdatestatus) | private |  | tv-broadcast | inferred | Returns the channel list update status. |
+| [`getChannelMode`](#getchannelmode) | public |  | tv-broadcast | inferred | Returns the channel mode. |
+| [`getChannelModeList`](#getchannelmodelist) | public |  | tv-broadcast | inferred | Returns the channel mode list. |
+| [`getChannelSortMode`](#getchannelsortmode) | private |  | tv-broadcast | inferred | Returns the channel sort mode. |
+| [`getChannelTypeList`](#getchanneltypelist) | public |  | tv-broadcast | inferred | Returns the channel type list. |
+| [`getCurrentAudioChannel`](#getcurrentaudiochannel) | public |  | audio | inferred | Returns the current audio channel. |
+| [`getCurrentAudioCodecType`](#getcurrentaudiocodectype) | public |  | audio | inferred | Returns the current audio codec type. |
+| [`getCurrentAudioLanguage`](#getcurrentaudiolanguage) | public |  | audio | inferred | Returns the current audio language. |
+| [`getCurrentVideoView`](#getcurrentvideoview) | public |  | tv-broadcast | inferred | Returns the current video view. |
+| [`getDirectTuneChannel`](#getdirecttunechannel) | public |  | tv-broadcast | inferred | Returns the direct tune channel. |
+| [`getEwsEvent`](#getewsevent) | private |  | tv-broadcast | inferred | Returns the ews event. |
+| [`getLastChannelId`](#getlastchannelid) | public |  | tv-broadcast | inferred | Returns the last channel ID. |
+| [`getPreferredRegionNId`](#getpreferredregionnid) | private |  | tv-broadcast | inferred | Returns the preferred region n ID. |
+| [`getSatelliteBouquetList`](#getsatellitebouquetlist) | private |  | tv-broadcast | inferred | Returns the satellite bouquet list. |
+| [`getScannedSatelliteList`](#getscannedsatellitelist) | private |  | tv-broadcast | inferred | Returns the scanned satellite list. |
+| [`getSignalLevel`](#getsignallevel) | public |  | tv-broadcast | inferred | Returns the signal level. |
+| [`getVideoViewList`](#getvideoviewlist) | public |  | tv-broadcast | inferred | Returns the video view list. |
+| [`isAnalogChannelListAutoSorted`](#isanalogchannellistautosorted) | private |  | tv-broadcast | inferred | Reports whether the analog channel list auto sorted is set. |
+| [`isAudioDescriptionConflict`](#isaudiodescriptionconflict) | private |  | audio | inferred | Reports whether the audio description conflict is set. |
+| [`isCurrentChannelVirtualService`](#iscurrentchannelvirtualservice) | private |  | tv-broadcast | inferred | Reports whether the current channel virtual service is set. |
+| [`notifyRecommendedChannel`](#notifyrecommendedchannel) | private |  | tv-broadcast | inferred | Notifies of the recommended channel. |
+| [`oipfdrmagent/connectDrm`](#oipfdrmagent_connectdrm) | private |  | tv-broadcast | inferred | Connects the DRM (oipfdrmagent) |
+| [`oipfdrmagent/disConnectDrm`](#oipfdrmagent_disconnectdrm) | private |  | tv-broadcast | inferred | Handles the dis connect DRM (oipfdrmagent) |
+| [`oipfdrmagent/getDrmIdList`](#oipfdrmagent_getdrmidlist) | private |  | tv-broadcast | inferred | Returns the DRM ID list (oipfdrmagent) |
+| [`oipfdrmagent/getDrmMessageResult`](#oipfdrmagent_getdrmmessageresult) | private |  | tv-broadcast | inferred | Returns the DRM message result (oipfdrmagent) |
+| [`oipfdrmagent/getDRMSystemMessage`](#oipfdrmagent_getdrmsystemmessage) | private |  | tv-broadcast | inferred | Returns the DRM system message (oipfdrmagent) |
+| [`oipfdrmagent/sendDrmMessage`](#oipfdrmagent_senddrmmessage) | private |  | tv-broadcast | inferred | Sends the DRM message (oipfdrmagent) |
+| [`releaseMessageChannel`](#releasemessagechannel) | public |  | tv-broadcast | inferred | Releases the message channel. |
+| [`scan/addDvbSatelliteTransponder`](#scan_adddvbsatellitetransponder) | private |  | tv-broadcast | inferred | Adds the DVB satellite transponder (scan) |
+| [`scan/bindToBroadcast`](#scan_bindtobroadcast) | public |  | tv-broadcast | inferred | Binds the to broadcast (scan) |
+| [`scan/cancelAnalogManualTuning`](#scan_cancelanalogmanualtuning) | private |  | tv-broadcast | inferred | Cancels the analog manual tuning (scan) |
+| [`scan/cancelAribSatelliteSignalTest`](#scan_cancelaribsatellitesignaltest) | private |  | tv-broadcast | inferred | Cancels the arib satellite signal test (scan) |
+| [`scan/cancelAribTerrestrialSignalTest`](#scan_cancelaribterrestrialsignaltest) | private |  | tv-broadcast | inferred | Cancels the arib terrestrial signal test (scan) |
+| [`scan/cancelAtscManualTuning`](#scan_cancelatscmanualtuning) | private |  | tv-broadcast | inferred | Cancels the ATSC manual tuning (scan) |
+| [`scan/cancelDvbCableManualTuning`](#scan_canceldvbcablemanualtuning) | private |  | tv-broadcast | inferred | Cancels the DVB cable manual tuning (scan) |
+| [`scan/cancelDvbSatelliteGatheringAstraChannelLists`](#scan_canceldvbsatellitegatheringastrachannellists) | private |  | tv-broadcast | inferred | Cancels the DVB satellite gathering astra channel lists (scan) |
+| [`scan/cancelDvbSatelliteGatheringTricolorRegionalLists`](#scan_canceldvbsatellitegatheringtricolorregionallists) | private |  | tv-broadcast | inferred | Cancels the DVB satellite gathering tricolor regional lists (scan) |
+| [`scan/cancelDvbSatelliteM7AutoDiSEqCConfiguration`](#scan_canceldvbsatellitem7autodiseqcconfiguration) | private |  | settings | inferred | Cancels the DVB satellite m 7 auto di s eq c configuration (scan) |
+| [`scan/cancelDvbSatelliteM7HomeTPSearch`](#scan_canceldvbsatellitem7hometpsearch) | private |  | tv-broadcast | inferred | Cancels the DVB satellite m 7 home TP search (scan) |
+| [`scan/cancelDvbSatelliteManualTuning`](#scan_canceldvbsatellitemanualtuning) | private |  | tv-broadcast | inferred | Cancels the DVB satellite manual tuning (scan) |
+| [`scan/cancelDvbTerrestrialManualTuning`](#scan_canceldvbterrestrialmanualtuning) | private |  | tv-broadcast | inferred | Cancels the DVB terrestrial manual tuning (scan) |
+| [`scan/checkServerStatus`](#scan_checkserverstatus) | private |  | tv-broadcast | inferred | Checks the server status (scan) |
+| [`scan/clearConflictList`](#scan_clearconflictlist) | private |  | tv-broadcast | inferred | Clears the conflict list (scan) |
+| [`scan/clearDvbSatelliteTkgsVisibleTransponderList`](#scan_cleardvbsatellitetkgsvisibletransponderlist) | private |  | tv-broadcast | inferred | Clears the DVB satellite tkgs visible transponder list (scan) |
+| [`scan/clearOpCamChannels`](#scan_clearopcamchannels) | private |  | tv-broadcast | inferred | Clears the op CAM channels (scan) |
+| [`scan/clearUKconflict`](#scan_clearukconflict) | private |  | tv-broadcast | inferred | Clears the u kconflict (scan) |
+| [`scan/createDvbSatelliteConfiguration`](#scan_createdvbsatelliteconfiguration) | private |  | settings | inferred | Creates the DVB satellite configuration (scan) |
+| [`scan/deleteAnalogManualTuning`](#scan_deleteanalogmanualtuning) | private |  | tv-broadcast | inferred | Deletes the analog manual tuning (scan) ⚠️ |
+| [`scan/deleteAtscManualTuning`](#scan_deleteatscmanualtuning) | public |  | tv-broadcast | inferred | Deletes the ATSC manual tuning (scan) ⚠️ |
+| [`scan/deleteDvbCableManualTuning`](#scan_deletedvbcablemanualtuning) | private |  | tv-broadcast | inferred | Deletes the DVB cable manual tuning (scan) ⚠️ |
+| [`scan/deleteDvbSatelliteConfiguration`](#scan_deletedvbsatelliteconfiguration) | private |  | settings | inferred | Deletes the DVB satellite configuration (scan) ⚠️ |
+| [`scan/deleteDvbSatelliteTransponder`](#scan_deletedvbsatellitetransponder) | private |  | tv-broadcast | inferred | Deletes the DVB satellite transponder (scan) ⚠️ |
+| [`scan/deleteDvbTerrestrialManualTuning`](#scan_deletedvbterrestrialmanualtuning) | private |  | tv-broadcast | inferred | Deletes the DVB terrestrial manual tuning (scan) ⚠️ |
+| [`scan/editDvbSatelliteTkgsVisibleTransponder`](#scan_editdvbsatellitetkgsvisibletransponder) | private |  | tv-broadcast | inferred | Edits the DVB satellite tkgs visible transponder (scan) |
+| [`scan/editDvbSatelliteTransponder`](#scan_editdvbsatellitetransponder) | private |  | tv-broadcast | inferred | Edits the DVB satellite transponder (scan) |
+| [`scan/getAnalogDefaultTuneInfo`](#scan_getanalogdefaulttuneinfo) | private |  | tv-broadcast | inferred | Returns the analog default tune info (scan) |
+| [`scan/getAnalogFrequencyList`](#scan_getanalogfrequencylist) | private |  | tv-broadcast | inferred | Returns the analog frequency list (scan) |
+| [`scan/getAnalogProgramNumber`](#scan_getanalogprogramnumber) | private |  | tv-broadcast | inferred | Returns the analog program number (scan) |
+| [`scan/getAnalogScanInfo`](#scan_getanalogscaninfo) | private |  | tv-broadcast | inferred | Returns the analog scan info (scan) |
+| [`scan/getAnalogTuningStatus`](#scan_getanalogtuningstatus) | private |  | tv-broadcast | inferred | Returns the analog tuning status (scan) |
+| [`scan/getAribSatelliteScanInfo`](#scan_getaribsatellitescaninfo) | private |  | tv-broadcast | inferred | Returns the arib satellite scan info (scan) |
+| [`scan/getAribSatelliteTuningStatus`](#scan_getaribsatellitetuningstatus) | private |  | tv-broadcast | inferred | Returns the arib satellite tuning status (scan) |
+| [`scan/getAribTerrestrialScanInfo`](#scan_getaribterrestrialscaninfo) | private |  | tv-broadcast | inferred | Returns the arib terrestrial scan info (scan) |
+| [`scan/getAribTerrestrialTuningStatus`](#scan_getaribterrestrialtuningstatus) | private |  | tv-broadcast | inferred | Returns the arib terrestrial tuning status (scan) |
+| [`scan/getAtscScanInfo`](#scan_getatscscaninfo) | public |  | tv-broadcast | inferred | Returns the ATSC scan info (scan) |
+| [`scan/getAtscTuningStatus`](#scan_getatsctuningstatus) | public |  | tv-broadcast | inferred | Returns the ATSC tuning status (scan) |
+| [`scan/getAutoScanChannelType`](#scan_getautoscanchanneltype) | public |  | tv-broadcast | inferred | Returns the auto scan channel type (scan) |
+| [`scan/getAutoScanChannelTypeOrder`](#scan_getautoscanchanneltypeorder) | public |  | tv-broadcast | inferred | Returns the auto scan channel type order (scan) |
+| [`scan/getAutoScanConflictInfo`](#scan_getautoscanconflictinfo) | private |  | tv-broadcast | inferred | Returns the auto scan conflict info (scan) |
+| [`scan/getAutoScanModeForStore`](#scan_getautoscanmodeforstore) | private |  | tv-broadcast | inferred | Returns the auto scan mode for store (scan) |
+| [`scan/getAutoScanProgress`](#scan_getautoscanprogress) | public |  | tv-broadcast | inferred | Returns the auto scan progress (scan) |
+| [`scan/getAutoScanSourceOrderStatus`](#scan_getautoscansourceorderstatus) | public |  | tv-broadcast | inferred | Returns the auto scan source order status (scan) |
+| [`scan/getAutoScanSourceSearchResult`](#scan_getautoscansourcesearchresult) | private |  | tv-broadcast | inferred | Returns the auto scan source search result (scan) |
+| [`scan/getAutoScanStatus`](#scan_getautoscanstatus) | public |  | tv-broadcast | inferred | Returns the auto scan status (scan) |
+| [`scan/getChannelListCountToSolveConflictLcn`](#scan_getchannellistcounttosolveconflictlcn) | private |  | tv-broadcast | inferred | Returns the channel list count to solve conflict lcn (scan) |
+| [`scan/getChannelListCountToSolveSatCustomisedLcn`](#scan_getchannellistcounttosolvesatcustomisedlcn) | private |  | tv-broadcast | inferred | Returns the channel list count to solve sat customised lcn (scan) |
+| [`scan/getChannelListToSolveConflictLcn`](#scan_getchannellisttosolveconflictlcn) | private |  | tv-broadcast | inferred | Returns the channel list to solve conflict lcn (scan) |
+| [`scan/getChannelListToSolveSatCustomisedLcn`](#scan_getchannellisttosolvesatcustomisedlcn) | private |  | tv-broadcast | inferred | Returns the channel list to solve sat customised lcn (scan) |
+| [`scan/getConflictLcnList`](#scan_getconflictlcnlist) | private |  | tv-broadcast | inferred | Returns the conflict lcn list (scan) |
+| [`scan/getDefaultTuneInfo`](#scan_getdefaulttuneinfo) | private |  | tv-broadcast | inferred | Returns the default tune info (scan) |
+| [`scan/getDvbCableDefaultTuneInfo`](#scan_getdvbcabledefaulttuneinfo) | private |  | tv-broadcast | inferred | Returns the DVB cable default tune info (scan) |
+| [`scan/getDvbCableProgramAutoUpdate`](#scan_getdvbcableprogramautoupdate) | private |  | tv-broadcast | inferred | Returns the DVB cable program auto update (scan) |
+| [`scan/getDvbCableScanInfo`](#scan_getdvbcablescaninfo) | private |  | tv-broadcast | inferred | Returns the DVB cable scan info (scan) |
+| [`scan/getDvbCableScanOption`](#scan_getdvbcablescanoption) | private |  | tv-broadcast | inferred | Returns the DVB cable scan option (scan) |
+| [`scan/getDvbCableServiceOperatorList`](#scan_getdvbcableserviceoperatorlist) | private |  | tv-broadcast | inferred | Returns the DVB cable service operator list (scan) |
+| [`scan/getDvbCableSignalTestInfoStatus`](#scan_getdvbcablesignaltestinfostatus) | private |  | tv-broadcast | inferred | Returns the DVB cable signal test info status (scan) |
+| [`scan/getDvbCableSignalTestStatus`](#scan_getdvbcablesignalteststatus) | private |  | tv-broadcast | inferred | Returns the DVB cable signal test status (scan) |
+| [`scan/getDvbCableTuningStatus`](#scan_getdvbcabletuningstatus) | private |  | tv-broadcast | inferred | Returns the DVB cable tuning status (scan) |
+| [`scan/getDvbSatellite2TunerConn`](#scan_getdvbsatellite2tunerconn) | private |  | tv-broadcast | inferred | Returns the DVB satellite 2 tuner conn (scan) |
+| [`scan/getDvbSatelliteAstraChannelLists`](#scan_getdvbsatelliteastrachannellists) | private |  | tv-broadcast | inferred | Returns the DVB satellite astra channel lists (scan) |
+| [`scan/getDvbSatelliteAstraChannelListsCount`](#scan_getdvbsatelliteastrachannellistscount) | private |  | tv-broadcast | inferred | Returns the DVB satellite astra channel lists count (scan) |
+| [`scan/getDvbSatelliteConfigurationList`](#scan_getdvbsatelliteconfigurationlist) | private |  | settings | inferred | Returns the DVB satellite configuration list (scan) |
+| [`scan/getDvbSatelliteDiSEqCMotorSetting`](#scan_getdvbsatellitediseqcmotorsetting) | private |  | tv-broadcast | inferred | Returns the DVB satellite di s eq c motor setting (scan) |
+| [`scan/getDvbSatelliteGatheringAstraChannelListsStatus`](#scan_getdvbsatellitegatheringastrachannellistsstatus) | private |  | tv-broadcast | inferred | Returns the DVB satellite gathering astra channel lists status (scan) |
+| [`scan/getDvbSatelliteGatheringTricolorRegionalListsStatus`](#scan_getdvbsatellitegatheringtricolorregionallistsstatus) | private |  | tv-broadcast | inferred | Returns the DVB satellite gathering tricolor regional lists status (scan) |
+| [`scan/getDvbSatelliteList`](#scan_getdvbsatellitelist) | private |  | tv-broadcast | inferred | Returns the DVB satellite list (scan) |
+| [`scan/getDvbSatelliteLocationLongitude`](#scan_getdvbsatellitelocationlongitude) | private |  | tv-broadcast | inferred | Returns the DVB satellite location longitude (scan) |
+| [`scan/getDvbSatelliteM7AutoDiSEqCConfigurationStatus`](#scan_getdvbsatellitem7autodiseqcconfigurationstatus) | private |  | settings | inferred | Returns the DVB satellite m 7 auto di s eq c configuration status (scan) |
+| [`scan/getDvbSatelliteM7HomeTpSearchStatus`](#scan_getdvbsatellitem7hometpsearchstatus) | private |  | tv-broadcast | inferred | Returns the DVB satellite m 7 home tp search status (scan) |
+| [`scan/getDvbSatelliteM7ORFRegionalProgram`](#scan_getdvbsatellitem7orfregionalprogram) | private |  | tv-broadcast | inferred | Returns the DVB satellite m 7 ORF regional program (scan) |
+| [`scan/getDvbSatelliteM7ORFRegionalProgramList`](#scan_getdvbsatellitem7orfregionalprogramlist) | private |  | tv-broadcast | inferred | Returns the DVB satellite m 7 ORF regional program list (scan) |
+| [`scan/getDvbSatelliteM7ORFRegionalProgramListCount`](#scan_getdvbsatellitem7orfregionalprogramlistcount) | private |  | tv-broadcast | inferred | Returns the DVB satellite m 7 ORF regional program list count (scan) |
+| [`scan/getDvbSatelliteM7RegionalProgramList`](#scan_getdvbsatellitem7regionalprogramlist) | private |  | tv-broadcast | inferred | Returns the DVB satellite m 7 regional program list (scan) |
+| [`scan/getDvbSatelliteM7RegionList`](#scan_getdvbsatellitem7regionlist) | private |  | tv-broadcast | inferred | Returns the DVB satellite m 7 region list (scan) |
+| [`scan/getDvbSatelliteM7SelectedRegionalProgramList`](#scan_getdvbsatellitem7selectedregionalprogramlist) | private |  | tv-broadcast | inferred | Returns the DVB satellite m 7 selected regional program list (scan) |
+| [`scan/getDvbSatelliteM7ServiceOperatorSubLists`](#scan_getdvbsatellitem7serviceoperatorsublists) | private |  | tv-broadcast | inferred | Returns the DVB satellite m 7 service operator sub lists (scan) |
+| [`scan/getDvbSatelliteMotorStatus`](#scan_getdvbsatellitemotorstatus) | private |  | tv-broadcast | inferred | Returns the DVB satellite motor status (scan) |
+| [`scan/getDvbSatelliteMyLatitude`](#scan_getdvbsatellitemylatitude) | private |  | tv-broadcast | inferred | Returns the DVB satellite my latitude (scan) |
+| [`scan/getDvbSatelliteMyLongitude`](#scan_getdvbsatellitemylongitude) | private |  | tv-broadcast | inferred | Returns the DVB satellite my longitude (scan) |
+| [`scan/getDvbSatelliteORSRegionalProgram`](#scan_getdvbsatelliteorsregionalprogram) | private |  | tv-broadcast | inferred | Returns the DVB satellite ORS regional program (scan) |
+| [`scan/getDvbSatelliteORSRegionalProgramList`](#scan_getdvbsatelliteorsregionalprogramlist) | private |  | tv-broadcast | inferred | Returns the DVB satellite ORS regional program list (scan) |
+| [`scan/getDvbSatelliteORSRegionalProgramListCount`](#scan_getdvbsatelliteorsregionalprogramlistcount) | private |  | tv-broadcast | inferred | Returns the DVB satellite ORS regional program list count (scan) |
+| [`scan/getDvbSatelliteRegion`](#scan_getdvbsatelliteregion) | private |  | tv-broadcast | inferred | Returns the DVB satellite region (scan) |
+| [`scan/getDvbSatelliteRegionList`](#scan_getdvbsatelliteregionlist) | private |  | tv-broadcast | inferred | Returns the DVB satellite region list (scan) |
+| [`scan/getDvbSatelliteRegionListCount`](#scan_getdvbsatelliteregionlistcount) | private |  | tv-broadcast | inferred | Returns the DVB satellite region list count (scan) |
+| [`scan/getDvbSatelliteScanOption`](#scan_getdvbsatellitescanoption) | private |  | tv-broadcast | inferred | Returns the DVB satellite scan option (scan) |
+| [`scan/getDvbSatelliteSelectedAstraChannelList`](#scan_getdvbsatelliteselectedastrachannellist) | private |  | tv-broadcast | inferred | Returns the DVB satellite selected astra channel list (scan) |
+| [`scan/getDvbSatelliteServiceOperator`](#scan_getdvbsatelliteserviceoperator) | private |  | tv-broadcast | inferred | Returns the DVB satellite service operator (scan) |
+| [`scan/getDvbSatelliteServiceOperatorList`](#scan_getdvbsatelliteserviceoperatorlist) | private |  | tv-broadcast | inferred | Returns the DVB satellite service operator list (scan) |
+| [`scan/getDvbSatelliteTkgsHiddenTransponderList`](#scan_getdvbsatellitetkgshiddentransponderlist) | private |  | tv-broadcast | inferred | Returns the DVB satellite tkgs hidden transponder list (scan) |
+| [`scan/getDvbSatelliteTkgsHiddenTransponderListCount`](#scan_getdvbsatellitetkgshiddentransponderlistcount) | private |  | tv-broadcast | inferred | Returns the DVB satellite tkgs hidden transponder list count (scan) |
+| [`scan/getDvbSatelliteTkgsPreferredListCount`](#scan_getdvbsatellitetkgspreferredlistcount) | private |  | tv-broadcast | inferred | Returns the DVB satellite tkgs preferred list count (scan) |
+| [`scan/getDvbSatelliteTkgsPreferredLists`](#scan_getdvbsatellitetkgspreferredlists) | private |  | tv-broadcast | inferred | Returns the DVB satellite tkgs preferred lists (scan) |
+| [`scan/getDvbSatelliteTkgsSelectedPreferredList`](#scan_getdvbsatellitetkgsselectedpreferredlist) | private |  | tv-broadcast | inferred | Returns the DVB satellite tkgs selected preferred list (scan) |
+| [`scan/getDvbSatelliteTkgsTestMode`](#scan_getdvbsatellitetkgstestmode) | private |  | tv-broadcast | inferred | Returns the DVB satellite tkgs test mode (scan) |
+| [`scan/getDvbSatelliteTkgsUpdateListsStatus`](#scan_getdvbsatellitetkgsupdatelistsstatus) | private |  | tv-broadcast | inferred | Returns the DVB satellite tkgs update lists status (scan) |
+| [`scan/getDvbSatelliteTkgsVersion`](#scan_getdvbsatellitetkgsversion) | private |  | tv-broadcast | inferred | Returns the DVB satellite tkgs version (scan) |
+| [`scan/getDvbSatelliteTkgsVisibleTransponderList`](#scan_getdvbsatellitetkgsvisibletransponderlist) | private |  | tv-broadcast | inferred | Returns the DVB satellite tkgs visible transponder list (scan) |
+| [`scan/getDvbSatelliteTkgsVisibleTransponderListCount`](#scan_getdvbsatellitetkgsvisibletransponderlistcount) | private |  | tv-broadcast | inferred | Returns the DVB satellite tkgs visible transponder list count (scan) |
+| [`scan/getDvbSatelliteTransponderList`](#scan_getdvbsatellitetransponderlist) | private |  | tv-broadcast | inferred | Returns the DVB satellite transponder list (scan) |
+| [`scan/getDvbSatelliteTricolorRegionalList`](#scan_getdvbsatellitetricolorregionallist) | private |  | tv-broadcast | inferred | Returns the DVB satellite tricolor regional list (scan) |
+| [`scan/getDvbSatelliteTricolorRegionalLists`](#scan_getdvbsatellitetricolorregionallists) | private |  | tv-broadcast | inferred | Returns the DVB satellite tricolor regional lists (scan) |
+| [`scan/getDvbSatelliteTricolorRegionalListsCount`](#scan_getdvbsatellitetricolorregionallistscount) | private |  | tv-broadcast | inferred | Returns the DVB satellite tricolor regional lists count (scan) |
+| [`scan/getDvbSatelliteTuningStatus`](#scan_getdvbsatellitetuningstatus) | private |  | tv-broadcast | inferred | Returns the DVB satellite tuning status (scan) |
+| [`scan/getDvbTerrestrialDefaultTuneInfo`](#scan_getdvbterrestrialdefaulttuneinfo) | private |  | tv-broadcast | inferred | Returns the DVB terrestrial default tune info (scan) |
+| [`scan/getDvbTerrestrialScanInfo`](#scan_getdvbterrestrialscaninfo) | private |  | tv-broadcast | inferred | Returns the DVB terrestrial scan info (scan) |
+| [`scan/getDvbTerrestrialScanOption`](#scan_getdvbterrestrialscanoption) | private |  | tv-broadcast | inferred | Returns the DVB terrestrial scan option (scan) |
+| [`scan/getDvbTerrestrialServiceOperatorList`](#scan_getdvbterrestrialserviceoperatorlist) | private |  | tv-broadcast | inferred | Returns the DVB terrestrial service operator list (scan) |
+| [`scan/getDvbTerrestrialSignalTestInfoStatus`](#scan_getdvbterrestrialsignaltestinfostatus) | private |  | tv-broadcast | inferred | Returns the DVB terrestrial signal test info status (scan) |
+| [`scan/getDvbTerrestrialSignalTestStatus`](#scan_getdvbterrestrialsignalteststatus) | private |  | tv-broadcast | inferred | Returns the DVB terrestrial signal test status (scan) |
+| [`scan/getDvbTerrestrialTuningStatus`](#scan_getdvbterrestrialtuningstatus) | private |  | tv-broadcast | inferred | Returns the DVB terrestrial tuning status (scan) |
+| [`scan/getDvbTKGSCurrentOperatingMode`](#scan_getdvbtkgscurrentoperatingmode) | private |  | tv-broadcast | inferred | Returns the DVB TKGS current operating mode (scan) |
+| [`scan/getDvbTKGSOperatingModeList`](#scan_getdvbtkgsoperatingmodelist) | private |  | tv-broadcast | inferred | Returns the DVB TKGS operating mode list (scan) |
+| [`scan/getNetworkListToSolveConflictLcn`](#scan_getnetworklisttosolveconflictlcn) | private |  | tv-broadcast | inferred | Returns the network list to solve conflict lcn (scan) |
+| [`scan/getRegionListCountToSolveConflictLcn`](#scan_getregionlistcounttosolveconflictlcn) | private |  | tv-broadcast | inferred | Returns the region list count to solve conflict lcn (scan) |
+| [`scan/getRegionListToSolveConflictLcn`](#scan_getregionlisttosolveconflictlcn) | private |  | tv-broadcast | inferred | Returns the region list to solve conflict lcn (scan) |
+| [`scan/getSatAdultChannelList`](#scan_getsatadultchannellist) | private |  | tv-broadcast | inferred | Returns the sat adult channel list (scan) |
+| [`scan/getSatCustomisedLcnList`](#scan_getsatcustomisedlcnlist) | private |  | tv-broadcast | inferred | Returns the sat customised lcn list (scan) |
+| [`scan/getSatCustomisedLCNListCount`](#scan_getsatcustomisedlcnlistcount) | private |  | tv-broadcast | inferred | Returns the sat customised LCN list count (scan) |
+| [`scan/getScanSelectionInfo`](#scan_getscanselectioninfo) | private |  | tv-broadcast | inferred | Returns the scan selection info (scan) |
+| [`scan/getSignalStatus`](#scan_getsignalstatus) | public |  | tv-broadcast | inferred | Returns the signal status (scan) |
+| [`scan/getSignalTestInfoStatus`](#scan_getsignaltestinfostatus) | private |  | tv-broadcast | inferred | Returns the signal test info status (scan) |
+| [`scan/getSignalTestStatus`](#scan_getsignalteststatus) | private |  | tv-broadcast | inferred | Returns the signal test status (scan) |
+| [`scan/getSupportZiggoSpecification`](#scan_getsupportziggospecification) | private |  | tv-broadcast | inferred | Returns the support ziggo specification (scan) |
+| [`scan/isDvbSatelliteHomeTpModificationAllowed`](#scan_isdvbsatellitehometpmodificationallowed) | private |  | tv-broadcast | inferred | Reports whether the DVB satellite home tp modification allowed is set (scan) |
+| [`scan/isDvbSatelliteM7RegionalProgramAvailable`](#scan_isdvbsatellitem7regionalprogramavailable) | private |  | tv-broadcast | inferred | Reports whether the DVB satellite m 7 regional program available is set (scan) |
+| [`scan/isDvbSatelliteM7ServiceOperator`](#scan_isdvbsatellitem7serviceoperator) | private |  | tv-broadcast | inferred | Reports whether the DVB satellite m 7 service operator is set (scan) |
+| [`scan/isDvbSatelliteTkgsUpdateRequired`](#scan_isdvbsatellitetkgsupdaterequired) | private |  | tv-broadcast | inferred | Reports whether the DVB satellite tkgs update required is set (scan) |
+| [`scan/moveDvbSatelliteDiSEqCMotor`](#scan_movedvbsatellitediseqcmotor) | private |  | tv-broadcast | inferred | Moves the DVB satellite di s eq c motor (scan) |
+| [`scan/moveDvbSatelliteUSALSMotor`](#scan_movedvbsatelliteusalsmotor) | private |  | tv-broadcast | inferred | Moves the DVB satellite USALS motor (scan) |
+| [`scan/releaseBroadcast`](#scan_releasebroadcast) | public |  | tv-broadcast | inferred | Releases the broadcast (scan) |
+| [`scan/resetDvbCableNetworkScanInfo`](#scan_resetdvbcablenetworkscaninfo) | private |  | tv-broadcast | inferred | Resets the DVB cable network scan info (scan) ⚠️ |
+| [`scan/resetDvbCableQuickScanInfo`](#scan_resetdvbcablequickscaninfo) | private |  | tv-broadcast | inferred | Resets the DVB cable quick scan info (scan) ⚠️ |
+| [`scan/resetDvbCableScanInfo`](#scan_resetdvbcablescaninfo) | private |  | tv-broadcast | inferred | Resets the DVB cable scan info (scan) ⚠️ |
+| [`scan/resetDvbSatelliteDiSEqCMotor`](#scan_resetdvbsatellitediseqcmotor) | private |  | tv-broadcast | inferred | Resets the DVB satellite di s eq c motor (scan) ⚠️ |
+| [`scan/resetDvbSatelliteDiSEqCMotorLimit`](#scan_resetdvbsatellitediseqcmotorlimit) | private |  | tv-broadcast | inferred | Resets the DVB satellite di s eq c motor limit (scan) ⚠️ |
+| [`scan/resetDvbSatelliteTkgsHiddenTransponderList`](#scan_resetdvbsatellitetkgshiddentransponderlist) | private |  | tv-broadcast | inferred | Resets the DVB satellite tkgs hidden transponder list (scan) ⚠️ |
+| [`scan/resetDvbSatelliteTkgsVersion`](#scan_resetdvbsatellitetkgsversion) | private |  | tv-broadcast | inferred | Resets the DVB satellite tkgs version (scan) ⚠️ |
+| [`scan/saveAnalogManualTuning`](#scan_saveanalogmanualtuning) | private |  | tv-broadcast | inferred | Saves the analog manual tuning (scan) |
+| [`scan/saveAtscManualTuning`](#scan_saveatscmanualtuning) | public |  | tv-broadcast | inferred | Saves the ATSC manual tuning (scan) |
+| [`scan/saveDvbCableManualTuning`](#scan_savedvbcablemanualtuning) | private |  | tv-broadcast | inferred | Saves the DVB cable manual tuning (scan) |
+| [`scan/saveDvbSatelliteManualTuning`](#scan_savedvbsatellitemanualtuning) | private |  | tv-broadcast | inferred | Saves the DVB satellite manual tuning (scan) |
+| [`scan/saveDvbTerrestrialManualTuning`](#scan_savedvbterrestrialmanualtuning) | private |  | tv-broadcast | inferred | Saves the DVB terrestrial manual tuning (scan) |
+| [`scan/scanSelectionInfoDone`](#scan_scanselectioninfodone) | private |  | tv-broadcast | inferred | Scans for selection info done (scan) |
+| [`scan/setAnalogManualTuning`](#scan_setanalogmanualtuning) | private |  | tv-broadcast | inferred | Sets the analog manual tuning (scan) |
+| [`scan/setAribSatelliteSignalTest`](#scan_setaribsatellitesignaltest) | private |  | tv-broadcast | inferred | Sets the arib satellite signal test (scan) |
+| [`scan/setAribTerrestrialSignalTest`](#scan_setaribterrestrialsignaltest) | private |  | tv-broadcast | inferred | Sets the arib terrestrial signal test (scan) |
+| [`scan/setAtscManualTuning`](#scan_setatscmanualtuning) | public |  | tv-broadcast | inferred | Sets the ATSC manual tuning (scan) |
+| [`scan/setAutoScanChannelType`](#scan_setautoscanchanneltype) | public |  | tv-broadcast | inferred | Sets the auto scan channel type (scan) |
+| [`scan/setAutoScanModeForStore`](#scan_setautoscanmodeforstore) | private |  | tv-broadcast | inferred | Sets the auto scan mode for store (scan) |
+| [`scan/setDvbCableManualTuning`](#scan_setdvbcablemanualtuning) | private |  | tv-broadcast | inferred | Sets the DVB cable manual tuning (scan) |
+| [`scan/setDvbCableProgramAutoUpdate`](#scan_setdvbcableprogramautoupdate) | private |  | tv-broadcast | inferred | Sets the DVB cable program auto update (scan) |
+| [`scan/setDvbCableScanInfo`](#scan_setdvbcablescaninfo) | private |  | tv-broadcast | inferred | Sets the DVB cable scan info (scan) |
+| [`scan/setDvbCableScanOption`](#scan_setdvbcablescanoption) | private |  | tv-broadcast | inferred | Sets the DVB cable scan option (scan) |
+| [`scan/setDvbCableServiceOperator`](#scan_setdvbcableserviceoperator) | private |  | tv-broadcast | inferred | Sets the DVB cable service operator (scan) |
+| [`scan/setDvbSatellite2TunerConn`](#scan_setdvbsatellite2tunerconn) | private |  | tv-broadcast | inferred | Sets the DVB satellite 2 tuner conn (scan) |
+| [`scan/setDvbSatelliteAstraChannelList`](#scan_setdvbsatelliteastrachannellist) | private |  | tv-broadcast | inferred | Sets the DVB satellite astra channel list (scan) |
+| [`scan/setDvbSatelliteDiSEqCMotorLimit`](#scan_setdvbsatellitediseqcmotorlimit) | private |  | tv-broadcast | inferred | Sets the DVB satellite di s eq c motor limit (scan) |
+| [`scan/setDvbSatelliteDiSEqCMotorPosition`](#scan_setdvbsatellitediseqcmotorposition) | private |  | tv-broadcast | inferred | Sets the DVB satellite di s eq c motor position (scan) |
+| [`scan/setDvbSatelliteHomeTPs`](#scan_setdvbsatellitehometps) | private |  | tv-broadcast | inferred | Sets the DVB satellite home t ps (scan) |
+| [`scan/setDvbSatelliteLocationLongitude`](#scan_setdvbsatellitelocationlongitude) | private |  | tv-broadcast | inferred | Sets the DVB satellite location longitude (scan) |
+| [`scan/setDvbSatelliteM7ORFRegionalProgram`](#scan_setdvbsatellitem7orfregionalprogram) | private |  | tv-broadcast | inferred | Sets the DVB satellite m 7 ORF regional program (scan) |
+| [`scan/setDvbSatelliteM7RegionalProgram`](#scan_setdvbsatellitem7regionalprogram) | private |  | tv-broadcast | inferred | Sets the DVB satellite m 7 regional program (scan) |
+| [`scan/setDvbSatelliteM7ServiceOperatorSubList`](#scan_setdvbsatellitem7serviceoperatorsublist) | private |  | tv-broadcast | inferred | Sets the DVB satellite m 7 service operator sub list (scan) |
+| [`scan/setDvbSatelliteManualTuning`](#scan_setdvbsatellitemanualtuning) | private |  | tv-broadcast | inferred | Sets the DVB satellite manual tuning (scan) |
+| [`scan/setDvbSatelliteMyLatitude`](#scan_setdvbsatellitemylatitude) | private |  | tv-broadcast | inferred | Sets the DVB satellite my latitude (scan) |
+| [`scan/setDvbSatelliteMyLongitude`](#scan_setdvbsatellitemylongitude) | private |  | tv-broadcast | inferred | Sets the DVB satellite my longitude (scan) |
+| [`scan/setDvbSatelliteORSRegionalProgram`](#scan_setdvbsatelliteorsregionalprogram) | private |  | tv-broadcast | inferred | Sets the DVB satellite ORS regional program (scan) |
+| [`scan/setDvbSatelliteRegion`](#scan_setdvbsatelliteregion) | private |  | tv-broadcast | inferred | Sets the DVB satellite region (scan) |
+| [`scan/setDvbSatelliteScanInfo`](#scan_setdvbsatellitescaninfo) | private |  | tv-broadcast | inferred | Sets the DVB satellite scan info (scan) |
+| [`scan/setDvbSatelliteScanOption`](#scan_setdvbsatellitescanoption) | private |  | tv-broadcast | inferred | Sets the DVB satellite scan option (scan) |
+| [`scan/setDvbSatelliteSelectedSatellite`](#scan_setdvbsatelliteselectedsatellite) | private |  | tv-broadcast | inferred | Sets the DVB satellite selected satellite (scan) |
+| [`scan/setDvbSatelliteServiceOperator`](#scan_setdvbsatelliteserviceoperator) | private |  | tv-broadcast | inferred | Sets the DVB satellite service operator (scan) |
+| [`scan/setDvbSatelliteTkgsPreferredList`](#scan_setdvbsatellitetkgspreferredlist) | private |  | tv-broadcast | inferred | Sets the DVB satellite tkgs preferred list (scan) |
+| [`scan/setDvbSatelliteTkgsTestMode`](#scan_setdvbsatellitetkgstestmode) | private |  | tv-broadcast | inferred | Sets the DVB satellite tkgs test mode (scan) |
+| [`scan/setDvbSatelliteTkgsUpdate`](#scan_setdvbsatellitetkgsupdate) | private |  | tv-broadcast | inferred | Sets the DVB satellite tkgs update (scan) |
+| [`scan/setDvbSatelliteTricolorRegionalList`](#scan_setdvbsatellitetricolorregionallist) | private |  | tv-broadcast | inferred | Sets the DVB satellite tricolor regional list (scan) |
+| [`scan/setDvbTerrestrialManualTuning`](#scan_setdvbterrestrialmanualtuning) | private |  | tv-broadcast | inferred | Sets the DVB terrestrial manual tuning (scan) |
+| [`scan/setDvbTerrestrialScanOption`](#scan_setdvbterrestrialscanoption) | private |  | tv-broadcast | inferred | Sets the DVB terrestrial scan option (scan) |
+| [`scan/setDvbTerrestrialServiceOperator`](#scan_setdvbterrestrialserviceoperator) | private |  | tv-broadcast | inferred | Sets the DVB terrestrial service operator (scan) |
+| [`scan/setDvbTKGSCurrentOperatingMode`](#scan_setdvbtkgscurrentoperatingmode) | private |  | tv-broadcast | inferred | Sets the DVB TKGS current operating mode (scan) |
+| [`scan/setPreferredChannelToSolveConflictLcn`](#scan_setpreferredchanneltosolveconflictlcn) | private |  | tv-broadcast | inferred | Sets the preferred channel to solve conflict lcn (scan) |
+| [`scan/setPreferredChannelToSolveSatCustomisedLcn`](#scan_setpreferredchanneltosolvesatcustomisedlcn) | private |  | tv-broadcast | inferred | Sets the preferred channel to solve sat customised lcn (scan) |
+| [`scan/setPreferredNetworkToSolveConflictLcn`](#scan_setpreferrednetworktosolveconflictlcn) | private |  | tv-broadcast | inferred | Sets the preferred network to solve conflict lcn (scan) |
+| [`scan/setPreferredRegionToSolveConflictLcn`](#scan_setpreferredregiontosolveconflictlcn) | private |  | tv-broadcast | inferred | Sets the preferred region to solve conflict lcn (scan) |
+| [`scan/skipAutoScan`](#scan_skipautoscan) | public |  | tv-broadcast | inferred | Skips the auto scan (scan) |
+| [`scan/startAutoScan`](#scan_startautoscan) | public |  | tv-broadcast | inferred | Starts the auto scan (scan) |
+| [`scan/startDvbCableChannelListUpdate`](#scan_startdvbcablechannellistupdate) | private |  | tv-broadcast | inferred | Starts the DVB cable channel list update (scan) |
+| [`scan/startDvbCableSignalTest`](#scan_startdvbcablesignaltest) | private |  | tv-broadcast | inferred | Starts the DVB cable signal test (scan) |
+| [`scan/startDvbSatelliteChannelListUpdate`](#scan_startdvbsatellitechannellistupdate) | private |  | tv-broadcast | inferred | Starts the DVB satellite channel list update (scan) |
+| [`scan/startDvbSatelliteGatheringAstraChannelLists`](#scan_startdvbsatellitegatheringastrachannellists) | private |  | tv-broadcast | inferred | Starts the DVB satellite gathering astra channel lists (scan) |
+| [`scan/startDvbSatelliteGatheringTricolorRegionalLists`](#scan_startdvbsatellitegatheringtricolorregionallists) | private |  | tv-broadcast | inferred | Starts the DVB satellite gathering tricolor regional lists (scan) |
+| [`scan/startDvbSatelliteM7AutoDiSEqCConfiguration`](#scan_startdvbsatellitem7autodiseqcconfiguration) | private |  | settings | inferred | Starts the DVB satellite m 7 auto di s eq c configuration (scan) |
+| [`scan/startDvbSatelliteM7HomeTPSearch`](#scan_startdvbsatellitem7hometpsearch) | private |  | tv-broadcast | inferred | Starts the DVB satellite m 7 home TP search (scan) |
+| [`scan/startDvbSatelliteTkgsUpdate`](#scan_startdvbsatellitetkgsupdate) | private |  | tv-broadcast | inferred | Starts the DVB satellite tkgs update (scan) |
+| [`scan/startDvbTerrestrialChannelListUpdate`](#scan_startdvbterrestrialchannellistupdate) | private |  | tv-broadcast | inferred | Starts the DVB terrestrial channel list update (scan) |
+| [`scan/startDvbTerrestrialSignalTest`](#scan_startdvbterrestrialsignaltest) | private |  | tv-broadcast | inferred | Starts the DVB terrestrial signal test (scan) |
+| [`scan/stopAutoScan`](#scan_stopautoscan) | public |  | tv-broadcast | inferred | Stops the auto scan (scan) |
+| [`scan/stopDvbCableChannelListUpdate`](#scan_stopdvbcablechannellistupdate) | private |  | tv-broadcast | inferred | Stops the DVB cable channel list update (scan) |
+| [`scan/stopDvbCableSignalTest`](#scan_stopdvbcablesignaltest) | private |  | tv-broadcast | inferred | Stops the DVB cable signal test (scan) |
+| [`scan/stopDvbSatelliteChannelListUpdate`](#scan_stopdvbsatellitechannellistupdate) | private |  | tv-broadcast | inferred | Stops the DVB satellite channel list update (scan) |
+| [`scan/stopDvbSatelliteDiSEqCMotorMoving`](#scan_stopdvbsatellitediseqcmotormoving) | private |  | tv-broadcast | inferred | Stops the DVB satellite di s eq c motor moving (scan) |
+| [`scan/stopDvbSatelliteTkgsUpdate`](#scan_stopdvbsatellitetkgsupdate) | private |  | tv-broadcast | inferred | Stops the DVB satellite tkgs update (scan) |
+| [`scan/stopDvbTerrestrialChannelListUpdate`](#scan_stopdvbterrestrialchannellistupdate) | private |  | tv-broadcast | inferred | Stops the DVB terrestrial channel list update (scan) |
+| [`scan/stopDvbTerrestrialSignalTest`](#scan_stopdvbterrestrialsignaltest) | private |  | tv-broadcast | inferred | Stops the DVB terrestrial signal test (scan) |
+| [`scanBarkerChannel`](#scanbarkerchannel) | public |  | tv-broadcast | inferred | Scans for barker channel. |
+| [`setAudioChannel`](#setaudiochannel) | public |  | audio | inferred | Sets the audio channel. |
+| [`setAudioLanguage`](#setaudiolanguage) | public |  | audio | inferred | Sets the audio language. |
+| [`setChannelGroup`](#setchannelgroup) | public |  | tv-broadcast | inferred | Sets the channel group. |
+| [`setChannelMode`](#setchannelmode) | public |  | tv-broadcast | inferred | Sets the channel mode. |
+| [`setChannelSortMode`](#setchannelsortmode) | private |  | tv-broadcast | inferred | Sets the channel sort mode. |
+| [`setLastChannelId`](#setlastchannelid) | public |  | tv-broadcast | inferred | Sets the last channel ID. |
+| [`setVideoView`](#setvideoview) | public |  | tv-broadcast | inferred | Sets the video view. |
+| [`sortAnalogChannelList`](#sortanalogchannellist) | private |  | tv-broadcast | inferred | Handles the sort analog channel list. |
+| [`startEwbsCheckInWarm`](#startewbscheckinwarm) | private |  | tv-broadcast | inferred | Starts the ewbs check in warm. |
+| [`stopEwbsCheckInWarm`](#stopewbscheckinwarm) | private |  | tv-broadcast | inferred | Stops the ewbs check in warm. |
 
 <a id="acas_getmoduleid"></a>
 ## `acas/getModuleId`
 
 `luna://com.webos.service.utp.channel/acas/getModuleId`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the module ID (acas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/acas/getModuleId '{}'
@@ -359,13 +363,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/acas/getModuleInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the module info (acas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/acas/getModuleInfo '{}'
@@ -380,13 +386,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/bcas/getAutomaticDisplay`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the automatic display (bcas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/bcas/getAutomaticDisplay '{}'
@@ -401,13 +409,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/bcas/getCardId`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the card ID (bcas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/bcas/getCardId '{}'
@@ -422,13 +432,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/bcas/getEmmTimer`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the emm timer (bcas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/bcas/getEmmTimer '{}'
@@ -443,13 +455,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/bcas/getPayChannelGuide`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the pay channel guide (bcas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/bcas/getPayChannelGuide '{}'
@@ -464,13 +478,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/bcas/removeEmmTimer`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Removes the emm timer (bcas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/bcas/removeEmmTimer '{}'
@@ -485,13 +501,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/bcas/setEmmTimer`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the emm timer (bcas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/bcas/setEmmTimer '{}'
@@ -506,13 +524,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/bcas/setEmmTimerChannel`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the emm timer channel (bcas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/bcas/setEmmTimerChannel '{}'
@@ -527,13 +547,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/bcas/stopEmmTimerChannel`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the emm timer channel (bcas)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/bcas/stopEmmTimerChannel '{}'
@@ -548,13 +570,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/blockKeyInput`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Blocks the key input.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/blockKeyInput '{}'
@@ -569,13 +593,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/changeChannelFavorite`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Changes the channel favorite.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/changeChannelFavorite '{}'
@@ -590,13 +616,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/changeChannelType`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Changes the channel type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/changeChannelType '{}'
@@ -611,13 +639,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/changeMessageChannel`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Changes the message channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/changeMessageChannel '{}'
@@ -632,13 +662,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/checkBarkerChannel`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Checks the barker channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/checkBarkerChannel '{}'
@@ -653,13 +685,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/camPlayerPauseRequest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the CAM player pause request (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/camPlayerPauseRequest '{}'
@@ -674,13 +708,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/camPlayerResumeRequest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the CAM player resume request (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/camPlayerResumeRequest '{}'
@@ -695,13 +731,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/camPlayerSeekRequest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the CAM player seek request (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/camPlayerSeekRequest '{}'
@@ -716,13 +754,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/camPlayerStopRequest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the CAM player stop request (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/camPlayerStopRequest '{}'
@@ -737,13 +777,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/camPlayerVerifyRequest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the CAM player verify request (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/camPlayerVerifyRequest '{}'
@@ -758,13 +800,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/checkCamUpgradeState`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Checks the CAM upgrade state (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/checkCamUpgradeState '{}'
@@ -779,13 +823,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/checkCiPlusState`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Checks the CI plus state (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/checkCiPlusState '{}'
@@ -800,13 +846,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/confirmPinCode`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the confirm pin code (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/confirmPinCode '{}'
@@ -821,13 +869,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/connectSas`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Connects the sas (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/connectSas '{}'
@@ -842,13 +892,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/fileRequest4Aux`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the file request 4 aux (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/fileRequest4Aux '{}'
@@ -863,13 +915,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getCaIdList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the ca ID list (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getCaIdList '{}'
@@ -884,13 +938,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getCamMessage`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the CAM message (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getCamMessage '{}'
@@ -905,13 +961,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getChannelBannerControlStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel banner control status (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getChannelBannerControlStatus '{}'
@@ -926,13 +984,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getCIPlusConnected`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the CI plus connected (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getCIPlusConnected '{}'
@@ -947,13 +1007,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getCIVersion`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the CI version (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getCIVersion '{}'
@@ -968,13 +1030,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getConnectionState`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the connection state (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getConnectionState '{}'
@@ -989,13 +1053,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getEcpControlInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the ecp control info (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getEcpControlInfo '{}'
@@ -1010,13 +1076,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getHostCtlInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the host ctl info (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getHostCtlInfo '{}'
@@ -1031,13 +1099,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getLowSpeedConnectionStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the low speed connection status (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getLowSpeedConnectionStatus '{}'
@@ -1052,13 +1122,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getOperatorProfileEnabled`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the operator profile enabled (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getOperatorProfileEnabled '{}'
@@ -1073,13 +1145,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getOsdtPosition`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the osdt position (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getOsdtPosition '{}'
@@ -1094,13 +1168,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getSasConnectionState`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the sas connection state (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getSasConnectionState '{}'
@@ -1115,13 +1191,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/getSasMessage`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the sas message (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/getSasMessage '{}'
@@ -1136,13 +1214,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/hostInitiatedCAMPlayRequest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the host initiated CAM play request (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/hostInitiatedCAMPlayRequest '{}'
@@ -1157,13 +1237,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/hostPlayerRequest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the host player request (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/hostPlayerRequest '{}'
@@ -1178,13 +1260,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/IsAppMmiLaunched`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the app mmi launched is set (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/IsAppMmiLaunched '{}'
@@ -1199,13 +1283,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/ischannelchangeByCamHostControl`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the ischannelchange by CAM host control (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/ischannelchangeByCamHostControl '{}'
@@ -1220,13 +1306,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/isCiInformationMenuEnabled`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the CI information menu enabled is set (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/isCiInformationMenuEnabled '{}'
@@ -1241,13 +1329,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/isEcpContentProtected`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the ecp content protected is set (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/isEcpContentProtected '{}'
@@ -1262,13 +1352,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/isOperatorProfileEnabled`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the operator profile enabled is set (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/isOperatorProfileEnabled '{}'
@@ -1283,13 +1375,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/isSavePinCodeMenuEnabled`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the save pin code menu enabled is set (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/isSavePinCodeMenuEnabled '{}'
@@ -1304,13 +1398,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/isTrickModeRestrictedContent`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the trick mode restricted content is set (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/isTrickModeRestrictedContent '{}'
@@ -1325,13 +1421,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/notifyMmiOsdDisappeared`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Notifies of the mmi OSD disappeared (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/notifyMmiOsdDisappeared '{}'
@@ -1346,13 +1444,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/registerCplayerStatus`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Registers the cplayer status (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/registerCplayerStatus '{}'
@@ -1367,13 +1467,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/registerDomainIDCB`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Registers the domain IDCB (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/registerDomainIDCB '{}'
@@ -1388,13 +1490,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/registerFileRequestAckCB`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Registers the file request ack CB (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/registerFileRequestAckCB '{}'
@@ -1409,13 +1513,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/replyPinCode`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the reply pin code (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/replyPinCode '{}'
@@ -1430,13 +1536,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/ReqAppAbort`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the req app abort (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/ReqAppAbort '{}'
@@ -1451,13 +1559,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/requestFileData`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Requests the file data (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/requestFileData '{}'
@@ -1472,13 +1582,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/requestPreviousMmiMessage`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Requests the previous mmi message (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/requestPreviousMmiMessage '{}'
@@ -1493,13 +1605,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/requestStartAck`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Requests the start ack (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/requestStartAck '{}'
@@ -1514,13 +1628,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/resetCam`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Resets the CAM (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/resetCam '{}'
@@ -1535,13 +1651,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/saveLaunchInfo4Aux`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Saves the launch info 4 aux (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/saveLaunchInfo4Aux '{}'
@@ -1556,13 +1674,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/searchOperator`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Searches for operator (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/searchOperator '{}'
@@ -1577,13 +1697,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/selectMmiMenuIndex`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Selects the mmi menu index (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/selectMmiMenuIndex '{}'
@@ -1598,13 +1720,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/sendHostControlAskRelease`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sends the host control ask release (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/sendHostControlAskRelease '{}'
@@ -1619,13 +1743,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/sendSasMessage`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sends the sas message (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/sendSasMessage '{}'
@@ -1640,13 +1766,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/setMmiEnquiry`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the mmi enquiry (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/setMmiEnquiry '{}'
@@ -1661,13 +1789,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/startCiInformationMenu`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the CI information menu (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/startCiInformationMenu '{}'
@@ -1682,13 +1812,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/startOpUpdateInWarmState`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the op update in warm state (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/startOpUpdateInWarmState '{}'
@@ -1703,13 +1835,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/startOtaUpdateInWarmState`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the ota update in warm state (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/startOtaUpdateInWarmState '{}'
@@ -1724,13 +1858,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/startPowerDownNotice`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the power down notice (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/startPowerDownNotice '{}'
@@ -1745,13 +1881,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/stopOpUpdateInWarmState`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the op update in warm state (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/stopOpUpdateInWarmState '{}'
@@ -1766,13 +1904,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/stopOtaUpdateInWarmState`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the ota update in warm state (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/stopOtaUpdateInWarmState '{}'
@@ -1787,13 +1927,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/stopPowerDownNotice`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the power down notice (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/stopPowerDownNotice '{}'
@@ -1808,13 +1950,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/ci/subscribeRequestStart`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Subscribes to the request start (CI)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/ci/subscribeRequestStart '{}'
@@ -1829,13 +1973,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/copyDvbSatelliteChannelForAstra`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Copies the DVB satellite channel for astra.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/copyDvbSatelliteChannelForAstra '{}'
@@ -1850,13 +1996,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/deleteDvbSatelliteChannelForAstra`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Deletes the DVB satellite channel for astra.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/deleteDvbSatelliteChannelForAstra '{}'
@@ -1871,13 +2019,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getAudioChannelList`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the audio channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getAudioChannelList '{}'
@@ -1892,13 +2042,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/getAudioLanguageList`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the audio language list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getAudioLanguageList '{}'
@@ -1913,13 +2065,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/getBarkerStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the barker status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getBarkerStatus '{}'
@@ -1934,13 +2088,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getCaIdListFromDvbSi`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the ca ID list from DVB SI.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getCaIdListFromDvbSi '{}'
@@ -1955,13 +2111,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getChannelGroup`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelGroup '{}'
@@ -1976,13 +2134,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getChannelGroupList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel group list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelGroupList '{}'
@@ -1997,13 +2157,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getChannelListUpdateInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel list update info.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelListUpdateInfo '{}'
@@ -2018,13 +2180,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getChannelListUpdateStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel list update status.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelListUpdateStatus '{}'
@@ -2039,13 +2203,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getChannelMode`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelMode '{}'
@@ -2060,13 +2226,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getChannelModeList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel mode list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelModeList '{}'
@@ -2081,13 +2249,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getChannelSortMode`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel sort mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelSortMode '{}'
@@ -2102,13 +2272,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getChannelTypeList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel type list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelTypeList '{}'
@@ -2123,13 +2295,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getCurrentAudioChannel`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the current audio channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getCurrentAudioChannel '{}'
@@ -2144,13 +2318,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/getCurrentAudioCodecType`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the current audio codec type.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getCurrentAudioCodecType '{}'
@@ -2165,13 +2341,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/getCurrentAudioLanguage`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the current audio language.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getCurrentAudioLanguage '{}'
@@ -2186,13 +2364,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/getCurrentVideoView`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the current video view.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getCurrentVideoView '{}'
@@ -2207,13 +2387,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/getDirectTuneChannel`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the direct tune channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getDirectTuneChannel '{}'
@@ -2228,13 +2410,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/getEwsEvent`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the ews event.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getEwsEvent '{}'
@@ -2249,13 +2433,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getLastChannelId`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the last channel ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getLastChannelId '{}'
@@ -2270,13 +2456,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getPreferredRegionNId`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the preferred region n ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getPreferredRegionNId '{}'
@@ -2291,13 +2479,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getSatelliteBouquetList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the satellite bouquet list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getSatelliteBouquetList '{}'
@@ -2312,13 +2502,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getScannedSatelliteList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the scanned satellite list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getScannedSatelliteList '{}'
@@ -2333,13 +2525,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/getSignalLevel`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the signal level.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getSignalLevel '{}'
@@ -2354,13 +2548,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/getVideoViewList`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the video view list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getVideoViewList '{}'
@@ -2375,13 +2571,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/isAnalogChannelListAutoSorted`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the analog channel list auto sorted is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/isAnalogChannelListAutoSorted '{}'
@@ -2396,13 +2594,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/isAudioDescriptionConflict`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Reports whether the audio description conflict is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/isAudioDescriptionConflict '{}'
@@ -2417,13 +2617,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/isCurrentChannelVirtualService`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the current channel virtual service is set.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/isCurrentChannelVirtualService '{}'
@@ -2438,13 +2640,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/notifyRecommendedChannel`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Notifies of the recommended channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/notifyRecommendedChannel '{}'
@@ -2459,13 +2663,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/oipfdrmagent/connectDrm`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Connects the DRM (oipfdrmagent)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/oipfdrmagent/connectDrm '{}'
@@ -2480,13 +2686,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/oipfdrmagent/disConnectDrm`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the dis connect DRM (oipfdrmagent)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/oipfdrmagent/disConnectDrm '{}'
@@ -2501,13 +2709,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/oipfdrmagent/getDrmIdList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DRM ID list (oipfdrmagent)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/oipfdrmagent/getDrmIdList '{}'
@@ -2522,13 +2732,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/oipfdrmagent/getDrmMessageResult`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DRM message result (oipfdrmagent)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/oipfdrmagent/getDrmMessageResult '{}'
@@ -2543,13 +2755,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/oipfdrmagent/getDRMSystemMessage`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DRM system message (oipfdrmagent)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/oipfdrmagent/getDRMSystemMessage '{}'
@@ -2564,13 +2778,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/oipfdrmagent/sendDrmMessage`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sends the DRM message (oipfdrmagent)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/oipfdrmagent/sendDrmMessage '{}'
@@ -2585,13 +2801,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/releaseMessageChannel`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Releases the message channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/releaseMessageChannel '{}'
@@ -2606,13 +2824,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/addDvbSatelliteTransponder`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Adds the DVB satellite transponder (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/addDvbSatelliteTransponder '{}'
@@ -2627,13 +2847,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/bindToBroadcast`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Binds the to broadcast (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/bindToBroadcast '{}'
@@ -2648,13 +2870,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/scan/cancelAnalogManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Cancels the analog manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/cancelAnalogManualTuning '{}'
@@ -2669,13 +2893,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/cancelAribSatelliteSignalTest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Cancels the arib satellite signal test (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/cancelAribSatelliteSignalTest '{}'
@@ -2690,13 +2916,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/cancelAribTerrestrialSignalTest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Cancels the arib terrestrial signal test (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/cancelAribTerrestrialSignalTest '{}'
@@ -2711,13 +2939,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/cancelAtscManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Cancels the ATSC manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/cancelAtscManualTuning '{}'
@@ -2732,13 +2962,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/cancelDvbCableManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Cancels the DVB cable manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/cancelDvbCableManualTuning '{}'
@@ -2753,13 +2985,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/cancelDvbSatelliteGatheringAstraChannelLists`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Cancels the DVB satellite gathering astra channel lists (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/cancelDvbSatelliteGatheringAstraChannelLists '{}'
@@ -2774,13 +3008,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/cancelDvbSatelliteGatheringTricolorRegionalLists`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Cancels the DVB satellite gathering tricolor regional lists (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/cancelDvbSatelliteGatheringTricolorRegionalLists '{}'
@@ -2795,13 +3031,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/cancelDvbSatelliteM7AutoDiSEqCConfiguration`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Cancels the DVB satellite m 7 auto di s eq c configuration (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/cancelDvbSatelliteM7AutoDiSEqCConfiguration '{}'
@@ -2816,13 +3054,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/cancelDvbSatelliteM7HomeTPSearch`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Cancels the DVB satellite m 7 home TP search (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/cancelDvbSatelliteM7HomeTPSearch '{}'
@@ -2837,13 +3077,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/cancelDvbSatelliteManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Cancels the DVB satellite manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/cancelDvbSatelliteManualTuning '{}'
@@ -2858,13 +3100,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/cancelDvbTerrestrialManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Cancels the DVB terrestrial manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/cancelDvbTerrestrialManualTuning '{}'
@@ -2879,13 +3123,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/checkServerStatus`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Checks the server status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/checkServerStatus '{}'
@@ -2900,13 +3146,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/clearConflictList`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Clears the conflict list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/clearConflictList '{}'
@@ -2921,13 +3169,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/clearDvbSatelliteTkgsVisibleTransponderList`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Clears the DVB satellite tkgs visible transponder list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/clearDvbSatelliteTkgsVisibleTransponderList '{}'
@@ -2942,13 +3192,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/clearOpCamChannels`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Clears the op CAM channels (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/clearOpCamChannels '{}'
@@ -2963,13 +3215,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/clearUKconflict`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Clears the u kconflict (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/clearUKconflict '{}'
@@ -2984,13 +3238,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/createDvbSatelliteConfiguration`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Creates the DVB satellite configuration (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/createDvbSatelliteConfiguration '{}'
@@ -3005,13 +3261,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/deleteAnalogManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Deletes the analog manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/deleteAnalogManualTuning '{}'
@@ -3026,13 +3284,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/deleteAtscManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Deletes the ATSC manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/deleteAtscManualTuning '{}'
@@ -3047,13 +3307,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/deleteDvbCableManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Deletes the DVB cable manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/deleteDvbCableManualTuning '{}'
@@ -3068,13 +3330,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/deleteDvbSatelliteConfiguration`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Deletes the DVB satellite configuration (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/deleteDvbSatelliteConfiguration '{}'
@@ -3089,13 +3353,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/deleteDvbSatelliteTransponder`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Deletes the DVB satellite transponder (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/deleteDvbSatelliteTransponder '{}'
@@ -3110,13 +3376,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/deleteDvbTerrestrialManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Deletes the DVB terrestrial manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/deleteDvbTerrestrialManualTuning '{}'
@@ -3131,13 +3399,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/editDvbSatelliteTkgsVisibleTransponder`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Edits the DVB satellite tkgs visible transponder (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/editDvbSatelliteTkgsVisibleTransponder '{}'
@@ -3152,13 +3422,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/editDvbSatelliteTransponder`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Edits the DVB satellite transponder (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/editDvbSatelliteTransponder '{}'
@@ -3173,13 +3445,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAnalogDefaultTuneInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the analog default tune info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAnalogDefaultTuneInfo '{}'
@@ -3194,13 +3468,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAnalogFrequencyList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the analog frequency list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAnalogFrequencyList '{}'
@@ -3215,13 +3491,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAnalogProgramNumber`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the analog program number (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAnalogProgramNumber '{}'
@@ -3236,13 +3514,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAnalogScanInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the analog scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAnalogScanInfo '{}'
@@ -3257,13 +3537,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAnalogTuningStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the analog tuning status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAnalogTuningStatus '{}'
@@ -3278,13 +3560,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAribSatelliteScanInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the arib satellite scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAribSatelliteScanInfo '{}'
@@ -3299,13 +3583,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAribSatelliteTuningStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the arib satellite tuning status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAribSatelliteTuningStatus '{}'
@@ -3320,13 +3606,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAribTerrestrialScanInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the arib terrestrial scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAribTerrestrialScanInfo '{}'
@@ -3341,13 +3629,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAribTerrestrialTuningStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the arib terrestrial tuning status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAribTerrestrialTuningStatus '{}'
@@ -3362,13 +3652,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAtscScanInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the ATSC scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAtscScanInfo '{}'
@@ -3383,13 +3675,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAtscTuningStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the ATSC tuning status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAtscTuningStatus '{}'
@@ -3404,13 +3698,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAutoScanChannelType`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the auto scan channel type (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAutoScanChannelType '{}'
@@ -3425,13 +3721,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAutoScanChannelTypeOrder`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the auto scan channel type order (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAutoScanChannelTypeOrder '{}'
@@ -3446,13 +3744,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAutoScanConflictInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the auto scan conflict info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAutoScanConflictInfo '{}'
@@ -3467,13 +3767,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAutoScanModeForStore`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the auto scan mode for store (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAutoScanModeForStore '{}'
@@ -3488,13 +3790,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAutoScanProgress`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the auto scan progress (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAutoScanProgress '{}'
@@ -3509,13 +3813,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAutoScanSourceOrderStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the auto scan source order status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAutoScanSourceOrderStatus '{}'
@@ -3530,13 +3836,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAutoScanSourceSearchResult`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the auto scan source search result (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAutoScanSourceSearchResult '{}'
@@ -3551,13 +3859,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getAutoScanStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the auto scan status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getAutoScanStatus '{}'
@@ -3572,13 +3882,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getChannelListCountToSolveConflictLcn`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel list count to solve conflict lcn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getChannelListCountToSolveConflictLcn '{}'
@@ -3593,13 +3905,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getChannelListCountToSolveSatCustomisedLcn`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel list count to solve sat customised lcn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getChannelListCountToSolveSatCustomisedLcn '{}'
@@ -3614,13 +3928,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getChannelListToSolveConflictLcn`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel list to solve conflict lcn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getChannelListToSolveConflictLcn '{}'
@@ -3635,13 +3951,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getChannelListToSolveSatCustomisedLcn`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the channel list to solve sat customised lcn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getChannelListToSolveSatCustomisedLcn '{}'
@@ -3656,13 +3974,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getConflictLcnList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the conflict lcn list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getConflictLcnList '{}'
@@ -3677,13 +3997,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDefaultTuneInfo`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the default tune info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDefaultTuneInfo '{}'
@@ -3698,13 +4020,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/scan/getDvbCableDefaultTuneInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB cable default tune info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbCableDefaultTuneInfo '{}'
@@ -3719,13 +4043,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbCableProgramAutoUpdate`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB cable program auto update (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbCableProgramAutoUpdate '{}'
@@ -3740,13 +4066,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbCableScanInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB cable scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbCableScanInfo '{}'
@@ -3761,13 +4089,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbCableScanOption`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB cable scan option (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbCableScanOption '{}'
@@ -3782,13 +4112,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbCableServiceOperatorList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB cable service operator list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbCableServiceOperatorList '{}'
@@ -3803,13 +4135,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbCableSignalTestInfoStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB cable signal test info status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbCableSignalTestInfoStatus '{}'
@@ -3824,13 +4158,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbCableSignalTestStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB cable signal test status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbCableSignalTestStatus '{}'
@@ -3845,13 +4181,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbCableTuningStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB cable tuning status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbCableTuningStatus '{}'
@@ -3866,13 +4204,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatellite2TunerConn`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite 2 tuner conn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatellite2TunerConn '{}'
@@ -3887,13 +4227,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteAstraChannelLists`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite astra channel lists (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteAstraChannelLists '{}'
@@ -3908,13 +4250,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteAstraChannelListsCount`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite astra channel lists count (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteAstraChannelListsCount '{}'
@@ -3929,13 +4273,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteConfigurationList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite configuration list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteConfigurationList '{}'
@@ -3950,13 +4296,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteDiSEqCMotorSetting`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite di s eq c motor setting (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteDiSEqCMotorSetting '{}'
@@ -3971,13 +4319,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteGatheringAstraChannelListsStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite gathering astra channel lists status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteGatheringAstraChannelListsStatus '{}'
@@ -3992,13 +4342,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteGatheringTricolorRegionalListsStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite gathering tricolor regional lists status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteGatheringTricolorRegionalListsStatus '{}'
@@ -4013,13 +4365,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteList '{}'
@@ -4034,13 +4388,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteLocationLongitude`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite location longitude (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteLocationLongitude '{}'
@@ -4055,13 +4411,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7AutoDiSEqCConfigurationStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite m 7 auto di s eq c configuration status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7AutoDiSEqCConfigurationStatus '{}'
@@ -4076,13 +4434,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7HomeTpSearchStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite m 7 home tp search status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7HomeTpSearchStatus '{}'
@@ -4097,13 +4457,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7ORFRegionalProgram`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite m 7 ORF regional program (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7ORFRegionalProgram '{}'
@@ -4118,13 +4480,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7ORFRegionalProgramList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite m 7 ORF regional program list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7ORFRegionalProgramList '{}'
@@ -4139,13 +4503,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7ORFRegionalProgramListCount`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite m 7 ORF regional program list count (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7ORFRegionalProgramListCount '{}'
@@ -4160,13 +4526,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7RegionalProgramList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite m 7 regional program list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7RegionalProgramList '{}'
@@ -4181,13 +4549,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7RegionList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite m 7 region list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7RegionList '{}'
@@ -4202,13 +4572,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7SelectedRegionalProgramList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite m 7 selected regional program list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7SelectedRegionalProgramList '{}'
@@ -4223,13 +4595,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7ServiceOperatorSubLists`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite m 7 service operator sub lists (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteM7ServiceOperatorSubLists '{}'
@@ -4244,13 +4618,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteMotorStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite motor status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteMotorStatus '{}'
@@ -4265,13 +4641,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteMyLatitude`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite my latitude (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteMyLatitude '{}'
@@ -4286,13 +4664,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteMyLongitude`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite my longitude (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteMyLongitude '{}'
@@ -4307,13 +4687,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteORSRegionalProgram`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite ORS regional program (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteORSRegionalProgram '{}'
@@ -4328,13 +4710,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteORSRegionalProgramList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite ORS regional program list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteORSRegionalProgramList '{}'
@@ -4349,13 +4733,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteORSRegionalProgramListCount`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite ORS regional program list count (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteORSRegionalProgramListCount '{}'
@@ -4370,13 +4756,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteRegion`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite region (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteRegion '{}'
@@ -4391,13 +4779,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteRegionList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite region list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteRegionList '{}'
@@ -4412,13 +4802,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteRegionListCount`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite region list count (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteRegionListCount '{}'
@@ -4433,13 +4825,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteScanOption`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite scan option (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteScanOption '{}'
@@ -4454,13 +4848,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteSelectedAstraChannelList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite selected astra channel list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteSelectedAstraChannelList '{}'
@@ -4475,13 +4871,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteServiceOperator`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite service operator (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteServiceOperator '{}'
@@ -4496,13 +4894,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteServiceOperatorList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite service operator list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteServiceOperatorList '{}'
@@ -4517,13 +4917,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsHiddenTransponderList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tkgs hidden transponder list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsHiddenTransponderList '{}'
@@ -4538,13 +4940,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsHiddenTransponderListCount`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tkgs hidden transponder list count (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsHiddenTransponderListCount '{}'
@@ -4559,13 +4963,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsPreferredListCount`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tkgs preferred list count (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsPreferredListCount '{}'
@@ -4580,13 +4986,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsPreferredLists`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tkgs preferred lists (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsPreferredLists '{}'
@@ -4601,13 +5009,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsSelectedPreferredList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tkgs selected preferred list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsSelectedPreferredList '{}'
@@ -4622,13 +5032,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsTestMode`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tkgs test mode (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsTestMode '{}'
@@ -4643,13 +5055,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsUpdateListsStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tkgs update lists status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsUpdateListsStatus '{}'
@@ -4664,13 +5078,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsVersion`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tkgs version (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsVersion '{}'
@@ -4685,13 +5101,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsVisibleTransponderList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tkgs visible transponder list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsVisibleTransponderList '{}'
@@ -4706,13 +5124,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsVisibleTransponderListCount`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tkgs visible transponder list count (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTkgsVisibleTransponderListCount '{}'
@@ -4727,13 +5147,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTransponderList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite transponder list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTransponderList '{}'
@@ -4748,13 +5170,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTricolorRegionalList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tricolor regional list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTricolorRegionalList '{}'
@@ -4769,13 +5193,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTricolorRegionalLists`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tricolor regional lists (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTricolorRegionalLists '{}'
@@ -4790,13 +5216,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTricolorRegionalListsCount`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tricolor regional lists count (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTricolorRegionalListsCount '{}'
@@ -4811,13 +5239,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbSatelliteTuningStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB satellite tuning status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbSatelliteTuningStatus '{}'
@@ -4832,13 +5262,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbTerrestrialDefaultTuneInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB terrestrial default tune info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbTerrestrialDefaultTuneInfo '{}'
@@ -4853,13 +5285,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbTerrestrialScanInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB terrestrial scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbTerrestrialScanInfo '{}'
@@ -4874,13 +5308,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbTerrestrialScanOption`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB terrestrial scan option (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbTerrestrialScanOption '{}'
@@ -4895,13 +5331,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbTerrestrialServiceOperatorList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB terrestrial service operator list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbTerrestrialServiceOperatorList '{}'
@@ -4916,13 +5354,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbTerrestrialSignalTestInfoStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB terrestrial signal test info status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbTerrestrialSignalTestInfoStatus '{}'
@@ -4937,13 +5377,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbTerrestrialSignalTestStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB terrestrial signal test status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbTerrestrialSignalTestStatus '{}'
@@ -4958,13 +5400,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbTerrestrialTuningStatus`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB terrestrial tuning status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbTerrestrialTuningStatus '{}'
@@ -4979,13 +5423,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbTKGSCurrentOperatingMode`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB TKGS current operating mode (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbTKGSCurrentOperatingMode '{}'
@@ -5000,13 +5446,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getDvbTKGSOperatingModeList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the DVB TKGS operating mode list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getDvbTKGSOperatingModeList '{}'
@@ -5021,13 +5469,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getNetworkListToSolveConflictLcn`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the network list to solve conflict lcn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getNetworkListToSolveConflictLcn '{}'
@@ -5042,13 +5492,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getRegionListCountToSolveConflictLcn`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the region list count to solve conflict lcn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getRegionListCountToSolveConflictLcn '{}'
@@ -5063,13 +5515,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getRegionListToSolveConflictLcn`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the region list to solve conflict lcn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getRegionListToSolveConflictLcn '{}'
@@ -5084,13 +5538,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getSatAdultChannelList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the sat adult channel list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getSatAdultChannelList '{}'
@@ -5105,13 +5561,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getSatCustomisedLcnList`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the sat customised lcn list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getSatCustomisedLcnList '{}'
@@ -5126,13 +5584,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getSatCustomisedLCNListCount`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the sat customised LCN list count (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getSatCustomisedLCNListCount '{}'
@@ -5147,13 +5607,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getScanSelectionInfo`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the scan selection info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getScanSelectionInfo '{}'
@@ -5168,13 +5630,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/getSignalStatus`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the signal status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getSignalStatus '{}'
@@ -5189,13 +5653,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/scan/getSignalTestInfoStatus`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the signal test info status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getSignalTestInfoStatus '{}'
@@ -5210,13 +5676,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/scan/getSignalTestStatus`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Returns the signal test status (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getSignalTestStatus '{}'
@@ -5231,13 +5699,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/scan/getSupportZiggoSpecification`
 
-Getter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Returns the support ziggo specification (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/getSupportZiggoSpecification '{}'
@@ -5252,13 +5722,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/isDvbSatelliteHomeTpModificationAllowed`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the DVB satellite home tp modification allowed is set (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/isDvbSatelliteHomeTpModificationAllowed '{}'
@@ -5273,13 +5745,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/isDvbSatelliteM7RegionalProgramAvailable`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the DVB satellite m 7 regional program available is set (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/isDvbSatelliteM7RegionalProgramAvailable '{}'
@@ -5294,13 +5768,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/isDvbSatelliteM7ServiceOperator`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the DVB satellite m 7 service operator is set (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/isDvbSatelliteM7ServiceOperator '{}'
@@ -5315,13 +5791,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/isDvbSatelliteTkgsUpdateRequired`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Reports whether the DVB satellite tkgs update required is set (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/isDvbSatelliteTkgsUpdateRequired '{}'
@@ -5336,13 +5814,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/moveDvbSatelliteDiSEqCMotor`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Moves the DVB satellite di s eq c motor (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/moveDvbSatelliteDiSEqCMotor '{}'
@@ -5357,13 +5837,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/moveDvbSatelliteUSALSMotor`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Moves the DVB satellite USALS motor (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/moveDvbSatelliteUSALSMotor '{}'
@@ -5378,13 +5860,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/releaseBroadcast`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Releases the broadcast (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/releaseBroadcast '{}'
@@ -5399,13 +5883,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/scan/resetDvbCableNetworkScanInfo`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Resets the DVB cable network scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/resetDvbCableNetworkScanInfo '{}'
@@ -5420,13 +5906,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/resetDvbCableQuickScanInfo`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Resets the DVB cable quick scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/resetDvbCableQuickScanInfo '{}'
@@ -5441,13 +5929,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/resetDvbCableScanInfo`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Resets the DVB cable scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/resetDvbCableScanInfo '{}'
@@ -5462,13 +5952,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/resetDvbSatelliteDiSEqCMotor`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Resets the DVB satellite di s eq c motor (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/resetDvbSatelliteDiSEqCMotor '{}'
@@ -5483,13 +5975,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/resetDvbSatelliteDiSEqCMotorLimit`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Resets the DVB satellite di s eq c motor limit (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/resetDvbSatelliteDiSEqCMotorLimit '{}'
@@ -5504,13 +5998,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/resetDvbSatelliteTkgsHiddenTransponderList`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Resets the DVB satellite tkgs hidden transponder list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/resetDvbSatelliteTkgsHiddenTransponderList '{}'
@@ -5525,13 +6021,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/resetDvbSatelliteTkgsVersion`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Resets the DVB satellite tkgs version (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/resetDvbSatelliteTkgsVersion '{}'
@@ -5546,13 +6044,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/saveAnalogManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Saves the analog manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/saveAnalogManualTuning '{}'
@@ -5567,13 +6067,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/saveAtscManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Saves the ATSC manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/saveAtscManualTuning '{}'
@@ -5588,13 +6090,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/saveDvbCableManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Saves the DVB cable manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/saveDvbCableManualTuning '{}'
@@ -5609,13 +6113,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/saveDvbSatelliteManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Saves the DVB satellite manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/saveDvbSatelliteManualTuning '{}'
@@ -5630,13 +6136,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/saveDvbTerrestrialManualTuning`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Saves the DVB terrestrial manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/saveDvbTerrestrialManualTuning '{}'
@@ -5651,13 +6159,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/scanSelectionInfoDone`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Scans for selection info done (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/scanSelectionInfoDone '{}'
@@ -5672,13 +6182,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setAnalogManualTuning`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the analog manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setAnalogManualTuning '{}'
@@ -5693,13 +6205,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setAribSatelliteSignalTest`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the arib satellite signal test (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setAribSatelliteSignalTest '{}'
@@ -5714,13 +6228,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setAribTerrestrialSignalTest`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the arib terrestrial signal test (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setAribTerrestrialSignalTest '{}'
@@ -5735,13 +6251,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setAtscManualTuning`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the ATSC manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setAtscManualTuning '{}'
@@ -5756,13 +6274,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setAutoScanChannelType`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the auto scan channel type (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setAutoScanChannelType '{}'
@@ -5777,13 +6297,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setAutoScanModeForStore`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the auto scan mode for store (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setAutoScanModeForStore '{}'
@@ -5798,13 +6320,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbCableManualTuning`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB cable manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbCableManualTuning '{}'
@@ -5819,13 +6343,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbCableProgramAutoUpdate`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB cable program auto update (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbCableProgramAutoUpdate '{}'
@@ -5840,13 +6366,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbCableScanInfo`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB cable scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbCableScanInfo '{}'
@@ -5861,13 +6389,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbCableScanOption`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB cable scan option (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbCableScanOption '{}'
@@ -5882,13 +6412,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbCableServiceOperator`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB cable service operator (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbCableServiceOperator '{}'
@@ -5903,13 +6435,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatellite2TunerConn`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite 2 tuner conn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatellite2TunerConn '{}'
@@ -5924,13 +6458,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteAstraChannelList`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite astra channel list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteAstraChannelList '{}'
@@ -5945,13 +6481,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteDiSEqCMotorLimit`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite di s eq c motor limit (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteDiSEqCMotorLimit '{}'
@@ -5966,13 +6504,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteDiSEqCMotorPosition`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite di s eq c motor position (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteDiSEqCMotorPosition '{}'
@@ -5987,13 +6527,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteHomeTPs`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite home t ps (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteHomeTPs '{}'
@@ -6008,13 +6550,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteLocationLongitude`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite location longitude (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteLocationLongitude '{}'
@@ -6029,13 +6573,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteM7ORFRegionalProgram`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite m 7 ORF regional program (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteM7ORFRegionalProgram '{}'
@@ -6050,13 +6596,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteM7RegionalProgram`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite m 7 regional program (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteM7RegionalProgram '{}'
@@ -6071,13 +6619,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteM7ServiceOperatorSubList`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite m 7 service operator sub list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteM7ServiceOperatorSubList '{}'
@@ -6092,13 +6642,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteManualTuning`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteManualTuning '{}'
@@ -6113,13 +6665,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteMyLatitude`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite my latitude (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteMyLatitude '{}'
@@ -6134,13 +6688,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteMyLongitude`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite my longitude (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteMyLongitude '{}'
@@ -6155,13 +6711,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteORSRegionalProgram`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite ORS regional program (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteORSRegionalProgram '{}'
@@ -6176,13 +6734,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteRegion`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite region (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteRegion '{}'
@@ -6197,13 +6757,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteScanInfo`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite scan info (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteScanInfo '{}'
@@ -6218,13 +6780,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteScanOption`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite scan option (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteScanOption '{}'
@@ -6239,13 +6803,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteSelectedSatellite`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite selected satellite (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteSelectedSatellite '{}'
@@ -6260,13 +6826,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteServiceOperator`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite service operator (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteServiceOperator '{}'
@@ -6281,13 +6849,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteTkgsPreferredList`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite tkgs preferred list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteTkgsPreferredList '{}'
@@ -6302,13 +6872,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteTkgsTestMode`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite tkgs test mode (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteTkgsTestMode '{}'
@@ -6323,13 +6895,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteTkgsUpdate`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite tkgs update (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteTkgsUpdate '{}'
@@ -6344,13 +6918,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbSatelliteTricolorRegionalList`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB satellite tricolor regional list (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbSatelliteTricolorRegionalList '{}'
@@ -6365,13 +6941,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbTerrestrialManualTuning`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB terrestrial manual tuning (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbTerrestrialManualTuning '{}'
@@ -6386,13 +6964,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbTerrestrialScanOption`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB terrestrial scan option (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbTerrestrialScanOption '{}'
@@ -6407,13 +6987,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbTerrestrialServiceOperator`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB terrestrial service operator (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbTerrestrialServiceOperator '{}'
@@ -6428,13 +7010,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setDvbTKGSCurrentOperatingMode`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the DVB TKGS current operating mode (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setDvbTKGSCurrentOperatingMode '{}'
@@ -6449,13 +7033,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setPreferredChannelToSolveConflictLcn`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the preferred channel to solve conflict lcn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setPreferredChannelToSolveConflictLcn '{}'
@@ -6470,13 +7056,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setPreferredChannelToSolveSatCustomisedLcn`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the preferred channel to solve sat customised lcn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setPreferredChannelToSolveSatCustomisedLcn '{}'
@@ -6491,13 +7079,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setPreferredNetworkToSolveConflictLcn`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the preferred network to solve conflict lcn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setPreferredNetworkToSolveConflictLcn '{}'
@@ -6512,13 +7102,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/setPreferredRegionToSolveConflictLcn`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the preferred region to solve conflict lcn (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/setPreferredRegionToSolveConflictLcn '{}'
@@ -6533,13 +7125,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/skipAutoScan`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Skips the auto scan (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/skipAutoScan '{}'
@@ -6554,13 +7148,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/startAutoScan`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the auto scan (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/startAutoScan '{}'
@@ -6575,13 +7171,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/startDvbCableChannelListUpdate`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the DVB cable channel list update (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/startDvbCableChannelListUpdate '{}'
@@ -6596,13 +7194,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/startDvbCableSignalTest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the DVB cable signal test (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/startDvbCableSignalTest '{}'
@@ -6617,13 +7217,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/startDvbSatelliteChannelListUpdate`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the DVB satellite channel list update (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/startDvbSatelliteChannelListUpdate '{}'
@@ -6638,13 +7240,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/startDvbSatelliteGatheringAstraChannelLists`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the DVB satellite gathering astra channel lists (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/startDvbSatelliteGatheringAstraChannelLists '{}'
@@ -6659,13 +7263,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/startDvbSatelliteGatheringTricolorRegionalLists`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the DVB satellite gathering tricolor regional lists (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/startDvbSatelliteGatheringTricolorRegionalLists '{}'
@@ -6680,13 +7286,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/startDvbSatelliteM7AutoDiSEqCConfiguration`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the DVB satellite m 7 auto di s eq c configuration (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/startDvbSatelliteM7AutoDiSEqCConfiguration '{}'
@@ -6701,13 +7309,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/startDvbSatelliteM7HomeTPSearch`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the DVB satellite m 7 home TP search (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/startDvbSatelliteM7HomeTPSearch '{}'
@@ -6722,13 +7332,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/startDvbSatelliteTkgsUpdate`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the DVB satellite tkgs update (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/startDvbSatelliteTkgsUpdate '{}'
@@ -6743,13 +7355,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/startDvbTerrestrialChannelListUpdate`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the DVB terrestrial channel list update (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/startDvbTerrestrialChannelListUpdate '{}'
@@ -6764,13 +7378,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/startDvbTerrestrialSignalTest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the DVB terrestrial signal test (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/startDvbTerrestrialSignalTest '{}'
@@ -6785,13 +7401,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/stopAutoScan`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the auto scan (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/stopAutoScan '{}'
@@ -6806,13 +7424,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/stopDvbCableChannelListUpdate`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the DVB cable channel list update (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/stopDvbCableChannelListUpdate '{}'
@@ -6827,13 +7447,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/stopDvbCableSignalTest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the DVB cable signal test (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/stopDvbCableSignalTest '{}'
@@ -6848,13 +7470,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/stopDvbSatelliteChannelListUpdate`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the DVB satellite channel list update (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/stopDvbSatelliteChannelListUpdate '{}'
@@ -6869,13 +7493,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/stopDvbSatelliteDiSEqCMotorMoving`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the DVB satellite di s eq c motor moving (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/stopDvbSatelliteDiSEqCMotorMoving '{}'
@@ -6890,13 +7516,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/stopDvbSatelliteTkgsUpdate`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the DVB satellite tkgs update (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/stopDvbSatelliteTkgsUpdate '{}'
@@ -6911,13 +7539,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/stopDvbTerrestrialChannelListUpdate`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the DVB terrestrial channel list update (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/stopDvbTerrestrialChannelListUpdate '{}'
@@ -6932,13 +7562,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scan/stopDvbTerrestrialSignalTest`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the DVB terrestrial signal test (scan)
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scan/stopDvbTerrestrialSignalTest '{}'
@@ -6953,13 +7585,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/scanBarkerChannel`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Scans for barker channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/scanBarkerChannel '{}'
@@ -6974,13 +7608,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/setAudioChannel`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Sets the audio channel.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/setAudioChannel '{}'
@@ -6995,13 +7631,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/setAudioLanguage`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Sets the audio language.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/setAudioLanguage '{}'
@@ -7016,13 +7654,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/setChannelGroup`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the channel group.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/setChannelGroup '{}'
@@ -7037,13 +7677,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/setChannelMode`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the channel mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/setChannelMode '{}'
@@ -7058,13 +7700,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/setChannelSortMode`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the channel sort mode.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/setChannelSortMode '{}'
@@ -7079,13 +7723,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/setLastChannelId`
 
-Setter on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Sets the last channel ID.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/setLastChannelId '{}'
@@ -7100,13 +7746,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/setVideoView`
 
-Method on com.webos.service.utp.channel (from on-device permission registry; parameters undocumented).
+Sets the video view.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/setVideoView '{}'
@@ -7121,13 +7769,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 `luna://com.webos.service.utp.channel/sortAnalogChannelList`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Handles the sort analog channel list.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/sortAnalogChannelList '{}'
@@ -7142,13 +7792,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/startEwbsCheckInWarm`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Starts the ewbs check in warm.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/startEwbsCheckInWarm '{}'
@@ -7163,13 +7815,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 `luna://com.webos.service.utp.channel/stopEwbsCheckInWarm`
 
-Method on com.webos.service.utp.channel (introspected on-device; parameters undocumented).
+Stops the ewbs check in warm.
+
+> _Description inferred from the method name; parameters are not publicly documented._
 
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** code
+- **Confidence:** inferred
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/stopEwbsCheckInWarm '{}'
