@@ -1,7 +1,6 @@
 /* Luna Atlas web server for `luna-atlas serve` (SSH / localhost).
  * Serves the UI and runs one luna-send call on POST /api/run.  Open (no code)
- * because it binds localhost and is reached over an SSH tunnel.  The app's own
- * LAN server (webos-app/service/webserver.js) is the code-gated one.
+ * because it binds localhost and is reached over an SSH tunnel.
  * Node ships on webOS, so this needs nothing installed.
  * Usage: node server.js [port] [--host 127.0.0.1] [--code CODE]
  */

@@ -8,9 +8,9 @@
 [![Status](https://img.shields.io/badge/status-heavy%20active%20development-f59e0b)](#what-this-is)
 [![GitHub stars](https://img.shields.io/github/stars/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS?style=social)](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS/stargazers)
 
-<img src="webos-app/assets/banner.png" width="100%" alt="Luna Atlas: every LG webOS luna-send command, on your TV.  8,125 methods across 501 services, with params and examples, usable from a terminal, a browser, or a webOS app on the TV.">
+<img src="assets/brand/banner-final.png" width="100%" alt="Luna Atlas: every LG webOS luna-send command, documented.  8,125 methods across 501 services, with params and examples, usable from a terminal or a browser.">
 
-> **Every LG webOS `luna-send` command in one place.**  8,125 methods across 501 services, each with its parameters, a ready-to-run example, its access level and where it came from.  Drive it from a terminal, a browser, or a webOS app on the TV.
+> **Every LG webOS `luna-send` command in one place.**  8,125 methods across 501 services, each with its parameters, a ready-to-run example, its access level and where it came from.  Drive it from a terminal or a browser.
 
 ---
 
@@ -19,7 +19,7 @@
 |  |  |
 |---|---|
 | **Start here** | [What this is](#what-this-is) &middot; [Install](#install) &middot; [Quick start](#quick-start) |
-| **Use it** | [Script (SSH)](#script-ssh) &middot; [Browser UI](#browser-ui) &middot; [TV app](#tv-app) |
+| **Use it** | [Script (SSH)](#script-ssh) &middot; [Browser UI](#browser-ui) |
 | **Reference** | [The catalog](#the-catalog) &middot; [Coverage](#coverage) &middot; [How descriptions are sourced](#how-descriptions-are-sourced) &middot; [Categories](#categories) &middot; [Services](#services) |
 | **More** | [Dump your own TV](#dump-your-own-tv) &middot; [Scope & safety](#scope-and-safety) &middot; [Credits](#credits) &middot; [License](#license) |
 
@@ -33,19 +33,18 @@ Every LG webOS TV ships a command-line tool called **`luna-send`**.  It talks to
 luna-send -n 1 -f luna://com.webos.notification/createToast '{"message":"Hello from luna-send"}'
 ```
 
-There has never been a complete list of what you can *say* to it.  This repo is that list, **8,125 methods across 501 services**, plus three ways to use it that all read one catalog, so they always agree:
+There has never been a complete list of what you can *say* to it.  This repo is that list, **8,125 methods across 501 services**, plus two ways to use it that both read one catalog, so they always agree:
 
 | Tool | What it is | Where |
 |---|---|---|
 | **Script** | `search` / `show` / `run` over SSH, with tab completion | [`luna-atlas.sh`](luna-atlas.sh) |
 | **Browser UI** | browse and test from a phone or PC | [`luna-atlas serve`](#browser-ui) |
-| **webOS app** | the same from the couch, with the remote | [`webos-app/`](webos-app/) |
 
 > [!IMPORTANT]
-> **Under heavy active development.**  The catalog, the script and the app are all changing fast.  Method names are solid, but many parameters are still being filled in, categories may move, and the app and script are pre-1.0.  Expect breaking changes and re-dumps; pin a commit if you need something stable.
+> **Under heavy active development.**  The catalog and the script are both changing fast.  Method names are solid, but many parameters are still being filled in, categories may move, and the script is pre-1.0.  Expect breaking changes and re-dumps; pin a commit if you need something stable.
 
 > [!NOTE]
-> **The catalog is the focus right now — the app, CLI and web UI are not ready for real use yet.**  The priority is documenting every Luna call first; the webOS app and browser panel are early and rough and will get the attention once the catalog is solid.  Treat them as a preview, not a finished tool.
+> **The catalog is the focus right now — the CLI and web UI are still early.**  The priority is documenting every Luna call first; the script and browser panel are rough and will get the attention once the catalog is solid.  Treat them as a preview, not a finished tool.
 
 > [!WARNING]
 > **This drives real services on your TV.**  Many calls change settings, inputs, power or the panel, and a few can factory reset, wipe data, or brick the set.  Those are flagged ⚠️ and listed in [docs/dangerous.md](docs/dangerous.md).  Running one here is exactly as safe or unsafe as typing the same `luna-send` yourself.  Use at your own risk; there is no warranty (see [LICENSE](LICENSE)).  You need a **rooted TV or Developer Mode**.
@@ -65,24 +64,6 @@ I, [OhMyBahGosh](https://github.com/ohmybahgosh), build this with AI coding agen
 
 First you need a **rooted TV** (see [RootMyTV](https://rootmy.tv)) or **Developer Mode**, so that `luna-send` and SSH are available.
 
-<details>
-<summary><b>Option A &mdash; the webOS app</b> (no SSH needed)</summary>
-
-<br>
-
-Install the **Luna Atlas** app through the [Homebrew Channel](https://github.com/webosbrew/webos-homebrew-channel):
-
-1. Build or download the IPK (`webos-app/build.sh`, or the [Releases](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS/releases) page once published).
-2. Install it with the Homebrew Channel's **Developer Manager**, or `ares-install org.ohmybahgosh.lunaatlas_*.ipk`.
-3. For private methods, use the Homebrew Channel's **Elevate service** on it; public ones work as-is.
-
-</details>
-
-<details>
-<summary><b>Option B &mdash; the script</b> (SSH)</summary>
-
-<br>
-
 On a rooted TV, drop the repo somewhere writable (e.g. with [Entware](https://github.com/ohmybahgosh/WEBOS-ENTWARE-INSTALLER) for `git`/`curl`, or just `scp` it over):
 
 ```sh
@@ -99,8 +80,6 @@ Only `luna-atlas.sh` and the `catalog/` and `web/` folders are needed at runtime
 . completions/luna-atlas.bash     # bash
 # or add completions/luna-atlas.zsh to your $fpath for zsh
 ```
-
-</details>
 
 ---
 
@@ -143,26 +122,7 @@ ssh -L 28472:127.0.0.1:28472 root@<tv-ip>
 # then open http://localhost:28472
 ```
 
-The webOS app has a simpler path: its **Web access** switch starts the same UI on your LAN with a QR code and a one-time code, no SSH needed.  The default port is **28472** (an uncommon one, chosen to avoid SSAP on 3000/3001 and other services).  The page browses the whole catalog, shows parameters, and **runs** commands back on the TV.
-
-### TV app
-
-The **Luna Atlas** webOS app is the same thing with the remote: browse by category or service, search, read the params, edit a payload and run it, with a confirm on the dangerous calls and a **Show command** button that prints the `luna-send` line and a QR code so you can grab it on your phone.
-
-<details>
-<summary>Screenshots</summary>
-
-<br>
-
-<p align="center">
-  <img src="webos-app/assets/app-tv.gif" width="100%" alt="Luna Atlas running on an LG TV: filtering by category, searching for createToast and opening its detail with the parameter list, showing the luna-send command and a QR code, then selecting the dangerous tvpower reboot method and seeing the red confirm gate.">
-</p>
-
-<img src="webos-app/assets/screenshots/detail-createtoast.png" width="100%" alt="Luna Atlas app detail view for createToast: a public badge, the luna URI, and a table of parameters (sourceId, iconUrl, message, onclick, noaction, stale).">
-
-</details>
-
-Build it with [`webos-app/build.sh`](webos-app/build.sh); details in [`webos-app/README.md`](webos-app/README.md).
+The default port is **28472** (an uncommon one, chosen to avoid SSAP on 3000/3001 and other services).  The page browses the whole catalog, shows parameters, and **runs** commands back on the TV.
 
 ---
 
@@ -193,7 +153,7 @@ Build it with [`webos-app/build.sh`](webos-app/build.sh); details in [`webos-app
 
 ### How descriptions are sourced
 
-Every method carries a `confidence` flag (column 9 of `index.tsv`, `dc` in the app catalog) so nothing reads as more certain than it is:
+Every method carries a `confidence` flag (column 9 of `index.tsv`, `dc` in the web catalog) so nothing reads as more certain than it is:
 
 | Confidence | Methods | What it means |
 |---|---|---|
