@@ -8,9 +8,9 @@
 [![Status](https://img.shields.io/badge/status-heavy%20active%20development-f59e0b)](#what-this-is)
 [![GitHub stars](https://img.shields.io/github/stars/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS?style=social)](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS/stargazers)
 
-<img src="assets/brand/banner-final.png" width="100%" alt="Luna Atlas: every LG webOS luna-send command, documented.  8,125 methods across 501 services, with params and examples, usable from a terminal or a browser.">
+<img src="assets/brand/banner-final.png" width="100%" alt="Luna Atlas: every LG webOS luna-send command, documented.  8,125 methods across 501 services, with params and examples, usable from the terminal.">
 
-> **Every LG webOS `luna-send` command in one place.**  8,125 methods across 501 services, each with its parameters, a ready-to-run example, its access level and where it came from.  Drive it from a terminal or a browser.
+> **Every LG webOS `luna-send` command in one place.**  8,125 methods across 501 services, each with its parameters, a ready-to-run example, its access level and where it came from.  Search it, read it, and run it straight from the terminal.
 
 ---
 
@@ -19,7 +19,7 @@
 |  |  |
 |---|---|
 | **Start here** | [What this is](#what-this-is) &middot; [Install](#install) &middot; [Quick start](#quick-start) |
-| **Use it** | [Finding a command](#finding-a-command) &middot; [Script (SSH)](#script-ssh) &middot; [Browser UI](#browser-ui) |
+| **Use it** | [Finding a command](#finding-a-command) &middot; [Using the script](#usage) |
 | **Reference** | [The catalog](#the-catalog) &middot; [Coverage](#coverage) &middot; [How descriptions are sourced](#how-descriptions-are-sourced) &middot; [Categories](#categories) &middot; [Services](#services) |
 | **More** | [Dump your own TV](#dump-your-own-tv) &middot; [Scope & safety](#scope-and-safety) &middot; [Credits](#credits) &middot; [License](#license) |
 
@@ -33,18 +33,13 @@ Every LG webOS TV ships a command-line tool called **`luna-send`**.  It talks to
 luna-send -n 1 -f luna://com.webos.notification/createToast '{"message":"Hello from luna-send"}'
 ```
 
-There has never been a complete list of what you can *say* to it.  This repo is that list, **8,125 methods across 501 services**, plus two ways to use it that both read one catalog, so they always agree:
-
-| Tool | What it is | Where |
-|---|---|---|
-| **Script** | `search` / `show` / `run` over SSH, with tab completion | [`luna-atlas.sh`](luna-atlas.sh) |
-| **Browser UI** | browse and test from a phone or PC | [`luna-atlas serve`](#browser-ui) |
+There has never been a complete list of what you can *say* to it.  This repo is that list, **8,125 methods across 501 services**, with a small command-line tool, [`luna-atlas.sh`](luna-atlas.sh), that reads the catalog to `search`, `show` and `run` any of them over SSH, with tab completion.
 
 > [!IMPORTANT]
 > **Under heavy active development.**  The catalog and the script are both changing fast.  Method names are solid, but many parameters are still being filled in, categories may move, and the script is pre-1.0.  Expect breaking changes and re-dumps; pin a commit if you need something stable.
 
 > [!NOTE]
-> **The catalog is the focus right now — the CLI and web UI are still early.**  The priority is documenting every Luna call first; the script and browser panel are rough and will get the attention once the catalog is solid.  Treat them as a preview, not a finished tool.
+> **The catalog is the focus right now; the CLI is still early.**  The priority is documenting every Luna call first; the `luna-atlas` script is rough and will get the attention once the catalog is solid.  Treat it as a preview, not a finished tool.
 
 > [!WARNING]
 > **This drives real services on your TV.**  Many calls change settings, inputs, power or the panel, and a few can factory reset, wipe data, or brick the set.  Those are flagged ⚠️ and listed in [docs/dangerous.md](docs/dangerous.md).  Running one here is exactly as safe or unsafe as typing the same `luna-send` yourself.  Use at your own risk; there is no warranty (see [LICENSE](LICENSE)).  You need a **rooted TV or Developer Mode**.
@@ -74,7 +69,7 @@ cd /home/root/luna-atlas
 sh luna-atlas.sh search toast
 ```
 
-Only `luna-atlas.sh` and the `catalog/` and `web/` folders are needed at runtime.  Put `luna-atlas.sh` on your `PATH` and set `LUNA_ATLAS_DATA` to that folder if you move it.  For **tab completion**, source the right file (bash via Entware, or on your own machine):
+Only `luna-atlas.sh` and the `catalog/` folder are needed at runtime.  Put `luna-atlas.sh` on your `PATH` and set `LUNA_ATLAS_DATA` to that folder if you move it.  For **tab completion**, source the right file (bash via Entware, or on your own machine):
 
 ```sh
 . completions/luna-atlas.bash     # bash
@@ -113,8 +108,6 @@ awk -F'\t' '$5==1 && $7=="power" {print $3}' catalog/index.tsv
 
 ## Usage
 
-### Script (SSH)
-
 ```sh
 luna-atlas search toast                 # find methods by name, service or description
 luna-atlas show com.webos.notification/createToast   # params + a ready-to-run example
@@ -122,31 +115,14 @@ luna-atlas services tvpower             # list services (optionally filtered)
 luna-atlas categories                   # methods grouped by what they do
 luna-atlas run luna://com.webos.notification/createToast '{"message":"hi"}'
 luna-atlas run luna://com.webos.service.tvpower/power/reboot   # dangerous ones ask first
-luna-atlas serve 28472                  # start the browser UI (see below)
 luna-atlas dump                         # read-only dump of THIS TV's services
 ```
 
 `run` passes your call straight to `luna-send`, and asks for a typed **YES** on anything flagged dangerous.  Tab completion fills in service and method names from the catalog.
 
-### Browser UI
-
-`luna-atlas serve` runs a tiny `node` web server (node ships on webOS, so nothing to install) bound to **localhost only**, reached through an SSH tunnel so nothing is exposed on your network:
-
-```sh
-# on the TV:
-luna-atlas serve 28472
-# on your PC/phone, in another terminal:
-ssh -L 28472:127.0.0.1:28472 root@<tv-ip>
-# then open http://localhost:28472
-```
-
-The default port is **28472** (an uncommon one, chosen to avoid SSAP on 3000/3001 and other services).  The page browses the whole catalog, shows parameters, and **runs** commands back on the TV.
-
----
-
 ## The catalog
 
-8,125 methods across 501 services.  Machine-readable in [`catalog/luna-catalog.json`](catalog/luna-catalog.json) / [`.jsonl`](catalog/luna-catalog.jsonl); a grep-friendly [`catalog/index.tsv`](catalog/index.tsv) feeds the script.  One page per service under [`docs/services/`](docs/services/), grouped by category under [`docs/categories/`](docs/categories/).  The compact [`web/catalog.json`](web/catalog.json) that the browser panel and [ohmybahgosh.dev/luna-atlas](https://ohmybahgosh.dev/luna-atlas/) read is built from the JSONL: run `python3 scripts/build-web-catalog.py` after changing it.
+8,125 methods across 501 services.  Machine-readable in [`catalog/luna-catalog.json`](catalog/luna-catalog.json) / [`.jsonl`](catalog/luna-catalog.jsonl); a grep-friendly [`catalog/index.tsv`](catalog/index.tsv) feeds the script.  One page per service under [`docs/services/`](docs/services/), grouped by category under [`docs/categories/`](docs/categories/).  The compact [`web/catalog.json`](web/catalog.json) that [ohmybahgosh.dev/luna-atlas](https://ohmybahgosh.dev/luna-atlas/) reads is built from the JSONL: run `python3 scripts/build-web-catalog.py` after changing it.
 
 <details>
 <summary>Deeper reference docs</summary>

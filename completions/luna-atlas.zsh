@@ -13,7 +13,7 @@ _luna_atlas_idx() {
 _luna_atlas() {
   local -a subs
   subs=(search:'find methods' show:'method details' services:'list services'
-        categories:'list categories' run:'run a call' serve:'browser UI'
+        categories:'list categories' run:'run a call'
         dump:'dump this TV' count:'totals' version:'version' help:'help')
   if (( CURRENT == 2 )); then
     _describe 'command' subs; return

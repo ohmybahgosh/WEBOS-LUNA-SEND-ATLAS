@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Build web/catalog.json, the compact catalog the browser panel, the TV app and
-ohmybahgosh.dev/luna-atlas read, from catalog/luna-catalog.jsonl and catalog/services.json.
+"""Build web/catalog.json, the compact catalog ohmybahgosh.dev/luna-atlas reads,
+from catalog/luna-catalog.jsonl and catalog/services.json.
 
 Keys per method: m method, u uri, c category, a access, s subscribe (1/0),
 d dangerous (1/0), dc doc confidence (documented | inferred | stub), desc, p params.

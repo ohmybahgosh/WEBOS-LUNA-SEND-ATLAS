@@ -4,7 +4,7 @@
 # `luna-send` is the TV's own command-line client for the Luna Service Bus (the
 # internal IPC bus every webOS service sits on).  This wraps the catalog of
 # every known service + method around it: search them, read them, run them with
-# a guard on the dangerous ones, and serve a browser UI.
+# a guard on the dangerous ones.
 #
 # Runs on a rooted LG TV (busybox sh) or any POSIX shell with luna-send on PATH.
 # Part of WEBOS-LUNA-SEND-ATLAS: https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS
@@ -14,7 +14,7 @@ VERSION="1.0.0"
 SELF=$(command -v "$0" 2>/dev/null || echo "$0")
 case "$SELF" in */*) SELFDIR=$(cd "$(dirname "$SELF")" && pwd) ;; *) SELFDIR=$(pwd) ;; esac
 
-# Locate the data dir (holds catalog/index.tsv and web/).  Override with LUNA_ATLAS_DATA.
+# Locate the data dir (holds catalog/index.tsv).  Override with LUNA_ATLAS_DATA.
 find_data() {
   for d in \
     "${LUNA_ATLAS_DATA:-}" \
@@ -28,7 +28,6 @@ find_data() {
 }
 DATA=$(find_data) || { echo "luna-atlas: can't find catalog/index.tsv (set LUNA_ATLAS_DATA)" >&2; exit 1; }
 IDX="$DATA/catalog/index.tsv"
-WEB="$DATA/web"
 
 # colours only on a terminal
 if [ -t 1 ] && [ "${NO_COLOR:-}" = "" ]; then
@@ -48,7 +47,6 @@ ${C_B}Usage${C_0}
   luna-atlas services [filter]          list services and their method counts
   luna-atlas categories                 list categories and counts
   luna-atlas run <uri> ['<payload>'] [-y]  run a call (asks on dangerous ones)
-  luna-atlas serve [port]               browser UI on 127.0.0.1 (default 28472)
   luna-atlas dump [outdir]              read-only dump of THIS TV's services
   luna-atlas count                      how many methods / services
   luna-atlas help
@@ -57,7 +55,6 @@ ${C_B}Examples${C_0}
   luna-atlas search toast
   luna-atlas show com.webos.notification/createToast
   luna-atlas run luna://com.webos.notification/createToast '{"message":"hi"}'
-  luna-atlas serve 28472    # then on your PC: ssh -L 28472:127.0.0.1:28472 root@TV
 
 Data: $DATA
 EOF
@@ -152,16 +149,6 @@ cmd_dump() {
   sh "$d" "${1:-/tmp}"
 }
 
-cmd_serve() {
-  port=${1:-28472}
-  [ -d "$WEB" ] || die "web UI not found at $WEB"
-  echo "${C_B}Luna Atlas${C_0} serving on ${C_G}http://127.0.0.1:$port${C_0} (localhost only)"
-  echo "${C_D}From your PC/phone:  ssh -L $port:127.0.0.1:$port root@<tv-ip>  then open http://localhost:$port${C_0}"
-  echo "${C_D}Ctrl-C to stop.${C_0}"
-  command -v node >/dev/null 2>&1 || die "node not found (needed to serve; it ships on webOS)"
-  exec node "$WEB/server.js" "$port"
-}
-
 sub=${1:-help}; [ $# -gt 0 ] && shift || true
 case "$sub" in
   search)      cmd_search "$@" ;;
@@ -169,7 +156,6 @@ case "$sub" in
   services|svc) cmd_services "$@" ;;
   categories|cats) cmd_categories "$@" ;;
   run|send)    cmd_run "$@" ;;
-  serve|web)   cmd_serve "$@" ;;
   dump)        cmd_dump "$@" ;;
   count)       cmd_count ;;
   version|--version|-v) echo "luna-atlas $VERSION" ;;

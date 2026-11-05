@@ -13,7 +13,7 @@ _luna_atlas_idx() {
 _luna_atlas() {
   local cur prev subs idx
   cur="${COMP_WORDS[COMP_CWORD]}"
-  subs="search show services categories run serve dump count version help"
+  subs="search show services categories run dump count version help"
   if [ "$COMP_CWORD" -eq 1 ]; then
     COMPREPLY=( $(compgen -W "$subs" -- "$cur") ); return
   fi
