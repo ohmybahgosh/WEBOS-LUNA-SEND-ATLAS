@@ -2,51 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=1920, height=1080">
 <title>Luna Atlas</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div id="bg"></div>
 <div id="app">
-  <header>
-    <img src="icon160.png" alt="">
-    <h1>Luna&nbsp;Atlas</h1>
-    <input id="search" type="text" placeholder="Search methods, e.g. toast, setSystemSettings, tvpower">
-    <span id="stats" class="stats"></span>
-    <button id="webaccess" class="webbtn" tabindex="0">Web access <span id="webdot" class="webdot"></span></button>
-  </header>
-  <div id="weboverlay" class="weboverlay hidden">
-    <div class="webpanel">
-      <div class="webpanel-title">Open Luna Atlas on your phone or computer</div>
-      <div class="webpanel-body">
-        <div class="webqr" id="webqr"></div>
-        <div class="webinfo">
-          <div class="weblabel">On the same Wi-Fi, open</div>
-          <div class="weburl" id="weburl">...</div>
-          <div class="weblabel">and enter the code</div>
-          <div class="webcode" id="webcode">...</div>
-          <div class="webnote" id="webnote">Scan the QR with your phone's camera, or type the address.</div>
-        </div>
-      </div>
-      <div class="webpanel-actions">
-        <button id="webstop" class="webact" tabindex="0">Turn off web access</button>
-      </div>
-      <div class="webpanel-hint">Press <b>Back</b> to close this.  The server keeps running until you turn it off.</div>
-    </div>
-  </div>
-  <div id="cats" class="cats"></div>
-  <main>
-    <nav id="svclist" class="pane" tabindex="0"></nav>
-    <section id="methodlist" class="pane" tabindex="0"></section>
-    <section id="detail" class="pane detail"></section>
-  </main>
-  <footer>
-    <span><span class="k">OK</span>Select</span>
-    <span><span class="k">&#9650; &#9660;</span>Move</span>
-    <span><span class="k">BACK</span>Back</span>
-    <span id="hint">Red = can change or damage the TV.</span>
-    <span class="right">github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS</span>
-  </footer>
+  <nav id="rail"></nav>
+  <main id="view"></main>
 </div>
+<div id="gate" class="hidden"></div>
+<div id="hint"></div>
 <script src="vendor/qrcode.js"></script>
 <script src="js/luna.js"></script>
 <script src="js/app.js"></script>

@@ -1,398 +1,509 @@
-/* app.js - Luna Atlas UI, ES5. Browse/search the catalog and run commands. */
+/* Luna Atlas - TV app.  Browse/search the luna-send catalog and run commands,
+ * with a proper D-pad focus model and a one-tap LAN web editor.
+ * Targets the modern webOS WebView (Chromium).  The companion JS service does
+ * the actual luna calls and hosts the web editor (see service/). */
 (function () {
-  "use strict";
-  var DATA = null, SERVICES = [], curSvc = null, curMethod = null, catFilter = null;
+"use strict";
 
-  var $ = function (id) { return document.getElementById(id); };
-  function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
-  function esc(s) { return String(s == null ? "" : s); }
+/* ---------- small helpers ---------- */
+var $ = function (id) { return document.getElementById(id); };
+function h(html) { var d = document.createElement("div"); d.innerHTML = html.trim(); return d.firstChild; }
+function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+function store(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
 
-  function accBadge(a) { var e = el("span", "badge b-" + (a || "unknown"), a || "unknown"); return e; }
+var ICON = {
+ home:'<path d="M4 11 12 4l8 7"/><path d="M6 10v9h12v-9"/>',
+ browse:'<rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
+ search:'<circle cx="11" cy="11" r="7"/><path d="M16 16l5 5"/>',
+ star:'<path d="M12 3l2.6 5.5 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.3l6-.8z"/>',
+ web:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/>',
+ gear:'<circle cx="12" cy="12" r="3.2"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>',
+ run:'<path d="M7 4l12 8-12 8z"/>',
+ copy:'<rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/>'
+};
+function svg(name) { return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + (ICON[name] || "") + "</svg>"; }
+function logo(sz) {
+ return '<svg width="' + sz + '" height="' + sz + '" viewBox="0 0 160 160"><defs><linearGradient id="lg' + sz + '" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3ddc97"/><stop offset="1" stop-color="#33e1ff"/></linearGradient></defs>' +
+  '<circle cx="70" cy="68" r="36" fill="none" stroke="url(#lg' + sz + ')" stroke-width="9"/>' +
+  '<mask id="lm' + sz + '"><circle cx="70" cy="68" r="22" fill="#fff"/><circle cx="83" cy="59" r="18" fill="#000"/></mask>' +
+  '<circle cx="70" cy="68" r="22" fill="#3ddc97" mask="url(#lm' + sz + ')"/>' +
+  '<line x1="97" y1="95" x2="126" y2="124" stroke="url(#lg' + sz + ')" stroke-width="13" stroke-linecap="round"/></svg>';
+}
 
-  function load() {
-    var x = new XMLHttpRequest();
-    x.open("GET", "app-catalog.json", true);
-    x.onreadystatechange = function () {
-      if (x.readyState === 4) {
-        if (x.status === 200 || x.status === 0) {
-          try { DATA = JSON.parse(x.responseText); } catch (e) { fatal("Catalog parse error: " + e); return; }
-          SERVICES = DATA.services || [];
-          boot();
-        } else { fatal("Could not load app-catalog.json (" + x.status + ")"); }
-      }
-    };
-    x.send();
-  }
-  function fatal(m) { $("methodlist").innerHTML = '<div class="empty">' + esc(m) + "</div>"; }
+var CATTITLES = {apps:"Applications",notifications:"Notifications",audio:"Audio","system-info":"System Info",settings:"Settings",picture:"Picture",sound:"Sound",power:"Power",display:"Display / Panel",input:"Input & Keys",network:"Network / Wi-Fi",bluetooth:"Bluetooth",media:"Media","tv-broadcast":"TV Broadcast / DVR",storage:"Storage & USB",db:"Database (db8)",activity:"Activity Manager",security:"Security / Keys",devmode:"Developer Mode",update:"Software Update","power-mgmt":"Power Management",connection:"Connection Manager",camera:"Camera",location:"Location",keys:"Key Management",ui:"UI / Compositor",misc:"Misc"};
 
-  function boot() {
-    var c = DATA.counts || {};
-    $("stats").textContent = (c.methods || 0) + " methods / " + (c.services || 0) + " services";
-    buildCats(c.by_category || {});
-    renderServices("");
-    // report bridge/root status
-    if (window.Luna) Luna.status(function (r) {
-      if (r && r.root === true) $("hint").textContent = "Bridge service: root (full access). Red = can change/damage the TV.";
-      else if (r && r.returnValue) $("hint").textContent = "Bridge service running (public access; elevate in Homebrew Channel for private methods).";
-    });
-    wireKeys();
-    initWeb();
-    $("search").addEventListener("input", function () { curSvc = null; renderServices(this.value); });
-    // Focus the service column so the D-pad works without first clicking.
-    setCol("svclist");
-  }
+var RAIL = [
+ {id:"home",label:"Home",icon:"home"},
+ {id:"browse",label:"Browse",icon:"browse"},
+ {id:"search",label:"Search",icon:"search"},
+ {id:"favorites",label:"Favorites",icon:"star"},
+ {id:"webeditor",label:"Web Editor",icon:"web"},
+ {id:"settings",label:"Settings",icon:"gear"}
+];
 
-  function buildCats(cats) {
-    var box = $("cats"); box.innerHTML = "";
-    var all = el("span", "chip active", "all"); all.tabIndex = 0;
-    all.onclick = function () { setCat(null, all); };
-    box.appendChild(all);
-    Object.keys(cats).sort(function (a, b) { return cats[b] - cats[a]; }).forEach(function (k) {
-      var ch = el("span", "chip", k + " (" + cats[k] + ")"); ch.tabIndex = 0;
-      ch.setAttribute("data-cat", k);
-      ch.onclick = function () { setCat(k, ch); };
-      box.appendChild(ch);
-    });
-  }
-  function setCat(k, node) {
-    catFilter = k;
-    var chips = document.querySelectorAll("#cats .chip");
-    for (var i = 0; i < chips.length; i++) chips[i].className = "chip" + (chips[i] === node ? " active" : "");
-    curSvc = null; renderServices($("search").value);
-  }
+/* ---------- state ---------- */
+var CAT = null, CATEGORIES = [], byUri = {}, totalMethods = 0, totalServices = 0;
+var S = {
+ view:"home", rail:null, rootAccess:null,
+ home:{zone:"cards", i:0, recent:[]},
+ browse:{cat:0, col:0, mi:0, methods:[]},
+ detail:{m:null, bi:0, from:"home", result:null, running:false},
+ web:{status:null, loading:false},
+ search:{q:"", zone:"input", si:0, results:[]},
+ fav:{si:0},
+ favs: load("la_favs", []), recent: load("la_recent", [])
+};
 
-  function matchMethod(m, svc, q) {
-    if (catFilter && m.c !== catFilter) return false;
-    if (!q) return true;
-    q = q.toLowerCase();
-    return (m.m.toLowerCase().indexOf(q) >= 0) || (svc.toLowerCase().indexOf(q) >= 0) ||
-           (m.u.toLowerCase().indexOf(q) >= 0) || ((m.desc || "").toLowerCase().indexOf(q) >= 0);
-  }
+/* ---------- boot ---------- */
+boot();
+function boot() {
+ var x = new XMLHttpRequest();
+ x.open("GET", "web/catalog.json", true);
+ x.onreadystatechange = function () {
+  if (x.readyState !== 4) return;
+  if (x.status === 200 || x.status === 0) {
+   try { CAT = JSON.parse(x.responseText); } catch (e) { return fatal("Catalog parse error."); }
+   indexCatalog(); render();
+   if (window.Luna) Luna.status(function (r) { S.rootAccess = r && r.root; if (S.view === "settings") render(); });
+  } else fatal("Could not load catalog (" + x.status + ").");
+ };
+ x.send();
+ document.addEventListener("keydown", onKey, true);
+}
+function fatal(msg) { $("view").innerHTML = '<div style="padding:80px;font-size:28px;color:#ff5d5d">' + esc(msg) + "</div>"; }
 
-  // Left pane: services (filtered to those with matching methods), or when searching, shows matches directly.
-  function renderServices(q) {
-    var nav = $("svclist"); nav.innerHTML = "";
-    var hits = [];
-    SERVICES.forEach(function (s) {
-      var n = 0;
-      for (var i = 0; i < s.methods.length; i++) if (matchMethod(s.methods[i], s.service, q)) n++;
-      if (n > 0) hits.push({ s: s, n: n });
-    });
-    if (!hits.length) { nav.innerHTML = '<div class="empty">No matches</div>'; $("methodlist").innerHTML = ""; $("detail").innerHTML = ""; return; }
-    hits.forEach(function (h) {
-      var r = el("div", "row"); r.tabIndex = -1;
-      var nm = el("span", "name", h.s.service); r.appendChild(nm);
-      r.appendChild(el("span", "count", String(h.n)));
-      r.onclick = function () { selectService(h.s, q, r); };
-      r._svc = h.s;
-      nav.appendChild(r);
-    });
-    // auto-open first
-    selectService(hits[0].s, q, nav.firstChild);
-  }
+function indexCatalog() {
+ var cmap = {};
+ totalServices = CAT.services.length;
+ CAT.services.forEach(function (svc) {
+  (svc.methods || []).forEach(function (m) {
+   m.svc = svc.service; byUri[m.u] = m; totalMethods++;
+   var c = m.c || "misc"; (cmap[c] = cmap[c] || []).push(m);
+  });
+ });
+ Object.keys(cmap).forEach(function (c) { cmap[c].sort(function (a, b) { return (a.svc + a.m).toLowerCase() < (b.svc + b.m).toLowerCase() ? -1 : 1; }); });
+ var order = Object.keys(CATTITLES).filter(function (c) { return cmap[c]; });
+ Object.keys(cmap).forEach(function (c) { if (order.indexOf(c) < 0) order.push(c); });
+ CATEGORIES = order.map(function (c) { return {key:c, title:CATTITLES[c] || c, methods:cmap[c]}; });
+ S.browse.methods = CATEGORIES[0] ? CATEGORIES[0].methods : [];
+ if (CAT.counts && CAT.counts.methods) totalMethods = CAT.counts.methods;
+}
 
-  function selectService(s, q, node) {
-    curSvc = s;
-    var rows = $("svclist").children;
-    for (var i = 0; i < rows.length; i++) rows[i].className = "row" + (rows[i] === node ? " sel" : "");
-    renderMethods(s, q);
-  }
+/* ---------- render ---------- */
+function render() { renderRail(); var v = S.view;
+ if (v === "home") renderHome();
+ else if (v === "browse") renderBrowse();
+ else if (v === "detail") renderDetail();
+ else if (v === "webeditor") renderWeb();
+ else if (v === "search") renderSearch();
+ else if (v === "favorites") renderFav();
+ else if (v === "settings") renderSettings();
+ renderHint();
+}
+function renderRail() {
+ var active = S.view === "detail" ? "browse" : S.view;
+ var items = RAIL.map(function (it, i) {
+  var cls = "navitem" + (it.id === active ? " active" : "") + (S.rail === i ? " focus" : "");
+  return '<div class="' + cls + '">' + svg(it.icon) + "<span>" + it.label + "</span></div>";
+ }).join("");
+ $("rail").innerHTML = '<div class="brand">' + logo(44) + "<b>Luna Atlas</b></div>" + items +
+  '<div class="foot"><span class="dot"></span>webOS · on device<br>' + totalMethods.toLocaleString() + " methods</div>";
+}
+function badge(a) { return '<span class="badge b-' + esc(a) + '">' + esc(a) + "</span>"; }
+function confBadge(dc) { return '<span class="badge b-' + (dc === "documented" ? "doc" : "inferred") + '">' + esc(dc) + "</span>"; }
 
-  function renderMethods(s, q) {
-    var box = $("methodlist"); box.innerHTML = "";
-    var shown = [];
-    s.methods.forEach(function (m) { if (matchMethod(m, s.service, q)) shown.push(m); });
-    shown.forEach(function (m) {
-      var r = el("div", "row"); r.tabIndex = -1;
-      var left = el("div");
-      var nm = el("span", "name", m.m); left.appendChild(nm);
-      if (m.desc) { var sm = el("small", null, m.desc.slice(0, 90)); left.appendChild(sm); }
-      r.appendChild(left);
-      var bad = el("div");
-      bad.appendChild(accBadge(m.a));
-      if (m.s) bad.appendChild(el("span", "badge b-sub", "sub"));
-      if (m.d) bad.appendChild(el("span", "badge b-danger", "!"));
-      r.appendChild(bad);
-      r.onclick = function () { selectMethod(m, r); };
-      box.appendChild(r);
-    });
-    if (shown.length) selectMethod(shown[0], box.firstChild);
-  }
+function renderHint() {
+ var v = S.view, parts;
+ if (v === "browse") parts = [k("←→","Columns"), k("↑↓","Move"), k("OK","Open"), k("↺","Back")];
+ else if (v === "detail") parts = [k("↑↓","Choose"), k("OK","Do"), k("↺","Back to list")];
+ else if (v === "webeditor") parts = [k("OK","Start / stop"), k("↺","Back")];
+ else if (v === "search") parts = [k("OK","Type / open"), k("↓","Results"), k("↺","Back")];
+ else parts = [k("↑↓←→","Move"), k("OK","Select"), k("↺","Back")];
+ $("hint").innerHTML = parts.join("");
+}
+function k(key, lbl) { return '<span><span class="key">' + key + "</span>" + lbl + "</span>"; }
 
-  function skeleton(m) {
-    var o = {}; var p = m.p || {};
-    Object.keys(p).forEach(function (k) {
-      var t = (p[k] || "").toLowerCase();
-      if (t.indexOf("required") >= 0) {
-        o[k] = t.indexOf("bool") >= 0 ? false : (t.indexOf("int") >= 0 || t.indexOf("number") >= 0) ? 0 : "";
-      }
-    });
-    if (m.s) o.subscribe = true;
-    return o;
-  }
+/* ----- HOME ----- */
+function renderHome() {
+ var cards = [
+  {t:"Browse the catalog", p:"By category, service or access level", ic:"browse", cls:""},
+  {t:"Search", p:"Find any method, service or description", ic:"search", cls:""},
+  {t:"Open Web Editor", p:"Drive it from your phone or computer", ic:"web", cls:"web"},
+  {t:"Favorites", p:S.favs.length ? S.favs.length + " saved" : "Star methods to pin them here", ic:"star", cls:""}
+ ];
+ var ch = cards.map(function (c, i) {
+  var f = (S.rail === null && S.home.zone === "cards" && S.home.i === i) ? " focus" : "";
+  return '<div class="card ' + c.cls + f + '"><div class="ic">' + svg(c.ic) + "</div><div><h3>" + c.t + "</h3><p>" + c.p + "</p></div></div>";
+ }).join("");
+ var rec = S.recent.slice(0, 3).map(function (u, i) {
+  var f = (S.rail === null && S.home.zone === "recent" && S.home.i === i) ? " focus" : "";
+  return '<div class="rpill' + f + '">' + esc(u.replace("luna://", "")) + "</div>";
+ }).join("");
+ var recBlock = S.recent.length ? '<div class="recent"><div class="lbl">Recent</div><div class="rrow">' + rec + "</div></div>"
+  : '<div class="recent"><div class="lbl">Recent</div><div class="empty">Open a method and it shows up here.</div></div>';
+ $("view").innerHTML =
+  '<div style="display:flex;align-items:center;gap:18px">' + logo(58) + '<div class="h1">Luna <span class="grad">Atlas</span></div></div>' +
+  '<div class="sub">Every LG webOS <span class="mono" style="color:var(--g)">luna-send</span> command, on your TV.</div>' +
+  '<div class="chips"><span class="chip"><b>' + totalMethods.toLocaleString() + '</b> methods</span><span class="chip"><b>' + totalServices + '</b> services</span><span class="chip"><b>on-device</b> verified</span></div>' +
+  '<div class="cards">' + ch + "</div>" + recBlock;
+}
 
-  function selectMethod(m, node) {
-    curMethod = m;
-    var rows = $("methodlist").children;
-    for (var i = 0; i < rows.length; i++) rows[i].className = "row" + (rows[i] === node ? " sel" : "");
-    renderDetail(m);
-  }
+/* ----- BROWSE ----- */
+function renderBrowse() {
+ var b = S.browse, cat = CATEGORIES[b.cat];
+ var catsHtml = CATEGORIES.map(function (c, i) {
+  var f = (S.rail === null && b.col === 0 && b.mi === i) ? " focus" : (i === b.cat ? " sel" : "");
+  return '<div class="litem' + f + '" data-fa="' + i + '"><span>' + esc(c.title) + '</span><span class="n">' + c.methods.length + "</span></div>";
+ }).join("");
+ var methods = cat ? cat.methods : [];
+ var mHtml = methods.map(function (m, i) {
+  var f = (S.rail === null && b.col === 1 && b.mi === i) ? " focus" : "";
+  var dg = m.d ? '<span class="badge b-danger">⚠</span>' : "";
+  return '<div class="mitem' + f + '" data-fb="' + i + '"><span class="badge b-' + esc(m.a) + '">' + esc(m.a) + '</span><span class="mono">' + esc(m.m) + '</span><span class="svc">' + esc(m.svc.replace(/^com\.(webos\.)?(service\.)?/, "")) + "</span>" + dg + "</div>";
+ }).join("");
+ var sel = methods[b.col === 1 ? b.mi : 0] || methods[0];
+ var prev = sel ? detailPreview(sel) : '<div class="empty" style="padding:30px">No methods.</div>';
+ $("view").innerHTML = '<div class="h1">Browse</div><div class="cols">' +
+  '<div class="colA" id="colA"><div class="colh">Categories</div>' + catsHtml + "</div>" +
+  '<div class="colB" id="colB"><div class="colh">' + esc(cat ? cat.title : "") + " · " + methods.length + "</div>" + mHtml + "</div>" +
+  '<div class="dprev">' + prev + "</div></div>";
+ scrollFocus();
+}
+function detailPreview(m) {
+ var params = m.p && Object.keys(m.p).length;
+ var pt = "";
+ if (params) { pt = '<table class="ptable"><tr><th>Param</th><th>Type / notes</th></tr>';
+  Object.keys(m.p).slice(0, 6).forEach(function (k) { pt += '<tr><td><span class="mono">' + esc(k) + '</span></td><td>' + esc(m.p[k]) + "</td></tr>"; });
+  pt += "</table>"; }
+ return '<div class="svc">' + esc(m.svc) + '</div><h2>' + esc(m.m) + '</h2>' +
+  '<div class="uri">' + esc(m.u) + '</div>' +
+  '<div class="metarow">' + badge(m.a) + confBadge(m.dc) + (m.d ? '<span class="badge b-danger">⚠ dangerous</span>' : "") + "</div>" +
+  '<p>' + esc(m.desc || "No description.") + "</p>" + pt +
+  '<div class="openhint">Press <span class="key" style="display:inline-flex">OK</span> to open and run</div>';
+}
 
-  function renderDetail(m) {
-    var d = $("detail"); d.innerHTML = "";
-    d.appendChild(el("h2", null, m.m));
-    d.appendChild(el("div", "uri", m.u));
-    var meta = el("div", "meta");
-    meta.appendChild(accBadge(m.a));
-    if (m.s) meta.appendChild(el("span", "badge b-sub", "subscribe"));
-    if (m.d) meta.appendChild(el("span", "badge b-danger", "dangerous"));
-    meta.appendChild(el("span", "badge b-unknown", m.c));
-    d.appendChild(meta);
-    if (m.desc) d.appendChild(el("div", "desc", m.desc));
-    if (m.dc === "inferred") d.appendChild(el("div", "inferred-note", "Description inferred from the method name. Parameters are not publicly documented."));
+/* ----- DETAIL ----- */
+function renderDetail() {
+ var m = S.detail.m; if (!m) { S.view = "browse"; return renderBrowse(); }
+ var pt = "";
+ if (m.p && Object.keys(m.p).length) { pt = '<table class="ptable"><tr><th>Param</th><th>Type / notes</th></tr>';
+  Object.keys(m.p).forEach(function (k) { pt += '<tr><td><span class="mono">' + esc(k) + '</span></td><td>' + esc(m.p[k]) + "</td></tr>"; });
+  pt += "</table>"; }
+ var ret = (m.returns && Object.keys(m.returns).length) ? '<div class="ret">Returns ' + Object.keys(m.returns).map(function (f) { return "<b>" + esc(f) + "</b>"; }).join(", ") + "</div>" : "";
+ var cmd = '<span class="p">$</span> luna-send -n 1 -f \\<br>&nbsp;&nbsp;<span class="s">' + esc(m.u) + "</span> '{}'";
+ var isFav = S.favs.indexOf(m.u) >= 0;
+ var runCls = m.d ? "btn danger" : "btn pri";
+ var btns = [
+  {lbl:(m.d ? "⚠ Run (dangerous)" : "▶ Run on TV"), cls:runCls},
+  {lbl:"⧉ Copy command", cls:"btn"},
+  {lbl:(isFav ? "★ Favorited" : "☆ Add to favorites"), cls:"btn"}
+ ];
+ var btnHtml = btns.map(function (b, i) { return '<div class="' + b.cls + (S.detail.bi === i ? " focus" : "") + '">' + b.lbl + "</div>"; }).join("");
+ var resHtml = S.detail.result ? resultBox(S.detail.result) : "";
+ $("view").innerHTML = '<div class="dwrap"><div class="dmain">' +
+  '<div class="crumb">' + esc((CATTITLES[m.c] || m.c) + " ▸ " + m.svc) + "</div>" +
+  '<h2>' + esc(m.m) + '</h2><div class="uri">' + esc(m.u) + "</div>" +
+  '<div class="metarow">' + badge(m.a) + confBadge(m.dc) + '<span class="badge b-unknown">subscribe: ' + (m.s ? "yes" : "no") + "</span>" + (m.d ? '<span class="badge b-danger">⚠ dangerous</span>' : "") + "</div>" +
+  '<p>' + esc(m.desc || "No description.") + "</p>" + pt + ret +
+  '</div><div class="side"><div class="cmd">' + cmd + "</div><div class=\"btns\">" + btnHtml + "</div>" + resHtml + "</div></div>";
+}
+function resultBox(r) {
+ var ok = r && r.returnValue !== false;
+ var body = esc(JSON.stringify(r, null, 2)).replace(/&quot;returnValue&quot;: true/, '<span class="k">&quot;returnValue&quot;: true</span>').replace(/&quot;errorText&quot;/, '<span class="e">&quot;errorText&quot;</span>');
+ return '<div class="result ' + (ok ? "ok" : "err") + '">' + body + "</div>";
+}
 
-    var pk = Object.keys(m.p || {});
-    if (pk.length) {
-      var t = el("table", "ptable");
-      pk.forEach(function (k) {
-        var tr = el("tr");
-        tr.appendChild(el("td", "k", k));
-        tr.appendChild(el("td", null, m.p[k]));
-        t.appendChild(tr);
-      });
-      d.appendChild(t);
-    }
+/* ----- WEB EDITOR ----- */
+function renderWeb() {
+ var w = S.web;
+ if (w.loading) { $("view").innerHTML = '<div class="webwrap"><div class="webloading">' + logo(60) + '<div style="margin-top:20px">Starting the web editor…</div></div></div>'; return; }
+ var st = w.status;
+ if (!st || !st.running) {
+  $("view").innerHTML = '<div class="webwrap"><div class="webcard" style="grid-template-columns:1fr;text-align:center"><div><h2>Web Editor</h2><div class="lead">Start a small server on the TV so you can browse and run commands from your phone or computer on the same Wi-Fi.</div><div class="webbtn focus" style="margin:0 auto;display:inline-block">Start web editor</div></div></div></div>';
+  return;
+ }
+ var ip = (st.ips && st.ips[0]) || "your-tv-ip";
+ var url = "http://" + ip + ":" + st.port;
+ var qr = "";
+ try { if (typeof qrcode === "function") { var q = qrcode(0, "M"); q.addData(url); q.make(); qr = q.createSvgTag({cellSize:6, margin:1}); } } catch (e) {}
+ $("view").innerHTML = '<div class="webwrap"><div class="webcard">' +
+  '<div class="qr">' + (qr || "QR") + "</div><div>" +
+  '<h2>Web Editor is running</h2><div class="lead">Open the full searchable catalog on your phone or computer, on the same Wi-Fi.</div>' +
+  '<div class="urlbox">\u{1F310} ' + esc(url) + "</div>" +
+  '<div class="codebox"><span class="lbl">Access code</span><span class="codev">' + esc(st.code || "----") + "</span></div>" +
+  '<div class="steps"><div><b>1</b>Scan the QR code, or type the address.</div><div><b>2</b>Enter the code shown here.</div><div><b>3</b>Browse, search and send commands from the big screen.</div></div>' +
+  '<div class="wstat"><span class="running"><span class="dot"></span>Serving on port ' + st.port + "</span><div class=\"webbtn focus\">Stop server</div></div>" +
+  "</div></div></div>";
+}
 
-    d.appendChild(el("label", "lbl", "Payload (JSON)"));
-    var ta = el("textarea"); ta.id = "payload";
-    ta.value = JSON.stringify(skeleton(m), null, 2);
-    d.appendChild(ta);
+/* ----- SEARCH ----- */
+function renderSearch() {
+ var s = S.search;
+ var inFocus = S.rail === null && s.zone === "input";
+ var res = s.results.slice(0, 60).map(function (m, i) {
+  var f = (S.rail === null && s.zone === "results" && s.si === i) ? " focus" : "";
+  return '<div class="sitem' + f + '"><span class="badge b-' + esc(m.a) + '">' + esc(m.a) + '</span><span class="mono">' + esc(m.m) + '</span><span class="svc">' + esc(m.svc) + "</span>" + (m.d ? '<span class="badge b-danger">⚠</span>' : "") + "</div>";
+ }).join("");
+ var body = s.q ? (s.results.length ? '<div class="sresults" id="sres">' + res + "</div>" : '<div class="empty" style="padding:30px">No matches for “' + esc(s.q) + "”.</div>")
+  : '<div class="empty" style="padding:30px">Type to search ' + totalMethods.toLocaleString() + " methods by name, service or description.</div>";
+ $("view").innerHTML = '<div class="h1">Search</div>' +
+  '<div class="searchbar' + (inFocus ? " focus" : "") + '">' + svg("search").replace("<svg", '<svg style="width:28px;height:28px;color:var(--fg3);margin-left:12px"') +
+  '<input id="searchinput" type="text" placeholder="e.g. toast, getVolume, tvpower" value="' + esc(s.q) + '"></div>' + body;
+ var inp = $("searchinput");
+ if (inp) { inp.oninput = function () { s.q = inp.value; s.results = runSearch(s.q); s.si = 0; renderSearch(); if ($("searchinput")) { $("searchinput").focus(); } };
+  if (inFocus) { inp.focus(); } }
+ scrollFocus();
+}
+function runSearch(q) {
+ q = q.toLowerCase().trim(); if (!q) return [];
+ var out = [], all = Object.keys(byUri);
+ for (var i = 0; i < all.length && out.length < 200; i++) {
+  var m = byUri[all[i]];
+  if (m.m.toLowerCase().indexOf(q) >= 0 || m.svc.toLowerCase().indexOf(q) >= 0 || (m.desc || "").toLowerCase().indexOf(q) >= 0 || m.u.toLowerCase().indexOf(q) >= 0) out.push(m);
+ }
+ out.sort(function (a, b) { var am = a.m.toLowerCase().indexOf(q) === 0, bm = b.m.toLowerCase().indexOf(q) === 0; return am === bm ? 0 : (am ? -1 : 1); });
+ return out;
+}
 
-    var confirmChk = null;
-    if (m.d) {
-      var db = el("div", "danger-box");
-      db.appendChild(document.createTextNode("This call can change or damage the TV. "));
-      var lab = el("label"); confirmChk = el("input"); confirmChk.type = "checkbox";
-      lab.appendChild(confirmChk); lab.appendChild(document.createTextNode(" I understand, allow Run"));
-      db.appendChild(lab); d.appendChild(db);
-    }
+/* ----- FAVORITES ----- */
+function renderFav() {
+ var items = S.favs.map(function (u) { return byUri[u]; }).filter(Boolean);
+ if (!items.length) { $("view").innerHTML = '<div class="h1">Favorites</div><div class="empty" style="padding:40px">No favorites yet.  Open any method and choose <b>Add to favorites</b>.</div>'; return; }
+ var res = items.map(function (m, i) {
+  var f = (S.rail === null && S.fav.si === i) ? " focus" : "";
+  return '<div class="sitem' + f + '"><span class="badge b-' + esc(m.a) + '">' + esc(m.a) + '</span><span class="mono">' + esc(m.m) + '</span><span class="svc">' + esc(m.svc) + "</span></div>";
+ }).join("");
+ $("view").innerHTML = '<div class="h1">Favorites</div><div class="sresults" id="sres">' + res + "</div>";
+ scrollFocus();
+}
 
-    var row = el("div", "btnrow");
-    var runBtn = el("button", "btn primary", "Run"); runBtn.id = "runbtn";
-    if (m.d) { runBtn.disabled = true; confirmChk.onchange = function () { runBtn.disabled = !this.checked; }; }
-    runBtn.onclick = function () { doRun(m, ta, runBtn); };
-    row.appendChild(runBtn);
-    var show = el("button", "btn", "Show command");
-    show.onclick = function () { showCmd(m, ta); };
-    row.appendChild(show);
-    d.appendChild(row);
+/* ----- SETTINGS ----- */
+function renderSettings() {
+ var acc = S.rootAccess === null ? "checking…" : (S.rootAccess ? "root (full access to private methods)" : "public methods only — elevate in the Homebrew Channel for private");
+ $("view").innerHTML = '<div class="h1">Settings</div><div style="margin-top:20px">' +
+  srow("Catalog", totalMethods.toLocaleString() + " methods · " + totalServices + " services") +
+  srow("Access level", acc) +
+  srow("Web editor port", "28472") +
+  srow("Version", "1.0.0 · OhMyBahGosh") +
+  srow("Source", "github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS") +
+  "</div>";
+}
+function srow(l, v) { return '<div class="srow"><span class="lbl">' + esc(l) + '</span><span class="val">' + esc(v) + "</span></div>"; }
 
-    var resp = el("div", "empty", "Response will appear here."); resp.id = "response";
-    d.appendChild(resp);
-  }
+/* ---------- scrolling focused item into view ---------- */
+function scrollFocus() {
+ ["colA", "colB", "sres"].forEach(function (id) {
+  var c = $(id); if (!c) return; var f = c.querySelector(".focus"); if (!f) return;
+  var ct = c.scrollTop, cb = ct + c.clientHeight, et = f.offsetTop, eb = et + f.offsetHeight;
+  if (et < ct + 60) c.scrollTop = Math.max(0, et - 60); else if (eb > cb - 20) c.scrollTop = eb - c.clientHeight + 20;
+ });
+}
 
-  function parsePayload(ta) {
-    var txt = (ta.value || "").trim(); if (!txt) return {};
-    return JSON.parse(txt); // throws -> caught by caller
-  }
+/* ---------- navigation ---------- */
+function onKey(ev) {
+ var code = ev.keyCode, key = ev.key;
+ var BACK = code === 461 || code === 27 || code === 8 || key === "Back" || key === "GoBack" || key === "BrowserBack";
+ var OK = code === 13 || key === "Enter";
+ var L = code === 37, U = code === 38, R = code === 39, D = code === 40;
 
-  function doRun(m, ta, btn) {
-    var resp = $("response"); var params;
-    try { params = parsePayload(ta); } catch (e) { resp.className = "err"; resp.textContent = "Invalid JSON payload: " + e; return; }
-    resp.className = ""; resp.textContent = "Running " + m.u + " ...";
-    btn.disabled = true;
-    Luna.run({ uri: m.u, params: params, subscribe: !!m.s && params.subscribe === true }, function (r) {
-      btn.disabled = false;
-      var ok = r && r.returnValue !== false && !r.errorText;
-      resp.className = ok ? "ok" : "err";
-      var head = (r && r.__viaDirect ? "(direct bus call)\n" : "");
-      resp.textContent = head + JSON.stringify(r, null, 2);
-    });
-  }
+ // danger gate intercepts everything
+ if (!$("gate").classList.contains("hidden")) { gateKey(ev, BACK, OK); return; }
 
-  function escapeHtml(s) {
-    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  }
+ if (BACK) { ev.preventDefault(); goBack(); return; }
 
-  // Show the full luna-send command to read/type over SSH, plus a QR code so it
-  // can be scanned to a phone. (On a TV there is no clipboard to paste into, so
-  // "copy" is pointless; this is the useful form.)
-  function showCmd(m, ta) {
-    var params = "{}"; try { params = JSON.stringify(parsePayload(ta)); } catch (e) {}
-    var cmd = "luna-send -n 1 -f " + m.u + " '" + params + "'";
-    var resp = $("response"); resp.className = "cmdview";
-    var html = '<div class="cmd">' + escapeHtml(cmd) + "</div>";
-    try {
-      if (typeof qrcode === "function") {
-        var qr = qrcode(0, "L"); qr.addData(cmd); qr.make();
-        html += '<div class="qr">' + qr.createSvgTag({ cellSize: 4, margin: 2 }) +
-                "<span>Run it with root over SSH, or scan to send the command to your phone.</span></div>";
-      }
-    } catch (e) { html += '<div class="qrhint">Command too long for a QR code; read it above.</div>'; }
-    resp.innerHTML = html;
-    // best-effort clipboard (only does anything in a desktop browser)
-    try {
-      var t = document.createElement("textarea"); t.value = cmd; document.body.appendChild(t);
-      t.select(); document.execCommand("copy"); document.body.removeChild(t);
-    } catch (e) {}
-  }
+ // rail focus
+ if (S.rail !== null) {
+  if (U) { ev.preventDefault(); S.rail = Math.max(0, S.rail - 1); renderRail(); }
+  else if (D) { ev.preventDefault(); S.rail = Math.min(RAIL.length - 1, S.rail + 1); renderRail(); }
+  else if (R || OK) { ev.preventDefault(); activateRail(RAIL[S.rail].id); }
+  return;
+ }
 
-  /* ---- web access: toggle the service's LAN web server, show QR + URL + code ---- */
-  var webOn = false;
-  function svcCall(method, params, cb) {
-    if (!window.Luna) { cb({}); return; }
-    Luna.raw(Luna.SERVICE + "/" + method, params || {}, function (r) { cb(r || {}); });
-  }
-  function initWeb() {
-    var btn = $("webaccess"); if (!btn) return;
-    btn.onclick = openWeb;
-    btn.addEventListener("keydown", function (ev) { if (ev.keyCode === 13) { ev.preventDefault(); openWeb(); } });
-    var stop = $("webstop");
-    if (stop) { stop.onclick = stopWeb; stop.addEventListener("keydown", function (ev) { if (ev.keyCode === 13) { ev.preventDefault(); stopWeb(); } }); }
-    // Click outside the panel closes it too (pointer fallback for the Magic Remote).
-    var ov = $("weboverlay");
-    if (ov) ov.addEventListener("click", function (ev) { if (ev.target === ov) hideWeb(); });
-    // Reflect the current state on the button only.  Never pop the panel open on
-    // launch; the panel appears when the user chooses Web access.
-    svcCall("webStatus", {}, function (r) { setWeb(r && r.running); });
-  }
-  function setWeb(on) {
-    webOn = !!on;
-    var btn = $("webaccess"); if (btn) btn.className = "webbtn" + (webOn ? " on" : "");
-  }
-  // Tapping Web access opens the panel: start the server if it's off, otherwise
-  // show the current address and code again (fetched fresh).
-  function openWeb() {
-    if (webOn) {
-      svcCall("webStatus", {}, function (r) {
-        if (r && r.running && r.port) { setWeb(true); showWeb(r); }
-        else startWeb();
-      });
-      return;
-    }
-    startWeb();
-  }
-  function startWeb() {
-    var btn = $("webaccess"); if (btn) btn.textContent = "Starting...";
-    svcCall("webStart", { port: 28472 }, function (r) {
-      if (btn) { btn.innerHTML = 'Web access <span id="webdot" class="webdot"></span>'; }
-      if (r && r.running) { setWeb(true); showWeb(r); }
-      else { setWeb(false); alertWeb((r && r.errorText) || "Could not start the web server."); }
-    });
-  }
-  function stopWeb() { svcCall("webStop", {}, function () { setWeb(false); hideWeb(); }); }
-  function urlOf(s, ip) { return "http://" + (ip || (s.ips && s.ips[0]) || "<tv-ip>") + ":" + s.port; }
-  function showWeb(s) {
-    var url = urlOf(s);
-    $("weburl").textContent = url;
-    $("webcode").textContent = s.code || "----";
-    var qr = $("webqr"); qr.innerHTML = "";
-    try { if (typeof qrcode === "function") { var q = qrcode(0, "M"); q.addData(url); q.make(); qr.innerHTML = q.createSvgTag({ cellSize: 6, margin: 1 }); } } catch (e) {}
-    var note = "Scan the QR with your phone's camera, or type the address on a computer on the same network.";
-    if (s.ips && s.ips.length > 1) note += "  Other addresses: " + s.ips.slice(1).map(function (i) { return urlOf(s, i); }).join("  ");
-    if (!s.ips || !s.ips.length) note = "This TV reports no network address; check it's on Wi-Fi or Ethernet.";
-    $("webnote").textContent = note;
-    $("weboverlay").className = "weboverlay";
-    var stop = $("webstop"); if (stop) { try { stop.focus(); } catch (e) {} }
-  }
-  function hideWeb() { var o = $("weboverlay"); if (o) o.className = "weboverlay hidden"; }
-  function alertWeb(msg) { $("weburl").textContent = ""; $("webcode").textContent = ""; $("webqr").innerHTML = ""; $("webnote").textContent = msg; $("weboverlay").className = "weboverlay"; }
-  function webOverlayOpen() { var o = $("weboverlay"); return o && o.className.indexOf("hidden") < 0; }
+ var v = S.view;
+ if (v === "home") homeKey(ev, L, U, R, D, OK);
+ else if (v === "browse") browseKey(ev, L, U, R, D, OK);
+ else if (v === "detail") detailKey(ev, U, D, OK);
+ else if (v === "webeditor") webKey(ev, L, OK);
+ else if (v === "search") searchKey(ev, L, U, R, D, OK);
+ else if (v === "favorites") favKey(ev, L, U, D, OK);
+ else if (v === "settings") { if (L) { ev.preventDefault(); enterRail(); } }
+}
+function enterRail() { S.rail = RAIL.map(function (r) { return r.id; }).indexOf(S.view === "detail" ? "browse" : S.view); if (S.rail < 0) S.rail = 0; renderRail(); }
+function activateRail(id) {
+ S.rail = null;
+ if (id === "home") { S.view = "home"; S.home = {zone:"cards", i:0}; }
+ else if (id === "browse") { S.view = "browse"; S.browse.col = 0; }
+ else if (id === "search") { S.view = "search"; S.search.zone = "input"; }
+ else if (id === "favorites") { S.view = "favorites"; S.fav.si = 0; }
+ else if (id === "webeditor") { openWeb(); return; }
+ else if (id === "settings") { S.view = "settings"; }
+ render();
+}
+function goBack() {
+ if (S.rail !== null) { S.rail = null; render(); return; }
+ if (S.view === "detail") { S.view = "browse"; S.detail.result = null; render(); return; }
+ if (S.view !== "home") { S.view = "home"; render(); return; }
+ try { if (window.webOSSystem && window.webOSSystem.platformBack) return window.webOSSystem.platformBack(); } catch (e) {}
+ try { window.close(); } catch (e) {}
+}
 
-  /* ---- D-pad / remote navigation across the three columns ----
-     Columns: svclist (services) -> methodlist (methods) -> detail (form).
-     Up/Down moves the selection inside the focused list column; Left/Right moves
-     between columns; OK steps right (into the next column); Back steps left, and
-     leaves the app from the first column. The Magic Remote cursor still works via
-     the click handlers on every row and control. */
-  var col = "svclist"; // cats | svclist | methodlist | detail
-  function selRowOf(id) { var rows = $(id).querySelectorAll(".row"); for (var i = 0; i < rows.length; i++) if (rows[i].className.indexOf("sel") >= 0) return rows[i]; return rows[0] || null; }
-  function chips() { return $("cats").querySelectorAll(".chip"); }
-  function chipIdx() { var cs = chips(), ae = document.activeElement; for (var i = 0; i < cs.length; i++) if (cs[i] === ae) return i; for (var j = 0; j < cs.length; j++) if (cs[j].className.indexOf("active") >= 0) return j; return 0; }
-  function focusChip(idx) { var cs = chips(); if (!cs.length) return; idx = Math.max(0, Math.min(cs.length - 1, idx)); try { cs[idx].focus(); } catch (e) {} cs[idx].scrollIntoView({ block: "nearest", inline: "center" }); }
-  function atFirstRow(id) { var rows = $(id).querySelectorAll(".row"); return !rows.length || rows[0].className.indexOf("sel") >= 0; }
-  function setCol(c) {
-    col = c;
-    ["svclist", "methodlist", "detail"].forEach(function (id) {
-      var p = $(id); if (!p) return;
-      p.className = p.className.replace(/\s*col-focus/g, "") + (id === c ? " col-focus" : "");
-    });
-    if (c === "cats") { focusChip(chipIdx()); return; }
-    if (c === "detail") { focusDetail(0); return; }
-    var sel = selRowOf(c);
-    if (sel) { try { sel.focus(); } catch (e) {} sel.scrollIntoView({ block: "nearest" }); }
-    else { var p = $(c); if (p) try { p.focus(); } catch (e) {} }
-  }
-  function moveSel(id, dir) {
-    var rows = $(id).querySelectorAll(".row"); if (!rows.length) return;
-    var idx = 0; for (var i = 0; i < rows.length; i++) if (rows[i].className.indexOf("sel") >= 0) idx = i;
-    idx = Math.max(0, Math.min(rows.length - 1, idx + dir));
-    rows[idx].click(); rows[idx].scrollIntoView({ block: "nearest" }); try { rows[idx].focus(); } catch (e) {}
-  }
-  function detailControls() { return $("detail").querySelectorAll("input, button"); }
-  function focusDetail(idx) {
-    var c = detailControls(); if (!c.length) { try { $("detail").focus(); } catch (e) {} return; }
-    idx = Math.max(0, Math.min(c.length - 1, idx));
-    try { c[idx].focus(); } catch (e) {} c[idx].scrollIntoView({ block: "nearest" });
-  }
-  function moveDetail(dir) {
-    var c = detailControls(); if (!c.length) return;
-    var ae = document.activeElement, idx = 0;
-    for (var i = 0; i < c.length; i++) if (c[i] === ae) idx = i;
-    focusDetail(idx + dir);
-  }
-  function wireKeys() {
-    document.addEventListener("keydown", function (ev) {
-      var k = ev.keyCode, key = ev.key;
-      // Back / Esc: close the web overlay, else step left a column, else leave the app.
-      if (k === 461 || k === 27 || k === 8 || key === "Back" || key === "GoBack" || key === "BrowserBack") {
-        ev.preventDefault();
-        if (webOverlayOpen()) { hideWeb(); return; }
-        if (col === "detail") { setCol("methodlist"); return; }
-        if (col === "methodlist") { setCol("svclist"); return; }
-        if (col === "cats") { setCol("svclist"); return; }
-        try { if (window.webOSSystem && window.webOSSystem.platformBack) { window.webOSSystem.platformBack(); return; } } catch (e) {}
-        try { window.close(); } catch (e) {}
-        return;
-      }
-      if (webOverlayOpen()) return; // panel open: only Back / cursor act on it
-      var ae = document.activeElement;
-      // From the search box, Down drops into the category pills.
-      if (ae && ae.id === "search" && k === 40) { ev.preventDefault(); setCol("cats"); return; }
-      // Category pills row: Left/Right between pills, OK applies, Up to search, Down to list.
-      if (col === "cats") {
-        if (k === 37) { ev.preventDefault(); focusChip(chipIdx() - 1); return; }
-        if (k === 39) { ev.preventDefault(); focusChip(chipIdx() + 1); return; }
-        if (k === 38) { ev.preventDefault(); var s = $("search"); if (s) try { s.focus(); } catch (e) {} return; }
-        if (k === 40) { ev.preventDefault(); setCol("svclist"); return; }
-        if (k === 13) { ev.preventDefault(); var cs = chips(); if (cs[chipIdx()]) cs[chipIdx()].click(); return; }
-        return;
-      }
-      var typing = ae && (ae.id === "search" || ae.id === "payload");
-      if (k === 37) { if (typing) return; ev.preventDefault(); if (col === "detail") setCol("methodlist"); else if (col === "methodlist") setCol("svclist"); return; }
-      if (k === 39) { if (typing) return; ev.preventDefault(); if (col === "svclist") setCol("methodlist"); else if (col === "methodlist") setCol("detail"); return; }
-      if (k === 38 || k === 40) {
-        if (typing) return; ev.preventDefault();
-        // Up from the top of the service list jumps to the category pills.
-        if (k === 38 && col === "svclist" && atFirstRow("svclist")) { setCol("cats"); return; }
-        if (col === "detail") moveDetail(k === 40 ? 1 : -1); else moveSel(col, k === 40 ? 1 : -1);
-        return;
-      }
-      if (k === 13) { // OK: step into the next column (buttons handle their own Enter)
-        if (col === "svclist") { ev.preventDefault(); setCol("methodlist"); return; }
-        if (col === "methodlist") { ev.preventDefault(); setCol("detail"); return; }
-      }
-    });
-  }
+function homeKey(ev, L, U, R, D, OK) {
+ ev.preventDefault(); var hm = S.home;
+ if (hm.zone === "cards") {
+  var row = Math.floor(hm.i / 2), col = hm.i % 2;
+  if (L) { if (col === 0) return enterRail(); hm.i -= 1; }
+  else if (R) { if (col === 1) return; hm.i += 1; }
+  else if (U) { if (row === 0) return; hm.i -= 2; }
+  else if (D) { if (row === 1) { if (S.recent.length) { hm.zone = "recent"; hm.i = 0; } } else hm.i += 2; }
+  else if (OK) return activateCard(hm.i);
+ } else { // recent
+  if (L) { if (hm.i === 0) return enterRail(); hm.i -= 1; }
+  else if (R) { hm.i = Math.min(S.recent.length - 1, hm.i + 1); }
+  else if (U) { hm.zone = "cards"; hm.i = 2; }
+  else if (OK) { var u = S.recent[hm.i]; if (byUri[u]) openDetail(byUri[u], "home"); return; }
+ }
+ renderHome();
+}
+function activateCard(i) {
+ if (i === 0) { S.view = "browse"; S.browse.col = 0; render(); }
+ else if (i === 1) { S.view = "search"; S.search.zone = "input"; render(); }
+ else if (i === 2) { openWeb(); }
+ else if (i === 3) { S.view = "favorites"; S.fav.si = 0; render(); }
+}
 
-  // polyfill closest for old webkit
-  if (!Element.prototype.closest) {
-    Element.prototype.closest = function (sel) {
-      var e = this;
-      while (e) { if ((e.matches || e.webkitMatchesSelector).call(e, sel)) return e; e = e.parentElement; }
-      return null;
-    };
-  }
+function browseKey(ev, L, U, R, D, OK) {
+ ev.preventDefault(); var b = S.browse;
+ if (b.col === 0) {
+  if (U) { b.mi = Math.max(0, b.mi - 1); b.cat = b.mi; }
+  else if (D) { b.mi = Math.min(CATEGORIES.length - 1, b.mi + 1); b.cat = b.mi; }
+  else if (L) return enterRail();
+  else if (R || OK) { b.cat = b.mi; b.col = 1; b.mi = 0; }
+ } else {
+  var methods = CATEGORIES[b.cat].methods;
+  if (U) b.mi = Math.max(0, b.mi - 1);
+  else if (D) b.mi = Math.min(methods.length - 1, b.mi + 1);
+  else if (L) { b.col = 0; b.mi = b.cat; }
+  else if (R || OK) { return openDetail(methods[b.mi], "browse"); }
+ }
+ renderBrowse();
+}
 
-  load();
+function detailKey(ev, U, D, OK) {
+ ev.preventDefault(); var d = S.detail;
+ if (U) { d.bi = Math.max(0, d.bi - 1); renderDetail(); }
+ else if (D) { d.bi = Math.min(2, d.bi + 1); renderDetail(); }
+ else if (OK) {
+  if (d.bi === 0) { if (d.m.d) openGate(); else runMethod(); }
+  else if (d.bi === 1) copyCmd();
+  else if (d.bi === 2) toggleFav();
+ }
+}
+
+function webKey(ev, L, OK) {
+ ev.preventDefault();
+ if (L) return enterRail();
+ if (OK) { if (S.web.status && S.web.status.running) stopWeb(); else openWeb(); }
+}
+
+function searchKey(ev, L, U, R, D, OK) {
+ var s = S.search;
+ if (s.zone === "input") {
+  if (D && s.results.length) { ev.preventDefault(); s.zone = "results"; s.si = 0; var inp = $("searchinput"); if (inp) inp.blur(); renderSearch(); }
+  else if (L && (!$("searchinput") || !s.q)) { ev.preventDefault(); enterRail(); }
+  // let typing & OK pass to the input / virtual keyboard
+ } else {
+  ev.preventDefault();
+  if (U) { if (s.si === 0) { s.zone = "input"; var i2 = $("searchinput"); if (i2) i2.focus(); } else s.si--; renderSearch(); }
+  else if (D) { s.si = Math.min(s.results.length - 1, s.si + 1); renderSearch(); }
+  else if (L) enterRail();
+  else if (OK) openDetail(s.results[s.si], "search");
+ }
+}
+
+function favKey(ev, L, U, D, OK) {
+ ev.preventDefault(); var items = S.favs.map(function (u) { return byUri[u]; }).filter(Boolean);
+ if (!items.length) { if (L) enterRail(); return; }
+ if (U) { if (S.fav.si === 0) return enterRail(); S.fav.si--; }
+ else if (D) S.fav.si = Math.min(items.length - 1, S.fav.si + 1);
+ else if (L) return enterRail();
+ else if (OK) return openDetail(items[S.fav.si], "favorites");
+ renderFav();
+}
+
+/* ---------- actions ---------- */
+function openDetail(m, from) {
+ if (!m) return;
+ S.detail = {m:m, bi:0, from:from, result:null, running:false};
+ S.recent = [m.u].concat(S.recent.filter(function (u) { return u !== m.u; })).slice(0, 12);
+ store("la_recent", S.recent);
+ S.view = "detail"; render();
+}
+function toggleFav() {
+ var u = S.detail.m.u, i = S.favs.indexOf(u);
+ if (i >= 0) S.favs.splice(i, 1); else S.favs.unshift(u);
+ store("la_favs", S.favs); renderDetail();
+}
+function copyCmd() {
+ var cmd = "luna-send -n 1 -f " + S.detail.m.u + " '{}'";
+ try { if (navigator.clipboard) navigator.clipboard.writeText(cmd).catch(function () {}); } catch (e) {}
+ S.detail.result = {returnValue:true, copied:cmd}; renderDetail();
+}
+function runMethod() {
+ var m = S.detail.m; S.detail.result = {returnValue:true, status:"running…"}; renderDetail();
+ if (!window.Luna) { S.detail.result = {returnValue:false, errorText:"bridge service unavailable"}; return renderDetail(); }
+ Luna.run({uri:m.u, params:{}, subscribe:false}, function (r) { S.detail.result = r || {returnValue:false, errorText:"no reply"}; if (S.view === "detail") renderDetail(); });
+}
+
+/* danger gate */
+var holdTimer = null, holdStart = 0, holdRAF = null;
+function openGate() {
+ var m = S.detail.m;
+ $("gate").innerHTML = '<div class="gatebox"><div class="dic">⚠️</div><h3>This can change or damage the TV</h3>' +
+  '<p>' + esc(m.u) + ' is flagged dangerous.  It may change settings, inputs, power, or wipe data.</p>' +
+  '<div class="hold">Hold <span class="key" style="border-color:rgba(255,93,93,.6)">OK</span> to confirm</div>' +
+  '<div class="holdbar"><i id="holdi"></i></div><div class="gatehint">Release to cancel · Back to go back</div></div>';
+ $("gate").classList.remove("hidden");
+}
+function closeGate() { $("gate").classList.add("hidden"); $("gate").innerHTML = ""; cancelHold(); }
+function cancelHold() { if (holdTimer) clearTimeout(holdTimer); holdTimer = null; if (holdRAF) cancelAnimationFrame(holdRAF); holdRAF = null; var i = $("holdi"); if (i) i.style.width = "0"; }
+function gateKey(ev, BACK, OK) {
+ ev.preventDefault();
+ if (BACK) return closeGate();
+ if (OK) {
+  if (!holdStart) { holdStart = Date.now(); tickHold(); }
+  // each repeat keydown refreshes the release watchdog
+  if (holdTimer) clearTimeout(holdTimer);
+  holdTimer = setTimeout(function () { holdStart = 0; cancelHold(); }, 260);
+ }
+}
+function tickHold() {
+ holdRAF = requestAnimationFrame(function () {
+  if (!holdStart) return;
+  var p = Math.min(1, (Date.now() - holdStart) / 1200);
+  var i = $("holdi"); if (i) i.style.width = (p * 100) + "%";
+  if (p >= 1) { holdStart = 0; cancelHold(); closeGate(); runMethod(); }
+  else tickHold();
+ });
+}
+
+/* web editor */
+function openWeb() {
+ S.view = "webeditor"; S.web.loading = true; render();
+ svcCall("webStatus", {}, function (r) {
+  if (r && r.running) { S.web.status = r; S.web.loading = false; return render(); }
+  svcCall("webStart", {port:28472}, function (r2) {
+   S.web.loading = false;
+   S.web.status = (r2 && r2.returnValue !== false) ? r2 : null;
+   if (!S.web.status) S.web.err = (r2 && r2.errorText) || "could not start";
+   render();
+  });
+ });
+}
+function stopWeb() { svcCall("webStop", {}, function () { S.web.status = null; render(); }); }
+function svcCall(method, params, cb) {
+ if (!window.Luna) return cb({returnValue:false, errorText:"no bridge"});
+ Luna.raw(Luna.SERVICE + "/" + method, params || {}, function (r) { cb(r || {}); });
+}
+
 })();

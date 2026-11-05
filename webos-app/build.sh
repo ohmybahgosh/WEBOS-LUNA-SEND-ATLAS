@@ -14,9 +14,9 @@ command -v ares-package >/dev/null 2>&1 || { echo "ares-package not found (npm i
 VERSION=${1:-$(sed -n 's/.*"version"[^"]*"\([^"]*\)".*/\1/p' "$SRC/appinfo.json" | head -1)}
 case "$VERSION" in [0-9]*.[0-9]*.[0-9]*) ;; *) echo "Version must look like 1.0.0, got $VERSION" >&2; exit 1 ;; esac
 
-# keep the bundled catalog fresh if the generator is around
-if [ -f "$HERE/../../tools/gen_app_catalog.py" ] && [ -f "$HERE/../catalog/luna-catalog.jsonl" ]; then
-  python3 "$HERE/../../tools/gen_app_catalog.py" >/dev/null 2>&1 || true
+# keep the bundled web/catalog.json fresh from the catalog (the TV app reads it too)
+if [ -f "$HERE/../scripts/build-web-catalog.py" ]; then
+  python3 "$HERE/../scripts/build-web-catalog.py" >/dev/null 2>&1 || true
 fi
 
 # Bundle everything so one install gives the app, the SSH CLI and the web UI.
