@@ -1,6 +1,6 @@
 # Bluetooth
 
-338 methods.  [Back to index](../../README.md#categories)
+336 methods.  [Back to index](../../README.md#categories)
 
 | URI | Access | Conf | Description |
 |---|---|---|---|
@@ -140,8 +140,6 @@
 | [`luna://com.webos.service.bluetooth2/BleMeshKeyUpdateResponse`](../services/com.webos.service.bluetooth2.md#blemeshkeyupdateresponse) | unknown | documented | Object representing the intermediate response during key update to nodes in the network. |
 | [`luna://com.webos.service.bluetooth2/BleMeshNetKeys`](../services/com.webos.service.bluetooth2.md#blemeshnetkeys) | unknown | documented | Object provides the info related to network key |
 | [`luna://com.webos.service.bluetooth2/BleMeshNode`](../services/com.webos.service.bluetooth2.md#blemeshnode) | unknown | documented | Object containing a list of provisioned nodes in the network |
-| [`luna://com.webos.service.bluetooth2/BleMeshPayload - for "onOff" command`](../services/com.webos.service.bluetooth2.md#blemeshpayload_-_for_onoff_command) | unknown | documented | Payload object structure when the command is "onOff" in mesh/model/send API. |
-| [`luna://com.webos.service.bluetooth2/BleMeshPayload - for "passthrough" command`](../services/com.webos.service.bluetooth2.md#blemeshpayload_-_for_passthrough_command) | unknown | documented | Payload object structure when the command is "passThrough" in mesh/model/send API. |
 | [`luna://com.webos.service.bluetooth2/BleMeshProvisioner`](../services/com.webos.service.bluetooth2.md#blemeshprovisioner) | unknown | documented | Object provides provisioner related information |
 | [`luna://com.webos.service.bluetooth2/BleMeshUnprovisionedDevice`](../services/com.webos.service.bluetooth2.md#blemeshunprovisioneddevice) | unknown | documented | Array of BLE Mesh devices that are known to the system and that are not yet provisioned by the system |
 | [`luna://com.webos.service.bluetooth2/bluetooth2Adapter`](../services/com.webos.service.bluetooth2.md#bluetooth2adapter) | unknown | documented | An object containing constant information about the adapter. |

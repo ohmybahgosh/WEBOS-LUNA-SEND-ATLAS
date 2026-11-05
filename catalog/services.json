@@ -199,7 +199,7 @@
   "com.palm.service.tellurium": {
    "description": "Tellurium test-automation service for driving web applications: queues and broadcasts commands, subscribes to commands and events, and reports running apps, stages and window/resolution info.",
    "confidence": "inferred",
-   "methods": 20
+   "methods": 17
   },
   "com.palm.sleep": {
    "description": "Power-management service handling suspend/wake: wake-lock registration, suspend request handshakes, activity start/end, and system shutdown/reboot.",
@@ -609,7 +609,7 @@
   "com.webos.service.bluetooth2": {
    "description": "Bluetooth stack service: manages the adapter, device discovery and pairing, and profiles such as A2DP, HFP and GATT for audio and input devices.",
    "confidence": "documented",
-   "methods": 258
+   "methods": 256
   },
   "com.webos.service.broadcast-conf-downloader": {
    "description": "Appears to download broadcast configuration data; only a test method is exposed, so its full behavior is not inferable. Marked.",
@@ -804,7 +804,7 @@
   "com.webos.service.db": {
    "description": "DB8 database service: lets apps store persistent JSON data as typed 'kinds' with indexed queries (find/get/put/del/batch), compaction and backup/restore.",
    "confidence": "documented",
-   "methods": 89
+   "methods": 52
   },
   "com.webos.service.devicereset": {
    "description": "Device factory-reset service: triggers reset, reports reset status and progress, requests reboot, and tracks in-store ('instop') demo state.",

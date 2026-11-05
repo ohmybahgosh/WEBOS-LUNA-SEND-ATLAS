@@ -2,7 +2,7 @@
 
 Tellurium test-automation service for driving web applications: queues and broadcasts commands, subscribes to commands and events, and reports running apps, stages and window/resolution info. _(inferred from the service's methods)_
 
-20 methods.  Platforms seen: webOS OSE.
+17 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
@@ -22,11 +22,8 @@ Tellurium test-automation service for driving web applications: queues and broad
 | [`resolution`](#resolution) | unknown |  | devmode | documented | Screen resolution |
 | [`stages`](#stages) | unknown |  | devmode | documented | Provide stage Information of the running application. |
 | [`subscribeToCommands`](#subscribetocommands) | public | yes | devmode | documented | Subscribes to Tellurium commands |
-| [`subscribeToCommands\`](#subscribetocommands_) | public | yes | misc | documented | \ Subscribes to Tellurium commands\ \ |
 | [`subscribeToEvents`](#subscribetoevents) | public | yes | devmode | documented | Subscribes to stages' events (received from stage in notifyEvent) |
-| [`subscribeToEvents\`](#subscribetoevents_) | public | yes | misc | documented | \ Subscribes to stages' events (received from stage in notifyEvent)\ \ |
 | [`version`](#version) | public |  | devmode | documented | Returns the tellurium version from the submission tag. |
-| [`version\`](#version_) | public |  | misc | documented | \ Returns the tellurium version from the submission tag.\ \ |
 | [`window`](#window) | unknown |  | devmode | documented | Creates a top level window and accesses the screen information. |
 
 <a id="appinfo"></a>
@@ -391,40 +388,6 @@ luna-send -i luna://com.palm.service.tellurium/subscribeToCommands '{ "subscribe
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-palm-service-tellurium/)
 
-<a id="subscribetocommands_"></a>
-## `subscribeToCommands\`
-
-`luna://com.palm.service.tellurium/subscribeToCommands\`
-
-\ Subscribes to Tellurium commands\ \
-
-- **Access:** public  
-- **Subscribe:** yes  
-- **Platform:** webOS OSE  
-- **Versions:** API level 24  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `subscribe` | Boolean (required) Indicates whether to subscribe for related events. - true: Subscribe - false: Do not subscribe |
-| `appInfo` | Object: appInfo (required) JSON containing application info. |
-| `baseURI` | String (optional) Document URI |
-| `width` | Number (optional) Window width |
-| `height` | Number (optional) Window height |
-| `name` | String (required) Window name |
-| `scene` | String (required) Scene name |
-| `version` | String (optional) Nub version |
-| `type` | String (required) type name |
-
-```sh
-# luna-send -i luna://com.palm.service.tellurium/subscribeToCommands '{\ \ "subscribe":true,\ \ "appInfo":{"id":"amazon.html"},\ \ "baseURI":"file:///media/cryptofs/apps/usr/palm/applications/amazon.html/index.html",\ \ "width":1280,\ \ "height":720,\ \ "name":"",\ \ "type":"card",\ \ "scene":"phone",\ \ "version":"2.2.6"\ \ }'\ \
-```
-
-> ACG group: testautomation.operation
-
-Sources: 
-
 <a id="subscribetoevents"></a>
 ## `subscribeToEvents`
 
@@ -450,32 +413,6 @@ luna-send -i luna://com.palm.service.tellurium/subscribeToEvents '{"subscribe":t
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-palm-service-tellurium/)
 
-<a id="subscribetoevents_"></a>
-## `subscribeToEvents\`
-
-`luna://com.palm.service.tellurium/subscribeToEvents\`
-
-\ Subscribes to stages' events (received from stage in notifyEvent)\ \
-
-- **Access:** public  
-- **Subscribe:** yes  
-- **Platform:** webOS OSE  
-- **Versions:** API level 24  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `subscribe` | Boolean (required) Indicates whether to subscribe for notifications. Possible values are: - true: Subscribed - false: Not subscribed |
-
-```sh
-# luna-send -i luna://com.palm.service.tellurium/subscribeToEvents '{"subscribe":true}'\ \
-```
-
-> ACG group: testautomation.operation
-
-Sources: 
-
 <a id="version"></a>
 ## `version`
 
@@ -496,27 +433,6 @@ luna-send -n 1 -f luna://com.palm.service.tellurium/version '{}
 > ACG: testautomation.operation \| Returns: returnValue:Boolean; version:String \| Service: Intended for interacting with web applications
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-palm-service-tellurium/)
-
-<a id="version_"></a>
-## `version\`
-
-`luna://com.palm.service.tellurium/version\`
-
-\ Returns the tellurium version from the submission tag.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 24  
-- **Confidence:** documented
-
-```sh
-# luna-send -n 1 -f luna://com.palm.service.tellurium/version '{}'\ \
-```
-
-> ACG group: testautomation.operation
-
-Sources: 
 
 <a id="window"></a>
 ## `window`

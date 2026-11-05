@@ -2,7 +2,7 @@
 
 Bluetooth stack service: manages the adapter, device discovery and pairing, and profiles such as A2DP, HFP and GATT for audio and input devices.
 
-258 methods.  Platforms seen: webOS OSE, webOS TV.
+256 methods.  Platforms seen: webOS OSE, webOS TV.
 
 [Back to index](../../README.md#services)
 
@@ -89,8 +89,6 @@ Bluetooth stack service: manages the adapter, device discovery and pairing, and 
 | [`BleMeshKeyUpdateResponse`](#blemeshkeyupdateresponse) | unknown |  | bluetooth | documented | Object representing the intermediate response during key update to nodes in the network. |
 | [`BleMeshNetKeys`](#blemeshnetkeys) | unknown |  | bluetooth | documented | Object provides the info related to network key |
 | [`BleMeshNode`](#blemeshnode) | unknown |  | bluetooth | documented | Object containing a list of provisioned nodes in the network |
-| [`BleMeshPayload - for "onOff" command`](#blemeshpayload_-_for_onoff_command) | unknown |  | bluetooth | documented | Payload object structure when the command is "onOff" in mesh/model/send API. |
-| [`BleMeshPayload - for "passthrough" command`](#blemeshpayload_-_for_passthrough_command) | unknown |  | bluetooth | documented | Payload object structure when the command is "passThrough" in mesh/model/send API. |
 | [`BleMeshProvisioner`](#blemeshprovisioner) | unknown |  | bluetooth | documented | Object provides provisioner related information |
 | [`BleMeshUnprovisionedDevice`](#blemeshunprovisioneddevice) | unknown |  | bluetooth | documented | Array of BLE Mesh devices that are known to the system and that are not yet provisioned by the system |
 | [`bluetooth2Adapter`](#bluetooth2adapter) | unknown |  | bluetooth | documented | An object containing constant information about the adapter. |
@@ -2657,48 +2655,6 @@ Object containing a list of provisioned nodes in the network
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.bluetooth2/BleMeshNode '{}'
-```
-
-> Service: Allows webOS to use remote Bluetooth devices. \| Example synthesized from parameter table (page has no example).
-
-Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
-
-<a id="blemeshpayload_-_for_onoff_command"></a>
-## `BleMeshPayload - for "onOff" command`
-
-`luna://com.webos.service.bluetooth2/BleMeshPayload - for "onOff" command`
-
-Payload object structure when the command is "onOff" in mesh/model/send API.
-
-- **Access:** unknown  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** webOS OSE API level 29+  
-- **Confidence:** documented
-
-```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/BleMeshPayload - for "onOff" command '{}'
-```
-
-> Service: Allows webOS to use remote Bluetooth devices. \| Example synthesized from parameter table (page has no example).
-
-Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-bluetooth2/)
-
-<a id="blemeshpayload_-_for_passthrough_command"></a>
-## `BleMeshPayload - for "passthrough" command`
-
-`luna://com.webos.service.bluetooth2/BleMeshPayload - for "passthrough" command`
-
-Payload object structure when the command is "passThrough" in mesh/model/send API.
-
-- **Access:** unknown  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** webOS OSE API level 29+  
-- **Confidence:** documented
-
-```sh
-luna-send -n 1 -f luna://com.webos.service.bluetooth2/BleMeshPayload - for "passthrough" command '{}'
 ```
 
 > Service: Allows webOS to use remote Bluetooth devices. \| Example synthesized from parameter table (page has no example).

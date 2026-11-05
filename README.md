@@ -2,15 +2,15 @@
 
 [![Release](https://img.shields.io/github/v/release/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS?sort=semver)](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Methods](https://img.shields.io/badge/methods-8%2C167-3ddc97)](catalog/luna-catalog.jsonl)
+[![Methods](https://img.shields.io/badge/methods-8%2C125-3ddc97)](catalog/luna-catalog.jsonl)
 [![Services](https://img.shields.io/badge/services-501-22e584)](#services)
 [![webOS](https://img.shields.io/badge/webOS-4%2B-22e584)](#install)
 [![Status](https://img.shields.io/badge/status-heavy%20active%20development-f59e0b)](#what-this-is)
 [![GitHub stars](https://img.shields.io/github/stars/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS?style=social)](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS/stargazers)
 
-<img src="webos-app/assets/banner.png" width="100%" alt="Luna Atlas: every LG webOS luna-send command, on your TV.  8,167 methods across 501 services, with params and examples, usable from a terminal, a browser, or a webOS app on the TV.">
+<img src="webos-app/assets/banner.png" width="100%" alt="Luna Atlas: every LG webOS luna-send command, on your TV.  8,125 methods across 501 services, with params and examples, usable from a terminal, a browser, or a webOS app on the TV.">
 
-> **Every LG webOS `luna-send` command in one place.**  8,167 methods across 501 services, each with its parameters, a ready-to-run example, its access level and where it came from.  Drive it from a terminal, a browser, or a webOS app on the TV.
+> **Every LG webOS `luna-send` command in one place.**  8,125 methods across 501 services, each with its parameters, a ready-to-run example, its access level and where it came from.  Drive it from a terminal, a browser, or a webOS app on the TV.
 
 ---
 
@@ -33,7 +33,7 @@ Every LG webOS TV ships a command-line tool called **`luna-send`**.  It talks to
 luna-send -n 1 -f luna://com.webos.notification/createToast '{"message":"Hello from luna-send"}'
 ```
 
-There has never been a complete list of what you can *say* to it.  This repo is that list, **8,167 methods across 501 services**, plus three ways to use it that all read one catalog, so they always agree:
+There has never been a complete list of what you can *say* to it.  This repo is that list, **8,125 methods across 501 services**, plus three ways to use it that all read one catalog, so they always agree:
 
 | Tool | What it is | Where |
 |---|---|---|
@@ -168,7 +168,7 @@ Build it with [`webos-app/build.sh`](webos-app/build.sh); details in [`webos-app
 
 ## The catalog
 
-8,167 methods across 501 services.  Machine-readable in [`catalog/luna-catalog.json`](catalog/luna-catalog.json) / [`.jsonl`](catalog/luna-catalog.jsonl); a grep-friendly [`catalog/index.tsv`](catalog/index.tsv) feeds the script.  One page per service under [`docs/services/`](docs/services/), grouped by category under [`docs/categories/`](docs/categories/).  The compact [`web/catalog.json`](web/catalog.json) that the browser panel and [ohmybahgosh.dev/luna-atlas](https://ohmybahgosh.dev/luna-atlas/) read is built from the JSONL: run `python3 scripts/build-web-catalog.py` after changing it.
+8,125 methods across 501 services.  Machine-readable in [`catalog/luna-catalog.json`](catalog/luna-catalog.json) / [`.jsonl`](catalog/luna-catalog.jsonl); a grep-friendly [`catalog/index.tsv`](catalog/index.tsv) feeds the script.  One page per service under [`docs/services/`](docs/services/), grouped by category under [`docs/categories/`](docs/categories/).  The compact [`web/catalog.json`](web/catalog.json) that the browser panel and [ohmybahgosh.dev/luna-atlas](https://ohmybahgosh.dev/luna-atlas/) read is built from the JSONL: run `python3 scripts/build-web-catalog.py` after changing it.
 
 <details>
 <summary>Deeper reference docs</summary>
@@ -184,8 +184,8 @@ Build it with [`webos-app/build.sh`](webos-app/build.sh); details in [`webos-app
 | Access | Methods |
 |---|---|
 | `private` | 5141 |
-| `public` | 2478 |
-| `unknown` | 413 |
+| `public` | 2438 |
+| `unknown` | 411 |
 | `ssap` | 100 |
 | `root` | 35 |
 
@@ -197,7 +197,7 @@ Every method carries a `confidence` flag (column 9 of `index.tsv`, `dc` in the a
 
 | Confidence | Methods | What it means |
 |---|---|---|
-| `documented` | 1,849 | Described from an authoritative source: the [webOS OSE LS2 API reference](https://www.webosose.org/docs/reference/ls2-api/) (CC-BY 4.0), official LG docs, or community tools.  Parameters and return fields are real where shown. |
+| `documented` | 1,807 | Described from an authoritative source: the [webOS OSE LS2 API reference](https://www.webosose.org/docs/reference/ls2-api/) (CC-BY 4.0), official LG docs, or community tools.  Parameters and return fields are real where shown. |
 | `inferred` | 6,316 | LG-proprietary services with no public documentation and no readable source (native firmware binaries).  The one-line description is derived **only from the method's own name** &mdash; e.g. `getLockStatusforSubscribe` &rarr; "Returns the lock status (subscription variant)".  **No parameters are invented.**  Treat these as a best-effort guide, not verified behaviour. |
 | `stub` | 2 | Name only, no description yet. |
 
@@ -210,13 +210,13 @@ Methods grouped by what they broadly do.  Each opens a page with its full method
 | Category | Methods |
 |---|---|
 | [TV Broadcast / DVR](docs/categories/tv-broadcast.md) | 1901 |
-| [Misc](docs/categories/misc.md) | 869 |
+| [Misc](docs/categories/misc.md) | 829 |
 | [Input & Keys](docs/categories/input.md) | 795 |
 | [Audio](docs/categories/audio.md) | 697 |
 | [Media Playback](docs/categories/media.md) | 433 |
 | [Power](docs/categories/power.md) | 369 |
 | [Applications](docs/categories/apps.md) | 365 |
-| [Bluetooth](docs/categories/bluetooth.md) | 338 |
+| [Bluetooth](docs/categories/bluetooth.md) | 336 |
 | [Network / Wi-Fi](docs/categories/network.md) | 304 |
 | [Settings](docs/categories/settings.md) | 295 |
 | [System Info](docs/categories/system-info.md) | 289 |
@@ -242,7 +242,7 @@ Methods grouped by what they broadly do.  Each opens a page with its full method
 **webOS TV &mdash; 445 services**
 
 <details>
-<summary><code>com.webos.service.*</code> &mdash; 355 services, 6241 methods</summary>
+<summary><code>com.webos.service.*</code> &mdash; 355 services, 6239 methods</summary>
 
 | Service | Methods | Platforms |
 |---|---|---|
@@ -279,7 +279,7 @@ Methods grouped by what they broadly do.  Each opens a page with its full method
 | [`com.webos.service.blegatt`](docs/services/com.webos.service.blegatt.md) | 33 | webOS TV |
 | [`com.webos.service.blegattsoundbar`](docs/services/com.webos.service.blegattsoundbar.md) | 4 | webOS TV |
 | [`com.webos.service.bluetooth`](docs/services/com.webos.service.bluetooth.md) | 26 | webOS TV |
-| [`com.webos.service.bluetooth2`](docs/services/com.webos.service.bluetooth2.md) | 258 | webOS OSE, webOS TV |
+| [`com.webos.service.bluetooth2`](docs/services/com.webos.service.bluetooth2.md) | 256 | webOS OSE, webOS TV |
 | [`com.webos.service.broadcast-conf-downloader`](docs/services/com.webos.service.broadcast-conf-downloader.md) | 1 | webOS TV |
 | [`com.webos.service.broadcastchannelmixer`](docs/services/com.webos.service.broadcastchannelmixer.md) | 5 | webOS TV |
 | [`com.webos.service.broadcastconfigd`](docs/services/com.webos.service.broadcastconfigd.md) | 17 | webOS TV |
@@ -749,7 +749,7 @@ Methods grouped by what they broadly do.  Each opens a page with its full method
 
 | Service | Methods | Platforms |
 |---|---|---|
-| [`com.palm.service.tellurium`](docs/services/com.palm.service.tellurium.md) | 20 | webOS OSE |
+| [`com.palm.service.tellurium`](docs/services/com.palm.service.tellurium.md) | 17 | webOS OSE |
 | [`com.webos.pipeline.camera`](docs/services/com.webos.pipeline.camera.md) | 5 | webOS OSE |
 | [`com.webos.pipeline.record`](docs/services/com.webos.pipeline.record.md) | 8 | webOS OSE |
 | [`com.webos.service.activitymanager`](docs/services/com.webos.service.activitymanager.md) | 36 | webOS OSE |
@@ -761,7 +761,7 @@ Methods grouped by what they broadly do.  Each opens a page with its full method
 | [`com.webos.service.cec`](docs/services/com.webos.service.cec.md) | 8 | webOS OSE |
 | [`com.webos.service.configurator`](docs/services/com.webos.service.configurator.md) | 4 | webOS OSE |
 | [`com.webos.service.contextintentmgr`](docs/services/com.webos.service.contextintentmgr.md) | 3 | webOS OSE |
-| [`com.webos.service.db`](docs/services/com.webos.service.db.md) | 89 | webOS OSE |
+| [`com.webos.service.db`](docs/services/com.webos.service.db.md) | 52 | webOS OSE |
 | [`com.webos.service.devmode`](docs/services/com.webos.service.devmode.md) | 3 | webOS OSE |
 | [`com.webos.service.filecache`](docs/services/com.webos.service.filecache.md) | 16 | webOS OSE |
 | [`com.webos.service.hfp`](docs/services/com.webos.service.hfp.md) | 11 | webOS OSE |

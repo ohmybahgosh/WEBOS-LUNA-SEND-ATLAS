@@ -2,7 +2,7 @@
 
 DB8 database service: lets apps store persistent JSON data as typed 'kinds' with indexed queries (find/get/put/del/batch), compaction and backup/restore.
 
-89 methods.  Platforms seen: webOS OSE.
+52 methods.  Platforms seen: webOS OSE.
 
 [Back to index](../../README.md#services)
 
@@ -10,92 +10,55 @@ DB8 database service: lets apps store persistent JSON data as typed 'kinds' with
 |---|---|---|---|---|---|
 | [`activity`](#activity) | unknown |  | db | documented | Information about registered Activity in ActivityManager for calling DB8 internal/scheduledPurge API call. |
 | [`batch`](#batch) | public |  | db | documented | The batch method enables apps to execute multiple database operations in one service request. It allows only the following database operatio |
-| [`batch\`](#batch_) | public |  | misc | documented | \ The **batch** method enables apps to execute multiple database operations in one service request. It allows only the following database op |
 | [`BatchOperation`](#batchoperation) | unknown |  | db | documented | Method and params for batch operation. |
 | [`BatchResponse`](#batchresponse) | unknown |  | db | documented | Response to batch operation. |
 | [`cancelSearch`](#cancelsearch) | public |  | db | documented | Stops the search operation mid-way. This method can be used when the search operation takes a long time to return results or required to sea |
-| [`cancelSearch\`](#cancelsearch_) | public |  | misc | documented | \ Stops the search operation mid-way.\ \ This method can be used when the search operation takes a long time to return results or required t |
 | [`compact`](#compact) | public |  | db | documented | The compact method invokes the low level garbage collector. When DB8 executes a del operation without Purge:True param, it only marks the ob |
-| [`compact\`](#compact_) | public |  | misc | documented | \ The **compact** method invokes the low level garbage collector. When DB8 executes a **del** operation without **Purge:True** param, it onl |
 | [`del`](#del) | public |  | db | documented | The del method deletes JSON data objects from the database. Apps can specify the objects to be deleted by providing: a set of IDs to be dele |
-| [`del\`](#del_) | public |  | misc | documented | \ The **del** method deletes JSON data objects from the database.\ \ Apps can specify the objects to be deleted by providing:\ \ - a set of  |
 | [`delKind`](#delkind) | public |  | db | documented | The delKind method deletes a Kind from the database. Deleting a Kind deletes ALL data objects of that Kind. |
-| [`delKind\`](#delkind_) | public |  | misc | documented | \ The **delKind** method deletes a Kind from the database. Deleting a Kind deletes ALL data objects of that Kind.\ \ |
 | [`dump`](#dump) | public |  | db | documented | Backs up a database. The file created by the dump method typically contains JSON statements to recreate all of the Kinds and data of the dat |
-| [`dump\`](#dump_) | public |  | misc | documented | \ Backs up a database. The file created by the **dump** methodtypically contains JSON statements to recreate all of the Kinds and data of th |
 | [`FilterClause`](#filterclause) | unknown |  | db | documented | Definition of the Filter clause that is part of the Query object. |
 | [`find`](#find) | public | yes | db | documented | The find method returns a set of objects that match the query specified in the query parameter. The app can specify the number of results to |
-| [`find\`](#find_) | public | yes | misc | documented | \ The **find** method returns a set of objects that match the query specified in the **query** parameter.\ \ The app can specify the number  |
 | [`get`](#get) | public |  | db | documented | The get method retrieves JSON data objects by ids. This is the fastest way to retrieve data. |
-| [`get\`](#get_) | public |  | misc | documented | \ The **get** method retrieves JSON data objects by ids. This is the fastest way to retrieve data.\ \ |
 | [`getProfile`](#getprofile) | public |  | db | documented | Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time. |
-| [`getProfile\`](#getprofile_) | public |  | misc | documented | \ Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time |
 | [`IndexClause`](#indexclause) | unknown |  | db | documented | Used in the putKind call for creating kind object indexes. Note that indexes determine the type of queries your app can make. See Queries an |
 | [`IndexPropClause`](#indexpropclause) | unknown |  | db | documented | Defines index property for IndexClause |
 | [`internal/postBackup`](#internal_postbackup) | public |  | db | documented | An internal DB8 method that is called when a backup operation has been completed. |
-| [`internal/postBackup\`](#internal_postbackup_) | public |  | misc | documented | \ An internal DB8 method that is called when a backup operation has been completed.\ \ |
 | [`internal/postRestore`](#internal_postrestore) | public |  | db | documented | An internal DB8 method that is called when the database finishes a restore process. |
-| [`internal/postRestore\`](#internal_postrestore_) | public |  | misc | documented | \ An internal DB8 method that is called when the database finishes a restore process.\ \ |
 | [`internal/preBackup`](#internal_prebackup) | public |  | db | documented | Invoked when an internal webOS service wants to restore a database from a backup file. |
-| [`internal/preBackup\`](#internal_prebackup_) | public |  | misc | documented | \ Invoked when an internal webOS service wants to restore a database from a backup file.\ \ |
 | [`internal/preRestore`](#internal_prerestore) | public |  | db | documented | Used by the webOS service to correctly respond to a database restore command. This method must be called before restoring a database. |
-| [`internal/preRestore\`](#internal_prerestore_) | public |  | misc | documented | \ Used by the webOS service to correctly respond to a database restore command. This method must be called before restoring a database.\ \ |
 | [`internal/releaseAdminProfile`](#internal_releaseadminprofile) | public |  | db | documented | For applications whose profiling is controlled by admin-privileged applications, this method relinquishes the profiling control from admin-p |
-| [`internal/releaseAdminProfile\`](#internal_releaseadminprofile_) | public |  | misc | documented | \ For applications whose profiling is controlled by admin-privileged applications, this method relinquishes the profiling control from admin |
 | [`internal/scheduledPurge`](#internal_scheduledpurge) | public |  | db | documented | An internal DB8 private method, used by activityManager . Activity manager periodically calls the DB8 garbage collector to remove data that  |
-| [`internal/scheduledPurge\`](#internal_scheduledpurge_) | public |  | misc | documented | \ An internal DB8 private method, used by **activityManager**. **Activity manager** periodically calls the **DB8** garbage collector to remo |
 | [`internal/scheduledSpaceCheck`](#internal_scheduledspacecheck) | public |  | db | documented | An internal DB8 callback method, that is called by the Activity Manager for checking available disk space. |
-| [`internal/scheduledSpaceCheck\`](#internal_scheduledspacecheck_) | public |  | misc | documented | \ An internal DB8 callback method, that is called by the **Activity Manager** for checking available disk space.\ \ |
 | [`internal/spaceCheck`](#internal_spacecheck) | public |  | db | documented | An internal DB8 private method, used by webOS private services. Services can subscribe for the spaceCheck method and get notifications when  |
-| [`internal/spaceCheck\`](#internal_spacecheck_) | public |  | misc | documented | \ An internal DB8 private method, used by webOS private services. Services can subscribe for the **spaceCheck** method and get notifications |
 | [`listActiveMedia`](#listactivemedia) | public |  | db | documented | Returns a list of active attached media, and shards. |
-| [`listActiveMedia\`](#listactivemedia_) | public |  | misc | documented | \ Returns a list of active attached media, and shards.\ \ |
 | [`load`](#load) | public |  | db | documented | Restores a database from a dumped JSON file. |
-| [`load\`](#load_) | public |  | misc | documented | \ Restores a database from a dumped JSON file.\ \ |
 | [`media`](#media) | unknown |  | db | inferred | Handles the media. |
 | [`merge`](#merge) | public |  | db | documented | The merge method updates the properties of existing objects. The objects can be specified in one of the following ways: A query An array of  |
-| [`merge\`](#merge_) | public |  | misc | documented | \ The **merge** method updates the properties of existing objects.\ \ The objects can be specified in one of the following ways:\ \ - A quer |
 | [`mergePut`](#mergeput) | public |  | db | documented | The mergePut method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. The o |
-| [`mergePut\`](#mergeput_) | public |  | misc | documented | \ The **mergePut** method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database. |
 | [`operation`](#operation) | unknown |  | db | documented | Object used to represent a batch operation to run. Note: This object has different format as target. Following object example is for the tar |
 | [`profile`](#profile) | public |  | db | documented | Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application. You can enable DB8 profili |
-| [`profile\`](#profile_) | public |  | misc | documented | \ Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application.\ \ You can enable DB8 pr |
 | [`purge`](#purge) | public |  | db | documented | The purge method invokes the garbage collector. The purge method will: Remove all objects that were marked for deletion Perform a space chec |
-| [`purge\`](#purge_) | public |  | misc | documented | \ The **purge** method invokes the garbage collector. The purge method will:\ \ - Remove all objects that were marked for deletion\ - Perfor |
 | [`purgeStatus`](#purgestatus) | public |  | db | documented | The purgeStatus method returns the status of the last run purge command. If the last run purge command was successful, the objects were perm |
-| [`purgeStatus\`](#purgestatus_) | public |  | misc | documented | \ The **purgeStatus** method returns the status of the last run **purge** command. If the last run **purge** command was successful, the obj |
 | [`put`](#put) | public |  | db | documented | The put method stores JSON data objects of a particular Kind into the database. The put method will: Assign an id field to each object, if i |
-| [`put\`](#put_) | public |  | misc | documented | \ The **put** method stores JSON data objects of a particular Kind into the database. The **put** method will:\ \ - Assign an **id** field t |
 | [`putKind`](#putkind) | public |  | db | documented | The putKind method registers a kind with the database. Kinds define the owner, and the indexes for a JSON data object. Indexes can be compos |
-| [`putKind\`](#putkind_) | public |  | misc | documented | \ The **putKind** method registers a kind with the database.\ \ Kinds define the owner, and the indexes for a JSON data object. Indexes can  |
 | [`putPermissions`](#putpermissions) | public |  | db | documented | The putPermissions method enables other apps or services to access an app's stored DB8 data. The app can give permissions to access data obj |
-| [`putPermissions\`](#putpermissions_) | public |  | misc | documented | \ The **putPermissions** method enables other apps or services to access an app's stored DB8 data. The app can give permissions to access da |
 | [`putQuotas`](#putquotas) | public |  | db | documented | The putQuotas method provides the ability to update a quota's current service limits at runtime. This service is used by private webOS servi |
-| [`putQuotas\`](#putquotas_) | public |  | misc | documented | \ The **putQuotas** method provides the ability to update a quota's current service limits at runtime. This service is used by private webOS |
 | [`Query`](#query) | unknown |  | db | documented | Defines a db8 query. |
 | [`quotaStats`](#quotastats) | public |  | db | documented | The quotaStats method returns information about a service's used limits. |
-| [`quotaStats\`](#quotastats_) | public |  | misc | documented | \ The **quotaStats** method returns information about a service's used limits.\ \ |
 | [`quotaStatsResult`](#quotastatsresult) | unknown |  | db | documented | Information about used quotas. |
 | [`removeAppData`](#removeappdata) | public |  | db | documented | The removeAppData method removes all data associated with the given owner. In other words, the method removes all Kinds that have specified  |
-| [`removeAppData\`](#removeappdata_) | public |  | misc | documented | \ The **removeAppData** method removes all data associated with the given owner. In other words, the method removes all **Kinds** that have  |
 | [`reserveIds`](#reserveids) | public |  | db | documented | When a client service creates objects that have references between each other, the service can ask the database through the reserveIds metho |
-| [`reserveIds\`](#reserveids_) | public |  | misc | documented | \ When a client service creates objects that have references between each other, the service can ask the database through the **reserveIds** |
 | [`Results`](#results) | unknown |  | db | documented | Contains "id" and "rev" fields for the JSON data object. |
 | [`RevSetClause`](#revsetclause) | unknown |  | db | documented | Defines a revision set - subset of an object's properties that your app can be notified about when one of the properties is modified. |
 | [`RevSetPropClause`](#revsetpropclause) | unknown |  | db | documented | A property in a RevSetClause. |
 | [`search`](#search) | public | yes | db | documented | Unlike the find method, the search method supports the "?" (question mark) operator. The ? operator can be used for full-text searching. How |
-| [`search\`](#search_) | public | yes | misc | documented | \ Unlike the **find** method, the **search** method supports the **"?"**(question mark) operator. The **?** operator can be used for full-te |
 | [`setShardMode`](#setshardmode) | public |  | db | documented | Marks an external media as transient for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by an |
-| [`setShardMode\`](#setshardmode_) | public |  | misc | documented | \ Marks an external media as **transient** for the specified DB8 shard Id. This means that all data, relative to the shard, are not required |
 | [`shardInfo`](#shardinfo) | public |  | db | documented | Retrieves the state of a shard, like shard activity, associated media devices, mount point. |
-| [`shardInfo\`](#shardinfo_) | public |  | misc | documented | \ Retrieves the state of a shard, like shard activity, associated media devices, mount point.\ \ |
 | [`shardKind`](#shardkind) | public |  | db | documented | Requests whether an external media supports a specific kind, by providing the DB8 short ID and the Kind. shardKind method call is deprecated |
-| [`shardKind\`](#shardkind_) | public |  | misc | documented | \ Requests whether an external media supports a specific kind, by providing the DB8 short ID and the Kind.\ \ **shardKind** method call is d |
 | [`stats`](#stats) | public |  | db | documented | The stats method returns detailed information about the storage space used by every service. |
-| [`stats\`](#stats_) | public |  | misc | documented | \ The stats method returns detailed information about the storage space used by every service.\ \ |
 | [`statsKindResult`](#statskindresult) | unknown |  | db | documented | Information about kind usage. |
 | [`watch`](#watch) | public | yes | db | documented | The watch method watches for updates to the database that would change the results of a query. |
-| [`watch\`](#watch_) | public | yes | misc | documented | \ The **watch** method watches for updates to the database that would change the results of a query.\ \ |
 | [`WhereClause`](#whereclause) | unknown |  | db | documented | Defines a SQL-like JSON where clause for a db8 Query. |
 
 <a id="activity"></a>
@@ -143,32 +106,6 @@ luna-send -n 1 -f -a com.webos.service.test luna://com.webos.service.db/batch '{
 > ACG: database.operation \| Returns: batchResponse:Object: BatchResponse; errorCode:Number; errorText:String; returnValue:Boolean \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="batch_"></a>
-## `batch\`
-
-`luna://com.webos.service.db/batch\`
-
-\ The **batch** method enables apps to execute multiple database operations in one service request. It allows only the following database operations:\ \ - put\ - get\ - del\ - find (without a watch)\ - merge\ \ Atomicity is NOT guaranteed across batched operations.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `operations` | Object array: BatchOperation (required) The operations parameter contains the list of database operations to perform. |
-
-```sh
-# luna-send -n 1 -f -a com.webos.service.test luna://com.webos.service.db/batch '{\ \ "operations":\[\ \ {\ \ "method":"put",\ \ "params":{\ \ "objects":\[\ \ {\ \ "\_kind":"com.webos.service.test:1",\ \ "sample":"sample1",\ \ "test":"test1"\ \ }\ \ \]\ \ }\ \ },\ \ {\ \ "method":"merge",\ \ "params":{\ \ "query":{\ \ "from":"com.webos.service.test:1",\ \ "where":\[\ \ {\ \ "prop":"sample",\ \ "op
-```
-
-> ACG group: database.operation
-
-Sources: 
 
 <a id="batchoperation"></a>
 ## `BatchOperation`
@@ -237,32 +174,6 @@ luna-send -n 1 -f luna://com.webos.service.db/cancelSearch '{"taskId": "find_sEh
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="cancelsearch_"></a>
-## `cancelSearch\`
-
-`luna://com.webos.service.db/cancelSearch\`
-
-\ Stops the search operation mid-way.\ \ This method can be used when the search operation takes a long time to return results or required to search with another keyword without waiting for previous search results. It is not applicable to situations where the search method returns results immediately.\ \ **Note:** For this method to work, the search() API must be configured with the 'cancelable' parameter set to 'true'.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `taskId` | String (required) Unique identifier of the search operation. Obtained using the search() API. |
-
-```sh
-# luna-send -n 1 -f luna://com.webos.service.db/cancelSearch '{"taskId": "find\_sEhKeU"}'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
-
 <a id="compact"></a>
 ## `compact`
 
@@ -283,27 +194,6 @@ luna-send -n 1 -f luna://com.webos.service.db/compact '{}
 > ACG: database.management \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="compact_"></a>
-## `compact\`
-
-`luna://com.webos.service.db/compact\`
-
-\ The **compact** method invokes the low level garbage collector. When DB8 executes a **del** operation without **Purge:True** param, it only marks the object as to be deleted. The object will be removed by DB8, when the garbage collector is called. To call the garbage collector manually, the client can call the **compact** method.\ \ This command is implemented only for the **LevelDB** and **Sandwich** engine.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-```sh
-# luna-send -n 1 -f luna://com.webos.service.db/compact '{}'\ \
-```
-
-> ACG group: database.management
-
-Sources: 
 
 <a id="del"></a>
 ## `del`
@@ -332,34 +222,6 @@ luna-send -n 1 -f luna://com.webos.service.db/del '{"ids" :["J8rBI6u7uh+"]}'
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="del_"></a>
-## `del\`
-
-`luna://com.webos.service.db/del\`
-
-\ The **del** method deletes JSON data objects from the database.\ \ Apps can specify the objects to be deleted by providing:\ \ - a set of IDs to be deleted\ - a DB8 query\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `ids` | String array (optional) The ids parameter contains an array of JSON object ids that you wish to delete. If you do not wish to specify JSON object IDs, you must specify a query in the query parameter. |
-| `query` | Object: Query (optional) The query parameter contains a query for a set of objects to be deleted. If you do not wish to specify a query, you must specify a list of JSON object ids in the ids parameter. |
-| `purge` | Boolean (optional) The default value of the purge parameter is false. - If the purge parameter is set to false, the target objects will only be marked for deletion. Objects marked for deletion can still be restored. They will be purged permanently only when an administrative purge operation is run. - If the purge parameter is set to true, the target objects will be deleted permanently immediately. |
-
-```sh
-# luna-send -n 1 -f luna://com.webos.service.db/del '{"ids" :\["J8rBI6u7uh+"\]}'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
-
 <a id="delkind"></a>
 ## `delKind`
 
@@ -384,32 +246,6 @@ luna-send -n 1 -f -a com.webos.service.configurator luna://com.webos.service.db/
 > ACG: database.operation \| Returns: returnValue:Boolean; errorCode:Number; errorText:String \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="delkind_"></a>
-## `delKind\`
-
-`luna://com.webos.service.db/delKind\`
-
-\ The **delKind** method deletes a Kind from the database. Deleting a Kind deletes ALL data objects of that Kind.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `id` | String (required) The id parameter contains the id of the kind the app wants to delete. |
-
-```sh
-# luna-send -n 1 -f -a com.webos.service.configurator luna://com.webos.service.db/delKind '{"id" : "com.webos.service.test:1"}'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
 
 <a id="dump"></a>
 ## `dump`
@@ -436,33 +272,6 @@ luna-send -n 1 -f -a com.webos.service.configurator luna://com.webos.service.db/
 > ACG: database.management \| Returns: count:Number; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="dump_"></a>
-## `dump\`
-
-`luna://com.webos.service.db/dump\`
-
-\ Backs up a database. The file created by the **dump** methodtypically contains JSON statements to recreate all of the Kinds and data of the database from which they have been dumped.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `path` | String (required) Path to the dump file |
-| `incDel` | Boolean (optional) If true, also include deleted objects. |
-
-```sh
-# luna-send -n 1 -f -a com.webos.service.configurator luna://com.webos.service.db/dump '{"path":"/tmp/dump.json"}'\ \
-```
-
-> ACG group: database.management
-
-Sources: 
 
 <a id="filterclause"></a>
 ## `FilterClause`
@@ -513,35 +322,6 @@ luna-send -n 1 -f -a com.webos.service.test luna://com.webos.service.db/find '{ 
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="find_"></a>
-## `find\`
-
-`luna://com.webos.service.db/find\`
-
-\ The **find** method returns a set of objects that match the query specified in the **query** parameter.\ \ The app can specify the number of results to return. However, if the app does not want to specify a limit, it can set the **count** parameter to **true**. This will cause the **find** method to return the total number of results.\ \ The app can also request to be notified if any of the returned results from the query change in the future. In order to receive change notifications, set the **watch** parameter to **true**.\ \ The **find** method supports distinct groups enabling the app to remove duplicate objects.\ \
-
-- **Access:** public  
-- **Subscribe:** yes  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `query` | Object: Query (required) DB8 query for retrieving results. |
-| `count` | Boolean (optional) The default value of the count parameter is false. If the app did not specify a limit on the number of results to return, and wants to know the total number of results returned, the app should set the count parameter to true. |
-| `watch` | Boolean (optional) The default value of the watch parameter is false. If an app wants to be notified about any change in the returned results, the app should set the watch parameter to true. |
-| `subscribe` | Boolean (optional) Subscription is enabled if true. |
-
-```sh
-# luna-send -n 1 -f -a com.webos.service.test luna://com.webos.service.db/find '{\ \ "query":{\ \ "from":"com.webos.service.test:1",\ \ "where":\[\ \ {\ \ "prop":"sample",\ \ "op":"=",\ \ "val":"sample1"\ \ }\ \ \]\ \ }\ \ }'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
-
 <a id="get"></a>
 ## `get`
 
@@ -566,32 +346,6 @@ luna-send -n 1 -f luna://com.webos.service.db/get '{"ids" : ["J8rKTaBClIo"]}
 > ACG: database.operation \| Returns: results:Object array; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="get_"></a>
-## `get\`
-
-`luna://com.webos.service.db/get\`
-
-\ The **get** method retrieves JSON data objects by ids. This is the fastest way to retrieve data.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `ids` | String array (required) Ids of the JSON data objects to retrieve. |
-
-```sh
-# luna-send -n 1 -f luna://com.webos.service.db/get '{"ids" : \["J8rKTaBClIo"\]}'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
 
 <a id="getprofile"></a>
 ## `getProfile`
@@ -618,33 +372,6 @@ luna-send -n 1 -a com.webos.service.test:3 luna://com.webos.service.db/getProfil
 > ACG: database.profiling \| Returns: returnValue:Boolean; results:Object array; errorCode:Number; errorText:String \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="getprofile_"></a>
-## `getProfile\`
-
-`luna://com.webos.service.db/getProfile\`
-
-\ Get profiling data for applications. Profile data includes the queries made and related information such as request time and response time.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `application` | String (optional) Name of application for which to get profile data. - If no name is specified, returns the profile data for the current application. - If name is given as \*, returns profile data for all applications. The caller application must have admin permissions. |
-| `query` | Object: Query (optional) Additional filters for retrieving profile data. |
-
-```sh
-# luna-send -n 1 -a com.webos.service.test:3 luna://com.webos.service.db/getProfile '{ }' -f\ \
-```
-
-> ACG group: database.profiling
-
-Sources: 
 
 <a id="indexclause"></a>
 ## `IndexClause`
@@ -709,27 +436,6 @@ luna-send -n 1 -a com.webos.service.configurator -f luna://com.webos.service.db/
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="internal_postbackup_"></a>
-## `internal/postBackup\`
-
-`luna://com.webos.service.db/internal/postBackup\`
-
-\ An internal DB8 method that is called when a backup operation has been completed.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 23  
-- **Confidence:** documented
-
-```sh
-# luna-send -n 1 -a com.webos.service.configurator -f luna://com.webos.service.db/internal/postBackup '{}'\ \
-```
-
-> ACG group: database.management
-
-Sources: 
-
 <a id="internal_postrestore"></a>
 ## `internal/postRestore`
 
@@ -755,33 +461,6 @@ luna-send -n 1 -f luna://com.webos.service.db/internal/postRestore '{"tempDir": 
 > ACG: database.management \| Returns: returnValue:Boolean \| Service: Enables apps to store persistent data. \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="internal_postrestore_"></a>
-## `internal/postRestore\`
-
-`luna://com.webos.service.db/internal/postRestore\`
-
-\ An internal DB8 method that is called when the database finishes a restore process.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 21  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `tempDir` | String (required) Directory where the JSON dump file is stored. |
-| `files` | String array (required) List of files to load from tempDir |
-
-```sh
-luna-send -n 1 -f luna://com.webos.service.db/internal/postRestore\ '{}'
-```
-
-> ACG group: database.management
-
-Sources: 
 
 <a id="internal_prebackup"></a>
 ## `internal/preBackup`
@@ -812,36 +491,6 @@ luna-send -n 1 -m com.webos.service.configurator -f luna://com.webos.service.db/
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="internal_prebackup_"></a>
-## `internal/preBackup\`
-
-`luna://com.webos.service.db/internal/preBackup\`
-
-\ Invoked when an internal webOS service wants to restore a database from a backup file.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 21  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `tempDir` | String (required) Directory where the JSON dump files are stored. |
-| `maxTempBytes` | Number (required) Maximum size allowed for the dump file. |
-| `incrementalKey` | Object (optional) Provides list of revisions to be dumped |
-| `deletedRev` | Number (int32\_t) (optional) Deleted revision value that increase after operation |
-| `rev` | Number (int32\_t) (optional) revision value that increase after operation |
-
-```sh
-# luna-send -n 1 -m com.webos.service.configurator -f luna://com.webos.service.db/internal/preBackup '{\ \ "tempDir": "/tmp/",\ \ "maxTempBytes" : 777 ,\ \ "incrementalKey" : {\ \ "deletedRev" : 1,\ \ "rev" : 1\ \ }\ \ }'\ \
-```
-
-> ACG group: database.management
-
-Sources: 
-
 <a id="internal_prerestore"></a>
 ## `internal/preRestore`
 
@@ -866,32 +515,6 @@ luna-send -n 1 -f luna://com.webos.service.db/internal/preRestore '{"version": "
 > ACG: database.management \| Returns: proceed:Boolean; returnValue:Boolean \| Service: Enables apps to store persistent data. \| Example synthesized from parameter table (page has no example).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="internal_prerestore_"></a>
-## `internal/preRestore\`
-
-`luna://com.webos.service.db/internal/preRestore\`
-
-\ Used by the webOS service to correctly respond to a database restore command. This method must be called before restoring a database.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 21  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `version` | String (required) version is the database version that is to be restored. |
-
-```sh
-luna-send -n 1 -f luna://com.webos.service.db/internal/preRestore\ '{}'
-```
-
-> ACG group: database.management
-
-Sources: 
 
 <a id="internal_releaseadminprofile"></a>
 ## `internal/releaseAdminProfile`
@@ -918,32 +541,6 @@ luna-send -n 1 -a com.webos.service.configurator luna://com.webos.service.db/int
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="internal_releaseadminprofile_"></a>
-## `internal/releaseAdminProfile\`
-
-`luna://com.webos.service.db/internal/releaseAdminProfile\`
-
-\ For applications whose profiling is controlled by admin-privileged applications, this method relinquishes the profiling control from admin-privilged applications. The 3rd-party application can then control its own its own profiling.\ \ **Background:** Once an admin-privileged application has enabled/disabled profiling for a 3rd-party application, then only admin-privileged applications can control the profiling for that application.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 21  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `application` | String (optional) Name of application for which admin permission must be relinquished. - If no name is specified, admin permission for the caller application is released. - If name is given as \*, admin permission for all applications is released. |
-
-```sh
-# luna-send -n 1 -a com.webos.service.configurator luna://com.webos.service.db/internal/releaseAdminProfile '{"application":"\*"}' -f\ \ Example 2: Admin-privileged application (com.webos.service.configurator) relinquishes its control over profiling for the "com.webos.testApp" 3rd-party application.\ \ # luna-send -n 1 -a com.webos.service.configurator luna://com.webos.service.db/internal/releaseA
-```
-
-> ACG group: database.management
-
-Sources: 
-
 <a id="internal_scheduledpurge"></a>
 ## `internal/scheduledPurge`
 
@@ -968,32 +565,6 @@ luna-send -n 1 -f luna://com.webos.service.activitymanager/create '{ "activity":
 > ACG: database.management \| Returns: returnValue:Boolean \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="internal_scheduledpurge_"></a>
-## `internal/scheduledPurge\`
-
-`luna://com.webos.service.db/internal/scheduledPurge\`
-
-\ An internal DB8 private method, used by **activityManager**. **Activity manager** periodically calls the **DB8** garbage collector to remove data that has been marked for deletion.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 21  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `$activity` | Object: activity (required) $activity contain information about active ActivityManager job |
-
-```sh
-# luna-send -n 1 -f luna://com.webos.service.activitymanager/create '{\ \ "activity":{\ \ "name":"basicactivity",\ \ "description":"Test create",\ \ "type":{\ \ "foreground":true\ \ }\ \ },\ \ "start":true,\ \ "subscribe":true\ \ }'\ \
-```
-
-> ACG group: database.management
-
-Sources: 
 
 <a id="internal_scheduledspacecheck"></a>
 ## `internal/scheduledSpaceCheck`
@@ -1020,32 +591,6 @@ luna-send -n 1 -f luna://com.webos.service.db/internal/scheduledSpaceCheck '{}'
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="internal_scheduledspacecheck_"></a>
-## `internal/scheduledSpaceCheck\`
-
-`luna://com.webos.service.db/internal/scheduledSpaceCheck\`
-
-\ An internal DB8 callback method, that is called by the **Activity Manager** for checking available disk space.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 21  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `$activity` | Object (required) Id of created activity by activity manager. |
-
-```sh
-luna-send -n 1 -f luna://com.webos.service.db/internal/scheduledSpaceCheck\ '{}'
-```
-
-> ACG group: database.management
-
-Sources: 
-
 <a id="internal_spacecheck"></a>
 ## `internal/spaceCheck`
 
@@ -1067,27 +612,6 @@ luna-send -n 1 -f luna://com.webos.service.db/internal/spaceCheck '{}'
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="internal_spacecheck_"></a>
-## `internal/spaceCheck\`
-
-`luna://com.webos.service.db/internal/spaceCheck\`
-
-\ An internal DB8 private method, used by webOS private services. Services can subscribe for the **spaceCheck** method and get notifications when DB8 reaches soft and hard disk space limits.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 21  
-- **Confidence:** documented
-
-```sh
-luna-send -n 1 -f luna://com.webos.service.db/internal/spaceCheck\ '{}'
-```
-
-> ACG group: database.management
-
-Sources: 
-
 <a id="listactivemedia"></a>
 ## `listActiveMedia`
 
@@ -1108,27 +632,6 @@ luna-send -f -n 1 luna://com.webos.mediadb/listActiveMedia '{}
 > ACG: database.operation \| Returns: returnValue:Boolean; media:Object: media \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="listactivemedia_"></a>
-## `listActiveMedia\`
-
-`luna://com.webos.service.db/listActiveMedia\`
-
-\ Returns a list of active attached media, and shards.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 21  
-- **Confidence:** documented
-
-```sh
-# luna-send -f -n 1 luna://com.webos.mediadb/listActiveMedia '{}'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
 
 <a id="load"></a>
 ## `load`
@@ -1154,32 +657,6 @@ luna-send -n 1 -f luna://com.webos.service.db/load '{"path": "/tmp/dump.json"}
 > ACG: database.management \| Returns: count:Number; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="load_"></a>
-## `load\`
-
-`luna://com.webos.service.db/load\`
-
-\ Restores a database from a dumped JSON file.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `path` | String (required) The complete path of the JSON dump file. For example: /tmp/dump.json |
-
-```sh
-# luna-send -n 1 -f luna://com.webos.service.db/load '{"path": "/tmp/dump.json"}'\ \
-```
-
-> ACG group: database.management
-
-Sources: 
 
 <a id="media"></a>
 ## `media`
@@ -1232,35 +709,6 @@ luna-send -n 1 -f -a com.webos.service.configurator luna://com.webos.service.db/
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="merge_"></a>
-## `merge\`
-
-`luna://com.webos.service.db/merge\`
-
-\ The **merge** method updates the properties of existing objects.\ \ The objects can be specified in one of the following ways:\ \ - A query\ - An array of IDs\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `objects` | Object array (optional) The object parameter is an array of objects, each object will have an id and key/value pairs that represent the object properties the app needs to merge. The objects parameter is required if the query parameter is not specified. |
-| `query` | Object: Query (optional) The query parameter is a Query object specifying the set of objects whose properties the app wants to update. The query parameter is required if the object parameter is not specified. |
-| `props` | Object (optional) The props parameter is an object with key/value pairs that specify the set of properties to be merged into the existing object(s) specified in the query parameter. If the app specifies the properties in the prop parameter, the query is required. |
-| `ignoreMissing` | Boolean (optional) Ignore if any key is missing |
-
-```sh
-# luna-send -n 1 -f -a com.webos.service.configurator luna://com.webos.service.db/merge '{\ \ "objects":\[\ \ {\ \ "\_id":"J8rKTaBClIo",\ \ "test":"test1",\ \ "sample":"sample\_updated\_value"\ \ }\ \ \]\ \ }'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
-
 <a id="mergeput"></a>
 ## `mergePut`
 
@@ -1287,34 +735,6 @@ luna-send -n 1 -f -a com.webos.service.configurator luna://com.webos.service.db/
 > ACG: database.operation \| Returns: results:Object array: Results; count:Number; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="mergeput_"></a>
-## `mergePut\`
-
-`luna://com.webos.service.db/mergePut\`
-
-\ The **mergePut** method updates the properties of existing objects. If an object doesn't exist, a new one will be created in the database.\ \ The object to be updated can be specified in one of the following ways:\ \ - A query\ - An array of IDs\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `objects` | Object array (optional) The object parameter is an array of objects, each object will have an id and key/value pairs that represent the object properties the app needs to merge. This is required if the query parameter is not specified. |
-| `query` | Object: Query (optional) The query parameter is a Query object specifying the set of objects whose properties the app wants to update. The query parameter is required if the object parameter is not specified. |
-| `props` | Object (optional) The props parameter is an object with key/value pairs that specify the set of properties to be merged into the existing object(s) specified in the query parameter. If the app specifies the properties in the prop parameter, the query is required. |
-
-```sh
-# luna-send -n 1 -f -a com.webos.service.configurator luna://com.webos.service.db/mergePut '{\ \ "objects":\[\ \ {\ \ "\_id":"J8rKTaBClIo",\ \ "test":"test1",\ \ "sample":"sample\_updated\_value"\ \ }\ \ \]\ \ }'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
 
 <a id="operation"></a>
 ## `operation`
@@ -1363,33 +783,6 @@ luna-send -f -a com.webos.testApp -n 1 luna://com.webos.service.db/profile '{"en
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="profile_"></a>
-## `profile\`
-
-`luna://com.webos.service.db/profile\`
-
-\ Enables or disables DB8 profiling for an application. When enabled, profiling data is stored for the application.\ \ You can enable DB8 profiling using one of the following approaches:\ \ \- Self enabling: In this approach, the 3rd-party application enables profiling on itself (see example 1).\ \ \- Enable profiling using admin-privileged applications: In the approach, an admin-privileged application controls DB8 profiling for 3rd-party applications. Use this approach when you want the admin to control the profiling of 3rd-party applications. You can choose to enable profiling for a single application or for all 3rd-party applications. See example 2 and 3.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `enable` | Boolean (optional) Status of DB8 profiling. Possible values: TRUE, FALSE Default value: TRUE |
-| `application` | String (optional) Name of application to be profiled. - If no name is specified, the current/caller application is profiled. - If name is given as \*, all applications are profiled. The caller application must have admin permissions. |
-
-```sh
-# luna-send -f -a com.webos.testApp -n 1 luna://com.webos.service.db/profile '{"enable":true}'\ \ Example 2: Admin-privileged application (com.webos.service.configurator) enables profiling for all 3rd-party applications.\ \ # luna-send -n 1 -a com.webos.service.configurator luna://com.webos.service.db/profile '{"enable":true, "application":"\*"}'\ \ Example 3: Admin-privileged application (com.web
-```
-
-> ACG group: database.profiling
-
-Sources: 
-
 <a id="purge"></a>
 ## `purge`
 
@@ -1415,32 +808,6 @@ luna-send -n 1 -f -a com.palm.configurator luna://com.webos.service.db/purge '{}
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="purge_"></a>
-## `purge\`
-
-`luna://com.webos.service.db/purge\`
-
-\ The **purge** method invokes the garbage collector. The purge method will:\ \ - Remove all objects that were marked for deletion\ - Perform a space check, and remove all temporary data\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `window` | Number (int32\_t) (optional) purge window size |
-
-```sh
-# luna-send -n 1 -f -a com.palm.configurator luna://com.webos.service.db/purge '{}'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
-
 <a id="purgestatus"></a>
 ## `purgeStatus`
 
@@ -1461,27 +828,6 @@ luna-send -n 1 -f -a com.palm.configurator luna://com.webos.service.db/purgeStat
 > ACG: database.operation \| Returns: returnValue:Boolean; rev:Number \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="purgestatus_"></a>
-## `purgeStatus\`
-
-`luna://com.webos.service.db/purgeStatus\`
-
-\ The **purgeStatus** method returns the status of the last run **purge** command. If the last run **purge** command was successful, the objects were permanently deleted, and the **purgeStatus** method will return the updated database revision number.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-```sh
-#luna-send -n 1 -f -a com.palm.configurator luna://com.webos.service.db/purgeStatus '{}'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
 
 <a id="put"></a>
 ## `put`
@@ -1508,33 +854,6 @@ luna-send -n 1 -f -a com.webos.service.configurator luna://com.webos.service.db/
 > ACG: database.operation \| Returns: results:Object array: Results; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="put_"></a>
-## `put\`
-
-`luna://com.webos.service.db/put\`
-
-\ The **put** method stores JSON data objects of a particular Kind into the database. The **put** method will:\ \ - Assign an **id** field to each object, if it was not set.\ - Return the **id** and **rev** for each stored object.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `objects` | Object array (required) List of JSON data objects of a particular kind that the app wants to store in the database. |
-| `shardId` | String (optional) Id of shard info |
-
-```sh
-# luna-send -n 1 -f -a com.webos.service.configurator luna://com.webos.service.db/put '{\ \ "objects":\[\ \ {\ \ "\_kind":"com.webos.service.test:1",\ \ "sample":"sample1",\ \ "test":"test1"\ \ }\ \ \]\ \ }'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
 
 <a id="putkind"></a>
 ## `putKind`
@@ -1569,40 +888,6 @@ luna-send -n 1 -f -a com.webos.service.test luna://com.webos.service.db/putKind 
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="putkind_"></a>
-## `putKind\`
-
-`luna://com.webos.service.db/putKind\`
-
-\ The **putKind** method registers a kind with the database.\ \ Kinds define the owner, and the indexes for a JSON data object. Indexes can be composed of single or multiple properties. When you create your index, be aware that queries can only return results that are indexed, and are contiguously ordered.\ \ If your app or service wants to be notified only when a subset of an object's properties are updated, then you can use revision sets.\ \ If your app or service creates objects that other apps or services need to access, then see the **putPermissions** method for more information.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `id` | String (required) Id of the kind to be registered with the database. |
-| `owner` | String (required) Owner of the kind. Only the owner has permission to modify the created kind. - Use the ID of the app/service which calls the putKind method. - App/service can only create kinds that they are the owner of. But it is possible to grant access to the created kind to other apps/services using the putPermission method. |
-| `schema` | Object (optional) JSON Syntax for data objects of a specific kind. If set, this kind's data objects are validated before being stored. For details refer to http://json-schema.org/documentation.html |
-| `sync` | Boolean (optional) The sync parameter allows apps to enable backing up and restoring specific kinds of objects. The default value for the sync parameter is false. If the user moves to another device, the saved app data can be restored. |
-| `extends` | String array (optional) List of ids of parent kinds from which the kind has been derived. |
-| `indexes` | Object: IndexClause (optional) The indexes parameter contains indexes for the kind. |
-| `revsets` | Object array: RevSetClause (optional) List of database revision sets. |
-| `private` | Boolean (optional) Enable private data for putKind |
-| `assignId` | Boolean (optional) Enable assign id for putKind if true |
-
-```sh
-# luna-send -n 1 -f -a com.webos.service.test luna://com.webos.service.db/putKind '{\ \ "id":"com.webos.service.test:1",\ \ "owner":"com.webos.service.test",\ \ "indexes":\[\ \ {\ \ "name":"sample",\ \ "props":\[\ \ {\ \ "name":"sample"\ \ }\ \ \]\ \ },\ \ {\ \ "name":"testsample",\ \ "props":\[\ \ {\ \ "name":"test"\ \ },\ \ {\ \ "name":"sample"\ \ }\ \ \]\ \ }\ \ \]\ \ }'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
-
 <a id="putpermissions"></a>
 ## `putPermissions`
 
@@ -1635,39 +920,6 @@ luna-send -n 1 -f -a com.webos.service.test luna://com.webos.service.db/putPermi
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="putpermissions_"></a>
-## `putPermissions\`
-
-`luna://com.webos.service.db/putPermissions\`
-
-\ The **putPermissions** method enables other apps or services to access an app's stored DB8 data. The app can give permissions to access data objects of a specific Kind.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `type` | String (required) Must be set to db.kind. |
-| `object` | String (required) The DB8 kind of the object for which the app wants to provide access. |
-| `caller` | String (required) The id of the app or service that the app is granting permission to access its data. |
-| `operations` | Object: operation (required) Database operations the app is granting permissions for. |
-| `create` | String (optional) To grant create permission, set the create parameter to allow. |
-| `read` | String (optional) To grant read permission, set the read parameter to allow. |
-| `update` | String (optional) To grant update permission, set the update parameter to allow. |
-| `delete` | String (optional) To grant delete permission, set the delete parameter to allow. |
-
-```sh
-# luna-send -n 1 -f -a com.webos.service.test luna://com.webos.service.db/putPermissions '{\ \ "permissions":\[\ \ {\ \ "operations":{\ \ "read":"allow",\ \ "create":"allow",\ \ "update":"allow",\ \ "delete":"allow"\ \ },\ \ "object":"com.webos.service.test:1",\ \ "type":"db.kind",\ \ "caller":"com.webos.service.testapp"\ \ }\ \ \]\ \ }'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
-
 <a id="putquotas"></a>
 ## `putQuotas`
 
@@ -1694,34 +946,6 @@ luna-send -f -n 1 -a com.webos.service.configurator luna://com.webos.service.db/
 > ACG: database.management \| Returns: returnValue:Boolean \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="putquotas_"></a>
-## `putQuotas\`
-
-`luna://com.webos.service.db/putQuotas\`
-
-\ The **putQuotas** method provides the ability to update a quota's current service limits at runtime. This service is used by private webOS services to increase/decrease quotas for critical webOS services.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `quotas` | Object array: putQuotas (required) List of quotas |
-| `owner` | String (optional) Name of service |
-| `size` | Number (int32\_t) (optional) quota size in bytes |
-
-```sh
-# luna-send -f -n 1 -a com.webos.service.configurator luna://com.webos.service.db/putQuotas '{\ \ "quotas":\[\ \ {\ \ "owner":"com.test",\ \ "size":1000000\ \ }\ \ \]\ \ }'\ \
-```
-
-> ACG group: database.management
-
-Sources: 
 
 <a id="query"></a>
 ## `Query`
@@ -1764,27 +988,6 @@ luna-send -n 1 -f -a com.palm.configurator luna://com.webos.service.db/quotaStat
 > ACG: database.management \| Returns: returnValue:Boolean; results:Object: quotaStatsResult \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="quotastats_"></a>
-## `quotaStats\`
-
-`luna://com.webos.service.db/quotaStats\`
-
-\ The **quotaStats** method returns information about a service's used limits.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-```sh
-# luna-send -n 1 -f -a com.palm.configurator luna://com.webos.service.db/quotaStats '{}'\ \
-```
-
-> ACG group: database.management
-
-Sources: 
 
 <a id="quotastatsresult"></a>
 ## `quotaStatsResult`
@@ -1832,32 +1035,6 @@ luna-send -n 1 luna://com.webos.service.db/removeAppData '{"owners" : [ "com.web
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="removeappdata_"></a>
-## `removeAppData\`
-
-`luna://com.webos.service.db/removeAppData\`
-
-\ The **removeAppData** method removes all data associated with the given owner. In other words, the method removes all **Kinds** that have specified **owner**.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `owners` | String array (required) Owner(s) of kinds to delete. Kinds having given owners will be removed from the database. |
-
-```sh
-# luna-send -n 1 luna://com.webos.service.db/removeAppData '{"owners" : \[ "com.webos.service.test:1" \]}'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
-
 <a id="reserveids"></a>
 ## `reserveIds`
 
@@ -1882,32 +1059,6 @@ luna-send -i -f luna://com.webos.service.db/reserveIds '{ "count" : 3 }
 > ACG: database.operation \| Returns: ids:String array; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="reserveids_"></a>
-## `reserveIds\`
-
-`luna://com.webos.service.db/reserveIds\`
-
-\ When a client service creates objects that have references between each other, the service can ask the database through the **reserveIds** method to regenerate ids of objects. The client service can use such ids as objects, and DB8 will use those ids when objects are inserted into the database.\ \ By default, DB8 configured to reserve maximum \[0:1000\] ids, but this limit can vary depending on the platform.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `count` | Number (required) Number of Ids to reserve. |
-
-```sh
-# luna-send -i -f luna://com.webos.service.db/reserveIds '{ "count" : 3 }'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
 
 <a id="results"></a>
 ## `Results`
@@ -1999,34 +1150,6 @@ luna-send -n 1 -f -a com.webos.service.test luna://com.webos.service.db/search '
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="search_"></a>
-## `search\`
-
-`luna://com.webos.service.db/search\`
-
-\ Unlike the **find** method, the **search** method supports the **"?"**(question mark) operator. The **?** operator can be used for full-text searching. However, the **search** method is significantly slower, and should only be used for full-text type-down search. The **search** method should not be used for retrieving results that are going to be scrolled in a list.\ \ The search method supports:\ \ - Ordering by any property.\ - _Distinct method_ to remove duplicate objects.\ - **%%** operator in filter to search in a sub-string.\ - Canceling the search mid-way (using the 'cancelable' parameter).\ \ The **search** method has some limitations:\ \ - There must be an index for the field you are searching on.\ - The search operation looks for words beginning with the search string.\ \
-
-- **Access:** public  
-- **Subscribe:** yes  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `query` | Object: Query (required) Query for search. |
-| `watch` | Boolean (optional) Indicates if the app must be notified of any changes in the search results. This notification is sent only once (the first time when there is a change in the result). Possible values are: - true- Notifies the changes. - false- No notifications. Default value:false Note: The 'watch' and 'subscribe' parameters must not be used in the same call. |
-| `subscribe` | Boolean (optional) Subscribe to get notified when there are changes in search results. Possible values are: - true- Subscribe for changes. - false- Not subscribed. Note: - It is mandatory to set 'subscribe' to true when 'cancelable' is set to true. - The 'watch' and 'subscribe' parameters must not be used in the same call. |
-
-```sh
-# luna-send -n 1 -f -a com.webos.service.test luna://com.webos.service.db/search '{\ \ "query":{\ \ "from":"com.webos.service.test:1",\ \ "where":\[\ \ {\ \ "prop":"sample",\ \ "op":"?",\ \ "val":"sample"\ \ }\ \ \]\ \ }\ \ }'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
-
 <a id="setshardmode"></a>
 ## `setShardMode`
 
@@ -2053,33 +1176,6 @@ luna-send -f -n 1 luna://com.webos.mediadb/setShardMode '{ "shardId" : "+MHrmF",
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="setshardmode_"></a>
-## `setShardMode\`
-
-`luna://com.webos.service.db/setShardMode\`
-
-\ Marks an external media as **transient** for the specified DB8 shard Id. This means that all data, relative to the shard, are not required by any application and will be removed by garbage collector. In other words, marking shard as **transient** will wipe all data from the shard on the nearest garbage collector call.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 21  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `shardId` | String (required) Base64 encoded id of shard |
-| `transient` | Boolean (required) Mark shard as transient. Service can mark shard as not transient. If garbage collector didn't run, all data relative to shard, will not be removed. |
-
-```sh
-# luna-send -f -n 1 luna://com.webos.mediadb/setShardMode '{ "shardId" : "+MHrmF", "transient" : true }'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
-
 <a id="shardinfo"></a>
 ## `shardInfo`
 
@@ -2104,32 +1200,6 @@ luna-send -f -n 1 luna://com.webos.mediadb/shardInfo '{ "shardId" : "+MHrmF"}
 > ACG: database.operation \| Returns: returnValue:Boolean; isActive:Boolean; isTransient:Boolean; shardId:String; deviceId:String; deviceName:String; deviceUri:String; mountPath:String; errorCode:Number; errorText:String \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="shardinfo_"></a>
-## `shardInfo\`
-
-`luna://com.webos.service.db/shardInfo\`
-
-\ Retrieves the state of a shard, like shard activity, associated media devices, mount point.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 21  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `shardId` | String (required) Base64 encoded shard Id for which information is to be retrieved. |
-
-```sh
-# luna-send -f -n 1 luna://com.webos.mediadb/shardInfo '{ "shardId" : "+MHrmF"}'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
 
 <a id="shardkind"></a>
 ## `shardKind`
@@ -2157,33 +1227,6 @@ luna-send -f -n 1 luna://com.webos.mediadb/shardKind '{ "shardId" : "+MHrmF"}
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
 
-<a id="shardkind_"></a>
-## `shardKind\`
-
-`luna://com.webos.service.db/shardKind\`
-
-\ Requests whether an external media supports a specific kind, by providing the DB8 short ID and the Kind.\ \ **shardKind** method call is deprecated and will always return _isSupported: TRUE_.\ \ For physical shards, sharding is available for any kind and so the **shardKind** call is no longer useful.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 23  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `shardId` | String (required) base64 encoded shard ID |
-| `kind` | String (required) Id of kind |
-
-```sh
-# luna-send -f -n 1 luna://com.webos.mediadb/shardKind '{ "shardId" : "+MHrmF"}'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
-
 <a id="stats"></a>
 ## `stats`
 
@@ -2209,33 +1252,6 @@ luna-send -n 1 -f luna://com.webos.service.db/stats '{}
 > ACG: database.profiling \| Returns: returnValue:Boolean; results:Object array: statsKindResult \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="stats_"></a>
-## `stats\`
-
-`luna://com.webos.service.db/stats\`
-
-\ The stats method returns detailed information about the storage space used by every service.\ \
-
-- **Access:** public  
-- **Subscribe:** no  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `kind` | String (optional) Identifier of kind |
-| `verify` | Boolean (optional) Verify kindkey if it is true |
-
-```sh
-# luna-send -n 1 -f luna://com.webos.service.db/stats '{}'\ \
-```
-
-> ACG group: database.profiling
-
-Sources: 
 
 <a id="statskindresult"></a>
 ## `statsKindResult`
@@ -2283,33 +1299,6 @@ luna-send -i -f -a com.webos.service.configurator luna://com.webos.service.db/wa
 > ACG: database.operation \| Returns: fired:Boolean; returnValue:Boolean; errorCode:Number; errorText:String \| Service: Enables apps to store persistent data.
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-db/)
-
-<a id="watch_"></a>
-## `watch\`
-
-`luna://com.webos.service.db/watch\`
-
-\ The **watch** method watches for updates to the database that would change the results of a query.\ \
-
-- **Access:** public  
-- **Subscribe:** yes  
-- **Platform:** webOS OSE  
-- **Versions:** API level 11  
-- **Confidence:** documented
-
-| Param | Type / notes |
-|---|---|
-| `---` | --- (---) --- |
-| `query` | Object: Query (required) Query whose results the app wants to watch. |
-| `subscribe` | Boolean (optional) subscription is enabled if it true |
-
-```sh
-# luna-send -i -f -a com.webos.service.configurator luna://com.webos.service.db/watch '{\ \ "query":{\ \ "from":"com.webos.service.test:1",\ \ "where":\[\ \ {\ \ "prop":"sample",\ \ "op":"=",\ \ "val":"sample1"\ \ }\ \ \]\ \ }\ \ }'\ \
-```
-
-> ACG group: database.operation
-
-Sources: 
 
 <a id="whereclause"></a>
 ## `WhereClause`
