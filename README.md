@@ -19,9 +19,9 @@
 |  |  |
 |---|---|
 | **Start here** | [What this is](#what-this-is) &middot; [Install](#install) &middot; [Quick start](#quick-start) |
-| **Use it** | [Finding a command](#finding-a-command) &middot; [Using the script](#usage) |
+| **Use it** | [Finding a command](#finding-a-command) &middot; [Recipes](docs/recipes.md) &middot; [Using the script](#usage) |
 | **Reference** | [The catalog](#the-catalog) &middot; [Coverage](#coverage) &middot; [How descriptions are sourced](#how-descriptions-are-sourced) &middot; [Categories](#categories) &middot; [Services](#services) |
-| **More** | [Dump your own TV](#dump-your-own-tv) &middot; [Scope & safety](#scope-and-safety) &middot; [Credits](#credits) &middot; [License](#license) |
+| **More** | [Dump your own TV](#dump-your-own-tv) &middot; [Discovery notes](docs/discovery.md) &middot; [Scope & safety](#scope-and-safety) &middot; [Credits](#credits) &middot; [License](#license) |
 
 ---
 
@@ -104,6 +104,8 @@ Listing every dangerous call in the power category is then a one-liner:
 awk -F'\t' '$5==1 && $7=="power" {print $3}' catalog/index.tsv
 ```
 
+For ready-to-run lines for common tasks (screen off, screenshot, current app, volume, notifications), see [recipes](docs/recipes.md).
+
 ---
 
 ## Usage
@@ -129,7 +131,7 @@ luna-atlas dump                         # read-only dump of THIS TV's services
 
 <br>
 
-[luna-send basics](docs/luna-send-basics.md) &middot; [SSAP + the createAlert trick](docs/ssap-and-createalert.md) &middot; [SSAP routing](docs/ssap-routing-W22O.md) &middot; [settings keys](docs/settings-keys.md) &middot; [hidden menus](docs/hidden-menus.md) &middot; [calibration](docs/calibration.md) &middot; [dangerous calls](docs/dangerous.md) &middot; [sensitive services](docs/sensitive-services.md) &middot; [TV dumps](docs/tv-dumps.md)
+[recipes](docs/recipes.md) &middot; [discovery notes](docs/discovery.md) &middot; [luna-send basics](docs/luna-send-basics.md) &middot; [SSAP + the createAlert trick](docs/ssap-and-createalert.md) &middot; [SSAP routing](docs/ssap-routing-W22O.md) &middot; [settings keys](docs/settings-keys.md) &middot; [hidden menus](docs/hidden-menus.md) &middot; [calibration](docs/calibration.md) &middot; [dangerous calls](docs/dangerous.md) &middot; [sensitive services](docs/sensitive-services.md) &middot; [TV dumps](docs/tv-dumps.md)
 
 </details>
 
@@ -789,7 +791,7 @@ Out of scope on purpose: DRM, LG account/store authentication, region or country
 
 ## Credits
 
-Stands on the webOS OSE docs, LG's webOS TV developer docs, [webosbrew](https://github.com/webosbrew), [openlgtv](https://github.com/openlgtv), [bscpylgtv](https://github.com/chros73/bscpylgtv), [LGTV Companion](https://github.com/JPersson77/LGTVCompanion), [Glasshouse](https://github.com/rorygallagher2024/glasshouse), and the projects in [SOURCES.md](SOURCES.md).  QR codes by [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) (MIT).
+Stands on the webOS OSE docs, LG's webOS TV developer docs, [Informatic's openlgtv webOS hacking notes](https://gist.github.com/Informatic/1983f2e501444cf1cbd182e50820d6c1), [webosbrew](https://github.com/webosbrew), [openlgtv](https://github.com/openlgtv), [bscpylgtv](https://github.com/chros73/bscpylgtv), [LGTV Companion](https://github.com/JPersson77/LGTVCompanion), [Glasshouse](https://github.com/rorygallagher2024/glasshouse), and the projects in [SOURCES.md](SOURCES.md).  QR codes by [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) (MIT).
 
 Not affiliated with LG Electronics.  webOS is a trademark of LG Electronics.
 
