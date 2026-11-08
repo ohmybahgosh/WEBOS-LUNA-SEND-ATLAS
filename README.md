@@ -19,7 +19,7 @@
 |  |  |
 |---|---|
 | **Start here** | [What this is](#what-this-is) &middot; [Install](#install) &middot; [Quick start](#quick-start) |
-| **Use it** | [Finding a command](#finding-a-command) &middot; [Recipes](docs/recipes.md) &middot; [Using the script](#usage) |
+| **Use it** | [Finding a command](#finding-a-command) &middot; [Recipes](#recipes) &middot; [Using the script](#usage) |
 | **Reference** | [The catalog](#the-catalog) &middot; [Coverage](#coverage) &middot; [How descriptions are sourced](#how-descriptions-are-sourced) &middot; [Categories](#categories) &middot; [Services](#services) |
 | **More** | [Dump your own TV](#dump-your-own-tv) &middot; [Discovery notes](docs/discovery.md) &middot; [Scope & safety](#scope-and-safety) &middot; [Credits](#credits) &middot; [License](#license) |
 
@@ -104,7 +104,32 @@ Listing every dangerous call in the power category is then a one-liner:
 awk -F'\t' '$5==1 && $7=="power" {print $3}' catalog/index.tsv
 ```
 
-For ready-to-run lines for common tasks (screen off, screenshot, current app, volume, notifications), see [recipes](docs/recipes.md).
+---
+
+## Recipes
+
+Ready-to-run lines for the things people reach for most.  The full set, dangerous calls included, is in [docs/recipes.md](docs/recipes.md).
+
+```sh
+# show a toast
+luna-send -n 1 -f luna://com.webos.notification/createToast '{"message":"Hello from luna-send"}'
+
+# turn the panel off, then back on (backlight only, audio keeps playing)
+luna-send -n 1 -f luna://com.webos.service.tvpower/power/turnOffScreen '{}'
+luna-send -n 1 -f luna://com.webos.service.tvpower/power/turnOnScreen '{}'
+
+# screenshot the current frame to a file
+luna-send -n 1 -f luna://com.webos.service.capture/executeOneShot '{"path":"/tmp/capture.png","method":"DISPLAY","format":"PNG"}'
+
+# what's on screen right now (subscribes; Ctrl-C to stop)
+luna-send -i -f luna://com.webos.applicationManager/getForegroundAppInfo '{"subscribe":true}'
+
+# volume up, and the webOS version
+luna-send -n 1 -f luna://com.webos.audio/volumeUp '{}'
+luna-send -n 1 -f luna://com.webos.service.systemservice/osInfo/query '{"parameters":["webos_release","webos_build_datetime"]}'
+```
+
+The flagged ones (reboot, launch an app, change settings) and the rest are in [docs/recipes.md](docs/recipes.md).
 
 ---
 
@@ -780,6 +805,8 @@ For anything specific, search the catalog (see [Finding a command](#finding-a-co
 3. Open a PR or issue with `new-methods.jsonl` and your model + webOS version.
 
 Before committing, run `sh scripts/scrub-check.sh`.  It fails on MAC / public-IP / credential / email leaks and on homebrew / sideloaded app buses.  The build keeps only stock services; homebrew apps (installed under `/media/developer`) are filtered so a dump never advertises what you installed.
+
+For finding and verifying calls on your own TV, with `ls-monitor` and the on-device `/etc/palm/schemas`, see [discovery notes](docs/discovery.md).
 
 </details>
 
