@@ -279,7 +279,7 @@
 | [`luna://com.webos.service.power/suspend/TESTSuspend`](../services/com.webos.service.power.md#suspend_testsuspend) | public | inferred | Tests the suspend (suspend) |
 | [`luna://com.webos.service.rollingscreen/getMotorMicomVersion`](../services/com.webos.service.rollingscreen.md#getmotormicomversion) | public | inferred | Returns the motor MICOM version. |
 | [`luna://com.webos.service.rollingscreen/updateMotorMicomFirmware`](../services/com.webos.service.rollingscreen.md#updatemotormicomfirmware) | public | inferred | Updates the motor MICOM firmware. ⚠️ |
-| [`luna://com.webos.service.secondscreen.gateway/getPowerState`](../services/com.webos.service.secondscreen.gateway.md#getpowerstate) | private | inferred | Returns the power state. |
+| [`luna://com.webos.service.secondscreen.gateway/getPowerState`](../services/com.webos.service.secondscreen.gateway.md#getpowerstate) | private | documented | Returns the power state. |
 | [`luna://com.webos.service.tv.power/cancelPowerOff`](../services/com.webos.service.tv.power.md#cancelpoweroff) | private | documented | Cancels a power-off in progress |
 | [`luna://com.webos.service.tv.power/enableWol`](../services/com.webos.service.tv.power.md#enablewol) | private | documented | TV power method: enableWol |
 | [`luna://com.webos.service.tvdataexchanger/startPowerOnDefault`](../services/com.webos.service.tvdataexchanger.md#startpowerondefault) | private | inferred | Starts the power on default. |

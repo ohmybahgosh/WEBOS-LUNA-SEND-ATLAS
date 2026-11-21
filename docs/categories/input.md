@@ -570,7 +570,7 @@
 | [`luna://com.webos.service.qbd/getResetTime`](../services/com.webos.service.qbd.md#getresettime) | private | inferred | Returns the reset time. |
 | [`luna://com.webos.service.qbd/setDevicesResumeTimeout`](../services/com.webos.service.qbd.md#setdevicesresumetimeout) | private | inferred | Sets the devices resume timeout. |
 | [`luna://com.webos.service.qbd/setResetTime`](../services/com.webos.service.qbd.md#setresettime) | private | inferred | Sets the reset time. ⚠️ |
-| [`luna://com.webos.service.secondscreen.gateway/test/getTime`](../services/com.webos.service.secondscreen.gateway.md#test_gettime) | private | inferred | Returns the time (test) |
+| [`luna://com.webos.service.secondscreen.gateway/test/getTime`](../services/com.webos.service.secondscreen.gateway.md#test_gettime) | private | documented | Returns the time (test) |
 | [`luna://com.webos.service.sensor/control`](../services/com.webos.service.sensor.md#control) | private | inferred | Controls the sensor. |
 | [`luna://com.webos.service.sensor/getInfo`](../services/com.webos.service.sensor.md#getinfo) | public | inferred | Returns the info. |
 | [`luna://com.webos.service.sensor/getSensorsList`](../services/com.webos.service.sensor.md#getsensorslist) | public | inferred | Returns the sensors list. |

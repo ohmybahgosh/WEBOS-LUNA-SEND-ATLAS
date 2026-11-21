@@ -148733,22 +148733,29 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/app2app/connectToApp",
   "category": "network",
   "description": "Connects the to app (app 2 app)",
-  "params": {},
+  "params": {
+   "appId": "String (optional) Target app ID.  Required unless `webAppId` is given.",
+   "webAppId": "String (optional) Target web app ID.  Required unless `appId` is given.",
+   "params": "Object (optional) Parameters passed to the target app.",
+   "bringAppToForeground": "Boolean (optional) Bring the target app to the foreground.",
+   "subscribe": "Boolean (required) Must be true; subscription-only."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/app2app/connectToApp '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, secondscreen.app2app, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, secondscreen.app2app, all.  Requires either `appId` or `webAppId`.  Opens an app-to-app channel to the target app.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/app2app/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -148763,15 +148770,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: public, secondscreen.all, private, system.remote, secondscreen.app2app, all.",
+  "notes": "ACG groups: public, secondscreen.all, private, system.remote, secondscreen.app2app, all.  Takes no request parameters; the sender app ID is used (permission denied if the sender cannot be identified).  Returns a `socketUrl` (ws://) for registering an app with that name.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/app2app/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -148779,22 +148787,26 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/app2app/host/registerAppChannel",
   "category": "network",
   "description": "Registers the app channel (app 2 app host)",
-  "params": {},
+  "params": {
+   "appId": "String (optional) App ID to host the channel as; only first-party services (com.webos, com.lge, com.palm) may specify one, otherwise the sender's own app/service ID is used.",
+   "subscribe": "Boolean (required) Must be true; subscription-only."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/app2app/host/registerAppChannel '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, secondscreen.app2app, all, public.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, secondscreen.app2app, all, public.  Registers an app-channel host for the sender.  Fails if a subscription is already registered for that app.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/app2app/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -148802,22 +148814,26 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/app2app/host/sendJoinResponse",
   "category": "network",
   "description": "Sends the join response (app 2 app host)",
-  "params": {},
+  "params": {
+   "requestId": "String (required) Join request ID being answered.",
+   "allowJoin": "Boolean (required) Whether to allow the guest to join."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/app2app/host/sendJoinResponse '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, secondscreen.app2app, all, public.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, secondscreen.app2app, all, public.  Requires a channel previously registered with registerAppChannel.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/app2app/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -148825,22 +148841,27 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/app2app/host/sendMessage",
   "category": "network",
   "description": "Sends the message (app 2 app host)",
-  "params": {},
+  "params": {
+   "payload": "Object (required) Message payload to send.",
+   "to": "String (optional) Target guest to send to.",
+   "ns": "String (optional) Namespace."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/app2app/host/sendMessage '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, secondscreen.app2app, all, public.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, secondscreen.app2app, all, public.  Requires a channel previously registered with registerAppChannel.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/app2app/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -148848,22 +148869,26 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/getHostMessage",
   "category": "network",
   "description": "Returns the host message.",
-  "params": {},
+  "params": {
+   "clientKey": "String (required) Client key (also accepted as `_clientKey`).",
+   "subscribe": "Boolean (required) Must be true; subscription-only."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/getHostMessage '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all, secondscreen.uac.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all, secondscreen.uac.  Subscription-only.  Streams host messages for the client.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -148871,22 +148896,25 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/getPairedDeviceList",
   "category": "network",
   "description": "Returns the paired device list.",
-  "params": {},
+  "params": {
+   "all": "Boolean (optional) Include all profiles (including unsigned) rather than only signed ones."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/getPairedDeviceList '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, configurator.callbacks, system.remote, all, secondscreen.uac, activities.callbacks.",
+  "notes": "ACG groups: secondscreen.all, private, configurator.callbacks, system.remote, all, secondscreen.uac, activities.callbacks.  Subscribable.  Returns the paired devices in `devices`.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -148894,22 +148922,26 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/getPowerState",
   "category": "power",
   "description": "Returns the power state.",
-  "params": {},
+  "params": {
+   "clientKey": "String (required) Client key (also accepted as `_clientKey`).",
+   "subscribe": "Boolean (required) Must be true; subscription-only."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/getPowerState '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Subscription-only.  Streams the TV power state to the client.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -148924,15 +148956,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Takes no parameters.  Returns the virtual interface (service) list in `services`.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred",
+  "doc_status": "documented",
   "returns": {
    "name": "",
    "services": "",
@@ -148952,15 +148985,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Forwards the request payload to the heartbeat manager's notifyNamedSocket event.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/heartbeat/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -148975,15 +149009,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Takes no parameters.  Returns returnValue:true.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/heartbeat/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149060,22 +149095,26 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/pairing/acceptPairing",
   "category": "network",
   "description": "Handles the accept pairing (pairing)",
-  "params": {},
+  "params": {
+   "pairingRequestId": "String (required) ID of the pairing request to accept.",
+   "closeAlert": "Boolean (optional) Close the pairing alert."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/acceptPairing '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149083,22 +149122,25 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/pairing/getPairingStatus",
   "category": "network",
   "description": "Returns the pairing status (pairing)",
-  "params": {},
+  "params": {
+   "subscribe": "Boolean (required) Must be true; this method is subscription-only."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/getPairingStatus '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Subscription-only.  Streams pairing, accept and reject events (pairingRequestId, pin, deviceName, status).  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149106,22 +149148,26 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/pairing/register",
   "category": "network",
   "description": "Registers the secondscreen gateway (pairing)",
-  "params": {},
+  "params": {
+   "payload": "Object (required) Registration data: client-key, companion-client-key, pairingType and manifest (deviceName, permissions, trustKeys, r2rMode, forcePairing).",
+   "subscribe": "Boolean (required) Must be true; register is subscription-only."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/register '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Registers a companion client from the luna bus; reuses an existing client profile when a valid client-key is supplied, otherwise prompts to pair.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149129,22 +149175,27 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/pairing/rejectPairing",
   "category": "network",
   "description": "Handles the reject pairing (pairing)",
-  "params": {},
+  "params": {
+   "pairingRequestId": "String (required) ID of the pairing request to reject.",
+   "closeAlert": "Boolean (optional) Close the pairing alert.",
+   "errorCode": "Integer (optional) Error code to report with the rejection."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/rejectPairing '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149152,22 +149203,28 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/pairing/requestPairing",
   "category": "network",
   "description": "Requests the pairing (pairing)",
-  "params": {},
+  "params": {
+   "pairingType": "String (required) Pairing prompt type: PROMPT, PIN, or COMBINED.",
+   "message": "String (required) Dialog message.",
+   "title": "String (optional) Dialog title.",
+   "subscribe": "Boolean (required) Must be true; this method is subscription-only."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/requestPairing '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Prompts the user to confirm pairing and streams the chosen pairingType.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149175,22 +149232,25 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/pairing/setPin",
   "category": "network",
   "description": "Sets the pin (pairing)",
-  "params": {},
+  "params": {
+   "pin": "String (optional) PIN code to validate against the open pairing prompt."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/pairing/setPin '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Matches `pin` against the pending PIN/COMBINED pairing request for the caller; returns access denied if there is no matching prompt.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149198,22 +149258,25 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/setMobileAccess",
   "category": "network",
   "description": "Sets the mobile access.",
-  "params": {},
+  "params": {
+   "enable": "Boolean (required) Enable (true) or block (false) connect requests and messages from SSAP for EWS events."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/setMobileAccess '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149228,15 +149291,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Takes no parameters.  Subscribable.  Returns the current time; a subscription streams it once per second.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/test/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149251,15 +149315,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Test method; returns clearedForDuty.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/test/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149274,15 +149339,17 @@
   "platform": "webOS TV",
   "versions": "unknown",
   "dangerous": false,
-  "notes": "Called by ConnectSDK WebOSTVService.secureAccessTest; response {clearedForDuty:true}.",
+  "notes": "Called by ConnectSDK WebOSTVService.secureAccessTest; response {clearedForDuty:true}.  Test method; returns clearedForDuty.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
    "https://github.com/snabb/webostv/blob/master/mmisc.go",
-   "https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/WebOSTVService.java"
+   "https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/WebOSTVService.java",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/test/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "code",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
-  ]
+   "documented"
+  ],
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149290,22 +149357,25 @@
   "uri": "luna://com.webos.service.secondscreen.gateway/unpair",
   "category": "network",
   "description": "Unpairs the secondscreen gateway.",
-  "params": {},
+  "params": {
+   "clientKey": "String (required) Client key of the paired device to remove."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.secondscreen.gateway/unpair '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all, secondscreen.uac.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all, secondscreen.uac.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149320,15 +149390,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, system.remote, all.",
+  "notes": "ACG groups: secondscreen.all, private, system.remote, all.  Takes no parameters.  Unpairs all paired devices.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149343,15 +149414,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Sends the request payload to all connected companion clients.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/weeCustom/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.secondscreen.gateway",
@@ -149366,15 +149438,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Forwards the request payload to com.webos.service.weecustom/requestAction.  Parameters recovered from the on-device second-screen gateway service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.secondscreen.gateway/adapters/weeCustom/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.sensor",

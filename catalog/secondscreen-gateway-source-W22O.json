@@ -1,0 +1,206 @@
+{
+ "luna://com.webos.service.secondscreen.gateway/app2app/connectToApp": {
+  "params": {
+   "appId": "String (optional) Target app ID.  Required unless `webAppId` is given.",
+   "webAppId": "String (optional) Target web app ID.  Required unless `appId` is given.",
+   "params": "Object (optional) Parameters passed to the target app.",
+   "bringAppToForeground": "Boolean (optional) Bring the target app to the foreground.",
+   "subscribe": "Boolean (required) Must be true; subscription-only."
+  },
+  "required": [
+   "subscribe"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/app2app/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/app2app/createAppChannel": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/app2app/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/app2app/host/registerAppChannel": {
+  "params": {
+   "appId": "String (optional) App ID to host the channel as; only first-party services (com.webos, com.lge, com.palm) may specify one, otherwise the sender's own app/service ID is used.",
+   "subscribe": "Boolean (required) Must be true; subscription-only."
+  },
+  "required": [
+   "subscribe"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/app2app/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/app2app/host/sendJoinResponse": {
+  "params": {
+   "requestId": "String (required) Join request ID being answered.",
+   "allowJoin": "Boolean (required) Whether to allow the guest to join."
+  },
+  "required": [
+   "allowJoin",
+   "requestId"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/app2app/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/app2app/host/sendMessage": {
+  "params": {
+   "payload": "Object (required) Message payload to send.",
+   "to": "String (optional) Target guest to send to.",
+   "ns": "String (optional) Namespace."
+  },
+  "required": [
+   "payload"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/app2app/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/getHostMessage": {
+  "params": {
+   "clientKey": "String (required) Client key (also accepted as `_clientKey`).",
+   "subscribe": "Boolean (required) Must be true; subscription-only."
+  },
+  "required": [
+   "clientKey",
+   "subscribe"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/getPairedDeviceList": {
+  "params": {
+   "all": "Boolean (optional) Include all profiles (including unsigned) rather than only signed ones."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/getPowerState": {
+  "params": {
+   "clientKey": "String (required) Client key (also accepted as `_clientKey`).",
+   "subscribe": "Boolean (required) Must be true; subscription-only."
+  },
+  "required": [
+   "clientKey",
+   "subscribe"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/getServiceList": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/heartbeat/notifyNamedSocket": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/heartbeat/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/heartbeat/ping": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/heartbeat/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/pairing/acceptPairing": {
+  "params": {
+   "pairingRequestId": "String (required) ID of the pairing request to accept.",
+   "closeAlert": "Boolean (optional) Close the pairing alert."
+  },
+  "required": [
+   "pairingRequestId"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/pairing/getPairingStatus": {
+  "params": {
+   "subscribe": "Boolean (required) Must be true; this method is subscription-only."
+  },
+  "required": [
+   "subscribe"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/pairing/register": {
+  "params": {
+   "payload": "Object (required) Registration data: client-key, companion-client-key, pairingType and manifest (deviceName, permissions, trustKeys, r2rMode, forcePairing).",
+   "subscribe": "Boolean (required) Must be true; register is subscription-only."
+  },
+  "required": [
+   "payload",
+   "subscribe"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/pairing/rejectPairing": {
+  "params": {
+   "pairingRequestId": "String (required) ID of the pairing request to reject.",
+   "closeAlert": "Boolean (optional) Close the pairing alert.",
+   "errorCode": "Integer (optional) Error code to report with the rejection."
+  },
+  "required": [
+   "pairingRequestId"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/pairing/requestPairing": {
+  "params": {
+   "pairingType": "String (required) Pairing prompt type: PROMPT, PIN, or COMBINED.",
+   "message": "String (required) Dialog message.",
+   "title": "String (optional) Dialog title.",
+   "subscribe": "Boolean (required) Must be true; this method is subscription-only."
+  },
+  "required": [
+   "message",
+   "pairingType",
+   "subscribe"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/pairing/setPin": {
+  "params": {
+   "pin": "String (optional) PIN code to validate against the open pairing prompt."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/pairing/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/setMobileAccess": {
+  "params": {
+   "enable": "Boolean (required) Enable (true) or block (false) connect requests and messages from SSAP for EWS events."
+  },
+  "required": [
+   "enable"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/test/getTime": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/test/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/test/protected": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/test/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/test/secure": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/test/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/unpair": {
+  "params": {
+   "clientKey": "String (required) Client key of the paired device to remove."
+  },
+  "required": [
+   "clientKey"
+  ],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/unpairAll": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/misc/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/weeCustom/getResponse": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/weeCustom/index.js"
+ },
+ "luna://com.webos.service.secondscreen.gateway/weeCustom/requestAction": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.secondscreen.gateway/adapters/weeCustom/index.js"
+ }
+}

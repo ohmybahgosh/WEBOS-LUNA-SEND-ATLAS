@@ -6113,34 +6113,34 @@ com.webos.service.sdxpromo	expirePromo	luna://com.webos.service.sdxpromo/expireP
 com.webos.service.sdxpromo	info	luna://com.webos.service.sdxpromo/info	public	0	0	security	Handles the info.	inferred
 com.webos.service.sdxpromo	localeChange	luna://com.webos.service.sdxpromo/localeChange	public	0	0	security	Handles the locale change.	inferred
 com.webos.service.sdxpromo	quit	luna://com.webos.service.sdxpromo/quit	public	0	0	security	Quits the sdxpromo.	inferred
-com.webos.service.secondscreen.gateway	app2app/connectToApp	luna://com.webos.service.secondscreen.gateway/app2app/connectToApp	private	0	0	network	Connects the to app (app 2 app)	inferred
-com.webos.service.secondscreen.gateway	app2app/createAppChannel	luna://com.webos.service.secondscreen.gateway/app2app/createAppChannel	public	0	0	network	Creates the app channel (app 2 app)	inferred
-com.webos.service.secondscreen.gateway	app2app/host/registerAppChannel	luna://com.webos.service.secondscreen.gateway/app2app/host/registerAppChannel	public	0	0	network	Registers the app channel (app 2 app host)	inferred
-com.webos.service.secondscreen.gateway	app2app/host/sendJoinResponse	luna://com.webos.service.secondscreen.gateway/app2app/host/sendJoinResponse	public	0	0	network	Sends the join response (app 2 app host)	inferred
-com.webos.service.secondscreen.gateway	app2app/host/sendMessage	luna://com.webos.service.secondscreen.gateway/app2app/host/sendMessage	public	0	0	network	Sends the message (app 2 app host)	inferred
-com.webos.service.secondscreen.gateway	getHostMessage	luna://com.webos.service.secondscreen.gateway/getHostMessage	private	0	0	network	Returns the host message.	inferred
-com.webos.service.secondscreen.gateway	getPairedDeviceList	luna://com.webos.service.secondscreen.gateway/getPairedDeviceList	private	0	0	network	Returns the paired device list.	inferred
-com.webos.service.secondscreen.gateway	getPowerState	luna://com.webos.service.secondscreen.gateway/getPowerState	private	0	0	power	Returns the power state.	inferred
-com.webos.service.secondscreen.gateway	getServiceList	luna://com.webos.service.secondscreen.gateway/getServiceList	private	0	0	network	Returns the service list.	inferred
-com.webos.service.secondscreen.gateway	heartbeat/notifyNamedSocket	luna://com.webos.service.secondscreen.gateway/heartbeat/notifyNamedSocket	private	0	0	network	Notifies of the named socket (heartbeat)	inferred
-com.webos.service.secondscreen.gateway	heartbeat/ping	luna://com.webos.service.secondscreen.gateway/heartbeat/ping	private	0	0	network	Pings the secondscreen gateway (heartbeat)	inferred
+com.webos.service.secondscreen.gateway	app2app/connectToApp	luna://com.webos.service.secondscreen.gateway/app2app/connectToApp	private	0	0	network	Connects the to app (app 2 app)	documented
+com.webos.service.secondscreen.gateway	app2app/createAppChannel	luna://com.webos.service.secondscreen.gateway/app2app/createAppChannel	public	0	0	network	Creates the app channel (app 2 app)	documented
+com.webos.service.secondscreen.gateway	app2app/host/registerAppChannel	luna://com.webos.service.secondscreen.gateway/app2app/host/registerAppChannel	public	0	0	network	Registers the app channel (app 2 app host)	documented
+com.webos.service.secondscreen.gateway	app2app/host/sendJoinResponse	luna://com.webos.service.secondscreen.gateway/app2app/host/sendJoinResponse	public	0	0	network	Sends the join response (app 2 app host)	documented
+com.webos.service.secondscreen.gateway	app2app/host/sendMessage	luna://com.webos.service.secondscreen.gateway/app2app/host/sendMessage	public	0	0	network	Sends the message (app 2 app host)	documented
+com.webos.service.secondscreen.gateway	getHostMessage	luna://com.webos.service.secondscreen.gateway/getHostMessage	private	0	0	network	Returns the host message.	documented
+com.webos.service.secondscreen.gateway	getPairedDeviceList	luna://com.webos.service.secondscreen.gateway/getPairedDeviceList	private	0	0	network	Returns the paired device list.	documented
+com.webos.service.secondscreen.gateway	getPowerState	luna://com.webos.service.secondscreen.gateway/getPowerState	private	0	0	power	Returns the power state.	documented
+com.webos.service.secondscreen.gateway	getServiceList	luna://com.webos.service.secondscreen.gateway/getServiceList	private	0	0	network	Returns the service list.	documented
+com.webos.service.secondscreen.gateway	heartbeat/notifyNamedSocket	luna://com.webos.service.secondscreen.gateway/heartbeat/notifyNamedSocket	private	0	0	network	Notifies of the named socket (heartbeat)	documented
+com.webos.service.secondscreen.gateway	heartbeat/ping	luna://com.webos.service.secondscreen.gateway/heartbeat/ping	private	0	0	network	Pings the secondscreen gateway (heartbeat)	documented
 com.webos.service.secondscreen.gateway	internal/heapdump	luna://com.webos.service.secondscreen.gateway/internal/heapdump	private	0	0	network	Handles the heapdump (internal)	inferred
 com.webos.service.secondscreen.gateway	internal/memoryUsage	luna://com.webos.service.secondscreen.gateway/internal/memoryUsage	private	0	0	network	Handles the memory usage (internal)	inferred
 com.webos.service.secondscreen.gateway	internal/setConfig	luna://com.webos.service.secondscreen.gateway/internal/setConfig	private	0	0	settings	Sets the config (internal)	inferred
-com.webos.service.secondscreen.gateway	pairing/acceptPairing	luna://com.webos.service.secondscreen.gateway/pairing/acceptPairing	private	0	0	network	Handles the accept pairing (pairing)	inferred
-com.webos.service.secondscreen.gateway	pairing/getPairingStatus	luna://com.webos.service.secondscreen.gateway/pairing/getPairingStatus	private	0	0	network	Returns the pairing status (pairing)	inferred
-com.webos.service.secondscreen.gateway	pairing/register	luna://com.webos.service.secondscreen.gateway/pairing/register	private	0	0	network	Registers the secondscreen gateway (pairing)	inferred
-com.webos.service.secondscreen.gateway	pairing/rejectPairing	luna://com.webos.service.secondscreen.gateway/pairing/rejectPairing	private	0	0	network	Handles the reject pairing (pairing)	inferred
-com.webos.service.secondscreen.gateway	pairing/requestPairing	luna://com.webos.service.secondscreen.gateway/pairing/requestPairing	private	0	0	network	Requests the pairing (pairing)	inferred
-com.webos.service.secondscreen.gateway	pairing/setPin	luna://com.webos.service.secondscreen.gateway/pairing/setPin	private	0	0	network	Sets the pin (pairing)	inferred
-com.webos.service.secondscreen.gateway	setMobileAccess	luna://com.webos.service.secondscreen.gateway/setMobileAccess	private	0	0	network	Sets the mobile access.	inferred
-com.webos.service.secondscreen.gateway	test/getTime	luna://com.webos.service.secondscreen.gateway/test/getTime	private	0	0	input	Returns the time (test)	inferred
-com.webos.service.secondscreen.gateway	test/protected	luna://com.webos.service.secondscreen.gateway/test/protected	private	0	0	network	Handles the protected (test)	inferred
+com.webos.service.secondscreen.gateway	pairing/acceptPairing	luna://com.webos.service.secondscreen.gateway/pairing/acceptPairing	private	0	0	network	Handles the accept pairing (pairing)	documented
+com.webos.service.secondscreen.gateway	pairing/getPairingStatus	luna://com.webos.service.secondscreen.gateway/pairing/getPairingStatus	private	0	0	network	Returns the pairing status (pairing)	documented
+com.webos.service.secondscreen.gateway	pairing/register	luna://com.webos.service.secondscreen.gateway/pairing/register	private	0	0	network	Registers the secondscreen gateway (pairing)	documented
+com.webos.service.secondscreen.gateway	pairing/rejectPairing	luna://com.webos.service.secondscreen.gateway/pairing/rejectPairing	private	0	0	network	Handles the reject pairing (pairing)	documented
+com.webos.service.secondscreen.gateway	pairing/requestPairing	luna://com.webos.service.secondscreen.gateway/pairing/requestPairing	private	0	0	network	Requests the pairing (pairing)	documented
+com.webos.service.secondscreen.gateway	pairing/setPin	luna://com.webos.service.secondscreen.gateway/pairing/setPin	private	0	0	network	Sets the pin (pairing)	documented
+com.webos.service.secondscreen.gateway	setMobileAccess	luna://com.webos.service.secondscreen.gateway/setMobileAccess	private	0	0	network	Sets the mobile access.	documented
+com.webos.service.secondscreen.gateway	test/getTime	luna://com.webos.service.secondscreen.gateway/test/getTime	private	0	0	input	Returns the time (test)	documented
+com.webos.service.secondscreen.gateway	test/protected	luna://com.webos.service.secondscreen.gateway/test/protected	private	0	0	network	Handles the protected (test)	documented
 com.webos.service.secondscreen.gateway	test/secure	luna://com.webos.service.secondscreen.gateway/test/secure	ssap	0	0	connection	SSAP self-test: reports whether connection is secure/cleared ({clearedForDuty:true})	documented
-com.webos.service.secondscreen.gateway	unpair	luna://com.webos.service.secondscreen.gateway/unpair	private	0	0	network	Unpairs the secondscreen gateway.	inferred
-com.webos.service.secondscreen.gateway	unpairAll	luna://com.webos.service.secondscreen.gateway/unpairAll	private	0	0	network	Unpairs the all.	inferred
-com.webos.service.secondscreen.gateway	weeCustom/getResponse	luna://com.webos.service.secondscreen.gateway/weeCustom/getResponse	private	0	0	network	Returns the response (wee custom)	inferred
-com.webos.service.secondscreen.gateway	weeCustom/requestAction	luna://com.webos.service.secondscreen.gateway/weeCustom/requestAction	private	0	0	network	Requests the action (wee custom)	inferred
+com.webos.service.secondscreen.gateway	unpair	luna://com.webos.service.secondscreen.gateway/unpair	private	0	0	network	Unpairs the secondscreen gateway.	documented
+com.webos.service.secondscreen.gateway	unpairAll	luna://com.webos.service.secondscreen.gateway/unpairAll	private	0	0	network	Unpairs the all.	documented
+com.webos.service.secondscreen.gateway	weeCustom/getResponse	luna://com.webos.service.secondscreen.gateway/weeCustom/getResponse	private	0	0	network	Returns the response (wee custom)	documented
+com.webos.service.secondscreen.gateway	weeCustom/requestAction	luna://com.webos.service.secondscreen.gateway/weeCustom/requestAction	private	0	0	network	Requests the action (wee custom)	documented
 com.webos.service.sensor	control	luna://com.webos.service.sensor/control	private	0	0	input	Controls the sensor.	inferred
 com.webos.service.sensor	getInfo	luna://com.webos.service.sensor/getInfo	public	0	0	input	Returns the info.	inferred
 com.webos.service.sensor	getSensorsList	luna://com.webos.service.sensor/getSensorsList	public	0	0	input	Returns the sensors list.	inferred
