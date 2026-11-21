@@ -14,20 +14,20 @@ Legacy download/upload manager: queues and controls file downloads and uploads, 
 | [`_dbg_getMaxKey`](#_dbg_getmaxkey) | private |  | apps | inferred | Handles the dbg get max key. |
 | [`_dbg_selfdestruct`](#_dbg_selfdestruct) | private |  | apps | inferred | Handles the dbg selfdestruct. |
 | [`_dbg_setTicketBase`](#_dbg_setticketbase) | private |  | apps | inferred | Handles the dbg set ticket base. |
-| [`allow1x`](#allow1x) | private |  | apps | inferred | Allows the 1 x. |
+| [`allow1x`](#allow1x) | private |  | apps | documented | Allows the 1 x. |
 | [`cancelAllDownloads`](#cancelalldownloads) | private |  | apps | inferred | Cancels the all downloads. |
-| [`cancelDownload`](#canceldownload) | private |  | apps | inferred | Cancels the download. |
+| [`cancelDownload`](#canceldownload) | private |  | apps | documented | Cancels the download. |
 | [`cancelUpload`](#cancelupload) | private |  | apps | inferred | Cancels the upload. |
-| [`clearHistory`](#clearhistory) | private |  | apps | inferred | Clears the history. |
-| [`deleteDownloadedFile`](#deletedownloadedfile) | private |  | apps | inferred | Deletes the downloaded file. ⚠️ |
+| [`clearHistory`](#clearhistory) | private |  | apps | documented | Clears the history. |
+| [`deleteDownloadedFile`](#deletedownloadedfile) | private |  | apps | documented | Deletes the downloaded file. ⚠️ |
 | [`download`](#download) | root |  | storage | documented | Downloads a URL to /media/internal/downloads |
-| [`downloadStatusQuery`](#downloadstatusquery) | private |  | apps | inferred | Downloads the status query. |
-| [`getAllHistory`](#getallhistory) | private |  | apps | inferred | Returns the all history. |
+| [`downloadStatusQuery`](#downloadstatusquery) | private |  | apps | documented | Downloads the status query. |
+| [`getAllHistory`](#getallhistory) | private |  | apps | documented | Returns the all history. |
 | [`is1xMode`](#is1xmode) | private |  | apps | inferred | Reports whether the 1 x mode is set. |
 | [`listPending`](#listpending) | private |  | apps | inferred | Lists the pending. |
-| [`pauseDownload`](#pausedownload) | private |  | apps | inferred | Pauses the download. |
-| [`resumeDownload`](#resumedownload) | private |  | apps | inferred | Resumes the download. |
-| [`upload`](#upload) | private |  | apps | inferred | Uploads the downloadmanager. |
+| [`pauseDownload`](#pausedownload) | private |  | apps | documented | Pauses the download. |
+| [`resumeDownload`](#resumedownload) | private |  | apps | documented | Resumes the download. |
+| [`upload`](#upload) | private |  | apps | documented | Uploads the downloadmanager. |
 
 <a id="_dbg_addhistory"></a>
 ## `_dbg_addHistory`
@@ -174,19 +174,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Allows the 1 x.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `value` | Boolean (required) should allow 1x |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/allow1x '{}'
 ```
 
-> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -220,19 +222,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Cancels the download.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `ticket` | Number (required) Download ID from download |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/cancelDownload '{}'
 ```
 
-> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -266,19 +270,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Clears the history.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `owner` | String (optional) App ID which requested the download |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/clearHistory '{}'
 ```
 
-> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -289,19 +295,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Deletes the downloaded file.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `ticket` | Number (required) ticket of the file to be deleted. |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/deleteDownloadedFile '{}'
 ```
 
-> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -335,19 +343,22 @@ Sources: [1](https://wiki.webos-internals.org/wiki/Luna_Send)
 
 Downloads the status query.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `ticket` | Number (required) ticket of the file to be queried. |
+| `subscribe` | Boolean (optional) Subscribe this call and subscribers can receive install progress. |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/downloadStatusQuery '{}'
 ```
 
-> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -358,19 +369,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Returns the all history.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `owner` | String (required) App ID which requested the download |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/getAllHistory '{}'
 ```
 
-> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -427,19 +440,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Pauses the download.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `ticket` | Number (required) Download ID from download |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/pauseDownload '{}'
 ```
 
-> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -450,19 +465,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Resumes the download.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `ticket` | Number (required) Download ID from download |
+| `authToken` | String (optional) used for curl in Auth-Token |
+| `deviceId` | String (optional) used for curl in Device-Id |
+| `subscribe` | Boolean (optional) Subscribe this call and subscribers can receive install progress. |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/resumeDownload '{}'
 ```
 
-> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -473,18 +493,26 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Uploads the downloadmanager.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `url` | String (required) The URL to which to post the file |
+| `fileName` | String (required) Path to the local file to be uploaded |
+| `contentType` | String (optional) The MIME type of the file |
+| `fileLabel` | String (optional) The label portion of the file name (as opposed to the file extension) |
+| `postParameters` | Array (optional) |
+| `cookies` | Array (optional) cookies |
+| `customHttpHeaders` | Array (optional) customHttpHeaders |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.downloadmanager/upload '{}'
 ```
 
-> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))

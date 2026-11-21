@@ -10,20 +10,20 @@ TV resource manager: requests, releases and arbitrates tuner/pipeline resources 
 |---|---|---|---|---|---|
 | [`beginTransaction`](#begintransaction) | private |  | tv-broadcast | inferred | Begins the transaction. |
 | [`dbgFeature`](#dbgfeature) | private |  | tv-broadcast | inferred | Debug: Handles the feature. |
-| [`endTransaction`](#endtransaction) | private |  | tv-broadcast | inferred | Handles the end transaction. |
-| [`getResourceToRelease`](#getresourcetorelease) | private |  | tv-broadcast | inferred | Returns the resource to release. |
+| [`endTransaction`](#endtransaction) | private |  | tv-broadcast | documented | Handles the end transaction. |
+| [`getResourceToRelease`](#getresourcetorelease) | private |  | tv-broadcast | documented | Returns the resource to release. |
 | [`getSimulationResult`](#getsimulationresult) | private |  | tv-broadcast | inferred | Returns the simulation result. |
 | [`notifyBackground`](#notifybackground) | private |  | tv-broadcast | inferred | Notifies of the background. |
-| [`notifyForeground`](#notifyforeground) | private |  | tv-broadcast | inferred | Notifies of the foreground. |
+| [`notifyForeground`](#notifyforeground) | private |  | tv-broadcast | documented | Notifies of the foreground. |
 | [`policyActionEvent`](#policyactionevent) | private |  | misc | inferred | Handles the policy action event. |
-| [`presetTuner`](#presettuner) | private |  | tv-broadcast | inferred | Handles the preset tuner. ⚠️ |
-| [`registerHandledResource`](#registerhandledresource) | private |  | tv-broadcast | inferred | Registers the handled resource. |
-| [`releaseResource`](#releaseresource) | private |  | tv-broadcast | inferred | Releases the resource. |
-| [`requestResource`](#requestresource) | private |  | tv-broadcast | inferred | Requests the resource. |
-| [`setPipelineState`](#setpipelinestate) | private |  | tv-broadcast | inferred | Sets the pipeline state. |
-| [`setSimulationMode`](#setsimulationmode) | private |  | tv-broadcast | inferred | Sets the simulation mode. |
-| [`simulateResource`](#simulateresource) | private |  | tv-broadcast | inferred | Handles the simulate resource. |
-| [`updatePipelineInfo`](#updatepipelineinfo) | private |  | tv-broadcast | inferred | Updates the pipeline info. |
+| [`presetTuner`](#presettuner) | private |  | tv-broadcast | documented | Handles the preset tuner. ⚠️ |
+| [`registerHandledResource`](#registerhandledresource) | private |  | tv-broadcast | documented | Registers the handled resource. |
+| [`releaseResource`](#releaseresource) | private |  | tv-broadcast | documented | Releases the resource. |
+| [`requestResource`](#requestresource) | private |  | tv-broadcast | documented | Requests the resource. |
+| [`setPipelineState`](#setpipelinestate) | private |  | tv-broadcast | documented | Sets the pipeline state. |
+| [`setSimulationMode`](#setsimulationmode) | private |  | tv-broadcast | documented | Sets the simulation mode. |
+| [`simulateResource`](#simulateresource) | private |  | tv-broadcast | documented | Handles the simulate resource. |
+| [`updatePipelineInfo`](#updatepipelineinfo) | private |  | tv-broadcast | documented | Updates the pipeline info. |
 
 <a id="begintransaction"></a>
 ## `beginTransaction`
@@ -78,19 +78,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Handles the end transaction.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `$$transactionId` | Number (required) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/endTransaction '{}'
 ```
 
-> ACG groups: private, tv, all, tvrm.control.
+> ACG groups: private, tv, all, tvrm.control.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -101,19 +103,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the resource to release.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pipelineId` | String (optional) |
+| `input` | Any (optional) |
+| `purpose` | Any (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/getResourceToRelease '{}'
 ```
 
-> ACG groups: private, tv, all, tvrm.control.
+> ACG groups: private, tv, all, tvrm.control.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -176,19 +182,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Notifies of the foreground.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pipelineId` | String (optional) |
+| `input` | Any (optional) |
+| `purpose` | Any (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/notifyForeground '{}'
 ```
 
-> ACG groups: private, tv, all, tvrm.control.
+> ACG groups: private, tv, all, tvrm.control.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -222,19 +232,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Handles the preset tuner.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `input` | Any (optional) |
+| `tuner` | Number (optional) |
+| `port` | Number (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/presetTuner '{}'
 ```
 
-> ACG groups: private, tv, all, tvrm.control. Flagged dangerous by name; verify before calling.
+> ACG groups: private, tv, all, tvrm.control. Flagged dangerous by name; verify before calling.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -245,19 +259,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Registers the handled resource.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `resourceList` | Array (required) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/registerHandledResource '{}'
 ```
 
-> ACG groups: private, tv, all, tvrm.control.
+> ACG groups: private, tv, all, tvrm.control.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -268,19 +284,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Releases the resource.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pipelineId` | String (optional) |
+| `input` | Any (optional) |
+| `purpose` | Any (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/releaseResource '{}'
 ```
 
-> ACG groups: private, tv, all, tvrm.control.
+> ACG groups: private, tv, all, tvrm.control.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -291,19 +311,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Requests the resource.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pipelineId` | String (optional) |
+| `input` | Any (optional) |
+| `purpose` | Any (optional) |
+| `simulationMode` | Boolean (optional) This indicates whether the request is handled in simulation mode or not Default: False |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/requestResource '{}'
 ```
 
-> ACG groups: private, tv, all, tvrm.control.
+> ACG groups: private, tv, all, tvrm.control.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -314,19 +339,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the pipeline state.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pipelineId` | String (required) |
+| `state` | String (required) Possible values: foreground, background |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/setPipelineState '{}'
 ```
 
-> ACG groups: private, tv, all, tvrm.control.
+> ACG groups: private, tv, all, tvrm.control.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -337,19 +365,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the simulation mode.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `mode` | Boolean (required) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/setSimulationMode '{}'
 ```
 
-> ACG groups: private, tv, all, tvrm.control.
+> ACG groups: private, tv, all, tvrm.control.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -360,19 +390,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Handles the simulate resource.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `input` | Any (required) |
+| `purpose` | Any (required) |
+| `channel` | Object (required) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/simulateResource '{}'
 ```
 
-> ACG groups: private, tv, all, tvrm.control.
+> ACG groups: private, tv, all, tvrm.control.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -383,18 +417,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Updates the pipeline info.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `input` | Any (optional) |
+| `purpose` | Any (optional) |
+| `pipelineInfo` | Object (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvrm/updatePipelineInfo '{}'
 ```
 
-> ACG groups: private, tv, all, tvrm.control.
+> ACG groups: private, tv, all, tvrm.control.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))

@@ -8,12 +8,12 @@ Package installer service: installs, removes, and cancels packages, queries inst
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`cancel`](#cancel) | private |  | misc | inferred | Cancels the pkg install. |
-| [`install`](#install) | private |  | misc | inferred | Installs the pkg install. |
+| [`cancel`](#cancel) | private |  | misc | documented | Cancels the pkg install. |
+| [`install`](#install) | private |  | misc | documented | Installs the pkg install. |
 | [`internal/start`](#internal_start) | private |  | misc | inferred | Starts the pkg install (internal) |
-| [`queryInstallCapacity`](#queryinstallcapacity) | private |  | misc | inferred | Queries the install capacity. |
-| [`remove`](#remove) | private |  | misc | inferred | Removes the pkg install. ⚠️ |
-| [`status`](#status) | private |  | misc | inferred | Handles the status. |
+| [`queryInstallCapacity`](#queryinstallcapacity) | private |  | misc | documented | Queries the install capacity. |
+| [`remove`](#remove) | private |  | misc | documented | Removes the pkg install. ⚠️ |
+| [`status`](#status) | private |  | misc | documented | Handles the status. |
 
 <a id="cancel"></a>
 ## `cancel`
@@ -22,19 +22,21 @@ Package installer service: installs, removes, and cancels packages, queries inst
 
 Cancels the pkg install.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) ID of package to be cancel. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgInstall/cancel '{}'
 ```
 
-> ACG groups: pkginstalld.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: pkginstalld.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -45,19 +47,26 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Installs the pkg install.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) ID of application to be installed. |
+| `target` | Object (optional) |
+| `type` | String (optional) Indicates install type. If type is stub install stub app, else install full app Possible values: stub, op |
+| `silence` | Boolean (optional) Indicates install performed without any user notification. Default is true Default: True |
+| `wait` | Boolean (optional) request for multiple sequential installation Default: False |
+| `subscribe` | Boolean (optional) Subscribe this call and subscribers can receive install progress. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgInstall/install '{}'
 ```
 
-> ACG groups: pkginstalld.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: pkginstalld.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -91,19 +100,25 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Queries the install capacity.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) ID of package to be checked. |
+| `size` | Number (required) Packed package byte size. |
+| `uncompressedSize` | Number (required) Unpacked package byte size. |
+| `freeupSpace` | Boolean (optional) Request to free up internal storage. Default: False |
+| `dependencies` | Array (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgInstall/queryInstallCapacity '{}'
 ```
 
-> ACG groups: pkginstalld.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: pkginstalld.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -114,19 +129,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Removes the pkg install.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) ID of application to be removed. |
+| `type` | String (optional) Indicates remove type. If system app need to initialze, type should be initialize. Possible values: initialize |
+| `subscribe` | Boolean (optional) Subscribe this call and subscribers can receive remove progress. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgInstall/remove '{}'
 ```
 
-> ACG groups: pkginstalld.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.
+> ACG groups: pkginstalld.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -137,18 +156,20 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Handles the status.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `subscribe` | Boolean (optional) Subscribe this call and subscribers can receive app version status changes. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pkgInstall/status '{}'
 ```
 
-> ACG groups: configurator.callbacks, pkginstalld.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: configurator.callbacks, pkginstalld.internal, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))

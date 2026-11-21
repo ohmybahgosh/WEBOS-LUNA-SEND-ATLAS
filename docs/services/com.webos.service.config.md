@@ -215,6 +215,10 @@ Configd parses all configuration files again and regenerates the values of confi
 - **Versions:** webOS OSE API level 11+  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `timeout` | Integer (optional) |
+
 **Returns:**
 
 | Field | Type / notes |
@@ -226,7 +230,7 @@ Configd parses all configuration files again and regenerates the values of confi
 luna-send -n 1 luna://com.webos.service.config/reconfigure '{}
 ```
 
-> ACG: systemconfig.management \| Returns: returnValue:Boolean; errorCode:Number (int32_t); errorText:String \| Service: A static service in the system that provides product specific configurations to webOS components. This service provides simple get/set interfaces to access the configurations. [Terminology] config : I
+> ACG: systemconfig.management \| Returns: returnValue:Boolean; errorCode:Number (int32_t); errorText:String \| Service: A static service in the system that provides product specific configurations to webOS components. This service provides simple get/set interfaces to access the configurations. [Terminology] config : I  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-config/)
 

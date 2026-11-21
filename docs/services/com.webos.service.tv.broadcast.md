@@ -46,11 +46,20 @@ Broadcast pipeline control method changeChannel (listed in community research; s
 - **Versions:** webOS TV (version not stated)  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `channelId` | String (required) Unique channel id obtained from iEPG. |
+| `mode` | String (optional) Describe play mode. |
+| `update` | Boolean (optional) If true, update last channel. Default: True |
+| `connection_timeout` | Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000 |
+| `ignorable` | Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/changeChannel '{}'
 ```
 
-> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.
+> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/apis/com.webos.service.tv.broadcast.md)
 
@@ -92,11 +101,18 @@ Broadcast pipeline control method changeChannelPrevious (listed in community res
 - **Versions:** webOS TV (version not stated)  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `update` | Boolean (optional) If true, update last channel. Default: True |
+| `connection_timeout` | Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000 |
+| `ignorable` | Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/changeChannelPrevious '{}'
 ```
 
-> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.
+> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/apis/com.webos.service.tv.broadcast.md)
 
@@ -201,11 +217,15 @@ Broadcast pipeline control method close (listed in community research; semantics
 - **Versions:** webOS TV (version not stated)  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/close '{}'
 ```
 
-> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.
+> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/apis/com.webos.service.tv.broadcast.md)
 
@@ -390,11 +410,15 @@ Broadcast pipeline control method open (listed in community research; semantics 
 - **Versions:** webOS TV (version not stated)  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `options` | Object (optional) |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/open '{}'
 ```
 
-> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.
+> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/apis/com.webos.service.tv.broadcast.md)
 
@@ -411,11 +435,16 @@ Broadcast pipeline control method pause (listed in community research; semantics
 - **Versions:** webOS TV (version not stated)  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `mode` | String (optional) Describe pause mode. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/pause '{}'
 ```
 
-> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.
+> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/apis/com.webos.service.tv.broadcast.md)
 
@@ -537,10 +566,14 @@ Broadcast pipeline control method stop (listed in community research; semantics 
 - **Versions:** webOS TV (version not stated)  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tv.broadcast/stop '{}'
 ```
 
-> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.
+> Method list from the webostv-research repo; the README cites a patent (KR20150101367A) describing the service. Only changeChannelUp/Down have a code sample.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/apis/com.webos.service.tv.broadcast.md)

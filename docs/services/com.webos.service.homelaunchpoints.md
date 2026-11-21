@@ -8,20 +8,20 @@ Home-screen launch-point and QCard manager: lists, adds, moves, hides, removes a
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`addLaunchPoint`](#addlaunchpoint) | private |  | apps | inferred | Adds the launch point. |
-| [`addQCard`](#addqcard) | private |  | apps | inferred | Adds the q card. |
-| [`hideLaunchPoint`](#hidelaunchpoint) | private |  | apps | inferred | Hides the launch point. |
-| [`listAvailableLaunchPoints`](#listavailablelaunchpoints) | private |  | apps | inferred | Lists the available launch points. |
-| [`listAvailableQCards`](#listavailableqcards) | private |  | apps | inferred | Lists the available q cards. |
-| [`listLaunchPoints`](#listlaunchpoints) | private |  | apps | inferred | Lists the launch points. |
-| [`listQCards`](#listqcards) | private |  | apps | inferred | Lists the q cards. |
-| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | inferred | Moves the launch point. |
-| [`moveQCard`](#moveqcard) | private |  | apps | inferred | Moves the q card. |
-| [`removeLaunchPoint`](#removelaunchpoint) | private |  | apps | inferred | Removes the launch point. ⚠️ |
-| [`removeQCard`](#removeqcard) | private |  | apps | inferred | Removes the q card. ⚠️ |
-| [`unhideLaunchPoint`](#unhidelaunchpoint) | private |  | apps | inferred | Handles the unhide launch point. |
-| [`updateLaunchPoint`](#updatelaunchpoint) | private |  | apps | inferred | Updates the launch point. |
-| [`updateQCard`](#updateqcard) | public |  | apps | inferred | Updates the q card. |
+| [`addLaunchPoint`](#addlaunchpoint) | private |  | apps | documented | Adds the launch point. |
+| [`addQCard`](#addqcard) | private |  | apps | documented | Adds the q card. |
+| [`hideLaunchPoint`](#hidelaunchpoint) | private |  | apps | documented | Hides the launch point. |
+| [`listAvailableLaunchPoints`](#listavailablelaunchpoints) | private |  | apps | documented | Lists the available launch points. |
+| [`listAvailableQCards`](#listavailableqcards) | private |  | apps | documented | Lists the available q cards. |
+| [`listLaunchPoints`](#listlaunchpoints) | private |  | apps | documented | Lists the launch points. |
+| [`listQCards`](#listqcards) | private |  | apps | documented | Lists the q cards. |
+| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | documented | Moves the launch point. |
+| [`moveQCard`](#moveqcard) | private |  | apps | documented | Moves the q card. |
+| [`removeLaunchPoint`](#removelaunchpoint) | private |  | apps | documented | Removes the launch point. ⚠️ |
+| [`removeQCard`](#removeqcard) | private |  | apps | documented | Removes the q card. ⚠️ |
+| [`unhideLaunchPoint`](#unhidelaunchpoint) | private |  | apps | documented | Handles the unhide launch point. |
+| [`updateLaunchPoint`](#updatelaunchpoint) | private |  | apps | documented | Updates the launch point. |
+| [`updateQCard`](#updateqcard) | public |  | apps | documented | Updates the q card. |
 
 <a id="addlaunchpoint"></a>
 ## `addLaunchPoint`
@@ -30,19 +30,21 @@ Home-screen launch-point and QCard manager: lists, adds, moves, hides, removes a
 
 Adds the launch point.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) ID of launch point to be added |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/addLaunchPoint '{}'
 ```
 
-> ACG groups: hlp.internal, private, all.
+> ACG groups: hlp.internal, private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -53,19 +55,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Adds the q card.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be updated |
+| `position` | Number (required) This field means the position where to put on launcher |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/addQCard '{}'
 ```
 
-> ACG groups: hlp.internal, private, all.
+> ACG groups: hlp.internal, private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -76,19 +81,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Hides the launch point.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be hidden by user |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/hideLaunchPoint '{}'
 ```
 
-> ACG groups: hlp.internal, private, all.
+> ACG groups: hlp.internal, private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -99,19 +106,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the available launch points.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `subscribe` | Boolean (optional) listAvailableLaunchPoints maintains the order of hidden launch point apps |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/listAvailableLaunchPoints '{}'
 ```
 
-> ACG groups: hlp.internal, private, all.
+> ACG groups: hlp.internal, private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -122,13 +131,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the available q cards.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (optional) listAvailableQCards support subscription to notify when home launch points are updated |
 
 **Returns:**
 
@@ -172,7 +183,7 @@ Lists the available q cards.
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/listAvailableQCards '{}'
 ```
 
-> ACG groups: hlp.internal, private, all.
+> ACG groups: hlp.internal, private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -183,19 +194,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the launch points.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `subscribe` | Boolean (optional) listLaunchPoints maintains the order of lauch point apps that are not hidden |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/listLaunchPoints '{}'
 ```
 
-> ACG groups: hlp.internal, private, all.
+> ACG groups: hlp.internal, private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -206,13 +219,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the q cards.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `subscribe` | Boolean (optional) listQCards support subscription to notify when home launch points are updated. |
 
 **Returns:**
 
@@ -256,7 +271,7 @@ Lists the q cards.
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/listQCards '{}'
 ```
 
-> ACG groups: hlp.internal, private, all.
+> ACG groups: hlp.internal, private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -267,19 +282,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Moves the launch point.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be updated |
+| `position` | Number (required) This field means the position where to put on launcher |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/moveLaunchPoint '{}'
 ```
 
-> ACG groups: hlp.internal, private, all.
+> ACG groups: hlp.internal, private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -290,19 +308,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Moves the q card.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be updated |
+| `position` | Number (required) This field means the position where to put on launcher |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/moveQCard '{}'
 ```
 
-> ACG groups: hlp.internal, private, all.
+> ACG groups: hlp.internal, private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -313,19 +334,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Removes the launch point.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be removed |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/removeLaunchPoint '{}'
 ```
 
-> ACG groups: hlp.internal, private, all. Flagged dangerous by name; verify before calling.
+> ACG groups: hlp.internal, private, all. Flagged dangerous by name; verify before calling.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -336,19 +359,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Removes the q card.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be removed |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/removeQCard '{}'
 ```
 
-> ACG groups: hlp.internal, private, all. Flagged dangerous by name; verify before calling.
+> ACG groups: hlp.internal, private, all. Flagged dangerous by name; verify before calling.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -359,19 +384,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Handles the unhide launch point.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be restored from hidden list |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/unhideLaunchPoint '{}'
 ```
 
-> ACG groups: hlp.internal, private, all.
+> ACG groups: hlp.internal, private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -382,19 +409,36 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Updates the launch point.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be updated |
+| `title` | String (optional) Title for the launch point to be updated |
+| `icon` | String (optional) Path to icon for the launch point to be updated |
+| `bgImage` | String (optional) This field is the location of a bitmap. The bitmap is displayed to the user when the user hovers over the launch point with the system pointer. |
+| `bgImages` | Array (optional) Locations of bitmaps that may be displayed to the user when the user hovers over the launch point with the system pointer. |
+| `bgColor` | String (optional) This field is the color to be displayed to the user when the user hovers over the launch point with the system pointer. This is used in the absence of the backgroundImage. |
+| `imageForRecents` | String (optional) This field is the location of a bitmap. The bitmap is displayed in the recent apps list. |
+| `iconColor` | String (optional) indicates color of the icon of the launch point. |
+| `mediumLargeIcon` | String (optional) path to mediumLargeIcon |
+| `largeIcon` | String (optional) path to largeIcon |
+| `extraLargeIcon` | String (optional) path to extraLargeIcon |
+| `appDescription` | String (optional) A short tagline for the application |
+| `params` | Object (optional) Parameters to pass to the application |
+| `userData` | String (optional) Additional data that may be used by clients, such as an identifier for analytics purposes |
+| `tileSize` | String (optional) Hint for sizing of UI tiles: normal or large, large may be used for a promotional item Possible values: normal, large |
+| `unmovable` | Boolean (optional) Hint that an item should never be moved from it's given position |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/updateLaunchPoint '{}'
 ```
 
-> ACG groups: hlp.internal, private, all.
+> ACG groups: hlp.internal, private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -405,18 +449,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Updates the q card.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be updated |
+| `qCardTitle` | String (optional) New title that user desires |
+| `qCardDescription` | String (optional) User required description |
+| `qCardIcon` | String (optional) user required icon |
+| `qCardRemoteIcon` | String (optional) user required remote icon |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homelaunchpoints/updateQCard '{}'
 ```
 
-> ACG groups: hlp.internal, private, public, all.
+> ACG groups: hlp.internal, private, public, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))

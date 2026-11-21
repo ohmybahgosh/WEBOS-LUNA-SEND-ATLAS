@@ -8,11 +8,11 @@ Service manager: launches and closes prerequisite services, sets and reads their
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`closePrerequisiteServices`](#closeprerequisiteservices) | private |  | misc | inferred | Closes the prerequisite services. |
-| [`getPriorityLevel`](#getprioritylevel) | private |  | misc | inferred | Returns the priority level. |
-| [`launchPrerequisiteServices`](#launchprerequisiteservices) | private |  | apps | inferred | Launches the prerequisite services. |
-| [`setPriorityLevel`](#setprioritylevel) | private |  | misc | inferred | Sets the priority level. |
-| [`status`](#status) | private |  | misc | inferred | Handles the status. |
+| [`closePrerequisiteServices`](#closeprerequisiteservices) | private |  | misc | documented | Closes the prerequisite services. |
+| [`getPriorityLevel`](#getprioritylevel) | private |  | misc | documented | Returns the priority level. |
+| [`launchPrerequisiteServices`](#launchprerequisiteservices) | private |  | apps | documented | Launches the prerequisite services. |
+| [`setPriorityLevel`](#setprioritylevel) | private |  | misc | documented | Sets the priority level. |
+| [`status`](#status) | private |  | misc | documented | Handles the status. |
 
 <a id="closeprerequisiteservices"></a>
 ## `closePrerequisiteServices`
@@ -21,19 +21,21 @@ Service manager: launches and closes prerequisite services, sets and reads their
 
 Closes the prerequisite services.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (optional) app id to close prerequisite services |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.servicemanager/closePrerequisiteServices '{}'
 ```
 
-> ACG groups: servicemanager.internal, all.
+> ACG groups: servicemanager.internal, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -44,19 +46,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the priority level.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `serviceName` | String (optional) serviceName to check the priority level |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.servicemanager/getPriorityLevel '{}'
 ```
 
-> ACG groups: servicemanager.internal, all.
+> ACG groups: servicemanager.internal, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -67,19 +71,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Launches the prerequisite services.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (optional) app id to launch prerequisite services |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.servicemanager/launchPrerequisiteServices '{}'
 ```
 
-> ACG groups: servicemanager.internal, all.
+> ACG groups: servicemanager.internal, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -90,19 +96,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the priority level.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `serviceName` | String (optional) serviceName to set priority level |
+| `value` | String (optional) priority level - highest, high, normal, low, lowest |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.servicemanager/setPriorityLevel '{}'
 ```
 
-> ACG groups: servicemanager.internal, all.
+> ACG groups: servicemanager.internal, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -113,18 +122,20 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Handles the status.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `serviceName` | String (optional) serviceName to check the status |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.servicemanager/status '{}'
 ```
 
-> ACG groups: servicemanager.internal, all.
+> ACG groups: servicemanager.internal, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))

@@ -369,11 +369,18 @@ The object contains sorted foreground applications in ascending order.
 - **Versions:** webOS OSE API level 29+  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `appId` | String (required) Application ID of application in foreground. |
+| `windowId` | String (required) Window ID of application in foreground. |
+| `processId` | String (required) Process ID of application in foreground. |
+| `windowType` | String (optional) Describe type of window : maximized, maximized, pip, popup, overay |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/foregroundAppInfo '{}'
 ```
 
-> Service: Provides methods for managing application life cycle, application information, LaunchPoint list. \| Example synthesized from parameter table (page has no example).
+> Service: Provides methods for managing application life cycle, application information, LaunchPoint list. \| Example synthesized from parameter table (page has no example).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-applicationmanager/)
 
@@ -709,11 +716,19 @@ Contains the array of launchpoints.
 - **Versions:** webOS OSE API level 29+  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `applications_common` | Array (optional) apps which are displayed on launcher in common |
+| `applications_dosci` | Array (optional) apps which are displayed on launcher depending on service country information |
+| `applications_dobci` | Array (optional) apps which are displayed on launcher depending on broadcast country information and lcd panel |
+| `applications_dobci_oled` | Array (optional) apps which are displayed on launcher depending on broadcast country information and oled panel |
+| `applications_dobci_tnative` | Array (optional) apps which are displayed on launcher depending on broadcast country information and tnative |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationmanager/launchPoints '{}'
 ```
 
-> Service: Provides methods for managing application life cycle, application information, LaunchPoint list. \| Example synthesized from parameter table (page has no example).
+> Service: Provides methods for managing application life cycle, application information, LaunchPoint list. \| Example synthesized from parameter table (page has no example).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-applicationmanager/)
 

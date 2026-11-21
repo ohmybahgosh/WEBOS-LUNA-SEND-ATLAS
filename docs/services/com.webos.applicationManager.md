@@ -9,8 +9,8 @@ Application manager: installs and launches apps, manages launch points and virtu
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
 | [`addContent`](#addcontent) | private |  | apps | inferred | Adds the content. |
-| [`addLaunchPoint`](#addlaunchpoint) | private |  | apps | inferred | Adds the launch point. |
-| [`addVirtualApp`](#addvirtualapp) | private |  | apps | inferred | Adds the virtual app. |
+| [`addLaunchPoint`](#addlaunchpoint) | private |  | apps | documented | Adds the launch point. |
+| [`addVirtualApp`](#addvirtualapp) | private |  | apps | documented | Adds the virtual app. |
 | [`blockSystemApp`](#blocksystemapp) | private |  | apps | documented | Blocks a system app (used by webos-homebar to replace LG Home) ⚠️ |
 | [`changeRunningAppId`](#changerunningappid) | private |  | apps | inferred | Changes the running app ID. |
 | [`close`](#close) | ssap |  | apps | documented | Close an app by id (SSAP) |
@@ -24,44 +24,44 @@ Application manager: installs and launches apps, manages launch points and virtu
 | [`dev/managerInfo`](#dev_managerinfo) | unknown |  | apps | documented | Registered in webOS OSE sysbus api.json (ACG group application.devmode); name only |
 | [`dev/running`](#dev_running) | public |  | apps | documented | Developer-mode listing of running apps (ares-launch --running) |
 | [`getAllContents`](#getallcontents) | private |  | apps | inferred | Returns the all contents. |
-| [`getAppBasePath`](#getappbasepath) | public |  | apps | inferred | Returns the app base path. |
+| [`getAppBasePath`](#getappbasepath) | public |  | apps | documented | Returns the app base path. |
 | [`getAppInfo`](#getappinfo) | ssap |  | apps | documented | Get info for one installed app |
 | [`getAppLifeEvents`](#getapplifeevents) | private | yes | apps | inferred | Returns the app life events. |
 | [`getAppLifeStatus`](#getapplifestatus) | private | yes | apps | inferred | Returns the app life status. |
 | [`getAppLoadStatus`](#getapploadstatus) | public |  | apps | documented | Returns whether the app with the given ID is installed (webOS TV 4.0+). |
-| [`getAppStatus`](#getappstatus) | private |  | apps | inferred | Returns the app status. |
-| [`getContents`](#getcontents) | public |  | apps | inferred | Returns the contents. |
+| [`getAppStatus`](#getappstatus) | private |  | apps | documented | Returns the app status. |
+| [`getContents`](#getcontents) | public |  | apps | documented | Returns the contents. |
 | [`getForegroundAppInfo`](#getforegroundappinfo) | ssap | yes | apps | documented | Get (or subscribe to) the foreground app |
-| [`getForegroundApps`](#getforegroundapps) | private |  | apps | inferred | Returns the foreground apps. |
-| [`getHandlerForExtension`](#gethandlerforextension) | public |  | apps | inferred | Returns the handler for extension. |
-| [`getHandlerForMimeType`](#gethandlerformimetype) | public |  | apps | inferred | Returns the handler for mime type. |
+| [`getForegroundApps`](#getforegroundapps) | private |  | apps | documented | Returns the foreground apps. |
+| [`getHandlerForExtension`](#gethandlerforextension) | public |  | apps | documented | Returns the handler for extension. |
+| [`getHandlerForMimeType`](#gethandlerformimetype) | public |  | apps | documented | Returns the handler for mime type. |
 | [`getHandlerForMimeTypeByVerb`](#gethandlerformimetypebyverb) | public |  | apps | inferred | Returns the handler for mime type by verb. |
-| [`getHandlerForUrl`](#gethandlerforurl) | public |  | apps | inferred | Returns the handler for URL. |
-| [`getHandlerForUrlByVerb`](#gethandlerforurlbyverb) | public |  | apps | inferred | Returns the handler for URL by verb. |
+| [`getHandlerForUrl`](#gethandlerforurl) | public |  | apps | documented | Returns the handler for URL. |
+| [`getHandlerForUrlByVerb`](#gethandlerforurlbyverb) | public |  | apps | documented | Returns the handler for URL by verb. |
 | [`getHistoricalBackInfo`](#gethistoricalbackinfo) | private |  | apps | inferred | Returns the historical back info. |
 | [`getLastOrder`](#getlastorder) | private |  | apps | inferred | Returns the last order. |
-| [`getPackageInfo`](#getpackageinfo) | private |  | apps | inferred | Returns the package info. |
+| [`getPackageInfo`](#getpackageinfo) | private |  | apps | documented | Returns the package info. |
 | [`isPromotionalAppOn`](#ispromotionalappon) | public |  | apps | inferred | Reports whether the promotional app on is set. |
 | [`launch`](#launch) | public |  | apps | documented | Launches the app with the given app ID, optionally with params. ⚠️ |
 | [`launchDefaultApp`](#launchdefaultapp) | private |  | apps | documented | Launches the default app (listed by ls-monitor -i, parameters unread) |
-| [`launchVirtualApp`](#launchvirtualapp) | private |  | apps | inferred | Launches the virtual app. |
-| [`listAllHandlersForMime`](#listallhandlersformime) | public |  | apps | inferred | Lists the all handlers for mime. |
+| [`launchVirtualApp`](#launchvirtualapp) | private |  | apps | documented | Launches the virtual app. |
+| [`listAllHandlersForMime`](#listallhandlersformime) | public |  | apps | documented | Lists the all handlers for mime. |
 | [`listAllHandlersForMimeByVerb`](#listallhandlersformimebyverb) | public |  | apps | inferred | Lists the all handlers for mime by verb. |
-| [`listAllHandlersForMultipleMime`](#listallhandlersformultiplemime) | public |  | apps | inferred | Lists the all handlers for multiple mime. |
-| [`listAllHandlersForMultipleUrlPattern`](#listallhandlersformultipleurlpattern) | public |  | apps | inferred | Lists the all handlers for multiple URL pattern. |
-| [`listAllHandlersForUrl`](#listallhandlersforurl) | public |  | apps | inferred | Lists the all handlers for URL. |
-| [`listAllHandlersForUrlByVerb`](#listallhandlersforurlbyverb) | public |  | apps | inferred | Lists the all handlers for URL by verb. |
-| [`listAllHandlersForUrlPattern`](#listallhandlersforurlpattern) | public |  | apps | inferred | Lists the all handlers for URL pattern. |
+| [`listAllHandlersForMultipleMime`](#listallhandlersformultiplemime) | public |  | apps | documented | Lists the all handlers for multiple mime. |
+| [`listAllHandlersForMultipleUrlPattern`](#listallhandlersformultipleurlpattern) | public |  | apps | documented | Lists the all handlers for multiple URL pattern. |
+| [`listAllHandlersForUrl`](#listallhandlersforurl) | public |  | apps | documented | Lists the all handlers for URL. |
+| [`listAllHandlersForUrlByVerb`](#listallhandlersforurlbyverb) | public |  | apps | documented | Lists the all handlers for URL by verb. |
+| [`listAllHandlersForUrlPattern`](#listallhandlersforurlpattern) | public |  | apps | documented | Lists the all handlers for URL pattern. |
 | [`listApps`](#listapps) | private |  | apps | documented | Lists installed apps |
 | [`listExtensionMap`](#listextensionmap) | public |  | apps | inferred | Lists the extension map. |
 | [`listLaunchPoints`](#listlaunchpoints) | ssap | yes | apps | documented | List launcher launch points (apps visible in launcher) |
 | [`listLaunchPointsForLocale`](#listlaunchpointsforlocale) | private |  | apps | inferred | Lists the launch points for locale. |
-| [`listPackages`](#listpackages) | private |  | apps | inferred | Lists the packages. |
-| [`lockAllApps`](#lockallapps) | private |  | apps | inferred | Locks the all apps. |
-| [`lockApp`](#lockapp) | private |  | apps | inferred | Locks the app. |
-| [`mimeTypeForExtension`](#mimetypeforextension) | public |  | apps | inferred | Handles the mime type for extension. |
-| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | inferred | Moves the launch point. |
-| [`notifyAlertClosed`](#notifyalertclosed) | private |  | apps | inferred | Notifies of the alert closed. |
+| [`listPackages`](#listpackages) | private |  | apps | documented | Lists the packages. |
+| [`lockAllApps`](#lockallapps) | private |  | apps | documented | Locks the all apps. |
+| [`lockApp`](#lockapp) | private |  | apps | documented | Locks the app. |
+| [`mimeTypeForExtension`](#mimetypeforextension) | public |  | apps | documented | Handles the mime type for extension. |
+| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | documented | Moves the launch point. |
+| [`notifyAlertClosed`](#notifyalertclosed) | private |  | apps | documented | Notifies of the alert closed. |
 | [`notifySplashTimeout`](#notifysplashtimeout) | private |  | apps | inferred | Notifies of the splash timeout. |
 | [`onLaunch`](#onlaunch) | private |  | apps | inferred | Event handler: fires on the launch. |
 | [`open`](#open) | ssap |  | apps | documented | Open an app by id (SSAP) |
@@ -71,19 +71,19 @@ Application manager: installs and launches apps, manages launch points and virtu
 | [`registerVerbsForRedirect`](#registerverbsforredirect) | private |  | apps | inferred | Registers the verbs for redirect. |
 | [`registerVerbsForResource`](#registerverbsforresource) | private |  | apps | inferred | Registers the verbs for resource. |
 | [`releaseBlockSystemApp`](#releaseblocksystemapp) | private |  | apps | documented | Releases a blocked system app |
-| [`removeAllContents`](#removeallcontents) | private |  | apps | inferred | Removes the all contents. |
-| [`removeContent`](#removecontent) | private |  | apps | inferred | Removes the content. |
+| [`removeAllContents`](#removeallcontents) | private |  | apps | documented | Removes the all contents. |
+| [`removeContent`](#removecontent) | private |  | apps | documented | Removes the content. |
 | [`removeLaunchPoint`](#removelaunchpoint) | private |  | apps | documented | Removes a launch point by id |
-| [`removeVirtualApp`](#removevirtualapp) | private |  | apps | inferred | Removes the virtual app. |
+| [`removeVirtualApp`](#removevirtualapp) | private |  | apps | documented | Removes the virtual app. |
 | [`run`](#run) | private |  | apps | inferred | Runs the application manager. |
 | [`running`](#running) | private | yes | apps | documented | Lists running apps |
 | [`saveOrder`](#saveorder) | private |  | apps | inferred | Saves the order. |
 | [`scan`](#scan) | private |  | apps | documented | Triggers the app manager to rescan app directories |
-| [`searchApps`](#searchapps) | private |  | apps | inferred | Searches for apps. |
-| [`setContents`](#setcontents) | public |  | apps | inferred | Sets the contents. |
-| [`setDefaultApp`](#setdefaultapp) | private |  | apps | inferred | Sets the default app. |
-| [`setOrder`](#setorder) | private |  | apps | inferred | Sets the order. |
-| [`updateLaunchPoint`](#updatelaunchpoint) | private |  | apps | inferred | Updates the launch point. |
+| [`searchApps`](#searchapps) | private |  | apps | documented | Searches for apps. |
+| [`setContents`](#setcontents) | public |  | apps | documented | Sets the contents. |
+| [`setDefaultApp`](#setdefaultapp) | private |  | apps | documented | Sets the default app. |
+| [`setOrder`](#setorder) | private |  | apps | documented | Sets the order. |
+| [`updateLaunchPoint`](#updatelaunchpoint) | private |  | apps | documented | Updates the launch point. |
 
 <a id="addcontent"></a>
 ## `addContent`
@@ -115,19 +115,38 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Adds the launch point.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) ID of application to generate launch point |
+| `title` | String (optional) Title for the launch point |
+| `icon` | String (optional) Path to icon |
+| `bgImage` | String (optional) This field is the location of a bitmap. The bitmap is displayed to the user when the user hovers over the launch point with the system pointer. |
+| `bgImages` | Array (optional) Locations of bitmaps that may be displayed to the user when the user hovers over the launch point with the system pointer. Default: [] |
+| `bgColor` | String (optional) This field is the color to be displayed to the user when the user hovers over the launch point with the system pointer. This is used in the absence of the backgroundImage. |
+| `imageForRecents` | String (optional) This field is the location of a bitmap. The bitmap is displayed in the recent apps list. |
+| `iconColor` | String (optional) indicates color of the icon of the launch point. |
+| `mediumLargeIcon` | String (optional) path to mediumLargeIcon |
+| `largeIcon` | String (optional) path to largeIcon |
+| `extraLargeIcon` | String (optional) path to extraLargeIcon |
+| `appDescription` | String (optional) A short tagline for the application |
+| `params` | Object (optional) Parameters to pass to the application |
+| `userData` | String (optional) Additional data that may be used by clients, such as an identifier for analytics purposes |
+| `tileSize` | String (optional) Hint for sizing of UI tiles: normal or large, large may be used for a promotional item Possible values: normal, large Default: normal |
+| `unmovable` | Boolean (optional) Hint that an item should never be moved from it's given position Default: False |
+| `removable` | Boolean (optional) Hint that an item should never be removed |
+| `supportI18nTitle` | Boolean (optional) Hint that i18n will be supported for title Default: True |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/addLaunchPoint '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.launcher" in the component api.json/groups.json; no parameter docs read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.launcher" in the component api.json/groups.json; no parameter docs read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt), [2](https://github.com/webosose/sam/blob/master/files/sysbus/com.webos.sam.api.json)
 
@@ -138,19 +157,24 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Adds the virtual app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) virtual application ID to be created. |
+| `hostId` | String (required) host application id for virtual application. |
+| `appInfo` | Object (optional) appInfo for virtual application. Default: {} |
+| `params` | Object (required) params to be passed to host application as launch params. Default: {} |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/addVirtualApp '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -507,19 +531,21 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Returns the app base path.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `appId` | String (required) Get application base path for a given application ID. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getAppBasePath '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.operation" in the component api.json/groups.json; no parameter docs read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.operation" in the component api.json/groups.json; no parameter docs read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt), [2](https://github.com/webosose/sam/blob/master/files/sysbus/com.webos.sam.api.json)
 
@@ -626,19 +652,22 @@ Sources: [1](https://webostv.developer.lge.com/develop/references/application-ma
 
 Returns the app status.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `appId` | String (required) |
+| `appInfo` | Boolean (optional) Default: False |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getAppStatus '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, configurator.callbacks, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.operation" in the component api.json/groups.json; no parameter docs read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, configurator.callbacks, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.operation" in the component api.json/groups.json; no parameter docs read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt), [2](https://github.com/webosose/sam/blob/master/files/sysbus/com.webos.sam.api.json)
 
@@ -649,19 +678,21 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Returns the contents.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) Unique id of launch point |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getContents '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, public, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, public, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -707,13 +738,16 @@ Sources: [1](https://github.com/home-assistant-libs/aiowebostv/blob/main/aiowebo
 
 Returns the foreground apps.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `extraInfo` | Boolean (optional) If set to true, returns all foreground apps as an array. Otherwise, returns only a full screen app (e.g. card type) |
+| `subscribe` | Boolean (optional) |
 
 **Returns:**
 
@@ -727,7 +761,7 @@ Returns the foreground apps.
 luna-send -n 1 -f luna://com.webos.applicationManager/getForegroundApps '{}'
 ```
 
-> ACG groups: private, configurator.callbacks, all, applications.internal.
+> ACG groups: private, configurator.callbacks, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -738,19 +772,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the handler for extension.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `extension` | String (required) The extension for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getHandlerForExtension '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -761,19 +797,21 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Returns the handler for mime type.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `mimeType` | String (required) The mime type for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getHandlerForMimeType '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -807,19 +845,21 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Returns the handler for URL.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `url` | String (required) The url for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getHandlerForUrl '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -830,19 +870,23 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Returns the handler for URL by verb.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `url` | String (optional) The url for getting handler application by verb. |
+| `mime` | String (optional) The mime for getting handler application by verb. |
+| `verb` | String (required) The verb for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getHandlerForUrlByVerb '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -899,19 +943,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Returns the package info.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) Get package information for a given package ID. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/getPackageInfo '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -986,11 +1032,15 @@ Launches the default app (listed by ls-monitor -i, parameters unread)
 - **Versions:** unknown  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `category` | String (required) app category name |
+
 ```sh
 luna-send -n 1 luna://com.webos.applicationManager/launchDefaultApp '{}'
 ```
 
-> Only the method name was seen (lumen recon).
+> Only the method name was seen (lumen recon).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/HEAD/docs/device/b9.md)
 
@@ -1001,19 +1051,29 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/HEAD/docs/device/b
 
 Launches the virtual app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) virtual application ID to be launched. |
+| `hostId` | String (required) Host app id for virtual application. |
+| `appInfo` | Object (optional) appInfo for virtual application Default: {} |
+| `params` | Object (required) params to be passed to host application as params Default: {} |
+| `noSplash` | Boolean (optional) |
+| `spinner` | Boolean (optional) |
+| `preload` | String (optional) App will be launched in background if preload is filled in Possible values: full, semi-full, partial, minimal |
+| `launchHidden` | Boolean (optional) |
+| `keepAlive` | Boolean (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/launchVirtualApp '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1024,19 +1084,21 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Lists the all handlers for mime.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `mime` | String (optional) The mime for getting handler application by verb. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForMime '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1070,19 +1132,21 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Lists the all handlers for multiple mime.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `mimes` | Array (required) The mimes type for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForMultipleMime '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1093,19 +1157,21 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Lists the all handlers for multiple URL pattern.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `urls` | Array (required) The urls for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForMultipleUrlPattern '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1116,19 +1182,21 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Lists the all handlers for URL.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `url` | String (optional) The url for getting handler application by verb. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForUrl '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1139,19 +1207,23 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Lists the all handlers for URL by verb.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `url` | String (optional) The url for getting handler application by verb. |
+| `mime` | String (optional) The mime for getting handler application by verb. |
+| `verb` | String (required) The verb for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForUrlByVerb '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1162,19 +1234,21 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Lists the all handlers for URL pattern.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `urlPattern` | String (required) The mimes type for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/listAllHandlersForUrlPattern '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1190,6 +1264,11 @@ Lists installed apps
 - **Platform:** webOS TV  
 - **Versions:** webOS 3+  
 - **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `properties` | Array (optional) Get application information for service-user selected properties. |
+| `subscribe` | Boolean (optional) listApps support subscription to notify when Apps are updated, i.e., an app is installed or removed or edit |
 
 **Returns:**
 
@@ -1396,7 +1475,7 @@ Lists installed apps
 luna-send -n 1 luna://com.webos.applicationManager/listApps '{}'
 ```
 
-> Non-dev variant; dev-manager falls back to it when dev/listApps is unknown. \|\| Response key: apps.
+> Non-dev variant; dev-manager falls back to it when dev/listApps is unknown. \|\| Response key: apps.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/webosbrew/dev-manager-desktop/blob/HEAD/src/app/core/services/app-manager.service.ts), [2](https://github.com/gprot42/webos-launch-home/blob/HEAD/src/js/luna.js), [3](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoints.py), [4](https://github.com/home-assistant-libs/aiowebostv/blob/main/aiowebostv/endpoints.py), [5](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/webos_client.py)
 
@@ -1491,13 +1570,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Lists the packages.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `subscribe` | Boolean (optional) listPackages support subscription to notify when packages are updated, i.e., an package is installed or removed or edit |
 
 **Returns:**
 
@@ -1532,7 +1613,7 @@ Lists the packages.
 luna-send -n 1 -f luna://com.webos.applicationManager/listPackages '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1543,19 +1624,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Locks the all apps.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `lock` | Boolean (required) When set all applications is not allowed to launch |
+| `exceptionApps` | Array (optional) apps which should not be blocked, only for lock. Default: [] |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/lockAllApps '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1566,19 +1650,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Locks the app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) ID of application to be locked. |
+| `lock` | Boolean (required) When set the application is not allowed to launch |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/lockApp '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.launcher" in the component api.json/groups.json; no parameter docs read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.launcher" in the component api.json/groups.json; no parameter docs read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt), [2](https://github.com/webosose/sam/blob/master/files/sysbus/com.webos.sam.api.json)
 
@@ -1589,19 +1676,21 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Handles the mime type for extension.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `extension` | String (required) The extension of file for getting mime type. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/mimeTypeForExtension '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.query, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1612,19 +1701,23 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Moves the launch point.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be updated |
+| `position` | Number (optional) This field means the position where to put on launcher |
+| `target` | Object (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/moveLaunchPoint '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1635,19 +1728,22 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Notifies of the alert closed.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `alertId` | String (required) The update-popup ID. This is randomly generated by SAM when reqeusting an update-popup. |
+| `action` | String (required) The action that the user can choose. Possible values: launch, update, cancel |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/notifyAlertClosed '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1867,19 +1963,21 @@ Sources: [1](https://github.com/rawinek/webos-homebar/blob/HEAD/webos10/home-tak
 
 Removes the all contents.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPoints` | Array (required) Unique id list of launch point |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/removeAllContents '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1890,19 +1988,21 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Removes the content.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `contentId` | String (required) Unique id of content |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/removeContent '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -1938,19 +2038,21 @@ Sources: [1](https://github.com/rorygallagher2024/glasshouse/blob/HEAD/server/li
 
 Removes the virtual app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) virtual application ID to be removed |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/removeVirtualApp '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -2053,19 +2155,21 @@ Sources: [1](https://github.com/rudra-avatar/Hearth/blob/HEAD/src/takeover/takeo
 
 Searches for apps.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `keyword` | String (required) Keyword to search with |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/searchApps '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -2076,19 +2180,22 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Sets the contents.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) Unique id of launch point |
+| `contents` | Array (required) set of contents |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/setContents '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, public, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, public, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -2099,19 +2206,22 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Sets the default app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `category` | String (required) app category name |
+| `appId` | String (required) targe app id for given category |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/setDefaultApp '{}'
 ```
 
-> ACG groups: applications, all, applications.internal.
+> ACG groups: applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -2122,19 +2232,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the order.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `type` | String (required) Set order type Possible values: custom, default |
+| `order` | Array (optional) Order array |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/setOrder '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -2145,18 +2258,37 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Updates the launch point.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be updated |
+| `title` | String (optional) Title for the launch point to be updated |
+| `icon` | String (optional) Path to icon for the launch point to be updated |
+| `bgImage` | String (optional) This field is the location of a bitmap. The bitmap is displayed to the user when the user hovers over the launch point with the system pointer. |
+| `bgImages` | Array (optional) Locations of bitmaps that may be displayed to the user when the user hovers over the launch point with the system pointer. |
+| `bgColor` | String (optional) This field is the color to be displayed to the user when the user hovers over the launch point with the system pointer. This is used in the absence of the backgroundImage. |
+| `imageForRecents` | String (optional) This field is the location of a bitmap. The bitmap is displayed in the recent apps list. |
+| `iconColor` | String (optional) indicates color of the icon of the launch point. |
+| `mediumLargeIcon` | String (optional) path to mediumLargeIcon |
+| `largeIcon` | String (optional) path to largeIcon |
+| `extraLargeIcon` | String (optional) path to extraLargeIcon |
+| `appDescription` | String (optional) A short tagline for the application |
+| `params` | Object (optional) Parameters to pass to the application |
+| `userData` | String (optional) Additional data that may be used by clients, such as an identifier for analytics purposes |
+| `tileSize` | String (optional) Hint for sizing of UI tiles: normal or large, large may be used for a promotional item Possible values: normal, large |
+| `unmovable` | Boolean (optional) Hint that an item should never be moved from it's given position |
+| `removable` | Boolean (optional) Hint that an item should never be removed |
+| `hidden` | Boolean (optional) To store the status of launch point is hidden or not |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/updateLaunchPoint '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.launcher" in the component api.json/groups.json; no parameter docs read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.launcher" in the component api.json/groups.json; no parameter docs read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt), [2](https://github.com/webosose/sam/blob/master/files/sysbus/com.webos.sam.api.json)

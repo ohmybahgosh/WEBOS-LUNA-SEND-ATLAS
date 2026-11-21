@@ -8,15 +8,15 @@ Unified broadcast (Live TV) control: changes channels and volatile channels, rep
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`bind`](#bind) | private |  | tv-broadcast | inferred | Binds the UTP broadcast. |
-| [`changeChannel`](#changechannel) | public |  | tv-broadcast | inferred | Changes the channel. |
-| [`changeChannelByProperty`](#changechannelbyproperty) | private |  | tv-broadcast | inferred | Changes the channel by property. |
-| [`changeChannelDown`](#changechanneldown) | public |  | tv-broadcast | inferred | Changes the channel down. |
-| [`changeChannelPrevious`](#changechannelprevious) | public |  | tv-broadcast | inferred | Changes the channel previous. |
+| [`bind`](#bind) | private |  | tv-broadcast | documented | Binds the UTP broadcast. |
+| [`changeChannel`](#changechannel) | public |  | tv-broadcast | documented | Changes the channel. |
+| [`changeChannelByProperty`](#changechannelbyproperty) | private |  | tv-broadcast | documented | Changes the channel by property. |
+| [`changeChannelDown`](#changechanneldown) | public |  | tv-broadcast | documented | Changes the channel down. |
+| [`changeChannelPrevious`](#changechannelprevious) | public |  | tv-broadcast | documented | Changes the channel previous. |
 | [`changeChannelService`](#changechannelservice) | private |  | tv-broadcast | inferred | Changes the channel service. |
-| [`changeChannelUp`](#changechannelup) | public |  | tv-broadcast | inferred | Changes the channel up. |
+| [`changeChannelUp`](#changechannelup) | public |  | tv-broadcast | documented | Changes the channel up. |
 | [`changeVolatileChannel`](#changevolatilechannel) | public |  | tv-broadcast | inferred | Changes the volatile channel. |
-| [`close`](#close) | public |  | tv-broadcast | inferred | Closes the UTP broadcast. |
+| [`close`](#close) | public |  | tv-broadcast | documented | Closes the UTP broadcast. |
 | [`getAudioChannelList`](#getaudiochannellist) | private |  | audio | inferred | Returns the audio channel list. |
 | [`getAudioDescriptionStatus`](#getaudiodescriptionstatus) | private |  | audio | inferred | Returns the audio description status. |
 | [`getAudioInfo`](#getaudioinfo) | public |  | audio | inferred | Returns the audio info. |
@@ -57,11 +57,11 @@ Unified broadcast (Live TV) control: changes channels and volatile channels, rep
 | [`isPossibleChChange`](#ispossiblechchange) | public |  | tv-broadcast | inferred | Reports whether the possible channel change is set. |
 | [`isSupportDvbi`](#issupportdvbi) | private |  | tv-broadcast | inferred | Reports whether the support dvbi is set. |
 | [`isSupportFvp`](#issupportfvp) | private |  | tv-broadcast | inferred | Reports whether the support fvp is set. |
-| [`open`](#open) | public |  | tv-broadcast | inferred | Opens the UTP broadcast. |
-| [`pause`](#pause) | public |  | tv-broadcast | inferred | Pauses the UTP broadcast. |
+| [`open`](#open) | public |  | tv-broadcast | documented | Opens the UTP broadcast. |
+| [`pause`](#pause) | public |  | tv-broadcast | documented | Pauses the UTP broadcast. |
 | [`pauseOnLive`](#pauseonlive) | private |  | tv-broadcast | inferred | Pauses the on live. |
 | [`pin`](#pin) | public |  | tv-broadcast | inferred | Handles the pin. |
-| [`play`](#play) | private |  | tv-broadcast | inferred | Plays the UTP broadcast. |
+| [`play`](#play) | private |  | tv-broadcast | documented | Plays the UTP broadcast. |
 | [`playSignaling`](#playsignaling) | private |  | tv-broadcast | inferred | Plays the signaling. |
 | [`registerDataMfu`](#registerdatamfu) | private |  | tv-broadcast | inferred | Registers the data mfu. |
 | [`scanDetailInformation`](#scandetailinformation) | private |  | tv-broadcast | inferred | Scans for detail information. ⚠️ |
@@ -74,7 +74,7 @@ Unified broadcast (Live TV) control: changes channels and volatile channels, rep
 | [`setObjectAudioInfo`](#setobjectaudioinfo) | private |  | audio | inferred | Sets the object audio info. |
 | [`setPipHotkey`](#setpiphotkey) | private |  | tv-broadcast | inferred | Sets the pip hotkey. |
 | [`setSink`](#setsink) | private |  | tv-broadcast | inferred | Sets the sink. |
-| [`stop`](#stop) | public |  | tv-broadcast | inferred | Stops the UTP broadcast. |
+| [`stop`](#stop) | public |  | tv-broadcast | documented | Stops the UTP broadcast. |
 | [`stopRecordAndChangeChannel`](#stoprecordandchangechannel) | private |  | tv-broadcast | inferred | Stops the record and change channel. |
 | [`subscribeSignalTable`](#subscribesignaltable) | private |  | tv-broadcast | inferred | Subscribes to the signal table. |
 | [`unpauseToLive`](#unpausetolive) | private |  | tv-broadcast | inferred | Handles the unpause to live. |
@@ -86,19 +86,23 @@ Unified broadcast (Live TV) control: changes channels and volatile channels, rep
 
 Binds the UTP broadcast.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `wait` | Boolean (optional) Wait to bind until broadcast is playing. Default: False |
+| `hints` | Object (optional) |
+| `subscribe` | Boolean (optional) Subscribe this method and subscribers can receive binding status. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/bind '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -109,19 +113,26 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Changes the channel.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `channelId` | String (required) Unique channel id obtained from iEPG. |
+| `mode` | String (optional) Describe play mode. |
+| `update` | Boolean (optional) If true, update last channel. Default: True |
+| `connection_timeout` | Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000 |
+| `ignorable` | Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeChannel '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -132,19 +143,26 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Changes the channel by property.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `mode` | String (optional) Describe play mode. |
+| `update` | Boolean (optional) If true, update last channel. Default: True |
+| `connection_timeout` | Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000 |
+| `properties` | Object (required) Describe channel properties. |
+| `ignorable` | Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeChannelByProperty '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -155,19 +173,25 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Changes the channel down.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `skipSourceType` | Array (optional) Describe input source types to skip. Default: [''] |
+| `update` | Boolean (optional) If true, update last channel. Default: True |
+| `connection_timeout` | Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000 |
+| `ignorable` | Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeChannelDown '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -178,19 +202,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Changes the channel previous.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `update` | Boolean (optional) If true, update last channel. Default: True |
+| `connection_timeout` | Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000 |
+| `ignorable` | Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeChannelPrevious '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -224,19 +253,25 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Changes the channel up.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `skipSourceType` | Array (optional) Describe input source types to skip. Default: [''] |
+| `update` | Boolean (optional) If true, update last channel. Default: True |
+| `connection_timeout` | Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000 |
+| `ignorable` | Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/changeChannelUp '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -270,19 +305,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Closes the UTP broadcast.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/close '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1227,19 +1264,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Opens the UTP broadcast.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `options` | Object (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/open '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1250,19 +1289,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Pauses the UTP broadcast.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `mode` | String (optional) Describe pause mode. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/pause '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1319,19 +1361,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Plays the UTP broadcast.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `mode` | String (optional) Describe play mode. |
+| `connection_timeout` | Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000 |
+| `resolveConflicts` | Boolean (optional) If this value is true, resolve recording conflicts and play available channel. Default: False |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/play '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1618,19 +1665,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Stops the UTP broadcast.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.broadcast/stop '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

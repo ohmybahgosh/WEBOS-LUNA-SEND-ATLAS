@@ -9,53 +9,53 @@ Application manager (TV): reports installed app and package info, foreground app
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
 | [`addContent`](#addcontent) | private |  | apps | inferred | Adds the content. |
-| [`addVirtualApp`](#addvirtualapp) | private |  | apps | inferred | Adds the virtual app. |
-| [`blockSystemApp`](#blocksystemapp) | private |  | apps | inferred | Blocks the system app. |
+| [`addVirtualApp`](#addvirtualapp) | private |  | apps | documented | Adds the virtual app. |
+| [`blockSystemApp`](#blocksystemapp) | private |  | apps | documented | Blocks the system app. |
 | [`changeRunningAppId`](#changerunningappid) | private |  | apps | inferred | Changes the running app ID. |
 | [`closeAllApps`](#closeallapps) | private |  | apps | inferred | Closes the all apps. |
 | [`debug/traceApi`](#debug_traceapi) | private |  | apps | inferred | Handles the trace api (debug) |
 | [`dev/listPackages`](#dev_listpackages) | private |  | apps | inferred | Lists the packages (dev) |
 | [`getAppLoadStatus`](#getapploadstatus) | public |  | apps | documented | Checks whether an app exists/is loadable |
-| [`getContents`](#getcontents) | public |  | apps | inferred | Returns the contents. |
-| [`getForegroundApps`](#getforegroundapps) | private |  | apps | inferred | Returns the foreground apps. |
-| [`getHandlerForExtension`](#gethandlerforextension) | public |  | apps | inferred | Returns the handler for extension. |
-| [`getHandlerForMimeType`](#gethandlerformimetype) | public |  | apps | inferred | Returns the handler for mime type. |
+| [`getContents`](#getcontents) | public |  | apps | documented | Returns the contents. |
+| [`getForegroundApps`](#getforegroundapps) | private |  | apps | documented | Returns the foreground apps. |
+| [`getHandlerForExtension`](#gethandlerforextension) | public |  | apps | documented | Returns the handler for extension. |
+| [`getHandlerForMimeType`](#gethandlerformimetype) | public |  | apps | documented | Returns the handler for mime type. |
 | [`getHandlerForMimeTypeByVerb`](#gethandlerformimetypebyverb) | public |  | apps | inferred | Returns the handler for mime type by verb. |
-| [`getHandlerForUrl`](#gethandlerforurl) | public |  | apps | inferred | Returns the handler for URL. |
-| [`getHandlerForUrlByVerb`](#gethandlerforurlbyverb) | public |  | apps | inferred | Returns the handler for URL by verb. |
+| [`getHandlerForUrl`](#gethandlerforurl) | public |  | apps | documented | Returns the handler for URL. |
+| [`getHandlerForUrlByVerb`](#gethandlerforurlbyverb) | public |  | apps | documented | Returns the handler for URL by verb. |
 | [`getHistoricalBackInfo`](#gethistoricalbackinfo) | private |  | apps | inferred | Returns the historical back info. |
 | [`getLastOrder`](#getlastorder) | private |  | apps | inferred | Returns the last order. |
-| [`getPackageInfo`](#getpackageinfo) | private |  | apps | inferred | Returns the package info. |
+| [`getPackageInfo`](#getpackageinfo) | private |  | apps | documented | Returns the package info. |
 | [`isPromotionalAppOn`](#ispromotionalappon) | public |  | apps | inferred | Reports whether the promotional app on is set. |
-| [`launchDefaultApp`](#launchdefaultapp) | private |  | apps | inferred | Launches the default app. |
-| [`launchVirtualApp`](#launchvirtualapp) | private |  | apps | inferred | Launches the virtual app. |
-| [`listAllHandlersForMime`](#listallhandlersformime) | public |  | apps | inferred | Lists the all handlers for mime. |
+| [`launchDefaultApp`](#launchdefaultapp) | private |  | apps | documented | Launches the default app. |
+| [`launchVirtualApp`](#launchvirtualapp) | private |  | apps | documented | Launches the virtual app. |
+| [`listAllHandlersForMime`](#listallhandlersformime) | public |  | apps | documented | Lists the all handlers for mime. |
 | [`listAllHandlersForMimeByVerb`](#listallhandlersformimebyverb) | public |  | apps | inferred | Lists the all handlers for mime by verb. |
-| [`listAllHandlersForMultipleMime`](#listallhandlersformultiplemime) | public |  | apps | inferred | Lists the all handlers for multiple mime. |
-| [`listAllHandlersForMultipleUrlPattern`](#listallhandlersformultipleurlpattern) | public |  | apps | inferred | Lists the all handlers for multiple URL pattern. |
-| [`listAllHandlersForUrl`](#listallhandlersforurl) | public |  | apps | inferred | Lists the all handlers for URL. |
-| [`listAllHandlersForUrlByVerb`](#listallhandlersforurlbyverb) | public |  | apps | inferred | Lists the all handlers for URL by verb. |
-| [`listAllHandlersForUrlPattern`](#listallhandlersforurlpattern) | public |  | apps | inferred | Lists the all handlers for URL pattern. |
+| [`listAllHandlersForMultipleMime`](#listallhandlersformultiplemime) | public |  | apps | documented | Lists the all handlers for multiple mime. |
+| [`listAllHandlersForMultipleUrlPattern`](#listallhandlersformultipleurlpattern) | public |  | apps | documented | Lists the all handlers for multiple URL pattern. |
+| [`listAllHandlersForUrl`](#listallhandlersforurl) | public |  | apps | documented | Lists the all handlers for URL. |
+| [`listAllHandlersForUrlByVerb`](#listallhandlersforurlbyverb) | public |  | apps | documented | Lists the all handlers for URL by verb. |
+| [`listAllHandlersForUrlPattern`](#listallhandlersforurlpattern) | public |  | apps | documented | Lists the all handlers for URL pattern. |
 | [`listExtensionMap`](#listextensionmap) | public |  | apps | inferred | Lists the extension map. |
 | [`listLaunchPointsForLocale`](#listlaunchpointsforlocale) | private |  | apps | inferred | Lists the launch points for locale. |
-| [`listPackages`](#listpackages) | private |  | apps | inferred | Lists the packages. |
-| [`lockAllApps`](#lockallapps) | private |  | apps | inferred | Locks the all apps. |
-| [`mimeTypeForExtension`](#mimetypeforextension) | public |  | apps | inferred | Handles the mime type for extension. |
-| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | inferred | Moves the launch point. |
-| [`notifyAlertClosed`](#notifyalertclosed) | private |  | apps | inferred | Notifies of the alert closed. |
+| [`listPackages`](#listpackages) | private |  | apps | documented | Lists the packages. |
+| [`lockAllApps`](#lockallapps) | private |  | apps | documented | Locks the all apps. |
+| [`mimeTypeForExtension`](#mimetypeforextension) | public |  | apps | documented | Handles the mime type for extension. |
+| [`moveLaunchPoint`](#movelaunchpoint) | private |  | apps | documented | Moves the launch point. |
+| [`notifyAlertClosed`](#notifyalertclosed) | private |  | apps | documented | Notifies of the alert closed. |
 | [`notifySplashTimeout`](#notifysplashtimeout) | private |  | apps | inferred | Notifies of the splash timeout. |
 | [`onLaunch`](#onlaunch) | private |  | apps | inferred | Event handler: fires on the launch. |
 | [`registerVerbsForRedirect`](#registerverbsforredirect) | private |  | apps | inferred | Registers the verbs for redirect. |
 | [`registerVerbsForResource`](#registerverbsforresource) | private |  | apps | inferred | Registers the verbs for resource. |
-| [`releaseBlockSystemApp`](#releaseblocksystemapp) | private |  | apps | inferred | Releases the block system app. |
-| [`removeAllContents`](#removeallcontents) | private |  | apps | inferred | Removes the all contents. ⚠️ |
-| [`removeContent`](#removecontent) | private |  | apps | inferred | Removes the content. ⚠️ |
-| [`removeVirtualApp`](#removevirtualapp) | private |  | apps | inferred | Removes the virtual app. ⚠️ |
+| [`releaseBlockSystemApp`](#releaseblocksystemapp) | private |  | apps | documented | Releases the block system app. |
+| [`removeAllContents`](#removeallcontents) | private |  | apps | documented | Removes the all contents. ⚠️ |
+| [`removeContent`](#removecontent) | private |  | apps | documented | Removes the content. ⚠️ |
+| [`removeVirtualApp`](#removevirtualapp) | private |  | apps | documented | Removes the virtual app. ⚠️ |
 | [`run`](#run) | private |  | apps | inferred | Runs the application manager. |
 | [`saveOrder`](#saveorder) | private |  | apps | inferred | Saves the order. |
-| [`searchApps`](#searchapps) | private |  | apps | inferred | Searches for apps. |
-| [`setContents`](#setcontents) | public |  | apps | inferred | Sets the contents. |
-| [`setOrder`](#setorder) | private |  | apps | inferred | Sets the order. |
+| [`searchApps`](#searchapps) | private |  | apps | documented | Searches for apps. |
+| [`setContents`](#setcontents) | public |  | apps | documented | Sets the contents. |
+| [`setOrder`](#setorder) | private |  | apps | documented | Sets the order. |
 
 <a id="addcontent"></a>
 ## `addContent`
@@ -87,19 +87,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Adds the virtual app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) virtual application ID to be created. |
+| `hostId` | String (required) host application id for virtual application. |
+| `appInfo` | Object (optional) appInfo for virtual application. Default: {} |
+| `params` | Object (required) params to be passed to host application as launch params. Default: {} |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/addVirtualApp '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -110,19 +115,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Blocks the system app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) system application ID to be removed |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/blockSystemApp '{}'
 ```
 
-> ACG groups: all.
+> ACG groups: all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -250,19 +257,21 @@ Sources: [1](https://github.com/webosbrew/dev-manager-desktop/blob/HEAD/src/app/
 
 Returns the contents.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) Unique id of launch point |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getContents '{}'
 ```
 
-> ACG groups: public, all, applications.internal. \|\| ACG groups: public, private, all, applications.internal.
+> ACG groups: public, all, applications.internal. \|\| ACG groups: public, private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -273,13 +282,16 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the foreground apps.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `extraInfo` | Boolean (optional) If set to true, returns all foreground apps as an array. Otherwise, returns only a full screen app (e.g. card type) |
+| `subscribe` | Boolean (optional) |
 
 **Returns:**
 
@@ -293,7 +305,7 @@ Returns the foreground apps.
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getForegroundApps '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -304,19 +316,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the handler for extension.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `extension` | String (required) The extension for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getHandlerForExtension '{}'
 ```
 
-> ACG groups: applications.query, public, private, applications, all, applications.internal.
+> ACG groups: applications.query, public, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -327,19 +341,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the handler for mime type.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `mimeType` | String (required) The mime type for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getHandlerForMimeType '{}'
 ```
 
-> ACG groups: applications.query, public, private, applications, all, applications.internal.
+> ACG groups: applications.query, public, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -373,19 +389,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the handler for URL.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `url` | String (required) The url for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getHandlerForUrl '{}'
 ```
 
-> ACG groups: applications.query, public, private, applications, all, applications.internal.
+> ACG groups: applications.query, public, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -396,19 +414,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the handler for URL by verb.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `url` | String (optional) The url for getting handler application by verb. |
+| `mime` | String (optional) The mime for getting handler application by verb. |
+| `verb` | String (required) The verb for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getHandlerForUrlByVerb '{}'
 ```
 
-> ACG groups: applications.query, public, private, applications, all, applications.internal.
+> ACG groups: applications.query, public, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -465,19 +487,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Returns the package info.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) Get package information for a given package ID. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/getPackageInfo '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -511,19 +535,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Launches the default app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `category` | String (required) app category name |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/launchDefaultApp '{}'
 ```
 
-> ACG groups: applications.launch, private, applications, all, applications.internal.
+> ACG groups: applications.launch, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -534,19 +560,29 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Launches the virtual app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) virtual application ID to be launched. |
+| `hostId` | String (required) Host app id for virtual application. |
+| `appInfo` | Object (optional) appInfo for virtual application Default: {} |
+| `params` | Object (required) params to be passed to host application as params Default: {} |
+| `noSplash` | Boolean (optional) |
+| `spinner` | Boolean (optional) |
+| `preload` | String (optional) App will be launched in background if preload is filled in Possible values: full, semi-full, partial, minimal |
+| `launchHidden` | Boolean (optional) |
+| `keepAlive` | Boolean (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/launchVirtualApp '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -557,19 +593,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the all handlers for mime.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `mime` | String (optional) The mime for getting handler application by verb. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForMime '{}'
 ```
 
-> ACG groups: applications.query, public, private, applications, all, applications.internal.
+> ACG groups: applications.query, public, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -603,19 +641,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the all handlers for multiple mime.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `mimes` | Array (required) The mimes type for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForMultipleMime '{}'
 ```
 
-> ACG groups: applications.query, public, private, applications, all, applications.internal.
+> ACG groups: applications.query, public, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -626,19 +666,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the all handlers for multiple URL pattern.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `urls` | Array (required) The urls for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForMultipleUrlPattern '{}'
 ```
 
-> ACG groups: applications.query, public, private, applications, all, applications.internal.
+> ACG groups: applications.query, public, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -649,19 +691,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the all handlers for URL.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `url` | String (optional) The url for getting handler application by verb. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForUrl '{}'
 ```
 
-> ACG groups: applications.query, public, private, applications, all, applications.internal.
+> ACG groups: applications.query, public, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -672,19 +716,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the all handlers for URL by verb.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `url` | String (optional) The url for getting handler application by verb. |
+| `mime` | String (optional) The mime for getting handler application by verb. |
+| `verb` | String (required) The verb for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForUrlByVerb '{}'
 ```
 
-> ACG groups: applications.query, public, private, applications, all, applications.internal.
+> ACG groups: applications.query, public, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -695,19 +743,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the all handlers for URL pattern.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `urlPattern` | String (required) The mimes type for getting handler application. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listAllHandlersForUrlPattern '{}'
 ```
 
-> ACG groups: applications.query, public, private, applications, all, applications.internal.
+> ACG groups: applications.query, public, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -777,13 +827,15 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Lists the packages.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `subscribe` | Boolean (optional) listPackages support subscription to notify when packages are updated, i.e., an package is installed or removed or edit |
 
 **Returns:**
 
@@ -818,7 +870,7 @@ Lists the packages.
 luna-send -n 1 -f luna://com.webos.service.applicationManager/listPackages '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -829,19 +881,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Locks the all apps.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `lock` | Boolean (required) When set all applications is not allowed to launch |
+| `exceptionApps` | Array (optional) apps which should not be blocked, only for lock. Default: [] |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/lockAllApps '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -852,19 +907,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Handles the mime type for extension.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `extension` | String (required) The extension of file for getting mime type. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/mimeTypeForExtension '{}'
 ```
 
-> ACG groups: applications.query, public, private, applications, all, applications.internal.
+> ACG groups: applications.query, public, private, applications, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -875,19 +932,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Moves the launch point.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) ID of launch point to be updated |
+| `position` | Number (optional) This field means the position where to put on launcher |
+| `target` | Object (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/moveLaunchPoint '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -898,19 +959,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Notifies of the alert closed.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `alertId` | String (required) The update-popup ID. This is randomly generated by SAM when reqeusting an update-popup. |
+| `action` | String (required) The action that the user can choose. Possible values: launch, update, cancel |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/notifyAlertClosed '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1013,19 +1077,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Releases the block system app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) system application ID to be released |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/releaseBlockSystemApp '{}'
 ```
 
-> ACG groups: all.
+> ACG groups: all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1036,19 +1102,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Removes the all contents.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPoints` | Array (required) Unique id list of launch point |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/removeAllContents '{}'
 ```
 
-> ACG groups: private, all, applications.internal. Flagged dangerous by name; verify before calling.
+> ACG groups: private, all, applications.internal. Flagged dangerous by name; verify before calling.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1059,19 +1127,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Removes the content.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `contentId` | String (required) Unique id of content |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/removeContent '{}'
 ```
 
-> ACG groups: private, all, applications.internal. Flagged dangerous by name; verify before calling.
+> ACG groups: private, all, applications.internal. Flagged dangerous by name; verify before calling.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1082,19 +1152,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Removes the virtual app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (required) virtual application ID to be removed |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/removeVirtualApp '{}'
 ```
 
-> ACG groups: private, all, applications.internal. Flagged dangerous by name; verify before calling.
+> ACG groups: private, all, applications.internal. Flagged dangerous by name; verify before calling.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1151,19 +1223,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Searches for apps.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `keyword` | String (required) Keyword to search with |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/searchApps '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1174,19 +1248,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the contents.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `launchPointId` | String (required) Unique id of launch point |
+| `contents` | Array (required) set of contents |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/setContents '{}'
 ```
 
-> ACG groups: public, private, all, applications.internal.
+> ACG groups: public, private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1197,18 +1274,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the order.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `type` | String (required) Set order type Possible values: custom, default |
+| `order` | Array (optional) Order array |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.applicationManager/setOrder '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))

@@ -114,10 +114,10 @@ com.palm.activitymanager	release	luna://com.palm.activitymanager/release	public	
 com.palm.activitymanager	start	luna://com.palm.activitymanager/start	public	0	0	activity	Moves an Activity from init to eligible-to-run, or resumes a paused one.	documented
 com.palm.activitymanager	stop	luna://com.palm.activitymanager/stop	public	0	0	activity	Stops an Activity and sends a stop event to all subscribers.	documented
 com.palm.applicationManager	close	luna://com.palm.applicationManager/close	root	0	0	apps	Closes a running process	documented
-com.palm.applicationManager	closeByAppId	luna://com.palm.applicationManager/closeByAppId	private	0	0	apps	Closes the by app ID.	inferred
+com.palm.applicationManager	closeByAppId	luna://com.palm.applicationManager/closeByAppId	private	0	0	apps	Closes the by app ID.	documented
 com.palm.applicationManager	launch	luna://com.palm.applicationManager/launch	root	0	0	apps	Launches an app	documented
-com.palm.applicationManager	launchDefaultApp	luna://com.palm.applicationManager/launchDefaultApp	private	0	0	apps	Launches the default app.	inferred
-com.palm.applicationManager	listApps	luna://com.palm.applicationManager/listApps	private	0	0	apps	Lists the apps.	inferred
+com.palm.applicationManager	launchDefaultApp	luna://com.palm.applicationManager/launchDefaultApp	private	0	0	apps	Launches the default app.	documented
+com.palm.applicationManager	listApps	luna://com.palm.applicationManager/listApps	private	0	0	apps	Lists the apps.	documented
 com.palm.applicationManager	listLaunchPoints	luna://com.palm.applicationManager/listLaunchPoints	root	0	0	apps	Lists all installed apps/launch points	documented
 com.palm.applicationManager	rescan	luna://com.palm.applicationManager/rescan	root	0	0	apps	Refreshes the Launcher	documented
 com.palm.applicationManager	running	luna://com.palm.applicationManager/running	root	0	0	apps	Lists running apps with process ids	documented
@@ -283,20 +283,20 @@ com.palm.downloadmanager	_dbg_gcd	luna://com.palm.downloadmanager/_dbg_gcd	priva
 com.palm.downloadmanager	_dbg_getMaxKey	luna://com.palm.downloadmanager/_dbg_getMaxKey	private	0	0	apps	Handles the dbg get max key.	inferred
 com.palm.downloadmanager	_dbg_selfdestruct	luna://com.palm.downloadmanager/_dbg_selfdestruct	private	0	0	apps	Handles the dbg selfdestruct.	inferred
 com.palm.downloadmanager	_dbg_setTicketBase	luna://com.palm.downloadmanager/_dbg_setTicketBase	private	0	0	apps	Handles the dbg set ticket base.	inferred
-com.palm.downloadmanager	allow1x	luna://com.palm.downloadmanager/allow1x	private	0	0	apps	Allows the 1 x.	inferred
+com.palm.downloadmanager	allow1x	luna://com.palm.downloadmanager/allow1x	private	0	0	apps	Allows the 1 x.	documented
 com.palm.downloadmanager	cancelAllDownloads	luna://com.palm.downloadmanager/cancelAllDownloads	private	0	0	apps	Cancels the all downloads.	inferred
-com.palm.downloadmanager	cancelDownload	luna://com.palm.downloadmanager/cancelDownload	private	0	0	apps	Cancels the download.	inferred
+com.palm.downloadmanager	cancelDownload	luna://com.palm.downloadmanager/cancelDownload	private	0	0	apps	Cancels the download.	documented
 com.palm.downloadmanager	cancelUpload	luna://com.palm.downloadmanager/cancelUpload	private	0	0	apps	Cancels the upload.	inferred
-com.palm.downloadmanager	clearHistory	luna://com.palm.downloadmanager/clearHistory	private	0	0	apps	Clears the history.	inferred
-com.palm.downloadmanager	deleteDownloadedFile	luna://com.palm.downloadmanager/deleteDownloadedFile	private	1	0	apps	Deletes the downloaded file.	inferred
+com.palm.downloadmanager	clearHistory	luna://com.palm.downloadmanager/clearHistory	private	0	0	apps	Clears the history.	documented
+com.palm.downloadmanager	deleteDownloadedFile	luna://com.palm.downloadmanager/deleteDownloadedFile	private	1	0	apps	Deletes the downloaded file.	documented
 com.palm.downloadmanager	download	luna://com.palm.downloadmanager/download	root	0	0	storage	Downloads a URL to /media/internal/downloads	documented
-com.palm.downloadmanager	downloadStatusQuery	luna://com.palm.downloadmanager/downloadStatusQuery	private	0	0	apps	Downloads the status query.	inferred
-com.palm.downloadmanager	getAllHistory	luna://com.palm.downloadmanager/getAllHistory	private	0	0	apps	Returns the all history.	inferred
+com.palm.downloadmanager	downloadStatusQuery	luna://com.palm.downloadmanager/downloadStatusQuery	private	0	0	apps	Downloads the status query.	documented
+com.palm.downloadmanager	getAllHistory	luna://com.palm.downloadmanager/getAllHistory	private	0	0	apps	Returns the all history.	documented
 com.palm.downloadmanager	is1xMode	luna://com.palm.downloadmanager/is1xMode	private	0	0	apps	Reports whether the 1 x mode is set.	inferred
 com.palm.downloadmanager	listPending	luna://com.palm.downloadmanager/listPending	private	0	0	apps	Lists the pending.	inferred
-com.palm.downloadmanager	pauseDownload	luna://com.palm.downloadmanager/pauseDownload	private	0	0	apps	Pauses the download.	inferred
-com.palm.downloadmanager	resumeDownload	luna://com.palm.downloadmanager/resumeDownload	private	0	0	apps	Resumes the download.	inferred
-com.palm.downloadmanager	upload	luna://com.palm.downloadmanager/upload	private	0	0	apps	Uploads the downloadmanager.	inferred
+com.palm.downloadmanager	pauseDownload	luna://com.palm.downloadmanager/pauseDownload	private	0	0	apps	Pauses the download.	documented
+com.palm.downloadmanager	resumeDownload	luna://com.palm.downloadmanager/resumeDownload	private	0	0	apps	Resumes the download.	documented
+com.palm.downloadmanager	upload	luna://com.palm.downloadmanager/upload	private	0	0	apps	Uploads the downloadmanager.	documented
 com.palm.filecache	ChangeType	luna://com.palm.filecache/ChangeType	private	0	0	storage	Changes the type.	inferred
 com.palm.filecache	CopyCacheObject	luna://com.palm.filecache/CopyCacheObject	private	0	0	storage	Copies the cache object.	inferred
 com.palm.filecache	DefineType	luna://com.palm.filecache/DefineType	private	0	0	storage	Handles the define type.	inferred
@@ -626,31 +626,31 @@ com.webos.app.teletext	getTeletextState	luna://com.webos.app.teletext/getTeletex
 com.webos.app.teletext	isTimeAvailable	luna://com.webos.app.teletext/isTimeAvailable	private	0	0	input	Reports whether the time available is set.	inferred
 com.webos.app.teletext	sendTeletextKeyEvent	luna://com.webos.app.teletext/sendTeletextKeyEvent	private	0	0	misc	Sends the teletext key event.	inferred
 com.webos.app.teletext	setTeletext	luna://com.webos.app.teletext/setTeletext	private	0	0	misc	Sets the teletext.	inferred
-com.webos.appInstallService	cancel	luna://com.webos.appInstallService/cancel	private	0	0	apps	Cancels the app install service.	inferred
+com.webos.appInstallService	cancel	luna://com.webos.appInstallService/cancel	private	0	0	apps	Cancels the app install service.	documented
 com.webos.appInstallService	commercial/installInternal	luna://com.webos.appInstallService/commercial/installInternal	private	0	0	apps	Installs the internal (commercial)	inferred
-com.webos.appInstallService	createLSConfigFiles	luna://com.webos.appInstallService/createLSConfigFiles	private	0	0	settings	Creates the LS config files.	inferred
+com.webos.appInstallService	createLSConfigFiles	luna://com.webos.appInstallService/createLSConfigFiles	private	0	0	settings	Creates the LS config files.	documented
 com.webos.appInstallService	details	luna://com.webos.appInstallService/details	unknown	0	0	misc	Describes the progress on all operations that are managed by com.webos.appInstallService.	documented
 com.webos.appInstallService	dev/install	luna://com.webos.appInstallService/dev/install	public	0	1	misc	Installs an ipk file which exists in local repository of a device. Note: This method is available only in developer mode (devmode). To enable devmode, call 'com	documented
 com.webos.appInstallService	dev/remove	luna://com.webos.appInstallService/dev/remove	public	0	1	misc	Removes apps from a device that are installed using dev/install method. Note: This method is available only in developer mode (devmode). To enable devmode, call	documented
-com.webos.appInstallService	group/install	luna://com.webos.appInstallService/group/install	private	0	0	apps	Installs the app install service (group)	inferred
-com.webos.appInstallService	group/queryInstallCapacity	luna://com.webos.appInstallService/group/queryInstallCapacity	private	0	0	apps	Queries the install capacity (group)	inferred
-com.webos.appInstallService	group/status	luna://com.webos.appInstallService/group/status	private	0	0	apps	Handles the status (group)	inferred
+com.webos.appInstallService	group/install	luna://com.webos.appInstallService/group/install	private	0	0	apps	Installs the app install service (group)	documented
+com.webos.appInstallService	group/queryInstallCapacity	luna://com.webos.appInstallService/group/queryInstallCapacity	private	0	0	apps	Queries the install capacity (group)	documented
+com.webos.appInstallService	group/status	luna://com.webos.appInstallService/group/status	private	0	0	apps	Handles the status (group)	documented
 com.webos.appInstallService	install	luna://com.webos.appInstallService/install	public	0	1	misc	Installs an app on a device.	documented
-com.webos.appInstallService	installInternal	luna://com.webos.appInstallService/installInternal	private	0	0	apps	Installs the internal.	inferred
+com.webos.appInstallService	installInternal	luna://com.webos.appInstallService/installInternal	private	0	0	apps	Installs the internal.	documented
 com.webos.appInstallService	installLocal	luna://com.webos.appInstallService/installLocal	private	0	0	apps	Installs an app from a local IPK (non-dev variant; name seen only)	documented
 com.webos.appInstallService	installLocalNoVerify	luna://com.webos.appInstallService/installLocalNoVerify	public	0	0	apps	Installs the local no verify.	inferred
 com.webos.appInstallService	installService	luna://com.webos.appInstallService/installService	private	0	0	apps	Installs the service.	inferred
-com.webos.appInstallService	pause	luna://com.webos.appInstallService/pause	private	0	0	apps	Pauses the app install service.	inferred
-com.webos.appInstallService	queryInstallCapacity	luna://com.webos.appInstallService/queryInstallCapacity	private	0	0	apps	Queries the install capacity.	inferred
+com.webos.appInstallService	pause	luna://com.webos.appInstallService/pause	private	0	0	apps	Pauses the app install service.	documented
+com.webos.appInstallService	queryInstallCapacity	luna://com.webos.appInstallService/queryInstallCapacity	private	0	0	apps	Queries the install capacity.	documented
 com.webos.appInstallService	remove	luna://com.webos.appInstallService/remove	public	0	1	misc	Removes an installed app from a device.	documented
-com.webos.appInstallService	removeLSConfigFiles	luna://com.webos.appInstallService/removeLSConfigFiles	private	1	0	settings	Removes the LS config files.	inferred
-com.webos.appInstallService	resume	luna://com.webos.appInstallService/resume	private	0	0	apps	Resumes the app install service.	inferred
+com.webos.appInstallService	removeLSConfigFiles	luna://com.webos.appInstallService/removeLSConfigFiles	private	1	0	settings	Removes the LS config files.	documented
+com.webos.appInstallService	resume	luna://com.webos.appInstallService/resume	private	0	0	apps	Resumes the app install service.	documented
 com.webos.appInstallService	status	luna://com.webos.appInstallService/status	public	0	1	misc	Monitors the status of all installed and removed apps that are operating in the com.webos.appInstallService.	documented
-com.webos.appInstallService	system/installLocal	luna://com.webos.appInstallService/system/installLocal	private	0	0	apps	Installs the local (system)	inferred
+com.webos.appInstallService	system/installLocal	luna://com.webos.appInstallService/system/installLocal	private	0	0	apps	Installs the local (system)	documented
 com.webos.appInstallService	uninstallService	luna://com.webos.appInstallService/uninstallService	private	0	0	apps	Uninstalls the service.	inferred
 com.webos.applicationManager	addContent	luna://com.webos.applicationManager/addContent	private	0	0	apps	Adds the content.	inferred
-com.webos.applicationManager	addLaunchPoint	luna://com.webos.applicationManager/addLaunchPoint	private	0	0	apps	Adds the launch point.	inferred
-com.webos.applicationManager	addVirtualApp	luna://com.webos.applicationManager/addVirtualApp	private	0	0	apps	Adds the virtual app.	inferred
+com.webos.applicationManager	addLaunchPoint	luna://com.webos.applicationManager/addLaunchPoint	private	0	0	apps	Adds the launch point.	documented
+com.webos.applicationManager	addVirtualApp	luna://com.webos.applicationManager/addVirtualApp	private	0	0	apps	Adds the virtual app.	documented
 com.webos.applicationManager	blockSystemApp	luna://com.webos.applicationManager/blockSystemApp	private	1	0	apps	Blocks a system app (used by webos-homebar to replace LG Home)	documented
 com.webos.applicationManager	changeRunningAppId	luna://com.webos.applicationManager/changeRunningAppId	private	0	0	apps	Changes the running app ID.	inferred
 com.webos.applicationManager	close	luna://com.webos.applicationManager/close	ssap	0	0	apps	Close an app by id (SSAP)	documented
@@ -664,44 +664,44 @@ com.webos.applicationManager	dev/listPackages	luna://com.webos.applicationManage
 com.webos.applicationManager	dev/managerInfo	luna://com.webos.applicationManager/dev/managerInfo	unknown	0	0	apps	Registered in webOS OSE sysbus api.json (ACG group application.devmode); name only	documented
 com.webos.applicationManager	dev/running	luna://com.webos.applicationManager/dev/running	public	0	0	apps	Developer-mode listing of running apps (ares-launch --running)	documented
 com.webos.applicationManager	getAllContents	luna://com.webos.applicationManager/getAllContents	private	0	0	apps	Returns the all contents.	inferred
-com.webos.applicationManager	getAppBasePath	luna://com.webos.applicationManager/getAppBasePath	public	0	0	apps	Returns the app base path.	inferred
+com.webos.applicationManager	getAppBasePath	luna://com.webos.applicationManager/getAppBasePath	public	0	0	apps	Returns the app base path.	documented
 com.webos.applicationManager	getAppInfo	luna://com.webos.applicationManager/getAppInfo	ssap	0	0	apps	Get info for one installed app	documented
 com.webos.applicationManager	getAppLifeEvents	luna://com.webos.applicationManager/getAppLifeEvents	private	0	1	apps	Returns the app life events.	inferred
 com.webos.applicationManager	getAppLifeStatus	luna://com.webos.applicationManager/getAppLifeStatus	private	0	1	apps	Returns the app life status.	inferred
 com.webos.applicationManager	getAppLoadStatus	luna://com.webos.applicationManager/getAppLoadStatus	public	0	0	apps	Returns whether the app with the given ID is installed (webOS TV 4.0+).	documented
-com.webos.applicationManager	getAppStatus	luna://com.webos.applicationManager/getAppStatus	private	0	0	apps	Returns the app status.	inferred
-com.webos.applicationManager	getContents	luna://com.webos.applicationManager/getContents	public	0	0	apps	Returns the contents.	inferred
+com.webos.applicationManager	getAppStatus	luna://com.webos.applicationManager/getAppStatus	private	0	0	apps	Returns the app status.	documented
+com.webos.applicationManager	getContents	luna://com.webos.applicationManager/getContents	public	0	0	apps	Returns the contents.	documented
 com.webos.applicationManager	getForegroundAppInfo	luna://com.webos.applicationManager/getForegroundAppInfo	ssap	0	1	apps	Get (or subscribe to) the foreground app	documented
-com.webos.applicationManager	getForegroundApps	luna://com.webos.applicationManager/getForegroundApps	private	0	0	apps	Returns the foreground apps.	inferred
-com.webos.applicationManager	getHandlerForExtension	luna://com.webos.applicationManager/getHandlerForExtension	public	0	0	apps	Returns the handler for extension.	inferred
-com.webos.applicationManager	getHandlerForMimeType	luna://com.webos.applicationManager/getHandlerForMimeType	public	0	0	apps	Returns the handler for mime type.	inferred
+com.webos.applicationManager	getForegroundApps	luna://com.webos.applicationManager/getForegroundApps	private	0	0	apps	Returns the foreground apps.	documented
+com.webos.applicationManager	getHandlerForExtension	luna://com.webos.applicationManager/getHandlerForExtension	public	0	0	apps	Returns the handler for extension.	documented
+com.webos.applicationManager	getHandlerForMimeType	luna://com.webos.applicationManager/getHandlerForMimeType	public	0	0	apps	Returns the handler for mime type.	documented
 com.webos.applicationManager	getHandlerForMimeTypeByVerb	luna://com.webos.applicationManager/getHandlerForMimeTypeByVerb	public	0	0	apps	Returns the handler for mime type by verb.	inferred
-com.webos.applicationManager	getHandlerForUrl	luna://com.webos.applicationManager/getHandlerForUrl	public	0	0	apps	Returns the handler for URL.	inferred
-com.webos.applicationManager	getHandlerForUrlByVerb	luna://com.webos.applicationManager/getHandlerForUrlByVerb	public	0	0	apps	Returns the handler for URL by verb.	inferred
+com.webos.applicationManager	getHandlerForUrl	luna://com.webos.applicationManager/getHandlerForUrl	public	0	0	apps	Returns the handler for URL.	documented
+com.webos.applicationManager	getHandlerForUrlByVerb	luna://com.webos.applicationManager/getHandlerForUrlByVerb	public	0	0	apps	Returns the handler for URL by verb.	documented
 com.webos.applicationManager	getHistoricalBackInfo	luna://com.webos.applicationManager/getHistoricalBackInfo	private	0	0	apps	Returns the historical back info.	inferred
 com.webos.applicationManager	getLastOrder	luna://com.webos.applicationManager/getLastOrder	private	0	0	apps	Returns the last order.	inferred
-com.webos.applicationManager	getPackageInfo	luna://com.webos.applicationManager/getPackageInfo	private	0	0	apps	Returns the package info.	inferred
+com.webos.applicationManager	getPackageInfo	luna://com.webos.applicationManager/getPackageInfo	private	0	0	apps	Returns the package info.	documented
 com.webos.applicationManager	isPromotionalAppOn	luna://com.webos.applicationManager/isPromotionalAppOn	public	0	0	apps	Reports whether the promotional app on is set.	inferred
 com.webos.applicationManager	launch	luna://com.webos.applicationManager/launch	public	1	0	apps	Launches the app with the given app ID, optionally with params.	documented
 com.webos.applicationManager	launchDefaultApp	luna://com.webos.applicationManager/launchDefaultApp	private	0	0	apps	Launches the default app (listed by ls-monitor -i, parameters unread)	documented
-com.webos.applicationManager	launchVirtualApp	luna://com.webos.applicationManager/launchVirtualApp	private	0	0	apps	Launches the virtual app.	inferred
-com.webos.applicationManager	listAllHandlersForMime	luna://com.webos.applicationManager/listAllHandlersForMime	public	0	0	apps	Lists the all handlers for mime.	inferred
+com.webos.applicationManager	launchVirtualApp	luna://com.webos.applicationManager/launchVirtualApp	private	0	0	apps	Launches the virtual app.	documented
+com.webos.applicationManager	listAllHandlersForMime	luna://com.webos.applicationManager/listAllHandlersForMime	public	0	0	apps	Lists the all handlers for mime.	documented
 com.webos.applicationManager	listAllHandlersForMimeByVerb	luna://com.webos.applicationManager/listAllHandlersForMimeByVerb	public	0	0	apps	Lists the all handlers for mime by verb.	inferred
-com.webos.applicationManager	listAllHandlersForMultipleMime	luna://com.webos.applicationManager/listAllHandlersForMultipleMime	public	0	0	apps	Lists the all handlers for multiple mime.	inferred
-com.webos.applicationManager	listAllHandlersForMultipleUrlPattern	luna://com.webos.applicationManager/listAllHandlersForMultipleUrlPattern	public	0	0	apps	Lists the all handlers for multiple URL pattern.	inferred
-com.webos.applicationManager	listAllHandlersForUrl	luna://com.webos.applicationManager/listAllHandlersForUrl	public	0	0	apps	Lists the all handlers for URL.	inferred
-com.webos.applicationManager	listAllHandlersForUrlByVerb	luna://com.webos.applicationManager/listAllHandlersForUrlByVerb	public	0	0	apps	Lists the all handlers for URL by verb.	inferred
-com.webos.applicationManager	listAllHandlersForUrlPattern	luna://com.webos.applicationManager/listAllHandlersForUrlPattern	public	0	0	apps	Lists the all handlers for URL pattern.	inferred
+com.webos.applicationManager	listAllHandlersForMultipleMime	luna://com.webos.applicationManager/listAllHandlersForMultipleMime	public	0	0	apps	Lists the all handlers for multiple mime.	documented
+com.webos.applicationManager	listAllHandlersForMultipleUrlPattern	luna://com.webos.applicationManager/listAllHandlersForMultipleUrlPattern	public	0	0	apps	Lists the all handlers for multiple URL pattern.	documented
+com.webos.applicationManager	listAllHandlersForUrl	luna://com.webos.applicationManager/listAllHandlersForUrl	public	0	0	apps	Lists the all handlers for URL.	documented
+com.webos.applicationManager	listAllHandlersForUrlByVerb	luna://com.webos.applicationManager/listAllHandlersForUrlByVerb	public	0	0	apps	Lists the all handlers for URL by verb.	documented
+com.webos.applicationManager	listAllHandlersForUrlPattern	luna://com.webos.applicationManager/listAllHandlersForUrlPattern	public	0	0	apps	Lists the all handlers for URL pattern.	documented
 com.webos.applicationManager	listApps	luna://com.webos.applicationManager/listApps	private	0	0	apps	Lists installed apps	documented
 com.webos.applicationManager	listExtensionMap	luna://com.webos.applicationManager/listExtensionMap	public	0	0	apps	Lists the extension map.	inferred
 com.webos.applicationManager	listLaunchPoints	luna://com.webos.applicationManager/listLaunchPoints	ssap	0	1	apps	List launcher launch points (apps visible in launcher)	documented
 com.webos.applicationManager	listLaunchPointsForLocale	luna://com.webos.applicationManager/listLaunchPointsForLocale	private	0	0	apps	Lists the launch points for locale.	inferred
-com.webos.applicationManager	listPackages	luna://com.webos.applicationManager/listPackages	private	0	0	apps	Lists the packages.	inferred
-com.webos.applicationManager	lockAllApps	luna://com.webos.applicationManager/lockAllApps	private	0	0	apps	Locks the all apps.	inferred
-com.webos.applicationManager	lockApp	luna://com.webos.applicationManager/lockApp	private	0	0	apps	Locks the app.	inferred
-com.webos.applicationManager	mimeTypeForExtension	luna://com.webos.applicationManager/mimeTypeForExtension	public	0	0	apps	Handles the mime type for extension.	inferred
-com.webos.applicationManager	moveLaunchPoint	luna://com.webos.applicationManager/moveLaunchPoint	private	0	0	apps	Moves the launch point.	inferred
-com.webos.applicationManager	notifyAlertClosed	luna://com.webos.applicationManager/notifyAlertClosed	private	0	0	apps	Notifies of the alert closed.	inferred
+com.webos.applicationManager	listPackages	luna://com.webos.applicationManager/listPackages	private	0	0	apps	Lists the packages.	documented
+com.webos.applicationManager	lockAllApps	luna://com.webos.applicationManager/lockAllApps	private	0	0	apps	Locks the all apps.	documented
+com.webos.applicationManager	lockApp	luna://com.webos.applicationManager/lockApp	private	0	0	apps	Locks the app.	documented
+com.webos.applicationManager	mimeTypeForExtension	luna://com.webos.applicationManager/mimeTypeForExtension	public	0	0	apps	Handles the mime type for extension.	documented
+com.webos.applicationManager	moveLaunchPoint	luna://com.webos.applicationManager/moveLaunchPoint	private	0	0	apps	Moves the launch point.	documented
+com.webos.applicationManager	notifyAlertClosed	luna://com.webos.applicationManager/notifyAlertClosed	private	0	0	apps	Notifies of the alert closed.	documented
 com.webos.applicationManager	notifySplashTimeout	luna://com.webos.applicationManager/notifySplashTimeout	private	0	0	apps	Notifies of the splash timeout.	inferred
 com.webos.applicationManager	onLaunch	luna://com.webos.applicationManager/onLaunch	private	0	0	apps	Event handler: fires on the launch.	inferred
 com.webos.applicationManager	open	luna://com.webos.applicationManager/open	ssap	0	0	apps	Open an app by id (SSAP)	documented
@@ -711,19 +711,19 @@ com.webos.applicationManager	registerNativeApp	luna://com.webos.applicationManag
 com.webos.applicationManager	registerVerbsForRedirect	luna://com.webos.applicationManager/registerVerbsForRedirect	private	0	0	apps	Registers the verbs for redirect.	inferred
 com.webos.applicationManager	registerVerbsForResource	luna://com.webos.applicationManager/registerVerbsForResource	private	0	0	apps	Registers the verbs for resource.	inferred
 com.webos.applicationManager	releaseBlockSystemApp	luna://com.webos.applicationManager/releaseBlockSystemApp	private	0	0	apps	Releases a blocked system app	documented
-com.webos.applicationManager	removeAllContents	luna://com.webos.applicationManager/removeAllContents	private	0	0	apps	Removes the all contents.	inferred
-com.webos.applicationManager	removeContent	luna://com.webos.applicationManager/removeContent	private	0	0	apps	Removes the content.	inferred
+com.webos.applicationManager	removeAllContents	luna://com.webos.applicationManager/removeAllContents	private	0	0	apps	Removes the all contents.	documented
+com.webos.applicationManager	removeContent	luna://com.webos.applicationManager/removeContent	private	0	0	apps	Removes the content.	documented
 com.webos.applicationManager	removeLaunchPoint	luna://com.webos.applicationManager/removeLaunchPoint	private	0	0	apps	Removes a launch point by id	documented
-com.webos.applicationManager	removeVirtualApp	luna://com.webos.applicationManager/removeVirtualApp	private	0	0	apps	Removes the virtual app.	inferred
+com.webos.applicationManager	removeVirtualApp	luna://com.webos.applicationManager/removeVirtualApp	private	0	0	apps	Removes the virtual app.	documented
 com.webos.applicationManager	run	luna://com.webos.applicationManager/run	private	0	0	apps	Runs the application manager.	inferred
 com.webos.applicationManager	running	luna://com.webos.applicationManager/running	private	0	1	apps	Lists running apps	documented
 com.webos.applicationManager	saveOrder	luna://com.webos.applicationManager/saveOrder	private	0	0	apps	Saves the order.	inferred
 com.webos.applicationManager	scan	luna://com.webos.applicationManager/scan	private	0	0	apps	Triggers the app manager to rescan app directories	documented
-com.webos.applicationManager	searchApps	luna://com.webos.applicationManager/searchApps	private	0	0	apps	Searches for apps.	inferred
-com.webos.applicationManager	setContents	luna://com.webos.applicationManager/setContents	public	0	0	apps	Sets the contents.	inferred
-com.webos.applicationManager	setDefaultApp	luna://com.webos.applicationManager/setDefaultApp	private	0	0	apps	Sets the default app.	inferred
-com.webos.applicationManager	setOrder	luna://com.webos.applicationManager/setOrder	private	0	0	apps	Sets the order.	inferred
-com.webos.applicationManager	updateLaunchPoint	luna://com.webos.applicationManager/updateLaunchPoint	private	0	0	apps	Updates the launch point.	inferred
+com.webos.applicationManager	searchApps	luna://com.webos.applicationManager/searchApps	private	0	0	apps	Searches for apps.	documented
+com.webos.applicationManager	setContents	luna://com.webos.applicationManager/setContents	public	0	0	apps	Sets the contents.	documented
+com.webos.applicationManager	setDefaultApp	luna://com.webos.applicationManager/setDefaultApp	private	0	0	apps	Sets the default app.	documented
+com.webos.applicationManager	setOrder	luna://com.webos.applicationManager/setOrder	private	0	0	apps	Sets the order.	documented
+com.webos.applicationManager	updateLaunchPoint	luna://com.webos.applicationManager/updateLaunchPoint	private	0	0	apps	Updates the launch point.	documented
 com.webos.appUpdateService	check	luna://com.webos.appUpdateService/check	private	0	0	update	Checks the app update service.	inferred
 com.webos.appUpdateService	status	luna://com.webos.appUpdateService/status	public	0	0	update	Handles the status.	inferred
 com.webos.appUpdateService	statusAll	luna://com.webos.appUpdateService/statusAll	private	0	0	update	Handles the status all.	inferred
@@ -1170,14 +1170,14 @@ com.webos.notification	button	luna://com.webos.notification/button	unknown	0	0	n
 com.webos.notification	callback/wakeUp	luna://com.webos.notification/callback/wakeUp	private	0	0	misc	Found by on-device introspection (parameters undocumented).	documented
 com.webos.notification	closeAlert	luna://com.webos.notification/closeAlert	public	0	0	notifications	Closes the currently displayed alert notification.	documented
 com.webos.notification	closeAllAlerts	luna://com.webos.notification/closeAllAlerts	public	0	0	notifications	Closes all the open alerts. Note: This method is for internal use. It must only be used by com.webos.service.battest during BAT test . If the caller is not com.	documented
-com.webos.notification	closeInputAlert	luna://com.webos.notification/closeInputAlert	private	0	0	notifications	Closes the input alert.	inferred
-com.webos.notification	closePincodePrompt	luna://com.webos.notification/closePincodePrompt	private	0	0	notifications	Closes the pincode prompt.	inferred
+com.webos.notification	closeInputAlert	luna://com.webos.notification/closeInputAlert	private	0	0	notifications	Closes the input alert.	documented
+com.webos.notification	closePincodePrompt	luna://com.webos.notification/closePincodePrompt	private	0	0	notifications	Closes the pincode prompt.	documented
 com.webos.notification	closeToast	luna://com.webos.notification/closeToast	public	0	0	notifications	Removes a toast notification from the database.	documented
 com.webos.notification	createAlert	luna://com.webos.notification/createAlert	public	0	0	notifications	Creates a system alert notification.	documented
-com.webos.notification	createInputAlert	luna://com.webos.notification/createInputAlert	private	0	0	notifications	Creates the input alert.	inferred
-com.webos.notification	createNotification	luna://com.webos.notification/createNotification	private	0	0	notifications	Creates the notification.	inferred
-com.webos.notification	createPincodePrompt	luna://com.webos.notification/createPincodePrompt	public	0	0	notifications	Creates the pincode prompt.	inferred
-com.webos.notification	createRemoteNotification	luna://com.webos.notification/createRemoteNotification	private	0	0	notifications	Creates the remote notification.	inferred
+com.webos.notification	createInputAlert	luna://com.webos.notification/createInputAlert	private	0	0	notifications	Creates the input alert.	documented
+com.webos.notification	createNotification	luna://com.webos.notification/createNotification	private	0	0	notifications	Creates the notification.	documented
+com.webos.notification	createPincodePrompt	luna://com.webos.notification/createPincodePrompt	public	0	0	notifications	Creates the pincode prompt.	documented
+com.webos.notification	createRemoteNotification	luna://com.webos.notification/createRemoteNotification	private	0	0	notifications	Creates the remote notification.	documented
 com.webos.notification	createSignageAlert	luna://com.webos.notification/createSignageAlert	public	0	0	notifications	Creates the signage alert.	inferred
 com.webos.notification	createToast	luna://com.webos.notification/createToast	public	0	0	notifications	Creates a toast notification.	documented
 com.webos.notification	disable	luna://com.webos.notification/disable	public	0	0	notifications	Disables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note: Only a privileged application or service can call this method.	documented
@@ -1187,9 +1187,9 @@ com.webos.notification	enableToast	luna://com.webos.notification/enableToast	pri
 com.webos.notification	getAlertNotification	luna://com.webos.notification/getAlertNotification	public	0	1	notifications	Subscribe to create alert notifications. Note: This method should only be used by the Surface Manager .	documented
 com.webos.notification	getInputAlertNotification	luna://com.webos.notification/getInputAlertNotification	private	0	0	notifications	Returns the input alert notification.	inferred
 com.webos.notification	getNotification	luna://com.webos.notification/getNotification	private	0	0	notifications	Returns the notification.	inferred
-com.webos.notification	getNotificationInfo	luna://com.webos.notification/getNotificationInfo	private	0	0	notifications	Returns the notification info.	inferred
+com.webos.notification	getNotificationInfo	luna://com.webos.notification/getNotificationInfo	private	0	0	notifications	Returns the notification info.	documented
 com.webos.notification	getPincodePromptNotification	luna://com.webos.notification/getPincodePromptNotification	private	0	0	notifications	Returns the pincode prompt notification.	inferred
-com.webos.notification	getRemoteNotificationInfo	luna://com.webos.notification/getRemoteNotificationInfo	private	0	0	notifications	Returns the remote notification info.	inferred
+com.webos.notification	getRemoteNotificationInfo	luna://com.webos.notification/getRemoteNotificationInfo	private	0	0	notifications	Returns the remote notification info.	documented
 com.webos.notification	getToastCount	luna://com.webos.notification/getToastCount	public	0	1	notifications	Queries the toast notification details of the stored messages and provides the read/unread count of the toast notifications. Note: Only "com.webos.surfacemanage	documented
 com.webos.notification	getToastList	luna://com.webos.notification/getToastList	public	0	0	notifications	Lists the toasts created for the app/client based on the user logged into the particular session.	documented
 com.webos.notification	getToastNotification	luna://com.webos.notification/getToastNotification	public	0	1	notifications	Subscribe to created toast notification. Note: This method should only be used by Surface Manager only.	documented
@@ -1202,7 +1202,7 @@ com.webos.notification	onFailAction	luna://com.webos.notification/onFailAction	u
 com.webos.notification	purgeHistory	luna://com.webos.notification/purgeHistory	private	0	0	notifications	Handles the purge history.	inferred
 com.webos.notification	removeAllNotification	luna://com.webos.notification/removeAllNotification	public	0	0	notifications	Removes all notifications that are currently being displayed.	documented
 com.webos.notification	removeNotification	luna://com.webos.notification/removeNotification	public	0	0	notifications	Deletes the given notification(s) from DB. We can remove given set of notifications or remove all notifications from a given sourceId.	documented
-com.webos.notification	removeRemoteNotification	luna://com.webos.notification/removeRemoteNotification	private	1	0	notifications	Removes the remote notification.	inferred
+com.webos.notification	removeRemoteNotification	luna://com.webos.notification/removeRemoteNotification	private	1	0	notifications	Removes the remote notification.	documented
 com.webos.notification	schedule	luna://com.webos.notification/schedule	unknown	0	0	notifications	Creates a toast notification as a persistent message and define its schedule.	documented
 com.webos.notification	setAlertProgress	luna://com.webos.notification/setAlertProgress	private	0	0	misc	Found by on-device introspection (parameters undocumented).	documented
 com.webos.notification	setToastStatus	luna://com.webos.notification/setToastStatus	public	0	0	notifications	Specifies whether the toast is to be marked as read or unread.	documented
@@ -1512,9 +1512,9 @@ com.webos.service.appcasting	sendUIBCEvent	luna://com.webos.service.appcasting/s
 com.webos.service.applaunchmanager	getStatus	luna://com.webos.service.applaunchmanager/getStatus	private	0	0	apps	Returns the status.	inferred
 com.webos.service.applicationManager	addContent	luna://com.webos.service.applicationManager/addContent	private	0	0	apps	Adds the content.	inferred
 com.webos.service.applicationmanager	addLaunchPoint	luna://com.webos.service.applicationmanager/addLaunchPoint	public	0	0	apps	Adds a dynamic launchpoint. According to the information on launchpoint, application is displayed in the Launcher. If a parameter is not defined, SAM set the LP	documented
-com.webos.service.applicationManager	addVirtualApp	luna://com.webos.service.applicationManager/addVirtualApp	private	0	0	apps	Adds the virtual app.	inferred
+com.webos.service.applicationManager	addVirtualApp	luna://com.webos.service.applicationManager/addVirtualApp	private	0	0	apps	Adds the virtual app.	documented
 com.webos.service.applicationmanager	appInfo	luna://com.webos.service.applicationmanager/appInfo	unknown	0	0	apps	Contains the information about the application.	documented
-com.webos.service.applicationManager	blockSystemApp	luna://com.webos.service.applicationManager/blockSystemApp	private	0	0	apps	Blocks the system app.	inferred
+com.webos.service.applicationManager	blockSystemApp	luna://com.webos.service.applicationManager/blockSystemApp	private	0	0	apps	Blocks the system app.	documented
 com.webos.service.applicationManager	changeRunningAppId	luna://com.webos.service.applicationManager/changeRunningAppId	private	0	0	apps	Changes the running app ID.	inferred
 com.webos.service.applicationmanager	close	luna://com.webos.service.applicationmanager/close	public	0	0	apps	Closes an application. Note A: At least one parameter is required. ('id', 'launchPointId', 'instanceId') Note B: Don't use this API in TV and signage. The API i	documented
 com.webos.service.applicationManager	closeAllApps	luna://com.webos.service.applicationManager/closeAllApps	private	0	0	apps	Closes the all apps.	inferred
@@ -1534,39 +1534,39 @@ com.webos.service.applicationmanager	getAppLifeEvents	luna://com.webos.service.a
 com.webos.service.applicationmanager	getAppLifeStatus	luna://com.webos.service.applicationmanager/getAppLifeStatus	public	0	1	apps	Provides the application's life cycle status. Note: This API is useful to do something based on application's life cycle status.	documented
 com.webos.service.applicationManager	getAppLoadStatus	luna://com.webos.service.applicationManager/getAppLoadStatus	public	0	0	apps	Checks whether an app exists/is loadable	documented
 com.webos.service.applicationmanager	getAppStatus	luna://com.webos.service.applicationmanager/getAppStatus	public	0	1	apps	Gets the application status and information.	documented
-com.webos.service.applicationManager	getContents	luna://com.webos.service.applicationManager/getContents	public	0	0	apps	Returns the contents.	inferred
+com.webos.service.applicationManager	getContents	luna://com.webos.service.applicationManager/getContents	public	0	0	apps	Returns the contents.	documented
 com.webos.service.applicationmanager	getForegroundAppInfo	luna://com.webos.service.applicationmanager/getForegroundAppInfo	public	0	1	apps	Gets the information on the foreground application. Note: The information comes from LSM. Please use extraInfo parameter to get raw responsePayload from LSM.	documented
-com.webos.service.applicationManager	getForegroundApps	luna://com.webos.service.applicationManager/getForegroundApps	private	0	0	apps	Returns the foreground apps.	inferred
-com.webos.service.applicationManager	getHandlerForExtension	luna://com.webos.service.applicationManager/getHandlerForExtension	public	0	0	apps	Returns the handler for extension.	inferred
-com.webos.service.applicationManager	getHandlerForMimeType	luna://com.webos.service.applicationManager/getHandlerForMimeType	public	0	0	apps	Returns the handler for mime type.	inferred
+com.webos.service.applicationManager	getForegroundApps	luna://com.webos.service.applicationManager/getForegroundApps	private	0	0	apps	Returns the foreground apps.	documented
+com.webos.service.applicationManager	getHandlerForExtension	luna://com.webos.service.applicationManager/getHandlerForExtension	public	0	0	apps	Returns the handler for extension.	documented
+com.webos.service.applicationManager	getHandlerForMimeType	luna://com.webos.service.applicationManager/getHandlerForMimeType	public	0	0	apps	Returns the handler for mime type.	documented
 com.webos.service.applicationManager	getHandlerForMimeTypeByVerb	luna://com.webos.service.applicationManager/getHandlerForMimeTypeByVerb	public	0	0	apps	Returns the handler for mime type by verb.	inferred
-com.webos.service.applicationManager	getHandlerForUrl	luna://com.webos.service.applicationManager/getHandlerForUrl	public	0	0	apps	Returns the handler for URL.	inferred
-com.webos.service.applicationManager	getHandlerForUrlByVerb	luna://com.webos.service.applicationManager/getHandlerForUrlByVerb	public	0	0	apps	Returns the handler for URL by verb.	inferred
+com.webos.service.applicationManager	getHandlerForUrl	luna://com.webos.service.applicationManager/getHandlerForUrl	public	0	0	apps	Returns the handler for URL.	documented
+com.webos.service.applicationManager	getHandlerForUrlByVerb	luna://com.webos.service.applicationManager/getHandlerForUrlByVerb	public	0	0	apps	Returns the handler for URL by verb.	documented
 com.webos.service.applicationManager	getHistoricalBackInfo	luna://com.webos.service.applicationManager/getHistoricalBackInfo	private	0	0	apps	Returns the historical back info.	inferred
 com.webos.service.applicationManager	getLastOrder	luna://com.webos.service.applicationManager/getLastOrder	private	0	0	apps	Returns the last order.	inferred
-com.webos.service.applicationManager	getPackageInfo	luna://com.webos.service.applicationManager/getPackageInfo	private	0	0	apps	Returns the package info.	inferred
+com.webos.service.applicationManager	getPackageInfo	luna://com.webos.service.applicationManager/getPackageInfo	private	0	0	apps	Returns the package info.	documented
 com.webos.service.applicationManager	isPromotionalAppOn	luna://com.webos.service.applicationManager/isPromotionalAppOn	public	0	0	apps	Reports whether the promotional app on is set.	inferred
 com.webos.service.applicationmanager	launch	luna://com.webos.service.applicationmanager/launch	public	0	0	apps	Launches an application corresponding to the given application ID. Opens the service or app. Example: The user can download a content with a service in the back	documented
-com.webos.service.applicationManager	launchDefaultApp	luna://com.webos.service.applicationManager/launchDefaultApp	private	0	0	apps	Launches the default app.	inferred
+com.webos.service.applicationManager	launchDefaultApp	luna://com.webos.service.applicationManager/launchDefaultApp	private	0	0	apps	Launches the default app.	documented
 com.webos.service.applicationmanager	launchPoints	luna://com.webos.service.applicationmanager/launchPoints	unknown	0	0	apps	Contains the array of launchpoints.	documented
-com.webos.service.applicationManager	launchVirtualApp	luna://com.webos.service.applicationManager/launchVirtualApp	private	0	0	apps	Launches the virtual app.	inferred
-com.webos.service.applicationManager	listAllHandlersForMime	luna://com.webos.service.applicationManager/listAllHandlersForMime	public	0	0	apps	Lists the all handlers for mime.	inferred
+com.webos.service.applicationManager	launchVirtualApp	luna://com.webos.service.applicationManager/launchVirtualApp	private	0	0	apps	Launches the virtual app.	documented
+com.webos.service.applicationManager	listAllHandlersForMime	luna://com.webos.service.applicationManager/listAllHandlersForMime	public	0	0	apps	Lists the all handlers for mime.	documented
 com.webos.service.applicationManager	listAllHandlersForMimeByVerb	luna://com.webos.service.applicationManager/listAllHandlersForMimeByVerb	public	0	0	apps	Lists the all handlers for mime by verb.	inferred
-com.webos.service.applicationManager	listAllHandlersForMultipleMime	luna://com.webos.service.applicationManager/listAllHandlersForMultipleMime	public	0	0	apps	Lists the all handlers for multiple mime.	inferred
-com.webos.service.applicationManager	listAllHandlersForMultipleUrlPattern	luna://com.webos.service.applicationManager/listAllHandlersForMultipleUrlPattern	public	0	0	apps	Lists the all handlers for multiple URL pattern.	inferred
-com.webos.service.applicationManager	listAllHandlersForUrl	luna://com.webos.service.applicationManager/listAllHandlersForUrl	public	0	0	apps	Lists the all handlers for URL.	inferred
-com.webos.service.applicationManager	listAllHandlersForUrlByVerb	luna://com.webos.service.applicationManager/listAllHandlersForUrlByVerb	public	0	0	apps	Lists the all handlers for URL by verb.	inferred
-com.webos.service.applicationManager	listAllHandlersForUrlPattern	luna://com.webos.service.applicationManager/listAllHandlersForUrlPattern	public	0	0	apps	Lists the all handlers for URL pattern.	inferred
+com.webos.service.applicationManager	listAllHandlersForMultipleMime	luna://com.webos.service.applicationManager/listAllHandlersForMultipleMime	public	0	0	apps	Lists the all handlers for multiple mime.	documented
+com.webos.service.applicationManager	listAllHandlersForMultipleUrlPattern	luna://com.webos.service.applicationManager/listAllHandlersForMultipleUrlPattern	public	0	0	apps	Lists the all handlers for multiple URL pattern.	documented
+com.webos.service.applicationManager	listAllHandlersForUrl	luna://com.webos.service.applicationManager/listAllHandlersForUrl	public	0	0	apps	Lists the all handlers for URL.	documented
+com.webos.service.applicationManager	listAllHandlersForUrlByVerb	luna://com.webos.service.applicationManager/listAllHandlersForUrlByVerb	public	0	0	apps	Lists the all handlers for URL by verb.	documented
+com.webos.service.applicationManager	listAllHandlersForUrlPattern	luna://com.webos.service.applicationManager/listAllHandlersForUrlPattern	public	0	0	apps	Lists the all handlers for URL pattern.	documented
 com.webos.service.applicationmanager	listApps	luna://com.webos.service.applicationmanager/listApps	public	0	1	apps	Lists all of the registered applications. Note: Client can get all installed application information using this API.	documented
 com.webos.service.applicationManager	listExtensionMap	luna://com.webos.service.applicationManager/listExtensionMap	public	0	0	apps	Lists the extension map.	inferred
 com.webos.service.applicationmanager	listLaunchPoints	luna://com.webos.service.applicationmanager/listLaunchPoints	public	0	1	apps	Gets all of the launchpoints. Note: LaunchPoint is the virtual instance of an application. The webOS provides shortcut based on launchPoint.	documented
 com.webos.service.applicationManager	listLaunchPointsForLocale	luna://com.webos.service.applicationManager/listLaunchPointsForLocale	private	0	0	apps	Lists the launch points for locale.	inferred
-com.webos.service.applicationManager	listPackages	luna://com.webos.service.applicationManager/listPackages	private	0	0	apps	Lists the packages.	inferred
-com.webos.service.applicationManager	lockAllApps	luna://com.webos.service.applicationManager/lockAllApps	private	0	0	apps	Locks the all apps.	inferred
+com.webos.service.applicationManager	listPackages	luna://com.webos.service.applicationManager/listPackages	private	0	0	apps	Lists the packages.	documented
+com.webos.service.applicationManager	lockAllApps	luna://com.webos.service.applicationManager/lockAllApps	private	0	0	apps	Locks the all apps.	documented
 com.webos.service.applicationmanager	lockApp	luna://com.webos.service.applicationmanager/lockApp	public	0	0	apps	Locks an application. Note: Once it is locked, the application cannot be launched. This method is only called internally. Do not use this method in your applica	documented
-com.webos.service.applicationManager	mimeTypeForExtension	luna://com.webos.service.applicationManager/mimeTypeForExtension	public	0	0	apps	Handles the mime type for extension.	inferred
-com.webos.service.applicationManager	moveLaunchPoint	luna://com.webos.service.applicationManager/moveLaunchPoint	private	0	0	apps	Moves the launch point.	inferred
-com.webos.service.applicationManager	notifyAlertClosed	luna://com.webos.service.applicationManager/notifyAlertClosed	private	0	0	apps	Notifies of the alert closed.	inferred
+com.webos.service.applicationManager	mimeTypeForExtension	luna://com.webos.service.applicationManager/mimeTypeForExtension	public	0	0	apps	Handles the mime type for extension.	documented
+com.webos.service.applicationManager	moveLaunchPoint	luna://com.webos.service.applicationManager/moveLaunchPoint	private	0	0	apps	Moves the launch point.	documented
+com.webos.service.applicationManager	notifyAlertClosed	luna://com.webos.service.applicationManager/notifyAlertClosed	private	0	0	apps	Notifies of the alert closed.	documented
 com.webos.service.applicationManager	notifySplashTimeout	luna://com.webos.service.applicationManager/notifySplashTimeout	private	0	0	apps	Notifies of the splash timeout.	inferred
 com.webos.service.applicationManager	onLaunch	luna://com.webos.service.applicationManager/onLaunch	private	0	0	apps	Event handler: fires on the launch.	inferred
 com.webos.service.applicationmanager	open	luna://com.webos.service.applicationmanager/open	public	0	0	apps	The open method implicitly opens an application based on the target URL or MIME type. Caution : Using this method is not recommended due to insecurity.	documented
@@ -1576,19 +1576,19 @@ com.webos.service.applicationmanager	registerApp	luna://com.webos.service.applic
 com.webos.service.applicationmanager	registerNativeApp	luna://com.webos.service.applicationmanager/registerNativeApp	public	0	0	apps	Registered in webOS OSE sysbus api.json (ACG group application.operation); name only	documented
 com.webos.service.applicationManager	registerVerbsForRedirect	luna://com.webos.service.applicationManager/registerVerbsForRedirect	private	0	0	apps	Registers the verbs for redirect.	inferred
 com.webos.service.applicationManager	registerVerbsForResource	luna://com.webos.service.applicationManager/registerVerbsForResource	private	0	0	apps	Registers the verbs for resource.	inferred
-com.webos.service.applicationManager	releaseBlockSystemApp	luna://com.webos.service.applicationManager/releaseBlockSystemApp	private	0	0	apps	Releases the block system app.	inferred
-com.webos.service.applicationManager	removeAllContents	luna://com.webos.service.applicationManager/removeAllContents	private	1	0	apps	Removes the all contents.	inferred
-com.webos.service.applicationManager	removeContent	luna://com.webos.service.applicationManager/removeContent	private	1	0	apps	Removes the content.	inferred
+com.webos.service.applicationManager	releaseBlockSystemApp	luna://com.webos.service.applicationManager/releaseBlockSystemApp	private	0	0	apps	Releases the block system app.	documented
+com.webos.service.applicationManager	removeAllContents	luna://com.webos.service.applicationManager/removeAllContents	private	1	0	apps	Removes the all contents.	documented
+com.webos.service.applicationManager	removeContent	luna://com.webos.service.applicationManager/removeContent	private	1	0	apps	Removes the content.	documented
 com.webos.service.applicationmanager	removeLaunchPoint	luna://com.webos.service.applicationmanager/removeLaunchPoint	public	0	0	apps	Removes a dynamic launchpoint. Note: It can cause application uninstall.	documented
-com.webos.service.applicationManager	removeVirtualApp	luna://com.webos.service.applicationManager/removeVirtualApp	private	1	0	apps	Removes the virtual app.	inferred
+com.webos.service.applicationManager	removeVirtualApp	luna://com.webos.service.applicationManager/removeVirtualApp	private	1	0	apps	Removes the virtual app.	documented
 com.webos.service.applicationManager	run	luna://com.webos.service.applicationManager/run	private	0	0	apps	Runs the application manager.	inferred
 com.webos.service.applicationmanager	running	luna://com.webos.service.applicationmanager/running	public	0	1	apps	Lists the background/foreground applications and their process IDs that are running on webOS platform. Note: This API is one of key methods of applicationmanage	documented
 com.webos.service.applicationmanager	running_apps	luna://com.webos.service.applicationmanager/running_apps	unknown	0	0	apps	Indicates the object that contains the array of the running applications.	documented
 com.webos.service.applicationManager	saveOrder	luna://com.webos.service.applicationManager/saveOrder	private	0	0	apps	Saves the order.	inferred
-com.webos.service.applicationManager	searchApps	luna://com.webos.service.applicationManager/searchApps	private	0	0	apps	Searches for apps.	inferred
-com.webos.service.applicationManager	setContents	luna://com.webos.service.applicationManager/setContents	public	0	0	apps	Sets the contents.	inferred
+com.webos.service.applicationManager	searchApps	luna://com.webos.service.applicationManager/searchApps	private	0	0	apps	Searches for apps.	documented
+com.webos.service.applicationManager	setContents	luna://com.webos.service.applicationManager/setContents	public	0	0	apps	Sets the contents.	documented
 com.webos.service.applicationmanager	setDefaultApp	luna://com.webos.service.applicationmanager/setDefaultApp	private	1	0	apps	Sets the default app for a category such as home (replaces the Home button target)	documented
-com.webos.service.applicationManager	setOrder	luna://com.webos.service.applicationManager/setOrder	private	0	0	apps	Sets the order.	inferred
+com.webos.service.applicationManager	setOrder	luna://com.webos.service.applicationManager/setOrder	private	0	0	apps	Sets the order.	documented
 com.webos.service.applicationmanager	updateLaunchPoint	luna://com.webos.service.applicationmanager/updateLaunchPoint	public	0	0	apps	Updates a dynamic launchpoint. Note: If a user changes the HDMI application icon to another icon like a game icon using Input Manager on a TV, the HDMI applicat	documented
 com.webos.service.appstatus	getAppStatus	luna://com.webos.service.appstatus/getAppStatus	ssap	0	1	apps	Get (subscribe) app status	documented
 com.webos.service.arccontroller	getARCEDIDInfo	luna://com.webos.service.arccontroller/getARCEDIDInfo	public	0	0	misc	Returns the ARCEDID info.	inferred
@@ -2835,9 +2835,9 @@ com.webos.service.connectionmanager	wifi	luna://com.webos.service.connectionmana
 com.webos.service.connectionmanager	wifiInfo	luna://com.webos.service.connectionmanager/wifiInfo	unknown	0	0	connection	This object contains the MAC address for the WI-Fi interface. An example object would like this: { "macAddress": "aa:bb:cc:dd:ee" }	documented
 com.webos.service.connectionmanager	wired	luna://com.webos.service.connectionmanager/wired	unknown	0	0	connection	The wired object provides details on the status of the wired connections. If the wired connection is available then all the fields of this object contain the re	documented
 com.webos.service.connectionmanager	wiredInfo	luna://com.webos.service.connectionmanager/wiredInfo	unknown	0	0	connection	The object containing the MAC address of the wired interface.	documented
-com.webos.service.contentminer	clearPersonalKey	luna://com.webos.service.contentminer/clearPersonalKey	public	0	0	misc	Clears the personal key.	inferred
-com.webos.service.contentminer	getContentData	luna://com.webos.service.contentminer/getContentData	public	0	0	misc	Returns the content data.	inferred
-com.webos.service.contentminer	setPersonalKey	luna://com.webos.service.contentminer/setPersonalKey	public	0	0	misc	Sets the personal key.	inferred
+com.webos.service.contentminer	clearPersonalKey	luna://com.webos.service.contentminer/clearPersonalKey	public	0	0	misc	Clears the personal key.	documented
+com.webos.service.contentminer	getContentData	luna://com.webos.service.contentminer/getContentData	public	0	0	misc	Returns the content data.	documented
+com.webos.service.contentminer	setPersonalKey	luna://com.webos.service.contentminer/setPersonalKey	public	0	0	misc	Sets the personal key.	documented
 com.webos.service.contextintentmgr	getDataFromWorkflow	luna://com.webos.service.contextintentmgr/getDataFromWorkflow	public	0	1	apps	Publishes data from the workflow to the app. The data can be consumed by an app which has subscribed to it.	documented
 com.webos.service.contextintentmgr	injectDataToWorkflow	luna://com.webos.service.contextintentmgr/injectDataToWorkflow	public	0	0	apps	Injects data from the app to the workflow.	documented
 com.webos.service.contextintentmgr	result	luna://com.webos.service.contextintentmgr/result	unknown	0	0	apps	Contains the results.	documented
@@ -3015,7 +3015,7 @@ com.webos.service.downloadmanager	download	luna://com.webos.service.downloadmana
 com.webos.service.downloadmanager	downloads	luna://com.webos.service.downloadmanager/downloads	unknown	0	0	network	Array containing downloads	documented
 com.webos.service.downloadmanager	downloadStatusQuery	luna://com.webos.service.downloadmanager/downloadStatusQuery	public	0	1	network	Get the status of a download for a specific ticket number. The method will return the status of current downloads, or any downloads in the history.	documented
 com.webos.service.downloadmanager	getAllHistory	luna://com.webos.service.downloadmanager/getAllHistory	public	0	0	network	Get the download or upload history for a specific application.	documented
-com.webos.service.downloadmanager	getTicketHistory	luna://com.webos.service.downloadmanager/getTicketHistory	private	0	0	apps	Returns the ticket history.	inferred
+com.webos.service.downloadmanager	getTicketHistory	luna://com.webos.service.downloadmanager/getTicketHistory	private	0	0	apps	Returns the ticket history.	documented
 com.webos.service.downloadmanager	is1xMode	luna://com.webos.service.downloadmanager/is1xMode	public	0	0	network	Determine if the network connection is in 1x mode.	documented
 com.webos.service.downloadmanager	items	luna://com.webos.service.downloadmanager/items	unknown	0	0	network	Objects of items which describe information of download history.	documented
 com.webos.service.downloadmanager	listPending	luna://com.webos.service.downloadmanager/listPending	public	0	0	network	Return the list of all downloads that are currently in progress.	documented
@@ -3827,20 +3827,20 @@ com.webos.service.homeconnect	relayEvent	luna://com.webos.service.homeconnect/re
 com.webos.service.homeconnect	set	luna://com.webos.service.homeconnect/set	public	0	0	misc	Sets the homeconnect.	inferred
 com.webos.service.homeconnect	start	luna://com.webos.service.homeconnect/start	public	0	0	misc	Starts the homeconnect.	inferred
 com.webos.service.homeconnect	stop	luna://com.webos.service.homeconnect/stop	public	0	0	misc	Stops the homeconnect.	inferred
-com.webos.service.homelaunchpoints	addLaunchPoint	luna://com.webos.service.homelaunchpoints/addLaunchPoint	private	0	0	apps	Adds the launch point.	inferred
-com.webos.service.homelaunchpoints	addQCard	luna://com.webos.service.homelaunchpoints/addQCard	private	0	0	apps	Adds the q card.	inferred
-com.webos.service.homelaunchpoints	hideLaunchPoint	luna://com.webos.service.homelaunchpoints/hideLaunchPoint	private	0	0	apps	Hides the launch point.	inferred
-com.webos.service.homelaunchpoints	listAvailableLaunchPoints	luna://com.webos.service.homelaunchpoints/listAvailableLaunchPoints	private	0	0	apps	Lists the available launch points.	inferred
-com.webos.service.homelaunchpoints	listAvailableQCards	luna://com.webos.service.homelaunchpoints/listAvailableQCards	private	0	0	apps	Lists the available q cards.	inferred
-com.webos.service.homelaunchpoints	listLaunchPoints	luna://com.webos.service.homelaunchpoints/listLaunchPoints	private	0	0	apps	Lists the launch points.	inferred
-com.webos.service.homelaunchpoints	listQCards	luna://com.webos.service.homelaunchpoints/listQCards	private	0	0	apps	Lists the q cards.	inferred
-com.webos.service.homelaunchpoints	moveLaunchPoint	luna://com.webos.service.homelaunchpoints/moveLaunchPoint	private	0	0	apps	Moves the launch point.	inferred
-com.webos.service.homelaunchpoints	moveQCard	luna://com.webos.service.homelaunchpoints/moveQCard	private	0	0	apps	Moves the q card.	inferred
-com.webos.service.homelaunchpoints	removeLaunchPoint	luna://com.webos.service.homelaunchpoints/removeLaunchPoint	private	1	0	apps	Removes the launch point.	inferred
-com.webos.service.homelaunchpoints	removeQCard	luna://com.webos.service.homelaunchpoints/removeQCard	private	1	0	apps	Removes the q card.	inferred
-com.webos.service.homelaunchpoints	unhideLaunchPoint	luna://com.webos.service.homelaunchpoints/unhideLaunchPoint	private	0	0	apps	Handles the unhide launch point.	inferred
-com.webos.service.homelaunchpoints	updateLaunchPoint	luna://com.webos.service.homelaunchpoints/updateLaunchPoint	private	0	0	apps	Updates the launch point.	inferred
-com.webos.service.homelaunchpoints	updateQCard	luna://com.webos.service.homelaunchpoints/updateQCard	public	0	0	apps	Updates the q card.	inferred
+com.webos.service.homelaunchpoints	addLaunchPoint	luna://com.webos.service.homelaunchpoints/addLaunchPoint	private	0	0	apps	Adds the launch point.	documented
+com.webos.service.homelaunchpoints	addQCard	luna://com.webos.service.homelaunchpoints/addQCard	private	0	0	apps	Adds the q card.	documented
+com.webos.service.homelaunchpoints	hideLaunchPoint	luna://com.webos.service.homelaunchpoints/hideLaunchPoint	private	0	0	apps	Hides the launch point.	documented
+com.webos.service.homelaunchpoints	listAvailableLaunchPoints	luna://com.webos.service.homelaunchpoints/listAvailableLaunchPoints	private	0	0	apps	Lists the available launch points.	documented
+com.webos.service.homelaunchpoints	listAvailableQCards	luna://com.webos.service.homelaunchpoints/listAvailableQCards	private	0	0	apps	Lists the available q cards.	documented
+com.webos.service.homelaunchpoints	listLaunchPoints	luna://com.webos.service.homelaunchpoints/listLaunchPoints	private	0	0	apps	Lists the launch points.	documented
+com.webos.service.homelaunchpoints	listQCards	luna://com.webos.service.homelaunchpoints/listQCards	private	0	0	apps	Lists the q cards.	documented
+com.webos.service.homelaunchpoints	moveLaunchPoint	luna://com.webos.service.homelaunchpoints/moveLaunchPoint	private	0	0	apps	Moves the launch point.	documented
+com.webos.service.homelaunchpoints	moveQCard	luna://com.webos.service.homelaunchpoints/moveQCard	private	0	0	apps	Moves the q card.	documented
+com.webos.service.homelaunchpoints	removeLaunchPoint	luna://com.webos.service.homelaunchpoints/removeLaunchPoint	private	1	0	apps	Removes the launch point.	documented
+com.webos.service.homelaunchpoints	removeQCard	luna://com.webos.service.homelaunchpoints/removeQCard	private	1	0	apps	Removes the q card.	documented
+com.webos.service.homelaunchpoints	unhideLaunchPoint	luna://com.webos.service.homelaunchpoints/unhideLaunchPoint	private	0	0	apps	Handles the unhide launch point.	documented
+com.webos.service.homelaunchpoints	updateLaunchPoint	luna://com.webos.service.homelaunchpoints/updateLaunchPoint	private	0	0	apps	Updates the launch point.	documented
+com.webos.service.homelaunchpoints	updateQCard	luna://com.webos.service.homelaunchpoints/updateQCard	public	0	0	apps	Updates the q card.	documented
 com.webos.service.hybridtvapiserver	getChannelStatus	luna://com.webos.service.hybridtvapiserver/getChannelStatus	public	0	0	tv-broadcast	Returns the channel status.	inferred
 com.webos.service.hybridtvapiserver	getServerUrl	luna://com.webos.service.hybridtvapiserver/getServerUrl	public	0	0	misc	Returns the server URL.	inferred
 com.webos.service.hybridtvapiserver	playChannel	luna://com.webos.service.hybridtvapiserver/playChannel	public	0	0	tv-broadcast	Plays the channel.	inferred
@@ -4004,11 +4004,11 @@ com.webos.service.iepg	setReservationEventInfo	luna://com.webos.service.iepg/set
 com.webos.service.iepg	test	luna://com.webos.service.iepg/test	private	0	0	tv-broadcast	Tests the IEPG.	inferred
 com.webos.service.iepg	upChannel	luna://com.webos.service.iepg/upChannel	private	0	0	tv-broadcast	Handles the up channel.	inferred
 com.webos.service.iepg	updateChannelList	luna://com.webos.service.iepg/updateChannelList	private	0	0	tv-broadcast	Updates the channel list.	inferred
-com.webos.service.image	combine	luna://com.webos.service.image/combine	private	0	0	misc	Handles the combine.	inferred
-com.webos.service.image	convert	luna://com.webos.service.image/convert	public	0	0	misc	Handles the convert.	inferred
-com.webos.service.image	cropMultiple	luna://com.webos.service.image/cropMultiple	private	0	0	misc	Handles the crop multiple.	inferred
-com.webos.service.image	ezResize	luna://com.webos.service.image/ezResize	public	0	0	misc	Handles the ez resize.	inferred
-com.webos.service.image	imageInfo	luna://com.webos.service.image/imageInfo	public	0	0	misc	Handles the image info.	inferred
+com.webos.service.image	combine	luna://com.webos.service.image/combine	private	0	0	misc	Handles the combine.	documented
+com.webos.service.image	convert	luna://com.webos.service.image/convert	public	0	0	misc	Handles the convert.	documented
+com.webos.service.image	cropMultiple	luna://com.webos.service.image/cropMultiple	private	0	0	misc	Handles the crop multiple.	documented
+com.webos.service.image	ezResize	luna://com.webos.service.image/ezResize	public	0	0	misc	Handles the ez resize.	documented
+com.webos.service.image	imageInfo	luna://com.webos.service.image/imageInfo	public	0	0	misc	Handles the image info.	documented
 com.webos.service.ime	deleteCharacters	luna://com.webos.service.ime/deleteCharacters	ssap	0	0	input	Delete characters in the focused text field	documented
 com.webos.service.ime	insertText	luna://com.webos.service.ime/insertText	ssap	0	0	input	Insert (or replace) text in the focused text field	documented
 com.webos.service.ime	registerRemoteKeyboard	luna://com.webos.service.ime/registerRemoteKeyboard	ssap	0	1	input	Subscribe to remote-keyboard (text field focus) events	documented
@@ -5820,12 +5820,12 @@ com.webos.service.photorenderer	setTransitionProperty	luna://com.webos.service.p
 com.webos.service.photorenderer	setTranslationProperty	luna://com.webos.service.photorenderer/setTranslationProperty	private	0	0	media	Sets the translation property.	inferred
 com.webos.service.photorenderer	setWindow	luna://com.webos.service.photorenderer/setWindow	private	0	0	media	Sets the window.	inferred
 com.webos.service.photorenderer	subscribe	luna://com.webos.service.photorenderer/subscribe	private	0	0	media	Subscribes to the photorenderer.	inferred
-com.webos.service.pkgInstall	cancel	luna://com.webos.service.pkgInstall/cancel	private	0	0	misc	Cancels the pkg install.	inferred
-com.webos.service.pkgInstall	install	luna://com.webos.service.pkgInstall/install	private	0	0	misc	Installs the pkg install.	inferred
+com.webos.service.pkgInstall	cancel	luna://com.webos.service.pkgInstall/cancel	private	0	0	misc	Cancels the pkg install.	documented
+com.webos.service.pkgInstall	install	luna://com.webos.service.pkgInstall/install	private	0	0	misc	Installs the pkg install.	documented
 com.webos.service.pkgInstall	internal/start	luna://com.webos.service.pkgInstall/internal/start	private	0	0	misc	Starts the pkg install (internal)	inferred
-com.webos.service.pkgInstall	queryInstallCapacity	luna://com.webos.service.pkgInstall/queryInstallCapacity	private	0	0	misc	Queries the install capacity.	inferred
-com.webos.service.pkgInstall	remove	luna://com.webos.service.pkgInstall/remove	private	1	0	misc	Removes the pkg install.	inferred
-com.webos.service.pkgInstall	status	luna://com.webos.service.pkgInstall/status	private	0	0	misc	Handles the status.	inferred
+com.webos.service.pkgInstall	queryInstallCapacity	luna://com.webos.service.pkgInstall/queryInstallCapacity	private	0	0	misc	Queries the install capacity.	documented
+com.webos.service.pkgInstall	remove	luna://com.webos.service.pkgInstall/remove	private	1	0	misc	Removes the pkg install.	documented
+com.webos.service.pkgInstall	status	luna://com.webos.service.pkgInstall/status	private	0	0	misc	Handles the status.	documented
 com.webos.service.pkgUpdate	check	luna://com.webos.service.pkgUpdate/check	private	0	0	update	Checks the pkg update.	inferred
 com.webos.service.pkgUpdate	statusAll	luna://com.webos.service.pkgUpdate/statusAll	private	0	0	update	Handles the status all.	inferred
 com.webos.service.pkgverifier	verifyIpk	luna://com.webos.service.pkgverifier/verifyIpk	private	0	0	security	Verifies the ipk.	inferred
@@ -5909,7 +5909,7 @@ com.webos.service.preferences	systemProperties/getSysProperty	luna://com.webos.s
 com.webos.service.preloadmanager	getPreloadPolicy	luna://com.webos.service.preloadmanager/getPreloadPolicy	private	0	0	apps	Reads preload policy	documented
 com.webos.service.preloadmanager	setPreloadPolicy	luna://com.webos.service.preloadmanager/setPreloadPolicy	private	0	0	apps	Enables/disables preloading of an app so LG does not keep it resident in memory	documented
 com.webos.service.preloadmanager	setPreloadStatus	luna://com.webos.service.preloadmanager/setPreloadStatus	private	0	0	apps	Preload manager status setter (name listed among ACG-permitted methods in scheduled-task research note)	documented
-com.webos.service.printing	autoprint	luna://com.webos.service.printing/autoprint	public	0	0	storage	Handles the autoprint.	inferred
+com.webos.service.printing	autoprint	luna://com.webos.service.printing/autoprint	public	0	0	storage	Handles the autoprint.	documented
 com.webos.service.printing	configuration/addPrinter	luna://com.webos.service.printing/configuration/addPrinter	public	0	0	settings	Adds the printer (configuration)	inferred
 com.webos.service.printing	configuration/deletePrinter	luna://com.webos.service.printing/configuration/deletePrinter	public	1	0	settings	Deletes the printer (configuration)	inferred
 com.webos.service.printing	configuration/disable	luna://com.webos.service.printing/configuration/disable	public	0	0	settings	Disables the printing (configuration)	inferred
@@ -5922,16 +5922,16 @@ com.webos.service.printing	info/defaultPrinter	luna://com.webos.service.printing
 com.webos.service.printing	info/displayConfig	luna://com.webos.service.printing/info/displayConfig	public	0	0	settings	Handles the display config (info)	inferred
 com.webos.service.printing	info/enablePrinter	luna://com.webos.service.printing/info/enablePrinter	public	0	0	storage	Enables the printer (info)	inferred
 com.webos.service.printing	info/listPrinters	luna://com.webos.service.printing/info/listPrinters	public	0	0	storage	Lists the printers (info)	inferred
-com.webos.service.printing	jobs/all	luna://com.webos.service.printing/jobs/all	public	0	0	storage	Handles the all (jobs)	inferred
-com.webos.service.printing	jobs/cancel	luna://com.webos.service.printing/jobs/cancel	public	0	0	storage	Cancels the printing (jobs)	inferred
+com.webos.service.printing	jobs/all	luna://com.webos.service.printing/jobs/all	public	0	0	storage	Handles the all (jobs)	documented
+com.webos.service.printing	jobs/cancel	luna://com.webos.service.printing/jobs/cancel	public	0	0	storage	Cancels the printing (jobs)	documented
 com.webos.service.printing	jobs/cancelAll	luna://com.webos.service.printing/jobs/cancelAll	public	0	0	storage	Cancels the all (jobs)	inferred
 com.webos.service.printing	jobs/cancelPrinter	luna://com.webos.service.printing/jobs/cancelPrinter	public	0	0	storage	Cancels the printer (jobs)	inferred
 com.webos.service.printing	jobs/completeJobs	luna://com.webos.service.printing/jobs/completeJobs	public	0	0	storage	Completes the jobs (jobs)	inferred
-com.webos.service.printing	jobs/move	luna://com.webos.service.printing/jobs/move	public	0	0	storage	Moves the printing (jobs)	inferred
+com.webos.service.printing	jobs/move	luna://com.webos.service.printing/jobs/move	public	0	0	storage	Moves the printing (jobs)	documented
 com.webos.service.printing	jobs/printNow	luna://com.webos.service.printing/jobs/printNow	public	0	0	storage	Prints the now (jobs)	inferred
-com.webos.service.printing	jobs/queue	luna://com.webos.service.printing/jobs/queue	public	0	0	storage	Handles the queue (jobs)	inferred
-com.webos.service.printing	jobs/stop	luna://com.webos.service.printing/jobs/stop	public	0	0	storage	Stops the printing (jobs)	inferred
-com.webos.service.printing	print	luna://com.webos.service.printing/print	public	0	0	storage	Prints the printing.	inferred
+com.webos.service.printing	jobs/queue	luna://com.webos.service.printing/jobs/queue	public	0	0	storage	Handles the queue (jobs)	documented
+com.webos.service.printing	jobs/stop	luna://com.webos.service.printing/jobs/stop	public	0	0	storage	Stops the printing (jobs)	documented
+com.webos.service.printing	print	luna://com.webos.service.printing/print	public	0	0	storage	Prints the printing.	documented
 com.webos.service.prosense	getMonitorStatus	luna://com.webos.service.prosense/getMonitorStatus	private	0	0	misc	Returns the monitor status.	inferred
 com.webos.service.prosense	getMonitorStatust	luna://com.webos.service.prosense/getMonitorStatust	private	0	0	misc	Returns the monitor statust.	inferred
 com.webos.service.prosense	notifyFault	luna://com.webos.service.prosense/notifyFault	private	0	0	misc	Notifies of the fault.	inferred
@@ -6147,11 +6147,11 @@ com.webos.service.sensor	getSensorsList	luna://com.webos.service.sensor/getSenso
 com.webos.service.sensor	getValue	luna://com.webos.service.sensor/getValue	public	0	0	input	Returns the value.	inferred
 com.webos.service.sensor	internal/deviceAttached	luna://com.webos.service.sensor/internal/deviceAttached	private	0	0	input	Handles the device attached (internal)	inferred
 com.webos.service.sensor	internal/deviceDetached	luna://com.webos.service.sensor/internal/deviceDetached	private	0	0	input	Handles the device detached (internal)	inferred
-com.webos.service.servicemanager	closePrerequisiteServices	luna://com.webos.service.servicemanager/closePrerequisiteServices	private	0	0	misc	Closes the prerequisite services.	inferred
-com.webos.service.servicemanager	getPriorityLevel	luna://com.webos.service.servicemanager/getPriorityLevel	private	0	0	misc	Returns the priority level.	inferred
-com.webos.service.servicemanager	launchPrerequisiteServices	luna://com.webos.service.servicemanager/launchPrerequisiteServices	private	0	0	apps	Launches the prerequisite services.	inferred
-com.webos.service.servicemanager	setPriorityLevel	luna://com.webos.service.servicemanager/setPriorityLevel	private	0	0	misc	Sets the priority level.	inferred
-com.webos.service.servicemanager	status	luna://com.webos.service.servicemanager/status	private	0	0	misc	Handles the status.	inferred
+com.webos.service.servicemanager	closePrerequisiteServices	luna://com.webos.service.servicemanager/closePrerequisiteServices	private	0	0	misc	Closes the prerequisite services.	documented
+com.webos.service.servicemanager	getPriorityLevel	luna://com.webos.service.servicemanager/getPriorityLevel	private	0	0	misc	Returns the priority level.	documented
+com.webos.service.servicemanager	launchPrerequisiteServices	luna://com.webos.service.servicemanager/launchPrerequisiteServices	private	0	0	apps	Launches the prerequisite services.	documented
+com.webos.service.servicemanager	setPriorityLevel	luna://com.webos.service.servicemanager/setPriorityLevel	private	0	0	misc	Sets the priority level.	documented
+com.webos.service.servicemanager	status	luna://com.webos.service.servicemanager/status	private	0	0	misc	Handles the status.	documented
 com.webos.service.settings	arrayExt	luna://com.webos.service.settings/arrayExt	unknown	0	0	settings	This object describes the strings among the selectable value type.	documented
 com.webos.service.settings	batch	luna://com.webos.service.settings/batch	public	0	1	settings	Runs more than one Settings Service method at once. Remarks Subscription is supported only when all the methods in operations input parameter support subscripti	documented
 com.webos.service.settings	batchOperation	luna://com.webos.service.settings/batchOperation	unknown	0	0	settings	This object describes the methods to be executed in batch method.	documented
@@ -6302,13 +6302,13 @@ com.webos.service.storageaccess	listStorageProviders	luna://com.webos.service.st
 com.webos.service.storageaccess	operation	luna://com.webos.service.storageaccess/operation	unknown	0	0	storage	Provides details of the operation.	documented
 com.webos.service.storageaccess	payload	luna://com.webos.service.storageaccess/payload	unknown	0	0	storage	Arguments required for the operation in the form of key value pair	documented
 com.webos.service.storageaccess	storageProviders	luna://com.webos.service.storageaccess/storageProviders	unknown	0	0	storage	Provides information about the storage provider.	documented
-com.webos.service.storagestatistics	check	luna://com.webos.service.storagestatistics/check	private	0	0	storage	Checks the storagestatistics.	inferred
-com.webos.service.storagestatistics	clearAppData	luna://com.webos.service.storagestatistics/clearAppData	private	0	0	storage	Clears the app data.	inferred
+com.webos.service.storagestatistics	check	luna://com.webos.service.storagestatistics/check	private	0	0	storage	Checks the storagestatistics.	documented
+com.webos.service.storagestatistics	clearAppData	luna://com.webos.service.storagestatistics/clearAppData	private	0	0	storage	Clears the app data.	documented
 com.webos.service.storagestatistics	getAllAppStats	luna://com.webos.service.storagestatistics/getAllAppStats	private	0	0	storage	Returns the all app stats.	inferred
-com.webos.service.storagestatistics	getAppStats	luna://com.webos.service.storagestatistics/getAppStats	private	0	0	storage	Returns the app stats.	inferred
+com.webos.service.storagestatistics	getAppStats	luna://com.webos.service.storagestatistics/getAppStats	private	0	0	storage	Returns the app stats.	documented
 com.webos.service.storagestatistics	listInternalLargeFiles	luna://com.webos.service.storagestatistics/listInternalLargeFiles	private	0	0	storage	Lists the internal large files.	inferred
-com.webos.service.storagestatistics	listLargeApps	luna://com.webos.service.storagestatistics/listLargeApps	private	0	0	storage	Lists the large apps.	inferred
-com.webos.service.storagestatistics	listLargeFiles	luna://com.webos.service.storagestatistics/listLargeFiles	private	0	0	storage	Lists the large files.	inferred
+com.webos.service.storagestatistics	listLargeApps	luna://com.webos.service.storagestatistics/listLargeApps	private	0	0	storage	Lists the large apps.	documented
+com.webos.service.storagestatistics	listLargeFiles	luna://com.webos.service.storagestatistics/listLargeFiles	private	0	0	storage	Lists the large files.	documented
 com.webos.service.storagestatistics	removeFile	luna://com.webos.service.storagestatistics/removeFile	private	1	0	storage	Removes the file.	inferred
 com.webos.service.sysfaultdetector	listSystemInspectionInfo	luna://com.webos.service.sysfaultdetector/listSystemInspectionInfo	private	0	0	misc	Lists the system inspection info.	inferred
 com.webos.service.systemmanager	getBootStatus	luna://com.webos.service.systemmanager/getBootStatus	public	0	0	misc	Returns the boot status.	inferred
@@ -6718,20 +6718,20 @@ com.webos.service.tvReservationAgent	watch/manual/add	luna://com.webos.service.t
 com.webos.service.tvReservationAgent	watch/okBtn	luna://com.webos.service.tvReservationAgent/watch/okBtn	private	0	0	tv-broadcast	Handles the ok btn (watch)	inferred
 com.webos.service.tvrm	beginTransaction	luna://com.webos.service.tvrm/beginTransaction	private	0	0	tv-broadcast	Begins the transaction.	inferred
 com.webos.service.tvrm	dbgFeature	luna://com.webos.service.tvrm/dbgFeature	private	0	0	tv-broadcast	Debug: Handles the feature.	inferred
-com.webos.service.tvrm	endTransaction	luna://com.webos.service.tvrm/endTransaction	private	0	0	tv-broadcast	Handles the end transaction.	inferred
-com.webos.service.tvrm	getResourceToRelease	luna://com.webos.service.tvrm/getResourceToRelease	private	0	0	tv-broadcast	Returns the resource to release.	inferred
+com.webos.service.tvrm	endTransaction	luna://com.webos.service.tvrm/endTransaction	private	0	0	tv-broadcast	Handles the end transaction.	documented
+com.webos.service.tvrm	getResourceToRelease	luna://com.webos.service.tvrm/getResourceToRelease	private	0	0	tv-broadcast	Returns the resource to release.	documented
 com.webos.service.tvrm	getSimulationResult	luna://com.webos.service.tvrm/getSimulationResult	private	0	0	tv-broadcast	Returns the simulation result.	inferred
 com.webos.service.tvrm	notifyBackground	luna://com.webos.service.tvrm/notifyBackground	private	0	0	tv-broadcast	Notifies of the background.	inferred
-com.webos.service.tvrm	notifyForeground	luna://com.webos.service.tvrm/notifyForeground	private	0	0	tv-broadcast	Notifies of the foreground.	inferred
+com.webos.service.tvrm	notifyForeground	luna://com.webos.service.tvrm/notifyForeground	private	0	0	tv-broadcast	Notifies of the foreground.	documented
 com.webos.service.tvrm	policyActionEvent	luna://com.webos.service.tvrm/policyActionEvent	private	0	0	misc	Handles the policy action event.	inferred
-com.webos.service.tvrm	presetTuner	luna://com.webos.service.tvrm/presetTuner	private	1	0	tv-broadcast	Handles the preset tuner.	inferred
-com.webos.service.tvrm	registerHandledResource	luna://com.webos.service.tvrm/registerHandledResource	private	0	0	tv-broadcast	Registers the handled resource.	inferred
-com.webos.service.tvrm	releaseResource	luna://com.webos.service.tvrm/releaseResource	private	0	0	tv-broadcast	Releases the resource.	inferred
-com.webos.service.tvrm	requestResource	luna://com.webos.service.tvrm/requestResource	private	0	0	tv-broadcast	Requests the resource.	inferred
-com.webos.service.tvrm	setPipelineState	luna://com.webos.service.tvrm/setPipelineState	private	0	0	tv-broadcast	Sets the pipeline state.	inferred
-com.webos.service.tvrm	setSimulationMode	luna://com.webos.service.tvrm/setSimulationMode	private	0	0	tv-broadcast	Sets the simulation mode.	inferred
-com.webos.service.tvrm	simulateResource	luna://com.webos.service.tvrm/simulateResource	private	0	0	tv-broadcast	Handles the simulate resource.	inferred
-com.webos.service.tvrm	updatePipelineInfo	luna://com.webos.service.tvrm/updatePipelineInfo	private	0	0	tv-broadcast	Updates the pipeline info.	inferred
+com.webos.service.tvrm	presetTuner	luna://com.webos.service.tvrm/presetTuner	private	1	0	tv-broadcast	Handles the preset tuner.	documented
+com.webos.service.tvrm	registerHandledResource	luna://com.webos.service.tvrm/registerHandledResource	private	0	0	tv-broadcast	Registers the handled resource.	documented
+com.webos.service.tvrm	releaseResource	luna://com.webos.service.tvrm/releaseResource	private	0	0	tv-broadcast	Releases the resource.	documented
+com.webos.service.tvrm	requestResource	luna://com.webos.service.tvrm/requestResource	private	0	0	tv-broadcast	Requests the resource.	documented
+com.webos.service.tvrm	setPipelineState	luna://com.webos.service.tvrm/setPipelineState	private	0	0	tv-broadcast	Sets the pipeline state.	documented
+com.webos.service.tvrm	setSimulationMode	luna://com.webos.service.tvrm/setSimulationMode	private	0	0	tv-broadcast	Sets the simulation mode.	documented
+com.webos.service.tvrm	simulateResource	luna://com.webos.service.tvrm/simulateResource	private	0	0	tv-broadcast	Handles the simulate resource.	documented
+com.webos.service.tvrm	updatePipelineInfo	luna://com.webos.service.tvrm/updatePipelineInfo	private	0	0	tv-broadcast	Updates the pipeline info.	documented
 com.webos.service.tvrm.policy.receiver	notifyPolicyActionDone	luna://com.webos.service.tvrm.policy.receiver/notifyPolicyActionDone	private	0	0	tv-broadcast	Notifies of the policy action done.	inferred
 com.webos.service.tvrm.policy.sender	subscribePolicyAction	luna://com.webos.service.tvrm.policy.sender/subscribePolicyAction	private	0	0	tv-broadcast	Subscribes to the policy action.	inferred
 com.webos.service.tvrmclient.gibbs_3189	getData	luna://com.webos.service.tvrmclient.gibbs_3189/getData	private	0	0	tv-broadcast	Returns the data.	inferred
@@ -6863,15 +6863,15 @@ com.webos.service.utp.audiorecorder	startRecord	luna://com.webos.service.utp.aud
 com.webos.service.utp.audiorecorder	stopRecord	luna://com.webos.service.utp.audiorecorder/stopRecord	private	0	0	audio	Stops the record.	inferred
 com.webos.service.utp.boot	boot	luna://com.webos.service.utp.boot/boot	private	0	0	misc	Handles the boot.	inferred
 com.webos.service.utp.boot	getLastChannelId	luna://com.webos.service.utp.boot/getLastChannelId	private	0	0	misc	Returns the last channel ID.	inferred
-com.webos.service.utp.broadcast	bind	luna://com.webos.service.utp.broadcast/bind	private	0	0	tv-broadcast	Binds the UTP broadcast.	inferred
-com.webos.service.utp.broadcast	changeChannel	luna://com.webos.service.utp.broadcast/changeChannel	public	0	0	tv-broadcast	Changes the channel.	inferred
-com.webos.service.utp.broadcast	changeChannelByProperty	luna://com.webos.service.utp.broadcast/changeChannelByProperty	private	0	0	tv-broadcast	Changes the channel by property.	inferred
-com.webos.service.utp.broadcast	changeChannelDown	luna://com.webos.service.utp.broadcast/changeChannelDown	public	0	0	tv-broadcast	Changes the channel down.	inferred
-com.webos.service.utp.broadcast	changeChannelPrevious	luna://com.webos.service.utp.broadcast/changeChannelPrevious	public	0	0	tv-broadcast	Changes the channel previous.	inferred
+com.webos.service.utp.broadcast	bind	luna://com.webos.service.utp.broadcast/bind	private	0	0	tv-broadcast	Binds the UTP broadcast.	documented
+com.webos.service.utp.broadcast	changeChannel	luna://com.webos.service.utp.broadcast/changeChannel	public	0	0	tv-broadcast	Changes the channel.	documented
+com.webos.service.utp.broadcast	changeChannelByProperty	luna://com.webos.service.utp.broadcast/changeChannelByProperty	private	0	0	tv-broadcast	Changes the channel by property.	documented
+com.webos.service.utp.broadcast	changeChannelDown	luna://com.webos.service.utp.broadcast/changeChannelDown	public	0	0	tv-broadcast	Changes the channel down.	documented
+com.webos.service.utp.broadcast	changeChannelPrevious	luna://com.webos.service.utp.broadcast/changeChannelPrevious	public	0	0	tv-broadcast	Changes the channel previous.	documented
 com.webos.service.utp.broadcast	changeChannelService	luna://com.webos.service.utp.broadcast/changeChannelService	private	0	0	tv-broadcast	Changes the channel service.	inferred
-com.webos.service.utp.broadcast	changeChannelUp	luna://com.webos.service.utp.broadcast/changeChannelUp	public	0	0	tv-broadcast	Changes the channel up.	inferred
+com.webos.service.utp.broadcast	changeChannelUp	luna://com.webos.service.utp.broadcast/changeChannelUp	public	0	0	tv-broadcast	Changes the channel up.	documented
 com.webos.service.utp.broadcast	changeVolatileChannel	luna://com.webos.service.utp.broadcast/changeVolatileChannel	public	0	0	tv-broadcast	Changes the volatile channel.	inferred
-com.webos.service.utp.broadcast	close	luna://com.webos.service.utp.broadcast/close	public	0	0	tv-broadcast	Closes the UTP broadcast.	inferred
+com.webos.service.utp.broadcast	close	luna://com.webos.service.utp.broadcast/close	public	0	0	tv-broadcast	Closes the UTP broadcast.	documented
 com.webos.service.utp.broadcast	getAudioChannelList	luna://com.webos.service.utp.broadcast/getAudioChannelList	private	0	0	audio	Returns the audio channel list.	inferred
 com.webos.service.utp.broadcast	getAudioDescriptionStatus	luna://com.webos.service.utp.broadcast/getAudioDescriptionStatus	private	0	0	audio	Returns the audio description status.	inferred
 com.webos.service.utp.broadcast	getAudioInfo	luna://com.webos.service.utp.broadcast/getAudioInfo	public	0	0	audio	Returns the audio info.	inferred
@@ -6912,11 +6912,11 @@ com.webos.service.utp.broadcast	isPauseOnLive	luna://com.webos.service.utp.broad
 com.webos.service.utp.broadcast	isPossibleChChange	luna://com.webos.service.utp.broadcast/isPossibleChChange	public	0	0	tv-broadcast	Reports whether the possible channel change is set.	inferred
 com.webos.service.utp.broadcast	isSupportDvbi	luna://com.webos.service.utp.broadcast/isSupportDvbi	private	0	0	tv-broadcast	Reports whether the support dvbi is set.	inferred
 com.webos.service.utp.broadcast	isSupportFvp	luna://com.webos.service.utp.broadcast/isSupportFvp	private	0	0	tv-broadcast	Reports whether the support fvp is set.	inferred
-com.webos.service.utp.broadcast	open	luna://com.webos.service.utp.broadcast/open	public	0	0	tv-broadcast	Opens the UTP broadcast.	inferred
-com.webos.service.utp.broadcast	pause	luna://com.webos.service.utp.broadcast/pause	public	0	0	tv-broadcast	Pauses the UTP broadcast.	inferred
+com.webos.service.utp.broadcast	open	luna://com.webos.service.utp.broadcast/open	public	0	0	tv-broadcast	Opens the UTP broadcast.	documented
+com.webos.service.utp.broadcast	pause	luna://com.webos.service.utp.broadcast/pause	public	0	0	tv-broadcast	Pauses the UTP broadcast.	documented
 com.webos.service.utp.broadcast	pauseOnLive	luna://com.webos.service.utp.broadcast/pauseOnLive	private	0	0	tv-broadcast	Pauses the on live.	inferred
 com.webos.service.utp.broadcast	pin	luna://com.webos.service.utp.broadcast/pin	public	0	0	tv-broadcast	Handles the pin.	inferred
-com.webos.service.utp.broadcast	play	luna://com.webos.service.utp.broadcast/play	private	0	0	tv-broadcast	Plays the UTP broadcast.	inferred
+com.webos.service.utp.broadcast	play	luna://com.webos.service.utp.broadcast/play	private	0	0	tv-broadcast	Plays the UTP broadcast.	documented
 com.webos.service.utp.broadcast	playSignaling	luna://com.webos.service.utp.broadcast/playSignaling	private	0	0	tv-broadcast	Plays the signaling.	inferred
 com.webos.service.utp.broadcast	registerDataMfu	luna://com.webos.service.utp.broadcast/registerDataMfu	private	0	0	tv-broadcast	Registers the data mfu.	inferred
 com.webos.service.utp.broadcast	scanDetailInformation	luna://com.webos.service.utp.broadcast/scanDetailInformation	private	1	0	tv-broadcast	Scans for detail information.	inferred
@@ -6929,7 +6929,7 @@ com.webos.service.utp.broadcast	setDialogEnhancementGain	luna://com.webos.servic
 com.webos.service.utp.broadcast	setObjectAudioInfo	luna://com.webos.service.utp.broadcast/setObjectAudioInfo	private	0	0	audio	Sets the object audio info.	inferred
 com.webos.service.utp.broadcast	setPipHotkey	luna://com.webos.service.utp.broadcast/setPipHotkey	private	0	0	tv-broadcast	Sets the pip hotkey.	inferred
 com.webos.service.utp.broadcast	setSink	luna://com.webos.service.utp.broadcast/setSink	private	0	0	tv-broadcast	Sets the sink.	inferred
-com.webos.service.utp.broadcast	stop	luna://com.webos.service.utp.broadcast/stop	public	0	0	tv-broadcast	Stops the UTP broadcast.	inferred
+com.webos.service.utp.broadcast	stop	luna://com.webos.service.utp.broadcast/stop	public	0	0	tv-broadcast	Stops the UTP broadcast.	documented
 com.webos.service.utp.broadcast	stopRecordAndChangeChannel	luna://com.webos.service.utp.broadcast/stopRecordAndChangeChannel	private	0	0	tv-broadcast	Stops the record and change channel.	inferred
 com.webos.service.utp.broadcast	subscribeSignalTable	luna://com.webos.service.utp.broadcast/subscribeSignalTable	private	0	0	tv-broadcast	Subscribes to the signal table.	inferred
 com.webos.service.utp.broadcast	unpauseToLive	luna://com.webos.service.utp.broadcast/unpauseToLive	private	0	0	tv-broadcast	Handles the unpause to live.	inferred
@@ -6944,8 +6944,8 @@ com.webos.service.utp.channel	bcas/setEmmTimer	luna://com.webos.service.utp.chan
 com.webos.service.utp.channel	bcas/setEmmTimerChannel	luna://com.webos.service.utp.channel/bcas/setEmmTimerChannel	private	0	0	tv-broadcast	Sets the emm timer channel (bcas)	inferred
 com.webos.service.utp.channel	bcas/stopEmmTimerChannel	luna://com.webos.service.utp.channel/bcas/stopEmmTimerChannel	private	0	0	tv-broadcast	Stops the emm timer channel (bcas)	inferred
 com.webos.service.utp.channel	blockKeyInput	luna://com.webos.service.utp.channel/blockKeyInput	private	0	0	tv-broadcast	Blocks the key input.	inferred
-com.webos.service.utp.channel	changeChannelFavorite	luna://com.webos.service.utp.channel/changeChannelFavorite	public	0	0	tv-broadcast	Changes the channel favorite.	inferred
-com.webos.service.utp.channel	changeChannelType	luna://com.webos.service.utp.channel/changeChannelType	public	0	0	tv-broadcast	Changes the channel type.	inferred
+com.webos.service.utp.channel	changeChannelFavorite	luna://com.webos.service.utp.channel/changeChannelFavorite	public	0	0	tv-broadcast	Changes the channel favorite.	documented
+com.webos.service.utp.channel	changeChannelType	luna://com.webos.service.utp.channel/changeChannelType	public	0	0	tv-broadcast	Changes the channel type.	documented
 com.webos.service.utp.channel	changeMessageChannel	luna://com.webos.service.utp.channel/changeMessageChannel	public	0	0	tv-broadcast	Changes the message channel.	inferred
 com.webos.service.utp.channel	checkBarkerChannel	luna://com.webos.service.utp.channel/checkBarkerChannel	private	0	0	tv-broadcast	Checks the barker channel.	inferred
 com.webos.service.utp.channel	ci/camPlayerPauseRequest	luna://com.webos.service.utp.channel/ci/camPlayerPauseRequest	private	0	0	tv-broadcast	Handles the CAM player pause request (CI)	inferred
@@ -7017,14 +7017,14 @@ com.webos.service.utp.channel	getChannelListUpdateStatus	luna://com.webos.servic
 com.webos.service.utp.channel	getChannelMode	luna://com.webos.service.utp.channel/getChannelMode	public	0	0	tv-broadcast	Returns the channel mode.	inferred
 com.webos.service.utp.channel	getChannelModeList	luna://com.webos.service.utp.channel/getChannelModeList	public	0	0	tv-broadcast	Returns the channel mode list.	inferred
 com.webos.service.utp.channel	getChannelSortMode	luna://com.webos.service.utp.channel/getChannelSortMode	private	0	0	tv-broadcast	Returns the channel sort mode.	inferred
-com.webos.service.utp.channel	getChannelTypeList	luna://com.webos.service.utp.channel/getChannelTypeList	public	0	0	tv-broadcast	Returns the channel type list.	inferred
+com.webos.service.utp.channel	getChannelTypeList	luna://com.webos.service.utp.channel/getChannelTypeList	public	0	0	tv-broadcast	Returns the channel type list.	documented
 com.webos.service.utp.channel	getCurrentAudioChannel	luna://com.webos.service.utp.channel/getCurrentAudioChannel	public	0	0	audio	Returns the current audio channel.	inferred
 com.webos.service.utp.channel	getCurrentAudioCodecType	luna://com.webos.service.utp.channel/getCurrentAudioCodecType	public	0	0	audio	Returns the current audio codec type.	inferred
 com.webos.service.utp.channel	getCurrentAudioLanguage	luna://com.webos.service.utp.channel/getCurrentAudioLanguage	public	0	0	audio	Returns the current audio language.	inferred
 com.webos.service.utp.channel	getCurrentVideoView	luna://com.webos.service.utp.channel/getCurrentVideoView	public	0	0	tv-broadcast	Returns the current video view.	inferred
 com.webos.service.utp.channel	getDirectTuneChannel	luna://com.webos.service.utp.channel/getDirectTuneChannel	public	0	0	tv-broadcast	Returns the direct tune channel.	inferred
 com.webos.service.utp.channel	getEwsEvent	luna://com.webos.service.utp.channel/getEwsEvent	private	0	0	tv-broadcast	Returns the ews event.	inferred
-com.webos.service.utp.channel	getLastChannelId	luna://com.webos.service.utp.channel/getLastChannelId	public	0	0	tv-broadcast	Returns the last channel ID.	inferred
+com.webos.service.utp.channel	getLastChannelId	luna://com.webos.service.utp.channel/getLastChannelId	public	0	0	tv-broadcast	Returns the last channel ID.	documented
 com.webos.service.utp.channel	getPreferredRegionNId	luna://com.webos.service.utp.channel/getPreferredRegionNId	private	0	0	tv-broadcast	Returns the preferred region n ID.	inferred
 com.webos.service.utp.channel	getSatelliteBouquetList	luna://com.webos.service.utp.channel/getSatelliteBouquetList	private	0	0	tv-broadcast	Returns the satellite bouquet list.	inferred
 com.webos.service.utp.channel	getScannedSatelliteList	luna://com.webos.service.utp.channel/getScannedSatelliteList	private	0	0	tv-broadcast	Returns the scanned satellite list.	inferred
@@ -7251,10 +7251,10 @@ com.webos.service.utp.channel	scan/stopDvbTerrestrialSignalTest	luna://com.webos
 com.webos.service.utp.channel	scanBarkerChannel	luna://com.webos.service.utp.channel/scanBarkerChannel	public	0	0	tv-broadcast	Scans for barker channel.	inferred
 com.webos.service.utp.channel	setAudioChannel	luna://com.webos.service.utp.channel/setAudioChannel	public	0	0	audio	Sets the audio channel.	inferred
 com.webos.service.utp.channel	setAudioLanguage	luna://com.webos.service.utp.channel/setAudioLanguage	public	0	0	audio	Sets the audio language.	inferred
-com.webos.service.utp.channel	setChannelGroup	luna://com.webos.service.utp.channel/setChannelGroup	public	0	0	tv-broadcast	Sets the channel group.	inferred
-com.webos.service.utp.channel	setChannelMode	luna://com.webos.service.utp.channel/setChannelMode	public	0	0	tv-broadcast	Sets the channel mode.	inferred
+com.webos.service.utp.channel	setChannelGroup	luna://com.webos.service.utp.channel/setChannelGroup	public	0	0	tv-broadcast	Sets the channel group.	documented
+com.webos.service.utp.channel	setChannelMode	luna://com.webos.service.utp.channel/setChannelMode	public	0	0	tv-broadcast	Sets the channel mode.	documented
 com.webos.service.utp.channel	setChannelSortMode	luna://com.webos.service.utp.channel/setChannelSortMode	private	0	0	tv-broadcast	Sets the channel sort mode.	inferred
-com.webos.service.utp.channel	setLastChannelId	luna://com.webos.service.utp.channel/setLastChannelId	public	0	0	tv-broadcast	Sets the last channel ID.	inferred
+com.webos.service.utp.channel	setLastChannelId	luna://com.webos.service.utp.channel/setLastChannelId	public	0	0	tv-broadcast	Sets the last channel ID.	documented
 com.webos.service.utp.channel	setVideoView	luna://com.webos.service.utp.channel/setVideoView	public	0	0	tv-broadcast	Sets the video view.	inferred
 com.webos.service.utp.channel	sortAnalogChannelList	luna://com.webos.service.utp.channel/sortAnalogChannelList	private	0	0	tv-broadcast	Handles the sort analog channel list.	inferred
 com.webos.service.utp.channel	startEwbsCheckInWarm	luna://com.webos.service.utp.channel/startEwbsCheckInWarm	private	0	0	tv-broadcast	Starts the ewbs check in warm.	inferred
@@ -7395,8 +7395,8 @@ com.webos.service.utp.externaldevice	input/stop	luna://com.webos.service.utp.ext
 com.webos.service.utp.externaldevice	input/switchExternalInput	luna://com.webos.service.utp.externaldevice/input/switchExternalInput	private	0	0	input	Switches the external input (input)	inferred
 com.webos.service.utp.externaldevice	setHdmiInfo	luna://com.webos.service.utp.externaldevice/setHdmiInfo	private	0	0	input	Sets the HDMI info.	inferred
 com.webos.service.utp.externaldevice	setLastInputInfoDB	luna://com.webos.service.utp.externaldevice/setLastInputInfoDB	private	0	0	db	Sets the last input info DB.	inferred
-com.webos.service.utp.extinputs	bind	luna://com.webos.service.utp.extinputs/bind	private	0	0	input	Binds the UTP extinputs.	inferred
-com.webos.service.utp.extinputs	close	luna://com.webos.service.utp.extinputs/close	private	0	0	input	Closes the UTP extinputs.	inferred
+com.webos.service.utp.extinputs	bind	luna://com.webos.service.utp.extinputs/bind	private	0	0	input	Binds the UTP extinputs.	documented
+com.webos.service.utp.extinputs	close	luna://com.webos.service.utp.extinputs/close	private	0	0	input	Closes the UTP extinputs.	documented
 com.webos.service.utp.extinputs	disableSubtitle	luna://com.webos.service.utp.extinputs/disableSubtitle	private	0	0	input	Disables the subtitle.	inferred
 com.webos.service.utp.extinputs	disableTeletextPes	luna://com.webos.service.utp.extinputs/disableTeletextPes	private	0	0	input	Disables the teletext pes.	inferred
 com.webos.service.utp.extinputs	enableSubtitle	luna://com.webos.service.utp.extinputs/enableSubtitle	private	0	0	input	Enables the subtitle.	inferred
@@ -7423,15 +7423,15 @@ com.webos.service.utp.extinputs	getTeletextList	luna://com.webos.service.utp.ext
 com.webos.service.utp.extinputs	getTeletextState	luna://com.webos.service.utp.extinputs/getTeletextState	private	0	0	input	Returns the teletext state.	inferred
 com.webos.service.utp.extinputs	getVideoInfo	luna://com.webos.service.utp.extinputs/getVideoInfo	private	0	0	input	Returns the video info.	inferred
 com.webos.service.utp.extinputs	getVRRInfo	luna://com.webos.service.utp.extinputs/getVRRInfo	private	0	0	input	Returns the VRR info.	inferred
-com.webos.service.utp.extinputs	open	luna://com.webos.service.utp.extinputs/open	private	0	0	input	Opens the UTP extinputs.	inferred
-com.webos.service.utp.extinputs	pause	luna://com.webos.service.utp.extinputs/pause	private	0	0	input	Pauses the UTP extinputs.	inferred
+com.webos.service.utp.extinputs	open	luna://com.webos.service.utp.extinputs/open	private	0	0	input	Opens the UTP extinputs.	documented
+com.webos.service.utp.extinputs	pause	luna://com.webos.service.utp.extinputs/pause	private	0	0	input	Pauses the UTP extinputs.	documented
 com.webos.service.utp.extinputs	pin	luna://com.webos.service.utp.extinputs/pin	private	0	0	input	Handles the pin.	inferred
 com.webos.service.utp.extinputs	resetHDMIErrorHistory	luna://com.webos.service.utp.extinputs/resetHDMIErrorHistory	private	1	0	input	Resets the HDMI error history.	inferred
 com.webos.service.utp.extinputs	setAudioMute	luna://com.webos.service.utp.extinputs/setAudioMute	private	0	0	audio	Sets the audio mute.	inferred
 com.webos.service.utp.extinputs	setMultiAudioOutType	luna://com.webos.service.utp.extinputs/setMultiAudioOutType	private	0	0	audio	Sets the multi audio out type.	inferred
 com.webos.service.utp.extinputs	setPipelineWindowId	luna://com.webos.service.utp.extinputs/setPipelineWindowId	private	0	0	input	Sets the pipeline window ID.	inferred
 com.webos.service.utp.extinputs	setProperties	luna://com.webos.service.utp.extinputs/setProperties	private	0	0	input	Sets the properties.	inferred
-com.webos.service.utp.extinputs	stop	luna://com.webos.service.utp.extinputs/stop	private	0	0	input	Stops the UTP extinputs.	inferred
+com.webos.service.utp.extinputs	stop	luna://com.webos.service.utp.extinputs/stop	private	0	0	input	Stops the UTP extinputs.	documented
 com.webos.service.utp.extinputs	switchExternalInput	luna://com.webos.service.utp.extinputs/switchExternalInput	private	0	0	input	Switches the external input.	inferred
 com.webos.service.utp.frontend	getSignalStatusforSelfCheck	luna://com.webos.service.utp.frontend/getSignalStatusforSelfCheck	private	0	0	misc	Returns the signal status (self-check)	inferred
 com.webos.service.utp.lbdsmcc	attach	luna://com.webos.service.utp.lbdsmcc/attach	private	0	0	system-info	Handles the attach.	inferred

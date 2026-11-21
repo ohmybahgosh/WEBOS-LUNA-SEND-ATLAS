@@ -15,14 +15,14 @@ System notification service: creates and closes toasts, alerts, input alerts, PI
 | [`callback/wakeUp`](#callback_wakeup) | private |  | misc | documented | Found by on-device introspection (parameters undocumented). |
 | [`closeAlert`](#closealert) | public |  | notifications | documented | Closes the currently displayed alert notification. |
 | [`closeAllAlerts`](#closeallalerts) | public |  | notifications | documented | Closes all the open alerts. Note: This method is for internal use. It must only be used by com.webos.service.battest during BAT test . If th |
-| [`closeInputAlert`](#closeinputalert) | private |  | notifications | inferred | Closes the input alert. |
-| [`closePincodePrompt`](#closepincodeprompt) | private |  | notifications | inferred | Closes the pincode prompt. |
+| [`closeInputAlert`](#closeinputalert) | private |  | notifications | documented | Closes the input alert. |
+| [`closePincodePrompt`](#closepincodeprompt) | private |  | notifications | documented | Closes the pincode prompt. |
 | [`closeToast`](#closetoast) | public |  | notifications | documented | Removes a toast notification from the database. |
 | [`createAlert`](#createalert) | public |  | notifications | documented | Creates a system alert notification. |
-| [`createInputAlert`](#createinputalert) | private |  | notifications | inferred | Creates the input alert. |
-| [`createNotification`](#createnotification) | private |  | notifications | inferred | Creates the notification. |
-| [`createPincodePrompt`](#createpincodeprompt) | public |  | notifications | inferred | Creates the pincode prompt. |
-| [`createRemoteNotification`](#createremotenotification) | private |  | notifications | inferred | Creates the remote notification. |
+| [`createInputAlert`](#createinputalert) | private |  | notifications | documented | Creates the input alert. |
+| [`createNotification`](#createnotification) | private |  | notifications | documented | Creates the notification. |
+| [`createPincodePrompt`](#createpincodeprompt) | public |  | notifications | documented | Creates the pincode prompt. |
+| [`createRemoteNotification`](#createremotenotification) | private |  | notifications | documented | Creates the remote notification. |
 | [`createSignageAlert`](#createsignagealert) | public |  | notifications | inferred | Creates the signage alert. |
 | [`createToast`](#createtoast) | public |  | notifications | documented | Creates a toast notification. |
 | [`disable`](#disable) | public |  | notifications | documented | Disables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note: Only a privileged application or service can call this met |
@@ -32,9 +32,9 @@ System notification service: creates and closes toasts, alerts, input alerts, PI
 | [`getAlertNotification`](#getalertnotification) | public | yes | notifications | documented | Subscribe to create alert notifications. Note: This method should only be used by the Surface Manager . |
 | [`getInputAlertNotification`](#getinputalertnotification) | private |  | notifications | inferred | Returns the input alert notification. |
 | [`getNotification`](#getnotification) | private |  | notifications | inferred | Returns the notification. |
-| [`getNotificationInfo`](#getnotificationinfo) | private |  | notifications | inferred | Returns the notification info. |
+| [`getNotificationInfo`](#getnotificationinfo) | private |  | notifications | documented | Returns the notification info. |
 | [`getPincodePromptNotification`](#getpincodepromptnotification) | private |  | notifications | inferred | Returns the pincode prompt notification. |
-| [`getRemoteNotificationInfo`](#getremotenotificationinfo) | private |  | notifications | inferred | Returns the remote notification info. |
+| [`getRemoteNotificationInfo`](#getremotenotificationinfo) | private |  | notifications | documented | Returns the remote notification info. |
 | [`getToastCount`](#gettoastcount) | public | yes | notifications | documented | Queries the toast notification details of the stored messages and provides the read/unread count of the toast notifications. Note: Only "com |
 | [`getToastList`](#gettoastlist) | public |  | notifications | documented | Lists the toasts created for the app/client based on the user logged into the particular session. |
 | [`getToastNotification`](#gettoastnotification) | public | yes | notifications | documented | Subscribe to created toast notification. Note: This method should only be used by Surface Manager only. |
@@ -47,7 +47,7 @@ System notification service: creates and closes toasts, alerts, input alerts, PI
 | [`purgeHistory`](#purgehistory) | private |  | notifications | inferred | Handles the purge history. |
 | [`removeAllNotification`](#removeallnotification) | public |  | notifications | documented | Removes all notifications that are currently being displayed. |
 | [`removeNotification`](#removenotification) | public |  | notifications | documented | Deletes the given notification(s) from DB. We can remove given set of notifications or remove all notifications from a given sourceId. |
-| [`removeRemoteNotification`](#removeremotenotification) | private |  | notifications | inferred | Removes the remote notification. ⚠️ |
+| [`removeRemoteNotification`](#removeremotenotification) | private |  | notifications | documented | Removes the remote notification. ⚠️ |
 | [`schedule`](#schedule) | unknown |  | notifications | documented | Creates a toast notification as a persistent message and define its schedule. |
 | [`setAlertProgress`](#setalertprogress) | private |  | misc | documented | Found by on-device introspection (parameters undocumented). |
 | [`setToastStatus`](#settoaststatus) | public |  | notifications | documented | Specifies whether the toast is to be marked as read or unread. |
@@ -211,19 +211,21 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notificat
 
 Closes the input alert.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `inputAlertId` | String (required) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/closeInputAlert '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, notifications, all. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, notifications, all. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -234,19 +236,23 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Closes the pincode prompt.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pincode` | String (optional) |
+| `closeType` | String (required) |
+| `mode` | String (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/closePincodePrompt '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, notifications, all. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, notifications, all. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -324,19 +330,29 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notificat
 
 Creates the input alert.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `appId` | String (optional) |
+| `portType` | String (optional) |
+| `portName` | String (optional) |
+| `portIcon` | String (optional) |
+| `deviceName` | String (optional) |
+| `deviceIcon` | String (optional) |
+| `params` | Object (optional) |
+| `inputs` | Array (optional) Contains input alert informations |
+| `timeout` | Number (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/createInputAlert '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, notifications, all. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, notifications, all. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -347,19 +363,37 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Creates the notification.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `sourceId` | String (optional) |
+| `iconUrl` | String (optional) |
+| `title` | String (optional) |
+| `message` | String (required) |
+| `readable` | String (optional) |
+| `autoRemove` | Boolean (optional) |
+| `onClick` | String (optional) |
+| `params` | Object (optional) |
+| `forceLcdTurnOn` | Boolean (optional) |
+| `needSoundPlay` | Boolean (optional) |
+| `forceSoundPlay` | Boolean (optional) |
+| `soundUri` | String (optional) |
+| `isRawSound` | Boolean (optional) |
+| `needToShowPopup` | Boolean (optional) |
+| `isRemoteNotification` | Boolean (optional) |
+| `isUnDeletable` | Boolean (optional) |
+| `isSysReq` | Boolean (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/createNotification '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, notifications.manage, notifications, all. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, notifications.manage, notifications, all. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -370,19 +404,23 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Creates the pincode prompt.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `promptType` | String (required) |
+| `appId` | String (optional) |
+| `message` | String (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/createPincodePrompt '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, public, notifications, all. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, public, notifications, all. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -393,19 +431,44 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Creates the remote notification.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `remoteSourceId` | String (optional) |
+| `parentNotiId` | String (optional) |
+| `remotePackageName` | String (required) |
+| `remoteTitle` | String (optional) |
+| `remoteMessage` | String (required) |
+| `remoteTickerText` | String (optional) |
+| `remoteId` | Number (optional) |
+| `remoteUserId` | Number (optional) |
+| `remotePostTime` | Number (optional) |
+| `remoteAppName` | String (required) |
+| `remoteIconUrl` | String (optional) |
+| `remoteBgImage` | String (optional) |
+| `remoteActionParam` | Array (optional) |
+| `isUnDeletable` | Boolean (optional) |
+| `isRemoteNotification` | Boolean (optional) |
+| `groupId` | String (optional) |
+| `notificationType` | String (optional) |
+| `pageNumber` | Number (optional) |
+| `remoteSubText` | String (optional) |
+| `remoteCount` | Number (optional) |
+| `remoteTag` | String (optional) |
+| `remoteResultKey` | String (optional) |
+| `remoteAlert` | Boolean (optional) |
+| `enhancedNotification` | String (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/createRemoteNotification '{}'
 ```
 
-> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -490,11 +553,15 @@ Disables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note
 - **Versions:** webOS OSE API level 21+  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `exceptions` | Array (optional) services that will not be disabled exceptionally. |
+
 ```sh
 luna-send -n 1 -f -a com.webos.app.test luna://com.webos.notification/disable '{}
 ```
 
-> ACG: notification.management \| Returns: returnValue:Boolean \| Service: Manages the system notifications. \|\| Parameters unread; presence only.
+> ACG: notification.management \| Returns: returnValue:Boolean \| Service: Manages the system notifications. \|\| Parameters unread; presence only.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notification/), [2](https://github.com/rorygallagher2024/glasshouse/blob/HEAD/docs/development/TV-RESEARCH.md)
 
@@ -643,19 +710,22 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Returns the notification info.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `sourceId` | String (optional) |
+| `all` | Boolean (required) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/getNotificationInfo '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, notifications, all, notifications.query. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.notification` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, notifications, all, notifications.query. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -689,19 +759,22 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Returns the remote notification info.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `remotePackageName` | String (optional) |
+| `all` | Boolean (required) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/getRemoteNotificationInfo '{}'
 ```
 
-> ACG groups: notifications.query, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: notifications.query, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -1008,19 +1081,22 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-notificat
 
 Removes the remote notification.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `removeRemoteNotiId` | Array (optional) |
+| `remotePackageName` | String (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/removeRemoteNotification '{}'
 ```
 
-> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.
+> ACG groups: private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device). Flagged dangerous by name; verify before calling.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -1058,13 +1134,17 @@ Found by on-device introspection (parameters undocumented).
 - **Versions:** seen on HE_DTV_W22O_AFABATPU  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `alertId` | String (required) |
+| `progress` | Integer (required) |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.notification/setAlertProgress '{}'
 ```
 
-> ACG groups: all Confirmed on webOS 7.0 (W22O) dump.
+> ACG groups: all Confirmed on webOS 7.0 (W22O) dump.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
-Sources: 
 
 <a id="settoaststatus"></a>
 ## `setToastStatus`

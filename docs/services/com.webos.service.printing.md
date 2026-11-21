@@ -8,7 +8,7 @@ Printing service: adds, removes and configures printers, sets the default printe
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`autoprint`](#autoprint) | public |  | storage | inferred | Handles the autoprint. |
+| [`autoprint`](#autoprint) | public |  | storage | documented | Handles the autoprint. |
 | [`configuration/addPrinter`](#configuration_addprinter) | public |  | settings | inferred | Adds the printer (configuration) |
 | [`configuration/deletePrinter`](#configuration_deleteprinter) | public |  | settings | inferred | Deletes the printer (configuration) ⚠️ |
 | [`configuration/disable`](#configuration_disable) | public |  | settings | inferred | Disables the printing (configuration) |
@@ -21,16 +21,16 @@ Printing service: adds, removes and configures printers, sets the default printe
 | [`info/displayConfig`](#info_displayconfig) | public |  | settings | inferred | Handles the display config (info) |
 | [`info/enablePrinter`](#info_enableprinter) | public |  | storage | inferred | Enables the printer (info) |
 | [`info/listPrinters`](#info_listprinters) | public |  | storage | inferred | Lists the printers (info) |
-| [`jobs/all`](#jobs_all) | public |  | storage | inferred | Handles the all (jobs) |
-| [`jobs/cancel`](#jobs_cancel) | public |  | storage | inferred | Cancels the printing (jobs) |
+| [`jobs/all`](#jobs_all) | public |  | storage | documented | Handles the all (jobs) |
+| [`jobs/cancel`](#jobs_cancel) | public |  | storage | documented | Cancels the printing (jobs) |
 | [`jobs/cancelAll`](#jobs_cancelall) | public |  | storage | inferred | Cancels the all (jobs) |
 | [`jobs/cancelPrinter`](#jobs_cancelprinter) | public |  | storage | inferred | Cancels the printer (jobs) |
 | [`jobs/completeJobs`](#jobs_completejobs) | public |  | storage | inferred | Completes the jobs (jobs) |
-| [`jobs/move`](#jobs_move) | public |  | storage | inferred | Moves the printing (jobs) |
+| [`jobs/move`](#jobs_move) | public |  | storage | documented | Moves the printing (jobs) |
 | [`jobs/printNow`](#jobs_printnow) | public |  | storage | inferred | Prints the now (jobs) |
-| [`jobs/queue`](#jobs_queue) | public |  | storage | inferred | Handles the queue (jobs) |
-| [`jobs/stop`](#jobs_stop) | public |  | storage | inferred | Stops the printing (jobs) |
-| [`print`](#print) | public |  | storage | inferred | Prints the printing. |
+| [`jobs/queue`](#jobs_queue) | public |  | storage | documented | Handles the queue (jobs) |
+| [`jobs/stop`](#jobs_stop) | public |  | storage | documented | Stops the printing (jobs) |
+| [`print`](#print) | public |  | storage | documented | Prints the printing. |
 
 <a id="autoprint"></a>
 ## `autoprint`
@@ -39,19 +39,21 @@ Printing service: adds, removes and configures printers, sets the default printe
 
 Handles the autoprint.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `filePath` | String (required) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/autoprint '{}'
 ```
 
-> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -338,19 +340,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Handles the all (jobs)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `printer` | String (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/all '{}'
 ```
 
-> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -361,19 +365,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Cancels the printing (jobs)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | Array (required) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/cancel '{}'
 ```
 
-> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -453,19 +459,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Moves the printing (jobs)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | Integer (required) |
+| `printer` | String (required) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/move '{}'
 ```
 
-> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -499,19 +508,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Handles the queue (jobs)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `printer` | String (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/queue '{}'
 ```
 
-> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -522,19 +533,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Stops the printing (jobs)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | Integer (required) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/jobs/stop '{}'
 ```
 
-> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -545,18 +558,35 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Prints the printing.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `printer` | String (required) |
+| `filePath` | Array (required) |
+| `fileName` | Array (optional) |
+| `filePassword` | Array (optional) |
+| `copies` | Integer (optional) |
+| `orientation` | Integer (optional) |
+| `sides` | String (optional) Possible values: one-sided, two-sided-long-edge, two-sided-short-edge |
+| `quality` | Integer (optional) |
+| `numberUp` | Integer (optional) Possible values: 1, 2, 4, 6, 9, 16 |
+| `size` | String (optional) |
+| `pageRanges` | String (optional) |
+| `pageSet` | String (optional) Possible values: odd, even |
+| `color` | String (optional) Possible values: color, monochrome |
+| `collate` | Boolean (optional) |
+| `fromhov` | Boolean (optional) |
+| `hovFile` | String (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.printing/print '{}'
 ```
 
-> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: all, com.webos.service.printing.group, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))

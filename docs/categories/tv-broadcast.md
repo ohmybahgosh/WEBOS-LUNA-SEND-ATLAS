@@ -1382,30 +1382,30 @@
 | [`luna://com.webos.service.tvrm.policy.sender/subscribePolicyAction`](../services/com.webos.service.tvrm.policy.sender.md#subscribepolicyaction) | private | inferred | Subscribes to the policy action. |
 | [`luna://com.webos.service.tvrm/beginTransaction`](../services/com.webos.service.tvrm.md#begintransaction) | private | inferred | Begins the transaction. |
 | [`luna://com.webos.service.tvrm/dbgFeature`](../services/com.webos.service.tvrm.md#dbgfeature) | private | inferred | Debug: Handles the feature. |
-| [`luna://com.webos.service.tvrm/endTransaction`](../services/com.webos.service.tvrm.md#endtransaction) | private | inferred | Handles the end transaction. |
-| [`luna://com.webos.service.tvrm/getResourceToRelease`](../services/com.webos.service.tvrm.md#getresourcetorelease) | private | inferred | Returns the resource to release. |
+| [`luna://com.webos.service.tvrm/endTransaction`](../services/com.webos.service.tvrm.md#endtransaction) | private | documented | Handles the end transaction. |
+| [`luna://com.webos.service.tvrm/getResourceToRelease`](../services/com.webos.service.tvrm.md#getresourcetorelease) | private | documented | Returns the resource to release. |
 | [`luna://com.webos.service.tvrm/getSimulationResult`](../services/com.webos.service.tvrm.md#getsimulationresult) | private | inferred | Returns the simulation result. |
 | [`luna://com.webos.service.tvrm/notifyBackground`](../services/com.webos.service.tvrm.md#notifybackground) | private | inferred | Notifies of the background. |
-| [`luna://com.webos.service.tvrm/notifyForeground`](../services/com.webos.service.tvrm.md#notifyforeground) | private | inferred | Notifies of the foreground. |
-| [`luna://com.webos.service.tvrm/presetTuner`](../services/com.webos.service.tvrm.md#presettuner) | private | inferred | Handles the preset tuner. ⚠️ |
-| [`luna://com.webos.service.tvrm/registerHandledResource`](../services/com.webos.service.tvrm.md#registerhandledresource) | private | inferred | Registers the handled resource. |
-| [`luna://com.webos.service.tvrm/releaseResource`](../services/com.webos.service.tvrm.md#releaseresource) | private | inferred | Releases the resource. |
-| [`luna://com.webos.service.tvrm/requestResource`](../services/com.webos.service.tvrm.md#requestresource) | private | inferred | Requests the resource. |
-| [`luna://com.webos.service.tvrm/setPipelineState`](../services/com.webos.service.tvrm.md#setpipelinestate) | private | inferred | Sets the pipeline state. |
-| [`luna://com.webos.service.tvrm/setSimulationMode`](../services/com.webos.service.tvrm.md#setsimulationmode) | private | inferred | Sets the simulation mode. |
-| [`luna://com.webos.service.tvrm/simulateResource`](../services/com.webos.service.tvrm.md#simulateresource) | private | inferred | Handles the simulate resource. |
-| [`luna://com.webos.service.tvrm/updatePipelineInfo`](../services/com.webos.service.tvrm.md#updatepipelineinfo) | private | inferred | Updates the pipeline info. |
+| [`luna://com.webos.service.tvrm/notifyForeground`](../services/com.webos.service.tvrm.md#notifyforeground) | private | documented | Notifies of the foreground. |
+| [`luna://com.webos.service.tvrm/presetTuner`](../services/com.webos.service.tvrm.md#presettuner) | private | documented | Handles the preset tuner. ⚠️ |
+| [`luna://com.webos.service.tvrm/registerHandledResource`](../services/com.webos.service.tvrm.md#registerhandledresource) | private | documented | Registers the handled resource. |
+| [`luna://com.webos.service.tvrm/releaseResource`](../services/com.webos.service.tvrm.md#releaseresource) | private | documented | Releases the resource. |
+| [`luna://com.webos.service.tvrm/requestResource`](../services/com.webos.service.tvrm.md#requestresource) | private | documented | Requests the resource. |
+| [`luna://com.webos.service.tvrm/setPipelineState`](../services/com.webos.service.tvrm.md#setpipelinestate) | private | documented | Sets the pipeline state. |
+| [`luna://com.webos.service.tvrm/setSimulationMode`](../services/com.webos.service.tvrm.md#setsimulationmode) | private | documented | Sets the simulation mode. |
+| [`luna://com.webos.service.tvrm/simulateResource`](../services/com.webos.service.tvrm.md#simulateresource) | private | documented | Handles the simulate resource. |
+| [`luna://com.webos.service.tvrm/updatePipelineInfo`](../services/com.webos.service.tvrm.md#updatepipelineinfo) | private | documented | Updates the pipeline info. |
 | [`luna://com.webos.service.tvrmclient.gibbs_3189/getData`](../services/com.webos.service.tvrmclient.gibbs_3189.md#getdata) | private | inferred | Returns the data. |
 | [`luna://com.webos.service.tvrmclient.tv_2140/getData`](../services/com.webos.service.tvrmclient.tv_2140.md#getdata) | private | inferred | Returns the data. |
-| [`luna://com.webos.service.utp.broadcast/bind`](../services/com.webos.service.utp.broadcast.md#bind) | private | inferred | Binds the UTP broadcast. |
-| [`luna://com.webos.service.utp.broadcast/changeChannel`](../services/com.webos.service.utp.broadcast.md#changechannel) | public | inferred | Changes the channel. |
-| [`luna://com.webos.service.utp.broadcast/changeChannelByProperty`](../services/com.webos.service.utp.broadcast.md#changechannelbyproperty) | private | inferred | Changes the channel by property. |
-| [`luna://com.webos.service.utp.broadcast/changeChannelDown`](../services/com.webos.service.utp.broadcast.md#changechanneldown) | public | inferred | Changes the channel down. |
-| [`luna://com.webos.service.utp.broadcast/changeChannelPrevious`](../services/com.webos.service.utp.broadcast.md#changechannelprevious) | public | inferred | Changes the channel previous. |
+| [`luna://com.webos.service.utp.broadcast/bind`](../services/com.webos.service.utp.broadcast.md#bind) | private | documented | Binds the UTP broadcast. |
+| [`luna://com.webos.service.utp.broadcast/changeChannel`](../services/com.webos.service.utp.broadcast.md#changechannel) | public | documented | Changes the channel. |
+| [`luna://com.webos.service.utp.broadcast/changeChannelByProperty`](../services/com.webos.service.utp.broadcast.md#changechannelbyproperty) | private | documented | Changes the channel by property. |
+| [`luna://com.webos.service.utp.broadcast/changeChannelDown`](../services/com.webos.service.utp.broadcast.md#changechanneldown) | public | documented | Changes the channel down. |
+| [`luna://com.webos.service.utp.broadcast/changeChannelPrevious`](../services/com.webos.service.utp.broadcast.md#changechannelprevious) | public | documented | Changes the channel previous. |
 | [`luna://com.webos.service.utp.broadcast/changeChannelService`](../services/com.webos.service.utp.broadcast.md#changechannelservice) | private | inferred | Changes the channel service. |
-| [`luna://com.webos.service.utp.broadcast/changeChannelUp`](../services/com.webos.service.utp.broadcast.md#changechannelup) | public | inferred | Changes the channel up. |
+| [`luna://com.webos.service.utp.broadcast/changeChannelUp`](../services/com.webos.service.utp.broadcast.md#changechannelup) | public | documented | Changes the channel up. |
 | [`luna://com.webos.service.utp.broadcast/changeVolatileChannel`](../services/com.webos.service.utp.broadcast.md#changevolatilechannel) | public | inferred | Changes the volatile channel. |
-| [`luna://com.webos.service.utp.broadcast/close`](../services/com.webos.service.utp.broadcast.md#close) | public | inferred | Closes the UTP broadcast. |
+| [`luna://com.webos.service.utp.broadcast/close`](../services/com.webos.service.utp.broadcast.md#close) | public | documented | Closes the UTP broadcast. |
 | [`luna://com.webos.service.utp.broadcast/getBroadcastComponentList`](../services/com.webos.service.utp.broadcast.md#getbroadcastcomponentlist) | private | inferred | Returns the broadcast component list. |
 | [`luna://com.webos.service.utp.broadcast/getBroadcastState`](../services/com.webos.service.utp.broadcast.md#getbroadcaststate) | public | inferred | Returns the broadcast state. |
 | [`luna://com.webos.service.utp.broadcast/getBroadcastSystemUIStatus`](../services/com.webos.service.utp.broadcast.md#getbroadcastsystemuistatus) | private | inferred | Returns the broadcast system UI status. |
@@ -1440,11 +1440,11 @@
 | [`luna://com.webos.service.utp.broadcast/isPossibleChChange`](../services/com.webos.service.utp.broadcast.md#ispossiblechchange) | public | inferred | Reports whether the possible channel change is set. |
 | [`luna://com.webos.service.utp.broadcast/isSupportDvbi`](../services/com.webos.service.utp.broadcast.md#issupportdvbi) | private | inferred | Reports whether the support dvbi is set. |
 | [`luna://com.webos.service.utp.broadcast/isSupportFvp`](../services/com.webos.service.utp.broadcast.md#issupportfvp) | private | inferred | Reports whether the support fvp is set. |
-| [`luna://com.webos.service.utp.broadcast/open`](../services/com.webos.service.utp.broadcast.md#open) | public | inferred | Opens the UTP broadcast. |
-| [`luna://com.webos.service.utp.broadcast/pause`](../services/com.webos.service.utp.broadcast.md#pause) | public | inferred | Pauses the UTP broadcast. |
+| [`luna://com.webos.service.utp.broadcast/open`](../services/com.webos.service.utp.broadcast.md#open) | public | documented | Opens the UTP broadcast. |
+| [`luna://com.webos.service.utp.broadcast/pause`](../services/com.webos.service.utp.broadcast.md#pause) | public | documented | Pauses the UTP broadcast. |
 | [`luna://com.webos.service.utp.broadcast/pauseOnLive`](../services/com.webos.service.utp.broadcast.md#pauseonlive) | private | inferred | Pauses the on live. |
 | [`luna://com.webos.service.utp.broadcast/pin`](../services/com.webos.service.utp.broadcast.md#pin) | public | inferred | Handles the pin. |
-| [`luna://com.webos.service.utp.broadcast/play`](../services/com.webos.service.utp.broadcast.md#play) | private | inferred | Plays the UTP broadcast. |
+| [`luna://com.webos.service.utp.broadcast/play`](../services/com.webos.service.utp.broadcast.md#play) | private | documented | Plays the UTP broadcast. |
 | [`luna://com.webos.service.utp.broadcast/playSignaling`](../services/com.webos.service.utp.broadcast.md#playsignaling) | private | inferred | Plays the signaling. |
 | [`luna://com.webos.service.utp.broadcast/registerDataMfu`](../services/com.webos.service.utp.broadcast.md#registerdatamfu) | private | inferred | Registers the data mfu. |
 | [`luna://com.webos.service.utp.broadcast/scanDetailInformation`](../services/com.webos.service.utp.broadcast.md#scandetailinformation) | private | inferred | Scans for detail information. ⚠️ |
@@ -1453,7 +1453,7 @@
 | [`luna://com.webos.service.utp.broadcast/setDialogEnhancementGain`](../services/com.webos.service.utp.broadcast.md#setdialogenhancementgain) | private | inferred | Sets the dialog enhancement gain. |
 | [`luna://com.webos.service.utp.broadcast/setPipHotkey`](../services/com.webos.service.utp.broadcast.md#setpiphotkey) | private | inferred | Sets the pip hotkey. |
 | [`luna://com.webos.service.utp.broadcast/setSink`](../services/com.webos.service.utp.broadcast.md#setsink) | private | inferred | Sets the sink. |
-| [`luna://com.webos.service.utp.broadcast/stop`](../services/com.webos.service.utp.broadcast.md#stop) | public | inferred | Stops the UTP broadcast. |
+| [`luna://com.webos.service.utp.broadcast/stop`](../services/com.webos.service.utp.broadcast.md#stop) | public | documented | Stops the UTP broadcast. |
 | [`luna://com.webos.service.utp.broadcast/stopRecordAndChangeChannel`](../services/com.webos.service.utp.broadcast.md#stoprecordandchangechannel) | private | inferred | Stops the record and change channel. |
 | [`luna://com.webos.service.utp.broadcast/subscribeSignalTable`](../services/com.webos.service.utp.broadcast.md#subscribesignaltable) | private | inferred | Subscribes to the signal table. |
 | [`luna://com.webos.service.utp.broadcast/unpauseToLive`](../services/com.webos.service.utp.broadcast.md#unpausetolive) | private | inferred | Handles the unpause to live. |
@@ -1468,8 +1468,8 @@
 | [`luna://com.webos.service.utp.channel/bcas/setEmmTimerChannel`](../services/com.webos.service.utp.channel.md#bcas_setemmtimerchannel) | private | inferred | Sets the emm timer channel (bcas) |
 | [`luna://com.webos.service.utp.channel/bcas/stopEmmTimerChannel`](../services/com.webos.service.utp.channel.md#bcas_stopemmtimerchannel) | private | inferred | Stops the emm timer channel (bcas) |
 | [`luna://com.webos.service.utp.channel/blockKeyInput`](../services/com.webos.service.utp.channel.md#blockkeyinput) | private | inferred | Blocks the key input. |
-| [`luna://com.webos.service.utp.channel/changeChannelFavorite`](../services/com.webos.service.utp.channel.md#changechannelfavorite) | public | inferred | Changes the channel favorite. |
-| [`luna://com.webos.service.utp.channel/changeChannelType`](../services/com.webos.service.utp.channel.md#changechanneltype) | public | inferred | Changes the channel type. |
+| [`luna://com.webos.service.utp.channel/changeChannelFavorite`](../services/com.webos.service.utp.channel.md#changechannelfavorite) | public | documented | Changes the channel favorite. |
+| [`luna://com.webos.service.utp.channel/changeChannelType`](../services/com.webos.service.utp.channel.md#changechanneltype) | public | documented | Changes the channel type. |
 | [`luna://com.webos.service.utp.channel/changeMessageChannel`](../services/com.webos.service.utp.channel.md#changemessagechannel) | public | inferred | Changes the message channel. |
 | [`luna://com.webos.service.utp.channel/checkBarkerChannel`](../services/com.webos.service.utp.channel.md#checkbarkerchannel) | private | inferred | Checks the barker channel. |
 | [`luna://com.webos.service.utp.channel/ci/camPlayerPauseRequest`](../services/com.webos.service.utp.channel.md#ci_camplayerpauserequest) | private | inferred | Handles the CAM player pause request (CI) |
@@ -1537,11 +1537,11 @@
 | [`luna://com.webos.service.utp.channel/getChannelMode`](../services/com.webos.service.utp.channel.md#getchannelmode) | public | inferred | Returns the channel mode. |
 | [`luna://com.webos.service.utp.channel/getChannelModeList`](../services/com.webos.service.utp.channel.md#getchannelmodelist) | public | inferred | Returns the channel mode list. |
 | [`luna://com.webos.service.utp.channel/getChannelSortMode`](../services/com.webos.service.utp.channel.md#getchannelsortmode) | private | inferred | Returns the channel sort mode. |
-| [`luna://com.webos.service.utp.channel/getChannelTypeList`](../services/com.webos.service.utp.channel.md#getchanneltypelist) | public | inferred | Returns the channel type list. |
+| [`luna://com.webos.service.utp.channel/getChannelTypeList`](../services/com.webos.service.utp.channel.md#getchanneltypelist) | public | documented | Returns the channel type list. |
 | [`luna://com.webos.service.utp.channel/getCurrentVideoView`](../services/com.webos.service.utp.channel.md#getcurrentvideoview) | public | inferred | Returns the current video view. |
 | [`luna://com.webos.service.utp.channel/getDirectTuneChannel`](../services/com.webos.service.utp.channel.md#getdirecttunechannel) | public | inferred | Returns the direct tune channel. |
 | [`luna://com.webos.service.utp.channel/getEwsEvent`](../services/com.webos.service.utp.channel.md#getewsevent) | private | inferred | Returns the ews event. |
-| [`luna://com.webos.service.utp.channel/getLastChannelId`](../services/com.webos.service.utp.channel.md#getlastchannelid) | public | inferred | Returns the last channel ID. |
+| [`luna://com.webos.service.utp.channel/getLastChannelId`](../services/com.webos.service.utp.channel.md#getlastchannelid) | public | documented | Returns the last channel ID. |
 | [`luna://com.webos.service.utp.channel/getPreferredRegionNId`](../services/com.webos.service.utp.channel.md#getpreferredregionnid) | private | inferred | Returns the preferred region n ID. |
 | [`luna://com.webos.service.utp.channel/getSatelliteBouquetList`](../services/com.webos.service.utp.channel.md#getsatellitebouquetlist) | private | inferred | Returns the satellite bouquet list. |
 | [`luna://com.webos.service.utp.channel/getScannedSatelliteList`](../services/com.webos.service.utp.channel.md#getscannedsatellitelist) | private | inferred | Returns the scanned satellite list. |
@@ -1759,10 +1759,10 @@
 | [`luna://com.webos.service.utp.channel/scan/stopDvbTerrestrialChannelListUpdate`](../services/com.webos.service.utp.channel.md#scan_stopdvbterrestrialchannellistupdate) | private | inferred | Stops the DVB terrestrial channel list update (scan) |
 | [`luna://com.webos.service.utp.channel/scan/stopDvbTerrestrialSignalTest`](../services/com.webos.service.utp.channel.md#scan_stopdvbterrestrialsignaltest) | private | inferred | Stops the DVB terrestrial signal test (scan) |
 | [`luna://com.webos.service.utp.channel/scanBarkerChannel`](../services/com.webos.service.utp.channel.md#scanbarkerchannel) | public | inferred | Scans for barker channel. |
-| [`luna://com.webos.service.utp.channel/setChannelGroup`](../services/com.webos.service.utp.channel.md#setchannelgroup) | public | inferred | Sets the channel group. |
-| [`luna://com.webos.service.utp.channel/setChannelMode`](../services/com.webos.service.utp.channel.md#setchannelmode) | public | inferred | Sets the channel mode. |
+| [`luna://com.webos.service.utp.channel/setChannelGroup`](../services/com.webos.service.utp.channel.md#setchannelgroup) | public | documented | Sets the channel group. |
+| [`luna://com.webos.service.utp.channel/setChannelMode`](../services/com.webos.service.utp.channel.md#setchannelmode) | public | documented | Sets the channel mode. |
 | [`luna://com.webos.service.utp.channel/setChannelSortMode`](../services/com.webos.service.utp.channel.md#setchannelsortmode) | private | inferred | Sets the channel sort mode. |
-| [`luna://com.webos.service.utp.channel/setLastChannelId`](../services/com.webos.service.utp.channel.md#setlastchannelid) | public | inferred | Sets the last channel ID. |
+| [`luna://com.webos.service.utp.channel/setLastChannelId`](../services/com.webos.service.utp.channel.md#setlastchannelid) | public | documented | Sets the last channel ID. |
 | [`luna://com.webos.service.utp.channel/setVideoView`](../services/com.webos.service.utp.channel.md#setvideoview) | public | inferred | Sets the video view. |
 | [`luna://com.webos.service.utp.channel/sortAnalogChannelList`](../services/com.webos.service.utp.channel.md#sortanalogchannellist) | private | inferred | Handles the sort analog channel list. |
 | [`luna://com.webos.service.utp.channel/startEwbsCheckInWarm`](../services/com.webos.service.utp.channel.md#startewbscheckinwarm) | private | inferred | Starts the ewbs check in warm. |

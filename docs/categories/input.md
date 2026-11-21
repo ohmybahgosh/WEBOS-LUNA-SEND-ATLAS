@@ -628,8 +628,8 @@
 | [`luna://com.webos.service.utp.externaldevice/input/stop`](../services/com.webos.service.utp.externaldevice.md#input_stop) | private | inferred | Stops the UTP externaldevice (input) |
 | [`luna://com.webos.service.utp.externaldevice/input/switchExternalInput`](../services/com.webos.service.utp.externaldevice.md#input_switchexternalinput) | private | inferred | Switches the external input (input) |
 | [`luna://com.webos.service.utp.externaldevice/setHdmiInfo`](../services/com.webos.service.utp.externaldevice.md#sethdmiinfo) | private | inferred | Sets the HDMI info. |
-| [`luna://com.webos.service.utp.extinputs/bind`](../services/com.webos.service.utp.extinputs.md#bind) | private | inferred | Binds the UTP extinputs. |
-| [`luna://com.webos.service.utp.extinputs/close`](../services/com.webos.service.utp.extinputs.md#close) | private | inferred | Closes the UTP extinputs. |
+| [`luna://com.webos.service.utp.extinputs/bind`](../services/com.webos.service.utp.extinputs.md#bind) | private | documented | Binds the UTP extinputs. |
+| [`luna://com.webos.service.utp.extinputs/close`](../services/com.webos.service.utp.extinputs.md#close) | private | documented | Closes the UTP extinputs. |
 | [`luna://com.webos.service.utp.extinputs/disableSubtitle`](../services/com.webos.service.utp.extinputs.md#disablesubtitle) | private | inferred | Disables the subtitle. |
 | [`luna://com.webos.service.utp.extinputs/disableTeletextPes`](../services/com.webos.service.utp.extinputs.md#disableteletextpes) | private | inferred | Disables the teletext pes. |
 | [`luna://com.webos.service.utp.extinputs/enableSubtitle`](../services/com.webos.service.utp.extinputs.md#enablesubtitle) | private | inferred | Enables the subtitle. |
@@ -654,13 +654,13 @@
 | [`luna://com.webos.service.utp.extinputs/getTeletextState`](../services/com.webos.service.utp.extinputs.md#getteletextstate) | private | inferred | Returns the teletext state. |
 | [`luna://com.webos.service.utp.extinputs/getVideoInfo`](../services/com.webos.service.utp.extinputs.md#getvideoinfo) | private | inferred | Returns the video info. |
 | [`luna://com.webos.service.utp.extinputs/getVRRInfo`](../services/com.webos.service.utp.extinputs.md#getvrrinfo) | private | inferred | Returns the VRR info. |
-| [`luna://com.webos.service.utp.extinputs/open`](../services/com.webos.service.utp.extinputs.md#open) | private | inferred | Opens the UTP extinputs. |
-| [`luna://com.webos.service.utp.extinputs/pause`](../services/com.webos.service.utp.extinputs.md#pause) | private | inferred | Pauses the UTP extinputs. |
+| [`luna://com.webos.service.utp.extinputs/open`](../services/com.webos.service.utp.extinputs.md#open) | private | documented | Opens the UTP extinputs. |
+| [`luna://com.webos.service.utp.extinputs/pause`](../services/com.webos.service.utp.extinputs.md#pause) | private | documented | Pauses the UTP extinputs. |
 | [`luna://com.webos.service.utp.extinputs/pin`](../services/com.webos.service.utp.extinputs.md#pin) | private | inferred | Handles the pin. |
 | [`luna://com.webos.service.utp.extinputs/resetHDMIErrorHistory`](../services/com.webos.service.utp.extinputs.md#resethdmierrorhistory) | private | inferred | Resets the HDMI error history. ⚠️ |
 | [`luna://com.webos.service.utp.extinputs/setPipelineWindowId`](../services/com.webos.service.utp.extinputs.md#setpipelinewindowid) | private | inferred | Sets the pipeline window ID. |
 | [`luna://com.webos.service.utp.extinputs/setProperties`](../services/com.webos.service.utp.extinputs.md#setproperties) | private | inferred | Sets the properties. |
-| [`luna://com.webos.service.utp.extinputs/stop`](../services/com.webos.service.utp.extinputs.md#stop) | private | inferred | Stops the UTP extinputs. |
+| [`luna://com.webos.service.utp.extinputs/stop`](../services/com.webos.service.utp.extinputs.md#stop) | private | documented | Stops the UTP extinputs. |
 | [`luna://com.webos.service.utp.extinputs/switchExternalInput`](../services/com.webos.service.utp.extinputs.md#switchexternalinput) | private | inferred | Switches the external input. |
 | [`luna://com.webos.service.utp.teletext/isTimeAvailable`](../services/com.webos.service.utp.teletext.md#istimeavailable) | public | inferred | Reports whether the time available is set. |
 | [`luna://com.webos.service.voice.performer.plugin/`](../services/com.webos.service.voice.performer.plugin.md#) | private | stub | Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented). |

@@ -108,21 +108,21 @@
 | [`luna://com.webos.service.pdm/umountAllDrive`](../services/com.webos.service.pdm.md#umountalldrive) | public | documented | Unmounts all drives. |
 | [`luna://com.webos.service.pdm/videoDeviceList`](../services/com.webos.service.pdm.md#videodevicelist) | unknown | documented | List of video device(s) connected. |
 | [`luna://com.webos.service.pdm/wakeupHdd`](../services/com.webos.service.pdm.md#wakeuphdd) | private | inferred | Handles the wakeup hdd. |
-| [`luna://com.webos.service.printing/autoprint`](../services/com.webos.service.printing.md#autoprint) | public | inferred | Handles the autoprint. |
+| [`luna://com.webos.service.printing/autoprint`](../services/com.webos.service.printing.md#autoprint) | public | documented | Handles the autoprint. |
 | [`luna://com.webos.service.printing/info/acceptPrinter`](../services/com.webos.service.printing.md#info_acceptprinter) | public | inferred | Handles the accept printer (info) |
 | [`luna://com.webos.service.printing/info/defaultPrinter`](../services/com.webos.service.printing.md#info_defaultprinter) | public | inferred | Handles the default printer (info) |
 | [`luna://com.webos.service.printing/info/enablePrinter`](../services/com.webos.service.printing.md#info_enableprinter) | public | inferred | Enables the printer (info) |
 | [`luna://com.webos.service.printing/info/listPrinters`](../services/com.webos.service.printing.md#info_listprinters) | public | inferred | Lists the printers (info) |
-| [`luna://com.webos.service.printing/jobs/all`](../services/com.webos.service.printing.md#jobs_all) | public | inferred | Handles the all (jobs) |
-| [`luna://com.webos.service.printing/jobs/cancel`](../services/com.webos.service.printing.md#jobs_cancel) | public | inferred | Cancels the printing (jobs) |
+| [`luna://com.webos.service.printing/jobs/all`](../services/com.webos.service.printing.md#jobs_all) | public | documented | Handles the all (jobs) |
+| [`luna://com.webos.service.printing/jobs/cancel`](../services/com.webos.service.printing.md#jobs_cancel) | public | documented | Cancels the printing (jobs) |
 | [`luna://com.webos.service.printing/jobs/cancelAll`](../services/com.webos.service.printing.md#jobs_cancelall) | public | inferred | Cancels the all (jobs) |
 | [`luna://com.webos.service.printing/jobs/cancelPrinter`](../services/com.webos.service.printing.md#jobs_cancelprinter) | public | inferred | Cancels the printer (jobs) |
 | [`luna://com.webos.service.printing/jobs/completeJobs`](../services/com.webos.service.printing.md#jobs_completejobs) | public | inferred | Completes the jobs (jobs) |
-| [`luna://com.webos.service.printing/jobs/move`](../services/com.webos.service.printing.md#jobs_move) | public | inferred | Moves the printing (jobs) |
+| [`luna://com.webos.service.printing/jobs/move`](../services/com.webos.service.printing.md#jobs_move) | public | documented | Moves the printing (jobs) |
 | [`luna://com.webos.service.printing/jobs/printNow`](../services/com.webos.service.printing.md#jobs_printnow) | public | inferred | Prints the now (jobs) |
-| [`luna://com.webos.service.printing/jobs/queue`](../services/com.webos.service.printing.md#jobs_queue) | public | inferred | Handles the queue (jobs) |
-| [`luna://com.webos.service.printing/jobs/stop`](../services/com.webos.service.printing.md#jobs_stop) | public | inferred | Stops the printing (jobs) |
-| [`luna://com.webos.service.printing/print`](../services/com.webos.service.printing.md#print) | public | inferred | Prints the printing. |
+| [`luna://com.webos.service.printing/jobs/queue`](../services/com.webos.service.printing.md#jobs_queue) | public | documented | Handles the queue (jobs) |
+| [`luna://com.webos.service.printing/jobs/stop`](../services/com.webos.service.printing.md#jobs_stop) | public | documented | Stops the printing (jobs) |
+| [`luna://com.webos.service.printing/print`](../services/com.webos.service.printing.md#print) | public | documented | Prints the printing. |
 | [`luna://com.webos.service.storageaccess/device/copy`](../services/com.webos.service.storageaccess.md#device_copy) | public | documented | Copies a file or directory from the source location to the destination. |
 | [`luna://com.webos.service.storageaccess/device/eject`](../services/com.webos.service.storageaccess.md#device_eject) | public | documented | Ejects the storage device. In case of "cloud" storage type, it acts as a logout operation. Note: This operation is not applicable for "internal" storage type. |
 | [`luna://com.webos.service.storageaccess/device/getProperties`](../services/com.webos.service.storageaccess.md#device_getproperties) | public | documented | Gets properties of the given storage provider or the specified file or directory. |
@@ -136,11 +136,11 @@
 | [`luna://com.webos.service.storageaccess/operation`](../services/com.webos.service.storageaccess.md#operation) | unknown | documented | Provides details of the operation. |
 | [`luna://com.webos.service.storageaccess/payload`](../services/com.webos.service.storageaccess.md#payload) | unknown | documented | Arguments required for the operation in the form of key value pair |
 | [`luna://com.webos.service.storageaccess/storageProviders`](../services/com.webos.service.storageaccess.md#storageproviders) | unknown | documented | Provides information about the storage provider. |
-| [`luna://com.webos.service.storagestatistics/check`](../services/com.webos.service.storagestatistics.md#check) | private | inferred | Checks the storagestatistics. |
-| [`luna://com.webos.service.storagestatistics/clearAppData`](../services/com.webos.service.storagestatistics.md#clearappdata) | private | inferred | Clears the app data. |
+| [`luna://com.webos.service.storagestatistics/check`](../services/com.webos.service.storagestatistics.md#check) | private | documented | Checks the storagestatistics. |
+| [`luna://com.webos.service.storagestatistics/clearAppData`](../services/com.webos.service.storagestatistics.md#clearappdata) | private | documented | Clears the app data. |
 | [`luna://com.webos.service.storagestatistics/getAllAppStats`](../services/com.webos.service.storagestatistics.md#getallappstats) | private | inferred | Returns the all app stats. |
-| [`luna://com.webos.service.storagestatistics/getAppStats`](../services/com.webos.service.storagestatistics.md#getappstats) | private | inferred | Returns the app stats. |
+| [`luna://com.webos.service.storagestatistics/getAppStats`](../services/com.webos.service.storagestatistics.md#getappstats) | private | documented | Returns the app stats. |
 | [`luna://com.webos.service.storagestatistics/listInternalLargeFiles`](../services/com.webos.service.storagestatistics.md#listinternallargefiles) | private | inferred | Lists the internal large files. |
-| [`luna://com.webos.service.storagestatistics/listLargeApps`](../services/com.webos.service.storagestatistics.md#listlargeapps) | private | inferred | Lists the large apps. |
-| [`luna://com.webos.service.storagestatistics/listLargeFiles`](../services/com.webos.service.storagestatistics.md#listlargefiles) | private | inferred | Lists the large files. |
+| [`luna://com.webos.service.storagestatistics/listLargeApps`](../services/com.webos.service.storagestatistics.md#listlargeapps) | private | documented | Lists the large apps. |
+| [`luna://com.webos.service.storagestatistics/listLargeFiles`](../services/com.webos.service.storagestatistics.md#listlargefiles) | private | documented | Lists the large files. |
 | [`luna://com.webos.service.storagestatistics/removeFile`](../services/com.webos.service.storagestatistics.md#removefile) | private | inferred | Removes the file. ⚠️ |

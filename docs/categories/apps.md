@@ -6,10 +6,10 @@
 |---|---|---|---|
 | [`luna://amazon.alexa.adapter.plugin/launchShortcutPanel`](../services/amazon.alexa.adapter.plugin.md#launchshortcutpanel) | public | inferred | Launches the shortcut panel. |
 | [`luna://com.palm.applicationManager/close`](../services/com.palm.applicationManager.md#close) | root | documented | Closes a running process |
-| [`luna://com.palm.applicationManager/closeByAppId`](../services/com.palm.applicationManager.md#closebyappid) | private | inferred | Closes the by app ID. |
+| [`luna://com.palm.applicationManager/closeByAppId`](../services/com.palm.applicationManager.md#closebyappid) | private | documented | Closes the by app ID. |
 | [`luna://com.palm.applicationManager/launch`](../services/com.palm.applicationManager.md#launch) | root | documented | Launches an app |
-| [`luna://com.palm.applicationManager/launchDefaultApp`](../services/com.palm.applicationManager.md#launchdefaultapp) | private | inferred | Launches the default app. |
-| [`luna://com.palm.applicationManager/listApps`](../services/com.palm.applicationManager.md#listapps) | private | inferred | Lists the apps. |
+| [`luna://com.palm.applicationManager/launchDefaultApp`](../services/com.palm.applicationManager.md#launchdefaultapp) | private | documented | Launches the default app. |
+| [`luna://com.palm.applicationManager/listApps`](../services/com.palm.applicationManager.md#listapps) | private | documented | Lists the apps. |
 | [`luna://com.palm.applicationManager/listLaunchPoints`](../services/com.palm.applicationManager.md#listlaunchpoints) | root | documented | Lists all installed apps/launch points |
 | [`luna://com.palm.applicationManager/rescan`](../services/com.palm.applicationManager.md#rescan) | root | documented | Refreshes the Launcher |
 | [`luna://com.palm.applicationManager/running`](../services/com.palm.applicationManager.md#running) | root | documented | Lists running apps with process ids |
@@ -19,19 +19,19 @@
 | [`luna://com.palm.downloadmanager/_dbg_getMaxKey`](../services/com.palm.downloadmanager.md#_dbg_getmaxkey) | private | inferred | Handles the dbg get max key. |
 | [`luna://com.palm.downloadmanager/_dbg_selfdestruct`](../services/com.palm.downloadmanager.md#_dbg_selfdestruct) | private | inferred | Handles the dbg selfdestruct. |
 | [`luna://com.palm.downloadmanager/_dbg_setTicketBase`](../services/com.palm.downloadmanager.md#_dbg_setticketbase) | private | inferred | Handles the dbg set ticket base. |
-| [`luna://com.palm.downloadmanager/allow1x`](../services/com.palm.downloadmanager.md#allow1x) | private | inferred | Allows the 1 x. |
+| [`luna://com.palm.downloadmanager/allow1x`](../services/com.palm.downloadmanager.md#allow1x) | private | documented | Allows the 1 x. |
 | [`luna://com.palm.downloadmanager/cancelAllDownloads`](../services/com.palm.downloadmanager.md#cancelalldownloads) | private | inferred | Cancels the all downloads. |
-| [`luna://com.palm.downloadmanager/cancelDownload`](../services/com.palm.downloadmanager.md#canceldownload) | private | inferred | Cancels the download. |
+| [`luna://com.palm.downloadmanager/cancelDownload`](../services/com.palm.downloadmanager.md#canceldownload) | private | documented | Cancels the download. |
 | [`luna://com.palm.downloadmanager/cancelUpload`](../services/com.palm.downloadmanager.md#cancelupload) | private | inferred | Cancels the upload. |
-| [`luna://com.palm.downloadmanager/clearHistory`](../services/com.palm.downloadmanager.md#clearhistory) | private | inferred | Clears the history. |
-| [`luna://com.palm.downloadmanager/deleteDownloadedFile`](../services/com.palm.downloadmanager.md#deletedownloadedfile) | private | inferred | Deletes the downloaded file. ⚠️ |
-| [`luna://com.palm.downloadmanager/downloadStatusQuery`](../services/com.palm.downloadmanager.md#downloadstatusquery) | private | inferred | Downloads the status query. |
-| [`luna://com.palm.downloadmanager/getAllHistory`](../services/com.palm.downloadmanager.md#getallhistory) | private | inferred | Returns the all history. |
+| [`luna://com.palm.downloadmanager/clearHistory`](../services/com.palm.downloadmanager.md#clearhistory) | private | documented | Clears the history. |
+| [`luna://com.palm.downloadmanager/deleteDownloadedFile`](../services/com.palm.downloadmanager.md#deletedownloadedfile) | private | documented | Deletes the downloaded file. ⚠️ |
+| [`luna://com.palm.downloadmanager/downloadStatusQuery`](../services/com.palm.downloadmanager.md#downloadstatusquery) | private | documented | Downloads the status query. |
+| [`luna://com.palm.downloadmanager/getAllHistory`](../services/com.palm.downloadmanager.md#getallhistory) | private | documented | Returns the all history. |
 | [`luna://com.palm.downloadmanager/is1xMode`](../services/com.palm.downloadmanager.md#is1xmode) | private | inferred | Reports whether the 1 x mode is set. |
 | [`luna://com.palm.downloadmanager/listPending`](../services/com.palm.downloadmanager.md#listpending) | private | inferred | Lists the pending. |
-| [`luna://com.palm.downloadmanager/pauseDownload`](../services/com.palm.downloadmanager.md#pausedownload) | private | inferred | Pauses the download. |
-| [`luna://com.palm.downloadmanager/resumeDownload`](../services/com.palm.downloadmanager.md#resumedownload) | private | inferred | Resumes the download. |
-| [`luna://com.palm.downloadmanager/upload`](../services/com.palm.downloadmanager.md#upload) | private | inferred | Uploads the downloadmanager. |
+| [`luna://com.palm.downloadmanager/pauseDownload`](../services/com.palm.downloadmanager.md#pausedownload) | private | documented | Pauses the download. |
+| [`luna://com.palm.downloadmanager/resumeDownload`](../services/com.palm.downloadmanager.md#resumedownload) | private | documented | Resumes the download. |
+| [`luna://com.palm.downloadmanager/upload`](../services/com.palm.downloadmanager.md#upload) | private | documented | Uploads the downloadmanager. |
 | [`luna://com.palm.webappmanager/changeWindowType`](../services/com.palm.webappmanager.md#changewindowtype) | private | inferred | Changes the window type. |
 | [`luna://com.palm.webappmanager/clearBrowsingData`](../services/com.palm.webappmanager.md#clearbrowsingdata) | private | inferred | Clears the browsing data. |
 | [`luna://com.palm.webappmanager/closeAllApps`](../services/com.palm.webappmanager.md#closeallapps) | private | inferred | Closes the all apps. |
@@ -52,23 +52,23 @@
 | [`luna://com.palm.webappmanager/setInspectorEnable`](../services/com.palm.webappmanager.md#setinspectorenable) | private | inferred | Sets the inspector enable. |
 | [`luna://com.palm.webappmanager/setWindowGeometry`](../services/com.palm.webappmanager.md#setwindowgeometry) | private | inferred | Sets the window geometry. |
 | [`luna://com.palm.webappmanager/webProcessCreated`](../services/com.palm.webappmanager.md#webprocesscreated) | private | inferred | Handles the web process created. |
-| [`luna://com.webos.appInstallService/cancel`](../services/com.webos.appInstallService.md#cancel) | private | inferred | Cancels the app install service. |
+| [`luna://com.webos.appInstallService/cancel`](../services/com.webos.appInstallService.md#cancel) | private | documented | Cancels the app install service. |
 | [`luna://com.webos.appInstallService/commercial/installInternal`](../services/com.webos.appInstallService.md#commercial_installinternal) | private | inferred | Installs the internal (commercial) |
-| [`luna://com.webos.appInstallService/group/install`](../services/com.webos.appInstallService.md#group_install) | private | inferred | Installs the app install service (group) |
-| [`luna://com.webos.appInstallService/group/queryInstallCapacity`](../services/com.webos.appInstallService.md#group_queryinstallcapacity) | private | inferred | Queries the install capacity (group) |
-| [`luna://com.webos.appInstallService/group/status`](../services/com.webos.appInstallService.md#group_status) | private | inferred | Handles the status (group) |
-| [`luna://com.webos.appInstallService/installInternal`](../services/com.webos.appInstallService.md#installinternal) | private | inferred | Installs the internal. |
+| [`luna://com.webos.appInstallService/group/install`](../services/com.webos.appInstallService.md#group_install) | private | documented | Installs the app install service (group) |
+| [`luna://com.webos.appInstallService/group/queryInstallCapacity`](../services/com.webos.appInstallService.md#group_queryinstallcapacity) | private | documented | Queries the install capacity (group) |
+| [`luna://com.webos.appInstallService/group/status`](../services/com.webos.appInstallService.md#group_status) | private | documented | Handles the status (group) |
+| [`luna://com.webos.appInstallService/installInternal`](../services/com.webos.appInstallService.md#installinternal) | private | documented | Installs the internal. |
 | [`luna://com.webos.appInstallService/installLocal`](../services/com.webos.appInstallService.md#installlocal) | private | documented | Installs an app from a local IPK (non-dev variant; name seen only) |
 | [`luna://com.webos.appInstallService/installLocalNoVerify`](../services/com.webos.appInstallService.md#installlocalnoverify) | public | inferred | Installs the local no verify. |
 | [`luna://com.webos.appInstallService/installService`](../services/com.webos.appInstallService.md#installservice) | private | inferred | Installs the service. |
-| [`luna://com.webos.appInstallService/pause`](../services/com.webos.appInstallService.md#pause) | private | inferred | Pauses the app install service. |
-| [`luna://com.webos.appInstallService/queryInstallCapacity`](../services/com.webos.appInstallService.md#queryinstallcapacity) | private | inferred | Queries the install capacity. |
-| [`luna://com.webos.appInstallService/resume`](../services/com.webos.appInstallService.md#resume) | private | inferred | Resumes the app install service. |
-| [`luna://com.webos.appInstallService/system/installLocal`](../services/com.webos.appInstallService.md#system_installlocal) | private | inferred | Installs the local (system) |
+| [`luna://com.webos.appInstallService/pause`](../services/com.webos.appInstallService.md#pause) | private | documented | Pauses the app install service. |
+| [`luna://com.webos.appInstallService/queryInstallCapacity`](../services/com.webos.appInstallService.md#queryinstallcapacity) | private | documented | Queries the install capacity. |
+| [`luna://com.webos.appInstallService/resume`](../services/com.webos.appInstallService.md#resume) | private | documented | Resumes the app install service. |
+| [`luna://com.webos.appInstallService/system/installLocal`](../services/com.webos.appInstallService.md#system_installlocal) | private | documented | Installs the local (system) |
 | [`luna://com.webos.appInstallService/uninstallService`](../services/com.webos.appInstallService.md#uninstallservice) | private | inferred | Uninstalls the service. |
 | [`luna://com.webos.applicationManager/addContent`](../services/com.webos.applicationManager.md#addcontent) | private | inferred | Adds the content. |
-| [`luna://com.webos.applicationManager/addLaunchPoint`](../services/com.webos.applicationManager.md#addlaunchpoint) | private | inferred | Adds the launch point. |
-| [`luna://com.webos.applicationManager/addVirtualApp`](../services/com.webos.applicationManager.md#addvirtualapp) | private | inferred | Adds the virtual app. |
+| [`luna://com.webos.applicationManager/addLaunchPoint`](../services/com.webos.applicationManager.md#addlaunchpoint) | private | documented | Adds the launch point. |
+| [`luna://com.webos.applicationManager/addVirtualApp`](../services/com.webos.applicationManager.md#addvirtualapp) | private | documented | Adds the virtual app. |
 | [`luna://com.webos.applicationManager/blockSystemApp`](../services/com.webos.applicationManager.md#blocksystemapp) | private | documented | Blocks a system app (used by webos-homebar to replace LG Home) ⚠️ |
 | [`luna://com.webos.applicationManager/changeRunningAppId`](../services/com.webos.applicationManager.md#changerunningappid) | private | inferred | Changes the running app ID. |
 | [`luna://com.webos.applicationManager/close`](../services/com.webos.applicationManager.md#close) | ssap | documented | Close an app by id (SSAP) |
@@ -82,44 +82,44 @@
 | [`luna://com.webos.applicationManager/dev/managerInfo`](../services/com.webos.applicationManager.md#dev_managerinfo) | unknown | documented | Registered in webOS OSE sysbus api.json (ACG group application.devmode); name only |
 | [`luna://com.webos.applicationManager/dev/running`](../services/com.webos.applicationManager.md#dev_running) | public | documented | Developer-mode listing of running apps (ares-launch --running) |
 | [`luna://com.webos.applicationManager/getAllContents`](../services/com.webos.applicationManager.md#getallcontents) | private | inferred | Returns the all contents. |
-| [`luna://com.webos.applicationManager/getAppBasePath`](../services/com.webos.applicationManager.md#getappbasepath) | public | inferred | Returns the app base path. |
+| [`luna://com.webos.applicationManager/getAppBasePath`](../services/com.webos.applicationManager.md#getappbasepath) | public | documented | Returns the app base path. |
 | [`luna://com.webos.applicationManager/getAppInfo`](../services/com.webos.applicationManager.md#getappinfo) | ssap | documented | Get info for one installed app |
 | [`luna://com.webos.applicationManager/getAppLifeEvents`](../services/com.webos.applicationManager.md#getapplifeevents) | private | inferred | Returns the app life events. |
 | [`luna://com.webos.applicationManager/getAppLifeStatus`](../services/com.webos.applicationManager.md#getapplifestatus) | private | inferred | Returns the app life status. |
 | [`luna://com.webos.applicationManager/getAppLoadStatus`](../services/com.webos.applicationManager.md#getapploadstatus) | public | documented | Returns whether the app with the given ID is installed (webOS TV 4.0+). |
-| [`luna://com.webos.applicationManager/getAppStatus`](../services/com.webos.applicationManager.md#getappstatus) | private | inferred | Returns the app status. |
-| [`luna://com.webos.applicationManager/getContents`](../services/com.webos.applicationManager.md#getcontents) | public | inferred | Returns the contents. |
+| [`luna://com.webos.applicationManager/getAppStatus`](../services/com.webos.applicationManager.md#getappstatus) | private | documented | Returns the app status. |
+| [`luna://com.webos.applicationManager/getContents`](../services/com.webos.applicationManager.md#getcontents) | public | documented | Returns the contents. |
 | [`luna://com.webos.applicationManager/getForegroundAppInfo`](../services/com.webos.applicationManager.md#getforegroundappinfo) | ssap | documented | Get (or subscribe to) the foreground app |
-| [`luna://com.webos.applicationManager/getForegroundApps`](../services/com.webos.applicationManager.md#getforegroundapps) | private | inferred | Returns the foreground apps. |
-| [`luna://com.webos.applicationManager/getHandlerForExtension`](../services/com.webos.applicationManager.md#gethandlerforextension) | public | inferred | Returns the handler for extension. |
-| [`luna://com.webos.applicationManager/getHandlerForMimeType`](../services/com.webos.applicationManager.md#gethandlerformimetype) | public | inferred | Returns the handler for mime type. |
+| [`luna://com.webos.applicationManager/getForegroundApps`](../services/com.webos.applicationManager.md#getforegroundapps) | private | documented | Returns the foreground apps. |
+| [`luna://com.webos.applicationManager/getHandlerForExtension`](../services/com.webos.applicationManager.md#gethandlerforextension) | public | documented | Returns the handler for extension. |
+| [`luna://com.webos.applicationManager/getHandlerForMimeType`](../services/com.webos.applicationManager.md#gethandlerformimetype) | public | documented | Returns the handler for mime type. |
 | [`luna://com.webos.applicationManager/getHandlerForMimeTypeByVerb`](../services/com.webos.applicationManager.md#gethandlerformimetypebyverb) | public | inferred | Returns the handler for mime type by verb. |
-| [`luna://com.webos.applicationManager/getHandlerForUrl`](../services/com.webos.applicationManager.md#gethandlerforurl) | public | inferred | Returns the handler for URL. |
-| [`luna://com.webos.applicationManager/getHandlerForUrlByVerb`](../services/com.webos.applicationManager.md#gethandlerforurlbyverb) | public | inferred | Returns the handler for URL by verb. |
+| [`luna://com.webos.applicationManager/getHandlerForUrl`](../services/com.webos.applicationManager.md#gethandlerforurl) | public | documented | Returns the handler for URL. |
+| [`luna://com.webos.applicationManager/getHandlerForUrlByVerb`](../services/com.webos.applicationManager.md#gethandlerforurlbyverb) | public | documented | Returns the handler for URL by verb. |
 | [`luna://com.webos.applicationManager/getHistoricalBackInfo`](../services/com.webos.applicationManager.md#gethistoricalbackinfo) | private | inferred | Returns the historical back info. |
 | [`luna://com.webos.applicationManager/getLastOrder`](../services/com.webos.applicationManager.md#getlastorder) | private | inferred | Returns the last order. |
-| [`luna://com.webos.applicationManager/getPackageInfo`](../services/com.webos.applicationManager.md#getpackageinfo) | private | inferred | Returns the package info. |
+| [`luna://com.webos.applicationManager/getPackageInfo`](../services/com.webos.applicationManager.md#getpackageinfo) | private | documented | Returns the package info. |
 | [`luna://com.webos.applicationManager/isPromotionalAppOn`](../services/com.webos.applicationManager.md#ispromotionalappon) | public | inferred | Reports whether the promotional app on is set. |
 | [`luna://com.webos.applicationManager/launch`](../services/com.webos.applicationManager.md#launch) | public | documented | Launches the app with the given app ID, optionally with params. ⚠️ |
 | [`luna://com.webos.applicationManager/launchDefaultApp`](../services/com.webos.applicationManager.md#launchdefaultapp) | private | documented | Launches the default app (listed by ls-monitor -i, parameters unread) |
-| [`luna://com.webos.applicationManager/launchVirtualApp`](../services/com.webos.applicationManager.md#launchvirtualapp) | private | inferred | Launches the virtual app. |
-| [`luna://com.webos.applicationManager/listAllHandlersForMime`](../services/com.webos.applicationManager.md#listallhandlersformime) | public | inferred | Lists the all handlers for mime. |
+| [`luna://com.webos.applicationManager/launchVirtualApp`](../services/com.webos.applicationManager.md#launchvirtualapp) | private | documented | Launches the virtual app. |
+| [`luna://com.webos.applicationManager/listAllHandlersForMime`](../services/com.webos.applicationManager.md#listallhandlersformime) | public | documented | Lists the all handlers for mime. |
 | [`luna://com.webos.applicationManager/listAllHandlersForMimeByVerb`](../services/com.webos.applicationManager.md#listallhandlersformimebyverb) | public | inferred | Lists the all handlers for mime by verb. |
-| [`luna://com.webos.applicationManager/listAllHandlersForMultipleMime`](../services/com.webos.applicationManager.md#listallhandlersformultiplemime) | public | inferred | Lists the all handlers for multiple mime. |
-| [`luna://com.webos.applicationManager/listAllHandlersForMultipleUrlPattern`](../services/com.webos.applicationManager.md#listallhandlersformultipleurlpattern) | public | inferred | Lists the all handlers for multiple URL pattern. |
-| [`luna://com.webos.applicationManager/listAllHandlersForUrl`](../services/com.webos.applicationManager.md#listallhandlersforurl) | public | inferred | Lists the all handlers for URL. |
-| [`luna://com.webos.applicationManager/listAllHandlersForUrlByVerb`](../services/com.webos.applicationManager.md#listallhandlersforurlbyverb) | public | inferred | Lists the all handlers for URL by verb. |
-| [`luna://com.webos.applicationManager/listAllHandlersForUrlPattern`](../services/com.webos.applicationManager.md#listallhandlersforurlpattern) | public | inferred | Lists the all handlers for URL pattern. |
+| [`luna://com.webos.applicationManager/listAllHandlersForMultipleMime`](../services/com.webos.applicationManager.md#listallhandlersformultiplemime) | public | documented | Lists the all handlers for multiple mime. |
+| [`luna://com.webos.applicationManager/listAllHandlersForMultipleUrlPattern`](../services/com.webos.applicationManager.md#listallhandlersformultipleurlpattern) | public | documented | Lists the all handlers for multiple URL pattern. |
+| [`luna://com.webos.applicationManager/listAllHandlersForUrl`](../services/com.webos.applicationManager.md#listallhandlersforurl) | public | documented | Lists the all handlers for URL. |
+| [`luna://com.webos.applicationManager/listAllHandlersForUrlByVerb`](../services/com.webos.applicationManager.md#listallhandlersforurlbyverb) | public | documented | Lists the all handlers for URL by verb. |
+| [`luna://com.webos.applicationManager/listAllHandlersForUrlPattern`](../services/com.webos.applicationManager.md#listallhandlersforurlpattern) | public | documented | Lists the all handlers for URL pattern. |
 | [`luna://com.webos.applicationManager/listApps`](../services/com.webos.applicationManager.md#listapps) | private | documented | Lists installed apps |
 | [`luna://com.webos.applicationManager/listExtensionMap`](../services/com.webos.applicationManager.md#listextensionmap) | public | inferred | Lists the extension map. |
 | [`luna://com.webos.applicationManager/listLaunchPoints`](../services/com.webos.applicationManager.md#listlaunchpoints) | ssap | documented | List launcher launch points (apps visible in launcher) |
 | [`luna://com.webos.applicationManager/listLaunchPointsForLocale`](../services/com.webos.applicationManager.md#listlaunchpointsforlocale) | private | inferred | Lists the launch points for locale. |
-| [`luna://com.webos.applicationManager/listPackages`](../services/com.webos.applicationManager.md#listpackages) | private | inferred | Lists the packages. |
-| [`luna://com.webos.applicationManager/lockAllApps`](../services/com.webos.applicationManager.md#lockallapps) | private | inferred | Locks the all apps. |
-| [`luna://com.webos.applicationManager/lockApp`](../services/com.webos.applicationManager.md#lockapp) | private | inferred | Locks the app. |
-| [`luna://com.webos.applicationManager/mimeTypeForExtension`](../services/com.webos.applicationManager.md#mimetypeforextension) | public | inferred | Handles the mime type for extension. |
-| [`luna://com.webos.applicationManager/moveLaunchPoint`](../services/com.webos.applicationManager.md#movelaunchpoint) | private | inferred | Moves the launch point. |
-| [`luna://com.webos.applicationManager/notifyAlertClosed`](../services/com.webos.applicationManager.md#notifyalertclosed) | private | inferred | Notifies of the alert closed. |
+| [`luna://com.webos.applicationManager/listPackages`](../services/com.webos.applicationManager.md#listpackages) | private | documented | Lists the packages. |
+| [`luna://com.webos.applicationManager/lockAllApps`](../services/com.webos.applicationManager.md#lockallapps) | private | documented | Locks the all apps. |
+| [`luna://com.webos.applicationManager/lockApp`](../services/com.webos.applicationManager.md#lockapp) | private | documented | Locks the app. |
+| [`luna://com.webos.applicationManager/mimeTypeForExtension`](../services/com.webos.applicationManager.md#mimetypeforextension) | public | documented | Handles the mime type for extension. |
+| [`luna://com.webos.applicationManager/moveLaunchPoint`](../services/com.webos.applicationManager.md#movelaunchpoint) | private | documented | Moves the launch point. |
+| [`luna://com.webos.applicationManager/notifyAlertClosed`](../services/com.webos.applicationManager.md#notifyalertclosed) | private | documented | Notifies of the alert closed. |
 | [`luna://com.webos.applicationManager/notifySplashTimeout`](../services/com.webos.applicationManager.md#notifysplashtimeout) | private | inferred | Notifies of the splash timeout. |
 | [`luna://com.webos.applicationManager/onLaunch`](../services/com.webos.applicationManager.md#onlaunch) | private | inferred | Event handler: fires on the launch. |
 | [`luna://com.webos.applicationManager/open`](../services/com.webos.applicationManager.md#open) | ssap | documented | Open an app by id (SSAP) |
@@ -129,19 +129,19 @@
 | [`luna://com.webos.applicationManager/registerVerbsForRedirect`](../services/com.webos.applicationManager.md#registerverbsforredirect) | private | inferred | Registers the verbs for redirect. |
 | [`luna://com.webos.applicationManager/registerVerbsForResource`](../services/com.webos.applicationManager.md#registerverbsforresource) | private | inferred | Registers the verbs for resource. |
 | [`luna://com.webos.applicationManager/releaseBlockSystemApp`](../services/com.webos.applicationManager.md#releaseblocksystemapp) | private | documented | Releases a blocked system app |
-| [`luna://com.webos.applicationManager/removeAllContents`](../services/com.webos.applicationManager.md#removeallcontents) | private | inferred | Removes the all contents. |
-| [`luna://com.webos.applicationManager/removeContent`](../services/com.webos.applicationManager.md#removecontent) | private | inferred | Removes the content. |
+| [`luna://com.webos.applicationManager/removeAllContents`](../services/com.webos.applicationManager.md#removeallcontents) | private | documented | Removes the all contents. |
+| [`luna://com.webos.applicationManager/removeContent`](../services/com.webos.applicationManager.md#removecontent) | private | documented | Removes the content. |
 | [`luna://com.webos.applicationManager/removeLaunchPoint`](../services/com.webos.applicationManager.md#removelaunchpoint) | private | documented | Removes a launch point by id |
-| [`luna://com.webos.applicationManager/removeVirtualApp`](../services/com.webos.applicationManager.md#removevirtualapp) | private | inferred | Removes the virtual app. |
+| [`luna://com.webos.applicationManager/removeVirtualApp`](../services/com.webos.applicationManager.md#removevirtualapp) | private | documented | Removes the virtual app. |
 | [`luna://com.webos.applicationManager/run`](../services/com.webos.applicationManager.md#run) | private | inferred | Runs the application manager. |
 | [`luna://com.webos.applicationManager/running`](../services/com.webos.applicationManager.md#running) | private | documented | Lists running apps |
 | [`luna://com.webos.applicationManager/saveOrder`](../services/com.webos.applicationManager.md#saveorder) | private | inferred | Saves the order. |
 | [`luna://com.webos.applicationManager/scan`](../services/com.webos.applicationManager.md#scan) | private | documented | Triggers the app manager to rescan app directories |
-| [`luna://com.webos.applicationManager/searchApps`](../services/com.webos.applicationManager.md#searchapps) | private | inferred | Searches for apps. |
-| [`luna://com.webos.applicationManager/setContents`](../services/com.webos.applicationManager.md#setcontents) | public | inferred | Sets the contents. |
-| [`luna://com.webos.applicationManager/setDefaultApp`](../services/com.webos.applicationManager.md#setdefaultapp) | private | inferred | Sets the default app. |
-| [`luna://com.webos.applicationManager/setOrder`](../services/com.webos.applicationManager.md#setorder) | private | inferred | Sets the order. |
-| [`luna://com.webos.applicationManager/updateLaunchPoint`](../services/com.webos.applicationManager.md#updatelaunchpoint) | private | inferred | Updates the launch point. |
+| [`luna://com.webos.applicationManager/searchApps`](../services/com.webos.applicationManager.md#searchapps) | private | documented | Searches for apps. |
+| [`luna://com.webos.applicationManager/setContents`](../services/com.webos.applicationManager.md#setcontents) | public | documented | Sets the contents. |
+| [`luna://com.webos.applicationManager/setDefaultApp`](../services/com.webos.applicationManager.md#setdefaultapp) | private | documented | Sets the default app. |
+| [`luna://com.webos.applicationManager/setOrder`](../services/com.webos.applicationManager.md#setorder) | private | documented | Sets the order. |
+| [`luna://com.webos.applicationManager/updateLaunchPoint`](../services/com.webos.applicationManager.md#updatelaunchpoint) | private | documented | Updates the launch point. |
 | [`luna://com.webos.booster/launch`](../services/com.webos.booster.md#launch) | private | inferred | Launches the booster. |
 | [`luna://com.webos.sensord/getSampleRate`](../services/com.webos.sensord.md#getsamplerate) | public | inferred | Returns the sample rate. |
 | [`luna://com.webos.sensord/setSampleRate`](../services/com.webos.sensord.md#setsamplerate) | public | inferred | Sets the sample rate. |
@@ -186,9 +186,9 @@
 | [`luna://com.webos.service.applaunchmanager/getStatus`](../services/com.webos.service.applaunchmanager.md#getstatus) | private | inferred | Returns the status. |
 | [`luna://com.webos.service.applicationManager/addContent`](../services/com.webos.service.applicationManager.md#addcontent) | private | inferred | Adds the content. |
 | [`luna://com.webos.service.applicationmanager/addLaunchPoint`](../services/com.webos.service.applicationmanager.md#addlaunchpoint) | public | documented | Adds a dynamic launchpoint. According to the information on launchpoint, application is displayed in the Launcher. If a parameter is not defined, SAM set the LP |
-| [`luna://com.webos.service.applicationManager/addVirtualApp`](../services/com.webos.service.applicationManager.md#addvirtualapp) | private | inferred | Adds the virtual app. |
+| [`luna://com.webos.service.applicationManager/addVirtualApp`](../services/com.webos.service.applicationManager.md#addvirtualapp) | private | documented | Adds the virtual app. |
 | [`luna://com.webos.service.applicationmanager/appInfo`](../services/com.webos.service.applicationmanager.md#appinfo) | unknown | documented | Contains the information about the application. |
-| [`luna://com.webos.service.applicationManager/blockSystemApp`](../services/com.webos.service.applicationManager.md#blocksystemapp) | private | inferred | Blocks the system app. |
+| [`luna://com.webos.service.applicationManager/blockSystemApp`](../services/com.webos.service.applicationManager.md#blocksystemapp) | private | documented | Blocks the system app. |
 | [`luna://com.webos.service.applicationManager/changeRunningAppId`](../services/com.webos.service.applicationManager.md#changerunningappid) | private | inferred | Changes the running app ID. |
 | [`luna://com.webos.service.applicationmanager/close`](../services/com.webos.service.applicationmanager.md#close) | public | documented | Closes an application. Note A: At least one parameter is required. ('id', 'launchPointId', 'instanceId') Note B: Don't use this API in TV and signage. The API i |
 | [`luna://com.webos.service.applicationManager/closeAllApps`](../services/com.webos.service.applicationManager.md#closeallapps) | private | inferred | Closes the all apps. |
@@ -208,39 +208,39 @@
 | [`luna://com.webos.service.applicationmanager/getAppLifeStatus`](../services/com.webos.service.applicationmanager.md#getapplifestatus) | public | documented | Provides the application's life cycle status. Note: This API is useful to do something based on application's life cycle status. |
 | [`luna://com.webos.service.applicationManager/getAppLoadStatus`](../services/com.webos.service.applicationManager.md#getapploadstatus) | public | documented | Checks whether an app exists/is loadable |
 | [`luna://com.webos.service.applicationmanager/getAppStatus`](../services/com.webos.service.applicationmanager.md#getappstatus) | public | documented | Gets the application status and information. |
-| [`luna://com.webos.service.applicationManager/getContents`](../services/com.webos.service.applicationManager.md#getcontents) | public | inferred | Returns the contents. |
+| [`luna://com.webos.service.applicationManager/getContents`](../services/com.webos.service.applicationManager.md#getcontents) | public | documented | Returns the contents. |
 | [`luna://com.webos.service.applicationmanager/getForegroundAppInfo`](../services/com.webos.service.applicationmanager.md#getforegroundappinfo) | public | documented | Gets the information on the foreground application. Note: The information comes from LSM. Please use extraInfo parameter to get raw responsePayload from LSM. |
-| [`luna://com.webos.service.applicationManager/getForegroundApps`](../services/com.webos.service.applicationManager.md#getforegroundapps) | private | inferred | Returns the foreground apps. |
-| [`luna://com.webos.service.applicationManager/getHandlerForExtension`](../services/com.webos.service.applicationManager.md#gethandlerforextension) | public | inferred | Returns the handler for extension. |
-| [`luna://com.webos.service.applicationManager/getHandlerForMimeType`](../services/com.webos.service.applicationManager.md#gethandlerformimetype) | public | inferred | Returns the handler for mime type. |
+| [`luna://com.webos.service.applicationManager/getForegroundApps`](../services/com.webos.service.applicationManager.md#getforegroundapps) | private | documented | Returns the foreground apps. |
+| [`luna://com.webos.service.applicationManager/getHandlerForExtension`](../services/com.webos.service.applicationManager.md#gethandlerforextension) | public | documented | Returns the handler for extension. |
+| [`luna://com.webos.service.applicationManager/getHandlerForMimeType`](../services/com.webos.service.applicationManager.md#gethandlerformimetype) | public | documented | Returns the handler for mime type. |
 | [`luna://com.webos.service.applicationManager/getHandlerForMimeTypeByVerb`](../services/com.webos.service.applicationManager.md#gethandlerformimetypebyverb) | public | inferred | Returns the handler for mime type by verb. |
-| [`luna://com.webos.service.applicationManager/getHandlerForUrl`](../services/com.webos.service.applicationManager.md#gethandlerforurl) | public | inferred | Returns the handler for URL. |
-| [`luna://com.webos.service.applicationManager/getHandlerForUrlByVerb`](../services/com.webos.service.applicationManager.md#gethandlerforurlbyverb) | public | inferred | Returns the handler for URL by verb. |
+| [`luna://com.webos.service.applicationManager/getHandlerForUrl`](../services/com.webos.service.applicationManager.md#gethandlerforurl) | public | documented | Returns the handler for URL. |
+| [`luna://com.webos.service.applicationManager/getHandlerForUrlByVerb`](../services/com.webos.service.applicationManager.md#gethandlerforurlbyverb) | public | documented | Returns the handler for URL by verb. |
 | [`luna://com.webos.service.applicationManager/getHistoricalBackInfo`](../services/com.webos.service.applicationManager.md#gethistoricalbackinfo) | private | inferred | Returns the historical back info. |
 | [`luna://com.webos.service.applicationManager/getLastOrder`](../services/com.webos.service.applicationManager.md#getlastorder) | private | inferred | Returns the last order. |
-| [`luna://com.webos.service.applicationManager/getPackageInfo`](../services/com.webos.service.applicationManager.md#getpackageinfo) | private | inferred | Returns the package info. |
+| [`luna://com.webos.service.applicationManager/getPackageInfo`](../services/com.webos.service.applicationManager.md#getpackageinfo) | private | documented | Returns the package info. |
 | [`luna://com.webos.service.applicationManager/isPromotionalAppOn`](../services/com.webos.service.applicationManager.md#ispromotionalappon) | public | inferred | Reports whether the promotional app on is set. |
 | [`luna://com.webos.service.applicationmanager/launch`](../services/com.webos.service.applicationmanager.md#launch) | public | documented | Launches an application corresponding to the given application ID. Opens the service or app. Example: The user can download a content with a service in the back |
-| [`luna://com.webos.service.applicationManager/launchDefaultApp`](../services/com.webos.service.applicationManager.md#launchdefaultapp) | private | inferred | Launches the default app. |
+| [`luna://com.webos.service.applicationManager/launchDefaultApp`](../services/com.webos.service.applicationManager.md#launchdefaultapp) | private | documented | Launches the default app. |
 | [`luna://com.webos.service.applicationmanager/launchPoints`](../services/com.webos.service.applicationmanager.md#launchpoints) | unknown | documented | Contains the array of launchpoints. |
-| [`luna://com.webos.service.applicationManager/launchVirtualApp`](../services/com.webos.service.applicationManager.md#launchvirtualapp) | private | inferred | Launches the virtual app. |
-| [`luna://com.webos.service.applicationManager/listAllHandlersForMime`](../services/com.webos.service.applicationManager.md#listallhandlersformime) | public | inferred | Lists the all handlers for mime. |
+| [`luna://com.webos.service.applicationManager/launchVirtualApp`](../services/com.webos.service.applicationManager.md#launchvirtualapp) | private | documented | Launches the virtual app. |
+| [`luna://com.webos.service.applicationManager/listAllHandlersForMime`](../services/com.webos.service.applicationManager.md#listallhandlersformime) | public | documented | Lists the all handlers for mime. |
 | [`luna://com.webos.service.applicationManager/listAllHandlersForMimeByVerb`](../services/com.webos.service.applicationManager.md#listallhandlersformimebyverb) | public | inferred | Lists the all handlers for mime by verb. |
-| [`luna://com.webos.service.applicationManager/listAllHandlersForMultipleMime`](../services/com.webos.service.applicationManager.md#listallhandlersformultiplemime) | public | inferred | Lists the all handlers for multiple mime. |
-| [`luna://com.webos.service.applicationManager/listAllHandlersForMultipleUrlPattern`](../services/com.webos.service.applicationManager.md#listallhandlersformultipleurlpattern) | public | inferred | Lists the all handlers for multiple URL pattern. |
-| [`luna://com.webos.service.applicationManager/listAllHandlersForUrl`](../services/com.webos.service.applicationManager.md#listallhandlersforurl) | public | inferred | Lists the all handlers for URL. |
-| [`luna://com.webos.service.applicationManager/listAllHandlersForUrlByVerb`](../services/com.webos.service.applicationManager.md#listallhandlersforurlbyverb) | public | inferred | Lists the all handlers for URL by verb. |
-| [`luna://com.webos.service.applicationManager/listAllHandlersForUrlPattern`](../services/com.webos.service.applicationManager.md#listallhandlersforurlpattern) | public | inferred | Lists the all handlers for URL pattern. |
+| [`luna://com.webos.service.applicationManager/listAllHandlersForMultipleMime`](../services/com.webos.service.applicationManager.md#listallhandlersformultiplemime) | public | documented | Lists the all handlers for multiple mime. |
+| [`luna://com.webos.service.applicationManager/listAllHandlersForMultipleUrlPattern`](../services/com.webos.service.applicationManager.md#listallhandlersformultipleurlpattern) | public | documented | Lists the all handlers for multiple URL pattern. |
+| [`luna://com.webos.service.applicationManager/listAllHandlersForUrl`](../services/com.webos.service.applicationManager.md#listallhandlersforurl) | public | documented | Lists the all handlers for URL. |
+| [`luna://com.webos.service.applicationManager/listAllHandlersForUrlByVerb`](../services/com.webos.service.applicationManager.md#listallhandlersforurlbyverb) | public | documented | Lists the all handlers for URL by verb. |
+| [`luna://com.webos.service.applicationManager/listAllHandlersForUrlPattern`](../services/com.webos.service.applicationManager.md#listallhandlersforurlpattern) | public | documented | Lists the all handlers for URL pattern. |
 | [`luna://com.webos.service.applicationmanager/listApps`](../services/com.webos.service.applicationmanager.md#listapps) | public | documented | Lists all of the registered applications. Note: Client can get all installed application information using this API. |
 | [`luna://com.webos.service.applicationManager/listExtensionMap`](../services/com.webos.service.applicationManager.md#listextensionmap) | public | inferred | Lists the extension map. |
 | [`luna://com.webos.service.applicationmanager/listLaunchPoints`](../services/com.webos.service.applicationmanager.md#listlaunchpoints) | public | documented | Gets all of the launchpoints. Note: LaunchPoint is the virtual instance of an application. The webOS provides shortcut based on launchPoint. |
 | [`luna://com.webos.service.applicationManager/listLaunchPointsForLocale`](../services/com.webos.service.applicationManager.md#listlaunchpointsforlocale) | private | inferred | Lists the launch points for locale. |
-| [`luna://com.webos.service.applicationManager/listPackages`](../services/com.webos.service.applicationManager.md#listpackages) | private | inferred | Lists the packages. |
-| [`luna://com.webos.service.applicationManager/lockAllApps`](../services/com.webos.service.applicationManager.md#lockallapps) | private | inferred | Locks the all apps. |
+| [`luna://com.webos.service.applicationManager/listPackages`](../services/com.webos.service.applicationManager.md#listpackages) | private | documented | Lists the packages. |
+| [`luna://com.webos.service.applicationManager/lockAllApps`](../services/com.webos.service.applicationManager.md#lockallapps) | private | documented | Locks the all apps. |
 | [`luna://com.webos.service.applicationmanager/lockApp`](../services/com.webos.service.applicationmanager.md#lockapp) | public | documented | Locks an application. Note: Once it is locked, the application cannot be launched. This method is only called internally. Do not use this method in your applica |
-| [`luna://com.webos.service.applicationManager/mimeTypeForExtension`](../services/com.webos.service.applicationManager.md#mimetypeforextension) | public | inferred | Handles the mime type for extension. |
-| [`luna://com.webos.service.applicationManager/moveLaunchPoint`](../services/com.webos.service.applicationManager.md#movelaunchpoint) | private | inferred | Moves the launch point. |
-| [`luna://com.webos.service.applicationManager/notifyAlertClosed`](../services/com.webos.service.applicationManager.md#notifyalertclosed) | private | inferred | Notifies of the alert closed. |
+| [`luna://com.webos.service.applicationManager/mimeTypeForExtension`](../services/com.webos.service.applicationManager.md#mimetypeforextension) | public | documented | Handles the mime type for extension. |
+| [`luna://com.webos.service.applicationManager/moveLaunchPoint`](../services/com.webos.service.applicationManager.md#movelaunchpoint) | private | documented | Moves the launch point. |
+| [`luna://com.webos.service.applicationManager/notifyAlertClosed`](../services/com.webos.service.applicationManager.md#notifyalertclosed) | private | documented | Notifies of the alert closed. |
 | [`luna://com.webos.service.applicationManager/notifySplashTimeout`](../services/com.webos.service.applicationManager.md#notifysplashtimeout) | private | inferred | Notifies of the splash timeout. |
 | [`luna://com.webos.service.applicationManager/onLaunch`](../services/com.webos.service.applicationManager.md#onlaunch) | private | inferred | Event handler: fires on the launch. |
 | [`luna://com.webos.service.applicationmanager/open`](../services/com.webos.service.applicationmanager.md#open) | public | documented | The open method implicitly opens an application based on the target URL or MIME type. Caution : Using this method is not recommended due to insecurity. |
@@ -250,19 +250,19 @@
 | [`luna://com.webos.service.applicationmanager/registerNativeApp`](../services/com.webos.service.applicationmanager.md#registernativeapp) | public | documented | Registered in webOS OSE sysbus api.json (ACG group application.operation); name only |
 | [`luna://com.webos.service.applicationManager/registerVerbsForRedirect`](../services/com.webos.service.applicationManager.md#registerverbsforredirect) | private | inferred | Registers the verbs for redirect. |
 | [`luna://com.webos.service.applicationManager/registerVerbsForResource`](../services/com.webos.service.applicationManager.md#registerverbsforresource) | private | inferred | Registers the verbs for resource. |
-| [`luna://com.webos.service.applicationManager/releaseBlockSystemApp`](../services/com.webos.service.applicationManager.md#releaseblocksystemapp) | private | inferred | Releases the block system app. |
-| [`luna://com.webos.service.applicationManager/removeAllContents`](../services/com.webos.service.applicationManager.md#removeallcontents) | private | inferred | Removes the all contents. ⚠️ |
-| [`luna://com.webos.service.applicationManager/removeContent`](../services/com.webos.service.applicationManager.md#removecontent) | private | inferred | Removes the content. ⚠️ |
+| [`luna://com.webos.service.applicationManager/releaseBlockSystemApp`](../services/com.webos.service.applicationManager.md#releaseblocksystemapp) | private | documented | Releases the block system app. |
+| [`luna://com.webos.service.applicationManager/removeAllContents`](../services/com.webos.service.applicationManager.md#removeallcontents) | private | documented | Removes the all contents. ⚠️ |
+| [`luna://com.webos.service.applicationManager/removeContent`](../services/com.webos.service.applicationManager.md#removecontent) | private | documented | Removes the content. ⚠️ |
 | [`luna://com.webos.service.applicationmanager/removeLaunchPoint`](../services/com.webos.service.applicationmanager.md#removelaunchpoint) | public | documented | Removes a dynamic launchpoint. Note: It can cause application uninstall. |
-| [`luna://com.webos.service.applicationManager/removeVirtualApp`](../services/com.webos.service.applicationManager.md#removevirtualapp) | private | inferred | Removes the virtual app. ⚠️ |
+| [`luna://com.webos.service.applicationManager/removeVirtualApp`](../services/com.webos.service.applicationManager.md#removevirtualapp) | private | documented | Removes the virtual app. ⚠️ |
 | [`luna://com.webos.service.applicationManager/run`](../services/com.webos.service.applicationManager.md#run) | private | inferred | Runs the application manager. |
 | [`luna://com.webos.service.applicationmanager/running`](../services/com.webos.service.applicationmanager.md#running) | public | documented | Lists the background/foreground applications and their process IDs that are running on webOS platform. Note: This API is one of key methods of applicationmanage |
 | [`luna://com.webos.service.applicationmanager/running_apps`](../services/com.webos.service.applicationmanager.md#running_apps) | unknown | documented | Indicates the object that contains the array of the running applications. |
 | [`luna://com.webos.service.applicationManager/saveOrder`](../services/com.webos.service.applicationManager.md#saveorder) | private | inferred | Saves the order. |
-| [`luna://com.webos.service.applicationManager/searchApps`](../services/com.webos.service.applicationManager.md#searchapps) | private | inferred | Searches for apps. |
-| [`luna://com.webos.service.applicationManager/setContents`](../services/com.webos.service.applicationManager.md#setcontents) | public | inferred | Sets the contents. |
+| [`luna://com.webos.service.applicationManager/searchApps`](../services/com.webos.service.applicationManager.md#searchapps) | private | documented | Searches for apps. |
+| [`luna://com.webos.service.applicationManager/setContents`](../services/com.webos.service.applicationManager.md#setcontents) | public | documented | Sets the contents. |
 | [`luna://com.webos.service.applicationmanager/setDefaultApp`](../services/com.webos.service.applicationmanager.md#setdefaultapp) | private | documented | Sets the default app for a category such as home (replaces the Home button target) ⚠️ |
-| [`luna://com.webos.service.applicationManager/setOrder`](../services/com.webos.service.applicationManager.md#setorder) | private | inferred | Sets the order. |
+| [`luna://com.webos.service.applicationManager/setOrder`](../services/com.webos.service.applicationManager.md#setorder) | private | documented | Sets the order. |
 | [`luna://com.webos.service.applicationmanager/updateLaunchPoint`](../services/com.webos.service.applicationmanager.md#updatelaunchpoint) | public | documented | Updates a dynamic launchpoint. Note: If a user changes the HDMI application icon to another icon like a game icon using Input Manager on a TV, the HDMI applicat |
 | [`luna://com.webos.service.appstatus/getAppStatus`](../services/com.webos.service.appstatus.md#getappstatus) | ssap | documented | Get (subscribe) app status |
 | [`luna://com.webos.service.btgattwowcast/sampleRun`](../services/com.webos.service.btgattwowcast.md#samplerun) | private | inferred | Handles the sample run. |
@@ -281,22 +281,22 @@
 | [`luna://com.webos.service.contextintentmgr/injectDataToWorkflow`](../services/com.webos.service.contextintentmgr.md#injectdatatoworkflow) | public | documented | Injects data from the app to the workflow. |
 | [`luna://com.webos.service.contextintentmgr/result`](../services/com.webos.service.contextintentmgr.md#result) | unknown | documented | Contains the results. |
 | [`luna://com.webos.service.dmost/launchHomeApplication`](../services/com.webos.service.dmost.md#launchhomeapplication) | private | inferred | Launches the home application. |
-| [`luna://com.webos.service.downloadmanager/getTicketHistory`](../services/com.webos.service.downloadmanager.md#gettickethistory) | private | inferred | Returns the ticket history. |
+| [`luna://com.webos.service.downloadmanager/getTicketHistory`](../services/com.webos.service.downloadmanager.md#gettickethistory) | private | documented | Returns the ticket history. |
 | [`luna://com.webos.service.familycare/launchUsageCareByPCS`](../services/com.webos.service.familycare.md#launchusagecarebypcs) | private | inferred | Launches the usage care by PCS. |
-| [`luna://com.webos.service.homelaunchpoints/addLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#addlaunchpoint) | private | inferred | Adds the launch point. |
-| [`luna://com.webos.service.homelaunchpoints/addQCard`](../services/com.webos.service.homelaunchpoints.md#addqcard) | private | inferred | Adds the q card. |
-| [`luna://com.webos.service.homelaunchpoints/hideLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#hidelaunchpoint) | private | inferred | Hides the launch point. |
-| [`luna://com.webos.service.homelaunchpoints/listAvailableLaunchPoints`](../services/com.webos.service.homelaunchpoints.md#listavailablelaunchpoints) | private | inferred | Lists the available launch points. |
-| [`luna://com.webos.service.homelaunchpoints/listAvailableQCards`](../services/com.webos.service.homelaunchpoints.md#listavailableqcards) | private | inferred | Lists the available q cards. |
-| [`luna://com.webos.service.homelaunchpoints/listLaunchPoints`](../services/com.webos.service.homelaunchpoints.md#listlaunchpoints) | private | inferred | Lists the launch points. |
-| [`luna://com.webos.service.homelaunchpoints/listQCards`](../services/com.webos.service.homelaunchpoints.md#listqcards) | private | inferred | Lists the q cards. |
-| [`luna://com.webos.service.homelaunchpoints/moveLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#movelaunchpoint) | private | inferred | Moves the launch point. |
-| [`luna://com.webos.service.homelaunchpoints/moveQCard`](../services/com.webos.service.homelaunchpoints.md#moveqcard) | private | inferred | Moves the q card. |
-| [`luna://com.webos.service.homelaunchpoints/removeLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#removelaunchpoint) | private | inferred | Removes the launch point. ⚠️ |
-| [`luna://com.webos.service.homelaunchpoints/removeQCard`](../services/com.webos.service.homelaunchpoints.md#removeqcard) | private | inferred | Removes the q card. ⚠️ |
-| [`luna://com.webos.service.homelaunchpoints/unhideLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#unhidelaunchpoint) | private | inferred | Handles the unhide launch point. |
-| [`luna://com.webos.service.homelaunchpoints/updateLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#updatelaunchpoint) | private | inferred | Updates the launch point. |
-| [`luna://com.webos.service.homelaunchpoints/updateQCard`](../services/com.webos.service.homelaunchpoints.md#updateqcard) | public | inferred | Updates the q card. |
+| [`luna://com.webos.service.homelaunchpoints/addLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#addlaunchpoint) | private | documented | Adds the launch point. |
+| [`luna://com.webos.service.homelaunchpoints/addQCard`](../services/com.webos.service.homelaunchpoints.md#addqcard) | private | documented | Adds the q card. |
+| [`luna://com.webos.service.homelaunchpoints/hideLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#hidelaunchpoint) | private | documented | Hides the launch point. |
+| [`luna://com.webos.service.homelaunchpoints/listAvailableLaunchPoints`](../services/com.webos.service.homelaunchpoints.md#listavailablelaunchpoints) | private | documented | Lists the available launch points. |
+| [`luna://com.webos.service.homelaunchpoints/listAvailableQCards`](../services/com.webos.service.homelaunchpoints.md#listavailableqcards) | private | documented | Lists the available q cards. |
+| [`luna://com.webos.service.homelaunchpoints/listLaunchPoints`](../services/com.webos.service.homelaunchpoints.md#listlaunchpoints) | private | documented | Lists the launch points. |
+| [`luna://com.webos.service.homelaunchpoints/listQCards`](../services/com.webos.service.homelaunchpoints.md#listqcards) | private | documented | Lists the q cards. |
+| [`luna://com.webos.service.homelaunchpoints/moveLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#movelaunchpoint) | private | documented | Moves the launch point. |
+| [`luna://com.webos.service.homelaunchpoints/moveQCard`](../services/com.webos.service.homelaunchpoints.md#moveqcard) | private | documented | Moves the q card. |
+| [`luna://com.webos.service.homelaunchpoints/removeLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#removelaunchpoint) | private | documented | Removes the launch point. ⚠️ |
+| [`luna://com.webos.service.homelaunchpoints/removeQCard`](../services/com.webos.service.homelaunchpoints.md#removeqcard) | private | documented | Removes the q card. ⚠️ |
+| [`luna://com.webos.service.homelaunchpoints/unhideLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#unhidelaunchpoint) | private | documented | Handles the unhide launch point. |
+| [`luna://com.webos.service.homelaunchpoints/updateLaunchPoint`](../services/com.webos.service.homelaunchpoints.md#updatelaunchpoint) | private | documented | Updates the launch point. |
+| [`luna://com.webos.service.homelaunchpoints/updateQCard`](../services/com.webos.service.homelaunchpoints.md#updateqcard) | public | documented | Updates the q card. |
 | [`luna://com.webos.service.hybridtvmanager/launchUserAgreement`](../services/com.webos.service.hybridtvmanager.md#launchuseragreement) | private | inferred | Launches the user agreement. |
 | [`luna://com.webos.service.intent/handler`](../services/com.webos.service.intent.md#handler) | unknown | documented | Indicates the application to handle the intent. |
 | [`luna://com.webos.service.intent/intent`](../services/com.webos.service.intent.md#intent) | unknown | documented | Provides details of the intent. |
@@ -325,7 +325,7 @@
 | [`luna://com.webos.service.sdx/callbackNotice`](../services/com.webos.service.sdx.md#callbacknotice) | private | documented | SDP callback notification sink. Name only. |
 | [`luna://com.webos.service.sdx/getHttpHeaderForServiceRequest`](../services/com.webos.service.sdx.md#gethttpheaderforservicerequest) | private | documented | Returns the HTTP headers (including the SDP HOST) to use for a named SDP service. Glasshouse reads only the HOST from it (e.g. GB.nextlgsdp.com for sdp_nlp/sdp_ |
 | [`luna://com.webos.service.sdx/send`](../services/com.webos.service.sdx.md#send) | private | documented | Generic SDP request. Glasshouse uses it with serviceName 'sdp_onnow', url 'content_discovery/item-detail' and bodyData {item_id, item_type} to fetch a title's d |
-| [`luna://com.webos.service.servicemanager/launchPrerequisiteServices`](../services/com.webos.service.servicemanager.md#launchprerequisiteservices) | private | inferred | Launches the prerequisite services. |
+| [`luna://com.webos.service.servicemanager/launchPrerequisiteServices`](../services/com.webos.service.servicemanager.md#launchprerequisiteservices) | private | documented | Launches the prerequisite services. |
 | [`luna://com.webos.service.signageplayer/autoPlayManager/failover`](../services/com.webos.service.signageplayer.md#autoplaymanager_failover) | private | inferred | Handles the failover (auto play manager) |
 | [`luna://com.webos.service.signageplayer/autoPlayManager/playInternalMemory`](../services/com.webos.service.signageplayer.md#autoplaymanager_playinternalmemory) | private | inferred | Plays the internal memory (auto play manager) |
 | [`luna://com.webos.service.signageplayer/checkAlive`](../services/com.webos.service.signageplayer.md#checkalive) | private | inferred | Checks the alive. |

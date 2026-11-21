@@ -18,7 +18,7 @@ Download manager: manages file download and upload on the device, including queu
 | [`downloads`](#downloads) | unknown |  | network | documented | Array containing downloads |
 | [`downloadStatusQuery`](#downloadstatusquery) | public | yes | network | documented | Get the status of a download for a specific ticket number. The method will return the status of current downloads, or any downloads in the h |
 | [`getAllHistory`](#getallhistory) | public |  | network | documented | Get the download or upload history for a specific application. |
-| [`getTicketHistory`](#gettickethistory) | private |  | apps | inferred | Returns the ticket history. |
+| [`getTicketHistory`](#gettickethistory) | private |  | apps | documented | Returns the ticket history. |
 | [`is1xMode`](#is1xmode) | public |  | network | documented | Determine if the network connection is in 1x mode. |
 | [`items`](#items) | unknown |  | network | documented | Objects of items which describe information of download history. |
 | [`listPending`](#listpending) | public |  | network | documented | Return the list of all downloads that are currently in progress. |
@@ -366,19 +366,21 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-d
 
 Returns the ticket history.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `ticket` | Number (required) ticket of the file to be queried. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.downloadmanager/getTicketHistory '{}'
 ```
 
-> ACG groups: networking.internal. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: networking.internal. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 

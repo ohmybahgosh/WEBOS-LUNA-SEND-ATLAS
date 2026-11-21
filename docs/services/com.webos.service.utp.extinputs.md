@@ -8,8 +8,8 @@ UTP external-inputs service: binds external inputs, reports HDMI info, signal an
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`bind`](#bind) | private |  | input | inferred | Binds the UTP extinputs. |
-| [`close`](#close) | private |  | input | inferred | Closes the UTP extinputs. |
+| [`bind`](#bind) | private |  | input | documented | Binds the UTP extinputs. |
+| [`close`](#close) | private |  | input | documented | Closes the UTP extinputs. |
 | [`disableSubtitle`](#disablesubtitle) | private |  | input | inferred | Disables the subtitle. |
 | [`disableTeletextPes`](#disableteletextpes) | private |  | input | inferred | Disables the teletext pes. |
 | [`enableSubtitle`](#enablesubtitle) | private |  | input | inferred | Enables the subtitle. |
@@ -36,15 +36,15 @@ UTP external-inputs service: binds external inputs, reports HDMI info, signal an
 | [`getTeletextState`](#getteletextstate) | private |  | input | inferred | Returns the teletext state. |
 | [`getVideoInfo`](#getvideoinfo) | private |  | input | inferred | Returns the video info. |
 | [`getVRRInfo`](#getvrrinfo) | private |  | input | inferred | Returns the VRR info. |
-| [`open`](#open) | private |  | input | inferred | Opens the UTP extinputs. |
-| [`pause`](#pause) | private |  | input | inferred | Pauses the UTP extinputs. |
+| [`open`](#open) | private |  | input | documented | Opens the UTP extinputs. |
+| [`pause`](#pause) | private |  | input | documented | Pauses the UTP extinputs. |
 | [`pin`](#pin) | private |  | input | inferred | Handles the pin. |
 | [`resetHDMIErrorHistory`](#resethdmierrorhistory) | private |  | input | inferred | Resets the HDMI error history. ⚠️ |
 | [`setAudioMute`](#setaudiomute) | private |  | audio | inferred | Sets the audio mute. |
 | [`setMultiAudioOutType`](#setmultiaudioouttype) | private |  | audio | inferred | Sets the multi audio out type. |
 | [`setPipelineWindowId`](#setpipelinewindowid) | private |  | input | inferred | Sets the pipeline window ID. |
 | [`setProperties`](#setproperties) | private |  | input | inferred | Sets the properties. |
-| [`stop`](#stop) | private |  | input | inferred | Stops the UTP extinputs. |
+| [`stop`](#stop) | private |  | input | documented | Stops the UTP extinputs. |
 | [`switchExternalInput`](#switchexternalinput) | private |  | input | inferred | Switches the external input. |
 
 <a id="bind"></a>
@@ -54,19 +54,23 @@ UTP external-inputs service: binds external inputs, reports HDMI info, signal an
 
 Binds the UTP extinputs.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `wait` | Boolean (optional) Wait to bind until broadcast is playing. Default: False |
+| `hints` | Object (optional) |
+| `subscribe` | Boolean (optional) Subscribe this method and subscribers can receive binding status. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.extinputs/bind '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -77,19 +81,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Closes the UTP extinputs.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.extinputs/close '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -698,19 +704,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Opens the UTP extinputs.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `options` | Object (optional) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.extinputs/open '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -721,19 +729,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Pauses the UTP extinputs.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `mode` | String (optional) Describe pause mode. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.extinputs/pause '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -882,19 +893,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Stops the UTP extinputs.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.extinputs/stop '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

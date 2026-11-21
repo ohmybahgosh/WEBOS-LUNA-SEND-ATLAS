@@ -19,8 +19,8 @@ Broadcast channel service (utp stack): large API for channel tuning, scanning, a
 | [`bcas/setEmmTimerChannel`](#bcas_setemmtimerchannel) | private |  | tv-broadcast | inferred | Sets the emm timer channel (bcas) |
 | [`bcas/stopEmmTimerChannel`](#bcas_stopemmtimerchannel) | private |  | tv-broadcast | inferred | Stops the emm timer channel (bcas) |
 | [`blockKeyInput`](#blockkeyinput) | private |  | tv-broadcast | inferred | Blocks the key input. |
-| [`changeChannelFavorite`](#changechannelfavorite) | public |  | tv-broadcast | inferred | Changes the channel favorite. |
-| [`changeChannelType`](#changechanneltype) | public |  | tv-broadcast | inferred | Changes the channel type. |
+| [`changeChannelFavorite`](#changechannelfavorite) | public |  | tv-broadcast | documented | Changes the channel favorite. |
+| [`changeChannelType`](#changechanneltype) | public |  | tv-broadcast | documented | Changes the channel type. |
 | [`changeMessageChannel`](#changemessagechannel) | public |  | tv-broadcast | inferred | Changes the message channel. |
 | [`checkBarkerChannel`](#checkbarkerchannel) | private |  | tv-broadcast | inferred | Checks the barker channel. |
 | [`ci/camPlayerPauseRequest`](#ci_camplayerpauserequest) | private |  | tv-broadcast | inferred | Handles the CAM player pause request (CI) |
@@ -92,14 +92,14 @@ Broadcast channel service (utp stack): large API for channel tuning, scanning, a
 | [`getChannelMode`](#getchannelmode) | public |  | tv-broadcast | inferred | Returns the channel mode. |
 | [`getChannelModeList`](#getchannelmodelist) | public |  | tv-broadcast | inferred | Returns the channel mode list. |
 | [`getChannelSortMode`](#getchannelsortmode) | private |  | tv-broadcast | inferred | Returns the channel sort mode. |
-| [`getChannelTypeList`](#getchanneltypelist) | public |  | tv-broadcast | inferred | Returns the channel type list. |
+| [`getChannelTypeList`](#getchanneltypelist) | public |  | tv-broadcast | documented | Returns the channel type list. |
 | [`getCurrentAudioChannel`](#getcurrentaudiochannel) | public |  | audio | inferred | Returns the current audio channel. |
 | [`getCurrentAudioCodecType`](#getcurrentaudiocodectype) | public |  | audio | inferred | Returns the current audio codec type. |
 | [`getCurrentAudioLanguage`](#getcurrentaudiolanguage) | public |  | audio | inferred | Returns the current audio language. |
 | [`getCurrentVideoView`](#getcurrentvideoview) | public |  | tv-broadcast | inferred | Returns the current video view. |
 | [`getDirectTuneChannel`](#getdirecttunechannel) | public |  | tv-broadcast | inferred | Returns the direct tune channel. |
 | [`getEwsEvent`](#getewsevent) | private |  | tv-broadcast | inferred | Returns the ews event. |
-| [`getLastChannelId`](#getlastchannelid) | public |  | tv-broadcast | inferred | Returns the last channel ID. |
+| [`getLastChannelId`](#getlastchannelid) | public |  | tv-broadcast | documented | Returns the last channel ID. |
 | [`getPreferredRegionNId`](#getpreferredregionnid) | private |  | tv-broadcast | inferred | Returns the preferred region n ID. |
 | [`getSatelliteBouquetList`](#getsatellitebouquetlist) | private |  | tv-broadcast | inferred | Returns the satellite bouquet list. |
 | [`getScannedSatelliteList`](#getscannedsatellitelist) | private |  | tv-broadcast | inferred | Returns the scanned satellite list. |
@@ -326,10 +326,10 @@ Broadcast channel service (utp stack): large API for channel tuning, scanning, a
 | [`scanBarkerChannel`](#scanbarkerchannel) | public |  | tv-broadcast | inferred | Scans for barker channel. |
 | [`setAudioChannel`](#setaudiochannel) | public |  | audio | inferred | Sets the audio channel. |
 | [`setAudioLanguage`](#setaudiolanguage) | public |  | audio | inferred | Sets the audio language. |
-| [`setChannelGroup`](#setchannelgroup) | public |  | tv-broadcast | inferred | Sets the channel group. |
-| [`setChannelMode`](#setchannelmode) | public |  | tv-broadcast | inferred | Sets the channel mode. |
+| [`setChannelGroup`](#setchannelgroup) | public |  | tv-broadcast | documented | Sets the channel group. |
+| [`setChannelMode`](#setchannelmode) | public |  | tv-broadcast | documented | Sets the channel mode. |
 | [`setChannelSortMode`](#setchannelsortmode) | private |  | tv-broadcast | inferred | Sets the channel sort mode. |
-| [`setLastChannelId`](#setlastchannelid) | public |  | tv-broadcast | inferred | Sets the last channel ID. |
+| [`setLastChannelId`](#setlastchannelid) | public |  | tv-broadcast | documented | Sets the last channel ID. |
 | [`setVideoView`](#setvideoview) | public |  | tv-broadcast | inferred | Sets the video view. |
 | [`sortAnalogChannelList`](#sortanalogchannellist) | private |  | tv-broadcast | inferred | Handles the sort analog channel list. |
 | [`startEwbsCheckInWarm`](#startewbscheckinwarm) | private |  | tv-broadcast | inferred | Starts the ewbs check in warm. |
@@ -595,19 +595,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Changes the channel favorite.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `update` | Boolean (optional) If true, update last channel. Default: True |
+| `connection_timeout` | Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000 |
+| `ignorable` | Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/changeChannelFavorite '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -618,19 +623,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Changes the channel type.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `broadcastId` | String (required) Unique broadcast id obtained from open method. |
+| `update` | Boolean (optional) If true, update last channel. Default: True |
+| `connection_timeout` | Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000 |
+| `ignorable` | Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/changeChannelType '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -2322,19 +2332,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the channel type list.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `channelModeId` | Number (required) Channel mode id. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getChannelTypeList '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -2483,19 +2495,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the last channel ID.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `sourceType` | String (required) If sourceType is INPUTSOURCE_NONE, last channel from all input type will be replied, or specified input source type will be replied. Possible values: INPUTSOURCE_TERRESTRIAL_DIGITAL, INPUTSOURCE_TERRESTRIAL_ANALOG, INPUTSOURCE_CABLE_DIGITAL, INPUTSOURCE_CABLE_ANALOG, INPUTSOURCE_SATELLITE, INPUTSOURCE_RF, INPUTSOURCE_CABLE, INPUTSOURCE_TERRESTRIAL, INPUTSOURCE_TERRESTRIAL_DIGITAL |
+| `subscribe` | Boolean (optional) Subscribe this method and subscribers can receive last channel id is updated |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/getLastChannelId '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -7704,19 +7719,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Sets the channel group.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `channelGroupId` | Number (required) Channel group id to be set. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/setChannelGroup '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -7727,19 +7744,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the channel mode.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `channelModeId` | Number (required) Channel mode id to be set. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/setChannelMode '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -7773,19 +7792,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the last channel ID.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `channelId` | String (required) channelId to be set to last channel. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.utp.channel/setLastChannelId '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

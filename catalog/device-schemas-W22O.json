@@ -1,0 +1,2602 @@
+{
+ "luna://com.palm.applicationManager/close": {
+  "params": {
+   "processId": "String (required) ProcessID of application to be closed.",
+   "tryToMakeScreenshot": "Boolean (optional) If set true, try call LSM's closeByAppId to leave screenshot on recent Default: False"
+  },
+  "required": [
+   "processId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.close.schema"
+ },
+ "luna://com.palm.applicationManager/closeByAppId": {
+  "params": {
+   "id": "String (required) Application ID to be closed."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.closeByAppId.schema"
+ },
+ "luna://com.palm.applicationManager/launch": {
+  "params": {
+   "id": "String (optional) ID of application to be launched.",
+   "target": "String (optional) A target URL. If id is not specified, this URL is opened in an appropriate application, if there is one.",
+   "mime": "String (optional) Mime type for target.",
+   "params": "Object (optional) Additional launch parameters for the application.",
+   "authToken": "Object (optional) Authorization token given to download manager when opening a remote file. deviceId is required with this.",
+   "deviceId": "Object (optional) Device ID given to download manager when opening a remote file. authToken is required with this.",
+   "overrideHandlerAppId": "String (optional) If specified, this appid will be used to open a resource.",
+   "fileName": "String (optional) File name of target.",
+   "subcsribe": "Boolean (optional) When true, the message is a subscription request.",
+   "noSplash": "Boolean (optional) When true, there will be no splash screen.",
+   "launchFirstApp": "Boolean (optional) When true, the app is set to first launched app after booting."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.open.schema"
+ },
+ "luna://com.palm.applicationManager/launchDefaultApp": {
+  "params": {
+   "category": "String (required) app category name"
+  },
+  "required": [
+   "category"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.launchDefaultApp.schema"
+ },
+ "luna://com.palm.applicationManager/listApps": {
+  "params": {
+   "properties": "Array (optional) Get application information for service-user selected properties.",
+   "subscribe": "Boolean (optional) listApps support subscription to notify when Apps are updated, i.e., an app is installed or removed or edit"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listApps.schema"
+ },
+ "luna://com.palm.applicationManager/listLaunchPoints": {
+  "params": {
+   "subscribe": "Boolean (optional) listLaunchPoints support subscription to notify when launch points are updated, i.e., an app is installed or removed"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listLaunchPoints.schema"
+ },
+ "luna://com.palm.applicationManager/running": {
+  "params": {
+   "subscribe": "Boolean (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.running.schema"
+ },
+ "luna://com.palm.downloadmanager/allow1x": {
+  "params": {
+   "value": "Boolean (required) should allow 1x"
+  },
+  "required": [
+   "value"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.allow1x.schema"
+ },
+ "luna://com.palm.downloadmanager/cancelDownload": {
+  "params": {
+   "ticket": "Number (required) Download ID from download"
+  },
+  "required": [
+   "ticket"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.cancelDownload.schema"
+ },
+ "luna://com.palm.downloadmanager/clearHistory": {
+  "params": {
+   "owner": "String (optional) App ID which requested the download"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.clearHistory.schema"
+ },
+ "luna://com.palm.downloadmanager/deleteDownloadedFile": {
+  "params": {
+   "ticket": "Number (required) ticket of the file to be deleted."
+  },
+  "required": [
+   "ticket"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.deleteDownloadedFile.schema"
+ },
+ "luna://com.palm.downloadmanager/download": {
+  "params": {
+   "target": "String (required) ID of application to be installed.",
+   "mime": "String (optional) mime type string, not used in curl now, instead application/x-binary is set.",
+   "authToken": "String (optional) used for curl in Auth-Token",
+   "cookieToken": "String (optional) cookieToken",
+   "cookieHeader": "String (optional) cookieHeader",
+   "deviceId": "String (optional) used for curl in Device-Id",
+   "targetDir": "String (optional) target directory where the download file is placed.",
+   "targetFilename": "String (optional) target file name that the download file will have. If it's omitted, it will have unique name. If there is the same file name, downloadmgr internally generate unique name.",
+   "keepFilenameOnRedirect": "Boolean (optional) If True, it will follow redirects until it download the actual file.",
+   "canHandlePause": "Boolean (optional) True if it can be paused.",
+   "autoResume": "Boolean (optional) If autoTesume is false, paused task will not be recovered automatically.",
+   "appendTargetFile": "Boolean (optional) If true and if target file already exist, append download data not create new one.",
+   "e_rangeLow": "String (optional) the offset in number of bytes that you want the transfer to start from. used for curl option.",
+   "e_rangeHigh": "String (optional) not used now, but must be bigger than e_rangeLow.",
+   "interface": "String (optional) one of the following state - (wifi, wan, btpan), it internally set to ANY if it is not one of them. If it is any it will determin a good interface as follows in order.",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "target"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.download.schema"
+ },
+ "luna://com.palm.downloadmanager/downloadStatusQuery": {
+  "params": {
+   "ticket": "Number (required) ticket of the file to be queried.",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "ticket"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.downloadStatusQuery.schema"
+ },
+ "luna://com.palm.downloadmanager/getAllHistory": {
+  "params": {
+   "owner": "String (required) App ID which requested the download"
+  },
+  "required": [
+   "owner"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.getAllHistory.schema"
+ },
+ "luna://com.palm.downloadmanager/pauseDownload": {
+  "params": {
+   "ticket": "Number (required) Download ID from download"
+  },
+  "required": [
+   "ticket"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.pauseDownload.schema"
+ },
+ "luna://com.palm.downloadmanager/resumeDownload": {
+  "params": {
+   "ticket": "Number (required) Download ID from download",
+   "authToken": "String (optional) used for curl in Auth-Token",
+   "deviceId": "String (optional) used for curl in Device-Id",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "ticket"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.resumeDownload.schema"
+ },
+ "luna://com.palm.downloadmanager/upload": {
+  "params": {
+   "url": "String (required) The URL to which to post the file",
+   "fileName": "String (required) Path to the local file to be uploaded",
+   "contentType": "String (optional) The MIME type of the file",
+   "fileLabel": "String (optional) The label portion of the file name (as opposed to the file extension)",
+   "postParameters": "Array (optional)",
+   "cookies": "Array (optional) cookies",
+   "customHttpHeaders": "Array (optional) customHttpHeaders"
+  },
+  "required": [
+   "fileName",
+   "url"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.upload.schema"
+ },
+ "luna://com.webos.appInstallService/cancel": {
+  "params": {
+   "id": "String (required) ID of package to be cancel."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/pkginstalld/pkgInstallService.cancel.schema"
+ },
+ "luna://com.webos.appInstallService/createLSConfigFiles": {
+  "params": {
+   "id": "String (required) ID of application.",
+   "target": "Object (optional)",
+   "dev": "Boolean (optional) Indicates whether app is on developer space. Default: False"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.createLSConfigFiles.schema"
+ },
+ "luna://com.webos.appInstallService/dev/install": {
+  "params": {
+   "id": "String (required) ID of application to be installed.",
+   "ipkUrl": "String (required) Ipk file path of application to be installed.",
+   "target": "Object (optional)",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "id",
+   "ipkUrl"
+  ],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.dev.install.schema"
+ },
+ "luna://com.webos.appInstallService/dev/remove": {
+  "params": {
+   "id": "String (required) ID of application to be removed.",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive remove progress."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.dev.remove.schema"
+ },
+ "luna://com.webos.appInstallService/group/install": {
+  "params": {
+   "id": "String (required) ID of group to be installed.",
+   "members": "Array (required) ID of application to be installed.",
+   "target": "Object (optional)",
+   "type": "String (optional) Indicates install type. If type is stub install stub app, else install full app",
+   "silence": "Boolean (optional) Indicates install performed without any user notification. Default is true Default: True",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "id",
+   "members"
+  ],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.group.install.schema"
+ },
+ "luna://com.webos.appInstallService/group/queryInstallCapacity": {
+  "params": {
+   "id": "String (required) ID of group to be checked.",
+   "members": "Array (required) ID of applications to be checked.",
+   "size": "Number (required) Packed group apps byte size.",
+   "uncompressedSize": "Number (required) Unpacked group apps byte size.",
+   "freeupSpace": "Boolean (optional) Request to free up internal storage. Default: False"
+  },
+  "required": [
+   "id",
+   "members",
+   "size",
+   "uncompressedSize"
+  ],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.group.queryInstallCapacity.schema"
+ },
+ "luna://com.webos.appInstallService/group/status": {
+  "params": {
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive all package app status changes."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.group.status.schema"
+ },
+ "luna://com.webos.appInstallService/install": {
+  "params": {
+   "id": "String (required) ID of application to be installed.",
+   "target": "Object (optional)",
+   "type": "String (optional) Indicates install type. If type is stub install stub app, else install full app Possible values: stub, op",
+   "silence": "Boolean (optional) Indicates install performed without any user notification. Default is true Default: True",
+   "wait": "Boolean (optional) request for multiple sequential installation Default: False",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/pkginstalld/pkgInstallService.install.schema"
+ },
+ "luna://com.webos.appInstallService/installInternal": {
+  "params": {
+   "id": "String (required) ID of application to be installed.",
+   "ipkUrl": "String (required) Ipk URL of application to be installed.",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "id",
+   "ipkUrl"
+  ],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.installInternal.schema"
+ },
+ "luna://com.webos.appInstallService/installLocal": {
+  "params": {
+   "id": "String (required) ID of application to be installed.",
+   "ipkUrl": "String (required) Ipk file path of application to be installed.",
+   "target": "Object (optional)",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "id",
+   "ipkUrl"
+  ],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.installLocal.schema"
+ },
+ "luna://com.webos.appInstallService/pause": {
+  "params": {
+   "id": "String (required) ID of application to be pause."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.pause.schema"
+ },
+ "luna://com.webos.appInstallService/queryInstallCapacity": {
+  "params": {
+   "id": "String (required) ID of package to be checked.",
+   "size": "Number (required) Packed package byte size.",
+   "uncompressedSize": "Number (required) Unpacked package byte size.",
+   "freeupSpace": "Boolean (optional) Request to free up internal storage. Default: False",
+   "dependencies": "Array (optional)"
+  },
+  "required": [
+   "id",
+   "size",
+   "uncompressedSize"
+  ],
+  "source": "/etc/palm/schemas/pkginstalld/pkgInstallService.queryInstallCapacity.schema"
+ },
+ "luna://com.webos.appInstallService/remove": {
+  "params": {
+   "id": "String (required) ID of application to be removed.",
+   "type": "String (optional) Indicates remove type. If system app need to initialze, type should be initialize. Possible values: initialize",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive remove progress."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/pkginstalld/pkgInstallService.remove.schema"
+ },
+ "luna://com.webos.appInstallService/removeLSConfigFiles": {
+  "params": {
+   "id": "String (required) ID of application.",
+   "target": "Object (optional)",
+   "dev": "Boolean (optional) Indicates whether app is on developer space. Default: False"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.removeLSConfigFiles.schema"
+ },
+ "luna://com.webos.appInstallService/resume": {
+  "params": {
+   "id": "String (required) ID of application to be resume."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.resume.schema"
+ },
+ "luna://com.webos.appInstallService/status": {
+  "params": {
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive app version status changes."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/pkginstalld/pkgUpdateService.status.schema"
+ },
+ "luna://com.webos.appInstallService/system/installLocal": {
+  "params": {
+   "id": "String (required) ID of application to be installed.",
+   "ipkUrl": "String (required) Ipk file path of application to be installed.",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "id",
+   "ipkUrl"
+  ],
+  "source": "/etc/palm/schemas/appinstalld/appInstallService.system.installLocal.schema"
+ },
+ "luna://com.webos.applicationManager/addLaunchPoint": {
+  "params": {
+   "id": "String (required) ID of application to generate launch point",
+   "title": "String (optional) Title for the launch point",
+   "icon": "String (optional) Path to icon",
+   "bgImage": "String (optional) This field is the location of a bitmap. The bitmap is displayed to the user when the user hovers over the launch point with the system pointer.",
+   "bgImages": "Array (optional) Locations of bitmaps that may be displayed to the user when the user hovers over the launch point with the system pointer. Default: []",
+   "bgColor": "String (optional) This field is the color to be displayed to the user when the user hovers over the launch point with the system pointer. This is used in the absence of the backgroundImage.",
+   "imageForRecents": "String (optional) This field is the location of a bitmap. The bitmap is displayed in the recent apps list.",
+   "iconColor": "String (optional) indicates color of the icon of the launch point.",
+   "mediumLargeIcon": "String (optional) path to mediumLargeIcon",
+   "largeIcon": "String (optional) path to largeIcon",
+   "extraLargeIcon": "String (optional) path to extraLargeIcon",
+   "appDescription": "String (optional) A short tagline for the application",
+   "params": "Object (optional) Parameters to pass to the application",
+   "userData": "String (optional) Additional data that may be used by clients, such as an identifier for analytics purposes",
+   "tileSize": "String (optional) Hint for sizing of UI tiles: normal or large, large may be used for a promotional item Possible values: normal, large Default: normal",
+   "unmovable": "Boolean (optional) Hint that an item should never be moved from it's given position Default: False",
+   "removable": "Boolean (optional) Hint that an item should never be removed",
+   "supportI18nTitle": "Boolean (optional) Hint that i18n will be supported for title Default: True"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.addLaunchPoint.schema"
+ },
+ "luna://com.webos.applicationManager/addVirtualApp": {
+  "params": {
+   "id": "String (required) virtual application ID to be created.",
+   "hostId": "String (required) host application id for virtual application.",
+   "appInfo": "Object (optional) appInfo for virtual application. Default: {}",
+   "params": "Object (required) params to be passed to host application as launch params. Default: {}"
+  },
+  "required": [
+   "hostId",
+   "id",
+   "params"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.addVirtualApp.schema"
+ },
+ "luna://com.webos.applicationManager/blockSystemApp": {
+  "params": {
+   "id": "String (required) system application ID to be removed"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.blockSystemApp.schema"
+ },
+ "luna://com.webos.applicationManager/close": {
+  "params": {
+   "processId": "String (required) ProcessID of application to be closed.",
+   "tryToMakeScreenshot": "Boolean (optional) If set true, try call LSM's closeByAppId to leave screenshot on recent Default: False"
+  },
+  "required": [
+   "processId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.close.schema"
+ },
+ "luna://com.webos.applicationManager/closeByAppId": {
+  "params": {
+   "id": "String (required) Application ID to be closed."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.closeByAppId.schema"
+ },
+ "luna://com.webos.applicationManager/getAppBasePath": {
+  "params": {
+   "appId": "String (required) Get application base path for a given application ID."
+  },
+  "required": [
+   "appId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getAppBasePath.schema"
+ },
+ "luna://com.webos.applicationManager/getAppInfo": {
+  "params": {
+   "id": "String (required) Get application information for a given application ID.",
+   "properties": "Array (optional) Get application information for service-user selected properties."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getAppInfo.schema"
+ },
+ "luna://com.webos.applicationManager/getAppLoadStatus": {
+  "params": {
+   "appId": "String (required)"
+  },
+  "required": [
+   "appId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getAppLoadStatus.schema"
+ },
+ "luna://com.webos.applicationManager/getAppStatus": {
+  "params": {
+   "appId": "String (required)",
+   "appInfo": "Boolean (optional) Default: False"
+  },
+  "required": [
+   "appId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getAppStatus.schema"
+ },
+ "luna://com.webos.applicationManager/getContents": {
+  "params": {
+   "launchPointId": "String (required) Unique id of launch point"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getContents.schema"
+ },
+ "luna://com.webos.applicationManager/getForegroundAppInfo": {
+  "params": {
+   "extraInfo": "Boolean (optional) If set to true, returns all foreground apps as an array. Otherwise, returns only a full screen app (e.g. card type)",
+   "subscribe": "Boolean (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.getForegroundAppInfo.schema"
+ },
+ "luna://com.webos.applicationManager/getForegroundApps": {
+  "params": {
+   "extraInfo": "Boolean (optional) If set to true, returns all foreground apps as an array. Otherwise, returns only a full screen app (e.g. card type)",
+   "subscribe": "Boolean (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.getForegroundApps.schema"
+ },
+ "luna://com.webos.applicationManager/getHandlerForExtension": {
+  "params": {
+   "extension": "String (required) The extension for getting handler application."
+  },
+  "required": [
+   "extension"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getHandlerForExtension.schema"
+ },
+ "luna://com.webos.applicationManager/getHandlerForMimeType": {
+  "params": {
+   "mimeType": "String (required) The mime type for getting handler application."
+  },
+  "required": [
+   "mimeType"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getHandlerForMimeType.schema"
+ },
+ "luna://com.webos.applicationManager/getHandlerForUrl": {
+  "params": {
+   "url": "String (required) The url for getting handler application."
+  },
+  "required": [
+   "url"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getHandlerForUrl.schema"
+ },
+ "luna://com.webos.applicationManager/getHandlerForUrlByVerb": {
+  "params": {
+   "url": "String (optional) The url for getting handler application by verb.",
+   "mime": "String (optional) The mime for getting handler application by verb.",
+   "verb": "String (required) The verb for getting handler application."
+  },
+  "required": [
+   "verb"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getHandlerForUrlByVerb.schema"
+ },
+ "luna://com.webos.applicationManager/getPackageInfo": {
+  "params": {
+   "id": "String (required) Get package information for a given package ID."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getPackageInfo.schema"
+ },
+ "luna://com.webos.applicationManager/launch": {
+  "params": {
+   "id": "String (optional) ID of application to be launched.",
+   "target": "String (optional) A target URL. If id is not specified, this URL is opened in an appropriate application, if there is one.",
+   "mime": "String (optional) Mime type for target.",
+   "params": "Object (optional) Additional launch parameters for the application.",
+   "authToken": "Object (optional) Authorization token given to download manager when opening a remote file. deviceId is required with this.",
+   "deviceId": "Object (optional) Device ID given to download manager when opening a remote file. authToken is required with this.",
+   "overrideHandlerAppId": "String (optional) If specified, this appid will be used to open a resource.",
+   "fileName": "String (optional) File name of target.",
+   "subcsribe": "Boolean (optional) When true, the message is a subscription request.",
+   "noSplash": "Boolean (optional) When true, there will be no splash screen.",
+   "launchFirstApp": "Boolean (optional) When true, the app is set to first launched app after booting."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.open.schema"
+ },
+ "luna://com.webos.applicationManager/launchDefaultApp": {
+  "params": {
+   "category": "String (required) app category name"
+  },
+  "required": [
+   "category"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.launchDefaultApp.schema"
+ },
+ "luna://com.webos.applicationManager/launchVirtualApp": {
+  "params": {
+   "id": "String (required) virtual application ID to be launched.",
+   "hostId": "String (required) Host app id for virtual application.",
+   "appInfo": "Object (optional) appInfo for virtual application Default: {}",
+   "params": "Object (required) params to be passed to host application as params Default: {}",
+   "noSplash": "Boolean (optional)",
+   "spinner": "Boolean (optional)",
+   "preload": "String (optional) App will be launched in background if preload is filled in Possible values: full, semi-full, partial, minimal",
+   "launchHidden": "Boolean (optional)",
+   "keepAlive": "Boolean (optional)"
+  },
+  "required": [
+   "hostId",
+   "id",
+   "params"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.launchVirtualApp.schema"
+ },
+ "luna://com.webos.applicationManager/listAllHandlersForMime": {
+  "params": {
+   "mime": "String (optional) The mime for getting handler application by verb."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForMime.schema"
+ },
+ "luna://com.webos.applicationManager/listAllHandlersForMultipleMime": {
+  "params": {
+   "mimes": "Array (required) The mimes type for getting handler application."
+  },
+  "required": [
+   "mimes"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForMultipleMime.schema"
+ },
+ "luna://com.webos.applicationManager/listAllHandlersForMultipleUrlPattern": {
+  "params": {
+   "urls": "Array (required) The urls for getting handler application."
+  },
+  "required": [
+   "urls"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForMultipleUrlPattern.schema"
+ },
+ "luna://com.webos.applicationManager/listAllHandlersForUrl": {
+  "params": {
+   "url": "String (optional) The url for getting handler application by verb."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForUrl.schema"
+ },
+ "luna://com.webos.applicationManager/listAllHandlersForUrlByVerb": {
+  "params": {
+   "url": "String (optional) The url for getting handler application by verb.",
+   "mime": "String (optional) The mime for getting handler application by verb.",
+   "verb": "String (required) The verb for getting handler application."
+  },
+  "required": [
+   "verb"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForUrlByVerb.schema"
+ },
+ "luna://com.webos.applicationManager/listAllHandlersForUrlPattern": {
+  "params": {
+   "urlPattern": "String (required) The mimes type for getting handler application."
+  },
+  "required": [
+   "urlPattern"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForUrlPattern.schema"
+ },
+ "luna://com.webos.applicationManager/listApps": {
+  "params": {
+   "properties": "Array (optional) Get application information for service-user selected properties.",
+   "subscribe": "Boolean (optional) listApps support subscription to notify when Apps are updated, i.e., an app is installed or removed or edit"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listApps.schema"
+ },
+ "luna://com.webos.applicationManager/listLaunchPoints": {
+  "params": {
+   "subscribe": "Boolean (optional) listLaunchPoints support subscription to notify when launch points are updated, i.e., an app is installed or removed"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listLaunchPoints.schema"
+ },
+ "luna://com.webos.applicationManager/listPackages": {
+  "params": {
+   "subscribe": "Boolean (optional) listPackages support subscription to notify when packages are updated, i.e., an package is installed or removed or edit"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listPackages.schema"
+ },
+ "luna://com.webos.applicationManager/lockAllApps": {
+  "params": {
+   "lock": "Boolean (required) When set all applications is not allowed to launch",
+   "exceptionApps": "Array (optional) apps which should not be blocked, only for lock. Default: []"
+  },
+  "required": [
+   "lock"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.lockAllApps.schema"
+ },
+ "luna://com.webos.applicationManager/lockApp": {
+  "params": {
+   "id": "String (required) ID of application to be locked.",
+   "lock": "Boolean (required) When set the application is not allowed to launch"
+  },
+  "required": [
+   "id",
+   "lock"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.lockApp.schema"
+ },
+ "luna://com.webos.applicationManager/mimeTypeForExtension": {
+  "params": {
+   "extension": "String (required) The extension of file for getting mime type."
+  },
+  "required": [
+   "extension"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.mimeTypeForExtension.schema"
+ },
+ "luna://com.webos.applicationManager/moveLaunchPoint": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be updated",
+   "position": "Number (optional) This field means the position where to put on launcher",
+   "target": "Object (optional)"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.moveLaunchPoint.schema"
+ },
+ "luna://com.webos.applicationManager/notifyAlertClosed": {
+  "params": {
+   "alertId": "String (required) The update-popup ID. This is randomly generated by SAM when reqeusting an update-popup.",
+   "action": "String (required) The action that the user can choose. Possible values: launch, update, cancel"
+  },
+  "required": [
+   "action",
+   "alertId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.notifyAlertClosed.schema"
+ },
+ "luna://com.webos.applicationManager/releaseBlockSystemApp": {
+  "params": {
+   "id": "String (required) system application ID to be released"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.releaseBlockSystemApp.schema"
+ },
+ "luna://com.webos.applicationManager/removeAllContents": {
+  "params": {
+   "launchPoints": "Array (required) Unique id list of launch point"
+  },
+  "required": [
+   "launchPoints"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.removeAllContents.schema"
+ },
+ "luna://com.webos.applicationManager/removeContent": {
+  "params": {
+   "contentId": "String (required) Unique id of content"
+  },
+  "required": [
+   "contentId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.removeContent.schema"
+ },
+ "luna://com.webos.applicationManager/removeLaunchPoint": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be removed"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.removeLaunchPoint.schema"
+ },
+ "luna://com.webos.applicationManager/removeVirtualApp": {
+  "params": {
+   "id": "String (required) virtual application ID to be removed"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.removeVirtualApp.schema"
+ },
+ "luna://com.webos.applicationManager/running": {
+  "params": {
+   "subscribe": "Boolean (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.running.schema"
+ },
+ "luna://com.webos.applicationManager/searchApps": {
+  "params": {
+   "keyword": "String (required) Keyword to search with"
+  },
+  "required": [
+   "keyword"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.searchApps.schema"
+ },
+ "luna://com.webos.applicationManager/setContents": {
+  "params": {
+   "launchPointId": "String (required) Unique id of launch point",
+   "contents": "Array (required) set of contents"
+  },
+  "required": [
+   "contents",
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.setContents.schema"
+ },
+ "luna://com.webos.applicationManager/setDefaultApp": {
+  "params": {
+   "category": "String (required) app category name",
+   "appId": "String (required) targe app id for given category"
+  },
+  "required": [
+   "appId",
+   "category"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.setDefaultApp.schema"
+ },
+ "luna://com.webos.applicationManager/setOrder": {
+  "params": {
+   "type": "String (required) Set order type Possible values: custom, default",
+   "order": "Array (optional) Order array"
+  },
+  "required": [
+   "type"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.setOrder.schema"
+ },
+ "luna://com.webos.applicationManager/updateLaunchPoint": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be updated",
+   "title": "String (optional) Title for the launch point to be updated",
+   "icon": "String (optional) Path to icon for the launch point to be updated",
+   "bgImage": "String (optional) This field is the location of a bitmap. The bitmap is displayed to the user when the user hovers over the launch point with the system pointer.",
+   "bgImages": "Array (optional) Locations of bitmaps that may be displayed to the user when the user hovers over the launch point with the system pointer.",
+   "bgColor": "String (optional) This field is the color to be displayed to the user when the user hovers over the launch point with the system pointer. This is used in the absence of the backgroundImage.",
+   "imageForRecents": "String (optional) This field is the location of a bitmap. The bitmap is displayed in the recent apps list.",
+   "iconColor": "String (optional) indicates color of the icon of the launch point.",
+   "mediumLargeIcon": "String (optional) path to mediumLargeIcon",
+   "largeIcon": "String (optional) path to largeIcon",
+   "extraLargeIcon": "String (optional) path to extraLargeIcon",
+   "appDescription": "String (optional) A short tagline for the application",
+   "params": "Object (optional) Parameters to pass to the application",
+   "userData": "String (optional) Additional data that may be used by clients, such as an identifier for analytics purposes",
+   "tileSize": "String (optional) Hint for sizing of UI tiles: normal or large, large may be used for a promotional item Possible values: normal, large",
+   "unmovable": "Boolean (optional) Hint that an item should never be moved from it's given position",
+   "removable": "Boolean (optional) Hint that an item should never be removed",
+   "hidden": "Boolean (optional) To store the status of launch point is hidden or not"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.updateLaunchPoint.schema"
+ },
+ "luna://com.webos.notification/closeAlert": {
+  "params": {
+   "alertId": "String (required)"
+  },
+  "required": [
+   "alertId"
+  ],
+  "source": "/etc/palm/schemas/notificationmgr/closeAlert.schema"
+ },
+ "luna://com.webos.notification/closeInputAlert": {
+  "params": {
+   "inputAlertId": "String (required)"
+  },
+  "required": [
+   "inputAlertId"
+  ],
+  "source": "/etc/palm/schemas/notificationmgr/closeInputAlert.schema"
+ },
+ "luna://com.webos.notification/closePincodePrompt": {
+  "params": {
+   "pincode": "String (optional)",
+   "closeType": "String (required)",
+   "mode": "String (optional)"
+  },
+  "required": [
+   "closeType"
+  ],
+  "source": "/etc/palm/schemas/notificationmgr/closePincodePrompt.schema"
+ },
+ "luna://com.webos.notification/closeToast": {
+  "params": {
+   "toastId": "String (optional)",
+   "sourceId": "String (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/notificationmgr/closeToast.schema"
+ },
+ "luna://com.webos.notification/createAlert": {
+  "params": {
+   "iconUrl": "String (optional)",
+   "thumbnailUrl": "String (optional) File path  to thumbnail. The path should be local to device.",
+   "title": "String (optional)",
+   "message": "String (required)",
+   "readable": "String (optional)",
+   "modal": "Boolean (optional)",
+   "autoTimeout": "Integer (optional) Alert is closed after autoTimeout seconds. If it's not specified, it's decided by UI default policy.",
+   "showTimeout": "Boolean (optional) If this value is true, UI will show remaining timeout in alert.",
+   "type": "String (optional) Possible values: confirm, warning, battery, spinner, progress",
+   "buttons": "Array (required)",
+   "checkButton": "Object (optional)",
+   "isSysReq": "Boolean (optional)",
+   "onclose": "Object (optional) Defines closed alert action",
+   "onfail": "Object (optional) Defines failed alert action"
+  },
+  "required": [
+   "buttons",
+   "message"
+  ],
+  "source": "/etc/palm/schemas/notificationmgr/createAlert.schema"
+ },
+ "luna://com.webos.notification/createInputAlert": {
+  "params": {
+   "appId": "String (optional)",
+   "portType": "String (optional)",
+   "portName": "String (optional)",
+   "portIcon": "String (optional)",
+   "deviceName": "String (optional)",
+   "deviceIcon": "String (optional)",
+   "params": "Object (optional)",
+   "inputs": "Array (optional) Contains input alert informations",
+   "timeout": "Number (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/notificationmgr/createInputAlert.schema"
+ },
+ "luna://com.webos.notification/createNotification": {
+  "params": {
+   "sourceId": "String (optional)",
+   "iconUrl": "String (optional)",
+   "title": "String (optional)",
+   "message": "String (required)",
+   "readable": "String (optional)",
+   "autoRemove": "Boolean (optional)",
+   "onClick": "String (optional)",
+   "params": "Object (optional)",
+   "forceLcdTurnOn": "Boolean (optional)",
+   "needSoundPlay": "Boolean (optional)",
+   "forceSoundPlay": "Boolean (optional)",
+   "soundUri": "String (optional)",
+   "isRawSound": "Boolean (optional)",
+   "needToShowPopup": "Boolean (optional)",
+   "isRemoteNotification": "Boolean (optional)",
+   "isUnDeletable": "Boolean (optional)",
+   "isSysReq": "Boolean (optional)"
+  },
+  "required": [
+   "message"
+  ],
+  "source": "/etc/palm/schemas/notificationmgr/createNotification.schema"
+ },
+ "luna://com.webos.notification/createPincodePrompt": {
+  "params": {
+   "promptType": "String (required)",
+   "appId": "String (optional)",
+   "message": "String (optional)"
+  },
+  "required": [
+   "promptType"
+  ],
+  "source": "/etc/palm/schemas/notificationmgr/createPincodePrompt.schema"
+ },
+ "luna://com.webos.notification/createRemoteNotification": {
+  "params": {
+   "remoteSourceId": "String (optional)",
+   "parentNotiId": "String (optional)",
+   "remotePackageName": "String (required)",
+   "remoteTitle": "String (optional)",
+   "remoteMessage": "String (required)",
+   "remoteTickerText": "String (optional)",
+   "remoteId": "Number (optional)",
+   "remoteUserId": "Number (optional)",
+   "remotePostTime": "Number (optional)",
+   "remoteAppName": "String (required)",
+   "remoteIconUrl": "String (optional)",
+   "remoteBgImage": "String (optional)",
+   "remoteActionParam": "Array (optional)",
+   "isUnDeletable": "Boolean (optional)",
+   "isRemoteNotification": "Boolean (optional)",
+   "groupId": "String (optional)",
+   "notificationType": "String (optional)",
+   "pageNumber": "Number (optional)",
+   "remoteSubText": "String (optional)",
+   "remoteCount": "Number (optional)",
+   "remoteTag": "String (optional)",
+   "remoteResultKey": "String (optional)",
+   "remoteAlert": "Boolean (optional)",
+   "enhancedNotification": "String (optional)"
+  },
+  "required": [
+   "remoteAppName",
+   "remoteMessage",
+   "remotePackageName"
+  ],
+  "source": "/etc/palm/schemas/notificationmgr/createRemoteNotification.schema"
+ },
+ "luna://com.webos.notification/createToast": {
+  "params": {
+   "sourceId": "String (optional)",
+   "iconUrl": "String (optional)",
+   "title": "String (optional)",
+   "message": "String (required)",
+   "readable": "String (optional)",
+   "onclick": "Object (optional)",
+   "noaction": "Boolean (optional)",
+   "stale": "Boolean (optional)",
+   "persistent": "Boolean (optional)",
+   "onlyToast": "Boolean (optional)",
+   "isSysReq": "Boolean (optional)",
+   "schedule": "Object (optional) Defines the persistent message schedule",
+   "type": "String (optional) Defines the toast type Possible values: standard, light, advanced Default: standard",
+   "opacity": "Number (optional) Defines toast opacity, Is is specified as a number between 0.0 (fully transparent) and 1.0 (fully opaque). Default: 1.0",
+   "autoTimeout": "Integer (optional) Toast is closed after autoTimeout seconds. If it's not specified, it's decided by UI default policy.",
+   "extra": "Object (optional) Defines extra toast resource"
+  },
+  "required": [
+   "message"
+  ],
+  "source": "/etc/palm/schemas/notificationmgr/createToast.schema"
+ },
+ "luna://com.webos.notification/disable": {
+  "params": {
+   "exceptions": "Array (optional) services that will not be disabled exceptionally."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/notificationmgr/disable.schema"
+ },
+ "luna://com.webos.notification/getNotificationInfo": {
+  "params": {
+   "sourceId": "String (optional)",
+   "all": "Boolean (required)"
+  },
+  "required": [
+   "all"
+  ],
+  "source": "/etc/palm/schemas/notificationmgr/getNotificationInfo.schema"
+ },
+ "luna://com.webos.notification/getRemoteNotificationInfo": {
+  "params": {
+   "remotePackageName": "String (optional)",
+   "all": "Boolean (required)"
+  },
+  "required": [
+   "all"
+  ],
+  "source": "/etc/palm/schemas/notificationmgr/getRemoteNotificationInfo.schema"
+ },
+ "luna://com.webos.notification/getToastNotification": {
+  "params": {
+   "subscribe": "Boolean (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/notificationmgr/getNotification.schema"
+ },
+ "luna://com.webos.notification/removeNotification": {
+  "params": {
+   "removeNotiId": "Array (optional)",
+   "sourceId": "String (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/notificationmgr/removeNotification.schema"
+ },
+ "luna://com.webos.notification/removeRemoteNotification": {
+  "params": {
+   "removeRemoteNotiId": "Array (optional)",
+   "remotePackageName": "String (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/notificationmgr/removeRemoteNotification.schema"
+ },
+ "luna://com.webos.notification/setAlertProgress": {
+  "params": {
+   "alertId": "String (required)",
+   "progress": "Integer (required)"
+  },
+  "required": [
+   "alertId",
+   "progress"
+  ],
+  "source": "/etc/palm/schemas/notificationmgr/setAlertProgress.schema"
+ },
+ "luna://com.webos.service.applicationManager/addVirtualApp": {
+  "params": {
+   "id": "String (required) virtual application ID to be created.",
+   "hostId": "String (required) host application id for virtual application.",
+   "appInfo": "Object (optional) appInfo for virtual application. Default: {}",
+   "params": "Object (required) params to be passed to host application as launch params. Default: {}"
+  },
+  "required": [
+   "hostId",
+   "id",
+   "params"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.addVirtualApp.schema"
+ },
+ "luna://com.webos.service.applicationManager/blockSystemApp": {
+  "params": {
+   "id": "String (required) system application ID to be removed"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.blockSystemApp.schema"
+ },
+ "luna://com.webos.service.applicationManager/getAppLoadStatus": {
+  "params": {
+   "appId": "String (required)"
+  },
+  "required": [
+   "appId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getAppLoadStatus.schema"
+ },
+ "luna://com.webos.service.applicationManager/getContents": {
+  "params": {
+   "launchPointId": "String (required) Unique id of launch point"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getContents.schema"
+ },
+ "luna://com.webos.service.applicationManager/getForegroundApps": {
+  "params": {
+   "extraInfo": "Boolean (optional) If set to true, returns all foreground apps as an array. Otherwise, returns only a full screen app (e.g. card type)",
+   "subscribe": "Boolean (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.getForegroundApps.schema"
+ },
+ "luna://com.webos.service.applicationManager/getHandlerForExtension": {
+  "params": {
+   "extension": "String (required) The extension for getting handler application."
+  },
+  "required": [
+   "extension"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getHandlerForExtension.schema"
+ },
+ "luna://com.webos.service.applicationManager/getHandlerForMimeType": {
+  "params": {
+   "mimeType": "String (required) The mime type for getting handler application."
+  },
+  "required": [
+   "mimeType"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getHandlerForMimeType.schema"
+ },
+ "luna://com.webos.service.applicationManager/getHandlerForUrl": {
+  "params": {
+   "url": "String (required) The url for getting handler application."
+  },
+  "required": [
+   "url"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getHandlerForUrl.schema"
+ },
+ "luna://com.webos.service.applicationManager/getHandlerForUrlByVerb": {
+  "params": {
+   "url": "String (optional) The url for getting handler application by verb.",
+   "mime": "String (optional) The mime for getting handler application by verb.",
+   "verb": "String (required) The verb for getting handler application."
+  },
+  "required": [
+   "verb"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getHandlerForUrlByVerb.schema"
+ },
+ "luna://com.webos.service.applicationManager/getPackageInfo": {
+  "params": {
+   "id": "String (required) Get package information for a given package ID."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getPackageInfo.schema"
+ },
+ "luna://com.webos.service.applicationManager/launchDefaultApp": {
+  "params": {
+   "category": "String (required) app category name"
+  },
+  "required": [
+   "category"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.launchDefaultApp.schema"
+ },
+ "luna://com.webos.service.applicationManager/launchVirtualApp": {
+  "params": {
+   "id": "String (required) virtual application ID to be launched.",
+   "hostId": "String (required) Host app id for virtual application.",
+   "appInfo": "Object (optional) appInfo for virtual application Default: {}",
+   "params": "Object (required) params to be passed to host application as params Default: {}",
+   "noSplash": "Boolean (optional)",
+   "spinner": "Boolean (optional)",
+   "preload": "String (optional) App will be launched in background if preload is filled in Possible values: full, semi-full, partial, minimal",
+   "launchHidden": "Boolean (optional)",
+   "keepAlive": "Boolean (optional)"
+  },
+  "required": [
+   "hostId",
+   "id",
+   "params"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.launchVirtualApp.schema"
+ },
+ "luna://com.webos.service.applicationManager/listAllHandlersForMime": {
+  "params": {
+   "mime": "String (optional) The mime for getting handler application by verb."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForMime.schema"
+ },
+ "luna://com.webos.service.applicationManager/listAllHandlersForMultipleMime": {
+  "params": {
+   "mimes": "Array (required) The mimes type for getting handler application."
+  },
+  "required": [
+   "mimes"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForMultipleMime.schema"
+ },
+ "luna://com.webos.service.applicationManager/listAllHandlersForMultipleUrlPattern": {
+  "params": {
+   "urls": "Array (required) The urls for getting handler application."
+  },
+  "required": [
+   "urls"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForMultipleUrlPattern.schema"
+ },
+ "luna://com.webos.service.applicationManager/listAllHandlersForUrl": {
+  "params": {
+   "url": "String (optional) The url for getting handler application by verb."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForUrl.schema"
+ },
+ "luna://com.webos.service.applicationManager/listAllHandlersForUrlByVerb": {
+  "params": {
+   "url": "String (optional) The url for getting handler application by verb.",
+   "mime": "String (optional) The mime for getting handler application by verb.",
+   "verb": "String (required) The verb for getting handler application."
+  },
+  "required": [
+   "verb"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForUrlByVerb.schema"
+ },
+ "luna://com.webos.service.applicationManager/listAllHandlersForUrlPattern": {
+  "params": {
+   "urlPattern": "String (required) The mimes type for getting handler application."
+  },
+  "required": [
+   "urlPattern"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.listAllHandlersForUrlPattern.schema"
+ },
+ "luna://com.webos.service.applicationManager/listPackages": {
+  "params": {
+   "subscribe": "Boolean (optional) listPackages support subscription to notify when packages are updated, i.e., an package is installed or removed or edit"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listPackages.schema"
+ },
+ "luna://com.webos.service.applicationManager/lockAllApps": {
+  "params": {
+   "lock": "Boolean (required) When set all applications is not allowed to launch",
+   "exceptionApps": "Array (optional) apps which should not be blocked, only for lock. Default: []"
+  },
+  "required": [
+   "lock"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.lockAllApps.schema"
+ },
+ "luna://com.webos.service.applicationManager/mimeTypeForExtension": {
+  "params": {
+   "extension": "String (required) The extension of file for getting mime type."
+  },
+  "required": [
+   "extension"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.mimeTypeForExtension.schema"
+ },
+ "luna://com.webos.service.applicationManager/moveLaunchPoint": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be updated",
+   "position": "Number (optional) This field means the position where to put on launcher",
+   "target": "Object (optional)"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.moveLaunchPoint.schema"
+ },
+ "luna://com.webos.service.applicationManager/notifyAlertClosed": {
+  "params": {
+   "alertId": "String (required) The update-popup ID. This is randomly generated by SAM when reqeusting an update-popup.",
+   "action": "String (required) The action that the user can choose. Possible values: launch, update, cancel"
+  },
+  "required": [
+   "action",
+   "alertId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.notifyAlertClosed.schema"
+ },
+ "luna://com.webos.service.applicationManager/releaseBlockSystemApp": {
+  "params": {
+   "id": "String (required) system application ID to be released"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.releaseBlockSystemApp.schema"
+ },
+ "luna://com.webos.service.applicationManager/removeAllContents": {
+  "params": {
+   "launchPoints": "Array (required) Unique id list of launch point"
+  },
+  "required": [
+   "launchPoints"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.removeAllContents.schema"
+ },
+ "luna://com.webos.service.applicationManager/removeContent": {
+  "params": {
+   "contentId": "String (required) Unique id of content"
+  },
+  "required": [
+   "contentId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.removeContent.schema"
+ },
+ "luna://com.webos.service.applicationManager/removeVirtualApp": {
+  "params": {
+   "id": "String (required) virtual application ID to be removed"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.removeVirtualApp.schema"
+ },
+ "luna://com.webos.service.applicationManager/searchApps": {
+  "params": {
+   "keyword": "String (required) Keyword to search with"
+  },
+  "required": [
+   "keyword"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.searchApps.schema"
+ },
+ "luna://com.webos.service.applicationManager/setContents": {
+  "params": {
+   "launchPointId": "String (required) Unique id of launch point",
+   "contents": "Array (required) set of contents"
+  },
+  "required": [
+   "contents",
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.setContents.schema"
+ },
+ "luna://com.webos.service.applicationManager/setOrder": {
+  "params": {
+   "type": "String (required) Set order type Possible values: custom, default",
+   "order": "Array (optional) Order array"
+  },
+  "required": [
+   "type"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.setOrder.schema"
+ },
+ "luna://com.webos.service.applicationmanager/addLaunchPoint": {
+  "params": {
+   "id": "String (required) ID of application to generate launch point",
+   "title": "String (optional) Title for the launch point",
+   "icon": "String (optional) Path to icon",
+   "bgImage": "String (optional) This field is the location of a bitmap. The bitmap is displayed to the user when the user hovers over the launch point with the system pointer.",
+   "bgImages": "Array (optional) Locations of bitmaps that may be displayed to the user when the user hovers over the launch point with the system pointer. Default: []",
+   "bgColor": "String (optional) This field is the color to be displayed to the user when the user hovers over the launch point with the system pointer. This is used in the absence of the backgroundImage.",
+   "imageForRecents": "String (optional) This field is the location of a bitmap. The bitmap is displayed in the recent apps list.",
+   "iconColor": "String (optional) indicates color of the icon of the launch point.",
+   "mediumLargeIcon": "String (optional) path to mediumLargeIcon",
+   "largeIcon": "String (optional) path to largeIcon",
+   "extraLargeIcon": "String (optional) path to extraLargeIcon",
+   "appDescription": "String (optional) A short tagline for the application",
+   "params": "Object (optional) Parameters to pass to the application",
+   "userData": "String (optional) Additional data that may be used by clients, such as an identifier for analytics purposes",
+   "tileSize": "String (optional) Hint for sizing of UI tiles: normal or large, large may be used for a promotional item Possible values: normal, large Default: normal",
+   "unmovable": "Boolean (optional) Hint that an item should never be moved from it's given position Default: False",
+   "removable": "Boolean (optional) Hint that an item should never be removed",
+   "supportI18nTitle": "Boolean (optional) Hint that i18n will be supported for title Default: True"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.addLaunchPoint.schema"
+ },
+ "luna://com.webos.service.applicationmanager/close": {
+  "params": {
+   "processId": "String (required) ProcessID of application to be closed.",
+   "tryToMakeScreenshot": "Boolean (optional) If set true, try call LSM's closeByAppId to leave screenshot on recent Default: False"
+  },
+  "required": [
+   "processId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.close.schema"
+ },
+ "luna://com.webos.service.applicationmanager/closeByAppId": {
+  "params": {
+   "id": "String (required) Application ID to be closed."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.closeByAppId.schema"
+ },
+ "luna://com.webos.service.applicationmanager/foregroundAppInfo": {
+  "params": {
+   "appId": "String (required) Application ID of application in foreground.",
+   "windowId": "String (required) Window ID of application in foreground.",
+   "processId": "String (required) Process ID of application in foreground.",
+   "windowType": "String (optional) Describe type of window : maximized, maximized, pip, popup, overay"
+  },
+  "required": [
+   "appId",
+   "processId",
+   "windowId"
+  ],
+  "source": "/etc/palm/schemas/sam/foregroundAppInfo.schema"
+ },
+ "luna://com.webos.service.applicationmanager/getAppBasePath": {
+  "params": {
+   "appId": "String (required) Get application base path for a given application ID."
+  },
+  "required": [
+   "appId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getAppBasePath.schema"
+ },
+ "luna://com.webos.service.applicationmanager/getAppInfo": {
+  "params": {
+   "id": "String (required) Get application information for a given application ID.",
+   "properties": "Array (optional) Get application information for service-user selected properties."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getAppInfo.schema"
+ },
+ "luna://com.webos.service.applicationmanager/getAppStatus": {
+  "params": {
+   "appId": "String (required)",
+   "appInfo": "Boolean (optional) Default: False"
+  },
+  "required": [
+   "appId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.getAppStatus.schema"
+ },
+ "luna://com.webos.service.applicationmanager/getForegroundAppInfo": {
+  "params": {
+   "extraInfo": "Boolean (optional) If set to true, returns all foreground apps as an array. Otherwise, returns only a full screen app (e.g. card type)",
+   "subscribe": "Boolean (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.getForegroundAppInfo.schema"
+ },
+ "luna://com.webos.service.applicationmanager/launch": {
+  "params": {
+   "id": "String (optional) ID of application to be launched.",
+   "target": "String (optional) A target URL. If id is not specified, this URL is opened in an appropriate application, if there is one.",
+   "mime": "String (optional) Mime type for target.",
+   "params": "Object (optional) Additional launch parameters for the application.",
+   "authToken": "Object (optional) Authorization token given to download manager when opening a remote file. deviceId is required with this.",
+   "deviceId": "Object (optional) Device ID given to download manager when opening a remote file. authToken is required with this.",
+   "overrideHandlerAppId": "String (optional) If specified, this appid will be used to open a resource.",
+   "fileName": "String (optional) File name of target.",
+   "subcsribe": "Boolean (optional) When true, the message is a subscription request.",
+   "noSplash": "Boolean (optional) When true, there will be no splash screen.",
+   "launchFirstApp": "Boolean (optional) When true, the app is set to first launched app after booting."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.open.schema"
+ },
+ "luna://com.webos.service.applicationmanager/launchPoints": {
+  "params": {
+   "applications_common": "Array (optional) apps which are displayed on launcher in common",
+   "applications_dosci": "Array (optional) apps which are displayed on launcher depending on service country information",
+   "applications_dobci": "Array (optional) apps which are displayed on launcher depending on broadcast country information and lcd panel",
+   "applications_dobci_oled": "Array (optional) apps which are displayed on launcher depending on broadcast country information and oled panel",
+   "applications_dobci_tnative": "Array (optional) apps which are displayed on launcher depending on broadcast country information and tnative"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/Customization.launchPoints.schema"
+ },
+ "luna://com.webos.service.applicationmanager/listApps": {
+  "params": {
+   "properties": "Array (optional) Get application information for service-user selected properties.",
+   "subscribe": "Boolean (optional) listApps support subscription to notify when Apps are updated, i.e., an app is installed or removed or edit"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listApps.schema"
+ },
+ "luna://com.webos.service.applicationmanager/listLaunchPoints": {
+  "params": {
+   "subscribe": "Boolean (optional) listLaunchPoints support subscription to notify when launch points are updated, i.e., an app is installed or removed"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.listLaunchPoints.schema"
+ },
+ "luna://com.webos.service.applicationmanager/lockApp": {
+  "params": {
+   "id": "String (required) ID of application to be locked.",
+   "lock": "Boolean (required) When set the application is not allowed to launch"
+  },
+  "required": [
+   "id",
+   "lock"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.lockApp.schema"
+ },
+ "luna://com.webos.service.applicationmanager/removeLaunchPoint": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be removed"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.removeLaunchPoint.schema"
+ },
+ "luna://com.webos.service.applicationmanager/running": {
+  "params": {
+   "subscribe": "Boolean (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/sam/applicationManager.running.schema"
+ },
+ "luna://com.webos.service.applicationmanager/setDefaultApp": {
+  "params": {
+   "category": "String (required) app category name",
+   "appId": "String (required) targe app id for given category"
+  },
+  "required": [
+   "appId",
+   "category"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.setDefaultApp.schema"
+ },
+ "luna://com.webos.service.applicationmanager/updateLaunchPoint": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be updated",
+   "title": "String (optional) Title for the launch point to be updated",
+   "icon": "String (optional) Path to icon for the launch point to be updated",
+   "bgImage": "String (optional) This field is the location of a bitmap. The bitmap is displayed to the user when the user hovers over the launch point with the system pointer.",
+   "bgImages": "Array (optional) Locations of bitmaps that may be displayed to the user when the user hovers over the launch point with the system pointer.",
+   "bgColor": "String (optional) This field is the color to be displayed to the user when the user hovers over the launch point with the system pointer. This is used in the absence of the backgroundImage.",
+   "imageForRecents": "String (optional) This field is the location of a bitmap. The bitmap is displayed in the recent apps list.",
+   "iconColor": "String (optional) indicates color of the icon of the launch point.",
+   "mediumLargeIcon": "String (optional) path to mediumLargeIcon",
+   "largeIcon": "String (optional) path to largeIcon",
+   "extraLargeIcon": "String (optional) path to extraLargeIcon",
+   "appDescription": "String (optional) A short tagline for the application",
+   "params": "Object (optional) Parameters to pass to the application",
+   "userData": "String (optional) Additional data that may be used by clients, such as an identifier for analytics purposes",
+   "tileSize": "String (optional) Hint for sizing of UI tiles: normal or large, large may be used for a promotional item Possible values: normal, large",
+   "unmovable": "Boolean (optional) Hint that an item should never be moved from it's given position",
+   "removable": "Boolean (optional) Hint that an item should never be removed",
+   "hidden": "Boolean (optional) To store the status of launch point is hidden or not"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/sam/applicationManager.updateLaunchPoint.schema"
+ },
+ "luna://com.webos.service.config/getConfigs": {
+  "params": {
+   "configNames": "Array (required)",
+   "subscribe": "Boolean (optional)"
+  },
+  "required": [
+   "configNames"
+  ],
+  "source": "/etc/palm/schemas/configd/ConfigdService.getConfigs.schema"
+ },
+ "luna://com.webos.service.config/reconfigure": {
+  "params": {
+   "timeout": "Integer (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/configd/ConfigdService.reconfigure.schema"
+ },
+ "luna://com.webos.service.config/setConfigs": {
+  "params": {
+   "configs": "Object (required)"
+  },
+  "required": [
+   "configs"
+  ],
+  "source": "/etc/palm/schemas/configd/ConfigdService.setConfigs.schema"
+ },
+ "luna://com.webos.service.contentminer/clearPersonalKey": {
+  "params": {
+   "appId": "String (required) Clear content data for a given application ID."
+  },
+  "required": [
+   "appId"
+  ],
+  "source": "/etc/palm/schemas/contentminer/contentminer.clearPersonalKey.schema"
+ },
+ "luna://com.webos.service.contentminer/getContentData": {
+  "params": {
+   "appId": "String (required) Get content data for a given application ID."
+  },
+  "required": [
+   "appId"
+  ],
+  "source": "/etc/palm/schemas/contentminer/contentminer.getContentData.schema"
+ },
+ "luna://com.webos.service.contentminer/setPersonalKey": {
+  "params": {
+   "appId": "String (required) Get content data for a given application ID.",
+   "key": "String (required) unique key for app personalization",
+   "expiredTime": "Number (optional) valid until"
+  },
+  "required": [
+   "appId",
+   "key"
+  ],
+  "source": "/etc/palm/schemas/contentminer/contentminer.setPersonalKey.schema"
+ },
+ "luna://com.webos.service.downloadmanager/allow1x": {
+  "params": {
+   "value": "Boolean (required) should allow 1x"
+  },
+  "required": [
+   "value"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.allow1x.schema"
+ },
+ "luna://com.webos.service.downloadmanager/cancelDownload": {
+  "params": {
+   "ticket": "Number (required) Download ID from download"
+  },
+  "required": [
+   "ticket"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.cancelDownload.schema"
+ },
+ "luna://com.webos.service.downloadmanager/clearHistory": {
+  "params": {
+   "owner": "String (optional) App ID which requested the download"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.clearHistory.schema"
+ },
+ "luna://com.webos.service.downloadmanager/deleteDownloadedFile": {
+  "params": {
+   "ticket": "Number (required) ticket of the file to be deleted."
+  },
+  "required": [
+   "ticket"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.deleteDownloadedFile.schema"
+ },
+ "luna://com.webos.service.downloadmanager/download": {
+  "params": {
+   "target": "String (required) ID of application to be installed.",
+   "mime": "String (optional) mime type string, not used in curl now, instead application/x-binary is set.",
+   "authToken": "String (optional) used for curl in Auth-Token",
+   "cookieToken": "String (optional) cookieToken",
+   "cookieHeader": "String (optional) cookieHeader",
+   "deviceId": "String (optional) used for curl in Device-Id",
+   "targetDir": "String (optional) target directory where the download file is placed.",
+   "targetFilename": "String (optional) target file name that the download file will have. If it's omitted, it will have unique name. If there is the same file name, downloadmgr internally generate unique name.",
+   "keepFilenameOnRedirect": "Boolean (optional) If True, it will follow redirects until it download the actual file.",
+   "canHandlePause": "Boolean (optional) True if it can be paused.",
+   "autoResume": "Boolean (optional) If autoTesume is false, paused task will not be recovered automatically.",
+   "appendTargetFile": "Boolean (optional) If true and if target file already exist, append download data not create new one.",
+   "e_rangeLow": "String (optional) the offset in number of bytes that you want the transfer to start from. used for curl option.",
+   "e_rangeHigh": "String (optional) not used now, but must be bigger than e_rangeLow.",
+   "interface": "String (optional) one of the following state - (wifi, wan, btpan), it internally set to ANY if it is not one of them. If it is any it will determin a good interface as follows in order.",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "target"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.download.schema"
+ },
+ "luna://com.webos.service.downloadmanager/downloadStatusQuery": {
+  "params": {
+   "ticket": "Number (required) ticket of the file to be queried.",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "ticket"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.downloadStatusQuery.schema"
+ },
+ "luna://com.webos.service.downloadmanager/getAllHistory": {
+  "params": {
+   "owner": "String (required) App ID which requested the download"
+  },
+  "required": [
+   "owner"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.getAllHistory.schema"
+ },
+ "luna://com.webos.service.downloadmanager/getTicketHistory": {
+  "params": {
+   "ticket": "Number (required) ticket of the file to be queried."
+  },
+  "required": [
+   "ticket"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.getTicketHistory.schema"
+ },
+ "luna://com.webos.service.downloadmanager/pauseDownload": {
+  "params": {
+   "ticket": "Number (required) Download ID from download"
+  },
+  "required": [
+   "ticket"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.pauseDownload.schema"
+ },
+ "luna://com.webos.service.downloadmanager/resumeDownload": {
+  "params": {
+   "ticket": "Number (required) Download ID from download",
+   "authToken": "String (optional) used for curl in Auth-Token",
+   "deviceId": "String (optional) used for curl in Device-Id",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "ticket"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.resumeDownload.schema"
+ },
+ "luna://com.webos.service.downloadmanager/upload": {
+  "params": {
+   "url": "String (required) The URL to which to post the file",
+   "fileName": "String (required) Path to the local file to be uploaded",
+   "contentType": "String (optional) The MIME type of the file",
+   "fileLabel": "String (optional) The label portion of the file name (as opposed to the file extension)",
+   "postParameters": "Array (optional)",
+   "cookies": "Array (optional) cookies",
+   "customHttpHeaders": "Array (optional) customHttpHeaders"
+  },
+  "required": [
+   "fileName",
+   "url"
+  ],
+  "source": "/etc/palm/schemas/luna-downloadmgr/DownloadService.upload.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/addLaunchPoint": {
+  "params": {
+   "id": "String (required) ID of launch point to be added"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.addLaunchPoint.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/addQCard": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be updated",
+   "position": "Number (required) This field means the position where to put on launcher"
+  },
+  "required": [
+   "launchPointId",
+   "position"
+  ],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.addQCard.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/hideLaunchPoint": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be hidden by user"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.hideLaunchPoint.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/listAvailableLaunchPoints": {
+  "params": {
+   "subscribe": "Boolean (optional) listAvailableLaunchPoints maintains the order of hidden launch point apps"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.listAvailableLaunchPoints.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/listAvailableQCards": {
+  "params": {
+   "launchPointId": "String (optional) listAvailableQCards support subscription to notify when home launch points are updated"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.listAvailableQCards.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/listLaunchPoints": {
+  "params": {
+   "subscribe": "Boolean (optional) listLaunchPoints maintains the order of lauch point apps that are not hidden"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.listLaunchPoints.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/listQCards": {
+  "params": {
+   "subscribe": "Boolean (optional) listQCards support subscription to notify when home launch points are updated."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.listQCards.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/moveLaunchPoint": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be updated",
+   "position": "Number (required) This field means the position where to put on launcher"
+  },
+  "required": [
+   "launchPointId",
+   "position"
+  ],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.moveLaunchPoint.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/moveQCard": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be updated",
+   "position": "Number (required) This field means the position where to put on launcher"
+  },
+  "required": [
+   "launchPointId",
+   "position"
+  ],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.moveQCard.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/removeLaunchPoint": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be removed"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.removeLaunchPoint.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/removeQCard": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be removed"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.removeQCard.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/unhideLaunchPoint": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be restored from hidden list"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.unhideLaunchPoint.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/updateLaunchPoint": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be updated",
+   "title": "String (optional) Title for the launch point to be updated",
+   "icon": "String (optional) Path to icon for the launch point to be updated",
+   "bgImage": "String (optional) This field is the location of a bitmap. The bitmap is displayed to the user when the user hovers over the launch point with the system pointer.",
+   "bgImages": "Array (optional) Locations of bitmaps that may be displayed to the user when the user hovers over the launch point with the system pointer.",
+   "bgColor": "String (optional) This field is the color to be displayed to the user when the user hovers over the launch point with the system pointer. This is used in the absence of the backgroundImage.",
+   "imageForRecents": "String (optional) This field is the location of a bitmap. The bitmap is displayed in the recent apps list.",
+   "iconColor": "String (optional) indicates color of the icon of the launch point.",
+   "mediumLargeIcon": "String (optional) path to mediumLargeIcon",
+   "largeIcon": "String (optional) path to largeIcon",
+   "extraLargeIcon": "String (optional) path to extraLargeIcon",
+   "appDescription": "String (optional) A short tagline for the application",
+   "params": "Object (optional) Parameters to pass to the application",
+   "userData": "String (optional) Additional data that may be used by clients, such as an identifier for analytics purposes",
+   "tileSize": "String (optional) Hint for sizing of UI tiles: normal or large, large may be used for a promotional item Possible values: normal, large",
+   "unmovable": "Boolean (optional) Hint that an item should never be moved from it's given position"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.updateLaunchPoint.schema"
+ },
+ "luna://com.webos.service.homelaunchpoints/updateQCard": {
+  "params": {
+   "launchPointId": "String (required) ID of launch point to be updated",
+   "qCardTitle": "String (optional) New title that user desires",
+   "qCardDescription": "String (optional) User required description",
+   "qCardIcon": "String (optional) user required icon",
+   "qCardRemoteIcon": "String (optional) user required remote icon"
+  },
+  "required": [
+   "launchPointId"
+  ],
+  "source": "/etc/palm/schemas/homelaunchpoints/homelaunchpoints.updateQCard.schema"
+ },
+ "luna://com.webos.service.image/combine": {
+  "params": {
+   "srcFile": "Array (required)",
+   "combineDimension": "Object (optional)",
+   "combineScaled": "Object (optional)",
+   "position": "Object (required)",
+   "backgroundColor": "String (optional)",
+   "destFile": "String (required)",
+   "scrim": "String (optional)"
+  },
+  "required": [
+   "destFile",
+   "position",
+   "srcFile"
+  ],
+  "source": "/etc/palm/schemas/webos-image-service/combine.schema"
+ },
+ "luna://com.webos.service.image/convert": {
+  "params": {
+   "src": "String (required)",
+   "dest": "String (required)",
+   "destType": "String (required)",
+   "focusX": "Number (optional)",
+   "focusY": "Number (optional)",
+   "cropW": "Number (optional)",
+   "cropH": "Number (optional)"
+  },
+  "required": [
+   "dest",
+   "destType",
+   "src"
+  ],
+  "source": "/etc/palm/schemas/webos-image-service/convert.schema"
+ },
+ "luna://com.webos.service.image/cropMultiple": {
+  "params": {
+   "src": "String (required)",
+   "destSpec": "Array (required)"
+  },
+  "required": [
+   "destSpec",
+   "src"
+  ],
+  "source": "/etc/palm/schemas/webos-image-service/cropMultiple.schema"
+ },
+ "luna://com.webos.service.image/ezResize": {
+  "params": {
+   "src": "String (required)",
+   "dest": "String (required)",
+   "destType": "String (required)",
+   "destSizeW": "Number (required)",
+   "destSizeH": "Number (required)"
+  },
+  "required": [
+   "dest",
+   "destSizeH",
+   "destSizeW",
+   "destType",
+   "src"
+  ],
+  "source": "/etc/palm/schemas/webos-image-service/ezResize.schema"
+ },
+ "luna://com.webos.service.image/imageInfo": {
+  "params": {
+   "src": "String (required)"
+  },
+  "required": [
+   "src"
+  ],
+  "source": "/etc/palm/schemas/webos-image-service/imageInfo.schema"
+ },
+ "luna://com.webos.service.pkgInstall/cancel": {
+  "params": {
+   "id": "String (required) ID of package to be cancel."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/pkginstalld/pkgInstallService.cancel.schema"
+ },
+ "luna://com.webos.service.pkgInstall/install": {
+  "params": {
+   "id": "String (required) ID of application to be installed.",
+   "target": "Object (optional)",
+   "type": "String (optional) Indicates install type. If type is stub install stub app, else install full app Possible values: stub, op",
+   "silence": "Boolean (optional) Indicates install performed without any user notification. Default is true Default: True",
+   "wait": "Boolean (optional) request for multiple sequential installation Default: False",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive install progress."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/pkginstalld/pkgInstallService.install.schema"
+ },
+ "luna://com.webos.service.pkgInstall/queryInstallCapacity": {
+  "params": {
+   "id": "String (required) ID of package to be checked.",
+   "size": "Number (required) Packed package byte size.",
+   "uncompressedSize": "Number (required) Unpacked package byte size.",
+   "freeupSpace": "Boolean (optional) Request to free up internal storage. Default: False",
+   "dependencies": "Array (optional)"
+  },
+  "required": [
+   "id",
+   "size",
+   "uncompressedSize"
+  ],
+  "source": "/etc/palm/schemas/pkginstalld/pkgInstallService.queryInstallCapacity.schema"
+ },
+ "luna://com.webos.service.pkgInstall/remove": {
+  "params": {
+   "id": "String (required) ID of application to be removed.",
+   "type": "String (optional) Indicates remove type. If system app need to initialze, type should be initialize. Possible values: initialize",
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive remove progress."
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/pkginstalld/pkgInstallService.remove.schema"
+ },
+ "luna://com.webos.service.pkgInstall/status": {
+  "params": {
+   "subscribe": "Boolean (optional) Subscribe this call and subscribers can receive app version status changes."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/pkginstalld/pkgUpdateService.status.schema"
+ },
+ "luna://com.webos.service.printing/autoprint": {
+  "params": {
+   "filePath": "String (required)"
+  },
+  "required": [
+   "filePath"
+  ],
+  "source": "/etc/palm/schemas/com.webos.service.printing/printing.service.autoprint.schema"
+ },
+ "luna://com.webos.service.printing/jobs/all": {
+  "params": {
+   "printer": "String (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/com.webos.service.printing/printing.service.jobs.all.schema"
+ },
+ "luna://com.webos.service.printing/jobs/cancel": {
+  "params": {
+   "id": "Array (required)"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/com.webos.service.printing/printing.service.jobs.cancel.schema"
+ },
+ "luna://com.webos.service.printing/jobs/move": {
+  "params": {
+   "id": "Integer (required)",
+   "printer": "String (required)"
+  },
+  "required": [
+   "id",
+   "printer"
+  ],
+  "source": "/etc/palm/schemas/com.webos.service.printing/printing.service.jobs.move.schema"
+ },
+ "luna://com.webos.service.printing/jobs/queue": {
+  "params": {
+   "printer": "String (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/com.webos.service.printing/printing.service.jobs.queue.schema"
+ },
+ "luna://com.webos.service.printing/jobs/stop": {
+  "params": {
+   "id": "Integer (required)"
+  },
+  "required": [
+   "id"
+  ],
+  "source": "/etc/palm/schemas/com.webos.service.printing/printing.service.jobs.stop.schema"
+ },
+ "luna://com.webos.service.printing/print": {
+  "params": {
+   "printer": "String (required)",
+   "filePath": "Array (required)",
+   "fileName": "Array (optional)",
+   "filePassword": "Array (optional)",
+   "copies": "Integer (optional)",
+   "orientation": "Integer (optional)",
+   "sides": "String (optional) Possible values: one-sided, two-sided-long-edge, two-sided-short-edge",
+   "quality": "Integer (optional)",
+   "numberUp": "Integer (optional) Possible values: 1, 2, 4, 6, 9, 16",
+   "size": "String (optional)",
+   "pageRanges": "String (optional)",
+   "pageSet": "String (optional) Possible values: odd, even",
+   "color": "String (optional) Possible values: color, monochrome",
+   "collate": "Boolean (optional)",
+   "fromhov": "Boolean (optional)",
+   "hovFile": "String (optional)"
+  },
+  "required": [
+   "filePath",
+   "printer"
+  ],
+  "source": "/etc/palm/schemas/com.webos.service.printing/printing.service.print.schema"
+ },
+ "luna://com.webos.service.servicemanager/closePrerequisiteServices": {
+  "params": {
+   "id": "String (optional) app id to close prerequisite services"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/servicemanager/servicemanager.closePrerequisiteServices.schema"
+ },
+ "luna://com.webos.service.servicemanager/getPriorityLevel": {
+  "params": {
+   "serviceName": "String (optional) serviceName to check the priority level"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/servicemanager/servicemanager.getPriorityLevel.schema"
+ },
+ "luna://com.webos.service.servicemanager/launchPrerequisiteServices": {
+  "params": {
+   "id": "String (optional) app id to launch prerequisite services"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/servicemanager/servicemanager.launchPrerequisiteServices.schema"
+ },
+ "luna://com.webos.service.servicemanager/setPriorityLevel": {
+  "params": {
+   "serviceName": "String (optional) serviceName to set priority level",
+   "value": "String (optional) priority level - highest, high, normal, low, lowest"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/servicemanager/servicemanager.setPriorityLevel.schema"
+ },
+ "luna://com.webos.service.servicemanager/status": {
+  "params": {
+   "serviceName": "String (optional) serviceName to check the status"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/servicemanager/servicemanager.status.schema"
+ },
+ "luna://com.webos.service.storagestatistics/check": {
+  "params": {
+   "$activity": "Object (optional)",
+   "force": "Boolean (optional) monitoring regardless of the flag Default: False"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/storagestatistics/storagestatistics.check.schema"
+ },
+ "luna://com.webos.service.storagestatistics/clearAppData": {
+  "params": {
+   "appId": "String (required) ID of application for which data to be cleared."
+  },
+  "required": [
+   "appId"
+  ],
+  "source": "/etc/palm/schemas/storagestatistics/storagestatistics.clearAppData.schema"
+ },
+ "luna://com.webos.service.storagestatistics/getAppStats": {
+  "params": {
+   "appId": "String (required) ID of application for which storage statistics to be retrived."
+  },
+  "required": [
+   "appId"
+  ],
+  "source": "/etc/palm/schemas/storagestatistics/storagestatistics.getAppStats.schema"
+ },
+ "luna://com.webos.service.storagestatistics/listLargeApps": {
+  "params": {
+   "limit": "Number (optional) Total number of entries to be returned Default: 10"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/storagestatistics/storagestatistics.listLargeApps.schema"
+ },
+ "luna://com.webos.service.storagestatistics/listLargeFiles": {
+  "params": {
+   "limit": "Number (optional) Total number of entries to be returned Default: 10"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/storagestatistics/storagestatistics.listLargeFiles.schema"
+ },
+ "luna://com.webos.service.tv.broadcast/changeChannel": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "channelId": "String (required) Unique channel id obtained from iEPG.",
+   "mode": "String (optional) Describe play mode.",
+   "update": "Boolean (optional) If true, update last channel. Default: True",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "ignorable": "Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False"
+  },
+  "required": [
+   "broadcastId",
+   "channelId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.changeChannel.schema"
+ },
+ "luna://com.webos.service.tv.broadcast/changeChannelDown": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "skipSourceType": "Array (optional) Describe input source types to skip. Default: ['']",
+   "update": "Boolean (optional) If true, update last channel. Default: True",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "ignorable": "Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False"
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.changeChannelDown.schema"
+ },
+ "luna://com.webos.service.tv.broadcast/changeChannelPrevious": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "update": "Boolean (optional) If true, update last channel. Default: True",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "ignorable": "Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False"
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.changeChannelPrevious.schema"
+ },
+ "luna://com.webos.service.tv.broadcast/changeChannelUp": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "skipSourceType": "Array (optional) Describe input source types to skip. Default: ['']",
+   "update": "Boolean (optional) If true, update last channel. Default: True",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "ignorable": "Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False"
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.changeChannelUp.schema"
+ },
+ "luna://com.webos.service.tv.broadcast/close": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method."
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.close.schema"
+ },
+ "luna://com.webos.service.tv.broadcast/open": {
+  "params": {
+   "options": "Object (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/utp/utp.open.schema"
+ },
+ "luna://com.webos.service.tv.broadcast/pause": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "mode": "String (optional) Describe pause mode."
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.pause.schema"
+ },
+ "luna://com.webos.service.tv.broadcast/stop": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method."
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.stop.schema"
+ },
+ "luna://com.webos.service.tvrm/endTransaction": {
+  "params": {
+   "$$transactionId": "Number (required)"
+  },
+  "required": [
+   "$$transactionId"
+  ],
+  "source": "/etc/palm/schemas/tvrm/tvrm.api.endTransaction.schema"
+ },
+ "luna://com.webos.service.tvrm/getResourceToRelease": {
+  "params": {
+   "pipelineId": "String (optional)",
+   "input": "Any (optional)",
+   "purpose": "Any (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/tvrm/tvrm.api.getResourceToRelease.schema"
+ },
+ "luna://com.webos.service.tvrm/notifyForeground": {
+  "params": {
+   "pipelineId": "String (optional)",
+   "input": "Any (optional)",
+   "purpose": "Any (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/tvrm/tvrm.api.notifyForeground.schema"
+ },
+ "luna://com.webos.service.tvrm/presetTuner": {
+  "params": {
+   "input": "Any (optional)",
+   "tuner": "Number (optional)",
+   "port": "Number (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/tvrm/tvrm.api.presetTuner.schema"
+ },
+ "luna://com.webos.service.tvrm/registerHandledResource": {
+  "params": {
+   "resourceList": "Array (required)"
+  },
+  "required": [
+   "resourceList"
+  ],
+  "source": "/etc/palm/schemas/tvrm/tvrm.api.registerHandledResource.schema"
+ },
+ "luna://com.webos.service.tvrm/releaseResource": {
+  "params": {
+   "pipelineId": "String (optional)",
+   "input": "Any (optional)",
+   "purpose": "Any (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/tvrm/tvrm.api.releaseResource.schema"
+ },
+ "luna://com.webos.service.tvrm/requestResource": {
+  "params": {
+   "pipelineId": "String (optional)",
+   "input": "Any (optional)",
+   "purpose": "Any (optional)",
+   "simulationMode": "Boolean (optional) This indicates whether the request is handled in simulation mode or not Default: False"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/tvrm/tvrm.api.requestResource.schema"
+ },
+ "luna://com.webos.service.tvrm/setPipelineState": {
+  "params": {
+   "pipelineId": "String (required)",
+   "state": "String (required) Possible values: foreground, background"
+  },
+  "required": [
+   "pipelineId",
+   "state"
+  ],
+  "source": "/etc/palm/schemas/tvrm/tvrm.api.setPipelineState.schema"
+ },
+ "luna://com.webos.service.tvrm/setSimulationMode": {
+  "params": {
+   "mode": "Boolean (required)"
+  },
+  "required": [
+   "mode"
+  ],
+  "source": "/etc/palm/schemas/tvrm/tvrm.api.setSimulationMode.schema"
+ },
+ "luna://com.webos.service.tvrm/simulateResource": {
+  "params": {
+   "input": "Any (required)",
+   "purpose": "Any (required)",
+   "channel": "Object (required)"
+  },
+  "required": [
+   "channel",
+   "input",
+   "purpose"
+  ],
+  "source": "/etc/palm/schemas/tvrm/tvrm.api.simulateResource.schema"
+ },
+ "luna://com.webos.service.tvrm/updatePipelineInfo": {
+  "params": {
+   "input": "Any (optional)",
+   "purpose": "Any (optional)",
+   "pipelineInfo": "Object (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/tvrm/tvrm.api.updatePipelineInfo.schema"
+ },
+ "luna://com.webos.service.utp.broadcast/bind": {
+  "params": {
+   "wait": "Boolean (optional) Wait to bind until broadcast is playing. Default: False",
+   "hints": "Object (optional)",
+   "subscribe": "Boolean (optional) Subscribe this method and subscribers can receive binding status."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/utp/utp.bind.schema"
+ },
+ "luna://com.webos.service.utp.broadcast/changeChannel": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "channelId": "String (required) Unique channel id obtained from iEPG.",
+   "mode": "String (optional) Describe play mode.",
+   "update": "Boolean (optional) If true, update last channel. Default: True",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "ignorable": "Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False"
+  },
+  "required": [
+   "broadcastId",
+   "channelId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.changeChannel.schema"
+ },
+ "luna://com.webos.service.utp.broadcast/changeChannelByProperty": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "mode": "String (optional) Describe play mode.",
+   "update": "Boolean (optional) If true, update last channel. Default: True",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "properties": "Object (required) Describe channel properties.",
+   "ignorable": "Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False"
+  },
+  "required": [
+   "broadcastId",
+   "properties"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.changeChannelByProperty.schema"
+ },
+ "luna://com.webos.service.utp.broadcast/changeChannelDown": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "skipSourceType": "Array (optional) Describe input source types to skip. Default: ['']",
+   "update": "Boolean (optional) If true, update last channel. Default: True",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "ignorable": "Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False"
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.changeChannelDown.schema"
+ },
+ "luna://com.webos.service.utp.broadcast/changeChannelPrevious": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "update": "Boolean (optional) If true, update last channel. Default: True",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "ignorable": "Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False"
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.changeChannelPrevious.schema"
+ },
+ "luna://com.webos.service.utp.broadcast/changeChannelUp": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "skipSourceType": "Array (optional) Describe input source types to skip. Default: ['']",
+   "update": "Boolean (optional) If true, update last channel. Default: True",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "ignorable": "Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False"
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.changeChannelUp.schema"
+ },
+ "luna://com.webos.service.utp.broadcast/close": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method."
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.close.schema"
+ },
+ "luna://com.webos.service.utp.broadcast/open": {
+  "params": {
+   "options": "Object (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/utp/utp.open.schema"
+ },
+ "luna://com.webos.service.utp.broadcast/pause": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "mode": "String (optional) Describe pause mode."
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.pause.schema"
+ },
+ "luna://com.webos.service.utp.broadcast/play": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "mode": "String (optional) Describe play mode.",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "resolveConflicts": "Boolean (optional) If this value is true, resolve recording conflicts and play available channel. Default: False"
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.play.schema"
+ },
+ "luna://com.webos.service.utp.broadcast/stop": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method."
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.stop.schema"
+ },
+ "luna://com.webos.service.utp.channel/changeChannelFavorite": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "update": "Boolean (optional) If true, update last channel. Default: True",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "ignorable": "Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False"
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.changeChannelFavorite.schema"
+ },
+ "luna://com.webos.service.utp.channel/changeChannelType": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "update": "Boolean (optional) If true, update last channel. Default: True",
+   "connection_timeout": "Number (optional) Connection timeout for provider. If 0 is specified, wait for permanently. Default: 1000",
+   "ignorable": "Boolean (optional) If this true, request can be cancelled by utp internal policy. Default: False"
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.changeChannelType.schema"
+ },
+ "luna://com.webos.service.utp.channel/getChannelTypeList": {
+  "params": {
+   "channelModeId": "Number (required) Channel mode id."
+  },
+  "required": [
+   "channelModeId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.getChannelTypeList.schema"
+ },
+ "luna://com.webos.service.utp.channel/getLastChannelId": {
+  "params": {
+   "sourceType": "String (required) If sourceType is INPUTSOURCE_NONE, last channel from all input type will be replied, or specified input source type will be replied. Possible values: INPUTSOURCE_TERRESTRIAL_DIGITAL, INPUTSOURCE_TERRESTRIAL_ANALOG, INPUTSOURCE_CABLE_DIGITAL, INPUTSOURCE_CABLE_ANALOG, INPUTSOURCE_SATELLITE, INPUTSOURCE_RF, INPUTSOURCE_CABLE, INPUTSOURCE_TERRESTRIAL, INPUTSOURCE_TERRESTRIAL_DIGITAL",
+   "subscribe": "Boolean (optional) Subscribe this method and subscribers can receive last channel id is updated"
+  },
+  "required": [
+   "sourceType"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.getLastChannelId.schema"
+ },
+ "luna://com.webos.service.utp.channel/setChannelGroup": {
+  "params": {
+   "channelGroupId": "Number (required) Channel group id to be set."
+  },
+  "required": [
+   "channelGroupId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.setChannelGroup.schema"
+ },
+ "luna://com.webos.service.utp.channel/setChannelMode": {
+  "params": {
+   "channelModeId": "Number (required) Channel mode id to be set."
+  },
+  "required": [
+   "channelModeId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.setChannelMode.schema"
+ },
+ "luna://com.webos.service.utp.channel/setLastChannelId": {
+  "params": {
+   "channelId": "String (required) channelId to be set to last channel."
+  },
+  "required": [
+   "channelId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.setLastChannelId.schema"
+ },
+ "luna://com.webos.service.utp.extinputs/bind": {
+  "params": {
+   "wait": "Boolean (optional) Wait to bind until broadcast is playing. Default: False",
+   "hints": "Object (optional)",
+   "subscribe": "Boolean (optional) Subscribe this method and subscribers can receive binding status."
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/utp/utp.bind.schema"
+ },
+ "luna://com.webos.service.utp.extinputs/close": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method."
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.close.schema"
+ },
+ "luna://com.webos.service.utp.extinputs/open": {
+  "params": {
+   "options": "Object (optional)"
+  },
+  "required": [],
+  "source": "/etc/palm/schemas/utp/utp.open.schema"
+ },
+ "luna://com.webos.service.utp.extinputs/pause": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method.",
+   "mode": "String (optional) Describe pause mode."
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.pause.schema"
+ },
+ "luna://com.webos.service.utp.extinputs/stop": {
+  "params": {
+   "broadcastId": "String (required) Unique broadcast id obtained from open method."
+  },
+  "required": [
+   "broadcastId"
+  ],
+  "source": "/etc/palm/schemas/utp/utp.stop.schema"
+ }
+}

@@ -12,14 +12,14 @@
 | [`luna://com.webos.notification/button`](../services/com.webos.notification.md#button) | unknown | documented | Contains alert button information |
 | [`luna://com.webos.notification/closeAlert`](../services/com.webos.notification.md#closealert) | public | documented | Closes the currently displayed alert notification. |
 | [`luna://com.webos.notification/closeAllAlerts`](../services/com.webos.notification.md#closeallalerts) | public | documented | Closes all the open alerts. Note: This method is for internal use. It must only be used by com.webos.service.battest during BAT test . If the caller is not com. |
-| [`luna://com.webos.notification/closeInputAlert`](../services/com.webos.notification.md#closeinputalert) | private | inferred | Closes the input alert. |
-| [`luna://com.webos.notification/closePincodePrompt`](../services/com.webos.notification.md#closepincodeprompt) | private | inferred | Closes the pincode prompt. |
+| [`luna://com.webos.notification/closeInputAlert`](../services/com.webos.notification.md#closeinputalert) | private | documented | Closes the input alert. |
+| [`luna://com.webos.notification/closePincodePrompt`](../services/com.webos.notification.md#closepincodeprompt) | private | documented | Closes the pincode prompt. |
 | [`luna://com.webos.notification/closeToast`](../services/com.webos.notification.md#closetoast) | public | documented | Removes a toast notification from the database. |
 | [`luna://com.webos.notification/createAlert`](../services/com.webos.notification.md#createalert) | public | documented | Creates a system alert notification. |
-| [`luna://com.webos.notification/createInputAlert`](../services/com.webos.notification.md#createinputalert) | private | inferred | Creates the input alert. |
-| [`luna://com.webos.notification/createNotification`](../services/com.webos.notification.md#createnotification) | private | inferred | Creates the notification. |
-| [`luna://com.webos.notification/createPincodePrompt`](../services/com.webos.notification.md#createpincodeprompt) | public | inferred | Creates the pincode prompt. |
-| [`luna://com.webos.notification/createRemoteNotification`](../services/com.webos.notification.md#createremotenotification) | private | inferred | Creates the remote notification. |
+| [`luna://com.webos.notification/createInputAlert`](../services/com.webos.notification.md#createinputalert) | private | documented | Creates the input alert. |
+| [`luna://com.webos.notification/createNotification`](../services/com.webos.notification.md#createnotification) | private | documented | Creates the notification. |
+| [`luna://com.webos.notification/createPincodePrompt`](../services/com.webos.notification.md#createpincodeprompt) | public | documented | Creates the pincode prompt. |
+| [`luna://com.webos.notification/createRemoteNotification`](../services/com.webos.notification.md#createremotenotification) | private | documented | Creates the remote notification. |
 | [`luna://com.webos.notification/createSignageAlert`](../services/com.webos.notification.md#createsignagealert) | public | inferred | Creates the signage alert. |
 | [`luna://com.webos.notification/createToast`](../services/com.webos.notification.md#createtoast) | public | documented | Creates a toast notification. |
 | [`luna://com.webos.notification/disable`](../services/com.webos.notification.md#disable) | public | documented | Disables all notification features (Toast, Alert, Input Alert, Pin Prompt). Note: Only a privileged application or service can call this method. |
@@ -29,9 +29,9 @@
 | [`luna://com.webos.notification/getAlertNotification`](../services/com.webos.notification.md#getalertnotification) | public | documented | Subscribe to create alert notifications. Note: This method should only be used by the Surface Manager . |
 | [`luna://com.webos.notification/getInputAlertNotification`](../services/com.webos.notification.md#getinputalertnotification) | private | inferred | Returns the input alert notification. |
 | [`luna://com.webos.notification/getNotification`](../services/com.webos.notification.md#getnotification) | private | inferred | Returns the notification. |
-| [`luna://com.webos.notification/getNotificationInfo`](../services/com.webos.notification.md#getnotificationinfo) | private | inferred | Returns the notification info. |
+| [`luna://com.webos.notification/getNotificationInfo`](../services/com.webos.notification.md#getnotificationinfo) | private | documented | Returns the notification info. |
 | [`luna://com.webos.notification/getPincodePromptNotification`](../services/com.webos.notification.md#getpincodepromptnotification) | private | inferred | Returns the pincode prompt notification. |
-| [`luna://com.webos.notification/getRemoteNotificationInfo`](../services/com.webos.notification.md#getremotenotificationinfo) | private | inferred | Returns the remote notification info. |
+| [`luna://com.webos.notification/getRemoteNotificationInfo`](../services/com.webos.notification.md#getremotenotificationinfo) | private | documented | Returns the remote notification info. |
 | [`luna://com.webos.notification/getToastCount`](../services/com.webos.notification.md#gettoastcount) | public | documented | Queries the toast notification details of the stored messages and provides the read/unread count of the toast notifications. Note: Only "com.webos.surfacemanage |
 | [`luna://com.webos.notification/getToastList`](../services/com.webos.notification.md#gettoastlist) | public | documented | Lists the toasts created for the app/client based on the user logged into the particular session. |
 | [`luna://com.webos.notification/getToastNotification`](../services/com.webos.notification.md#gettoastnotification) | public | documented | Subscribe to created toast notification. Note: This method should only be used by Surface Manager only. |
@@ -44,7 +44,7 @@
 | [`luna://com.webos.notification/purgeHistory`](../services/com.webos.notification.md#purgehistory) | private | inferred | Handles the purge history. |
 | [`luna://com.webos.notification/removeAllNotification`](../services/com.webos.notification.md#removeallnotification) | public | documented | Removes all notifications that are currently being displayed. |
 | [`luna://com.webos.notification/removeNotification`](../services/com.webos.notification.md#removenotification) | public | documented | Deletes the given notification(s) from DB. We can remove given set of notifications or remove all notifications from a given sourceId. |
-| [`luna://com.webos.notification/removeRemoteNotification`](../services/com.webos.notification.md#removeremotenotification) | private | inferred | Removes the remote notification. ⚠️ |
+| [`luna://com.webos.notification/removeRemoteNotification`](../services/com.webos.notification.md#removeremotenotification) | private | documented | Removes the remote notification. ⚠️ |
 | [`luna://com.webos.notification/schedule`](../services/com.webos.notification.md#schedule) | unknown | documented | Creates a toast notification as a persistent message and define its schedule. |
 | [`luna://com.webos.notification/setToastStatus`](../services/com.webos.notification.md#settoaststatus) | public | documented | Specifies whether the toast is to be marked as read or unread. |
 | [`luna://com.webos.notification/toastInfo`](../services/com.webos.notification.md#toastinfo) | unknown | documented | Contains information about the stored toasts |

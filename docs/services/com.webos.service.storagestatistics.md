@@ -8,13 +8,13 @@ Storage statistics: reports per-app storage usage, lists large apps and files, c
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`check`](#check) | private |  | storage | inferred | Checks the storagestatistics. |
-| [`clearAppData`](#clearappdata) | private |  | storage | inferred | Clears the app data. |
+| [`check`](#check) | private |  | storage | documented | Checks the storagestatistics. |
+| [`clearAppData`](#clearappdata) | private |  | storage | documented | Clears the app data. |
 | [`getAllAppStats`](#getallappstats) | private |  | storage | inferred | Returns the all app stats. |
-| [`getAppStats`](#getappstats) | private |  | storage | inferred | Returns the app stats. |
+| [`getAppStats`](#getappstats) | private |  | storage | documented | Returns the app stats. |
 | [`listInternalLargeFiles`](#listinternallargefiles) | private |  | storage | inferred | Lists the internal large files. |
-| [`listLargeApps`](#listlargeapps) | private |  | storage | inferred | Lists the large apps. |
-| [`listLargeFiles`](#listlargefiles) | private |  | storage | inferred | Lists the large files. |
+| [`listLargeApps`](#listlargeapps) | private |  | storage | documented | Lists the large apps. |
+| [`listLargeFiles`](#listlargefiles) | private |  | storage | documented | Lists the large files. |
 | [`removeFile`](#removefile) | private |  | storage | inferred | Removes the file. ⚠️ |
 
 <a id="check"></a>
@@ -24,13 +24,16 @@ Storage statistics: reports per-app storage usage, lists large apps and files, c
 
 Checks the storagestatistics.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `$activity` | Object (optional) |
+| `force` | Boolean (optional) monitoring regardless of the flag Default: False |
 
 **Returns:**
 
@@ -47,7 +50,7 @@ Checks the storagestatistics.
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/check '{}'
 ```
 
-> ACG groups: configurator.callbacks, service.storagestatistics, all.
+> ACG groups: configurator.callbacks, service.storagestatistics, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -58,19 +61,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Clears the app data.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `appId` | String (required) ID of application for which data to be cleared. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/clearAppData '{}'
 ```
 
-> ACG groups: service.storagestatistics, all.
+> ACG groups: service.storagestatistics, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -104,19 +109,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the app stats.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `appId` | String (required) ID of application for which storage statistics to be retrived. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/getAppStats '{}'
 ```
 
-> ACG groups: service.storagestatistics, all.
+> ACG groups: service.storagestatistics, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -150,19 +157,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the large apps.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `limit` | Number (optional) Total number of entries to be returned Default: 10 |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/listLargeApps '{}'
 ```
 
-> ACG groups: service.storagestatistics, all.
+> ACG groups: service.storagestatistics, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -173,19 +182,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the large files.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `limit` | Number (optional) Total number of entries to be returned Default: 10 |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.storagestatistics/listLargeFiles '{}'
 ```
 
-> ACG groups: service.storagestatistics, all.
+> ACG groups: service.storagestatistics, all.  Parameters documented from the on-device LS2 request schema (/etc/palm/schemas, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

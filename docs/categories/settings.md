@@ -63,8 +63,8 @@
 | [`luna://com.test.interc.service.fake/settingsservice/getSystemSettingsEmergencyInformation`](../services/com.test.interc.service.fake.md#settingsservice_getsystemsettingsemergencyinformation) | public | inferred | Returns the system settings emergency information (settingsservice) |
 | [`luna://com.test.interc.service.fake/settingsservice/getSystemSettingsLocaleInfo`](../services/com.test.interc.service.fake.md#settingsservice_getsystemsettingslocaleinfo) | public | inferred | Returns the system settings locale info (settingsservice) |
 | [`luna://com.test.interc.service.fake/settingsservice/getSystemSettingsSound`](../services/com.test.interc.service.fake.md#settingsservice_getsystemsettingssound) | public | inferred | Returns the system settings sound (settingsservice) |
-| [`luna://com.webos.appInstallService/createLSConfigFiles`](../services/com.webos.appInstallService.md#createlsconfigfiles) | private | inferred | Creates the LS config files. |
-| [`luna://com.webos.appInstallService/removeLSConfigFiles`](../services/com.webos.appInstallService.md#removelsconfigfiles) | private | inferred | Removes the LS config files. ⚠️ |
+| [`luna://com.webos.appInstallService/createLSConfigFiles`](../services/com.webos.appInstallService.md#createlsconfigfiles) | private | documented | Creates the LS config files. |
+| [`luna://com.webos.appInstallService/removeLSConfigFiles`](../services/com.webos.appInstallService.md#removelsconfigfiles) | private | documented | Removes the LS config files. ⚠️ |
 | [`luna://com.webos.flutter.embedder/getConfigs`](../services/com.webos.flutter.embedder.md#getconfigs) | private | inferred | Returns the configs. |
 | [`luna://com.webos.memorymanager/getConfigs`](../services/com.webos.memorymanager.md#getconfigs) | private | inferred | Returns the configs. |
 | [`luna://com.webos.rdxd/getLogSettings`](../services/com.webos.rdxd.md#getlogsettings) | private | inferred | Returns the log settings. |

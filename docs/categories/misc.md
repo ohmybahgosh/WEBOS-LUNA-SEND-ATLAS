@@ -273,9 +273,9 @@
 | [`luna://com.webos.service.commercialinputdevice/sendKeyItems`](../services/com.webos.service.commercialinputdevice.md#sendkeyitems) | private | inferred | Sends the key items. |
 | [`luna://com.webos.service.commercialinputdevice/setKeyItems`](../services/com.webos.service.commercialinputdevice.md#setkeyitems) | private | inferred | Sets the key items. |
 | [`luna://com.webos.service.commercialinputdevice/setWhiteListKeys`](../services/com.webos.service.commercialinputdevice.md#setwhitelistkeys) | private | inferred | Sets the white list keys. |
-| [`luna://com.webos.service.contentminer/clearPersonalKey`](../services/com.webos.service.contentminer.md#clearpersonalkey) | public | inferred | Clears the personal key. |
-| [`luna://com.webos.service.contentminer/getContentData`](../services/com.webos.service.contentminer.md#getcontentdata) | public | inferred | Returns the content data. |
-| [`luna://com.webos.service.contentminer/setPersonalKey`](../services/com.webos.service.contentminer.md#setpersonalkey) | public | inferred | Sets the personal key. |
+| [`luna://com.webos.service.contentminer/clearPersonalKey`](../services/com.webos.service.contentminer.md#clearpersonalkey) | public | documented | Clears the personal key. |
+| [`luna://com.webos.service.contentminer/getContentData`](../services/com.webos.service.contentminer.md#getcontentdata) | public | documented | Returns the content data. |
+| [`luna://com.webos.service.contentminer/setPersonalKey`](../services/com.webos.service.contentminer.md#setpersonalkey) | public | documented | Sets the personal key. |
 | [`luna://com.webos.service.crashreport/processReport`](../services/com.webos.service.crashreport.md#processreport) | private | inferred | Processes the report. |
 | [`luna://com.webos.service.dass/connect`](../services/com.webos.service.dass.md#connect) | private | inferred | Connects the dass. |
 | [`luna://com.webos.service.dass/disconnect`](../services/com.webos.service.dass.md#disconnect) | private | inferred | Disconnects the dass. |
@@ -407,11 +407,11 @@
 | [`luna://com.webos.service.hybridtvmanager/teletext/getTeletextState`](../services/com.webos.service.hybridtvmanager.md#teletext_getteletextstate) | public | inferred | Returns the teletext state (teletext) |
 | [`luna://com.webos.service.hybridtvmanager/teletext/setMessage`](../services/com.webos.service.hybridtvmanager.md#teletext_setmessage) | public | inferred | Sets the message (teletext) |
 | [`luna://com.webos.service.hybridtvmanager/teletext/setTeletext`](../services/com.webos.service.hybridtvmanager.md#teletext_setteletext) | public | inferred | Sets the teletext (teletext) |
-| [`luna://com.webos.service.image/combine`](../services/com.webos.service.image.md#combine) | private | inferred | Handles the combine. |
-| [`luna://com.webos.service.image/convert`](../services/com.webos.service.image.md#convert) | public | inferred | Handles the convert. |
-| [`luna://com.webos.service.image/cropMultiple`](../services/com.webos.service.image.md#cropmultiple) | private | inferred | Handles the crop multiple. |
-| [`luna://com.webos.service.image/ezResize`](../services/com.webos.service.image.md#ezresize) | public | inferred | Handles the ez resize. |
-| [`luna://com.webos.service.image/imageInfo`](../services/com.webos.service.image.md#imageinfo) | public | inferred | Handles the image info. |
+| [`luna://com.webos.service.image/combine`](../services/com.webos.service.image.md#combine) | private | documented | Handles the combine. |
+| [`luna://com.webos.service.image/convert`](../services/com.webos.service.image.md#convert) | public | documented | Handles the convert. |
+| [`luna://com.webos.service.image/cropMultiple`](../services/com.webos.service.image.md#cropmultiple) | private | documented | Handles the crop multiple. |
+| [`luna://com.webos.service.image/ezResize`](../services/com.webos.service.image.md#ezresize) | public | documented | Handles the ez resize. |
+| [`luna://com.webos.service.image/imageInfo`](../services/com.webos.service.image.md#imageinfo) | public | documented | Handles the image info. |
 | [`luna://com.webos.service.interactivecontent.apiserver.test/getServerUrl`](../services/com.webos.service.interactivecontent.apiserver.test.md#getserverurl) | public | inferred | Returns the server URL. |
 | [`luna://com.webos.service.interactivecontent.apiserver.test/start`](../services/com.webos.service.interactivecontent.apiserver.test.md#start) | public | inferred | Starts the interactivecontent apiserver test. |
 | [`luna://com.webos.service.interactivecontent.apiserver/getServerUrl`](../services/com.webos.service.interactivecontent.apiserver.md#getserverurl) | public | inferred | Returns the server URL. |
@@ -553,12 +553,12 @@
 | [`luna://com.webos.service.packagemanager/unlockPackage`](../services/com.webos.service.packagemanager.md#unlockpackage) | private | inferred | Unlocks the package. |
 | [`luna://com.webos.service.personalsoundwizard/getStatus`](../services/com.webos.service.personalsoundwizard.md#getstatus) | private | inferred | Returns the status. |
 | [`luna://com.webos.service.personalsoundwizard/setStatus`](../services/com.webos.service.personalsoundwizard.md#setstatus) | private | inferred | Sets the status. |
-| [`luna://com.webos.service.pkgInstall/cancel`](../services/com.webos.service.pkgInstall.md#cancel) | private | inferred | Cancels the pkg install. |
-| [`luna://com.webos.service.pkgInstall/install`](../services/com.webos.service.pkgInstall.md#install) | private | inferred | Installs the pkg install. |
+| [`luna://com.webos.service.pkgInstall/cancel`](../services/com.webos.service.pkgInstall.md#cancel) | private | documented | Cancels the pkg install. |
+| [`luna://com.webos.service.pkgInstall/install`](../services/com.webos.service.pkgInstall.md#install) | private | documented | Installs the pkg install. |
 | [`luna://com.webos.service.pkgInstall/internal/start`](../services/com.webos.service.pkgInstall.md#internal_start) | private | inferred | Starts the pkg install (internal) |
-| [`luna://com.webos.service.pkgInstall/queryInstallCapacity`](../services/com.webos.service.pkgInstall.md#queryinstallcapacity) | private | inferred | Queries the install capacity. |
-| [`luna://com.webos.service.pkgInstall/remove`](../services/com.webos.service.pkgInstall.md#remove) | private | inferred | Removes the pkg install. ⚠️ |
-| [`luna://com.webos.service.pkgInstall/status`](../services/com.webos.service.pkgInstall.md#status) | private | inferred | Handles the status. |
+| [`luna://com.webos.service.pkgInstall/queryInstallCapacity`](../services/com.webos.service.pkgInstall.md#queryinstallcapacity) | private | documented | Queries the install capacity. |
+| [`luna://com.webos.service.pkgInstall/remove`](../services/com.webos.service.pkgInstall.md#remove) | private | documented | Removes the pkg install. ⚠️ |
+| [`luna://com.webos.service.pkgInstall/status`](../services/com.webos.service.pkgInstall.md#status) | private | documented | Handles the status. |
 | [`luna://com.webos.service.ppm/checkPermission`](../services/com.webos.service.ppm.md#checkpermission) | private | inferred | Checks the permission. |
 | [`luna://com.webos.service.ppm/notifyAlertClosed`](../services/com.webos.service.ppm.md#notifyalertclosed) | private | inferred | Notifies of the alert closed. |
 | [`luna://com.webos.service.ppm/queryPermissions`](../services/com.webos.service.ppm.md#querypermissions) | private | inferred | Queries the permissions. |
@@ -602,10 +602,10 @@
 | [`luna://com.webos.service.screenrotation/setVtgWindow`](../services/com.webos.service.screenrotation.md#setvtgwindow) | private | inferred | Sets the vtg window. |
 | [`luna://com.webos.service.sdpservernotice/responseNotice`](../services/com.webos.service.sdpservernotice.md#responsenotice) | private | inferred | Handles the response notice. |
 | [`luna://com.webos.service.sdpservernotice/start`](../services/com.webos.service.sdpservernotice.md#start) | private | inferred | Starts the sdpservernotice. |
-| [`luna://com.webos.service.servicemanager/closePrerequisiteServices`](../services/com.webos.service.servicemanager.md#closeprerequisiteservices) | private | inferred | Closes the prerequisite services. |
-| [`luna://com.webos.service.servicemanager/getPriorityLevel`](../services/com.webos.service.servicemanager.md#getprioritylevel) | private | inferred | Returns the priority level. |
-| [`luna://com.webos.service.servicemanager/setPriorityLevel`](../services/com.webos.service.servicemanager.md#setprioritylevel) | private | inferred | Sets the priority level. |
-| [`luna://com.webos.service.servicemanager/status`](../services/com.webos.service.servicemanager.md#status) | private | inferred | Handles the status. |
+| [`luna://com.webos.service.servicemanager/closePrerequisiteServices`](../services/com.webos.service.servicemanager.md#closeprerequisiteservices) | private | documented | Closes the prerequisite services. |
+| [`luna://com.webos.service.servicemanager/getPriorityLevel`](../services/com.webos.service.servicemanager.md#getprioritylevel) | private | documented | Returns the priority level. |
+| [`luna://com.webos.service.servicemanager/setPriorityLevel`](../services/com.webos.service.servicemanager.md#setprioritylevel) | private | documented | Sets the priority level. |
+| [`luna://com.webos.service.servicemanager/status`](../services/com.webos.service.servicemanager.md#status) | private | documented | Handles the status. |
 | [`luna://com.webos.service.soundshare/getExecutableStatus`](../services/com.webos.service.soundshare.md#getexecutablestatus) | private | inferred | Returns the executable status. |
 | [`luna://com.webos.service.soundshare/getStreamOutStatus`](../services/com.webos.service.soundshare.md#getstreamoutstatus) | private | inferred | Returns the stream out status. |
 | [`luna://com.webos.service.soundshare/setPcmBuffer`](../services/com.webos.service.soundshare.md#setpcmbuffer) | private | inferred | Sets the PCM buffer. |
