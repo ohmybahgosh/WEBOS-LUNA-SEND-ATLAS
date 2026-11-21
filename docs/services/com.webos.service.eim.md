@@ -17,7 +17,7 @@ External Input Manager: manages HDMI and other external inputs, including device
 | [`cec/notifyInterestingEvents`](#cec_notifyinterestingevents) | public |  | input | inferred | Notifies of the interesting events (CEC) |
 | [`cec/registerVendorCommand`](#cec_registervendorcommand) | public |  | input | inferred | Registers the vendor command (CEC) |
 | [`cec/requestVendorCommand`](#cec_requestvendorcommand) | public |  | input | inferred | Requests the vendor command (CEC) |
-| [`cec/requestVendorCommandWithID`](#cec_requestvendorcommandwithid) | public |  | input | inferred | Requests the vendor command with ID (CEC) |
+| [`cec/requestVendorCommandWithID`](#cec_requestvendorcommandwithid) | public |  | input | documented | Requests the vendor command with ID (CEC) |
 | [`cec/sendKeyEvent`](#cec_sendkeyevent) | private |  | input | documented | Sends an HDMI-CEC key event |
 | [`cec/sendRequestAudioStatus`](#cec_sendrequestaudiostatus) | public |  | audio | inferred | Sends the request audio status (CEC) |
 | [`cec/sendSystemAudioModeRequest`](#cec_sendsystemaudiomoderequest) | public |  | audio | inferred | Sends the system audio mode request (CEC) |
@@ -266,19 +266,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Requests the vendor command with ID (CEC)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `opcode` | String (observed in live traffic) |
+| `operand` | String (observed in live traffic) |
+| `uniqueId` | Integer (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.eim/cec/requestVendorCommandWithID '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

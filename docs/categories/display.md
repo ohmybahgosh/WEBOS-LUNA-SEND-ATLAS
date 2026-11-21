@@ -44,15 +44,15 @@
 | [`luna://com.webos.service.multiviewcontroller/getPresetList`](../services/com.webos.service.multiviewcontroller.md#getpresetlist) | public | inferred | Returns the preset list. |
 | [`luna://com.webos.service.multiviewcontroller/getRecentsList`](../services/com.webos.service.multiviewcontroller.md#getrecentslist) | public | inferred | Returns the recents list. |
 | [`luna://com.webos.service.multiviewcontroller/getRestrictionStatus`](../services/com.webos.service.multiviewcontroller.md#getrestrictionstatus) | public | inferred | Returns the restriction status. |
-| [`luna://com.webos.service.multiviewcontroller/getStatus`](../services/com.webos.service.multiviewcontroller.md#getstatus) | public | inferred | Returns the status. |
+| [`luna://com.webos.service.multiviewcontroller/getStatus`](../services/com.webos.service.multiviewcontroller.md#getstatus) | public | documented | Returns the status. |
 | [`luna://com.webos.service.multiviewcontroller/getSubAppList`](../services/com.webos.service.multiviewcontroller.md#getsubapplist) | public | inferred | Returns the sub app list. |
-| [`luna://com.webos.service.multiviewcontroller/removeClient`](../services/com.webos.service.multiviewcontroller.md#removeclient) | public | inferred | Removes the client. ⚠️ |
+| [`luna://com.webos.service.multiviewcontroller/removeClient`](../services/com.webos.service.multiviewcontroller.md#removeclient) | public | documented | Removes the client. ⚠️ |
 | [`luna://com.webos.service.multiviewcontroller/removePreset`](../services/com.webos.service.multiviewcontroller.md#removepreset) | public | inferred | Removes the preset. ⚠️ |
 | [`luna://com.webos.service.multiviewcontroller/setAppCloseInfo`](../services/com.webos.service.multiviewcontroller.md#setappcloseinfo) | public | inferred | Sets the app close info. |
 | [`luna://com.webos.service.multiviewcontroller/setAppCoordinate`](../services/com.webos.service.multiviewcontroller.md#setappcoordinate) | public | inferred | Sets the app coordinate. |
-| [`luna://com.webos.service.multiviewcontroller/setAppPipelineStatus`](../services/com.webos.service.multiviewcontroller.md#setapppipelinestatus) | public | inferred | Sets the app pipeline status. |
+| [`luna://com.webos.service.multiviewcontroller/setAppPipelineStatus`](../services/com.webos.service.multiviewcontroller.md#setapppipelinestatus) | public | documented | Sets the app pipeline status. |
 | [`luna://com.webos.service.multiviewcontroller/setAppViewStatus`](../services/com.webos.service.multiviewcontroller.md#setappviewstatus) | public | inferred | Sets the app view status. |
-| [`luna://com.webos.service.multiviewcontroller/setInputMode`](../services/com.webos.service.multiviewcontroller.md#setinputmode) | public | inferred | Sets the input mode. |
+| [`luna://com.webos.service.multiviewcontroller/setInputMode`](../services/com.webos.service.multiviewcontroller.md#setinputmode) | public | documented | Sets the input mode. |
 | [`luna://com.webos.service.multiviewcontroller/setInputVolume`](../services/com.webos.service.multiviewcontroller.md#setinputvolume) | public | inferred | Sets the input volume. |
 | [`luna://com.webos.service.multiviewcontroller/setMobileInfo`](../services/com.webos.service.multiviewcontroller.md#setmobileinfo) | public | inferred | Sets the mobile info. |
 | [`luna://com.webos.service.multiviewcontroller/switchSyncType`](../services/com.webos.service.multiviewcontroller.md#switchsynctype) | public | inferred | Switches the sync type. |
@@ -72,7 +72,7 @@
 | [`luna://com.webos.service.oledepl/notifyPopupClosed`](../services/com.webos.service.oledepl.md#notifypopupclosed) | public | inferred | Notifies of the popup closed. |
 | [`luna://com.webos.service.oledepl/playMusicPixelRefresher`](../services/com.webos.service.oledepl.md#playmusicpixelrefresher) | public | inferred | Plays the music pixel refresher. |
 | [`luna://com.webos.service.oledepl/restoreEplCondition`](../services/com.webos.service.oledepl.md#restoreeplcondition) | public | inferred | Restores the epl condition. |
-| [`luna://com.webos.service.oledepl/setEplAppInfo`](../services/com.webos.service.oledepl.md#seteplappinfo) | public | inferred | Sets the epl app info. |
+| [`luna://com.webos.service.oledepl/setEplAppInfo`](../services/com.webos.service.oledepl.md#seteplappinfo) | public | documented | Sets the epl app info. |
 | [`luna://com.webos.service.oledepl/setEplCtrl`](../services/com.webos.service.oledepl.md#seteplctrl) | public | inferred | Sets the epl ctrl. |
 | [`luna://com.webos.service.oledepl/setGlobalStressReduction`](../services/com.webos.service.oledepl.md#setglobalstressreduction) | private | documented | Toggles OLED GSR (In-Start service menu option) ⚠️ |
 | [`luna://com.webos.service.oledepl/setPcScreenSaverResponse`](../services/com.webos.service.oledepl.md#setpcscreensaverresponse) | public | inferred | Sets the pc screen saver response. |
@@ -195,7 +195,7 @@
 | [`luna://com.webos.service.videooutput/display/setDisplayResolution`](../services/com.webos.service.videooutput.md#display_setdisplayresolution) | public | inferred | Sets the display resolution (display) |
 | [`luna://com.webos.service.videooutput/display/setDisplayScreen`](../services/com.webos.service.videooutput.md#display_setdisplayscreen) | public | inferred | Sets the display screen (display) |
 | [`luna://com.webos.service.videooutput/display/setDisplayWindow`](../services/com.webos.service.videooutput.md#display_setdisplaywindow) | public | documented | Setup video output location on the screen for specified sink. |
-| [`luna://com.webos.service.videooutput/display/setDisplayWindowProperty`](../services/com.webos.service.videooutput.md#display_setdisplaywindowproperty) | public | inferred | Sets the display window property (display) |
+| [`luna://com.webos.service.videooutput/display/setDisplayWindowProperty`](../services/com.webos.service.videooutput.md#display_setdisplaywindowproperty) | public | documented | Sets the display window property (display) |
 | [`luna://com.webos.service.videooutput/display/setFrameDelay`](../services/com.webos.service.videooutput.md#display_setframedelay) | private | inferred | Sets the frame delay (display) |
 | [`luna://com.webos.service.videooutput/display/setNMRM`](../services/com.webos.service.videooutput.md#display_setnmrm) | public | inferred | Sets the NMRM (display) |
 | [`luna://com.webos.service.videooutput/display/setParam`](../services/com.webos.service.videooutput.md#display_setparam) | public | inferred | Sets the param (display) |

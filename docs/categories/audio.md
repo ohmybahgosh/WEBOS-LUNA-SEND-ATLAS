@@ -237,7 +237,7 @@
 | [`luna://com.webos.audio/vvm/setVolume`](../services/com.webos.audio.md#vvm_setvolume) | private | inferred | Sets the volume (vvm) |
 | [`luna://com.webos.audio/vvm/status`](../services/com.webos.audio.md#vvm_status) | private | inferred | Handles the status (vvm) |
 | [`luna://com.webos.media/setAudioDualMono`](../services/com.webos.media.md#setaudiodualmono) | public | inferred | Sets the audio dual mono. |
-| [`luna://com.webos.media/setAudioMute`](../services/com.webos.media.md#setaudiomute) | public | inferred | Sets the audio mute. |
+| [`luna://com.webos.media/setAudioMute`](../services/com.webos.media.md#setaudiomute) | public | documented | Sets the audio mute. |
 | [`luna://com.webos.media/setAudioStreamPitch`](../services/com.webos.media.md#setaudiostreampitch) | public | inferred | Sets the audio stream pitch. |
 | [`luna://com.webos.media/setMpeghAudioConfig`](../services/com.webos.media.md#setmpeghaudioconfig) | public | inferred | Sets the mpegh audio config. |
 | [`luna://com.webos.service.apiadapter/audio/changeSoundOutput`](../services/com.webos.service.apiadapter.md#audio_changesoundoutput) | ssap | documented | Change sound output |
@@ -413,7 +413,7 @@
 | [`luna://com.webos.service.audio/tv/getGainAsInput`](../services/com.webos.service.audio.md#tv_getgainasinput) | private | inferred | Returns the gain as input (TV) |
 | [`luna://com.webos.service.audio/tv/getHeadphoneStatus`](../services/com.webos.service.audio.md#tv_getheadphonestatus) | public | inferred | Returns the headphone status (TV) |
 | [`luna://com.webos.service.audio/tv/getSoundCardsState`](../services/com.webos.service.audio.md#tv_getsoundcardsstate) | private | inferred | Returns the sound cards state (TV) |
-| [`luna://com.webos.service.audio/tv/mixDigitalSoundOutput`](../services/com.webos.service.audio.md#tv_mixdigitalsoundoutput) | public | inferred | Handles the mix digital sound output (TV) |
+| [`luna://com.webos.service.audio/tv/mixDigitalSoundOutput`](../services/com.webos.service.audio.md#tv_mixdigitalsoundoutput) | public | documented | Handles the mix digital sound output (TV) |
 | [`luna://com.webos.service.audio/tv/playOnPowerState`](../services/com.webos.service.audio.md#tv_playonpowerstate) | public | inferred | Plays the on power state (TV) |
 | [`luna://com.webos.service.audio/tv/readI2cDataFromAmplifier`](../services/com.webos.service.audio.md#tv_readi2cdatafromamplifier) | private | inferred | Reads the i 2 c data from amplifier (TV) |
 | [`luna://com.webos.service.audio/tv/resetSoundSettings`](../services/com.webos.service.audio.md#tv_resetsoundsettings) | public | inferred | Resets the sound settings (TV) ⚠️ |
@@ -421,7 +421,7 @@
 | [`luna://com.webos.service.audio/tv/setARCDeviceInfo`](../services/com.webos.service.audio.md#tv_setarcdeviceinfo) | private | inferred | Sets the ARC device info (TV) |
 | [`luna://com.webos.service.audio/tv/setAudioEffectState`](../services/com.webos.service.audio.md#tv_setaudioeffectstate) | private | inferred | Sets the audio effect state (TV) |
 | [`luna://com.webos.service.audio/tv/setAudioVideoSync`](../services/com.webos.service.audio.md#tv_setaudiovideosync) | public | inferred | Sets the audio video sync (TV) |
-| [`luna://com.webos.service.audio/tv/setDolbyOTTMode`](../services/com.webos.service.audio.md#tv_setdolbyottmode) | public | inferred | Sets the dolby OTT mode (TV) |
+| [`luna://com.webos.service.audio/tv/setDolbyOTTMode`](../services/com.webos.service.audio.md#tv_setdolbyottmode) | public | documented | Sets the dolby OTT mode (TV) |
 | [`luna://com.webos.service.audio/tv/setDolbyVisionPopup`](../services/com.webos.service.audio.md#tv_setdolbyvisionpopup) | private | inferred | Sets the dolby vision popup (TV) |
 | [`luna://com.webos.service.audio/tv/setEqualizerStatus`](../services/com.webos.service.audio.md#tv_setequalizerstatus) | public | inferred | Sets the equalizer status (TV) |
 | [`luna://com.webos.service.audio/tv/setInputVolume`](../services/com.webos.service.audio.md#tv_setinputvolume) | private | inferred | Sets the input volume (TV) |
@@ -431,11 +431,11 @@
 | [`luna://com.webos.service.audio/tv/setOutputMute`](../services/com.webos.service.audio.md#tv_setoutputmute) | private | inferred | Sets the output mute (TV) |
 | [`luna://com.webos.service.audio/tv/setPopupDisplayStatus`](../services/com.webos.service.audio.md#tv_setpopupdisplaystatus) | private | inferred | Sets the popup display status (TV) |
 | [`luna://com.webos.service.audio/tv/setPSWProperties`](../services/com.webos.service.audio.md#tv_setpswproperties) | private | inferred | Sets the PSW properties (TV) |
-| [`luna://com.webos.service.audio/tv/setQualityAttribute`](../services/com.webos.service.audio.md#tv_setqualityattribute) | public | inferred | Sets the quality attribute (TV) |
+| [`luna://com.webos.service.audio/tv/setQualityAttribute`](../services/com.webos.service.audio.md#tv_setqualityattribute) | public | documented | Sets the quality attribute (TV) |
 | [`luna://com.webos.service.audio/tv/setSCMS`](../services/com.webos.service.audio.md#tv_setscms) | public | inferred | Sets the SCMS (TV) |
 | [`luna://com.webos.service.audio/tv/setSoundEngineStatus`](../services/com.webos.service.audio.md#tv_setsoundenginestatus) | public | inferred | Sets the sound engine status (TV) |
 | [`luna://com.webos.service.audio/tv/setSoundOutputMode`](../services/com.webos.service.audio.md#tv_setsoundoutputmode) | public | inferred | Sets the sound output mode (TV) |
-| [`luna://com.webos.service.audio/tv/setVideoLatencyTime`](../services/com.webos.service.audio.md#tv_setvideolatencytime) | private | inferred | Sets the video latency time (TV) |
+| [`luna://com.webos.service.audio/tv/setVideoLatencyTime`](../services/com.webos.service.audio.md#tv_setvideolatencytime) | private | documented | Sets the video latency time (TV) |
 | [`luna://com.webos.service.audio/tv/switchMicrophone`](../services/com.webos.service.audio.md#tv_switchmicrophone) | private | inferred | Switches the microphone (TV) |
 | [`luna://com.webos.service.audio/tv/updateExtFw`](../services/com.webos.service.audio.md#tv_updateextfw) | private | inferred | Updates the ext firmware (TV) |
 | [`luna://com.webos.service.audio/tv/writeI2cDataToAmplifier`](../services/com.webos.service.audio.md#tv_writei2cdatatoamplifier) | private | inferred | Writes the i 2 c data to amplifier (TV) |
@@ -446,10 +446,10 @@
 | [`luna://com.webos.service.audio/UMI/getInputVolume`](../services/com.webos.service.audio.md#umi_getinputvolume) | public | inferred | Returns the input volume (UMI) |
 | [`luna://com.webos.service.audio/UMI/getStatus`](../services/com.webos.service.audio.md#umi_getstatus) | public | documented | Shows the connection status of audio resources. |
 | [`luna://com.webos.service.audio/UMI/mute`](../services/com.webos.service.audio.md#umi_mute) | public | documented | Mutes or unmutes the input volume of the requested connection. Note: This method is added for future-use. It does not have any impact on the audio setting. |
-| [`luna://com.webos.service.audio/UMI/register`](../services/com.webos.service.audio.md#umi_register) | public | inferred | Registers the audio (UMI) |
+| [`luna://com.webos.service.audio/UMI/register`](../services/com.webos.service.audio.md#umi_register) | public | documented | Registers the audio (UMI) |
 | [`luna://com.webos.service.audio/UMI/setInputDownMix`](../services/com.webos.service.audio.md#umi_setinputdownmix) | private | inferred | Sets the input down mix (UMI) |
 | [`luna://com.webos.service.audio/UMI/setInputVolume`](../services/com.webos.service.audio.md#umi_setinputvolume) | public | inferred | Sets the input volume (UMI) |
-| [`luna://com.webos.service.audio/UMI/unregister`](../services/com.webos.service.audio.md#umi_unregister) | public | inferred | Unregisters the audio (UMI) |
+| [`luna://com.webos.service.audio/UMI/unregister`](../services/com.webos.service.audio.md#umi_unregister) | public | documented | Unregisters the audio (UMI) |
 | [`luna://com.webos.service.audio/unregisterTrack`](../services/com.webos.service.audio.md#unregistertrack) | public | documented | Unregisters a playback by an application/service. |
 | [`luna://com.webos.service.audio/vibrate/get`](../services/com.webos.service.audio.md#vibrate_get) | private | inferred | Returns the audio (vibrate) |
 | [`luna://com.webos.service.audio/vibrate/set`](../services/com.webos.service.audio.md#vibrate_set) | private | inferred | Sets the audio (vibrate) |
@@ -494,17 +494,17 @@
 | [`luna://com.webos.service.audiooutput/audio/getHeadphoneStatus`](../services/com.webos.service.audiooutput.md#audio_getheadphonestatus) | private | inferred | Returns the headphone status (audio) |
 | [`luna://com.webos.service.audiooutput/audio/getStatus`](../services/com.webos.service.audiooutput.md#audio_getstatus) | public | documented | Lists the information of all the connected audio source and sinks. |
 | [`luna://com.webos.service.audiooutput/audio/mute`](../services/com.webos.service.audiooutput.md#audio_mute) | public | documented | Mutes or unmutes the connected audio source. |
-| [`luna://com.webos.service.audiooutput/audio/removePipelineInfo`](../services/com.webos.service.audiooutput.md#audio_removepipelineinfo) | private | inferred | Removes the pipeline info (audio) ⚠️ |
-| [`luna://com.webos.service.audiooutput/audio/setInputVolume`](../services/com.webos.service.audiooutput.md#audio_setinputvolume) | private | inferred | Sets the input volume (audio) |
+| [`luna://com.webos.service.audiooutput/audio/removePipelineInfo`](../services/com.webos.service.audiooutput.md#audio_removepipelineinfo) | private | documented | Removes the pipeline info (audio) ⚠️ |
+| [`luna://com.webos.service.audiooutput/audio/setInputVolume`](../services/com.webos.service.audiooutput.md#audio_setinputvolume) | private | documented | Sets the input volume (audio) |
 | [`luna://com.webos.service.audiooutput/audio/setSoundOut`](../services/com.webos.service.audiooutput.md#audio_setsoundout) | public | documented | Sets the audio output device to which the audio must be routed. |
 | [`luna://com.webos.service.audiooutput/audio/volume/down`](../services/com.webos.service.audiooutput.md#audio_volume_down) | public | documented | Linearly decreases, the master volume of the audio output device. |
 | [`luna://com.webos.service.audiooutput/audio/volume/getStatus`](../services/com.webos.service.audiooutput.md#audio_volume_getstatus) | public | documented | Lists the information of all available audio output devices. |
 | [`luna://com.webos.service.audiooutput/audio/volume/muteSoundOut`](../services/com.webos.service.audiooutput.md#audio_volume_mutesoundout) | public | documented | Mutes the audio output device. |
 | [`luna://com.webos.service.audiooutput/audio/volume/set`](../services/com.webos.service.audiooutput.md#audio_volume_set) | public | documented | Sets the volume of the audio output device, to a specific numerical value. |
 | [`luna://com.webos.service.audiooutput/audio/volume/up`](../services/com.webos.service.audiooutput.md#audio_volume_up) | public | documented | Linearly increases, the master volume of the audio output device. |
-| [`luna://com.webos.service.audiooutput/quality/getSettings`](../services/com.webos.service.audiooutput.md#quality_getsettings) | private | inferred | Returns the settings (quality) |
-| [`luna://com.webos.service.audiooutput/quality/setQualityAttribute`](../services/com.webos.service.audiooutput.md#quality_setqualityattribute) | private | inferred | Sets the quality attribute (quality) |
-| [`luna://com.webos.service.audiooutput/quality/setSettings`](../services/com.webos.service.audiooutput.md#quality_setsettings) | private | inferred | Sets the settings (quality) |
+| [`luna://com.webos.service.audiooutput/quality/getSettings`](../services/com.webos.service.audiooutput.md#quality_getsettings) | private | documented | Returns the settings (quality) |
+| [`luna://com.webos.service.audiooutput/quality/setQualityAttribute`](../services/com.webos.service.audiooutput.md#quality_setqualityattribute) | private | documented | Sets the quality attribute (quality) |
+| [`luna://com.webos.service.audiooutput/quality/setSettings`](../services/com.webos.service.audiooutput.md#quality_setsettings) | private | documented | Sets the settings (quality) |
 | [`luna://com.webos.service.audiooutput/volumeStatus`](../services/com.webos.service.audiooutput.md#volumestatus) | unknown | documented | Contains the information of the audio output devices. |
 | [`luna://com.webos.service.bluetooth/audio/changeToTVSpeaker`](../services/com.webos.service.bluetooth.md#audio_changetotvspeaker) | public | inferred | Changes the to TV speaker (audio) |
 | [`luna://com.webos.service.bluetooth/audio/enableSoundOutRedirect`](../services/com.webos.service.bluetooth.md#audio_enablesoundoutredirect) | public | inferred | Enables the sound out redirect (audio) |

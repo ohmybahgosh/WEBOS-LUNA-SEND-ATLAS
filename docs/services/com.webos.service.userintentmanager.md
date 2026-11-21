@@ -11,7 +11,7 @@ User-intent manager: tracks user context and history, records and ranks intents,
 | [`getContext`](#getcontext) | private |  | misc | inferred | Returns the context. |
 | [`getHistory`](#gethistory) | private |  | misc | inferred | Returns the history. |
 | [`getIntentStatus`](#getintentstatus) | private |  | misc | inferred | Returns the intent status. |
-| [`getRank`](#getrank) | private |  | misc | inferred | Returns the rank. |
+| [`getRank`](#getrank) | private |  | misc | documented | Returns the rank. |
 | [`load`](#load) | private |  | misc | inferred | Loads the userintentmanager. |
 | [`reset`](#reset) | private |  | misc | inferred | Resets the userintentmanager. ⚠️ |
 | [`setContext`](#setcontext) | private |  | misc | inferred | Sets the context. |
@@ -93,19 +93,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the rank.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `eventSubTypes` | Array (observed in live traffic) |
+| `limit` | Integer (observed in live traffic) |
+| `fromDate` | Integer (observed in live traffic) |
+| `eventType` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.userintentmanager/getRank '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

@@ -25,7 +25,7 @@ Video output service: connects video sources to the display, sets display window
 | [`display/setDisplayResolution`](#display_setdisplayresolution) | public |  | display | inferred | Sets the display resolution (display) |
 | [`display/setDisplayScreen`](#display_setdisplayscreen) | public |  | display | inferred | Sets the display screen (display) |
 | [`display/setDisplayWindow`](#display_setdisplaywindow) | public |  | display | documented | Setup video output location on the screen for specified sink. |
-| [`display/setDisplayWindowProperty`](#display_setdisplaywindowproperty) | public |  | display | inferred | Sets the display window property (display) |
+| [`display/setDisplayWindowProperty`](#display_setdisplaywindowproperty) | public |  | display | documented | Sets the display window property (display) |
 | [`display/setFrameDelay`](#display_setframedelay) | private |  | display | inferred | Sets the frame delay (display) |
 | [`display/setNMRM`](#display_setnmrm) | public |  | display | inferred | Sets the NMRM (display) |
 | [`display/setParam`](#display_setparam) | public |  | display | inferred | Sets the param (display) |
@@ -494,19 +494,22 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-v
 
 Sets the display window property (display)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `context` | String (observed in live traffic) |
+| `appRotation` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.videooutput/display/setDisplayWindowProperty '{}'
 ```
 
-> ACG groups: private, all, media, public.
+> ACG groups: private, all, media, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

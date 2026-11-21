@@ -14,17 +14,17 @@ Audio output service: connects audio source to output sink, controls volume and 
 | [`audio/getHeadphoneStatus`](#audio_getheadphonestatus) | private |  | audio | inferred | Returns the headphone status (audio) |
 | [`audio/getStatus`](#audio_getstatus) | public |  | audio | documented | Lists the information of all the connected audio source and sinks. |
 | [`audio/mute`](#audio_mute) | public |  | audio | documented | Mutes or unmutes the connected audio source. |
-| [`audio/removePipelineInfo`](#audio_removepipelineinfo) | private |  | audio | inferred | Removes the pipeline info (audio) ⚠️ |
-| [`audio/setInputVolume`](#audio_setinputvolume) | private |  | audio | inferred | Sets the input volume (audio) |
+| [`audio/removePipelineInfo`](#audio_removepipelineinfo) | private |  | audio | documented | Removes the pipeline info (audio) ⚠️ |
+| [`audio/setInputVolume`](#audio_setinputvolume) | private |  | audio | documented | Sets the input volume (audio) |
 | [`audio/setSoundOut`](#audio_setsoundout) | public |  | audio | documented | Sets the audio output device to which the audio must be routed. |
 | [`audio/volume/down`](#audio_volume_down) | public |  | audio | documented | Linearly decreases, the master volume of the audio output device. |
 | [`audio/volume/getStatus`](#audio_volume_getstatus) | public |  | audio | documented | Lists the information of all available audio output devices. |
 | [`audio/volume/muteSoundOut`](#audio_volume_mutesoundout) | public |  | audio | documented | Mutes the audio output device. |
 | [`audio/volume/set`](#audio_volume_set) | public |  | audio | documented | Sets the volume of the audio output device, to a specific numerical value. |
 | [`audio/volume/up`](#audio_volume_up) | public |  | audio | documented | Linearly increases, the master volume of the audio output device. |
-| [`quality/getSettings`](#quality_getsettings) | private |  | audio | inferred | Returns the settings (quality) |
-| [`quality/setQualityAttribute`](#quality_setqualityattribute) | private |  | audio | inferred | Sets the quality attribute (quality) |
-| [`quality/setSettings`](#quality_setsettings) | private |  | audio | inferred | Sets the settings (quality) |
+| [`quality/getSettings`](#quality_getsettings) | private |  | audio | documented | Returns the settings (quality) |
+| [`quality/setQualityAttribute`](#quality_setqualityattribute) | private |  | audio | documented | Sets the quality attribute (quality) |
+| [`quality/setSettings`](#quality_setsettings) | private |  | audio | documented | Sets the settings (quality) |
 | [`volumeStatus`](#volumestatus) | unknown |  | audio | documented | Contains the information of the audio output devices. |
 
 <a id="audio"></a>
@@ -214,19 +214,21 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 Removes the pipeline info (audio)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pipelineId` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audiooutput/audio/removePipelineInfo '{}'
 ```
 
-> ACG groups: all, media. Flagged dangerous by name; verify before calling.
+> ACG groups: all, media. Flagged dangerous by name; verify before calling.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -237,19 +239,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the input volume (audio)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `source` | String (observed in live traffic) |
+| `sink` | String (observed in live traffic) |
+| `volume` | Integer (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audiooutput/audio/setInputVolume '{}'
 ```
 
-> ACG groups: all, media.
+> ACG groups: all, media.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -460,19 +466,22 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 Returns the settings (quality)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `category` | String (observed in live traffic) |
+| `settings` | Object (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audiooutput/quality/getSettings '{}'
 ```
 
-> ACG groups: all, media.
+> ACG groups: all, media.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -483,19 +492,25 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the quality attribute (quality)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `categoryInfo` | Object (observed in live traffic) |
+| `requestType` | String (observed in live traffic) |
+| `pipelineInfo` | Object (observed in live traffic) |
+| `activeState` | Boolean (observed in live traffic) |
+| `categoryType` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audiooutput/quality/setQualityAttribute '{}'
 ```
 
-> ACG groups: all, media.
+> ACG groups: all, media.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -506,19 +521,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the settings (quality)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `category` | String (observed in live traffic) |
+| `value` | Object (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audiooutput/quality/setSettings '{}'
 ```
 
-> ACG groups: all, media.
+> ACG groups: all, media.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

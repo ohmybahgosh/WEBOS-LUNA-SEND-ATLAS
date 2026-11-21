@@ -25,13 +25,13 @@ Manages attached USB storage: lists devices and folder contents, copies, deletes
 | [`listContentsByCamera`](#listcontentsbycamera) | private |  | storage | inferred | Lists the contents by camera. |
 | [`listDevices`](#listdevices) | ssap |  | storage | documented | List attached storage devices |
 | [`listDevices2`](#listdevices2) | private |  | storage | inferred | Lists the devices 2. |
-| [`listFolderContents`](#listfoldercontents) | private |  | storage | inferred | Lists the folder contents. |
+| [`listFolderContents`](#listfoldercontents) | private |  | storage | documented | Lists the folder contents. |
 | [`move`](#move) | private |  | storage | inferred | Moves the attachedstoragemanager. |
 | [`refreshDeviceList`](#refreshdevicelist) | private |  | storage | inferred | Refreshes the device list. |
-| [`registerDeviceStatus`](#registerdevicestatus) | private |  | storage | inferred | Registers the device status. |
+| [`registerDeviceStatus`](#registerdevicestatus) | private |  | storage | documented | Registers the device status. |
 | [`responseDeviceStatus`](#responsedevicestatus) | private |  | storage | inferred | Handles the response device status. |
 | [`triggeredActivity`](#triggeredactivity) | private |  | storage | inferred | Handles the triggered activity. |
-| [`unregisterDeviceStatus`](#unregisterdevicestatus) | private |  | storage | inferred | Unregisters the device status. |
+| [`unregisterDeviceStatus`](#unregisterdevicestatus) | private |  | storage | documented | Unregisters the device status. |
 
 <a id="cancelrequest"></a>
 ## `cancelRequest`
@@ -463,19 +463,29 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Lists the folder contents.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `deviceId` | String (observed in live traffic) |
+| `subDeviceId` | String (observed in live traffic) |
+| `path` | String (observed in live traffic) |
+| `offset` | Integer (observed in live traffic) |
+| `limit` | Integer (observed in live traffic) |
+| `dataScope` | String (observed in live traffic) |
+| `requestType` | String (observed in live traffic) |
+| `itemType` | Array (observed in live traffic) |
+| `extensionList` | Array (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/listFolderContents '{}'
 ```
 
-> ACG groups: private, attachedstoragemanager.list, all, devices.
+> ACG groups: private, attachedstoragemanager.list, all, devices.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -532,19 +542,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Registers the device status.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `isHighPriority` | Boolean (observed in live traffic) |
+| `deviceType` | Array (observed in live traffic) |
+| `name` | String (observed in live traffic) |
+| `subscribe` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/registerDeviceStatus '{}'
 ```
 
-> ACG groups: attachedstoragemanager.control, private, all, devices.
+> ACG groups: attachedstoragemanager.control, private, all, devices.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -601,18 +616,20 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Unregisters the device status.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `name` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/unregisterDeviceStatus '{}'
 ```
 
-> ACG groups: attachedstoragemanager.control, private, all.
+> ACG groups: attachedstoragemanager.control, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))

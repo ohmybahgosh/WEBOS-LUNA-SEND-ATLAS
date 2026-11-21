@@ -16,10 +16,10 @@ Audio/video mute manager: coordinates AV mute across clients, tracking mute stat
 | [`getRegisterDB`](#getregisterdb) | public |  | db | inferred | Returns the register DB. |
 | [`listDebugRegisteredServices`](#listdebugregisteredservices) | public |  | misc | inferred | Lists the debug registered services. |
 | [`listMuteStatus`](#listmutestatus) | public |  | misc | inferred | Lists the mute status. |
-| [`register`](#register) | public |  | misc | inferred | Registers the avmutemanager. |
-| [`setAvMute`](#setavmute) | public |  | misc | inferred | Sets the A/V mute. |
-| [`unregister`](#unregister) | public |  | misc | inferred | Unregisters the avmutemanager. |
-| [`updateAvResource`](#updateavresource) | public |  | update | inferred | Updates the A/V resource. |
+| [`register`](#register) | public |  | misc | documented | Registers the avmutemanager. |
+| [`setAvMute`](#setavmute) | public |  | misc | documented | Sets the A/V mute. |
+| [`unregister`](#unregister) | public |  | misc | documented | Unregisters the avmutemanager. |
+| [`updateAvResource`](#updateavresource) | public |  | update | documented | Updates the A/V resource. |
 
 <a id="getinternalmutestatus"></a>
 ## `getInternalMuteStatus`
@@ -212,19 +212,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Registers the avmutemanager.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `contextId` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/register '{}'
 ```
 
-> ACG groups: all, public.
+> ACG groups: all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -235,19 +237,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the A/V mute.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `muteOn` | Boolean (observed in live traffic) |
+| `contextId` | String (observed in live traffic) |
+| `muteType` | String (observed in live traffic) |
+| `muteOwner` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/setAvMute '{}'
 ```
 
-> ACG groups: all, public.
+> ACG groups: all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -258,19 +265,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Unregisters the avmutemanager.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `contextId` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/unregister '{}'
 ```
 
-> ACG groups: all, public.
+> ACG groups: all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -281,18 +290,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Updates the A/V resource.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `contextId` | String (observed in live traffic) |
+| `muteType` | String (observed in live traffic) |
+| `muteTarget` | Array (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.avmutemanager/updateAvResource '{}'
 ```
 
-> ACG groups: all, public.
+> ACG groups: all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))

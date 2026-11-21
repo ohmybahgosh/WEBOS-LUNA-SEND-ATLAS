@@ -8,9 +8,9 @@ DB8 database instance for user-account data: stores typed records (kinds) with f
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`batch`](#batch) | private |  | db | inferred | Handles the batch. |
+| [`batch`](#batch) | private |  | db | documented | Handles the batch. |
 | [`compact`](#compact) | private |  | db | inferred | Handles the compact. |
-| [`del`](#del) | private |  | db | inferred | Handles the del. |
+| [`del`](#del) | private |  | db | documented | Handles the del. |
 | [`deleteWorkSpace`](#deleteworkspace) | private |  | db | inferred | Deletes the work space. ⚠️ |
 | [`delKind`](#delkind) | private |  | db | inferred | Handles the del kind. |
 | [`dump`](#dump) | private |  | db | inferred | Dumps the accountdb. |
@@ -29,7 +29,7 @@ DB8 database instance for user-account data: stores typed records (kinds) with f
 | [`merge`](#merge) | private |  | db | inferred | Merges the accountdb. |
 | [`mergePut`](#mergeput) | private |  | db | inferred | Merges the put. |
 | [`purge`](#purge) | private |  | db | inferred | Handles the purge. |
-| [`put`](#put) | private |  | db | inferred | Writes the accountdb. |
+| [`put`](#put) | private |  | db | documented | Writes the accountdb. |
 | [`putKind`](#putkind) | private |  | db | inferred | Writes the kind. |
 | [`putPermissions`](#putpermissions) | private |  | db | inferred | Writes the permissions. |
 | [`resetWorkSpaceData`](#resetworkspacedata) | private |  | db | inferred | Resets the work space data. ⚠️ |
@@ -44,19 +44,21 @@ DB8 database instance for user-account data: stores typed records (kinds) with f
 
 Handles the batch.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `operations` | Array (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/batch '{}'
 ```
 
-> ACG groups: private, all, database, database.internal.
+> ACG groups: private, all, database, database.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -90,19 +92,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Handles the del.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `query` | Object (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/del '{}'
 ```
 
-> ACG groups: private, all, database, database.internal.
+> ACG groups: private, all, database, database.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -535,19 +539,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Writes the accountdb.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `objects` | Array (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.accountdb/put '{}'
 ```
 
-> ACG groups: private, all, database, database.internal.
+> ACG groups: private, all, database, database.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

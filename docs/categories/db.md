@@ -80,9 +80,9 @@
 | [`luna://com.palm.tempdb/shardKind`](../services/com.palm.tempdb.md#shardkind) | public | inferred | Handles the shard kind. |
 | [`luna://com.palm.tempdb/stats`](../services/com.palm.tempdb.md#stats) | private | documented | The stats method returns detailed information about the storage space used by every service. |
 | [`luna://com.palm.tempdb/watch`](../services/com.palm.tempdb.md#watch) | public | documented | The watch method watches for updates to the database that would change the results of a query. |
-| [`luna://com.webos.accountdb/batch`](../services/com.webos.accountdb.md#batch) | private | inferred | Handles the batch. |
+| [`luna://com.webos.accountdb/batch`](../services/com.webos.accountdb.md#batch) | private | documented | Handles the batch. |
 | [`luna://com.webos.accountdb/compact`](../services/com.webos.accountdb.md#compact) | private | inferred | Handles the compact. |
-| [`luna://com.webos.accountdb/del`](../services/com.webos.accountdb.md#del) | private | inferred | Handles the del. |
+| [`luna://com.webos.accountdb/del`](../services/com.webos.accountdb.md#del) | private | documented | Handles the del. |
 | [`luna://com.webos.accountdb/deleteWorkSpace`](../services/com.webos.accountdb.md#deleteworkspace) | private | inferred | Deletes the work space. ⚠️ |
 | [`luna://com.webos.accountdb/delKind`](../services/com.webos.accountdb.md#delkind) | private | inferred | Handles the del kind. |
 | [`luna://com.webos.accountdb/dump`](../services/com.webos.accountdb.md#dump) | private | inferred | Dumps the accountdb. |
@@ -101,7 +101,7 @@
 | [`luna://com.webos.accountdb/merge`](../services/com.webos.accountdb.md#merge) | private | inferred | Merges the accountdb. |
 | [`luna://com.webos.accountdb/mergePut`](../services/com.webos.accountdb.md#mergeput) | private | inferred | Merges the put. |
 | [`luna://com.webos.accountdb/purge`](../services/com.webos.accountdb.md#purge) | private | inferred | Handles the purge. |
-| [`luna://com.webos.accountdb/put`](../services/com.webos.accountdb.md#put) | private | inferred | Writes the accountdb. |
+| [`luna://com.webos.accountdb/put`](../services/com.webos.accountdb.md#put) | private | documented | Writes the accountdb. |
 | [`luna://com.webos.accountdb/putKind`](../services/com.webos.accountdb.md#putkind) | private | inferred | Writes the kind. |
 | [`luna://com.webos.accountdb/putPermissions`](../services/com.webos.accountdb.md#putpermissions) | private | inferred | Writes the permissions. |
 | [`luna://com.webos.accountdb/resetWorkSpaceData`](../services/com.webos.accountdb.md#resetworkspacedata) | private | inferred | Resets the work space data. ⚠️ |

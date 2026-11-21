@@ -1,0 +1,651 @@
+{
+ "luna://com.palm.preferences/appProperties/getAppProperty": {
+  "params": {
+   "appId": "String",
+   "key": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 8
+ },
+ "luna://com.palm.webappmanager/discardCodeCache": {
+  "params": {
+   "force": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 1
+ },
+ "luna://com.palm.webappmanager/killApp": {
+  "params": {
+   "reason": "String",
+   "appId": "String",
+   "forceMode": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 12
+ },
+ "luna://com.palm.webappmanager/launchApp": {
+  "params": {
+   "reason": "String",
+   "parameters": "Object",
+   "appDesc": "Object",
+   "launchingAppId": "String",
+   "launchingProcId": "String",
+   "keepAlive": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 24
+ },
+ "luna://com.webos.accountdb/batch": {
+  "params": {
+   "operations": "Array"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 608
+ },
+ "luna://com.webos.accountdb/del": {
+  "params": {
+   "query": "Object"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 23
+ },
+ "luna://com.webos.accountdb/put": {
+  "params": {
+   "objects": "Array"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 23
+ },
+ "luna://com.webos.applicationManager/registerApp": {
+  "params": {
+   "subscribe": "Boolean",
+   "appId": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 10
+ },
+ "luna://com.webos.media/closeMediaPipeline": {
+  "params": {
+   "pid": "Integer"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 2
+ },
+ "luna://com.webos.media/notifyMultiviewControlMode": {
+  "params": {
+   "role": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 7
+ },
+ "luna://com.webos.media/setAppId": {
+  "params": {
+   "appId": "String",
+   "reserved": "Boolean",
+   "mediaId": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 9
+ },
+ "luna://com.webos.media/setAudioMute": {
+  "params": {
+   "mediaId": "String",
+   "isMuteOn": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 6
+ },
+ "luna://com.webos.media/setOwnerPipeline": {
+  "params": {
+   "connectionId": "String",
+   "ownerConnectionId": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 34
+ },
+ "luna://com.webos.media/setResourcePolicyExtraInfo": {
+  "params": {
+   "connectionId": "String",
+   "policyExtraInfo": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 34
+ },
+ "luna://com.webos.media/trackAppStatus": {
+  "params": {
+   "connectionId": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 17
+ },
+ "luna://com.webos.media/trackResourcesStatus": {
+  "params": {
+   "connectionId": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 17
+ },
+ "luna://com.webos.memorymanager/getCustomThreshold": {
+  "params": {
+   "appId": "String",
+   "threshold": "String",
+   "subscribe": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 27
+ },
+ "luna://com.webos.memorymanager/setRequiredMemory": {
+  "params": {
+   "defaultWindowType": "String",
+   "appId": "String",
+   "requiredMemory": "Integer",
+   "containerBasedApp": "Boolean",
+   "appType": "String",
+   "relaunch": "Boolean",
+   "windowGroup": "Boolean",
+   "preload": "String",
+   "windowGroupOwner": "Boolean",
+   "windowGroupOwnerId": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 123
+ },
+ "luna://com.webos.service.accountmanager/getLoginUserData": {
+  "params": {
+   "serviceName": "String",
+   "subscribe": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 8
+ },
+ "luna://com.webos.service.admanager/launchCMPApp": {
+  "params": {
+   "forceStatus": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 2
+ },
+ "luna://com.webos.service.asc/registerDevice": {
+  "params": {
+   "type": "String",
+   "address": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 4
+ },
+ "luna://com.webos.service.attachedstoragemanager/listFolderContents": {
+  "params": {
+   "deviceId": "String",
+   "subDeviceId": "String",
+   "path": "String",
+   "offset": "Integer",
+   "limit": "Integer",
+   "dataScope": "String",
+   "requestType": "String",
+   "itemType": "Array",
+   "extensionList": "Array"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 72
+ },
+ "luna://com.webos.service.attachedstoragemanager/registerDeviceStatus": {
+  "params": {
+   "isHighPriority": "Boolean",
+   "deviceType": "Array",
+   "name": "String",
+   "subscribe": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 12
+ },
+ "luna://com.webos.service.attachedstoragemanager/unregisterDeviceStatus": {
+  "params": {
+   "name": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 3
+ },
+ "luna://com.webos.service.audio/UMI/register": {
+  "params": {
+   "pipelineId": "String",
+   "streamType": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 14
+ },
+ "luna://com.webos.service.audio/UMI/unregister": {
+  "params": {
+   "pipelineId": "String",
+   "streamType": "String",
+   "pipelineAttribute": "Object"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 21
+ },
+ "luna://com.webos.service.audio/tv/mixDigitalSoundOutput": {
+  "params": {
+   "mix": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 3
+ },
+ "luna://com.webos.service.audio/tv/setDolbyOTTMode": {
+  "params": {
+   "ottmode": "Boolean",
+   "atmoslocking": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 2
+ },
+ "luna://com.webos.service.audio/tv/setQualityAttribute": {
+  "params": {
+   "categoryType": "String",
+   "requestType": "String",
+   "categoryInfo": "Object",
+   "pipelineInfo": "Object"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 125
+ },
+ "luna://com.webos.service.audio/tv/setVideoLatencyTime": {
+  "params": {
+   "pipelineId": "String",
+   "videoLatencyTime": "Integer"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 56
+ },
+ "luna://com.webos.service.audiooutput/audio/removePipelineInfo": {
+  "params": {
+   "pipelineId": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 7
+ },
+ "luna://com.webos.service.audiooutput/audio/setInputVolume": {
+  "params": {
+   "source": "String",
+   "sink": "String",
+   "volume": "Integer"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 42
+ },
+ "luna://com.webos.service.audiooutput/quality/getSettings": {
+  "params": {
+   "category": "String",
+   "settings": "Object"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 188
+ },
+ "luna://com.webos.service.audiooutput/quality/setQualityAttribute": {
+  "params": {
+   "categoryInfo": "Object",
+   "requestType": "String",
+   "pipelineInfo": "Object",
+   "activeState": "Boolean",
+   "categoryType": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 158
+ },
+ "luna://com.webos.service.audiooutput/quality/setSettings": {
+  "params": {
+   "category": "String",
+   "value": "Object"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 204
+ },
+ "luna://com.webos.service.avmutemanager/register": {
+  "params": {
+   "contextId": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 40
+ },
+ "luna://com.webos.service.avmutemanager/setAvMute": {
+  "params": {
+   "muteOn": "Boolean",
+   "contextId": "String",
+   "muteType": "String",
+   "muteOwner": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 285
+ },
+ "luna://com.webos.service.avmutemanager/unregister": {
+  "params": {
+   "contextId": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 40
+ },
+ "luna://com.webos.service.avmutemanager/updateAvResource": {
+  "params": {
+   "contextId": "String",
+   "muteType": "String",
+   "muteTarget": "Array"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 147
+ },
+ "luna://com.webos.service.dial/heartbeat/notifyNamedSocket": {
+  "params": {
+   "path": "String",
+   "port": "Integer"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 44
+ },
+ "luna://com.webos.service.eim/cec/requestVendorCommandWithID": {
+  "params": {
+   "opcode": "String",
+   "operand": "String",
+   "uniqueId": "Integer"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 42
+ },
+ "luna://com.webos.service.emmcd/getProfileInfo": {
+  "params": {
+   "alive": "Boolean",
+   "count": "String",
+   "format": "String",
+   "subscribe": "Boolean",
+   "summary": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 190
+ },
+ "luna://com.webos.service.factorymanager/getFactoryOpt": {
+  "params": {
+   "keys": "Array",
+   "subscribe": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 80
+ },
+ "luna://com.webos.service.homeconnect/get": {
+  "params": {
+   "type": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 4
+ },
+ "luna://com.webos.service.ics/iot/getIoTDevice": {
+  "params": {
+   "deviceId": "String",
+   "deviceType": "Integer",
+   "buttonOK": "Integer"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 9
+ },
+ "luna://com.webos.service.iepg/getChannelList": {
+  "params": {
+   "dataType": "Integer",
+   "sort": "Integer",
+   "attribute": "Array",
+   "channelGroup": "Array",
+   "channelMode": "Array",
+   "format": "Integer",
+   "requestField": "Array"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 56
+ },
+ "luna://com.webos.service.lowlevelstorage/setData": {
+  "params": {
+   "dbgroups": "Array",
+   "export": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 8
+ },
+ "luna://com.webos.service.mrcu/getDeviceInfo": {
+  "params": {
+   "subscribe": "Boolean",
+   "deviceName": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 2
+ },
+ "luna://com.webos.service.mrcu/setSleepMode": {
+  "params": {
+   "sleep": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 8
+ },
+ "luna://com.webos.service.multiviewcontroller/getStatus": {
+  "params": {
+   "id": "String",
+   "subscribe": "Boolean",
+   "clientType": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 53
+ },
+ "luna://com.webos.service.multiviewcontroller/removeClient": {
+  "params": {
+   "id": "String",
+   "clientType": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 34
+ },
+ "luna://com.webos.service.multiviewcontroller/setAppPipelineStatus": {
+  "params": {
+   "appId": "String",
+   "pipelineId": "String",
+   "status": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 192
+ },
+ "luna://com.webos.service.multiviewcontroller/setInputMode": {
+  "params": {
+   "appId": "String",
+   "inputMode": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 14
+ },
+ "luna://com.webos.service.nnproxy/picture/set": {
+  "params": {
+   "command": "String",
+   "type": "String",
+   "option": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 231
+ },
+ "luna://com.webos.service.nop/removeNopTimer": {
+  "params": {
+   "timerId": "String",
+   "option": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 158
+ },
+ "luna://com.webos.service.oledepl/setEplAppInfo": {
+  "params": {
+   "appId": "String",
+   "supportScreenSaverPolicy": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 16
+ },
+ "luna://com.webos.service.packagemanager/closePackage": {
+  "params": {
+   "id": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 1
+ },
+ "luna://com.webos.service.packagemanager/lockPackage": {
+  "params": {
+   "id": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 1
+ },
+ "luna://com.webos.service.packagemanager/unlockPackage": {
+  "params": {
+   "id": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 1
+ },
+ "luna://com.webos.service.pbsw/debug": {
+  "params": {
+   "removeEPG": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 19
+ },
+ "luna://com.webos.service.pkgverifier/verifyIpk": {
+  "params": {
+   "ipkName": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 1
+ },
+ "luna://com.webos.service.pqcontroller/setPQ": {
+  "params": {
+   "video": "Object",
+   "id": "Integer"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 82
+ },
+ "luna://com.webos.service.preloadmanager/setPreloadStatus": {
+  "params": {
+   "status": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 2
+ },
+ "luna://com.webos.service.sm/license/apps/getDrmStatus": {
+  "params": {
+   "installBasePath": "String",
+   "appId": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 16
+ },
+ "luna://com.webos.service.sportsalarm/push": {
+  "params": {
+   "push": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 2
+ },
+ "luna://com.webos.service.systemUIManager/closeByAppId": {
+  "params": {
+   "appId": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 2
+ },
+ "luna://com.webos.service.tvpower/power2/registerPowerOffRequest": {
+  "params": {
+   "clientName": "String",
+   "subscribe": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 8
+ },
+ "luna://com.webos.service.tvpower/power2/registerPreparePowerOff": {
+  "params": {
+   "clientName": "String",
+   "subscribe": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 8
+ },
+ "luna://com.webos.service.tvpower/power2/registerPreparePowerOn": {
+  "params": {
+   "clientName": "String",
+   "subscribe": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 8
+ },
+ "luna://com.webos.service.tvpower/power2/registerScreenSaverRequest": {
+  "params": {
+   "clientName": "String",
+   "subscribe": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 8
+ },
+ "luna://com.webos.service.usercontextmanager/getHistory": {
+  "params": {
+   "eventId": "String",
+   "limit": "Integer",
+   "fromDate": "Integer",
+   "eventType": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 16
+ },
+ "luna://com.webos.service.userintentmanager/getRank": {
+  "params": {
+   "eventSubTypes": "Array",
+   "limit": "Integer",
+   "fromDate": "Integer",
+   "eventType": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 16
+ },
+ "luna://com.webos.service.videooutput/display/setDisplayWindowProperty": {
+  "params": {
+   "context": "String",
+   "appRotation": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 32
+ },
+ "luna://com.webos.service.voice.performer.plugin/getContext": {
+  "params": {
+   "source": "String",
+   "voiceTicket": "String",
+   "enableNlp": "Boolean",
+   "deviceId": "String",
+   "recognitionType": "String",
+   "recognitionSource": "Object",
+   "powerOnByVoice": "String",
+   "voiceUiParam": "Object"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 32
+ },
+ "luna://com.webos.service.voice.performer.plugin/load": {
+  "params": {
+   "serverConfigs": "Object",
+   "uiLang": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 4
+ },
+ "luna://com.webos.service.voiceconductor/interactor/register": {
+  "params": {
+   "type": "String",
+   "subscribe": "Boolean"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 12
+ },
+ "luna://netflix.service/saveToken": {
+  "params": {
+   "notValidAfter": "Integer",
+   "token": "String"
+  },
+  "source": "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)",
+  "observed_calls": 6
+ }
+}

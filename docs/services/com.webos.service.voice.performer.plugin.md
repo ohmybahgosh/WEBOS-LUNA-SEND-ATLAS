@@ -9,8 +9,8 @@ Voice-command performer plugin: loads/unloads, reads context, and performs voice
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
 | [``](#) | private |  | input | stub | Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented). |
-| [`getContext`](#getcontext) | private |  | input | inferred | Returns the context. |
-| [`load`](#load) | private |  | input | inferred | Loads the voice performer plugin. |
+| [`getContext`](#getcontext) | private |  | input | documented | Returns the context. |
+| [`load`](#load) | private |  | input | documented | Loads the voice performer plugin. |
 | [`performAction`](#performaction) | private |  | input | inferred | Handles the perform action. |
 | [`performShortPress`](#performshortpress) | private |  | input | inferred | Handles the perform short press. |
 | [`unload`](#unload) | private |  | input | inferred | Unloads the voice performer plugin. |
@@ -43,13 +43,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the context.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `source` | String (observed in live traffic) |
+| `voiceTicket` | String (observed in live traffic) |
+| `enableNlp` | Boolean (observed in live traffic) |
+| `deviceId` | String (observed in live traffic) |
+| `recognitionType` | String (observed in live traffic) |
+| `recognitionSource` | Object (observed in live traffic) |
+| `powerOnByVoice` | String (observed in live traffic) |
+| `voiceUiParam` | Object (observed in live traffic) |
 
 **Returns:**
 
@@ -135,7 +144,7 @@ Returns the context.
 luna-send -n 1 -f luna://com.webos.service.voice.performer.plugin/getContext '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -146,19 +155,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Loads the voice performer plugin.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `serverConfigs` | Object (observed in live traffic) |
+| `uiLang` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voice.performer.plugin/load '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

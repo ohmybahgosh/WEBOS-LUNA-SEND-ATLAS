@@ -69,8 +69,14 @@ Preload manager status setter (name listed among ACG-permitted methods in schedu
 - **Versions:** unknown  
 - **Confidence:** documented
 
+| Param | Type / notes |
+|---|---|
+| `status` | String (observed in live traffic) |
+
 ```sh
 luna-send -n 1 -f luna://com.webos.service.preloadmanager/setPreloadStatus '{}'
 ```
+
+> Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/rhinoswirl/webostv-research/blob/main/development/scheduled-tasks-triggers.md)

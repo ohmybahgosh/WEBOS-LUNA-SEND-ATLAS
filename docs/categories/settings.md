@@ -38,7 +38,7 @@
 | [`luna://com.palm.preferences/appProperties/getAllAppPropertiesObj`](../services/com.palm.preferences.md#appproperties_getallapppropertiesobj) | private | inferred | Returns the all app properties obj (app properties) |
 | [`luna://com.palm.preferences/appProperties/getAppKeys`](../services/com.palm.preferences.md#appproperties_getappkeys) | private | inferred | Returns the app keys (app properties) |
 | [`luna://com.palm.preferences/appProperties/getAppKeysObj`](../services/com.palm.preferences.md#appproperties_getappkeysobj) | private | inferred | Returns the app keys obj (app properties) |
-| [`luna://com.palm.preferences/appProperties/getAppProperty`](../services/com.palm.preferences.md#appproperties_getappproperty) | private | inferred | Returns the app property (app properties) |
+| [`luna://com.palm.preferences/appProperties/getAppProperty`](../services/com.palm.preferences.md#appproperties_getappproperty) | private | documented | Returns the app property (app properties) |
 | [`luna://com.palm.preferences/appProperties/removeAppProperty`](../services/com.palm.preferences.md#appproperties_removeappproperty) | private | inferred | Removes the app property (app properties) ⚠️ |
 | [`luna://com.palm.preferences/appProperties/setAppProperty`](../services/com.palm.preferences.md#appproperties_setappproperty) | private | inferred | Sets the app property (app properties) |
 | [`luna://com.palm.preferences/systemProperties/Get`](../services/com.palm.preferences.md#systemproperties_get) | public | inferred | Returns the preferences (system properties) |

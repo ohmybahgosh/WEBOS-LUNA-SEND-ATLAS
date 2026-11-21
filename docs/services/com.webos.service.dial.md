@@ -8,7 +8,7 @@ DIAL (Discovery and Launch) service: starts and quits second-screen-launched app
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`heartbeat/notifyNamedSocket`](#heartbeat_notifynamedsocket) | private |  | misc | inferred | Notifies of the named socket (heartbeat) |
+| [`heartbeat/notifyNamedSocket`](#heartbeat_notifynamedsocket) | private |  | misc | documented | Notifies of the named socket (heartbeat) |
 | [`heartbeat/ping`](#heartbeat_ping) | private |  | misc | inferred | Pings the dial (heartbeat) |
 | [`info`](#info) | public |  | misc | inferred | Handles the info. |
 | [`quit`](#quit) | public |  | misc | inferred | Quits the dial. |
@@ -22,19 +22,22 @@ DIAL (Discovery and Launch) service: starts and quits second-screen-launched app
 
 Notifies of the named socket (heartbeat)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `path` | String (observed in live traffic) |
+| `port` | Integer (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.dial/heartbeat/notifyNamedSocket '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

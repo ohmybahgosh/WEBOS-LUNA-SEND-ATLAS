@@ -21,7 +21,7 @@ Advertising manager: issues banner/asset ad requests, manages the advertising ID
 | [`getAdid`](#getadid) | public |  | apps | inferred | Returns the adid. |
 | [`getAdRequestInfo`](#getadrequestinfo) | public |  | apps | inferred | Returns the ad request info. |
 | [`inactivateCookies`](#inactivatecookies) | private |  | apps | inferred | Handles the inactivate cookies. |
-| [`launchCMPApp`](#launchcmpapp) | private |  | apps | inferred | Launches the CMP app. |
+| [`launchCMPApp`](#launchcmpapp) | private |  | apps | documented | Launches the CMP app. |
 | [`reqNormalLog`](#reqnormallog) | public |  | apps | inferred | Handles the req normal log. |
 | [`requestAssetClickInfo`](#requestassetclickinfo) | public |  | apps | inferred | Requests the asset click info. |
 | [`requestBannerInfo`](#requestbannerinfo) | public |  | apps | inferred | Requests the banner info. |
@@ -360,19 +360,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Launches the CMP app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `forceStatus` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.admanager/launchCMPApp '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

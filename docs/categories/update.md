@@ -13,7 +13,7 @@
 | [`luna://com.webos.service.accountmanager/updateAccountData`](../services/com.webos.service.accountmanager.md#updateaccountdata) | private | inferred | Updates the account data. |
 | [`luna://com.webos.service.admanager/updateDNS`](../services/com.webos.service.admanager.md#updatedns) | private | inferred | Updates the DNS. |
 | [`luna://com.webos.service.airplayadaptor/updateApp`](../services/com.webos.service.airplayadaptor.md#updateapp) | public | inferred | Updates the app. |
-| [`luna://com.webos.service.avmutemanager/updateAvResource`](../services/com.webos.service.avmutemanager.md#updateavresource) | public | inferred | Updates the A/V resource. |
+| [`luna://com.webos.service.avmutemanager/updateAvResource`](../services/com.webos.service.avmutemanager.md#updateavresource) | public | documented | Updates the A/V resource. |
 | [`luna://com.webos.service.camera/updateFirmware`](../services/com.webos.service.camera.md#updatefirmware) | private | inferred | Updates the firmware. ⚠️ |
 | [`luna://com.webos.service.commercial.contentmanager/update`](../services/com.webos.service.commercial.contentmanager.md#update) | private | inferred | Updates the commercial contentmanager. |
 | [`luna://com.webos.service.commercial.webgateway/updateMasterInfo`](../services/com.webos.service.commercial.webgateway.md#updatemasterinfo) | private | inferred | Updates the master info. |

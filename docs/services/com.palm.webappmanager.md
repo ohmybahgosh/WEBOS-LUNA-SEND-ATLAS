@@ -13,12 +13,12 @@ Web app manager: launches apps and URLs, kills/pauses apps, lists running apps, 
 | [`closeAllApps`](#closeallapps) | private |  | apps | inferred | Closes the all apps. |
 | [`closeByProcessId`](#closebyprocessid) | private |  | apps | inferred | Closes the by process ID. |
 | [`deliverPushMessage`](#deliverpushmessage) | private |  | apps | inferred | Handles the deliver push message. |
-| [`discardCodeCache`](#discardcodecache) | private |  | apps | inferred | Handles the discard code cache. |
+| [`discardCodeCache`](#discardcodecache) | private |  | apps | documented | Handles the discard code cache. |
 | [`fireNotificationEvent`](#firenotificationevent) | private |  | notifications | inferred | Handles the fire notification event. |
 | [`getMemoryStatus`](#getmemorystatus) | private |  | apps | inferred | Returns the memory status. |
 | [`getWebProcessSize`](#getwebprocesssize) | private |  | apps | inferred | Returns the web process size. |
-| [`killApp`](#killapp) | private |  | apps | inferred | Handles the kill app. |
-| [`launchApp`](#launchapp) | private |  | apps | inferred | Launches the app. |
+| [`killApp`](#killapp) | private |  | apps | documented | Handles the kill app. |
+| [`launchApp`](#launchapp) | private |  | apps | documented | Launches the app. |
 | [`launchUrl`](#launchurl) | private |  | apps | inferred | Launches the URL. |
 | [`launchUrlChild`](#launchurlchild) | private |  | apps | inferred | Launches the URL child. |
 | [`listRunningApps`](#listrunningapps) | private |  | apps | inferred | Lists the running apps. |
@@ -152,19 +152,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Handles the discard code cache.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `force` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/discardCodeCache '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -244,19 +246,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Handles the kill app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `reason` | String (observed in live traffic) |
+| `appId` | String (observed in live traffic) |
+| `forceMode` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/killApp '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -267,19 +273,26 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Launches the app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `reason` | String (observed in live traffic) |
+| `parameters` | Object (observed in live traffic) |
+| `appDesc` | Object (observed in live traffic) |
+| `launchingAppId` | String (observed in live traffic) |
+| `launchingProcId` | String (observed in live traffic) |
+| `keepAlive` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.webappmanager/launchApp '{}'
 ```
 
-> ACG groups: private, all, applications.internal.
+> ACG groups: private, all, applications.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

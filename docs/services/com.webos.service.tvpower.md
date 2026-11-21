@@ -66,10 +66,10 @@ TV power daemon: powers the TV on/off, reboots (including MICOM), reports power 
 | [`power2/registerAlwaysOnDisplayRequest`](#power2_registeralwaysondisplayrequest) | private |  | power | inferred | Registers the always on display request (power 2) |
 | [`power2/registerAlwaysReadyRequest`](#power2_registeralwaysreadyrequest) | private |  | power | inferred | Registers the always ready request (power 2) |
 | [`power2/registerPowerOffLogoRequest`](#power2_registerpowerofflogorequest) | private |  | power | inferred | Registers the power off logo request (power 2) |
-| [`power2/registerPowerOffRequest`](#power2_registerpoweroffrequest) | private |  | power | inferred | Registers the power off request (power 2) |
-| [`power2/registerPreparePowerOff`](#power2_registerpreparepoweroff) | private |  | power | inferred | Registers the prepare power off (power 2) |
-| [`power2/registerPreparePowerOn`](#power2_registerpreparepoweron) | private |  | power | inferred | Registers the prepare power on (power 2) |
-| [`power2/registerScreenSaverRequest`](#power2_registerscreensaverrequest) | private |  | power | inferred | Registers the screen saver request (power 2) |
+| [`power2/registerPowerOffRequest`](#power2_registerpoweroffrequest) | private |  | power | documented | Registers the power off request (power 2) |
+| [`power2/registerPreparePowerOff`](#power2_registerpreparepoweroff) | private |  | power | documented | Registers the prepare power off (power 2) |
+| [`power2/registerPreparePowerOn`](#power2_registerpreparepoweron) | private |  | power | documented | Registers the prepare power on (power 2) |
+| [`power2/registerScreenSaverRequest`](#power2_registerscreensaverrequest) | private |  | power | documented | Registers the screen saver request (power 2) |
 | [`power2/registerSuspendRequest`](#power2_registersuspendrequest) | private |  | power | inferred | Registers the suspend request (power 2) |
 | [`power2/responseActiveStandbyRequest`](#power2_responseactivestandbyrequest) | private |  | power | inferred | Handles the response active standby request (power 2) |
 | [`power2/responseAlwaysOnDisplayRequest`](#power2_responsealwaysondisplayrequest) | private |  | power | inferred | Handles the response always on display request (power 2) |
@@ -1436,19 +1436,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Registers the power off request (power 2)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `clientName` | String (observed in live traffic) |
+| `subscribe` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPowerOffRequest '{}'
 ```
 
-> ACG groups: private, all, tv.management.
+> ACG groups: private, all, tv.management.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1459,19 +1462,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Registers the prepare power off (power 2)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `clientName` | String (observed in live traffic) |
+| `subscribe` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPreparePowerOff '{}'
 ```
 
-> ACG groups: private, all, tv.management.
+> ACG groups: private, all, tv.management.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1482,19 +1488,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Registers the prepare power on (power 2)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `clientName` | String (observed in live traffic) |
+| `subscribe` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPreparePowerOn '{}'
 ```
 
-> ACG groups: private, all, tv.management.
+> ACG groups: private, all, tv.management.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1505,19 +1514,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Registers the screen saver request (power 2)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `clientName` | String (observed in live traffic) |
+| `subscribe` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerScreenSaverRequest '{}'
 ```
 
-> ACG groups: private, all, tv.management.
+> ACG groups: private, all, tv.management.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

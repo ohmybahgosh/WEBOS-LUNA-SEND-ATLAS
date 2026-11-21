@@ -8,12 +8,12 @@ App/package manager: runs and closes packages, locks and unlocks them, mounts sq
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`closePackage`](#closepackage) | private |  | misc | inferred | Closes the package. |
+| [`closePackage`](#closepackage) | private |  | misc | documented | Closes the package. |
 | [`getStatus`](#getstatus) | private |  | misc | inferred | Returns the status. |
-| [`lockPackage`](#lockpackage) | private |  | misc | inferred | Locks the package. |
+| [`lockPackage`](#lockpackage) | private |  | misc | documented | Locks the package. |
 | [`run`](#run) | private |  | misc | inferred | Runs the packagemanager. |
 | [`squashfsMount`](#squashfsmount) | private |  | misc | inferred | Handles the squashfs mount. |
-| [`unlockPackage`](#unlockpackage) | private |  | misc | inferred | Unlocks the package. |
+| [`unlockPackage`](#unlockpackage) | private |  | misc | documented | Unlocks the package. |
 
 <a id="closepackage"></a>
 ## `closePackage`
@@ -22,19 +22,21 @@ App/package manager: runs and closes packages, locks and unlocks them, mounts sq
 
 Closes the package.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.packagemanager/closePackage '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -75,19 +77,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Locks the package.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.packagemanager/lockPackage '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -144,18 +148,20 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Unlocks the package.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.packagemanager/unlockPackage '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))

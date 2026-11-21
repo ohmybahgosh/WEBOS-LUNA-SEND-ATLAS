@@ -28,7 +28,7 @@ Picture-quality (PQ) controller: adjusts white balance and N-point white balance
 | [`setNpointWB`](#setnpointwb) | public |  | picture | inferred | Sets the npoint WB. |
 | [`setOCPAlertResult`](#setocpalertresult) | private |  | picture | inferred | Sets the OCP alert result. |
 | [`setParameter`](#setparameter) | public |  | picture | inferred | Sets the parameter. |
-| [`setPQ`](#setpq) | public |  | picture | inferred | Sets the PQ. |
+| [`setPQ`](#setpq) | public |  | picture | documented | Sets the PQ. |
 | [`setProperties`](#setproperties) | private |  | picture | documented | Set picture-quality controller properties; used to trigger USB Dolby Vision config Update/Restore |
 | [`setWbPattern`](#setwbpattern) | public |  | picture | inferred | Sets the wb pattern. |
 | [`setWhiteBalance`](#setwhitebalance) | private |  | picture | documented | Set white balance in Ez-Adjust service menu ⚠️ |
@@ -507,19 +507,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the PQ.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `video` | Object (observed in live traffic) |
+| `id` | Integer (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pqcontroller/setPQ '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

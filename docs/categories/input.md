@@ -133,7 +133,7 @@
 | [`luna://com.webos.service.eim/cec/notifyInterestingEvents`](../services/com.webos.service.eim.md#cec_notifyinterestingevents) | public | inferred | Notifies of the interesting events (CEC) |
 | [`luna://com.webos.service.eim/cec/registerVendorCommand`](../services/com.webos.service.eim.md#cec_registervendorcommand) | public | inferred | Registers the vendor command (CEC) |
 | [`luna://com.webos.service.eim/cec/requestVendorCommand`](../services/com.webos.service.eim.md#cec_requestvendorcommand) | public | inferred | Requests the vendor command (CEC) |
-| [`luna://com.webos.service.eim/cec/requestVendorCommandWithID`](../services/com.webos.service.eim.md#cec_requestvendorcommandwithid) | public | inferred | Requests the vendor command with ID (CEC) |
+| [`luna://com.webos.service.eim/cec/requestVendorCommandWithID`](../services/com.webos.service.eim.md#cec_requestvendorcommandwithid) | public | documented | Requests the vendor command with ID (CEC) |
 | [`luna://com.webos.service.eim/cec/sendKeyEvent`](../services/com.webos.service.eim.md#cec_sendkeyevent) | private | documented | Sends an HDMI-CEC key event |
 | [`luna://com.webos.service.eim/cec/setCECState`](../services/com.webos.service.eim.md#cec_setcecstate) | public | inferred | Sets the CEC state (CEC) |
 | [`luna://com.webos.service.eim/cec/setCECUniqueId`](../services/com.webos.service.eim.md#cec_setcecuniqueid) | public | inferred | Sets the CEC unique ID (CEC) |
@@ -302,7 +302,7 @@
 | [`luna://com.webos.service.ics/getUeiAppList`](../services/com.webos.service.ics.md#getueiapplist) | private | inferred | Returns the uei app list. |
 | [`luna://com.webos.service.ics/iot/getAllIoTDevices`](../services/com.webos.service.ics.md#iot_getalliotdevices) | private | inferred | Returns the all io t devices (iot) |
 | [`luna://com.webos.service.ics/iot/getIoTBrandList`](../services/com.webos.service.ics.md#iot_getiotbrandlist) | private | inferred | Returns the io t brand list (iot) |
-| [`luna://com.webos.service.ics/iot/getIoTDevice`](../services/com.webos.service.ics.md#iot_getiotdevice) | private | inferred | Returns the io t device (iot) |
+| [`luna://com.webos.service.ics/iot/getIoTDevice`](../services/com.webos.service.ics.md#iot_getiotdevice) | private | documented | Returns the io t device (iot) |
 | [`luna://com.webos.service.ics/iot/replyEventCallback`](../services/com.webos.service.ics.md#iot_replyeventcallback) | private | inferred | Handles the reply event callback (iot) |
 | [`luna://com.webos.service.ics/iot/selectIoTDevice`](../services/com.webos.service.ics.md#iot_selectiotdevice) | private | inferred | Selects the io t device (iot) |
 | [`luna://com.webos.service.ics/iot/setIoTDevice`](../services/com.webos.service.ics.md#iot_setiotdevice) | private | inferred | Sets the io t device (iot) |
@@ -358,7 +358,7 @@
 | [`luna://com.webos.service.mrcu/getConnectionStatus`](../services/com.webos.service.mrcu.md#getconnectionstatus) | private | inferred | Returns the connection status. |
 | [`luna://com.webos.service.mrcu/getCursorHistory`](../services/com.webos.service.mrcu.md#getcursorhistory) | private | inferred | Returns the cursor history. |
 | [`luna://com.webos.service.mrcu/getDataDelivery`](../services/com.webos.service.mrcu.md#getdatadelivery) | private | inferred | Returns the data delivery. |
-| [`luna://com.webos.service.mrcu/getDeviceInfo`](../services/com.webos.service.mrcu.md#getdeviceinfo) | private | inferred | Returns the device info. |
+| [`luna://com.webos.service.mrcu/getDeviceInfo`](../services/com.webos.service.mrcu.md#getdeviceinfo) | private | documented | Returns the device info. |
 | [`luna://com.webos.service.mrcu/getDiagnosisItem`](../services/com.webos.service.mrcu.md#getdiagnosisitem) | private | inferred | Returns the diagnosis item. |
 | [`luna://com.webos.service.mrcu/getDoingOtaStatus`](../services/com.webos.service.mrcu.md#getdoingotastatus) | private | inferred | Returns the doing ota status. |
 | [`luna://com.webos.service.mrcu/getLongpressKeyInfo`](../services/com.webos.service.mrcu.md#getlongpresskeyinfo) | private | inferred | Returns the longpress key info. |
@@ -418,7 +418,7 @@
 | [`luna://com.webos.service.mrcu/setPosition`](../services/com.webos.service.mrcu.md#setposition) | public | inferred | Sets the position. |
 | [`luna://com.webos.service.mrcu/setSensitivity`](../services/com.webos.service.mrcu.md#setsensitivity) | public | inferred | Sets the sensitivity. |
 | [`luna://com.webos.service.mrcu/setSharedMemory`](../services/com.webos.service.mrcu.md#setsharedmemory) | public | inferred | Sets the shared memory. |
-| [`luna://com.webos.service.mrcu/setSleepMode`](../services/com.webos.service.mrcu.md#setsleepmode) | private | inferred | Sets the sleep mode. |
+| [`luna://com.webos.service.mrcu/setSleepMode`](../services/com.webos.service.mrcu.md#setsleepmode) | private | documented | Sets the sleep mode. |
 | [`luna://com.webos.service.mrcu/setSlideMode`](../services/com.webos.service.mrcu.md#setslidemode) | public | inferred | Sets the slide mode. |
 | [`luna://com.webos.service.mrcu/setWakeUpCondition`](../services/com.webos.service.mrcu.md#setwakeupcondition) | public | inferred | Sets the wake up condition. |
 | [`luna://com.webos.service.mrcu/startFirmwareUpdate`](../services/com.webos.service.mrcu.md#startfirmwareupdate) | private | inferred | Starts the firmware update. ⚠️ |
@@ -518,7 +518,7 @@
 | [`luna://com.webos.service.nop/addNopTimer`](../services/com.webos.service.nop.md#addnoptimer) | private | inferred | Adds the nop timer. |
 | [`luna://com.webos.service.nop/getTimerInfo`](../services/com.webos.service.nop.md#gettimerinfo) | private | inferred | Returns the timer info. |
 | [`luna://com.webos.service.nop/notifyExpireTimer`](../services/com.webos.service.nop.md#notifyexpiretimer) | private | inferred | Notifies of the expire timer. |
-| [`luna://com.webos.service.nop/removeNopTimer`](../services/com.webos.service.nop.md#removenoptimer) | private | inferred | Removes the nop timer. ⚠️ |
+| [`luna://com.webos.service.nop/removeNopTimer`](../services/com.webos.service.nop.md#removenoptimer) | private | documented | Removes the nop timer. ⚠️ |
 | [`luna://com.webos.service.peripheralmanager/config`](../services/com.webos.service.peripheralmanager.md#config) | unknown | documented | Configurations to be set for the opened UART Interface. |
 | [`luna://com.webos.service.peripheralmanager/gpio/close`](../services/com.webos.service.peripheralmanager.md#gpio_close) | public | documented | Closes the opened GPIO pin, so that the pin is available for other applications to use. |
 | [`luna://com.webos.service.peripheralmanager/gpio/getDirection`](../services/com.webos.service.peripheralmanager.md#gpio_getdirection) | public | documented | Returns the direction of the required GPIO pin. |
@@ -664,8 +664,8 @@
 | [`luna://com.webos.service.utp.extinputs/switchExternalInput`](../services/com.webos.service.utp.extinputs.md#switchexternalinput) | private | inferred | Switches the external input. |
 | [`luna://com.webos.service.utp.teletext/isTimeAvailable`](../services/com.webos.service.utp.teletext.md#istimeavailable) | public | inferred | Reports whether the time available is set. |
 | [`luna://com.webos.service.voice.performer.plugin/`](../services/com.webos.service.voice.performer.plugin.md#) | private | stub | Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented). |
-| [`luna://com.webos.service.voice.performer.plugin/getContext`](../services/com.webos.service.voice.performer.plugin.md#getcontext) | private | inferred | Returns the context. |
-| [`luna://com.webos.service.voice.performer.plugin/load`](../services/com.webos.service.voice.performer.plugin.md#load) | private | inferred | Loads the voice performer plugin. |
+| [`luna://com.webos.service.voice.performer.plugin/getContext`](../services/com.webos.service.voice.performer.plugin.md#getcontext) | private | documented | Returns the context. |
+| [`luna://com.webos.service.voice.performer.plugin/load`](../services/com.webos.service.voice.performer.plugin.md#load) | private | documented | Loads the voice performer plugin. |
 | [`luna://com.webos.service.voice.performer.plugin/performAction`](../services/com.webos.service.voice.performer.plugin.md#performaction) | private | inferred | Handles the perform action. |
 | [`luna://com.webos.service.voice.performer.plugin/performShortPress`](../services/com.webos.service.voice.performer.plugin.md#performshortpress) | private | inferred | Handles the perform short press. |
 | [`luna://com.webos.service.voice.performer.plugin/unload`](../services/com.webos.service.voice.performer.plugin.md#unload) | private | inferred | Unloads the voice performer plugin. |
@@ -690,7 +690,7 @@
 | [`luna://com.webos.service.voiceconductor/getUtteranceEvents`](../services/com.webos.service.voiceconductor.md#getutteranceevents) | private | inferred | Returns the utterance events. |
 | [`luna://com.webos.service.voiceconductor/getVoiceKey`](../services/com.webos.service.voiceconductor.md#getvoicekey) | private | inferred | Returns the voice key. |
 | [`luna://com.webos.service.voiceconductor/getVoiceUiEvents`](../services/com.webos.service.voiceconductor.md#getvoiceuievents) | public | inferred | Returns the voice ui events. |
-| [`luna://com.webos.service.voiceconductor/interactor/register`](../services/com.webos.service.voiceconductor.md#interactor_register) | public | inferred | Registers the voiceconductor (interactor) |
+| [`luna://com.webos.service.voiceconductor/interactor/register`](../services/com.webos.service.voiceconductor.md#interactor_register) | public | documented | Registers the voiceconductor (interactor) |
 | [`luna://com.webos.service.voiceconductor/interactor/reportActionResult`](../services/com.webos.service.voiceconductor.md#interactor_reportactionresult) | public | inferred | Reports the action result (interactor) |
 | [`luna://com.webos.service.voiceconductor/interactor/setContext`](../services/com.webos.service.voiceconductor.md#interactor_setcontext) | public | inferred | Sets the context (interactor) |
 | [`luna://com.webos.service.voiceconductor/recognizeIntentByText`](../services/com.webos.service.voiceconductor.md#recognizeintentbytext) | public | inferred | Recognizes the intent by text. |

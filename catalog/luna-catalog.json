@@ -8932,22 +8932,26 @@
   "uri": "luna://com.palm.preferences/appProperties/getAppProperty",
   "category": "settings",
   "description": "Returns the app property (app properties)",
-  "params": {},
+  "params": {
+   "appId": "String (observed in live traffic)",
+   "key": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.palm.preferences/appProperties/getAppProperty '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
   "dangerous": false,
-  "notes": "ACG groups: private, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "notes": "ACG groups: private, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.palm.preferences",
@@ -12797,22 +12801,25 @@
   "uri": "luna://com.palm.webappmanager/discardCodeCache",
   "category": "apps",
   "description": "Handles the discard code cache.",
-  "params": {},
+  "params": {
+   "force": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.palm.webappmanager/discardCodeCache '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, applications.internal.",
+  "notes": "ACG groups: private, all, applications.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.palm.webappmanager",
@@ -12889,22 +12896,27 @@
   "uri": "luna://com.palm.webappmanager/killApp",
   "category": "apps",
   "description": "Handles the kill app.",
-  "params": {},
+  "params": {
+   "reason": "String (observed in live traffic)",
+   "appId": "String (observed in live traffic)",
+   "forceMode": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.palm.webappmanager/killApp '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, applications.internal.",
+  "notes": "ACG groups: private, all, applications.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.palm.webappmanager",
@@ -12912,22 +12924,30 @@
   "uri": "luna://com.palm.webappmanager/launchApp",
   "category": "apps",
   "description": "Launches the app.",
-  "params": {},
+  "params": {
+   "reason": "String (observed in live traffic)",
+   "parameters": "Object (observed in live traffic)",
+   "appDesc": "Object (observed in live traffic)",
+   "launchingAppId": "String (observed in live traffic)",
+   "launchingProcId": "String (observed in live traffic)",
+   "keepAlive": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.palm.webappmanager/launchApp '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, applications.internal.",
+  "notes": "ACG groups: private, all, applications.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.palm.webappmanager",
@@ -13554,22 +13574,25 @@
   "uri": "luna://com.webos.accountdb/batch",
   "category": "db",
   "description": "Handles the batch.",
-  "params": {},
+  "params": {
+   "operations": "Array (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.accountdb/batch '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, database, database.internal.",
+  "notes": "ACG groups: private, all, database, database.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.accountdb",
@@ -13600,22 +13623,25 @@
   "uri": "luna://com.webos.accountdb/del",
   "category": "db",
   "description": "Handles the del.",
-  "params": {},
+  "params": {
+   "query": "Object (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.accountdb/del '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, database, database.internal.",
+  "notes": "ACG groups: private, all, database, database.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.accountdb",
@@ -14041,22 +14067,25 @@
   "uri": "luna://com.webos.accountdb/put",
   "category": "db",
   "description": "Writes the accountdb.",
-  "params": {},
+  "params": {
+   "objects": "Array (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.accountdb/put '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, database, database.internal.",
+  "notes": "ACG groups: private, all, database, database.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.accountdb",
@@ -17218,23 +17247,27 @@
   "uri": "luna://com.webos.applicationManager/registerApp",
   "category": "apps",
   "description": "Registers the app.",
-  "params": {},
+  "params": {
+   "subscribe": "Boolean (observed in live traffic)",
+   "appId": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.applicationManager/registerApp '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "webOS TV 4.5 (4.10.2-31); newer firmware unverified",
   "dangerous": false,
-  "notes": "Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. | Listed under ACG group \"application.operation\" in the component api.json/groups.json; no parameter docs read.",
+  "notes": "Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. | Listed under ACG group \"application.operation\" in the component api.json/groups.json; no parameter docs read.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
    "https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt",
-   "https://github.com/webosose/sam/blob/master/files/sysbus/com.webos.sam.api.json"
+   "https://github.com/webosose/sam/blob/master/files/sysbus/com.webos.sam.api.json",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.applicationManager",
@@ -23257,22 +23290,25 @@
   "uri": "luna://com.webos.media/closeMediaPipeline",
   "category": "media",
   "description": "Closes the media pipeline.",
-  "params": {},
+  "params": {
+   "pid": "Integer (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.media/closeMediaPipeline '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.media",
@@ -24053,22 +24089,25 @@
   "uri": "luna://com.webos.media/notifyMultiviewControlMode",
   "category": "media",
   "description": "Notifies of the multiview control mode.",
-  "params": {},
+  "params": {
+   "role": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.media/notifyMultiviewControlMode '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, public.",
+  "notes": "ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.media",
@@ -24792,22 +24831,27 @@
   "uri": "luna://com.webos.media/setAppId",
   "category": "media",
   "description": "Sets the app ID.",
-  "params": {},
+  "params": {
+   "appId": "String (observed in live traffic)",
+   "reserved": "Boolean (observed in live traffic)",
+   "mediaId": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.media/setAppId '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, public.",
+  "notes": "ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.media",
@@ -24861,22 +24905,26 @@
   "uri": "luna://com.webos.media/setAudioMute",
   "category": "audio",
   "description": "Sets the audio mute.",
-  "params": {},
+  "params": {
+   "mediaId": "String (observed in live traffic)",
+   "isMuteOn": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.media/setAudioMute '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, public.",
+  "notes": "ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.media",
@@ -25251,22 +25299,26 @@
   "uri": "luna://com.webos.media/setOwnerPipeline",
   "category": "media",
   "description": "Sets the owner pipeline.",
-  "params": {},
+  "params": {
+   "connectionId": "String (observed in live traffic)",
+   "ownerConnectionId": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.media/setOwnerPipeline '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, public.",
+  "notes": "ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.media",
@@ -25398,22 +25450,26 @@
   "uri": "luna://com.webos.media/setResourcePolicyExtraInfo",
   "category": "media",
   "description": "Sets the resource policy extra info.",
-  "params": {},
+  "params": {
+   "connectionId": "String (observed in live traffic)",
+   "policyExtraInfo": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.media/setResourcePolicyExtraInfo '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, public.",
+  "notes": "ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.media",
@@ -26575,22 +26631,25 @@
   "uri": "luna://com.webos.media/trackAppStatus",
   "category": "media",
   "description": "Handles the track app status.",
-  "params": {},
+  "params": {
+   "connectionId": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.media/trackAppStatus '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.media",
@@ -26644,22 +26703,25 @@
   "uri": "luna://com.webos.media/trackResourcesStatus",
   "category": "media",
   "description": "Handles the track resources status.",
-  "params": {},
+  "params": {
+   "connectionId": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.media/trackResourcesStatus '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.media",
@@ -28118,22 +28180,27 @@
   "uri": "luna://com.webos.memorymanager/getCustomThreshold",
   "category": "misc",
   "description": "Returns the custom threshold.",
-  "params": {},
+  "params": {
+   "appId": "String (observed in live traffic)",
+   "threshold": "String (observed in live traffic)",
+   "subscribe": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.memorymanager/getCustomThreshold '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, system, applications.internal.",
+  "notes": "ACG groups: private, all, system, applications.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.memorymanager",
@@ -28321,22 +28388,34 @@
   "uri": "luna://com.webos.memorymanager/setRequiredMemory",
   "category": "misc",
   "description": "Sets the required memory.",
-  "params": {},
+  "params": {
+   "defaultWindowType": "String (observed in live traffic)",
+   "appId": "String (observed in live traffic)",
+   "requiredMemory": "Integer (observed in live traffic)",
+   "containerBasedApp": "Boolean (observed in live traffic)",
+   "appType": "String (observed in live traffic)",
+   "relaunch": "Boolean (observed in live traffic)",
+   "windowGroup": "Boolean (observed in live traffic)",
+   "preload": "String (observed in live traffic)",
+   "windowGroupOwner": "Boolean (observed in live traffic)",
+   "windowGroupOwnerId": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.memorymanager/setRequiredMemory '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, system, applications.internal.",
+  "notes": "ACG groups: private, all, system, applications.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.memorymanager",
@@ -31473,22 +31552,26 @@
   "uri": "luna://com.webos.service.accountmanager/getLoginUserData",
   "category": "system-info",
   "description": "Returns the login user data.",
-  "params": {},
+  "params": {
+   "serviceName": "String (observed in live traffic)",
+   "subscribe": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.accountmanager/getLoginUserData '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.accountmanager",
@@ -33467,22 +33550,25 @@
   "uri": "luna://com.webos.service.admanager/launchCMPApp",
   "category": "apps",
   "description": "Launches the CMP app.",
-  "params": {},
+  "params": {
+   "forceStatus": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.admanager/launchCMPApp '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.admanager",
@@ -39530,22 +39616,26 @@
   "uri": "luna://com.webos.service.asc/registerDevice",
   "category": "misc",
   "description": "Registers the device.",
-  "params": {},
+  "params": {
+   "type": "String (observed in live traffic)",
+   "address": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.asc/registerDevice '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, public, bluetooth.manage.",
+  "notes": "ACG groups: private, all, public, bluetooth.manage.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.asc",
@@ -40087,22 +40177,33 @@
   "uri": "luna://com.webos.service.attachedstoragemanager/listFolderContents",
   "category": "storage",
   "description": "Lists the folder contents.",
-  "params": {},
+  "params": {
+   "deviceId": "String (observed in live traffic)",
+   "subDeviceId": "String (observed in live traffic)",
+   "path": "String (observed in live traffic)",
+   "offset": "Integer (observed in live traffic)",
+   "limit": "Integer (observed in live traffic)",
+   "dataScope": "String (observed in live traffic)",
+   "requestType": "String (observed in live traffic)",
+   "itemType": "Array (observed in live traffic)",
+   "extensionList": "Array (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/listFolderContents '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, attachedstoragemanager.list, all, devices.",
+  "notes": "ACG groups: private, attachedstoragemanager.list, all, devices.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.attachedstoragemanager",
@@ -40156,22 +40257,28 @@
   "uri": "luna://com.webos.service.attachedstoragemanager/registerDeviceStatus",
   "category": "storage",
   "description": "Registers the device status.",
-  "params": {},
+  "params": {
+   "isHighPriority": "Boolean (observed in live traffic)",
+   "deviceType": "Array (observed in live traffic)",
+   "name": "String (observed in live traffic)",
+   "subscribe": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/registerDeviceStatus '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: attachedstoragemanager.control, private, all, devices.",
+  "notes": "ACG groups: attachedstoragemanager.control, private, all, devices.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.attachedstoragemanager",
@@ -40225,22 +40332,25 @@
   "uri": "luna://com.webos.service.attachedstoragemanager/unregisterDeviceStatus",
   "category": "storage",
   "description": "Unregisters the device status.",
-  "params": {},
+  "params": {
+   "name": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.attachedstoragemanager/unregisterDeviceStatus '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: attachedstoragemanager.control, private, all.",
+  "notes": "ACG groups: attachedstoragemanager.control, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audio",
@@ -44353,22 +44463,25 @@
   "uri": "luna://com.webos.service.audio/tv/mixDigitalSoundOutput",
   "category": "audio",
   "description": "Handles the mix digital sound output (TV)",
-  "params": {},
+  "params": {
+   "mix": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.audio/tv/mixDigitalSoundOutput '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: media, public, private, all.",
+  "notes": "ACG groups: media, public, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audio",
@@ -44537,22 +44650,26 @@
   "uri": "luna://com.webos.service.audio/tv/setDolbyOTTMode",
   "category": "audio",
   "description": "Sets the dolby OTT mode (TV)",
-  "params": {},
+  "params": {
+   "ottmode": "Boolean (observed in live traffic)",
+   "atmoslocking": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.audio/tv/setDolbyOTTMode '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: media, public, private, all.",
+  "notes": "ACG groups: media, public, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audio",
@@ -44767,22 +44884,28 @@
   "uri": "luna://com.webos.service.audio/tv/setQualityAttribute",
   "category": "audio",
   "description": "Sets the quality attribute (TV)",
-  "params": {},
+  "params": {
+   "categoryType": "String (observed in live traffic)",
+   "requestType": "String (observed in live traffic)",
+   "categoryInfo": "Object (observed in live traffic)",
+   "pipelineInfo": "Object (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.audio/tv/setQualityAttribute '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: media, public, private, all.",
+  "notes": "ACG groups: media, public, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audio",
@@ -44859,22 +44982,26 @@
   "uri": "luna://com.webos.service.audio/tv/setVideoLatencyTime",
   "category": "audio",
   "description": "Sets the video latency time (TV)",
-  "params": {},
+  "params": {
+   "pipelineId": "String (observed in live traffic)",
+   "videoLatencyTime": "Integer (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.audio/tv/setVideoLatencyTime '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: media, all.",
+  "notes": "ACG groups: media, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audio",
@@ -45150,22 +45277,26 @@
   "uri": "luna://com.webos.service.audio/UMI/register",
   "category": "audio",
   "description": "Registers the audio (UMI)",
-  "params": {},
+  "params": {
+   "pipelineId": "String (observed in live traffic)",
+   "streamType": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.audio/UMI/register '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: media, public, private, all.",
+  "notes": "ACG groups: media, public, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audio",
@@ -45219,22 +45350,27 @@
   "uri": "luna://com.webos.service.audio/UMI/unregister",
   "category": "audio",
   "description": "Unregisters the audio (UMI)",
-  "params": {},
+  "params": {
+   "pipelineId": "String (observed in live traffic)",
+   "streamType": "String (observed in live traffic)",
+   "pipelineAttribute": "Object (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.audio/UMI/unregister '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: media, public, private, all.",
+  "notes": "ACG groups: media, public, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audio",
@@ -46322,22 +46458,25 @@
   "uri": "luna://com.webos.service.audiooutput/audio/removePipelineInfo",
   "category": "audio",
   "description": "Removes the pipeline info (audio)",
-  "params": {},
+  "params": {
+   "pipelineId": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.audiooutput/audio/removePipelineInfo '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": true,
-  "notes": "ACG groups: all, media. Flagged dangerous by name; verify before calling.",
+  "notes": "ACG groups: all, media. Flagged dangerous by name; verify before calling.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audiooutput",
@@ -46345,22 +46484,27 @@
   "uri": "luna://com.webos.service.audiooutput/audio/setInputVolume",
   "category": "audio",
   "description": "Sets the input volume (audio)",
-  "params": {},
+  "params": {
+   "source": "String (observed in live traffic)",
+   "sink": "String (observed in live traffic)",
+   "volume": "Integer (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.audiooutput/audio/setInputVolume '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: all, media.",
+  "notes": "ACG groups: all, media.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audiooutput",
@@ -46552,22 +46696,26 @@
   "uri": "luna://com.webos.service.audiooutput/quality/getSettings",
   "category": "audio",
   "description": "Returns the settings (quality)",
-  "params": {},
+  "params": {
+   "category": "String (observed in live traffic)",
+   "settings": "Object (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.audiooutput/quality/getSettings '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: all, media.",
+  "notes": "ACG groups: all, media.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audiooutput",
@@ -46575,22 +46723,29 @@
   "uri": "luna://com.webos.service.audiooutput/quality/setQualityAttribute",
   "category": "audio",
   "description": "Sets the quality attribute (quality)",
-  "params": {},
+  "params": {
+   "categoryInfo": "Object (observed in live traffic)",
+   "requestType": "String (observed in live traffic)",
+   "pipelineInfo": "Object (observed in live traffic)",
+   "activeState": "Boolean (observed in live traffic)",
+   "categoryType": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.audiooutput/quality/setQualityAttribute '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: all, media.",
+  "notes": "ACG groups: all, media.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audiooutput",
@@ -46598,22 +46753,26 @@
   "uri": "luna://com.webos.service.audiooutput/quality/setSettings",
   "category": "audio",
   "description": "Sets the settings (quality)",
-  "params": {},
+  "params": {
+   "category": "String (observed in live traffic)",
+   "value": "Object (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.audiooutput/quality/setSettings '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: all, media.",
+  "notes": "ACG groups: all, media.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.audiooutput",
@@ -47770,22 +47929,25 @@
   "uri": "luna://com.webos.service.avmutemanager/register",
   "category": "misc",
   "description": "Registers the avmutemanager.",
-  "params": {},
+  "params": {
+   "contextId": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.avmutemanager/register '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: all, public.",
+  "notes": "ACG groups: all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.avmutemanager",
@@ -47793,22 +47955,28 @@
   "uri": "luna://com.webos.service.avmutemanager/setAvMute",
   "category": "misc",
   "description": "Sets the A/V mute.",
-  "params": {},
+  "params": {
+   "muteOn": "Boolean (observed in live traffic)",
+   "contextId": "String (observed in live traffic)",
+   "muteType": "String (observed in live traffic)",
+   "muteOwner": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.avmutemanager/setAvMute '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: all, public.",
+  "notes": "ACG groups: all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.avmutemanager",
@@ -47816,22 +47984,25 @@
   "uri": "luna://com.webos.service.avmutemanager/unregister",
   "category": "misc",
   "description": "Unregisters the avmutemanager.",
-  "params": {},
+  "params": {
+   "contextId": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.avmutemanager/unregister '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: all, public.",
+  "notes": "ACG groups: all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.avmutemanager",
@@ -47839,22 +48010,27 @@
   "uri": "luna://com.webos.service.avmutemanager/updateAvResource",
   "category": "update",
   "description": "Updates the A/V resource.",
-  "params": {},
+  "params": {
+   "contextId": "String (observed in live traffic)",
+   "muteType": "String (observed in live traffic)",
+   "muteTarget": "Array (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.avmutemanager/updateAvResource '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: all, public.",
+  "notes": "ACG groups: all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.avoutput",
@@ -72463,22 +72639,26 @@
   "uri": "luna://com.webos.service.dial/heartbeat/notifyNamedSocket",
   "category": "misc",
   "description": "Notifies of the named socket (heartbeat)",
-  "params": {},
+  "params": {
+   "path": "String (observed in live traffic)",
+   "port": "Integer (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.dial/heartbeat/notifyNamedSocket '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.dial",
@@ -75845,22 +76025,27 @@
   "uri": "luna://com.webos.service.eim/cec/requestVendorCommandWithID",
   "category": "input",
   "description": "Requests the vendor command with ID (CEC)",
-  "params": {},
+  "params": {
+   "opcode": "String (observed in live traffic)",
+   "operand": "String (observed in live traffic)",
+   "uniqueId": "Integer (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.eim/cec/requestVendorCommandWithID '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, public.",
+  "notes": "ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.eim",
@@ -76748,22 +76933,29 @@
   "uri": "luna://com.webos.service.emmcd/getProfileInfo",
   "category": "misc",
   "description": "Returns the profile info.",
-  "params": {},
+  "params": {
+   "alive": "Boolean (observed in live traffic)",
+   "count": "String (observed in live traffic)",
+   "format": "String (observed in live traffic)",
+   "subscribe": "Boolean (observed in live traffic)",
+   "summary": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.emmcd/getProfileInfo '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: all, public, system.",
+  "notes": "ACG groups: all, public, system.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred",
+  "doc_status": "documented",
   "returns": {
    "topList": ""
   }
@@ -79978,22 +80170,26 @@
   "uri": "luna://com.webos.service.factorymanager/getFactoryOpt",
   "category": "system-info",
   "description": "Returns the factory opt.",
-  "params": {},
+  "params": {
+   "keys": "Array (observed in live traffic)",
+   "subscribe": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.factorymanager/getFactoryOpt '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: factorymanager.service, private, configurator.callbacks, all, activities.callbacks.",
+  "notes": "ACG groups: factorymanager.service, private, configurator.callbacks, all, activities.callbacks.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.factorymanager",
@@ -93673,22 +93869,25 @@
   "uri": "luna://com.webos.service.homeconnect/get",
   "category": "misc",
   "description": "Returns the homeconnect.",
-  "params": {},
+  "params": {
+   "type": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.homeconnect/get '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, public.",
+  "notes": "ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.homeconnect",
@@ -95843,22 +96042,27 @@
   "uri": "luna://com.webos.service.ics/iot/getIoTDevice",
   "category": "input",
   "description": "Returns the io t device (iot)",
-  "params": {},
+  "params": {
+   "deviceId": "String (observed in live traffic)",
+   "deviceType": "Integer (observed in live traffic)",
+   "buttonOK": "Integer (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.ics/iot/getIoTDevice '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.ics",
@@ -96308,22 +96512,31 @@
   "uri": "luna://com.webos.service.iepg/getChannelList",
   "category": "tv-broadcast",
   "description": "Returns the channel list.",
-  "params": {},
+  "params": {
+   "dataType": "Integer (observed in live traffic)",
+   "sort": "Integer (observed in live traffic)",
+   "attribute": "Array (observed in live traffic)",
+   "channelGroup": "Array (observed in live traffic)",
+   "channelMode": "Array (observed in live traffic)",
+   "format": "Integer (observed in live traffic)",
+   "requestField": "Array (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.iepg/getChannelList '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: tv.services, private, all, partner.api.",
+  "notes": "ACG groups: tv.services, private, all, partner.api.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred",
+  "doc_status": "documented",
   "returns": {
    "channelList": "",
    "channelListCount": "",
@@ -118668,22 +118881,26 @@
   "uri": "luna://com.webos.service.lowlevelstorage/setData",
   "category": "storage",
   "description": "Sets the data.",
-  "params": {},
+  "params": {
+   "dbgroups": "Array (observed in live traffic)",
+   "export": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.lowlevelstorage/setData '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, lls.data.",
+  "notes": "ACG groups: private, all, lls.data.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.lowlevelstorage",
@@ -124578,22 +124795,26 @@
   "uri": "luna://com.webos.service.mrcu/getDeviceInfo",
   "category": "input",
   "description": "Returns the device info.",
-  "params": {},
+  "params": {
+   "subscribe": "Boolean (observed in live traffic)",
+   "deviceName": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.mrcu/getDeviceInfo '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "webOS TV 4.5 (4.10.2-31); newer firmware unverified",
   "dangerous": false,
-  "notes": "Seen via `ls-monitor -i com.webos.service.mrcu` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, devices. Only the name and ACG groups are known; parameters/return fields were not read.",
+  "notes": "Seen via `ls-monitor -i com.webos.service.mrcu` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, devices. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt"
+   "https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.mrcu",
@@ -125978,22 +126199,25 @@
   "uri": "luna://com.webos.service.mrcu/setSleepMode",
   "category": "input",
   "description": "Sets the sleep mode.",
-  "params": {},
+  "params": {
+   "sleep": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.mrcu/setSleepMode '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "webOS TV 4.5 (4.10.2-31); newer firmware unverified",
   "dangerous": false,
-  "notes": "Seen via `ls-monitor -i com.webos.service.mrcu` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all. Only the name and ACG groups are known; parameters/return fields were not read.",
+  "notes": "Seen via `ls-monitor -i com.webos.service.mrcu` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt"
+   "https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.mrcu",
@@ -128047,22 +128271,27 @@
   "uri": "luna://com.webos.service.multiviewcontroller/getStatus",
   "category": "display",
   "description": "Returns the status.",
-  "params": {},
+  "params": {
+   "id": "String (observed in live traffic)",
+   "subscribe": "Boolean (observed in live traffic)",
+   "clientType": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getStatus '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: com.webos.service.multiviewcontroller, private, all, public.",
+  "notes": "ACG groups: com.webos.service.multiviewcontroller, private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred",
+  "doc_status": "documented",
   "returns": {
    "appList": "",
    "apps": "",
@@ -128206,22 +128435,26 @@
   "uri": "luna://com.webos.service.multiviewcontroller/removeClient",
   "category": "display",
   "description": "Removes the client.",
-  "params": {},
+  "params": {
+   "id": "String (observed in live traffic)",
+   "clientType": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/removeClient '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": true,
-  "notes": "ACG groups: com.webos.service.multiviewcontroller, private, all, public. Flagged dangerous by name; verify before calling.",
+  "notes": "ACG groups: com.webos.service.multiviewcontroller, private, all, public. Flagged dangerous by name; verify before calling.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -128321,22 +128554,27 @@
   "uri": "luna://com.webos.service.multiviewcontroller/setAppPipelineStatus",
   "category": "display",
   "description": "Sets the app pipeline status.",
-  "params": {},
+  "params": {
+   "appId": "String (observed in live traffic)",
+   "pipelineId": "String (observed in live traffic)",
+   "status": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setAppPipelineStatus '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: com.webos.service.multiviewcontroller, private, all, public.",
+  "notes": "ACG groups: com.webos.service.multiviewcontroller, private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -128367,22 +128605,26 @@
   "uri": "luna://com.webos.service.multiviewcontroller/setInputMode",
   "category": "display",
   "description": "Sets the input mode.",
-  "params": {},
+  "params": {
+   "appId": "String (observed in live traffic)",
+   "inputMode": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setInputMode '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: com.webos.service.multiviewcontroller, private, all, public.",
+  "notes": "ACG groups: com.webos.service.multiviewcontroller, private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.multiviewcontroller",
@@ -134146,22 +134388,27 @@
   "uri": "luna://com.webos.service.nnproxy/picture/set",
   "category": "misc",
   "description": "Sets the nnproxy (picture)",
-  "params": {},
+  "params": {
+   "command": "String (observed in live traffic)",
+   "type": "String (observed in live traffic)",
+   "option": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.nnproxy/picture/set '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: system, applications.internal, all.",
+  "notes": "ACG groups: system, applications.internal, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.nomotion",
@@ -134428,22 +134675,26 @@
   "uri": "luna://com.webos.service.nop/removeNopTimer",
   "category": "input",
   "description": "Removes the nop timer.",
-  "params": {},
+  "params": {
+   "timerId": "String (observed in live traffic)",
+   "option": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.nop/removeNopTimer '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": true,
-  "notes": "ACG groups: private, nop.control, applications.internal, all. Flagged dangerous by name; verify before calling.",
+  "notes": "ACG groups: private, nop.control, applications.internal, all. Flagged dangerous by name; verify before calling.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.nudge",
@@ -135330,22 +135581,26 @@
   "uri": "luna://com.webos.service.oledepl/setEplAppInfo",
   "category": "display",
   "description": "Sets the epl app info.",
-  "params": {},
+  "params": {
+   "appId": "String (observed in live traffic)",
+   "supportScreenSaverPolicy": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.oledepl/setEplAppInfo '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, public.",
+  "notes": "ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.oledepl",
@@ -135756,22 +136011,25 @@
   "uri": "luna://com.webos.service.packagemanager/closePackage",
   "category": "misc",
   "description": "Closes the package.",
-  "params": {},
+  "params": {
+   "id": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.packagemanager/closePackage '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.packagemanager",
@@ -135806,22 +136064,25 @@
   "uri": "luna://com.webos.service.packagemanager/lockPackage",
   "category": "misc",
   "description": "Locks the package.",
-  "params": {},
+  "params": {
+   "id": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.packagemanager/lockPackage '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.packagemanager",
@@ -135875,22 +136136,25 @@
   "uri": "luna://com.webos.service.packagemanager/unlockPackage",
   "category": "misc",
   "description": "Unlocks the package.",
-  "params": {},
+  "params": {
+   "id": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.packagemanager/unlockPackage '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.panelcontroller",
@@ -137452,22 +137716,25 @@
   "uri": "luna://com.webos.service.pbsw/debug",
   "category": "power",
   "description": "Handles the debug.",
-  "params": {},
+  "params": {
+   "removeEPG": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.pbsw/debug '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, tv.services.",
+  "notes": "ACG groups: private, all, tv.services.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.pbsw",
@@ -141763,22 +142030,25 @@
   "uri": "luna://com.webos.service.pkgverifier/verifyIpk",
   "category": "security",
   "description": "Verifies the ipk.",
-  "params": {},
+  "params": {
+   "ipkName": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.pkgverifier/verifyIpk '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: pkgverifier.internal, all. Package signature verifier. Name only.",
+  "notes": "ACG groups: pkgverifier.internal, all. Package signature verifier. Name only.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.power",
@@ -143154,22 +143424,26 @@
   "uri": "luna://com.webos.service.pqcontroller/setPQ",
   "category": "picture",
   "description": "Sets the PQ.",
-  "params": {},
+  "params": {
+   "video": "Object (observed in live traffic)",
+   "id": "Integer (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.pqcontroller/setPQ '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, public.",
+  "notes": "ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.pqcontroller",
@@ -143781,21 +144055,25 @@
   "uri": "luna://com.webos.service.preloadmanager/setPreloadStatus",
   "category": "apps",
   "description": "Preload manager status setter (name listed among ACG-permitted methods in scheduled-task research note)",
-  "params": {},
+  "params": {
+   "status": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.preloadmanager/setPreloadStatus '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "unknown",
   "dangerous": false,
-  "notes": "",
+  "notes": "Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/rhinoswirl/webostv-research/blob/main/development/scheduled-tasks-triggers.md"
+   "https://github.com/rhinoswirl/webostv-research/blob/main/development/scheduled-tasks-triggers.md",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "community",
+  "confidence": "documented",
   "confidence_all": [
-   "community"
-  ]
+   "documented"
+  ],
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.printing",
@@ -152284,22 +152562,26 @@
   "uri": "luna://com.webos.service.sm/license/apps/getDrmStatus",
   "category": "security",
   "description": "Returns the DRM status (license apps)",
-  "params": {},
+  "params": {
+   "installBasePath": "String (observed in live traffic)",
+   "appId": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.sm/license/apps/getDrmStatus '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, sm.security, security, all.",
+  "notes": "ACG groups: private, sm.security, security, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.sm",
@@ -152813,22 +153095,25 @@
   "uri": "luna://com.webos.service.sportsalarm/push",
   "category": "misc",
   "description": "Pushes the sportsalarm.",
-  "params": {},
+  "params": {
+   "push": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.sportsalarm/push '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, com.webos.service.sportsalarm, all.",
+  "notes": "ACG groups: private, com.webos.service.sportsalarm, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.sportsalarm",
@@ -155428,22 +155713,25 @@
   "uri": "luna://com.webos.service.systemUIManager/closeByAppId",
   "category": "misc",
   "description": "Closes the by app ID.",
-  "params": {},
+  "params": {
+   "appId": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.systemUIManager/closeByAppId '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: surfaces.control, public, launcher.control, all.",
+  "notes": "ACG groups: surfaces.control, public, launcher.control, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.systemUIManager",
@@ -162018,22 +162306,26 @@
   "uri": "luna://com.webos.service.tvpower/power2/registerPowerOffRequest",
   "category": "power",
   "description": "Registers the power off request (power 2)",
-  "params": {},
+  "params": {
+   "clientName": "String (observed in live traffic)",
+   "subscribe": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPowerOffRequest '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, tv.management.",
+  "notes": "ACG groups: private, all, tv.management.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.tvpower",
@@ -162041,22 +162333,26 @@
   "uri": "luna://com.webos.service.tvpower/power2/registerPreparePowerOff",
   "category": "power",
   "description": "Registers the prepare power off (power 2)",
-  "params": {},
+  "params": {
+   "clientName": "String (observed in live traffic)",
+   "subscribe": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPreparePowerOff '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, tv.management.",
+  "notes": "ACG groups: private, all, tv.management.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.tvpower",
@@ -162064,22 +162360,26 @@
   "uri": "luna://com.webos.service.tvpower/power2/registerPreparePowerOn",
   "category": "power",
   "description": "Registers the prepare power on (power 2)",
-  "params": {},
+  "params": {
+   "clientName": "String (observed in live traffic)",
+   "subscribe": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerPreparePowerOn '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, tv.management.",
+  "notes": "ACG groups: private, all, tv.management.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.tvpower",
@@ -162087,22 +162387,26 @@
   "uri": "luna://com.webos.service.tvpower/power2/registerScreenSaverRequest",
   "category": "power",
   "description": "Registers the screen saver request (power 2)",
-  "params": {},
+  "params": {
+   "clientName": "String (observed in live traffic)",
+   "subscribe": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.tvpower/power2/registerScreenSaverRequest '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, tv.management.",
+  "notes": "ACG groups: private, all, tv.management.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.tvpower",
@@ -166287,22 +166591,28 @@
   "uri": "luna://com.webos.service.usercontextmanager/getHistory",
   "category": "misc",
   "description": "Returns the history.",
-  "params": {},
+  "params": {
+   "eventId": "String (observed in live traffic)",
+   "limit": "Integer (observed in live traffic)",
+   "fromDate": "Integer (observed in live traffic)",
+   "eventType": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.usercontextmanager/getHistory '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: usercontextmanager.internal, public, all.",
+  "notes": "ACG groups: usercontextmanager.internal, public, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.usercontextmanager",
@@ -166547,22 +166857,28 @@
   "uri": "luna://com.webos.service.userintentmanager/getRank",
   "category": "misc",
   "description": "Returns the rank.",
-  "params": {},
+  "params": {
+   "eventSubTypes": "Array (observed in live traffic)",
+   "limit": "Integer (observed in live traffic)",
+   "fromDate": "Integer (observed in live traffic)",
+   "eventType": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.userintentmanager/getRank '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.userintentmanager",
@@ -182457,22 +182773,26 @@
   "uri": "luna://com.webos.service.videooutput/display/setDisplayWindowProperty",
   "category": "display",
   "description": "Sets the display window property (display)",
-  "params": {},
+  "params": {
+   "context": "String (observed in live traffic)",
+   "appRotation": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.videooutput/display/setDisplayWindowProperty '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, media, public.",
+  "notes": "ACG groups: private, all, media, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.videooutput",
@@ -183176,22 +183496,32 @@
   "uri": "luna://com.webos.service.voice.performer.plugin/getContext",
   "category": "input",
   "description": "Returns the context.",
-  "params": {},
+  "params": {
+   "source": "String (observed in live traffic)",
+   "voiceTicket": "String (observed in live traffic)",
+   "enableNlp": "Boolean (observed in live traffic)",
+   "deviceId": "String (observed in live traffic)",
+   "recognitionType": "String (observed in live traffic)",
+   "recognitionSource": "Object (observed in live traffic)",
+   "powerOnByVoice": "String (observed in live traffic)",
+   "voiceUiParam": "Object (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.voice.performer.plugin/getContext '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred",
+  "doc_status": "documented",
   "returns": {
    "Clickable": "",
    "Default": "",
@@ -183276,22 +183606,26 @@
   "uri": "luna://com.webos.service.voice.performer.plugin/load",
   "category": "input",
   "description": "Loads the voice performer plugin.",
-  "params": {},
+  "params": {
+   "serverConfigs": "Object (observed in live traffic)",
+   "uiLang": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.voice.performer.plugin/load '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.voice.performer.plugin",
@@ -183954,22 +184288,26 @@
   "uri": "luna://com.webos.service.voiceconductor/interactor/register",
   "category": "input",
   "description": "Registers the voiceconductor (interactor)",
-  "params": {},
+  "params": {
+   "type": "String (observed in live traffic)",
+   "subscribe": "Boolean (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.voiceconductor/interactor/register '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all, public.",
+  "notes": "ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.voiceconductor",
@@ -195360,22 +195698,26 @@
   "uri": "luna://netflix.service/saveToken",
   "category": "misc",
   "description": "Saves the token.",
-  "params": {},
+  "params": {
+   "notValidAfter": "Integer (observed in live traffic)",
+   "token": "String (observed in live traffic)"
+  },
   "example": "luna-send -n 1 -f luna://netflix.service/saveToken '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
   "dangerous": false,
-  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "notes": "ACG groups: private, public. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)",
+   "Observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "netflix.service",

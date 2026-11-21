@@ -21,7 +21,7 @@ iEPG channel/program-guide service: manages the channel map and lists, channel n
 | [`getChannelGroupList`](#getchannelgrouplist) | private |  | tv-broadcast | inferred | Returns the channel group list. |
 | [`getChannelIdInfo`](#getchannelidinfo) | private |  | tv-broadcast | inferred | Returns the channel ID info. |
 | [`getChannelInfo`](#getchannelinfo) | private |  | tv-broadcast | inferred | Returns the channel info. |
-| [`getChannelList`](#getchannellist) | private |  | tv-broadcast | inferred | Returns the channel list. |
+| [`getChannelList`](#getchannellist) | private |  | tv-broadcast | documented | Returns the channel list. |
 | [`getChannelListbySignalChId`](#getchannellistbysignalchid) | private |  | tv-broadcast | inferred | Returns the channel listby signal channel ID. |
 | [`getChannelShortcutKey`](#getchannelshortcutkey) | private |  | tv-broadcast | inferred | Returns the channel shortcut key. |
 | [`getChannelShortcutKeyList`](#getchannelshortcutkeylist) | private |  | tv-broadcast | inferred | Returns the channel shortcut key list. |
@@ -442,13 +442,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the channel list.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `dataType` | Integer (observed in live traffic) |
+| `sort` | Integer (observed in live traffic) |
+| `attribute` | Array (observed in live traffic) |
+| `channelGroup` | Array (observed in live traffic) |
+| `channelMode` | Array (observed in live traffic) |
+| `format` | Integer (observed in live traffic) |
+| `requestField` | Array (observed in live traffic) |
 
 **Returns:**
 
@@ -471,7 +479,7 @@ Returns the channel list.
 luna-send -n 1 -f luna://com.webos.service.iepg/getChannelList '{}'
 ```
 
-> ACG groups: tv.services, private, all, partner.api.
+> ACG groups: tv.services, private, all, partner.api.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

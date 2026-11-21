@@ -14,7 +14,7 @@ Factory/production manager: runs factory test commands, performs calibration (AD
 | [`getAdcCalibrationStatus`](#getadccalibrationstatus) | private |  | system-info | inferred | Returns the adc calibration status. |
 | [`getEdidStatus`](#getedidstatus) | private |  | system-info | inferred | Returns the EDID status. |
 | [`getFactoryChannelChangeParam`](#getfactorychannelchangeparam) | private |  | system-info | inferred | Returns the factory channel change param. |
-| [`getFactoryOpt`](#getfactoryopt) | private |  | system-info | inferred | Returns the factory opt. |
+| [`getFactoryOpt`](#getfactoryopt) | private |  | system-info | documented | Returns the factory opt. |
 | [`getFactoryParam`](#getfactoryparam) | private |  | system-info | inferred | Returns the factory param. |
 | [`getPOnlyKeyState`](#getponlykeystate) | private |  | system-info | inferred | Returns the p only key state. |
 | [`getTestPatternColor`](#gettestpatterncolor) | private |  | system-info | inferred | Returns the test pattern color. |
@@ -215,19 +215,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the factory opt.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `keys` | Array (observed in live traffic) |
+| `subscribe` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.factorymanager/getFactoryOpt '{}'
 ```
 
-> ACG groups: factorymanager.service, private, configurator.callbacks, all, activities.callbacks.
+> ACG groups: factorymanager.service, private, configurator.callbacks, all, activities.callbacks.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

@@ -39,7 +39,7 @@
 | [`luna://com.webos.media/bufferRange`](../services/com.webos.media.md#bufferrange) | unknown | documented | Indicates the buffering range of the particular media content. It is raised multiple times when specific media is loaded. |
 | [`luna://com.webos.media/changeResolution`](../services/com.webos.media.md#changeresolution) | public | inferred | Changes the resolution. |
 | [`luna://com.webos.media/closeAllConnections`](../services/com.webos.media.md#closeallconnections) | private | inferred | Closes the all connections. |
-| [`luna://com.webos.media/closeMediaPipeline`](../services/com.webos.media.md#closemediapipeline) | private | inferred | Closes the media pipeline. |
+| [`luna://com.webos.media/closeMediaPipeline`](../services/com.webos.media.md#closemediapipeline) | private | documented | Closes the media pipeline. |
 | [`luna://com.webos.media/contentReady`](../services/com.webos.media.md#contentready) | unknown | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
 | [`luna://com.webos.media/currentTime`](../services/com.webos.media.md#currenttime) | unknown | documented | The currentTime event is raised multiple times when a specific media is playing. It indicates the progress of the media being played and provides the current ti |
 | [`luna://com.webos.media/detached`](../services/com.webos.media.md#detached) | unknown | documented | The detached event is raised when a specific media has been detached from the client by another client attaching to the corresponding pipeline. The detached eve |
@@ -71,7 +71,7 @@
 | [`luna://com.webos.media/notifyDelay`](../services/com.webos.media.md#notifydelay) | private | inferred | Notifies of the delay. |
 | [`luna://com.webos.media/notifyFocus`](../services/com.webos.media.md#notifyfocus) | public | inferred | Notifies of the focus. |
 | [`luna://com.webos.media/notifyForeground`](../services/com.webos.media.md#notifyforeground) | public | documented | Marks a pipeline as foreground. This API is called when the media object in question is un-carded and made visible. Note: Foreground pipeline video content is c |
-| [`luna://com.webos.media/notifyMultiviewControlMode`](../services/com.webos.media.md#notifymultiviewcontrolmode) | public | inferred | Notifies of the multiview control mode. |
+| [`luna://com.webos.media/notifyMultiviewControlMode`](../services/com.webos.media.md#notifymultiviewcontrolmode) | public | documented | Notifies of the multiview control mode. |
 | [`luna://com.webos.media/notifyPipelineStatus`](../services/com.webos.media.md#notifypipelinestatus) | public | documented | Notifies the playback status of media pipelines. |
 | [`luna://com.webos.media/option`](../services/com.webos.media.md#option) | unknown | documented | Provides parameters for pipeline's Information. |
 | [`luna://com.webos.media/pause`](../services/com.webos.media.md#pause) | public | documented | Requests the media server to pause the media object. |
@@ -101,7 +101,7 @@
 | [`luna://com.webos.media/selectTrack`](../services/com.webos.media.md#selecttrack) | public | documented | Selects an audio or subtitle track of an open pipeline |
 | [`luna://com.webos.media/selectTrackByPreference`](../services/com.webos.media.md#selecttrackbypreference) | public | inferred | Selects the track by preference. |
 | [`luna://com.webos.media/selectTrackByPreferencePayload`](../services/com.webos.media.md#selecttrackbypreferencepayload) | public | inferred | Selects the track by preference payload. |
-| [`luna://com.webos.media/setAppId`](../services/com.webos.media.md#setappid) | public | inferred | Sets the app ID. |
+| [`luna://com.webos.media/setAppId`](../services/com.webos.media.md#setappid) | public | documented | Sets the app ID. |
 | [`luna://com.webos.media/setAppWindowType`](../services/com.webos.media.md#setappwindowtype) | public | inferred | Sets the app window type. |
 | [`luna://com.webos.media/setClearKey`](../services/com.webos.media.md#setclearkey) | public | inferred | Sets the clear key. |
 | [`luna://com.webos.media/setDebugLevel`](../services/com.webos.media.md#setdebuglevel) | private | inferred | Sets the debug level. |
@@ -117,13 +117,13 @@
 | [`luna://com.webos.media/setMediaStopTime`](../services/com.webos.media.md#setmediastoptime) | public | inferred | Sets the media stop time. |
 | [`luna://com.webos.media/setMediaSynchronizerControlTimestamp`](../services/com.webos.media.md#setmediasynchronizercontroltimestamp) | public | inferred | Sets the media synchronizer control timestamp. |
 | [`luna://com.webos.media/setMediaSynchronizerOptions`](../services/com.webos.media.md#setmediasynchronizeroptions) | public | inferred | Sets the media synchronizer options. |
-| [`luna://com.webos.media/setOwnerPipeline`](../services/com.webos.media.md#setownerpipeline) | public | inferred | Sets the owner pipeline. |
+| [`luna://com.webos.media/setOwnerPipeline`](../services/com.webos.media.md#setownerpipeline) | public | documented | Sets the owner pipeline. |
 | [`luna://com.webos.media/setPipelineDebugState`](../services/com.webos.media.md#setpipelinedebugstate) | private | inferred | Sets the pipeline debug state. |
 | [`luna://com.webos.media/setPlayRate`](../services/com.webos.media.md#setplayrate) | public | documented | Sets the pipeline media play rate. |
 | [`luna://com.webos.media/setPriorityLevel`](../services/com.webos.media.md#setprioritylevel) | public | inferred | Sets the priority level. |
 | [`luna://com.webos.media/setProperty`](../services/com.webos.media.md#setproperty) | public | inferred | Sets the property. |
 | [`luna://com.webos.media/setPurpose`](../services/com.webos.media.md#setpurpose) | public | inferred | Sets the purpose. |
-| [`luna://com.webos.media/setResourcePolicyExtraInfo`](../services/com.webos.media.md#setresourcepolicyextrainfo) | public | inferred | Sets the resource policy extra info. |
+| [`luna://com.webos.media/setResourcePolicyExtraInfo`](../services/com.webos.media.md#setresourcepolicyextrainfo) | public | documented | Sets the resource policy extra info. |
 | [`luna://com.webos.media/setSink`](../services/com.webos.media.md#setsink) | public | inferred | Sets the sink. |
 | [`luna://com.webos.media/setSlave`](../services/com.webos.media.md#setslave) | public | inferred | Sets the slave. |
 | [`luna://com.webos.media/setSlaveClock`](../services/com.webos.media.md#setslaveclock) | public | inferred | Sets the slave clock. |
@@ -171,10 +171,10 @@
 | [`luna://com.webos.media/testPipelineEvent`](../services/com.webos.media.md#testpipelineevent) | private | inferred | Tests the pipeline event. |
 | [`luna://com.webos.media/trackAcquireResultInfo`](../services/com.webos.media.md#trackacquireresultinfo) | private | inferred | Handles the track acquire result info. |
 | [`luna://com.webos.media/trackAppProcesses`](../services/com.webos.media.md#trackappprocesses) | public | documented | Subscribes to messages containing the mapping of application ID (appID) and pipeline process ID (PID), i.e. it returns information about which application each  |
-| [`luna://com.webos.media/trackAppStatus`](../services/com.webos.media.md#trackappstatus) | private | inferred | Handles the track app status. |
+| [`luna://com.webos.media/trackAppStatus`](../services/com.webos.media.md#trackappstatus) | private | documented | Handles the track app status. |
 | [`luna://com.webos.media/trackPipelineInfo`](../services/com.webos.media.md#trackpipelineinfo) | public | inferred | Handles the track pipeline info. |
 | [`luna://com.webos.media/trackPolicyActionInfo`](../services/com.webos.media.md#trackpolicyactioninfo) | private | inferred | Handles the track policy action info. |
-| [`luna://com.webos.media/trackResourcesStatus`](../services/com.webos.media.md#trackresourcesstatus) | private | inferred | Handles the track resources status. |
+| [`luna://com.webos.media/trackResourcesStatus`](../services/com.webos.media.md#trackresourcesstatus) | private | documented | Handles the track resources status. |
 | [`luna://com.webos.media/tryAcquire`](../services/com.webos.media.md#tryacquire) | public | documented | Tries to acquire resources from mediaserver. Note: This API will not issue policyAction to other pipelines in order to force them to release resources. If there |
 | [`luna://com.webos.media/unload`](../services/com.webos.media.md#unload) | public | documented | Unloads the pipeline and releases all AV resources. |
 | [`luna://com.webos.media/unloadCompleted`](../services/com.webos.media.md#unloadcompleted) | unknown | documented | The unloadCompleted event is raised when a specific media pipeline has been successfully unloaded. |

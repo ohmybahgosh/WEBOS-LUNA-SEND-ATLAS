@@ -10,7 +10,7 @@ eMMC storage daemon: reports flash lifetime, memory usage and profile info, and 
 |---|---|---|---|---|---|
 | [`checkLifetime`](#checklifetime) | public |  | input | inferred | Checks the lifetime. |
 | [`getMemoryUsage`](#getmemoryusage) | public |  | misc | inferred | Returns the memory usage. |
-| [`getProfileInfo`](#getprofileinfo) | public |  | misc | inferred | Returns the profile info. |
+| [`getProfileInfo`](#getprofileinfo) | public |  | misc | documented | Returns the profile info. |
 | [`setEmmcPON`](#setemmcpon) | public |  | misc | inferred | Sets the emmc PON. |
 | [`setProfileConfig`](#setprofileconfig) | public |  | settings | inferred | Sets the profile config. |
 
@@ -75,13 +75,19 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the profile info.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `alive` | Boolean (observed in live traffic) |
+| `count` | String (observed in live traffic) |
+| `format` | String (observed in live traffic) |
+| `subscribe` | Boolean (observed in live traffic) |
+| `summary` | Boolean (observed in live traffic) |
 
 **Returns:**
 
@@ -93,7 +99,7 @@ Returns the profile info.
 luna-send -n 1 -f luna://com.webos.service.emmcd/getProfileInfo '{}'
 ```
 
-> ACG groups: all, public, system.
+> ACG groups: all, public, system.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

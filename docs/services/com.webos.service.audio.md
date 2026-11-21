@@ -175,7 +175,7 @@ webOS audio policy service: implements audio routing and volume control across s
 | [`tv/getGainAsInput`](#tv_getgainasinput) | private |  | audio | inferred | Returns the gain as input (TV) |
 | [`tv/getHeadphoneStatus`](#tv_getheadphonestatus) | public |  | audio | inferred | Returns the headphone status (TV) |
 | [`tv/getSoundCardsState`](#tv_getsoundcardsstate) | private |  | audio | inferred | Returns the sound cards state (TV) |
-| [`tv/mixDigitalSoundOutput`](#tv_mixdigitalsoundoutput) | public |  | audio | inferred | Handles the mix digital sound output (TV) |
+| [`tv/mixDigitalSoundOutput`](#tv_mixdigitalsoundoutput) | public |  | audio | documented | Handles the mix digital sound output (TV) |
 | [`tv/playOnPowerState`](#tv_playonpowerstate) | public |  | audio | inferred | Plays the on power state (TV) |
 | [`tv/readI2cDataFromAmplifier`](#tv_readi2cdatafromamplifier) | private |  | audio | inferred | Reads the i 2 c data from amplifier (TV) |
 | [`tv/resetSoundSettings`](#tv_resetsoundsettings) | public |  | audio | inferred | Resets the sound settings (TV) ⚠️ |
@@ -183,7 +183,7 @@ webOS audio policy service: implements audio routing and volume control across s
 | [`tv/setARCDeviceInfo`](#tv_setarcdeviceinfo) | private |  | audio | inferred | Sets the ARC device info (TV) |
 | [`tv/setAudioEffectState`](#tv_setaudioeffectstate) | private |  | audio | inferred | Sets the audio effect state (TV) |
 | [`tv/setAudioVideoSync`](#tv_setaudiovideosync) | public |  | audio | inferred | Sets the audio video sync (TV) |
-| [`tv/setDolbyOTTMode`](#tv_setdolbyottmode) | public |  | audio | inferred | Sets the dolby OTT mode (TV) |
+| [`tv/setDolbyOTTMode`](#tv_setdolbyottmode) | public |  | audio | documented | Sets the dolby OTT mode (TV) |
 | [`tv/setDolbyVisionPopup`](#tv_setdolbyvisionpopup) | private |  | audio | inferred | Sets the dolby vision popup (TV) |
 | [`tv/setEqualizerStatus`](#tv_setequalizerstatus) | public |  | audio | inferred | Sets the equalizer status (TV) |
 | [`tv/setInputVolume`](#tv_setinputvolume) | private |  | audio | inferred | Sets the input volume (TV) |
@@ -193,11 +193,11 @@ webOS audio policy service: implements audio routing and volume control across s
 | [`tv/setOutputMute`](#tv_setoutputmute) | private |  | audio | inferred | Sets the output mute (TV) |
 | [`tv/setPopupDisplayStatus`](#tv_setpopupdisplaystatus) | private |  | audio | inferred | Sets the popup display status (TV) |
 | [`tv/setPSWProperties`](#tv_setpswproperties) | private |  | audio | inferred | Sets the PSW properties (TV) |
-| [`tv/setQualityAttribute`](#tv_setqualityattribute) | public |  | audio | inferred | Sets the quality attribute (TV) |
+| [`tv/setQualityAttribute`](#tv_setqualityattribute) | public |  | audio | documented | Sets the quality attribute (TV) |
 | [`tv/setSCMS`](#tv_setscms) | public |  | audio | inferred | Sets the SCMS (TV) |
 | [`tv/setSoundEngineStatus`](#tv_setsoundenginestatus) | public |  | audio | inferred | Sets the sound engine status (TV) |
 | [`tv/setSoundOutputMode`](#tv_setsoundoutputmode) | public |  | audio | inferred | Sets the sound output mode (TV) |
-| [`tv/setVideoLatencyTime`](#tv_setvideolatencytime) | private |  | audio | inferred | Sets the video latency time (TV) |
+| [`tv/setVideoLatencyTime`](#tv_setvideolatencytime) | private |  | audio | documented | Sets the video latency time (TV) |
 | [`tv/switchMicrophone`](#tv_switchmicrophone) | private |  | audio | inferred | Switches the microphone (TV) |
 | [`tv/updateExtFw`](#tv_updateextfw) | private |  | audio | inferred | Updates the ext firmware (TV) |
 | [`tv/writeI2cDataToAmplifier`](#tv_writei2cdatatoamplifier) | private |  | audio | inferred | Writes the i 2 c data to amplifier (TV) |
@@ -208,10 +208,10 @@ webOS audio policy service: implements audio routing and volume control across s
 | [`UMI/getInputVolume`](#umi_getinputvolume) | public |  | audio | inferred | Returns the input volume (UMI) |
 | [`UMI/getStatus`](#umi_getstatus) | public |  | audio | documented | Shows the connection status of audio resources. |
 | [`UMI/mute`](#umi_mute) | public |  | audio | documented | Mutes or unmutes the input volume of the requested connection. Note: This method is added for future-use. It does not have any impact on the |
-| [`UMI/register`](#umi_register) | public |  | audio | inferred | Registers the audio (UMI) |
+| [`UMI/register`](#umi_register) | public |  | audio | documented | Registers the audio (UMI) |
 | [`UMI/setInputDownMix`](#umi_setinputdownmix) | private |  | audio | inferred | Sets the input down mix (UMI) |
 | [`UMI/setInputVolume`](#umi_setinputvolume) | public |  | audio | inferred | Sets the input volume (UMI) |
-| [`UMI/unregister`](#umi_unregister) | public |  | audio | inferred | Unregisters the audio (UMI) |
+| [`UMI/unregister`](#umi_unregister) | public |  | audio | documented | Unregisters the audio (UMI) |
 | [`unregisterTrack`](#unregistertrack) | public |  | audio | documented | Unregisters a playback by an application/service. |
 | [`vibrate/get`](#vibrate_get) | private |  | audio | inferred | Returns the audio (vibrate) |
 | [`vibrate/set`](#vibrate_set) | private |  | audio | inferred | Sets the audio (vibrate) |
@@ -4441,19 +4441,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Handles the mix digital sound output (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `mix` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/mixDigitalSoundOutput '{}'
 ```
 
-> ACG groups: media, public, private, all.
+> ACG groups: media, public, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -4625,19 +4627,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the dolby OTT mode (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `ottmode` | Boolean (observed in live traffic) |
+| `atmoslocking` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setDolbyOTTMode '{}'
 ```
 
-> ACG groups: media, public, private, all.
+> ACG groups: media, public, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -4855,19 +4860,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the quality attribute (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `categoryType` | String (observed in live traffic) |
+| `requestType` | String (observed in live traffic) |
+| `categoryInfo` | Object (observed in live traffic) |
+| `pipelineInfo` | Object (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setQualityAttribute '{}'
 ```
 
-> ACG groups: media, public, private, all.
+> ACG groups: media, public, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -4947,19 +4957,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the video latency time (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pipelineId` | String (observed in live traffic) |
+| `videoLatencyTime` | Integer (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/tv/setVideoLatencyTime '{}'
 ```
 
-> ACG groups: media, all.
+> ACG groups: media, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -5247,19 +5260,22 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-service-a
 
 Registers the audio (UMI)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pipelineId` | String (observed in live traffic) |
+| `streamType` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/UMI/register '{}'
 ```
 
-> ACG groups: media, public, private, all.
+> ACG groups: media, public, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -5316,19 +5332,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Unregisters the audio (UMI)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pipelineId` | String (observed in live traffic) |
+| `streamType` | String (observed in live traffic) |
+| `pipelineAttribute` | Object (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.audio/UMI/unregister '{}'
 ```
 
-> ACG groups: media, public, private, all.
+> ACG groups: media, public, private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

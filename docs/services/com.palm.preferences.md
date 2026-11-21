@@ -12,7 +12,7 @@ Key-value preferences store: gets and sets per-application properties and system
 | [`appProperties/getAllAppPropertiesObj`](#appproperties_getallapppropertiesobj) | private |  | settings | inferred | Returns the all app properties obj (app properties) |
 | [`appProperties/getAppKeys`](#appproperties_getappkeys) | private |  | settings | inferred | Returns the app keys (app properties) |
 | [`appProperties/getAppKeysObj`](#appproperties_getappkeysobj) | private |  | settings | inferred | Returns the app keys obj (app properties) |
-| [`appProperties/getAppProperty`](#appproperties_getappproperty) | private |  | settings | inferred | Returns the app property (app properties) |
+| [`appProperties/getAppProperty`](#appproperties_getappproperty) | private |  | settings | documented | Returns the app property (app properties) |
 | [`appProperties/removeAppProperty`](#appproperties_removeappproperty) | private |  | settings | inferred | Removes the app property (app properties) ⚠️ |
 | [`appProperties/setAppProperty`](#appproperties_setappproperty) | private |  | settings | inferred | Sets the app property (app properties) |
 | [`systemProperties/Get`](#systemproperties_get) | public |  | settings | inferred | Returns the preferences (system properties) |
@@ -126,19 +126,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Returns the app property (app properties)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `appId` | String (observed in live traffic) |
+| `key` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.preferences/appProperties/getAppProperty '{}'
 ```
 
-> ACG groups: private, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 

@@ -33,19 +33,19 @@ Multiview controller: creates and arranges app views for split/multi-view, chang
 | [`getPresetList`](#getpresetlist) | public |  | display | inferred | Returns the preset list. |
 | [`getRecentsList`](#getrecentslist) | public |  | display | inferred | Returns the recents list. |
 | [`getRestrictionStatus`](#getrestrictionstatus) | public |  | display | inferred | Returns the restriction status. |
-| [`getStatus`](#getstatus) | public |  | display | inferred | Returns the status. |
+| [`getStatus`](#getstatus) | public |  | display | documented | Returns the status. |
 | [`getSubAppList`](#getsubapplist) | public |  | display | inferred | Returns the sub app list. |
 | [`increaseMixAudioVolume`](#increasemixaudiovolume) | public |  | audio | inferred | Increases the mix audio volume. |
 | [`launchApps`](#launchapps) | public |  | apps | inferred | Launches the apps. |
 | [`launchMode`](#launchmode) | public |  | apps | inferred | Launches the mode. |
-| [`removeClient`](#removeclient) | public |  | display | inferred | Removes the client. ⚠️ |
+| [`removeClient`](#removeclient) | public |  | display | documented | Removes the client. ⚠️ |
 | [`removePreset`](#removepreset) | public |  | display | inferred | Removes the preset. ⚠️ |
 | [`selectAudioOut`](#selectaudioout) | public |  | audio | inferred | Selects the audio out. |
 | [`setAppCloseInfo`](#setappcloseinfo) | public |  | display | inferred | Sets the app close info. |
 | [`setAppCoordinate`](#setappcoordinate) | public |  | display | inferred | Sets the app coordinate. |
-| [`setAppPipelineStatus`](#setapppipelinestatus) | public |  | display | inferred | Sets the app pipeline status. |
+| [`setAppPipelineStatus`](#setapppipelinestatus) | public |  | display | documented | Sets the app pipeline status. |
 | [`setAppViewStatus`](#setappviewstatus) | public |  | display | inferred | Sets the app view status. |
-| [`setInputMode`](#setinputmode) | public |  | display | inferred | Sets the input mode. |
+| [`setInputMode`](#setinputmode) | public |  | display | documented | Sets the input mode. |
 | [`setInputVolume`](#setinputvolume) | public |  | display | inferred | Sets the input volume. |
 | [`setMediaContentInfo`](#setmediacontentinfo) | public |  | media | inferred | Sets the media content info. |
 | [`setMixAudio`](#setmixaudio) | public |  | audio | inferred | Sets the mix audio. |
@@ -764,13 +764,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the status.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (observed in live traffic) |
+| `subscribe` | Boolean (observed in live traffic) |
+| `clientType` | String (observed in live traffic) |
 
 **Returns:**
 
@@ -820,7 +824,7 @@ Returns the status.
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/getStatus '{}'
 ```
 
-> ACG groups: com.webos.service.multiviewcontroller, private, all, public.
+> ACG groups: com.webos.service.multiviewcontroller, private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -929,19 +933,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Removes the client.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (observed in live traffic) |
+| `clientType` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/removeClient '{}'
 ```
 
-> ACG groups: com.webos.service.multiviewcontroller, private, all, public. Flagged dangerous by name; verify before calling.
+> ACG groups: com.webos.service.multiviewcontroller, private, all, public. Flagged dangerous by name; verify before calling.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1044,19 +1051,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the app pipeline status.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `appId` | String (observed in live traffic) |
+| `pipelineId` | String (observed in live traffic) |
+| `status` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setAppPipelineStatus '{}'
 ```
 
-> ACG groups: com.webos.service.multiviewcontroller, private, all, public.
+> ACG groups: com.webos.service.multiviewcontroller, private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1090,19 +1101,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the input mode.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `appId` | String (observed in live traffic) |
+| `inputMode` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.multiviewcontroller/setInputMode '{}'
 ```
 
-> ACG groups: com.webos.service.multiviewcontroller, private, all, public.
+> ACG groups: com.webos.service.multiviewcontroller, private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

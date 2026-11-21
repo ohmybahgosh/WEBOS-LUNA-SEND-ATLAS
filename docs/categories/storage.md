@@ -41,13 +41,13 @@
 | [`luna://com.webos.service.attachedstoragemanager/listContentsByCamera`](../services/com.webos.service.attachedstoragemanager.md#listcontentsbycamera) | private | inferred | Lists the contents by camera. |
 | [`luna://com.webos.service.attachedstoragemanager/listDevices`](../services/com.webos.service.attachedstoragemanager.md#listdevices) | ssap | documented | List attached storage devices |
 | [`luna://com.webos.service.attachedstoragemanager/listDevices2`](../services/com.webos.service.attachedstoragemanager.md#listdevices2) | private | inferred | Lists the devices 2. |
-| [`luna://com.webos.service.attachedstoragemanager/listFolderContents`](../services/com.webos.service.attachedstoragemanager.md#listfoldercontents) | private | inferred | Lists the folder contents. |
+| [`luna://com.webos.service.attachedstoragemanager/listFolderContents`](../services/com.webos.service.attachedstoragemanager.md#listfoldercontents) | private | documented | Lists the folder contents. |
 | [`luna://com.webos.service.attachedstoragemanager/move`](../services/com.webos.service.attachedstoragemanager.md#move) | private | inferred | Moves the attachedstoragemanager. |
 | [`luna://com.webos.service.attachedstoragemanager/refreshDeviceList`](../services/com.webos.service.attachedstoragemanager.md#refreshdevicelist) | private | inferred | Refreshes the device list. |
-| [`luna://com.webos.service.attachedstoragemanager/registerDeviceStatus`](../services/com.webos.service.attachedstoragemanager.md#registerdevicestatus) | private | inferred | Registers the device status. |
+| [`luna://com.webos.service.attachedstoragemanager/registerDeviceStatus`](../services/com.webos.service.attachedstoragemanager.md#registerdevicestatus) | private | documented | Registers the device status. |
 | [`luna://com.webos.service.attachedstoragemanager/responseDeviceStatus`](../services/com.webos.service.attachedstoragemanager.md#responsedevicestatus) | private | inferred | Handles the response device status. |
 | [`luna://com.webos.service.attachedstoragemanager/triggeredActivity`](../services/com.webos.service.attachedstoragemanager.md#triggeredactivity) | private | inferred | Handles the triggered activity. |
-| [`luna://com.webos.service.attachedstoragemanager/unregisterDeviceStatus`](../services/com.webos.service.attachedstoragemanager.md#unregisterdevicestatus) | private | inferred | Unregisters the device status. |
+| [`luna://com.webos.service.attachedstoragemanager/unregisterDeviceStatus`](../services/com.webos.service.attachedstoragemanager.md#unregisterdevicestatus) | private | documented | Unregisters the device status. |
 | [`luna://com.webos.service.commercial.scapadapter/fs/storageInfo`](../services/com.webos.service.commercial.scapadapter.md#fs_storageinfo) | public | inferred | Handles the storage info (fs) |
 | [`luna://com.webos.service.filecache/ChangeType`](../services/com.webos.service.filecache.md#changetype) | public | documented | Allows apps to modify the parameters of a cache type other than its name. You must specify the name of the cache type, and those cache type parameters that have |
 | [`luna://com.webos.service.filecache/CopyCacheObject`](../services/com.webos.service.filecache.md#copycacheobject) | public | documented | Enables copying of an object from the file cache to a non-cached location. On successful completion, newPathName will be returned as it may be different than ex |
@@ -66,7 +66,7 @@
 | [`luna://com.webos.service.filecache/SubscribeCacheObject`](../services/com.webos.service.filecache.md#subscribecacheobject) | public | documented | Enables you to subscribe an object in the cache and hold a subscription to the object for the duration of your usage. An object cannot be expired from the cache |
 | [`luna://com.webos.service.filecache/TouchCacheObject`](../services/com.webos.service.filecache.md#touchcacheobject) | public | documented | Allows you to mark an object as recently used. This decreases the chances of the object from getting expired from the cache when the space is being reclaimed. |
 | [`luna://com.webos.service.lowlevelstorage/getData`](../services/com.webos.service.lowlevelstorage.md#getdata) | private | documented | Reads low-level storage (factory/model DB) values by dbid and item name |
-| [`luna://com.webos.service.lowlevelstorage/setData`](../services/com.webos.service.lowlevelstorage.md#setdata) | private | inferred | Sets the data. |
+| [`luna://com.webos.service.lowlevelstorage/setData`](../services/com.webos.service.lowlevelstorage.md#setdata) | private | documented | Sets the data. |
 | [`luna://com.webos.service.lowlevelstorage/shutdown`](../services/com.webos.service.lowlevelstorage.md#shutdown) | private | inferred | Shuts down the lowlevelstorage. ⚠️ |
 | [`luna://com.webos.service.pdm/audioDeviceList`](../services/com.webos.service.pdm.md#audiodevicelist) | unknown | documented | List of audio device(s) connected. |
 | [`luna://com.webos.service.pdm/checkUSBPort`](../services/com.webos.service.pdm.md#checkusbport) | private | inferred | Checks the USB port. |

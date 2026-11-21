@@ -30,7 +30,7 @@ Magic Remote Control Unit service: pairs the remote, manages the pointer cursor 
 | [`getConnectionStatus`](#getconnectionstatus) | private |  | input | inferred | Returns the connection status. |
 | [`getCursorHistory`](#getcursorhistory) | private |  | input | inferred | Returns the cursor history. |
 | [`getDataDelivery`](#getdatadelivery) | private |  | input | inferred | Returns the data delivery. |
-| [`getDeviceInfo`](#getdeviceinfo) | private |  | input | inferred | Returns the device info. |
+| [`getDeviceInfo`](#getdeviceinfo) | private |  | input | documented | Returns the device info. |
 | [`getDiagnosisItem`](#getdiagnosisitem) | private |  | input | inferred | Returns the diagnosis item. |
 | [`getDoingOtaStatus`](#getdoingotastatus) | private |  | input | inferred | Returns the doing ota status. |
 | [`getLongpressKeyInfo`](#getlongpresskeyinfo) | private |  | input | inferred | Returns the longpress key info. |
@@ -90,7 +90,7 @@ Magic Remote Control Unit service: pairs the remote, manages the pointer cursor 
 | [`setPosition`](#setposition) | public |  | input | inferred | Sets the position. |
 | [`setSensitivity`](#setsensitivity) | public |  | input | inferred | Sets the sensitivity. |
 | [`setSharedMemory`](#setsharedmemory) | public |  | input | inferred | Sets the shared memory. |
-| [`setSleepMode`](#setsleepmode) | private |  | input | inferred | Sets the sleep mode. |
+| [`setSleepMode`](#setsleepmode) | private |  | input | documented | Sets the sleep mode. |
 | [`setSlideMode`](#setslidemode) | public |  | input | inferred | Sets the slide mode. |
 | [`setWakeUpCondition`](#setwakeupcondition) | public |  | input | inferred | Sets the wake up condition. |
 | [`startFirmwareUpdate`](#startfirmwareupdate) | private |  | input | inferred | Starts the firmware update. ⚠️ |
@@ -666,19 +666,22 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Returns the device info.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `subscribe` | Boolean (observed in live traffic) |
+| `deviceName` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/getDeviceInfo '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.service.mrcu` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, devices. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.service.mrcu` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all, devices. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 
@@ -2063,19 +2066,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Sets the sleep mode.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `sleep` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.mrcu/setSleepMode '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.service.mrcu` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all. Only the name and ACG groups are known; parameters/return fields were not read.
+> Seen via `ls-monitor -i com.webos.service.mrcu` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, all. Only the name and ACG groups are known; parameters/return fields were not read.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt)
 

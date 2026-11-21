@@ -53,7 +53,7 @@ IR-blaster / universal-control service: manages a database of IR and IP-controll
 | [`getUeiAppList`](#getueiapplist) | private |  | input | inferred | Returns the uei app list. |
 | [`iot/getAllIoTDevices`](#iot_getalliotdevices) | private |  | input | inferred | Returns the all io t devices (iot) |
 | [`iot/getIoTBrandList`](#iot_getiotbrandlist) | private |  | input | inferred | Returns the io t brand list (iot) |
-| [`iot/getIoTDevice`](#iot_getiotdevice) | private |  | input | inferred | Returns the io t device (iot) |
+| [`iot/getIoTDevice`](#iot_getiotdevice) | private |  | input | documented | Returns the io t device (iot) |
 | [`iot/replyEventCallback`](#iot_replyeventcallback) | private |  | input | inferred | Handles the reply event callback (iot) |
 | [`iot/selectIoTDevice`](#iot_selectiotdevice) | private |  | input | inferred | Selects the io t device (iot) |
 | [`iot/setIoTDevice`](#iot_setiotdevice) | private |  | input | inferred | Sets the io t device (iot) |
@@ -1115,19 +1115,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the io t device (iot)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `deviceId` | String (observed in live traffic) |
+| `deviceType` | Integer (observed in live traffic) |
+| `buttonOK` | Integer (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.ics/iot/getIoTDevice '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

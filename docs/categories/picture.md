@@ -24,7 +24,7 @@
 | [`luna://com.webos.service.pqcontroller/setNpointWB`](../services/com.webos.service.pqcontroller.md#setnpointwb) | public | inferred | Sets the npoint WB. |
 | [`luna://com.webos.service.pqcontroller/setOCPAlertResult`](../services/com.webos.service.pqcontroller.md#setocpalertresult) | private | inferred | Sets the OCP alert result. |
 | [`luna://com.webos.service.pqcontroller/setParameter`](../services/com.webos.service.pqcontroller.md#setparameter) | public | inferred | Sets the parameter. |
-| [`luna://com.webos.service.pqcontroller/setPQ`](../services/com.webos.service.pqcontroller.md#setpq) | public | inferred | Sets the PQ. |
+| [`luna://com.webos.service.pqcontroller/setPQ`](../services/com.webos.service.pqcontroller.md#setpq) | public | documented | Sets the PQ. |
 | [`luna://com.webos.service.pqcontroller/setProperties`](../services/com.webos.service.pqcontroller.md#setproperties) | private | documented | Set picture-quality controller properties; used to trigger USB Dolby Vision config Update/Restore |
 | [`luna://com.webos.service.pqcontroller/setWbPattern`](../services/com.webos.service.pqcontroller.md#setwbpattern) | public | inferred | Sets the wb pattern. |
 | [`luna://com.webos.service.pqcontroller/setWhiteBalance`](../services/com.webos.service.pqcontroller.md#setwhitebalance) | private | documented | Set white balance in Ez-Adjust service menu ⚠️ |

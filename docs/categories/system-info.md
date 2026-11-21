@@ -36,7 +36,7 @@
 | [`luna://com.webos.service.accountmanager/getAccountTerm`](../services/com.webos.service.accountmanager.md#getaccountterm) | private | inferred | Returns the account term. |
 | [`luna://com.webos.service.accountmanager/getLoginHistory`](../services/com.webos.service.accountmanager.md#getloginhistory) | private | inferred | Returns the login history. |
 | [`luna://com.webos.service.accountmanager/getLoginID`](../services/com.webos.service.accountmanager.md#getloginid) | private | inferred | Returns the login ID. |
-| [`luna://com.webos.service.accountmanager/getLoginUserData`](../services/com.webos.service.accountmanager.md#getloginuserdata) | private | inferred | Returns the login user data. |
+| [`luna://com.webos.service.accountmanager/getLoginUserData`](../services/com.webos.service.accountmanager.md#getloginuserdata) | private | documented | Returns the login user data. |
 | [`luna://com.webos.service.accountmanager/getOOBEData`](../services/com.webos.service.accountmanager.md#getoobedata) | public | inferred | Returns the OOBE data. |
 | [`luna://com.webos.service.accountmanager/loginAccount`](../services/com.webos.service.accountmanager.md#loginaccount) | private | inferred | Logs in to the account. |
 | [`luna://com.webos.service.accountmanager/loginAccountByExtDevice`](../services/com.webos.service.accountmanager.md#loginaccountbyextdevice) | private | inferred | Logs in to the account by ext device. |
@@ -66,7 +66,7 @@
 | [`luna://com.webos.service.factorymanager/getAdcCalibrationStatus`](../services/com.webos.service.factorymanager.md#getadccalibrationstatus) | private | inferred | Returns the adc calibration status. |
 | [`luna://com.webos.service.factorymanager/getEdidStatus`](../services/com.webos.service.factorymanager.md#getedidstatus) | private | inferred | Returns the EDID status. |
 | [`luna://com.webos.service.factorymanager/getFactoryChannelChangeParam`](../services/com.webos.service.factorymanager.md#getfactorychannelchangeparam) | private | inferred | Returns the factory channel change param. |
-| [`luna://com.webos.service.factorymanager/getFactoryOpt`](../services/com.webos.service.factorymanager.md#getfactoryopt) | private | inferred | Returns the factory opt. |
+| [`luna://com.webos.service.factorymanager/getFactoryOpt`](../services/com.webos.service.factorymanager.md#getfactoryopt) | private | documented | Returns the factory opt. |
 | [`luna://com.webos.service.factorymanager/getFactoryParam`](../services/com.webos.service.factorymanager.md#getfactoryparam) | private | inferred | Returns the factory param. |
 | [`luna://com.webos.service.factorymanager/getPOnlyKeyState`](../services/com.webos.service.factorymanager.md#getponlykeystate) | private | inferred | Returns the p only key state. |
 | [`luna://com.webos.service.factorymanager/getTestPatternColor`](../services/com.webos.service.factorymanager.md#gettestpatterncolor) | private | inferred | Returns the test pattern color. |

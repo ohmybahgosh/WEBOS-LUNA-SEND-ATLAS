@@ -19,7 +19,7 @@ Voice-assistant orchestration service: recognizes intents by voice or text, repo
 | [`getUtteranceEvents`](#getutteranceevents) | private |  | input | inferred | Returns the utterance events. |
 | [`getVoiceKey`](#getvoicekey) | private |  | input | inferred | Returns the voice key. |
 | [`getVoiceUiEvents`](#getvoiceuievents) | public |  | input | inferred | Returns the voice ui events. |
-| [`interactor/register`](#interactor_register) | public |  | input | inferred | Registers the voiceconductor (interactor) |
+| [`interactor/register`](#interactor_register) | public |  | input | documented | Registers the voiceconductor (interactor) |
 | [`interactor/reportActionResult`](#interactor_reportactionresult) | public |  | input | inferred | Reports the action result (interactor) |
 | [`interactor/setContext`](#interactor_setcontext) | public |  | input | inferred | Sets the context (interactor) |
 | [`launchApp`](#launchapp) | private |  | apps | inferred | Launches the app. |
@@ -384,19 +384,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Registers the voiceconductor (interactor)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `type` | String (observed in live traffic) |
+| `subscribe` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.voiceconductor/interactor/register '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

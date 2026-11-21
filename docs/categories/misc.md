@@ -112,14 +112,14 @@
 | [`luna://com.webos.iotframework/start`](../services/com.webos.iotframework.md#start) | private | inferred | Starts the iotframework. |
 | [`luna://com.webos.memorymanager/getCloseAppId`](../services/com.webos.memorymanager.md#getcloseappid) | private | inferred | Returns the close app ID. |
 | [`luna://com.webos.memorymanager/getCurrentMemState`](../services/com.webos.memorymanager.md#getcurrentmemstate) | private | inferred | Returns the current mem state. |
-| [`luna://com.webos.memorymanager/getCustomThreshold`](../services/com.webos.memorymanager.md#getcustomthreshold) | private | inferred | Returns the custom threshold. |
+| [`luna://com.webos.memorymanager/getCustomThreshold`](../services/com.webos.memorymanager.md#getcustomthreshold) | private | documented | Returns the custom threshold. |
 | [`luna://com.webos.memorymanager/getEFS`](../services/com.webos.memorymanager.md#getefs) | private | inferred | Returns the EFS. |
 | [`luna://com.webos.memorymanager/getGroupInfo`](../services/com.webos.memorymanager.md#getgroupinfo) | private | inferred | Returns the group info. |
 | [`luna://com.webos.memorymanager/getPolicy`](../services/com.webos.memorymanager.md#getpolicy) | private | inferred | Returns the policy. |
 | [`luna://com.webos.memorymanager/getUnitList`](../services/com.webos.memorymanager.md#getunitlist) | private | inferred | Returns the unit list. |
 | [`luna://com.webos.memorymanager/sendLowMemPopupTest`](../services/com.webos.memorymanager.md#sendlowmempopuptest) | private | inferred | Sends the low mem popup test. |
 | [`luna://com.webos.memorymanager/setMriHelper`](../services/com.webos.memorymanager.md#setmrihelper) | private | inferred | Sets the mri helper. |
-| [`luna://com.webos.memorymanager/setRequiredMemory`](../services/com.webos.memorymanager.md#setrequiredmemory) | private | inferred | Sets the required memory. |
+| [`luna://com.webos.memorymanager/setRequiredMemory`](../services/com.webos.memorymanager.md#setrequiredmemory) | private | documented | Sets the required memory. |
 | [`luna://com.webos.memorymanager/startMemNotifier`](../services/com.webos.memorymanager.md#startmemnotifier) | private | inferred | Starts the mem notifier. |
 | [`luna://com.webos.notification/callback/wakeUp`](../services/com.webos.notification.md#callback_wakeup) | private | documented | Found by on-device introspection (parameters undocumented). |
 | [`luna://com.webos.notification/setAlertProgress`](../services/com.webos.notification.md#setalertprogress) | private | documented | Found by on-device introspection (parameters undocumented). |
@@ -180,7 +180,7 @@
 | [`luna://com.webos.service.arccontroller/getEARCDelay`](../services/com.webos.service.arccontroller.md#getearcdelay) | public | inferred | Returns the EARC delay. |
 | [`luna://com.webos.service.arccontroller/setARCState`](../services/com.webos.service.arccontroller.md#setarcstate) | public | inferred | Sets the ARC state. |
 | [`luna://com.webos.service.asc/getAdvertisingStatus`](../services/com.webos.service.asc.md#getadvertisingstatus) | public | inferred | Returns the advertising status. |
-| [`luna://com.webos.service.asc/registerDevice`](../services/com.webos.service.asc.md#registerdevice) | public | inferred | Registers the device. |
+| [`luna://com.webos.service.asc/registerDevice`](../services/com.webos.service.asc.md#registerdevice) | public | documented | Registers the device. |
 | [`luna://com.webos.service.asc/resetWoBLE`](../services/com.webos.service.asc.md#resetwoble) | public | inferred | Resets the wo BLE. ⚠️ |
 | [`luna://com.webos.service.asc/startAdvertising`](../services/com.webos.service.asc.md#startadvertising) | public | inferred | Starts the advertising. |
 | [`luna://com.webos.service.asc/stopAdvertising`](../services/com.webos.service.asc.md#stopadvertising) | public | inferred | Stops the advertising. |
@@ -192,9 +192,9 @@
 | [`luna://com.webos.service.avmutemanager/getMuteStatus`](../services/com.webos.service.avmutemanager.md#getmutestatus) | public | inferred | Returns the mute status. |
 | [`luna://com.webos.service.avmutemanager/listDebugRegisteredServices`](../services/com.webos.service.avmutemanager.md#listdebugregisteredservices) | public | inferred | Lists the debug registered services. |
 | [`luna://com.webos.service.avmutemanager/listMuteStatus`](../services/com.webos.service.avmutemanager.md#listmutestatus) | public | inferred | Lists the mute status. |
-| [`luna://com.webos.service.avmutemanager/register`](../services/com.webos.service.avmutemanager.md#register) | public | inferred | Registers the avmutemanager. |
-| [`luna://com.webos.service.avmutemanager/setAvMute`](../services/com.webos.service.avmutemanager.md#setavmute) | public | inferred | Sets the A/V mute. |
-| [`luna://com.webos.service.avmutemanager/unregister`](../services/com.webos.service.avmutemanager.md#unregister) | public | inferred | Unregisters the avmutemanager. |
+| [`luna://com.webos.service.avmutemanager/register`](../services/com.webos.service.avmutemanager.md#register) | public | documented | Registers the avmutemanager. |
+| [`luna://com.webos.service.avmutemanager/setAvMute`](../services/com.webos.service.avmutemanager.md#setavmute) | public | documented | Sets the A/V mute. |
+| [`luna://com.webos.service.avmutemanager/unregister`](../services/com.webos.service.avmutemanager.md#unregister) | public | documented | Unregisters the avmutemanager. |
 | [`luna://com.webos.service.bam/stop`](../services/com.webos.service.bam.md#stop) | public | inferred | Stops the bam. |
 | [`luna://com.webos.service.bam/test`](../services/com.webos.service.bam.md#test) | private | inferred | Tests the bam. |
 | [`luna://com.webos.service.billing/confirm`](../services/com.webos.service.billing.md#confirm) | public | inferred | Handles the confirm. |
@@ -285,7 +285,7 @@
 | [`luna://com.webos.service.datamigrator/run`](../services/com.webos.service.datamigrator.md#run) | private | inferred | Runs the datamigrator. |
 | [`luna://com.webos.service.datamigrator/writeVersion`](../services/com.webos.service.datamigrator.md#writeversion) | private | inferred | Writes the version. |
 | [`luna://com.webos.service.dial.ssdpmanager/heartbeat/ping`](../services/com.webos.service.dial.ssdpmanager.md#heartbeat_ping) | private | inferred | Pings the dial ssdpmanager (heartbeat) |
-| [`luna://com.webos.service.dial/heartbeat/notifyNamedSocket`](../services/com.webos.service.dial.md#heartbeat_notifynamedsocket) | private | inferred | Notifies of the named socket (heartbeat) |
+| [`luna://com.webos.service.dial/heartbeat/notifyNamedSocket`](../services/com.webos.service.dial.md#heartbeat_notifynamedsocket) | private | documented | Notifies of the named socket (heartbeat) |
 | [`luna://com.webos.service.dial/heartbeat/ping`](../services/com.webos.service.dial.md#heartbeat_ping) | private | inferred | Pings the dial (heartbeat) |
 | [`luna://com.webos.service.dial/info`](../services/com.webos.service.dial.md#info) | public | inferred | Handles the info. |
 | [`luna://com.webos.service.dial/quit`](../services/com.webos.service.dial.md#quit) | public | inferred | Quits the dial. |
@@ -310,7 +310,7 @@
 | [`luna://com.webos.service.dnssd/unregisterAvahiBrowse`](../services/com.webos.service.dnssd.md#unregisteravahibrowse) | private | inferred | Unregisters the avahi browse. |
 | [`luna://com.webos.service.dnssd/unregisterAvahiPublish`](../services/com.webos.service.dnssd.md#unregisteravahipublish) | private | inferred | Unregisters the avahi publish. |
 | [`luna://com.webos.service.emmcd/getMemoryUsage`](../services/com.webos.service.emmcd.md#getmemoryusage) | public | inferred | Returns the memory usage. |
-| [`luna://com.webos.service.emmcd/getProfileInfo`](../services/com.webos.service.emmcd.md#getprofileinfo) | public | inferred | Returns the profile info. |
+| [`luna://com.webos.service.emmcd/getProfileInfo`](../services/com.webos.service.emmcd.md#getprofileinfo) | public | documented | Returns the profile info. |
 | [`luna://com.webos.service.emmcd/setEmmcPON`](../services/com.webos.service.emmcd.md#setemmcpon) | public | inferred | Sets the emmc PON. |
 | [`luna://com.webos.service.eulaservice/cancelEulaDownload`](../services/com.webos.service.eulaservice.md#canceleuladownload) | private | inferred | Cancels the eula download. |
 | [`luna://com.webos.service.eulaservice/getEulaDownloadStatus`](../services/com.webos.service.eulaservice.md#geteuladownloadstatus) | private | inferred | Returns the eula download status. |
@@ -387,7 +387,7 @@
 | [`luna://com.webos.service.hidusbemul/getStatus`](../services/com.webos.service.hidusbemul.md#getstatus) | private | inferred | Returns the status. |
 | [`luna://com.webos.service.hidusbemul/pause`](../services/com.webos.service.hidusbemul.md#pause) | private | inferred | Pauses the hidusbemul. |
 | [`luna://com.webos.service.hidusbemul/resume`](../services/com.webos.service.hidusbemul.md#resume) | private | inferred | Resumes the hidusbemul. |
-| [`luna://com.webos.service.homeconnect/get`](../services/com.webos.service.homeconnect.md#get) | public | inferred | Returns the homeconnect. |
+| [`luna://com.webos.service.homeconnect/get`](../services/com.webos.service.homeconnect.md#get) | public | documented | Returns the homeconnect. |
 | [`luna://com.webos.service.homeconnect/info`](../services/com.webos.service.homeconnect.md#info) | public | inferred | Handles the info. |
 | [`luna://com.webos.service.homeconnect/quit`](../services/com.webos.service.homeconnect.md#quit) | public | inferred | Quits the homeconnect. |
 | [`luna://com.webos.service.homeconnect/relayEvent`](../services/com.webos.service.homeconnect.md#relayevent) | public | inferred | Handles the relay event. |
@@ -512,7 +512,7 @@
 | [`luna://com.webos.service.nms/startHandler`](../services/com.webos.service.nms.md#starthandler) | public | inferred | Starts the handler. |
 | [`luna://com.webos.service.nnproxy/picture/debug`](../services/com.webos.service.nnproxy.md#picture_debug) | private | inferred | Handles the debug (picture) |
 | [`luna://com.webos.service.nnproxy/picture/get`](../services/com.webos.service.nnproxy.md#picture_get) | private | inferred | Returns the nnproxy (picture) |
-| [`luna://com.webos.service.nnproxy/picture/set`](../services/com.webos.service.nnproxy.md#picture_set) | private | inferred | Sets the nnproxy (picture) |
+| [`luna://com.webos.service.nnproxy/picture/set`](../services/com.webos.service.nnproxy.md#picture_set) | private | documented | Sets the nnproxy (picture) |
 | [`luna://com.webos.service.nomotion/test`](../services/com.webos.service.nomotion.md#test) | private | inferred | Tests the nomotion. |
 | [`luna://com.webos.service.nop/getInformation`](../services/com.webos.service.nop.md#getinformation) | private | inferred | Returns the information. |
 | [`luna://com.webos.service.nudge/deleteHistory`](../services/com.webos.service.nudge.md#deletehistory) | private | inferred | Deletes the history. ⚠️ |
@@ -545,12 +545,12 @@
 | [`luna://com.webos.service.opappwebserver/stop`](../services/com.webos.service.opappwebserver.md#stop) | public | inferred | Stops the opappwebserver. |
 | [`luna://com.webos.service.outdoorwebcontrol/info`](../services/com.webos.service.outdoorwebcontrol.md#info) | private | inferred | Handles the info. |
 | [`luna://com.webos.service.outdoorwebcontrol/quit`](../services/com.webos.service.outdoorwebcontrol.md#quit) | private | inferred | Quits the outdoorwebcontrol. |
-| [`luna://com.webos.service.packagemanager/closePackage`](../services/com.webos.service.packagemanager.md#closepackage) | private | inferred | Closes the package. |
+| [`luna://com.webos.service.packagemanager/closePackage`](../services/com.webos.service.packagemanager.md#closepackage) | private | documented | Closes the package. |
 | [`luna://com.webos.service.packagemanager/getStatus`](../services/com.webos.service.packagemanager.md#getstatus) | private | inferred | Returns the status. |
-| [`luna://com.webos.service.packagemanager/lockPackage`](../services/com.webos.service.packagemanager.md#lockpackage) | private | inferred | Locks the package. |
+| [`luna://com.webos.service.packagemanager/lockPackage`](../services/com.webos.service.packagemanager.md#lockpackage) | private | documented | Locks the package. |
 | [`luna://com.webos.service.packagemanager/run`](../services/com.webos.service.packagemanager.md#run) | private | inferred | Runs the packagemanager. |
 | [`luna://com.webos.service.packagemanager/squashfsMount`](../services/com.webos.service.packagemanager.md#squashfsmount) | private | inferred | Handles the squashfs mount. |
-| [`luna://com.webos.service.packagemanager/unlockPackage`](../services/com.webos.service.packagemanager.md#unlockpackage) | private | inferred | Unlocks the package. |
+| [`luna://com.webos.service.packagemanager/unlockPackage`](../services/com.webos.service.packagemanager.md#unlockpackage) | private | documented | Unlocks the package. |
 | [`luna://com.webos.service.personalsoundwizard/getStatus`](../services/com.webos.service.personalsoundwizard.md#getstatus) | private | inferred | Returns the status. |
 | [`luna://com.webos.service.personalsoundwizard/setStatus`](../services/com.webos.service.personalsoundwizard.md#setstatus) | private | inferred | Sets the status. |
 | [`luna://com.webos.service.pkgInstall/cancel`](../services/com.webos.service.pkgInstall.md#cancel) | private | documented | Cancels the pkg install. |
@@ -613,7 +613,7 @@
 | [`luna://com.webos.service.soundshare/stopStreamOut`](../services/com.webos.service.soundshare.md#stopstreamout) | private | inferred | Stops the stream out. |
 | [`luna://com.webos.service.sportsalarm/checkTranslation`](../services/com.webos.service.sportsalarm.md#checktranslation) | private | inferred | Checks the translation. |
 | [`luna://com.webos.service.sportsalarm/getEvent`](../services/com.webos.service.sportsalarm.md#getevent) | private | inferred | Returns the event. |
-| [`luna://com.webos.service.sportsalarm/push`](../services/com.webos.service.sportsalarm.md#push) | private | inferred | Pushes the sportsalarm. |
+| [`luna://com.webos.service.sportsalarm/push`](../services/com.webos.service.sportsalarm.md#push) | private | documented | Pushes the sportsalarm. |
 | [`luna://com.webos.service.sportsalarm/start`](../services/com.webos.service.sportsalarm.md#start) | private | inferred | Starts the sportsalarm. |
 | [`luna://com.webos.service.sportsalert/info`](../services/com.webos.service.sportsalert.md#info) | private | inferred | Handles the info. |
 | [`luna://com.webos.service.sportsalert/invoke`](../services/com.webos.service.sportsalert.md#invoke) | private | inferred | Handles the invoke. |
@@ -628,7 +628,7 @@
 | [`luna://com.webos.service.systemprofile/disableProfile`](../services/com.webos.service.systemprofile.md#disableprofile) | private | inferred | Disables the profile. |
 | [`luna://com.webos.service.systemprofile/enableProfile`](../services/com.webos.service.systemprofile.md#enableprofile) | private | inferred | Enables the profile. |
 | [`luna://com.webos.service.systemprofile/status`](../services/com.webos.service.systemprofile.md#status) | private | inferred | Handles the status. |
-| [`luna://com.webos.service.systemUIManager/closeByAppId`](../services/com.webos.service.systemUIManager.md#closebyappid) | public | inferred | Closes the by app ID. |
+| [`luna://com.webos.service.systemUIManager/closeByAppId`](../services/com.webos.service.systemUIManager.md#closebyappid) | public | documented | Closes the by app ID. |
 | [`luna://com.webos.service.systemUIManager/getForegroundAppInfo`](../services/com.webos.service.systemUIManager.md#getforegroundappinfo) | public | inferred | Returns the foreground app info. |
 | [`luna://com.webos.service.sysuicompmgr/changeSystemUIView`](../services/com.webos.service.sysuicompmgr.md#changesystemuiview) | private | inferred | Changes the system UI view. |
 | [`luna://com.webos.service.sysuicompmgr/changeSystemUIViewStateTransition`](../services/com.webos.service.sysuicompmgr.md#changesystemuiviewstatetransition) | private | inferred | Changes the system UI view state transition. |
@@ -684,7 +684,7 @@
 | [`luna://com.webos.service.universalqcard/quit`](../services/com.webos.service.universalqcard.md#quit) | private | inferred | Quits the universalqcard. |
 | [`luna://com.webos.service.usercontextmanager/displayMonthlyReport`](../services/com.webos.service.usercontextmanager.md#displaymonthlyreport) | private | inferred | Handles the display monthly report. |
 | [`luna://com.webos.service.usercontextmanager/getCategorizedRank`](../services/com.webos.service.usercontextmanager.md#getcategorizedrank) | public | inferred | Returns the categorized rank. |
-| [`luna://com.webos.service.usercontextmanager/getHistory`](../services/com.webos.service.usercontextmanager.md#gethistory) | public | inferred | Returns the history. |
+| [`luna://com.webos.service.usercontextmanager/getHistory`](../services/com.webos.service.usercontextmanager.md#gethistory) | public | documented | Returns the history. |
 | [`luna://com.webos.service.usercontextmanager/getHistoryFromServer`](../services/com.webos.service.usercontextmanager.md#gethistoryfromserver) | public | inferred | Returns the history from server. |
 | [`luna://com.webos.service.usercontextmanager/getModeledRank`](../services/com.webos.service.usercontextmanager.md#getmodeledrank) | public | inferred | Returns the modeled rank. |
 | [`luna://com.webos.service.usercontextmanager/getRank`](../services/com.webos.service.usercontextmanager.md#getrank) | public | inferred | Returns the rank. |
@@ -695,7 +695,7 @@
 | [`luna://com.webos.service.userintentmanager/getContext`](../services/com.webos.service.userintentmanager.md#getcontext) | private | inferred | Returns the context. |
 | [`luna://com.webos.service.userintentmanager/getHistory`](../services/com.webos.service.userintentmanager.md#gethistory) | private | inferred | Returns the history. |
 | [`luna://com.webos.service.userintentmanager/getIntentStatus`](../services/com.webos.service.userintentmanager.md#getintentstatus) | private | inferred | Returns the intent status. |
-| [`luna://com.webos.service.userintentmanager/getRank`](../services/com.webos.service.userintentmanager.md#getrank) | private | inferred | Returns the rank. |
+| [`luna://com.webos.service.userintentmanager/getRank`](../services/com.webos.service.userintentmanager.md#getrank) | private | documented | Returns the rank. |
 | [`luna://com.webos.service.userintentmanager/load`](../services/com.webos.service.userintentmanager.md#load) | private | inferred | Loads the userintentmanager. |
 | [`luna://com.webos.service.userintentmanager/reset`](../services/com.webos.service.userintentmanager.md#reset) | private | inferred | Resets the userintentmanager. ⚠️ |
 | [`luna://com.webos.service.userintentmanager/setContext`](../services/com.webos.service.userintentmanager.md#setcontext) | private | inferred | Sets the context. |
@@ -809,7 +809,7 @@
 | [`luna://listenserver.service/stop`](../services/listenserver.service.md#stop) | public | inferred | Stops the listenserver. |
 | [`luna://netflix.service/clearToken`](../services/netflix.service.md#cleartoken) | public | inferred | Clears the token. |
 | [`luna://netflix.service/impression`](../services/netflix.service.md#impression) | public | inferred | Handles the impression. |
-| [`luna://netflix.service/saveToken`](../services/netflix.service.md#savetoken) | public | inferred | Saves the token. |
+| [`luna://netflix.service/saveToken`](../services/netflix.service.md#savetoken) | public | documented | Saves the token. |
 | [`luna://netflix.service/search`](../services/netflix.service.md#search) | public | inferred | Searches for netflix. |
 | [`luna://nuance.stt.adapter.plugin/cancelRecognition`](../services/nuance.stt.adapter.plugin.md#cancelrecognition) | private | inferred | Cancels the recognition. |
 | [`luna://nuance.stt.adapter.plugin/load`](../services/nuance.stt.adapter.plugin.md#load) | private | inferred | Loads the nuance stt adapter plugin. |

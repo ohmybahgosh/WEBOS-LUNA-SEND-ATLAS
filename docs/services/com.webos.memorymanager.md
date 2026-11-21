@@ -11,14 +11,14 @@ Memory manager: reports current memory state, enforces low-memory policy and thr
 | [`getCloseAppId`](#getcloseappid) | private |  | misc | inferred | Returns the close app ID. |
 | [`getConfigs`](#getconfigs) | private |  | settings | inferred | Returns the configs. |
 | [`getCurrentMemState`](#getcurrentmemstate) | private |  | misc | inferred | Returns the current mem state. |
-| [`getCustomThreshold`](#getcustomthreshold) | private |  | misc | inferred | Returns the custom threshold. |
+| [`getCustomThreshold`](#getcustomthreshold) | private |  | misc | documented | Returns the custom threshold. |
 | [`getEFS`](#getefs) | private |  | misc | inferred | Returns the EFS. |
 | [`getGroupInfo`](#getgroupinfo) | private |  | misc | inferred | Returns the group info. |
 | [`getPolicy`](#getpolicy) | private |  | misc | inferred | Returns the policy. |
 | [`getUnitList`](#getunitlist) | private |  | misc | inferred | Returns the unit list. |
 | [`sendLowMemPopupTest`](#sendlowmempopuptest) | private |  | misc | inferred | Sends the low mem popup test. |
 | [`setMriHelper`](#setmrihelper) | private |  | misc | inferred | Sets the mri helper. |
-| [`setRequiredMemory`](#setrequiredmemory) | private |  | misc | inferred | Sets the required memory. |
+| [`setRequiredMemory`](#setrequiredmemory) | private |  | misc | documented | Sets the required memory. |
 | [`startMemNotifier`](#startmemnotifier) | private |  | misc | inferred | Starts the mem notifier. |
 
 <a id="getcloseappid"></a>
@@ -191,19 +191,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the custom threshold.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `appId` | String (observed in live traffic) |
+| `threshold` | String (observed in live traffic) |
+| `subscribe` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/getCustomThreshold '{}'
 ```
 
-> ACG groups: private, all, system, applications.internal.
+> ACG groups: private, all, system, applications.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -406,19 +410,30 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the required memory.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `defaultWindowType` | String (observed in live traffic) |
+| `appId` | String (observed in live traffic) |
+| `requiredMemory` | Integer (observed in live traffic) |
+| `containerBasedApp` | Boolean (observed in live traffic) |
+| `appType` | String (observed in live traffic) |
+| `relaunch` | Boolean (observed in live traffic) |
+| `windowGroup` | Boolean (observed in live traffic) |
+| `preload` | String (observed in live traffic) |
+| `windowGroupOwner` | Boolean (observed in live traffic) |
+| `windowGroupOwnerId` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.memorymanager/setRequiredMemory '{}'
 ```
 
-> ACG groups: private, all, system, applications.internal.
+> ACG groups: private, all, system, applications.internal.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

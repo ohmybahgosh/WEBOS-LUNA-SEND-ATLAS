@@ -222,7 +222,7 @@
 | [`luna://com.webos.service.miracasttx/requestMiracast`](../services/com.webos.service.miracasttx.md#requestmiracast) | private | inferred | Requests the miracast. |
 | [`luna://com.webos.service.miracasttx/requestMsg`](../services/com.webos.service.miracasttx.md#requestmsg) | private | inferred | Requests the msg. |
 | [`luna://com.webos.service.miracasttx/setEncodingMode`](../services/com.webos.service.miracasttx.md#setencodingmode) | private | inferred | Sets the encoding mode. |
-| [`luna://com.webos.service.pkgverifier/verifyIpk`](../services/com.webos.service.pkgverifier.md#verifyipk) | private | inferred | Verifies the ipk. |
+| [`luna://com.webos.service.pkgverifier/verifyIpk`](../services/com.webos.service.pkgverifier.md#verifyipk) | private | documented | Verifies the ipk. |
 | [`luna://com.webos.service.sdx/deleteDeviceAuthentication`](../services/com.webos.service.sdx.md#deletedeviceauthentication) | private | documented | Clears the stored SDP device authentication. Documented as existing. ⚠️ |
 | [`luna://com.webos.service.sdx/getDeviceAuthenticationStatus`](../services/com.webos.service.sdx.md#getdeviceauthenticationstatus) | private | documented | Read-only: reports whether the device is authenticated/provisioned with SDP (isDeviceAuthenticated, provisioningCompleted). Glasshouse saw acr stop when this re |
 | [`luna://com.webos.service.sdx/requestDeviceAuthentication`](../services/com.webos.service.sdx.md#requestdeviceauthentication) | private | documented | Starts SDP device authentication/provisioning. Documented as existing; this repo does not cover forging or bypassing it. |
@@ -238,7 +238,7 @@
 | [`luna://com.webos.service.sdxpromo/localeChange`](../services/com.webos.service.sdxpromo.md#localechange) | public | inferred | Handles the locale change. |
 | [`luna://com.webos.service.sdxpromo/quit`](../services/com.webos.service.sdxpromo.md#quit) | public | inferred | Quits the sdxpromo. |
 | [`luna://com.webos.service.sm/deviceid/getIDs`](../services/com.webos.service.sm.md#deviceid_getids) | public | documented | Returns device IDs provided by webOS TV (LGUDID). |
-| [`luna://com.webos.service.sm/license/apps/getDrmStatus`](../services/com.webos.service.sm.md#license_apps_getdrmstatus) | private | inferred | Returns the DRM status (license apps) |
+| [`luna://com.webos.service.sm/license/apps/getDrmStatus`](../services/com.webos.service.sm.md#license_apps_getdrmstatus) | private | documented | Returns the DRM status (license apps) |
 | [`luna://com.webos.service.utp.acas/getAutoDisplayMessageInfo`](../services/com.webos.service.utp.acas.md#getautodisplaymessageinfo) | private | inferred | Returns the auto display message info. |
 | [`luna://com.webos.service.utp.acas/getAutoDisplayMessageStatus`](../services/com.webos.service.utp.acas.md#getautodisplaymessagestatus) | private | inferred | Returns the auto display message status. |
 | [`luna://com.webos.service.utp.acas/getCasInfo`](../services/com.webos.service.utp.acas.md#getcasinfo) | private | inferred | Returns the cas info. |

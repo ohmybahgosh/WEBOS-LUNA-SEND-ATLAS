@@ -37,11 +37,11 @@
 | [`luna://com.palm.webappmanager/closeAllApps`](../services/com.palm.webappmanager.md#closeallapps) | private | inferred | Closes the all apps. |
 | [`luna://com.palm.webappmanager/closeByProcessId`](../services/com.palm.webappmanager.md#closebyprocessid) | private | inferred | Closes the by process ID. |
 | [`luna://com.palm.webappmanager/deliverPushMessage`](../services/com.palm.webappmanager.md#deliverpushmessage) | private | inferred | Handles the deliver push message. |
-| [`luna://com.palm.webappmanager/discardCodeCache`](../services/com.palm.webappmanager.md#discardcodecache) | private | inferred | Handles the discard code cache. |
+| [`luna://com.palm.webappmanager/discardCodeCache`](../services/com.palm.webappmanager.md#discardcodecache) | private | documented | Handles the discard code cache. |
 | [`luna://com.palm.webappmanager/getMemoryStatus`](../services/com.palm.webappmanager.md#getmemorystatus) | private | inferred | Returns the memory status. |
 | [`luna://com.palm.webappmanager/getWebProcessSize`](../services/com.palm.webappmanager.md#getwebprocesssize) | private | inferred | Returns the web process size. |
-| [`luna://com.palm.webappmanager/killApp`](../services/com.palm.webappmanager.md#killapp) | private | inferred | Handles the kill app. |
-| [`luna://com.palm.webappmanager/launchApp`](../services/com.palm.webappmanager.md#launchapp) | private | inferred | Launches the app. |
+| [`luna://com.palm.webappmanager/killApp`](../services/com.palm.webappmanager.md#killapp) | private | documented | Handles the kill app. |
+| [`luna://com.palm.webappmanager/launchApp`](../services/com.palm.webappmanager.md#launchapp) | private | documented | Launches the app. |
 | [`luna://com.palm.webappmanager/launchUrl`](../services/com.palm.webappmanager.md#launchurl) | private | inferred | Launches the URL. |
 | [`luna://com.palm.webappmanager/launchUrlChild`](../services/com.palm.webappmanager.md#launchurlchild) | private | inferred | Launches the URL child. |
 | [`luna://com.palm.webappmanager/listRunningApps`](../services/com.palm.webappmanager.md#listrunningapps) | private | inferred | Lists the running apps. |
@@ -124,7 +124,7 @@
 | [`luna://com.webos.applicationManager/onLaunch`](../services/com.webos.applicationManager.md#onlaunch) | private | inferred | Event handler: fires on the launch. |
 | [`luna://com.webos.applicationManager/open`](../services/com.webos.applicationManager.md#open) | ssap | documented | Open an app by id (SSAP) |
 | [`luna://com.webos.applicationManager/pause`](../services/com.webos.applicationManager.md#pause) | private | inferred | Pauses the application manager. |
-| [`luna://com.webos.applicationManager/registerApp`](../services/com.webos.applicationManager.md#registerapp) | public | inferred | Registers the app. |
+| [`luna://com.webos.applicationManager/registerApp`](../services/com.webos.applicationManager.md#registerapp) | public | documented | Registers the app. |
 | [`luna://com.webos.applicationManager/registerNativeApp`](../services/com.webos.applicationManager.md#registernativeapp) | public | inferred | Registers the native app. |
 | [`luna://com.webos.applicationManager/registerVerbsForRedirect`](../services/com.webos.applicationManager.md#registerverbsforredirect) | private | inferred | Registers the verbs for redirect. |
 | [`luna://com.webos.applicationManager/registerVerbsForResource`](../services/com.webos.applicationManager.md#registerverbsforresource) | private | inferred | Registers the verbs for resource. |
@@ -159,7 +159,7 @@
 | [`luna://com.webos.service.admanager/getAdid`](../services/com.webos.service.admanager.md#getadid) | public | inferred | Returns the adid. |
 | [`luna://com.webos.service.admanager/getAdRequestInfo`](../services/com.webos.service.admanager.md#getadrequestinfo) | public | inferred | Returns the ad request info. |
 | [`luna://com.webos.service.admanager/inactivateCookies`](../services/com.webos.service.admanager.md#inactivatecookies) | private | inferred | Handles the inactivate cookies. |
-| [`luna://com.webos.service.admanager/launchCMPApp`](../services/com.webos.service.admanager.md#launchcmpapp) | private | inferred | Launches the CMP app. |
+| [`luna://com.webos.service.admanager/launchCMPApp`](../services/com.webos.service.admanager.md#launchcmpapp) | private | documented | Launches the CMP app. |
 | [`luna://com.webos.service.admanager/reqNormalLog`](../services/com.webos.service.admanager.md#reqnormallog) | public | inferred | Handles the req normal log. |
 | [`luna://com.webos.service.admanager/requestAssetClickInfo`](../services/com.webos.service.admanager.md#requestassetclickinfo) | public | inferred | Requests the asset click info. |
 | [`luna://com.webos.service.admanager/requestBannerInfo`](../services/com.webos.service.admanager.md#requestbannerinfo) | public | inferred | Requests the banner info. |

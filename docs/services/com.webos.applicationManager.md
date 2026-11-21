@@ -66,7 +66,7 @@ Application manager: installs and launches apps, manages launch points and virtu
 | [`onLaunch`](#onlaunch) | private |  | apps | inferred | Event handler: fires on the launch. |
 | [`open`](#open) | ssap |  | apps | documented | Open an app by id (SSAP) |
 | [`pause`](#pause) | private |  | apps | inferred | Pauses the application manager. |
-| [`registerApp`](#registerapp) | public |  | apps | inferred | Registers the app. |
+| [`registerApp`](#registerapp) | public |  | apps | documented | Registers the app. |
 | [`registerNativeApp`](#registernativeapp) | public |  | apps | inferred | Registers the native app. |
 | [`registerVerbsForRedirect`](#registerverbsforredirect) | private |  | apps | inferred | Registers the verbs for redirect. |
 | [`registerVerbsForResource`](#registerverbsforresource) | private |  | apps | inferred | Registers the verbs for resource. |
@@ -1848,19 +1848,22 @@ Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/r
 
 Registers the app.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** webOS TV 4.5 (4.10.2-31); newer firmware unverified  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `subscribe` | Boolean (observed in live traffic) |
+| `appId` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.applicationManager/registerApp '{}'
 ```
 
-> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.operation" in the component api.json/groups.json; no parameter docs read.
+> Seen via `ls-monitor -i com.webos.applicationManager` on a rooted retail TV (LG OLED55B9PUA, webOS TV 4.5 (firmware 4.10.2-31)); ACG groups: private, applications, public, all, applications.internal. Only the name and ACG groups are known; parameters/return fields were not read. \| Listed under ACG group "application.operation" in the component api.json/groups.json; no parameter docs read.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/SunnySide007/lumen-webos/blob/main/docs/device/remote-20261031-060938.txt), [2](https://github.com/webosose/sam/blob/master/files/sysbus/com.webos.sam.api.json)
 

@@ -478,7 +478,7 @@
 | [`luna://com.webos.service.iepg/getChannelGroupList`](../services/com.webos.service.iepg.md#getchannelgrouplist) | private | inferred | Returns the channel group list. |
 | [`luna://com.webos.service.iepg/getChannelIdInfo`](../services/com.webos.service.iepg.md#getchannelidinfo) | private | inferred | Returns the channel ID info. |
 | [`luna://com.webos.service.iepg/getChannelInfo`](../services/com.webos.service.iepg.md#getchannelinfo) | private | inferred | Returns the channel info. |
-| [`luna://com.webos.service.iepg/getChannelList`](../services/com.webos.service.iepg.md#getchannellist) | private | inferred | Returns the channel list. |
+| [`luna://com.webos.service.iepg/getChannelList`](../services/com.webos.service.iepg.md#getchannellist) | private | documented | Returns the channel list. |
 | [`luna://com.webos.service.iepg/getChannelListbySignalChId`](../services/com.webos.service.iepg.md#getchannellistbysignalchid) | private | inferred | Returns the channel listby signal channel ID. |
 | [`luna://com.webos.service.iepg/getChannelShortcutKey`](../services/com.webos.service.iepg.md#getchannelshortcutkey) | private | inferred | Returns the channel shortcut key. |
 | [`luna://com.webos.service.iepg/getChannelShortcutKeyList`](../services/com.webos.service.iepg.md#getchannelshortcutkeylist) | private | inferred | Returns the channel shortcut key list. |

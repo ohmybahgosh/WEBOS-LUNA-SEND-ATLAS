@@ -15,7 +15,7 @@ Account manager: logs user accounts in and out, stores and updates account data,
 | [`getAccountTerm`](#getaccountterm) | private |  | system-info | inferred | Returns the account term. |
 | [`getLoginHistory`](#getloginhistory) | private |  | system-info | inferred | Returns the login history. |
 | [`getLoginID`](#getloginid) | private |  | system-info | inferred | Returns the login ID. |
-| [`getLoginUserData`](#getloginuserdata) | private |  | system-info | inferred | Returns the login user data. |
+| [`getLoginUserData`](#getloginuserdata) | private |  | system-info | documented | Returns the login user data. |
 | [`getOOBEData`](#getoobedata) | public |  | system-info | inferred | Returns the OOBE data. |
 | [`loginAccount`](#loginaccount) | private |  | system-info | inferred | Logs in to the account. |
 | [`loginAccountByExtDevice`](#loginaccountbyextdevice) | private |  | system-info | inferred | Logs in to the account by ext device. |
@@ -193,19 +193,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the login user data.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `serviceName` | String (observed in live traffic) |
+| `subscribe` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.accountmanager/getLoginUserData '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

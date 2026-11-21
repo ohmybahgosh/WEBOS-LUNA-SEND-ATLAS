@@ -10,7 +10,7 @@ User-context manager: tracks usage history and computes content/usage rankings (
 |---|---|---|---|---|---|
 | [`displayMonthlyReport`](#displaymonthlyreport) | private |  | misc | inferred | Handles the display monthly report. |
 | [`getCategorizedRank`](#getcategorizedrank) | public |  | misc | inferred | Returns the categorized rank. |
-| [`getHistory`](#gethistory) | public |  | misc | inferred | Returns the history. |
+| [`getHistory`](#gethistory) | public |  | misc | documented | Returns the history. |
 | [`getHistoryFromServer`](#gethistoryfromserver) | public |  | misc | inferred | Returns the history from server. |
 | [`getModeledRank`](#getmodeledrank) | public |  | misc | inferred | Returns the modeled rank. |
 | [`getRank`](#getrank) | public |  | misc | inferred | Returns the rank. |
@@ -72,19 +72,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the history.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `eventId` | String (observed in live traffic) |
+| `limit` | Integer (observed in live traffic) |
+| `fromDate` | Integer (observed in live traffic) |
+| `eventType` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.usercontextmanager/getHistory '{}'
 ```
 
-> ACG groups: usercontextmanager.internal, public, all.
+> ACG groups: usercontextmanager.internal, public, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

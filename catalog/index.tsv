@@ -376,7 +376,7 @@ com.palm.preferences	appProperties/getAllAppProperties	luna://com.palm.preferenc
 com.palm.preferences	appProperties/getAllAppPropertiesObj	luna://com.palm.preferences/appProperties/getAllAppPropertiesObj	private	0	0	settings	Returns the all app properties obj (app properties)	inferred
 com.palm.preferences	appProperties/getAppKeys	luna://com.palm.preferences/appProperties/getAppKeys	private	0	0	settings	Returns the app keys (app properties)	inferred
 com.palm.preferences	appProperties/getAppKeysObj	luna://com.palm.preferences/appProperties/getAppKeysObj	private	0	0	settings	Returns the app keys obj (app properties)	inferred
-com.palm.preferences	appProperties/getAppProperty	luna://com.palm.preferences/appProperties/getAppProperty	private	0	0	settings	Returns the app property (app properties)	inferred
+com.palm.preferences	appProperties/getAppProperty	luna://com.palm.preferences/appProperties/getAppProperty	private	0	0	settings	Returns the app property (app properties)	documented
 com.palm.preferences	appProperties/removeAppProperty	luna://com.palm.preferences/appProperties/removeAppProperty	private	1	0	settings	Removes the app property (app properties)	inferred
 com.palm.preferences	appProperties/setAppProperty	luna://com.palm.preferences/appProperties/setAppProperty	private	0	0	settings	Sets the app property (app properties)	inferred
 com.palm.preferences	systemProperties/Get	luna://com.palm.preferences/systemProperties/Get	public	0	0	settings	Returns the preferences (system properties)	inferred
@@ -539,12 +539,12 @@ com.palm.webappmanager	clearBrowsingData	luna://com.palm.webappmanager/clearBrow
 com.palm.webappmanager	closeAllApps	luna://com.palm.webappmanager/closeAllApps	private	0	0	apps	Closes the all apps.	inferred
 com.palm.webappmanager	closeByProcessId	luna://com.palm.webappmanager/closeByProcessId	private	0	0	apps	Closes the by process ID.	inferred
 com.palm.webappmanager	deliverPushMessage	luna://com.palm.webappmanager/deliverPushMessage	private	0	0	apps	Handles the deliver push message.	inferred
-com.palm.webappmanager	discardCodeCache	luna://com.palm.webappmanager/discardCodeCache	private	0	0	apps	Handles the discard code cache.	inferred
+com.palm.webappmanager	discardCodeCache	luna://com.palm.webappmanager/discardCodeCache	private	0	0	apps	Handles the discard code cache.	documented
 com.palm.webappmanager	fireNotificationEvent	luna://com.palm.webappmanager/fireNotificationEvent	private	0	0	notifications	Handles the fire notification event.	inferred
 com.palm.webappmanager	getMemoryStatus	luna://com.palm.webappmanager/getMemoryStatus	private	0	0	apps	Returns the memory status.	inferred
 com.palm.webappmanager	getWebProcessSize	luna://com.palm.webappmanager/getWebProcessSize	private	0	0	apps	Returns the web process size.	inferred
-com.palm.webappmanager	killApp	luna://com.palm.webappmanager/killApp	private	0	0	apps	Handles the kill app.	inferred
-com.palm.webappmanager	launchApp	luna://com.palm.webappmanager/launchApp	private	0	0	apps	Launches the app.	inferred
+com.palm.webappmanager	killApp	luna://com.palm.webappmanager/killApp	private	0	0	apps	Handles the kill app.	documented
+com.palm.webappmanager	launchApp	luna://com.palm.webappmanager/launchApp	private	0	0	apps	Launches the app.	documented
 com.palm.webappmanager	launchUrl	luna://com.palm.webappmanager/launchUrl	private	0	0	apps	Launches the URL.	inferred
 com.palm.webappmanager	launchUrlChild	luna://com.palm.webappmanager/launchUrlChild	private	0	0	apps	Launches the URL child.	inferred
 com.palm.webappmanager	listRunningApps	luna://com.palm.webappmanager/listRunningApps	private	0	0	apps	Lists the running apps.	inferred
@@ -572,9 +572,9 @@ com.test.interc.service.fake	settingsservice/getSystemSettingsEmergencyInformati
 com.test.interc.service.fake	settingsservice/getSystemSettingsLocaleInfo	luna://com.test.interc.service.fake/settingsservice/getSystemSettingsLocaleInfo	public	0	0	settings	Returns the system settings locale info (settingsservice)	inferred
 com.test.interc.service.fake	settingsservice/getSystemSettingsSound	luna://com.test.interc.service.fake/settingsservice/getSystemSettingsSound	public	0	0	settings	Returns the system settings sound (settingsservice)	inferred
 com.test.interc.service.fake	subtitle/getRatingInfo	luna://com.test.interc.service.fake/subtitle/getRatingInfo	public	0	0	media	Returns the rating info (subtitle)	inferred
-com.webos.accountdb	batch	luna://com.webos.accountdb/batch	private	0	0	db	Handles the batch.	inferred
+com.webos.accountdb	batch	luna://com.webos.accountdb/batch	private	0	0	db	Handles the batch.	documented
 com.webos.accountdb	compact	luna://com.webos.accountdb/compact	private	0	0	db	Handles the compact.	inferred
-com.webos.accountdb	del	luna://com.webos.accountdb/del	private	0	0	db	Handles the del.	inferred
+com.webos.accountdb	del	luna://com.webos.accountdb/del	private	0	0	db	Handles the del.	documented
 com.webos.accountdb	deleteWorkSpace	luna://com.webos.accountdb/deleteWorkSpace	private	1	0	db	Deletes the work space.	inferred
 com.webos.accountdb	delKind	luna://com.webos.accountdb/delKind	private	0	0	db	Handles the del kind.	inferred
 com.webos.accountdb	dump	luna://com.webos.accountdb/dump	private	0	0	db	Dumps the accountdb.	inferred
@@ -593,7 +593,7 @@ com.webos.accountdb	internal/spaceCheck	luna://com.webos.accountdb/internal/spac
 com.webos.accountdb	merge	luna://com.webos.accountdb/merge	private	0	0	db	Merges the accountdb.	inferred
 com.webos.accountdb	mergePut	luna://com.webos.accountdb/mergePut	private	0	0	db	Merges the put.	inferred
 com.webos.accountdb	purge	luna://com.webos.accountdb/purge	private	0	0	db	Handles the purge.	inferred
-com.webos.accountdb	put	luna://com.webos.accountdb/put	private	0	0	db	Writes the accountdb.	inferred
+com.webos.accountdb	put	luna://com.webos.accountdb/put	private	0	0	db	Writes the accountdb.	documented
 com.webos.accountdb	putKind	luna://com.webos.accountdb/putKind	private	0	0	db	Writes the kind.	inferred
 com.webos.accountdb	putPermissions	luna://com.webos.accountdb/putPermissions	private	0	0	db	Writes the permissions.	inferred
 com.webos.accountdb	resetWorkSpaceData	luna://com.webos.accountdb/resetWorkSpaceData	private	1	0	db	Resets the work space data.	inferred
@@ -706,7 +706,7 @@ com.webos.applicationManager	notifySplashTimeout	luna://com.webos.applicationMan
 com.webos.applicationManager	onLaunch	luna://com.webos.applicationManager/onLaunch	private	0	0	apps	Event handler: fires on the launch.	inferred
 com.webos.applicationManager	open	luna://com.webos.applicationManager/open	ssap	0	0	apps	Open an app by id (SSAP)	documented
 com.webos.applicationManager	pause	luna://com.webos.applicationManager/pause	private	0	0	apps	Pauses the application manager.	inferred
-com.webos.applicationManager	registerApp	luna://com.webos.applicationManager/registerApp	public	0	0	apps	Registers the app.	inferred
+com.webos.applicationManager	registerApp	luna://com.webos.applicationManager/registerApp	public	0	0	apps	Registers the app.	documented
 com.webos.applicationManager	registerNativeApp	luna://com.webos.applicationManager/registerNativeApp	public	0	0	apps	Registers the native app.	inferred
 com.webos.applicationManager	registerVerbsForRedirect	luna://com.webos.applicationManager/registerVerbsForRedirect	private	0	0	apps	Registers the verbs for redirect.	inferred
 com.webos.applicationManager	registerVerbsForResource	luna://com.webos.applicationManager/registerVerbsForResource	private	0	0	apps	Registers the verbs for resource.	inferred
@@ -959,7 +959,7 @@ com.webos.media	bufferingStart	luna://com.webos.media/bufferingStart	unknown	0	0
 com.webos.media	bufferRange	luna://com.webos.media/bufferRange	unknown	0	0	media	Indicates the buffering range of the particular media content. It is raised multiple times when specific media is loaded.	documented
 com.webos.media	changeResolution	luna://com.webos.media/changeResolution	public	0	0	media	Changes the resolution.	inferred
 com.webos.media	closeAllConnections	luna://com.webos.media/closeAllConnections	private	0	0	media	Closes the all connections.	inferred
-com.webos.media	closeMediaPipeline	luna://com.webos.media/closeMediaPipeline	private	0	0	media	Closes the media pipeline.	inferred
+com.webos.media	closeMediaPipeline	luna://com.webos.media/closeMediaPipeline	private	0	0	media	Closes the media pipeline.	documented
 com.webos.media	contentReady	luna://com.webos.media/contentReady	unknown	0	0	media	Registered in webOS OSE sysbus api.json (ACG group media); name only	documented
 com.webos.media	currentTime	luna://com.webos.media/currentTime	unknown	0	0	media	The currentTime event is raised multiple times when a specific media is playing. It indicates the progress of the media being played and provides the current ti	documented
 com.webos.media	detached	luna://com.webos.media/detached	unknown	0	0	media	The detached event is raised when a specific media has been detached from the client by another client attaching to the corresponding pipeline. The detached eve	documented
@@ -991,7 +991,7 @@ com.webos.media	notifyBackground	luna://com.webos.media/notifyBackground	public	
 com.webos.media	notifyDelay	luna://com.webos.media/notifyDelay	private	0	0	media	Notifies of the delay.	inferred
 com.webos.media	notifyFocus	luna://com.webos.media/notifyFocus	public	0	0	media	Notifies of the focus.	inferred
 com.webos.media	notifyForeground	luna://com.webos.media/notifyForeground	public	0	0	media	Marks a pipeline as foreground. This API is called when the media object in question is un-carded and made visible. Note: Foreground pipeline video content is c	documented
-com.webos.media	notifyMultiviewControlMode	luna://com.webos.media/notifyMultiviewControlMode	public	0	0	media	Notifies of the multiview control mode.	inferred
+com.webos.media	notifyMultiviewControlMode	luna://com.webos.media/notifyMultiviewControlMode	public	0	0	media	Notifies of the multiview control mode.	documented
 com.webos.media	notifyPipelineStatus	luna://com.webos.media/notifyPipelineStatus	public	0	0	media	Notifies the playback status of media pipelines.	documented
 com.webos.media	option	luna://com.webos.media/option	unknown	0	0	media	Provides parameters for pipeline's Information.	documented
 com.webos.media	pause	luna://com.webos.media/pause	public	0	0	media	Requests the media server to pause the media object.	documented
@@ -1021,10 +1021,10 @@ com.webos.media	seekDone	luna://com.webos.media/seekDone	unknown	0	0	media	The s
 com.webos.media	selectTrack	luna://com.webos.media/selectTrack	public	0	0	media	Selects an audio or subtitle track of an open pipeline	documented
 com.webos.media	selectTrackByPreference	luna://com.webos.media/selectTrackByPreference	public	0	0	media	Selects the track by preference.	inferred
 com.webos.media	selectTrackByPreferencePayload	luna://com.webos.media/selectTrackByPreferencePayload	public	0	0	media	Selects the track by preference payload.	inferred
-com.webos.media	setAppId	luna://com.webos.media/setAppId	public	0	0	media	Sets the app ID.	inferred
+com.webos.media	setAppId	luna://com.webos.media/setAppId	public	0	0	media	Sets the app ID.	documented
 com.webos.media	setAppWindowType	luna://com.webos.media/setAppWindowType	public	0	0	media	Sets the app window type.	inferred
 com.webos.media	setAudioDualMono	luna://com.webos.media/setAudioDualMono	public	0	0	audio	Sets the audio dual mono.	inferred
-com.webos.media	setAudioMute	luna://com.webos.media/setAudioMute	public	0	0	audio	Sets the audio mute.	inferred
+com.webos.media	setAudioMute	luna://com.webos.media/setAudioMute	public	0	0	audio	Sets the audio mute.	documented
 com.webos.media	setAudioStreamPitch	luna://com.webos.media/setAudioStreamPitch	public	0	0	audio	Sets the audio stream pitch.	inferred
 com.webos.media	setClearKey	luna://com.webos.media/setClearKey	public	0	0	media	Sets the clear key.	inferred
 com.webos.media	setDebugLevel	luna://com.webos.media/setDebugLevel	private	0	0	media	Sets the debug level.	inferred
@@ -1041,13 +1041,13 @@ com.webos.media	setMediaStopTime	luna://com.webos.media/setMediaStopTime	public	
 com.webos.media	setMediaSynchronizerControlTimestamp	luna://com.webos.media/setMediaSynchronizerControlTimestamp	public	0	0	media	Sets the media synchronizer control timestamp.	inferred
 com.webos.media	setMediaSynchronizerOptions	luna://com.webos.media/setMediaSynchronizerOptions	public	0	0	media	Sets the media synchronizer options.	inferred
 com.webos.media	setMpeghAudioConfig	luna://com.webos.media/setMpeghAudioConfig	public	0	0	audio	Sets the mpegh audio config.	inferred
-com.webos.media	setOwnerPipeline	luna://com.webos.media/setOwnerPipeline	public	0	0	media	Sets the owner pipeline.	inferred
+com.webos.media	setOwnerPipeline	luna://com.webos.media/setOwnerPipeline	public	0	0	media	Sets the owner pipeline.	documented
 com.webos.media	setPipelineDebugState	luna://com.webos.media/setPipelineDebugState	private	0	0	media	Sets the pipeline debug state.	inferred
 com.webos.media	setPlayRate	luna://com.webos.media/setPlayRate	public	0	0	media	Sets the pipeline media play rate.	documented
 com.webos.media	setPriorityLevel	luna://com.webos.media/setPriorityLevel	public	0	0	media	Sets the priority level.	inferred
 com.webos.media	setProperty	luna://com.webos.media/setProperty	public	0	0	media	Sets the property.	inferred
 com.webos.media	setPurpose	luna://com.webos.media/setPurpose	public	0	0	media	Sets the purpose.	inferred
-com.webos.media	setResourcePolicyExtraInfo	luna://com.webos.media/setResourcePolicyExtraInfo	public	0	0	media	Sets the resource policy extra info.	inferred
+com.webos.media	setResourcePolicyExtraInfo	luna://com.webos.media/setResourcePolicyExtraInfo	public	0	0	media	Sets the resource policy extra info.	documented
 com.webos.media	setSink	luna://com.webos.media/setSink	public	0	0	media	Sets the sink.	inferred
 com.webos.media	setSlave	luna://com.webos.media/setSlave	public	0	0	media	Sets the slave.	inferred
 com.webos.media	setSlaveClock	luna://com.webos.media/setSlaveClock	public	0	0	media	Sets the slave clock.	inferred
@@ -1095,10 +1095,10 @@ com.webos.media	takeSnapshot	luna://com.webos.media/takeSnapshot	private	0	0	med
 com.webos.media	testPipelineEvent	luna://com.webos.media/testPipelineEvent	private	0	0	media	Tests the pipeline event.	inferred
 com.webos.media	trackAcquireResultInfo	luna://com.webos.media/trackAcquireResultInfo	private	0	0	media	Handles the track acquire result info.	inferred
 com.webos.media	trackAppProcesses	luna://com.webos.media/trackAppProcesses	public	0	1	media	Subscribes to messages containing the mapping of application ID (appID) and pipeline process ID (PID), i.e. it returns information about which application each 	documented
-com.webos.media	trackAppStatus	luna://com.webos.media/trackAppStatus	private	0	0	media	Handles the track app status.	inferred
+com.webos.media	trackAppStatus	luna://com.webos.media/trackAppStatus	private	0	0	media	Handles the track app status.	documented
 com.webos.media	trackPipelineInfo	luna://com.webos.media/trackPipelineInfo	public	0	0	media	Handles the track pipeline info.	inferred
 com.webos.media	trackPolicyActionInfo	luna://com.webos.media/trackPolicyActionInfo	private	0	0	media	Handles the track policy action info.	inferred
-com.webos.media	trackResourcesStatus	luna://com.webos.media/trackResourcesStatus	private	0	0	media	Handles the track resources status.	inferred
+com.webos.media	trackResourcesStatus	luna://com.webos.media/trackResourcesStatus	private	0	0	media	Handles the track resources status.	documented
 com.webos.media	tryAcquire	luna://com.webos.media/tryAcquire	public	0	0	media	Tries to acquire resources from mediaserver. Note: This API will not issue policyAction to other pipelines in order to force them to release resources. If there	documented
 com.webos.media	unload	luna://com.webos.media/unload	public	0	0	media	Unloads the pipeline and releases all AV resources.	documented
 com.webos.media	unloadCompleted	luna://com.webos.media/unloadCompleted	unknown	0	0	media	The unloadCompleted event is raised when a specific media pipeline has been successfully unloaded.	documented
@@ -1154,14 +1154,14 @@ com.webos.mediadb	watch	luna://com.webos.mediadb/watch	public	0	1	db	Watches for
 com.webos.memorymanager	getCloseAppId	luna://com.webos.memorymanager/getCloseAppId	private	0	0	misc	Returns the close app ID.	inferred
 com.webos.memorymanager	getConfigs	luna://com.webos.memorymanager/getConfigs	private	0	0	settings	Returns the configs.	inferred
 com.webos.memorymanager	getCurrentMemState	luna://com.webos.memorymanager/getCurrentMemState	private	0	0	misc	Returns the current mem state.	inferred
-com.webos.memorymanager	getCustomThreshold	luna://com.webos.memorymanager/getCustomThreshold	private	0	0	misc	Returns the custom threshold.	inferred
+com.webos.memorymanager	getCustomThreshold	luna://com.webos.memorymanager/getCustomThreshold	private	0	0	misc	Returns the custom threshold.	documented
 com.webos.memorymanager	getEFS	luna://com.webos.memorymanager/getEFS	private	0	0	misc	Returns the EFS.	inferred
 com.webos.memorymanager	getGroupInfo	luna://com.webos.memorymanager/getGroupInfo	private	0	0	misc	Returns the group info.	inferred
 com.webos.memorymanager	getPolicy	luna://com.webos.memorymanager/getPolicy	private	0	0	misc	Returns the policy.	inferred
 com.webos.memorymanager	getUnitList	luna://com.webos.memorymanager/getUnitList	private	0	0	misc	Returns the unit list.	inferred
 com.webos.memorymanager	sendLowMemPopupTest	luna://com.webos.memorymanager/sendLowMemPopupTest	private	0	0	misc	Sends the low mem popup test.	inferred
 com.webos.memorymanager	setMriHelper	luna://com.webos.memorymanager/setMriHelper	private	0	0	misc	Sets the mri helper.	inferred
-com.webos.memorymanager	setRequiredMemory	luna://com.webos.memorymanager/setRequiredMemory	private	0	0	misc	Sets the required memory.	inferred
+com.webos.memorymanager	setRequiredMemory	luna://com.webos.memorymanager/setRequiredMemory	private	0	0	misc	Sets the required memory.	documented
 com.webos.memorymanager	startMemNotifier	luna://com.webos.memorymanager/startMemNotifier	private	0	0	misc	Starts the mem notifier.	inferred
 com.webos.notification	$activity	luna://com.webos.notification/$activity	unknown	0	0	notifications	Contains detailed information of an activity which is fired by the Actvity Manager . This object is returned from the Activity Manager. For more details, see co	documented
 com.webos.notification	action	luna://com.webos.notification/action	unknown	0	0	notifications	Describes the action parameter for the toast.	documented
@@ -1288,7 +1288,7 @@ com.webos.service.accountmanager	getAccountData	luna://com.webos.service.account
 com.webos.service.accountmanager	getAccountTerm	luna://com.webos.service.accountmanager/getAccountTerm	private	0	0	system-info	Returns the account term.	inferred
 com.webos.service.accountmanager	getLoginHistory	luna://com.webos.service.accountmanager/getLoginHistory	private	0	0	system-info	Returns the login history.	inferred
 com.webos.service.accountmanager	getLoginID	luna://com.webos.service.accountmanager/getLoginID	private	0	0	system-info	Returns the login ID.	inferred
-com.webos.service.accountmanager	getLoginUserData	luna://com.webos.service.accountmanager/getLoginUserData	private	0	0	system-info	Returns the login user data.	inferred
+com.webos.service.accountmanager	getLoginUserData	luna://com.webos.service.accountmanager/getLoginUserData	private	0	0	system-info	Returns the login user data.	documented
 com.webos.service.accountmanager	getOOBEData	luna://com.webos.service.accountmanager/getOOBEData	public	0	0	system-info	Returns the OOBE data.	inferred
 com.webos.service.accountmanager	loginAccount	luna://com.webos.service.accountmanager/loginAccount	private	0	0	system-info	Logs in to the account.	inferred
 com.webos.service.accountmanager	loginAccountByExtDevice	luna://com.webos.service.accountmanager/loginAccountByExtDevice	private	0	0	system-info	Logs in to the account by ext device.	inferred
@@ -1365,7 +1365,7 @@ com.webos.service.admanager	eulaStatus	luna://com.webos.service.admanager/eulaSt
 com.webos.service.admanager	getAdid	luna://com.webos.service.admanager/getAdid	public	0	0	apps	Returns the adid.	inferred
 com.webos.service.admanager	getAdRequestInfo	luna://com.webos.service.admanager/getAdRequestInfo	public	0	0	apps	Returns the ad request info.	inferred
 com.webos.service.admanager	inactivateCookies	luna://com.webos.service.admanager/inactivateCookies	private	0	0	apps	Handles the inactivate cookies.	inferred
-com.webos.service.admanager	launchCMPApp	luna://com.webos.service.admanager/launchCMPApp	private	0	0	apps	Launches the CMP app.	inferred
+com.webos.service.admanager	launchCMPApp	luna://com.webos.service.admanager/launchCMPApp	private	0	0	apps	Launches the CMP app.	documented
 com.webos.service.admanager	reqNormalLog	luna://com.webos.service.admanager/reqNormalLog	public	0	0	apps	Handles the req normal log.	inferred
 com.webos.service.admanager	requestAssetClickInfo	luna://com.webos.service.admanager/requestAssetClickInfo	public	0	0	apps	Requests the asset click info.	inferred
 com.webos.service.admanager	requestBannerInfo	luna://com.webos.service.admanager/requestBannerInfo	public	0	0	apps	Requests the banner info.	inferred
@@ -1597,7 +1597,7 @@ com.webos.service.arccontroller	getEARCDelay	luna://com.webos.service.arccontrol
 com.webos.service.arccontroller	setARCState	luna://com.webos.service.arccontroller/setARCState	public	0	0	misc	Sets the ARC state.	inferred
 com.webos.service.asc	getAdvertisingStatus	luna://com.webos.service.asc/getAdvertisingStatus	public	0	0	misc	Returns the advertising status.	inferred
 com.webos.service.asc	readBleDevices	luna://com.webos.service.asc/readBleDevices	public	0	0	db	Reads the ble devices.	inferred
-com.webos.service.asc	registerDevice	luna://com.webos.service.asc/registerDevice	public	0	0	misc	Registers the device.	inferred
+com.webos.service.asc	registerDevice	luna://com.webos.service.asc/registerDevice	public	0	0	misc	Registers the device.	documented
 com.webos.service.asc	resetWoBLE	luna://com.webos.service.asc/resetWoBLE	public	1	0	misc	Resets the wo BLE.	inferred
 com.webos.service.asc	startAdvertising	luna://com.webos.service.asc/startAdvertising	public	0	0	misc	Starts the advertising.	inferred
 com.webos.service.asc	stopAdvertising	luna://com.webos.service.asc/stopAdvertising	public	0	0	misc	Stops the advertising.	inferred
@@ -1620,13 +1620,13 @@ com.webos.service.attachedstoragemanager	getProperties	luna://com.webos.service.
 com.webos.service.attachedstoragemanager	listContentsByCamera	luna://com.webos.service.attachedstoragemanager/listContentsByCamera	private	0	0	storage	Lists the contents by camera.	inferred
 com.webos.service.attachedstoragemanager	listDevices	luna://com.webos.service.attachedstoragemanager/listDevices	ssap	0	0	storage	List attached storage devices	documented
 com.webos.service.attachedstoragemanager	listDevices2	luna://com.webos.service.attachedstoragemanager/listDevices2	private	0	0	storage	Lists the devices 2.	inferred
-com.webos.service.attachedstoragemanager	listFolderContents	luna://com.webos.service.attachedstoragemanager/listFolderContents	private	0	0	storage	Lists the folder contents.	inferred
+com.webos.service.attachedstoragemanager	listFolderContents	luna://com.webos.service.attachedstoragemanager/listFolderContents	private	0	0	storage	Lists the folder contents.	documented
 com.webos.service.attachedstoragemanager	move	luna://com.webos.service.attachedstoragemanager/move	private	0	0	storage	Moves the attachedstoragemanager.	inferred
 com.webos.service.attachedstoragemanager	refreshDeviceList	luna://com.webos.service.attachedstoragemanager/refreshDeviceList	private	0	0	storage	Refreshes the device list.	inferred
-com.webos.service.attachedstoragemanager	registerDeviceStatus	luna://com.webos.service.attachedstoragemanager/registerDeviceStatus	private	0	0	storage	Registers the device status.	inferred
+com.webos.service.attachedstoragemanager	registerDeviceStatus	luna://com.webos.service.attachedstoragemanager/registerDeviceStatus	private	0	0	storage	Registers the device status.	documented
 com.webos.service.attachedstoragemanager	responseDeviceStatus	luna://com.webos.service.attachedstoragemanager/responseDeviceStatus	private	0	0	storage	Handles the response device status.	inferred
 com.webos.service.attachedstoragemanager	triggeredActivity	luna://com.webos.service.attachedstoragemanager/triggeredActivity	private	0	0	storage	Handles the triggered activity.	inferred
-com.webos.service.attachedstoragemanager	unregisterDeviceStatus	luna://com.webos.service.attachedstoragemanager/unregisterDeviceStatus	private	0	0	storage	Unregisters the device status.	inferred
+com.webos.service.attachedstoragemanager	unregisterDeviceStatus	luna://com.webos.service.attachedstoragemanager/unregisterDeviceStatus	private	0	0	storage	Unregisters the device status.	documented
 com.webos.service.audio	alarm/getAlarmOn	luna://com.webos.service.audio/alarm/getAlarmOn	private	0	0	audio	Returns the alarm on (alarm)	inferred
 com.webos.service.audio	alarm/getVolume	luna://com.webos.service.audio/alarm/getVolume	private	0	0	audio	Returns the volume (alarm)	inferred
 com.webos.service.audio	alarm/offsetVolume	luna://com.webos.service.audio/alarm/offsetVolume	private	0	0	audio	Handles the offset volume (alarm)	inferred
@@ -1794,7 +1794,7 @@ com.webos.service.audio	tv/getExtDeviceFwVersion	luna://com.webos.service.audio/
 com.webos.service.audio	tv/getGainAsInput	luna://com.webos.service.audio/tv/getGainAsInput	private	0	0	audio	Returns the gain as input (TV)	inferred
 com.webos.service.audio	tv/getHeadphoneStatus	luna://com.webos.service.audio/tv/getHeadphoneStatus	public	0	0	audio	Returns the headphone status (TV)	inferred
 com.webos.service.audio	tv/getSoundCardsState	luna://com.webos.service.audio/tv/getSoundCardsState	private	0	0	audio	Returns the sound cards state (TV)	inferred
-com.webos.service.audio	tv/mixDigitalSoundOutput	luna://com.webos.service.audio/tv/mixDigitalSoundOutput	public	0	0	audio	Handles the mix digital sound output (TV)	inferred
+com.webos.service.audio	tv/mixDigitalSoundOutput	luna://com.webos.service.audio/tv/mixDigitalSoundOutput	public	0	0	audio	Handles the mix digital sound output (TV)	documented
 com.webos.service.audio	tv/playOnPowerState	luna://com.webos.service.audio/tv/playOnPowerState	public	0	0	audio	Plays the on power state (TV)	inferred
 com.webos.service.audio	tv/readI2cDataFromAmplifier	luna://com.webos.service.audio/tv/readI2cDataFromAmplifier	private	0	0	audio	Reads the i 2 c data from amplifier (TV)	inferred
 com.webos.service.audio	tv/resetSoundSettings	luna://com.webos.service.audio/tv/resetSoundSettings	public	1	0	audio	Resets the sound settings (TV)	inferred
@@ -1802,7 +1802,7 @@ com.webos.service.audio	tv/setAmplifierState	luna://com.webos.service.audio/tv/s
 com.webos.service.audio	tv/setARCDeviceInfo	luna://com.webos.service.audio/tv/setARCDeviceInfo	private	0	0	audio	Sets the ARC device info (TV)	inferred
 com.webos.service.audio	tv/setAudioEffectState	luna://com.webos.service.audio/tv/setAudioEffectState	private	0	0	audio	Sets the audio effect state (TV)	inferred
 com.webos.service.audio	tv/setAudioVideoSync	luna://com.webos.service.audio/tv/setAudioVideoSync	public	0	0	audio	Sets the audio video sync (TV)	inferred
-com.webos.service.audio	tv/setDolbyOTTMode	luna://com.webos.service.audio/tv/setDolbyOTTMode	public	0	0	audio	Sets the dolby OTT mode (TV)	inferred
+com.webos.service.audio	tv/setDolbyOTTMode	luna://com.webos.service.audio/tv/setDolbyOTTMode	public	0	0	audio	Sets the dolby OTT mode (TV)	documented
 com.webos.service.audio	tv/setDolbyVisionPopup	luna://com.webos.service.audio/tv/setDolbyVisionPopup	private	0	0	audio	Sets the dolby vision popup (TV)	inferred
 com.webos.service.audio	tv/setEqualizerStatus	luna://com.webos.service.audio/tv/setEqualizerStatus	public	0	0	audio	Sets the equalizer status (TV)	inferred
 com.webos.service.audio	tv/setInputVolume	luna://com.webos.service.audio/tv/setInputVolume	private	0	0	audio	Sets the input volume (TV)	inferred
@@ -1812,11 +1812,11 @@ com.webos.service.audio	tv/setOffsetDelay	luna://com.webos.service.audio/tv/setO
 com.webos.service.audio	tv/setOutputMute	luna://com.webos.service.audio/tv/setOutputMute	private	0	0	audio	Sets the output mute (TV)	inferred
 com.webos.service.audio	tv/setPopupDisplayStatus	luna://com.webos.service.audio/tv/setPopupDisplayStatus	private	0	0	audio	Sets the popup display status (TV)	inferred
 com.webos.service.audio	tv/setPSWProperties	luna://com.webos.service.audio/tv/setPSWProperties	private	0	0	audio	Sets the PSW properties (TV)	inferred
-com.webos.service.audio	tv/setQualityAttribute	luna://com.webos.service.audio/tv/setQualityAttribute	public	0	0	audio	Sets the quality attribute (TV)	inferred
+com.webos.service.audio	tv/setQualityAttribute	luna://com.webos.service.audio/tv/setQualityAttribute	public	0	0	audio	Sets the quality attribute (TV)	documented
 com.webos.service.audio	tv/setSCMS	luna://com.webos.service.audio/tv/setSCMS	public	0	0	audio	Sets the SCMS (TV)	inferred
 com.webos.service.audio	tv/setSoundEngineStatus	luna://com.webos.service.audio/tv/setSoundEngineStatus	public	0	0	audio	Sets the sound engine status (TV)	inferred
 com.webos.service.audio	tv/setSoundOutputMode	luna://com.webos.service.audio/tv/setSoundOutputMode	public	0	0	audio	Sets the sound output mode (TV)	inferred
-com.webos.service.audio	tv/setVideoLatencyTime	luna://com.webos.service.audio/tv/setVideoLatencyTime	private	0	0	audio	Sets the video latency time (TV)	inferred
+com.webos.service.audio	tv/setVideoLatencyTime	luna://com.webos.service.audio/tv/setVideoLatencyTime	private	0	0	audio	Sets the video latency time (TV)	documented
 com.webos.service.audio	tv/switchMicrophone	luna://com.webos.service.audio/tv/switchMicrophone	private	0	0	audio	Switches the microphone (TV)	inferred
 com.webos.service.audio	tv/updateExtFw	luna://com.webos.service.audio/tv/updateExtFw	private	0	0	audio	Updates the ext firmware (TV)	inferred
 com.webos.service.audio	tv/writeI2cDataToAmplifier	luna://com.webos.service.audio/tv/writeI2cDataToAmplifier	private	0	0	audio	Writes the i 2 c data to amplifier (TV)	inferred
@@ -1827,10 +1827,10 @@ com.webos.service.audio	UMI/disconnect	luna://com.webos.service.audio/UMI/discon
 com.webos.service.audio	UMI/getInputVolume	luna://com.webos.service.audio/UMI/getInputVolume	public	0	0	audio	Returns the input volume (UMI)	inferred
 com.webos.service.audio	UMI/getStatus	luna://com.webos.service.audio/UMI/getStatus	public	0	0	audio	Shows the connection status of audio resources.	documented
 com.webos.service.audio	UMI/mute	luna://com.webos.service.audio/UMI/mute	public	0	0	audio	Mutes or unmutes the input volume of the requested connection. Note: This method is added for future-use. It does not have any impact on the audio setting.	documented
-com.webos.service.audio	UMI/register	luna://com.webos.service.audio/UMI/register	public	0	0	audio	Registers the audio (UMI)	inferred
+com.webos.service.audio	UMI/register	luna://com.webos.service.audio/UMI/register	public	0	0	audio	Registers the audio (UMI)	documented
 com.webos.service.audio	UMI/setInputDownMix	luna://com.webos.service.audio/UMI/setInputDownMix	private	0	0	audio	Sets the input down mix (UMI)	inferred
 com.webos.service.audio	UMI/setInputVolume	luna://com.webos.service.audio/UMI/setInputVolume	public	0	0	audio	Sets the input volume (UMI)	inferred
-com.webos.service.audio	UMI/unregister	luna://com.webos.service.audio/UMI/unregister	public	0	0	audio	Unregisters the audio (UMI)	inferred
+com.webos.service.audio	UMI/unregister	luna://com.webos.service.audio/UMI/unregister	public	0	0	audio	Unregisters the audio (UMI)	documented
 com.webos.service.audio	unregisterTrack	luna://com.webos.service.audio/unregisterTrack	public	0	0	audio	Unregisters a playback by an application/service.	documented
 com.webos.service.audio	vibrate/get	luna://com.webos.service.audio/vibrate/get	private	0	0	audio	Returns the audio (vibrate)	inferred
 com.webos.service.audio	vibrate/set	luna://com.webos.service.audio/vibrate/set	private	0	0	audio	Sets the audio (vibrate)	inferred
@@ -1875,17 +1875,17 @@ com.webos.service.audiooutput	audio/disconnect	luna://com.webos.service.audioout
 com.webos.service.audiooutput	audio/getHeadphoneStatus	luna://com.webos.service.audiooutput/audio/getHeadphoneStatus	private	0	0	audio	Returns the headphone status (audio)	inferred
 com.webos.service.audiooutput	audio/getStatus	luna://com.webos.service.audiooutput/audio/getStatus	public	0	0	audio	Lists the information of all the connected audio source and sinks.	documented
 com.webos.service.audiooutput	audio/mute	luna://com.webos.service.audiooutput/audio/mute	public	0	0	audio	Mutes or unmutes the connected audio source.	documented
-com.webos.service.audiooutput	audio/removePipelineInfo	luna://com.webos.service.audiooutput/audio/removePipelineInfo	private	1	0	audio	Removes the pipeline info (audio)	inferred
-com.webos.service.audiooutput	audio/setInputVolume	luna://com.webos.service.audiooutput/audio/setInputVolume	private	0	0	audio	Sets the input volume (audio)	inferred
+com.webos.service.audiooutput	audio/removePipelineInfo	luna://com.webos.service.audiooutput/audio/removePipelineInfo	private	1	0	audio	Removes the pipeline info (audio)	documented
+com.webos.service.audiooutput	audio/setInputVolume	luna://com.webos.service.audiooutput/audio/setInputVolume	private	0	0	audio	Sets the input volume (audio)	documented
 com.webos.service.audiooutput	audio/setSoundOut	luna://com.webos.service.audiooutput/audio/setSoundOut	public	0	0	audio	Sets the audio output device to which the audio must be routed.	documented
 com.webos.service.audiooutput	audio/volume/down	luna://com.webos.service.audiooutput/audio/volume/down	public	0	0	audio	Linearly decreases, the master volume of the audio output device.	documented
 com.webos.service.audiooutput	audio/volume/getStatus	luna://com.webos.service.audiooutput/audio/volume/getStatus	public	0	0	audio	Lists the information of all available audio output devices.	documented
 com.webos.service.audiooutput	audio/volume/muteSoundOut	luna://com.webos.service.audiooutput/audio/volume/muteSoundOut	public	0	0	audio	Mutes the audio output device.	documented
 com.webos.service.audiooutput	audio/volume/set	luna://com.webos.service.audiooutput/audio/volume/set	public	0	0	audio	Sets the volume of the audio output device, to a specific numerical value.	documented
 com.webos.service.audiooutput	audio/volume/up	luna://com.webos.service.audiooutput/audio/volume/up	public	0	0	audio	Linearly increases, the master volume of the audio output device.	documented
-com.webos.service.audiooutput	quality/getSettings	luna://com.webos.service.audiooutput/quality/getSettings	private	0	0	audio	Returns the settings (quality)	inferred
-com.webos.service.audiooutput	quality/setQualityAttribute	luna://com.webos.service.audiooutput/quality/setQualityAttribute	private	0	0	audio	Sets the quality attribute (quality)	inferred
-com.webos.service.audiooutput	quality/setSettings	luna://com.webos.service.audiooutput/quality/setSettings	private	0	0	audio	Sets the settings (quality)	inferred
+com.webos.service.audiooutput	quality/getSettings	luna://com.webos.service.audiooutput/quality/getSettings	private	0	0	audio	Returns the settings (quality)	documented
+com.webos.service.audiooutput	quality/setQualityAttribute	luna://com.webos.service.audiooutput/quality/setQualityAttribute	private	0	0	audio	Sets the quality attribute (quality)	documented
+com.webos.service.audiooutput	quality/setSettings	luna://com.webos.service.audiooutput/quality/setSettings	private	0	0	audio	Sets the settings (quality)	documented
 com.webos.service.audiooutput	volumeStatus	luna://com.webos.service.audiooutput/volumeStatus	unknown	0	0	audio	Contains the information of the audio output devices.	documented
 com.webos.service.avf	activateMyZoom	luna://com.webos.service.avf/activateMyZoom	private	0	0	tv-broadcast	Activates the my zoom.	inferred
 com.webos.service.avf	cancelMyZoomRecording	luna://com.webos.service.avf/cancelMyZoomRecording	private	0	0	tv-broadcast	Cancels the my zoom recording.	inferred
@@ -1936,10 +1936,10 @@ com.webos.service.avmutemanager	getMuteStatus	luna://com.webos.service.avmuteman
 com.webos.service.avmutemanager	getRegisterDB	luna://com.webos.service.avmutemanager/getRegisterDB	public	0	0	db	Returns the register DB.	inferred
 com.webos.service.avmutemanager	listDebugRegisteredServices	luna://com.webos.service.avmutemanager/listDebugRegisteredServices	public	0	0	misc	Lists the debug registered services.	inferred
 com.webos.service.avmutemanager	listMuteStatus	luna://com.webos.service.avmutemanager/listMuteStatus	public	0	0	misc	Lists the mute status.	inferred
-com.webos.service.avmutemanager	register	luna://com.webos.service.avmutemanager/register	public	0	0	misc	Registers the avmutemanager.	inferred
-com.webos.service.avmutemanager	setAvMute	luna://com.webos.service.avmutemanager/setAvMute	public	0	0	misc	Sets the A/V mute.	inferred
-com.webos.service.avmutemanager	unregister	luna://com.webos.service.avmutemanager/unregister	public	0	0	misc	Unregisters the avmutemanager.	inferred
-com.webos.service.avmutemanager	updateAvResource	luna://com.webos.service.avmutemanager/updateAvResource	public	0	0	update	Updates the A/V resource.	inferred
+com.webos.service.avmutemanager	register	luna://com.webos.service.avmutemanager/register	public	0	0	misc	Registers the avmutemanager.	documented
+com.webos.service.avmutemanager	setAvMute	luna://com.webos.service.avmutemanager/setAvMute	public	0	0	misc	Sets the A/V mute.	documented
+com.webos.service.avmutemanager	unregister	luna://com.webos.service.avmutemanager/unregister	public	0	0	misc	Unregisters the avmutemanager.	documented
+com.webos.service.avmutemanager	updateAvResource	luna://com.webos.service.avmutemanager/updateAvResource	public	0	0	update	Updates the A/V resource.	documented
 com.webos.service.avoutput	audio/connect	luna://com.webos.service.avoutput/audio/connect	public	0	0	display	Connects audio source to audio sink. Note : In case it's already connected, will disconnect from previous sink automatically.	documented
 com.webos.service.avoutput	audio/disconnect	luna://com.webos.service.avoutput/audio/disconnect	public	0	0	display	Disconnect from audio sink. No change is done if not connected.	documented
 com.webos.service.avoutput	audio/getStatus	luna://com.webos.service.avoutput/audio/getStatus	public	0	1	display	Lists all video and audio sinks and their status.	documented
@@ -2925,7 +2925,7 @@ com.webos.service.devicereset	setResetStatus	luna://com.webos.service.devicerese
 com.webos.service.devmode	getDevMode	luna://com.webos.service.devmode/getDevMode	public	0	1	devmode	Return the current status of developer mode.	documented
 com.webos.service.devmode	getPassphrase	luna://com.webos.service.devmode/getPassphrase	public	0	0	devmode	Returns the current passphrase associated with the SSH key, which is used to connect to the device. This method is only callable by the developer mode app.	documented
 com.webos.service.devmode	setDevMode	luna://com.webos.service.devmode/setDevMode	public	0	0	devmode	Enable or disable developer mode. The device will reboot if the mode is changed.	documented
-com.webos.service.dial	heartbeat/notifyNamedSocket	luna://com.webos.service.dial/heartbeat/notifyNamedSocket	private	0	0	misc	Notifies of the named socket (heartbeat)	inferred
+com.webos.service.dial	heartbeat/notifyNamedSocket	luna://com.webos.service.dial/heartbeat/notifyNamedSocket	private	0	0	misc	Notifies of the named socket (heartbeat)	documented
 com.webos.service.dial	heartbeat/ping	luna://com.webos.service.dial/heartbeat/ping	private	0	0	misc	Pings the dial (heartbeat)	inferred
 com.webos.service.dial	info	luna://com.webos.service.dial/info	public	0	0	misc	Handles the info.	inferred
 com.webos.service.dial	quit	luna://com.webos.service.dial/quit	public	0	0	misc	Quits the dial.	inferred
@@ -3063,7 +3063,7 @@ com.webos.service.eim	cec/getCECState	luna://com.webos.service.eim/cec/getCECSta
 com.webos.service.eim	cec/notifyInterestingEvents	luna://com.webos.service.eim/cec/notifyInterestingEvents	public	0	0	input	Notifies of the interesting events (CEC)	inferred
 com.webos.service.eim	cec/registerVendorCommand	luna://com.webos.service.eim/cec/registerVendorCommand	public	0	0	input	Registers the vendor command (CEC)	inferred
 com.webos.service.eim	cec/requestVendorCommand	luna://com.webos.service.eim/cec/requestVendorCommand	public	0	0	input	Requests the vendor command (CEC)	inferred
-com.webos.service.eim	cec/requestVendorCommandWithID	luna://com.webos.service.eim/cec/requestVendorCommandWithID	public	0	0	input	Requests the vendor command with ID (CEC)	inferred
+com.webos.service.eim	cec/requestVendorCommandWithID	luna://com.webos.service.eim/cec/requestVendorCommandWithID	public	0	0	input	Requests the vendor command with ID (CEC)	documented
 com.webos.service.eim	cec/sendKeyEvent	luna://com.webos.service.eim/cec/sendKeyEvent	private	0	0	input	Sends an HDMI-CEC key event	documented
 com.webos.service.eim	cec/sendRequestAudioStatus	luna://com.webos.service.eim/cec/sendRequestAudioStatus	public	0	0	audio	Sends the request audio status (CEC)	inferred
 com.webos.service.eim	cec/sendSystemAudioModeRequest	luna://com.webos.service.eim/cec/sendSystemAudioModeRequest	public	0	0	audio	Sends the system audio mode request (CEC)	inferred
@@ -3097,7 +3097,7 @@ com.webos.service.eim	updateEdid	luna://com.webos.service.eim/updateEdid	public	
 com.webos.service.eim	updateVirtualDevice	luna://com.webos.service.eim/updateVirtualDevice	private	0	0	input	External Input Manager method (listed in webosbrew eim.yml; params undocumented there)	documented
 com.webos.service.emmcd	checkLifetime	luna://com.webos.service.emmcd/checkLifetime	public	0	0	input	Checks the lifetime.	inferred
 com.webos.service.emmcd	getMemoryUsage	luna://com.webos.service.emmcd/getMemoryUsage	public	0	0	misc	Returns the memory usage.	inferred
-com.webos.service.emmcd	getProfileInfo	luna://com.webos.service.emmcd/getProfileInfo	public	0	0	misc	Returns the profile info.	inferred
+com.webos.service.emmcd	getProfileInfo	luna://com.webos.service.emmcd/getProfileInfo	public	0	0	misc	Returns the profile info.	documented
 com.webos.service.emmcd	setEmmcPON	luna://com.webos.service.emmcd/setEmmcPON	public	0	0	misc	Sets the emmc PON.	inferred
 com.webos.service.emmcd	setProfileConfig	luna://com.webos.service.emmcd/setProfileConfig	public	0	0	settings	Sets the profile config.	inferred
 com.webos.service.eulaservice	cancelEulaDownload	luna://com.webos.service.eulaservice/cancelEulaDownload	private	0	0	misc	Cancels the eula download.	inferred
@@ -3236,7 +3236,7 @@ com.webos.service.factorymanager	getAdcCalibrationMode	luna://com.webos.service.
 com.webos.service.factorymanager	getAdcCalibrationStatus	luna://com.webos.service.factorymanager/getAdcCalibrationStatus	private	0	0	system-info	Returns the adc calibration status.	inferred
 com.webos.service.factorymanager	getEdidStatus	luna://com.webos.service.factorymanager/getEdidStatus	private	0	0	system-info	Returns the EDID status.	inferred
 com.webos.service.factorymanager	getFactoryChannelChangeParam	luna://com.webos.service.factorymanager/getFactoryChannelChangeParam	private	0	0	system-info	Returns the factory channel change param.	inferred
-com.webos.service.factorymanager	getFactoryOpt	luna://com.webos.service.factorymanager/getFactoryOpt	private	0	0	system-info	Returns the factory opt.	inferred
+com.webos.service.factorymanager	getFactoryOpt	luna://com.webos.service.factorymanager/getFactoryOpt	private	0	0	system-info	Returns the factory opt.	documented
 com.webos.service.factorymanager	getFactoryParam	luna://com.webos.service.factorymanager/getFactoryParam	private	0	0	system-info	Returns the factory param.	inferred
 com.webos.service.factorymanager	getPOnlyKeyState	luna://com.webos.service.factorymanager/getPOnlyKeyState	private	0	0	system-info	Returns the p only key state.	inferred
 com.webos.service.factorymanager	getTestPatternColor	luna://com.webos.service.factorymanager/getTestPatternColor	private	0	0	system-info	Returns the test pattern color.	inferred
@@ -3820,7 +3820,7 @@ com.webos.service.hfp	hf/terminateCall	luna://com.webos.service.hfp/hf/terminate
 com.webos.service.hidusbemul	getStatus	luna://com.webos.service.hidusbemul/getStatus	private	0	0	misc	Returns the status.	inferred
 com.webos.service.hidusbemul	pause	luna://com.webos.service.hidusbemul/pause	private	0	0	misc	Pauses the hidusbemul.	inferred
 com.webos.service.hidusbemul	resume	luna://com.webos.service.hidusbemul/resume	private	0	0	misc	Resumes the hidusbemul.	inferred
-com.webos.service.homeconnect	get	luna://com.webos.service.homeconnect/get	public	0	0	misc	Returns the homeconnect.	inferred
+com.webos.service.homeconnect	get	luna://com.webos.service.homeconnect/get	public	0	0	misc	Returns the homeconnect.	documented
 com.webos.service.homeconnect	info	luna://com.webos.service.homeconnect/info	public	0	0	misc	Handles the info.	inferred
 com.webos.service.homeconnect	quit	luna://com.webos.service.homeconnect/quit	public	0	0	misc	Quits the homeconnect.	inferred
 com.webos.service.homeconnect	relayEvent	luna://com.webos.service.homeconnect/relayEvent	public	0	0	misc	Handles the relay event.	inferred
@@ -3908,7 +3908,7 @@ com.webos.service.ics	getToastMsg	luna://com.webos.service.ics/getToastMsg	priva
 com.webos.service.ics	getUeiAppList	luna://com.webos.service.ics/getUeiAppList	private	0	0	input	Returns the uei app list.	inferred
 com.webos.service.ics	iot/getAllIoTDevices	luna://com.webos.service.ics/iot/getAllIoTDevices	private	0	0	input	Returns the all io t devices (iot)	inferred
 com.webos.service.ics	iot/getIoTBrandList	luna://com.webos.service.ics/iot/getIoTBrandList	private	0	0	input	Returns the io t brand list (iot)	inferred
-com.webos.service.ics	iot/getIoTDevice	luna://com.webos.service.ics/iot/getIoTDevice	private	0	0	input	Returns the io t device (iot)	inferred
+com.webos.service.ics	iot/getIoTDevice	luna://com.webos.service.ics/iot/getIoTDevice	private	0	0	input	Returns the io t device (iot)	documented
 com.webos.service.ics	iot/replyEventCallback	luna://com.webos.service.ics/iot/replyEventCallback	private	0	0	input	Handles the reply event callback (iot)	inferred
 com.webos.service.ics	iot/selectIoTDevice	luna://com.webos.service.ics/iot/selectIoTDevice	private	0	0	input	Selects the io t device (iot)	inferred
 com.webos.service.ics	iot/setIoTDevice	luna://com.webos.service.ics/iot/setIoTDevice	private	0	0	input	Sets the io t device (iot)	inferred
@@ -3927,7 +3927,7 @@ com.webos.service.iepg	exportChannelMap	luna://com.webos.service.iepg/exportChan
 com.webos.service.iepg	getChannelGroupList	luna://com.webos.service.iepg/getChannelGroupList	private	0	0	tv-broadcast	Returns the channel group list.	inferred
 com.webos.service.iepg	getChannelIdInfo	luna://com.webos.service.iepg/getChannelIdInfo	private	0	0	tv-broadcast	Returns the channel ID info.	inferred
 com.webos.service.iepg	getChannelInfo	luna://com.webos.service.iepg/getChannelInfo	private	0	0	tv-broadcast	Returns the channel info.	inferred
-com.webos.service.iepg	getChannelList	luna://com.webos.service.iepg/getChannelList	private	0	0	tv-broadcast	Returns the channel list.	inferred
+com.webos.service.iepg	getChannelList	luna://com.webos.service.iepg/getChannelList	private	0	0	tv-broadcast	Returns the channel list.	documented
 com.webos.service.iepg	getChannelListbySignalChId	luna://com.webos.service.iepg/getChannelListbySignalChId	private	0	0	tv-broadcast	Returns the channel listby signal channel ID.	inferred
 com.webos.service.iepg	getChannelShortcutKey	luna://com.webos.service.iepg/getChannelShortcutKey	private	0	0	tv-broadcast	Returns the channel shortcut key.	inferred
 com.webos.service.iepg	getChannelShortcutKeyList	luna://com.webos.service.iepg/getChannelShortcutKeyList	private	0	0	tv-broadcast	Returns the channel shortcut key list.	inferred
@@ -4874,7 +4874,7 @@ com.webos.service.location	satellite	luna://com.webos.service.location/satellite
 com.webos.service.location	setState	luna://com.webos.service.location/setState	public	0	0	location	Enables or disables a location service provider in the setting menu.	documented
 com.webos.service.logger	writeLog	luna://com.webos.service.logger/writeLog	private	0	0	misc	Writes the log.	inferred
 com.webos.service.lowlevelstorage	getData	luna://com.webos.service.lowlevelstorage/getData	private	0	0	storage	Reads low-level storage (factory/model DB) values by dbid and item name	documented
-com.webos.service.lowlevelstorage	setData	luna://com.webos.service.lowlevelstorage/setData	private	0	0	storage	Sets the data.	inferred
+com.webos.service.lowlevelstorage	setData	luna://com.webos.service.lowlevelstorage/setData	private	0	0	storage	Sets the data.	documented
 com.webos.service.lowlevelstorage	shutdown	luna://com.webos.service.lowlevelstorage/shutdown	private	1	0	storage	Shuts down the lowlevelstorage.	inferred
 com.webos.service.lsa	start	luna://com.webos.service.lsa/start	private	0	0	misc	Starts the lsa.	inferred
 com.webos.service.magicnum	checkApp	luna://com.webos.service.magicnum/checkApp	public	0	0	misc	Checks the app.	inferred
@@ -5116,7 +5116,7 @@ com.webos.service.mrcu	getButtonHistory	luna://com.webos.service.mrcu/getButtonH
 com.webos.service.mrcu	getConnectionStatus	luna://com.webos.service.mrcu/getConnectionStatus	private	0	0	input	Returns the connection status.	inferred
 com.webos.service.mrcu	getCursorHistory	luna://com.webos.service.mrcu/getCursorHistory	private	0	0	input	Returns the cursor history.	inferred
 com.webos.service.mrcu	getDataDelivery	luna://com.webos.service.mrcu/getDataDelivery	private	0	0	input	Returns the data delivery.	inferred
-com.webos.service.mrcu	getDeviceInfo	luna://com.webos.service.mrcu/getDeviceInfo	private	0	0	input	Returns the device info.	inferred
+com.webos.service.mrcu	getDeviceInfo	luna://com.webos.service.mrcu/getDeviceInfo	private	0	0	input	Returns the device info.	documented
 com.webos.service.mrcu	getDiagnosisItem	luna://com.webos.service.mrcu/getDiagnosisItem	private	0	0	input	Returns the diagnosis item.	inferred
 com.webos.service.mrcu	getDoingOtaStatus	luna://com.webos.service.mrcu/getDoingOtaStatus	private	0	0	input	Returns the doing ota status.	inferred
 com.webos.service.mrcu	getLongpressKeyInfo	luna://com.webos.service.mrcu/getLongpressKeyInfo	private	0	0	input	Returns the longpress key info.	inferred
@@ -5176,7 +5176,7 @@ com.webos.service.mrcu	setPairingHistoryKeyCode	luna://com.webos.service.mrcu/se
 com.webos.service.mrcu	setPosition	luna://com.webos.service.mrcu/setPosition	public	0	0	input	Sets the position.	inferred
 com.webos.service.mrcu	setSensitivity	luna://com.webos.service.mrcu/setSensitivity	public	0	0	input	Sets the sensitivity.	inferred
 com.webos.service.mrcu	setSharedMemory	luna://com.webos.service.mrcu/setSharedMemory	public	0	0	input	Sets the shared memory.	inferred
-com.webos.service.mrcu	setSleepMode	luna://com.webos.service.mrcu/setSleepMode	private	0	0	input	Sets the sleep mode.	inferred
+com.webos.service.mrcu	setSleepMode	luna://com.webos.service.mrcu/setSleepMode	private	0	0	input	Sets the sleep mode.	documented
 com.webos.service.mrcu	setSlideMode	luna://com.webos.service.mrcu/setSlideMode	public	0	0	input	Sets the slide mode.	inferred
 com.webos.service.mrcu	setWakeUpCondition	luna://com.webos.service.mrcu/setWakeUpCondition	public	0	0	input	Sets the wake up condition.	inferred
 com.webos.service.mrcu	startFirmwareUpdate	luna://com.webos.service.mrcu/startFirmwareUpdate	private	1	0	input	Starts the firmware update.	inferred
@@ -5262,19 +5262,19 @@ com.webos.service.multiviewcontroller	getMultiviewSupportOption	luna://com.webos
 com.webos.service.multiviewcontroller	getPresetList	luna://com.webos.service.multiviewcontroller/getPresetList	public	0	0	display	Returns the preset list.	inferred
 com.webos.service.multiviewcontroller	getRecentsList	luna://com.webos.service.multiviewcontroller/getRecentsList	public	0	0	display	Returns the recents list.	inferred
 com.webos.service.multiviewcontroller	getRestrictionStatus	luna://com.webos.service.multiviewcontroller/getRestrictionStatus	public	0	0	display	Returns the restriction status.	inferred
-com.webos.service.multiviewcontroller	getStatus	luna://com.webos.service.multiviewcontroller/getStatus	public	0	0	display	Returns the status.	inferred
+com.webos.service.multiviewcontroller	getStatus	luna://com.webos.service.multiviewcontroller/getStatus	public	0	0	display	Returns the status.	documented
 com.webos.service.multiviewcontroller	getSubAppList	luna://com.webos.service.multiviewcontroller/getSubAppList	public	0	0	display	Returns the sub app list.	inferred
 com.webos.service.multiviewcontroller	increaseMixAudioVolume	luna://com.webos.service.multiviewcontroller/increaseMixAudioVolume	public	0	0	audio	Increases the mix audio volume.	inferred
 com.webos.service.multiviewcontroller	launchApps	luna://com.webos.service.multiviewcontroller/launchApps	public	0	0	apps	Launches the apps.	inferred
 com.webos.service.multiviewcontroller	launchMode	luna://com.webos.service.multiviewcontroller/launchMode	public	0	0	apps	Launches the mode.	inferred
-com.webos.service.multiviewcontroller	removeClient	luna://com.webos.service.multiviewcontroller/removeClient	public	1	0	display	Removes the client.	inferred
+com.webos.service.multiviewcontroller	removeClient	luna://com.webos.service.multiviewcontroller/removeClient	public	1	0	display	Removes the client.	documented
 com.webos.service.multiviewcontroller	removePreset	luna://com.webos.service.multiviewcontroller/removePreset	public	1	0	display	Removes the preset.	inferred
 com.webos.service.multiviewcontroller	selectAudioOut	luna://com.webos.service.multiviewcontroller/selectAudioOut	public	0	0	audio	Selects the audio out.	inferred
 com.webos.service.multiviewcontroller	setAppCloseInfo	luna://com.webos.service.multiviewcontroller/setAppCloseInfo	public	0	0	display	Sets the app close info.	inferred
 com.webos.service.multiviewcontroller	setAppCoordinate	luna://com.webos.service.multiviewcontroller/setAppCoordinate	public	0	0	display	Sets the app coordinate.	inferred
-com.webos.service.multiviewcontroller	setAppPipelineStatus	luna://com.webos.service.multiviewcontroller/setAppPipelineStatus	public	0	0	display	Sets the app pipeline status.	inferred
+com.webos.service.multiviewcontroller	setAppPipelineStatus	luna://com.webos.service.multiviewcontroller/setAppPipelineStatus	public	0	0	display	Sets the app pipeline status.	documented
 com.webos.service.multiviewcontroller	setAppViewStatus	luna://com.webos.service.multiviewcontroller/setAppViewStatus	public	0	0	display	Sets the app view status.	inferred
-com.webos.service.multiviewcontroller	setInputMode	luna://com.webos.service.multiviewcontroller/setInputMode	public	0	0	display	Sets the input mode.	inferred
+com.webos.service.multiviewcontroller	setInputMode	luna://com.webos.service.multiviewcontroller/setInputMode	public	0	0	display	Sets the input mode.	documented
 com.webos.service.multiviewcontroller	setInputVolume	luna://com.webos.service.multiviewcontroller/setInputVolume	public	0	0	display	Sets the input volume.	inferred
 com.webos.service.multiviewcontroller	setMediaContentInfo	luna://com.webos.service.multiviewcontroller/setMediaContentInfo	public	0	0	media	Sets the media content info.	inferred
 com.webos.service.multiviewcontroller	setMixAudio	luna://com.webos.service.multiviewcontroller/setMixAudio	public	0	0	audio	Sets the mix audio.	inferred
@@ -5522,7 +5522,7 @@ com.webos.service.nms	setnotificationstatus	luna://com.webos.service.nms/setnoti
 com.webos.service.nms	startHandler	luna://com.webos.service.nms/startHandler	public	0	0	misc	Starts the handler.	inferred
 com.webos.service.nnproxy	picture/debug	luna://com.webos.service.nnproxy/picture/debug	private	0	0	misc	Handles the debug (picture)	inferred
 com.webos.service.nnproxy	picture/get	luna://com.webos.service.nnproxy/picture/get	private	0	0	misc	Returns the nnproxy (picture)	inferred
-com.webos.service.nnproxy	picture/set	luna://com.webos.service.nnproxy/picture/set	private	0	0	misc	Sets the nnproxy (picture)	inferred
+com.webos.service.nnproxy	picture/set	luna://com.webos.service.nnproxy/picture/set	private	0	0	misc	Sets the nnproxy (picture)	documented
 com.webos.service.nomotion	addNoMotionAndNoOperationTimer	luna://com.webos.service.nomotion/addNoMotionAndNoOperationTimer	private	0	0	input	Adds the no motion and no operation timer.	inferred
 com.webos.service.nomotion	addNoMotionTimer	luna://com.webos.service.nomotion/addNoMotionTimer	private	0	0	input	Adds the no motion timer.	inferred
 com.webos.service.nomotion	getNoMotionAndNoOperationTimerInfo	luna://com.webos.service.nomotion/getNoMotionAndNoOperationTimerInfo	private	0	0	input	Returns the no motion and no operation timer info.	inferred
@@ -5534,7 +5534,7 @@ com.webos.service.nop	addNopTimer	luna://com.webos.service.nop/addNopTimer	priva
 com.webos.service.nop	getInformation	luna://com.webos.service.nop/getInformation	private	0	0	misc	Returns the information.	inferred
 com.webos.service.nop	getTimerInfo	luna://com.webos.service.nop/getTimerInfo	private	0	0	input	Returns the timer info.	inferred
 com.webos.service.nop	notifyExpireTimer	luna://com.webos.service.nop/notifyExpireTimer	private	0	0	input	Notifies of the expire timer.	inferred
-com.webos.service.nop	removeNopTimer	luna://com.webos.service.nop/removeNopTimer	private	1	0	input	Removes the nop timer.	inferred
+com.webos.service.nop	removeNopTimer	luna://com.webos.service.nop/removeNopTimer	private	1	0	input	Removes the nop timer.	documented
 com.webos.service.nudge	deleteHistory	luna://com.webos.service.nudge/deleteHistory	private	1	0	misc	Deletes the history.	inferred
 com.webos.service.nudge	getAlarmNudgeInfo	luna://com.webos.service.nudge/getAlarmNudgeInfo	private	0	0	misc	Returns the alarm nudge info.	inferred
 com.webos.service.nudge	getNudgeInfo	luna://com.webos.service.nudge/getNudgeInfo	private	0	0	misc	Returns the nudge info.	inferred
@@ -5572,7 +5572,7 @@ com.webos.service.oledepl	isPixelRefresherCondition	luna://com.webos.service.ole
 com.webos.service.oledepl	notifyPopupClosed	luna://com.webos.service.oledepl/notifyPopupClosed	public	0	0	display	Notifies of the popup closed.	inferred
 com.webos.service.oledepl	playMusicPixelRefresher	luna://com.webos.service.oledepl/playMusicPixelRefresher	public	0	0	display	Plays the music pixel refresher.	inferred
 com.webos.service.oledepl	restoreEplCondition	luna://com.webos.service.oledepl/restoreEplCondition	public	0	0	display	Restores the epl condition.	inferred
-com.webos.service.oledepl	setEplAppInfo	luna://com.webos.service.oledepl/setEplAppInfo	public	0	0	display	Sets the epl app info.	inferred
+com.webos.service.oledepl	setEplAppInfo	luna://com.webos.service.oledepl/setEplAppInfo	public	0	0	display	Sets the epl app info.	documented
 com.webos.service.oledepl	setEplCtrl	luna://com.webos.service.oledepl/setEplCtrl	public	0	0	display	Sets the epl ctrl.	inferred
 com.webos.service.oledepl	setGlobalStressReduction	luna://com.webos.service.oledepl/setGlobalStressReduction	private	1	0	display	Toggles OLED GSR (In-Start service menu option)	documented
 com.webos.service.oledepl	setPcScreenSaverResponse	luna://com.webos.service.oledepl/setPcScreenSaverResponse	public	0	0	display	Sets the pc screen saver response.	inferred
@@ -5590,12 +5590,12 @@ com.webos.service.opappwebserver	start	luna://com.webos.service.opappwebserver/s
 com.webos.service.opappwebserver	stop	luna://com.webos.service.opappwebserver/stop	public	0	0	misc	Stops the opappwebserver.	inferred
 com.webos.service.outdoorwebcontrol	info	luna://com.webos.service.outdoorwebcontrol/info	private	0	0	misc	Handles the info.	inferred
 com.webos.service.outdoorwebcontrol	quit	luna://com.webos.service.outdoorwebcontrol/quit	private	0	0	misc	Quits the outdoorwebcontrol.	inferred
-com.webos.service.packagemanager	closePackage	luna://com.webos.service.packagemanager/closePackage	private	0	0	misc	Closes the package.	inferred
+com.webos.service.packagemanager	closePackage	luna://com.webos.service.packagemanager/closePackage	private	0	0	misc	Closes the package.	documented
 com.webos.service.packagemanager	getStatus	luna://com.webos.service.packagemanager/getStatus	private	0	0	misc	Returns the status.	inferred
-com.webos.service.packagemanager	lockPackage	luna://com.webos.service.packagemanager/lockPackage	private	0	0	misc	Locks the package.	inferred
+com.webos.service.packagemanager	lockPackage	luna://com.webos.service.packagemanager/lockPackage	private	0	0	misc	Locks the package.	documented
 com.webos.service.packagemanager	run	luna://com.webos.service.packagemanager/run	private	0	0	misc	Runs the packagemanager.	inferred
 com.webos.service.packagemanager	squashfsMount	luna://com.webos.service.packagemanager/squashfsMount	private	0	0	misc	Handles the squashfs mount.	inferred
-com.webos.service.packagemanager	unlockPackage	luna://com.webos.service.packagemanager/unlockPackage	private	0	0	misc	Unlocks the package.	inferred
+com.webos.service.packagemanager	unlockPackage	luna://com.webos.service.packagemanager/unlockPackage	private	0	0	misc	Unlocks the package.	documented
 com.webos.service.panelcontroller	addOledPanelErrorLog	luna://com.webos.service.panelcontroller/addOledPanelErrorLog	public	0	0	display	Adds the oled panel error log.	inferred
 com.webos.service.panelcontroller	backupPanelUsageTime	luna://com.webos.service.panelcontroller/backupPanelUsageTime	public	0	0	display	Backs up the panel usage time.	inferred
 com.webos.service.panelcontroller	getBackendChipVersion	luna://com.webos.service.panelcontroller/getBackendChipVersion	public	0	0	display	Returns the backend chip version.	inferred
@@ -5661,7 +5661,7 @@ com.webos.service.pbsw	changeChannelFavoritePriority	luna://com.webos.service.pb
 com.webos.service.pbsw	changeChannelNumber	luna://com.webos.service.pbsw/changeChannelNumber	private	0	0	power	Changes the channel number.	inferred
 com.webos.service.pbsw	checkChannelMapVersion	luna://com.webos.service.pbsw/checkChannelMapVersion	private	0	0	power	Checks the channel map version.	inferred
 com.webos.service.pbsw	checkEpgExists	luna://com.webos.service.pbsw/checkEpgExists	private	0	0	power	Checks the EPG exists.	inferred
-com.webos.service.pbsw	debug	luna://com.webos.service.pbsw/debug	private	0	0	power	Handles the debug.	inferred
+com.webos.service.pbsw	debug	luna://com.webos.service.pbsw/debug	private	0	0	power	Handles the debug.	documented
 com.webos.service.pbsw	deleteChannel	luna://com.webos.service.pbsw/deleteChannel	private	1	0	power	Deletes the channel.	inferred
 com.webos.service.pbsw	downChannelMapVersion	luna://com.webos.service.pbsw/downChannelMapVersion	private	0	0	power	Handles the down channel map version.	inferred
 com.webos.service.pbsw	getAutoScanStatus4Twin	luna://com.webos.service.pbsw/getAutoScanStatus4Twin	private	0	0	power	Returns the auto scan status 4 twin.	inferred
@@ -5828,7 +5828,7 @@ com.webos.service.pkgInstall	remove	luna://com.webos.service.pkgInstall/remove	p
 com.webos.service.pkgInstall	status	luna://com.webos.service.pkgInstall/status	private	0	0	misc	Handles the status.	documented
 com.webos.service.pkgUpdate	check	luna://com.webos.service.pkgUpdate/check	private	0	0	update	Checks the pkg update.	inferred
 com.webos.service.pkgUpdate	statusAll	luna://com.webos.service.pkgUpdate/statusAll	private	0	0	update	Handles the status all.	inferred
-com.webos.service.pkgverifier	verifyIpk	luna://com.webos.service.pkgverifier/verifyIpk	private	0	0	security	Verifies the ipk.	inferred
+com.webos.service.pkgverifier	verifyIpk	luna://com.webos.service.pkgverifier/verifyIpk	private	0	0	security	Verifies the ipk.	documented
 com.webos.service.power	shutdown/initiate	luna://com.webos.service.power/shutdown/initiate	private	1	0	power	Handles the initiate (shutdown)	inferred
 com.webos.service.power	shutdown/machineOff	luna://com.webos.service.power/shutdown/machineOff	private	1	0	power	Handles the machine off (shutdown)	inferred
 com.webos.service.power	shutdown/machineReboot	luna://com.webos.service.power/shutdown/machineReboot	private	1	0	power	Handles the machine reboot (shutdown)	inferred
@@ -5885,7 +5885,7 @@ com.webos.service.pqcontroller	setNotificationResult	luna://com.webos.service.pq
 com.webos.service.pqcontroller	setNpointWB	luna://com.webos.service.pqcontroller/setNpointWB	public	0	0	picture	Sets the npoint WB.	inferred
 com.webos.service.pqcontroller	setOCPAlertResult	luna://com.webos.service.pqcontroller/setOCPAlertResult	private	0	0	picture	Sets the OCP alert result.	inferred
 com.webos.service.pqcontroller	setParameter	luna://com.webos.service.pqcontroller/setParameter	public	0	0	picture	Sets the parameter.	inferred
-com.webos.service.pqcontroller	setPQ	luna://com.webos.service.pqcontroller/setPQ	public	0	0	picture	Sets the PQ.	inferred
+com.webos.service.pqcontroller	setPQ	luna://com.webos.service.pqcontroller/setPQ	public	0	0	picture	Sets the PQ.	documented
 com.webos.service.pqcontroller	setProperties	luna://com.webos.service.pqcontroller/setProperties	private	0	0	picture	Set picture-quality controller properties; used to trigger USB Dolby Vision config Update/Restore	documented
 com.webos.service.pqcontroller	setWbPattern	luna://com.webos.service.pqcontroller/setWbPattern	public	0	0	picture	Sets the wb pattern.	inferred
 com.webos.service.pqcontroller	setWhiteBalance	luna://com.webos.service.pqcontroller/setWhiteBalance	private	1	0	picture	Set white balance in Ez-Adjust service menu	documented
@@ -6249,7 +6249,7 @@ com.webos.service.sm	deviceid/getIDList	luna://com.webos.service.sm/deviceid/get
 com.webos.service.sm	deviceid/getIDs	luna://com.webos.service.sm/deviceid/getIDs	public	0	0	security	Returns device IDs provided by webOS TV (LGUDID).	documented
 com.webos.service.sm	getStatusVerifyPartitionByDFT	luna://com.webos.service.sm/getStatusVerifyPartitionByDFT	private	0	0	system-info	Returns the status verify partition by DFT.	inferred
 com.webos.service.sm	license/apps/getDbPath	luna://com.webos.service.sm/license/apps/getDbPath	private	0	0	db	Returns the db path (license apps)	inferred
-com.webos.service.sm	license/apps/getDrmStatus	luna://com.webos.service.sm/license/apps/getDrmStatus	private	0	0	security	Returns the DRM status (license apps)	inferred
+com.webos.service.sm	license/apps/getDrmStatus	luna://com.webos.service.sm/license/apps/getDrmStatus	private	0	0	security	Returns the DRM status (license apps)	documented
 com.webos.service.sm	license/apps/getSdpTime	luna://com.webos.service.sm/license/apps/getSdpTime	private	0	0	input	Returns the sdp time (license apps)	inferred
 com.webos.service.sm	license/apps/installRights	luna://com.webos.service.sm/license/apps/installRights	private	0	0	system-info	Installs the rights (license apps)	inferred
 com.webos.service.sm	license/apps/uninstallRights	luna://com.webos.service.sm/license/apps/uninstallRights	private	0	0	system-info	Uninstalls the rights (license apps)	inferred
@@ -6272,7 +6272,7 @@ com.webos.service.soundshare	startStreamOut	luna://com.webos.service.soundshare/
 com.webos.service.soundshare	stopStreamOut	luna://com.webos.service.soundshare/stopStreamOut	private	0	0	misc	Stops the stream out.	inferred
 com.webos.service.sportsalarm	checkTranslation	luna://com.webos.service.sportsalarm/checkTranslation	private	0	0	misc	Checks the translation.	inferred
 com.webos.service.sportsalarm	getEvent	luna://com.webos.service.sportsalarm/getEvent	private	0	0	misc	Returns the event.	inferred
-com.webos.service.sportsalarm	push	luna://com.webos.service.sportsalarm/push	private	0	0	misc	Pushes the sportsalarm.	inferred
+com.webos.service.sportsalarm	push	luna://com.webos.service.sportsalarm/push	private	0	0	misc	Pushes the sportsalarm.	documented
 com.webos.service.sportsalarm	start	luna://com.webos.service.sportsalarm/start	private	0	0	misc	Starts the sportsalarm.	inferred
 com.webos.service.sportsalarm	startTimer	luna://com.webos.service.sportsalarm/startTimer	private	0	0	input	Starts the timer.	inferred
 com.webos.service.sportsalert	getAccountByActivitymanager	luna://com.webos.service.sportsalert/getAccountByActivitymanager	private	0	0	activity	Returns the account by activitymanager.	inferred
@@ -6368,7 +6368,7 @@ com.webos.service.systemservice	wallpaper/deleteWallpaper	luna://com.webos.servi
 com.webos.service.systemservice	wallpaper/importWallpaper	luna://com.webos.service.systemservice/wallpaper/importWallpaper	public	0	0	system-info	The importWallpaper method is used to convert the specified image into a device wallpaper. To convert into a wallpaper the image is either re-centered and cropp	documented
 com.webos.service.systemservice	wallpaper/info	luna://com.webos.service.systemservice/wallpaper/info	public	0	0	system-info	The info method retrieves a wallpaper object using either the wallpaperName or wallpaperFile parameter.	documented
 com.webos.service.systemservice	wallpaper/refresh	luna://com.webos.service.systemservice/wallpaper/refresh	public	0	0	system-info	The refresh method refreshes the internal list of available wallpapers. Under normal circumstances, there is no need to call refresh directly. Note: This method	documented
-com.webos.service.systemUIManager	closeByAppId	luna://com.webos.service.systemUIManager/closeByAppId	public	0	0	misc	Closes the by app ID.	inferred
+com.webos.service.systemUIManager	closeByAppId	luna://com.webos.service.systemUIManager/closeByAppId	public	0	0	misc	Closes the by app ID.	documented
 com.webos.service.systemUIManager	getForegroundAppInfo	luna://com.webos.service.systemUIManager/getForegroundAppInfo	public	0	0	misc	Returns the foreground app info.	inferred
 com.webos.service.systemUIManager	launch	luna://com.webos.service.systemUIManager/launch	public	0	0	apps	Launches the system UI manager.	inferred
 com.webos.service.sysuicompmgr	changeSystemUIView	luna://com.webos.service.sysuicompmgr/changeSystemUIView	private	0	0	misc	Changes the system UI view.	inferred
@@ -6649,10 +6649,10 @@ com.webos.service.tvpower	power2/registerActiveStandbyRequest	luna://com.webos.s
 com.webos.service.tvpower	power2/registerAlwaysOnDisplayRequest	luna://com.webos.service.tvpower/power2/registerAlwaysOnDisplayRequest	private	0	0	power	Registers the always on display request (power 2)	inferred
 com.webos.service.tvpower	power2/registerAlwaysReadyRequest	luna://com.webos.service.tvpower/power2/registerAlwaysReadyRequest	private	0	0	power	Registers the always ready request (power 2)	inferred
 com.webos.service.tvpower	power2/registerPowerOffLogoRequest	luna://com.webos.service.tvpower/power2/registerPowerOffLogoRequest	private	0	0	power	Registers the power off logo request (power 2)	inferred
-com.webos.service.tvpower	power2/registerPowerOffRequest	luna://com.webos.service.tvpower/power2/registerPowerOffRequest	private	0	0	power	Registers the power off request (power 2)	inferred
-com.webos.service.tvpower	power2/registerPreparePowerOff	luna://com.webos.service.tvpower/power2/registerPreparePowerOff	private	0	0	power	Registers the prepare power off (power 2)	inferred
-com.webos.service.tvpower	power2/registerPreparePowerOn	luna://com.webos.service.tvpower/power2/registerPreparePowerOn	private	0	0	power	Registers the prepare power on (power 2)	inferred
-com.webos.service.tvpower	power2/registerScreenSaverRequest	luna://com.webos.service.tvpower/power2/registerScreenSaverRequest	private	0	0	power	Registers the screen saver request (power 2)	inferred
+com.webos.service.tvpower	power2/registerPowerOffRequest	luna://com.webos.service.tvpower/power2/registerPowerOffRequest	private	0	0	power	Registers the power off request (power 2)	documented
+com.webos.service.tvpower	power2/registerPreparePowerOff	luna://com.webos.service.tvpower/power2/registerPreparePowerOff	private	0	0	power	Registers the prepare power off (power 2)	documented
+com.webos.service.tvpower	power2/registerPreparePowerOn	luna://com.webos.service.tvpower/power2/registerPreparePowerOn	private	0	0	power	Registers the prepare power on (power 2)	documented
+com.webos.service.tvpower	power2/registerScreenSaverRequest	luna://com.webos.service.tvpower/power2/registerScreenSaverRequest	private	0	0	power	Registers the screen saver request (power 2)	documented
 com.webos.service.tvpower	power2/registerSuspendRequest	luna://com.webos.service.tvpower/power2/registerSuspendRequest	private	0	0	power	Registers the suspend request (power 2)	inferred
 com.webos.service.tvpower	power2/responseActiveStandbyRequest	luna://com.webos.service.tvpower/power2/responseActiveStandbyRequest	private	0	0	power	Handles the response active standby request (power 2)	inferred
 com.webos.service.tvpower	power2/responseAlwaysOnDisplayRequest	luna://com.webos.service.tvpower/power2/responseAlwaysOnDisplayRequest	private	0	0	power	Handles the response always on display request (power 2)	inferred
@@ -6830,7 +6830,7 @@ com.webos.service.upnp	device/stop	luna://com.webos.service.upnp/device/stop	pub
 com.webos.service.upnp	device/unregister	luna://com.webos.service.upnp/device/unregister	public	0	0	network	Unregisters the upnp (device)	inferred
 com.webos.service.usercontextmanager	displayMonthlyReport	luna://com.webos.service.usercontextmanager/displayMonthlyReport	private	0	0	misc	Handles the display monthly report.	inferred
 com.webos.service.usercontextmanager	getCategorizedRank	luna://com.webos.service.usercontextmanager/getCategorizedRank	public	0	0	misc	Returns the categorized rank.	inferred
-com.webos.service.usercontextmanager	getHistory	luna://com.webos.service.usercontextmanager/getHistory	public	0	0	misc	Returns the history.	inferred
+com.webos.service.usercontextmanager	getHistory	luna://com.webos.service.usercontextmanager/getHistory	public	0	0	misc	Returns the history.	documented
 com.webos.service.usercontextmanager	getHistoryFromServer	luna://com.webos.service.usercontextmanager/getHistoryFromServer	public	0	0	misc	Returns the history from server.	inferred
 com.webos.service.usercontextmanager	getModeledRank	luna://com.webos.service.usercontextmanager/getModeledRank	public	0	0	misc	Returns the modeled rank.	inferred
 com.webos.service.usercontextmanager	getRank	luna://com.webos.service.usercontextmanager/getRank	public	0	0	misc	Returns the rank.	inferred
@@ -6841,7 +6841,7 @@ com.webos.service.usercontextmanager	test	luna://com.webos.service.usercontextma
 com.webos.service.userintentmanager	getContext	luna://com.webos.service.userintentmanager/getContext	private	0	0	misc	Returns the context.	inferred
 com.webos.service.userintentmanager	getHistory	luna://com.webos.service.userintentmanager/getHistory	private	0	0	misc	Returns the history.	inferred
 com.webos.service.userintentmanager	getIntentStatus	luna://com.webos.service.userintentmanager/getIntentStatus	private	0	0	misc	Returns the intent status.	inferred
-com.webos.service.userintentmanager	getRank	luna://com.webos.service.userintentmanager/getRank	private	0	0	misc	Returns the rank.	inferred
+com.webos.service.userintentmanager	getRank	luna://com.webos.service.userintentmanager/getRank	private	0	0	misc	Returns the rank.	documented
 com.webos.service.userintentmanager	load	luna://com.webos.service.userintentmanager/load	private	0	0	misc	Loads the userintentmanager.	inferred
 com.webos.service.userintentmanager	reset	luna://com.webos.service.userintentmanager/reset	private	1	0	misc	Resets the userintentmanager.	inferred
 com.webos.service.userintentmanager	setContext	luna://com.webos.service.userintentmanager/setContext	private	0	0	misc	Sets the context.	inferred
@@ -7523,7 +7523,7 @@ com.webos.service.videooutput	display/setCompositing	luna://com.webos.service.vi
 com.webos.service.videooutput	display/setDisplayResolution	luna://com.webos.service.videooutput/display/setDisplayResolution	public	0	0	display	Sets the display resolution (display)	inferred
 com.webos.service.videooutput	display/setDisplayScreen	luna://com.webos.service.videooutput/display/setDisplayScreen	public	0	0	display	Sets the display screen (display)	inferred
 com.webos.service.videooutput	display/setDisplayWindow	luna://com.webos.service.videooutput/display/setDisplayWindow	public	0	0	display	Setup video output location on the screen for specified sink.	documented
-com.webos.service.videooutput	display/setDisplayWindowProperty	luna://com.webos.service.videooutput/display/setDisplayWindowProperty	public	0	0	display	Sets the display window property (display)	inferred
+com.webos.service.videooutput	display/setDisplayWindowProperty	luna://com.webos.service.videooutput/display/setDisplayWindowProperty	public	0	0	display	Sets the display window property (display)	documented
 com.webos.service.videooutput	display/setFrameDelay	luna://com.webos.service.videooutput/display/setFrameDelay	private	0	0	display	Sets the frame delay (display)	inferred
 com.webos.service.videooutput	display/setNMRM	luna://com.webos.service.videooutput/display/setNMRM	public	0	0	display	Sets the NMRM (display)	inferred
 com.webos.service.videooutput	display/setParam	luna://com.webos.service.videooutput/display/setParam	public	0	0	display	Sets the param (display)	inferred
@@ -7553,8 +7553,8 @@ com.webos.service.videothumbnailer	getThumbnail	luna://com.webos.service.videoth
 com.webos.service.videothumbnailer	getThumbnailEs	luna://com.webos.service.videothumbnailer/getThumbnailEs	private	0	0	misc	Returns the thumbnail es.	inferred
 com.webos.service.videothumbnailer	getVideoInfo	luna://com.webos.service.videothumbnailer/getVideoInfo	private	0	0	misc	Returns the video info.	inferred
 com.webos.service.voice.performer.plugin		luna://com.webos.service.voice.performer.plugin/	private	0	0	input	Method on com.webos.service.voice.performer.plugin (introspected on-device; parameters undocumented).	stub
-com.webos.service.voice.performer.plugin	getContext	luna://com.webos.service.voice.performer.plugin/getContext	private	0	0	input	Returns the context.	inferred
-com.webos.service.voice.performer.plugin	load	luna://com.webos.service.voice.performer.plugin/load	private	0	0	input	Loads the voice performer plugin.	inferred
+com.webos.service.voice.performer.plugin	getContext	luna://com.webos.service.voice.performer.plugin/getContext	private	0	0	input	Returns the context.	documented
+com.webos.service.voice.performer.plugin	load	luna://com.webos.service.voice.performer.plugin/load	private	0	0	input	Loads the voice performer plugin.	documented
 com.webos.service.voice.performer.plugin	performAction	luna://com.webos.service.voice.performer.plugin/performAction	private	0	0	input	Handles the perform action.	inferred
 com.webos.service.voice.performer.plugin	performShortPress	luna://com.webos.service.voice.performer.plugin/performShortPress	private	0	0	input	Handles the perform short press.	inferred
 com.webos.service.voice.performer.plugin	unload	luna://com.webos.service.voice.performer.plugin/unload	private	0	0	input	Unloads the voice performer plugin.	inferred
@@ -7580,7 +7580,7 @@ com.webos.service.voiceconductor	getSupportedLanguages	luna://com.webos.service.
 com.webos.service.voiceconductor	getUtteranceEvents	luna://com.webos.service.voiceconductor/getUtteranceEvents	private	0	0	input	Returns the utterance events.	inferred
 com.webos.service.voiceconductor	getVoiceKey	luna://com.webos.service.voiceconductor/getVoiceKey	private	0	0	input	Returns the voice key.	inferred
 com.webos.service.voiceconductor	getVoiceUiEvents	luna://com.webos.service.voiceconductor/getVoiceUiEvents	public	0	0	input	Returns the voice ui events.	inferred
-com.webos.service.voiceconductor	interactor/register	luna://com.webos.service.voiceconductor/interactor/register	public	0	0	input	Registers the voiceconductor (interactor)	inferred
+com.webos.service.voiceconductor	interactor/register	luna://com.webos.service.voiceconductor/interactor/register	public	0	0	input	Registers the voiceconductor (interactor)	documented
 com.webos.service.voiceconductor	interactor/reportActionResult	luna://com.webos.service.voiceconductor/interactor/reportActionResult	public	0	0	input	Reports the action result (interactor)	inferred
 com.webos.service.voiceconductor	interactor/setContext	luna://com.webos.service.voiceconductor/interactor/setContext	public	0	0	input	Sets the context (interactor)	inferred
 com.webos.service.voiceconductor	launchApp	luna://com.webos.service.voiceconductor/launchApp	private	0	0	apps	Launches the app.	inferred
@@ -8049,7 +8049,7 @@ listenserver.service	stop	luna://listenserver.service/stop	public	0	0	misc	Stops
 netflix.service	clearToken	luna://netflix.service/clearToken	public	0	0	misc	Clears the token.	inferred
 netflix.service	discovery	luna://netflix.service/discovery	public	0	0	network	Handles the discovery.	inferred
 netflix.service	impression	luna://netflix.service/impression	public	0	0	misc	Handles the impression.	inferred
-netflix.service	saveToken	luna://netflix.service/saveToken	public	0	0	misc	Saves the token.	inferred
+netflix.service	saveToken	luna://netflix.service/saveToken	public	0	0	misc	Saves the token.	documented
 netflix.service	search	luna://netflix.service/search	public	0	0	misc	Searches for netflix.	inferred
 nuance.stt.adapter.plugin	cancelRecognition	luna://nuance.stt.adapter.plugin/cancelRecognition	private	0	0	misc	Cancels the recognition.	inferred
 nuance.stt.adapter.plugin	load	luna://nuance.stt.adapter.plugin/load	private	0	0	misc	Loads the nuance stt adapter plugin.	inferred

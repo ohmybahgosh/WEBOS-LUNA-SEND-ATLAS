@@ -20,7 +20,7 @@ Core media pipeline service: acquires and manages media resources and pipelines,
 | [`bufferRange`](#bufferrange) | unknown |  | media | documented | Indicates the buffering range of the particular media content. It is raised multiple times when specific media is loaded. |
 | [`changeResolution`](#changeresolution) | public |  | media | inferred | Changes the resolution. |
 | [`closeAllConnections`](#closeallconnections) | private |  | media | inferred | Closes the all connections. |
-| [`closeMediaPipeline`](#closemediapipeline) | private |  | media | inferred | Closes the media pipeline. |
+| [`closeMediaPipeline`](#closemediapipeline) | private |  | media | documented | Closes the media pipeline. |
 | [`contentReady`](#contentready) | unknown |  | media | documented | Registered in webOS OSE sysbus api.json (ACG group media); name only |
 | [`currentTime`](#currenttime) | unknown |  | media | documented | The currentTime event is raised multiple times when a specific media is playing. It indicates the progress of the media being played and pro |
 | [`detached`](#detached) | unknown |  | media | documented | The detached event is raised when a specific media has been detached from the client by another client attaching to the corresponding pipeli |
@@ -52,7 +52,7 @@ Core media pipeline service: acquires and manages media resources and pipelines,
 | [`notifyDelay`](#notifydelay) | private |  | media | inferred | Notifies of the delay. |
 | [`notifyFocus`](#notifyfocus) | public |  | media | inferred | Notifies of the focus. |
 | [`notifyForeground`](#notifyforeground) | public |  | media | documented | Marks a pipeline as foreground. This API is called when the media object in question is un-carded and made visible. Note: Foreground pipelin |
-| [`notifyMultiviewControlMode`](#notifymultiviewcontrolmode) | public |  | media | inferred | Notifies of the multiview control mode. |
+| [`notifyMultiviewControlMode`](#notifymultiviewcontrolmode) | public |  | media | documented | Notifies of the multiview control mode. |
 | [`notifyPipelineStatus`](#notifypipelinestatus) | public |  | media | documented | Notifies the playback status of media pipelines. |
 | [`option`](#option) | unknown |  | media | documented | Provides parameters for pipeline's Information. |
 | [`pause`](#pause) | public |  | media | documented | Requests the media server to pause the media object. |
@@ -82,10 +82,10 @@ Core media pipeline service: acquires and manages media resources and pipelines,
 | [`selectTrack`](#selecttrack) | public |  | media | documented | Selects an audio or subtitle track of an open pipeline |
 | [`selectTrackByPreference`](#selecttrackbypreference) | public |  | media | inferred | Selects the track by preference. |
 | [`selectTrackByPreferencePayload`](#selecttrackbypreferencepayload) | public |  | media | inferred | Selects the track by preference payload. |
-| [`setAppId`](#setappid) | public |  | media | inferred | Sets the app ID. |
+| [`setAppId`](#setappid) | public |  | media | documented | Sets the app ID. |
 | [`setAppWindowType`](#setappwindowtype) | public |  | media | inferred | Sets the app window type. |
 | [`setAudioDualMono`](#setaudiodualmono) | public |  | audio | inferred | Sets the audio dual mono. |
-| [`setAudioMute`](#setaudiomute) | public |  | audio | inferred | Sets the audio mute. |
+| [`setAudioMute`](#setaudiomute) | public |  | audio | documented | Sets the audio mute. |
 | [`setAudioStreamPitch`](#setaudiostreampitch) | public |  | audio | inferred | Sets the audio stream pitch. |
 | [`setClearKey`](#setclearkey) | public |  | media | inferred | Sets the clear key. |
 | [`setDebugLevel`](#setdebuglevel) | private |  | media | inferred | Sets the debug level. |
@@ -102,13 +102,13 @@ Core media pipeline service: acquires and manages media resources and pipelines,
 | [`setMediaSynchronizerControlTimestamp`](#setmediasynchronizercontroltimestamp) | public |  | media | inferred | Sets the media synchronizer control timestamp. |
 | [`setMediaSynchronizerOptions`](#setmediasynchronizeroptions) | public |  | media | inferred | Sets the media synchronizer options. |
 | [`setMpeghAudioConfig`](#setmpeghaudioconfig) | public |  | audio | inferred | Sets the mpegh audio config. |
-| [`setOwnerPipeline`](#setownerpipeline) | public |  | media | inferred | Sets the owner pipeline. |
+| [`setOwnerPipeline`](#setownerpipeline) | public |  | media | documented | Sets the owner pipeline. |
 | [`setPipelineDebugState`](#setpipelinedebugstate) | private |  | media | inferred | Sets the pipeline debug state. |
 | [`setPlayRate`](#setplayrate) | public |  | media | documented | Sets the pipeline media play rate. |
 | [`setPriorityLevel`](#setprioritylevel) | public |  | media | inferred | Sets the priority level. |
 | [`setProperty`](#setproperty) | public |  | media | inferred | Sets the property. |
 | [`setPurpose`](#setpurpose) | public |  | media | inferred | Sets the purpose. |
-| [`setResourcePolicyExtraInfo`](#setresourcepolicyextrainfo) | public |  | media | inferred | Sets the resource policy extra info. |
+| [`setResourcePolicyExtraInfo`](#setresourcepolicyextrainfo) | public |  | media | documented | Sets the resource policy extra info. |
 | [`setSink`](#setsink) | public |  | media | inferred | Sets the sink. |
 | [`setSlave`](#setslave) | public |  | media | inferred | Sets the slave. |
 | [`setSlaveClock`](#setslaveclock) | public |  | media | inferred | Sets the slave clock. |
@@ -156,10 +156,10 @@ Core media pipeline service: acquires and manages media resources and pipelines,
 | [`testPipelineEvent`](#testpipelineevent) | private |  | media | inferred | Tests the pipeline event. |
 | [`trackAcquireResultInfo`](#trackacquireresultinfo) | private |  | media | inferred | Handles the track acquire result info. |
 | [`trackAppProcesses`](#trackappprocesses) | public | yes | media | documented | Subscribes to messages containing the mapping of application ID (appID) and pipeline process ID (PID), i.e. it returns information about whi |
-| [`trackAppStatus`](#trackappstatus) | private |  | media | inferred | Handles the track app status. |
+| [`trackAppStatus`](#trackappstatus) | private |  | media | documented | Handles the track app status. |
 | [`trackPipelineInfo`](#trackpipelineinfo) | public |  | media | inferred | Handles the track pipeline info. |
 | [`trackPolicyActionInfo`](#trackpolicyactioninfo) | private |  | media | inferred | Handles the track policy action info. |
-| [`trackResourcesStatus`](#trackresourcesstatus) | private |  | media | inferred | Handles the track resources status. |
+| [`trackResourcesStatus`](#trackresourcesstatus) | private |  | media | documented | Handles the track resources status. |
 | [`tryAcquire`](#tryacquire) | public |  | media | documented | Tries to acquire resources from mediaserver. Note: This API will not issue policyAction to other pipelines in order to force them to release |
 | [`unload`](#unload) | public |  | media | documented | Unloads the pipeline and releases all AV resources. |
 | [`unloadCompleted`](#unloadcompleted) | unknown |  | media | documented | The unloadCompleted event is raised when a specific media pipeline has been successfully unloaded. |
@@ -463,19 +463,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Closes the media pipeline.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pid` | Integer (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/closeMediaPipeline '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1267,19 +1269,21 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 Notifies of the multiview control mode.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `role` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/notifyMultiviewControlMode '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -2015,19 +2019,23 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the app ID.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `appId` | String (observed in live traffic) |
+| `reserved` | Boolean (observed in live traffic) |
+| `mediaId` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setAppId '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -2084,19 +2092,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the audio mute.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `mediaId` | String (observed in live traffic) |
+| `isMuteOn` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setAudioMute '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -2473,19 +2484,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the owner pipeline.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `connectionId` | String (observed in live traffic) |
+| `ownerConnectionId` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setOwnerPipeline '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -2623,19 +2637,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the resource policy extra info.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `connectionId` | String (observed in live traffic) |
+| `policyExtraInfo` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/setResourcePolicyExtraInfo '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -3823,19 +3840,21 @@ Sources: [1](https://www.webosose.org/docs/reference/ls2-api/com-webos-media/)
 
 Handles the track app status.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `connectionId` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/trackAppStatus '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -3892,19 +3911,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Handles the track resources status.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `connectionId` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.media/trackResourcesStatus '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

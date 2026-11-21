@@ -8,7 +8,7 @@ Home-connect relay service: gets/sets state, relays events and starts/stops, bri
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`get`](#get) | public |  | misc | inferred | Returns the homeconnect. |
+| [`get`](#get) | public |  | misc | documented | Returns the homeconnect. |
 | [`info`](#info) | public |  | misc | inferred | Handles the info. |
 | [`quit`](#quit) | public |  | misc | inferred | Quits the homeconnect. |
 | [`relayEvent`](#relayevent) | public |  | misc | inferred | Handles the relay event. |
@@ -23,19 +23,21 @@ Home-connect relay service: gets/sets state, relays events and starts/stops, bri
 
 Returns the homeconnect.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `type` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.homeconnect/get '{}'
 ```
 
-> ACG groups: private, all, public.
+> ACG groups: private, all, public.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

@@ -13,7 +13,7 @@ Broadcast channel-map service: builds and edits the channel list and favorite gr
 | [`changeChannelNumber`](#changechannelnumber) | private |  | power | inferred | Changes the channel number. |
 | [`checkChannelMapVersion`](#checkchannelmapversion) | private |  | power | inferred | Checks the channel map version. |
 | [`checkEpgExists`](#checkepgexists) | private |  | power | inferred | Checks the EPG exists. |
-| [`debug`](#debug) | private |  | power | inferred | Handles the debug. |
+| [`debug`](#debug) | private |  | power | documented | Handles the debug. |
 | [`deleteChannel`](#deletechannel) | private |  | power | inferred | Deletes the channel. ⚠️ |
 | [`downChannelMapVersion`](#downchannelmapversion) | private |  | power | inferred | Handles the down channel map version. |
 | [`getAutoScanStatus4Twin`](#getautoscanstatus4twin) | private |  | power | inferred | Returns the auto scan status 4 twin. |
@@ -188,19 +188,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Handles the debug.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `removeEPG` | Boolean (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.pbsw/debug '{}'
 ```
 
-> ACG groups: private, all, tv.services.
+> ACG groups: private, all, tv.services.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

@@ -26,7 +26,7 @@ Security manager: handles app security permissions, USB-access authentication, d
 | [`deviceid/getIDs`](#deviceid_getids) | public |  | security | documented | Returns device IDs provided by webOS TV (LGUDID). |
 | [`getStatusVerifyPartitionByDFT`](#getstatusverifypartitionbydft) | private |  | system-info | inferred | Returns the status verify partition by DFT. |
 | [`license/apps/getDbPath`](#license_apps_getdbpath) | private |  | db | inferred | Returns the db path (license apps) |
-| [`license/apps/getDrmStatus`](#license_apps_getdrmstatus) | private |  | security | inferred | Returns the DRM status (license apps) |
+| [`license/apps/getDrmStatus`](#license_apps_getdrmstatus) | private |  | security | documented | Returns the DRM status (license apps) |
 | [`license/apps/getSdpTime`](#license_apps_getsdptime) | private |  | input | inferred | Returns the sdp time (license apps) |
 | [`license/apps/installRights`](#license_apps_installrights) | private |  | system-info | inferred | Installs the rights (license apps) |
 | [`license/apps/uninstallRights`](#license_apps_uninstallrights) | private |  | system-info | inferred | Uninstalls the rights (license apps) |
@@ -470,19 +470,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the DRM status (license apps)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `installBasePath` | String (observed in live traffic) |
+| `appId` | String (observed in live traffic) |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.sm/license/apps/getDrmStatus '{}'
 ```
 
-> ACG groups: private, sm.security, security, all.
+> ACG groups: private, sm.security, security, all.  Parameters observed in live LS2 bus traffic (ls-monitor capture, LG webOS 22, W22O): the names and types are from real calls to this method, so the set may be incomplete and which parameters are required is not determined.
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 

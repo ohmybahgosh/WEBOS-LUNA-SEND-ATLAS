@@ -212,7 +212,7 @@
 | [`luna://com.webos.service.pbsw/changeChannelNumber`](../services/com.webos.service.pbsw.md#changechannelnumber) | private | inferred | Changes the channel number. |
 | [`luna://com.webos.service.pbsw/checkChannelMapVersion`](../services/com.webos.service.pbsw.md#checkchannelmapversion) | private | inferred | Checks the channel map version. |
 | [`luna://com.webos.service.pbsw/checkEpgExists`](../services/com.webos.service.pbsw.md#checkepgexists) | private | inferred | Checks the EPG exists. |
-| [`luna://com.webos.service.pbsw/debug`](../services/com.webos.service.pbsw.md#debug) | private | inferred | Handles the debug. |
+| [`luna://com.webos.service.pbsw/debug`](../services/com.webos.service.pbsw.md#debug) | private | documented | Handles the debug. |
 | [`luna://com.webos.service.pbsw/deleteChannel`](../services/com.webos.service.pbsw.md#deletechannel) | private | inferred | Deletes the channel. ⚠️ |
 | [`luna://com.webos.service.pbsw/downChannelMapVersion`](../services/com.webos.service.pbsw.md#downchannelmapversion) | private | inferred | Handles the down channel map version. |
 | [`luna://com.webos.service.pbsw/getAutoScanStatus4Twin`](../services/com.webos.service.pbsw.md#getautoscanstatus4twin) | private | inferred | Returns the auto scan status 4 twin. |
@@ -336,10 +336,10 @@
 | [`luna://com.webos.service.tvpower/power2/registerAlwaysOnDisplayRequest`](../services/com.webos.service.tvpower.md#power2_registeralwaysondisplayrequest) | private | inferred | Registers the always on display request (power 2) |
 | [`luna://com.webos.service.tvpower/power2/registerAlwaysReadyRequest`](../services/com.webos.service.tvpower.md#power2_registeralwaysreadyrequest) | private | inferred | Registers the always ready request (power 2) |
 | [`luna://com.webos.service.tvpower/power2/registerPowerOffLogoRequest`](../services/com.webos.service.tvpower.md#power2_registerpowerofflogorequest) | private | inferred | Registers the power off logo request (power 2) |
-| [`luna://com.webos.service.tvpower/power2/registerPowerOffRequest`](../services/com.webos.service.tvpower.md#power2_registerpoweroffrequest) | private | inferred | Registers the power off request (power 2) |
-| [`luna://com.webos.service.tvpower/power2/registerPreparePowerOff`](../services/com.webos.service.tvpower.md#power2_registerpreparepoweroff) | private | inferred | Registers the prepare power off (power 2) |
-| [`luna://com.webos.service.tvpower/power2/registerPreparePowerOn`](../services/com.webos.service.tvpower.md#power2_registerpreparepoweron) | private | inferred | Registers the prepare power on (power 2) |
-| [`luna://com.webos.service.tvpower/power2/registerScreenSaverRequest`](../services/com.webos.service.tvpower.md#power2_registerscreensaverrequest) | private | inferred | Registers the screen saver request (power 2) |
+| [`luna://com.webos.service.tvpower/power2/registerPowerOffRequest`](../services/com.webos.service.tvpower.md#power2_registerpoweroffrequest) | private | documented | Registers the power off request (power 2) |
+| [`luna://com.webos.service.tvpower/power2/registerPreparePowerOff`](../services/com.webos.service.tvpower.md#power2_registerpreparepoweroff) | private | documented | Registers the prepare power off (power 2) |
+| [`luna://com.webos.service.tvpower/power2/registerPreparePowerOn`](../services/com.webos.service.tvpower.md#power2_registerpreparepoweron) | private | documented | Registers the prepare power on (power 2) |
+| [`luna://com.webos.service.tvpower/power2/registerScreenSaverRequest`](../services/com.webos.service.tvpower.md#power2_registerscreensaverrequest) | private | documented | Registers the screen saver request (power 2) |
 | [`luna://com.webos.service.tvpower/power2/registerSuspendRequest`](../services/com.webos.service.tvpower.md#power2_registersuspendrequest) | private | inferred | Registers the suspend request (power 2) |
 | [`luna://com.webos.service.tvpower/power2/responseActiveStandbyRequest`](../services/com.webos.service.tvpower.md#power2_responseactivestandbyrequest) | private | inferred | Handles the response active standby request (power 2) |
 | [`luna://com.webos.service.tvpower/power2/responseAlwaysOnDisplayRequest`](../services/com.webos.service.tvpower.md#power2_responsealwaysondisplayrequest) | private | inferred | Handles the response always on display request (power 2) |
