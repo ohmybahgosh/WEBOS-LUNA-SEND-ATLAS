@@ -4,11 +4,11 @@
 
 | URI | Access | Conf | Description |
 |---|---|---|---|
-| [`luna://com.palm.service.devmode/getDevMode`](../services/com.palm.service.devmode.md#getdevmode) | public | inferred | Returns the dev mode. |
-| [`luna://com.palm.service.devmode/getPassphrase`](../services/com.palm.service.devmode.md#getpassphrase) | public | inferred | Returns the passphrase. |
+| [`luna://com.palm.service.devmode/getDevMode`](../services/com.palm.service.devmode.md#getdevmode) | public | documented | Returns the dev mode. |
+| [`luna://com.palm.service.devmode/getPassphrase`](../services/com.palm.service.devmode.md#getpassphrase) | public | documented | Returns the passphrase. |
 | [`luna://com.palm.service.devmode/info`](../services/com.palm.service.devmode.md#info) | public | inferred | Handles the info. |
 | [`luna://com.palm.service.devmode/quit`](../services/com.palm.service.devmode.md#quit) | public | inferred | Quits the devmode. |
-| [`luna://com.palm.service.devmode/setDevMode`](../services/com.palm.service.devmode.md#setdevmode) | public | inferred | Sets the dev mode. |
+| [`luna://com.palm.service.devmode/setDevMode`](../services/com.palm.service.devmode.md#setdevmode) | public | documented | Sets the dev mode. |
 | [`luna://com.palm.service.tellurium/appInfo`](../services/com.palm.service.tellurium.md#appinfo) | unknown | documented | Provide the application ID to subscribe. Ex: "appInfo":{"id":"amazon.html"} |
 | [`luna://com.palm.service.tellurium/broadcastCommand`](../services/com.palm.service.tellurium.md#broadcastcommand) | public | documented | Sends message to all TelluriomNub instances |
 | [`luna://com.palm.service.tellurium/filter`](../services/com.palm.service.tellurium.md#filter) | unknown | documented | Its an object that describes details to apply the filter (usually used when "command": "getItems") |

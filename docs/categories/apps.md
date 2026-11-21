@@ -307,7 +307,7 @@
 | [`luna://com.webos.service.intent/subscribeResult`](../services/com.webos.service.intent.md#subscriberesult) | public | documented | All running intents have their own 'intentId'. Of course, handlers can reply results thought 'intentId'. Other component including requester can subscribe the r |
 | [`luna://com.webos.service.ismmanager/launchISM`](../services/com.webos.service.ismmanager.md#launchism) | private | inferred | Launches the ISM. |
 | [`luna://com.webos.service.livepickplus/launchOverlay`](../services/com.webos.service.livepickplus.md#launchoverlay) | private | inferred | Launches the overlay. |
-| [`luna://com.webos.service.magicnum/checkLauncher`](../services/com.webos.service.magicnum.md#checklauncher) | private | inferred | Checks the launcher. |
+| [`luna://com.webos.service.magicnum/checkLauncher`](../services/com.webos.service.magicnum.md#checklauncher) | private | documented | Checks the launcher. |
 | [`luna://com.webos.service.miracast/launchFullApp`](../services/com.webos.service.miracast.md#launchfullapp) | private | inferred | Launches the full app. |
 | [`luna://com.webos.service.miracast/launchOverlayApp`](../services/com.webos.service.miracast.md#launchoverlayapp) | private | inferred | Launches the overlay app. |
 | [`luna://com.webos.service.multiviewcontroller/launchApps`](../services/com.webos.service.multiviewcontroller.md#launchapps) | public | inferred | Launches the apps. |

@@ -9792,15 +9792,16 @@
   "platform": "webOS TV",
   "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
   "dangerous": false,
-  "notes": "ACG groups: private, public, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "notes": "ACG groups: private, public, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Takes no request parameters.  Returns `enabled` (Boolean) indicating whether Developer Mode is on.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.palm.service.devmode/devmode_service.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.palm.service.devmode",
@@ -9815,15 +9816,16 @@
   "platform": "webOS TV",
   "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
   "dangerous": false,
-  "notes": "ACG groups: private, public, system.devmode. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "notes": "ACG groups: private, public, system.devmode. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Takes no request parameters.  Returns a 6-character `passphrase` derived from the device nduid.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.palm.service.devmode/devmode_service.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.palm.service.devmode",
@@ -9877,22 +9879,25 @@
   "uri": "luna://com.palm.service.devmode/setDevMode",
   "category": "devmode",
   "description": "Sets the dev mode.",
-  "params": {},
+  "params": {
+   "enabled": "Boolean (required) True to enable Developer Mode, false to disable."
+  },
   "example": "luna-send -n 1 -f luna://com.palm.service.devmode/setDevMode '{}'",
   "subscribe": false,
   "access": "public",
   "platform": "webOS TV",
   "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
   "dangerous": false,
-  "notes": "ACG groups: private, public, system.devmode. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "notes": "ACG groups: private, public, system.devmode. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Enabling or disabling Developer Mode reboots the TV.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.palm.service.devmode/devmode_service.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.palm.service.tellurium",
@@ -82217,22 +82222,26 @@
   "uri": "luna://com.webos.service.firstuse/getSettings",
   "category": "settings",
   "description": "Returns the settings.",
-  "params": {},
+  "params": {
+   "key": "String (required) Setting key to read (must be a supported first-use key).",
+   "params": "Object (optional) Extra parameters for the key lookup."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.firstuse/getSettings '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
   "dangerous": false,
-  "notes": "ACG groups: configurator.callbacks, service.firstuse. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "notes": "ACG groups: configurator.callbacks, service.firstuse. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.firstuse/src/api/getSettingsData.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.firstuse",
@@ -82240,22 +82249,26 @@
   "uri": "luna://com.webos.service.firstuse/setSettings",
   "category": "settings",
   "description": "Sets the settings.",
-  "params": {},
+  "params": {
+   "key": "String (required) Setting key to write (must be a supported first-use key).",
+   "value": "Any (required) Value to set for the key."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.firstuse/setSettings '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
   "dangerous": false,
-  "notes": "ACG groups: configurator.callbacks, service.firstuse. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "notes": "ACG groups: configurator.callbacks, service.firstuse. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.firstuse/src/api/setSettingsData.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.ftms",
@@ -93033,22 +93046,29 @@
   "uri": "luna://com.webos.service.google.signin/start",
   "category": "misc",
   "description": "Starts the google signin.",
-  "params": {},
+  "params": {
+   "clientId": "String (required) Google OAuth2 client ID.",
+   "clientSecret": "String (required) Google OAuth2 client secret.",
+   "scopes": "Array (required) OAuth2 scopes to request.",
+   "appReturn": "Object (required) App launch descriptor to return to with the resulting token info.",
+   "listenPort": "Integer (optional) Local redirect/listen port (default 8080)."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.google.signin/start '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
   "dangerous": false,
-  "notes": "ACG groups: com.webos.service.google.signin, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "notes": "ACG groups: com.webos.service.google.signin, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Runs a Google OAuth2 sign-in flow in the TV browser and launches `appReturn` with the resulting tokens.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.google.signin/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.google.signin",
@@ -93063,15 +93083,16 @@
   "platform": "webOS TV",
   "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
   "dangerous": false,
-  "notes": "ACG groups: com.webos.service.google.signin, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "notes": "ACG groups: com.webos.service.google.signin, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Takes no request parameters.  Stops the sign-in flow and closes the local server.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.google.signin/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.googlehomecontroller",
@@ -118984,15 +119005,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: public, magicnum.action, private, configurator.callbacks, service.magicnum, all, activities.callbacks, services.",
+  "notes": "ACG groups: public, magicnum.action, private, configurator.callbacks, service.magicnum, all, activities.callbacks, services.  Triggered internally by the activity manager; takes no request parameters.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.magicnum/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.magicnum",
@@ -119007,15 +119029,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: configurator.callbacks, service.magicnum, all, activities.callbacks.",
+  "notes": "ACG groups: configurator.callbacks, service.magicnum, all, activities.callbacks.  Triggered internally by the activity manager (reads the activity trigger); takes no request parameters.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.magicnum/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.magicnum",
@@ -119081,15 +119104,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": true,
-  "notes": "ACG groups: configurator.callbacks, service.magicnum, all, activities.callbacks. Flagged dangerous by name; verify before calling.",
+  "notes": "ACG groups: configurator.callbacks, service.magicnum, all, activities.callbacks. Flagged dangerous by name; verify before calling.  Triggered internally by the activity manager; takes no request parameters.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.magicnum/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.matter",
@@ -164407,22 +164431,25 @@
   "uri": "luna://com.webos.service.tvstorepolicy/changeMode",
   "category": "misc",
   "description": "Changes the mode.",
-  "params": {},
+  "params": {
+   "mode": "String (required) Target mode: store or home."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.tvstorepolicy/changeMode '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
   "dangerous": false,
-  "notes": "ACG groups: com.webos.service.tvstorepolicy, configurator.callbacks, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "notes": "ACG groups: com.webos.service.tvstorepolicy, configurator.callbacks, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  In current firmware store/home switching returns \"This service is not available\".  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.tvstorepolicy/src/service/changeMode.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.tvstorepolicy",
@@ -164430,22 +164457,27 @@
   "uri": "luna://com.webos.service.tvstorepolicy/syncDemoSocket",
   "category": "misc",
   "description": "Synchronizes the demo socket.",
-  "params": {},
+  "params": {
+   "mode": "String (required) Socket operation: open, send, or close.",
+   "ip": "String (optional) Target IP of the demo device (used by open/send/close).",
+   "request": "Object (optional) Message to send over the socket."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.tvstorepolicy/syncDemoSocket '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d",
   "dangerous": false,
-  "notes": "ACG groups: com.webos.service.tvstorepolicy, configurator.callbacks, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).",
+  "notes": "ACG groups: com.webos.service.tvstorepolicy, configurator.callbacks, private. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Opens, sends on, or closes a WebSocket to a demo device at wss://<ip>:3001.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.tvstorepolicy/src/service/syncDemoSocket.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.unifiedsearch",

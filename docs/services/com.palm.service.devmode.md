@@ -8,11 +8,11 @@ Legacy Palm developer-mode service: enables or disables developer mode and retri
 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
-| [`getDevMode`](#getdevmode) | public |  | devmode | inferred | Returns the dev mode. |
-| [`getPassphrase`](#getpassphrase) | public |  | devmode | inferred | Returns the passphrase. |
+| [`getDevMode`](#getdevmode) | public |  | devmode | documented | Returns the dev mode. |
+| [`getPassphrase`](#getpassphrase) | public |  | devmode | documented | Returns the passphrase. |
 | [`info`](#info) | public |  | devmode | inferred | Handles the info. |
 | [`quit`](#quit) | public |  | devmode | inferred | Quits the devmode. |
-| [`setDevMode`](#setdevmode) | public |  | devmode | inferred | Sets the dev mode. |
+| [`setDevMode`](#setdevmode) | public |  | devmode | documented | Sets the dev mode. |
 
 <a id="getdevmode"></a>
 ## `getDevMode`
@@ -21,19 +21,17 @@ Legacy Palm developer-mode service: enables or disables developer mode and retri
 
 Returns the dev mode.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.devmode/getDevMode '{}'
 ```
 
-> ACG groups: private, public, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private, public, settings. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Takes no request parameters.  Returns `enabled` (Boolean) indicating whether Developer Mode is on.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -44,19 +42,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Returns the passphrase.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.devmode/getPassphrase '{}'
 ```
 
-> ACG groups: private, public, system.devmode. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private, public, system.devmode. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Takes no request parameters.  Returns a 6-character `passphrase` derived from the device nduid.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))
 
@@ -113,18 +109,20 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Sets the dev mode.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** listed in webOS TV 7.0 (W22O 33.31.68) api-permissions.d  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `enabled` | Boolean (required) True to enable Developer Mode, false to disable. |
 
 ```sh
 luna-send -n 1 -f luna://com.palm.service.devmode/setDevMode '{}'
 ```
 
-> ACG groups: private, public, system.devmode. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).
+> ACG groups: private, public, system.devmode. Registered in on-disk api-permissions.d; the service may be dormant unless its context is active (e.g. Live TV, recording, a paired device).  Enabling or disabling Developer Mode reboots the TV.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /usr/share/luna-service2/api-permissions.d, LG OLED webOS TV 7.0, W22O 33.31.68))

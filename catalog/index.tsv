@@ -413,11 +413,11 @@ com.palm.service.bugreport	signInToJira	luna://com.palm.service.bugreport/signIn
 com.palm.service.bugreport	signOutFromJira	luna://com.palm.service.bugreport/signOutFromJira	public	0	0	system-info	Signs the out from jira.	inferred
 com.palm.service.bugreport	storeCredential	luna://com.palm.service.bugreport/storeCredential	public	0	0	system-info	Stores the credential.	inferred
 com.palm.service.bugreport	takeScreenshot	luna://com.palm.service.bugreport/takeScreenshot	public	0	0	system-info	Handles the take screenshot.	inferred
-com.palm.service.devmode	getDevMode	luna://com.palm.service.devmode/getDevMode	public	0	0	devmode	Returns the dev mode.	inferred
-com.palm.service.devmode	getPassphrase	luna://com.palm.service.devmode/getPassphrase	public	0	0	devmode	Returns the passphrase.	inferred
+com.palm.service.devmode	getDevMode	luna://com.palm.service.devmode/getDevMode	public	0	0	devmode	Returns the dev mode.	documented
+com.palm.service.devmode	getPassphrase	luna://com.palm.service.devmode/getPassphrase	public	0	0	devmode	Returns the passphrase.	documented
 com.palm.service.devmode	info	luna://com.palm.service.devmode/info	public	0	0	devmode	Handles the info.	inferred
 com.palm.service.devmode	quit	luna://com.palm.service.devmode/quit	public	0	0	devmode	Quits the devmode.	inferred
-com.palm.service.devmode	setDevMode	luna://com.palm.service.devmode/setDevMode	public	0	0	devmode	Sets the dev mode.	inferred
+com.palm.service.devmode	setDevMode	luna://com.palm.service.devmode/setDevMode	public	0	0	devmode	Sets the dev mode.	documented
 com.palm.service.tellurium	appInfo	luna://com.palm.service.tellurium/appInfo	unknown	0	0	devmode	Provide the application ID to subscribe. Ex: "appInfo":{"id":"amazon.html"}	documented
 com.palm.service.tellurium	broadcastCommand	luna://com.palm.service.tellurium/broadcastCommand	public	0	0	devmode	Sends message to all TelluriomNub instances	documented
 com.palm.service.tellurium	filter	luna://com.palm.service.tellurium/filter	unknown	0	0	devmode	Its an object that describes details to apply the filter (usually used when "command": "getItems")	documented
@@ -3317,8 +3317,8 @@ com.webos.service.filecache	SubscribeCacheObject	luna://com.webos.service.fileca
 com.webos.service.filecache	TouchCacheObject	luna://com.webos.service.filecache/TouchCacheObject	public	0	0	storage	Allows you to mark an object as recently used. This decreases the chances of the object from getting expired from the cache when the space is being reclaimed.	documented
 com.webos.service.fingerprint	close	luna://com.webos.service.fingerprint/close	private	0	0	misc	Closes the fingerprint.	inferred
 com.webos.service.fingerprint	open	luna://com.webos.service.fingerprint/open	private	0	0	misc	Opens the fingerprint.	inferred
-com.webos.service.firstuse	getSettings	luna://com.webos.service.firstuse/getSettings	private	0	0	settings	Returns the settings.	inferred
-com.webos.service.firstuse	setSettings	luna://com.webos.service.firstuse/setSettings	private	0	0	settings	Sets the settings.	inferred
+com.webos.service.firstuse	getSettings	luna://com.webos.service.firstuse/getSettings	private	0	0	settings	Returns the settings.	documented
+com.webos.service.firstuse	setSettings	luna://com.webos.service.firstuse/setSettings	private	0	0	settings	Sets the settings.	documented
 com.webos.service.ftms	appendBlockedDeviceList	luna://com.webos.service.ftms/appendBlockedDeviceList	private	0	0	db	Handles the append blocked device list.	inferred
 com.webos.service.ftms	clearScanFilter	luna://com.webos.service.ftms/clearScanFilter	private	0	0	misc	Clears the scan filter.	inferred
 com.webos.service.ftms	connect	luna://com.webos.service.ftms/connect	private	0	0	misc	Connects the ftms.	inferred
@@ -3787,8 +3787,8 @@ com.webos.service.gingaccwebservices.test	setValue	luna://com.webos.service.ging
 com.webos.service.gingaccwebservices.test	start	luna://com.webos.service.gingaccwebservices.test/start	public	0	0	misc	Starts the gingaccwebservices test.	inferred
 com.webos.service.gingaccwebservices.test	stop	luna://com.webos.service.gingaccwebservices.test/stop	public	0	0	misc	Stops the gingaccwebservices test.	inferred
 com.webos.service.gingaccwebservices.test	subscribeForGinga	luna://com.webos.service.gingaccwebservices.test/subscribeForGinga	public	0	0	misc	Subscribes to the for ginga.	inferred
-com.webos.service.google.signin	start	luna://com.webos.service.google.signin/start	private	0	0	misc	Starts the google signin.	inferred
-com.webos.service.google.signin	stop	luna://com.webos.service.google.signin/stop	private	0	0	misc	Stops the google signin.	inferred
+com.webos.service.google.signin	start	luna://com.webos.service.google.signin/start	private	0	0	misc	Starts the google signin.	documented
+com.webos.service.google.signin	stop	luna://com.webos.service.google.signin/stop	private	0	0	misc	Stops the google signin.	documented
 com.webos.service.googlehomecontroller	disableGhpService	luna://com.webos.service.googlehomecontroller/disableGhpService	private	0	0	misc	Disables the ghp service.	inferred
 com.webos.service.googlehomecontroller	enableGhpService	luna://com.webos.service.googlehomecontroller/enableGhpService	public	0	0	misc	Enables the ghp service.	inferred
 com.webos.service.googlehomecontroller	getGhpStatus	luna://com.webos.service.googlehomecontroller/getGhpStatus	public	0	0	misc	Returns the ghp status.	inferred
@@ -4878,11 +4878,11 @@ com.webos.service.lowlevelstorage	setData	luna://com.webos.service.lowlevelstora
 com.webos.service.lowlevelstorage	shutdown	luna://com.webos.service.lowlevelstorage/shutdown	private	1	0	storage	Shuts down the lowlevelstorage.	inferred
 com.webos.service.lsa	start	luna://com.webos.service.lsa/start	private	0	0	misc	Starts the lsa.	inferred
 com.webos.service.magicnum	checkApp	luna://com.webos.service.magicnum/checkApp	public	0	0	misc	Checks the app.	inferred
-com.webos.service.magicnum	checkChannel	luna://com.webos.service.magicnum/checkChannel	public	0	0	misc	Checks the channel.	inferred
-com.webos.service.magicnum	checkLauncher	luna://com.webos.service.magicnum/checkLauncher	private	0	0	apps	Checks the launcher.	inferred
+com.webos.service.magicnum	checkChannel	luna://com.webos.service.magicnum/checkChannel	public	0	0	misc	Checks the channel.	documented
+com.webos.service.magicnum	checkLauncher	luna://com.webos.service.magicnum/checkLauncher	private	0	0	apps	Checks the launcher.	documented
 com.webos.service.magicnum	info	luna://com.webos.service.magicnum/info	private	0	0	misc	Handles the info.	inferred
 com.webos.service.magicnum	quit	luna://com.webos.service.magicnum/quit	private	0	0	misc	Quits the magicnum.	inferred
-com.webos.service.magicnum	setCountry	luna://com.webos.service.magicnum/setCountry	private	1	0	misc	Sets the country.	inferred
+com.webos.service.magicnum	setCountry	luna://com.webos.service.magicnum/setCountry	private	1	0	misc	Sets the country.	documented
 com.webos.service.matter	sendCommand	luna://com.webos.service.matter/sendCommand	private	0	0	misc	Sends the command.	inferred
 com.webos.service.matter	subscribe	luna://com.webos.service.matter/subscribe	private	0	0	misc	Subscribes to the matter.	inferred
 com.webos.service.mediacontroller	activateMediaSession	luna://com.webos.service.mediacontroller/activateMediaSession	public	0	0	media	Activates the media session. Recommended usage : The API is recommended to be used by the application . Note: Only an active media session can receive the AVRCP	documented
@@ -6736,8 +6736,8 @@ com.webos.service.tvrm.policy.receiver	notifyPolicyActionDone	luna://com.webos.s
 com.webos.service.tvrm.policy.sender	subscribePolicyAction	luna://com.webos.service.tvrm.policy.sender/subscribePolicyAction	private	0	0	tv-broadcast	Subscribes to the policy action.	inferred
 com.webos.service.tvrmclient.gibbs_3189	getData	luna://com.webos.service.tvrmclient.gibbs_3189/getData	private	0	0	tv-broadcast	Returns the data.	inferred
 com.webos.service.tvrmclient.tv_2140	getData	luna://com.webos.service.tvrmclient.tv_2140/getData	private	0	0	tv-broadcast	Returns the data.	inferred
-com.webos.service.tvstorepolicy	changeMode	luna://com.webos.service.tvstorepolicy/changeMode	private	0	0	misc	Changes the mode.	inferred
-com.webos.service.tvstorepolicy	syncDemoSocket	luna://com.webos.service.tvstorepolicy/syncDemoSocket	private	0	0	misc	Synchronizes the demo socket.	inferred
+com.webos.service.tvstorepolicy	changeMode	luna://com.webos.service.tvstorepolicy/changeMode	private	0	0	misc	Changes the mode.	documented
+com.webos.service.tvstorepolicy	syncDemoSocket	luna://com.webos.service.tvstorepolicy/syncDemoSocket	private	0	0	misc	Synchronizes the demo socket.	documented
 com.webos.service.unifiedsearch	category	luna://com.webos.service.unifiedsearch/category	unknown	0	0	misc	Indicates the category information.	documented
 com.webos.service.unifiedsearch	display	luna://com.webos.service.unifiedsearch/display	unknown	0	0	misc	Indicates the display information to show on screen.	documented
 com.webos.service.unifiedsearch	getCategories	luna://com.webos.service.unifiedsearch/getCategories	public	0	0	misc	Gets an ordered list of enabled and disabled categories.	documented

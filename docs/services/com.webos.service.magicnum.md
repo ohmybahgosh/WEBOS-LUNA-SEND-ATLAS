@@ -9,11 +9,11 @@ Appears to validate or resolve 'magic number' shortcuts for apps, channels, and 
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
 | [`checkApp`](#checkapp) | public |  | misc | inferred | Checks the app. |
-| [`checkChannel`](#checkchannel) | public |  | misc | inferred | Checks the channel. |
-| [`checkLauncher`](#checklauncher) | private |  | apps | inferred | Checks the launcher. |
+| [`checkChannel`](#checkchannel) | public |  | misc | documented | Checks the channel. |
+| [`checkLauncher`](#checklauncher) | private |  | apps | documented | Checks the launcher. |
 | [`info`](#info) | private |  | misc | inferred | Handles the info. |
 | [`quit`](#quit) | private |  | misc | inferred | Quits the magicnum. |
-| [`setCountry`](#setcountry) | private |  | misc | inferred | Sets the country. ⚠️ |
+| [`setCountry`](#setcountry) | private |  | misc | documented | Sets the country. ⚠️ |
 
 <a id="checkapp"></a>
 ## `checkApp`
@@ -45,19 +45,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Checks the channel.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** public  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.magicnum/checkChannel '{}'
 ```
 
-> ACG groups: public, magicnum.action, private, configurator.callbacks, service.magicnum, all, activities.callbacks, services.
+> ACG groups: public, magicnum.action, private, configurator.callbacks, service.magicnum, all, activities.callbacks, services.  Triggered internally by the activity manager; takes no request parameters.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -68,19 +66,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Checks the launcher.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.magicnum/checkLauncher '{}'
 ```
 
-> ACG groups: configurator.callbacks, service.magicnum, all, activities.callbacks.
+> ACG groups: configurator.callbacks, service.magicnum, all, activities.callbacks.  Triggered internally by the activity manager (reads the activity trigger); takes no request parameters.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -145,18 +141,16 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the country.
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.magicnum/setCountry '{}'
 ```
 
-> ACG groups: configurator.callbacks, service.magicnum, all, activities.callbacks. Flagged dangerous by name; verify before calling.
+> ACG groups: configurator.callbacks, service.magicnum, all, activities.callbacks. Flagged dangerous by name; verify before calling.  Triggered internally by the activity manager; takes no request parameters.  Parameters recovered from the on-device service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))

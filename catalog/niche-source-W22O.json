@@ -1,0 +1,98 @@
+{
+ "luna://com.palm.service.devmode/getDevMode": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.palm.service.devmode/devmode_service.js"
+ },
+ "luna://com.palm.service.devmode/getPassphrase": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.palm.service.devmode/devmode_service.js"
+ },
+ "luna://com.palm.service.devmode/setDevMode": {
+  "params": {
+   "enabled": "Boolean (required) True to enable Developer Mode, false to disable."
+  },
+  "required": [
+   "enabled"
+  ],
+  "source": "/usr/palm/services/com.palm.service.devmode/devmode_service.js"
+ },
+ "luna://com.webos.service.firstuse/getSettings": {
+  "params": {
+   "key": "String (required) Setting key to read (must be a supported first-use key).",
+   "params": "Object (optional) Extra parameters for the key lookup."
+  },
+  "required": [
+   "key"
+  ],
+  "source": "/usr/palm/services/com.webos.service.firstuse/src/api/getSettingsData.js"
+ },
+ "luna://com.webos.service.firstuse/setSettings": {
+  "params": {
+   "key": "String (required) Setting key to write (must be a supported first-use key).",
+   "value": "Any (required) Value to set for the key."
+  },
+  "required": [
+   "key",
+   "value"
+  ],
+  "source": "/usr/palm/services/com.webos.service.firstuse/src/api/setSettingsData.js"
+ },
+ "luna://com.webos.service.google.signin/start": {
+  "params": {
+   "clientId": "String (required) Google OAuth2 client ID.",
+   "clientSecret": "String (required) Google OAuth2 client secret.",
+   "scopes": "Array (required) OAuth2 scopes to request.",
+   "appReturn": "Object (required) App launch descriptor to return to with the resulting token info.",
+   "listenPort": "Integer (optional) Local redirect/listen port (default 8080)."
+  },
+  "required": [
+   "appReturn",
+   "clientId",
+   "clientSecret",
+   "scopes"
+  ],
+  "source": "/usr/palm/services/com.webos.service.google.signin/index.js"
+ },
+ "luna://com.webos.service.google.signin/stop": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.google.signin/index.js"
+ },
+ "luna://com.webos.service.magicnum/checkChannel": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.magicnum/index.js"
+ },
+ "luna://com.webos.service.magicnum/checkLauncher": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.magicnum/index.js"
+ },
+ "luna://com.webos.service.magicnum/setCountry": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.magicnum/index.js"
+ },
+ "luna://com.webos.service.tvstorepolicy/changeMode": {
+  "params": {
+   "mode": "String (required) Target mode: store or home."
+  },
+  "required": [
+   "mode"
+  ],
+  "source": "/usr/palm/services/com.webos.service.tvstorepolicy/src/service/changeMode.js"
+ },
+ "luna://com.webos.service.tvstorepolicy/syncDemoSocket": {
+  "params": {
+   "mode": "String (required) Socket operation: open, send, or close.",
+   "ip": "String (optional) Target IP of the demo device (used by open/send/close).",
+   "request": "Object (optional) Message to send over the socket."
+  },
+  "required": [
+   "mode"
+  ],
+  "source": "/usr/palm/services/com.webos.service.tvstorepolicy/src/service/syncDemoSocket.js"
+ }
+}

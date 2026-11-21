@@ -155,8 +155,8 @@
 | [`luna://com.webos.service.eim/resetExternalInputSettings`](../services/com.webos.service.eim.md#resetexternalinputsettings) | public | inferred | Resets the external input settings. ⚠️ |
 | [`luna://com.webos.service.emmcd/setProfileConfig`](../services/com.webos.service.emmcd.md#setprofileconfig) | public | inferred | Sets the profile config. |
 | [`luna://com.webos.service.familycare/getSystemSettingsByActivitymanager`](../services/com.webos.service.familycare.md#getsystemsettingsbyactivitymanager) | private | inferred | Returns the system settings by activitymanager. |
-| [`luna://com.webos.service.firstuse/getSettings`](../services/com.webos.service.firstuse.md#getsettings) | private | inferred | Returns the settings. |
-| [`luna://com.webos.service.firstuse/setSettings`](../services/com.webos.service.firstuse.md#setsettings) | private | inferred | Sets the settings. |
+| [`luna://com.webos.service.firstuse/getSettings`](../services/com.webos.service.firstuse.md#getsettings) | private | documented | Returns the settings. |
+| [`luna://com.webos.service.firstuse/setSettings`](../services/com.webos.service.firstuse.md#setsettings) | private | documented | Sets the settings. |
 | [`luna://com.webos.service.gibbips.bcConfigAdapter/configdcache_showAllValues`](../services/com.webos.service.gibbips.bcConfigAdapter.md#configdcache_showallvalues) | private | inferred | Handles the configdcache show all values. |
 | [`luna://com.webos.service.gibbips.bcConfigAdapter/settingscache_showAllValues`](../services/com.webos.service.gibbips.bcConfigAdapter.md#settingscache_showallvalues) | private | inferred | Handles the settingscache show all values. |
 | [`luna://com.webos.service.gibbips.bcConfigAdapter/showAllValues`](../services/com.webos.service.gibbips.bcConfigAdapter.md#showallvalues) | private | inferred | Shows the all values. |

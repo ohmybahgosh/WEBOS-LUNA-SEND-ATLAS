@@ -370,8 +370,8 @@
 | [`luna://com.webos.service.gingaccwebservices/start`](../services/com.webos.service.gingaccwebservices.md#start) | public | inferred | Starts the gingaccwebservices. |
 | [`luna://com.webos.service.gingaccwebservices/stop`](../services/com.webos.service.gingaccwebservices.md#stop) | public | inferred | Stops the gingaccwebservices. |
 | [`luna://com.webos.service.gingaccwebservices/subscribeForGinga`](../services/com.webos.service.gingaccwebservices.md#subscribeforginga) | public | inferred | Subscribes to the for ginga. |
-| [`luna://com.webos.service.google.signin/start`](../services/com.webos.service.google.signin.md#start) | private | inferred | Starts the google signin. |
-| [`luna://com.webos.service.google.signin/stop`](../services/com.webos.service.google.signin.md#stop) | private | inferred | Stops the google signin. |
+| [`luna://com.webos.service.google.signin/start`](../services/com.webos.service.google.signin.md#start) | private | documented | Starts the google signin. |
+| [`luna://com.webos.service.google.signin/stop`](../services/com.webos.service.google.signin.md#stop) | private | documented | Stops the google signin. |
 | [`luna://com.webos.service.googlehomecontroller/disableGhpService`](../services/com.webos.service.googlehomecontroller.md#disableghpservice) | private | inferred | Disables the ghp service. |
 | [`luna://com.webos.service.googlehomecontroller/enableGhpService`](../services/com.webos.service.googlehomecontroller.md#enableghpservice) | public | inferred | Enables the ghp service. |
 | [`luna://com.webos.service.googlehomecontroller/getGhpStatus`](../services/com.webos.service.googlehomecontroller.md#getghpstatus) | public | inferred | Returns the ghp status. |
@@ -448,10 +448,10 @@
 | [`luna://com.webos.service.logger/writeLog`](../services/com.webos.service.logger.md#writelog) | private | inferred | Writes the log. |
 | [`luna://com.webos.service.lsa/start`](../services/com.webos.service.lsa.md#start) | private | inferred | Starts the lsa. |
 | [`luna://com.webos.service.magicnum/checkApp`](../services/com.webos.service.magicnum.md#checkapp) | public | inferred | Checks the app. |
-| [`luna://com.webos.service.magicnum/checkChannel`](../services/com.webos.service.magicnum.md#checkchannel) | public | inferred | Checks the channel. |
+| [`luna://com.webos.service.magicnum/checkChannel`](../services/com.webos.service.magicnum.md#checkchannel) | public | documented | Checks the channel. |
 | [`luna://com.webos.service.magicnum/info`](../services/com.webos.service.magicnum.md#info) | private | inferred | Handles the info. |
 | [`luna://com.webos.service.magicnum/quit`](../services/com.webos.service.magicnum.md#quit) | private | inferred | Quits the magicnum. |
-| [`luna://com.webos.service.magicnum/setCountry`](../services/com.webos.service.magicnum.md#setcountry) | private | inferred | Sets the country. ⚠️ |
+| [`luna://com.webos.service.magicnum/setCountry`](../services/com.webos.service.magicnum.md#setcountry) | private | documented | Sets the country. ⚠️ |
 | [`luna://com.webos.service.matter/sendCommand`](../services/com.webos.service.matter.md#sendcommand) | private | inferred | Sends the command. |
 | [`luna://com.webos.service.matter/subscribe`](../services/com.webos.service.matter.md#subscribe) | private | inferred | Subscribes to the matter. |
 | [`luna://com.webos.service.mfi/deleteKey`](../services/com.webos.service.mfi.md#deletekey) | public | inferred | Deletes the key. ⚠️ |
@@ -668,8 +668,8 @@
 | [`luna://com.webos.service.tvlinkcmdprocessor/osdLockStatus`](../services/com.webos.service.tvlinkcmdprocessor.md#osdlockstatus) | public | inferred | Handles the OSD lock status. |
 | [`luna://com.webos.service.tvlinkcmdprocessor/receiveCommand`](../services/com.webos.service.tvlinkcmdprocessor.md#receivecommand) | public | inferred | Handles the receive command. |
 | [`luna://com.webos.service.tvrm/policyActionEvent`](../services/com.webos.service.tvrm.md#policyactionevent) | private | inferred | Handles the policy action event. |
-| [`luna://com.webos.service.tvstorepolicy/changeMode`](../services/com.webos.service.tvstorepolicy.md#changemode) | private | inferred | Changes the mode. |
-| [`luna://com.webos.service.tvstorepolicy/syncDemoSocket`](../services/com.webos.service.tvstorepolicy.md#syncdemosocket) | private | inferred | Synchronizes the demo socket. |
+| [`luna://com.webos.service.tvstorepolicy/changeMode`](../services/com.webos.service.tvstorepolicy.md#changemode) | private | documented | Changes the mode. |
+| [`luna://com.webos.service.tvstorepolicy/syncDemoSocket`](../services/com.webos.service.tvstorepolicy.md#syncdemosocket) | private | documented | Synchronizes the demo socket. |
 | [`luna://com.webos.service.unifiedsearch/category`](../services/com.webos.service.unifiedsearch.md#category) | unknown | documented | Indicates the category information. |
 | [`luna://com.webos.service.unifiedsearch/display`](../services/com.webos.service.unifiedsearch.md#display) | unknown | documented | Indicates the display information to show on screen. |
 | [`luna://com.webos.service.unifiedsearch/getCategories`](../services/com.webos.service.unifiedsearch.md#getcategories) | public | documented | Gets an ordered list of enabled and disabled categories. |
