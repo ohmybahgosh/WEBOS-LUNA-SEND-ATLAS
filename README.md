@@ -178,11 +178,11 @@ Every method carries a `confidence` flag (column 9 of `index.tsv`, `dc` in the w
 
 | Confidence | Methods | What it means |
 |---|---|---|
-| `documented` | 1,979 | Described from an authoritative source: the [webOS OSE LS2 API reference](https://www.webosose.org/docs/reference/ls2-api/) (CC-BY 4.0), official LG docs, community tools, or the TV's own on-device LS2 request schemas (`/etc/palm/schemas`).  Parameters and return fields are real where shown. |
-| `inferred` | 6,144 | LG-proprietary services with no public documentation and no readable source (native firmware binaries).  The one-line description is derived **only from the method's own name** &mdash; e.g. `getLockStatusforSubscribe` &rarr; "Returns the lock status (subscription variant)".  **No parameters are invented.**  Treat these as a best-effort guide, not verified behaviour. |
+| `documented` | 2,031 | Described from an authoritative source: the [webOS OSE LS2 API reference](https://www.webosose.org/docs/reference/ls2-api/) (CC-BY 4.0), official LG docs, community tools, the TV's own on-device LS2 request schemas (`/etc/palm/schemas`), or readable on-device service source (JavaScript services such as the apiadapter).  Parameters and return fields are real where shown. |
+| `inferred` | 6,092 | LG-proprietary services with no public documentation and no readable source (native firmware binaries).  The one-line description is derived **only from the method's own name** &mdash; e.g. `getLockStatusforSubscribe` &rarr; "Returns the lock status (subscription variant)".  **No parameters are invented.**  Treat these as a best-effort guide, not verified behaviour. |
 | `stub` | 2 | Name only, no description yet. |
 
-The method names, access levels, ACG permission groups and danger flags are all real (from the on-device permission registry).  Real parameters for 188 methods on commonly used services (application manager, notifications, install, download, printing, broadcast and more) now come from the TV's own LS2 request schemas in `/etc/palm/schemas`; [discovery.md](docs/discovery.md) explains how.  The remaining `inferred` methods are name-only until their schemas are recovered the same way.
+The method names, access levels, ACG permission groups and danger flags are all real (from the on-device permission registry).  Real parameters for 1,271 methods now come from authoritative sources: the TV's own LS2 request schemas in `/etc/palm/schemas` (application manager, notifications, install, download, printing, broadcast and more, 188 methods), and readable on-device service source &mdash; the apiadapter's JavaScript (audio, settings, system, tv, notifications, launcher, user, webapp and more, 52 methods).  [discovery.md](docs/discovery.md) explains how.  The remaining `inferred` methods are name-only until their schemas or source are recovered the same way.
 
 ### Categories
 

@@ -9,62 +9,62 @@ API adapter that bridges remote/second-screen clients to on-device functions: au
 | Method | Access | Sub | Category | Conf | Description |
 |---|---|---|---|---|---|
 | [`audio/changeSoundOutput`](#audio_changesoundoutput) | ssap |  | audio | documented | Change sound output |
-| [`audio/getMute`](#audio_getmute) | private |  | audio | inferred | Returns the mute (audio) |
+| [`audio/getMute`](#audio_getmute) | private |  | audio | documented | Returns the mute (audio) |
 | [`audio/getSoundOutput`](#audio_getsoundoutput) | ssap | yes | audio | documented | Get (or subscribe to) current sound output |
-| [`audio/getStatus`](#audio_getstatus) | private |  | audio | inferred | Returns the status (audio) |
-| [`audio/setMute`](#audio_setmute) | private |  | audio | inferred | Sets the mute (audio) |
-| [`config/getConfigs`](#config_getconfigs) | private |  | settings | inferred | Returns the configs (config) |
-| [`externalpq/getExternalPqData`](#externalpq_getexternalpqdata) | private |  | picture | inferred | Returns the external PQ data (externalpq) |
-| [`externalpq/setExternalPqData`](#externalpq_setexternalpqdata) | private |  | picture | inferred | Sets the external PQ data (externalpq) |
+| [`audio/getStatus`](#audio_getstatus) | private |  | audio | documented | Returns the status (audio) |
+| [`audio/setMute`](#audio_setmute) | private |  | audio | documented | Sets the mute (audio) |
+| [`config/getConfigs`](#config_getconfigs) | private |  | settings | documented | Returns the configs (config) |
+| [`externalpq/getExternalPqData`](#externalpq_getexternalpqdata) | private |  | picture | documented | Returns the external PQ data (externalpq) |
+| [`externalpq/setExternalPqData`](#externalpq_setexternalpqdata) | private |  | picture | documented | Sets the external PQ data (externalpq) |
 | [`info`](#info) | private |  | network | inferred | Handles the info. |
-| [`media_viewer/close`](#media_viewer_close) | private |  | media | inferred | Closes the apiadapter (media viewer) |
-| [`media_viewer/open`](#media_viewer_open) | private |  | media | inferred | Opens the apiadapter (media viewer) |
+| [`media_viewer/close`](#media_viewer_close) | private |  | media | documented | Closes the apiadapter (media viewer) |
+| [`media_viewer/open`](#media_viewer_open) | private |  | media | documented | Opens the apiadapter (media viewer) |
 | [`quit`](#quit) | private |  | network | inferred | Quits the apiadapter. |
-| [`settings/getSystemSettingDesc`](#settings_getsystemsettingdesc) | private |  | settings | inferred | Returns the system setting desc (settings) |
-| [`settings/getSystemSettings`](#settings_getsystemsettings) | private |  | settings | inferred | Returns the system settings (settings) |
-| [`settings/getSystemSettingsHDRInfo`](#settings_getsystemsettingshdrinfo) | private |  | settings | inferred | Returns the system settings HDR info (settings) |
-| [`settings/getSystemSettingValues`](#settings_getsystemsettingvalues) | private |  | settings | inferred | Returns the system setting values (settings) |
-| [`settings/resetSystemSettingDesc`](#settings_resetsystemsettingdesc) | private |  | settings | inferred | Resets the system setting desc (settings) ⚠️ |
-| [`settings/resetSystemSettings`](#settings_resetsystemsettings) | private |  | settings | inferred | Resets the system settings (settings) ⚠️ |
-| [`settings/setSystemSettings`](#settings_setsystemsettings) | private |  | settings | inferred | Sets the system settings (settings) |
-| [`system/getCountryInfo`](#system_getcountryinfo) | private |  | network | inferred | Returns the country info (system) |
-| [`system/getSystemInfo`](#system_getsysteminfo) | private |  | network | inferred | Returns the system info (system) |
-| [`system/isValidPin`](#system_isvalidpin) | private |  | network | inferred | Reports whether the valid pin is set (system) |
-| [`system_launcher/close`](#system_launcher_close) | private |  | apps | inferred | Closes the apiadapter (system launcher) |
-| [`system_launcher/getAppState`](#system_launcher_getappstate) | private |  | apps | inferred | Returns the app state (system launcher) |
-| [`system_launcher/launch`](#system_launcher_launch) | private |  | apps | inferred | Launches the apiadapter (system launcher) |
-| [`system_launcher/open`](#system_launcher_open) | private |  | apps | inferred | Opens the apiadapter (system launcher) |
-| [`system_notifications/closeAlert`](#system_notifications_closealert) | private |  | notifications | inferred | Closes the alert (system notifications) |
-| [`system_notifications/closeToast`](#system_notifications_closetoast) | private |  | notifications | inferred | Closes the toast (system notifications) |
+| [`settings/getSystemSettingDesc`](#settings_getsystemsettingdesc) | private |  | settings | documented | Returns the system setting desc (settings) |
+| [`settings/getSystemSettings`](#settings_getsystemsettings) | private |  | settings | documented | Returns the system settings (settings) |
+| [`settings/getSystemSettingsHDRInfo`](#settings_getsystemsettingshdrinfo) | private |  | settings | documented | Returns the system settings HDR info (settings) |
+| [`settings/getSystemSettingValues`](#settings_getsystemsettingvalues) | private |  | settings | documented | Returns the system setting values (settings) |
+| [`settings/resetSystemSettingDesc`](#settings_resetsystemsettingdesc) | private |  | settings | documented | Resets the system setting desc (settings) ⚠️ |
+| [`settings/resetSystemSettings`](#settings_resetsystemsettings) | private |  | settings | documented | Resets the system settings (settings) ⚠️ |
+| [`settings/setSystemSettings`](#settings_setsystemsettings) | private |  | settings | documented | Sets the system settings (settings) |
+| [`system/getCountryInfo`](#system_getcountryinfo) | private |  | network | documented | Returns the country info (system) |
+| [`system/getSystemInfo`](#system_getsysteminfo) | private |  | network | documented | Returns the system info (system) |
+| [`system/isValidPin`](#system_isvalidpin) | private |  | network | documented | Reports whether the valid pin is set (system) |
+| [`system_launcher/close`](#system_launcher_close) | private |  | apps | documented | Closes the apiadapter (system launcher) |
+| [`system_launcher/getAppState`](#system_launcher_getappstate) | private |  | apps | documented | Returns the app state (system launcher) |
+| [`system_launcher/launch`](#system_launcher_launch) | private |  | apps | documented | Launches the apiadapter (system launcher) |
+| [`system_launcher/open`](#system_launcher_open) | private |  | apps | documented | Opens the apiadapter (system launcher) |
+| [`system_notifications/closeAlert`](#system_notifications_closealert) | private |  | notifications | documented | Closes the alert (system notifications) |
+| [`system_notifications/closeToast`](#system_notifications_closetoast) | private |  | notifications | documented | Closes the toast (system notifications) |
 | [`system_notifications/createAlert`](#system_notifications_createalert) | private |  | notifications | inferred | Creates the alert (system notifications) |
-| [`system_notifications/createToast`](#system_notifications_createtoast) | private |  | notifications | inferred | Creates the toast (system notifications) |
-| [`systemprofile/getProfiles`](#systemprofile_getprofiles) | private |  | network | inferred | Returns the profiles (systemprofile) |
-| [`timer/getSettings`](#timer_getsettings) | private |  | settings | inferred | Returns the settings (timer) |
-| [`timer/setSettings`](#timer_setsettings) | private |  | settings | inferred | Sets the settings (timer) |
-| [`tv/executeOneShot`](#tv_executeoneshot) | private |  | network | inferred | Runs the one shot (TV) |
-| [`tv/getACRAuthToken`](#tv_getacrauthtoken) | private |  | network | inferred | Returns the ACR auth token (TV) |
-| [`tv/getChannelCurrentProgramInfo`](#tv_getchannelcurrentprograminfo) | private |  | network | inferred | Returns the channel current program info (TV) |
-| [`tv/getChannelList`](#tv_getchannellist) | private |  | network | inferred | Returns the channel list (TV) |
-| [`tv/getChannelProgramInfo`](#tv_getchannelprograminfo) | private |  | network | inferred | Returns the channel program info (TV) |
-| [`tv/getContentState`](#tv_getcontentstate) | private |  | network | inferred | Returns the content state (TV) |
-| [`tv/getCurrentChannel`](#tv_getcurrentchannel) | private |  | network | inferred | Returns the current channel (TV) |
-| [`tv/getExternalInputList`](#tv_getexternalinputlist) | private |  | network | inferred | Returns the external input list (TV) |
-| [`tv/getSimilarChannelList`](#tv_getsimilarchannellist) | private |  | network | inferred | Returns the similar channel list (TV) |
-| [`tv/openChannel`](#tv_openchannel) | private |  | network | inferred | Opens the channel (TV) |
-| [`tv/switchInput`](#tv_switchinput) | private |  | network | inferred | Switches the input (TV) |
-| [`user/getUserData`](#user_getuserdata) | private |  | network | inferred | Returns the user data (user) |
-| [`user/resetUserData`](#user_resetuserdata) | private |  | network | inferred | Resets the user data (user) ⚠️ |
-| [`user/resetUserInfo`](#user_resetuserinfo) | private |  | network | inferred | Resets the user info (user) ⚠️ |
-| [`user/resetUserSchedule`](#user_resetuserschedule) | private |  | network | inferred | Resets the user schedule (user) ⚠️ |
-| [`user/setUserData`](#user_setuserdata) | private |  | network | inferred | Sets the user data (user) |
-| [`user/setUserInfo`](#user_setuserinfo) | private |  | network | inferred | Sets the user info (user) |
-| [`user/setUserSchedule`](#user_setuserschedule) | private |  | network | inferred | Sets the user schedule (user) |
-| [`webapp/closeWebApp`](#webapp_closewebapp) | private |  | network | inferred | Closes the web app (webapp) |
-| [`webapp/getAppIdForWebApp`](#webapp_getappidforwebapp) | private |  | network | inferred | Returns the app ID for web app (webapp) |
-| [`webapp/isWebAppPinned`](#webapp_iswebapppinned) | private |  | network | inferred | Reports whether the web app pinned is set (webapp) |
-| [`webapp/launchWebApp`](#webapp_launchwebapp) | private |  | apps | inferred | Launches the web app (webapp) |
-| [`webapp/pinWebApp`](#webapp_pinwebapp) | private |  | network | inferred | Handles the pin web app (webapp) |
-| [`webapp/removePinnedWebApp`](#webapp_removepinnedwebapp) | private |  | network | inferred | Removes the pinned web app (webapp) ⚠️ |
+| [`system_notifications/createToast`](#system_notifications_createtoast) | private |  | notifications | documented | Creates the toast (system notifications) |
+| [`systemprofile/getProfiles`](#systemprofile_getprofiles) | private |  | network | documented | Returns the profiles (systemprofile) |
+| [`timer/getSettings`](#timer_getsettings) | private |  | settings | documented | Returns the settings (timer) |
+| [`timer/setSettings`](#timer_setsettings) | private |  | settings | documented | Sets the settings (timer) |
+| [`tv/executeOneShot`](#tv_executeoneshot) | private |  | network | documented | Runs the one shot (TV) |
+| [`tv/getACRAuthToken`](#tv_getacrauthtoken) | private |  | network | documented | Returns the ACR auth token (TV) |
+| [`tv/getChannelCurrentProgramInfo`](#tv_getchannelcurrentprograminfo) | private |  | network | documented | Returns the channel current program info (TV) |
+| [`tv/getChannelList`](#tv_getchannellist) | private |  | network | documented | Returns the channel list (TV) |
+| [`tv/getChannelProgramInfo`](#tv_getchannelprograminfo) | private |  | network | documented | Returns the channel program info (TV) |
+| [`tv/getContentState`](#tv_getcontentstate) | private |  | network | documented | Returns the content state (TV) |
+| [`tv/getCurrentChannel`](#tv_getcurrentchannel) | private |  | network | documented | Returns the current channel (TV) |
+| [`tv/getExternalInputList`](#tv_getexternalinputlist) | private |  | network | documented | Returns the external input list (TV) |
+| [`tv/getSimilarChannelList`](#tv_getsimilarchannellist) | private |  | network | documented | Returns the similar channel list (TV) |
+| [`tv/openChannel`](#tv_openchannel) | private |  | network | documented | Opens the channel (TV) |
+| [`tv/switchInput`](#tv_switchinput) | private |  | network | documented | Switches the input (TV) |
+| [`user/getUserData`](#user_getuserdata) | private |  | network | documented | Returns the user data (user) |
+| [`user/resetUserData`](#user_resetuserdata) | private |  | network | documented | Resets the user data (user) ⚠️ |
+| [`user/resetUserInfo`](#user_resetuserinfo) | private |  | network | documented | Resets the user info (user) ⚠️ |
+| [`user/resetUserSchedule`](#user_resetuserschedule) | private |  | network | documented | Resets the user schedule (user) ⚠️ |
+| [`user/setUserData`](#user_setuserdata) | private |  | network | documented | Sets the user data (user) |
+| [`user/setUserInfo`](#user_setuserinfo) | private |  | network | documented | Sets the user info (user) |
+| [`user/setUserSchedule`](#user_setuserschedule) | private |  | network | documented | Sets the user schedule (user) |
+| [`webapp/closeWebApp`](#webapp_closewebapp) | private |  | network | documented | Closes the web app (webapp) |
+| [`webapp/getAppIdForWebApp`](#webapp_getappidforwebapp) | private |  | network | documented | Returns the app ID for web app (webapp) |
+| [`webapp/isWebAppPinned`](#webapp_iswebapppinned) | private |  | network | documented | Reports whether the web app pinned is set (webapp) |
+| [`webapp/launchWebApp`](#webapp_launchwebapp) | private |  | apps | documented | Launches the web app (webapp) |
+| [`webapp/pinWebApp`](#webapp_pinwebapp) | private |  | network | documented | Handles the pin web app (webapp) |
+| [`webapp/removePinnedWebApp`](#webapp_removepinnedwebapp) | private |  | network | documented | Removes the pinned web app (webapp) ⚠️ |
 
 <a id="audio_changesoundoutput"></a>
 ## `audio/changeSoundOutput`
@@ -98,19 +98,17 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 Returns the mute (audio)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/audio/getMute '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Subscribable.  Returns mute state (forwarded from com.webos.service.audio/master/getVolume).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -146,19 +144,17 @@ Sources: [1](https://github.com/chros73/bscpylgtv/blob/master/bscpylgtv/endpoint
 
 Returns the status (audio)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/audio/getStatus '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Subscribable.  Returns returnValue, callerId and volumeStatus (activeStatus, adjustVolume, maxVolume, muteStatus, volume, soundOutput).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -169,19 +165,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the mute (audio)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `mute` | Boolean (optional) Mute state; true to mute, false to unmute.  Forwarded to com.webos.service.audio/master/muteVolume. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/audio/setMute '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -192,19 +190,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the configs (config)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `configNames` | Array (required) Config key names to fetch.  Must be non-empty.  Forwarded to com.webos.service.config/getConfigs. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/config/getConfigs '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -215,19 +215,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the external PQ data (externalpq)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/externalpq/getExternalPqData '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Forwards the request payload to com.webos.service.pqcontroller/getExternalPqData and returns the PQ data base64-encoded in `data`.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -238,19 +236,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the external PQ data (externalpq)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `data` | String (optional) External PQ data, base64-encoded; written to a temp file whose path is forwarded to com.webos.service.pqcontroller/setExternalPqData. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/externalpq/setExternalPqData '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -284,19 +284,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Closes the apiadapter (media viewer)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/media_viewer/close '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Closes the media viewer; delegates to the system launcher close.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -307,19 +305,25 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Opens the apiadapter (media viewer)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `target` | String (optional) URI of the media to open.  Required unless `mimeType` is given. |
+| `mimeType` | String (optional) MIME type of the media; selects the player.  Required unless `target` is given. |
+| `iconSrc` | String (optional) Icon for the image viewer (image media only). |
+| `title` | String (optional) Title for the image viewer (image media only). |
+| `description` | String (optional) Description for the image viewer (image media only). |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/media_viewer/open '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Requires either `target` or `mimeType`.  Opens the default player for the media type: photo/video, music, or the image viewer.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -353,19 +357,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Returns the system setting desc (settings)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `keys` | Array (required) Setting keys whose description metadata to read.  Must be non-empty. |
+| `category` | String (optional) Settings category. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettingDesc '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/getSystemSettingDesc.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -376,19 +383,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the system settings (settings)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `keys` | Array (required) Setting keys to read.  Must be non-empty. |
+| `category` | String (optional) Settings category (e.g. picture, sound, option). |
+| `current_app` | Boolean (optional) Read the current app's scoped value. |
+| `app_id` | String (optional) App ID to scope the read to. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettings '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/getSystemSettings.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -399,19 +411,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the system settings HDR info (settings)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `keys` | Array (required) Setting keys to read.  Must be non-empty. |
+| `category` | String (optional) Settings category. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettingsHDRInfo '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/getSystemSettings.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -422,19 +437,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the system setting values (settings)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `key` | String (required) Setting key whose possible values to read. |
+| `category` | String (optional) Settings category. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettingValues '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/getSystemSettingValues.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -445,19 +463,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Resets the system setting desc (settings)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `keys` | Array (required) Setting-description keys to reset.  Must be non-empty. |
+| `category` | String (optional) Settings category. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/resetSystemSettingDesc '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.
+> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Forwarded to com.webos.settingsservice/resetSystemSettingDesc.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -468,19 +489,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Resets the system settings (settings)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `keys` | Array (required) Setting keys to reset to default.  Must be non-empty. |
+| `category` | String (optional) Settings category. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/resetSystemSettings '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.
+> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Forwarded to com.webos.settingsservice/resetSystemSettings.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -491,19 +515,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the system settings (settings)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `settings` | Object (required) Map of setting keys to new values. |
+| `category` | String (optional) Settings category. |
+| `current_app` | Boolean (optional) Scope the write to the current app. |
+| `app_id` | String (optional) App ID to scope the write to. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/setSystemSettings '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/setSystemSettings.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -514,19 +543,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the country info (system)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system/getCountryInfo '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Returns returnValue, country, smartCountry, shortName, fullName and groupCode.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -537,19 +564,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the system info (system)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system/getSystemInfo '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Returns returnValue, features (dvr), receiverType, modelName, serialNumber and programMode (assembled from factorymanager and config).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -560,19 +585,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Reports whether the valid pin is set (system)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `pin` | String (optional) SHA-256 hash (hex) of the system PIN to check; the call returns valid:false if it does not match the stored PIN. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system/isValidPin '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -583,19 +610,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Closes the apiadapter (system launcher)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (optional) App ID of the launched app to close. |
+| `sessionId` | String (optional) Session ID of the launch to close. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/close '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Closes a launched app for the caller's session.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -606,19 +636,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the app state (system launcher)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (optional) App ID of the launched app to query. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/getAppState '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Returns running and visible flags.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -629,19 +661,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Launches the apiadapter (system launcher)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (optional) App ID to launch. |
+| `params` | Object (optional) Launch parameters passed to the app (the `windowType` key is stripped). |
+| `contentId` | String (optional) Content ID for deep-linking; if the app declares deep-linking params it is deep-linked. |
+| `sessionId` | String (optional) Session ID for the launch. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/launch '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -652,19 +689,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Opens the apiadapter (system launcher)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `id` | String (optional) App ID to open. |
+| `params` | Object (optional) Parameters passed to the app. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/open '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -675,19 +715,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Closes the alert (system notifications)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_notifications/closeAlert '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Forwards the request payload to com.webos.notification/closeAlert.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -698,19 +736,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Closes the toast (system notifications)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_notifications/closeToast '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Forwards the request payload to com.webos.notification/closeToast.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -744,19 +780,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device /us
 
 Creates the toast (system notifications)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `message` | String (required) Text to display in the toast. |
+| `iconData` | String (optional) Icon image, base64-encoded; requires `iconExtension`. |
+| `iconExtension` | String (optional) File extension for `iconData` (e.g. png). |
+| `onClick` | Object (optional) Action when the toast is tapped; must contain `appId` or `target`, with an optional `params` object. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/system_notifications/createToast '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.notification/createToast.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -767,19 +808,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the profiles (systemprofile)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `names` | Array (required) Profile names to fetch.  Must be non-empty.  Forwarded to com.webos.service.systemprofile/getProfiles. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/systemprofile/getProfiles '{}'
 ```
 
-> ACG groups: private, all.
+> ACG groups: private, all.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -790,19 +833,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the settings (timer)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `keys` | Array (required) Timer setting keys to read.  Must be non-empty. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/timer/getSettings '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Forwarded to com.webos.settingsservice/batch (getSystemSettings operations).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -813,19 +858,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the settings (timer)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `settings` | Object (required) Map of timer setting keys to values.  Time-category keys include onTimerEnable, offTimerEnable, onTimerHour, onTimerMinute, offTimerHour, offTimerMinute, onTimerWeekday, offTimerWeekday, onTimerSource, onTimerAppId, onTimerChannel, onTimerVolume; timer-category keys include myStarterInfo and setMyStarter.  Must be non-empty. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/timer/setSettings '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/batch (setSystemSettings operations).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -836,19 +883,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Runs the one shot (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/executeOneShot '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Captures the current display to /tmp/capture.jpg (960x540 JPEG) via com.webos.service.capture and returns its path in `imageUri`.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -859,19 +904,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the ACR auth token (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getACRAuthToken '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Requires ACR (the `livePlus` option) to be enabled, otherwise returns permission denied; returns an ACR `token`.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -882,19 +925,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the channel current program info (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `channelId` | String (optional) Channel ID; defaults to the current channel if omitted. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getChannelCurrentProgramInfo '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -905,19 +950,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the channel list (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `channelMode` | String (optional) Channel-mode filter. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getChannelList '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Forwarded to com.webos.service.iepg/getChannelList.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -928,19 +975,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the channel program info (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `channelId` | String (optional) Channel ID; defaults to the current channel if omitted. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getChannelProgramInfo '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -951,19 +1000,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the content state (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getContentState '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Subscribable.  Returns contentState: 2 when tuner program data is available, 1 when ACR data is available, 0 otherwise.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -974,19 +1021,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the current channel (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getCurrentChannel '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Subscribable.  Returns the current channel record.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -997,19 +1042,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the external input list (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getExternalInputList '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Subscribable.  Returns the external input/device list (from com.webos.service.eim/getAllInputStatus).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1020,19 +1063,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the similar channel list (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `channelNumber` | String (required) Channel number to match. |
+| `oldChannelId` | String (optional) Existing channel ID to disambiguate; must be a valid channel ID. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getSimilarChannelList '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1043,19 +1089,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Opens the channel (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `channelNumber` | String (optional) Channel number to open.  Required unless `channelId` is given. |
+| `channelId` | String (optional) Explicit channel ID (must be valid).  Required unless `channelNumber` is given. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/openChannel '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Requires either `channelNumber` or `channelId`.  Opens the Live TV app on the channel.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1066,19 +1115,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Switches the input (TV)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `inputId` | String (required) Input ID to switch to (e.g. HDMI_1). |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/switchInput '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Launches the app for the given external input.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1089,19 +1140,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the user data (user)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/getUserData '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Reads the stored userData record.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1112,19 +1161,17 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Resets the user data (user)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/resetUserData '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.
+> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Takes no request parameters.  Clears the stored userData record.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1135,19 +1182,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Resets the user info (user)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `_clientKey` | String (required) Client key identifying the user. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/resetUserInfo '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.
+> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1158,19 +1207,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Resets the user schedule (user)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `_clientKey` | String (optional) Client key; if omitted, all schedules are reset. |
+| `all` | Boolean (optional) Reset all schedules. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/resetUserSchedule '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.
+> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1181,19 +1233,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the user data (user)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `userData` | Any (required) User data value to store. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/setUserData '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote, secondscreen.uac.
+> ACG groups: secondscreen.all, private, all, system.remote, secondscreen.uac.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1204,19 +1258,26 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the user info (user)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `_clientKey` | String (required) Client key identifying the user. |
+| `userName` | String (required) User display name. |
+| `deviceId` | String (optional) Device identity. |
+| `userData` | Object (optional) Arbitrary user data to store. |
+| `userIconData` | String (optional) User icon image, base64-encoded; requires `userIconExt`. |
+| `userIconExt` | String (optional) File extension for `userIconData`. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/setUserInfo '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote, secondscreen.uac.
+> ACG groups: secondscreen.all, private, all, system.remote, secondscreen.uac.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1227,19 +1288,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Sets the user schedule (user)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `_clientKey` | String (required) Client key identifying the user. |
+| `schedules` | Array (required) Schedule objects to store.  Must be non-empty. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/user/setUserSchedule '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1250,19 +1314,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Closes the web app (webapp)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `webAppId` | String (required) Web app ID to close. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/closeWebApp '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Delegates to the system launcher close for the web app's host app.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1273,19 +1339,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Returns the app ID for web app (webapp)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `webAppId` | String (required) Web app ID. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/getAppIdForWebApp '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Returns the generated platform app ID in `appId`.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1296,19 +1364,21 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Reports whether the web app pinned is set (webapp)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `webAppId` | String (required) Web app ID to check. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/isWebAppPinned '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Returns a `pinned` flag.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1319,19 +1389,24 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Launches the web app (webapp)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `webAppId` | String (required) Web app ID. |
+| `appInfo` | Object (optional) App metadata, used when launching a pinned web app. |
+| `params` | Object (optional) Launch parameters. |
+| `urlParams` | Object (optional) URL parameters for the web app. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/launchWebApp '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1342,19 +1417,22 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Handles the pin web app (webapp)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `webAppId` | String (required) Web app ID. |
+| `appInfo` | Object (required) Web app metadata.  Required keys: id, title, icon, iconColor, largeIcon, bgImage, bgColor, splashBackground, vendor, handlesRelaunch; optional: appDescription. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/pinWebApp '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote.
+> ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))
 
@@ -1365,18 +1443,20 @@ Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device int
 
 Removes the pinned web app (webapp)
 
-> _Description inferred from the method name; parameters are not publicly documented._
-
 - **Access:** private  
 - **Subscribe:** no  
 - **Platform:** webOS TV  
 - **Versions:** seen on webOS TV 7.0 (model W22O, firmware 33.31.68)  
-- **Confidence:** inferred
+- **Confidence:** documented
+
+| Param | Type / notes |
+|---|---|
+| `webAppId` | String (required) Web app ID to unpin. |
 
 ```sh
 luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/removePinnedWebApp '{}'
 ```
 
-> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.
+> ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).
 
 Sources: [1](https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68))

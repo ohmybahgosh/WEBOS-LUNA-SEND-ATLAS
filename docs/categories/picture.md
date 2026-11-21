@@ -4,8 +4,8 @@
 
 | URI | Access | Conf | Description |
 |---|---|---|---|
-| [`luna://com.webos.service.apiadapter/externalpq/getExternalPqData`](../services/com.webos.service.apiadapter.md#externalpq_getexternalpqdata) | private | inferred | Returns the external PQ data (externalpq) |
-| [`luna://com.webos.service.apiadapter/externalpq/setExternalPqData`](../services/com.webos.service.apiadapter.md#externalpq_setexternalpqdata) | private | inferred | Sets the external PQ data (externalpq) |
+| [`luna://com.webos.service.apiadapter/externalpq/getExternalPqData`](../services/com.webos.service.apiadapter.md#externalpq_getexternalpqdata) | private | documented | Returns the external PQ data (externalpq) |
+| [`luna://com.webos.service.apiadapter/externalpq/setExternalPqData`](../services/com.webos.service.apiadapter.md#externalpq_setexternalpqdata) | private | documented | Sets the external PQ data (externalpq) |
 | [`luna://com.webos.service.pqcontroller/getExternalPqData`](../services/com.webos.service.pqcontroller.md#getexternalpqdata) | public | inferred | Returns the external PQ data. |
 | [`luna://com.webos.service.pqcontroller/getEyeqSensorData`](../services/com.webos.service.pqcontroller.md#geteyeqsensordata) | public | inferred | Returns the eyeq sensor data. |
 | [`luna://com.webos.service.pqcontroller/getInfo`](../services/com.webos.service.pqcontroller.md#getinfo) | private | documented | Reads PQ info, e.g. ambient lux |

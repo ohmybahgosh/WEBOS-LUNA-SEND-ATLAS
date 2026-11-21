@@ -241,10 +241,10 @@
 | [`luna://com.webos.media/setAudioStreamPitch`](../services/com.webos.media.md#setaudiostreampitch) | public | inferred | Sets the audio stream pitch. |
 | [`luna://com.webos.media/setMpeghAudioConfig`](../services/com.webos.media.md#setmpeghaudioconfig) | public | inferred | Sets the mpegh audio config. |
 | [`luna://com.webos.service.apiadapter/audio/changeSoundOutput`](../services/com.webos.service.apiadapter.md#audio_changesoundoutput) | ssap | documented | Change sound output |
-| [`luna://com.webos.service.apiadapter/audio/getMute`](../services/com.webos.service.apiadapter.md#audio_getmute) | private | inferred | Returns the mute (audio) |
+| [`luna://com.webos.service.apiadapter/audio/getMute`](../services/com.webos.service.apiadapter.md#audio_getmute) | private | documented | Returns the mute (audio) |
 | [`luna://com.webos.service.apiadapter/audio/getSoundOutput`](../services/com.webos.service.apiadapter.md#audio_getsoundoutput) | ssap | documented | Get (or subscribe to) current sound output |
-| [`luna://com.webos.service.apiadapter/audio/getStatus`](../services/com.webos.service.apiadapter.md#audio_getstatus) | private | inferred | Returns the status (audio) |
-| [`luna://com.webos.service.apiadapter/audio/setMute`](../services/com.webos.service.apiadapter.md#audio_setmute) | private | inferred | Sets the mute (audio) |
+| [`luna://com.webos.service.apiadapter/audio/getStatus`](../services/com.webos.service.apiadapter.md#audio_getstatus) | private | documented | Returns the status (audio) |
+| [`luna://com.webos.service.apiadapter/audio/setMute`](../services/com.webos.service.apiadapter.md#audio_setmute) | private | documented | Sets the mute (audio) |
 | [`luna://com.webos.service.attachedstoragemanager/getAudioMetadata`](../services/com.webos.service.attachedstoragemanager.md#getaudiometadata) | private | inferred | Returns the audio metadata. |
 | [`luna://com.webos.service.audio/alarm/getAlarmOn`](../services/com.webos.service.audio.md#alarm_getalarmon) | private | inferred | Returns the alarm on (alarm) |
 | [`luna://com.webos.service.audio/alarm/getVolume`](../services/com.webos.service.audio.md#alarm_getvolume) | private | inferred | Returns the volume (alarm) |

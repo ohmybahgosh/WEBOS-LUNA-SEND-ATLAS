@@ -35162,15 +35162,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Subscribable.  Returns mute state (forwarded from com.webos.service.audio/master/getVolume).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/audio/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35213,15 +35214,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Subscribable.  Returns returnValue, callerId and volumeStatus (activeStatus, adjustVolume, maxVolume, muteStatus, volume, soundOutput).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/audio/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35229,22 +35231,25 @@
   "uri": "luna://com.webos.service.apiadapter/audio/setMute",
   "category": "audio",
   "description": "Sets the mute (audio)",
-  "params": {},
+  "params": {
+   "mute": "Boolean (optional) Mute state; true to mute, false to unmute.  Forwarded to com.webos.service.audio/master/muteVolume."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/audio/setMute '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/audio/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35252,22 +35257,25 @@
   "uri": "luna://com.webos.service.apiadapter/config/getConfigs",
   "category": "settings",
   "description": "Returns the configs (config)",
-  "params": {},
+  "params": {
+   "configNames": "Array (required) Config key names to fetch.  Must be non-empty.  Forwarded to com.webos.service.config/getConfigs."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/config/getConfigs '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/config/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35282,15 +35290,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Forwards the request payload to com.webos.service.pqcontroller/getExternalPqData and returns the PQ data base64-encoded in `data`.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/externalpq/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35298,22 +35307,25 @@
   "uri": "luna://com.webos.service.apiadapter/externalpq/setExternalPqData",
   "category": "picture",
   "description": "Sets the external PQ data (externalpq)",
-  "params": {},
+  "params": {
+   "data": "String (optional) External PQ data, base64-encoded; written to a temp file whose path is forwarded to com.webos.service.pqcontroller/setExternalPqData."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/externalpq/setExternalPqData '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/externalpq/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35351,15 +35363,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Closes the media viewer; delegates to the system launcher close.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/media_viewer/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35367,22 +35380,29 @@
   "uri": "luna://com.webos.service.apiadapter/media_viewer/open",
   "category": "media",
   "description": "Opens the apiadapter (media viewer)",
-  "params": {},
+  "params": {
+   "target": "String (optional) URI of the media to open.  Required unless `mimeType` is given.",
+   "mimeType": "String (optional) MIME type of the media; selects the player.  Required unless `target` is given.",
+   "iconSrc": "String (optional) Icon for the image viewer (image media only).",
+   "title": "String (optional) Title for the image viewer (image media only).",
+   "description": "String (optional) Description for the image viewer (image media only)."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/media_viewer/open '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Requires either `target` or `mimeType`.  Opens the default player for the media type: photo/video, music, or the image viewer.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/media_viewer/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35413,22 +35433,26 @@
   "uri": "luna://com.webos.service.apiadapter/settings/getSystemSettingDesc",
   "category": "settings",
   "description": "Returns the system setting desc (settings)",
-  "params": {},
+  "params": {
+   "keys": "Array (required) Setting keys whose description metadata to read.  Must be non-empty.",
+   "category": "String (optional) Settings category."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettingDesc '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/getSystemSettingDesc.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35436,22 +35460,28 @@
   "uri": "luna://com.webos.service.apiadapter/settings/getSystemSettings",
   "category": "settings",
   "description": "Returns the system settings (settings)",
-  "params": {},
+  "params": {
+   "keys": "Array (required) Setting keys to read.  Must be non-empty.",
+   "category": "String (optional) Settings category (e.g. picture, sound, option).",
+   "current_app": "Boolean (optional) Read the current app's scoped value.",
+   "app_id": "String (optional) App ID to scope the read to."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettings '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/getSystemSettings.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35459,22 +35489,26 @@
   "uri": "luna://com.webos.service.apiadapter/settings/getSystemSettingsHDRInfo",
   "category": "settings",
   "description": "Returns the system settings HDR info (settings)",
-  "params": {},
+  "params": {
+   "keys": "Array (required) Setting keys to read.  Must be non-empty.",
+   "category": "String (optional) Settings category."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettingsHDRInfo '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/getSystemSettings.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35482,22 +35516,26 @@
   "uri": "luna://com.webos.service.apiadapter/settings/getSystemSettingValues",
   "category": "settings",
   "description": "Returns the system setting values (settings)",
-  "params": {},
+  "params": {
+   "key": "String (required) Setting key whose possible values to read.",
+   "category": "String (optional) Settings category."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/getSystemSettingValues '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/getSystemSettingValues.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35505,22 +35543,26 @@
   "uri": "luna://com.webos.service.apiadapter/settings/resetSystemSettingDesc",
   "category": "settings",
   "description": "Resets the system setting desc (settings)",
-  "params": {},
+  "params": {
+   "keys": "Array (required) Setting-description keys to reset.  Must be non-empty.",
+   "category": "String (optional) Settings category."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/resetSystemSettingDesc '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": true,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Forwarded to com.webos.settingsservice/resetSystemSettingDesc.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35528,22 +35570,26 @@
   "uri": "luna://com.webos.service.apiadapter/settings/resetSystemSettings",
   "category": "settings",
   "description": "Resets the system settings (settings)",
-  "params": {},
+  "params": {
+   "keys": "Array (required) Setting keys to reset to default.  Must be non-empty.",
+   "category": "String (optional) Settings category."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/resetSystemSettings '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": true,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Forwarded to com.webos.settingsservice/resetSystemSettings.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35551,22 +35597,28 @@
   "uri": "luna://com.webos.service.apiadapter/settings/setSystemSettings",
   "category": "settings",
   "description": "Sets the system settings (settings)",
-  "params": {},
+  "params": {
+   "settings": "Object (required) Map of setting keys to new values.",
+   "category": "String (optional) Settings category.",
+   "current_app": "Boolean (optional) Scope the write to the current app.",
+   "app_id": "String (optional) App ID to scope the write to."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/settings/setSystemSettings '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/setSystemSettings.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35581,15 +35633,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Returns returnValue, country, smartCountry, shortName, fullName and groupCode.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/system/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35604,15 +35657,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Returns returnValue, features (dvr), receiverType, modelName, serialNumber and programMode (assembled from factorymanager and config).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/system/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35620,22 +35674,25 @@
   "uri": "luna://com.webos.service.apiadapter/system/isValidPin",
   "category": "network",
   "description": "Reports whether the valid pin is set (system)",
-  "params": {},
+  "params": {
+   "pin": "String (optional) SHA-256 hash (hex) of the system PIN to check; the call returns valid:false if it does not match the stored PIN."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/system/isValidPin '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/system/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35643,22 +35700,26 @@
   "uri": "luna://com.webos.service.apiadapter/system_launcher/close",
   "category": "apps",
   "description": "Closes the apiadapter (system launcher)",
-  "params": {},
+  "params": {
+   "id": "String (optional) App ID of the launched app to close.",
+   "sessionId": "String (optional) Session ID of the launch to close."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/close '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Closes a launched app for the caller's session.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/system_launcher/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35666,22 +35727,25 @@
   "uri": "luna://com.webos.service.apiadapter/system_launcher/getAppState",
   "category": "apps",
   "description": "Returns the app state (system launcher)",
-  "params": {},
+  "params": {
+   "id": "String (optional) App ID of the launched app to query."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/getAppState '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Returns running and visible flags.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/system_launcher/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35689,22 +35753,28 @@
   "uri": "luna://com.webos.service.apiadapter/system_launcher/launch",
   "category": "apps",
   "description": "Launches the apiadapter (system launcher)",
-  "params": {},
+  "params": {
+   "id": "String (optional) App ID to launch.",
+   "params": "Object (optional) Launch parameters passed to the app (the `windowType` key is stripped).",
+   "contentId": "String (optional) Content ID for deep-linking; if the app declares deep-linking params it is deep-linked.",
+   "sessionId": "String (optional) Session ID for the launch."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/launch '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/system_launcher/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35712,22 +35782,26 @@
   "uri": "luna://com.webos.service.apiadapter/system_launcher/open",
   "category": "apps",
   "description": "Opens the apiadapter (system launcher)",
-  "params": {},
+  "params": {
+   "id": "String (optional) App ID to open.",
+   "params": "Object (optional) Parameters passed to the app."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/system_launcher/open '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/system_launcher/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35742,15 +35816,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Forwards the request payload to com.webos.notification/closeAlert.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/system_notifications/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35765,15 +35840,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Forwards the request payload to com.webos.notification/closeToast.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/system_notifications/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35804,22 +35880,28 @@
   "uri": "luna://com.webos.service.apiadapter/system_notifications/createToast",
   "category": "notifications",
   "description": "Creates the toast (system notifications)",
-  "params": {},
+  "params": {
+   "message": "String (required) Text to display in the toast.",
+   "iconData": "String (optional) Icon image, base64-encoded; requires `iconExtension`.",
+   "iconExtension": "String (optional) File extension for `iconData` (e.g. png).",
+   "onClick": "Object (optional) Action when the toast is tapped; must contain `appId` or `target`, with an optional `params` object."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/system_notifications/createToast '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.notification/createToast.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/system_notifications/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35827,22 +35909,25 @@
   "uri": "luna://com.webos.service.apiadapter/systemprofile/getProfiles",
   "category": "network",
   "description": "Returns the profiles (systemprofile)",
-  "params": {},
+  "params": {
+   "names": "Array (required) Profile names to fetch.  Must be non-empty.  Forwarded to com.webos.service.systemprofile/getProfiles."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/systemprofile/getProfiles '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: private, all.",
+  "notes": "ACG groups: private, all.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/system_profile/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35850,22 +35935,25 @@
   "uri": "luna://com.webos.service.apiadapter/timer/getSettings",
   "category": "settings",
   "description": "Returns the settings (timer)",
-  "params": {},
+  "params": {
+   "keys": "Array (required) Timer setting keys to read.  Must be non-empty."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/timer/getSettings '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Forwarded to com.webos.settingsservice/batch (getSystemSettings operations).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/timer/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35873,22 +35961,25 @@
   "uri": "luna://com.webos.service.apiadapter/timer/setSettings",
   "category": "settings",
   "description": "Sets the settings (timer)",
-  "params": {},
+  "params": {
+   "settings": "Object (required) Map of timer setting keys to values.  Time-category keys include onTimerEnable, offTimerEnable, onTimerHour, onTimerMinute, offTimerHour, offTimerMinute, onTimerWeekday, offTimerWeekday, onTimerSource, onTimerAppId, onTimerChannel, onTimerVolume; timer-category keys include myStarterInfo and setMyStarter.  Must be non-empty."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/timer/setSettings '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Forwarded to com.webos.settingsservice/batch (setSystemSettings operations).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/timer/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35903,15 +35994,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Captures the current display to /tmp/capture.jpg (960x540 JPEG) via com.webos.service.capture and returns its path in `imageUri`.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35926,15 +36018,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Requires ACR (the `livePlus` option) to be enabled, otherwise returns permission denied; returns an ACR `token`.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35942,22 +36035,25 @@
   "uri": "luna://com.webos.service.apiadapter/tv/getChannelCurrentProgramInfo",
   "category": "network",
   "description": "Returns the channel current program info (TV)",
-  "params": {},
+  "params": {
+   "channelId": "String (optional) Channel ID; defaults to the current channel if omitted."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getChannelCurrentProgramInfo '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35965,22 +36061,25 @@
   "uri": "luna://com.webos.service.apiadapter/tv/getChannelList",
   "category": "network",
   "description": "Returns the channel list (TV)",
-  "params": {},
+  "params": {
+   "channelMode": "String (optional) Channel-mode filter."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getChannelList '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Forwarded to com.webos.service.iepg/getChannelList.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -35988,22 +36087,25 @@
   "uri": "luna://com.webos.service.apiadapter/tv/getChannelProgramInfo",
   "category": "network",
   "description": "Returns the channel program info (TV)",
-  "params": {},
+  "params": {
+   "channelId": "String (optional) Channel ID; defaults to the current channel if omitted."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getChannelProgramInfo '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36018,15 +36120,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Subscribable.  Returns contentState: 2 when tuner program data is available, 1 when ACR data is available, 0 otherwise.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36041,15 +36144,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Subscribable.  Returns the current channel record.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36064,15 +36168,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Subscribable.  Returns the external input/device list (from com.webos.service.eim/getAllInputStatus).  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36080,22 +36185,26 @@
   "uri": "luna://com.webos.service.apiadapter/tv/getSimilarChannelList",
   "category": "network",
   "description": "Returns the similar channel list (TV)",
-  "params": {},
+  "params": {
+   "channelNumber": "String (required) Channel number to match.",
+   "oldChannelId": "String (optional) Existing channel ID to disambiguate; must be a valid channel ID."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/getSimilarChannelList '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36103,22 +36212,26 @@
   "uri": "luna://com.webos.service.apiadapter/tv/openChannel",
   "category": "network",
   "description": "Opens the channel (TV)",
-  "params": {},
+  "params": {
+   "channelNumber": "String (optional) Channel number to open.  Required unless `channelId` is given.",
+   "channelId": "String (optional) Explicit channel ID (must be valid).  Required unless `channelNumber` is given."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/openChannel '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Requires either `channelNumber` or `channelId`.  Opens the Live TV app on the channel.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36126,22 +36239,25 @@
   "uri": "luna://com.webos.service.apiadapter/tv/switchInput",
   "category": "network",
   "description": "Switches the input (TV)",
-  "params": {},
+  "params": {
+   "inputId": "String (required) Input ID to switch to (e.g. HDMI_1)."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/tv/switchInput '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Launches the app for the given external input.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36156,15 +36272,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Takes no request parameters.  Reads the stored userData record.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36179,15 +36296,16 @@
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": true,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Takes no request parameters.  Clears the stored userData record.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36195,22 +36313,25 @@
   "uri": "luna://com.webos.service.apiadapter/user/resetUserInfo",
   "category": "network",
   "description": "Resets the user info (user)",
-  "params": {},
+  "params": {
+   "_clientKey": "String (required) Client key identifying the user."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/user/resetUserInfo '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": true,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36218,22 +36339,26 @@
   "uri": "luna://com.webos.service.apiadapter/user/resetUserSchedule",
   "category": "network",
   "description": "Resets the user schedule (user)",
-  "params": {},
+  "params": {
+   "_clientKey": "String (optional) Client key; if omitted, all schedules are reset.",
+   "all": "Boolean (optional) Reset all schedules."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/user/resetUserSchedule '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": true,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36241,22 +36366,25 @@
   "uri": "luna://com.webos.service.apiadapter/user/setUserData",
   "category": "network",
   "description": "Sets the user data (user)",
-  "params": {},
+  "params": {
+   "userData": "Any (required) User data value to store."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/user/setUserData '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote, secondscreen.uac.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote, secondscreen.uac.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36264,22 +36392,30 @@
   "uri": "luna://com.webos.service.apiadapter/user/setUserInfo",
   "category": "network",
   "description": "Sets the user info (user)",
-  "params": {},
+  "params": {
+   "_clientKey": "String (required) Client key identifying the user.",
+   "userName": "String (required) User display name.",
+   "deviceId": "String (optional) Device identity.",
+   "userData": "Object (optional) Arbitrary user data to store.",
+   "userIconData": "String (optional) User icon image, base64-encoded; requires `userIconExt`.",
+   "userIconExt": "String (optional) File extension for `userIconData`."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/user/setUserInfo '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote, secondscreen.uac.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote, secondscreen.uac.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36287,22 +36423,26 @@
   "uri": "luna://com.webos.service.apiadapter/user/setUserSchedule",
   "category": "network",
   "description": "Sets the user schedule (user)",
-  "params": {},
+  "params": {
+   "_clientKey": "String (required) Client key identifying the user.",
+   "schedules": "Array (required) Schedule objects to store.  Must be non-empty."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/user/setUserSchedule '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36310,22 +36450,25 @@
   "uri": "luna://com.webos.service.apiadapter/webapp/closeWebApp",
   "category": "network",
   "description": "Closes the web app (webapp)",
-  "params": {},
+  "params": {
+   "webAppId": "String (required) Web app ID to close."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/closeWebApp '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Delegates to the system launcher close for the web app's host app.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36333,22 +36476,25 @@
   "uri": "luna://com.webos.service.apiadapter/webapp/getAppIdForWebApp",
   "category": "network",
   "description": "Returns the app ID for web app (webapp)",
-  "params": {},
+  "params": {
+   "webAppId": "String (required) Web app ID."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/getAppIdForWebApp '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Returns the generated platform app ID in `appId`.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36356,22 +36502,25 @@
   "uri": "luna://com.webos.service.apiadapter/webapp/isWebAppPinned",
   "category": "network",
   "description": "Reports whether the web app pinned is set (webapp)",
-  "params": {},
+  "params": {
+   "webAppId": "String (required) Web app ID to check."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/isWebAppPinned '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Subscribable.  Returns a `pinned` flag.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36379,22 +36528,28 @@
   "uri": "luna://com.webos.service.apiadapter/webapp/launchWebApp",
   "category": "apps",
   "description": "Launches the web app (webapp)",
-  "params": {},
+  "params": {
+   "webAppId": "String (required) Web app ID.",
+   "appInfo": "Object (optional) App metadata, used when launching a pinned web app.",
+   "params": "Object (optional) Launch parameters.",
+   "urlParams": "Object (optional) URL parameters for the web app."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/launchWebApp '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36402,22 +36557,26 @@
   "uri": "luna://com.webos.service.apiadapter/webapp/pinWebApp",
   "category": "network",
   "description": "Handles the pin web app (webapp)",
-  "params": {},
+  "params": {
+   "webAppId": "String (required) Web app ID.",
+   "appInfo": "Object (required) Web app metadata.  Required keys: id, title, icon, iconColor, largeIcon, bgImage, bgColor, splashBackground, vendor, handlesRelaunch; optional: appDescription."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/pinWebApp '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": false,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apiadapter",
@@ -36425,22 +36584,25 @@
   "uri": "luna://com.webos.service.apiadapter/webapp/removePinnedWebApp",
   "category": "network",
   "description": "Removes the pinned web app (webapp)",
-  "params": {},
+  "params": {
+   "webAppId": "String (required) Web app ID to unpin."
+  },
   "example": "luna-send -n 1 -f luna://com.webos.service.apiadapter/webapp/removePinnedWebApp '{}'",
   "subscribe": false,
   "access": "private",
   "platform": "webOS TV",
   "versions": "seen on webOS TV 7.0 (model W22O, firmware 33.31.68)",
   "dangerous": true,
-  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.",
+  "notes": "ACG groups: secondscreen.all, private, all, system.remote. Flagged dangerous by name; verify before calling.  Parameters recovered from the on-device apiadapter service source (readable JavaScript, LG webOS 22, W22O).",
   "sources": [
-   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)"
+   "https://github.com/ohmybahgosh/WEBOS-LUNA-SEND-ATLAS (on-device introspection: LG OLED, webOS TV 7.0, W22O 33.31.68)",
+   "On-device service source: /usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js (LG webOS 22, W22O)"
   ],
-  "confidence": "inferred",
+  "confidence": "documented",
   "confidence_all": [
-   "code"
+   "documented"
   ],
-  "doc_status": "name-inferred"
+  "doc_status": "documented"
  },
  {
   "service": "com.webos.service.apinstaller",

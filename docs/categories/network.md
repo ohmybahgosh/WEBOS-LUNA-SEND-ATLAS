@@ -10,33 +10,33 @@
 | [`luna://com.palm.wifi/setstate`](../services/com.palm.wifi.md#setstate) | root | documented | Turns WiFi on/off |
 | [`luna://com.webos.service.apiadapter/info`](../services/com.webos.service.apiadapter.md#info) | private | inferred | Handles the info. |
 | [`luna://com.webos.service.apiadapter/quit`](../services/com.webos.service.apiadapter.md#quit) | private | inferred | Quits the apiadapter. |
-| [`luna://com.webos.service.apiadapter/system/getCountryInfo`](../services/com.webos.service.apiadapter.md#system_getcountryinfo) | private | inferred | Returns the country info (system) |
-| [`luna://com.webos.service.apiadapter/system/getSystemInfo`](../services/com.webos.service.apiadapter.md#system_getsysteminfo) | private | inferred | Returns the system info (system) |
-| [`luna://com.webos.service.apiadapter/system/isValidPin`](../services/com.webos.service.apiadapter.md#system_isvalidpin) | private | inferred | Reports whether the valid pin is set (system) |
-| [`luna://com.webos.service.apiadapter/systemprofile/getProfiles`](../services/com.webos.service.apiadapter.md#systemprofile_getprofiles) | private | inferred | Returns the profiles (systemprofile) |
-| [`luna://com.webos.service.apiadapter/tv/executeOneShot`](../services/com.webos.service.apiadapter.md#tv_executeoneshot) | private | inferred | Runs the one shot (TV) |
-| [`luna://com.webos.service.apiadapter/tv/getACRAuthToken`](../services/com.webos.service.apiadapter.md#tv_getacrauthtoken) | private | inferred | Returns the ACR auth token (TV) |
-| [`luna://com.webos.service.apiadapter/tv/getChannelCurrentProgramInfo`](../services/com.webos.service.apiadapter.md#tv_getchannelcurrentprograminfo) | private | inferred | Returns the channel current program info (TV) |
-| [`luna://com.webos.service.apiadapter/tv/getChannelList`](../services/com.webos.service.apiadapter.md#tv_getchannellist) | private | inferred | Returns the channel list (TV) |
-| [`luna://com.webos.service.apiadapter/tv/getChannelProgramInfo`](../services/com.webos.service.apiadapter.md#tv_getchannelprograminfo) | private | inferred | Returns the channel program info (TV) |
-| [`luna://com.webos.service.apiadapter/tv/getContentState`](../services/com.webos.service.apiadapter.md#tv_getcontentstate) | private | inferred | Returns the content state (TV) |
-| [`luna://com.webos.service.apiadapter/tv/getCurrentChannel`](../services/com.webos.service.apiadapter.md#tv_getcurrentchannel) | private | inferred | Returns the current channel (TV) |
-| [`luna://com.webos.service.apiadapter/tv/getExternalInputList`](../services/com.webos.service.apiadapter.md#tv_getexternalinputlist) | private | inferred | Returns the external input list (TV) |
-| [`luna://com.webos.service.apiadapter/tv/getSimilarChannelList`](../services/com.webos.service.apiadapter.md#tv_getsimilarchannellist) | private | inferred | Returns the similar channel list (TV) |
-| [`luna://com.webos.service.apiadapter/tv/openChannel`](../services/com.webos.service.apiadapter.md#tv_openchannel) | private | inferred | Opens the channel (TV) |
-| [`luna://com.webos.service.apiadapter/tv/switchInput`](../services/com.webos.service.apiadapter.md#tv_switchinput) | private | inferred | Switches the input (TV) |
-| [`luna://com.webos.service.apiadapter/user/getUserData`](../services/com.webos.service.apiadapter.md#user_getuserdata) | private | inferred | Returns the user data (user) |
-| [`luna://com.webos.service.apiadapter/user/resetUserData`](../services/com.webos.service.apiadapter.md#user_resetuserdata) | private | inferred | Resets the user data (user) ⚠️ |
-| [`luna://com.webos.service.apiadapter/user/resetUserInfo`](../services/com.webos.service.apiadapter.md#user_resetuserinfo) | private | inferred | Resets the user info (user) ⚠️ |
-| [`luna://com.webos.service.apiadapter/user/resetUserSchedule`](../services/com.webos.service.apiadapter.md#user_resetuserschedule) | private | inferred | Resets the user schedule (user) ⚠️ |
-| [`luna://com.webos.service.apiadapter/user/setUserData`](../services/com.webos.service.apiadapter.md#user_setuserdata) | private | inferred | Sets the user data (user) |
-| [`luna://com.webos.service.apiadapter/user/setUserInfo`](../services/com.webos.service.apiadapter.md#user_setuserinfo) | private | inferred | Sets the user info (user) |
-| [`luna://com.webos.service.apiadapter/user/setUserSchedule`](../services/com.webos.service.apiadapter.md#user_setuserschedule) | private | inferred | Sets the user schedule (user) |
-| [`luna://com.webos.service.apiadapter/webapp/closeWebApp`](../services/com.webos.service.apiadapter.md#webapp_closewebapp) | private | inferred | Closes the web app (webapp) |
-| [`luna://com.webos.service.apiadapter/webapp/getAppIdForWebApp`](../services/com.webos.service.apiadapter.md#webapp_getappidforwebapp) | private | inferred | Returns the app ID for web app (webapp) |
-| [`luna://com.webos.service.apiadapter/webapp/isWebAppPinned`](../services/com.webos.service.apiadapter.md#webapp_iswebapppinned) | private | inferred | Reports whether the web app pinned is set (webapp) |
-| [`luna://com.webos.service.apiadapter/webapp/pinWebApp`](../services/com.webos.service.apiadapter.md#webapp_pinwebapp) | private | inferred | Handles the pin web app (webapp) |
-| [`luna://com.webos.service.apiadapter/webapp/removePinnedWebApp`](../services/com.webos.service.apiadapter.md#webapp_removepinnedwebapp) | private | inferred | Removes the pinned web app (webapp) ⚠️ |
+| [`luna://com.webos.service.apiadapter/system/getCountryInfo`](../services/com.webos.service.apiadapter.md#system_getcountryinfo) | private | documented | Returns the country info (system) |
+| [`luna://com.webos.service.apiadapter/system/getSystemInfo`](../services/com.webos.service.apiadapter.md#system_getsysteminfo) | private | documented | Returns the system info (system) |
+| [`luna://com.webos.service.apiadapter/system/isValidPin`](../services/com.webos.service.apiadapter.md#system_isvalidpin) | private | documented | Reports whether the valid pin is set (system) |
+| [`luna://com.webos.service.apiadapter/systemprofile/getProfiles`](../services/com.webos.service.apiadapter.md#systemprofile_getprofiles) | private | documented | Returns the profiles (systemprofile) |
+| [`luna://com.webos.service.apiadapter/tv/executeOneShot`](../services/com.webos.service.apiadapter.md#tv_executeoneshot) | private | documented | Runs the one shot (TV) |
+| [`luna://com.webos.service.apiadapter/tv/getACRAuthToken`](../services/com.webos.service.apiadapter.md#tv_getacrauthtoken) | private | documented | Returns the ACR auth token (TV) |
+| [`luna://com.webos.service.apiadapter/tv/getChannelCurrentProgramInfo`](../services/com.webos.service.apiadapter.md#tv_getchannelcurrentprograminfo) | private | documented | Returns the channel current program info (TV) |
+| [`luna://com.webos.service.apiadapter/tv/getChannelList`](../services/com.webos.service.apiadapter.md#tv_getchannellist) | private | documented | Returns the channel list (TV) |
+| [`luna://com.webos.service.apiadapter/tv/getChannelProgramInfo`](../services/com.webos.service.apiadapter.md#tv_getchannelprograminfo) | private | documented | Returns the channel program info (TV) |
+| [`luna://com.webos.service.apiadapter/tv/getContentState`](../services/com.webos.service.apiadapter.md#tv_getcontentstate) | private | documented | Returns the content state (TV) |
+| [`luna://com.webos.service.apiadapter/tv/getCurrentChannel`](../services/com.webos.service.apiadapter.md#tv_getcurrentchannel) | private | documented | Returns the current channel (TV) |
+| [`luna://com.webos.service.apiadapter/tv/getExternalInputList`](../services/com.webos.service.apiadapter.md#tv_getexternalinputlist) | private | documented | Returns the external input list (TV) |
+| [`luna://com.webos.service.apiadapter/tv/getSimilarChannelList`](../services/com.webos.service.apiadapter.md#tv_getsimilarchannellist) | private | documented | Returns the similar channel list (TV) |
+| [`luna://com.webos.service.apiadapter/tv/openChannel`](../services/com.webos.service.apiadapter.md#tv_openchannel) | private | documented | Opens the channel (TV) |
+| [`luna://com.webos.service.apiadapter/tv/switchInput`](../services/com.webos.service.apiadapter.md#tv_switchinput) | private | documented | Switches the input (TV) |
+| [`luna://com.webos.service.apiadapter/user/getUserData`](../services/com.webos.service.apiadapter.md#user_getuserdata) | private | documented | Returns the user data (user) |
+| [`luna://com.webos.service.apiadapter/user/resetUserData`](../services/com.webos.service.apiadapter.md#user_resetuserdata) | private | documented | Resets the user data (user) ⚠️ |
+| [`luna://com.webos.service.apiadapter/user/resetUserInfo`](../services/com.webos.service.apiadapter.md#user_resetuserinfo) | private | documented | Resets the user info (user) ⚠️ |
+| [`luna://com.webos.service.apiadapter/user/resetUserSchedule`](../services/com.webos.service.apiadapter.md#user_resetuserschedule) | private | documented | Resets the user schedule (user) ⚠️ |
+| [`luna://com.webos.service.apiadapter/user/setUserData`](../services/com.webos.service.apiadapter.md#user_setuserdata) | private | documented | Sets the user data (user) |
+| [`luna://com.webos.service.apiadapter/user/setUserInfo`](../services/com.webos.service.apiadapter.md#user_setuserinfo) | private | documented | Sets the user info (user) |
+| [`luna://com.webos.service.apiadapter/user/setUserSchedule`](../services/com.webos.service.apiadapter.md#user_setuserschedule) | private | documented | Sets the user schedule (user) |
+| [`luna://com.webos.service.apiadapter/webapp/closeWebApp`](../services/com.webos.service.apiadapter.md#webapp_closewebapp) | private | documented | Closes the web app (webapp) |
+| [`luna://com.webos.service.apiadapter/webapp/getAppIdForWebApp`](../services/com.webos.service.apiadapter.md#webapp_getappidforwebapp) | private | documented | Returns the app ID for web app (webapp) |
+| [`luna://com.webos.service.apiadapter/webapp/isWebAppPinned`](../services/com.webos.service.apiadapter.md#webapp_iswebapppinned) | private | documented | Reports whether the web app pinned is set (webapp) |
+| [`luna://com.webos.service.apiadapter/webapp/pinWebApp`](../services/com.webos.service.apiadapter.md#webapp_pinwebapp) | private | documented | Handles the pin web app (webapp) |
+| [`luna://com.webos.service.apiadapter/webapp/removePinnedWebApp`](../services/com.webos.service.apiadapter.md#webapp_removepinnedwebapp) | private | documented | Removes the pinned web app (webapp) ⚠️ |
 | [`luna://com.webos.service.commercial.scapadapter/network/connectWifi`](../services/com.webos.service.commercial.scapadapter.md#network_connectwifi) | public | inferred | Connects the wifi (network) |
 | [`luna://com.webos.service.commercial.scapadapter/network/getWifiList`](../services/com.webos.service.commercial.scapadapter.md#network_getwifilist) | public | inferred | Returns the wifi list (network) |
 | [`luna://com.webos.service.connectionmanager/checkinternetstatus`](../services/com.webos.service.connectionmanager.md#checkinternetstatus) | private | inferred | Handles the checkinternetstatus. |

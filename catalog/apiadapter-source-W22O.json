@@ -1,0 +1,423 @@
+{
+ "luna://com.webos.service.apiadapter/audio/getMute": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/audio/index.js"
+ },
+ "luna://com.webos.service.apiadapter/audio/getStatus": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/audio/index.js"
+ },
+ "luna://com.webos.service.apiadapter/audio/setMute": {
+  "params": {
+   "mute": "Boolean (optional) Mute state; true to mute, false to unmute.  Forwarded to com.webos.service.audio/master/muteVolume."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/audio/index.js"
+ },
+ "luna://com.webos.service.apiadapter/config/getConfigs": {
+  "params": {
+   "configNames": "Array (required) Config key names to fetch.  Must be non-empty.  Forwarded to com.webos.service.config/getConfigs."
+  },
+  "required": [
+   "configNames"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/config/index.js"
+ },
+ "luna://com.webos.service.apiadapter/externalpq/getExternalPqData": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/externalpq/index.js"
+ },
+ "luna://com.webos.service.apiadapter/externalpq/setExternalPqData": {
+  "params": {
+   "data": "String (optional) External PQ data, base64-encoded; written to a temp file whose path is forwarded to com.webos.service.pqcontroller/setExternalPqData."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/externalpq/index.js"
+ },
+ "luna://com.webos.service.apiadapter/media_viewer/close": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/media_viewer/index.js"
+ },
+ "luna://com.webos.service.apiadapter/media_viewer/open": {
+  "params": {
+   "target": "String (optional) URI of the media to open.  Required unless `mimeType` is given.",
+   "mimeType": "String (optional) MIME type of the media; selects the player.  Required unless `target` is given.",
+   "iconSrc": "String (optional) Icon for the image viewer (image media only).",
+   "title": "String (optional) Title for the image viewer (image media only).",
+   "description": "String (optional) Description for the image viewer (image media only)."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/media_viewer/index.js"
+ },
+ "luna://com.webos.service.apiadapter/settings/getSystemSettingDesc": {
+  "params": {
+   "keys": "Array (required) Setting keys whose description metadata to read.  Must be non-empty.",
+   "category": "String (optional) Settings category."
+  },
+  "required": [
+   "keys"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js"
+ },
+ "luna://com.webos.service.apiadapter/settings/getSystemSettingValues": {
+  "params": {
+   "key": "String (required) Setting key whose possible values to read.",
+   "category": "String (optional) Settings category."
+  },
+  "required": [
+   "key"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js"
+ },
+ "luna://com.webos.service.apiadapter/settings/getSystemSettings": {
+  "params": {
+   "keys": "Array (required) Setting keys to read.  Must be non-empty.",
+   "category": "String (optional) Settings category (e.g. picture, sound, option).",
+   "current_app": "Boolean (optional) Read the current app's scoped value.",
+   "app_id": "String (optional) App ID to scope the read to."
+  },
+  "required": [
+   "keys"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js"
+ },
+ "luna://com.webos.service.apiadapter/settings/getSystemSettingsHDRInfo": {
+  "params": {
+   "keys": "Array (required) Setting keys to read.  Must be non-empty.",
+   "category": "String (optional) Settings category."
+  },
+  "required": [
+   "keys"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js"
+ },
+ "luna://com.webos.service.apiadapter/settings/resetSystemSettingDesc": {
+  "params": {
+   "keys": "Array (required) Setting-description keys to reset.  Must be non-empty.",
+   "category": "String (optional) Settings category."
+  },
+  "required": [
+   "keys"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js"
+ },
+ "luna://com.webos.service.apiadapter/settings/resetSystemSettings": {
+  "params": {
+   "keys": "Array (required) Setting keys to reset to default.  Must be non-empty.",
+   "category": "String (optional) Settings category."
+  },
+  "required": [
+   "keys"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js"
+ },
+ "luna://com.webos.service.apiadapter/settings/setSystemSettings": {
+  "params": {
+   "settings": "Object (required) Map of setting keys to new values.",
+   "category": "String (optional) Settings category.",
+   "current_app": "Boolean (optional) Scope the write to the current app.",
+   "app_id": "String (optional) App ID to scope the write to."
+  },
+  "required": [
+   "settings"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/settings/index.js"
+ },
+ "luna://com.webos.service.apiadapter/system/getCountryInfo": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/system/index.js"
+ },
+ "luna://com.webos.service.apiadapter/system/getSystemInfo": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/system/index.js"
+ },
+ "luna://com.webos.service.apiadapter/system/isValidPin": {
+  "params": {
+   "pin": "String (optional) SHA-256 hash (hex) of the system PIN to check; the call returns valid:false if it does not match the stored PIN."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/system/index.js"
+ },
+ "luna://com.webos.service.apiadapter/system_launcher/close": {
+  "params": {
+   "id": "String (optional) App ID of the launched app to close.",
+   "sessionId": "String (optional) Session ID of the launch to close."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/system_launcher/index.js"
+ },
+ "luna://com.webos.service.apiadapter/system_launcher/getAppState": {
+  "params": {
+   "id": "String (optional) App ID of the launched app to query."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/system_launcher/index.js"
+ },
+ "luna://com.webos.service.apiadapter/system_launcher/launch": {
+  "params": {
+   "id": "String (optional) App ID to launch.",
+   "params": "Object (optional) Launch parameters passed to the app (the `windowType` key is stripped).",
+   "contentId": "String (optional) Content ID for deep-linking; if the app declares deep-linking params it is deep-linked.",
+   "sessionId": "String (optional) Session ID for the launch."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/system_launcher/index.js"
+ },
+ "luna://com.webos.service.apiadapter/system_launcher/open": {
+  "params": {
+   "id": "String (optional) App ID to open.",
+   "params": "Object (optional) Parameters passed to the app."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/system_launcher/index.js"
+ },
+ "luna://com.webos.service.apiadapter/system_notifications/closeAlert": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/system_notifications/index.js"
+ },
+ "luna://com.webos.service.apiadapter/system_notifications/closeToast": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/system_notifications/index.js"
+ },
+ "luna://com.webos.service.apiadapter/system_notifications/createToast": {
+  "params": {
+   "message": "String (required) Text to display in the toast.",
+   "iconData": "String (optional) Icon image, base64-encoded; requires `iconExtension`.",
+   "iconExtension": "String (optional) File extension for `iconData` (e.g. png).",
+   "onClick": "Object (optional) Action when the toast is tapped; must contain `appId` or `target`, with an optional `params` object."
+  },
+  "required": [
+   "message"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/system_notifications/index.js"
+ },
+ "luna://com.webos.service.apiadapter/systemprofile/getProfiles": {
+  "params": {
+   "names": "Array (required) Profile names to fetch.  Must be non-empty.  Forwarded to com.webos.service.systemprofile/getProfiles."
+  },
+  "required": [
+   "names"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/system_profile/index.js"
+ },
+ "luna://com.webos.service.apiadapter/timer/getSettings": {
+  "params": {
+   "keys": "Array (required) Timer setting keys to read.  Must be non-empty."
+  },
+  "required": [
+   "keys"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/timer/index.js"
+ },
+ "luna://com.webos.service.apiadapter/timer/setSettings": {
+  "params": {
+   "settings": "Object (required) Map of timer setting keys to values.  Time-category keys include onTimerEnable, offTimerEnable, onTimerHour, onTimerMinute, offTimerHour, offTimerMinute, onTimerWeekday, offTimerWeekday, onTimerSource, onTimerAppId, onTimerChannel, onTimerVolume; timer-category keys include myStarterInfo and setMyStarter.  Must be non-empty."
+  },
+  "required": [
+   "settings"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/timer/index.js"
+ },
+ "luna://com.webos.service.apiadapter/tv/executeOneShot": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js"
+ },
+ "luna://com.webos.service.apiadapter/tv/getACRAuthToken": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js"
+ },
+ "luna://com.webos.service.apiadapter/tv/getChannelCurrentProgramInfo": {
+  "params": {
+   "channelId": "String (optional) Channel ID; defaults to the current channel if omitted."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js"
+ },
+ "luna://com.webos.service.apiadapter/tv/getChannelList": {
+  "params": {
+   "channelMode": "String (optional) Channel-mode filter."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js"
+ },
+ "luna://com.webos.service.apiadapter/tv/getChannelProgramInfo": {
+  "params": {
+   "channelId": "String (optional) Channel ID; defaults to the current channel if omitted."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js"
+ },
+ "luna://com.webos.service.apiadapter/tv/getContentState": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js"
+ },
+ "luna://com.webos.service.apiadapter/tv/getCurrentChannel": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js"
+ },
+ "luna://com.webos.service.apiadapter/tv/getExternalInputList": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js"
+ },
+ "luna://com.webos.service.apiadapter/tv/getSimilarChannelList": {
+  "params": {
+   "channelNumber": "String (required) Channel number to match.",
+   "oldChannelId": "String (optional) Existing channel ID to disambiguate; must be a valid channel ID."
+  },
+  "required": [
+   "channelNumber"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js"
+ },
+ "luna://com.webos.service.apiadapter/tv/openChannel": {
+  "params": {
+   "channelNumber": "String (optional) Channel number to open.  Required unless `channelId` is given.",
+   "channelId": "String (optional) Explicit channel ID (must be valid).  Required unless `channelNumber` is given."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js"
+ },
+ "luna://com.webos.service.apiadapter/tv/switchInput": {
+  "params": {
+   "inputId": "String (required) Input ID to switch to (e.g. HDMI_1)."
+  },
+  "required": [
+   "inputId"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/tv/index.js"
+ },
+ "luna://com.webos.service.apiadapter/user/getUserData": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js"
+ },
+ "luna://com.webos.service.apiadapter/user/resetUserData": {
+  "params": {},
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js"
+ },
+ "luna://com.webos.service.apiadapter/user/resetUserInfo": {
+  "params": {
+   "_clientKey": "String (required) Client key identifying the user."
+  },
+  "required": [
+   "_clientKey"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js"
+ },
+ "luna://com.webos.service.apiadapter/user/resetUserSchedule": {
+  "params": {
+   "_clientKey": "String (optional) Client key; if omitted, all schedules are reset.",
+   "all": "Boolean (optional) Reset all schedules."
+  },
+  "required": [],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js"
+ },
+ "luna://com.webos.service.apiadapter/user/setUserData": {
+  "params": {
+   "userData": "Any (required) User data value to store."
+  },
+  "required": [
+   "userData"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js"
+ },
+ "luna://com.webos.service.apiadapter/user/setUserInfo": {
+  "params": {
+   "_clientKey": "String (required) Client key identifying the user.",
+   "userName": "String (required) User display name.",
+   "deviceId": "String (optional) Device identity.",
+   "userData": "Object (optional) Arbitrary user data to store.",
+   "userIconData": "String (optional) User icon image, base64-encoded; requires `userIconExt`.",
+   "userIconExt": "String (optional) File extension for `userIconData`."
+  },
+  "required": [
+   "_clientKey",
+   "userName"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js"
+ },
+ "luna://com.webos.service.apiadapter/user/setUserSchedule": {
+  "params": {
+   "_clientKey": "String (required) Client key identifying the user.",
+   "schedules": "Array (required) Schedule objects to store.  Must be non-empty."
+  },
+  "required": [
+   "_clientKey",
+   "schedules"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/user/index.js"
+ },
+ "luna://com.webos.service.apiadapter/webapp/closeWebApp": {
+  "params": {
+   "webAppId": "String (required) Web app ID to close."
+  },
+  "required": [
+   "webAppId"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js"
+ },
+ "luna://com.webos.service.apiadapter/webapp/getAppIdForWebApp": {
+  "params": {
+   "webAppId": "String (required) Web app ID."
+  },
+  "required": [
+   "webAppId"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js"
+ },
+ "luna://com.webos.service.apiadapter/webapp/isWebAppPinned": {
+  "params": {
+   "webAppId": "String (required) Web app ID to check."
+  },
+  "required": [
+   "webAppId"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js"
+ },
+ "luna://com.webos.service.apiadapter/webapp/launchWebApp": {
+  "params": {
+   "webAppId": "String (required) Web app ID.",
+   "appInfo": "Object (optional) App metadata, used when launching a pinned web app.",
+   "params": "Object (optional) Launch parameters.",
+   "urlParams": "Object (optional) URL parameters for the web app."
+  },
+  "required": [
+   "webAppId"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js"
+ },
+ "luna://com.webos.service.apiadapter/webapp/pinWebApp": {
+  "params": {
+   "webAppId": "String (required) Web app ID.",
+   "appInfo": "Object (required) Web app metadata.  Required keys: id, title, icon, iconColor, largeIcon, bgImage, bgColor, splashBackground, vendor, handlesRelaunch; optional: appDescription."
+  },
+  "required": [
+   "appInfo",
+   "webAppId"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js"
+ },
+ "luna://com.webos.service.apiadapter/webapp/removePinnedWebApp": {
+  "params": {
+   "webAppId": "String (required) Web app ID to unpin."
+  },
+  "required": [
+   "webAppId"
+  ],
+  "source": "/usr/palm/services/com.webos.service.apiadapter/adapters/webapp/index.js"
+ }
+}

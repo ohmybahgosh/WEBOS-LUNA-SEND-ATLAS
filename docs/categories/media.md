@@ -207,8 +207,8 @@
 | [`luna://com.webos.service.airplayadaptor/mfiKeyLength`](../services/com.webos.service.airplayadaptor.md#mfikeylength) | private | inferred | Handles the mfi key length. |
 | [`luna://com.webos.service.airplayadaptor/mfiKeyWrite`](../services/com.webos.service.airplayadaptor.md#mfikeywrite) | private | inferred | Handles the mfi key write. |
 | [`luna://com.webos.service.airplayadaptor/test`](../services/com.webos.service.airplayadaptor.md#test) | public | inferred | Tests the airplayadaptor. |
-| [`luna://com.webos.service.apiadapter/media_viewer/close`](../services/com.webos.service.apiadapter.md#media_viewer_close) | private | inferred | Closes the apiadapter (media viewer) |
-| [`luna://com.webos.service.apiadapter/media_viewer/open`](../services/com.webos.service.apiadapter.md#media_viewer_open) | private | inferred | Opens the apiadapter (media viewer) |
+| [`luna://com.webos.service.apiadapter/media_viewer/close`](../services/com.webos.service.apiadapter.md#media_viewer_close) | private | documented | Closes the apiadapter (media viewer) |
+| [`luna://com.webos.service.apiadapter/media_viewer/open`](../services/com.webos.service.apiadapter.md#media_viewer_open) | private | documented | Opens the apiadapter (media viewer) |
 | [`luna://com.webos.service.appcasting/getCommand`](../services/com.webos.service.appcasting.md#getcommand) | ssap | documented | Subscribe to appcasting commands from the TV |
 | [`luna://com.webos.service.appcasting/getMediaInfo`](../services/com.webos.service.appcasting.md#getmediainfo) | private | inferred | Returns the media info. |
 | [`luna://com.webos.service.appcasting/receiveUIBCEvent`](../services/com.webos.service.appcasting.md#receiveuibcevent) | ssap | documented | Subscribe to UIBC user-input events (screen mirroring) |

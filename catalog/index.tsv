@@ -1436,62 +1436,62 @@ com.webos.service.aos	getResetTime	luna://com.webos.service.aos/getResetTime	pri
 com.webos.service.aos	setResetTime	luna://com.webos.service.aos/setResetTime	private	1	0	input	Sets the reset time.	inferred
 com.webos.service.aos	test	luna://com.webos.service.aos/test	private	0	0	misc	Tests the aos.	inferred
 com.webos.service.apiadapter	audio/changeSoundOutput	luna://com.webos.service.apiadapter/audio/changeSoundOutput	ssap	0	0	audio	Change sound output	documented
-com.webos.service.apiadapter	audio/getMute	luna://com.webos.service.apiadapter/audio/getMute	private	0	0	audio	Returns the mute (audio)	inferred
+com.webos.service.apiadapter	audio/getMute	luna://com.webos.service.apiadapter/audio/getMute	private	0	0	audio	Returns the mute (audio)	documented
 com.webos.service.apiadapter	audio/getSoundOutput	luna://com.webos.service.apiadapter/audio/getSoundOutput	ssap	0	1	audio	Get (or subscribe to) current sound output	documented
-com.webos.service.apiadapter	audio/getStatus	luna://com.webos.service.apiadapter/audio/getStatus	private	0	0	audio	Returns the status (audio)	inferred
-com.webos.service.apiadapter	audio/setMute	luna://com.webos.service.apiadapter/audio/setMute	private	0	0	audio	Sets the mute (audio)	inferred
-com.webos.service.apiadapter	config/getConfigs	luna://com.webos.service.apiadapter/config/getConfigs	private	0	0	settings	Returns the configs (config)	inferred
-com.webos.service.apiadapter	externalpq/getExternalPqData	luna://com.webos.service.apiadapter/externalpq/getExternalPqData	private	0	0	picture	Returns the external PQ data (externalpq)	inferred
-com.webos.service.apiadapter	externalpq/setExternalPqData	luna://com.webos.service.apiadapter/externalpq/setExternalPqData	private	0	0	picture	Sets the external PQ data (externalpq)	inferred
+com.webos.service.apiadapter	audio/getStatus	luna://com.webos.service.apiadapter/audio/getStatus	private	0	0	audio	Returns the status (audio)	documented
+com.webos.service.apiadapter	audio/setMute	luna://com.webos.service.apiadapter/audio/setMute	private	0	0	audio	Sets the mute (audio)	documented
+com.webos.service.apiadapter	config/getConfigs	luna://com.webos.service.apiadapter/config/getConfigs	private	0	0	settings	Returns the configs (config)	documented
+com.webos.service.apiadapter	externalpq/getExternalPqData	luna://com.webos.service.apiadapter/externalpq/getExternalPqData	private	0	0	picture	Returns the external PQ data (externalpq)	documented
+com.webos.service.apiadapter	externalpq/setExternalPqData	luna://com.webos.service.apiadapter/externalpq/setExternalPqData	private	0	0	picture	Sets the external PQ data (externalpq)	documented
 com.webos.service.apiadapter	info	luna://com.webos.service.apiadapter/info	private	0	0	network	Handles the info.	inferred
-com.webos.service.apiadapter	media_viewer/close	luna://com.webos.service.apiadapter/media_viewer/close	private	0	0	media	Closes the apiadapter (media viewer)	inferred
-com.webos.service.apiadapter	media_viewer/open	luna://com.webos.service.apiadapter/media_viewer/open	private	0	0	media	Opens the apiadapter (media viewer)	inferred
+com.webos.service.apiadapter	media_viewer/close	luna://com.webos.service.apiadapter/media_viewer/close	private	0	0	media	Closes the apiadapter (media viewer)	documented
+com.webos.service.apiadapter	media_viewer/open	luna://com.webos.service.apiadapter/media_viewer/open	private	0	0	media	Opens the apiadapter (media viewer)	documented
 com.webos.service.apiadapter	quit	luna://com.webos.service.apiadapter/quit	private	0	0	network	Quits the apiadapter.	inferred
-com.webos.service.apiadapter	settings/getSystemSettingDesc	luna://com.webos.service.apiadapter/settings/getSystemSettingDesc	private	0	0	settings	Returns the system setting desc (settings)	inferred
-com.webos.service.apiadapter	settings/getSystemSettings	luna://com.webos.service.apiadapter/settings/getSystemSettings	private	0	0	settings	Returns the system settings (settings)	inferred
-com.webos.service.apiadapter	settings/getSystemSettingsHDRInfo	luna://com.webos.service.apiadapter/settings/getSystemSettingsHDRInfo	private	0	0	settings	Returns the system settings HDR info (settings)	inferred
-com.webos.service.apiadapter	settings/getSystemSettingValues	luna://com.webos.service.apiadapter/settings/getSystemSettingValues	private	0	0	settings	Returns the system setting values (settings)	inferred
-com.webos.service.apiadapter	settings/resetSystemSettingDesc	luna://com.webos.service.apiadapter/settings/resetSystemSettingDesc	private	1	0	settings	Resets the system setting desc (settings)	inferred
-com.webos.service.apiadapter	settings/resetSystemSettings	luna://com.webos.service.apiadapter/settings/resetSystemSettings	private	1	0	settings	Resets the system settings (settings)	inferred
-com.webos.service.apiadapter	settings/setSystemSettings	luna://com.webos.service.apiadapter/settings/setSystemSettings	private	0	0	settings	Sets the system settings (settings)	inferred
-com.webos.service.apiadapter	system/getCountryInfo	luna://com.webos.service.apiadapter/system/getCountryInfo	private	0	0	network	Returns the country info (system)	inferred
-com.webos.service.apiadapter	system/getSystemInfo	luna://com.webos.service.apiadapter/system/getSystemInfo	private	0	0	network	Returns the system info (system)	inferred
-com.webos.service.apiadapter	system/isValidPin	luna://com.webos.service.apiadapter/system/isValidPin	private	0	0	network	Reports whether the valid pin is set (system)	inferred
-com.webos.service.apiadapter	system_launcher/close	luna://com.webos.service.apiadapter/system_launcher/close	private	0	0	apps	Closes the apiadapter (system launcher)	inferred
-com.webos.service.apiadapter	system_launcher/getAppState	luna://com.webos.service.apiadapter/system_launcher/getAppState	private	0	0	apps	Returns the app state (system launcher)	inferred
-com.webos.service.apiadapter	system_launcher/launch	luna://com.webos.service.apiadapter/system_launcher/launch	private	0	0	apps	Launches the apiadapter (system launcher)	inferred
-com.webos.service.apiadapter	system_launcher/open	luna://com.webos.service.apiadapter/system_launcher/open	private	0	0	apps	Opens the apiadapter (system launcher)	inferred
-com.webos.service.apiadapter	system_notifications/closeAlert	luna://com.webos.service.apiadapter/system_notifications/closeAlert	private	0	0	notifications	Closes the alert (system notifications)	inferred
-com.webos.service.apiadapter	system_notifications/closeToast	luna://com.webos.service.apiadapter/system_notifications/closeToast	private	0	0	notifications	Closes the toast (system notifications)	inferred
+com.webos.service.apiadapter	settings/getSystemSettingDesc	luna://com.webos.service.apiadapter/settings/getSystemSettingDesc	private	0	0	settings	Returns the system setting desc (settings)	documented
+com.webos.service.apiadapter	settings/getSystemSettings	luna://com.webos.service.apiadapter/settings/getSystemSettings	private	0	0	settings	Returns the system settings (settings)	documented
+com.webos.service.apiadapter	settings/getSystemSettingsHDRInfo	luna://com.webos.service.apiadapter/settings/getSystemSettingsHDRInfo	private	0	0	settings	Returns the system settings HDR info (settings)	documented
+com.webos.service.apiadapter	settings/getSystemSettingValues	luna://com.webos.service.apiadapter/settings/getSystemSettingValues	private	0	0	settings	Returns the system setting values (settings)	documented
+com.webos.service.apiadapter	settings/resetSystemSettingDesc	luna://com.webos.service.apiadapter/settings/resetSystemSettingDesc	private	1	0	settings	Resets the system setting desc (settings)	documented
+com.webos.service.apiadapter	settings/resetSystemSettings	luna://com.webos.service.apiadapter/settings/resetSystemSettings	private	1	0	settings	Resets the system settings (settings)	documented
+com.webos.service.apiadapter	settings/setSystemSettings	luna://com.webos.service.apiadapter/settings/setSystemSettings	private	0	0	settings	Sets the system settings (settings)	documented
+com.webos.service.apiadapter	system/getCountryInfo	luna://com.webos.service.apiadapter/system/getCountryInfo	private	0	0	network	Returns the country info (system)	documented
+com.webos.service.apiadapter	system/getSystemInfo	luna://com.webos.service.apiadapter/system/getSystemInfo	private	0	0	network	Returns the system info (system)	documented
+com.webos.service.apiadapter	system/isValidPin	luna://com.webos.service.apiadapter/system/isValidPin	private	0	0	network	Reports whether the valid pin is set (system)	documented
+com.webos.service.apiadapter	system_launcher/close	luna://com.webos.service.apiadapter/system_launcher/close	private	0	0	apps	Closes the apiadapter (system launcher)	documented
+com.webos.service.apiadapter	system_launcher/getAppState	luna://com.webos.service.apiadapter/system_launcher/getAppState	private	0	0	apps	Returns the app state (system launcher)	documented
+com.webos.service.apiadapter	system_launcher/launch	luna://com.webos.service.apiadapter/system_launcher/launch	private	0	0	apps	Launches the apiadapter (system launcher)	documented
+com.webos.service.apiadapter	system_launcher/open	luna://com.webos.service.apiadapter/system_launcher/open	private	0	0	apps	Opens the apiadapter (system launcher)	documented
+com.webos.service.apiadapter	system_notifications/closeAlert	luna://com.webos.service.apiadapter/system_notifications/closeAlert	private	0	0	notifications	Closes the alert (system notifications)	documented
+com.webos.service.apiadapter	system_notifications/closeToast	luna://com.webos.service.apiadapter/system_notifications/closeToast	private	0	0	notifications	Closes the toast (system notifications)	documented
 com.webos.service.apiadapter	system_notifications/createAlert	luna://com.webos.service.apiadapter/system_notifications/createAlert	private	0	0	notifications	Creates the alert (system notifications)	inferred
-com.webos.service.apiadapter	system_notifications/createToast	luna://com.webos.service.apiadapter/system_notifications/createToast	private	0	0	notifications	Creates the toast (system notifications)	inferred
-com.webos.service.apiadapter	systemprofile/getProfiles	luna://com.webos.service.apiadapter/systemprofile/getProfiles	private	0	0	network	Returns the profiles (systemprofile)	inferred
-com.webos.service.apiadapter	timer/getSettings	luna://com.webos.service.apiadapter/timer/getSettings	private	0	0	settings	Returns the settings (timer)	inferred
-com.webos.service.apiadapter	timer/setSettings	luna://com.webos.service.apiadapter/timer/setSettings	private	0	0	settings	Sets the settings (timer)	inferred
-com.webos.service.apiadapter	tv/executeOneShot	luna://com.webos.service.apiadapter/tv/executeOneShot	private	0	0	network	Runs the one shot (TV)	inferred
-com.webos.service.apiadapter	tv/getACRAuthToken	luna://com.webos.service.apiadapter/tv/getACRAuthToken	private	0	0	network	Returns the ACR auth token (TV)	inferred
-com.webos.service.apiadapter	tv/getChannelCurrentProgramInfo	luna://com.webos.service.apiadapter/tv/getChannelCurrentProgramInfo	private	0	0	network	Returns the channel current program info (TV)	inferred
-com.webos.service.apiadapter	tv/getChannelList	luna://com.webos.service.apiadapter/tv/getChannelList	private	0	0	network	Returns the channel list (TV)	inferred
-com.webos.service.apiadapter	tv/getChannelProgramInfo	luna://com.webos.service.apiadapter/tv/getChannelProgramInfo	private	0	0	network	Returns the channel program info (TV)	inferred
-com.webos.service.apiadapter	tv/getContentState	luna://com.webos.service.apiadapter/tv/getContentState	private	0	0	network	Returns the content state (TV)	inferred
-com.webos.service.apiadapter	tv/getCurrentChannel	luna://com.webos.service.apiadapter/tv/getCurrentChannel	private	0	0	network	Returns the current channel (TV)	inferred
-com.webos.service.apiadapter	tv/getExternalInputList	luna://com.webos.service.apiadapter/tv/getExternalInputList	private	0	0	network	Returns the external input list (TV)	inferred
-com.webos.service.apiadapter	tv/getSimilarChannelList	luna://com.webos.service.apiadapter/tv/getSimilarChannelList	private	0	0	network	Returns the similar channel list (TV)	inferred
-com.webos.service.apiadapter	tv/openChannel	luna://com.webos.service.apiadapter/tv/openChannel	private	0	0	network	Opens the channel (TV)	inferred
-com.webos.service.apiadapter	tv/switchInput	luna://com.webos.service.apiadapter/tv/switchInput	private	0	0	network	Switches the input (TV)	inferred
-com.webos.service.apiadapter	user/getUserData	luna://com.webos.service.apiadapter/user/getUserData	private	0	0	network	Returns the user data (user)	inferred
-com.webos.service.apiadapter	user/resetUserData	luna://com.webos.service.apiadapter/user/resetUserData	private	1	0	network	Resets the user data (user)	inferred
-com.webos.service.apiadapter	user/resetUserInfo	luna://com.webos.service.apiadapter/user/resetUserInfo	private	1	0	network	Resets the user info (user)	inferred
-com.webos.service.apiadapter	user/resetUserSchedule	luna://com.webos.service.apiadapter/user/resetUserSchedule	private	1	0	network	Resets the user schedule (user)	inferred
-com.webos.service.apiadapter	user/setUserData	luna://com.webos.service.apiadapter/user/setUserData	private	0	0	network	Sets the user data (user)	inferred
-com.webos.service.apiadapter	user/setUserInfo	luna://com.webos.service.apiadapter/user/setUserInfo	private	0	0	network	Sets the user info (user)	inferred
-com.webos.service.apiadapter	user/setUserSchedule	luna://com.webos.service.apiadapter/user/setUserSchedule	private	0	0	network	Sets the user schedule (user)	inferred
-com.webos.service.apiadapter	webapp/closeWebApp	luna://com.webos.service.apiadapter/webapp/closeWebApp	private	0	0	network	Closes the web app (webapp)	inferred
-com.webos.service.apiadapter	webapp/getAppIdForWebApp	luna://com.webos.service.apiadapter/webapp/getAppIdForWebApp	private	0	0	network	Returns the app ID for web app (webapp)	inferred
-com.webos.service.apiadapter	webapp/isWebAppPinned	luna://com.webos.service.apiadapter/webapp/isWebAppPinned	private	0	0	network	Reports whether the web app pinned is set (webapp)	inferred
-com.webos.service.apiadapter	webapp/launchWebApp	luna://com.webos.service.apiadapter/webapp/launchWebApp	private	0	0	apps	Launches the web app (webapp)	inferred
-com.webos.service.apiadapter	webapp/pinWebApp	luna://com.webos.service.apiadapter/webapp/pinWebApp	private	0	0	network	Handles the pin web app (webapp)	inferred
-com.webos.service.apiadapter	webapp/removePinnedWebApp	luna://com.webos.service.apiadapter/webapp/removePinnedWebApp	private	1	0	network	Removes the pinned web app (webapp)	inferred
+com.webos.service.apiadapter	system_notifications/createToast	luna://com.webos.service.apiadapter/system_notifications/createToast	private	0	0	notifications	Creates the toast (system notifications)	documented
+com.webos.service.apiadapter	systemprofile/getProfiles	luna://com.webos.service.apiadapter/systemprofile/getProfiles	private	0	0	network	Returns the profiles (systemprofile)	documented
+com.webos.service.apiadapter	timer/getSettings	luna://com.webos.service.apiadapter/timer/getSettings	private	0	0	settings	Returns the settings (timer)	documented
+com.webos.service.apiadapter	timer/setSettings	luna://com.webos.service.apiadapter/timer/setSettings	private	0	0	settings	Sets the settings (timer)	documented
+com.webos.service.apiadapter	tv/executeOneShot	luna://com.webos.service.apiadapter/tv/executeOneShot	private	0	0	network	Runs the one shot (TV)	documented
+com.webos.service.apiadapter	tv/getACRAuthToken	luna://com.webos.service.apiadapter/tv/getACRAuthToken	private	0	0	network	Returns the ACR auth token (TV)	documented
+com.webos.service.apiadapter	tv/getChannelCurrentProgramInfo	luna://com.webos.service.apiadapter/tv/getChannelCurrentProgramInfo	private	0	0	network	Returns the channel current program info (TV)	documented
+com.webos.service.apiadapter	tv/getChannelList	luna://com.webos.service.apiadapter/tv/getChannelList	private	0	0	network	Returns the channel list (TV)	documented
+com.webos.service.apiadapter	tv/getChannelProgramInfo	luna://com.webos.service.apiadapter/tv/getChannelProgramInfo	private	0	0	network	Returns the channel program info (TV)	documented
+com.webos.service.apiadapter	tv/getContentState	luna://com.webos.service.apiadapter/tv/getContentState	private	0	0	network	Returns the content state (TV)	documented
+com.webos.service.apiadapter	tv/getCurrentChannel	luna://com.webos.service.apiadapter/tv/getCurrentChannel	private	0	0	network	Returns the current channel (TV)	documented
+com.webos.service.apiadapter	tv/getExternalInputList	luna://com.webos.service.apiadapter/tv/getExternalInputList	private	0	0	network	Returns the external input list (TV)	documented
+com.webos.service.apiadapter	tv/getSimilarChannelList	luna://com.webos.service.apiadapter/tv/getSimilarChannelList	private	0	0	network	Returns the similar channel list (TV)	documented
+com.webos.service.apiadapter	tv/openChannel	luna://com.webos.service.apiadapter/tv/openChannel	private	0	0	network	Opens the channel (TV)	documented
+com.webos.service.apiadapter	tv/switchInput	luna://com.webos.service.apiadapter/tv/switchInput	private	0	0	network	Switches the input (TV)	documented
+com.webos.service.apiadapter	user/getUserData	luna://com.webos.service.apiadapter/user/getUserData	private	0	0	network	Returns the user data (user)	documented
+com.webos.service.apiadapter	user/resetUserData	luna://com.webos.service.apiadapter/user/resetUserData	private	1	0	network	Resets the user data (user)	documented
+com.webos.service.apiadapter	user/resetUserInfo	luna://com.webos.service.apiadapter/user/resetUserInfo	private	1	0	network	Resets the user info (user)	documented
+com.webos.service.apiadapter	user/resetUserSchedule	luna://com.webos.service.apiadapter/user/resetUserSchedule	private	1	0	network	Resets the user schedule (user)	documented
+com.webos.service.apiadapter	user/setUserData	luna://com.webos.service.apiadapter/user/setUserData	private	0	0	network	Sets the user data (user)	documented
+com.webos.service.apiadapter	user/setUserInfo	luna://com.webos.service.apiadapter/user/setUserInfo	private	0	0	network	Sets the user info (user)	documented
+com.webos.service.apiadapter	user/setUserSchedule	luna://com.webos.service.apiadapter/user/setUserSchedule	private	0	0	network	Sets the user schedule (user)	documented
+com.webos.service.apiadapter	webapp/closeWebApp	luna://com.webos.service.apiadapter/webapp/closeWebApp	private	0	0	network	Closes the web app (webapp)	documented
+com.webos.service.apiadapter	webapp/getAppIdForWebApp	luna://com.webos.service.apiadapter/webapp/getAppIdForWebApp	private	0	0	network	Returns the app ID for web app (webapp)	documented
+com.webos.service.apiadapter	webapp/isWebAppPinned	luna://com.webos.service.apiadapter/webapp/isWebAppPinned	private	0	0	network	Reports whether the web app pinned is set (webapp)	documented
+com.webos.service.apiadapter	webapp/launchWebApp	luna://com.webos.service.apiadapter/webapp/launchWebApp	private	0	0	apps	Launches the web app (webapp)	documented
+com.webos.service.apiadapter	webapp/pinWebApp	luna://com.webos.service.apiadapter/webapp/pinWebApp	private	0	0	network	Handles the pin web app (webapp)	documented
+com.webos.service.apiadapter	webapp/removePinnedWebApp	luna://com.webos.service.apiadapter/webapp/removePinnedWebApp	private	1	0	network	Removes the pinned web app (webapp)	documented
 com.webos.service.apinstaller	checkAPInstallAvailability	luna://com.webos.service.apinstaller/checkAPInstallAvailability	private	0	0	misc	Checks the AP install availability.	inferred
 com.webos.service.apinstaller	checkAPStatus	luna://com.webos.service.apinstaller/checkAPStatus	private	0	0	misc	Checks the AP status.	inferred
 com.webos.service.apinstaller	corruptHandler	luna://com.webos.service.apinstaller/corruptHandler	private	0	0	misc	Handles the corrupt handler.	inferred

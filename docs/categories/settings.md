@@ -75,16 +75,16 @@
 | [`luna://com.webos.service.acr/setSessionControl`](../services/com.webos.service.acr.md#setsessioncontrol) | private | documented | Controls an ACR session. |
 | [`luna://com.webos.service.acr/setVideoPig`](../services/com.webos.service.acr.md#setvideopig) | private | documented | ACR PIG (picture-in-graphic) control. Name only. |
 | [`luna://com.webos.service.admanager/checkForegroundSettings`](../services/com.webos.service.admanager.md#checkforegroundsettings) | private | inferred | Checks the foreground settings. |
-| [`luna://com.webos.service.apiadapter/config/getConfigs`](../services/com.webos.service.apiadapter.md#config_getconfigs) | private | inferred | Returns the configs (config) |
-| [`luna://com.webos.service.apiadapter/settings/getSystemSettingDesc`](../services/com.webos.service.apiadapter.md#settings_getsystemsettingdesc) | private | inferred | Returns the system setting desc (settings) |
-| [`luna://com.webos.service.apiadapter/settings/getSystemSettings`](../services/com.webos.service.apiadapter.md#settings_getsystemsettings) | private | inferred | Returns the system settings (settings) |
-| [`luna://com.webos.service.apiadapter/settings/getSystemSettingsHDRInfo`](../services/com.webos.service.apiadapter.md#settings_getsystemsettingshdrinfo) | private | inferred | Returns the system settings HDR info (settings) |
-| [`luna://com.webos.service.apiadapter/settings/getSystemSettingValues`](../services/com.webos.service.apiadapter.md#settings_getsystemsettingvalues) | private | inferred | Returns the system setting values (settings) |
-| [`luna://com.webos.service.apiadapter/settings/resetSystemSettingDesc`](../services/com.webos.service.apiadapter.md#settings_resetsystemsettingdesc) | private | inferred | Resets the system setting desc (settings) ⚠️ |
-| [`luna://com.webos.service.apiadapter/settings/resetSystemSettings`](../services/com.webos.service.apiadapter.md#settings_resetsystemsettings) | private | inferred | Resets the system settings (settings) ⚠️ |
-| [`luna://com.webos.service.apiadapter/settings/setSystemSettings`](../services/com.webos.service.apiadapter.md#settings_setsystemsettings) | private | inferred | Sets the system settings (settings) |
-| [`luna://com.webos.service.apiadapter/timer/getSettings`](../services/com.webos.service.apiadapter.md#timer_getsettings) | private | inferred | Returns the settings (timer) |
-| [`luna://com.webos.service.apiadapter/timer/setSettings`](../services/com.webos.service.apiadapter.md#timer_setsettings) | private | inferred | Sets the settings (timer) |
+| [`luna://com.webos.service.apiadapter/config/getConfigs`](../services/com.webos.service.apiadapter.md#config_getconfigs) | private | documented | Returns the configs (config) |
+| [`luna://com.webos.service.apiadapter/settings/getSystemSettingDesc`](../services/com.webos.service.apiadapter.md#settings_getsystemsettingdesc) | private | documented | Returns the system setting desc (settings) |
+| [`luna://com.webos.service.apiadapter/settings/getSystemSettings`](../services/com.webos.service.apiadapter.md#settings_getsystemsettings) | private | documented | Returns the system settings (settings) |
+| [`luna://com.webos.service.apiadapter/settings/getSystemSettingsHDRInfo`](../services/com.webos.service.apiadapter.md#settings_getsystemsettingshdrinfo) | private | documented | Returns the system settings HDR info (settings) |
+| [`luna://com.webos.service.apiadapter/settings/getSystemSettingValues`](../services/com.webos.service.apiadapter.md#settings_getsystemsettingvalues) | private | documented | Returns the system setting values (settings) |
+| [`luna://com.webos.service.apiadapter/settings/resetSystemSettingDesc`](../services/com.webos.service.apiadapter.md#settings_resetsystemsettingdesc) | private | documented | Resets the system setting desc (settings) ⚠️ |
+| [`luna://com.webos.service.apiadapter/settings/resetSystemSettings`](../services/com.webos.service.apiadapter.md#settings_resetsystemsettings) | private | documented | Resets the system settings (settings) ⚠️ |
+| [`luna://com.webos.service.apiadapter/settings/setSystemSettings`](../services/com.webos.service.apiadapter.md#settings_setsystemsettings) | private | documented | Sets the system settings (settings) |
+| [`luna://com.webos.service.apiadapter/timer/getSettings`](../services/com.webos.service.apiadapter.md#timer_getsettings) | private | documented | Returns the settings (timer) |
+| [`luna://com.webos.service.apiadapter/timer/setSettings`](../services/com.webos.service.apiadapter.md#timer_setsettings) | private | documented | Sets the settings (timer) |
 | [`luna://com.webos.service.broadcastconfigd/getChanges`](../services/com.webos.service.broadcastconfigd.md#getchanges) | private | inferred | Returns the changes. |
 | [`luna://com.webos.service.broadcastconfigd/getCountryBasedSat`](../services/com.webos.service.broadcastconfigd.md#getcountrybasedsat) | private | inferred | Returns the country based sat. |
 | [`luna://com.webos.service.broadcastconfigd/getFeature`](../services/com.webos.service.broadcastconfigd.md#getfeature) | private | inferred | Returns the feature. |

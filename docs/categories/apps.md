@@ -177,11 +177,11 @@
 | [`luna://com.webos.service.admanager/setTCF`](../services/com.webos.service.admanager.md#settcf) | private | inferred | Sets the TCF. |
 | [`luna://com.webos.service.admanager/start`](../services/com.webos.service.admanager.md#start) | private | inferred | Starts the admanager. |
 | [`luna://com.webos.service.admanager/startDownloadUrl`](../services/com.webos.service.admanager.md#startdownloadurl) | public | inferred | Starts the download URL. |
-| [`luna://com.webos.service.apiadapter/system_launcher/close`](../services/com.webos.service.apiadapter.md#system_launcher_close) | private | inferred | Closes the apiadapter (system launcher) |
-| [`luna://com.webos.service.apiadapter/system_launcher/getAppState`](../services/com.webos.service.apiadapter.md#system_launcher_getappstate) | private | inferred | Returns the app state (system launcher) |
-| [`luna://com.webos.service.apiadapter/system_launcher/launch`](../services/com.webos.service.apiadapter.md#system_launcher_launch) | private | inferred | Launches the apiadapter (system launcher) |
-| [`luna://com.webos.service.apiadapter/system_launcher/open`](../services/com.webos.service.apiadapter.md#system_launcher_open) | private | inferred | Opens the apiadapter (system launcher) |
-| [`luna://com.webos.service.apiadapter/webapp/launchWebApp`](../services/com.webos.service.apiadapter.md#webapp_launchwebapp) | private | inferred | Launches the web app (webapp) |
+| [`luna://com.webos.service.apiadapter/system_launcher/close`](../services/com.webos.service.apiadapter.md#system_launcher_close) | private | documented | Closes the apiadapter (system launcher) |
+| [`luna://com.webos.service.apiadapter/system_launcher/getAppState`](../services/com.webos.service.apiadapter.md#system_launcher_getappstate) | private | documented | Returns the app state (system launcher) |
+| [`luna://com.webos.service.apiadapter/system_launcher/launch`](../services/com.webos.service.apiadapter.md#system_launcher_launch) | private | documented | Launches the apiadapter (system launcher) |
+| [`luna://com.webos.service.apiadapter/system_launcher/open`](../services/com.webos.service.apiadapter.md#system_launcher_open) | private | documented | Opens the apiadapter (system launcher) |
+| [`luna://com.webos.service.apiadapter/webapp/launchWebApp`](../services/com.webos.service.apiadapter.md#webapp_launchwebapp) | private | documented | Launches the web app (webapp) |
 | [`luna://com.webos.service.apluspolicymanager/launchPartialViewApp`](../services/com.webos.service.apluspolicymanager.md#launchpartialviewapp) | public | inferred | Launches the partial view app. |
 | [`luna://com.webos.service.applaunchmanager/getStatus`](../services/com.webos.service.applaunchmanager.md#getstatus) | private | inferred | Returns the status. |
 | [`luna://com.webos.service.applicationManager/addContent`](../services/com.webos.service.applicationManager.md#addcontent) | private | inferred | Adds the content. |

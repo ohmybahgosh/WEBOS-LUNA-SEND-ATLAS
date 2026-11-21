@@ -24,6 +24,13 @@ ls-monitor -i com.webos.service.tvpower   # inspect the requests a service suppo
 ls /etc/palm/schemas
 ```
 
+**Read the on-device service source.**  Some webOS services are shipped as readable JavaScript under `/usr/palm/services/<service>/` (not compiled), so their real parameters can be read straight from the handler code and its JSDoc.  The `com.webos.service.apiadapter` service is the clearest example: each `adapters/<name>/index.js` declares its methods and validates its request payload, which is where the parameters for 52 apiadapter methods in this catalog came from.
+
+```sh
+ls /usr/palm/services
+cat /usr/palm/services/com.webos.service.apiadapter/adapters/audio/index.js
+```
+
 **Dump and compare.**  This repo's own CLI does a read-only sweep of your TV's services:
 
 ```sh
